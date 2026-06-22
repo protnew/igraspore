@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.log
+puppeteer_test.js
+.vite/
+playwright-report/
+test-results/
+coverage/

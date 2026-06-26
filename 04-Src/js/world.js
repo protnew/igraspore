@@ -7,7 +7,7 @@ class EventManager {
         this.eventDuration = 0;
         
         this.events = [
-            { id: 'acid_rain', name: 'Кислотный дождь', duration: 15, onStart: () => { window.basePH = window.world.ph; window.world.ph = 2.0; }, onEnd: () => { window.world.ph = window.basePH; } },
+            { id: 'acid_rain', name: 'Кислотный дождь', duration: 15, onStart: () => { window.basePH = window.gamePH || 7.0; window.gamePH = 2.0; }, onEnd: () => { window.gamePH = window.basePH; } },
             { id: 'eclipse', name: 'Солнечное затмение', duration: 20, onStart: () => { window.eclipseMod = 0.1; }, onEnd: () => { window.eclipseMod = 1.0; } }
         ];
         window.eclipseMod = 1.0;

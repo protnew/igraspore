@@ -1,0 +1,541 @@
+{
+  "title": "ТАБЛИЦА 2: Open-source заготовки для форка/вдохновения",
+  "subtitle": "iGraSpore — что можно взять и улучшить. 14 проектов × 14 критериев. Веса Σ=100%",
+  "params": [
+    {
+      "name": "Релевантность к iGraSpore (микроорганизмы/лужа)",
+      "weight": 18,
+      "reverse": false
+    },
+    {
+      "name": "Можно ли форкнуть и использовать код",
+      "weight": 12,
+      "reverse": false
+    },
+    {
+      "name": "Canvas 2D / чистый JS (без движка)",
+      "weight": 10,
+      "reverse": false
+    },
+    {
+      "name": "Организмы с AI поведением",
+      "weight": 10,
+      "reverse": false
+    },
+    {
+      "name": "Food web / экосистема",
+      "weight": 9,
+      "reverse": false
+    },
+    {
+      "name": "Бесконечный мир / карта",
+      "weight": 7,
+      "reverse": false
+    },
+    {
+      "name": "Деление / размножение организмов",
+      "weight": 7,
+      "reverse": false
+    },
+    {
+      "name": "Один HTML файл / SPA",
+      "weight": 6,
+      "reverse": false
+    },
+    {
+      "name": "Активность проекта 2024-2026",
+      "weight": 5,
+      "reverse": false
+    },
+    {
+      "name": "Качество кода (читаемость, документация)",
+      "weight": 5,
+      "reverse": false
+    },
+    {
+      "name": "Зум / камера реализованы",
+      "weight": 4,
+      "reverse": false
+    },
+    {
+      "name": "Игрок управляет организмом",
+      "weight": 4,
+      "reverse": false
+    },
+    {
+      "name": "Генетика / эволюция / мутации",
+      "weight": 3,
+      "reverse": false
+    }
+  ],
+  "services": [
+    {
+      "name": "cell-simulation-js (3elDU)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/3elDU/cell-simulation-js)",
+      "scores": [
+        9.0,
+        8.0,
+        9.0,
+        8.0,
+        5.0,
+        6.0,
+        9.0,
+        7.0,
+        3.0,
+        6.0,
+        5.0,
+        2.0,
+        8.0
+      ],
+      "descs": [
+        "Клеточная эволюция. Геном, мутации, деление. Очень близко!",
+        "MIT. JS. Canvas. Можно форкнуть напрямую.",
+        "Canvas 2D + чистый JS. Точно наш стек!",
+        "AI на основе генома. Neural-like поведение. Клетки двигаются, едят.",
+        "Частичная. Конкуренция за ресурсы. Не полная food web.",
+        "Частичная. Не строго бесконечная.",
+        "Бинарное деление с мутациями. Реализовано отлично.",
+        "Почти. HTML+JS. Можно объединить.",
+        "2022 последний коммит. Умеренно мёртвый.",
+        "Хороший. Понятная структура. Геном = массив чисел.",
+        "Базовый zoom.",
+        "Нет autoplay. Наблюдение за симуляцией.",
+        "Геном = массив генов. Мутации при делении. Отлично."
+      ],
+      "verdict": "🥇 ЛУЧШИЙ КАНДИДАТ НА ФОРК. Тот же стек. Деление + геном + мутации."
+    },
+    {
+      "name": "Thrive (эволюция)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/Revolutionary-Games/Thrive)",
+      "scores": [
+        10.0,
+        3.0,
+        1.0,
+        9.0,
+        9.0,
+        8.0,
+        7.0,
+        1.0,
+        10.0,
+        9.0,
+        8.0,
+        8.0,
+        10.0
+      ],
+      "descs": [
+        "ЭТО iGraSpore но 3D. Микробная стадия = наша лужа. Идеальное вдохновение.",
+        "C# + Godot. НЕ подходит для форка (другой стек). Только вдохновение.",
+        "Нет. C# + Godot engine. Полная противоположность нашего стека.",
+        "Микробный AI: хемотаксис, фагоцитоз, бегство. Идеальный reference.",
+        "Полная food web: железо, фосфаты, O₂, CO₂, продуценты, хищники. Обучение.",
+        "Бесконечный мир. Chunk-based. Species spawning. Perfected.",
+        "Бинарное деление. Мутации. Реалистично.",
+        "Нет. Godot экспорт. 50MB+ билд.",
+        "0.9.0 март 2026. Очень активный. Patreon funded.",
+        "Отличный код. Docs, wiki, паттерны. Эталон.",
+        "Camera follow + zoom + прицеливание. Полная реализация.",
+        "Да. WASD + мышь. Полное управление микробом.",
+        "Мутации при делении. Генетика. Эволюция. Всё есть."
+      ],
+      "verdict": "🏆 ИДЕАЛЬНОЕ ВДОХНОВЕНИЕ. Копировать механики, НЕ код. Разный стек."
+    },
+    {
+      "name": "Ogar (Agar.io server)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/OgarProject/Ogar)",
+      "scores": [
+        8.0,
+        7.0,
+        7.0,
+        7.0,
+        3.0,
+        5.0,
+        8.0,
+        3.0,
+        1.0,
+        6.0,
+        4.0,
+        3.0,
+        1.0
+      ],
+      "descs": [
+        "Agar.io = клетки в петри. Самая близкая механика к нашей луже.",
+        "MIT лицензия. Node.js. Можно вытащить cell logic.",
+        "Node.js сервер. Canvas на клиенте. Чистый JS.",
+        "Cell merge, split, eject. AI bots. Паттерн движения.",
+        "Нет food web. Все едят друг друга по размеру. Упрощённо.",
+        "Нет. Фиксированная карта ~6000x6000.",
+        "Split = деление клетки. eject mass = «рождение». Есть.",
+        "Нет. Сервер + клиент отдельно. Socket.io.",
+        "Последний коммит 2020. Мёртвый. Но Ogar2 (Java) жив.",
+        "Хорошая структура. Документированный протокол.",
+        "Камера follow за игроком. Zoom при росте.",
+        "Да. WASD + мышь. Split на пробел.",
+        "Нет генетики. Размер = единственный параметр."
+      ],
+      "verdict": "🥇 ЛУЧШАЯ ЗАГОТОВКА. Cell mechanics + split + movement. Мёртвый но код рабочий."
+    },
+    {
+      "name": "agar.io-clone (owenashurst)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/owenashurst/agar.io-clone)",
+      "scores": [
+        7.0,
+        7.0,
+        7.0,
+        6.0,
+        3.0,
+        4.0,
+        7.0,
+        3.0,
+        4.0,
+        7.0,
+        5.0,
+        4.0,
+        1.0
+      ],
+      "descs": [
+        "Agar.io clone. Petri dish. Клетки. Близко.",
+        "MIT. JS + Socket.io. Можно форкнуть.",
+        "Canvas 2D + Node.js. Почти наш стек.",
+        "Bots с движением к еде. Базовый AI.",
+        "Нет. Size-based eating.",
+        "Фиксированная карта ~5000x5000.",
+        "Split на пробел. Cell division.",
+        "Нет. Сервер + клиент.",
+        "2023 коммиты. Умеренно активный.",
+        "Хороший. Live demo. README с скриншотами.",
+        "Camera follow. Zoom based on size.",
+        "Да. Мышь для направления. Split на пробел.",
+        "Нет."
+      ],
+      "verdict": "Хороший рабочий Agar.io clone. Взять: cell rendering, split, camera."
+    },
+    {
+      "name": "LifeEngineExtended",
+      "price": 0,
+      "link": "[GitHub](https://github.com/SuperSpaceEye/LifeEngineExtended)",
+      "scores": [
+        7.0,
+        5.0,
+        2.0,
+        8.0,
+        6.0,
+        7.0,
+        8.0,
+        1.0,
+        4.0,
+        5.0,
+        5.0,
+        2.0,
+        9.0
+      ],
+      "descs": [
+        "2D эволюция организмов. Emergent behavior. Близко к нашей идее.",
+        "GPL-3.0. C++. НЕ наш стек. Но концепции = ценные.",
+        "C++. Не Canvas/JS.",
+        "Emergent AI из генома. Organisms hunt, flee, reproduce.",
+        "Food web emerges из геномов. Хищники, жертвы, продуценты.",
+        "Бесконечная 2D карта.",
+        "Деление с наследованием генома + мутации.",
+        "Нет. C++ binary.",
+        "2022. Полу-мёртвый.",
+        "Средний. C++ сложнее читать но логика понятна.",
+        "Camera pan + zoom.",
+        "Нет. Наблюдение.",
+        "Отличная генетика. Эволюция = emergent."
+      ],
+      "verdict": "Концептуальный reference. Food web emergence = взять идею."
+    },
+    {
+      "name": "biosim4",
+      "price": 0,
+      "link": "[GitHub](https://github.com/davidrmiller/biosim4)",
+      "scores": [
+        7.0,
+        4.0,
+        2.0,
+        9.0,
+        6.0,
+        5.0,
+        8.0,
+        1.0,
+        5.0,
+        8.0,
+        4.0,
+        1.0,
+        10.0
+      ],
+      "descs": [
+        "Biological evolution simulator. Neural network brains. Близко.",
+        "GPL-2.0. C++. Не форкнуть. Но神经网络 design = gold standard.",
+        "C++. Не наш стек.",
+        "Neural network для мозга каждого организма. Sensors → brain → actions.",
+        "Emerged food web из конкуренции.",
+        "Фиксированная арена. Не бесконечная.",
+        "Деление + геном + NN brain inheritance.",
+        "Нет.",
+        "2024 коммиты. Активный.",
+        "Отличный. Книга + видео + код. Эталон.",
+        "Нет zoom.",
+        "Нет. Наблюдение.",
+        "NEAT-like нейросеть как мозг. Эволюция NN через генетический алгоритм."
+      ],
+      "verdict": "🏆 GOLD STANDARD для AI организмов. NN brain + evolution. Читать обязательно."
+    },
+    {
+      "name": "cell-simulation (C, 3elDU)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/3elDU/cell-simulation)",
+      "scores": [
+        9.0,
+        3.0,
+        1.0,
+        8.0,
+        5.0,
+        6.0,
+        9.0,
+        1.0,
+        3.0,
+        7.0,
+        5.0,
+        2.0,
+        9.0
+      ],
+      "descs": [
+        "Та же симуляция что JS-версия, но на C. Отличная механика.",
+        "GPL-3.0. C код. Не форкнуть в JS. Но logic = reference.",
+        "C + Raylib. НЕ наш стек. Только читать логику.",
+        "Те же AI что JS-версия но быстрее. Genome-driven.",
+        "Частичная.",
+        "Бесконечная карта. Chunk-based.",
+        "Отличная реализация деления с мутациями.",
+        "Нет. C binary.",
+        "2023. Умеренно активный.",
+        "Хороший C код. Понятная структура.",
+        "Camera pan + zoom.",
+        "Нет. Наблюдение.",
+        "Полная генетика. Мутации каждого гена при делении."
+      ],
+      "verdict": "Reference implementation. C = не форкнуть но логику перенести."
+    },
+    {
+      "name": "neural-evolution (kayehld)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/kayehld/neural-evolution)",
+      "scores": [
+        7.0,
+        5.0,
+        3.0,
+        9.0,
+        5.0,
+        4.0,
+        8.0,
+        2.0,
+        2.0,
+        7.0,
+        4.0,
+        2.0,
+        10.0
+      ],
+      "descs": [
+        "Cell evolution with neural network brain. Очень релевантно!",
+        "Java. НЕ наш стек. Но NN design = копировать.",
+        "Java + Swing. Не Canvas/JS.",
+        "Neural network controls each cell. Move, eat, reproduce decisions.",
+        "Competition emerges. Не формальная food web.",
+        "Фиксированная арена.",
+        "Division with NN brain copy + mutation.",
+        "Нет. Java app.",
+        "2022. Не активный.",
+        "Хороший. Clean Java. Videos on YouTube.",
+        "Camera pan.",
+        "Нет. Наблюдение.",
+        "NN brain per cell. Sensors → hidden layer → outputs. Genetic algorithm."
+      ],
+      "verdict": "NN brain design reference. Как biosim4 но проще. Взять архитектуру NN."
+    },
+    {
+      "name": "Evolution-Simulation (tanmaysinha18)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/tanmaysinha18/Evolution-Simulation)",
+      "scores": [
+        6.0,
+        5.0,
+        7.0,
+        7.0,
+        6.0,
+        3.0,
+        7.0,
+        5.0,
+        2.0,
+        4.0,
+        3.0,
+        2.0,
+        7.0
+      ],
+      "descs": [
+        "Ecosystem evolution. Organisms travel, eat, reproduce. Релевантно.",
+        "Open source. JS + HTML. Можно форкнуть.",
+        "Canvas 2D. JS. Наш стек!",
+        "Organisms move, eat, reproduce, evolve. Basic FSM.",
+        "Ecosystem simulation. Multiple species.",
+        "Нет. Фиксированная арена.",
+        "Reproduction when energy sufficient.",
+        "Почти. HTML+JS.",
+        "2021. Мёртвый.",
+        "Простой код. Без документации.",
+        "Нет.",
+        "Нет. Auto simulation.",
+        "Basic mutation on reproduction."
+      ],
+      "verdict": "Простой JS reference. Экосистема в HTML. Взять: FSM pattern."
+    },
+    {
+      "name": "Vanis.io / OpenAgar",
+      "price": 0,
+      "link": "[GitHub](https://github.com/AJS-development/OpenAgar)",
+      "scores": [
+        7.0,
+        6.0,
+        6.0,
+        6.0,
+        3.0,
+        4.0,
+        7.0,
+        2.0,
+        5.0,
+        5.0,
+        4.0,
+        3.0,
+        1.0
+      ],
+      "descs": [
+        "Agar.io clone. Клетки. Близко к микроорганизмам.",
+        "Open source. JS. Можно форкнуть.",
+        "Canvas + WebSocket. Node.js бэкенд.",
+        "Bots с базовым AI. Движение к еде, убегание от крупных.",
+        "Нет. Eat-or-be-eaten. Без пищевой цепочки.",
+        "Нет. Фиксированная карта.",
+        "Split mechanics. Cell division.",
+        "Нет. Сервер + клиент.",
+        "OpenAgar активнее чем Ogar. 2023-2024 коммиты.",
+        "Средний. Рабочий код но без документации.",
+        "Camera follow. Zoom на росте.",
+        "Да. Управление мышью.",
+        "Нет."
+      ],
+      "verdict": "🥈 Активнее Ogar. Но нужен сервер. cell logic можно вытащить."
+    },
+    {
+      "name": "Evolution-Simulator (bramvanwersch)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/bramvanwersch/Evolution-Simulator)",
+      "scores": [
+        6.0,
+        6.0,
+        5.0,
+        7.0,
+        5.0,
+        3.0,
+        7.0,
+        4.0,
+        2.0,
+        5.0,
+        3.0,
+        1.0,
+        8.0
+      ],
+      "descs": [
+        "Evolution of species with genome. Частично релевантно.",
+        "Open source. Python. Можно логику перенести.",
+        "Python + Pygame. Не Canvas/JS.",
+        "Genome-driven behavior. Species interact.",
+        "Базовая. Competition for resources.",
+        "Нет. Фиксированная арена.",
+        "Размножение с геномом и мутациями.",
+        "Нет. Python.",
+        "2022. Не активный.",
+        "Средний. Простой код.",
+        "Нет.",
+        "Нет.",
+        "Genome = sequence of genes. Mutation rate configurable."
+      ],
+      "verdict": "Простой reference для генома. Не для форка."
+    },
+    {
+      "name": "Cigar2 (Agar.io client)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/Cigar2/Cigar2)",
+      "scores": [
+        6.0,
+        7.0,
+        7.0,
+        5.0,
+        2.0,
+        3.0,
+        5.0,
+        5.0,
+        4.0,
+        6.0,
+        3.0,
+        3.0,
+        1.0
+      ],
+      "descs": [
+        "Agar.io клиент. Клетки. Частично релевантно.",
+        "MIT. npm install + npm start. Можно модифицировать.",
+        "Node.js + Canvas клиент. Протокол 6.",
+        "Базовые bots. Без сложного AI.",
+        "Нет.",
+        "Нет.",
+        "Split = деление. Базовое.",
+        "Почти. Один npm start. Но не один файл.",
+        "2023 коммиты. Умеренно активный.",
+        "Чистый код. Протокол documented.",
+        "Camera basics.",
+        "Частично. Мышь для направления.",
+        "Нет."
+      ],
+      "verdict": "Хороший Agar.io клиент. Protocol reference. Не полная игра."
+    },
+    {
+      "name": "agar.io-clone (yamcodes, p5.js)",
+      "price": 0,
+      "link": "[GitHub](https://github.com/yamcodes/agario-clone)",
+      "scores": [
+        6.0,
+        6.0,
+        6.0,
+        5.0,
+        2.0,
+        3.0,
+        6.0,
+        6.0,
+        3.0,
+        5.0,
+        3.0,
+        3.0,
+        1.0
+      ],
+      "descs": [
+        "Agar.io clone на p5.js. Простой. Обучающий.",
+        "MIT. p5.js. Можно форкнуть.",
+        "p5.js = Canvas wrapper. Близко к нашему стеку.",
+        "Базовый movement + eat. Без сложного AI.",
+        "Нет.",
+        "Фиксированная.",
+        "Split = деление.",
+        "Один HTML файл! p5 CDN + inline JS.",
+        "2022. Не активный.",
+        "Coding Train стиль. Понятный но упрощённый.",
+        "Нет.",
+        "Мышь для направления.",
+        "Нет."
+      ],
+      "verdict": "Самый простой Agar.io clone. Однофайловый. Взять: структуру одного файла."
+    }
+  ]
+}

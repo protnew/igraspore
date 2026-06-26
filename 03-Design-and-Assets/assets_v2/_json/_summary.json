@@ -1,0 +1,360 @@
+{
+  "project": "iGraSpore",
+  "categories": [
+    {
+      "id": "A",
+      "name": "Движок и рендеринг",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/A_Движок_и_рендеринг.xlsx",
+      "branches": [
+        {
+          "category_id": "A",
+          "category_name": "Движок и рендеринг",
+          "objects_count": 16,
+          "params_count": 9,
+          "recommendation": "A1. rAF + deltaTime",
+          "utility": 9.0,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/A_Движок_и_рендеринг.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Мир и среда",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/B_Мир_и_среда.xlsx",
+      "branches": [
+        {
+          "category_id": "B",
+          "category_name": "Мир и среда",
+          "objects_count": 16,
+          "params_count": 9,
+          "recommendation": "B3. sin()+глубина (дневной цикл)",
+          "utility": 8.98,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/B_Мир_и_среда.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Организмы ИИ",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/C_Организмы_ИИ.xlsx",
+      "branches": [
+        {
+          "category_id": "C",
+          "category_name": "Организмы ИИ",
+          "objects_count": 16,
+          "params_count": 9,
+          "recommendation": "C5. Brownian motion",
+          "utility": 8.25,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/C_Организмы_ИИ.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Энергия взаимодействие",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/D_Энергия_взаимодействие.xlsx",
+      "branches": [
+        {
+          "category_id": "D",
+          "category_name": "Энергия взаимодействие",
+          "objects_count": 15,
+          "params_count": 9,
+          "recommendation": "D2. Фотосинтез только idle",
+          "utility": 8.11,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/D_Энергия_взаимодействие.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Игрок",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/E_Игрок.xlsx",
+      "branches": [
+        {
+          "category_id": "E",
+          "category_name": "Игрок",
+          "objects_count": 9,
+          "params_count": 9,
+          "recommendation": "E2. Face cursor (организм смотрит на мышь)",
+          "utility": 8.85,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/E_Игрок.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "name": "Баланс экосистемы",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/F_Баланс_экосистемы.xlsx",
+      "branches": [
+        {
+          "category_id": "F",
+          "category_name": "Баланс экосистемы",
+          "objects_count": 9,
+          "params_count": 9,
+          "recommendation": "F1. Упрощённая цепь (хищник→жертва) ✅ РЕШЕНО",
+          "utility": 8.64,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/F_Баланс_экосистемы.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "name": "UI UX",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/G_UI_UX.xlsx",
+      "branches": [
+        {
+          "category_id": "G",
+          "category_name": "UI UX",
+          "objects_count": 13,
+          "params_count": 9,
+          "recommendation": "G2. Миникарта: точки",
+          "utility": 8.9,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/G_UI_UX.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "name": "Данные хранение",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/H_Данные_хранение.xlsx",
+      "branches": [
+        {
+          "category_id": "H",
+          "category_name": "Данные хранение",
+          "objects_count": 9,
+          "params_count": 9,
+          "recommendation": "H1. Plain object (литерал) ✅ РЕШЕНО",
+          "utility": 8.87,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/H_Данные_хранение.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "I",
+      "name": "Кросс платформа",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/I_Кросс_платформа.xlsx",
+      "branches": [
+        {
+          "category_id": "I",
+          "category_name": "Кросс платформа",
+          "objects_count": 11,
+          "params_count": 9,
+          "recommendation": "I2. Responsive canvas (auto-resize) ✅ РЕШЕНО",
+          "utility": 8.9,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/I_Кросс_платформа.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "J",
+      "name": "Звук эффекты",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/J_Звук_эффекты.xlsx",
+      "branches": [
+        {
+          "category_id": "J",
+          "category_name": "Звук эффекты",
+          "objects_count": 6,
+          "params_count": 9,
+          "recommendation": "J2. Вспышка (flash effect)",
+          "utility": 8.64,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/J_Звук_эффекты.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "T1",
+      "name": "Движки фреймворки",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/T1_Движки_фреймворки.xlsx",
+      "branches": [
+        {
+          "category_id": "T1",
+          "category_name": "Движки фреймворки",
+          "objects_count": 12,
+          "params_count": 12,
+          "recommendation": "Phaser 3",
+          "utility": 6.97,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/T1_Движки_фреймворки.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "T2",
+      "name": "OpenSource заготовки",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/T2_OpenSource_заготовки.xlsx",
+      "branches": [
+        {
+          "category_id": "T2",
+          "category_name": "OpenSource заготовки",
+          "objects_count": 13,
+          "params_count": 13,
+          "recommendation": "cell-simulation-js (3elDU)",
+          "utility": 7.17,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/T2_OpenSource_заготовки.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "T3",
+      "name": "Браузерные конкуренты",
+      "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/T3_Браузерные_конкуренты.xlsx",
+      "branches": [
+        {
+          "category_id": "T3",
+          "category_name": "Браузерные конкуренты",
+          "objects_count": 12,
+          "params_count": 14,
+          "recommendation": "Orb.Farm",
+          "utility": 5.99,
+          "status": "done",
+          "file": "/data/Obsidian/New/Projects/iGraSpore/assets_v2/T3_Браузерные_конкуренты.xlsx",
+          "checks": {
+            "weights_sum": true,
+            "scores_descs": true,
+            "justifications": true,
+            "links": true,
+            "verdicts": true,
+            "excel": true
+          },
+          "error": null
+        }
+      ]
+    }
+  ],
+  "params": [
+    "Производительность",
+    "Простота реализации",
+    "Поддержка file://",
+    "Масштабируемость",
+    "Кросс-платформа",
+    "Размер кода",
+    "Отладка",
+    "Совместимость браузеров",
+    "Future-proof"
+  ],
+  "total_params": 9,
+  "total_branches": 13,
+  "total_objects": 157,
+  "total_cells": 1561,
+  "solved": 13,
+  "unsolved": 0
+}

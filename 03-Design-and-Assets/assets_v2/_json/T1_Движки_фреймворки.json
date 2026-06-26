@@ -1,0 +1,476 @@
+{
+  "title": "ТАБЛИЦА 1: Движки и фреймворки для микроорганизменных симуляций",
+  "subtitle": "iGraSpore — выбор технологии. 12 движков × 12 критериев. Веса Σ=100%",
+  "params": [
+    {
+      "name": "Один HTML файл (file://)",
+      "weight": 15,
+      "reverse": false
+    },
+    {
+      "name": "Canvas 2D производительность (500 org @60fps)",
+      "weight": 15,
+      "reverse": false
+    },
+    {
+      "name": "ИИ-кодинг (LLM пишет код)",
+      "weight": 12,
+      "reverse": false
+    },
+    {
+      "name": "Простота прототипирования",
+      "weight": 10,
+      "reverse": false
+    },
+    {
+      "name": "Кросс-платформа Web+Mobile",
+      "weight": 10,
+      "reverse": false
+    },
+    {
+      "name": "Spatial hashing / коллизии из коробки",
+      "weight": 8,
+      "reverse": false
+    },
+    {
+      "name": "Размер бандла / зависимости",
+      "weight": 7,
+      "reverse": false
+    },
+    {
+      "name": "Зум / камера из коробки",
+      "weight": 5,
+      "reverse": false
+    },
+    {
+      "name": "FSM / AI поведение",
+      "weight": 5,
+      "reverse": false
+    },
+    {
+      "name": "Chunk-based бесконечный мир",
+      "weight": 5,
+      "reverse": false
+    },
+    {
+      "name": "Touch / джойстик из коробки",
+      "weight": 4,
+      "reverse": false
+    },
+    {
+      "name": "Активность сообщества 2025-2026",
+      "weight": 4,
+      "reverse": false
+    }
+  ],
+  "services": [
+    {
+      "name": "Phaser 3",
+      "price": 0,
+      "link": "[phaser.io](https://phaser.io/)",
+      "scores": [
+        3.0,
+        9.0,
+        8.0,
+        8.0,
+        9.0,
+        8.0,
+        4.0,
+        9.0,
+        5.0,
+        5.0,
+        7.0,
+        9.0
+      ],
+      "descs": [
+        "Нужен сервер для ES modules или bundler. file:// не работает с import. CDN OK но нужен http.",
+        "WebGL рендерер по умолчанию. Sprite batch = тысячы объектов @60fps. Arcade physics.",
+        "LLM знает Phaser хорошо. Есть примеры, docs, tutorials. Но конфигурация объёмная.",
+        "Быстрый старт через CDN.但有 scenes, preload, create boilerplate.",
+        "WebGL+Canvas fallback. Touch, pointer, keyboard из коробки. Mobile-first.",
+        "Arcade physics + overlap/collide. Готовая spatial проверка.",
+        "phaser.min.js = 1MB+. Даже CDN = зависимость. Не вписать в один файл комфортно.",
+        "Camera с follow, zoom, lerp, bounds. Всё из коробки.",
+        "FSM через плагины или вручную. State machine паттерн есть в examples.",
+        "Tilemaps с чанками. Нужна настройка бесконечности.",
+        "Touch, pointer, virtual joystick plugin. Всё есть.",
+        "Огромное комьюнити. 37K+ GitHub stars. Примеры, форумы, Discord активен."
+      ],
+      "verdict": "🥈 Лучший фреймворк если бы не ограничение одного файла. Для v2."
+    },
+    {
+      "name": "Phaser + Rollup (bundled)",
+      "price": 0,
+      "link": "[phaser.io](https://phaser.io/)",
+      "scores": [
+        5.0,
+        9.0,
+        7.0,
+        6.0,
+        9.0,
+        8.0,
+        3.0,
+        9.0,
+        5.0,
+        5.0,
+        7.0,
+        9.0
+      ],
+      "descs": [
+        "Rollup bundle = один HTML файл с inline JS. file:// OK. Но размер ~1MB.",
+        "WebGL batch. 500 организмов легко. Arcade physics.",
+        "LLM знает Phaser. Но bundler config = дополнительная сложность.",
+        "Нужен npm, rollup config, build step. Дольше чем чистый JS.",
+        "WebGL+Canvas. Touch + pointer из коробки.",
+        "Arcade + spatial. Готово.",
+        "Bundled ~800KB-1MB. Тяжёлый для одного файла.",
+        "Camera follow + zoom + lerp. Из коробки.",
+        "FSM plugin или вручную.",
+        "Tilemaps. Бесконечность = настройка.",
+        "Virtual joystick plugin. Готово.",
+        "37K stars. Активен."
+      ],
+      "verdict": "Вариант для v2 если нужен Phaser в одном файле. 1MB бандл."
+    },
+    {
+      "name": "Чистый JS + Canvas 2D (без фреймворка)",
+      "price": 0,
+      "link": "[Web API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)",
+      "scores": [
+        10.0,
+        8.0,
+        9.0,
+        9.0,
+        8.0,
+        2.0,
+        10.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        0.0
+      ],
+      "descs": [
+        "Ноль зависимостей. Один HTML файл = вся игра. file:// OK.",
+        "Canvas 2D нативный. 500 простых фигур @60fps легко. Безoverhead фреймворка.",
+        "LLM отлично знает нативный JS+Canvas. Максимальная генерация кода.",
+        "Мгновенный старт. Нет setup, нет конфигурации. Открыл файл и пишешь.",
+        "Работает везде где есть браузер. Desktop+mobile без изменений.",
+        "Нет. Писать spatial hash руками (~50 строк).",
+        "0 KB зависимостей. Весь код = твой код.",
+        "Нет. Camera system = offset + scale (30 строк).",
+        "Нет. FSM писать руками (~100 строк).",
+        "Нет. Чанки = Map<string, Chunk> (50 строк).",
+        "Нет. Touch API нативный, но джойстик = 80 строк.",
+        "MDN docs, StackOverflow. Нет «комьюнити фреймворка» но JS = вечный."
+      ],
+      "verdict": "🏆 ВЫБРАН ДЛЯ iGraSpore. Максимальная простота, file://, ИИ-кодинг."
+    },
+    {
+      "name": "Godot 4 (Web Export)",
+      "price": 0,
+      "link": "[godotengine.org](https://godotengine.org/)",
+      "scores": [
+        2.0,
+        9.0,
+        3.0,
+        4.0,
+        8.0,
+        9.0,
+        1.0,
+        9.0,
+        7.0,
+        8.0,
+        7.0,
+        10.0
+      ],
+      "descs": [
+        "Экспорт = WASM + JS обвязка = 10MB+. file:// не работает без сервера.",
+        "GDScript+engine. Отличная производительность. TileMap, физика, thousands nodes.",
+        "LLM хуже знает GDScript чем JS. Сцены .tscn = бинарные, ИИ не генерит.",
+        "Нужен редактор. Долгий setup для web. Экспорт = отдельный шаг.",
+        "Web export OK но тяжёлый. Android/iOS нативно. PWA сложный.",
+        "Physics engine + TileMap + spatial partitioning. Из коробки.",
+        "10MB+ WASM. Самый тяжёлый вариант. Не «один файл».",
+        "Camera2D с smoothing, zoom, limits, drag. Идеальная.",
+        "StateMachine node. Behaviour tree через плагины.",
+        "TileMap с chunk loading. Infinite scroller — из коробки.",
+        "Touch screen + virtual joystick = сторонний плагин.",
+        "90K stars. Огромное сообщество. Docs, tutorials, активный development."
+      ],
+      "verdict": "Лучший движок для 2D игр. Но WASM 10MB и file:// = нет."
+    },
+    {
+      "name": "Kaboom.js (kaplay)",
+      "price": 0,
+      "link": "[kaboomjs.com](https://kaboomjs.com/)",
+      "scores": [
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        6.0,
+        5.0,
+        5.0,
+        6.0,
+        3.0,
+        2.0,
+        5.0,
+        6.0
+      ],
+      "descs": [
+        "CDN script tag OK. Но один файл = kaboom + твой код = 500KB+.",
+        "Canvas 2D. Простые объекты OK. 500 организмов с AI — начинает тормозить.",
+        "LLM знает Kaboom. Простой API. onUpdate, onDraw, add — интуитивный.",
+        "Самый быстрый прототип. 10 строк = игра. Рекурсивный колбэк API.",
+        "Desktop OK. Mobile touch слабый. Нет нативного джойстика.",
+        "Простые collides(), overlaps(). Но spatial hash = линейный поиск.",
+        "kaboom.js = 100KB+. Компактный для фреймворка но не ноль.",
+        "camPos(), camScale(). Базовые функции. Нет lerp follow.",
+        "state() для FSM но очень простой. Нет иерархии состояний.",
+        "Нет. Фиксированная сцена. scroll = камера но не чанки.",
+        "onMouseMove, onTouch. Джойстик = вручную.",
+        "kaplay (форк Kaboom). 2K stars. Маленькое но активное сообщество."
+      ],
+      "verdict": "Для jam/прототипа — идеален. Для 500 организмов — слабоват."
+    },
+    {
+      "name": "PixiJS 8",
+      "price": 0,
+      "link": "[pixijs.com](https://pixijs.com/)",
+      "scores": [
+        3.0,
+        10.0,
+        7.0,
+        7.0,
+        8.0,
+        3.0,
+        4.0,
+        7.0,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "descs": [
+        "Нужен bundler или CDN. import не работает в file://. npm пакет.",
+        "WebGL2 рендерер. Batch rendering. 10K+ sprites @60fps. Лучшая производительность.",
+        "LLM знает PixiJS. Но v8 сильно изменился — старые примеры не работают.",
+        "Нужен Application, Loader, Ticker. Больше boilerplate чем чистый Canvas.",
+        "WebGL+Canvas fallback. Responsive. Но mobile WebGL может тормозить на старых.",
+        "Нет физики. Нет коллизий. Только рендеринг. Spatial hash = вручную.",
+        "pixi.min.js = 300KB+. Лёгкий для фреймворка но не вписывается в «без зависимостей».",
+        "Camera = Container с pivot/position. Zoom = scale. Надо настраивать.",
+        "Нет AI. Только рендеринг. FSM полностью вручную.",
+        "Нет чанков. Контейнеры сaddChild/removeChild. Бесконечность = вручную.",
+        "Interaction plugin. Но джойстик = вручную или сторонний.",
+        "39K stars. Активное развитие. Discord активен."
+      ],
+      "verdict": "Чистый рендеринг-монстр. Для нашего случая — overkill, нет AI/физики."
+    },
+    {
+      "name": "Excalibur.js",
+      "price": 0,
+      "link": "[excaliburjs.com](https://excaliburjs.com/)",
+      "scores": [
+        3.0,
+        7.0,
+        5.0,
+        6.0,
+        7.0,
+        6.0,
+        4.0,
+        7.0,
+        4.0,
+        3.0,
+        5.0,
+        5.0
+      ],
+      "descs": [
+        "TypeScript-first. Нужен bundler. CDN возможен но не рекомендуется.",
+        "Canvas 2D с оптимизациями. 500 entities = OK но не benchmarked.",
+        "LLM знает слабо. TS-first = сложнее для генерации без типов.",
+        "Actor model. Быстрый старт. Но TS config overhead.",
+        "Cross-platform. Electron + web. Mobile через browser.",
+        "Collision groups. Broadphase. Неплохо.",
+        "excalibur.min.js ~200KB. Средний.",
+        "Camera с strategy, zoom, lerp. Хорошо.",
+        "State machine через pattern. Нет встроенной FSM.",
+        "Tiled tilemap plugin. Не бесконечный.",
+        "Pointer events. Gamepad. Джойстик = плагин.",
+        "1.5K stars. Нишевый. Активное развитие."
+      ],
+      "verdict": "Хороший TS-фреймворк. Для JS одного файла — не подходит."
+    },
+    {
+      "name": "Kontra.js",
+      "price": 0,
+      "link": "[straker.github.io/kontra](https://straker.github.io/kontra/)",
+      "scores": [
+        6.0,
+        6.0,
+        6.0,
+        7.0,
+        6.0,
+        3.0,
+        7.0,
+        4.0,
+        2.0,
+        2.0,
+        3.0,
+        3.0
+      ],
+      "descs": [
+        "Tiny library. Script tag OK. Можно inline в HTML. ~15KB min.",
+        "Canvas 2D. Лёгкий. 500 org — на грани. Нет batch.",
+        "LLM частично знает. Мало примеров. Простой API.",
+        "Быстрый старт. Меньше boilerplate чем Phaser.",
+        "Desktop OK. Mobile = базовый.",
+        "Простые collision circles/rects.",
+        "~15KB min. Самый лёгкий среди фреймворков.",
+        "Camera с lookAt. Базовый zoom.",
+        "Нет FSM.",
+        "Нет чанков.",
+        "Базовый pointer events.",
+        "1K stars. Маленькое сообщество. Медленные обновления."
+      ],
+      "verdict": "Микро-фреймворк. Лучше чем чистый Canvas только для boilerplate."
+    },
+    {
+      "name": "p5.js",
+      "price": 0,
+      "link": "[p5js.org](https://p5js.org/)",
+      "scores": [
+        5.0,
+        4.0,
+        9.0,
+        9.0,
+        6.0,
+        1.0,
+        5.0,
+        2.0,
+        1.0,
+        1.0,
+        3.0,
+        7.0
+      ],
+      "descs": [
+        "CDN или bundle. p5.min.js ~800KB. Один файл возможен.",
+        "Canvas 2D wrapper. Без batch, без оптимизации. 500 org = тормозит.",
+        "LLM отлично знает p5. Coding Train = тысячи примеров. Идеально для генерации.",
+        "setup() + draw() = мгновенный старт. Самый простой API.",
+        "Desktop OK. Mobile через p5.js touch functions.",
+        "Нет. dist() для каждой пары = O(n²). Spatial hash = вручную.",
+        "p5.min.js ~800KB. Тяжёлый для абстракции над Canvas.",
+        "translate + scale. Нет camera follow, нет lerp.",
+        "Нет FSM. Только draw loop.",
+        "Нет. translate для scrolling но не чанки.",
+        "touchStarted, touchMoved. Базовый.",
+        "20K stars. Coding Train комьюнити. Активен."
+      ],
+      "verdict": "Для обучения — идеален. Для 500 организмов — слишком медленный."
+    },
+    {
+      "name": "Three.js (Orthographic 2D)",
+      "price": 0,
+      "link": "[threejs.org](https://threejs.org/)",
+      "scores": [
+        2.0,
+        9.0,
+        6.0,
+        3.0,
+        6.0,
+        4.0,
+        1.0,
+        8.0,
+        1.0,
+        4.0,
+        4.0,
+        10.0
+      ],
+      "descs": [
+        "three.min.js ~600KB. Нужен bundler или CDN. file:// с CDN нет.",
+        "WebGL. InstancedMesh = тысячи объектов. Максимальная производительность.",
+        "LLM знает Three.js но для 2D — overkill. Ортогональная камера = неочевидно.",
+        "Для 2D — слишком сложный. Scene, camera, renderer, geometry, material...",
+        "WebGL = 97% coverage. Но mobile GPU = проблема.",
+        "Raycaster. Для 2D = избыточно. Spatial = вручную.",
+        "600KB+ min. Тяжёлый.",
+        "OrthographicCamera. zoom, position. Отлично.",
+        "Нет FSM.",
+        "InstancedMesh для batch. Но бесконечные чанки = сложно.",
+        "Raycaster + pointer. Джойстик = вручную.",
+        "100K stars. Самый популярный WebGL фреймворк."
+      ],
+      "verdict": "Для 3D — король. Для 2D микроорганизмов — пушка по воробьям."
+    },
+    {
+      "name": "Crafty.js",
+      "price": 0,
+      "link": "[craftyjs.com](https://craftyjs.com/)",
+      "scores": [
+        5.0,
+        5.0,
+        5.0,
+        6.0,
+        5.0,
+        4.0,
+        6.0,
+        4.0,
+        3.0,
+        2.0,
+        3.0,
+        2.0
+      ],
+      "descs": [
+        "Script tag OK. Один файл возможен. Но library = dependency.",
+        "Canvas 2D. Простые объекты OK. 500 с AI — не тестировалось.",
+        "LLM слабо знает Crafty. Мало примеров. Устаревший API.",
+        "ECS подход. Компоненты. Средний порог входа.",
+        "Desktop OK. Mobile = не приоритет.",
+        "Простые collision. Нет spatial optimization.",
+        "crafty.min.js ~50KB. Компактный.",
+        "viewport с scroll. Базовый zoom.",
+        "Нет FSM. Компонентная модель но без state machine.",
+        "Нет чанков. Фиксированный viewport.",
+        "Простой mouse. Touch = минимум.",
+        "3K stars. Последний релиз 2022. Полумёртвый."
+      ],
+      "verdict": "Устаревший. Не стоит рассматривать."
+    },
+    {
+      "name": "Hyperformula (custom engine)",
+      "price": 0,
+      "link": "[custom](https://github.com/handsontable/hyperformula)",
+      "scores": [
+        10.0,
+        3.0,
+        2.0,
+        3.0,
+        5.0,
+        1.0,
+        9.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "descs": [
+        "Любой подход. Один файл = да. Но всё с нуля.",
+        "Зависит от реализации. Высокий риск тормозов без оптимизации.",
+        "LLM не знает кастомный движок. Всё руками.",
+        "Месяцы разработки. Движок = с нуля.",
+        "Зависит от реализации.",
+        "С нуля.",
+        "Только твой код. Минимум.",
+        "С нуля.",
+        "С нуля.",
+        "С нуля.",
+        "С нуля.",
+        "Нет сообщества. Один разработчик."
+      ],
+      "verdict": "Не движок, а анти-паттерн. Для справки."
+    }
+  ]
+}

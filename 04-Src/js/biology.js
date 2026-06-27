@@ -349,9 +349,10 @@ function updateOrg(o,dt){
   }
   if(o.attachedTo) {
       if(!o.attachedTo.alive || o.attachedTo.dying) {
-         o.attachedTo = null; // detached
+         o.attachedTo = null;
+         o.attachTime = 0;
       } else {
-         // Stick to the host
+         o.attachTime = (o.attachTime || 0) + dt;
          var targetX = o.attachedTo.x + Math.cos(o.attachAng) * o.attachDist;
          var targetY = o.attachedTo.y + Math.sin(o.attachAng) * o.attachDist;
          o.x += (targetX - o.x) * 0.1;
@@ -359,12 +360,26 @@ function updateOrg(o,dt){
          o.vx = o.attachedTo.vx;
          o.vy = o.attachedTo.vy;
          
-         // Mutual benefit: Host heals slightly, symbiont gets tiny energy
          o.attachedTo.energy += dt * 0.5;
          o.energy += dt * 0.5;
          
-         // 1% chance to detach randomly
-         if(Math.random() < 0.01 * dt) o.attachedTo = null;
+         if (o.attachTime > 60 && Math.random() < 0.01 * dt) {
+             var host = o.attachedTo;
+             if (!host.sp.isCustom) {
+                 host.sp = Object.assign({}, host.sp);
+                 host.sp.flags = Object.assign({}, host.sp.flags || {});
+                 host.sp.bio = Object.assign({}, host.sp.bio || {});
+                 host.sp.isCustom = true;
+             }
+             host.sp.bio = host.sp.bio || {};
+             var orgType = Math.random() < 0.5 ? 'chloroplasts' : 'mitochondria';
+             host.sp.bio[orgType] = (host.sp.bio[orgType] || 0) + 1;
+             if (typeof genOrgans === 'function') host.organs = genOrgans(host);
+             if (typeof DCODE !== 'undefined') killOrg(o, DCODE.AGE); else killOrg(o, 0);
+             return;
+         }
+         
+         if(Math.random() < 0.01 * dt) { o.attachedTo = null; o.attachTime = 0; }
          return;
       }
   }

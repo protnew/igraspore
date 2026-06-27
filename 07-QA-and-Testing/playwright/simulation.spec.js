@@ -4,11 +4,10 @@ test.describe('iGraSpore V2 Headless Simulation Test', () => {
   test('should run the game loop for 500 frames without exceptions and maintain population', async ({ page }) => {
     // Array to catch any page errors or console errors
     const errors = [];
-    page.on('pageerror', error => errors.push(error.message));
+    page.on('pageerror', error => { require('fs').writeFileSync('err.log', 'PAGE: ' + error.message + '\\n', {flag:'a'}); errors.push(error.message); });
     page.on('console', msg => {
       if (msg.type() === 'error') {
-        // Exclude specific known warnings if they exist, but generally capture all errors.
-        // We log text since it's the message string.
+        require('fs').writeFileSync('err.log', 'CONS: ' + msg.text() + '\\n', {flag:'a'});
         errors.push(msg.text());
       }
     });

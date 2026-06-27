@@ -508,7 +508,8 @@ function updateOrg(o,dt){
       for(var ai=0;ai<orgs.length;ai++){
         var ap=orgs[ai];
         if(!ap.alive||ap===o||ap.cyst||ap.divCD>0||ap.invuln>0)continue;
-        if(foodCats.indexOf(ap.sp.cat)<0)continue;
+        var isCan=(o.sp.flags&&o.sp.flags.cannibal&&o.energy<20&&ap.sp.id===o.sp.id);
+        if(!isCan&&foodCats.indexOf(ap.sp.cat)<0)continue;
         if(ap.size>=o.size*0.88)continue;
         var dd=dist2(o,ap);
         if(dd<(o.size+ap.sp.size+15)*(o.size+ap.sp.size+15)){

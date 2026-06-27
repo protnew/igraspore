@@ -77,14 +77,19 @@ function aiOrg(o,dt,speed){
   var prey=null,pd2=999999;
   if(foodCats.length>0&&o.energy<85){
     var near1 = window.getNearby(o.x, o.y, 2000);
+    var cPrey=null,cPd2=999999;
     for(var i=0;i<near1.length;i++){
       var p=near1[i];
       if(!p.alive||p===o||p.cyst||p.divCD>0||p.invuln>0)continue;
       if (p.isPlayer && (gt - p.spawnTime) < 30) continue; // GRACE PERIOD
-      if(foodCats.indexOf(p.sp.cat)<0)continue;
+      var isCan=(o.sp.flags&&o.sp.flags.cannibal&&o.energy<20&&p.sp.id===o.sp.id);
+      if(!isCan&&foodCats.indexOf(p.sp.cat)<0)continue;
       if(p.size>=o.size*0.88)continue;
-      var d=dist2(o,p);if(d<pd2){pd2=d;prey=p;}
+      var d=dist2(o,p);
+      if(isCan){if(d<cPd2){cPd2=d;cPrey=p;}}
+      else{if(d<pd2){pd2=d;prey=p;}}
     }
+    if(!prey&&cPrey){prey=cPrey;pd2=cPd2;}
   }
   if(prey&&pd2<350*350){
     o.state='hunt';

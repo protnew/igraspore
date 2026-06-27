@@ -17,9 +17,9 @@ window.getNearby = function(x, y, radius, isLargeCaller) {
        }
        return res;
    }
-   var r = Math.ceil(radius/1000);
-   var cx = Math.floor(x/1000);
-   var cy = Math.floor(y/1000);
+   var r = Math.ceil(radius/400);
+   var cx = Math.floor(x/400);
+   var cy = Math.floor(y/400);
    for(var gx=cx-r; gx<=cx+r; gx++){
      for(var gy=cy-r; gy<=cy+r; gy++){
         var arr = window.spatialGrid[gx+','+gy];

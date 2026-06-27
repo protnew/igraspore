@@ -66,7 +66,8 @@ function finishDivide(o){
     child.o2Offset = o.o2Offset;
     child.acidResist = o.acidResist;
 
-    if(Math.random() < 0.15) {
+    var mutChance = o.energy < o.sp.repEnergy * 0.1 ? 0.45 : 0.15;
+    if(Math.random() < mutChance) {
        var gene = Math.floor(Math.random()*5);
        if(gene===0) child.speedMult *= rng(0.9, 1.1);
        if(gene===1) child.sizeMult *= rng(0.9, 1.1);

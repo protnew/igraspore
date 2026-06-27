@@ -1,22 +1,8 @@
 "use strict";
 
-window.getNearby = function(x, y, radius, isLargeCaller) {
+window.getNearby = function(x, y, radius) {
    var res=[];
    if(!window.spatialGrid) return orgs;
-   if (isLargeCaller && window.spatialGridLarge) {
-       var rL = Math.ceil(radius/1000);
-       var cxL = Math.floor(x/1000);
-       var cyL = Math.floor(y/1000);
-       for(var gx=cxL-rL; gx<=cxL+rL; gx++){
-         for(var gy=cyL-rL; gy<=cyL+rL; gy++){
-            var arr = window.spatialGridLarge[gx+','+gy];
-            if(arr) {
-                for(var i=0; i<arr.length; i++) res.push(arr[i]);
-            }
-         }
-       }
-       return res;
-   }
    var r = Math.ceil(radius/1000);
    var cx = Math.floor(x/1000);
    var cy = Math.floor(y/1000);
@@ -88,9 +74,42 @@ function aiOrg(o,dt,speed){
   o.state='idle';
   // Skip eating during division cooldown
   if(o.divCD>0)return;
+
+  if (o.isMacrophage) {
+      var bestD = 999999, bestTgt = null;
+      for(var v=0; v<viruses.length; v++) {
+          var dist = dist2(o, viruses[v]);
+          if(dist < bestD) { bestD = dist; bestTgt = viruses[v]; }
+      }
+      var nearM = window.getNearby(o.x, o.y, 400);
+      for(var i=0; i<nearM.length; i++) {
+          var p = nearM[i];
+          if (p.alive && p !== o && !p.cyst && (p.sp.type === 'parasite' || (p.sp.cat === 'consumer1' && p.size < o.size * 0.8))) {
+              var dist = dist2(o, p);
+              if (dist < bestD) { bestD = dist; bestTgt = p; }
+          }
+      }
+      if (bestTgt && bestD < 400*400) {
+          o.state = 'hunt';
+          var dx = bestTgt.x - o.x, dy = bestTgt.y - o.y, d = Math.sqrt(bestD);
+          if(d > 1) { o.vx += (dx/d)*speed*dt*15; o.vy += (dy/d)*speed*dt*15; o.angle = Math.atan2(dy, dx); }
+          if(d < o.size + 5) {
+              if (bestTgt.alive !== undefined) { eatOrg(o, bestTgt); }
+              else {
+                  var idx = viruses.indexOf(bestTgt);
+                  if(idx > -1) {
+                      viruses.splice(idx, 1);
+                      o.energy += 10; o.flash = 0.5; o.flashColor = '#fff';
+                      if(typeof parts !== 'undefined') for(var k=0; k<3; k++) parts.push({x:o.x, y:o.y, vx:rng(-1,1), vy:rng(-1,1), life:1, maxL:1, size:2, color:'#fff'});
+                  }
+              }
+          }
+          return;
+      }
+  }
   var prey=null,pd2=999999;
   if(foodCats.length>0&&o.energy<85){
-    var near1 = window.getNearby(o.x, o.y, 2000, o.size > 150);
+    var near1 = window.getNearby(o.x, o.y, 2000);
     for(var i=0;i<near1.length;i++){
       var p=near1[i];
       if(!p.alive||p===o||p.cyst||p.divCD>0||p.invuln>0)continue;
@@ -142,7 +161,7 @@ function aiOrg(o,dt,speed){
   // HERD PANIC: Run away from predators
   var predatorNear = null;
   var panicDist2 = 250*250;
-  var near2 = window.getNearby(o.x, o.y, 500, o.size > 150);
+  var near2 = window.getNearby(o.x, o.y, 500);
   for(var i=0;i<near2.length;i++){
      var q=near2[i];
      if(!q.alive || q===o || q.size<=o.size*1.2) continue;
@@ -209,7 +228,7 @@ function aiOrg(o,dt,speed){
       }
   }
 
-  var near3 = window.getNearby(o.x, o.y, 500, o.size > 150);
+  var near3 = window.getNearby(o.x, o.y, 500);
   for(var i=0;i<near3.length;i++){
     var q=near3[i];
     if(!q.alive||q===o)continue;
@@ -283,7 +302,7 @@ function aiOrg(o,dt,speed){
       }
   } else if(cat === 'consumer3') {
       var scx = 0, scy = 0, swarmCount = 0;
-      var near4 = window.getNearby(o.x, o.y, 400, o.size > 150);
+      var near4 = window.getNearby(o.x, o.y, 400);
       for(var j=0; j<near4.length; j++){
           var q = near4[j];
           if(!q.alive || q===o || q.sp.cat !== 'consumer3' || q.cyst) continue;

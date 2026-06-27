@@ -77,19 +77,14 @@ function aiOrg(o,dt,speed){
   var prey=null,pd2=999999;
   if(foodCats.length>0&&o.energy<85){
     var near1 = window.getNearby(o.x, o.y, 2000);
-    var cPrey=null,cPd2=999999;
     for(var i=0;i<near1.length;i++){
       var p=near1[i];
       if(!p.alive||p===o||p.cyst||p.divCD>0||p.invuln>0)continue;
       if (p.isPlayer && (gt - p.spawnTime) < 30) continue; // GRACE PERIOD
-      var isCan=(o.sp.flags&&o.sp.flags.cannibal&&o.energy<20&&p.sp.id===o.sp.id);
-      if(!isCan&&foodCats.indexOf(p.sp.cat)<0)continue;
+      if(foodCats.indexOf(p.sp.cat)<0)continue;
       if(p.size>=o.size*0.88)continue;
-      var d=dist2(o,p);
-      if(isCan){if(d<cPd2){cPd2=d;cPrey=p;}}
-      else{if(d<pd2){pd2=d;prey=p;}}
+      var d=dist2(o,p);if(d<pd2){pd2=d;prey=p;}
     }
-    if(!prey&&cPrey){prey=cPrey;pd2=cPd2;}
   }
   if(prey&&pd2<350*350){
     o.state='hunt';
@@ -146,7 +141,13 @@ function aiOrg(o,dt,speed){
   if (predatorNear) {
      o.state='panic';
      var dx=o.x-predatorNear.x, dy=o.y-predatorNear.y, d=Math.sqrt(dx*dx+dy*dy);
-     if(d>1){o.vx+=dx/d*speed*dt*15;o.vy+=dy/d*speed*dt*15;o.angle=Math.atan2(dy,dx);}
+     if(d>1){
+        if(!o.jukeDir) o.jukeDir = Math.random() > 0.5 ? 0.8 : -0.8;
+        var fx = dx/d - (dy/d)*o.jukeDir;
+        var fy = dy/d + (dx/d)*o.jukeDir;
+        o.vx+=fx*speed*dt*15; o.vy+=fy*speed*dt*15;
+        o.angle=Math.atan2(fy,fx);
+     }
      return;
   }
   

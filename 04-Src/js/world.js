@@ -202,9 +202,17 @@ function clampToPuddle(o){
 function updateWorld(dt){
   dt*=timeScale;
   window.spatialGrid = {};
+  window.spatialGridLarge = {};
   for(var i=0;i<orgs.length;i++) {
      var o=orgs[i];
      if(!o.alive) continue;
+     if (o.size > 30) {
+        var gxL = Math.floor(o.x / 1000);
+        var gyL = Math.floor(o.y / 1000);
+        var kL = gxL+','+gyL;
+        if(!window.spatialGridLarge[kL]) window.spatialGridLarge[kL]=[];
+        window.spatialGridLarge[kL].push(o);
+     }
      var gx = Math.floor(o.x / 400);
      var gy = Math.floor(o.y / 400);
      var k = gx+','+gy;

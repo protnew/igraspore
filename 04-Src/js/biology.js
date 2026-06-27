@@ -286,6 +286,15 @@ function spawnVirus(){
 }
 
 function updateOrg(o,dt){
+  if (typeof cam !== 'undefined' && window.spatialGrid) {
+    var dx = cam.x - o.x, dy = cam.y - o.y;
+    var inGrid = window.spatialGrid[Math.floor(o.x/1000)+','+Math.floor(o.y/1000)];
+    if (dx*dx + dy*dy > 25000000 && !inGrid) {
+      o.skipTick = !o.skipTick;
+      if (o.skipTick) return;
+      dt *= 2;
+    }
+  }
   if(o.invuln>0)o.invuln-=dt;
   if(o.speedMult < 1.0) o.speedMult = Math.min(1.0, (o.speedMult||1.0) + dt*0.05);
   if(o.stomach && o.stomach.length>0){

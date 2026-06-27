@@ -317,7 +317,7 @@ function renderShadows(vL,vR,vT,vB){
   for(var i=0;i<orgs.length;i++){var o=orgs[i];if(!o.alive)continue;
     if(o.x<vL-20||o.x>vR+20||o.y<vT-20||o.y>vB+20)continue;
     var depthR=o.y/PD;ctx.fillStyle='rgba(0,0,0,'+(0.08*(1-depthR))+')';
-    ctx.beginPath();ctx.ellipse(o.x,o.y+o.size*0.5,o.size*0.8,o.size*0.4,0,0,Math.PI*2);ctx.fill();}
+    ctx.beginPath();ctx.ellipse(o.x,o.y+o.size*0.5,Math.max(0,o.size*0.8),Math.max(0,o.size*0.4),0,0,Math.PI*2);ctx.fill();}
   ctx.restore();
 }
 

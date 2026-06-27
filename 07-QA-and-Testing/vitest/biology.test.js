@@ -252,4 +252,18 @@ describe('biology.js core logic', () => {
         expect(o.infected).toBe(true);
         expect(context.viruses.length).toBe(0);
     });
+    it('updateOrg should throttle AI updates when far from camera', () => {
+        const sp = createMockSpecies();
+        const o = context.spawnOrg(sp, 6000, 6000);
+        context.cam = { x: 0, y: 0 };
+        context.window.spatialGrid = { '0,0': [] };
+        o.skipTick = false;
+        context.moveOrg = vi.fn();
+        
+        context.updateOrg(o, 1.0);
+        expect(o.skipTick).toBe(true);
+        
+        context.updateOrg(o, 1.0);
+        expect(o.skipTick).toBe(false);
+    });
 });

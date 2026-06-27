@@ -109,6 +109,7 @@ function renderOrganisms(vL,vR,vT,vB){
     ctx.beginPath();
     for(var i=0;i<arr.length;i++){
       var o = arr[i];
+      if(o.size * zoom < 3) { ctx.fillRect(o.x - o.size, o.y - o.size, o.size*2, o.size*2); continue; }
       if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) continue; 
       ctx.save();ctx.translate(o.x,o.y);ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
       drawBody(o, o.size, c, c, true);
@@ -117,6 +118,7 @@ function renderOrganisms(vL,vR,vT,vB){
     ctx.fill();
     for(var i=0;i<arr.length;i++){
       var o = arr[i];
+      if(o.size * zoom < 3) continue;
       if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) renderOrg(o, false);
       else renderOrg(o, true);
     }

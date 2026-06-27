@@ -367,6 +367,7 @@ function updateOrg(o,dt){
              if (!host.sp.isCustom) {
                  host.sp = Object.assign({}, host.sp);
                  host.sp.flags = Object.assign({}, host.sp.flags || {});
+                 host.sp.bio = Object.assign({}, host.sp.bio || {});
                  host.sp.isCustom = true;
              }
              host.sp.bio = host.sp.bio || {};

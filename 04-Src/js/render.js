@@ -95,9 +95,32 @@ function renderTrails(vL,vR,vT,vB){
   ctx.restore();
 }
 function renderOrganisms(vL,vR,vT,vB){
-  for(var i=0;i<orgs.length;i++){var o=orgs[i];
+  var batches = {};
+  for(var i=0;i<orgs.length;i++){
+    var o=orgs[i];
     if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
-    renderOrg(o);}
+    var c=o.sp.color;
+    if(!batches[c]) batches[c] = [];
+    batches[c].push(o);
+  }
+  for(var c in batches){
+    var arr = batches[c];
+    ctx.fillStyle = c;
+    ctx.beginPath();
+    for(var i=0;i<arr.length;i++){
+      var o = arr[i];
+      if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) continue; 
+      ctx.save();ctx.translate(o.x,o.y);ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
+      drawBody(o, o.size, c, c, true);
+      ctx.restore();
+    }
+    ctx.fill();
+    for(var i=0;i<arr.length;i++){
+      var o = arr[i];
+      if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) renderOrg(o, false);
+      else renderOrg(o, true);
+    }
+  }
 }
 
 

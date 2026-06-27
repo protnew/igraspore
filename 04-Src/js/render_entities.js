@@ -1,13 +1,14 @@
 "use strict";
 
-function drawBody(o,sz,fc2,fd){
+function drawBody(o,sz,fc2,fd, batched){
   var sh=o.sp.shape;
-  // Cytoplasm gradient — 3D look
-  var cyto=ctx.createRadialGradient(-sz*0.25,-sz*0.25,0,0,0,sz*1.1);
-  cyto.addColorStop(0,fc2);
-  cyto.addColorStop(0.7,fc2);
-  cyto.addColorStop(1,fd);
-  ctx.fillStyle=cyto;ctx.strokeStyle=fd;ctx.lineWidth=Math.max(1,sz*0.08);ctx.beginPath();
+  if(!batched){
+    var cyto=ctx.createRadialGradient(-sz*0.25,-sz*0.25,0,0,0,sz*1.1);
+    cyto.addColorStop(0,fc2);
+    cyto.addColorStop(0.7,fc2);
+    cyto.addColorStop(1,fd);
+    ctx.fillStyle=cyto;ctx.strokeStyle=fd;ctx.lineWidth=Math.max(1,sz*0.08);ctx.beginPath();
+  }
   if(sh==='circle'){
       var vmag = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
       var stretch = Math.min(1.4, 1.0 + vmag * 0.08);
@@ -20,28 +21,33 @@ function drawBody(o,sz,fc2,fd){
           if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
       }
   }
-  else if(sh==='rod')ctx.ellipse(0,0,sz*1.3,sz*0.6,0,0,Math.PI*2);
+  else if(sh==='rod'){if(batched)ctx.moveTo(sz*1.3,0);ctx.ellipse(0,0,sz*1.3,sz*0.6,0,0,Math.PI*2);}
   else if(sh==='spiral'){for(var i=0;i<=30;i++){var t=i/30*Math.PI*3,r=sz*0.8;var px=Math.cos(t)*r*(1-t/12),py=Math.sin(t)*r*(1-t/12);if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}}
-  else if(sh==='filament')ctx.ellipse(0,0,sz*2,sz*0.3,0,0,Math.PI*2);
-  else if(sh==='colony'){ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.fillStyle='rgba(100,200,100,0.5)';
+  else if(sh==='filament'){if(batched)ctx.moveTo(sz*2,0);ctx.ellipse(0,0,sz*2,sz*0.3,0,0,Math.PI*2);}
+  else if(sh==='colony'){if(batched)ctx.moveTo(sz,0);ctx.arc(0,0,sz,0,Math.PI*2);
+    if(!batched){ctx.fill();ctx.stroke();ctx.fillStyle='rgba(100,200,100,0.5)';
     for(var i=0;i<8;i++){var a=i/8*Math.PI*2;ctx.beginPath();ctx.arc(Math.cos(a)*sz*0.7,Math.sin(a)*sz*0.7,sz*0.15,0,Math.PI*2);ctx.fill();}return;}
+  }
   else if(sh==='star'){var pts=12;for(var i=0;i<=pts*2;i++){var a=i/(pts*2)*Math.PI*2,r=i%2===0?sz*1.3:sz*0.6;if(i===0)ctx.moveTo(Math.cos(a)*r,Math.sin(a)*r);else ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);}}
   else if(sh==='slipper'){ctx.moveTo(sz,0);ctx.bezierCurveTo(sz,-sz*0.65,-sz*0.8,-sz*0.65,-sz,0);ctx.bezierCurveTo(-sz*0.8,sz*0.65,sz,sz*0.65,sz,0);}
   else if(sh==='bell'){ctx.moveTo(0,-sz);ctx.bezierCurveTo(sz*0.8,-sz*0.9,sz*0.9,sz*0.3,0,sz*0.5);ctx.bezierCurveTo(-sz*0.9,sz*0.3,-sz*0.8,-sz*0.9,0,-sz);}
-  else if(sh==='oval')ctx.ellipse(0,0,sz*1.1,sz*0.7,0,0,Math.PI*2);
+  else if(sh==='oval'){if(batched)ctx.moveTo(sz*1.1,0);ctx.ellipse(0,0,sz*1.1,sz*0.7,0,0,Math.PI*2);}
   else if(sh==='irregular'){var lobes=5+Math.floor(o.wobble)%3;
     for(var i=0;i<=40;i++){var a=i/40*Math.PI*2;var r=sz+Math.sin(a*lobes+o.wobble)*sz*0.25+Math.sin(a*3+o.pulse)*sz*0.1;if(i===0)ctx.moveTo(Math.cos(a)*r,Math.sin(a)*r);else ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);}}
-  else ctx.arc(0,0,sz,0,Math.PI*2);
-  ctx.fill();
-  // Pellicle strips for ciliates
-  if(o.sp.bio.pellicle&&zoom>5){ctx.strokeStyle='rgba(180,140,60,0.3)';ctx.lineWidth=1;
-    for(var s=-sz*0.8;s<sz*0.8;s+=sz*0.15){ctx.beginPath();ctx.moveTo(s,-sz*0.5);ctx.lineTo(s,sz*0.5);ctx.stroke();}}
-  if(o.sp.bio.wall)ctx.lineWidth=Math.max(2,sz*0.12);
-  ctx.stroke();
-  if(o.sp.biolum&&dayLight<0.35){ctx.shadowColor=o.sp.color;ctx.shadowBlur=sz*2;ctx.fillStyle='rgba(100,255,200,0.25)';ctx.beginPath();ctx.arc(0,0,sz*0.6,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;}
+  else {if(batched)ctx.moveTo(sz,0);ctx.arc(0,0,sz,0,Math.PI*2);}
+  
+  if(!batched){
+    ctx.fill();
+    // Pellicle strips for ciliates
+    if(o.sp.bio.pellicle&&zoom>5){ctx.strokeStyle='rgba(180,140,60,0.3)';ctx.lineWidth=1;
+      for(var s=-sz*0.8;s<sz*0.8;s+=sz*0.15){ctx.beginPath();ctx.moveTo(s,-sz*0.5);ctx.lineTo(s,sz*0.5);ctx.stroke();}}
+    if(o.sp.bio.wall)ctx.lineWidth=Math.max(2,sz*0.12);
+    ctx.stroke();
+    if(o.sp.biolum&&dayLight<0.35){ctx.shadowColor=o.sp.color;ctx.shadowBlur=sz*2;ctx.fillStyle='rgba(100,255,200,0.25)';ctx.beginPath();ctx.arc(0,0,sz*0.6,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;}
+  }
 }
 
-function renderOrg(o){
+function renderOrg(o, skipBody){
   ctx.save();ctx.translate(o.x,o.y);
   
   // Bioluminescence at night for producers
@@ -62,11 +68,15 @@ function renderOrg(o){
   if(o.infected){ctx.fillStyle='rgba(255,50,50,0.15)';ctx.beginPath();ctx.arc(0,0,sz*1.2,0,Math.PI*2);ctx.fill();}
   if(o.dividing){
     var dp=o.divT/1.3;
-    ctx.save();ctx.translate(-sz*dp*0.3,0);drawBody(o,sz*(1-dp*0.15),bc,bd);drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
-    ctx.save();ctx.translate(sz*dp*0.3,0);drawBody(o,sz*(1-dp*0.15),bc,bd);drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
+    ctx.save();ctx.translate(-sz*dp*0.3,0);
+    if(!skipBody)drawBody(o,sz*(1-dp*0.15),bc,bd);
+    drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
+    ctx.save();ctx.translate(sz*dp*0.3,0);
+    if(!skipBody)drawBody(o,sz*(1-dp*0.15),bc,bd);
+    drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
     ctx.restore();return;}
   ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
-  drawBody(o,sz,bc,bd);
+  if(!skipBody)drawBody(o,sz,bc,bd);
   if(zoom>3)drawOrgans(o,sz);
   if(zoom>2)drawAppendages(o,sz);
   if(o.flash>0){ctx.globalAlpha=o.flash;ctx.fillStyle=o.flashColor;ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();}

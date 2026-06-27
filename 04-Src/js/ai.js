@@ -141,7 +141,13 @@ function aiOrg(o,dt,speed){
   if (predatorNear) {
      o.state='panic';
      var dx=o.x-predatorNear.x, dy=o.y-predatorNear.y, d=Math.sqrt(dx*dx+dy*dy);
-     if(d>1){o.vx+=dx/d*speed*dt*15;o.vy+=dy/d*speed*dt*15;o.angle=Math.atan2(dy,dx);}
+     if(d>1){
+        if(!o.jukeDir) o.jukeDir = Math.random() > 0.5 ? 0.8 : -0.8;
+        var fx = dx/d - (dy/d)*o.jukeDir;
+        var fy = dy/d + (dx/d)*o.jukeDir;
+        o.vx+=fx*speed*dt*15; o.vy+=fy*speed*dt*15;
+        o.angle=Math.atan2(fy,fx);
+     }
      return;
   }
   

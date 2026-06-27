@@ -349,9 +349,9 @@ function updateOrg(o,dt){
   }
   if(o.attachedTo) {
       if(!o.attachedTo.alive || o.attachedTo.dying) {
-         o.attachedTo = null; // detached
+         o.attachedTo = null; o.attachTime = 0;
       } else {
-         // Stick to the host
+         o.attachTime = (o.attachTime || 0) + dt;
          var targetX = o.attachedTo.x + Math.cos(o.attachAng) * o.attachDist;
          var targetY = o.attachedTo.y + Math.sin(o.attachAng) * o.attachDist;
          o.x += (targetX - o.x) * 0.1;
@@ -359,12 +359,25 @@ function updateOrg(o,dt){
          o.vx = o.attachedTo.vx;
          o.vy = o.attachedTo.vy;
          
-         // Mutual benefit: Host heals slightly, symbiont gets tiny energy
          o.attachedTo.energy += dt * 0.5;
          o.energy += dt * 0.5;
          
-         // 1% chance to detach randomly
-         if(Math.random() < 0.01 * dt) o.attachedTo = null;
+         if (o.attachTime > 60 && Math.random() < 0.01 * dt) {
+             var host = o.attachedTo;
+             if (!host.sp.isCustom) {
+                 host.sp = Object.assign({}, host.sp);
+                 host.sp.flags = Object.assign({}, host.sp.flags || {});
+                 host.sp.isCustom = true;
+             }
+             host.sp.bio = host.sp.bio || {};
+             var orgType = Math.random() < 0.5 ? 'chloroplasts' : 'mitochondria';
+             host.sp.bio[orgType] = (host.sp.bio[orgType] || 0) + 1;
+             if (typeof genOrgans === 'function') host.organs = genOrgans(host);
+             if (typeof DCODE !== 'undefined') killOrg(o, DCODE.AGE); else killOrg(o, 0);
+             return;
+         }
+         
+         if(Math.random() < 0.01 * dt) { o.attachedTo = null; o.attachTime = 0; }
          return;
       }
   }
@@ -449,6 +462,30 @@ function updateOrg(o,dt){
     }
   }
 
+  // Horizontal Gene Transfer (HGT) for bacteria
+  if (!o.sp.isEuk && o.alive && !o.dying && !o.cyst && (o.hgtCD||0) <= 0 && Math.random() < 2.0 * dt) {
+    for (var j=0; j<orgs.length; j++) {
+      var n = orgs[j];
+      if (n !== o && n.alive && !n.sp.isEuk && !n.cyst && n.sp.id !== o.sp.id && (n.hgtCD||0) <= 0) {
+        var rSum = o.size + n.size + 5;
+        if (dist2(o, n) < rSum * rSum) {
+          if (Math.random() < 0.5) {
+            o.acidResist = Math.max(0, Math.min(1, (o.acidResist + n.acidResist) / 2));
+            o.speedMult = Math.max(0.1, Math.min(5.0, (o.speedMult + n.speedMult) / 2));
+            o.tempOffset = (o.tempOffset + n.tempOffset) / 2;
+            o.hgtCD = 15; n.hgtCD = 15;
+            o.flash = 0.8; o.flashColor = '#0ff'; n.flash = 0.8; n.flashColor = '#0ff';
+            if (typeof parts !== 'undefined' && settings && settings.particles) {
+                for(var p=0;p<3;p++) parts.push({x:o.x, y:o.y, vx:rng(-2,2), vy:rng(-2,2), life:1, maxL:1, size:2, color:'#0ff'});
+            }
+          }
+          break;
+        }
+      }
+    }
+  }
+  if (o.hgtCD > 0) o.hgtCD -= dt;
+
   if(o.cyst){o.energy-=0.015*dt;o.cystT=(o.cystT||0)+dt;if(o.cystT>25){o.cyst=false;o.cystT=0;}}
   else moveOrg(o,dt);
   if(o.dividing){o.divT+=dt;if(o.divT>1.3)finishDivide(o);}
@@ -480,7 +517,7 @@ function updateOrg(o,dt){
   if(o.energy<=-5){killOrg(o,DCODE.STARVE);return;}
   if(o.sp.isEuk&&o.age>500){o.energy-=0.15*dt;if(o.energy<5&&Math.random()<0.004*dt){killOrg(o,DCODE.AGE);return;}}
   var tgtSz=o.sp.size*(o.sizeMult||1.0)*(0.5+clamp(o.energy/(o.sp.repEnergy||100),0,1)*1.2);
-  o.size=lerp(o.size,tgtSz,1.5*dt);
+  o.size=Math.max(0.1, lerp(o.size,tgtSz,1.5*dt));
   if(o.flash>0)o.flash=Math.max(0,o.flash-dt*2);
   // Easy mode auto-divide
   if(o.isPlayer && difficulty==='easy' && o.energy>o.sp.repEnergy && o.age>o.sp.minAge && o.divCD<=0) doDivide(o);

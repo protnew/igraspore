@@ -31,6 +31,7 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
     generation:0,offspring:0,eaten:0, speedMult:1.0, sizeMult:1.0, tempOffset:0.0, o2Offset:0.0, acidResist:0.0, stomach:[], inBiofilm:false, biofilmT:0,
     isPlayer:!!isPlayer,alive:true,_remove:false,
     gender: Math.random() < 0.5 ? 'M' : 'F', seekingMate: false,
+    isMacrophage: (sp.flags && sp.flags.chain && Math.random() < 0.05),
     invuln:isPlayer?10:0
   };
   o.organs=genOrgans(o);

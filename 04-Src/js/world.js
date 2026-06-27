@@ -309,7 +309,14 @@ function updateWorld(dt){
      }
   }
 
-  for(var i=parts.length-1;i>=0;i--){var p=parts[i];p.x+=p.vx*dt*60;p.y+=p.vy*dt*60;p.vx*=0.95;p.vy*=0.95;p.life-=dt/p.maxL;if(p.life<=0)parts.splice(i,1);}
+  var vw=cv.width/zoom, vh=cv.height/zoom;
+  var vL=cam.x-vw/2-50, vR=cam.x+vw/2+50, vT=cam.y-vh/2-50, vB=cam.y+vh/2+50;
+  for(var i=parts.length-1;i>=0;i--){
+    var p=parts[i];
+    if(p.x<vL||p.x>vR||p.y<vT||p.y>vB){parts.splice(i,1);continue;}
+    p.x+=p.vx*dt*60;p.y+=p.vy*dt*60;p.vx*=0.95;p.vy*=0.95;p.life-=dt/p.maxL;
+    if(p.life<=0)parts.splice(i,1);
+  }
   for(var i=0;i<currents.length;i++){currents[i].x+=currents[i].vx*dt;currents[i].y+=currents[i].vy*dt;if(Math.abs(currents[i].x)>PW)currents[i].vx*=-1;if(currents[i].y<50||currents[i].y>PD-50)currents[i].vy*=-1;}
   tod+=dt/DAY_SEC*24;
   if(tod>=24){

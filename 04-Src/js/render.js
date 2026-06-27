@@ -131,7 +131,7 @@ function renderOrganisms(vL,vR,vT,vB){
 
 function renderParticles(vL,vR,vT,vB){
   ctx.save();
-  for(var i=0;i<parts.length;i++){var p=parts[i];if(p.x<vL||p.x>vR||p.y<vT||p.y>vB)continue;
+  for(var i=0;i<parts.length;i++){var p=parts[i];
     ctx.globalAlpha=clamp(p.life,0,1);
     var col = p.color;
     if(p.life < p.maxL * 0.5 && (col==='#f44' || col==='#ff4444')) col = '#6b4c3a'; // Blood darkens to brown

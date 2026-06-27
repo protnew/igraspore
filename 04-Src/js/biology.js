@@ -116,9 +116,10 @@ function eatOrg(pred,prey){
          if(settings.particles) window.dmgIndicators.push({x:pred.x, y:pred.y, val:Math.round(recoil), life:1.0});
      }
      if(prey.sp.flags.toxic) {
-         pred.speedMult = 0.1; // Poisoned!
+         var res = pred.acidResist || 0;
+         pred.speedMult = 0.1 + 0.8 * res; // Poisoned!
          pred.flashColor = '#0f0'; pred.flash = 0.8;
-         pred.energy -= 10;
+         pred.energy -= 10 * Math.max(0, 1 - res);
      }
   }
   

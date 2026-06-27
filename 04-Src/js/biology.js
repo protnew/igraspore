@@ -257,9 +257,11 @@ function updateViruses(dt){
     if(v.target&&v.target.alive){
       var dx=v.target.x-v.x,dy=v.target.y-v.y,d=Math.sqrt(dx*dx+dy*dy);
       if(d<5){
-          v.target.infected=true;
-          v.target.infectionT=0;
-          if(v.sp.type === 'parasite') v.target.parasiticInfection = true;
+          if(Math.random() > (v.target.virusResist || 0)){
+            v.target.infected=true;
+            v.target.infectionT=0;
+            if(v.sp.type === 'parasite') v.target.parasiticInfection = true;
+          }
           viruses.splice(i,1);continue;
       }
       v.vx+=dx/d*0.5*dt*60;v.vy+=dy/d*0.5*dt*60;

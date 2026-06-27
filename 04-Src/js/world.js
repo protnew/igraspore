@@ -309,8 +309,9 @@ function updateWorld(dt){
              for(var j=0; j<nearby.length; j++){
                  var o = nearby[j];
                  if(o.alive && !(o.sp.flags&&o.sp.flags.toxic) && dist2(o,tc) < tc.r*tc.r) {
-                     o.energy -= dt*15; o.flash=0.5; o.flashColor='#0f0';
-                     o.speedMult = 0.5; // slows down
+                     var res = o.acidResist || 0;
+                     o.energy -= dt*15 * Math.max(0, 1 - res); o.flash=0.5; o.flashColor='#0f0';
+                     o.speedMult = 0.1 + 0.8 * res; // slows down less
                  }
              }
          }

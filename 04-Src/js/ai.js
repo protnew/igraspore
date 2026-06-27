@@ -74,50 +74,22 @@ function aiOrg(o,dt,speed){
   o.state='idle';
   // Skip eating during division cooldown
   if(o.divCD>0)return;
-
-  if (o.isMacrophage) {
-      var bestD = 999999, bestTgt = null;
-      for(var v=0; v<viruses.length; v++) {
-          var dist = dist2(o, viruses[v]);
-          if(dist < bestD) { bestD = dist; bestTgt = viruses[v]; }
-      }
-      var nearM = window.getNearby(o.x, o.y, 400);
-      for(var i=0; i<nearM.length; i++) {
-          var p = nearM[i];
-          if (p.alive && p !== o && !p.cyst && (p.sp.type === 'parasite' || (p.sp.cat === 'consumer1' && p.size < o.size * 0.8))) {
-              var dist = dist2(o, p);
-              if (dist < bestD) { bestD = dist; bestTgt = p; }
-          }
-      }
-      if (bestTgt && bestD < 400*400) {
-          o.state = 'hunt';
-          var dx = bestTgt.x - o.x, dy = bestTgt.y - o.y, d = Math.sqrt(bestD);
-          if(d > 1) { o.vx += (dx/d)*speed*dt*15; o.vy += (dy/d)*speed*dt*15; o.angle = Math.atan2(dy, dx); }
-          if(d < o.size + 5) {
-              if (bestTgt.alive !== undefined) { eatOrg(o, bestTgt); }
-              else {
-                  var idx = viruses.indexOf(bestTgt);
-                  if(idx > -1) {
-                      viruses.splice(idx, 1);
-                      o.energy += 10; o.flash = 0.5; o.flashColor = '#fff';
-                      if(typeof parts !== 'undefined') for(var k=0; k<3; k++) parts.push({x:o.x, y:o.y, vx:rng(-1,1), vy:rng(-1,1), life:1, maxL:1, size:2, color:'#fff'});
-                  }
-              }
-          }
-          return;
-      }
-  }
   var prey=null,pd2=999999;
   if(foodCats.length>0&&o.energy<85){
     var near1 = window.getNearby(o.x, o.y, 2000);
+    var cPrey=null,cPd2=999999;
     for(var i=0;i<near1.length;i++){
       var p=near1[i];
       if(!p.alive||p===o||p.cyst||p.divCD>0||p.invuln>0)continue;
       if (p.isPlayer && (gt - p.spawnTime) < 30) continue; // GRACE PERIOD
-      if(foodCats.indexOf(p.sp.cat)<0)continue;
+      var isCan=(o.sp.flags&&o.sp.flags.cannibal&&o.energy<20&&p.sp.id===o.sp.id);
+      if(!isCan&&foodCats.indexOf(p.sp.cat)<0)continue;
       if(p.size>=o.size*0.88)continue;
-      var d=dist2(o,p);if(d<pd2){pd2=d;prey=p;}
+      var d=dist2(o,p);
+      if(isCan){if(d<cPd2){cPd2=d;cPrey=p;}}
+      else{if(d<pd2){pd2=d;prey=p;}}
     }
+    if(!prey&&cPrey){prey=cPrey;pd2=cPd2;}
   }
   if(prey&&pd2<350*350){
     o.state='hunt';

@@ -270,10 +270,20 @@ function updateWorld(dt){
   spawnT+=dt;
   if(spawnT>2.5){
     spawnT=0;
+    var catBm = {};
+    for(var j=0;j<orgs.length;j++){
+      var o=orgs[j];
+      if(o.alive){
+        var cat=o.sp.cat;
+        catBm[cat] = (catBm[cat]||0) + o.sp.size * o.energy;
+      }
+    }
     for(var cat in TGT){
-      var cnt=0;for(var j=0;j<orgs.length;j++)if(orgs[j].alive&&orgs[j].sp.cat===cat)cnt++;
-      if(cnt<TGT[cat]*DIFF[difficulty].spawn*settings.density){
-        var pool=SPECIES_DB.filter(function(s){return s.cat===cat;});
+      var pool=SPECIES_DB.filter(function(s){return s.cat===cat;});
+      var bm=catBm[cat]||0;
+      var avgBm=0; for(var i=0;i<pool.length;i++) avgBm+=pool[i].size*(pool[i].energy*0.7+5);
+      avgBm = pool.length ? avgBm/pool.length : 500;
+      if(bm < TGT[cat]*avgBm*DIFF[difficulty].spawn*settings.density){
         var numToSpawn = (cat === 'producer') ? 15 : 1;
         for (var k=0; k<numToSpawn; k++) {
            if(pool.length>0){var sp=pool[Math.floor(Math.random()*pool.length)];var d=rng(20,PD-30),hw=halfW(d)-25;spawnOrg(sp,rng(-hw,hw),d);}

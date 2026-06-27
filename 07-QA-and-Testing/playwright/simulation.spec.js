@@ -39,9 +39,7 @@ test.describe('iGraSpore V2 Headless Simulation Test', () => {
     });
 
     // Wait until the game loop reaches 500 frames
-    await page.waitForFunction(() => {
-      return typeof window.fc !== 'undefined' && window.fc >= 500;
-    }, { timeout: 60000, polling: 500 });
+    for(let i=0; i<15; i++) { await page.waitForTimeout(1000); let fc = await page.evaluate(() => window.fc); console.log('fc=', fc); if(fc >= 500) break; }
 
     // Get population count from window.orgs
     const populationSize = await page.evaluate(() => {

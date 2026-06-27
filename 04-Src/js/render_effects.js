@@ -301,17 +301,6 @@ function renderNutrients(vL,vR,vT,vB){
   }
 }
 
-function renderShore(vL,vR,vT){
-  for(var i=0;i<shoreDecor.length;i++){var d=shoreDecor[i];
-    if(d.x<vL-30||d.x>vR+30||d.y<vT-30||d.y>30)continue;
-    ctx.save();ctx.translate(d.x,d.y);ctx.rotate(d.rot);
-    if(d.type==='grass'){ctx.strokeStyle='rgba(50,90,30,0.6)';ctx.lineWidth=2;
-      for(var b=0;b<4;b++){ctx.beginPath();ctx.moveTo(b*2-3,d.size*0.3);var sway=Math.sin(fc*0.02+b)*3;
-      ctx.quadraticCurveTo(b*2-3+sway,d.size*0.1,b*2-3+sway*2,-d.size);ctx.stroke();}}
-    else{ctx.fillStyle='rgba(100,85,60,0.7)';ctx.beginPath();ctx.ellipse(0,0,d.size,d.size*0.7,0,0,Math.PI*2);ctx.fill();}
-    ctx.restore();}
-}
-
 function renderShadows(vL,vR,vT,vB){
   ctx.save();
   for(var i=0;i<orgs.length;i++){var o=orgs[i];if(!o.alive)continue;

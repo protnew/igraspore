@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: './07-QA-and-Testing/playwright',
   timeout: 60000,
   expect: {
-    timeout: 60000,
+    timeout: 5000,
   },
   fullyParallel: true,
   retries: process.env.CI ? 2 : 0,

@@ -82,6 +82,36 @@ function renderEventLogs() {
 
 
 
+
+
+
+var shoreCache = null;
+function initShoreCache() {
+  shoreCache = document.createElement('canvas');
+  shoreCache.width = shoreDecor.length * 40; shoreCache.height = 40;
+  var c = shoreCache.getContext('2d');
+  for(var i=0;i<shoreDecor.length;i++){
+    var d=shoreDecor[i]; c.save(); c.translate(i*40 + 20, 20); c.rotate(d.rot);
+    if(d.type==='grass'){
+      c.strokeStyle='rgba(50,90,30,0.6)'; c.lineWidth=2;
+      for(var b=0;b<4;b++){ c.beginPath(); c.moveTo(b*2-3,d.size*0.3); var sway=Math.sin(b)*3; c.quadraticCurveTo(b*2-3+sway,d.size*0.1,b*2-3+sway*2,-d.size); c.stroke(); }
+    }else{
+      c.fillStyle='rgba(100,85,60,0.7)'; c.beginPath(); c.ellipse(0,0,d.size,d.size*0.7,0,0,Math.PI*2); c.fill();
+    }
+    c.restore();
+  }
+}
+window.addEventListener('resize', function(){ shoreCache = null; });
+function renderShore(vL,vR,vT) {
+  if(shoreDecor.length===0) return;
+  if(!shoreCache || shoreCache.width !== shoreDecor.length*40) initShoreCache();
+  for(var i=0;i<shoreDecor.length;i++){
+    var d=shoreDecor[i];
+    if(d.x<vL-30||d.x>vR+30||d.y<vT-30||d.y>30) continue;
+    ctx.drawImage(shoreCache, i*40, 0, 40, 40, d.x-20, d.y-20, 40, 40);
+  }
+}
+
 function renderTrails(vL,vR,vT,vB){
   ctx.save();
   for(var i=0;i<orgs.length;i++){var o=orgs[i];if(!o.alive||!o.glideTrail||o.glideTrail.length<2)continue;

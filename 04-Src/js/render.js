@@ -1,5 +1,5 @@
 "use strict";
-function render(){
+function render(){_mmFrame++;if(_mmFrame%12!==0&&_mmCache){ctx.drawImage(_mmCache,0,0);return;}
   var grad=ctx.createLinearGradient(0,-PD*0.2,0,PD);grad.addColorStop(0,'#0a2a4a');grad.addColorStop(1,'#000814');ctx.fillStyle=grad;ctx.fillRect(0,0,cv.width,cv.height);
   ctx.save();ctx.translate(cv.width/2,cv.height/2);ctx.scale(zoom,zoom);ctx.translate(-cam.x,-cam.y);
   var vw=cv.width/zoom,vh=cv.height/zoom,vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
@@ -22,7 +22,7 @@ function render(){
   renderTooltip();
   renderEventLogs();
   
-  if (window.dmgIndicators && settings.healthBars) {
+  if (window.dmgIndicators && settings.healthBars && fc%3===0) {
      ctx.save();
      ctx.font='bold 14px sans-serif'; ctx.textAlign='center';
      for(var i=window.dmgIndicators.length-1; i>=0; i--){
@@ -218,6 +218,7 @@ function renderTooltip(){
     tip.style.display='block';tip.style.left=clamp(mx+12,0,cv.width-260)+'px';tip.style.top=clamp(my+12,0,cv.height-80)+'px';
   }else tip.style.display='none';
 }
+var _mmCache=null,_mmFrame=0;
 function renderMinimap(){
   mc.clearRect(0,0,110,80);mc.fillStyle='rgba(0,12,28,0.85)';mc.fillRect(0,0,110,80);
   var sx=100/(PW*2),sy=70/PD;mc.save();mc.translate(5,5);

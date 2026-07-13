@@ -387,6 +387,7 @@ function updateOrg(o,dt){
       }
   }
 
+  if(o.isPlayer && !o.alive && !o.dying){o.dying=true;o.deathT=0;o.deathCause='energy';}
   if(o.dying){o.deathT+=dt;o.size*=Math.pow(0.95,dt*60);if(o.deathT>1.2)o._remove=true;return;}
   if(!o.alive)return;
   o.age+=dt;

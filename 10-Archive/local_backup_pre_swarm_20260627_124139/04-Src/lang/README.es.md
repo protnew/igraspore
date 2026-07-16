@@ -38,7 +38,7 @@ El análisis arquitectónico ANTES del código ahorró decenas de horas.
 
 ## Idiomas / Languages
 - [English](../README.md)
-- [Русский](README.ru.md)
-- [Français](README.fr.md)
-- [Español](README.es.md)
-- [中文](README.zh.md)
+- [Русский](Projects/08-iGraSpore%20V2/10-Archive/local_backup_pre_swarm_20260627_124139/04-Src/lang/README.ru.md)
+- [Français](Projects/08-iGraSpore%20V2/10-Archive/local_backup_pre_swarm_20260627_124139/04-Src/lang/README.fr.md)
+- [Español](Projects/08-iGraSpore%20V2/10-Archive/local_backup_pre_swarm_20260627_124139/04-Src/lang/README.es.md)
+- [中文](Projects/08-iGraSpore%20V2/10-Archive/local_backup_pre_swarm_20260627_124139/04-Src/lang/README.zh.md)

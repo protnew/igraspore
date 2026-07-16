@@ -35,6 +35,6 @@ tags: []
 ## Быстрые ссылки
 - **GitHub:** [ссылка]
 - **Локально:** `C:\Сделать\...`
-- **Актуальный бэклог:** [[Projects/iGraSpore V2/10-Archive/03-Old-Template/00-Бэклог/Сделать]]
-- **Архитектурные решения:** [[Projects/iGraSpore V2/10-Archive/03-Old-Template/01-Архитектура/Решения]]
-- **Каталог таблиц:** [[Projects/iGraSpore V2/10-Archive/03-Old-Template/01-Архитектура/Таблицы-выбора/_Каталог]]
+- **Актуальный бэклог:** [[Projects/08-iGraSpore V2/10-Archive/03-Old-Template/00-Бэклог/Сделать]]
+- **Архитектурные решения:** [[Projects/08-iGraSpore V2/10-Archive/03-Old-Template/01-Архитектура/Решения]]
+- **Каталог таблиц:** [[Projects/08-iGraSpore V2/10-Archive/03-Old-Template/01-Архитектура/Таблицы-выбора/_Каталог]]

@@ -137,6 +137,31 @@ function renderWater(vL,vR,vT,vB){
     ctx.globalAlpha=dayLight;
     ctx.fillStyle=window._surfGlowCache;ctx.fillRect(-halfW(0),-5,halfW(0)*2,35);
     ctx.restore();}
+  // Sun shafts penetrating deep water — visible from any depth
+  if(dayLight > 0.15) {
+    ctx.save();
+    ctx.globalCompositeOperation = 'screen';
+    var shaftAlpha = dayLight * 0.08;
+    var shaftColor = 'rgba(255,245,200,';
+    ctx.fillStyle = shaftColor + shaftAlpha + ')';
+    ctx.beginPath();
+    var surfW = halfW(0);
+    var sunPos = (tod - 5) / 14; // 0 to 1 across daytime
+    if(sunPos < 0) sunPos = 0;
+    if(sunPos > 1) sunPos = 1;
+    // 5 light shafts from surface going down
+    for(var s = 0; s < 5; s++) {
+      var sx = -surfW*0.7 + (surfW*1.4) * (s/4) + (sunPos-0.5)*200;
+      var w1 = 80, w2 = 200;
+      ctx.moveTo(sx - w1/2, 0);
+      ctx.lineTo(sx + w1/2, 0);
+      ctx.lineTo(sx + w2/2 + (sunPos-0.5)*1000, PD);
+      ctx.lineTo(sx - w2/2 + (sunPos-0.5)*1000, PD);
+      ctx.closePath();
+    }
+    ctx.fill();
+    ctx.restore();
+  }
   ctx.strokeStyle='rgba(140,200,240,'+(0.3+dayLight*0.3)+')';ctx.lineWidth=2;ctx.beginPath();
   var surfW=halfW(0);
   for(var x=-surfW;x<=surfW;x+=8){var wave=Math.sin(x*0.02+fc*0.05)*2;if(x===-surfW)ctx.moveTo(x,wave);else ctx.lineTo(x,wave);}

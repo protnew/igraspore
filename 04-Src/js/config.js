@@ -218,7 +218,7 @@ var currents=[],nutrientClouds=[],o2Bubbles=[],shoreDecor=[],sedimentClumps=[],s
 var speciesPop={};
 
 function halfW(d){d=Math.max(0,Math.min(d,PD));return PW-(PW-BW)*d/PD;}
-function lightAt(d){return Math.max(0.08,dayLight*Math.exp(-0.0005*d)*settings.lightMul);}
+function lightAt(d){return Math.max(0.1,dayLight*Math.exp(-0.0002*d)*settings.lightMul);}
 function clamp(v,a,b){return v<a?a:v>b?b:v;}
 function rng(a,b){return a+Math.random()*(b-a);}
 function lerp(a,b,t){return a+(b-a)*t;}

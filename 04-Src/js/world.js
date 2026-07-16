@@ -424,7 +424,10 @@ function updateCamera(dt){
 }
 function updateTodUI(){
   if(!sliderDragging){var sl=document.getElementById('todR');if(sl)sl.value=tod;}
-  var lbl=document.getElementById('todL');if(lbl){var h=Math.floor(tod),m=Math.floor((tod-h)*60);lbl.textContent=(h<10?'0':'')+h+':'+(m<10?'0':'')+m;}
+  var lbl=document.getElementById('todL');if(lbl){var h=Math.floor(tod),m=Math.floor((tod-h)*60);
+    // Sun/moon icon based on time of day
+    var icon = (tod>=5 && tod<=19) ? '☀️' : '🌙';
+    lbl.textContent=icon+' '+(h<10?'0':'')+h+':'+(m<10?'0':'')+m;}
   var sl=document.getElementById('seasL');if(sl)sl.textContent=tt('season'+season);
 }
 

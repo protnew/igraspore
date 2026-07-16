@@ -41,6 +41,34 @@ function renderSky(vL,vR,vT){
       }
       ctx.restore();
   }
+  
+  // === MOON: visible at night (dayLight < 0.3) ===
+  if(dayLight < 0.3 && vT < 0){
+    var moonX = cam.x + ((tod > 19 ? tod - 19 : tod + 5) / 10 - 0.5) * 600;
+    var moonY = vT * 0.5;
+    var moonAlpha = 1 - dayLight * 3; // brighter when darker
+    if(moonAlpha > 0.05){
+      ctx.save();
+      ctx.globalAlpha = Math.min(moonAlpha, 1);
+      // Moon glow
+      var mg = ctx.createRadialGradient(moonX, moonY, 0, moonX, moonY, 150);
+      mg.addColorStop(0, 'rgba(220,230,255,0.8)');
+      mg.addColorStop(0.2, 'rgba(200,215,255,0.4)');
+      mg.addColorStop(0.5, 'rgba(180,200,240,0.1)');
+      mg.addColorStop(1, 'rgba(160,190,230,0)');
+      ctx.fillStyle = mg;
+      ctx.beginPath(); ctx.arc(moonX, moonY, 150, 0, Math.PI*2); ctx.fill();
+      // Moon body
+      ctx.fillStyle = 'rgba(230,240,255,0.9)';
+      ctx.beginPath(); ctx.arc(moonX, moonY, 18, 0, Math.PI*2); ctx.fill();
+      // Moon craters (simple detail)
+      ctx.fillStyle = 'rgba(180,195,225,0.4)';
+      ctx.beginPath(); ctx.arc(moonX - 5, moonY - 3, 4, 0, Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.arc(moonX + 6, moonY + 4, 3, 0, Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.arc(moonX - 2, moonY + 7, 2.5, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    }
+  }
 }
 
 function renderWater(vL,vR,vT,vB){
@@ -99,12 +127,15 @@ function renderWater(vL,vR,vT,vB){
   }
   
   ctx.restore();
-  // Surface light glow when sun is shining
+  // Surface light glow when sun is shining (gradient cached)
   if(dayLight>0.2){ctx.save();ctx.globalCompositeOperation='screen';
-    var sg2=ctx.createLinearGradient(0,-5,0,30);
-    sg2.addColorStop(0,'rgba(255,240,200,'+(dayLight*0.15)+')');
-    sg2.addColorStop(1,'rgba(255,240,200,0)');
-    ctx.fillStyle=sg2;ctx.fillRect(-halfW(0),-5,halfW(0)*2,35);
+    if(!window._surfGlowCache){
+      window._surfGlowCache=ctx.createLinearGradient(0,-5,0,30);
+      window._surfGlowCache.addColorStop(0,'rgba(255,240,200,0.2)');
+      window._surfGlowCache.addColorStop(1,'rgba(255,240,200,0)');
+    }
+    ctx.globalAlpha=dayLight;
+    ctx.fillStyle=window._surfGlowCache;ctx.fillRect(-halfW(0),-5,halfW(0)*2,35);
     ctx.restore();}
   ctx.strokeStyle='rgba(140,200,240,'+(0.3+dayLight*0.3)+')';ctx.lineWidth=2;ctx.beginPath();
   var surfW=halfW(0);

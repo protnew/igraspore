@@ -341,8 +341,18 @@ function updateWorld(dt){
       }
   }
   updateTodUI();
-  var dayProg = (tod > 6 && tod < 18) ? (tod - 6)/12 : 0;
-  dayLight=Math.max(0.02, Math.sin(dayProg * Math.PI)) * SEASONS[season].light * (1 - SEASONS[season].ice) * (window.eclipseMod || 1.0);
+  // Smooth day/night: bell curve from 5:00 to 19:00, night otherwise
+  var dayProg;
+  if(tod >= 5 && tod <= 19) {
+    dayProg = Math.sin((tod - 5) / 14 * Math.PI);
+  } else {
+    dayProg = 0;
+  }
+  // Twilight ramp for gradual dawn/dusk
+  var twilight = 0;
+  if(tod >= 4.5 && tod < 5.5) twilight = (tod - 4.5);
+  else if(tod > 18.5 && tod <= 19.5) twilight = (19.5 - tod);
+  dayLight=Math.max(0.02, Math.max(dayProg, twilight * 0.15)) * SEASONS[season].light * (1 - SEASONS[season].ice) * (window.eclipseMod || 1.0);
   rainTimer+=dt;
   if(rainTimer>25+Math.random()*40){rainTimer=0;isRaining=Math.random()<SEASONS[season].rain;if(isRaining){wind.strength=rng(0.3,0.8);wind.x=rng(-1,1)*wind.strength;wind.y=0;}else{wind.x=0;wind.y=0;}}
   if(isRaining&&settings.particles)for(var i=0;i<2;i++)rainDrops.push({x:cam.x+rng(-cv.width/2/zoom,cv.width/2/zoom),y:Math.min(cam.y-cv.height/2/zoom,-5),vy:rng(8,14),vx:wind.x*2,life:1});

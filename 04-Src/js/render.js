@@ -125,6 +125,27 @@ function renderTrails(vL,vR,vT,vB){
   ctx.restore();
 }
 function renderOrganisms(vL,vR,vT,vB){
+  // Bioluminescence: organisms glow at night
+  if(dayLight < 0.3) {
+    ctx.save();
+    ctx.globalCompositeOperation = 'screen';
+    for(var bi=0;bi<orgs.length;bi++){
+      var bo=orgs[bi];
+      if(!bo.alive) continue;
+      if(bo.x<vL-20||bo.x>vR+20||bo.y<vT-20||bo.y>vB+20) continue;
+      var glowR = bo.size * 2.5;
+      var glowAlpha = (0.3 - dayLight) * 0.6;
+      ctx.fillStyle = bo.sp.color.replace('rgb','rgba').replace(')',','+glowAlpha+')');
+      if(bo.sp.color.startsWith('#')) {
+        // Hex color: use a soft glow
+        ctx.fillStyle = 'rgba(100,200,255,' + glowAlpha + ')';
+      }
+      ctx.beginPath();
+      ctx.arc(bo.x, bo.y, glowR, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
   var batches = {};
   for(var i=0;i<orgs.length;i++){
     var o=orgs[i];

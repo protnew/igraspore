@@ -141,7 +141,7 @@ function renderWater(vL,vR,vT,vB){
   if(dayLight > 0.15) {
     ctx.save();
     ctx.globalCompositeOperation = 'screen';
-    var shaftAlpha = dayLight * 0.08;
+    var shaftAlpha = dayLight * 0.15;
     var shaftColor = 'rgba(255,245,200,';
     ctx.fillStyle = shaftColor + shaftAlpha + ')';
     ctx.beginPath();

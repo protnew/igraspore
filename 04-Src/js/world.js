@@ -389,7 +389,14 @@ function updateWorld(dt){
 
 function updateCamera(dt){
   zoom=lerp(zoom,tZoom,clamp(dt*8,0,1));
-  if(!freeCam&&player&&player.alive){cam.x=lerp(cam.x,player.x,clamp(dt*4,0,1));cam.y=lerp(cam.y,player.y,clamp(dt*4,0,1));}
+  if(!isFinite(zoom)||zoom<=0)zoom=0.4;
+  if(!freeCam&&player&&player.alive){
+    var tx=player.x,ty=player.y;
+    if(!isFinite(tx)||!isFinite(ty)){tx=0;ty=PD*0.3;}
+    cam.x=lerp(cam.x,tx,clamp(dt*4,0,1));cam.y=lerp(cam.y,ty,clamp(dt*4,0,1));
+  }
+  if(!isFinite(cam.x))cam.x=0;
+  if(!isFinite(cam.y))cam.y=PD*0.3;
   else if(freeCam){
     var cs=400/zoom*dt*60;
     var moved=false;

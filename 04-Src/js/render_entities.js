@@ -43,17 +43,23 @@ function drawBody(o,sz,fc2,fd, batched){
       for(var s=-sz*0.8;s<sz*0.8;s+=sz*0.15){ctx.beginPath();ctx.moveTo(s,-sz*0.5);ctx.lineTo(s,sz*0.5);ctx.stroke();}}
     if(o.sp.bio.wall)ctx.lineWidth=Math.max(2,sz*0.12);
     ctx.stroke();
-    if(o.sp.biolum&&dayLight<0.35){ctx.shadowColor=o.sp.color;ctx.shadowBlur=sz*2;ctx.fillStyle='rgba(100,255,200,0.25)';ctx.beginPath();ctx.arc(0,0,sz*0.6,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;}
+    if(o.sp.biolum&&dayLight<0.35){ctx.fillStyle='rgba(100,255,200,0.25)';ctx.beginPath();ctx.arc(0,0,sz*0.8,0,Math.PI*2);ctx.fill();}
   }
 }
 
 function renderOrg(o, skipBody){
   ctx.save();ctx.translate(o.x,o.y);
   
-  // Bioluminescence at night for producers
+  // Bioluminescence at night for producers (gradient, NOT shadow — 50x faster)
   if(dayLight < 0.35 && o.sp.cat === 'producer' && o.alive) {
-     ctx.shadowColor = o.sp.color;
-     ctx.shadowBlur = 10 + Math.sin(fc*0.1 + o.pulse)*5;
+     var pulseR = sz * (2.5 + Math.sin(fc*0.1 + o.pulse)*0.5);
+     var glowG = ctx.createRadialGradient(0,0,0, 0,0,pulseR);
+     glowG.addColorStop(0, 'rgba(100,255,200,0.3)');
+     glowG.addColorStop(1, 'rgba(100,255,200,0)');
+     ctx.fillStyle = glowG;
+     ctx.beginPath();
+     ctx.arc(0,0,pulseR,0,Math.PI*2);
+     ctx.fill();
   }
   
   var sz=o.size,rgb=hex2rgb(o.sp.color);

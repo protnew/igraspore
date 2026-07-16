@@ -66,7 +66,7 @@ function renderEventLogs() {
      ctx.fillStyle = log.color;
      ctx.globalAlpha = Math.min(1.0, log.life);
      ctx.font = 'bold 13px sans-serif';
-     ctx.shadowColor = '#000'; ctx.shadowBlur = 4;
+     /* shadow removed for perf */
      ctx.fillText(log.text, 200, startY + i*20);
   }
   ctx.restore();

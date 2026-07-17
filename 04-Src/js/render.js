@@ -1,5 +1,12 @@
 "use strict";
-function render(){_mmFrame++;if(_mmFrame%12!==0&&_mmCache){ctx.drawImage(_mmCache,0,0);return;}
+function render(){
+  // GUARD: prevent NaN/Infinity from crashing gradients
+  if(!isFinite(cam.x))cam.x=0;
+  if(!isFinite(cam.y))cam.y=PD*0.3;
+  if(!isFinite(zoom)||zoom<=0)zoom=0.4;
+  if(!isFinite(dayLight))dayLight=0.5;
+  if(!isFinite(tod))tod=12;
+  _mmFrame++;if(_mmFrame%12!==0&&_mmCache){ctx.drawImage(_mmCache,0,0);return;}
   var grad=ctx.createLinearGradient(0,-PD*0.2,0,PD);grad.addColorStop(0,'#0a2a4a');grad.addColorStop(1,'#000814');ctx.fillStyle=grad;ctx.fillRect(0,0,cv.width,cv.height);
   ctx.save();ctx.translate(cv.width/2,cv.height/2);ctx.scale(zoom,zoom);ctx.translate(-cam.x,-cam.y);
   var vw=cv.width/zoom,vh=cv.height/zoom,vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;

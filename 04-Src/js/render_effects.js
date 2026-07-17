@@ -19,7 +19,7 @@ function renderSky(vL,vR,vT){
         window._sunGlowCache = {x: Math.round(sunX/50), y: Math.round(sunY/50), grad: null};
       }
       if(!window._sunGlowCache.grad){
-        var sg=ctx.createRadialGradient(sunX,sunY,0,sunX,sunY,300);
+        if(!isFinite(sunX)||!isFinite(sunY))sunX=0,sunY=-100;var sg=ctx.createRadialGradient(sunX,sunY,0,sunX,sunY,300);
         sg.addColorStop(0,'rgba(255,250,220,1)');sg.addColorStop(0.15,'rgba(255,240,180,0.9)');sg.addColorStop(0.4,'rgba(255,220,120,0.4)');sg.addColorStop(0.7,'rgba(255,200,80,0.1)');sg.addColorStop(1,'rgba(255,190,60,0)');
         window._sunGlowCache.grad = sg;
       }
@@ -51,7 +51,7 @@ function renderSky(vL,vR,vT){
       ctx.save();
       ctx.globalAlpha = Math.min(moonAlpha, 1);
       // Moon glow
-      var mg = ctx.createRadialGradient(moonX, moonY, 0, moonX, moonY, 150);
+      if(!isFinite(moonX)||!isFinite(moonY))moonX=0,moonY=-100;var mg = ctx.createRadialGradient(moonX, moonY, 0, moonX, moonY, 150);
       mg.addColorStop(0, 'rgba(220,230,255,0.8)');
       mg.addColorStop(0.2, 'rgba(200,215,255,0.4)');
       mg.addColorStop(0.5, 'rgba(180,200,240,0.1)');

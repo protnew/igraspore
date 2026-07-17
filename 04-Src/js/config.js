@@ -193,6 +193,24 @@ var DIV_SEPARATION=25;
 
 // === GAME STATE ===
 var cv=document.getElementById('c'),ctx=cv.getContext('2d');
+// GLOBAL gradient guard — prevents createRadialGradient crashes from NaN/Infinity
+(function(){
+  var origCRG = ctx.createRadialGradient.bind(ctx);
+  ctx.createRadialGradient = function(x0,y0,r0,x1,y1,r1){
+    if(!isFinite(x0))x0=0;if(!isFinite(y0))y0=0;if(!isFinite(r0)||r0<0)r0=0;
+    if(!isFinite(x1))x1=0;if(!isFinite(y1))y1=0;if(!isFinite(r1)||r1<0)r1=1;
+    return origCRG(x0,y0,r0,x1,y1,r1);
+  };
+})();
+// Same guard for createLinearGradient
+(function(){
+  var origCLG = ctx.createLinearGradient.bind(ctx);
+  ctx.createLinearGradient = function(x0,y0,x1,y1){
+    if(!isFinite(x0))x0=0;if(!isFinite(y0))y0=0;
+    if(!isFinite(x1))x1=1;if(!isFinite(y1))y1=1;
+    return origCLG(x0,y0,x1,y1);
+  };
+})();
 var mm=document.getElementById('mm'),mc=mm.getContext('2d');
 var pc=document.getElementById('pc'),pcc=pc.getContext('2d');
 var orgs=[],parts=[],player=null,inspOrg=null,viruses=[];

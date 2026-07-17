@@ -36,6 +36,14 @@ function buildCatSel(){
 
 function drawSpeciesPreview(canvas,sp,idx){
   var ctx2=canvas.getContext('2d');
+(function(){
+  var origCRG2 = ctx2.createRadialGradient.bind(ctx2);
+  ctx2.createRadialGradient = function(x0,y0,r0,x1,y1,r1){
+    if(!isFinite(x0))x0=0;if(!isFinite(y0))y0=0;if(!isFinite(r0)||r0<0)r0=0;
+    if(!isFinite(x1))x1=0;if(!isFinite(y1))y1=0;if(!isFinite(r1)||r1<0)r1=1;
+    return origCRG2(x0,y0,r0,x1,y1,r1);
+  };
+})();
   var W=canvas.width,H=canvas.height;
   ctx2.clearRect(0,0,W,H);
   // Water-like background gradient

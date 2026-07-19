@@ -374,14 +374,9 @@ function renderNutrients(vL,vR,vT,vB){
 }
 
 function renderShadows(vL,vR,vT,vB){
-  ctx.save();
-  for(var i=0;i<orgs.length;i++){var o=orgs[i];if(!o.alive)continue;
-    if(o.x<vL-20||o.x>vR+20||o.y<vT-20||o.y>vB+20)continue;
-    var depthR=o.y/PD;var sa=0.5*(1-depthR*0.3);
-    var sw=Math.max(o.size*2, 8/zoom),sh=Math.max(o.size*1, 4/zoom);
-    ctx.fillStyle='rgba(0,0,0,'+sa+')';
-    ctx.beginPath();ctx.ellipse(o.x,o.y+o.size*2,sw,sh,0,0,Math.PI*2);ctx.fill();}
-  ctx.restore();
+  // Microorganism shadows disabled — not convincing at microscopic scale.
+  // Light scattering in water doesn't produce sharp directional shadows.
+  return;
 }
 
 function renderBubbles(vL,vR,vT,vB){

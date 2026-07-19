@@ -192,6 +192,21 @@ var DIV_COOLDOWN=4;
 var DIV_SEPARATION=25;
 
 // === GAME STATE ===
+// GLOBAL GUARD: prevent createRadialGradient from crashing on NaN/Infinity
+(function(){
+  var _origCRG = CanvasRenderingContext2D.prototype.createRadialGradient;
+  CanvasRenderingContext2D.prototype.createRadialGradient = function(x0,y0,r0,x1,y1,r1){
+    if(!isFinite(x0))x0=0;if(!isFinite(y0))y0=0;if(!isFinite(r0)||r0<0)r0=0;
+    if(!isFinite(x1))x1=0;if(!isFinite(y1))y1=0;if(!isFinite(r1)||r1<0)r1=1;
+    return _origCRG.call(this,x0,y0,r0,x1,y1,r1);
+  };
+  var _origCLG = CanvasRenderingContext2D.prototype.createLinearGradient;
+  CanvasRenderingContext2D.prototype.createLinearGradient = function(x0,y0,x1,y1){
+    if(!isFinite(x0))x0=0;if(!isFinite(y0))y0=0;if(!isFinite(x1))x1=0;if(!isFinite(y1))y1=0;
+    return _origCLG.call(this,x0,y0,x1,y1);
+  };
+})();
+
 var cv=document.getElementById('c'),ctx=cv.getContext('2d');
 // GLOBAL gradient guard — prevents createRadialGradient crashes from NaN/Infinity
 (function(){
@@ -227,7 +242,7 @@ var isRaining=false,rainTimer=0,rainDrops=[];
 var autoAI=false,freeCam=false;
 var gameStats={startTime:0,maxPop:0,maxPlayerSize:0,evoLvl:0};
 var timeScale=0.5,lastT=0;
-var settings={particles:true,bubbles:true,currents:true,vignette:true,healthBars:true,shadows:true,density:1.0,lightMul:1.0,virusRate:0.7};
+var settings={particles:true,bubbles:true,currents:true,vignette:true,healthBars:true,shadows:true,density:1.0,lightMul:1.0,virusRate:0.7,renderMode:'cartoon'};
 var difficulty='easy',selCat='all',selSpecies=0;
 var mouseDown=false,moveTarget=null;
 var camKeys={w:false,a:false,s:false,d:false};

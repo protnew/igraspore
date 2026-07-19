@@ -306,11 +306,33 @@ function showDeadScreen(){
   document.getElementById('deadT').textContent=tt('dead');document.getElementById('deadO').className='ov show';
 }
 
+
+function toggleRenderMode(el){
+  settings.renderMode = settings.renderMode==='realistic' ? 'cartoon' : 'realistic';
+  el.className='tg'+(settings.renderMode==='realistic'?' on':'');
+  var lbl=document.getElementById('rmodeLbl');
+  if(lbl) lbl.innerHTML = settings.renderMode==='realistic' ? '🔬 Realistic' : '🎨 Cartoon';
+  // Apply visual changes
+  applyRenderMode();
+}
+function applyRenderMode(){
+  if(settings.renderMode==='realistic'){
+    // Realistic: darker, deeper colors, less saturation, more particles
+    settings.particles=true; settings.bubbles=true; settings.vignette=true;
+    settings.lightMul=1.2;
+  } else {
+    // Cartoon: brighter, more saturated, simpler
+    settings.lightMul=1.0;
+  }
+}
+
 function buildSettings(){
   var sb=document.getElementById('setBody');
   var opts=[['particles',tt('particles')],['bubbles',tt('bubbles')],['currents',tt('currents')],['vignette',tt('vignette')],['healthBars',tt('healthBars')],['shadows',tt('shadows')]];
   var html='';
   for(var i=0;i<opts.length;i++)html+='<div class="sr"><span>'+opts[i][1]+'</span><div class="tg'+(settings[opts[i][0]]?' on':'')+'" data-s="'+opts[i][0]+'" onclick="toggleSet(this)"></div></div>';
+  // Render mode toggle: Realistic vs Cartoon
+  html+='<div class="sr"><span>'+(window._t_renderMode||'Camera Mode')+': <b id="rmodeLbl">'+(settings.renderMode==='realistic'?'🔬 Realistic':'🎨 Cartoon')+'</b></span><div class="tg'+(settings.renderMode==='realistic'?' on':'')+'" id="rmodeTg" onclick="toggleRenderMode(this)"></div></div>';
   // Sliders
   html+='<div class="slider-row"><span>'+tt('density')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.density+'" oninput="settings.density=parseFloat(this.value)" /><span class="slider-val">'+settings.density.toFixed(1)+'</span></div>';
   html+='<div class="slider-row"><span>'+tt('lightInt')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.lightMul+'" oninput="settings.lightMul=parseFloat(this.value)" /><span class="slider-val">'+settings.lightMul.toFixed(1)+'</span></div>';

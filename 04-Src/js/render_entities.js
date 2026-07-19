@@ -7,7 +7,7 @@ function drawBody(o,sz,fc2,fd, batched){
     cyto.addColorStop(0,fc2);
     cyto.addColorStop(0.7,fc2);
     cyto.addColorStop(1,fd);
-    ctx.fillStyle=cyto;ctx.strokeStyle=fd;ctx.lineWidth=Math.max(1,sz*0.08);ctx.beginPath();
+    ctx.fillStyle=cyto;ctx.strokeStyle=fd;ctx.lineWidth=(settings.renderMode==='realistic'?0.5:Math.max(1,sz*0.08));ctx.beginPath();
   }
   if(sh==='circle'){
       var vmag = Math.sqrt(o.vx*o.vx + o.vy*o.vy);

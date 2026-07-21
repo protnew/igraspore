@@ -155,6 +155,8 @@ function eatOrg(pred,prey){
   }
   
   if (prey.size <= 2) {
+      // Phagocytosis: prey is engulfed — food vacuole forms around it
+      pred.phagoTimer = 0.5; // Brief pause for engulfment animation
       killOrg(prey,DCODE.EATEN);
       var gained = prey.sp.energy * 0.8;
       pred.energy += gained;
@@ -225,15 +227,18 @@ function updateInfections(dt){
       o.flash=Math.max(o.flash,0.15);o.flashColor='#f44';
       // Lysis after 15-25 seconds
       if(o.infectionT>15+rng(0,10)){
-        // Release new viruses + die
+        // #21 Virus lysis: cell bursts, releasing phages (dramatic visual)
         var numNew=4+Math.floor(Math.random()*4);
         for(var v=0;v<numNew;v++){
-          viruses.push({x:o.x+rng(-5,5),y:o.y+rng(-5,5),vx:rng(-2,2),vy:rng(-2,2),
+          viruses.push({x:o.x+rng(-5,5),y:o.y+rng(-5,5),vx:rng(-3,3),vy:rng(-3,3),
             sp:VIRUS_SPECS[Math.floor(Math.random()*VIRUS_SPECS.length)],
             target:null,age:0,angle:rng(0,Math.PI*2),wobble:rng(0,Math.PI*2)});
         }
         killOrg(o,DCODE.LYSIS);
-        if(settings.particles)for(var p=0;p<12;p++)parts.push({x:o.x,y:o.y,vx:rng(-4,4),vy:rng(-4,4),life:1,maxL:1,size:rng(2,5),color:'#f44'});
+        // Burst particles: cell debris + viral particles
+        if(settings.particles){
+          for(var p=0;p<20;p++)parts.push({x:o.x,y:o.y,vx:rng(-6,6),vy:rng(-6,6),life:1.5,maxL:1.5,size:rng(2,6),color:p<10?'#f44':o.sp.color});
+        }
       }
     }
   }
@@ -344,11 +349,15 @@ function updateOrg(o,dt){
   let curT = window.getTempAt(o.x, o.y);
   if(!o.cyst && (curT < 2 || curT > 35)) doCyst(o);
   
-  // Fungal spores
+  // #18 Fungal spores — sporangium produces spores
   if(o.sp.cat==='decomposer' && o.energy>80 && Math.random()<0.05*dt) {
       o.energy -= 20;
-      var c = spawnOrg(o.sp, o.x + rng(-20,20), o.y - rng(20, 50));
-      if(c) { c.size *= 0.3; c.energy = 20; c.cyst = true; c.cystT = 0; }
+      o.sporeFlash=0.5; // Visual: sporangium release flash
+      var sporeCount=Math.floor(rng(2,5));
+      for(var sp=0;sp<sporeCount;sp++){
+        var c = spawnOrg(o.sp, o.x + rng(-25,25), o.y - rng(15, 60));
+        if(c) { c.size *= 0.3; c.energy = 20; c.cyst = true; c.cystT = 0; }
+      }
   }
   if(o.attachedTo) {
       if(!o.attachedTo.alive || o.attachedTo.dying) {
@@ -469,7 +478,46 @@ function updateOrg(o,dt){
   }
 
   if(o.cyst){o.energy-=0.015*dt;o.cystT=(o.cystT||0)+dt;if(o.cystT>25){o.cyst=false;o.cystT=0;}}
-  else moveOrg(o,dt);
+  else {
+    // #22 Chemotaxis: move toward nearest nutrient cloud (for producers/decomposers)
+    if((o.sp.cat==='producer'||o.sp.cat==='decomposer')&&nutrientClouds&&nutrientClouds.length>0){
+      var bestCloud=null,bestD=Infinity;
+      for(var nc=0;nc<nutrientClouds.length;nc++){
+        var nd=dist2(o,nutrientClouds[nc]);
+        if(nd<bestD&&nd<40000){bestD=nd;bestCloud=nutrientClouds[nc];}
+      }
+      if(bestCloud){
+        var cdx=bestCloud.x-o.x,cdy=bestCloud.y-o.y;
+        var cdist=Math.sqrt(cdx*cdx+cdy*cdy)||1;
+        o.vx+=(cdx/cdist)*o.sp.speed*0.05;
+        o.vy+=(cdy/cdist)*o.sp.speed*0.05;
+      }
+    }
+    // #23 Phototaxis: producers move toward light (upward) during day
+    if(o.sp.cat==='producer'&&dayLight>0.3){
+      o.vy-=o.sp.speed*0.02*dayLight; // Swim upward toward sunlit zone
+    }
+    // #22 Chemotaxis for predators: move toward prey scent
+    if((o.sp.cat==='consumer2'||o.sp.cat==='consumer3')&&!o.isPlayer){
+      var foodCatsCh=FOOD[o.sp.cat]||[];
+      if(foodCatsCh.length>0){
+        for(var pc=0;pc<Math.min(orgs.length,200);pc++){
+          var prey2=orgs[pc];
+          if(!prey2.alive||prey2===o)continue;
+          if(foodCatsCh.indexOf(prey2.sp.cat)<0)continue;
+          var pd=dist2(o,prey2);
+          if(pd<10000){
+            var pdx=prey2.x-o.x,pdy=prey2.y-o.y;
+            var plen=Math.sqrt(pdx*pdx+pdy*pdy)||1;
+            o.vx+=(pdx/plen)*o.sp.speed*0.03;
+            o.vy+=(pdy/plen)*o.sp.speed*0.03;
+            break;
+          }
+        }
+      }
+    }
+    moveOrg(o,dt);
+  }
   if(o.dividing){o.divT+=dt;if(o.divT>1.3)finishDivide(o);}
   if(!o.isPlayer&&!o.dividing&&!o.cyst&&o.energy>o.sp.repEnergy&&o.age>o.sp.minAge&&o.divCD<=0){
     if (o.sp.flags && o.sp.flags.gendered) {
@@ -491,6 +539,19 @@ function updateOrg(o,dt){
                     o.vy += (ay/len) * o.sp.speed * 0.1;
                 }
             }
+        }
+    } else if (o.sp.cat === 'consumer1' && Math.random() < 0.001 * dt) {
+        // #29 Bacterial conjugation: exchange plasmid via pilus
+        for (var bj = 0; bj < orgs.length; bj++) {
+          var bn = orgs[bj];
+          if (bn !== o && bn.alive && bn.sp.id === o.sp.id && dist2(o, bn) < 400) {
+            o.conjugating = 0.5; bn.conjugating = 0.5;
+            // Exchange energy (plasmid transfer simulation)
+            var avg = (o.energy + bn.energy) / 2;
+            o.energy = avg; bn.energy = avg;
+            o.conjugatePartner = bn; bn.conjugatePartner = o;
+            break;
+          }
         }
     } else {
         if(Math.random()<0.02*dt)doDivide(o);

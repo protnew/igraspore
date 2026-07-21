@@ -13,9 +13,11 @@ function drawBody(o,sz,fc2,fd, batched){
       var vmag = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
       var stretch = Math.min(1.4, 1.0 + vmag * 0.08);
       var squish = Math.max(0.7, 1.0 - vmag * 0.04);
-      for(var i=0; i<=24; i++) {
-          var a = (i/24) * Math.PI * 2;
-          var r = sz + Math.sin(a * 6 - o.pulse * 2) * (vmag * 0.3);
+      // Membrane fluidity: subtle ripple on cell surface (lipid bilayer dynamics)
+      var memRipple=settings.renderMode==='realistic'?0.02:0.04;
+      for(var i=0; i<=32; i++) {
+          var a = (i/32) * Math.PI * 2;
+          var r = sz + Math.sin(a*6-o.pulse*2)*(vmag*0.3) + Math.sin(a*12+o.pulse*3)*sz*memRipple;
           var x = Math.cos(a) * r * stretch;
           var y = Math.sin(a) * r * squish;
           if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
@@ -25,15 +27,70 @@ function drawBody(o,sz,fc2,fd, batched){
   else if(sh==='spiral'){for(var i=0;i<=30;i++){var t=i/30*Math.PI*3,r=sz*0.8;var px=Math.cos(t)*r*(1-t/12),py=Math.sin(t)*r*(1-t/12);if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}}
   else if(sh==='filament'){if(batched)ctx.moveTo(sz*2,0);ctx.ellipse(0,0,sz*2,sz*0.3,0,0,Math.PI*2);}
   else if(sh==='colony'){if(batched)ctx.moveTo(sz,0);ctx.arc(0,0,sz,0,Math.PI*2);
-    if(!batched){ctx.fill();ctx.stroke();ctx.fillStyle='rgba(100,200,100,0.5)';
-    for(var i=0;i<8;i++){var a=i/8*Math.PI*2;ctx.beginPath();ctx.arc(Math.cos(a)*sz*0.7,Math.sin(a)*sz*0.7,sz*0.15,0,Math.PI*2);ctx.fill();}return;}
+    if(!batched){
+      ctx.fill();ctx.stroke();
+      // Colonial arrangement: sphere of cells (Volvox-like) or chain (Anabaena-like)
+      var colType=o.sp.bio.chain?'chain':'sphere';
+      if(colType==='chain'){
+        // Linear chain of cells
+        ctx.fillStyle='rgba(80,160,80,0.5)';
+        for(var cc=-2;cc<=2;cc++){
+          ctx.beginPath();ctx.ellipse(cc*sz*0.8,0,sz*0.3,sz*0.25,0,0,Math.PI*2);ctx.fill();
+        }
+      } else {
+        // Sphere colony (Volvox-like)
+        ctx.fillStyle='rgba(100,200,100,0.5)';
+        for(var ci2=0;ci2<10;ci2++){
+          var ca=ci2/10*Math.PI*2;
+          var cr=sz*0.7;
+          ctx.beginPath();ctx.arc(Math.cos(ca)*cr,Math.sin(ca)*cr,sz*0.12,0,Math.PI*2);ctx.fill();
+        }
+        // Daughter colonies inside (smaller spheres)
+        if(detail>=1){ctx.fillStyle='rgba(120,220,120,0.3)';
+        for(var dc=0;dc<3;dc++){
+          var da=dc/3*Math.PI*2;
+          ctx.beginPath();ctx.arc(Math.cos(da)*sz*0.3,Math.sin(da)*sz*0.3,sz*0.15,0,Math.PI*2);ctx.fill();
+        }}
+      }
+      return;
+    }
   }
   else if(sh==='star'){var pts=12;for(var i=0;i<=pts*2;i++){var a=i/(pts*2)*Math.PI*2,r=i%2===0?sz*1.3:sz*0.6;if(i===0)ctx.moveTo(Math.cos(a)*r,Math.sin(a)*r);else ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);}}
   else if(sh==='slipper'){ctx.moveTo(sz,0);ctx.bezierCurveTo(sz,-sz*0.65,-sz*0.8,-sz*0.65,-sz,0);ctx.bezierCurveTo(-sz*0.8,sz*0.65,sz,sz*0.65,sz,0);}
   else if(sh==='bell'){ctx.moveTo(0,-sz);ctx.bezierCurveTo(sz*0.8,-sz*0.9,sz*0.9,sz*0.3,0,sz*0.5);ctx.bezierCurveTo(-sz*0.9,sz*0.3,-sz*0.8,-sz*0.9,0,-sz);}
   else if(sh==='oval'){if(batched)ctx.moveTo(sz*1.1,0);ctx.ellipse(0,0,sz*1.1,sz*0.7,0,0,Math.PI*2);}
-  else if(sh==='irregular'){var lobes=5+Math.floor(o.wobble)%3;
-    for(var i=0;i<=40;i++){var a=i/40*Math.PI*2;var r=sz+Math.sin(a*lobes+o.wobble)*sz*0.25+Math.sin(a*3+o.pulse)*sz*0.1;if(i===0)ctx.moveTo(Math.cos(a)*r,Math.sin(a)*r);else ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);}}
+  else if(sh==='frustule'){
+    // Diatom frustule — two valves with ribbed pattern
+    if(batched)ctx.moveTo(sz*1.2,0);
+    ctx.ellipse(0,0,sz*1.2,sz*0.5,0,0,Math.PI*2);
+    if(!batched){
+      ctx.fill();ctx.stroke();
+      // Raphe (central slit) and striae (ribbed pattern)
+      ctx.strokeStyle='rgba(40,60,40,0.3)';ctx.lineWidth=0.5;
+      ctx.beginPath();ctx.moveTo(-sz*1.0,0);ctx.lineTo(sz*1.0,0);ctx.stroke();
+      for(var fr=-sz*0.9;fr<=sz*0.9;fr+=sz*0.15){
+        ctx.beginPath();ctx.moveTo(fr,-sz*0.4);ctx.lineTo(fr,sz*0.4);ctx.stroke();
+      }
+      return;
+    }
+  }
+  else if(sh==='irregular'){
+      // Amoeboid movement: body deforms in direction of motion, pseudopodia extend
+      var lobes=5+Math.floor(o.wobble)%3;
+      var vmag2=Math.sqrt(o.vx*o.vx+o.vy*o.vy);
+      var vang2=Math.atan2(o.vy,o.vx);
+      for(var i=0;i<=48;i++){
+        var a=i/48*Math.PI*2;
+        var r=sz+Math.sin(a*lobes+o.wobble)*sz*0.25+Math.sin(a*3+o.pulse)*sz*0.1;
+        // Stretch in direction of movement (pseudopod extension)
+        if(vmag2>0.5){
+          var align=Math.cos(a-vang2);
+          r+=align*vmag2*sz*0.2;
+        }
+        if(i===0)ctx.moveTo(Math.cos(a)*r,Math.sin(a)*r);
+        else ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);
+      }
+    }
   else {if(batched)ctx.moveTo(sz,0);ctx.arc(0,0,sz,0,Math.PI*2);}
   
   if(!batched){
@@ -41,9 +98,28 @@ function drawBody(o,sz,fc2,fd, batched){
     // Pellicle strips for ciliates
     if(o.sp.bio.pellicle&&zoom>5){ctx.strokeStyle='rgba(180,140,60,0.3)';ctx.lineWidth=1;
       for(var s=-sz*0.8;s<sz*0.8;s+=sz*0.15){ctx.beginPath();ctx.moveTo(s,-sz*0.5);ctx.lineTo(s,sz*0.5);ctx.stroke();}}
-    if(o.sp.bio.wall)ctx.lineWidth=Math.max(2,sz*0.12);
-    ctx.stroke();
-    if(o.sp.biolum&&dayLight<0.35){ctx.fillStyle='rgba(100,255,200,0.25)';ctx.beginPath();ctx.arc(0,0,sz*0.8,0,Math.PI*2);ctx.fill();}
+    if(o.sp.bio.wall){
+      // Double-layered cell wall (plants, fungi, bacteria)
+      ctx.lineWidth=Math.max(2,sz*0.12);
+      ctx.stroke();
+      // Inner membrane (thin line inside)
+      ctx.strokeStyle='rgba(100,80,50,0.3)';ctx.lineWidth=0.5;
+      ctx.beginPath();
+      // Re-trace the path slightly smaller
+      ctx.save();ctx.scale(0.92,0.92);
+      ctx.restore();
+    } else {ctx.stroke();}
+    if(o.sp.biolum&&dayLight<0.35){
+      // Pulsing bioluminescence — concentric rings expanding outward
+      var bpulse=(o.pulse%4)/4; // 0-1 cycle
+      for(var br=0;br<3;br++){
+        var bphase=(bpulse+br*0.33)%1;
+        var brad=sz*(0.5+bphase*1.5);
+        var balpha=(1-bphase)*0.2;
+        ctx.fillStyle='rgba(100,255,200,'+balpha+')';
+        ctx.beginPath();ctx.arc(0,0,brad,0,Math.PI*2);ctx.fill();
+      }
+    }
   }
 }
 
@@ -62,8 +138,15 @@ function renderOrg(o, skipBody){
      ctx.fill();
   }
   
-  var sz=o.size,rgb=hex2rgb(o.sp.color);
-  var tint=o.energy<25?0.5:(o.energy>90?1.2:1);
+  var sz=o.size;
+  // Size by age: grow from 30% (spore) to 100% (adult) over first 20% of lifespan
+  if(o.age<o.sp.minAge*0.5){var growthRatio=0.3+0.7*(o.age/(o.sp.minAge*0.5));sz*=growthRatio;}
+  var rgb=hex2rgb(o.sp.color);
+  // Color by status: paler at low health/energy, brighter at full
+  var healthRatio=o.energy/100;
+  var tint=0.4+healthRatio*0.8; // 0.4 (pale) to 1.2 (vibrant)
+  if(o.dying)tint*=0.5;
+  if(o.infected)tint=0.6; // Greenish when infected
   var bc=shadeRgb(rgb[0],rgb[1],rgb[2],tint),bd=shadeRgb(rgb[0],rgb[1],rgb[2],tint*0.5);
   if(o.dying)ctx.globalAlpha=clamp(1-o.deathT/1.2,0,1);
   if(o.cyst){ctx.fillStyle='rgba(180,160,80,0.35)';ctx.beginPath();ctx.arc(0,0,sz*1.4,0,Math.PI*2);ctx.fill();
@@ -73,11 +156,20 @@ function renderOrg(o, skipBody){
   // Infected overlay
   if(o.infected){ctx.fillStyle='rgba(255,50,50,0.15)';ctx.beginPath();ctx.arc(0,0,sz*1.2,0,Math.PI*2);ctx.fill();}
   if(o.dividing){
+    // Mitosis animation: nucleus divides first, then cytokinesis (cell splits)
     var dp=o.divT/1.3;
-    ctx.save();ctx.translate(-sz*dp*0.3,0);
+    var sep=sz*dp*0.5;
+    // Furrow (cleavage) appears in the middle during late mitosis
+    if(dp>0.3&&zoom>4){
+      ctx.strokeStyle='rgba(0,0,0,0.2)';ctx.lineWidth=sz*dp*0.15;
+      ctx.beginPath();ctx.moveTo(0,-sz);ctx.lineTo(0,sz);ctx.stroke();
+    }
+    // Left daughter cell
+    ctx.save();ctx.translate(-sep,0);
     if(!skipBody)drawBody(o,sz*(1-dp*0.15),bc,bd);
     drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
-    ctx.save();ctx.translate(sz*dp*0.3,0);
+    // Right daughter cell
+    ctx.save();ctx.translate(sep,0);
     if(!skipBody)drawBody(o,sz*(1-dp*0.15),bc,bd);
     drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
     ctx.restore();return;}
@@ -88,6 +180,19 @@ function renderOrg(o, skipBody){
   if(o.flash>0){ctx.globalAlpha=o.flash;ctx.fillStyle=o.flashColor;ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();}
   if(o.isPlayer&&state==='playing'){ctx.globalAlpha=0.5+Math.sin(fc*0.1)*0.3;ctx.strokeStyle='#4ff';ctx.lineWidth=2;
     ctx.beginPath();ctx.arc(0,0,sz+4,0,Math.PI*2);ctx.stroke();}
+  // #18 Sporangium flash (fungal spore release)
+  if(o.sporeFlash>0){
+    ctx.globalAlpha=o.sporeFlash*0.5;
+    ctx.fillStyle='rgba(200,180,100,0.5)';
+    ctx.beginPath();ctx.arc(0,-sz*0.5,sz*0.4,0,Math.PI*2);ctx.fill();
+    ctx.globalAlpha=1;
+  }
+  // #19/#29 Conjugation bridge (pilus between conjugating cells)
+  if(o.conjugatePartner&&o.conjugatePartner.alive){
+    var cpdx=o.conjugatePartner.x-o.x, cpdy=o.conjugatePartner.y-o.y;
+    ctx.strokeStyle='rgba(255,200,100,'+o.conjugating+')';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(cpdx,cpdy);ctx.stroke();
+  }
   ctx.restore();
 }
 
@@ -97,6 +202,8 @@ function drawOrgans(o,sz){
   for(var i=0;i<org.length;i++){
     var g=org[i];ctx.save();
     if(g.t==='nuc'){
+      // Organelle shadow (depth illusion)
+      if(detail>=1){ctx.fillStyle='rgba(0,0,0,0.1)';ctx.beginPath();ctx.arc(g.x+g.r*0.1,g.y+g.r*0.15,g.r*1.05,0,Math.PI*2);ctx.fill();}
       // Nucleus with nuclear envelope (double membrane look)
       var ng = ctx.createRadialGradient(g.x-g.r*0.2, g.y-g.r*0.2, 0, g.x, g.y, g.r);
       ng.addColorStop(0, 'rgba(180,120,200,0.9)');
@@ -107,9 +214,43 @@ function drawOrgans(o,sz){
       // Nuclear pores (dots on envelope)
       if(detail>=1){ctx.fillStyle='rgba(220,180,240,0.7)';
         for(var p=0;p<8;p++){var pa=p/8*Math.PI*2;ctx.beginPath();ctx.arc(g.x+Math.cos(pa)*g.r*0.9,g.y+Math.sin(pa)*g.r*0.9,g.r*0.06,0,Math.PI*2);ctx.fill();}}
-      // Chromatin strands inside
-      if(detail>=1){ctx.strokeStyle='rgba(210,150,230,0.6)';ctx.lineWidth=0.8;
-        for(var s=0;s<6;s++){ctx.beginPath();var a=s/6*Math.PI*2;ctx.moveTo(g.x,g.y);ctx.quadraticCurveTo(g.x+Math.cos(a)*g.r*0.6,g.y+Math.sin(a)*g.r*0.6,g.x+Math.cos(a+1)*g.r*0.8,g.y+Math.sin(a+1)*g.r*0.8);ctx.stroke();}}
+      // DNA double helix spiral (replaces random chromatin strands)
+      if(detail>=1){
+        var dnaPh=o.pulse*0.5;
+        var dnaR=g.r*0.55;
+        // Strand 1
+        ctx.strokeStyle='rgba(100,180,255,0.5)';ctx.lineWidth=1;
+        ctx.beginPath();
+        for(var ds=0;ds<=40;ds++){
+          var dt=ds/40;var da=dt*Math.PI*4+dnaPh;
+          var dx=g.x+Math.cos(da)*dnaR*dt;
+          var dy=g.y-g.r*0.4+dt*g.r*0.8;
+          var dz=Math.sin(da)*dnaR*0.3;
+          var px=dx+dz*0.5;
+          if(ds===0)ctx.moveTo(px,dy);else ctx.lineTo(px,dy);
+        }
+        ctx.stroke();
+        // Strand 2 (phase-shifted by PI)
+        ctx.strokeStyle='rgba(255,120,120,0.5)';ctx.lineWidth=1;
+        ctx.beginPath();
+        for(var ds=0;ds<=40;ds++){
+          var dt=ds/40;var da=dt*Math.PI*4+dnaPh+Math.PI;
+          var dx=g.x+Math.cos(da)*dnaR*dt;
+          var dy=g.y-g.r*0.4+dt*g.r*0.8;
+          var dz=Math.sin(da)*dnaR*0.3;
+          var px=dx+dz*0.5;
+          if(ds===0)ctx.moveTo(px,dy);else ctx.lineTo(px,dy);
+        }
+        ctx.stroke();
+        // Base pairs (rungs connecting strands)
+        if(detail>=2){ctx.strokeStyle='rgba(200,150,255,0.3)';ctx.lineWidth=0.5;
+        for(var bp=0;bp<8;bp++){
+          var bt=bp/8;var ba=bt*Math.PI*4+dnaPh;
+          var b1x=g.x+Math.cos(ba)*dnaR*bt+(Math.sin(ba)*dnaR*0.3)*0.5;
+          var b2x=g.x+Math.cos(ba+Math.PI)*dnaR*bt+(Math.sin(ba+Math.PI)*dnaR*0.3)*0.5;
+          ctx.beginPath();ctx.moveTo(b1x,g.y-g.r*0.4+bt*g.r*0.8);ctx.lineTo(b2x,g.y-g.r*0.4+bt*g.r*0.8);ctx.stroke();
+        }}
+      }
       // Nucleolus
       var ncg = ctx.createRadialGradient(g.x+g.r*0.1,g.y+g.r*0.1,0,g.x+g.r*0.2,g.y+g.r*0.1,g.r*0.4);
       ncg.addColorStop(0, 'rgba(230,150,230,1)'); ncg.addColorStop(1, 'rgba(150,50,150,0.9)');
@@ -124,8 +265,11 @@ function drawOrgans(o,sz){
     }
     else if(g.t==='mic'){ctx.fillStyle=g.c;ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();}
     else if(g.t==='chl'||g.t==='plastid'){
-      // Chloroplast — green disc with thylakoid stacks (grana)
-      ctx.save();ctx.translate(g.x,g.y);ctx.rotate(g.rot+o.pulse*0.1);
+      // Chloroplast with cyclosis (cytoplasmic streaming) — orbits around cell center
+      var cycloAngle=Math.atan2(g.y,g.x)+o.pulse*0.15;
+      var cycloR=Math.sqrt(g.x*g.x+g.y*g.y);
+      var cx2=Math.cos(cycloAngle)*cycloR,cy2=Math.sin(cycloAngle)*cycloR;
+      ctx.save();ctx.translate(cx2,cy2);ctx.rotate(g.rot+o.pulse*0.2);
       var cg=ctx.createRadialGradient(0,0,0,0,0,g.rx);
       cg.addColorStop(0,'#5fd45f');cg.addColorStop(0.7,'#2a8a2a');cg.addColorStop(1,'#1a5a1a');
       ctx.fillStyle=cg;ctx.beginPath();ctx.ellipse(0,0,g.rx,g.ry,0,0,Math.PI*2);ctx.fill();
@@ -147,23 +291,57 @@ function drawOrgans(o,sz){
       ctx.strokeStyle='rgba(120,30,30,0.5)';ctx.lineWidth=0.5;ctx.beginPath();ctx.ellipse(0,0,g.rx,g.ry,0,0,Math.PI*2);ctx.stroke();
       ctx.restore();
     }
-    else if(g.t==='golgi'){ctx.fillStyle=g.c;ctx.globalAlpha=0.4;ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();}
+    else if(g.t==='golgi'){
+      // Golgi apparatus — stacked cisternae (parallel arcs)
+      ctx.strokeStyle='rgba(180,140,200,0.5)';ctx.lineWidth=Math.max(1,g.r*0.08);
+      for(var gs=0;gs<5;gs++){
+        var goff=(gs-2)*g.r*0.25;
+        ctx.beginPath();ctx.ellipse(g.x,g.y+goff,g.r*(1-Math.abs(goff)/(g.r*2)),g.r*0.1,0,0,Math.PI*2);ctx.stroke();
+      }
+      // Vesicles budding off
+      ctx.fillStyle='rgba(200,160,220,0.4)';
+      ctx.beginPath();ctx.arc(g.x+g.r*0.8,g.y,g.r*0.1,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.arc(g.x-g.r*0.8,g.y,g.r*0.1,0,Math.PI*2);ctx.fill();
+    }
     else if(g.t==='golgiS'){ctx.fillStyle=g.c;ctx.globalAlpha=0.5;ctx.save();ctx.translate(g.x,g.y);ctx.beginPath();ctx.ellipse(0,0,g.rx,g.ry,0,0,Math.PI*2);ctx.fill();ctx.restore();}
-    else if(g.t==='er'){ctx.fillStyle=g.c;ctx.globalAlpha=0.3;ctx.save();ctx.translate(g.x,g.y);ctx.rotate(g.rot);ctx.beginPath();ctx.ellipse(0,0,g.rx,g.ry,0,0,Math.PI*2);ctx.fill();ctx.restore();}
+    else if(g.t==='er'){
+      // Endoplasmic reticulum — network of curved tubules
+      ctx.strokeStyle='rgba(180,140,120,0.4)';ctx.lineWidth=Math.max(1,sz*0.04);
+      ctx.save();ctx.translate(g.x,g.y);ctx.rotate(g.rot);
+      for(var et=0;et<4;et++){
+        var eo=et*g.rx*0.2-g.rx*0.3;
+        ctx.beginPath();
+        ctx.moveTo(eo,-g.ry*0.5);
+        ctx.quadraticCurveTo(eo+g.rx*0.1,-g.ry*0.2,eo+g.rx*0.05,g.ry*0.5);
+        ctx.stroke();
+      }
+      // Ribosomes on rough ER (dark dots)
+      if(detail>=1){ctx.fillStyle='rgba(80,60,40,0.6)';
+      for(var rb=0;rb<6;rb++){
+        ctx.beginPath();ctx.arc(rng(-g.rx*0.3,g.rx*0.3),rng(-g.ry*0.4,g.ry*0.4),sz*0.03,0,Math.PI*2);ctx.fill();
+      }}
+      ctx.restore();
+    }
     else if(g.t==='vac'){ctx.fillStyle=g.c;ctx.globalAlpha=0.45;ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();
       // Membrane outline
       ctx.strokeStyle='rgba(200,170,80,0.4)';ctx.lineWidth=0.5;ctx.stroke();}
         else if(g.t==='cv'){
-      var pr=g.r+Math.sin(o.pulse*2)*g.r*0.3;
-      ctx.fillStyle=g.c;ctx.globalAlpha=0.6;
-      ctx.beginPath();
-      for(var j=0;j<10;j++){
-        var a=j/10*Math.PI*2; var rr=(j%2===0)?pr:pr*0.5;
-        var vx=g.x+Math.cos(a)*rr, vy=g.y+Math.sin(a)*rr;
-        if(j===0) ctx.moveTo(vx,vy); else ctx.lineTo(vx,vy);
-      }
-      ctx.closePath(); ctx.fill();
+      // Contractile vacuole: osmoregulation cycle (fill → contract → empty)
+      var cvCycle=(o.pulse%6)/6; // 0-1 cycle
+      var cvPhase=cvCycle<0.7?cvCycle/0.7:(1-cvCycle)/0.3; // ramp up then rapid contract
+      var pr=g.r*(0.3+cvPhase*0.8);
+      ctx.fillStyle=g.c;ctx.globalAlpha=0.5+cvPhase*0.2;
+      ctx.beginPath();ctx.arc(g.x,g.y,pr,0,Math.PI*2);ctx.fill();
       ctx.strokeStyle='rgba(80,160,240,0.5)';ctx.lineWidth=0.5;ctx.stroke();
+      // Auxiliary canals (radiating tubules visible during fill phase)
+      if(detail>=1&&cvPhase>0.3){
+        ctx.strokeStyle='rgba(80,160,240,0.2)';ctx.lineWidth=0.5;
+        for(var cca=0;cca<6;cca++){
+          var ang=cca/6*Math.PI*2;
+          ctx.beginPath();ctx.moveTo(g.x+Math.cos(ang)*pr,g.y+Math.sin(ang)*pr);
+          ctx.lineTo(g.x+Math.cos(ang)*pr*1.5,g.y+Math.sin(ang)*pr*1.5);ctx.stroke();
+        }
+      }
     }
     else if(g.t==='nucleoid'){
       ctx.strokeStyle='rgba(140,160,255,0.7)'; ctx.lineWidth=1; ctx.beginPath();
@@ -181,13 +359,60 @@ function drawOrgans(o,sz){
       }
     }
     else if(g.t==='ribo'){ctx.fillStyle=g.c;ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();}
-    else if(g.t==='trich'){ctx.fillStyle=g.c;ctx.save();ctx.translate(g.x,g.y);ctx.rotate(Math.atan2(g.y,g.x));ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(sz*0.15,0);ctx.lineTo(0,sz*0.02);ctx.closePath();ctx.fill();ctx.restore();}
+    else if(g.t==='trich'){
+      // Trichocyst — resting state: small dart; firing state: long cross-striated filament
+      var trichFire=o.trichFire||0; // 0=resting, 1=firing
+      ctx.save();ctx.translate(g.x,g.y);ctx.rotate(Math.atan2(g.y,g.x));
+      if(trichFire>0.1){
+        // Firing: long filament with cross-striations
+        var tlen=sz*0.15+trichFire*sz*0.6;
+        ctx.strokeStyle='rgba(200,220,255,0.5)';ctx.lineWidth=Math.max(0.5,sz*0.02);
+        ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(tlen,0);ctx.stroke();
+        // Cross-striations
+        ctx.strokeStyle='rgba(180,200,240,0.3)';ctx.lineWidth=0.5;
+        for(var ts=0;ts<8;ts++){var tx2=ts/8*tlen;ctx.beginPath();ctx.moveTo(tx2,-sz*0.03);ctx.lineTo(tx2,sz*0.03);ctx.stroke();}
+      } else {
+        // Resting: compact dart shape
+        ctx.fillStyle='rgba(200,220,255,0.3)';
+        ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(sz*0.12,0);ctx.lineTo(0,sz*0.02);ctx.closePath();ctx.fill();
+      }
+      ctx.restore();
+    }
     else if(g.t==='oral'){ctx.fillStyle=g.c;ctx.globalAlpha=0.4;ctx.beginPath();ctx.ellipse(g.x,g.y,g.r,g.r*0.6,0,0,Math.PI*2);ctx.fill();}
     else if(g.t==='eye'){
       // Eyespot (stigma) — red/orange with photoreceptor
       ctx.fillStyle='#cc4400';ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();
       ctx.fillStyle='#ff7700';ctx.beginPath();ctx.arc(g.x-g.r*0.2,g.y-g.r*0.2,g.r*0.5,0,Math.PI*2);ctx.fill();
       ctx.fillStyle='#ffaa00';ctx.beginPath();ctx.arc(g.x-g.r*0.3,g.y-g.r*0.3,g.r*0.25,0,Math.PI*2);ctx.fill();
+    }
+    else if(g.t==='lyso'){
+      // Lysosome — dark granule with digestive enzymes
+      ctx.fillStyle='rgba(100,70,30,0.7)';
+      ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();
+      ctx.strokeStyle='rgba(140,100,50,0.5)';ctx.lineWidth=0.5;ctx.stroke();
+      // Inner enzymatic granules
+      if(detail>=1){ctx.fillStyle='rgba(180,140,80,0.4)';
+      for(var lg=0;lg<3;lg++){ctx.beginPath();ctx.arc(g.x+rng(-g.r*0.4,g.r*0.4),g.y+rng(-g.r*0.4,g.r*0.4),g.r*0.15,0,Math.PI*2);ctx.fill();}}
+    }
+    else if(g.t==='perox'){
+      // Peroxisome — small yellowish dot (oxidation reactions)
+      ctx.fillStyle='rgba(200,180,80,0.6)';
+      ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();
+      // Crystalline core (catalase)
+      if(detail>=1){ctx.fillStyle='rgba(240,230,150,0.5)';
+      ctx.beginPath();ctx.arc(g.x,g.y,g.r*0.3,0,Math.PI*2);ctx.fill();}
+    }
+    else if(g.t==='glyco'){
+      // Glycogen granules — small white dots (energy storage)
+      ctx.fillStyle='rgba(240,240,200,0.4)';
+      ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();
+    }
+    else if(g.t==='lipid'){
+      // Lipid droplet — large translucent yellow sphere
+      var lipo=ctx.createRadialGradient(g.x-g.r*0.2,g.y-g.r*0.2,0,g.x,g.y,g.r);
+      lipo.addColorStop(0,'rgba(255,240,200,0.6)');lipo.addColorStop(1,'rgba(200,170,80,0.4)');
+      ctx.fillStyle=lipo;
+      ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();
     }
     ctx.restore();
   }
@@ -197,27 +422,53 @@ function drawAppendages(o,sz){
   var b=o.sp.bio;ctx.save();ctx.strokeStyle='rgba(200,220,255,0.35)';ctx.lineWidth=Math.max(1,sz*0.05);
   if(b.flag){var fn=b.chain?3:1;
     for(var f=0;f<fn;f++){
-      ctx.beginPath();
+      // Flagellum with whip-tip: base thick, tip curls (euglena-style undulating motion)
       var sx=-sz*0.9+(f-fn/2)*sz*0.15;
-      ctx.moveTo(sx,0);
-      var wLen = 15;
+      var wLen=24; // More segments for smoother wave
+      var segs=[];
       for(var w=0;w<=wLen;w++){
         var t=w/wLen;
-        var wx=sx-t*sz*1.8;
-        var wy=Math.sin(o.flagPhase+w*0.8+f)*sz*(0.1+t*0.4); // Tapering wave
-        ctx.lineTo(wx,wy);
+        var wx=sx-t*sz*2.2;
+        // Whip motion: sinusoidal base, exponential amplitude toward tip
+        var amp=sz*(0.08+t*t*0.6); // Quadratic tapering (whip effect)
+        var wy=Math.sin(o.flagPhase+w*0.6+f*0.5)*amp;
+        // Tip curl: last 30% bends more sharply
+        if(t>0.7){var curl=(t-0.7)/0.3;wy+=Math.cos(o.flagPhase*1.5+w)*sz*0.15*curl;}
+        segs.push({x:wx,y:wy});
       }
-      ctx.lineWidth=Math.max(1, sz*0.08); // Thicker base
-      ctx.strokeStyle='rgba(220,240,255,0.6)';
-      ctx.stroke();
+      // Draw with varying width (thick base, thin tip)
+      for(var w=0;w<segs.length-1;w++){
+        var t=w/wLen;
+        ctx.lineWidth=Math.max(0.5,sz*(0.12-t*0.09)); // Tapering width
+        ctx.strokeStyle='rgba(220,240,255,'+(0.7-t*0.3)+')'; // Fading alpha
+        ctx.beginPath();ctx.moveTo(segs[w].x,segs[w].y);ctx.lineTo(segs[w+1].x,segs[w+1].y);ctx.stroke();
+      }
     }
   }
-  if(b.cilia){var cn=10+Math.floor(sz/3);
-    for(var c=0;c<cn;c++){var a=c/cn*Math.PI*2;var wave=Math.sin(o.cilPhase+c*0.5)*sz*0.15;var r1=sz*0.9,r2=sz*1.15+wave;
-      ctx.beginPath();ctx.moveTo(Math.cos(a)*r1,Math.sin(a)*r1);ctx.lineTo(Math.cos(a)*r2,Math.sin(a)*r2);ctx.stroke();}
-    // Metachronal wave (cilia beat pattern)
-    if(zoom>6){ctx.strokeStyle='rgba(255,255,255,0.1)';ctx.lineWidth=1;ctx.beginPath();
-      for(var c=0;c<cn;c++){var a=c/cn*Math.PI*2;var beat=Math.sin(o.cilPhase+c*0.3)*0.5+0.5;var r=sz*(0.95+beat*0.2);
+  if(b.cilia){var cn=12+Math.floor(sz/2);
+    // Each cilium has a phase offset creating metachronal wave (ciliary beating)
+    var ciliaDir=o.cilReverse?-1:1; // Reversal behavior (avoidance reaction)
+    for(var c=0;c<cn;c++){
+      var a=c/cn*Math.PI*2;
+      var phaseOffset=c*0.4; // Phase shift per cilium (metachronal coordination)
+      var beat=Math.sin(o.cilPhase*ciliaDir+phaseOffset);
+      var extension=0.5+beat*0.5; // 0=contracted, 1=extended
+      var r1=sz*0.85,r2=sz*(1.0+extension*0.35);
+      // Cilium curves during effective stroke, straight during recovery
+      var midR=(r1+r2)/2;
+      var curveOff=beat>0?sz*0.08:0; // Curve during power stroke
+      ctx.strokeStyle='rgba(200,220,255,'+(0.3+extension*0.3)+')';
+      ctx.lineWidth=Math.max(0.5,sz*0.04);
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a)*r1,Math.sin(a)*r1);
+      ctx.quadraticCurveTo(
+        Math.cos(a)*midR+Math.sin(a)*curveOff,Math.sin(a)*midR-Math.cos(a)*curveOff,
+        Math.cos(a)*r2,Math.sin(a)*r2);
+      ctx.stroke();
+    }
+    // Metachronal wave envelope (visible at high zoom)
+    if(zoom>6){ctx.strokeStyle='rgba(255,255,255,0.08)';ctx.lineWidth=1;ctx.beginPath();
+      for(var c=0;c<=cn;c++){var a=c/cn*Math.PI*2;var beat=Math.sin(o.cilPhase*ciliaDir+c*0.4);var r=sz*(0.95+beat*0.2+0.2);
         if(c===0)ctx.moveTo(Math.cos(a)*r,Math.sin(a)*r);else ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);}
       ctx.closePath();ctx.stroke();}}
   if(b.pseudo){var pn=5;

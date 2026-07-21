@@ -230,6 +230,7 @@ document.addEventListener('keydown',function(e){
   if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
   if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
   if(k==='v'){freeCam=false;autoAI=false;}
+  if(k==='m'){document.getElementById('bMicro').click();}
   if(k==='b'){var wo=document.getElementById('wikiO');if(wo.className==='ov show')wo.className='ov';else{buildWiki();wo.className='ov show';}}
   if(k==='e'){if(player&&player.alive&&!player.dying){var best=null,bd=99999;var fc2=FOOD[player.sp.cat]||[];
     for(var i=0;i<orgs.length;i++){var p=orgs[i];if(!p.alive||p===player||p.cyst||p.divCD>0)continue;
@@ -249,7 +250,20 @@ document.getElementById('bEat').onclick=function(){if(player&&player.alive){var 
 document.getElementById('bDiv').onclick=function(){if(player&&player.alive)doDivide(player);};
 document.getElementById('bCyst').onclick=function(){if(player&&player.alive)doCyst(player);};
 document.getElementById('bAuto').onclick=function(){if(player&&player.alive)autoAI=!autoAI;};
-document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};};
+document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};
+
+document.getElementById('bMicro').onclick=function(){
+  settings.microscopeMode=!settings.microscopeMode;
+  applyRenderMode();
+  if(settings.microscopeMode){
+    tZoom=Math.max(tZoom,8); // Zoom in for microscope view
+    document.getElementById('bMicro').style.background='#1a4a6a';
+    document.getElementById('bMicro').style.borderColor='#4af';
+  } else {
+    document.getElementById('bMicro').style.background='#012';
+    document.getElementById('bMicro').style.borderColor='#345';
+  }
+};
 document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;};
 document.getElementById('bWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
 document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};

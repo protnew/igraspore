@@ -27,6 +27,45 @@ function render(){
   if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
   if(settings.healthBars)renderHealthBars();
   renderTooltip();
+  // Microscope mode overlay
+  if(settings.microscopeMode){
+    var mw=cv.width,mh=cv.height;
+    var mcx=mw/2,mcy=mh/2;
+    var mradius=Math.min(mw,mh)*0.45;
+    
+    // 1. Strong vignette (circular dark edges — like looking through eyepiece)
+    ctx.save();
+    var mvig=ctx.createRadialGradient(mcx,mcy,mradius*0.6,mcx,mcy,mradius*1.3);
+    mvig.addColorStop(0,'rgba(0,0,0,0)');
+    mvig.addColorStop(0.7,'rgba(0,0,0,0.3)');
+    mvig.addColorStop(1,'rgba(0,0,0,0.95)');
+    ctx.fillStyle=mvig;
+    ctx.fillRect(0,0,mw,mh);
+    
+    // 2. Microscope graticule (crosshair + measurement scale)
+    ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=1;
+    // Horizontal line
+    ctx.beginPath();ctx.moveTo(mcx-mradius,mcy);ctx.lineTo(mcx+mradius,mcy);ctx.stroke();
+    // Vertical line
+    ctx.beginPath();ctx.moveTo(mcx,mcy-mradius);ctx.lineTo(mcx,mcy+mradius);ctx.stroke();
+    // Tick marks on horizontal (scale bar)
+    for(var tick=-4;tick<=4;tick++){
+      var tx=mcx+tick*mradius/5;
+      ctx.beginPath();ctx.moveTo(tx,mcy-5);ctx.lineTo(tx,mcy+5);ctx.stroke();
+    }
+    
+    // 3. Scale bar (µm measurement)
+    ctx.fillStyle='rgba(255,255,255,0.4)';ctx.font='10px sans-serif';ctx.textAlign='center';
+    var scaleUm=Math.round(mradius/5/zoom*10)/10;
+    ctx.fillText(scaleUm+' µm',mcx,mcy+mradius-15);
+    
+    // 4. Subtle green tint (fluorescence microscopy feel)
+    ctx.fillStyle='rgba(50,100,50,0.05)';
+    ctx.fillRect(0,0,mw,mh);
+    
+    ctx.restore();
+  }
+
   renderEventLogs();
   
   if (window.dmgIndicators && settings.healthBars && fc%3===0) {

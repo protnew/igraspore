@@ -229,7 +229,7 @@ var cv=document.getElementById('c'),ctx=cv.getContext('2d');
 var mm=document.getElementById('mm'),mc=mm.getContext('2d');
 var pc=document.getElementById('pc'),pcc=pc.getContext('2d');
 var orgs=[],parts=[],player=null,inspOrg=null,viruses=[];
-var cam={x:0,y:300},zoom=0.4,tZoom=0.4;
+var cam={x:0,y:300},zoom=3,tZoom=3;
 var gt=0,fc=0,fps=60,fAcc=0,fCnt=0;
 var state='menu',keys={},mx=9999,my=9999;
 var dayLight=0.6;

@@ -136,7 +136,7 @@ function startGame(isScreensaver){
      var hw = halfW(dY);
      player=spawnOrg(sp, hw * 0.8, dY, true);
      if(!player)player=spawnOrg(sp,0,PD*0.3,true);
-     player.energy=100;cam.x=player.x;cam.y=player.y;
+     player.energy=100;cam.x=player.x;cam.y=player.y;zoom=3;tZoom=3;
   }
   
   state='playing';gt=0;fc=0;
@@ -144,7 +144,13 @@ function startGame(isScreensaver){
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';
   document.getElementById('weatherP').style.display='block';
-  document.getElementById('actBar').style.display='flex';document.getElementById('keyHint').style.display='flex';
+  document.getElementById('actBar').style.display='flex';
+  var kh=document.getElementById('keyHint');
+  kh.innerHTML='<div style="font-size:11px;line-height:1.6">'+
+    '<b>WASD</b> — движение | <b>Мышь</b> — направление | <b>E</b> — есть | <b>Q</b> — делиться<br>'+
+    '<b>R</b> — циста | <b>Tab</b> — автопилот | <b>F</b> — своб.камера | <b>M</b> — микроскоп | <b>N</b> — режим<br>'+
+    '<b>V</b> — следовать | <b>B</b> — вики | <b>P</b> — пауза | Колесо — зум</div>';
+  kh.style.display='flex';
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');
   tw.innerHTML='<input type="range" id="todR" min="0" max="24" step="0.05" value="'+tod+'"><span id="todL">12:00</span><span id="seasL">'+tt('season1')+'</span>';

@@ -217,7 +217,17 @@ function killOrg(o,cause){
   stats.deaths++;stats.deathCauses[cause]++;
 }
 
-function doCyst(o){o.cyst=!o.cyst;o.cystT=0;}
+function doCyst(o){
+  // Cyst: dormant resting stage with thick protective wall
+  o.cyst=!o.cyst;o.cystT=0;
+  if(o.cyst){
+    o.cystDur=rng(10,30); // Duration of dormancy
+    o.speedMult=0; // Frozen metabolism
+    o.vx=0;o.vy=0;
+  } else {
+    o.speedMult=1; // Reactivate
+  }
+}
 
 function updateInfections(dt){
   for(var i=0;i<orgs.length;i++){

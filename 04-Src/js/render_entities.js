@@ -189,6 +189,16 @@ function renderOrg(o, skipBody){
   if(o.flash>0){ctx.globalAlpha=o.flash;ctx.fillStyle=o.flashColor;ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();}
   if(o.isPlayer&&state==='playing'){ctx.globalAlpha=0.5+Math.sin(fc*0.1)*0.3;ctx.strokeStyle='#4ff';ctx.lineWidth=2;
     ctx.beginPath();ctx.arc(0,0,sz+4,0,Math.PI*2);ctx.stroke();}
+  // UI-003: Highlight edible prey with green ring
+  if(!o.isPlayer&&o.alive&&player&&player.alive&&state==='playing'&&zoom>3){
+    var foodCats2=FOOD[player.sp.cat]||[];
+    if(foodCats2.indexOf(o.sp.cat)>=0&&o.size<player.size*0.88){
+      ctx.globalAlpha=0.3+Math.sin(fc*0.15)*0.2;
+      ctx.strokeStyle='#4f4';ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.arc(0,0,sz+3,0,Math.PI*2);ctx.stroke();
+      ctx.globalAlpha=1;
+    }
+  }
   // #18 Sporangium flash (fungal spore release)
   if(o.sporeFlash>0){
     ctx.globalAlpha=o.sporeFlash*0.5;

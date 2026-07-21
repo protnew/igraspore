@@ -274,7 +274,7 @@ function updateViruses(dt){
       var dx=v.target.x-v.x,dy=v.target.y-v.y,d=Math.sqrt(dx*dx+dy*dy);
       if(d<5){
           if(Math.random() > (v.target.virusResist || 0)){
-            v.target.infected=true;
+            if(!v.target.cyst){v.target.infected=true;}
             v.target.infectionT=0;
             if(v.sp.type === 'parasite') v.target.parasiticInfection = true;
           }
@@ -441,7 +441,10 @@ function updateOrg(o,dt){
 
   // Eco-Balance 2.0 and Respiration
   if(o.sp.cat==='producer'){
-    var photo=lightAt(o.y)*0.95;var nutr=0;
+    var photo=lightAt(o.y)*0.95;
+    // BIO-001 FIX: No photosynthesis at night (lightMul check)
+    if(dayLight<0.05) photo=0;
+    var nutr=0;
     // Photosynthesis requires CO2 and produces O2
     var co2Lim = Math.min(1.0, globalCO2 / 50.0);
     photo *= co2Lim;

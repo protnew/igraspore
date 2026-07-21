@@ -29,7 +29,7 @@ function updateHUD(){
   var h=document.getElementById('hud');h.style.display='block';var eRatio=clamp(player.energy/100,0,1);
   var dnaBtn = '<button onclick="openDNAEditor()" style="margin-top:5px;background:#0ff;color:#000;border:none;padding:3px 8px;border-radius:3px;cursor:pointer;font-size:10px;font-weight:bold;width:100%;box-sizing:border-box;">\uD83E\uDDEC \u0414\u041d\u041a-\u0420\u0435\u0434\u0430\u043a\u0442\u043e\u0440</button>';
   h.innerHTML='<div class="nm">'+player.sp.name+'</div><div class="la">Gen '+player.generation+' \u00b7 '+player.size.toFixed(1)+'\u03bcm</div>'+
-    '<div id="ebar"><div id="efill" style="width:'+(eRatio*100)+'%"></div></div>'+
+    '<div id="ebar"><div id="efill" style="width:'+(eRatio*100)+'%;background:'+(eRatio>0.6?'#4f4':eRatio>0.3?'#ff4':'#f44')+'"></div></div>'+
     '<div class="st">'+tt('energy')+': '+Math.round(player.energy)+'/100 \u00b7 '+tt('age')+': '+Math.round(player.age)+'s<br>'+
     tt('eaten')+': '+player.eaten+' \u00b7 '+tt('divs')+': '+player.offspring+'</div>'+(player.infected?'<div style="color:#f44;font-size:9px">\u2620 '+(curLang==='ru'?'\u0417\u0430\u0440\u0430\u0436\u0435\u043d!':'Infected!')+'</div>':'') + dnaBtn;
 }

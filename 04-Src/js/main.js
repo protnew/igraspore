@@ -232,7 +232,7 @@ window.playSound = function(type, x, y) {
 var keys={};
 document.addEventListener('keydown',function(e){
   var k=e.key.toLowerCase();keys[k]=true;
-  if(k==='w'||k==='a'||k==='s'||k==='d'){if(freeCam)camKeys[k]=true;e.preventDefault();}
+  if(k==='w'||k==='a'||k==='s'||k==='d'){if(freeCam)camKeys[k]=true;e.preventDefault();if(autoAI)autoAI=false;}
   if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
   if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
   if(k==='v'){freeCam=false;autoAI=false;}

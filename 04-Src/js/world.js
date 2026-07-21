@@ -118,29 +118,48 @@ function initWorld(){
   }
   nutrientClouds=[];for(var i=0;i<15;i++){var d=rng(PD*0.4,PD-20),hw=halfW(d)-20;nutrientClouds.push({x:rng(-hw,hw),y:d,r:rng(60,150),intensity:rng(0.4,0.9),vx:rng(-0.08,0.08),vy:rng(-0.02,0.02)});}
   shoreDecor=[];
-  // Surface vegetation: distributed naturally along shorelines at varying depths
-  for(var sd=0;sd<60;sd++){
-    var depth=rng(2,PD*0.08); // Shallow zone 0-8% of pond depth
-    var hwAtD=halfW(depth);
-    // Random X within shore zone, weighted toward edges (natural shore vegetation)
-    var t=Math.random();
-    var xPos;
-    if(t<0.35) xPos=-hwAtD+rng(3,30); // Left shore
-    else if(t<0.70) xPos=hwAtD-rng(3,30); // Right shore
-    else xPos=rng(-hwAtD*0.3,hwAtD*0.3); // Some in center shallows
-    shoreDecor.push({
-      x:xPos,
-      y:rng(-12,depth),
-      type: Math.random()<0.65?'grass':'pebble',
-      size: rng(5,22),
-      rot: rng(-0.4,0.4) // Natural slight tilt, not full random rotation
-    });
+  // Shore vegetation: SCATTERED clusters (not solid wall), varying depth/size
+  // Each cluster has 2-5 plants grouped naturally with gaps between clusters
+  var numClusters = 35; // Sparse clusters, not continuous
+  for(var cl=0;cl<numClusters;cl++){
+    var clDepth = rng(1, PD*0.12); // Some go deeper
+    var clHalfW = halfW(clDepth);
+    // Random cluster center — can be anywhere along shore, including center
+    var clSide = Math.random();
+    var clX;
+    if(clSide < 0.4) clX = -clHalfW + rng(5, clHalfW*0.5); // Left
+    else if(clSide < 0.8) clX = clHalfW - rng(5, clHalfW*0.5); // Right
+    else clX = rng(-clHalfW*0.4, clHalfW*0.4); // Center shallows
+    // Scatter 2-5 plants around cluster center with gaps
+    var plantsInCluster = 2 + Math.floor(Math.random() * 4);
+    for(var p=0; p<plantsInCluster; p++){
+      var gap = rng(-25, 25); // Gap between plants
+      var plantDepth = clDepth + rng(-5, 15);
+      var plantType = Math.random();
+      shoreDecor.push({
+        x: clX + gap + rng(-8, 8),
+        y: rng(-15, Math.max(2, plantDepth)),
+        type: plantType < 0.5 ? 'grass' : (plantType < 0.75 ? 'pebble' : 'reed'),
+        size: rng(4, 20),
+        rot: rng(-0.3, 0.3),
+        sway: rng(0, Math.PI * 2), // Sway phase for animation
+        hasShadow: true // FIX 4: vegetation casts shadow
+      });
+    }
   }
-  // Deeper algae clusters (sparse)
-  for(var da=0;da<20;da++){
-    var dd=rng(PD*0.1,PD*0.4);
+  // Sparse deep algae — individual, scattered
+  for(var da=0;da<25;da++){
+    var dd=rng(PD*0.15,PD*0.5);
     var dhw=halfW(dd);
-    shoreDecor.push({x:rng(-dhw*0.7,dhw*0.7),y:dd,type:'grass',size:rng(4,10),rot:rng(-0.3,0.3)});
+    shoreDecor.push({
+      x:rng(-dhw*0.8,dhw*0.8),
+      y:dd,
+      type:'grass',
+      size:rng(3,12),
+      rot:rng(-0.3,0.3),
+      sway: rng(0, Math.PI*2),
+      hasShadow: true
+    });
   }
   sedimentClumps=[];for(var i=0;i<25;i++){var hw=halfW(PD)-15;sedimentClumps.push({x:rng(-hw,hw),y:PD-rng(0,8),w:rng(15,40),h:rng(4,10),rot:rng(-0.3,0.3)});}
   sunRays=[];for(var i=0;i<12;i++)sunRays.push({x:rng(-PW*0.8,PW*0.8),w:rng(40,100),angle:rng(-0.15,0.15)});

@@ -330,6 +330,22 @@ function updateOrg(o,dt){
     if(o.energy>110) o.energy=110;
   }
   
+  // Plant/vegetation collision — organisms navigate around solid plants
+  if(shoreDecor && shoreDecor.length > 0 && o.y < PD*0.15 && !o.cyst){
+    for(var pi=0; pi<shoreDecor.length; pi++){
+      var plant=shoreDecor[pi];
+      if(plant.type==='pebble') continue; // Only grass/reed are solid
+      var pdx=o.x-plant.x, pdy=o.y-plant.y;
+      var pdist2=pdx*pdx+pdy*pdy;
+      var pradius=plant.size*0.8;
+      if(pdist2 < pradius*pradius && pdist2 > 0.01){
+        var pdist=Math.sqrt(pdist2);
+        var push=(pradius-pdist)/pradius;
+        o.vx += (pdx/pdist)*push*8*dt*60;
+        o.vy += (pdy/pdist)*push*8*dt*60;
+      }
+    }
+  }
   // Lilypad collision (they are physical objects now)
   if(o.y < 120 && o.y > -120) {
      var lpNearest = Math.round((o.x - 50) / 600) * 600 + 50;

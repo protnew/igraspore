@@ -50,8 +50,9 @@ function moveOrg(o,dt){
     if(o.sp.cat==='decomposer'){o.vy+=0.2*dt;}
   }
   if(settings.currents&&!o.dying){
-    var globalVx = Math.sin(o.y * 0.01 + fc * 0.02) * 20;
-    var globalVy = Math.cos(o.x * 0.01 + fc * 0.01) * 5;
+    // Gentle unidirectional drift — no oscillation (prevents seasick shaking)
+    var globalVx = Math.sin(o.y * 0.002 + fc * 0.003) * 3; // 7x weaker, 7x slower
+    var globalVy = Math.sin(o.x * 0.0015 + fc * 0.002) * 1.5; // Very subtle vertical
     o.vx += globalVx * dt;
     o.vy += globalVy * dt;
     for(var i=0;i<currents.length;i++){

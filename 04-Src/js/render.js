@@ -27,14 +27,23 @@ function render(){
   if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
   if(settings.healthBars)renderHealthBars();
   renderTooltip();
-  // Realistic mode post-processing (chromatic aberration + vignette)
+  // Realistic mode: microscope-like post-processing
   if(settings.renderMode==='realistic'&&!settings.microscopeMode){
-    // Subtle vignette for realistic feel
-    var rvig=ctx.createRadialGradient(cv.width/2,cv.height/2,Math.min(cv.width,cv.height)*0.4,cv.width/2,cv.height/2,Math.max(cv.width,cv.height)*0.7);
+    // 1. Strong vignette (darker edges — microscope field of view)
+    var rvig=ctx.createRadialGradient(cv.width/2,cv.height/2,Math.min(cv.width,cv.height)*0.3,cv.width/2,cv.height/2,Math.max(cv.width,cv.height)*0.6);
     rvig.addColorStop(0,'rgba(0,0,0,0)');
-    rvig.addColorStop(1,'rgba(0,0,10,0.3)');
+    rvig.addColorStop(0.6,'rgba(0,0,0,0.15)');
+    rvig.addColorStop(1,'rgba(0,0,20,0.5)');
     ctx.fillStyle=rvig;
     ctx.fillRect(0,0,cv.width,cv.height);
+    // 2. Sepia/muted tint (realistic microscopy has warm color cast)
+    ctx.fillStyle='rgba(40,30,10,0.06)';
+    ctx.fillRect(0,0,cv.width,cv.height);
+    // 3. Scan lines (CRT/microscope monitor effect)
+    ctx.globalAlpha=0.04;
+    ctx.fillStyle='#000';
+    for(var sl=0;sl<cv.height;sl+=3){ctx.fillRect(0,sl,cv.width,1);}
+    ctx.globalAlpha=1;
   }
   // Microscope mode overlay
   if(settings.microscopeMode){
@@ -143,15 +152,39 @@ function renderEventLogs() {
 var shoreCache = null;
 function initShoreCache() {
   shoreCache = document.createElement('canvas');
-  shoreCache.width = shoreDecor.length * 40; shoreCache.height = 40;
+  shoreCache.width = shoreDecor.length * 50; shoreCache.height = 50;
   var c = shoreCache.getContext('2d');
   for(var i=0;i<shoreDecor.length;i++){
-    var d=shoreDecor[i]; c.save(); c.translate(i*40 + 20, 20); c.rotate(d.rot);
+    var d=shoreDecor[i]; c.save(); c.translate(i*50 + 25, 25); c.rotate(d.rot);
+    // Shadow first (below plant)
+    if(d.hasShadow!==false){
+      c.fillStyle='rgba(0,0,0,0.15)';
+      c.beginPath(); c.ellipse(2, 3, d.size*0.8, d.size*0.3, 0, 0, Math.PI*2); c.fill();
+    }
     if(d.type==='grass'){
-      c.strokeStyle='rgba(50,90,30,0.6)'; c.lineWidth=2;
-      for(var b=0;b<4;b++){ c.beginPath(); c.moveTo(b*2-3,d.size*0.3); var sway=Math.sin(b)*3; c.quadraticCurveTo(b*2-3+sway,d.size*0.1,b*2-3+sway*2,-d.size); c.stroke(); }
-    }else{
+      c.strokeStyle='rgba(40,80,25,0.7)'; c.lineWidth=2;
+      for(var b=0;b<5;b++){
+        c.beginPath(); c.moveTo(b*2-4,d.size*0.3);
+        var sway=Math.sin(b*1.5)*4;
+        c.quadraticCurveTo(b*2-4+sway,d.size*0.1,b*2-4+sway*2,-d.size);
+        c.stroke();
+      }
+    } else if(d.type==='reed'){
+      // Tall reed with leaves
+      c.strokeStyle='rgba(60,100,30,0.6)'; c.lineWidth=2.5;
+      c.beginPath(); c.moveTo(0,d.size*0.3); c.lineTo(0,-d.size*1.2); c.stroke();
+      // Leaves
+      c.fillStyle='rgba(50,90,20,0.5)';
+      for(var lf=0;lf<3;lf++){
+        var ly=-d.size*0.3-lf*d.size*0.3;
+        c.save(); c.translate(0,ly); c.rotate(0.3+lf*0.2);
+        c.beginPath(); c.ellipse(d.size*0.3,0,d.size*0.25,d.size*0.06,0,0,Math.PI*2); c.fill();
+        c.restore();
+      }
+    } else {
+      // Pebble
       c.fillStyle='rgba(100,85,60,0.7)'; c.beginPath(); c.ellipse(0,0,d.size,d.size*0.7,0,0,Math.PI*2); c.fill();
+      c.fillStyle='rgba(120,105,75,0.4)'; c.beginPath(); c.ellipse(-d.size*0.2,-d.size*0.15,d.size*0.4,d.size*0.3,0,0,Math.PI*2); c.fill();
     }
     c.restore();
   }
@@ -159,11 +192,16 @@ function initShoreCache() {
 window.addEventListener('resize', function(){ shoreCache = null; });
 function renderShore(vL,vR,vT) {
   if(shoreDecor.length===0) return;
-  if(!shoreCache || shoreCache.width !== shoreDecor.length*40) initShoreCache();
+  if(!shoreCache || shoreCache.width !== shoreDecor.length*50) initShoreCache();
   for(var i=0;i<shoreDecor.length;i++){
     var d=shoreDecor[i];
-    if(d.x<vL-30||d.x>vR+30||d.y<vT-30||d.y>30) continue;
-    ctx.drawImage(shoreCache, i*40, 0, 40, 40, d.x-20, d.y-20, 40, 40);
+    if(d.x<vL-30||d.x>vR+30||d.y<vT-30||d.y>vT+200) continue;
+    // Draw shadow on main canvas (dark ellipse below plant)
+    if(d.hasShadow!==false){
+      ctx.fillStyle='rgba(0,0,0,0.1)';
+      ctx.beginPath(); ctx.ellipse(d.x+2, d.y+d.size*0.5, d.size*0.7, d.size*0.2, 0, 0, Math.PI*2); ctx.fill();
+    }
+    ctx.drawImage(shoreCache, i*50, 0, 50, 50, d.x-25, d.y-25, 50, 50);
   }
 }
 

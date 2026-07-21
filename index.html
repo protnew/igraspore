@@ -45,6 +45,10 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 #actBar{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);z-index:12;display:none;gap:8px;flex-wrap:wrap;justify-content:center;max-width:95%}
 .ab{padding:6px 10px;font-size:10px;color:#ffffff;background:#012;border:1px solid #345;border-radius:4px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all .1s;min-width:36px;text-align:center}
 .ab:hover{background:#123;color:#ffffff;border-color:#4af;transform:translateY(-1px)}
+#renderModeBtn{position:absolute;top:50px;right:10px;z-index:15;padding:8px 16px;font-size:14px;font-weight:bold;border-radius:8px;cursor:pointer;transition:all .2s;display:none}
+#renderModeBtn.cartoon{background:linear-gradient(135deg,#1a3a6a,#2a5a8a);color:#fff;border:2px solid #4af}
+#renderModeBtn.realistic{background:linear-gradient(135deg,#2a1a0a,#4a3a1a);color:#fa4;border:2px solid #fa4}
+#renderModeBtn:hover{transform:scale(1.05)}
 .ab:active{transform:translateY(0)}
 .ab.act{background:#246;color:#ffffff;border-color:#4af}
 .ab .hk{font-size:7px;color:#dddddd;display:block}
@@ -181,6 +185,7 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 </style>
 </head>
 <body>
+<button id="renderModeBtn" class="cartoon" onclick="toggleRenderModeLarge()">🎨 МУЛЬТЯШНЫЙ</button>
 <canvas id="c"></canvas>
 <canvas id="mm" style="position:absolute;bottom:6px;right:6px;width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;z-index:10;cursor:pointer" title="Minimap"></canvas>
 <canvas id="pc" style="position:absolute;bottom:92px;right:6px;width:110px;height:55px;border:1px solid #1a3a55;border-radius:4px;z-index:10" title="Population graph"></canvas>

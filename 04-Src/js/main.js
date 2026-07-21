@@ -145,6 +145,9 @@ function startGame(isScreensaver){
   document.getElementById('topR').style.display='block';
   document.getElementById('weatherP').style.display='block';
   document.getElementById('actBar').style.display='flex';
+  document.getElementById('renderModeBtn').style.display='block';
+  if(settings.renderMode==='realistic'){var rb=document.getElementById('renderModeBtn');if(rb){rb.className='realistic';rb.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';}}
+  else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';}}
   var kh=document.getElementById('keyHint');
   kh.innerHTML='<div style="font-size:11px;line-height:1.6">'+
     '<b>WASD</b> — движение | <b>Мышь</b> — направление | <b>E</b> — есть | <b>Q</b> — делиться<br>'+
@@ -271,17 +274,20 @@ document.getElementById('bMicro').onclick=function(){
     document.getElementById('bMicro').style.borderColor='#345';
   }
 };
-document.getElementById('bRender').onclick=function(){
+document.getElementById('bRender').onclick=function(){ toggleRenderModeLarge(); };
+function toggleRenderModeLarge(){
   settings.renderMode = settings.renderMode==='realistic' ? 'cartoon' : 'realistic';
   applyRenderMode();
+  var btn=document.getElementById('renderModeBtn');
+  var smBtn=document.getElementById('bRender');
   if(settings.renderMode==='realistic'){
-    document.getElementById('bRender').style.background='#4a3a1a';
-    document.getElementById('bRender').style.borderColor='#fa4';
+    if(btn){btn.className='realistic';btn.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';}
+    if(smBtn){smBtn.style.background='#4a3a1a';smBtn.style.borderColor='#fa4';}
   } else {
-    document.getElementById('bRender').style.background='#012';
-    document.getElementById('bRender').style.borderColor='#345';
+    if(btn){btn.className='cartoon';btn.innerHTML='🎨 МУЛЬТЯШНЫЙ';}
+    if(smBtn){smBtn.style.background='#012';smBtn.style.borderColor='#345';}
   }
-};
+}
 document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;};
 document.getElementById('bWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
 document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};

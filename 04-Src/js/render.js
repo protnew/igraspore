@@ -27,6 +27,15 @@ function render(){
   if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
   if(settings.healthBars)renderHealthBars();
   renderTooltip();
+  // Realistic mode post-processing (chromatic aberration + vignette)
+  if(settings.renderMode==='realistic'&&!settings.microscopeMode){
+    // Subtle vignette for realistic feel
+    var rvig=ctx.createRadialGradient(cv.width/2,cv.height/2,Math.min(cv.width,cv.height)*0.4,cv.width/2,cv.height/2,Math.max(cv.width,cv.height)*0.7);
+    rvig.addColorStop(0,'rgba(0,0,0,0)');
+    rvig.addColorStop(1,'rgba(0,0,10,0.3)');
+    ctx.fillStyle=rvig;
+    ctx.fillRect(0,0,cv.width,cv.height);
+  }
   // Microscope mode overlay
   if(settings.microscopeMode){
     var mw=cv.width,mh=cv.height;

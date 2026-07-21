@@ -182,8 +182,10 @@ function renderOrg(o, skipBody){
     ctx.restore();return;}
   ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
   if(!skipBody)drawBody(o,sz,bc,bd);
-  if(zoom>3)drawOrgans(o,sz);
-  if(zoom>2)drawAppendages(o,sz);
+  var organZoom=settings.renderMode==='realistic'?2:3;
+  if(zoom>organZoom)drawOrgans(o,sz);
+  var appZoom=settings.renderMode==='realistic'?1.5:2;
+  if(zoom>appZoom)drawAppendages(o,sz);
   if(o.flash>0){ctx.globalAlpha=o.flash;ctx.fillStyle=o.flashColor;ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();}
   if(o.isPlayer&&state==='playing'){ctx.globalAlpha=0.5+Math.sin(fc*0.1)*0.3;ctx.strokeStyle='#4ff';ctx.lineWidth=2;
     ctx.beginPath();ctx.arc(0,0,sz+4,0,Math.PI*2);ctx.stroke();}
@@ -205,7 +207,8 @@ function renderOrg(o, skipBody){
 
 function drawOrgans(o,sz){
   var org=o.organs;if(!org)return;
-  var detail=zoom>6?2:(zoom>4?1:0);
+  var detailThreshold=settings.renderMode==='realistic'?0.6:1.0;
+  var detail=zoom>(6*detailThreshold)?2:(zoom>(4*detailThreshold)?1:0);
   for(var i=0;i<org.length;i++){
     var g=org[i];ctx.save();
     if(g.t==='nuc'){

@@ -417,18 +417,14 @@ function updateCamera(dt){
   zoom=lerp(zoom,tZoom,clamp(dtc*5,0,0.15));
   if(!isFinite(zoom)||zoom<=0)zoom=0.4;
   
-  // Player-follow camera with dead zone (no jitter)
+  // Player-follow camera — DIRECT lock (no dead zone, no drift)
   if(!freeCam&&player&&player.alive){
     var tx=player.x,ty=player.y;
     if(!isFinite(tx)||!isFinite(ty)){tx=0;ty=PD*0.3;}
-    // Dead zone: don't move camera if player is near center
-    var dx=tx-cam.x,dy=ty-cam.y;
-    var dist=Math.sqrt(dx*dx+dy*dy);
-    if(dist>50){ // Only follow if player moved >50px from center
-      var followFactor=clamp(dtc*2.5,0,0.12); // Smooth, slow follow
-      cam.x=lerp(cam.x,tx,followFactor);
-      cam.y=lerp(cam.y,ty,followFactor);
-    }
+    // Direct smooth follow: fast lerp factor so camera stays on player
+    var followFactor=clamp(dtc*8,0,0.35);
+    cam.x=lerp(cam.x,tx,followFactor);
+    cam.y=lerp(cam.y,ty,followFactor);
   }
   
   if(!isFinite(cam.x))cam.x=0;

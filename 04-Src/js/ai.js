@@ -20,7 +20,7 @@ window.getNearby = function(x, y, radius) {
 
 function moveOrg(o,dt){
   var sp=o.sp;
-  var speed=Math.max(sp.speed,0.8)*SPD_SCALE*0.05;
+  var speed=Math.max(sp.speed,0.8)*SPD_SCALE*0.15;
   if(o.isPlayer&&!freeCam&&!autoAI&&!o.cyst&&!o.dying){
     var ax=0,ay=0;
     if(keys['w']||keys['arrowup'])ay-=1;

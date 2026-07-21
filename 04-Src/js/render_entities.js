@@ -7,14 +7,17 @@ function drawBody(o,sz,fc2,fd, batched){
     cyto.addColorStop(0,fc2);
     cyto.addColorStop(0.7,fc2);
     cyto.addColorStop(1,fd);
-    ctx.fillStyle=cyto;ctx.strokeStyle=fd;ctx.lineWidth=(settings.renderMode==='realistic'?0.5:Math.max(1,sz*0.08));ctx.beginPath();
+    ctx.fillStyle=cyto;ctx.strokeStyle=fd;ctx.lineWidth=(settings.renderMode==='realistic'?
+    Math.max(0.3,sz*0.02):  // Realistic: very thin outline
+    Math.max(1.5,sz*0.1)    // Cartoon: bold thick outline
+  );ctx.beginPath();
   }
   if(sh==='circle'){
       var vmag = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
       var stretch = Math.min(1.4, 1.0 + vmag * 0.08);
       var squish = Math.max(0.7, 1.0 - vmag * 0.04);
       // Membrane fluidity: subtle ripple on cell surface (lipid bilayer dynamics)
-      var memRipple=settings.renderMode==='realistic'?0.02:0.04;
+      var memRipple=settings.renderMode==='realistic'?0.01:0.04;
       for(var i=0; i<=32; i++) {
           var a = (i/32) * Math.PI * 2;
           var r = sz + Math.sin(a*6-o.pulse*2)*(vmag*0.3) + Math.sin(a*12+o.pulse*3)*sz*memRipple;
@@ -142,11 +145,15 @@ function renderOrg(o, skipBody){
   // Size by age: grow from 30% (spore) to 100% (adult) over first 20% of lifespan
   if(o.age<o.sp.minAge*0.5){var growthRatio=0.3+0.7*(o.age/(o.sp.minAge*0.5));sz*=growthRatio;}
   var rgb=hex2rgb(o.sp.color);
-  // Color by status: paler at low health/energy, brighter at full
+  // Color by status + render mode
   var healthRatio=o.energy/100;
-  var tint=0.4+healthRatio*0.8; // 0.4 (pale) to 1.2 (vibrant)
+  var tint=0.4+healthRatio*0.8;
   if(o.dying)tint*=0.5;
-  if(o.infected)tint=0.6; // Greenish when infected
+  if(o.infected)tint=0.6;
+  // Realistic mode: desaturate (lower saturation = muddier, natural look)
+  if(settings.renderMode==='realistic'){tint*=0.7;} // Muted, less vibrant
+  // Cartoon mode: extra vibrant
+  if(settings.renderMode==='cartoon'){tint*=1.1;}
   var bc=shadeRgb(rgb[0],rgb[1],rgb[2],tint),bd=shadeRgb(rgb[0],rgb[1],rgb[2],tint*0.5);
   if(o.dying)ctx.globalAlpha=clamp(1-o.deathT/1.2,0,1);
   if(o.cyst){ctx.fillStyle='rgba(180,160,80,0.35)';ctx.beginPath();ctx.arc(0,0,sz*1.4,0,Math.PI*2);ctx.fill();

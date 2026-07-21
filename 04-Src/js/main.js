@@ -231,6 +231,7 @@ document.addEventListener('keydown',function(e){
   if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
   if(k==='v'){freeCam=false;autoAI=false;}
   if(k==='m'){document.getElementById('bMicro').click();}
+  if(k==='n'){document.getElementById('bRender').click();}
   if(k==='b'){var wo=document.getElementById('wikiO');if(wo.className==='ov show')wo.className='ov';else{buildWiki();wo.className='ov show';}}
   if(k==='e'){if(player&&player.alive&&!player.dying){var best=null,bd=99999;var fc2=FOOD[player.sp.cat]||[];
     for(var i=0;i<orgs.length;i++){var p=orgs[i];if(!p.alive||p===player||p.cyst||p.divCD>0)continue;
@@ -262,6 +263,17 @@ document.getElementById('bMicro').onclick=function(){
   } else {
     document.getElementById('bMicro').style.background='#012';
     document.getElementById('bMicro').style.borderColor='#345';
+  }
+};
+document.getElementById('bRender').onclick=function(){
+  settings.renderMode = settings.renderMode==='realistic' ? 'cartoon' : 'realistic';
+  applyRenderMode();
+  if(settings.renderMode==='realistic'){
+    document.getElementById('bRender').style.background='#4a3a1a';
+    document.getElementById('bRender').style.borderColor='#fa4';
+  } else {
+    document.getElementById('bRender').style.background='#012';
+    document.getElementById('bRender').style.borderColor='#345';
   }
 };
 document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;};

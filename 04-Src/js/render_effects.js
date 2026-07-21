@@ -73,8 +73,10 @@ function renderSky(vL,vR,vT){
 
 function renderWater(vL,vR,vT,vB){
   ctx.save();
+  var realMode=settings.renderMode==='realistic';
+  var realMul=realMode?0.6:1.0; // Darker water in realistic mode
   var grad = ctx.createLinearGradient(0, 0, 0, PD);
-  var lightTop = lightAt(0), lightMid = lightAt(PD*0.5), lightBot = lightAt(PD);
+  var lightTop = lightAt(0)*realMul, lightMid = lightAt(PD*0.5)*realMul, lightBot = lightAt(PD)*realMul;
   
   // Smoothly blend photic, twilight, and benthic zones
   grad.addColorStop(0, 'rgb('+Math.round(10+lightTop*15)+','+Math.round(40+lightTop*40)+','+Math.round(60+lightTop*40)+')');

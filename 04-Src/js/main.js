@@ -65,6 +65,7 @@ window.focusTarget = null; window.focusTimer = 0; window.cinematicTime = 1;
 function gameLoop(ts){
   try{
   if(!lastT)lastT=ts;
+  if(state==='playing'&&!player){state='gameover';}
   var dt=Math.min(0.05,(ts-lastT)/1000);lastT=ts;fc++;
   
   if (focusTimer > 0) {
@@ -116,7 +117,7 @@ function gameLoop(ts){
   }else if(state==='gameover'){showDeadScreen();state='dead';}
   if(state==='playing'||state==='menu')render();
   requestAnimationFrame(gameLoop);
-  }catch(e){console.error('gameLoop error:',e.message);requestAnimationFrame(gameLoop);}
+  }catch(e){console.error('gameLoop:',e.message,e.stack);requestAnimationFrame(gameLoop);}
 }
 
 function startGame(isScreensaver){

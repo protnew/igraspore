@@ -23,7 +23,7 @@ function moveOrg(o,dt){
   var sp=o.sp;
   var speed=Math.max(sp.speed,0.8)*SPD_SCALE*0.05;
   // Player movement: 3x boost for responsive controls
-  if(o.isPlayer&&!freeCam&&!autoAI) speed*=3;
+  if(o.isPlayer&&!freeCam) speed*=3;
   if(o.isPlayer&&!freeCam&&!autoAI&&!o.cyst&&!o.dying){
     var ax=0,ay=0;
     if(keys['w']||keys['arrowup'])ay-=1;
@@ -80,7 +80,7 @@ function aiOrg(o,dt,speed){
   // Skip eating during division cooldown
   if(o.divCD>0)return;
   var prey=null,pd2=999999;
-  if(foodCats.length>0&&o.energy<85){
+  if(foodCats.length>0&&o.energy<(o.isPlayer?98:85)){
     var near1 = window.getNearby(o.x, o.y, 2000);
     for(var i=0;i<near1.length;i++){
       var p=near1[i];
@@ -102,7 +102,7 @@ function aiOrg(o,dt,speed){
         var vx = dx/d;
         var vy = dy/d;
         
-        if (o.sp.cat === 'C') {
+        if (o.sp.cat === 'consumer3' || o.sp.cat === 'consumer2') {
            var alliesX = 0, alliesY = 0, alliesC = 0;
            for(var i=0; i<near1.length; i++) {
               var peer = near1[i];
@@ -261,8 +261,8 @@ function aiOrg(o,dt,speed){
   } else if(cat==='macrophage') {
       var bestD = 99999, bestV = null;
       for(var v=0; v<viruses.length; v++) {
-          var dist = dist2(o, viruses[v]);
-          if(dist < bestD) { bestD = dist; bestV = viruses[v]; }
+          var vdist = dist2(o, viruses[v]);
+          if(vdist < bestD) { bestD = vdist; bestV = viruses[v]; }
       }
       if(bestV && bestD < 400*400) {
           var dx = bestV.x - o.x, dy = bestV.y - o.y, d = Math.sqrt(bestD);
@@ -293,7 +293,7 @@ function aiOrg(o,dt,speed){
           if(sd > 30) { o.vx += (sdx/sd)*speed*dt*5; o.vy += (sdy/sd)*speed*dt*5; }
       }
       o.vx+=rng(-0.4,0.4)*speed*dt*6;o.vy+=rng(-0.3,0.3)*speed*dt*6;
-  } else if(cat!=='decomposer'&&!o.isPlayer){
+  } else if(cat!=='decomposer'){
     o.vx+=rng(-0.4,0.4)*speed*dt*6;o.vy+=rng(-0.3,0.3)*speed*dt*6;
   }
 }

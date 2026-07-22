@@ -101,6 +101,30 @@ function drawBody(o,sz,fc2,fd, batched){
     // Pellicle strips for ciliates
     if(o.sp.bio.pellicle&&zoom>5){ctx.strokeStyle='rgba(180,140,60,0.3)';ctx.lineWidth=1;
       for(var s=-sz*0.8;s<sz*0.8;s+=sz*0.15){ctx.beginPath();ctx.moveTo(s,-sz*0.5);ctx.lineTo(s,sz*0.5);ctx.stroke();}}
+    // Spikes/defense structures (visible on shelled/spiked organisms)
+    if(o.sp.flags&&o.sp.flags.spikes){
+      ctx.strokeStyle='rgba(150,120,50,0.6)';ctx.lineWidth=Math.max(1,sz*0.05);
+      var spikeCount=8;
+      for(var sp=0;sp<spikeCount;sp++){
+        var sa=sp/spikeCount*Math.PI*2+o.wobble*0.1;
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(sa)*sz,Math.sin(sa)*sz);
+        ctx.lineTo(Math.cos(sa)*sz*1.4,Math.sin(sa)*sz*1.4);
+        ctx.stroke();
+      }
+    }
+    // Shell texture (diatoms, shelled organisms)
+    if(o.sp.flags&&o.sp.flags.shell){
+      ctx.strokeStyle='rgba(200,190,160,0.3)';ctx.lineWidth=0.5;
+      for(var sh=-sz*0.6;sh<sz*0.6;sh+=sz*0.12){
+        ctx.beginPath();ctx.moveTo(sh,-sz*0.4);ctx.lineTo(sh,sz*0.4);ctx.stroke();
+      }
+    }
+    // Toxic glow (toxic species glow green-ish)
+    if(o.sp.flags&&o.sp.flags.toxic){
+      ctx.fillStyle='rgba(100,255,50,0.08)';
+      ctx.beginPath();ctx.arc(0,0,sz*1.2,0,Math.PI*2);ctx.fill();
+    }
     if(o.sp.bio.wall){
       // Double-layered cell wall (plants, fungi, bacteria)
       ctx.lineWidth=Math.max(2,sz*0.12);
@@ -186,7 +210,17 @@ function renderOrg(o, skipBody){
   if(zoom>organZoom)drawOrgans(o,sz);
   var appZoom=settings.renderMode==='realistic'?1.5:2;
   if(zoom>appZoom)drawAppendages(o,sz);
-  if(o.flash>0){ctx.globalAlpha=o.flash;ctx.fillStyle=o.flashColor;ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();}
+  if(o.flash>0){
+    ctx.globalAlpha=o.flash;
+    ctx.fillStyle=o.flashColor||'#ff8';
+    ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();
+    // Combat ring: red ring when attacked
+    if(o.flashColor==='#f44'||o.flashColor==='#f00'){
+      ctx.globalAlpha=o.flash*0.5;ctx.strokeStyle='#f44';ctx.lineWidth=2;
+      ctx.beginPath();ctx.arc(0,0,sz+4+o.flash*5,0,Math.PI*2);ctx.stroke();
+    }
+    ctx.globalAlpha=1;
+  }
   if(o.isPlayer&&state==='playing'){ctx.globalAlpha=0.5+Math.sin(fc*0.1)*0.3;ctx.strokeStyle='#4ff';ctx.lineWidth=2;
     ctx.beginPath();ctx.arc(0,0,sz+4,0,Math.PI*2);ctx.stroke();}
   // UI-003: Highlight edible prey with green ring

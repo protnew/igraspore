@@ -99,9 +99,11 @@ function eatOrg(pred,prey){
      return;
   }
   if (prey.sp.flags && prey.sp.flags.venom) {
-     pred.speedMult = 0.1; // Poisoned by venom
-     pred.flashColor = '#0f0';
-     pred.flash = 0.8;
+     // Venom: paralyzes predator for several seconds
+     pred.speedMult = 0.05; // Almost paralyzed
+     pred.flashColor = '#0f0'; pred.flash = 0.8;
+     pred.energy -= 20; // Venom damage
+     pred.venomTimer = 5; // 5 seconds of venom effect
   }
   
   if(!window.dmgIndicators) window.dmgIndicators=[];
@@ -272,7 +274,7 @@ function updateViruses(dt){
     }
     if(v.target&&v.target.alive){
       var dx=v.target.x-v.x,dy=v.target.y-v.y,d=Math.sqrt(dx*dx+dy*dy);
-      if(d<5){
+      if(d<o.size+10){
           if(Math.random() > (v.target.virusResist || 0)){
             if(!v.target.cyst){v.target.infected=true;}
             v.target.infectionT=0;
@@ -319,6 +321,7 @@ function updateOrg(o,dt){
     for(var stIdx=o.stomach.length-1; stIdx>=0; stIdx--){
       var st=o.stomach[stIdx];
       var digestSpeed=dt*15;
+      if(digestSpeed>st.energy*0.3) digestSpeed=st.energy*0.3;
       if(st.energy<digestSpeed) digestSpeed=st.energy;
       st.energy-=digestSpeed; o.energy+=digestSpeed;
       st.size-=dt*1.5;
@@ -430,6 +433,7 @@ function updateOrg(o,dt){
   var baseMetab=(0.008 + o.sp.speed * o.speedMult * 0.003)*DIFF[difficulty].metab;
   var metabMult = o.inBiofilm ? 0.3 : 1.0;
   var metab = baseMetab * metabMult;
+  if(metab*dt > 2) metab = 2/dt;
   if(o.parasite) {
      o.energy -= dt*8; o.flash=0.1; o.flashColor='#f0f';
      if(Math.random()<0.02*dt) {
@@ -593,13 +597,16 @@ function updateOrg(o,dt){
   if(o.flash>0)o.flash=Math.max(0,o.flash-dt*2);
   // Easy mode auto-divide
   if(o.isPlayer && difficulty==='easy' && o.energy>o.sp.repEnergy && o.age>o.sp.minAge && o.divCD<=0) doDivide(o);
-  // AUTO-EAT: player automatically eats prey on contact (like AI does)
-  if(o.isPlayer&&o.alive&&!o.dividing&&!o.cyst&&!o.dying){
+  // AUTO-EAT: ALL organisms eat prey on contact (not just player!)
+  if(o.alive&&!o.dividing&&!o.cyst&&!o.dying){
     var foodCats=FOOD[o.sp.cat]||[];
     if(foodCats.length>0){
-      for(var ai=0;ai<orgs.length;ai++){
-        var ap=orgs[ai];
+      // Use spatial grid for efficiency instead of looping all orgs
+      var nearby = window.getNearby ? window.getNearby(o.x, o.y, o.size+50) : orgs;
+      for(var ai=0;ai<nearby.length;ai++){
+        var ap=nearby[ai];
         if(!ap.alive||ap===o||ap.cyst||ap.divCD>0||ap.invuln>0)continue;
+        if (ap.isPlayer && (gt - (ap.spawnTime||0)) < 30) continue; // Grace period
         var isCan=(o.sp.flags&&o.sp.flags.cannibal&&o.energy<20&&ap.sp.id===o.sp.id);
         if(!isCan&&foodCats.indexOf(ap.sp.cat)<0)continue;
         if(ap.size>=o.size*0.88)continue;

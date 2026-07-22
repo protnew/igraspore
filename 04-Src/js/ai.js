@@ -94,7 +94,7 @@ function aiOrg(o,dt,speed){
     var dx=prey.x-o.x,dy=prey.y-o.y,d=Math.sqrt(dx*dx+dy*dy);
     if(d>1){
         var dashMul = 1;
-        if(d<150 && o.energy>40 && Math.random()<0.1) { dashMul = 4; o.energy-=0.5; }
+        if(d<200 && o.energy>30 && Math.random()<0.15) { dashMul = 4; o.energy-=0.3; }
         
         // Swarm AI: Potential Fields (Task 39)
         var vx = dx/d;

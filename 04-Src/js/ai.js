@@ -45,7 +45,8 @@ function moveOrg(o,dt){
   }else if(!o.isPlayer&&!o.cyst&&!o.dying){aiOrg(o,dt,speed);}
   else if(o.isPlayer&&autoAI&&!o.cyst&&!o.dying){aiOrg(o,dt,speed);}
   var damp=o.isPlayer&&!freeCam?0.86:0.93;
-  o.vx*=Math.pow(damp,dt*60);o.vy*=Math.pow(damp,dt*60);
+  var dampDt=clamp(dt,0,0.05);
+  o.vx*=Math.pow(damp,dampDt*60);o.vy*=Math.pow(damp,dampDt*60);
   if(!o.isPlayer){
     if(o.sp.cat==='producer'){o.vy-=0.15*dt;}
     if(o.sp.cat==='decomposer'){o.vy+=0.2*dt;}

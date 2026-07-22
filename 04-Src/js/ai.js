@@ -254,9 +254,18 @@ function aiOrg(o,dt,speed){
       return; // Do not wander
   }
     if(cat==='producer'){
-    if(o.y>50) o.vy -= speed*dt*15; // Constant upward pull towards surface
-    
-    // Spread out randomly to avoid clumping
+    if(o.y>50) o.vy -= speed*dt*15;
+    if(o.energy<70 && typeof nutrientClouds!=='undefined' && nutrientClouds && nutrientClouds.length>0){
+      var bestNC=null,bestNCD=99999;
+      for(var nci=0;nci<nutrientClouds.length;nci++){
+        var ncD2=dist2(o,nutrientClouds[nci]);
+        if(ncD2<bestNCD&&ncD2<30000){bestNCD=ncD2;bestNC=nutrientClouds[nci];}
+      }
+      if(bestNC){
+        var ncDx=bestNC.x-o.x,ncDy=bestNC.y-o.y,ncDLen=Math.sqrt(ncDx*ncDx+ncDy*ncDy);
+        if(ncDLen>1){o.vx+=(ncDx/ncDLen)*speed*dt*8;o.vy+=(ncDy/ncDLen)*speed*dt*8;}
+      }
+    }
     if(Math.random()<0.05) { o.vx += rng(-speed, speed)*dt*10; }
   } else if(cat==='macrophage') {
       var bestD = 99999, bestV = null;

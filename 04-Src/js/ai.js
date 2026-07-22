@@ -3,9 +3,10 @@
 window.getNearby = function(x, y, radius) {
    var res=[];
    if(!window.spatialGrid) return orgs;
-   var r = Math.ceil(radius/1000);
-   var cx = Math.floor(x/1000);
-   var cy = Math.floor(y/1000);
+   var CELL=400; // Must match world.js spatial grid cell size
+   var r = Math.ceil(radius/CELL);
+   var cx = Math.floor(x/CELL);
+   var cy = Math.floor(y/CELL);
    for(var gx=cx-r; gx<=cx+r; gx++){
      for(var gy=cy-r; gy<=cy+r; gy++){
         var arr = window.spatialGrid[gx+','+gy];

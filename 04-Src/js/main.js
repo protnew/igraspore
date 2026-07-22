@@ -63,6 +63,7 @@ window.startSpectator = function() {
 window.focusTarget = null; window.focusTimer = 0; window.cinematicTime = 1;
 
 function gameLoop(ts){
+  try{
   if(!lastT)lastT=ts;
   var dt=Math.min(0.05,(ts-lastT)/1000);lastT=ts;fc++;
   
@@ -115,6 +116,7 @@ function gameLoop(ts){
   }else if(state==='gameover'){showDeadScreen();state='dead';}
   if(state==='playing'||state==='menu')render();
   requestAnimationFrame(gameLoop);
+  }catch(e){console.error('gameLoop error:',e.message);requestAnimationFrame(gameLoop);}
 }
 
 function startGame(isScreensaver){
@@ -139,7 +141,7 @@ function startGame(isScreensaver){
      player.energy=100;cam.x=player.x;cam.y=player.y;zoom=3;tZoom=3;
   }
   
-  state='playing';gt=0;fc=0;
+  state='playing';gt=0;fc=0;lastT=0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';

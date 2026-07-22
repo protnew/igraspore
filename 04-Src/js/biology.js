@@ -153,7 +153,7 @@ function eatOrg(pred,prey){
   pred.eaten++;pred.flash=0.3;pred.flashColor='#ff8';
   
   if (typeof window !== 'undefined' && window.playSound) {
-    if(dist2(player,pred)<2500 || dist2(player,prey)<2500) window.playSound("eat", prey.x, prey.y);
+    if(player&&dist2(player,pred)<2500 || player&&dist2(player,prey)<2500) window.playSound("eat", prey.x, prey.y);
   }
   
   if (prey.size <= 2) {
@@ -171,7 +171,7 @@ function eatOrg(pred,prey){
               parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:1,maxL:1,size:rng(2,5),color:prey.sp.color});
           }
       }
-      if (typeof window !== 'undefined' && state === 'menu' && window.focusTimer <= 0 && Math.random() < 0.15) { window.focusTarget = pred; window.focusTimer = 2.0; }
+      if (typeof window !== 'undefined' && state === 'menu' && (window.focusTimer||0) <= 0 && Math.random() < 0.15) { window.focusTarget = pred; window.focusTimer = 2.0; }
   } else {
       pred.energy += dmg * 0.5; // partial eat
       if(settings.particles) {

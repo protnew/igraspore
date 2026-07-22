@@ -244,6 +244,7 @@ function clampToPuddle(o){
 
 function updateWorld(dt){
   dt*=timeScale;
+  if(dt>0.5)dt=0.5; // PERF-015: Cap dt to prevent simulation explosion
   window.spatialGrid = {};
   window.spatialGridLarge = {};
   for(var i=0;i<orgs.length;i++) {

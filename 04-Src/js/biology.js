@@ -274,7 +274,7 @@ function updateViruses(dt){
     }
     if(v.target&&v.target.alive){
       var dx=v.target.x-v.x,dy=v.target.y-v.y,d=Math.sqrt(dx*dx+dy*dy);
-      if(d<o.size+10){
+      if(d<15){
           if(Math.random() > (v.target.virusResist || 0)){
             if(!v.target.cyst){v.target.infected=true;}
             v.target.infectionT=0;
@@ -321,7 +321,7 @@ function updateOrg(o,dt){
     for(var stIdx=o.stomach.length-1; stIdx>=0; stIdx--){
       var st=o.stomach[stIdx];
       var digestSpeed=dt*15;
-      if(digestSpeed>st.energy*0.3) digestSpeed=st.energy*0.3;
+      if(digestSpeed>st.energy*0.1) digestSpeed=st.energy*0.1;
       if(st.energy<digestSpeed) digestSpeed=st.energy;
       st.energy-=digestSpeed; o.energy+=digestSpeed;
       st.size-=dt*1.5;

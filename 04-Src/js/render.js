@@ -247,10 +247,17 @@ function renderOrganisms(vL,vR,vT,vB){
     ctx.restore();
   }
   var batches = {};
+  var isRealistic = settings.renderMode === 'realistic';
   for(var i=0;i<orgs.length;i++){
     var o=orgs[i];
     if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
     var c=o.sp.color;
+    // Realistic mode: convert to grayscale/brown for phase contrast look
+    if(isRealistic){
+      var gr=hex2rgb(c);
+      var gray=Math.round(gr[0]*0.3+gr[1]*0.59+gr[2]*0.11);
+      c='rgb('+Math.min(255,Math.round(gray*1.1))+','+Math.min(255,Math.round(gray*1.05))+','+Math.min(255,Math.round(gray*0.85))+')';
+    }
     if(!batches[c]) batches[c] = [];
     batches[c].push(o);
   }

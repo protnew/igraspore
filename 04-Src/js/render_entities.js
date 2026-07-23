@@ -174,10 +174,14 @@ function renderOrg(o, skipBody){
   var tint=0.4+healthRatio*0.8;
   if(o.dying)tint*=0.5;
   if(o.infected)tint=0.6;
-  // Realistic mode: desaturate (lower saturation = muddier, natural look)
-  if(settings.renderMode==='realistic'){tint*=0.7;} // Muted, less vibrant
-  // Cartoon mode: extra vibrant
   if(settings.renderMode==='cartoon'){tint*=1.1;}
+  // REALISTIC: convert to grayscale/brownish (phase contrast microscopy)
+  if(settings.renderMode==='realistic'){
+    var gray=Math.round((rgb[0]*0.3+rgb[1]*0.59+rgb[2]*0.11)*tint);
+    // Phase contrast: slight yellow-brown tint
+    rgb=[Math.min(255,Math.round(gray*1.1)),Math.min(255,Math.round(gray*1.05)),Math.min(255,Math.round(gray*0.85))];
+    tint=1; // Already applied via gray conversion
+  }
   var bc=shadeRgb(rgb[0],rgb[1],rgb[2],tint),bd=shadeRgb(rgb[0],rgb[1],rgb[2],tint*0.5);
   if(o.dying)ctx.globalAlpha=clamp(1-o.deathT/1.2,0,1);
   if(o.cyst){ctx.fillStyle='rgba(180,160,80,0.35)';ctx.beginPath();ctx.arc(0,0,sz*1.4,0,Math.PI*2);ctx.fill();
@@ -223,6 +227,19 @@ function renderOrg(o, skipBody){
   }
   if(o.isPlayer&&state==='playing'){ctx.globalAlpha=0.5+Math.sin(fc*0.1)*0.3;ctx.strokeStyle='#4ff';ctx.lineWidth=2;
     ctx.beginPath();ctx.arc(0,0,sz+4,0,Math.PI*2);ctx.stroke();}
+  // Realistic mode: scientific label at high zoom
+  if(settings.renderMode==='realistic'&&zoom>5&&!o.dying){
+    ctx.save();
+    ctx.scale(1/zoom,1/zoom);
+    ctx.fillStyle='rgba(200,200,180,0.7)';
+    ctx.font='10px monospace';
+    ctx.textAlign='center';
+    var labelY=-sz*zoom-15;
+    ctx.fillText(o.sp.name.substring(0,25),0,labelY);
+    if(o.sp.bio&&o.sp.bio.nucleus){ctx.fillText('eukaryote',0,labelY-12);}
+    else if(o.sp.bio&&o.sp.bio.nucleoid){ctx.fillText('prokaryote',0,labelY-12);}
+    ctx.restore();
+  }
   // UI-003: Highlight edible prey with green ring
   if(!o.isPlayer&&o.alive&&player&&player.alive&&state==='playing'&&zoom>3){
     var foodCats2=FOOD[player.sp.cat]||[];
@@ -251,7 +268,7 @@ function renderOrg(o, skipBody){
 
 function drawOrgans(o,sz){
   var org=o.organs;if(!org)return;
-  var detailThreshold=settings.renderMode==='realistic'?0.6:1.0;
+  var detailThreshold=settings.renderMode==='realistic'?0.4:1.0;
   var detail=zoom>(6*detailThreshold)?2:(zoom>(4*detailThreshold)?1:0);
   for(var i=0;i<org.length;i++){
     var g=org[i];ctx.save();

@@ -7,50 +7,105 @@ function render(){
   if(!isFinite(dayLight))dayLight=0.5;
   if(!isFinite(tod))tod=12;
   _mmFrame++;if(_mmFrame%12!==0&&_mmCache){ctx.drawImage(_mmCache,0,0);return;}
-  var grad=ctx.createLinearGradient(0,-PD*0.2,0,PD);grad.addColorStop(0,'#0a2a4a');grad.addColorStop(1,'#000814');ctx.fillStyle=grad;ctx.fillRect(0,0,cv.width,cv.height);
+  var isReal=settings.renderMode==='realistic';
+  // BACKGROUND: Cartoon = blue water gradient; Realistic = pure black
+  if(isReal){
+    ctx.fillStyle='#000000';ctx.fillRect(0,0,cv.width,cv.height);
+  } else {
+    var grad=ctx.createLinearGradient(0,-PD*0.2,0,PD);grad.addColorStop(0,'#0a2a4a');grad.addColorStop(1,'#000814');ctx.fillStyle=grad;ctx.fillRect(0,0,cv.width,cv.height);
+  }
   ctx.save();ctx.translate(cv.width/2,cv.height/2);ctx.scale(zoom,zoom);ctx.translate(-cam.x,-cam.y);
   var vw=cv.width/zoom,vh=cv.height/zoom,vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
-  renderSky(vL,vR,vT);renderWater(vL,vR,vT,vB);if(settings.renderMode!=='realistic')renderSunRays(vL,vR);renderSediment(vL,vR,vB);
+  // Realistic: skip ALL environment rendering (no sky, no water, no sun)
+  if(isReal){
+    renderOrganisms(vL,vR,vT,vB);
+    renderViruses(vL,vR,vT,vB);
+    if(moveTarget)renderTarget();
+    ctx.restore();
+  } else {
+    renderSky(vL,vR,vT);renderWater(vL,vR,vT,vB);renderSunRays(vL,vR);renderSediment(vL,vR,vB);
   renderNutrients(vL,vR,vT,vB);renderShore(vL,vR,vT);
   if(settings.shadows)renderShadows(vL,vR,vT,vB);
-  if(settings.bubbles)if(settings.renderMode!=='realistic')renderBubbles(vL,vR,vT,vB);
+    if(settings.bubbles)renderBubbles(vL,vR,vT,vB);
   renderParallax(vL,vR,vT,vB);
   renderNutrients(vL,vR,vT,vB);
   renderTrails(vL,vR,vT,vB);
-  renderOrganisms(vL,vR,vT,vB);
-  renderViruses(vL,vR,vT,vB);
-  if(settings.renderMode!=='realistic')renderParticles(vL,vR,vT,vB);
+    renderOrganisms(vL,vR,vT,vB);
+    renderViruses(vL,vR,vT,vB);
+    renderParticles(vL,vR,vT,vB);
   if(isRaining)renderRain(vL,vR,vT);
   if(moveTarget)renderTarget();
-  ctx.restore();
-  renderDayNight();
+    ctx.restore();
+  } // end cartoon mode
+  if(!isReal)renderDayNight();
   if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
   if(settings.healthBars&&settings.renderMode!=='realistic')renderHealthBars();
   renderTooltip();
-  // Realistic mode: FULL microscope simulation
-  if(settings.renderMode==='realistic'&&!settings.microscopeMode){
-    // 1. Circular field of view (dark corners like microscope eyepiece)
-    var rvig=ctx.createRadialGradient(cv.width/2,cv.height/2,Math.min(cv.width,cv.height)*0.25,cv.width/2,cv.height/2,Math.max(cv.width,cv.height)*0.55);
-    rvig.addColorStop(0,'rgba(0,0,0,0)');
-    rvig.addColorStop(0.5,'rgba(0,0,0,0.25)');
-    rvig.addColorStop(0.8,'rgba(0,0,0,0.6)');
-    rvig.addColorStop(1,'rgba(0,0,0,0.9)');
-    ctx.fillStyle=rvig;
-    ctx.fillRect(0,0,cv.width,cv.height);
-    // 2. Warm amber tint (iodine staining / phase contrast)
-    ctx.fillStyle='rgba(60,45,10,0.12)';
-    ctx.fillRect(0,0,cv.width,cv.height);
-    // 3. Scan lines (CRT monitor effect)
-    ctx.globalAlpha=0.06;ctx.fillStyle='#000';
-    for(var sl=0;sl<cv.height;sl+=3){ctx.fillRect(0,sl,cv.width,1);}
+  // === REALISTIC MICROSCOPE POST-PROCESSING ===
+  if(settings.renderMode==='realistic'){
+    var mw=cv.width,mh=cv.height,mcx=mw/2,mcy=mh/2;
+    var mradius=Math.min(mw,mh)*0.48;
+    
+    // 1. BLACK corners (circular field of view — eyepiece)
+    ctx.save();
+    var fovGrad=ctx.createRadialGradient(mcx,mcy,mradius*0.5,mcx,mcy,mradius*1.1);
+    fovGrad.addColorStop(0,'rgba(0,0,0,0)');
+    fovGrad.addColorStop(0.7,'rgba(0,0,0,0.4)');
+    fovGrad.addColorStop(0.9,'rgba(0,0,0,0.8)');
+    fovGrad.addColorStop(1,'rgba(0,0,0,1)');
+    ctx.fillStyle=fovGrad;
+    ctx.fillRect(0,0,mw,mh);
+    
+    // 2. Phase contrast amber/gold tint
+    ctx.globalCompositeOperation='overlay';
+    ctx.fillStyle='rgba(80,60,20,0.15)';
+    ctx.fillRect(0,0,mw,mh);
+    ctx.globalCompositeOperation='source-over';
+    
+    // 3. Scan lines (strong CRT effect)
+    ctx.globalAlpha=0.08;
+    ctx.fillStyle='#000';
+    for(var sl=0;sl<mh;sl+=2){ctx.fillRect(0,sl,mw,1);}
     ctx.globalAlpha=1;
-    // 4. Film grain noise
-    ctx.globalAlpha=0.03;
-    for(var gn=0;gn<50;gn++){
+    
+    // 4. Heavy film grain
+    ctx.globalAlpha=0.04;
+    for(var gn=0;gn<200;gn++){
       ctx.fillStyle=Math.random()>0.5?'#fff':'#000';
-      ctx.fillRect(Math.random()*cv.width,Math.random()*cv.height,1,1);
+      ctx.fillRect(Math.random()*mw,Math.random()*mh,1,1);
     }
     ctx.globalAlpha=1;
+    
+    // 5. Crosshair graticule (microscope reticle)
+    ctx.strokeStyle='rgba(200,200,180,0.2)';
+    ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(mcx-mradius*0.6,mcy);ctx.lineTo(mcx+mradius*0.6,mcy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(mcx,mcy-mradius*0.6);ctx.lineTo(mcx,mcy+mradius*0.6);ctx.stroke();
+    // Tick marks
+    for(var tk=-5;tk<=5;tk++){
+      var tx=mcx+tk*mradius*0.1;
+      ctx.beginPath();ctx.moveTo(tx,mcy-4);ctx.lineTo(tx,mcy+4);ctx.stroke();
+    }
+    
+    // 6. Scale bar (µm measurement)
+    ctx.fillStyle='rgba(200,200,180,0.5)';
+    ctx.font='bold 11px monospace';
+    ctx.textAlign='center';
+    var sbStart=mcx-mradius*0.3, sbEnd=mcx+mradius*0.3;
+    var sbUm=Math.round((sbEnd-sbStart)/zoom*10)/10;
+    // Scale bar line
+    ctx.fillStyle='rgba(255,255,255,0.4)';
+    ctx.fillRect(sbStart,mcy+mradius*0.5,sbEnd-sbStart,2);
+    ctx.fillStyle='rgba(200,200,180,0.5)';
+    ctx.fillText(sbUm+' µm',mcx,mcy+mradius*0.5+15);
+    
+    // 7. "PHASE CONTRAST" watermark
+    ctx.fillStyle='rgba(100,100,80,0.3)';
+    ctx.font='9px monospace';
+    ctx.textAlign='right';
+    ctx.fillText('PHASE CONTRAST 40x',mw-15,mh-15);
+    
+    ctx.restore();
   }
   // Microscope mode overlay
   if(settings.microscopeMode){
@@ -248,16 +303,20 @@ function renderOrganisms(vL,vR,vT,vB){
   }
   var batches = {};
   var isRealistic = settings.renderMode === 'realistic';
+  // REALISTIC MODE: render each organism individually with phase contrast effect
+  if(isRealistic){
+    for(var i=0;i<orgs.length;i++){
+      var o=orgs[i];
+      if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
+      if(o.size*zoom<1)continue;
+      renderOrg(o,false);
+    }
+  } else {
+  // CARTOON MODE: batch by color for performance
   for(var i=0;i<orgs.length;i++){
     var o=orgs[i];
     if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
     var c=o.sp.color;
-    // Realistic mode: convert to grayscale/brown for phase contrast look
-    if(isRealistic){
-      var gr=hex2rgb(c);
-      var gray=Math.round(gr[0]*0.3+gr[1]*0.59+gr[2]*0.11);
-      c='rgb('+Math.min(255,Math.round(gray*1.1))+','+Math.min(255,Math.round(gray*1.05))+','+Math.min(255,Math.round(gray*0.85))+')';
-    }
     if(!batches[c]) batches[c] = [];
     batches[c].push(o);
   }
@@ -274,13 +333,14 @@ function renderOrganisms(vL,vR,vT,vB){
       ctx.restore();
     }
     ctx.fill();
-    for(var i=0;i<arr.length;i++){
+      for(var i=0;i<arr.length;i++){
       var o = arr[i];
       if(o.size * zoom < 3) continue;
       if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) renderOrg(o, false);
       else renderOrg(o, true);
     }
   }
+  } // end cartoon batch
 }
 
 

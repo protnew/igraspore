@@ -152,6 +152,7 @@ function drawBody(o,sz,fc2,fd, batched){
 
 function renderOrg(o, skipBody){
   ctx.save();ctx.translate(o.x,o.y);
+  var isReal=settings.renderMode==='realistic';
   
   // Bioluminescence at night for producers (gradient, NOT shadow — 50x faster)
   if(dayLight < 0.35 && o.sp.cat === 'producer' && o.alive) {
@@ -209,7 +210,32 @@ function renderOrg(o, skipBody){
     drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
     ctx.restore();return;}
   ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
-  if(!skipBody)drawBody(o,sz,bc,bd);
+  if(isReal&&!skipBody){
+    // Phase contrast: bright halo, gray interior
+    var haloGrad=ctx.createRadialGradient(0,0,0,0,0,sz*1.3);
+    haloGrad.addColorStop(0,'rgba(200,200,180,0.3)');
+    haloGrad.addColorStop(0.7,'rgba(220,210,190,0.5)');
+    haloGrad.addColorStop(0.9,'rgba(255,255,240,0.7)');
+    haloGrad.addColorStop(1,'rgba(180,170,150,0)');
+    ctx.fillStyle=haloGrad;
+    ctx.beginPath();
+    // Draw same shape as body
+    var sh2=o.sp.shape;
+    if(sh2==='circle'||sh2==='colony'){ctx.arc(0,0,sz,0,Math.PI*2);}
+    else if(sh2==='rod'||sh2==='filament'){ctx.ellipse(0,0,sz*1.3,sz*0.6,0,0,Math.PI*2);}
+    else if(sh2==='oval'){ctx.ellipse(0,0,sz*1.1,sz*0.7,0,0,Math.PI*2);}
+    else if(sh2==='slipper'){ctx.moveTo(sz,0);ctx.bezierCurveTo(sz,-sz*0.65,-sz*0.8,-sz*0.65,-sz,0);ctx.bezierCurveTo(-sz*0.8,sz*0.65,sz,sz*0.65,sz,0);}
+    else if(sh2==='bell'){ctx.moveTo(0,-sz);ctx.bezierCurveTo(sz*0.8,-sz*0.9,sz*0.9,sz*0.3,0,sz*0.5);ctx.bezierCurveTo(-sz*0.9,sz*0.3,-sz*0.8,-sz*0.9,0,-sz);}
+    else if(sh2==='star'){for(var st=0;st<=24;st++){var sa=st/24*Math.PI*2,sr=st%2===0?sz*1.3:sz*0.6;if(st===0)ctx.moveTo(Math.cos(sa)*sr,Math.sin(sa)*sr);else ctx.lineTo(Math.cos(sa)*sr,Math.sin(sa)*sr);}}
+    else if(sh2==='irregular'){for(var il=0;il<=40;il++){var ia=il/40*Math.PI*2,ir=sz+Math.sin(ia*5+o.wobble)*sz*0.25;if(il===0)ctx.moveTo(Math.cos(ia)*ir,Math.sin(ia)*ir);else ctx.lineTo(Math.cos(ia)*ir,Math.sin(ia)*ir);}}
+    else{ctx.arc(0,0,sz,0,Math.PI*2);}
+    ctx.fill();
+    // Dark edge ring (phase contrast dark edge)
+    ctx.strokeStyle='rgba(100,90,70,0.4)';
+    ctx.lineWidth=Math.max(0.5,sz*0.05);
+    ctx.stroke();
+  }
+  else if(!skipBody)drawBody(o,sz,bc,bd);
   var organZoom=settings.renderMode==='realistic'?2:3;
   if(zoom>organZoom)drawOrgans(o,sz);
   var appZoom=settings.renderMode==='realistic'?1.5:2;

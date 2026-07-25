@@ -256,10 +256,31 @@ function renderOrganisms(vL,vR,vT,vB){
   var isRealistic = settings.renderMode === 'realistic';
   // REALISTIC MODE: render each organism individually with phase contrast effect
   if(isRealistic){
+    // Realistic mode: draw each organism with phase contrast glow
+    // First pass: glows (additive blending)
+    ctx.save();
+    ctx.globalCompositeOperation='lighter'; // Additive for glow
     for(var i=0;i<orgs.length;i++){
       var o=orgs[i];
+      if(!o.alive)continue;
       if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
-      if(o.size*zoom<1)continue;
+      var screenR=o.size*zoom*3; // Glow radius in screen space (world coords = screenR/zoom)
+      var worldR=screenR/zoom;
+      // Phase contrast glow: warm white-yellow
+      var gg=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,worldR);
+      gg.addColorStop(0,'rgba(255,240,200,0.4)');
+      gg.addColorStop(0.4,'rgba(200,180,140,0.2)');
+      gg.addColorStop(1,'rgba(100,80,50,0)');
+      ctx.fillStyle=gg;
+      ctx.beginPath();ctx.arc(o.x,o.y,worldR,0,Math.PI*2);ctx.fill();
+    }
+    ctx.restore();
+    // Second pass: organism bodies
+    for(var i=0;i<orgs.length;i++){
+      var o=orgs[i];
+      if(!o.alive)continue;
+      if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
+      if(o.size*zoom<0.5)continue;
       renderOrg(o,false);
     }
   } else {

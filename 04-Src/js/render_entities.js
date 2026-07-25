@@ -176,12 +176,10 @@ function renderOrg(o, skipBody){
   if(o.dying)tint*=0.5;
   if(o.infected)tint=0.6;
   if(settings.renderMode==='cartoon'){tint*=1.1;}
-  // REALISTIC: convert to grayscale/brownish (phase contrast microscopy)
+  // REALISTIC: keep natural species colors (NOT grayscale)
+  // Real microorganisms ARE colored — green algae are green, etc.
   if(settings.renderMode==='realistic'){
-    var gray=Math.round((rgb[0]*0.3+rgb[1]*0.59+rgb[2]*0.11)*tint);
-    // Phase contrast: slight yellow-brown tint
-    rgb=[Math.min(255,Math.round(gray*1.1)),Math.min(255,Math.round(gray*1.05)),Math.min(255,Math.round(gray*0.85))];
-    tint=1; // Already applied via gray conversion
+    tint=0.8; // Slightly muted (microscope lighting reduces saturation)
   }
   var bc=shadeRgb(rgb[0],rgb[1],rgb[2],tint),bd=shadeRgb(rgb[0],rgb[1],rgb[2],tint*0.5);
   if(o.dying)ctx.globalAlpha=clamp(1-o.deathT/1.2,0,1);
@@ -211,14 +209,16 @@ function renderOrg(o, skipBody){
     ctx.restore();return;}
   ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
   if(isReal&&!skipBody){
-    // Phase contrast microscopy: BRIGHT ring + dark center (highly visible)
-    // Outer glow
-    var haloGrad=ctx.createRadialGradient(0,0,sz*0.5,0,0,sz*1.5);
-    haloGrad.addColorStop(0,'rgba(180,180,160,0.6)');
-    haloGrad.addColorStop(0.6,'rgba(220,210,180,0.8)');
-    haloGrad.addColorStop(0.85,'rgba(255,250,220,0.9)');
-    haloGrad.addColorStop(1,'rgba(100,90,70,0)');
-    ctx.fillStyle=haloGrad;
+    // PHOTOREALISTIC: semi-transparent cell membrane (like real microscopy)
+    // Body: very transparent, natural color preserved
+    var memGrad=ctx.createRadialGradient(-sz*0.2,-sz*0.2,0,0,0,sz);
+    // Keep species color but make it transparent (like real cells)
+    var pr=rgb[0],pg=rgb[1],pb=rgb[2];
+    memGrad.addColorStop(0,'rgba('+pr+','+pg+','+pb+',0.15)'); // Center: barely visible
+    memGrad.addColorStop(0.6,'rgba('+pr+','+pg+','+pb+',0.25)'); // Mid: slightly visible
+    memGrad.addColorStop(0.85,'rgba('+pr+','+pg+','+pb+',0.5)'); // Edge: more opaque
+    memGrad.addColorStop(1,'rgba('+Math.round(pr*0.6)+','+Math.round(pg*0.6)+','+Math.round(pb*0.6)+',0.7)'); // Dark edge
+    ctx.fillStyle=memGrad;
     ctx.beginPath();
     // Draw same shape as body
     var sh2=o.sp.shape;
@@ -231,9 +231,9 @@ function renderOrg(o, skipBody){
     else if(sh2==='irregular'){for(var il=0;il<=40;il++){var ia=il/40*Math.PI*2,ir=sz+Math.sin(ia*5+o.wobble)*sz*0.25;if(il===0)ctx.moveTo(Math.cos(ia)*ir,Math.sin(ia)*ir);else ctx.lineTo(Math.cos(ia)*ir,Math.sin(ia)*ir);}}
     else{ctx.arc(0,0,sz,0,Math.PI*2);}
     ctx.fill();
-    // Bright edge ring (phase contrast bright edge)
-    ctx.strokeStyle='rgba(255,245,200,0.6)';
-    ctx.lineWidth=Math.max(1,sz*0.08);
+    // Subtle refractive edge (light scattering at cell boundary)
+    ctx.strokeStyle='rgba('+Math.min(255,pr+40)+','+Math.min(255,pg+40)+','+Math.min(255,pb+40)+',0.3)';
+    ctx.lineWidth=Math.max(0.5,sz*0.04);
     ctx.stroke();
   }
   else if(!skipBody)drawBody(o,sz,bc,bd);

@@ -15,7 +15,7 @@ function render(){
   // === STEP 1: BACKGROUND ===
   if(isReal){
     // Realistic: dark gray (phase contrast background)
-    ctx.fillStyle='#0a0a08';
+    ctx.fillStyle='#000000';
   } else {
     // Cartoon: blue water gradient
     var wgrad=ctx.createLinearGradient(0,0,0,cv.height);
@@ -256,26 +256,25 @@ function renderOrganisms(vL,vR,vT,vB){
   var isRealistic = settings.renderMode === 'realistic';
   // REALISTIC MODE: render each organism individually with phase contrast effect
   if(isRealistic){
-    // Realistic mode: draw each organism with phase contrast glow
-    // First pass: glows (additive blending)
+    // Photorealistic: organisms with subtle light scatter (dark field microscopy)
+    // First pass: very subtle scatter halos (only makes cells detectable, not glowing)
     ctx.save();
-    ctx.globalCompositeOperation='lighter'; // Additive for glow
+    ctx.globalCompositeOperation='lighter';
     for(var i=0;i<orgs.length;i++){
       var o=orgs[i];
       if(!o.alive)continue;
       if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
-      var screenR=o.size*zoom*3; // Glow radius in screen space (world coords = screenR/zoom)
-      var worldR=screenR/zoom;
-      // Phase contrast glow: warm white-yellow
-      var gg=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,worldR);
-      gg.addColorStop(0,'rgba(255,240,200,0.4)');
-      gg.addColorStop(0.4,'rgba(200,180,140,0.2)');
-      gg.addColorStop(1,'rgba(100,80,50,0)');
-      ctx.fillStyle=gg;
-      ctx.beginPath();ctx.arc(o.x,o.y,worldR,0,Math.PI*2);ctx.fill();
+      var r2=o.size*1.8; // Small natural halo
+      var rgb2=hex2rgb(o.sp.color);
+      var scatter=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,r2);
+      scatter.addColorStop(0,'rgba('+rgb2[0]+','+rgb2[1]+','+rgb2[2]+',0.15)');
+      scatter.addColorStop(0.5,'rgba('+rgb2[0]+','+rgb2[1]+','+rgb2[2]+',0.05)');
+      scatter.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=scatter;
+      ctx.beginPath();ctx.arc(o.x,o.y,r2,0,Math.PI*2);ctx.fill();
     }
     ctx.restore();
-    // Second pass: organism bodies
+    // Second pass: semi-transparent organism bodies with visible organelles
     for(var i=0;i<orgs.length;i++){
       var o=orgs[i];
       if(!o.alive)continue;

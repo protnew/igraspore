@@ -152,7 +152,7 @@ function startGame(isScreensaver){
   if(settings.renderMode==='realistic'){var rb=document.getElementById('renderModeBtn');if(rb){rb.className='realistic';rb.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';}}
   else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';}}
   var kh=document.getElementById('keyHint');
-  kh.innerHTML='<div style="font-size:11px;line-height:1.6">'+
+  kh.innerHTML='<div style="font-size:14px;line-height:1.8">'+
     '<b>WASD</b> — движение | <b>Мышь</b> — направление | <b>E</b> — есть | <b>Q</b> — делиться<br>'+
     '<b>R</b> — циста | <b>Tab</b> — автопилот | <b>F</b> — своб.камера | <b>M</b> — микроскоп | <b>N</b> — режим<br>'+
     '<b>V</b> — следовать | <b>B</b> — вики | <b>P</b> — пауза | Колесо — зум</div>';

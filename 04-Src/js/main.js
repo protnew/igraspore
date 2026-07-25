@@ -241,7 +241,18 @@ document.addEventListener('keydown',function(e){
   if(k==='w'||k==='a'||k==='s'||k==='d'){if(freeCam)camKeys[k]=true;e.preventDefault();if(autoAI)autoAI=false;}
   if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
   if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
-  if(k==='v'){freeCam=false;autoAI=false;}
+  if(k==='v'){
+    // V: Toggle camera follow player
+    if(freeCam){
+      // Detached -> reattach to player
+      freeCam=false;
+      if(player&&player.alive){cam.x=player.x;cam.y=player.y;}
+    } else {
+      // Attached -> detach (free camera)
+      freeCam=true;
+    }
+    camKeys={w:false,a:false,s:false,d:false};
+  }
   if(k==='m'){document.getElementById('bMicro').click();}
   if(k==='n'){document.getElementById('bRender').click();}
   if(k==='b'){var wo=document.getElementById('wikiO');if(wo.className==='ov show')wo.className='ov';else{buildWiki();wo.className='ov show';}}

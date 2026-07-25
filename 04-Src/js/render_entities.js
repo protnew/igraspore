@@ -211,12 +211,13 @@ function renderOrg(o, skipBody){
     ctx.restore();return;}
   ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
   if(isReal&&!skipBody){
-    // Phase contrast: bright halo, gray interior
-    var haloGrad=ctx.createRadialGradient(0,0,0,0,0,sz*1.3);
-    haloGrad.addColorStop(0,'rgba(200,200,180,0.3)');
-    haloGrad.addColorStop(0.7,'rgba(220,210,190,0.5)');
-    haloGrad.addColorStop(0.9,'rgba(255,255,240,0.7)');
-    haloGrad.addColorStop(1,'rgba(180,170,150,0)');
+    // Phase contrast microscopy: BRIGHT ring + dark center (highly visible)
+    // Outer glow
+    var haloGrad=ctx.createRadialGradient(0,0,sz*0.5,0,0,sz*1.5);
+    haloGrad.addColorStop(0,'rgba(180,180,160,0.6)');
+    haloGrad.addColorStop(0.6,'rgba(220,210,180,0.8)');
+    haloGrad.addColorStop(0.85,'rgba(255,250,220,0.9)');
+    haloGrad.addColorStop(1,'rgba(100,90,70,0)');
     ctx.fillStyle=haloGrad;
     ctx.beginPath();
     // Draw same shape as body
@@ -230,9 +231,9 @@ function renderOrg(o, skipBody){
     else if(sh2==='irregular'){for(var il=0;il<=40;il++){var ia=il/40*Math.PI*2,ir=sz+Math.sin(ia*5+o.wobble)*sz*0.25;if(il===0)ctx.moveTo(Math.cos(ia)*ir,Math.sin(ia)*ir);else ctx.lineTo(Math.cos(ia)*ir,Math.sin(ia)*ir);}}
     else{ctx.arc(0,0,sz,0,Math.PI*2);}
     ctx.fill();
-    // Dark edge ring (phase contrast dark edge)
-    ctx.strokeStyle='rgba(100,90,70,0.4)';
-    ctx.lineWidth=Math.max(0.5,sz*0.05);
+    // Bright edge ring (phase contrast bright edge)
+    ctx.strokeStyle='rgba(255,245,200,0.6)';
+    ctx.lineWidth=Math.max(1,sz*0.08);
     ctx.stroke();
   }
   else if(!skipBody)drawBody(o,sz,bc,bd);

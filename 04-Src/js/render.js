@@ -1,183 +1,134 @@
 "use strict";
 function render(){
-  // GUARD: prevent NaN/Infinity from crashing gradients
   if(!isFinite(cam.x))cam.x=0;
   if(!isFinite(cam.y))cam.y=PD*0.3;
-  if(!isFinite(zoom)||zoom<=0)zoom=0.4;
+  if(!isFinite(zoom)||zoom<=0)zoom=3;
   if(!isFinite(dayLight))dayLight=0.5;
   if(!isFinite(tod))tod=12;
-  _mmFrame++;if(_mmFrame%12!==0&&_mmCache){ctx.drawImage(_mmCache,0,0);return;}
+  _mmFrame++;
+  if(_mmFrame%12!==0&&_mmCache){ctx.drawImage(_mmCache,0,0);return;}
+  
   var isReal=settings.renderMode==='realistic';
-  // BACKGROUND: Cartoon = blue water gradient; Realistic = pure black
+  var vw=cv.width/zoom,vh=cv.height/zoom;
+  var vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
+  
+  // === STEP 1: BACKGROUND ===
   if(isReal){
-    ctx.fillStyle='#000000';ctx.fillRect(0,0,cv.width,cv.height);
+    // Realistic: dark gray (phase contrast background)
+    ctx.fillStyle='#0a0a08';
   } else {
-    var grad=ctx.createLinearGradient(0,-PD*0.2,0,PD);grad.addColorStop(0,'#0a2a4a');grad.addColorStop(1,'#000814');ctx.fillStyle=grad;ctx.fillRect(0,0,cv.width,cv.height);
+    // Cartoon: blue water gradient
+    var wgrad=ctx.createLinearGradient(0,0,0,cv.height);
+    wgrad.addColorStop(0,'#0a2a4a');wgrad.addColorStop(1,'#000814');
+    ctx.fillStyle=wgrad;
   }
-  ctx.save();ctx.translate(cv.width/2,cv.height/2);ctx.scale(zoom,zoom);ctx.translate(-cam.x,-cam.y);
-  var vw=cv.width/zoom,vh=cv.height/zoom,vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
-  // Realistic: skip ALL environment rendering (no sky, no water, no sun)
-  if(isReal){
-    renderOrganisms(vL,vR,vT,vB);
-    renderViruses(vL,vR,vT,vB);
-    if(moveTarget)renderTarget();
-    ctx.restore();
-  } else {
-    renderSky(vL,vR,vT);renderWater(vL,vR,vT,vB);renderSunRays(vL,vR);renderSediment(vL,vR,vB);
-  renderNutrients(vL,vR,vT,vB);renderShore(vL,vR,vT);
-  if(settings.shadows)renderShadows(vL,vR,vT,vB);
+  ctx.fillRect(0,0,cv.width,cv.height);
+  
+  // === STEP 2: WORLD TRANSFORM ===
+  ctx.save();
+  ctx.translate(cv.width/2,cv.height/2);
+  ctx.scale(zoom,zoom);
+  ctx.translate(-cam.x,-cam.y);
+  
+  // === STEP 3: ENVIRONMENT (cartoon only) ===
+  if(!isReal){
+    renderSky(vL,vR,vT);
+    renderWater(vL,vR,vT,vB);
+    renderSunRays(vL,vR);
+    renderSediment(vL,vR,vB);
+    renderNutrients(vL,vR,vT,vB);
+    renderShore(vL,vR,vT);
+    if(settings.shadows)renderShadows(vL,vR,vT,vB);
     if(settings.bubbles)renderBubbles(vL,vR,vT,vB);
-  renderParallax(vL,vR,vT,vB);
-  renderNutrients(vL,vR,vT,vB);
-  renderTrails(vL,vR,vT,vB);
-    renderOrganisms(vL,vR,vT,vB);
-    renderViruses(vL,vR,vT,vB);
-    renderParticles(vL,vR,vT,vB);
-  if(isRaining)renderRain(vL,vR,vT);
-  if(moveTarget)renderTarget();
-    ctx.restore();
-  } // end cartoon mode
-  if(!isReal)renderDayNight();
-  if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
-  if(settings.healthBars&&settings.renderMode!=='realistic')renderHealthBars();
-  renderTooltip();
-  // === REALISTIC MICROSCOPE POST-PROCESSING ===
-  if(settings.renderMode==='realistic'){
-    var mw=cv.width,mh=cv.height,mcx=mw/2,mcy=mh/2;
-    var mradius=Math.min(mw,mh)*0.48;
-    
-    // 1. BLACK corners (circular field of view — eyepiece)
-    ctx.save();
-    var fovGrad=ctx.createRadialGradient(mcx,mcy,mradius*0.5,mcx,mcy,mradius*1.1);
-    fovGrad.addColorStop(0,'rgba(0,0,0,0)');
-    fovGrad.addColorStop(0.7,'rgba(0,0,0,0.4)');
-    fovGrad.addColorStop(0.9,'rgba(0,0,0,0.8)');
-    fovGrad.addColorStop(1,'rgba(0,0,0,1)');
-    ctx.fillStyle=fovGrad;
-    ctx.fillRect(0,0,mw,mh);
-    
-    // 2. Phase contrast amber/gold tint
-    ctx.globalCompositeOperation='overlay';
-    ctx.fillStyle='rgba(80,60,20,0.15)';
-    ctx.fillRect(0,0,mw,mh);
-    ctx.globalCompositeOperation='source-over';
-    
-    // 3. Scan lines (strong CRT effect)
-    ctx.globalAlpha=0.08;
-    ctx.fillStyle='#000';
-    for(var sl=0;sl<mh;sl+=2){ctx.fillRect(0,sl,mw,1);}
-    ctx.globalAlpha=1;
-    
-    // 4. Heavy film grain
-    ctx.globalAlpha=0.04;
-    for(var gn=0;gn<200;gn++){
-      ctx.fillStyle=Math.random()>0.5?'#fff':'#000';
-      ctx.fillRect(Math.random()*mw,Math.random()*mh,1,1);
-    }
-    ctx.globalAlpha=1;
-    
-    // 5. Crosshair graticule (microscope reticle)
-    ctx.strokeStyle='rgba(200,200,180,0.2)';
-    ctx.lineWidth=1;
-    ctx.beginPath();ctx.moveTo(mcx-mradius*0.6,mcy);ctx.lineTo(mcx+mradius*0.6,mcy);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(mcx,mcy-mradius*0.6);ctx.lineTo(mcx,mcy+mradius*0.6);ctx.stroke();
-    // Tick marks
-    for(var tk=-5;tk<=5;tk++){
-      var tx=mcx+tk*mradius*0.1;
-      ctx.beginPath();ctx.moveTo(tx,mcy-4);ctx.lineTo(tx,mcy+4);ctx.stroke();
-    }
-    
-    // 6. Scale bar (µm measurement)
-    ctx.fillStyle='rgba(200,200,180,0.5)';
-    ctx.font='bold 11px monospace';
-    ctx.textAlign='center';
-    var sbStart=mcx-mradius*0.3, sbEnd=mcx+mradius*0.3;
-    var sbUm=Math.round((sbEnd-sbStart)/zoom*10)/10;
-    // Scale bar line
-    ctx.fillStyle='rgba(255,255,255,0.4)';
-    ctx.fillRect(sbStart,mcy+mradius*0.5,sbEnd-sbStart,2);
-    ctx.fillStyle='rgba(200,200,180,0.5)';
-    ctx.fillText(sbUm+' µm',mcx,mcy+mradius*0.5+15);
-    
-    // 7. "PHASE CONTRAST" watermark
-    ctx.fillStyle='rgba(100,100,80,0.3)';
-    ctx.font='9px monospace';
-    ctx.textAlign='right';
-    ctx.fillText('PHASE CONTRAST 40x',mw-15,mh-15);
-    
-    ctx.restore();
+    renderParallax(vL,vR,vT,vB);
+    renderTrails(vL,vR,vT,vB);
   }
-  // Microscope mode overlay
-  if(settings.microscopeMode){
-    var mw=cv.width,mh=cv.height;
-    var mcx=mw/2,mcy=mh/2;
+  
+  // === STEP 4: ORGANISMS (both modes) ===
+  renderOrganisms(vL,vR,vT,vB);
+  renderViruses(vL,vR,vT,vB);
+  
+  // === STEP 5: EFFECTS (cartoon only) ===
+  if(!isReal){
+    renderParticles(vL,vR,vT,vB);
+    if(isRaining)renderRain(vL,vR,vT);
+  }
+  if(moveTarget)renderTarget();
+  
+  ctx.restore(); // End world transform
+  
+  // === STEP 6: SCREEN-SPACE OVERLAYS ===
+  if(!isReal){
+    renderDayNight();
+    if(settings.healthBars)renderHealthBars();
+  }
+  renderTooltip();
+  
+  // === STEP 7: REALISTIC POST-PROCESSING ===
+  if(isReal){
+    var mw=cv.width,mh=cv.height,mcx=mw/2,mcy=mh/2;
     var mradius=Math.min(mw,mh)*0.45;
     
-    // 1. Strong vignette (circular dark edges — like looking through eyepiece)
+    // Circular field of view (vignette)
     ctx.save();
-    var mvig=ctx.createRadialGradient(mcx,mcy,mradius*0.6,mcx,mcy,mradius*1.3);
-    mvig.addColorStop(0,'rgba(0,0,0,0)');
-    mvig.addColorStop(0.7,'rgba(0,0,0,0.3)');
-    mvig.addColorStop(1,'rgba(0,0,0,0.95)');
-    ctx.fillStyle=mvig;
+    var fov=ctx.createRadialGradient(mcx,mcy,mradius*0.55,mcx,mcy,mradius*1.05);
+    fov.addColorStop(0,'rgba(0,0,0,0)');
+    fov.addColorStop(0.6,'rgba(0,0,0,0.3)');
+    fov.addColorStop(0.9,'rgba(0,0,0,0.85)');
+    fov.addColorStop(1,'rgba(0,0,0,1)');
+    ctx.fillStyle=fov;
     ctx.fillRect(0,0,mw,mh);
     
-    // 2. Microscope graticule (crosshair + measurement scale)
-    ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=1;
-    // Horizontal line
-    ctx.beginPath();ctx.moveTo(mcx-mradius,mcy);ctx.lineTo(mcx+mradius,mcy);ctx.stroke();
-    // Vertical line
-    ctx.beginPath();ctx.moveTo(mcx,mcy-mradius);ctx.lineTo(mcx,mcy+mradius);ctx.stroke();
-    // Tick marks on horizontal (scale bar)
-    for(var tick=-4;tick<=4;tick++){
-      var tx=mcx+tick*mradius/5;
-      ctx.beginPath();ctx.moveTo(tx,mcy-5);ctx.lineTo(tx,mcy+5);ctx.stroke();
-    }
-    
-    // 3. Scale bar (µm measurement)
-    ctx.fillStyle='rgba(255,255,255,0.4)';ctx.font='10px sans-serif';ctx.textAlign='center';
-    var scaleUm=Math.round(mradius/5/zoom*10)/10;
-    ctx.fillText(scaleUm+' µm',mcx,mcy+mradius-15);
-    
-    // 4. Subtle green tint (fluorescence microscopy feel)
-    ctx.fillStyle='rgba(50,100,50,0.05)';
+    // Amber tint
+    ctx.fillStyle='rgba(70,55,15,0.1)';
     ctx.fillRect(0,0,mw,mh);
+    
+    // Scan lines
+    ctx.globalAlpha=0.05;ctx.fillStyle='#000';
+    for(var sl=0;sl<mh;sl+=2)ctx.fillRect(0,sl,mw,1);
+    ctx.globalAlpha=1;
+    
+    // Crosshair
+    ctx.strokeStyle='rgba(200,200,170,0.15)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(mcx-mradius*0.5,mcy);ctx.lineTo(mcx+mradius*0.5,mcy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(mcx,mcy-mradius*0.5);ctx.lineTo(mcx,mcy+mradius*0.5);ctx.stroke();
+    for(var tk=-4;tk<=4;tk++){var tx=mcx+tk*mradius*0.1;ctx.beginPath();ctx.moveTo(tx,mcy-3);ctx.lineTo(tx,mcy+3);ctx.stroke();}
+    
+    // Scale bar
+    ctx.fillStyle='rgba(200,200,170,0.4)';ctx.font='bold 10px monospace';ctx.textAlign='center';
+    var sbs=mcx-mradius*0.25,sbe=mcx+mradius*0.25;
+    ctx.fillRect(sbs,mcy+mradius*0.4,sbe-sbs,2);
+    ctx.fillText(Math.round((sbe-sbs)/zoom*10)/10+' µm',mcx,mcy+mradius*0.4+14);
     
     ctx.restore();
   }
-
+  
+  if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
   renderEventLogs();
   
-  if (window.dmgIndicators && settings.healthBars && fc%3===0) {
-     ctx.save();
-     ctx.font='bold 14px sans-serif'; ctx.textAlign='center';
-     for(var i=window.dmgIndicators.length-1; i>=0; i--){
-         var ind = window.dmgIndicators[i];
-         ind.life -= 1/60; // Assuming 60fps, reduce life
-         ind.y -= 0.5; // Float upwards
-         ctx.fillStyle = 'rgba(255, 50, 50, '+Math.max(0, ind.life)+')';
-         ctx.fillText('-'+ind.val, cv.width/2 + (ind.x - cam.x)*zoom, cv.height/2 + (ind.y - cam.y)*zoom);
-         if(ind.life <= 0) window.dmgIndicators.splice(i, 1);
-     }
-     ctx.restore();
+  // Damage indicators
+  if(window.dmgIndicators){
+    ctx.save();
+    for(var di=0;di<window.dmgIndicators.length;di++){
+      var ind=window.dmgIndicators[di];
+      ctx.fillStyle='rgba(255,80,80,'+Math.max(0,ind.life)+')';
+      ctx.font='bold 12px sans-serif';ctx.textAlign='center';
+      ctx.fillText('-'+ind.val,cv.width/2+(ind.x-cam.x)*zoom,cv.height/2+(ind.y-cam.y)*zoom);
+    }
+    ctx.restore();
   }
-
-  // UI Hover Scanner
-  if(typeof window !== 'undefined' && window.mouseX) {
-     var wmx = (window.mouseX - window.innerWidth/2)/cam.z + cam.x;
-     var wmy = (window.mouseY - window.innerHeight/2)/cam.z + cam.y;
-     for(var i=0; i<orgs.length; i++){
-        var org = orgs[i];
-        if(org.alive && dist2({x:wmx,y:wmy}, org) < org.size*org.size) {
-           ctx.fillStyle='#fff'; ctx.font='10px Arial';
-           ctx.fillText('Spd: x'+(org.speedMult||1.0).toFixed(2), window.mouseX+10, window.mouseY);
-           ctx.fillText('Sz: x'+(org.sizeMult||1.0).toFixed(2), window.mouseX+10, window.mouseY+12);
-           if(org.parasite) ctx.fillText('INFECTED', window.mouseX+10, window.mouseY+24);
-           break;
-        }
-     }
+  
+  // Tooltip details
+  if(inspOrg&&mx<9000){
+    var org=inspOrg;
+    ctx.fillStyle='rgba(200,200,200,0.7)';ctx.font='10px sans-serif';ctx.textAlign='left';
+    ctx.fillText('Spd: x'+(org.speedMult||1.0).toFixed(2),window.mouseX+10,window.mouseY);
+    ctx.fillText('Sz: x'+(org.sizeMult||1.0).toFixed(2),window.mouseX+10,window.mouseY+12);
+    if(org.parasite)ctx.fillText('INFECTED',window.mouseX+10,window.mouseY+24);
   }
-
+  
+  // Minimap cache
+  _mmCacheReady=false;
 }
 
 function renderEventLogs() {

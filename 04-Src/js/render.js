@@ -106,48 +106,7 @@ function render(){
   if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
   renderEventLogs();
   
-  // Damage indicators
-  if(window.dmgIndicators){
-    ctx.save();
-    for(var di=0;di<window.dmgIndicators.length;di++){
-      var ind=window.dmgIndicators[di];
-      ctx.fillStyle='rgba(255,80,80,'+Math.max(0,ind.life)+')';
-      ctx.font='bold 12px sans-serif';ctx.textAlign='center';
-      ctx.fillText('-'+ind.val,cv.width/2+(ind.x-cam.x)*zoom,cv.height/2+(ind.y-cam.y)*zoom);
-    }
-    ctx.restore();
-  }
-  
-  // Tooltip details
-  if(inspOrg&&mx<9000){
-    var org=inspOrg;
-    ctx.fillStyle='rgba(200,200,200,0.7)';ctx.font='10px sans-serif';ctx.textAlign='left';
-    ctx.fillText('Spd: x'+(org.speedMult||1.0).toFixed(2),window.mouseX+10,window.mouseY);
-    ctx.fillText('Sz: x'+(org.sizeMult||1.0).toFixed(2),window.mouseX+10,window.mouseY+12);
-    if(org.parasite)ctx.fillText('INFECTED',window.mouseX+10,window.mouseY+24);
-  }
-  
-  // Minimap cache
-  _mmCacheReady=false;
-}
-
-function renderEventLogs() {
-  if(!window.eventLog || window.eventLog.length === 0) return;
-  ctx.save();
-  ctx.textAlign = 'left';
-  var startY = 80;
-  for(var i=0; i<window.eventLog.length; i++) {
-     var log = window.eventLog[i];
-     log.life -= 1/60;
-     if(log.life <= 0) { window.eventLog.splice(i, 1); i--; continue; }
-     ctx.fillStyle = log.color;
-     ctx.globalAlpha = Math.min(1.0, log.life);
-     ctx.font = 'bold 13px sans-serif';
-     /* shadow removed for perf */
-     ctx.fillText(log.text, 200, startY + i*20);
-  }
-  ctx.restore();
-}
+  // Damage indicators REMOVED
 
 
 
@@ -395,4 +354,5 @@ function renderPopGraph(){
   var cols={producer:'#2c2',consumer1:'#4af',consumer2:'#f80',consumer3:'#c4f',decomposer:'#a86'};
   for(var ci=0;ci<cats.length;ci++){pcc.strokeStyle=cols[cats[ci]];pcc.lineWidth=1.5;pcc.beginPath();
     for(var i=0;i<popHist.length;i++){var x=i/(popHist.length-1)*110;var y=55-(popHist[i][cats[ci]]||0)/maxP*52;if(i===0)pcc.moveTo(x,y);else pcc.lineTo(x,y);}pcc.stroke();}
+}
 }

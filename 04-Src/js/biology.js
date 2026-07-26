@@ -43,10 +43,13 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
 function doDivide(o){
   if(o.dividing||o.energy<o.sp.repEnergy||o.age<o.sp.minAge||o.divCD>0)return;
   o.dividing=true;o.divT=0;o.state='dividing';
+  o.preDivSize=o.size; // Remember original size
 }
 
 function finishDivide(o){
-  o.dividing=false;o.energy*=0.5; if(o===player||window.spectatorMode) window.playSound("divide");
+  o.dividing=false;o.energy*=0.5;
+  o.size=o.preDivSize?o.preDivSize*0.85:o.size; // Parent shrinks 15%
+  o.divCD=DIV_COOLDOWN; if(o===player||window.spectatorMode) window.playSound("divide");
   // KEY FIX: push child AWAY with separation impulse + cooldown
   var pushAng=rng(0,Math.PI*2);
   var cx=o.x+Math.cos(pushAng)*DIV_SEPARATION;
@@ -106,7 +109,7 @@ function eatOrg(pred,prey){
      pred.venomTimer = 5; // 5 seconds of venom effect
   }
   
-  if(!window.dmgIndicators) window.dmgIndicators=[];
+  // if(!window.dmgIndicators) window.dmgIndicators=[];
   var dmg = pred.size * 0.5;
   
   // Phytoplankton defenses
@@ -115,7 +118,7 @@ function eatOrg(pred,prey){
      if(prey.sp.flags.spikes) {
          var recoil = dmg * 0.4;
          pred.size -= recoil; // Takes damage back!
-         if(settings.particles) window.dmgIndicators.push({x:pred.x, y:pred.y, val:Math.round(recoil), life:1.0});
+         // if(settings.particles) window.dmgIndicators.push({x:pred.x, y:pred.y, val:Math.round(recoil), life:1.0});
      }
      if(prey.sp.flags.toxic) {
          var res = pred.acidResist || 0;
@@ -127,7 +130,7 @@ function eatOrg(pred,prey){
   
   if (prey.size < dmg) dmg = prey.size;
   prey.size -= dmg;
-  if(settings.particles) window.dmgIndicators.push({x:prey.x, y:prey.y, val:Math.round(dmg), life:1.0});
+  // if(settings.particles) window.dmgIndicators.push({x:prey.x, y:prey.y, val:Math.round(dmg), life:1.0});
   
   var gain=prey.energy*0.55+prey.size*1.5;
   if(!pred.stomach) pred.stomach=[];
@@ -551,7 +554,15 @@ function updateOrg(o,dt){
     }
     moveOrg(o,dt);
   }
-  if(o.dividing){o.divT+=dt;if(o.divT>1.3)finishDivide(o);}
+  if(o.dividing){
+    o.divT+=dt;
+    // VISUAL: progressively shrink as it divides
+    if(o.preDivSize){
+      var prog=o.divT/1.3; // 0 to 1
+      o.size=o.preDivSize*(1-prog*0.15); // Shrink 15% during division
+    }
+    if(o.divT>1.3)finishDivide(o);
+  }
   if(!o.isPlayer&&!o.dividing&&!o.cyst&&o.energy>o.sp.repEnergy&&o.age>o.sp.minAge&&o.divCD<=0){
     if (o.sp.flags && o.sp.flags.gendered) {
         o.seekingMate = true;

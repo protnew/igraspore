@@ -176,10 +176,12 @@ function renderOrg(o, skipBody){
   if(o.dying)tint*=0.5;
   if(o.infected)tint=0.6;
   if(settings.renderMode==='cartoon'){tint*=1.1;}
-  // REALISTIC: keep natural species colors (NOT grayscale)
-  // Real microorganisms ARE colored — green algae are green, etc.
+  // REALISTIC: phase contrast = luminance only (no color)
+  // Reference photos show white/gray organisms, not colored
   if(settings.renderMode==='realistic'){
-    tint=0.8; // Slightly muted (microscope lighting reduces saturation)
+    var g2=rgb[0]*0.3+rgb[1]*0.59+rgb[2]*0.11;
+    rgb=[Math.round(g2),Math.round(g2),Math.round(g2)];
+    tint=1;
   }
   var bc=shadeRgb(rgb[0],rgb[1],rgb[2],tint),bd=shadeRgb(rgb[0],rgb[1],rgb[2],tint*0.5);
   if(o.dying)ctx.globalAlpha=clamp(1-o.deathT/1.2,0,1);
@@ -209,15 +211,16 @@ function renderOrg(o, skipBody){
     ctx.restore();return;}
   ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
   if(isReal&&!skipBody){
-    // PHOTOREALISTIC: semi-transparent cell membrane (like real microscopy)
-    // Body: very transparent, natural color preserved
-    var memGrad=ctx.createRadialGradient(-sz*0.2,-sz*0.2,0,0,0,sz);
-    // Keep species color but make it transparent (like real cells)
+    // REAL PHASE CONTRAST: BRIGHT/WHITE organisms on dark background
+    // Reference photos show: light organisms, bright halo, dark gray bg
     var pr=rgb[0],pg=rgb[1],pb=rgb[2];
-    memGrad.addColorStop(0,'rgba('+pr+','+pg+','+pb+',0.15)'); // Center: barely visible
-    memGrad.addColorStop(0.6,'rgba('+pr+','+pg+','+pb+',0.25)'); // Mid: slightly visible
-    memGrad.addColorStop(0.85,'rgba('+pr+','+pg+','+pb+',0.5)'); // Edge: more opaque
-    memGrad.addColorStop(1,'rgba('+Math.round(pr*0.6)+','+Math.round(pg*0.6)+','+Math.round(pb*0.6)+',0.7)'); // Dark edge
+    // Convert to luminance (phase contrast = brightness differences)
+    var lum=Math.round(pr*0.3+pg*0.59+pb*0.11);
+    var memGrad=ctx.createRadialGradient(-sz*0.15,-sz*0.15,0,0,0,sz);
+    memGrad.addColorStop(0,'rgba('+Math.min(255,lum+60)+','+Math.min(255,lum+55)+','+Math.min(255,lum+40)+',0.85)'); // Bright center
+    memGrad.addColorStop(0.6,'rgba('+lum+','+lum+','+Math.max(0,lum-10)+',0.7)'); // Mid
+    memGrad.addColorStop(0.9,'rgba('+Math.min(255,lum+80)+','+Math.min(255,lum+75)+','+Math.min(255,lum+60)+',0.9)'); // Bright edge (phase halo)
+    memGrad.addColorStop(1,'rgba('+lum+','+lum+','+lum+',0.3)'); // Fade out
     ctx.fillStyle=memGrad;
     ctx.beginPath();
     // Draw same shape as body
@@ -231,9 +234,9 @@ function renderOrg(o, skipBody){
     else if(sh2==='irregular'){for(var il=0;il<=40;il++){var ia=il/40*Math.PI*2,ir=sz+Math.sin(ia*5+o.wobble)*sz*0.25;if(il===0)ctx.moveTo(Math.cos(ia)*ir,Math.sin(ia)*ir);else ctx.lineTo(Math.cos(ia)*ir,Math.sin(ia)*ir);}}
     else{ctx.arc(0,0,sz,0,Math.PI*2);}
     ctx.fill();
-    // Subtle refractive edge (light scattering at cell boundary)
-    ctx.strokeStyle='rgba('+Math.min(255,pr+40)+','+Math.min(255,pg+40)+','+Math.min(255,pb+40)+',0.3)';
-    ctx.lineWidth=Math.max(0.5,sz*0.04);
+    // Phase contrast bright halo edge
+    ctx.strokeStyle='rgba(255,250,230,0.6)';
+    ctx.lineWidth=Math.max(1,sz*0.08);
     ctx.stroke();
   }
   else if(!skipBody)drawBody(o,sz,bc,bd);

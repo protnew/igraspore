@@ -182,9 +182,25 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
    transform: translateY(1px);
    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
+
+/* === UI SIMPLIFICATION === */
+#hud { min-width: 200px; }
+#hud .stat-row { display: flex; justify-content: space-between; align-items: center; margin: 4px 0; }
+#abar button { font-size: 14px; padding: 10px 16px; min-width: 50px; }
+#abar button:hover { transform: scale(1.1); }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 13px; margin: 3px 0; }
+.stat-label { color: #8af; font-weight: bold; }
+.stat-value { color: #fff; font-weight: bold; }
+.section-title { color: #4af; font-size: 14px; font-weight: bold; text-transform: uppercase; margin: 8px 0 4px; border-bottom: 1px solid #234; }
+/* Hide confusing ecosystem breakdown */
+#ecoDetail { display: none !important; }
+/* Make speed bar bigger */
+#spdBar button { font-size: 14px; padding: 6px 12px; }
+
 </style>
 </head>
 <body>
+<div style="position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:9999;color:rgba(255,255,255,0.4);font-size:12px;font-family:monospace;pointer-events:none;text-shadow:0 0 2px #000;">iGraSpore V2 - v0.14.3</div>
 <button id="renderModeBtn" class="cartoon" onclick="toggleRenderModeLarge()">🎨 МУЛЬТЯШНЫЙ</button>
 <canvas id="c"></canvas>
 <canvas id="mm" style="position:absolute;bottom:6px;right:6px;width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;z-index:10;cursor:pointer" title="Minimap"></canvas>

@@ -226,8 +226,8 @@ function renderOrganisms(vL,vR,vT,vB){
       var r2=o.size*1.8; // Small natural halo
       var rgb2=hex2rgb(o.sp.color);
       var scatter=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,r2);
-      scatter.addColorStop(0,'rgba('+rgb2[0]+','+rgb2[1]+','+rgb2[2]+',0.15)');
-      scatter.addColorStop(0.5,'rgba('+rgb2[0]+','+rgb2[1]+','+rgb2[2]+',0.05)');
+      scatter.addColorStop(0,'rgba(200,200,180,0.35)');
+      scatter.addColorStop(0.5,'rgba(150,150,130,0.15)');
       scatter.addColorStop(1,'rgba(0,0,0,0)');
       ctx.fillStyle=scatter;
       ctx.beginPath();ctx.arc(o.x,o.y,r2,0,Math.PI*2);ctx.fill();

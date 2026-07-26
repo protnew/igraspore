@@ -139,7 +139,7 @@ function startGame(isScreensaver){
      var hw = halfW(dY);
      player=spawnOrg(sp, hw * 0.8, dY, true);
      if(!player)player=spawnOrg(sp,0,PD*0.3,true);
-     player.energy=100;cam.x=player.x;cam.y=player.y;zoom=3;tZoom=3;
+     player.energy=100;cam.x=player.x;cam.y=player.y;zoom=1;tZoom=3;
   }
   
   state='playing';gt=0;fc=0;lastT=0;

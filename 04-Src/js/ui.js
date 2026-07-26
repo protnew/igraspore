@@ -26,12 +26,22 @@ var langNames = {
 
 function updateHUD(){
   if(!player||!player.alive){document.getElementById('hud').style.display='none';return;}
-  var h=document.getElementById('hud');h.style.display='block';var eRatio=clamp(player.energy/100,0,1);
-  var dnaBtn = '<button onclick="openDNAEditor()" style="margin-top:5px;background:#0ff;color:#000;border:none;padding:3px 8px;border-radius:3px;cursor:pointer;font-size:10px;font-weight:bold;width:100%;box-sizing:border-box;">\uD83E\uDDEC \u0414\u041d\u041a-\u0420\u0435\u0434\u0430\u043a\u0442\u043e\u0440</button>';
-  h.innerHTML='<div class="nm">'+player.sp.name+'</div><div class="la">Gen '+player.generation+' \u00b7 '+player.size.toFixed(1)+'\u03bcm</div>'+
-    '<div id="ebar"><div id="efill" style="width:'+(eRatio*100)+'%;background:'+(eRatio>0.6?'#4f4':eRatio>0.3?'#ff4':'#f44')+'"></div></div>'+
-    '<div class="st">'+tt('energy')+': '+Math.round(player.energy)+'/100 \u00b7 '+tt('age')+': '+Math.round(player.age)+'s<br>'+
-    tt('eaten')+': '+player.eaten+' \u00b7 '+tt('divs')+': '+player.offspring+'</div>'+(player.infected?'<div style="color:#f44;font-size:9px">\u2620 '+(curLang==='ru'?'\u0417\u0430\u0440\u0430\u0436\u0435\u043d!':'Infected!')+'</div>':'') + dnaBtn;
+  var h=document.getElementById('hud');h.style.display='block';
+  var eRatio=clamp(player.energy/100,0,1);
+  var eColor = eRatio>0.6?'#4f4':eRatio>0.3?'#ff4':'#f44';
+  // SIMPLE CLEAN HUD: only essential stats
+  h.innerHTML = 
+    '<div style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:4px;">'+player.sp.name+'</div>'+
+    '<div style="font-size:12px;color:#89f;margin-bottom:8px;">Gen '+player.generation+' \u00b7 '+player.size.toFixed(1)+'\u03bcm</div>'+
+    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:18px;overflow:hidden;margin-bottom:6px;">'+
+      '<div style="width:'+(eRatio*100)+'%;background:'+eColor+';height:100%;transition:width .3s;"></div>'+
+    '</div>'+
+    '<div style="font-size:13px;line-height:1.6;">'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span style="color:#fff;font-weight:bold;">'+Math.round(player.energy)+'/100</span><br>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('age')+':</span> <span style="color:#fff;">'+Math.round(player.age)+'s</span><br>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span style="color:#fff;">'+player.offspring+'</span>'+
+    '</div>'+
+    (player.infected?'<div style="color:#f44;font-size:12px;margin-top:4px;">\u2620 '+(curLang==='ru'?'\u0417\u0430\u0440\u0430\u0436\u0435\u043d!':'Infected!')+'</div>':'');
 }
 function updateTopRight(){
   var t=document.getElementById('topR');var pop=0;for(var i=0;i<orgs.length;i++)if(orgs[i].alive)pop++;
@@ -48,19 +58,8 @@ function updateWeather(){
   w.style.display='block';
 }
 function updateEcoPanel(){
-  var ep=document.getElementById('ecoP');var cats=['producer','consumer1','consumer2','consumer3','decomposer'];
-  var html='<div class="ecT">'+(curLang==='ru'?'\u042d\u043a\u043e\u0441\u0438\u0441\u0442\u0435\u043c\u0430':'Ecosystem')+'</div>';
-  var maxCat=1;
-  for(var ci=0;ci<cats.length;ci++){var c=0;for(var j=0;j<orgs.length;j++)if(orgs[j].alive&&orgs[j].sp.cat===cats[ci])c++;if(c>maxCat)maxCat=c;}
-  for(var ci=0;ci<cats.length;ci++){var cat=cats[ci];var c=0;for(var j=0;j<orgs.length;j++)if(orgs[j].alive&&orgs[j].sp.cat===cat)c++;
-    html+='<div class="ecR"><div class="ecD" style="background:'+CC[cat]+'"></div><div class="ecB"><div class="ecF" style="width:'+(c/maxCat*100)+'%;background:'+CC[cat]+'"></div></div><div class="ecC">'+c+'</div></div>';}
-  if(viruses.length>0)html+='<div class="ecR"><div class="ecD" style="background:#f44"></div><div class="ecB"><div class="ecF" style="width:'+Math.min(100,viruses.length*5)+'%;background:#f44"></div></div><div class="ecC">'+viruses.length+'</div></div>';
-  html+='<div class="ecSub">'+tt('dCauses')+':<div style="display:flex; flex-direction:column; gap:2px;">';
-  for(var d=0;d<5;d++){
-      var dl=(curLang==='ru'?DLAB_RU:DLAB_EN)[d];
-      html+='<div style="display:flex; justify-content:space-between; width:100%;"><span>'+dl+':</span> <span>'+stats.deathCauses[d]+'</span></div>';
-  }
-  html+='</div></div>';ep.innerHTML=html;ep.style.display='block';
+  // ECOSYSTEM PANEL REMOVED per user request — confusing numbers
+  var ep=document.getElementById('ecoP');if(ep)ep.style.display='none';
 }
 function updateLegend(){
   var lg=document.getElementById('legP');var cats=['producer','consumer1','consumer2','consumer3','decomposer','virus','macrophage'];

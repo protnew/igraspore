@@ -211,17 +211,11 @@ function renderOrg(o, skipBody){
     ctx.restore();return;}
   ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
   if(isReal&&!skipBody){
-    // REAL PHASE CONTRAST: BRIGHT/WHITE organisms on dark background
-    // Reference photos show: light organisms, bright halo, dark gray bg
+    // PHASE CONTRAST: bright organisms, clearly visible on dark bg
     var pr=rgb[0],pg=rgb[1],pb=rgb[2];
-    // Convert to luminance (phase contrast = brightness differences)
-    var lum=Math.round(pr*0.3+pg*0.59+pb*0.11);
-    var memGrad=ctx.createRadialGradient(-sz*0.15,-sz*0.15,0,0,0,sz);
-    memGrad.addColorStop(0,'rgba('+Math.min(255,lum+60)+','+Math.min(255,lum+55)+','+Math.min(255,lum+40)+',0.85)'); // Bright center
-    memGrad.addColorStop(0.6,'rgba('+lum+','+lum+','+Math.max(0,lum-10)+',0.7)'); // Mid
-    memGrad.addColorStop(0.9,'rgba('+Math.min(255,lum+80)+','+Math.min(255,lum+75)+','+Math.min(255,lum+60)+',0.9)'); // Bright edge (phase halo)
-    memGrad.addColorStop(1,'rgba('+lum+','+lum+','+lum+',0.3)'); // Fade out
-    ctx.fillStyle=memGrad;
+    var lum=Math.min(255, Math.round(pr*0.3+pg*0.59+pb*0.11)+100); // Boost brightness
+    // Body: bright, semi-transparent
+    ctx.fillStyle='rgba('+lum+','+lum+','+Math.max(0,lum-15)+',0.75)';
     ctx.beginPath();
     // Draw same shape as body
     var sh2=o.sp.shape;
@@ -234,9 +228,9 @@ function renderOrg(o, skipBody){
     else if(sh2==='irregular'){for(var il=0;il<=40;il++){var ia=il/40*Math.PI*2,ir=sz+Math.sin(ia*5+o.wobble)*sz*0.25;if(il===0)ctx.moveTo(Math.cos(ia)*ir,Math.sin(ia)*ir);else ctx.lineTo(Math.cos(ia)*ir,Math.sin(ia)*ir);}}
     else{ctx.arc(0,0,sz,0,Math.PI*2);}
     ctx.fill();
-    // Phase contrast bright halo edge
-    ctx.strokeStyle='rgba(255,250,230,0.6)';
-    ctx.lineWidth=Math.max(1,sz*0.08);
+    // Bright halo edge
+    ctx.strokeStyle='rgba(255,255,240,0.8)';
+    ctx.lineWidth=Math.max(1.5,sz*0.1);
     ctx.stroke();
   }
   else if(!skipBody)drawBody(o,sz,bc,bd);

@@ -214,42 +214,105 @@ function renderOrganisms(vL,vR,vT,vB){
   var isRealistic = settings.renderMode === 'realistic';
   // REALISTIC MODE: render each organism individually with phase contrast effect
   if(isRealistic){
-    // DARK-FIELD / PHASE CONTRAST: bright organisms on black (like real microscope photos)
-    // Draw directly here so nothing can make them invisible
+    // PHASE CONTRAST / DARK FIELD: bright shapes on black (rods, cocci, filaments)
     for(var i=0;i<orgs.length;i++){
       var o=orgs[i];
       if(!o.alive)continue;
-      if(o.x<vL-50||o.x>vR+50||o.y<vT-50||o.y>vB+50)continue;
-      var sz=Math.max(o.size, 3.5);
-      // Soft outer halo
-      var g=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,sz*2.2);
-      g.addColorStop(0,'rgba(240,235,210,0.55)');
-      g.addColorStop(0.45,'rgba(200,195,170,0.25)');
+      if(o.x<vL-60||o.x>vR+60||o.y<vT-60||o.y>vB+60)continue;
+      var sz=Math.max(o.size, 3.2);
+      var sh=(o.sp && o.sp.shape) ? o.sp.shape : 'circle';
+      var ang = Math.atan2(o.vy||0, o.vx||0.01);
+      if(!isFinite(ang)) ang = (o.a||0);
+      // Soft scatter halo (ellipse-ish via scale)
+      ctx.save();
+      ctx.translate(o.x, o.y);
+      ctx.rotate(ang);
+      var hx = (sh==='rod'||sh==='filament'||sh==='spiral') ? sz*2.8 : (sh==='oval'?sz*2.4:sz*2.2);
+      var hy = (sh==='filament') ? sz*1.1 : (sh==='rod'||sh==='spiral') ? sz*1.5 : sz*2.2;
+      var g=ctx.createRadialGradient(0,0,0,0,0,Math.max(hx,hy));
+      g.addColorStop(0,'rgba(245,240,220,0.5)');
+      g.addColorStop(0.5,'rgba(200,195,170,0.18)');
       g.addColorStop(1,'rgba(0,0,0,0)');
       ctx.fillStyle=g;
-      ctx.beginPath();ctx.arc(o.x,o.y,sz*2.2,0,Math.PI*2);ctx.fill();
-      // Bright body (white/cream like real phase contrast)
-      var body=ctx.createRadialGradient(o.x-sz*0.2,o.y-sz*0.2,0,o.x,o.y,sz);
-      body.addColorStop(0,'rgba(255,255,245,1.0)');
-      body.addColorStop(0.7,'rgba(235,230,200,0.95)');
-      body.addColorStop(1,'rgba(200,195,170,0.85)');
+      ctx.beginPath(); ctx.ellipse(0,0,hx,hy,0,0,Math.PI*2); ctx.fill();
+
+      // Body gradient cream/white
+      var body=ctx.createRadialGradient(-sz*0.25,-sz*0.2,0,0,0,sz*1.2);
+      body.addColorStop(0,'rgba(255,255,245,1)');
+      body.addColorStop(0.65,'rgba(230,225,200,0.95)');
+      body.addColorStop(1,'rgba(170,165,140,0.75)');
       ctx.fillStyle=body;
-      ctx.beginPath();ctx.arc(o.x,o.y,sz,0,Math.PI*2);ctx.fill();
-      // Edge ring
-      ctx.strokeStyle='rgba(255,255,230,0.9)';
-      ctx.lineWidth=Math.max(0.8, sz*0.08);
-      ctx.stroke();
-      // Tiny nucleus dot
-      if(sz*zoom>4){
-        ctx.fillStyle='rgba(80,70,50,0.7)';
-        ctx.beginPath();ctx.arc(o.x-sz*0.15,o.y-sz*0.1,sz*0.22,0,Math.PI*2);ctx.fill();
+      ctx.strokeStyle='rgba(255,255,235,0.95)';
+      ctx.lineWidth=Math.max(0.9, sz*0.07);
+      ctx.beginPath();
+      if(sh==='rod'){
+        // bacillus: rounded capsule
+        var L=sz*1.55, R=sz*0.55;
+        ctx.moveTo(-L+R,-R);
+        ctx.lineTo(L-R,-R);
+        ctx.arc(L-R,0,R,-Math.PI/2,Math.PI/2);
+        ctx.lineTo(-L+R,R);
+        ctx.arc(-L+R,0,R,Math.PI/2,-Math.PI/2);
+        ctx.closePath();
+      } else if(sh==='filament'){
+        ctx.ellipse(0,0,sz*2.1,sz*0.32,0,0,Math.PI*2);
+      } else if(sh==='spiral'){
+        // elongated S-ish via ellipse + secondary
+        ctx.ellipse(0,0,sz*1.7,sz*0.45,0,0,Math.PI*2);
+      } else if(sh==='oval' || sh==='phage'){
+        ctx.ellipse(0,0,sz*1.25,sz*0.75,0,0,Math.PI*2);
+      } else if(sh==='colony'){
+        ctx.arc(0,0,sz,0,Math.PI*2);
+      } else if(sh==='star' || sh==='irregular'){
+        for(var k=0;k<8;k++){
+          var a2=k/8*Math.PI*2, rr=(k%2?sz*0.7:sz);
+          var px=Math.cos(a2)*rr, py=Math.sin(a2)*rr;
+          if(k===0)ctx.moveTo(px,py); else ctx.lineTo(px,py);
+        }
+        ctx.closePath();
+      } else {
+        // coccus / circle
+        ctx.arc(0,0,sz,0,Math.PI*2);
       }
-      // Player marker
+      ctx.fill(); ctx.stroke();
+
+      // Internal density (nucleus / nucleoid) — semi-transparent dark
+      if(sz*zoom > 3.5){
+        ctx.fillStyle='rgba(70,60,45,0.55)';
+        ctx.beginPath();
+        if(sh==='rod'||sh==='filament'){
+          ctx.ellipse(-sz*0.15,0,sz*0.55,sz*0.22,0,0,Math.PI*2);
+        } else {
+          ctx.arc(-sz*0.12,-sz*0.08,sz*0.28,0,Math.PI*2);
+        }
+        ctx.fill();
+      }
+      // Dividing pair hint
+      if(o.dividing){
+        ctx.strokeStyle='rgba(180,220,255,0.9)';
+        ctx.lineWidth=Math.max(1,sz*0.08);
+        ctx.beginPath(); ctx.moveTo(0,-sz*0.9); ctx.lineTo(0,sz*0.9); ctx.stroke();
+      }
+      // Flash highlight
+      if(o.flash && o.flash>0){
+        ctx.globalAlpha=Math.min(0.85, o.flash);
+        ctx.strokeStyle=o.flashColor||'#fff';
+        ctx.lineWidth=Math.max(1.5,sz*0.15);
+        ctx.beginPath();
+        if(sh==='rod'){ ctx.ellipse(0,0,sz*1.7,sz*0.75,0,0,Math.PI*2); }
+        else ctx.arc(0,0,sz*1.25,0,Math.PI*2);
+        ctx.stroke();
+        ctx.globalAlpha=1;
+      }
+      // Player ring
       if(o.isPlayer){
-        ctx.strokeStyle='rgba(100,255,200,0.9)';
-        ctx.lineWidth=Math.max(1.5,sz*0.12);
-        ctx.beginPath();ctx.arc(o.x,o.y,sz*1.35,0,Math.PI*2);ctx.stroke();
+        ctx.strokeStyle='rgba(80,255,200,0.95)';
+        ctx.lineWidth=Math.max(1.6,sz*0.12);
+        ctx.setLineDash([4,3]);
+        ctx.beginPath(); ctx.arc(0,0,sz*1.55,0,Math.PI*2); ctx.stroke();
+        ctx.setLineDash([]);
       }
+      ctx.restore();
     }
   } else {
   // CARTOON MODE: batch by color for performance

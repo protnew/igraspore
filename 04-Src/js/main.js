@@ -120,6 +120,79 @@ function gameLoop(ts){
   }catch(e){console.error('gameLoop:',e.message,e.stack);requestAnimationFrame(gameLoop);}
 }
 
+
+// ========== ONBOARDING TUTORIAL (5 steps, real "Далее" clicks) ==========
+window.tutorialStep = 0;
+window.tutorialActive = false;
+window.TUTORIAL_STEPS = [
+  { title: 'Добро пожаловать', body: 'Вы — микроорганизм в луже. Цель: есть, расти, делиться. Нажмите «Далее».' },
+  { title: 'Движение', body: 'WASD — плыть. Мышь задаёт направление. Попробуйте сдвинуться, затем «Далее».' },
+  { title: 'Питание', body: 'Подойдите к меньшей клетке и нажмите ЕСТЬ (E). Должны появиться вспышка и «+энергия».' },
+  { title: 'Деление', body: 'При полной энергии нажмите ДЕЛИТЬ (Q). Клетка станет заметно меньше — это нормально.' },
+  { title: 'Готово', body: 'Камера: СЛЕДИТЬ / КАМЕРА. Режим: кнопка РЕАЛИСТИЧНЫЙ. Удачи в эволюции!' }
+];
+
+window.showTutorialStep = function(){
+  var layer = document.getElementById('tutorialLayer');
+  var title = document.getElementById('tutorialTitle');
+  var body = document.getElementById('tutorialBody');
+  var counter = document.getElementById('tutorialCounter');
+  var next = document.getElementById('tutNext');
+  var skip = document.getElementById('tutSkip');
+  if(!layer || !next) return;
+  if(!window.tutorialActive || window.tutorialStep >= window.TUTORIAL_STEPS.length){
+    layer.style.display = 'none';
+    window.tutorialActive = false;
+    return;
+  }
+  var s = window.TUTORIAL_STEPS[window.tutorialStep];
+  title.textContent = s.title;
+  body.textContent = s.body;
+  counter.textContent = (window.tutorialStep+1) + ' / ' + window.TUTORIAL_STEPS.length;
+  next.textContent = (window.tutorialStep === window.TUTORIAL_STEPS.length-1) ? 'Играть' : 'Далее';
+  layer.style.display = 'flex';
+  layer.style.pointerEvents = 'auto';
+  next.style.pointerEvents = 'auto';
+  if(skip) skip.style.pointerEvents = 'auto';
+  // Re-bind every show (handlers must work even if DOM order changed)
+  next.onclick = function(e){ if(e){ e.preventDefault(); e.stopPropagation(); } window.advanceTutorial(); };
+  if(skip) skip.onclick = function(e){ if(e){ e.preventDefault(); e.stopPropagation(); } window.skipTutorial(); };
+  // Also click on card shouldn't block, only buttons
+  var card = document.getElementById('tutorialCard');
+  if(card) card.style.pointerEvents = 'auto';
+};
+
+window.advanceTutorial = function(){
+  if(!window.tutorialActive) return;
+  window.tutorialStep++;
+  if(window.tutorialStep >= window.TUTORIAL_STEPS.length){
+    window.tutorialActive = false;
+    var layer = document.getElementById('tutorialLayer');
+    if(layer) layer.style.display = 'none';
+    if(window.showToast) window.showToast('Туториал пройден', '#4f4');
+    try { localStorage.setItem('igraspore_tut_v2','1'); } catch(e){}
+    return;
+  }
+  window.showTutorialStep();
+};
+
+window.skipTutorial = function(){
+  window.tutorialActive = false;
+  window.tutorialStep = 999;
+  var layer = document.getElementById('tutorialLayer');
+  if(layer) layer.style.display = 'none';
+  try { localStorage.setItem('igraspore_tut_v2','1'); } catch(e){}
+};
+
+window.startTutorial = function(force){
+  var seen = false;
+  try { seen = localStorage.getItem('igraspore_tut_v2') === '1'; } catch(e){}
+  if(seen && !force){ window.tutorialActive=false; return; }
+  window.tutorialActive = true;
+  window.tutorialStep = 0;
+  window.showTutorialStep();
+};
+
 function startGame(isScreensaver){
   window.initAudio();
   initWorld();var sp;
@@ -145,17 +218,22 @@ function startGame(isScreensaver){
      player.energy=100;cam.x=player.x;cam.y=player.y;
      // Seed nearby food cluster so player sees action immediately
      var foodCats = FOOD[sp.cat] || ['producer','consumer1'];
-     for(var fi=0; fi<14; fi++){
-       var fsp = null;
-       for(var si=0; si<SPECIES_DB.length; si++){
-         if(foodCats.indexOf(SPECIES_DB[si].cat)>=0){ fsp = SPECIES_DB[si]; break; }
-       }
-       if(!fsp) fsp = SPECIES_DB[0];
-       var ang = rng(0, Math.PI*2), rr = rng(20, 90);
+     var foodPool = [];
+     for(var si=0; si<SPECIES_DB.length; si++){
+       if(foodCats.indexOf(SPECIES_DB[si].cat)>=0) foodPool.push(SPECIES_DB[si]);
+     }
+     if(!foodPool.length) foodPool = [SPECIES_DB[0]];
+     // Prefer rods/filaments so player sees non-circle shapes immediately
+     var shaped = foodPool.filter(function(s){ return s.shape==='rod'||s.shape==='filament'||s.shape==='spiral'; });
+     for(var fi=0; fi<16; fi++){
+       var fsp;
+       if(shaped.length && fi%2===0) fsp = shaped[fi % shaped.length];
+       else fsp = foodPool[fi % foodPool.length];
+       var ang = rng(0, Math.PI*2), rr = rng(18, 100);
        var fx = player.x + Math.cos(ang)*rr;
-       var fy = clamp(player.y + Math.sin(ang)*rr*0.6, 20, PD-20);
+       var fy = clamp(player.y + Math.sin(ang)*rr*0.65, 20, PD-20);
        var fo = spawnOrg(fsp, fx, fy, false);
-       if(fo){ fo.size = Math.min(fo.size, player.size*0.7); fo.energy = 40; }
+       if(fo){ fo.size = Math.min(fo.size, player.size*0.75); fo.energy = 45; }
      }
   }
   
@@ -195,6 +273,7 @@ function startGame(isScreensaver){
   sl.addEventListener('touchstart',function(){sliderDragging=true;});
   sl.addEventListener('touchend',function(){sliderDragging=false;tod=parseFloat(sl.value);});
   showSpeedBar();updateLegend();updateEcoPanel();
+  if(!isScreensaver){ setTimeout(function(){ window.startTutorial(false); }, 300); }
 }
 
 // === EVENT LISTENERS ===
@@ -398,3 +477,18 @@ resize();buildLangBar();buildDiff();buildCatSel();
 for(var i=0;i<SPECIES_DB.length;i++)speciesPop[i]={alive:0,born:0,deaths:[0,0,0,0,0]};
 buildSpeciesGrid();updateMenuTexts();initWorld();
 requestAnimationFrame(gameLoop);
+
+// Event delegation backup for tutorial buttons (capture phase)
+document.addEventListener('click', function(e){
+  var t = e.target;
+  if(!t || !window.tutorialActive) return;
+  var next = t.id==='tutNext' || (t.closest && t.closest('#tutNext'));
+  var skip = t.id==='tutSkip' || (t.closest && t.closest('#tutSkip'));
+  if(!next && !skip) return;
+  e.preventDefault(); e.stopPropagation();
+  if(window._tutClickLock) return;
+  window._tutClickLock = true;
+  setTimeout(function(){ window._tutClickLock=false; }, 120);
+  if(next) window.advanceTutorial && window.advanceTutorial();
+  else window.skipTutorial && window.skipTutorial();
+}, true);

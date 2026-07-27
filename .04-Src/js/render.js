@@ -220,7 +220,7 @@ function renderOrganisms(vL,vR,vT,vB){
       var o=orgs[i];
       if(!o.alive)continue;
       if(o.x<vL-50||o.x>vR+50||o.y<vT-50||o.y>vB+50)continue;
-      var sz=Math.max(o.size, 2);
+      var sz=Math.max(o.size, 3.5);
       // Soft outer halo
       var g=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,sz*2.2);
       g.addColorStop(0,'rgba(240,235,210,0.55)');
@@ -230,9 +230,9 @@ function renderOrganisms(vL,vR,vT,vB){
       ctx.beginPath();ctx.arc(o.x,o.y,sz*2.2,0,Math.PI*2);ctx.fill();
       // Bright body (white/cream like real phase contrast)
       var body=ctx.createRadialGradient(o.x-sz*0.2,o.y-sz*0.2,0,o.x,o.y,sz);
-      body.addColorStop(0,'rgba(255,255,240,0.95)');
-      body.addColorStop(0.7,'rgba(210,205,180,0.85)');
-      body.addColorStop(1,'rgba(160,155,130,0.7)');
+      body.addColorStop(0,'rgba(255,255,245,1.0)');
+      body.addColorStop(0.7,'rgba(235,230,200,0.95)');
+      body.addColorStop(1,'rgba(200,195,170,0.85)');
       ctx.fillStyle=body;
       ctx.beginPath();ctx.arc(o.x,o.y,sz,0,Math.PI*2);ctx.fill();
       // Edge ring

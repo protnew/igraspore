@@ -48,7 +48,9 @@ function doDivide(o){
 
 function finishDivide(o){
   o.dividing=false;o.energy*=0.5;
-  o.size=o.preDivSize?o.preDivSize*0.85:o.size; // Parent shrinks 15%
+  // Parent becomes ~half size (clearly visible), then slowly regrows via normal growth
+  var base = o.preDivSize || o.size;
+  o.size = Math.max(2, base * 0.5);
   o.divCD=DIV_COOLDOWN; if(o===player||window.spectatorMode) window.playSound("divide");
   // KEY FIX: push child AWAY with separation impulse + cooldown
   var pushAng=rng(0,Math.PI*2);
@@ -59,8 +61,9 @@ function finishDivide(o){
   var child=spawnOrg(o.sp,cx,cy,false,o.energy);
   if(child){
     child.generation=o.generation+1;child.energy=o.energy*0.9;
-    child.size=o.size*rng(0.92,1.05);
+    child.size=Math.max(2, base * 0.5 * rng(0.95,1.05));
     child.divCD=DIV_COOLDOWN;
+    child.flash=0.7; child.flashColor='#8ff';
     
     // Genetics & Mutations
     child.speedMult = o.speedMult;
@@ -88,8 +91,9 @@ function finishDivide(o){
     o.offspring++;
   }
   o.divCD=DIV_COOLDOWN;
-  o.flash=0.4;o.flashColor='#8f8';
-  if(settings.particles)for(var i=0;i<6;i++)parts.push({x:o.x,y:o.y,vx:rng(-2,2),vy:rng(-2,2),life:1,maxL:1,size:rng(2,4),color:'#8f8'});
+  o.flash=0.8;o.flashColor='#8ff';
+  if(settings.particles)for(var i=0;i<18;i++)parts.push({x:o.x,y:o.y,vx:rng(-4,4),vy:rng(-4,4),life:1.2,maxL:1.2,size:rng(2,6),color:i%2?'#8ff':'#fff'});
+  if(o===player && window.showToast) window.showToast('Деление!', '#8ff');
   if (typeof window !== 'undefined' && state === 'menu' && window.focusTimer <= 0 && Math.random() < 0.2) { window.focusTarget = o; window.focusTimer = 2.0; }
 }
 
@@ -152,8 +156,10 @@ function eatOrg(pred,prey){
       window.gameStats.dna += 1;
   }
   
-  if(pred.isPlayer&&settings.healthBars){ pred.flash = 0.3; }
-  pred.eaten++;pred.flash=0.3;pred.flashColor='#ff8';
+  // Strong visual feedback always
+  pred.eaten++;
+  pred.flash=0.7; pred.flashColor='#ff8';
+  prey.flash=0.9; prey.flashColor='#f44';
   
   if (typeof window !== 'undefined' && window.playSound) {
     if(player&&dist2(player,pred)<2500 || player&&dist2(player,prey)<2500) window.playSound("eat", prey.x, prey.y);
@@ -166,25 +172,23 @@ function eatOrg(pred,prey){
       var gained = prey.sp.energy * 0.8;
       pred.energy += gained;
       if(pred.energy > 120) pred.energy = 120;
-      if(settings.particles) {
-          var ang = Math.atan2(prey.y - pred.y, prey.x - pred.x);
-          for(var i=0;i<12;i++){
-              var pAng = ang + rng(-0.5, 0.5);
-              var spd = rng(2, 6);
-              parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:1,maxL:1,size:rng(2,5),color:prey.sp.color});
-          }
+      // Big burst
+      for(var i=0;i<20;i++){
+          var pAng = rng(0, Math.PI*2);
+          var spd = rng(2, 8);
+          parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:1.2,maxL:1.2,size:rng(2,6),color:prey.sp.color||'#ff8'});
       }
+      if(pred===player && window.showToast) window.showToast('+'+Math.round(gained)+' энергия', '#4f4');
       if (typeof window !== 'undefined' && state === 'menu' && (window.focusTimer||0) <= 0 && Math.random() < 0.15) { window.focusTarget = pred; window.focusTimer = 2.0; }
   } else {
-      pred.energy += dmg * 0.5; // partial eat
-      if(settings.particles) {
-          var ang = Math.atan2(prey.y - pred.y, prey.x - pred.x);
-          for(var i=0;i<5;i++){
-              var pAng = ang + rng(-0.3, 0.3);
-              var spd = rng(1, 4);
-              parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.5,maxL:0.5,size:rng(1,3),color:prey.sp.color});
-          }
+      var gained2 = dmg * 0.5;
+      pred.energy += gained2; // partial eat
+      for(var i=0;i<12;i++){
+          var pAng = rng(0, Math.PI*2);
+          var spd = rng(1, 5);
+          parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.9,maxL:0.9,size:rng(2,5),color:prey.sp.color||'#fa4'});
       }
+      if(pred===player && window.showToast) window.showToast('Укус! +'+Math.round(gained2), '#fa4');
   }
 }
 function killOrg(o,cause){

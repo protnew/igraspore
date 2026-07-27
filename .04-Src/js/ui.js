@@ -2,7 +2,7 @@
 function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight;}
 function showSpeedBar(){
   var sb=document.getElementById('spdBar');
-  var speeds=[{v:0,l:'\u23f8'},{v:0.1,l:'0.1x'},{v:0.25,l:'0.25x'},{v:0.5,l:'0.5x'},{v:1,l:'1x'},{v:5,l:'5x'},{v:25,l:'25x'},{v:100,l:'100x'}];
+  var speeds=[{v:0,l:'\u23f8'},{v:0.5,l:'0.5x'},{v:1,l:'1x'},{v:5,l:'5x'},{v:25,l:'25x'}];
   sb.innerHTML='';
   for(var i=0;i<speeds.length;i++){
     var b=document.createElement('div');b.className='sb'+(timeScale===speeds[i].v?' act':'');b.textContent=speeds[i].l;

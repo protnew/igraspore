@@ -1,0 +1,490 @@
+{
+  "summary": [
+    {
+      "product": "Thrive Microbe",
+      "avg": 7.7,
+      "sum": 154
+    },
+    {
+      "product": "Cell Lab",
+      "avg": 7.45,
+      "sum": 149
+    },
+    {
+      "product": "Agar.io-like cell games",
+      "avg": 6.85,
+      "sum": 137
+    },
+    {
+      "product": "Spore Cell Stage",
+      "avg": 6.75,
+      "sum": 135
+    },
+    {
+      "product": "iGraSpore V2",
+      "avg": 4.5,
+      "sum": 90
+    }
+  ],
+  "data": {
+    "products": [
+      "iGraSpore V2",
+      "Thrive Microbe",
+      "Spore Cell Stage",
+      "Cell Lab",
+      "Agar.io-like cell games"
+    ],
+    "params": [
+      "Onboarding clarity",
+      "Core loop feedback (eat/divide)",
+      "UI readability for non-experts",
+      "Microscope realism option",
+      "Species diversity visible at start",
+      "Tutorial that teaches buttons",
+      "Damage/combat VFX clarity",
+      "Division size feedback",
+      "Camera follow reliability",
+      "Performance 1000+ cells",
+      "Editor / genome tools",
+      "Challenges / goals",
+      "Legend/HUD simplicity",
+      "Speed controls usability",
+      "Scientific accuracy surface",
+      "Mobile/desktop polish",
+      "Multiplayer",
+      "Save/share organisms",
+      "Free/open access",
+      "Active development velocity"
+    ],
+    "scores": {
+      "iGraSpore V2": {
+        "Onboarding clarity": {
+          "s": 4,
+          "note": "Tutorial exists but buttons feel unresponsive to user"
+        },
+        "Core loop feedback (eat/divide)": {
+          "s": 3,
+          "note": "User: attack has no visible effect"
+        },
+        "UI readability for non-experts": {
+          "s": 3,
+          "note": "Eco panel numbers meaningless; fixed partially"
+        },
+        "Microscope realism option": {
+          "s": 5,
+          "note": "Mode exists; not yet photo-like rods"
+        },
+        "Species diversity visible at start": {
+          "s": 4,
+          "note": "Often 1-4 orgs in view at zoom1"
+        },
+        "Tutorial that teaches buttons": {
+          "s": 4,
+          "note": "Tutorial steps work in PW; user still confused"
+        },
+        "Damage/combat VFX clarity": {
+          "s": 4,
+          "note": "Damage numbers removed; need clear eat flash"
+        },
+        "Division size feedback": {
+          "s": 5,
+          "note": "Shrink 15% coded; user did not notice"
+        },
+        "Camera follow reliability": {
+          "s": 6,
+          "note": "V toggle added"
+        },
+        "Performance 1000+ cells": {
+          "s": 7,
+          "note": "2000+ alive, FPS~20-60 after opt"
+        },
+        "Editor / genome tools": {
+          "s": 2,
+          "note": "No Thrive-like editor"
+        },
+        "Challenges / goals": {
+          "s": 2,
+          "note": "Sandbox only"
+        },
+        "Legend/HUD simplicity": {
+          "s": 6,
+          "note": "Eco removed; energy/age/divs kept"
+        },
+        "Speed controls usability": {
+          "s": 4,
+          "note": "Too many steps 0.1..100x"
+        },
+        "Scientific accuracy surface": {
+          "s": 6,
+          "note": "Real species names; sim depth"
+        },
+        "Mobile/desktop polish": {
+          "s": 5,
+          "note": "Desktop canvas web"
+        },
+        "Multiplayer": {
+          "s": 1,
+          "note": "None"
+        },
+        "Save/share organisms": {
+          "s": 2,
+          "note": "Weak/none"
+        },
+        "Free/open access": {
+          "s": 9,
+          "note": "GitHub Pages free"
+        },
+        "Active development velocity": {
+          "s": 8,
+          "note": "Daily agent iteration"
+        }
+      },
+      "Thrive Microbe": {
+        "Onboarding clarity": {
+          "s": 7,
+          "note": "Steam microbe stage complete"
+        },
+        "Core loop feedback (eat/divide)": {
+          "s": 9,
+          "note": "Compounds, growth, editor loop"
+        },
+        "UI readability for non-experts": {
+          "s": 7,
+          "note": "Mature UI after years"
+        },
+        "Microscope realism option": {
+          "s": 6,
+          "note": "Stylized 3D top-down"
+        },
+        "Species diversity visible at start": {
+          "s": 8,
+          "note": "Patches + auto-evo"
+        },
+        "Tutorial that teaches buttons": {
+          "s": 8,
+          "note": "Guided microbe stage"
+        },
+        "Damage/combat VFX clarity": {
+          "s": 8,
+          "note": "Clear engulfs/toxins"
+        },
+        "Division size feedback": {
+          "s": 9,
+          "note": "Passive growth to editor"
+        },
+        "Camera follow reliability": {
+          "s": 9,
+          "note": "Stable camera"
+        },
+        "Performance 1000+ cells": {
+          "s": 7,
+          "note": "Godot optimized"
+        },
+        "Editor / genome tools": {
+          "s": 10,
+          "note": "Full microbe editor"
+        },
+        "Challenges / goals": {
+          "s": 8,
+          "note": "Progression + patches"
+        },
+        "Legend/HUD simplicity": {
+          "s": 7,
+          "note": "ATP/ammonia/phosphate clear"
+        },
+        "Speed controls usability": {
+          "s": 7,
+          "note": "Standard"
+        },
+        "Scientific accuracy surface": {
+          "s": 9,
+          "note": "Compounds, organelles"
+        },
+        "Mobile/desktop polish": {
+          "s": 8,
+          "note": "Steam desktop"
+        },
+        "Multiplayer": {
+          "s": 2,
+          "note": "Mostly single"
+        },
+        "Save/share organisms": {
+          "s": 8,
+          "note": "Saves + workshop culture"
+        },
+        "Free/open access": {
+          "s": 8,
+          "note": "Open source + Steam"
+        },
+        "Active development velocity": {
+          "s": 9,
+          "note": "Ongoing multicellular"
+        }
+      },
+      "Spore Cell Stage": {
+        "Onboarding clarity": {
+          "s": 10,
+          "note": "Jump right in design goal"
+        },
+        "Core loop feedback (eat/divide)": {
+          "s": 9,
+          "note": "Eat grow evolve clear"
+        },
+        "UI readability for non-experts": {
+          "s": 9,
+          "note": "Kid-friendly"
+        },
+        "Microscope realism option": {
+          "s": 2,
+          "note": "Cartoon only"
+        },
+        "Species diversity visible at start": {
+          "s": 8,
+          "note": "Busy ooze"
+        },
+        "Tutorial that teaches buttons": {
+          "s": 9,
+          "note": "Immediate grasp"
+        },
+        "Damage/combat VFX clarity": {
+          "s": 9,
+          "note": "Chomp feedback"
+        },
+        "Division size feedback": {
+          "s": 8,
+          "note": "Visible growth"
+        },
+        "Camera follow reliability": {
+          "s": 9,
+          "note": "Always centered"
+        },
+        "Performance 1000+ cells": {
+          "s": 6,
+          "note": "Limited stage"
+        },
+        "Editor / genome tools": {
+          "s": 8,
+          "note": "Parts editor"
+        },
+        "Challenges / goals": {
+          "s": 8,
+          "note": "Reach land"
+        },
+        "Legend/HUD simplicity": {
+          "s": 9,
+          "note": "Minimal"
+        },
+        "Speed controls usability": {
+          "s": 5,
+          "note": "Fixed pace mostly"
+        },
+        "Scientific accuracy surface": {
+          "s": 3,
+          "note": "Toy science"
+        },
+        "Mobile/desktop polish": {
+          "s": 9,
+          "note": "AAA polish"
+        },
+        "Multiplayer": {
+          "s": 1,
+          "note": "No"
+        },
+        "Save/share organisms": {
+          "s": 9,
+          "note": "Sporepedia"
+        },
+        "Free/open access": {
+          "s": 3,
+          "note": "Paid"
+        },
+        "Active development velocity": {
+          "s": 1,
+          "note": "Legacy"
+        }
+      },
+      "Cell Lab": {
+        "Onboarding clarity": {
+          "s": 8,
+          "note": "4 tutorials"
+        },
+        "Core loop feedback (eat/divide)": {
+          "s": 8,
+          "note": "Programmed behaviors visible"
+        },
+        "UI readability for non-experts": {
+          "s": 6,
+          "note": "Deep params"
+        },
+        "Microscope realism option": {
+          "s": 7,
+          "note": "Vector microscope aesthetic"
+        },
+        "Species diversity visible at start": {
+          "s": 7,
+          "note": "Challenge setups"
+        },
+        "Tutorial that teaches buttons": {
+          "s": 9,
+          "note": "4 tutorials + challenges"
+        },
+        "Damage/combat VFX clarity": {
+          "s": 7,
+          "note": "Clear interactions"
+        },
+        "Division size feedback": {
+          "s": 8,
+          "note": "Split ratio visible"
+        },
+        "Camera follow reliability": {
+          "s": 8,
+          "note": "Zoom to atomic"
+        },
+        "Performance 1000+ cells": {
+          "s": 8,
+          "note": "Up to 1000 claimed"
+        },
+        "Editor / genome tools": {
+          "s": 10,
+          "note": "16 types, 20 modes, 22+ params"
+        },
+        "Challenges / goals": {
+          "s": 10,
+          "note": "45 challenges"
+        },
+        "Legend/HUD simplicity": {
+          "s": 6,
+          "note": "Dense"
+        },
+        "Speed controls usability": {
+          "s": 9,
+          "note": "FF/slow-mo"
+        },
+        "Scientific accuracy surface": {
+          "s": 8,
+          "note": "Sandbox evolution"
+        },
+        "Mobile/desktop polish": {
+          "s": 8,
+          "note": "Android first"
+        },
+        "Multiplayer": {
+          "s": 1,
+          "note": "No"
+        },
+        "Save/share organisms": {
+          "s": 9,
+          "note": "Save load share genomes"
+        },
+        "Free/open access": {
+          "s": 8,
+          "note": "No ads IAP"
+        },
+        "Active development velocity": {
+          "s": 4,
+          "note": "Mature/slower"
+        }
+      },
+      "Agar.io-like cell games": {
+        "Onboarding clarity": {
+          "s": 10,
+          "note": "Instant play"
+        },
+        "Core loop feedback (eat/divide)": {
+          "s": 10,
+          "note": "Grow/split/feed obvious"
+        },
+        "UI readability for non-experts": {
+          "s": 10,
+          "note": "Almost no UI"
+        },
+        "Microscope realism option": {
+          "s": 1,
+          "note": "Arcade"
+        },
+        "Species diversity visible at start": {
+          "s": 7,
+          "note": "Many players"
+        },
+        "Tutorial that teaches buttons": {
+          "s": 9,
+          "note": "None needed"
+        },
+        "Damage/combat VFX clarity": {
+          "s": 9,
+          "note": "Absorb clear"
+        },
+        "Division size feedback": {
+          "s": 9,
+          "note": "Split halves size"
+        },
+        "Camera follow reliability": {
+          "s": 10,
+          "note": "Always"
+        },
+        "Performance 1000+ cells": {
+          "s": 8,
+          "note": "Massive multiplayer"
+        },
+        "Editor / genome tools": {
+          "s": 1,
+          "note": "None"
+        },
+        "Challenges / goals": {
+          "s": 4,
+          "note": "Leaderboard only"
+        },
+        "Legend/HUD simplicity": {
+          "s": 10,
+          "note": "Minimal"
+        },
+        "Speed controls usability": {
+          "s": 3,
+          "note": "N/A"
+        },
+        "Scientific accuracy surface": {
+          "s": 1,
+          "note": "None"
+        },
+        "Mobile/desktop polish": {
+          "s": 9,
+          "note": "High"
+        },
+        "Multiplayer": {
+          "s": 10,
+          "note": "Core"
+        },
+        "Save/share organisms": {
+          "s": 2,
+          "note": "Skins"
+        },
+        "Free/open access": {
+          "s": 9,
+          "note": "F2P"
+        },
+        "Active development velocity": {
+          "s": 5,
+          "note": "Stable"
+        }
+      }
+    },
+    "sources": [
+      {
+        "name": "Thrive Steam",
+        "url": "https://store.steampowered.com/app/1779200/Thrive/"
+      },
+      {
+        "name": "Thrive What is Thrive wiki",
+        "url": "https://wiki.revolutionarygamesstudio.com/wiki/What_is_Thrive"
+      },
+      {
+        "name": "Spore Cell Stage wiki",
+        "url": "https://spore.fandom.com/wiki/Cell_Stage"
+      },
+      {
+        "name": "Cell Lab official",
+        "url": "https://cell-lab.net/"
+      }
+    ]
+  }
+}

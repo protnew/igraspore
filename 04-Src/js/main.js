@@ -135,14 +135,32 @@ function startGame(isScreensaver){
      cam.x = 0; cam.y = PD * 0.3;
   } else {
      window.spectatorMode = false;
-     var dY = 100;
-     var hw = halfW(dY);
-     player=spawnOrg(sp, hw * 0.8, dY, true);
+     freeCam = false;
+     // Spawn mid-depth where density is higher
+     var dY = PD * 0.28;
+     var hw0 = halfW(dY) - 30;
+     var px = rng(-hw0*0.3, hw0*0.3);
+     player=spawnOrg(sp, px, dY, true);
      if(!player)player=spawnOrg(sp,0,PD*0.3,true);
-     player.energy=100;cam.x=player.x;cam.y=player.y;zoom=1;tZoom=3;
+     player.energy=100;cam.x=player.x;cam.y=player.y;
+     // Seed nearby food cluster so player sees action immediately
+     var foodCats = FOOD[sp.cat] || ['producer','consumer1'];
+     for(var fi=0; fi<14; fi++){
+       var fsp = null;
+       for(var si=0; si<SPECIES_DB.length; si++){
+         if(foodCats.indexOf(SPECIES_DB[si].cat)>=0){ fsp = SPECIES_DB[si]; break; }
+       }
+       if(!fsp) fsp = SPECIES_DB[0];
+       var ang = rng(0, Math.PI*2), rr = rng(20, 90);
+       var fx = player.x + Math.cos(ang)*rr;
+       var fy = clamp(player.y + Math.sin(ang)*rr*0.6, 20, PD-20);
+       var fo = spawnOrg(fsp, fx, fy, false);
+       if(fo){ fo.size = Math.min(fo.size, player.size*0.7); fo.energy = 40; }
+     }
   }
   
-  state='playing';zoom=1;tZoom=1;gt=0;fc=0;lastT=0;
+  // Start zoomed in enough to see neighbors (Spore/Agar feel)
+  state='playing';zoom=3.5;tZoom=3.5;gt=0;fc=0;lastT=0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';
@@ -152,11 +170,21 @@ function startGame(isScreensaver){
   if(settings.renderMode==='realistic'){var rb=document.getElementById('renderModeBtn');if(rb){rb.className='realistic';rb.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';}}
   else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';}}
   var kh=document.getElementById('keyHint');
-  kh.innerHTML='<div style="font-size:14px;line-height:1.8">'+
-    '<b>WASD</b> — движение | <b>Мышь</b> — направление | <b>E</b> — есть | <b>Q</b> — делиться<br>'+
-    '<b>R</b> — циста | <b>Tab</b> — автопилот | <b>F</b> — своб.камера | <b>M</b> — микроскоп | <b>N</b> — режим<br>'+
-    '<b>V</b> — следовать | <b>B</b> — вики | <b>P</b> — пауза | Колесо — зум</div>';
+  kh.innerHTML='<div style="font-size:15px;font-weight:700;line-height:1.7;text-align:center">'+
+    '<b>WASD</b> движение · <b>E</b> ЕСТЬ · <b>Q</b> ДЕЛИТЬ · <b>Tab</b> АВТО · <b>V</b> камера</div>';
   kh.style.display='flex';
+  // Large Russian labels on primary action buttons
+  function labelBtn(id, text, hk){
+    var b=document.getElementById(id); if(!b) return;
+    b.innerHTML = text + '<span class="hk">'+hk+'</span>';
+    b.style.minWidth='72px'; b.style.padding='12px 16px'; b.style.fontSize='15px';
+  }
+  labelBtn('bEat','ЕСТЬ','E');
+  labelBtn('bDiv','ДЕЛИТЬ','Q');
+  labelBtn('bCyst','ЦИСТА','R');
+  labelBtn('bAuto','АВТО','Tab');
+  labelBtn('bFree','КАМЕРА','F');
+  labelBtn('bFol','СЛЕДИТЬ','V');
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');
   tw.innerHTML='<input type="range" id="todR" min="0" max="24" step="0.05" value="'+tod+'"><span id="todL">12:00</span><span id="seasL">'+tt('season1')+'</span>';
@@ -235,6 +263,48 @@ window.playSound = function(type, x, y) {
     }
 };
 
+
+// UI toast — short feedback for actions
+window.showToast = function(msg, color){
+  var el = document.getElementById('toast');
+  if(!el){
+    el = document.createElement('div');
+    el.id = 'toast';
+    el.style.cssText = 'position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:50;padding:12px 22px;border-radius:10px;font-size:20px;font-weight:800;color:#fff;background:rgba(0,20,40,.88);border:2px solid #4af;pointer-events:none;opacity:0;transition:opacity .15s;text-shadow:0 2px 6px #000;';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  el.style.borderColor = color || '#4af';
+  el.style.color = color || '#fff';
+  el.style.opacity = '1';
+  clearTimeout(window._toastT);
+  window._toastT = setTimeout(function(){ el.style.opacity = '0'; }, 900);
+};
+
+window.tryPlayerEat = function(){
+  if(!player||!player.alive||player.dying) return false;
+  var best=null, bd=1e15;
+  var fc2 = FOOD[player.sp.cat]||[];
+  var range = (player.size + 55);
+  var range2 = range*range;
+  for(var i=0;i<orgs.length;i++){
+    var p=orgs[i];
+    if(!p.alive||p===player||p.cyst||p.divCD>0) continue;
+    // allow eating anything smaller, fallback to food chain
+    var okFood = fc2.indexOf(p.sp.cat)>=0 || p.size < player.size*0.85;
+    if(!okFood) continue;
+    if(p.size >= player.size*1.05) continue;
+    var d=dist2(player,p);
+    if(d<bd){ bd=d; best=p; }
+  }
+  if(best && bd < range2){
+    eatOrg(player, best);
+    return true;
+  }
+  if(window.showToast) window.showToast('Рядом нет добычи', '#faa');
+  return false;
+};
+
 var keys={};
 document.addEventListener('keydown',function(e){
   var k=e.key.toLowerCase();keys[k]=true;
@@ -256,25 +326,20 @@ document.addEventListener('keydown',function(e){
   if(k==='m'){document.getElementById('bMicro').click();}
   if(k==='n'){document.getElementById('bRender').click();}
   if(k==='b'){var wo=document.getElementById('wikiO');if(wo.className==='ov show')wo.className='ov';else{buildWiki();wo.className='ov show';}}
-  if(k==='e'){if(player&&player.alive&&!player.dying){var best=null,bd=99999;var fc2=FOOD[player.sp.cat]||[];
-    for(var i=0;i<orgs.length;i++){var p=orgs[i];if(!p.alive||p===player||p.cyst||p.divCD>0)continue;
-      if(fc2.indexOf(p.sp.cat)<0)continue;if(p.size>=player.size*0.88)continue;var d=dist2(player,p);if(d<bd){bd=d;best=p;}}
-    if(best&&bd<(player.size+best.sp.size+40)*(player.size+best.sp.size+40))eatOrg(player,best);}}
-  if(k==='q'){if(player&&player.alive)doDivide(player);}
+  if(k==='e'){ window.tryPlayerEat && window.tryPlayerEat(); }
+  if(k==='q'){if(player&&player.alive){var before=player.size; doDivide(player); if(window.showToast){ if(player.dividing||player.size<before) window.showToast('Деление...','#8ff'); else window.showToast('Мало энергии для деления','#faa'); }}}
   if(k==='r'){if(player&&player.alive)doCyst(player);}
-  if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';zoom=1;tZoom=1;document.getElementById('pauseO').className='ov';}}
+  if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
 });
 document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=false;if(k==='w'||k==='a'||k==='s'||k==='d')camKeys[k]=false;});
 
 mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;});
 
-document.getElementById('bEat').onclick=function(){if(player&&player.alive){var best=null,bd=99999;var fc2=FOOD[player.sp.cat]||[];
-  for(var i=0;i<orgs.length;i++){var p=orgs[i];if(!p.alive||p===player||p.cyst||p.divCD>0)continue;if(fc2.indexOf(p.sp.cat)<0)continue;if(p.size>=player.size*0.88)continue;var d=dist2(player,p);if(d<bd){bd=d;best=p;}}
-  if(best&&bd<(player.size+best.sp.size+40)*(player.size+best.sp.size+40))eatOrg(player,best);}};
-document.getElementById('bDiv').onclick=function(){if(player&&player.alive)doDivide(player);};
+document.getElementById('bEat').onclick=function(){ window.tryPlayerEat && window.tryPlayerEat(); };
+document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var before=player.size;doDivide(player);if(window.showToast){if(player.dividing||player.size<before)window.showToast('Деление...','#8ff');else window.showToast('Мало энергии для деления','#faa');}}};
 document.getElementById('bCyst').onclick=function(){if(player&&player.alive)doCyst(player);};
 document.getElementById('bAuto').onclick=function(){if(player&&player.alive)autoAI=!autoAI;};
-document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};};
+document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Камера: СВОБОДНО':'Камера: СЛЕДИТ','#4af');};
 
 document.getElementById('bMicro').onclick=function(){
   settings.microscopeMode=!settings.microscopeMode;
@@ -302,9 +367,9 @@ function toggleRenderModeLarge(){
     if(smBtn){smBtn.style.background='#012';smBtn.style.borderColor='#345';}
   }
 }
-document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;};
+document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;if(player&&player.alive){cam.x=player.x;cam.y=player.y;}if(window.showToast)window.showToast('Камера: СЛЕДИТ','#4af');};
 document.getElementById('bWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
-document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';zoom=1;tZoom=1;document.getElementById('pauseO').className='ov';}};
+document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};
 document.getElementById('bZI').onclick=function(){tZoom=clamp(tZoom*1.3,0.01,100);};
 document.getElementById('bZO').onclick=function(){tZoom=clamp(tZoom/1.3,0.01,100);};
 
@@ -318,7 +383,7 @@ document.getElementById('setClose').onclick=function(){document.getElementById('
 document.getElementById('wikiBtnMenu').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
 document.getElementById('wikiClose').onclick=function(){document.getElementById('wikiO').className='ov';};
 document.getElementById('wikiSearch').addEventListener('input',function(e){buildWiki(e.target.value);});
-document.getElementById('resBtn').onclick=function(){state='playing';zoom=1;tZoom=1;document.getElementById('pauseO').className='ov';};
+document.getElementById('resBtn').onclick=function(){state='playing';document.getElementById('pauseO').className='ov';};
 document.getElementById('pHelp').onclick=function(){document.getElementById('helpO').className='ov show';};
 document.getElementById('pSet').onclick=function(){buildSettings();document.getElementById('setO').className='ov show';};
 document.getElementById('pWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};

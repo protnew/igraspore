@@ -142,7 +142,7 @@ function startGame(isScreensaver){
      player.energy=100;cam.x=player.x;cam.y=player.y;zoom=1;tZoom=3;
   }
   
-  state='playing';gt=0;fc=0;lastT=0;
+  state='playing';zoom=1;tZoom=1;gt=0;fc=0;lastT=0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';
@@ -262,7 +262,7 @@ document.addEventListener('keydown',function(e){
     if(best&&bd<(player.size+best.sp.size+40)*(player.size+best.sp.size+40))eatOrg(player,best);}}
   if(k==='q'){if(player&&player.alive)doDivide(player);}
   if(k==='r'){if(player&&player.alive)doCyst(player);}
-  if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
+  if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';zoom=1;tZoom=1;document.getElementById('pauseO').className='ov';}}
 });
 document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=false;if(k==='w'||k==='a'||k==='s'||k==='d')camKeys[k]=false;});
 
@@ -304,13 +304,13 @@ function toggleRenderModeLarge(){
 }
 document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;};
 document.getElementById('bWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
-document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};
+document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';zoom=1;tZoom=1;document.getElementById('pauseO').className='ov';}};
 document.getElementById('bZI').onclick=function(){tZoom=clamp(tZoom*1.3,0.01,100);};
 document.getElementById('bZO').onclick=function(){tZoom=clamp(tZoom/1.3,0.01,100);};
 
 document.getElementById('startBtn').onclick=()=>startGame(false);
 document.getElementById('screensaverBtn').onclick=()=>startGame(true);
-document.getElementById('resBtn').onclick=function(){document.getElementById('pauseO').className='ov';state='playing';};
+document.getElementById('resBtn').onclick=function(){document.getElementById('pauseO').className='ov';state='playing';zoom=1;tZoom=1;};
 document.getElementById('helpBtn').onclick=function(){document.getElementById('helpO').className='ov show';};
 document.getElementById('helpClose').onclick=function(){document.getElementById('helpO').className='ov';};
 document.getElementById('setBtn2').onclick=function(){buildSettings();document.getElementById('setO').className='ov show';};
@@ -318,7 +318,7 @@ document.getElementById('setClose').onclick=function(){document.getElementById('
 document.getElementById('wikiBtnMenu').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
 document.getElementById('wikiClose').onclick=function(){document.getElementById('wikiO').className='ov';};
 document.getElementById('wikiSearch').addEventListener('input',function(e){buildWiki(e.target.value);});
-document.getElementById('resBtn').onclick=function(){state='playing';document.getElementById('pauseO').className='ov';};
+document.getElementById('resBtn').onclick=function(){state='playing';zoom=1;tZoom=1;document.getElementById('pauseO').className='ov';};
 document.getElementById('pHelp').onclick=function(){document.getElementById('helpO').className='ov show';};
 document.getElementById('pSet').onclick=function(){buildSettings();document.getElementById('setO').className='ov show';};
 document.getElementById('pWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};

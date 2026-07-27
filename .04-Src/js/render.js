@@ -5,8 +5,7 @@ function render(){
   if(!isFinite(zoom)||zoom<=0)zoom=1;
   if(!isFinite(dayLight))dayLight=0.5;
   if(!isFinite(tod))tod=12;
-  _mmFrame++;
-  if(_mmFrame%12!==0&&_mmCache){ctx.drawImage(_mmCache,0,0);return;}
+  // minimap early-return removed
   
   var isReal=settings.renderMode==='realistic';
   var vw=cv.width/zoom,vh=cv.height/zoom;
@@ -104,7 +103,7 @@ function render(){
   }
   
   if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
-  renderEventLogs();
+  /* renderEventLogs removed */
   
   // Damage indicators REMOVED
 
@@ -367,3 +366,5 @@ function renderPopGraph(){
     for(var i=0;i<popHist.length;i++){var x=i/(popHist.length-1)*110;var y=55-(popHist[i][cats[ci]]||0)/maxP*52;if(i===0)pcc.moveTo(x,y);else pcc.lineTo(x,y);}pcc.stroke();}
 }
 }
+
+function renderEventLogs(){}

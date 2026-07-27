@@ -38,7 +38,7 @@ L'analyse architecturale AVANT le code a économisé des dizaines d'heures.
 
 ## Langues / Languages
 - [English](../README.md)
-- [Русский](Projects/08-iGraSpore%20V2/04-Src/lang/README.ru.md)
-- [Français](Projects/08-iGraSpore%20V2/04-Src/lang/README.fr.md)
-- [Español](Projects/08-iGraSpore%20V2/04-Src/lang/README.es.md)
-- [中文](Projects/08-iGraSpore%20V2/04-Src/lang/README.zh.md)
+- [Русский](Projects/08-iGraSpore%20V2/.04-Src/lang/README.ru.md)
+- [Français](Projects/08-iGraSpore%20V2/.04-Src/lang/README.fr.md)
+- [Español](Projects/08-iGraSpore%20V2/.04-Src/lang/README.es.md)
+- [中文](Projects/08-iGraSpore%20V2/.04-Src/lang/README.zh.md)

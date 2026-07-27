@@ -2,7 +2,7 @@
 function render(){
   if(!isFinite(cam.x))cam.x=0;
   if(!isFinite(cam.y))cam.y=PD*0.3;
-  if(!isFinite(zoom)||zoom<=0)zoom=3;
+  if(!isFinite(zoom)||zoom<=0)zoom=1;
   if(!isFinite(dayLight))dayLight=0.5;
   if(!isFinite(tod))tod=12;
   _mmFrame++;
@@ -215,31 +215,42 @@ function renderOrganisms(vL,vR,vT,vB){
   var isRealistic = settings.renderMode === 'realistic';
   // REALISTIC MODE: render each organism individually with phase contrast effect
   if(isRealistic){
-    // Photorealistic: organisms with subtle light scatter (dark field microscopy)
-    // First pass: very subtle scatter halos (only makes cells detectable, not glowing)
-    ctx.save();
-    ctx.globalCompositeOperation='lighter';
+    // DARK-FIELD / PHASE CONTRAST: bright organisms on black (like real microscope photos)
+    // Draw directly here so nothing can make them invisible
     for(var i=0;i<orgs.length;i++){
       var o=orgs[i];
       if(!o.alive)continue;
-      if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
-      var r2=o.size*1.8; // Small natural halo
-      var rgb2=hex2rgb(o.sp.color);
-      var scatter=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,r2);
-      scatter.addColorStop(0,'rgba(200,200,180,0.35)');
-      scatter.addColorStop(0.5,'rgba(150,150,130,0.15)');
-      scatter.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=scatter;
-      ctx.beginPath();ctx.arc(o.x,o.y,r2,0,Math.PI*2);ctx.fill();
-    }
-    ctx.restore();
-    // Second pass: semi-transparent organism bodies with visible organelles
-    for(var i=0;i<orgs.length;i++){
-      var o=orgs[i];
-      if(!o.alive)continue;
-      if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
-      if(o.size*zoom<0.5)continue;
-      renderOrg(o,false);
+      if(o.x<vL-50||o.x>vR+50||o.y<vT-50||o.y>vB+50)continue;
+      var sz=Math.max(o.size, 2);
+      // Soft outer halo
+      var g=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,sz*2.2);
+      g.addColorStop(0,'rgba(240,235,210,0.55)');
+      g.addColorStop(0.45,'rgba(200,195,170,0.25)');
+      g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g;
+      ctx.beginPath();ctx.arc(o.x,o.y,sz*2.2,0,Math.PI*2);ctx.fill();
+      // Bright body (white/cream like real phase contrast)
+      var body=ctx.createRadialGradient(o.x-sz*0.2,o.y-sz*0.2,0,o.x,o.y,sz);
+      body.addColorStop(0,'rgba(255,255,240,0.95)');
+      body.addColorStop(0.7,'rgba(210,205,180,0.85)');
+      body.addColorStop(1,'rgba(160,155,130,0.7)');
+      ctx.fillStyle=body;
+      ctx.beginPath();ctx.arc(o.x,o.y,sz,0,Math.PI*2);ctx.fill();
+      // Edge ring
+      ctx.strokeStyle='rgba(255,255,230,0.9)';
+      ctx.lineWidth=Math.max(0.8, sz*0.08);
+      ctx.stroke();
+      // Tiny nucleus dot
+      if(sz*zoom>4){
+        ctx.fillStyle='rgba(80,70,50,0.7)';
+        ctx.beginPath();ctx.arc(o.x-sz*0.15,o.y-sz*0.1,sz*0.22,0,Math.PI*2);ctx.fill();
+      }
+      // Player marker
+      if(o.isPlayer){
+        ctx.strokeStyle='rgba(100,255,200,0.9)';
+        ctx.lineWidth=Math.max(1.5,sz*0.12);
+        ctx.beginPath();ctx.arc(o.x,o.y,sz*1.35,0,Math.PI*2);ctx.stroke();
+      }
     }
   } else {
   // CARTOON MODE: batch by color for performance

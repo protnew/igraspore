@@ -6,3 +6,9 @@ puppeteer_test.js
 playwright-report/
 test-results/
 coverage/
+
+# Added by obsidian_code_isolation_v2.py
+.04-Src/**/node_modules/
+07-QA-and-Testing/
+.04-Src/**/07-QA-and-Testing/
+backups/

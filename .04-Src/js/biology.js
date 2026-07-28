@@ -448,7 +448,7 @@ function updateOrg(o,dt){
   var metab = baseMetab * metabMult;
   if(metab*dt > 2) metab = 2/dt;
   if(o.parasite) {
-     o.energy -= dt*8; o.flash=0.1; o.flashColor='#f0f';
+     o.energy -= dt*(o.isPlayer?2.5:8); o.flash=0.1; o.flashColor='#f0f';
      if(Math.random()<0.02*dt) {
         var p = spawnOrg(o.parasite, o.x+rng(-10,10), o.y+rng(-10,10));
         if(p) { p.size*=0.5; p.energy=20; }
@@ -460,10 +460,11 @@ function updateOrg(o,dt){
   var tMin = o.sp.tempRange[0] + o.tempOffset - 5;
   var tMax = o.sp.tempRange[1] + o.tempOffset + 12;
   if(curTemp<tMin||curTemp>tMax){
-      if(!o.cyst && o.energy > 20) { o.cyst = true; o.energy -= 10; o.vx=0; o.vy=0; }
+      if(!o.isPlayer && !o.cyst && o.energy > 20) { o.cyst = true; o.energy -= 10; o.vx=0; o.vy=0; }
+      if(o.isPlayer){ o.energy -= dt*0.4; } // mild stress only
       if(!o.cyst && o.energy<5&&Math.random()<0.0008*dt){killOrg(o,DCODE.TEMP);return;}
   } else {
-      if(o.cyst && o.energy > 5) { o.cyst = false; }
+      if(o.cyst && o.energy > 5 && !o.isPlayer) { o.cyst = false; }
   }
   
   if(o.lastTemp !== undefined && Math.abs(o.lastTemp - curTemp) > 12) {
@@ -495,6 +496,13 @@ function updateOrg(o,dt){
     o.energy-=metab*dt*DIFF[difficulty].energy * (2.0 - o2Lim); // Starves faster if no O2
     globalO2 -= metab * dt * 0.05;
     globalCO2 += metab * dt * 0.05;
+  }
+
+  // Player energy floor/ceiling — never snap to weird negatives from stacked drains
+  if(o.isPlayer){
+    if(o.energy < 1) o.energy = 1; // keep controllable; death handled slowly below
+    if(o.energy > 120) o.energy = 120;
+    if(o.parasite && o.energy < 15){ o.parasite=null; if(window.showToast) window.showToast('Паразит сброшен','#fd8'); }
   }
 
   // Fluid Dynamics (Vortices/Trails)

@@ -361,10 +361,13 @@ window.showToast = function(msg, color){
 };
 
 window.tryPlayerEat = function(){
-  if(!player||!player.alive||player.dying||player.cyst) {
-    if(window.showToast) window.showToast('Нельзя есть сейчас', '#faa');
-    return false;
-  }
+  if(!player){ if(window.showToast) window.showToast('Нет игрока', '#faa'); return false; }
+  // Recover from soft-death / cyst if user insists on eating
+  if(player.cyst){ player.cyst=false; }
+  if(player.dying && player.energy<5){ player.dying=false; player.deathT=0; player.alive=true; player.energy=Math.max(player.energy, 12); }
+  if(!player.alive){ player.alive=true; player.energy=Math.max(player.energy, 15); }
+  if(player.energy<5) player.energy=15;
+
   // Ignore divCD on prey for player action — user intent wins
   var best=null, bd=1e15;
   var fc2 = FOOD[player.sp.cat]||[];

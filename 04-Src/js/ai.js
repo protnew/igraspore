@@ -22,8 +22,12 @@ window.getNearby = function(x, y, radius) {
 
 function moveOrg(o,dt){
   var sp=o.sp;
+  // Base speed — players always get responsive control (species drift stats are for NPCs)
   var speed=Math.max(sp.speed,0.8)*SPD_SCALE*0.05;
-  if(o.isPlayer&&!freeCam) speed*=3;
+  if(o.isPlayer&&!freeCam){
+    // Floor so producers/drifters still swim purposefully
+    speed = Math.max(speed, 2.2) * 2.2;
+  }
   if(o.speedMult) speed*=o.speedMult;
 
   // PLAYER manual
@@ -120,64 +124,59 @@ function moveOrg(o,dt){
 // ---- PLAYER AUTOPILOT: lock target, swim straight, eat on contact ----
 function playerAutoAI(o, dt, speed){
   o.state = 'auto';
-  // Retarget only every ~0.4s or if target dead/far
-  if(!o.aiTarget || !o.aiTarget.alive || o.aiRetargetT===undefined || o.aiRetargetT<=0){
-    o.aiRetargetT = 0.45;
-    o.aiTarget = findBestPrey(o, 900, true);
-    if(!o.aiTarget){
-      // explore: pick a wander point ahead and stick to it
-      if(!o.wanderPt || o.wanderT===undefined || o.wanderT<=0){
-        var ang = (o.angle||0) + (Math.random()-0.5)*0.9;
-        o.wanderPt = { x: o.x + Math.cos(ang)*220, y: clamp(o.y + Math.sin(ang)*140, 40, PD-40) };
-        o.wanderT = 1.2;
-      }
-    }
-  } else {
-    o.aiRetargetT -= dt;
+  // Keep prey lock longer; only retarget if dead/missing
+  var needNew = !o.aiTarget || !o.aiTarget.alive;
+  if(!needNew && o.aiRetargetT!==undefined) o.aiRetargetT -= dt;
+  if(needNew || (o.aiRetargetT!==undefined && o.aiRetargetT<=0 && !(o.aiTarget&&o.aiTarget.alive))){
+    o.aiTarget = findBestPrey(o, 1100, true);
+    o.aiRetargetT = 0.9;
   }
-  if(o.wanderT!==undefined) o.wanderT -= dt;
 
-  var tx, ty, hunting=false;
   if(o.aiTarget && o.aiTarget.alive){
-    tx = o.aiTarget.x; ty = o.aiTarget.y; hunting=true;
     o.state='hunt';
-  } else if(o.wanderPt){
-    tx = o.wanderPt.x; ty = o.wanderPt.y;
-    o.state='wander';
-  } else {
-    return;
-  }
-
-  var dx=tx-o.x, dy=ty-o.y, d=Math.sqrt(dx*dx+dy*dy);
-  if(d < 6){
-    if(!hunting){ o.wanderPt=null; o.wanderT=0; }
-    return;
-  }
-
-  // Smooth steering toward target (no sideways juke, no random dash)
-  var desiredAng = Math.atan2(dy, dx);
-  // Blend angle gently
-  var ca = o.angle || desiredAng;
-  var da = desiredAng - ca;
-  while(da>Math.PI) da-=Math.PI*2;
-  while(da<-Math.PI) da+=Math.PI*2;
-  o.angle = ca + da * Math.min(1, dt*6);
-
-  var thr = speed * dt * 20;
-  // Slight speed-up when close to food
-  if(hunting && d < 100) thr *= 1.5;
-  o.vx += Math.cos(o.angle) * thr;
-  o.vy += Math.sin(o.angle) * thr;
-
-  // Auto-eat when in range
-  if(hunting && d < (o.size + o.aiTarget.size + 18)){
-    if(typeof eatOrg==='function'){
-      eatOrg(o, o.aiTarget);
-      if(window.showToast) window.showToast('АВТО: съел', '#8f8');
+    var tx=o.aiTarget.x, ty=o.aiTarget.y;
+    var dx=tx-o.x, dy=ty-o.y, d=Math.sqrt(dx*dx+dy*dy)||1;
+    // Direct heading (fast lock) — no spiral
+    var desired = Math.atan2(dy, dx);
+    var ca = (typeof o.angle==='number' && isFinite(o.angle)) ? o.angle : desired;
+    var da = desired - ca;
+    while(da>Math.PI) da-=Math.PI*2;
+    while(da<-Math.PI) da+=Math.PI*2;
+    o.angle = ca + da * Math.min(1, dt*10);
+    var thr = speed * dt * 24;
+    if(d < 120) thr *= 1.6;
+    // Velocity mostly along heading (kill sideways drift that looks like orbiting)
+    var spMag = Math.sqrt(o.vx*o.vx+o.vy*o.vy);
+    if(spMag > 1){
+      o.vx = o.vx*0.7 + Math.cos(o.angle)*spMag*0.3;
+      o.vy = o.vy*0.7 + Math.sin(o.angle)*spMag*0.3;
     }
-    o.aiTarget = null;
-    o.aiRetargetT = 0.15;
+    o.vx += Math.cos(o.angle) * thr;
+    o.vy += Math.sin(o.angle) * thr;
+    if(d < (o.size + o.aiTarget.size + 22)){
+      if(typeof eatOrg==='function'){
+        if(o.aiTarget.divCD>0) o.aiTarget.divCD=0;
+        if(o.aiTarget.invuln>0) o.aiTarget.invuln=0;
+        eatOrg(o, o.aiTarget);
+        if(window.showToast) window.showToast('АВТО: съел', '#8f8');
+      }
+      o.aiTarget=null; o.aiRetargetT=0.05;
+    }
+    return;
   }
+
+  // Wander: long straight legs
+  if(!o.wanderPt || o.wanderT===undefined || o.wanderT<=0){
+    var ang = (typeof o.angle==='number'?o.angle:0) + (Math.random()-0.5)*0.5;
+    o.wanderPt = {
+      x: clamp(o.x + Math.cos(ang)*280, 40, PW-40),
+      y: clamp(o.y + Math.sin(ang)*160, 40, PD-40)
+    };
+    o.wanderT = 2.0;
+  }
+  o.wanderT -= dt;
+  o.state='wander';
+  steerToward(o, o.wanderPt.x, o.wanderPt.y, speed, dt, 16);
 }
 
 function findBestPrey(o, radius, forPlayer){

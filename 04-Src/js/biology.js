@@ -98,7 +98,13 @@ function finishDivide(o){
 }
 
 function eatOrg(pred,prey){
-  if(!prey.alive||prey.divCD>0||prey.invuln>0)return;
+  if(!prey||!prey.alive)return;
+  // Player overrides soft locks on prey
+  if(!(pred&&pred.isPlayer)){
+    if(prey.divCD>0||prey.invuln>0)return;
+  } else {
+    if(prey.invuln>0.8)return;
+  }
   if(prey.sp.cat==='consumer1' && Math.random()<0.15) {
      pred.parasite = prey.sp;
      pred.flashColor='#f0f'; pred.flash=0.5;
@@ -557,6 +563,7 @@ function updateOrg(o,dt){
       }
     }
     moveOrg(o,dt);
+    if(o.isPlayer && window.playerContactEat) window.playerContactEat(dt);
   }
   if(o.dividing){
     o.divT+=dt;

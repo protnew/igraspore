@@ -361,28 +361,90 @@ window.showToast = function(msg, color){
 };
 
 window.tryPlayerEat = function(){
-  if(!player||!player.alive||player.dying) return false;
+  if(!player||!player.alive||player.dying||player.cyst) {
+    if(window.showToast) window.showToast('Нельзя есть сейчас', '#faa');
+    return false;
+  }
+  // Ignore divCD on prey for player action — user intent wins
   var best=null, bd=1e15;
   var fc2 = FOOD[player.sp.cat]||[];
-  var range = (player.size + 55);
+  // Generous range so E works when prey is "nearby" on screen
+  var range = Math.max(90, player.size*4 + 70);
   var range2 = range*range;
   for(var i=0;i<orgs.length;i++){
     var p=orgs[i];
-    if(!p.alive||p===player||p.cyst||p.divCD>0) continue;
-    // allow eating anything smaller, fallback to food chain
-    var okFood = fc2.indexOf(p.sp.cat)>=0 || p.size < player.size*0.85;
+    if(!p||!p.alive||p===player||p.cyst) continue;
+    if(p.invuln>0.5) continue; // only hard invuln blocks
+    var okFood = false;
+    if(p.size < player.size*0.98) okFood = true; // anything smaller
+    if(fc2.indexOf(p.sp.cat)>=0 && p.size < player.size*1.15) okFood = true;
+    if(player.sp.cat==='producer' && p.size < player.size*1.05) okFood = true;
     if(!okFood) continue;
-    if(p.size >= player.size*1.05) continue;
+    if(p.size >= player.size*1.25) continue;
     var d=dist2(player,p);
     if(d<bd){ bd=d; best=p; }
   }
   if(best && bd < range2){
+    // Soften prey locks so eat always lands
+    if(best.divCD>0) best.divCD=0;
+    if(best.invuln>0) best.invuln=0;
+    var before = player.eaten||0;
     eatOrg(player, best);
+    if((player.eaten||0) > before){
+      if(window.showToast) window.showToast('Съел! +энергия', '#8f8');
+      return true;
+    }
+    // eatOrg may have early-returned — force minimal success feedback path
+    if(best.alive){
+      // manual energy gain if eatOrg blocked
+      var gain = Math.max(8, Math.min(40, best.energy*0.5 || best.size*3));
+      player.energy = Math.min(110, (player.energy||0) + gain);
+      player.eaten = (player.eaten||0)+1;
+      best.alive=false;
+      if(typeof killOrg==='function') try{ killOrg(best, (typeof DCODE!=='undefined'&&DCODE.EATEN)||1); }catch(e){ best.alive=false; }
+      player.flash=1; player.flashColor='#8f8';
+      if(settings.particles){
+        for(var k=0;k<10;k++) parts.push({x:player.x,y:player.y,vx:rng(-3,3),vy:rng(-3,3),life:rng(8,18),maxL:18,size:rng(2,5),color:'#8f8'});
+      }
+      if(window.showToast) window.showToast('+'+Math.round(gain)+' энергия', '#8f8');
+      return true;
+    }
     return true;
   }
-  if(window.showToast) window.showToast('Рядом нет добычи', '#faa');
+  // Pull toward nearest possible target as "almost" assist
+  if(best){
+    var dx=best.x-player.x, dy=best.y-player.y, d=Math.sqrt(dx*dx+dy*dy)||1;
+    player.vx += dx/d * 8;
+    player.vy += dy/d * 8;
+    if(window.showToast) window.showToast('Ближе к добыче…', '#fd8');
+    return false;
+  }
+  if(window.showToast) window.showToast('Рядом нет добычи (подплыви ближе)', '#faa');
   return false;
 };
+
+// Contact auto-eat for player (when overlapping smaller cell) — every ~0.15s
+window._playerContactEatT = 0;
+window.playerContactEat = function(dt){
+  if(!player||!player.alive||player.cyst||player.dying) return;
+  window._playerContactEatT -= (dt||0.016);
+  if(window._playerContactEatT>0) return;
+  window._playerContactEatT = 0.12;
+  var range = player.size + 14;
+  var range2 = range*range;
+  for(var i=0;i<orgs.length;i++){
+    var p=orgs[i];
+    if(!p||!p.alive||p===player||p.cyst) continue;
+    if(p.size >= player.size*0.95) continue;
+    if(dist2(player,p) <= range2){
+      if(p.divCD>0) p.divCD=0;
+      if(p.invuln>0) p.invuln=0;
+      eatOrg(player, p);
+      return;
+    }
+  }
+};
+
 
 var keys={};
 document.addEventListener('keydown',function(e){
@@ -405,7 +467,7 @@ document.addEventListener('keydown',function(e){
   if(k==='m'){document.getElementById('bMicro').click();}
   if(k==='n'){document.getElementById('bRender').click();}
   if(k==='b'){var wo=document.getElementById('wikiO');if(wo.className==='ov show')wo.className='ov';else{buildWiki();wo.className='ov show';}}
-  if(k==='e'){ window.tryPlayerEat && window.tryPlayerEat(); }
+  if(k==='e'||e.code==='KeyE'){ e.preventDefault(); window.tryPlayerEat && window.tryPlayerEat(); }
   if(k==='q'){if(player&&player.alive){var before=player.size; doDivide(player); if(window.showToast){ if(player.dividing||player.size<before) window.showToast('Деление...','#8ff'); else window.showToast('Мало энергии для деления','#faa'); }}}
   if(k==='r'){if(player&&player.alive)doCyst(player);}
   if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
@@ -492,3 +554,18 @@ document.addEventListener('click', function(e){
   if(next) window.advanceTutorial && window.advanceTutorial();
   else window.skipTutorial && window.skipTutorial();
 }, true);
+
+// Hard rebind action buttons (eat must always work)
+(function(){
+  function rebindActions(){
+    var be=document.getElementById('bEat');
+    if(be){ be.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} window.tryPlayerEat&&window.tryPlayerEat(); }; }
+    var bd=document.getElementById('bDiv');
+    if(bd){ bd.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} if(player&&player.alive){ var before=player.size; doDivide(player); if(window.showToast){ if(player.size<before-0.01||player.dividing) window.showToast('Деление!','#8ff'); else window.showToast('Мало энергии','#faa'); } } }; }
+    var ba=document.getElementById('bAuto');
+    if(ba){ ba.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} autoAI=!autoAI; ba.classList.toggle('on', !!autoAI); if(window.showToast) window.showToast(autoAI?'АВТО: вкл':'АВТО: выкл', autoAI?'#8f8':'#aaa'); }; }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', rebindActions);
+  else rebindActions();
+  window.rebindActions = rebindActions;
+})();

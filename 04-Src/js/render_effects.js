@@ -101,7 +101,7 @@ function renderSky(vL,vR,vT){
 function renderWater(vL,vR,vT,vB){
   ctx.save();
   var realMode=settings.renderMode==='realistic';
-  var realMul=realMode?0.55:1.0;
+  var realMul=realMode?0.85:1.0;
   var grad = ctx.createLinearGradient(0, 0, 0, PD);
   var lightTop = lightAt(0)*realMul, lightMid = lightAt(PD*0.5)*realMul, lightBot = lightAt(PD)*realMul;
   

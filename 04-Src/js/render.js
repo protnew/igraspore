@@ -12,20 +12,18 @@ function render(){
   var vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
   
   // === STEP 1: BACKGROUND ===
-  // Microscope (M) NEVER blacks out water — only zoom/overlay later.
-  // Realistic (N) = phase-contrast dark field (not pure pitch black).
-  if(isReal){
-    var rg=ctx.createRadialGradient(cv.width*0.5,cv.height*0.45,0,cv.width*0.5,cv.height*0.5,Math.max(cv.width,cv.height)*0.7);
-    rg.addColorStop(0,'#1a1f28');
-    rg.addColorStop(0.55,'#0c1018');
-    rg.addColorStop(1,'#05070c');
-    ctx.fillStyle=rg;
-  } else {
-    // Cartoon: living pond teal — NOT near-black
+  // BOTH modes: living water color. Realistic is darker teal, never pure black.
+  {
     var wgrad=ctx.createLinearGradient(0,0,0,cv.height);
-    wgrad.addColorStop(0,'#0d3a5c');
-    wgrad.addColorStop(0.45,'#0a4a62');
-    wgrad.addColorStop(1,'#063848');
+    if(isReal){
+      wgrad.addColorStop(0,'#0a2838');
+      wgrad.addColorStop(0.4,'#0c3040');
+      wgrad.addColorStop(1,'#061820');
+    } else {
+      wgrad.addColorStop(0,'#0d3a5c');
+      wgrad.addColorStop(0.45,'#0a4a62');
+      wgrad.addColorStop(1,'#063848');
+    }
     ctx.fillStyle=wgrad;
   }
   ctx.fillRect(0,0,cv.width,cv.height);
@@ -36,34 +34,39 @@ function render(){
   ctx.scale(zoom,zoom);
   ctx.translate(-cam.x,-cam.y);
   
-  // === STEP 3: ENVIRONMENT (cartoon only) ===
-  if(!isReal){
+  // === STEP 3: ENVIRONMENT — water/sky/algae ALWAYS (fix black water) ===
+  {
     renderSky(vL,vR,vT);
     renderWater(vL,vR,vT,vB);
     renderSunRays(vL,vR);
     renderSediment(vL,vR,vB);
-    renderNutrients(vL,vR,vT,vB);
+    if(!isReal) renderNutrients(vL,vR,vT,vB);
     renderShore(vL,vR,vT);
-    if(settings.shadows)renderShadows(vL,vR,vT,vB);
-    if(settings.bubbles)renderBubbles(vL,vR,vT,vB);
-    renderParallax(vL,vR,vT,vB);
-    renderTrails(vL,vR,vT,vB);
+    if(settings.shadows && !isReal) renderShadows(vL,vR,vT,vB);
+    if(settings.bubbles) renderBubbles(vL,vR,vT,vB);
+    if(!isReal){ renderParallax(vL,vR,vT,vB); renderTrails(vL,vR,vT,vB); }
   }
   
   // === STEP 4: ORGANISMS (both modes) ===
   renderOrganisms(vL,vR,vT,vB);
+  // Educational anatomy labels when zoomed in
+  if(typeof renderOrganelleEdu==='function'){/* drawn after world in screen space below */}
   renderViruses(vL,vR,vT,vB);
   
-  // === STEP 5: EFFECTS (cartoon only) ===
-  if(!isReal){
+  // === STEP 5: EFFECTS ===
+  {
     renderParticles(vL,vR,vT,vB);
-    if(isRaining)renderRain(vL,vR,vT);
+    if(!isReal && isRaining) renderRain(vL,vR,vT);
   }
   if(moveTarget)renderTarget();
   
+  // World-space organelle pins (still in world transform)
+  if(typeof renderOrganelleEdu==='function'){ /* panel is screen-space; pins need dual */ }
+
   ctx.restore(); // End world transform
   
   // === STEP 6: SCREEN-SPACE OVERLAYS ===
+  if(typeof renderOrganelleEdu==='function') renderOrganelleEdu(vL,vR,vT,vB);
   if(!isReal){
     renderDayNight();
     if(settings.healthBars)renderHealthBars();
@@ -73,20 +76,20 @@ function render(){
   // === STEP 7: REALISTIC POST-PROCESSING ===
   if(isReal){
     var mw=cv.width,mh=cv.height,mcx=mw/2,mcy=mh/2;
-    var mradius=Math.min(mw,mh)*0.45;
+    var mradius=Math.min(mw,mh)*0.48;
     
-    // Circular field of view (vignette)
+    // Soft eyepiece ring — CENTER stays clear so water/algae stay visible
     ctx.save();
-    var fov=ctx.createRadialGradient(mcx,mcy,mradius*0.55,mcx,mcy,mradius*1.05);
+    var fov=ctx.createRadialGradient(mcx,mcy,mradius*0.72,mcx,mcy,mradius*1.12);
     fov.addColorStop(0,'rgba(0,0,0,0)');
-    fov.addColorStop(0.6,'rgba(0,0,0,0.3)');
-    fov.addColorStop(0.9,'rgba(0,0,0,0.85)');
-    fov.addColorStop(1,'rgba(0,0,0,1)');
+    fov.addColorStop(0.55,'rgba(0,15,25,0.05)');
+    fov.addColorStop(0.82,'rgba(0,10,18,0.40)');
+    fov.addColorStop(1,'rgba(0,8,14,0.82)');
     ctx.fillStyle=fov;
     ctx.fillRect(0,0,mw,mh);
     
-    // Amber tint
-    ctx.fillStyle='rgba(70,55,15,0.1)';
+    // Light amber glass tint (subtle)
+    ctx.fillStyle='rgba(90,75,30,0.06)';
     ctx.fillRect(0,0,mw,mh);
     
     // Scan lines
@@ -519,3 +522,200 @@ function renderPopGraph(){
 }
 
 function renderEventLogs(){}
+
+
+// ============================================================
+// EDUCATIONAL ORGANELLE LABELS — anatomy learning mode
+// ============================================================
+var ORGANELLE_INFO = {
+  nucleus: {
+    ru: 'Ядро', en: 'Nucleus',
+    desc: 'Хранит ДНК. Управляет ростом, делением и синтезом белков. У бактерий настоящего ядра нет — ДНК в нуклеоиде.'
+  },
+  nucleoid: {
+    ru: 'Нуклеоид', en: 'Nucleoid',
+    desc: 'Зона с кольцевой ДНК у прокариот. Нет ядерной оболочки — геном свободно в цитоплазме.'
+  },
+  mito: {
+    ru: 'Митохондрия', en: 'Mitochondrion',
+    desc: '«Электростанция» клетки. Дыхание: сахар + O₂ → ATP (энергия). Своя ДНК — остаток древней бактерии.'
+  },
+  chloro: {
+    ru: 'Хлоропласт', en: 'Chloroplast',
+    desc: 'Фотосинтез: свет + CO₂ + H₂O → сахар + O₂. Зелёный из‑за хлорофилла. Есть у водорослей и растений.'
+  },
+  vacuole: {
+    ru: 'Вакуоль', en: 'Vacuole',
+    desc: 'Пузырёк с водой, запасными веществами или пищеварительными ферментами. У инфузорий — пищеварительные и сократительные вакуоли.'
+  },
+  cilia: {
+    ru: 'Реснички', en: 'Cilia',
+    desc: 'Короткие подвижные выросты. Создают ток воды: движение + фильтр-питание (затягивают бактерий и водоросли ко рту).'
+  },
+  flagella: {
+    ru: 'Жгутик', en: 'Flagellum',
+    desc: 'Длинный «мотор» для плавания. Вращается или изгибается — клетка плывёт к пище или от опасности (хемотаксис).'
+  },
+  membrane: {
+    ru: 'Мембрана', en: 'Membrane',
+    desc: 'Тонкая оболочка из липидов. Контролирует, что входит и выходит. У всех клеток есть мембрана.'
+  },
+  wall: {
+    ru: 'Клеточная стенка', en: 'Cell wall',
+    desc: 'Жёсткий каркас снаружи мембраны (пептидогликан у бактерий, целлюлоза у растений). Защита и форма.'
+  },
+  oral: {
+    ru: 'Ротовая воронка', en: 'Oral groove',
+    desc: 'У инфузорий — желобок, куда реснички сгоняют добычу. Отсюда пища попадает в пищеварительную вакуоль.'
+  },
+  cyto: {
+    ru: 'Цитоплазма', en: 'Cytoplasm',
+    desc: 'Внутренняя среда клетки: вода, белки, органеллы. Здесь идут тысячи биохимических реакций.'
+  }
+};
+
+function organelleSetFor(o){
+  if(!o || !o.sp) return [];
+  var cat = o.sp.cat || '';
+  var bio = o.sp.bio || {};
+  var list = [{id:'membrane', x:0.0, y:0.75}];
+  if(cat==='producer'){
+    list.push({id:'chloro', x:-0.25, y:-0.1});
+    list.push({id:'nucleoid', x:0.2, y:0.15});
+    if(bio.flagella || o.sp.loco==='flagella') list.push({id:'flagella', x:0.7, y:0.0});
+  } else if(cat==='consumer1'){
+    list.push({id:'nucleoid', x:0.0, y:0.0});
+    list.push({id:'wall', x:0.0, y:0.9});
+    if(bio.flagella || (o.sp.loco&&String(o.sp.loco).indexOf('flag')>=0))
+      list.push({id:'flagella', x:0.85, y:0.0});
+  } else if(cat==='consumer2'){
+    list.push({id:'nucleus', x:-0.15, y:-0.1});
+    list.push({id:'vacuole', x:0.25, y:0.2});
+    list.push({id:'cilia', x:0.0, y:-0.85});
+    list.push({id:'oral', x:0.55, y:0.0});
+    list.push({id:'mito', x:-0.35, y:0.25});
+  } else if(cat==='consumer3' || cat==='macrophage'){
+    list.push({id:'nucleus', x:0.0, y:-0.15});
+    list.push({id:'mito', x:-0.3, y:0.2});
+    list.push({id:'vacuole', x:0.3, y:0.15});
+  } else {
+    list.push({id:'cyto', x:0.0, y:0.0});
+  }
+  return list;
+}
+
+function renderOrganelleEdu(vL,vR,vT,vB){
+  if(typeof player==='undefined' || !player || !player.alive) return;
+  if(typeof zoom!=='number' || zoom < 2.6) {
+    var pan0 = document.getElementById('orgEduPanel');
+    if(pan0) pan0.style.display = 'none';
+    return;
+  }
+  var o = player;
+  if(window.freeCam && typeof mx==='number'){
+    var wx = cam.x+(mx-cv.width/2)/zoom, wy = cam.y+(my-cv.height/2)/zoom;
+    var best=null,bd=50*50;
+    for(var i=0;i<orgs.length;i++){
+      var t=orgs[i]; if(!t||!t.alive) continue;
+      var dd=(t.x-wx)*(t.x-wx)+(t.y-wy)*(t.y-wy);
+      if(dd<bd && t.size*zoom>10){ bd=dd; best=t; }
+    }
+    if(best) o = best;
+  }
+  var set = organelleSetFor(o);
+  if(!set.length) return;
+
+  var hovered = null;
+  var mouseWX = (typeof mx==='number') ? cam.x+(mx-cv.width/2)/zoom : null;
+  var mouseWY = (typeof my==='number') ? cam.y+(my-cv.height/2)/zoom : null;
+
+  ctx.save();
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.font = '12px system-ui,sans-serif';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+
+  for(var k=0;k<set.length;k++){
+    var it = set[k];
+    var info = ORGANELLE_INFO[it.id]; if(!info) continue;
+    var wxp = o.x + it.x * o.size * 1.15;
+    var wyp = o.y + it.y * o.size * 1.15;
+    var sx = (wxp - cam.x)*zoom + cv.width/2;
+    var sy = (wyp - cam.y)*zoom + cv.height/2;
+    if(sx<-40||sy<-40||sx>cv.width+40||sy>cv.height+40) continue;
+
+    // pin
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(255,250,210,0.95)';
+    ctx.strokeStyle = 'rgba(40,100,70,0.9)';
+    ctx.lineWidth = 1.5;
+    ctx.arc(sx, sy, 4.5, 0, Math.PI*2);
+    ctx.fill(); ctx.stroke();
+
+    var lab = info.ru;
+    var tw = ctx.measureText(lab).width;
+    var offx = (it.x >= 0 ? 10 : -tw - 14);
+    // leader
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(160,220,180,0.55)';
+    ctx.moveTo(sx, sy);
+    ctx.lineTo(sx + offx + (it.x>=0?0:tw), sy - 1);
+    ctx.stroke();
+    // chip
+    ctx.fillStyle = 'rgba(5,18,24,0.86)';
+    ctx.strokeStyle = 'rgba(120,200,160,0.5)';
+    roundRect(ctx, sx+offx-5, sy-10, tw+12, 20, 5);
+    ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#d8ffe8';
+    ctx.fillText(lab, sx+offx, sy);
+
+    if(mouseWX!=null){
+      var mdx=mouseWX-wxp, mdy=mouseWY-wyp;
+      if(mdx*mdx+mdy*mdy < (o.size*0.65)*(o.size*0.65)) hovered = {id:it.id, info:info};
+    }
+    // also hover near screen pin
+    if(typeof mx==='number'){
+      var sdx=mx-sx, sdy=my-sy;
+      if(sdx*sdx+sdy*sdy < 18*18) hovered = {id:it.id, info:info};
+    }
+  }
+  ctx.restore();
+
+  var focus = hovered;
+  if(!focus){
+    var rot = set[Math.floor(((gt||0)/3.5)) % set.length];
+    focus = {id:rot.id, info:ORGANELLE_INFO[rot.id]};
+  }
+  ensureOrgEduPanel();
+  var pan = document.getElementById('orgEduPanel');
+  if(pan && focus && focus.info){
+    pan.style.display = 'block';
+    var spn = (o.sp && o.sp.name) ? o.sp.name : '';
+    var catRu = {producer:'водоросль',consumer1:'бактерия',consumer2:'инфузория',consumer3:'хищник',decomposer:'редуцент'}[o.sp.cat]||o.sp.cat;
+    pan.innerHTML = '<div style="font-size:11px;opacity:.7;margin-bottom:2px">🔬 Анатомия клетки · '+spn+' <span style="opacity:.6">('+catRu+')</span></div>'+
+      '<div style="font-size:15px;font-weight:700;color:#b6ffd0">'+focus.info.ru+
+      ' <span style="font-weight:400;opacity:.65;font-size:12px">('+focus.info.en+')</span></div>'+
+      '<div style="font-size:12.5px;line-height:1.4;margin-top:4px;color:#e8f4ee">'+focus.info.desc+'</div>'+
+      '<div style="font-size:10px;opacity:.55;margin-top:5px">Наведи на точку · колёсико = приблизить · M = микроскоп</div>';
+  }
+}
+
+function roundRect(c,x,y,w,h,r){
+  c.beginPath();
+  c.moveTo(x+r,y); c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r);
+  c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath();
+}
+
+function ensureOrgEduPanel(){
+  if(document.getElementById('orgEduPanel')) return;
+  var d = document.createElement('div');
+  d.id = 'orgEduPanel';
+  d.style.cssText = 'display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:72px;z-index:60;'+
+    'max-width:min(520px,92vw);padding:10px 14px;border-radius:10px;'+
+    'background:rgba(4,16,22,0.88);border:1px solid rgba(100,180,140,0.45);'+
+    'color:#eaf7f0;font-family:system-ui,sans-serif;pointer-events:none;'+
+    'box-shadow:0 8px 28px rgba(0,0,0,0.45)';
+  document.body.appendChild(d);
+}
+window.renderOrganelleEdu = renderOrganelleEdu;
+window.ORGANELLE_INFO = ORGANELLE_INFO;

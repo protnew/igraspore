@@ -188,13 +188,15 @@ function playerAutoAI(o, dt, speed){
   if(o.aiRetargetT === undefined) o.aiRetargetT = 0;
   if(o.huntT === undefined) o.huntT = 0;
   o.aiRetargetT -= dt;
-  var pRange = en < 40 ? 280 : 900;
+  var isCilP = o.sp && o.sp.cat==='consumer2';
+  // Infusoria: short cruise to bacterial soup; predators may hunt farther
+  var pRange = isCilP ? (en < 40 ? 100 : 180) : (en < 40 ? 280 : 900);
   if(!o.aiTarget || !o.aiTarget.alive || o.aiRetargetT <= 0){
     o.aiTarget = findBestPrey(o, pRange, true);
-    o.aiRetargetT = 0.75;
+    o.aiRetargetT = isCilP ? 1.1 : 0.75;
     o.huntT = 0;
     if(o.aiTarget){
-      turnToward(o, Math.atan2(o.aiTarget.y-o.y, o.aiTarget.x-o.x), dt, 10);
+      turnToward(o, Math.atan2(o.aiTarget.y-o.y, o.aiTarget.x-o.x), dt, isCilP?5:10);
     }
   }
 
@@ -203,19 +205,19 @@ function playerAutoAI(o, dt, speed){
     var dy = o.aiTarget.y - o.y;
     var d = Math.sqrt(dx*dx + dy*dy) || 1;
     o.huntT += dt;
-    if(d > pRange * 1.3 || o.huntT > 8){
+    if(d > pRange * 1.3 || o.huntT > (isCilP?5:8)){
       o.aiTarget = null; o.huntT = 0; o.aiRetargetT = 1.0;
-      runAndTumble(o, dt, speed * 0.7, 0.7);
+      runAndTumble(o, dt, speed * 0.55, 0.7);
       o.state = 'wander';
       return;
     }
-    o.state = 'hunt';
-    turnToward(o, Math.atan2(dy, dx), dt, 8);
-    var mul = en < 40 ? 10 : 14;
-    if(d < 100 && en >= 40) mul = 16;
-    thrustAlongFacing(o, speed, dt, mul);
-
-    if(d < (o.size + o.aiTarget.size + 28)){
+    o.state = isCilP ? 'filter' : 'hunt';
+    turnToward(o, Math.atan2(dy, dx), dt, isCilP?4:8);
+    var mul = isCilP ? 5 : (en < 40 ? 10 : 14);
+    if(!isCilP && d < 100 && en >= 40) mul = 16;
+    thrustAlongFacing(o, speed * (isCilP?0.5:1), dt, mul);
+    // Ciliate: filterFeedPull already swallows; predator bites on contact
+    if(d < (o.size + o.aiTarget.size + (isCilP?26:28))){
       forceEat(o, o.aiTarget);
       o.aiTarget = null;
       o.aiRetargetT = 0.12;
@@ -224,7 +226,7 @@ function playerAutoAI(o, dt, speed){
     return;
   }
 
-  runAndTumble(o, dt, speed, en < 50 ? 0.7 : 1.0);
+  runAndTumble(o, dt, speed * (isCilP?0.65:1), en < 50 ? 0.7 : 1.0);
   o.state = 'wander';
 }
 
@@ -237,7 +239,10 @@ function forceEat(pred, prey){
   var before = pred.eaten || 0;
   if(typeof eatOrg === 'function') eatOrg(pred, prey);
   if((pred.eaten||0) > before){
-    if(pred.isPlayer && window.showToast) window.showToast('АВТО: съел', '#8f8');
+    if(pred.isPlayer && window.showToast){
+      var msg = (pred.sp&&pred.sp.cat==='consumer2') ? 'Фильтр: затянул добычу' : 'АВТО: съел';
+      window.showToast(msg, '#8f8');
+    }
     return true;
   }
   // Fallback if eatOrg blocked
@@ -277,9 +282,9 @@ function forceEat(pred, prey){
  */
 function findBestPrey(o, radius, forPlayer){
   var foodCats = (typeof FOOD!=='undefined' && FOOD[o.sp.cat]) ? FOOD[o.sp.cat] : [];
+  var isCiliate = o.sp && o.sp.cat === 'consumer2';
   var best=null, bd=1e15;
   var near = window.getNearby ? window.getNearby(o.x, o.y, radius) : orgs;
-  // Also hard-scan orgs if near is sparse (player must find food)
   if(forPlayer && (!near || near.length < 8)) near = orgs;
 
   for(var i=0;i<near.length;i++){
@@ -290,13 +295,19 @@ function findBestPrey(o, radius, forPlayer){
     var ok=false;
     var inChain = foodCats.indexOf(p.sp.cat) >= 0;
 
-    if(forPlayer){
-      // Predators: prefer food chain; also anything smaller
+    // === INFUSORIA / CILIATES: filter-feeders, NOT predators ===
+    // Only tiny bacteria & algae (and very small ciliates). Never dive on peers.
+    if(isCiliate){
+      if(!inChain) continue;
+      // Prefer bacteria & algae; allow only much smaller other ciliates
+      if(p.sp.cat === 'consumer2' && p.size >= o.size * 0.55) continue;
+      if(p.size >= o.size * 0.70) continue; // never "hunt" large targets
+      if(p.isPlayer && !forPlayer && (gt - (p.spawnTime||0)) < 20) continue;
+      ok = true;
+    } else if(forPlayer){
       if(inChain && p.size < o.size * 1.25) ok = true;
       if(p.size < o.size * 0.98) ok = true;
-      // Consumer with no smaller prey: still chase producers even if similar size
       if(inChain && p.sp.cat === 'producer') ok = true;
-      // Never eat larger predators of own size class badly
       if(p.size > o.size * 1.35 && !inChain) ok = false;
     } else {
       if(!inChain) continue;
@@ -307,14 +318,59 @@ function findBestPrey(o, radius, forPlayer){
     if(!ok) continue;
 
     var d = dist2(o, p);
-    // Prefer food-chain targets for predators (lower score)
     var score = d;
-    if(forPlayer && inChain) score *= 0.55;
-    if(forPlayer && p.sp.cat==='producer') score *= 0.75;
-    if(score < bd && d < radius*radius){ bd = score; best = p; }
+    if(isCiliate){
+      // Prefer smallest nearby snacks (real filter feeding)
+      score = d + p.size * p.size * 40;
+      if(p.sp.cat === 'consumer1') score *= 0.55; // bacteria first
+      if(p.sp.cat === 'producer') score *= 0.70;
+    } else {
+      if(forPlayer && inChain) score *= 0.55;
+      if(forPlayer && p.sp.cat==='producer') score *= 0.75;
+    }
+    if(score < bd){ bd = score; best = p; }
   }
   return best;
 }
+
+/** Ciliate filter current: gently pull tiny prey toward oral groove + eat in zone */
+function filterFeedPull(o, dt){
+  if(!o || !o.alive || !o.sp || o.sp.cat !== 'consumer2') return;
+  var foodCats = (typeof FOOD!=='undefined' && FOOD[o.sp.cat]) ? FOOD[o.sp.cat] : ['producer','consumer1'];
+  var zone = o.size * 3.2 + (o.isPlayer ? 36 : 22);
+  var near = window.getNearby ? window.getNearby(o.x, o.y, zone + 40) : orgs;
+  var facing = (typeof o.facing==='number') ? o.facing : 0;
+  // Oral groove slightly in front of cell
+  var mouthX = o.x + Math.cos(facing) * o.size * 0.55;
+  var mouthY = o.y + Math.sin(facing) * o.size * 0.55;
+  var pulled = 0;
+  for(var i=0;i<near.length;i++){
+    var p = near[i];
+    if(!p || !p.alive || p===o || p.cyst || p.dying) continue;
+    if(foodCats.indexOf(p.sp.cat) < 0) continue;
+    if(p.size >= o.size * 0.70) continue; // only micro-prey
+    var dx = mouthX - p.x, dy = mouthY - p.y;
+    var d = Math.sqrt(dx*dx+dy*dy) || 1;
+    if(d > zone) continue;
+    // Stronger pull when closer (cilia current)
+    var strength = (1 - d/zone) * (o.isPlayer ? 42 : 28) * (dt || 0.016);
+    p.x += (dx/d) * strength;
+    p.y += (dy/d) * strength;
+    // slight visual trail particle
+    if(typeof parts!=='undefined' && parts && Math.random()<0.12){
+      parts.push({x:p.x,y:p.y,vx:(dx/d)*-8,vy:(dy/d)*-8,life:0.35,maxL:0.35,size:1.2,color:p.sp.color||'#8c8'});
+    }
+    pulled++;
+    // Swallow if inside oral zone
+    if(d < o.size * 1.15 + p.size){
+      if(o.isPlayer && typeof forceEat==='function') forceEat(o, p);
+      else if(typeof eatOrg==='function') eatOrg(o, p);
+    }
+  }
+  o._filterPullN = pulled;
+}
+window.filterFeedPull = filterFeedPull;
+
 
 // ============================================================
 // NATURAL AI — bacterial run-and-tumble + hunt
@@ -363,14 +419,17 @@ function naturalAI(o, dt, speed){
   }
 
   // --- Hunt if hungry and has food chain ---
-  var needFood = en < 72; // was 92 → endless hunt
+  var isCil = o.sp && o.sp.cat==='consumer2';
+  // Ciliates filter nearby — only "seek" when hungry and food not in zone
+  var needFood = isCil ? (en < 85) : (en < 72);
   if(needFood && foodCats.length > 0){
     if(o.aiRetargetT === undefined) o.aiRetargetT = 0;
     if(o.huntT === undefined) o.huntT = 0;
     o.aiRetargetT -= dt;
 
-    // Starving: only pursue VERY close prey (save energy)
-    var huntRange = en < 38 ? 120 : (en < 55 ? 380 : 650);
+    // Ciliates: short range cruise toward soup, not long predator dives
+    var huntRange = isCil ? (en < 40 ? 90 : 160)
+                  : (en < 38 ? 120 : (en < 55 ? 380 : 650));
     var maxHuntTime = en < 40 ? 3.5 : 7.0;
 
     if(!o.aiTarget || !o.aiTarget.alive || o.aiRetargetT <= 0){
@@ -392,11 +451,12 @@ function naturalAI(o, dt, speed){
       }
       o.state='hunt';
       o.huntT += dt;
-      // Low energy → slower pursuit (don't burn last reserves)
-      var huntMul = en < 40 ? 7 : (en < 55 ? 10 : 12);
-      turnToward(o, Math.atan2(dy,dx), dt, en < 40 ? 4 : 6);
-      thrustAlongFacing(o, speed, dt, huntMul);
-      if(d < o.size + o.aiTarget.size + 10){
+      // Ciliates cruise gently; true predators pursue harder
+      var huntMul = isCil ? 4.5 : (en < 40 ? 7 : (en < 55 ? 10 : 12));
+      turnToward(o, Math.atan2(dy,dx), dt, isCil ? 3 : (en < 40 ? 4 : 6));
+      thrustAlongFacing(o, speed * (isCil ? 0.55 : 1), dt, huntMul);
+      // Filter current does the catching for ciliates; predators bite on contact
+      if(d < o.size + o.aiTarget.size + (isCil ? 22 : 10)){
         forceEat(o, o.aiTarget);
         o.aiTarget=null;
         o.aiRetargetT=0.25;

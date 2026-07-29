@@ -79,6 +79,10 @@ function updateWeather(){
 function updateEcoPanel(){
   // ECOSYSTEM PANEL REMOVED per user request — confusing numbers
   var ep=document.getElementById('ecoP');if(ep)ep.style.display='none';
+  var lg=document.getElementById('legendP')||document.getElementById('legP');
+  if(lg) lg.style.display='none';
+  var dc=document.getElementById('deathP')||document.getElementById('deathCauses');
+  if(dc) dc.style.display='none';
 }
 function updateLegend(){
   var lg=document.getElementById('legP');

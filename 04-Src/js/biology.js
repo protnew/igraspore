@@ -186,29 +186,34 @@ function eatOrg(pred,prey){
   var preySize0 = Math.max(0.4, prey.size || 1);
   var preyEn0 = Math.max(5, prey.energy || 10);
 
-  // if(!window.dmgIndicators) window.dmgIndicators=[];
-  var dmg = pred.size * 0.5;
-  
-  // Phytoplankton defenses
+  // Defenses
   if(prey.sp.flags) {
-     if(prey.sp.flags.shell) dmg *= 0.2; // Silicon shell reduces damage
      if(prey.sp.flags.spikes) {
-         var recoil = dmg * 0.4;
-         pred.size -= recoil; // Takes damage back!
-         // if(settings.particles) window.dmgIndicators.push({x:pred.x, y:pred.y, val:Math.round(recoil), life:1.0});
+         var recoil = Math.min(pred.size*0.15, preySize0*0.2);
+         pred.size = Math.max(1, pred.size - recoil);
      }
      if(prey.sp.flags.toxic) {
          var res = pred.acidResist || 0;
-         pred.speedMult = 0.1 + 0.8 * res; // Poisoned!
+         pred.speedMult = 0.1 + 0.8 * res;
          pred.flashColor = '#0f0'; pred.flash = 0.8;
          pred.energy -= 10 * Math.max(0, 1 - res);
      }
   }
-  
-  if (prey.size < dmg) dmg = prey.size;
-  // Fraction of meal consumed this bite (1.0 = fully eaten)
-  var biteFrac = (preySize0 > 0.01) ? Math.min(1, dmg / preySize0) : 1;
-  prey.size -= dmg;
+
+  // Full swallow if prey is not bigger than predator; otherwise chip away
+  var fullSwallow = preySize0 <= pred.size * 1.05;
+  if(prey.sp.flags && prey.sp.flags.shell) fullSwallow = preySize0 <= pred.size * 0.7;
+  var dmg, biteFrac;
+  if(fullSwallow){
+    dmg = prey.size;
+    biteFrac = 1;
+    prey.size = 0;
+  } else {
+    dmg = Math.max(pred.size * 0.45, preySize0 * 0.25);
+    if(dmg > prey.size) dmg = prey.size;
+    biteFrac = dmg / preySize0;
+    prey.size -= dmg;
+  }
   // if(settings.particles) window.dmgIndicators.push({x:prey.x, y:prey.y, val:Math.round(dmg), life:1.0});
   
   // Total nutrition from ORIGINAL prey size/energy × bite fraction
@@ -285,8 +290,7 @@ function eatOrg(pred,prey){
       if(pred===player && window.showToast) window.showToast('+'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' масса', '#4f4');
       if (typeof window !== 'undefined' && state === 'menu' && (window.focusTimer||0) <= 0 && Math.random() < 0.15) { window.focusTarget = pred; window.focusTimer = 2.0; }
   } else {
-      var gained2 = dmg * 0.5;
-      pred.energy += gained2; // partial eat
+      // partial nutrition already applied above via biteFrac — no second energy add
       for(var i=0;i<12;i++){
           var pAng = rng(0, Math.PI*2);
           var spd = rng(1, 5);

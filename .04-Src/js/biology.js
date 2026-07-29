@@ -296,7 +296,7 @@ function eatOrg(pred,prey){
           var spd = rng(1, 5);
           parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.9,maxL:0.9,size:rng(2,5),color:prey.sp.color||'#fa4'});
       }
-      if(pred===player && window.showToast) window.showToast('Укус! +'+Math.round(gained2), '#fa4');
+      if(pred===player && window.showToast) window.showToast('Укус +'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' м', '#fa4');
   }
 }
 function killOrg(o,cause){

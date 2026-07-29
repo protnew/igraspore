@@ -57,6 +57,16 @@ function updateWeather(){
     '<div style="color:#678;font-size:8px;margin-top:1px">'+(curLang==='ru'?'\u0412\u0435\u0442\u0435\u0440':'Wind')+': '+Math.round(wind.strength*10)/10+'</div>';
   w.style.display='block';
 }
+
+  // Division readiness (energy + mass + size)
+  try{
+    var hd=document.getElementById('hDivReady')||document.getElementById('hDiv')||document.getElementById('divInfo');
+    if(hd && player){
+      if(window.canDivide && window.canDivide(player)) hd.textContent='Деление: ГОТОВО';
+      else if(window.divideBlockReason) hd.textContent='Деление: '+window.divideBlockReason(player);
+    }
+  }catch(e){}
+
 function updateEcoPanel(){
   // ECOSYSTEM PANEL REMOVED per user request — confusing numbers
   var ep=document.getElementById('ecoP');if(ep)ep.style.display='none';

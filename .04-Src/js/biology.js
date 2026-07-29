@@ -18,7 +18,7 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
     size:sp.size*(0.85+rng(0,0.3)),
     currentSize: sp.size,
     spawnTime: gt,
-    angle:rng(0,Math.PI*2),facing:rng(0,Math.PI*2),
+    angle:rng(0,Math.PI*2),facing:rng(0,Math.PI*2),massFood:0,eatsSinceDiv:0,birthSize:0,
     state:'idle',target:null,
     dividing:false,divT:0,cyst:false,cystT:0,
     divCD:0,
@@ -37,21 +37,82 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
   orgs.push(o);
   if(speciesPop[sp.id]){speciesPop[sp.id].alive++;speciesPop[sp.id].born++;}
   stats.births++;
+  if(o){ if(!o.birthSize) o.birthSize=o.size; o.massFood=o.massFood||0; o.eatsSinceDiv=o.eatsSinceDiv||0; }
   return o;
 }
 
+/** Can this cell divide? Needs energy + mature size + mass from feeding. */
+function canDivide(o){
+  if(!o || !o.alive || o.cyst || o.dying) return false;
+  if(o.dividing) return false;
+  if(o.divCD > 0) return false;
+  if(o.age < (o.sp.minAge || 3)) return false;
+  var repE = o.sp.repEnergy || 80;
+  if(o.energy < repE) return false;
+  // Mature size: must be near adult body size (not a tiny just-born cell)
+  var adult = (o.sp.size || 4) * (o.sizeMult || 1.0);
+  var minSz = Math.max(adult * 0.92, 2.2); // never divide while tiny
+  if(o.size < minSz) return false;
+  // Mass bank: biomass accumulated since last division (from food / growth)
+  var needMass = Math.max(adult * 0.55, 2.5);
+  // Predators need more real feeding
+  if(o.sp.cat && o.sp.cat.indexOf('consumer') === 0) needMass = Math.max(adult * 0.85, 3.5);
+  if(o.sp.cat === 'consumer2' || o.sp.cat === 'consumer3' || o.sp.cat === 'macrophage')
+    needMass = Math.max(adult * 1.0, 5);
+  if((o.massFood || 0) < needMass) return false;
+  // Enough eats since last split (stops infinite micro-divide loops)
+  var needEats = (o.sp.cat && o.sp.cat.indexOf('consumer')===0) ? 3 : 1;
+  if(o.sp.cat === 'producer') needEats = 0; // producers grow via photo, massFood still required via growth
+  if((o.eatsSinceDiv || 0) < needEats) return false;
+  return true;
+}
+window.canDivide = canDivide;
+
+function divideBlockReason(o){
+  if(!o) return 'нет клетки';
+  if(o.dividing) return 'идёт деление...';
+  if(o.divCD > 0) return 'перезарядка '+o.divCD.toFixed(1)+'с';
+  if(o.age < (o.sp.minAge||3)) return 'слишком молода';
+  var repE = o.sp.repEnergy || 80;
+  if(o.energy < repE) return 'энергия '+Math.round(o.energy)+'/'+Math.round(repE);
+  var adult = (o.sp.size||4)*(o.sizeMult||1);
+  var minSz = Math.max(adult*0.92, 2.2);
+  if(o.size < minSz) return 'размер '+o.size.toFixed(1)+'/'+minSz.toFixed(1)+' (расти!)';
+  var needMass = Math.max(adult*0.55, 2.5);
+  if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) needMass = Math.max(adult*0.85, 3.5);
+  if((o.massFood||0) < needMass) return 'масса '+((o.massFood||0).toFixed(1))+'/'+needMass.toFixed(1)+' (ешь!)';
+  var needEats = (o.sp.cat && o.sp.cat.indexOf('consumer')===0) ? 3 : 0;
+  if((o.eatsSinceDiv||0) < needEats) return 'съедено '+(o.eatsSinceDiv||0)+'/'+needEats;
+  return '';
+}
+window.divideBlockReason = divideBlockReason;
+
 function doDivide(o){
-  if(o.dividing||o.energy<o.sp.repEnergy||o.age<o.sp.minAge||o.divCD>0)return;
-  o.dividing=true;o.divT=0;o.state='dividing';
-  o.preDivSize=o.size; // Remember original size
+  if(!canDivide(o)) return false;
+  o.dividing=true; o.divT=0; o.state='dividing';
+  o.preDivSize=o.size;
+  // Spend mass/eats immediately — cannot chain-divide mid-animation
+  o.massFood = 0;
+  o.eatsSinceDiv = 0;
+  return true;
 }
 
 function finishDivide(o){
   o.dividing=false;o.energy*=0.5;
   // Parent becomes ~half size (clearly visible), then slowly regrows via normal growth
   var base = o.preDivSize || o.size;
-  o.size = Math.max(2, base * 0.5);
-  o.divCD=DIV_COOLDOWN; if(o===player||window.spectatorMode) window.playSound("divide");
+  var half = Math.max(1.6, base * 0.5);
+  o.size = half;
+  // MUST re-accumulate mass/eats before next divide
+  o.massFood = 0;
+  o.eatsSinceDiv = 0;
+  o.birthSize = half;
+  // Longer cooldown for predators — no spam divide
+  var cd = (typeof DIV_COOLDOWN==='number' ? DIV_COOLDOWN : 4);
+  if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) cd = Math.max(cd, 8);
+  if(o.sp.cat==='consumer2'||o.sp.cat==='consumer3') cd = Math.max(cd, 12);
+  o.divCD = cd;
+  if(o===player||window.spectatorMode) window.playSound("divide");
   // KEY FIX: push child AWAY with separation impulse + cooldown
   var pushAng=rng(0,Math.PI*2);
   var cx=o.x+Math.cos(pushAng)*DIV_SEPARATION;
@@ -61,8 +122,11 @@ function finishDivide(o){
   var child=spawnOrg(o.sp,cx,cy,false,o.energy);
   if(child){
     child.generation=o.generation+1;child.energy=o.energy*0.9;
-    child.size=Math.max(2, base * 0.5 * rng(0.95,1.05));
-    child.divCD=DIV_COOLDOWN;
+    child.size=Math.max(1.6, base * 0.5 * rng(0.95,1.05));
+    child.massFood=0; child.eatsSinceDiv=0; child.birthSize=child.size;
+    var ccd = (typeof DIV_COOLDOWN==='number'?DIV_COOLDOWN:4);
+    if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) ccd=Math.max(ccd,8);
+    child.divCD=ccd;
     child.flash=0.7; child.flashColor='#8ff';
     
     // Genetics & Mutations
@@ -90,7 +154,6 @@ function finishDivide(o){
     child.vx-=Math.cos(pushAng)*pushForce;child.vy-=Math.sin(pushAng)*pushForce;
     o.offspring++;
   }
-  o.divCD=DIV_COOLDOWN;
   o.flash=0.8;o.flashColor='#8ff';
   if(settings.particles)for(var i=0;i<18;i++)parts.push({x:o.x,y:o.y,vx:rng(-4,4),vy:rng(-4,4),life:1.2,maxL:1.2,size:rng(2,6),color:i%2?'#8ff':'#fff'});
   if(o===player && window.showToast) window.showToast('Деление!', '#8ff');
@@ -163,7 +226,14 @@ function eatOrg(pred,prey){
   }
   
   // Strong visual feedback always
-  pred.eaten++;
+  pred.eaten = (pred.eaten||0) + 1;
+  pred.eatsSinceDiv = (pred.eatsSinceDiv||0) + 1;
+  // Biomass from prey → must bank this to unlock division
+  var massGain = Math.max(0.4, (prey.size||1)*0.65 + (gain||0)*0.02);
+  pred.massFood = (pred.massFood||0) + massGain;
+  // Immediate modest size growth when feeding (Agar.io-like but capped)
+  var adultCap = (pred.sp.size||4)*(pred.sizeMult||1.0)*1.35;
+  pred.size = Math.min(adultCap, pred.size + massGain*0.18);
   pred.flash=0.7; pred.flashColor='#ff8';
   prey.flash=0.9; prey.flashColor='#f44';
   
@@ -577,12 +647,12 @@ function updateOrg(o,dt){
     o.divT+=dt;
     // VISUAL: progressively shrink as it divides
     if(o.preDivSize){
-      var prog=o.divT/1.3; // 0 to 1
-      o.size=o.preDivSize*(1-prog*0.15); // Shrink 15% during division
+      var prog=Math.min(1, o.divT/0.9);
+      o.size=o.preDivSize*(1-prog*0.45); // Shrink toward half during anim
     }
-    if(o.divT>1.3)finishDivide(o);
+    if(o.divT>0.9)finishDivide(o);
   }
-  if(!o.isPlayer&&!o.dividing&&!o.cyst&&o.energy>o.sp.repEnergy&&o.age>o.sp.minAge&&o.divCD<=0){
+  if(!o.isPlayer&&!o.dividing&&!o.cyst&&canDivide(o)){
     if (o.sp.flags && o.sp.flags.gendered) {
         o.seekingMate = true;
         for(let j=0; j<orgs.length; j++) {
@@ -622,29 +692,60 @@ function updateOrg(o,dt){
   }
   if(o.energy<=-5){killOrg(o,DCODE.STARVE);return;}
   if(o.sp.isEuk&&o.age>500){o.energy-=0.15*dt;if(o.energy<5&&Math.random()<0.004*dt){killOrg(o,DCODE.AGE);return;}}
-  var tgtSz=o.sp.size*(o.sizeMult||1.0)*(0.5+clamp(o.energy/(o.sp.repEnergy||100),0,1)*1.2);
-  o.size=lerp(o.size,tgtSz,1.5*dt);
+  // Size from species baseline + mass bank (feeding), energy only mild factor
+  var adult0 = o.sp.size*(o.sizeMult||1.0);
+  var massFactor = clamp((o.massFood||0) / Math.max(adult0*0.8, 2), 0, 1.2);
+  var enFactor = 0.55 + clamp(o.energy/Math.max(o.sp.repEnergy||100,1), 0, 1)*0.45;
+  // After divide, birthSize anchors the floor; grow toward adult as mass accrues
+  var floorSz = Math.max(o.birthSize|| (adult0*0.45), adult0*0.4);
+  var tgtSz = floorSz + (adult0*1.05 - floorSz) * Math.min(1, massFactor*0.85 + (enFactor-0.55)*0.4);
+  // Consumers without food stay small; producers grow slowly via photo energy→mass trickle
+  if(o.sp.cat==='producer' && o.energy > 40){
+    o.massFood = (o.massFood||0) + dt * 0.35 * clamp(o.energy/100, 0.2, 1);
+  }
+  o.size = lerp(o.size, tgtSz, 0.9*dt);
+  if(o.size < floorSz) o.size = lerp(o.size, floorSz, 2*dt);
   if(o.flash>0)o.flash=Math.max(0,o.flash-dt*2);
-  // Easy mode auto-divide
-  if(o.isPlayer && difficulty==='easy' && o.energy>o.sp.repEnergy && o.age>o.sp.minAge && o.divCD<=0) doDivide(o);
-  // AUTO-EAT: ALL organisms eat prey on contact (not just player!)
+  // Easy mode: gentle hint only — NEVER auto-spam divide
+  // Division only via Q / button when canDivide() is true
+
+  // AUTO-EAT on contact — player AND NPCs (no E key needed)
   if(o.alive&&!o.dividing&&!o.cyst&&!o.dying){
     var foodCats=FOOD[o.sp.cat]||[];
-    if(foodCats.length>0){
-      // Use spatial grid for efficiency instead of looping all orgs
-      var nearby = window.getNearby ? window.getNearby(o.x, o.y, o.size+50) : orgs;
-      for(var ai=0;ai<nearby.length;ai++){
-        var ap=nearby[ai];
-        if(!ap.alive||ap===o||ap.cyst||ap.divCD>0||ap.invuln>0)continue;
-        if (ap.isPlayer && (gt - (ap.spawnTime||0)) < 30) continue; // Grace period
-        var isCan=(o.sp.flags&&o.sp.flags.cannibal&&o.energy<20&&ap.sp.id===o.sp.id);
-        if(!isCan&&foodCats.indexOf(ap.sp.cat)<0)continue;
-        if(ap.size>=o.size*0.88)continue;
-        var dd=dist2(o,ap);
-        if(dd<(o.size+ap.sp.size+15)*(o.size+ap.sp.size+15)){
-          eatOrg(o,ap);
-          break;
+    var range = o.size + (o.isPlayer ? 22 : 14);
+    var nearby = window.getNearby ? window.getNearby(o.x, o.y, range+40) : orgs;
+    for(var ai=0;ai<nearby.length;ai++){
+      var ap=nearby[ai];
+      if(!ap||!ap.alive||ap===o||ap.cyst||ap.dying) continue;
+      // Soft locks don't block player auto-eat
+      if(!o.isPlayer){
+        if(ap.divCD>0||ap.invuln>0) continue;
+        if(ap.isPlayer && (gt - (ap.spawnTime||0)) < 20) continue;
+      } else {
+        if(ap.invuln>0.8) continue;
+      }
+      var inChain = foodCats.indexOf(ap.sp.cat) >= 0;
+      var isCan=(o.sp.flags&&o.sp.flags.cannibal&&o.energy<25&&ap.sp.id===o.sp.id);
+      var ok=false;
+      if(inChain && ap.size < o.size*1.15) ok=true;
+      if(ap.size < o.size*0.95) ok=true; // graze smaller cells
+      if(isCan) ok=true;
+      // Producers: only graze much smaller debris/producers
+      if(o.sp.cat==='producer' && !inChain){
+        ok = ap.size < o.size*0.7 && (ap.sp.cat==='producer' || ap.sp.cat==='decomposer');
+      }
+      if(!ok) continue;
+      if(ap.size >= o.size*1.25) continue;
+      var dd=dist2(o,ap);
+      var need = (o.size + ap.size + (o.isPlayer?18:10));
+      if(dd < need*need){
+        if(o.isPlayer){
+          if(typeof forceEat==='function') forceEat(o, ap);
+          else { ap.divCD=0; ap.invuln=0; eatOrg(o,ap); }
+        } else {
+          eatOrg(o, ap);
         }
+        break;
       }
     }
   }

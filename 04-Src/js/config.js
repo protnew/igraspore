@@ -188,7 +188,7 @@ var SEASON_DAYS=2;
 var DCODE={STARVE:0,EATEN:1,TEMP:2,AGE:3,LYSIS:4};
 var DLAB_RU=['\u0413\u043e\u043b\u043e\u0434','\u0421\u044a\u0435\u0434\u0435\u043d\u043e','\u0422\u0435\u043c\u043f','\u0421\u0442\u0430\u0440\u043e\u0441\u0442\u044c','\u041b\u0438\u0437\u0438\u0441'];
 var DLAB_EN=['Starved','Eaten','Temp','Old age','Lysis'];
-var DIV_COOLDOWN=4;
+var DIV_COOLDOWN=6;
 var DIV_SEPARATION=25;
 
 // === GAME STATE ===

@@ -216,6 +216,10 @@ function forceEat(pred, prey){
     var gain = Math.max(10, Math.min(45, (prey.energy||20)*0.55));
     pred.energy = Math.min(120, (pred.energy||0) + gain);
     pred.eaten = (pred.eaten||0) + 1;
+    pred.eatsSinceDiv = (pred.eatsSinceDiv||0) + 1;
+    var mg = Math.max(0.5, (prey.size||1)*0.7);
+    pred.massFood = (pred.massFood||0) + mg;
+    pred.size = Math.min((pred.sp.size||4)*(pred.sizeMult||1)*1.35, pred.size + mg*0.18);
     pred.flash = 1; pred.flashColor = '#8f8';
     if(typeof killOrg === 'function'){
       try { killOrg(prey, (typeof DCODE!=='undefined' && DCODE.EATEN) || 1); }

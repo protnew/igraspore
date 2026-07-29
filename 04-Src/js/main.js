@@ -260,7 +260,7 @@ function startGame(isScreensaver){
     b.innerHTML = text + '<span class="hk">'+hk+'</span>';
     b.style.minWidth='72px'; b.style.padding='12px 16px'; b.style.fontSize='15px';
   }
-  labelBtn('bEat','ЕСТЬ','E');
+  labelBtn('bEat','ЕСТЬ','авто');
   labelBtn('bDiv','ДЕЛИТЬ','Q');
   labelBtn('bCyst','ЦИСТА','R');
   labelBtn('bAuto','АВТО','Tab');
@@ -450,7 +450,7 @@ document.addEventListener('keydown',function(e){
   if(k==='n'){document.getElementById('bRender').click();}
   if(k==='b'){var wo=document.getElementById('wikiO');if(wo.className==='ov show')wo.className='ov';else{buildWiki();wo.className='ov show';}}
   if(k==='e'||e.code==='KeyE'){ e.preventDefault(); window.tryPlayerEat && window.tryPlayerEat(); }
-  if(k==='q'){if(player&&player.alive){var before=player.size; doDivide(player); if(window.showToast){ if(player.dividing||player.size<before) window.showToast('Деление...','#8ff'); else window.showToast('Мало энергии для деления','#faa'); }}}
+  if(k==='q'){ if(player&&player.alive){ var okDiv=doDivide(player); if(window.showToast){ if(okDiv||player.dividing) window.showToast('Деление...','#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa'); } } }
   if(k==='r'){if(player&&player.alive)doCyst(player);}
   if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
 });
@@ -459,7 +459,7 @@ document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=
 mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;});
 
 document.getElementById('bEat').onclick=function(){ window.tryPlayerEat && window.tryPlayerEat(); };
-document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var before=player.size;doDivide(player);if(window.showToast){if(player.dividing||player.size<before)window.showToast('Деление...','#8ff');else window.showToast('Мало энергии для деления','#faa');}}};
+document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast('Деление...','#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa');}}};
 document.getElementById('bCyst').onclick=function(){if(player&&player.alive)doCyst(player);};
 document.getElementById('bAuto').onclick=function(){if(player&&player.alive)autoAI=!autoAI;};
 document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Камера: СВОБОДНО':'Камера: СЛЕДИТ','#4af');};
@@ -543,7 +543,7 @@ document.addEventListener('click', function(e){
     var be=document.getElementById('bEat');
     if(be){ be.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} window.tryPlayerEat&&window.tryPlayerEat(); }; }
     var bd=document.getElementById('bDiv');
-    if(bd){ bd.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} if(player&&player.alive){ var before=player.size; doDivide(player); if(window.showToast){ if(player.size<before-0.01||player.dividing) window.showToast('Деление!','#8ff'); else window.showToast('Мало энергии','#faa'); } } }; }
+    if(bd){ bd.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} if(player&&player.alive){ var ok=doDivide(player); if(window.showToast){ if(ok||player.dividing) window.showToast('Деление!','#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя','#faa'); } } }; }
     var ba=document.getElementById('bAuto');
     if(ba){ ba.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} autoAI=!autoAI; ba.classList.toggle('on', !!autoAI); if(window.showToast) window.showToast(autoAI?'АВТО: вкл':'АВТО: выкл', autoAI?'#8f8':'#aaa'); }; }
   }

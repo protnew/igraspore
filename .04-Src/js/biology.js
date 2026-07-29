@@ -49,21 +49,15 @@ function canDivide(o){
   if(o.age < (o.sp.minAge || 3)) return false;
   var repE = o.sp.repEnergy || 80;
   if(o.energy < repE) return false;
-  // Mature size: must be near adult body size (not a tiny just-born cell)
   var adult = (o.sp.size || 4) * (o.sizeMult || 1.0);
-  var minSz = Math.max(adult * 0.92, 2.2); // never divide while tiny
+  var minSz = Math.max(adult * 0.90, 2.2);
   if(o.size < minSz) return false;
-  // Mass bank: biomass accumulated since last division (from food / growth)
-  var needMass = Math.max(adult * 0.55, 2.5);
-  // Predators need more real feeding
-  if(o.sp.cat && o.sp.cat.indexOf('consumer') === 0) needMass = Math.max(adult * 0.85, 3.5);
+  // Mass from food/sun only — NO fixed eat-count gate
+  var needMass = Math.max(adult * 0.50, 2.2);
+  if(o.sp.cat && o.sp.cat.indexOf('consumer') === 0) needMass = Math.max(adult * 0.75, 3.0);
   if(o.sp.cat === 'consumer2' || o.sp.cat === 'consumer3' || o.sp.cat === 'macrophage')
-    needMass = Math.max(adult * 1.0, 5);
+    needMass = Math.max(adult * 0.9, 4.0);
   if((o.massFood || 0) < needMass) return false;
-  // Enough eats since last split (stops infinite micro-divide loops)
-  var needEats = (o.sp.cat && o.sp.cat.indexOf('consumer')===0) ? 3 : 1;
-  if(o.sp.cat === 'producer') needEats = 0; // producers grow via photo, massFood still required via growth
-  if((o.eatsSinceDiv || 0) < needEats) return false;
   return true;
 }
 window.canDivide = canDivide;
@@ -76,13 +70,13 @@ function divideBlockReason(o){
   var repE = o.sp.repEnergy || 80;
   if(o.energy < repE) return 'энергия '+Math.round(o.energy)+'/'+Math.round(repE);
   var adult = (o.sp.size||4)*(o.sizeMult||1);
-  var minSz = Math.max(adult*0.92, 2.2);
+  var minSz = Math.max(adult*0.90, 2.2);
   if(o.size < minSz) return 'размер '+o.size.toFixed(1)+'/'+minSz.toFixed(1)+' (расти!)';
-  var needMass = Math.max(adult*0.55, 2.5);
-  if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) needMass = Math.max(adult*0.85, 3.5);
-  if((o.massFood||0) < needMass) return 'масса '+((o.massFood||0).toFixed(1))+'/'+needMass.toFixed(1)+' (ешь!)';
-  var needEats = (o.sp.cat && o.sp.cat.indexOf('consumer')===0) ? 3 : 0;
-  if((o.eatsSinceDiv||0) < needEats) return 'съедено '+(o.eatsSinceDiv||0)+'/'+needEats;
+  var needMass = Math.max(adult*0.50, 2.2);
+  if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) needMass = Math.max(adult*0.75, 3.0);
+  if(o.sp.cat === 'consumer2' || o.sp.cat === 'consumer3' || o.sp.cat === 'macrophage')
+    needMass = Math.max(adult*0.9, 4.0);
+  if((o.massFood||0) < needMass) return 'масса '+((o.massFood||0).toFixed(1))+'/'+needMass.toFixed(1)+' (ешь/солнце!)';
   return '';
 }
 window.divideBlockReason = divideBlockReason;
@@ -188,6 +182,10 @@ function eatOrg(pred,prey){
      pred.venomTimer = 5; // 5 seconds of venom effect
   }
   
+  // Snapshot prey nutrition BEFORE damage (meal size must matter)
+  var preySize0 = Math.max(0.4, prey.size || 1);
+  var preyEn0 = Math.max(5, prey.energy || 10);
+
   // if(!window.dmgIndicators) window.dmgIndicators=[];
   var dmg = pred.size * 0.5;
   
@@ -208,38 +206,53 @@ function eatOrg(pred,prey){
   }
   
   if (prey.size < dmg) dmg = prey.size;
+  // Fraction of meal consumed this bite (1.0 = fully eaten)
+  var biteFrac = (preySize0 > 0.01) ? Math.min(1, dmg / preySize0) : 1;
   prey.size -= dmg;
   // if(settings.particles) window.dmgIndicators.push({x:prey.x, y:prey.y, val:Math.round(dmg), life:1.0});
   
-  var gain=prey.energy*0.55+prey.size*1.5;
+  // Total nutrition from ORIGINAL prey size/energy × bite fraction
+  var preyMass = preySize0;
+  var preyEn = preyEn0;
+  var totalNutri = (preyEn * 0.50 + preyMass * 3.2) * (biteFrac > 0 ? biteFrac : 1);
+  // ~half energy (health), ~half mass — both grow every meal
+  var energyGain = Math.max(2, totalNutri * 0.50);
+  var massGain = Math.max(0.2, totalNutri * 0.50 * 0.14);
+
+  // IMMEDIATE energy + mass (not only delayed stomach)
+  var enBefore = pred.energy || 0;
+  pred.energy = Math.min(120, enBefore + energyGain);
+  // if capped, still count intended gain for toast
+  var realEn = pred.energy - enBefore;
+  pred.massFood = (pred.massFood || 0) + massGain;
+  var adultCap = (pred.sp.size||4)*(pred.sizeMult||1.0)*1.40;
+  pred.size = Math.min(adultCap, (pred.size||1) + massGain * 0.22);
+
   if(!pred.stomach) pred.stomach=[];
-  
   pred.stomach.push({
     sp: prey.sp,
     t: prey.sp.cat,
     color: prey.sp.color,
-    size: prey.size*0.5,
-    energy: gain,
+    size: Math.max(0.2, prey.size*0.35),
+    energy: energyGain * 0.2,
     x: rng(-pred.size*0.4, pred.size*0.4),
     y: rng(-pred.size*0.4, pred.size*0.4)
   });
   if(pred.stomach.length>5) pred.stomach.shift();
-  
+
   if(pred === player) {
       if(typeof window.gameStats === 'undefined') window.gameStats = { dna: 0 };
       if(typeof window.gameStats.dna === 'undefined') window.gameStats.dna = 0;
       window.gameStats.dna += 1;
+      if(window.showToast){
+        window.showToast('+'+Math.round(energyGain)+' эн / +'+massGain.toFixed(1)+' масса', '#8f8');
+      }
   }
-  
-  // Strong visual feedback always
+
   pred.eaten = (pred.eaten||0) + 1;
-  pred.eatsSinceDiv = (pred.eatsSinceDiv||0) + 1;
-  // Biomass from prey → must bank this to unlock division
-  var massGain = Math.max(0.4, (prey.size||1)*0.65 + (gain||0)*0.02);
-  pred.massFood = (pred.massFood||0) + massGain;
-  // Immediate modest size growth when feeding (Agar.io-like but capped)
-  var adultCap = (pred.sp.size||4)*(pred.sizeMult||1.0)*1.35;
-  pred.size = Math.min(adultCap, pred.size + massGain*0.18);
+  pred.eatsSinceDiv = (pred.eatsSinceDiv||0) + 1; // stats only
+  pred._lastEnGain = energyGain;
+  pred._lastMassGain = massGain;
   pred.flash=0.7; pred.flashColor='#ff8';
   prey.flash=0.9; prey.flashColor='#f44';
   
@@ -250,10 +263,19 @@ function eatOrg(pred,prey){
   if (prey.size <= 2) {
       // Phagocytosis: prey is engulfed — food vacuole forms around it
       pred.phagoTimer = 0.5; // Brief pause for engulfment animation
+      // Finish leftover meal fraction (already paid biteFrac above; add remainder once)
+      var leftFrac = Math.max(0, 1 - (typeof biteFrac==='number' ? biteFrac : 1));
+      if(leftFrac > 0.02){
+        var rest = ((preyEn0||10)*0.50 + (preySize0||1)*3.2) * leftFrac;
+        var restEn = rest * 0.50;
+        var restMass = Math.max(0, rest * 0.50 * 0.14);
+        pred.energy = Math.min(120, (pred.energy||0) + restEn);
+        pred.massFood = (pred.massFood||0) + restMass;
+        pred.size = Math.min((pred.sp.size||4)*(pred.sizeMult||1)*1.40, pred.size + restMass*0.22);
+        pred._lastEnGain = (pred._lastEnGain||0) + restEn;
+        pred._lastMassGain = (pred._lastMassGain||0) + restMass;
+      }
       killOrg(prey,DCODE.EATEN);
-      var gained = prey.sp.energy * 0.8;
-      pred.energy += gained;
-      if(pred.energy > 120) pred.energy = 120;
       // Big burst
       for(var i=0;i<20;i++){
           var pAng = rng(0, Math.PI*2);
@@ -588,7 +610,22 @@ function updateOrg(o,dt){
     }
 
     for(var n=0;n<nutrientClouds.length;n++){if(dist2(o,nutrientClouds[n])<nutrientClouds[n].r*nutrientClouds[n].r){nutr=nutrientClouds[n].intensity*0.5;break;}}
-    o.energy+=(photo+nutr-metab)*dt*DIFF[difficulty].energy;
+    // SUN / light feeds phytoplankton: energy (health) + biomass (mass)
+    var sun = (photo + nutr) * dt * DIFF[difficulty].energy;
+    o.energy += sun - metab*dt*DIFF[difficulty].energy;
+    if(sun > 0){
+      // More light / better position → more mass for division
+      var sunMass = sun * 0.55 + (dayLight||0) * dt * 0.45;
+      // Surface bonus (shallower = more sun)
+      var depthFrac = 1 - clamp((o.y||0) / (PD||10000), 0, 1);
+      sunMass *= (0.55 + depthFrac * 0.9);
+      o.massFood = (o.massFood||0) + sunMass;
+      // slow size growth in good light
+      if(dayLight > 0.15){
+        var adultCapP = (o.sp.size||4)*(o.sizeMult||1)*1.35;
+        o.size = Math.min(adultCapP, o.size + sunMass * 0.04);
+      }
+    }
   }else{
     // Respiration: consumes O2, produces CO2
     var o2Lim = Math.min(1.0, Math.max(0, globalO2 + o.o2Offset) / 50.0);
@@ -721,8 +758,9 @@ function updateOrg(o,dt){
   var floorSz = Math.max(o.birthSize|| (adult0*0.45), adult0*0.4);
   var tgtSz = floorSz + (adult0*1.05 - floorSz) * Math.min(1, massFactor*0.85 + (enFactor-0.55)*0.4);
   // Consumers without food stay small; producers grow slowly via photo energy→mass trickle
-  if(o.sp.cat==='producer' && o.energy > 40){
-    o.massFood = (o.massFood||0) + dt * 0.35 * clamp(o.energy/100, 0.2, 1);
+  // Night/low light: almost no mass; daytime handled in photo block above
+  if(o.sp.cat==='producer' && (dayLight||0) < 0.08 && o.energy > 50){
+    o.massFood = (o.massFood||0) + dt * 0.05; // tiny reserve metabolism conversion
   }
   if(!o.dividing){
     o.size = lerp(o.size, tgtSz, 0.9*dt);

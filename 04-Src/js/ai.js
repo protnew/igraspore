@@ -213,14 +213,19 @@ function forceEat(pred, prey){
   }
   // Fallback if eatOrg blocked
   if(prey.alive && prey.size <= pred.size * 1.2){
-    var gain = Math.max(10, Math.min(45, (prey.energy||20)*0.55));
-    pred.energy = Math.min(120, (pred.energy||0) + gain);
+    var preyMass = Math.max(0.5, prey.size||1);
+    var preyEn = Math.max(5, prey.energy||10);
+    var totalNutri = preyEn*0.50 + preyMass*3.2;
+    var energyGain = Math.max(4, totalNutri*0.50);
+    var mg = Math.max(0.35, totalNutri*0.50*0.12);
+    pred.energy = Math.min(120, (pred.energy||0) + energyGain);
     pred.eaten = (pred.eaten||0) + 1;
     pred.eatsSinceDiv = (pred.eatsSinceDiv||0) + 1;
-    var mg = Math.max(0.5, (prey.size||1)*0.7);
     pred.massFood = (pred.massFood||0) + mg;
-    pred.size = Math.min((pred.sp.size||4)*(pred.sizeMult||1)*1.35, pred.size + mg*0.18);
+    pred.size = Math.min((pred.sp.size||4)*(pred.sizeMult||1)*1.40, pred.size + mg*0.22);
     pred.flash = 1; pred.flashColor = '#8f8';
+    if(pred.isPlayer && window.showToast)
+      window.showToast('+'+Math.round(energyGain)+' эн / +'+mg.toFixed(1)+' масса', '#8f8');
     if(typeof killOrg === 'function'){
       try { killOrg(prey, (typeof DCODE!=='undefined' && DCODE.EATEN) || 1); }
       catch(e){ prey.alive=false; prey._remove=true; }

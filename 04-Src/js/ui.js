@@ -58,13 +58,22 @@ function updateWeather(){
   w.style.display='block';
 }
 
-  // Division readiness (energy + mass + size)
+  // Energy + mass progress (food/sun grow both; no eat-count gate)
   try{
     var hd=document.getElementById('hDivReady')||document.getElementById('hDiv')||document.getElementById('divInfo');
-    if(hd && player){
-      if(window.canDivide && window.canDivide(player)) hd.textContent='Деление: ГОТОВО';
-      else if(window.divideBlockReason) hd.textContent='Деление: '+window.divideBlockReason(player);
-    }
+    if(hd && player && player.alive){
+      var ad=(player.sp.size||4)*(player.sizeMult||1);
+      var needM=Math.max(ad*0.5, 2.2);
+      if(player.sp.cat && player.sp.cat.indexOf('consumer')===0) needM=Math.max(ad*0.75, 3.0);
+      if(player.sp.cat==='consumer2'||player.sp.cat==='consumer3'||player.sp.cat==='macrophage') needM=Math.max(ad*0.9, 4.0);
+      var m=player.massFood||0;
+      var en=Math.round(player.energy||0);
+      var rep=Math.round(player.sp.repEnergy||80);
+      var line='Эн '+en+'/'+rep+' · Масса '+m.toFixed(1)+'/'+needM.toFixed(1);
+      if(window.canDivide && window.canDivide(player)) hd.textContent=line+' · ГОТОВО (Q)';
+      else if(window.divideBlockReason) hd.textContent=line+' · '+window.divideBlockReason(player);
+      else hd.textContent=line;
+    } else if(hd) hd.textContent='';
   }catch(e){}
 
 function updateEcoPanel(){

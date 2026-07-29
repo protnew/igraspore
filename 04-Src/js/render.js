@@ -12,13 +12,20 @@ function render(){
   var vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
   
   // === STEP 1: BACKGROUND ===
+  // Microscope (M) NEVER blacks out water — only zoom/overlay later.
+  // Realistic (N) = phase-contrast dark field (not pure pitch black).
   if(isReal){
-    // Realistic: dark gray (phase contrast background)
-    ctx.fillStyle='#000000';
+    var rg=ctx.createRadialGradient(cv.width*0.5,cv.height*0.45,0,cv.width*0.5,cv.height*0.5,Math.max(cv.width,cv.height)*0.7);
+    rg.addColorStop(0,'#1a1f28');
+    rg.addColorStop(0.55,'#0c1018');
+    rg.addColorStop(1,'#05070c');
+    ctx.fillStyle=rg;
   } else {
-    // Cartoon: blue water gradient
+    // Cartoon: living pond teal — NOT near-black
     var wgrad=ctx.createLinearGradient(0,0,0,cv.height);
-    wgrad.addColorStop(0,'#0a2a4a');wgrad.addColorStop(1,'#000814');
+    wgrad.addColorStop(0,'#0d3a5c');
+    wgrad.addColorStop(0.45,'#0a4a62');
+    wgrad.addColorStop(1,'#063848');
     ctx.fillStyle=wgrad;
   }
   ctx.fillRect(0,0,cv.width,cv.height);
@@ -102,6 +109,48 @@ function render(){
     ctx.restore();
   }
   
+  // === STEP 8: MICROSCOPE OVERLAY (M) — optics ON water, never black fill ===
+  if(settings.microscopeMode && !isReal){
+    var mw=cv.width, mh=cv.height, mcx=mw/2, mcy=mh/2;
+    var mradius=Math.min(mw,mh)*0.48;
+    ctx.save();
+    // Soft ring only outside the eyepiece — center stays teal water
+    var fov=ctx.createRadialGradient(mcx,mcy,mradius*0.72,mcx,mcy,mradius*1.08);
+    fov.addColorStop(0,'rgba(0,0,0,0)');
+    fov.addColorStop(0.55,'rgba(0,20,30,0.08)');
+    fov.addColorStop(0.85,'rgba(0,10,20,0.45)');
+    fov.addColorStop(1,'rgba(0,8,16,0.78)');
+    ctx.fillStyle=fov;
+    ctx.fillRect(0,0,mw,mh);
+    // Eyepiece brass rim
+    ctx.strokeStyle='rgba(180,160,100,0.35)';
+    ctx.lineWidth=3;
+    ctx.beginPath(); ctx.arc(mcx,mcy,mradius,0,Math.PI*2); ctx.stroke();
+    // Fine grid (µm reticle)
+    ctx.strokeStyle='rgba(200,220,230,0.12)';
+    ctx.lineWidth=1;
+    var step=Math.max(24, 40);
+    for(var gx=mcx-mradius; gx<mcx+mradius; gx+=step){
+      ctx.beginPath(); ctx.moveTo(gx, mcy-mradius); ctx.lineTo(gx, mcy+mradius); ctx.stroke();
+    }
+    for(var gy=mcy-mradius; gy<mcy+mradius; gy+=step){
+      ctx.beginPath(); ctx.moveTo(mcx-mradius, gy); ctx.lineTo(mcx+mradius, gy); ctx.stroke();
+    }
+    // Crosshair
+    ctx.strokeStyle='rgba(220,240,255,0.28)';
+    ctx.beginPath(); ctx.moveTo(mcx-mradius*0.55,mcy); ctx.lineTo(mcx+mradius*0.55,mcy); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(mcx,mcy-mradius*0.55); ctx.lineTo(mcx,mcy+mradius*0.55); ctx.stroke();
+    // Scale bar
+    var barW = Math.min(160, mradius*0.45);
+    var um = Math.round((barW/zoom)*10)/10;
+    ctx.fillStyle='rgba(230,240,255,0.75)';
+    ctx.fillRect(mcx-barW/2, mcy+mradius*0.62, barW, 3);
+    ctx.font='bold 13px monospace'; ctx.textAlign='center';
+    ctx.fillText(um+' µm', mcx, mcy+mradius*0.62+18);
+    ctx.fillText('MICROSCOPE ×'+Math.round(zoom*10)/10, mcx, mcy-mradius*0.78);
+    ctx.restore();
+  }
+
   if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
   /* renderEventLogs removed */
   

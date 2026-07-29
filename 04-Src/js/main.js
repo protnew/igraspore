@@ -488,14 +488,20 @@ document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:
 
 document.getElementById('bMicro').onclick=function(){
   settings.microscopeMode=!settings.microscopeMode;
-  applyRenderMode();
+  // M = optics only. NEVER switch renderMode / black water (that is N / realistic).
   if(settings.microscopeMode){
-    tZoom=Math.max(tZoom,8); // Zoom in for microscope view
+    // Keep current cartoon/realistic palette; just magnify
+    tZoom=Math.max(tZoom, 6);
+    if(settings.renderMode==='realistic'){
+      // if user was in phase-contrast, still OK — but do not force it ON
+    }
     document.getElementById('bMicro').style.background='#1a4a6a';
     document.getElementById('bMicro').style.borderColor='#4af';
+    if(window.showToast) window.showToast('🔬 Микроскоп: вода остаётся, зум+сетка (не режим N)','#8cf');
   } else {
     document.getElementById('bMicro').style.background='#012';
     document.getElementById('bMicro').style.borderColor='#345';
+    if(window.showToast) window.showToast('Микроскоп выкл','#aaa');
   }
 };
 document.getElementById('bRender').onclick=function(){ toggleRenderModeLarge(); };

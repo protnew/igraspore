@@ -101,14 +101,14 @@ function renderSky(vL,vR,vT){
 function renderWater(vL,vR,vT,vB){
   ctx.save();
   var realMode=settings.renderMode==='realistic';
-  var realMul=realMode?0.4:1.0;
+  var realMul=realMode?0.55:1.0;
   var grad = ctx.createLinearGradient(0, 0, 0, PD);
   var lightTop = lightAt(0)*realMul, lightMid = lightAt(PD*0.5)*realMul, lightBot = lightAt(PD)*realMul;
   
   // Natural pond: green-blue photic zone → deep teal → dark benthos
   var lt=lightTop, lm=lightMid, lb=lightBot;
-  grad.addColorStop(0, 'rgb('+Math.round(8+lt*18)+','+Math.round(55+lt*55)+','+Math.round(70+lt*50)+')');
-  grad.addColorStop(0.12, 'rgb('+Math.round(6+lt*14)+','+Math.round(45+lt*40)+','+Math.round(65+lt*45)+')');
+  grad.addColorStop(0, 'rgb('+Math.round(12+lt*28)+','+Math.round(70+lt*65)+','+Math.round(85+lt*55)+')');
+  grad.addColorStop(0.12, 'rgb('+Math.round(10+lt*20)+','+Math.round(55+lt*48)+','+Math.round(75+lt*50)+')');
   grad.addColorStop(0.45, 'rgb('+Math.round(8+lm*12)+','+Math.round(30+lm*28)+','+Math.round(55+lm*35)+')');
   grad.addColorStop(0.75, 'rgb('+Math.round(10+lb*8)+','+Math.round(22+lb*14)+','+Math.round(40+lb*22)+')');
   grad.addColorStop(1, 'rgb('+Math.round(12+lb*6)+','+Math.round(18+lb*8)+','+Math.round(22+lb*10)+')');

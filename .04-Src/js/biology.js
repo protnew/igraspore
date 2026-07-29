@@ -282,7 +282,7 @@ function eatOrg(pred,prey){
           var spd = rng(2, 8);
           parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:1.2,maxL:1.2,size:rng(2,6),color:prey.sp.color||'#ff8'});
       }
-      if(pred===player && window.showToast) window.showToast('+'+Math.round(gained)+' энергия', '#4f4');
+      if(pred===player && window.showToast) window.showToast('+'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' масса', '#4f4');
       if (typeof window !== 'undefined' && state === 'menu' && (window.focusTimer||0) <= 0 && Math.random() < 0.15) { window.focusTarget = pred; window.focusTimer = 2.0; }
   } else {
       var gained2 = dmg * 0.5;

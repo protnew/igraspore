@@ -615,21 +615,33 @@ function updateOrg(o,dt){
     }
 
     for(var n=0;n<nutrientClouds.length;n++){if(dist2(o,nutrientClouds[n])<nutrientClouds[n].r*nutrientClouds[n].r){nutr=nutrientClouds[n].intensity*0.5;break;}}
-    // SUN / light feeds phytoplankton: energy (health) + biomass (mass)
+    // DAY: photosynthesis → energy + biomass. NIGHT: respiration → lose both (like real phyto)
     var sun = (photo + nutr) * dt * DIFF[difficulty].energy;
-    o.energy += sun - metab*dt*DIFF[difficulty].energy;
-    if(sun > 0){
-      // More light / better position → more mass for division
-      var sunMass = sun * 0.55 + (dayLight||0) * dt * 0.45;
-      // Surface bonus (shallower = more sun)
-      var depthFrac = 1 - clamp((o.y||0) / (PD||10000), 0, 1);
+    var resp = metab * dt * DIFF[difficulty].energy;
+    o.energy += sun - resp;
+    var depthFrac = 1 - clamp((o.y||0) / (PD||10000), 0, 1);
+    var dl = (typeof dayLight === 'number') ? dayLight : 1;
+    if(dl >= 0.12 && sun > 0){
+      // Daylight: net primary production → bank mass
+      var sunMass = sun * 0.55 + dl * dt * 0.45;
       sunMass *= (0.55 + depthFrac * 0.9);
       o.massFood = (o.massFood||0) + sunMass;
-      // slow size growth in good light
-      if(dayLight > 0.15){
+      if(dl > 0.2){
         var adultCapP = (o.sp.size||4)*(o.sizeMult||1)*1.35;
         o.size = Math.min(adultCapP, o.size + sunMass * 0.04);
       }
+    } else {
+      // Night / deep dark: no mass gain — respiration burns reserves
+      // Stronger loss in full night; milder in twilight
+      var dark = clamp(1 - dl / 0.12, 0, 1);
+      var burn = dt * (0.22 + dark * 0.45); // mass bleed
+      o.massFood = Math.max(0, (o.massFood||0) - burn);
+      // slight size shrink if starving at night and low energy
+      if(o.energy < 35 && o.size > (o.sp.size||4)*0.55){
+        o.size = Math.max((o.sp.size||4)*0.55, o.size - dt * 0.08 * dark);
+      }
+      // extra energy drain at night (no photo offset)
+      o.energy -= resp * (0.35 + dark * 0.5);
     }
   }else{
     // Respiration: consumes O2, produces CO2
@@ -763,10 +775,8 @@ function updateOrg(o,dt){
   var floorSz = Math.max(o.birthSize|| (adult0*0.45), adult0*0.4);
   var tgtSz = floorSz + (adult0*1.05 - floorSz) * Math.min(1, massFactor*0.85 + (enFactor-0.55)*0.4);
   // Consumers without food stay small; producers grow slowly via photo energy→mass trickle
-  // Night/low light: almost no mass; daytime handled in photo block above
-  if(o.sp.cat==='producer' && (dayLight||0) < 0.08 && o.energy > 50){
-    o.massFood = (o.massFood||0) + dt * 0.05; // tiny reserve metabolism conversion
-  }
+  // Night mass handled in producer photo block (loss, not gain)
+
   if(!o.dividing){
     o.size = lerp(o.size, tgtSz, 0.9*dt);
     if(o.size < floorSz) o.size = lerp(o.size, floorSz, 2*dt);

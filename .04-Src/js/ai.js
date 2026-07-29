@@ -62,8 +62,17 @@ function moveOrg(o,dt){
   var sp=o.sp;
   var speed=Math.max(sp.speed, 0.5)*SPD_SCALE*0.05;
   if(o.isPlayer && !freeCam){
-    // Players always swim at a usable pace (real microbes: active swimming)
-    speed = Math.max(speed, 1.8) * 1.7; // usable but not rocket
+    // Hierarchy: phyto slow, bacteria mid, ciliates/predators faster (usable control)
+    var cat = o.sp && o.sp.cat;
+    if(cat==='producer'){
+      speed = Math.max(speed, 0.55) * 1.45; // slow vs hunters, but can reach surface
+    } else if(cat==='consumer1'){
+      speed = Math.max(speed, 1.1) * 1.35;
+    } else if(cat==='consumer2'){
+      speed = Math.max(speed, 1.35) * 1.35; // ciliate cruise (filter, not chase)
+    } else {
+      speed = Math.max(speed, 2.1) * 1.85; // true hunters fastest
+    }
   }
   if(o.speedMult) speed *= o.speedMult;
   ensureFacing(o);
@@ -155,8 +164,9 @@ function moveOrg(o,dt){
       if(o.x>PW-20){o.x=PW-20;o.vx=-Math.abs(o.vx)*0.4; turnToward(o, Math.PI, 1, 20);}
     }
     if(typeof PD!=='undefined'){
-      if(o.y<20){o.y=20;o.vy=Math.abs(o.vy)*0.4;}
-      if(o.y>PD-20){o.y=PD-20;o.vy=-Math.abs(o.vy)*0.4;}
+      // Surface y≈0 reachable (sky only above -12)
+      if(o.y < -12){ o.y = -12; if(o.vy<0) o.vy = Math.abs(o.vy)*0.25; }
+      if(o.y > PD-12){ o.y = PD-12; if(o.vy>0) o.vy = -Math.abs(o.vy)*0.35; }
     }
   }
 

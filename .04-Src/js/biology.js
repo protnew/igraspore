@@ -465,21 +465,22 @@ function updateOrg(o,dt){
       }
     }
   }
-  // Lilypad collision (they are physical objects now)
-  if(o.y < 120 && o.y > -120) {
+  // Lilypads: gentle nudge only (never wall off the surface)
+  if(o.y < 40 && o.y > -20) {
      var lpNearest = Math.round((o.x - 50) / 600) * 600 + 50;
      if(Math.abs(lpNearest) % 3 !== 0) {
          var dx = o.x - lpNearest;
-         var dy = o.y - 0;
-         var nx = dx / 250;
-         var ny = dy / 40;
+         var dy = o.y - (-2);
+         var nx = dx / 280;
+         var ny = dy / 55;
          var distSq = nx*nx + ny*ny;
-         if(distSq < 1.0) {
+         if(distSq < 0.55) {
              var dist = Math.sqrt(distSq) || 0.01;
-             var overlap = 1.0 - dist;
-             var force = overlap * 300 * dt;
+             var overlap = 0.55 - dist;
+             var force = overlap * 12 * dt; // decorative nudge only
              o.vx += (nx / dist) * force;
-             o.vy += (ny / dist) * force * 5;
+             // Prefer sliding along surface, not blasting downward
+             o.vy += (ny / dist) * force * 0.15; // barely affect depth
          }
      }
   }
@@ -722,7 +723,7 @@ function updateOrg(o,dt){
     }
     // #23 Phototaxis: producers move toward light (upward) during day
     if(o.sp.cat==='producer'&&dayLight>0.3){
-      o.vy-=o.sp.speed*0.02*dayLight; // Swim upward toward sunlit zone
+      o.vy-=Math.max(0.8, o.sp.speed*8)*0.015*dayLight; // phototaxis to surface
     }
     // #22 Chemotaxis for predators: move toward prey scent
     if((o.sp.cat==='consumer2'||o.sp.cat==='consumer3')&&!o.isPlayer){

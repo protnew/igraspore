@@ -235,8 +235,9 @@ function clampToPuddle(o){
      var dot2=o.vx*nRx+o.vy*nRy;
      if(dot2<0){o.vx-=dot2*nRx;o.vy-=dot2*nRy;o.vx*=0.85;o.vy*=0.85;}
   }
-  if(o.y<3){o.y=3;if(o.vy<0)o.vy=-o.vy*0.4;}
-  if(o.y>PD-8){o.y=PD-8;if(o.vy>0)o.vy=-o.vy*0.3;}
+  // Open surface at y≈0 (air-water interface). Soft bounce only above water.
+  if(o.y < -10){ o.y = -10; if(o.vy<0) o.vy = -o.vy*0.25; }
+  if(o.y > PD-8){ o.y = PD-8; if(o.vy>0) o.vy = -o.vy*0.3; }
 }
 
 
@@ -495,7 +496,7 @@ function updateCamera(dt){
       }
     }
     
-    cam.x=clamp(cam.x,-PW-200,PW+200);cam.y=clamp(cam.y,-100,PD+100);
+    cam.x=clamp(cam.x,-PW-200,PW+200);cam.y=clamp(cam.y,-280,PD+100); // sky + surface
   }
 }
 function updateTodUI(){

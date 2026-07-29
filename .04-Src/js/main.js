@@ -215,7 +215,7 @@ function startGame(isScreensaver){
      var px = rng(-hw0*0.3, hw0*0.3);
      player=spawnOrg(sp, px, dY, true);
      if(!player)player=spawnOrg(sp,0,PD*0.3,true);
-     player.energy=100;cam.x=player.x;cam.y=player.y;
+     player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y;
      // Seed nearby food cluster so player sees action immediately
      var foodCats = FOOD[sp.cat] || ['producer','consumer1'];
      var foodPool = [];
@@ -233,7 +233,10 @@ function startGame(isScreensaver){
        var fx = player.x + Math.cos(ang)*rr;
        var fy = clamp(player.y + Math.sin(ang)*rr*0.65, 20, PD-20);
        var fo = spawnOrg(fsp, fx, fy, false);
-       if(fo){ fo.size = Math.min(fo.size, player.size*0.75); fo.energy = 45; }
+       if(fo){
+         fo.size = Math.min(fo.size, Math.max(1.0, player.size*0.55));
+         fo.energy = 50; fo.divCD=0; fo.invuln=0; fo.alive=true;
+       }
      }
   }
   
@@ -361,88 +364,64 @@ window.showToast = function(msg, color){
 };
 
 window.tryPlayerEat = function(){
-  if(!player){ if(window.showToast) window.showToast('Нет игрока', '#faa'); return false; }
-  // Recover from soft-death / cyst if user insists on eating
-  if(player.cyst){ player.cyst=false; }
-  if(player.dying && player.energy<5){ player.dying=false; player.deathT=0; player.alive=true; player.energy=Math.max(player.energy, 12); }
-  if(!player.alive){ player.alive=true; player.energy=Math.max(player.energy, 15); }
-  if(player.energy<5) player.energy=15;
+  if(!player){ if(window.showToast) window.showToast('Нет игрока','#faa'); return false; }
+  if(player.cyst) player.cyst=false;
+  if(player.dying){ player.dying=false; player.deathT=0; }
+  if(!player.alive){ player.alive=true; }
+  if(player.energy<8) player.energy=20;
 
-  // Ignore divCD on prey for player action — user intent wins
-  var best=null, bd=1e15;
-  var fc2 = FOOD[player.sp.cat]||[];
-  // Generous range so E works when prey is "nearby" on screen
-  var range = Math.max(90, player.size*4 + 70);
-  var range2 = range*range;
-  for(var i=0;i<orgs.length;i++){
-    var p=orgs[i];
-    if(!p||!p.alive||p===player||p.cyst) continue;
-    if(p.invuln>0.5) continue; // only hard invuln blocks
-    var okFood = false;
-    if(p.size < player.size*0.98) okFood = true; // anything smaller
-    if(fc2.indexOf(p.sp.cat)>=0 && p.size < player.size*1.15) okFood = true;
-    if(player.sp.cat==='producer' && p.size < player.size*1.05) okFood = true;
-    if(!okFood) continue;
-    if(p.size >= player.size*1.25) continue;
-    var d=dist2(player,p);
-    if(d<bd){ bd=d; best=p; }
-  }
-  if(best && bd < range2){
-    // Soften prey locks so eat always lands
-    if(best.divCD>0) best.divCD=0;
-    if(best.invuln>0) best.invuln=0;
-    var before = player.eaten||0;
-    eatOrg(player, best);
-    if((player.eaten||0) > before){
-      if(window.showToast) window.showToast('Съел! +энергия', '#8f8');
-      return true;
+  // Prefer shared finder
+  var best = null;
+  if(typeof findBestPrey==='function') best = findBestPrey(player, 160, true);
+  if(!best && typeof findBestPrey==='function') best = findBestPrey(player, 420, true);
+
+  // Manual scan fallback
+  if(!best){
+    var bd=1e15, range2=Math.pow(Math.max(100, player.size*5+80),2);
+    for(var i=0;i<orgs.length;i++){
+      var p=orgs[i];
+      if(!p||!p.alive||p===player||p.cyst) continue;
+      var d=dist2(player,p);
+      if(d<bd && d<range2 && p.size < player.size*1.3){ bd=d; best=p; }
     }
-    // eatOrg may have early-returned — force minimal success feedback path
-    if(best.alive){
-      // manual energy gain if eatOrg blocked
-      var gain = Math.max(8, Math.min(40, best.energy*0.5 || best.size*3));
-      player.energy = Math.min(110, (player.energy||0) + gain);
-      player.eaten = (player.eaten||0)+1;
-      best.alive=false;
-      if(typeof killOrg==='function') try{ killOrg(best, (typeof DCODE!=='undefined'&&DCODE.EATEN)||1); }catch(e){ best.alive=false; }
-      player.flash=1; player.flashColor='#8f8';
-      if(settings.particles){
-        for(var k=0;k<10;k++) parts.push({x:player.x,y:player.y,vx:rng(-3,3),vy:rng(-3,3),life:rng(8,18),maxL:18,size:rng(2,5),color:'#8f8'});
-      }
-      if(window.showToast) window.showToast('+'+Math.round(gain)+' энергия', '#8f8');
-      return true;
-    }
-    return true;
   }
-  // Pull toward nearest possible target as "almost" assist
+
   if(best){
-    var dx=best.x-player.x, dy=best.y-player.y, d=Math.sqrt(dx*dx+dy*dy)||1;
-    player.vx += dx/d * 8;
-    player.vy += dy/d * 8;
-    if(window.showToast) window.showToast('Ближе к добыче…', '#fd8');
+    var d = Math.sqrt(dist2(player,best));
+    var range = Math.max(90, player.size*4 + 70);
+    if(d <= range){
+      if(typeof forceEat==='function') return forceEat(player, best);
+      // legacy
+      best.divCD=0; best.invuln=0;
+      eatOrg(player, best);
+      if(window.showToast) window.showToast('Съел! +энергия','#8f8');
+      return true;
+    }
+    // Pull toward
+    var dx=best.x-player.x, dy=best.y-player.y, dd=Math.sqrt(dx*dx+dy*dy)||1;
+    player.vx += dx/dd*10; player.vy += dy/dd*10;
+    if(window.showToast) window.showToast('Ближе к добыче…','#fd8');
     return false;
   }
-  if(window.showToast) window.showToast('Рядом нет добычи (подплыви ближе)', '#faa');
+  if(window.showToast) window.showToast('Рядом нет добычи — включи АВТО или подплыви','#faa');
   return false;
 };
 
-// Contact auto-eat for player (when overlapping smaller cell) — every ~0.15s
 window._playerContactEatT = 0;
 window.playerContactEat = function(dt){
-  if(!player||!player.alive||player.cyst||player.dying) return;
+  if(!player||!player.alive||player.cyst) return;
   window._playerContactEatT -= (dt||0.016);
   if(window._playerContactEatT>0) return;
-  window._playerContactEatT = 0.12;
-  var range = player.size + 14;
+  window._playerContactEatT = 0.10;
+  var range = player.size + 18;
   var range2 = range*range;
   for(var i=0;i<orgs.length;i++){
     var p=orgs[i];
     if(!p||!p.alive||p===player||p.cyst) continue;
-    if(p.size >= player.size*0.95) continue;
+    if(p.size >= player.size*1.15) continue;
     if(dist2(player,p) <= range2){
-      if(p.divCD>0) p.divCD=0;
-      if(p.invuln>0) p.invuln=0;
-      eatOrg(player, p);
+      if(typeof forceEat==='function') forceEat(player, p);
+      else { p.divCD=0;p.invuln=0; eatOrg(player,p); }
       return;
     }
   }

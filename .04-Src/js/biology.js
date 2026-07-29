@@ -18,7 +18,7 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
     size:sp.size*(0.85+rng(0,0.3)),
     currentSize: sp.size,
     spawnTime: gt,
-    angle:rng(0,Math.PI*2),
+    angle:rng(0,Math.PI*2),facing:rng(0,Math.PI*2),
     state:'idle',target:null,
     dividing:false,divT:0,cyst:false,cystT:0,
     divCD:0,

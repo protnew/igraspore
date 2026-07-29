@@ -221,8 +221,9 @@ function renderOrganisms(vL,vR,vT,vB){
       if(o.x<vL-60||o.x>vR+60||o.y<vT-60||o.y>vB+60)continue;
       var sz=Math.max(o.size, 3.2);
       var sh=(o.sp && o.sp.shape) ? o.sp.shape : 'circle';
-      var ang = Math.atan2(o.vy||0, o.vx||0.01);
-      if(!isFinite(ang)) ang = (o.a||0);
+      // Use smoothed facing — NEVER raw atan2(vx,vy) (causes CW/CCW flicker)
+      var ang = (typeof o.facing==='number' && isFinite(o.facing)) ? o.facing
+              : (typeof o.angle==='number' && isFinite(o.angle)) ? o.angle : 0;
       // Soft scatter halo (ellipse-ish via scale)
       ctx.save();
       ctx.translate(o.x, o.y);
@@ -331,7 +332,7 @@ function renderOrganisms(vL,vR,vT,vB){
       var o = arr[i];
       if(o.size * zoom < 3) { ctx.fillRect(o.x - o.size, o.y - o.size, o.size*2, o.size*2); continue; }
       if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) continue; 
-      ctx.save();ctx.translate(o.x,o.y);ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
+      ctx.save();ctx.translate(o.x,o.y);ctx.rotate(((typeof o.facing==='number')?o.facing:o.angle)||0);
       drawBody(o, o.size, c, c, true);
       ctx.restore();
     }

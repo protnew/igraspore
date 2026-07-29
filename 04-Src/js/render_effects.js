@@ -449,28 +449,26 @@ function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun, fromBelow){
     ctx.ellipse(0, 10, rx*1.05, Math.max(6, ry*2.2), 0, 0, Math.PI*2);
     ctx.fill();
 
-    // Dark leaf underside (not neon green)
+    // Dark leaf underside — matte silhouette, NO neon rings
     var ug = ctx.createRadialGradient(0, 0, 0, 0, 0, rx);
-    ug.addColorStop(0, 'rgba(25, 55, 28, 0.82)');
-    ug.addColorStop(0.6, 'rgba(15, 40, 20, 0.88)');
-    ug.addColorStop(1, 'rgba(8, 25, 12, 0.75)');
+    ug.addColorStop(0, 'rgba(18, 42, 22, 0.92)');
+    ug.addColorStop(0.55, 'rgba(10, 28, 14, 0.94)');
+    ug.addColorStop(1, 'rgba(5, 16, 8, 0.88)');
     ctx.fillStyle = ug;
     ctx.beginPath();
     ctx.moveTo(0,0);
     ctx.arc(0, 0, 1, notch, Math.PI*2 - notch, false);
     ctx.closePath();
-    ctx.save(); ctx.scale(rx, Math.max(ry, rx*0.35)); ctx.fill(); ctx.restore();
-
-    // Thin bright rim (transmitted light through leaf edge)
-    ctx.strokeStyle = 'rgba(120, 180, 90, 0.35)';
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.ellipse(0, 0, rx*0.98, Math.max(ry, rx*0.35)*0.98, 0, notch, Math.PI*2-notch);
+    ctx.save(); ctx.scale(rx, Math.max(ry, rx*0.38)); ctx.fill();
+    // very soft edge only (not green neon)
+    ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+    ctx.lineWidth = 0.04;
     ctx.stroke();
+    ctx.restore();
 
-    // Hanging rootlets / rhizoids
-    ctx.strokeStyle = 'rgba(40, 70, 40, 0.45)';
-    ctx.lineWidth = 1.1;
+    // Hanging rootlets — brown-olive, thin
+    ctx.strokeStyle = 'rgba(45, 55, 30, 0.4)';
+    ctx.lineWidth = 0.9;
     for(var k=0; k<5; k++){
       var a = -Math.PI/2 + (k-2)*0.35 + (seed%7)*0.02;
       var len = 12 + (k%3)*7 + (seed%5);
@@ -688,10 +686,7 @@ function renderSnellWindow(vL, vR, vT, vB){
   ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2); ctx.fill();
   ctx.globalCompositeOperation = 'source-over';
 
-  // Soft edge ring
-  ctx.strokeStyle = 'rgba(200, 230, 255, ' + (0.2*dl) + ')';
-  ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.arc(cx, cy, R*0.92, 0, Math.PI*2); ctx.stroke();
+  // no hard ring — Snell is soft glow only
   ctx.restore();
 }
 window.drawNaturalLilypads = drawNaturalLilypads;

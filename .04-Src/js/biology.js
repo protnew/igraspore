@@ -209,7 +209,8 @@ function eatOrg(pred,prey){
     biteFrac = 1;
     prey.size = 0;
   } else {
-    dmg = Math.max(pred.size * 0.45, preySize0 * 0.25);
+    // Bigger target → bigger bite chunk (still less than full swallow)
+    dmg = Math.max(pred.size * 0.55, preySize0 * 0.35);
     if(dmg > prey.size) dmg = prey.size;
     biteFrac = dmg / preySize0;
     prey.size -= dmg;

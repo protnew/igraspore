@@ -38,11 +38,14 @@ function bioFlags(cat,i){
   if(cat==='consumer2'){ // Ciliates
     b.nucleus=true; b.macro=true; b.vac=true; b.cilia=true; b.oral=true; b.mito=true; b.er=true; b.pellicle=true; b.contractile=true;
   }
-  if(cat==='consumer3'){ // Predators
-    b.nucleus=true; b.vac=true; b.mito=true; b.contractile=true; b.er=true;
+  if(cat==='consumer3'){ // Predators — full internals (not empty ovals)
+    b.nucleus=true; b.vac=true; b.mito=true; b.contractile=true; b.er=true; b.golgi=true; b.oral=true;
     var sh=SHAPES.consumer3[i];
-    b.pseudo=(sh==='star'||sh==='irregular'); b.cilia=(sh==='bell'); b.flag=(sh==='rod'||sh==='oval');
-    if (i > 8) b.venom = true; // Later predators are venomous
+    b.pseudo=(sh==='star'||sh==='irregular');
+    b.cilia=(sh==='bell'||sh==='oval'||sh==='slipper');
+    b.flag=(sh==='rod') || (!b.cilia && !b.pseudo);
+    b.pellicle = b.cilia;
+    if (i > 8) b.venom = true;
   }
   if(cat==='decomposer'){ // Fungi/Yeast
     b.nucleus=true; b.vac=true; b.wall=true; b.mito=true; b.ribo=true;
@@ -60,8 +63,8 @@ function mkSp(arr,cat,minSz,maxSz,minSp,maxSp){
     else if(loc==='budding'||loc==='growth') finalSp*=0.02;
     else if(loc==='pseudopodia') finalSp*=0.1;
     else if(loc==='glide') finalSp*=0.3;
-    else if(loc==='flagella') finalSp*=1.5;
-    else if(loc==='cilia') finalSp*=8.0;
+    else if(loc==='flagella') finalSp*=1.25;
+    else if(loc==='cilia') finalSp*=2.2; // was 8.0 rocket
     else if(loc==='cilia+stalk') finalSp*=1.0;
     
     var flags = {};

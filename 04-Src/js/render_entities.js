@@ -17,10 +17,10 @@ function drawBody(o,sz,fc2,fd, batched){
       var stretch = Math.min(1.4, 1.0 + vmag * 0.08);
       var squish = Math.max(0.7, 1.0 - vmag * 0.04);
       // Membrane fluidity: subtle ripple on cell surface (lipid bilayer dynamics)
-      var memRipple=settings.renderMode==='realistic'?0.01:0.04;
+      var memRipple=(settings.renderMode==='realistic'?0.008:0.025)*Math.min(1, 4/Math.max(zoom,1));
       for(var i=0; i<=32; i++) {
           var a = (i/32) * Math.PI * 2;
-          var r = sz + Math.sin(a*6-o.pulse*2)*(vmag*0.3) + Math.sin(a*12+o.pulse*3)*sz*memRipple;
+          var r = sz + Math.sin(a*6-o.pulse*1.2)*(Math.min(vmag,4)*0.12) + Math.sin(a*12+o.pulse*1.5)*sz*memRipple;
           var x = Math.cos(a) * r * stretch;
           var y = Math.sin(a) * r * squish;
           if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
@@ -61,7 +61,18 @@ function drawBody(o,sz,fc2,fd, batched){
   else if(sh==='star'){var pts=12;for(var i=0;i<=pts*2;i++){var a=i/(pts*2)*Math.PI*2,r=i%2===0?sz*1.3:sz*0.6;if(i===0)ctx.moveTo(Math.cos(a)*r,Math.sin(a)*r);else ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);}}
   else if(sh==='slipper'){ctx.moveTo(sz,0);ctx.bezierCurveTo(sz,-sz*0.65,-sz*0.8,-sz*0.65,-sz,0);ctx.bezierCurveTo(-sz*0.8,sz*0.65,sz,sz*0.65,sz,0);}
   else if(sh==='bell'){ctx.moveTo(0,-sz);ctx.bezierCurveTo(sz*0.8,-sz*0.9,sz*0.9,sz*0.3,0,sz*0.5);ctx.bezierCurveTo(-sz*0.9,sz*0.3,-sz*0.8,-sz*0.9,0,-sz);}
-  else if(sh==='oval'){if(batched)ctx.moveTo(sz*1.1,0);ctx.ellipse(0,0,sz*1.1,sz*0.7,0,0,Math.PI*2);}
+  else if(sh==='oval'){
+    // Soft elongated cell (ciliate-ish) — not a dumb capsule
+    if(batched){
+      ctx.moveTo(sz*1.15,0);
+      ctx.ellipse(0,0,sz*1.15,sz*0.68,0,0,Math.PI*2);
+    } else {
+      ctx.moveTo(sz*1.2, 0);
+      ctx.bezierCurveTo(sz*1.15, -sz*0.72, -sz*0.55, -sz*0.75, -sz*1.05, -sz*0.15);
+      ctx.bezierCurveTo(-sz*1.2, 0, -sz*1.05, sz*0.15, -sz*0.55, sz*0.75);
+      ctx.bezierCurveTo(sz*1.15, sz*0.72, sz*1.2, 0, sz*1.2, 0);
+    }
+  }
   else if(sh==='frustule'){
     // Diatom frustule — two valves with ribbed pattern
     if(batched)ctx.moveTo(sz*1.2,0);
@@ -84,7 +95,7 @@ function drawBody(o,sz,fc2,fd, batched){
       var vang2=Math.atan2(o.vy,o.vx);
       for(var i=0;i<=48;i++){
         var a=i/48*Math.PI*2;
-        var r=sz+Math.sin(a*lobes+o.wobble)*sz*0.25+Math.sin(a*3+o.pulse)*sz*0.1;
+        var r=sz+Math.sin(a*lobes+o.wobble)*sz*0.10+Math.sin(a*3+o.pulse)*sz*0.04;
         // Stretch in direction of movement (pseudopod extension)
         if(vmag2>0.5){
           var align=Math.cos(a-vang2);
@@ -113,6 +124,21 @@ function drawBody(o,sz,fc2,fd, batched){
         ctx.stroke();
       }
     }
+    // Ciliate texture: oral groove + contractile vacuole hint on oval/slipper
+    if((sh==='oval'||sh==='slipper')&&!batched){
+      ctx.strokeStyle='rgba(0,0,0,0.18)';ctx.lineWidth=Math.max(0.8,sz*0.04);
+      ctx.beginPath();ctx.moveTo(sz*0.15,-sz*0.15);ctx.quadraticCurveTo(sz*0.55,0,sz*0.15,sz*0.2);ctx.stroke();
+      // contractile vacuole
+      ctx.fillStyle='rgba(180,220,255,0.35)';
+      ctx.beginPath();ctx.arc(-sz*0.35,-sz*0.15,sz*0.16,0,Math.PI*2);ctx.fill();
+      ctx.strokeStyle='rgba(120,180,220,0.45)';ctx.lineWidth=0.7;
+      ctx.beginPath();ctx.arc(-sz*0.35,-sz*0.15,sz*0.16,0,Math.PI*2);ctx.stroke();
+      // food vacuoles
+      ctx.fillStyle='rgba(255,200,80,0.35)';
+      ctx.beginPath();ctx.arc(sz*0.2,sz*0.1,sz*0.1,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.arc(-sz*0.05,sz*0.28,sz*0.07,0,Math.PI*2);ctx.fill();
+    }
+
     // Shell texture (diatoms, shelled organisms)
     if(o.sp.flags&&o.sp.flags.shell){
       ctx.strokeStyle='rgba(200,190,160,0.3)';ctx.lineWidth=0.5;
@@ -209,7 +235,7 @@ function renderOrg(o, skipBody){
     if(!skipBody)drawBody(o,sz*(1-dp*0.15),bc,bd);
     drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
     ctx.restore();return;}
-  ctx.rotate(o.angle+Math.sin(o.wobble)*0.04);
+  ctx.rotate(((typeof o.facing==='number')?o.facing:o.angle||0)+Math.sin(o.wobble)*0.012);
   if(isReal&&!skipBody){
     // PHASE CONTRAST: bright organisms, clearly visible on dark bg
     var pr=rgb[0],pg=rgb[1],pb=rgb[2];
@@ -225,7 +251,7 @@ function renderOrg(o, skipBody){
     else if(sh2==='slipper'){ctx.moveTo(sz,0);ctx.bezierCurveTo(sz,-sz*0.65,-sz*0.8,-sz*0.65,-sz,0);ctx.bezierCurveTo(-sz*0.8,sz*0.65,sz,sz*0.65,sz,0);}
     else if(sh2==='bell'){ctx.moveTo(0,-sz);ctx.bezierCurveTo(sz*0.8,-sz*0.9,sz*0.9,sz*0.3,0,sz*0.5);ctx.bezierCurveTo(-sz*0.9,sz*0.3,-sz*0.8,-sz*0.9,0,-sz);}
     else if(sh2==='star'){for(var st=0;st<=24;st++){var sa=st/24*Math.PI*2,sr=st%2===0?sz*1.3:sz*0.6;if(st===0)ctx.moveTo(Math.cos(sa)*sr,Math.sin(sa)*sr);else ctx.lineTo(Math.cos(sa)*sr,Math.sin(sa)*sr);}}
-    else if(sh2==='irregular'){for(var il=0;il<=40;il++){var ia=il/40*Math.PI*2,ir=sz+Math.sin(ia*5+o.wobble)*sz*0.25;if(il===0)ctx.moveTo(Math.cos(ia)*ir,Math.sin(ia)*ir);else ctx.lineTo(Math.cos(ia)*ir,Math.sin(ia)*ir);}}
+    else if(sh2==='irregular'){for(var il=0;il<=40;il++){var ia=il/40*Math.PI*2,ir=sz+Math.sin(ia*5+o.wobble)*sz*0.10;if(il===0)ctx.moveTo(Math.cos(ia)*ir,Math.sin(ia)*ir);else ctx.lineTo(Math.cos(ia)*ir,Math.sin(ia)*ir);}}
     else{ctx.arc(0,0,sz,0,Math.PI*2);}
     ctx.fill();
     // Bright halo edge
@@ -234,9 +260,9 @@ function renderOrg(o, skipBody){
     ctx.stroke();
   }
   else if(!skipBody)drawBody(o,sz,bc,bd);
-  var organZoom=settings.renderMode==='realistic'?2:3;
+  var organZoom=settings.renderMode==='realistic'?1.2:1.8;
   if(zoom>organZoom)drawOrgans(o,sz);
-  var appZoom=settings.renderMode==='realistic'?1.5:2;
+  var appZoom=settings.renderMode==='realistic'?1.0:1.4;
   if(zoom>appZoom)drawAppendages(o,sz);
   if(o.flash>0){
     ctx.globalAlpha=o.flash;
@@ -356,21 +382,21 @@ function drawOrgans(o,sz){
       // Macronucleus — bean/elongated shape with chromatin
       ctx.fillStyle='rgba(160,80,160,0.8)';ctx.beginPath();ctx.ellipse(g.x,g.y,g.r,g.r*0.6,0,0,Math.PI*2);ctx.fill();
       if(detail>=1){ctx.fillStyle='rgba(190,110,190,0.4)';
-        for(var m=0;m<5;m++){ctx.beginPath();ctx.arc(g.x+rng(-g.r*0.6,g.r*0.6),g.y+rng(-g.r*0.3,g.r*0.3),g.r*0.08,0,Math.PI*2);ctx.fill();}}
+        for(var m=0;m<5;m++){var ma=m/5*Math.PI*2+o.pulse*0.02;ctx.beginPath();ctx.arc(g.x+Math.cos(ma)*g.r*0.35,g.y+Math.sin(ma)*g.r*0.2,g.r*0.08,0,Math.PI*2);ctx.fill();}}
     }
     else if(g.t==='mic'){ctx.fillStyle=g.c;ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();}
     else if(g.t==='chl'||g.t==='plastid'){
       // Chloroplast with cyclosis (cytoplasmic streaming) — orbits around cell center
-      var cycloAngle=Math.atan2(g.y,g.x)+o.pulse*0.15;
+      var cycloAngle=Math.atan2(g.y,g.x)+o.pulse*0.035; // slow streaming, not shake
       var cycloR=Math.sqrt(g.x*g.x+g.y*g.y);
       var cx2=Math.cos(cycloAngle)*cycloR,cy2=Math.sin(cycloAngle)*cycloR;
-      ctx.save();ctx.translate(cx2,cy2);ctx.rotate(g.rot+o.pulse*0.2);
+      ctx.save();ctx.translate(cx2,cy2);ctx.rotate(g.rot+o.pulse*0.04);
       var cg=ctx.createRadialGradient(0,0,0,0,0,g.rx);
       cg.addColorStop(0,'#5fd45f');cg.addColorStop(0.7,'#2a8a2a');cg.addColorStop(1,'#1a5a1a');
       ctx.fillStyle=cg;ctx.beginPath();ctx.ellipse(0,0,g.rx,g.ry,0,0,Math.PI*2);ctx.fill();
       // Thylakoid stacks (grana — dark green dots)
       if(detail>=1){ctx.fillStyle='rgba(15,60,15,0.6)';
-        for(var gr=0;gr<4;gr++){ctx.beginPath();ctx.ellipse(-g.rx*0.4+gr*g.rx*0.25,rng(-g.ry*0.3,g.ry*0.3),g.rx*0.12,g.ry*0.15,0,0,Math.PI*2);ctx.fill();}}
+        for(var gr=0;gr<4;gr++){ctx.beginPath();ctx.ellipse(-g.rx*0.4+gr*g.rx*0.25,Math.sin(gr*1.7+o.pulse*0.05)*g.ry*0.2,g.rx*0.12,g.ry*0.15,0,0,Math.PI*2);ctx.fill();}}
       ctx.strokeStyle='rgba(20,80,20,0.4)';ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(-g.rx*0.7,0);ctx.lineTo(g.rx*0.7,0);ctx.stroke();
       ctx.restore();
     }
@@ -567,7 +593,7 @@ function drawAppendages(o,sz){
         if(c===0)ctx.moveTo(Math.cos(a)*r,Math.sin(a)*r);else ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);}
       ctx.closePath();ctx.stroke();}}
   if(b.pseudo){var pn=5;
-    for(var p=0;p<pn;p++){var a=p/pn*Math.PI*2+Math.sin(o.wobble)*0.3;var ext=sz*0.4+Math.sin(o.pulse+p*1.5)*sz*0.35;
+    for(var p=0;p<pn;p++){var a=p/pn*Math.PI*2+Math.sin(o.wobble)*0.08;var ext=sz*0.4+Math.sin(o.pulse*0.7+p*1.5)*sz*0.18;
       ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(Math.cos(a)*sz*0.7,Math.sin(a)*sz*0.7,Math.cos(a)*(sz+ext),Math.sin(a)*(sz+ext));
       ctx.lineWidth=Math.max(2,sz*0.12);ctx.strokeStyle='rgba(200,220,255,0.15)';ctx.stroke();}}
   if(b.stalk){ctx.strokeStyle='rgba(150,130,80,0.4)';ctx.lineWidth=Math.max(1,sz*0.06);
@@ -580,7 +606,7 @@ function renderViruses(vL,vR,vT,vB){
   ctx.save();
   for(var i=0;i<viruses.length;i++){
     var v=viruses[i];if(v.x<vL-20||v.x>vR+20||v.y<vT-20||v.y>vB+20)continue;
-    ctx.save();ctx.translate(v.x,v.y);ctx.rotate(v.angle+Math.sin(v.wobble)*0.1);
+    ctx.save();ctx.translate(v.x,v.y);ctx.rotate(v.angle+Math.sin(v.wobble)*0.03);
     ctx.fillStyle='#f44';ctx.strokeStyle='#a00';ctx.lineWidth=0.5;
     // Head (icosahedron look)
     ctx.beginPath();ctx.arc(0,0,3,0,Math.PI*2);ctx.fill();ctx.stroke();

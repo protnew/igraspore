@@ -51,7 +51,9 @@ function turnToward(o, desired, dt, turnSpeed){
 
 function thrustAlongFacing(o, speed, dt, mul){
   ensureFacing(o);
-  var thr = speed * dt * (mul||12);
+  // Cap thrust: high mul near prey caused "teleport dashes"
+  var m = Math.min(mul||12, o.isPlayer ? 16 : 12);
+  var thr = speed * dt * m;
   o.vx += Math.cos(o.facing) * thr;
   o.vy += Math.sin(o.facing) * thr;
 }
@@ -61,7 +63,7 @@ function moveOrg(o,dt){
   var speed=Math.max(sp.speed, 0.5)*SPD_SCALE*0.05;
   if(o.isPlayer && !freeCam){
     // Players always swim at a usable pace (real microbes: active swimming)
-    speed = Math.max(speed, 2.5) * 2.4;
+    speed = Math.max(speed, 1.8) * 1.7; // usable but not rocket
   }
   if(o.speedMult) speed *= o.speedMult;
   ensureFacing(o);
@@ -111,6 +113,16 @@ function moveOrg(o,dt){
   o.vx *= Math.pow(damp, dampDt*60);
   o.vy *= Math.pow(damp, dampDt*60);
 
+  // Hard speed ceiling — prevents rare "rocket" bursts (timeScale / stacked thrust)
+  var maxSwim = (o.isPlayer ? 9.5 : 6.5) * (o.speedMult || 1) * Math.max(0.6, Math.min(1.4, (sp.speed||1)/2));
+  if(o.state === 'flee') maxSwim *= 1.15;
+  if(o.state === 'hunt' && (o.energy||0) < 40) maxSwim *= 0.7; // weak when starving
+  var spNow = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
+  if(spNow > maxSwim && spNow > 1e-6){
+    var sc = maxSwim / spNow;
+    o.vx *= sc; o.vy *= sc;
+  }
+
   // Kill sideways orbit: keep velocity mostly along facing when moving
   var spMag = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
   if(spMag > 0.4 && (!o.isPlayer || autoAI || freeCam)){
@@ -148,11 +160,11 @@ function moveOrg(o,dt){
     }
   }
 
-  // Gentle visual wobble ONLY (does not affect heading used for locomotion)
-  o.wobble = (o.wobble||0) + dt * 1.2;
-  o.pulse = (o.pulse||0) + dt * 1.0;
-  o.flagPhase = (o.flagPhase||0) + dt * 6;
-  o.cilPhase = (o.cilPhase||0) + dt * 10;
+  // Gentle visual phase — slow at any zoom (organs must not "vibrate")
+  o.wobble = (o.wobble||0) + dt * 0.35;
+  o.pulse = (o.pulse||0) + dt * 0.45;
+  o.flagPhase = (o.flagPhase||0) + dt * 2.2;
+  o.cilPhase = (o.cilPhase||0) + dt * 3.5;
 
   if(o.divCD>0) o.divCD -= dt;
 }
@@ -162,40 +174,57 @@ function moveOrg(o,dt){
 // ============================================================
 function playerAutoAI(o, dt, speed){
   o.state = 'auto';
+  var en = (typeof o.energy === 'number') ? o.energy : 50;
+
+  // Critical energy: stop long chases, only contact food
+  if(en < 25){
+    o.aiTarget = null;
+    runAndTumble(o, dt, speed * 0.5, 0.45);
+    o.state = 'rest';
+    return;
+  }
 
   // Retarget when missing/dead or timer expired
   if(o.aiRetargetT === undefined) o.aiRetargetT = 0;
+  if(o.huntT === undefined) o.huntT = 0;
   o.aiRetargetT -= dt;
+  var pRange = en < 40 ? 280 : 900;
   if(!o.aiTarget || !o.aiTarget.alive || o.aiRetargetT <= 0){
-    o.aiTarget = findBestPrey(o, 1400, true);
-    o.aiRetargetT = 0.7;
+    o.aiTarget = findBestPrey(o, pRange, true);
+    o.aiRetargetT = 0.75;
+    o.huntT = 0;
     if(o.aiTarget){
-      // face prey immediately (snap-ish)
-      turnToward(o, Math.atan2(o.aiTarget.y-o.y, o.aiTarget.x-o.x), dt, 14);
+      turnToward(o, Math.atan2(o.aiTarget.y-o.y, o.aiTarget.x-o.x), dt, 10);
     }
   }
 
   if(o.aiTarget && o.aiTarget.alive){
-    o.state = 'hunt';
     var dx = o.aiTarget.x - o.x;
     var dy = o.aiTarget.y - o.y;
     var d = Math.sqrt(dx*dx + dy*dy) || 1;
-    turnToward(o, Math.atan2(dy, dx), dt, 9);
-    var mul = 22;
-    if(d < 140) mul = 30;
+    o.huntT += dt;
+    if(d > pRange * 1.3 || o.huntT > 8){
+      o.aiTarget = null; o.huntT = 0; o.aiRetargetT = 1.0;
+      runAndTumble(o, dt, speed * 0.7, 0.7);
+      o.state = 'wander';
+      return;
+    }
+    o.state = 'hunt';
+    turnToward(o, Math.atan2(dy, dx), dt, 8);
+    var mul = en < 40 ? 10 : 14;
+    if(d < 100 && en >= 40) mul = 16;
     thrustAlongFacing(o, speed, dt, mul);
 
-    // Eat on contact (generous)
     if(d < (o.size + o.aiTarget.size + 28)){
       forceEat(o, o.aiTarget);
       o.aiTarget = null;
-      o.aiRetargetT = 0.08;
+      o.aiRetargetT = 0.12;
+      o.huntT = 0;
     }
     return;
   }
 
-  // No prey: run-and-tumble explore (natural)
-  runAndTumble(o, dt, speed, 1.0);
+  runAndTumble(o, dt, speed, en < 50 ? 0.7 : 1.0);
   o.state = 'wander';
 }
 
@@ -319,28 +348,66 @@ function naturalAI(o, dt, speed){
     return;
   }
 
+  // --- Energy gates: never hunt to death ---
+  // <22: rest/cyst attempt; 22-38: only eat contact prey; 38-72: short hunts; >72: optional
+  var en = (typeof o.energy === 'number') ? o.energy : 50;
+  if(en < 22){
+    o.state = 'rest';
+    o.aiTarget = null;
+    // try cyst if not player (biology also handles temp); here soft rest
+    o.vx *= Math.pow(0.8, dt*60); o.vy *= Math.pow(0.8, dt*60);
+    if(!o.isPlayer && !o.cyst && en > 8 && Math.random() < 0.02*dt){
+      o.cyst = true; o.vx=0; o.vy=0;
+    }
+    return;
+  }
+
   // --- Hunt if hungry and has food chain ---
-  var needFood = o.energy < 92;
+  var needFood = en < 72; // was 92 → endless hunt
   if(needFood && foodCats.length > 0){
     if(o.aiRetargetT === undefined) o.aiRetargetT = 0;
+    if(o.huntT === undefined) o.huntT = 0;
     o.aiRetargetT -= dt;
+
+    // Starving: only pursue VERY close prey (save energy)
+    var huntRange = en < 38 ? 120 : (en < 55 ? 380 : 650);
+    var maxHuntTime = en < 40 ? 3.5 : 7.0;
+
     if(!o.aiTarget || !o.aiTarget.alive || o.aiRetargetT <= 0){
-      o.aiTarget = findBestPrey(o, 750, false);
-      o.aiRetargetT = 0.8 + Math.random()*0.5;
+      o.aiTarget = findBestPrey(o, huntRange, false);
+      o.aiRetargetT = 0.9 + Math.random()*0.6;
+      o.huntT = 0;
     }
     if(o.aiTarget && o.aiTarget.alive){
-      o.state='hunt';
       var dx=o.aiTarget.x-o.x, dy=o.aiTarget.y-o.y;
       var d=Math.sqrt(dx*dx+dy*dy)||1;
-      turnToward(o, Math.atan2(dy,dx), dt, 6);
-      thrustAlongFacing(o, speed, dt, 14);
+      // Give up: too far or chase too long without catch
+      if(d > huntRange * 1.25 || o.huntT > maxHuntTime){
+        o.aiTarget = null;
+        o.aiRetargetT = 1.2 + Math.random();
+        o.huntT = 0;
+        o.state = 'wander';
+        runAndTumble(o, dt, speed * 0.55, 0.6);
+        return;
+      }
+      o.state='hunt';
+      o.huntT += dt;
+      // Low energy → slower pursuit (don't burn last reserves)
+      var huntMul = en < 40 ? 7 : (en < 55 ? 10 : 12);
+      turnToward(o, Math.atan2(dy,dx), dt, en < 40 ? 4 : 6);
+      thrustAlongFacing(o, speed, dt, huntMul);
       if(d < o.size + o.aiTarget.size + 10){
         forceEat(o, o.aiTarget);
         o.aiTarget=null;
-        o.aiRetargetT=0.15;
+        o.aiRetargetT=0.25;
+        o.huntT = 0;
       }
       return;
     }
+  } else {
+    // Satiated: clear hunt lock, rest thrust
+    o.aiTarget = null;
+    o.huntT = 0;
   }
 
   // --- Default: run-and-tumble (like real flagellated microbes) ---

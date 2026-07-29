@@ -646,9 +646,29 @@ function updateOrg(o,dt){
   }else{
     // Respiration: consumes O2, produces CO2
     var o2Lim = Math.min(1.0, Math.max(0, globalO2 + o.o2Offset) / 50.0);
-    o.energy-=metab*dt*DIFF[difficulty].energy * (2.0 - o2Lim); // Starves faster if no O2
+    var huntTax = 1.0;
+    if(o.state === 'hunt'){
+      // Short sprint cost — NOT a death spiral. Cap extra burn.
+      huntTax = (o.energy < 40) ? 1.15 : 1.35;
+    } else if(o.state === 'rest' || o.state === 'idle'){
+      huntTax = 0.55; // conserve when resting
+    } else if(o.state === 'wander' || o.state === 'run'){
+      huntTax = 0.85;
+    }
+    o.energy-=metab*dt*DIFF[difficulty].energy * (2.0 - o2Lim) * huntTax;
     globalO2 -= metab * dt * 0.05;
     globalCO2 += metab * dt * 0.05;
+    // Soft floor for NPC predators: enter rest before zero-death
+    if(!o.isPlayer && o.energy < 18 && o.energy > 0 && !o.cyst && !o.dying){
+      o.state = 'rest';
+      o.aiTarget = null;
+      // tiny salvage from mass bank if any
+      if((o.massFood||0) > 0.5){
+        var tap = Math.min(o.massFood, dt * 1.2);
+        o.massFood -= tap;
+        o.energy += tap * 0.8;
+      }
+    }
   }
 
   // Player energy floor/ceiling — never snap to weird negatives from stacked drains
@@ -765,7 +785,15 @@ function updateOrg(o,dt){
         if(Math.random()<0.02*dt)doDivide(o);
     }
   }
-  if(o.energy<=-5){killOrg(o,DCODE.STARVE);return;}
+  if(o.energy<=0 && !o.isPlayer){
+    // Last chance: cyst instead of instant death once
+    if(!o.cyst && !o._starvedOnce){
+      o._starvedOnce = true;
+      o.cyst = true; o.energy = 8; o.vx=0; o.vy=0; o.aiTarget=null;
+      return;
+    }
+  }
+  if(o.energy<=-8){killOrg(o,DCODE.STARVE);return;}
   if(o.sp.isEuk&&o.age>500){o.energy-=0.15*dt;if(o.energy<5&&Math.random()<0.004*dt){killOrg(o,DCODE.AGE);return;}}
   // Size from species baseline + mass bank (feeding), energy only mild factor
   var adult0 = o.sp.size*(o.sizeMult||1.0);
@@ -786,14 +814,17 @@ function updateOrg(o,dt){
   // Division only via Q / button when canDivide() is true
 
   // AUTO-EAT on contact — player AND NPCs (no E key needed)
+  // consumer2 (инфузории) = фильтр-питание: заглатывают бактерий/водоросли в зоне рта
   if(o.alive&&!o.dividing&&!o.cyst&&!o.dying){
     var foodCats=FOOD[o.sp.cat]||[];
+    var isCiliate = (o.sp.cat==='consumer2');
     var range = o.size + (o.isPlayer ? 22 : 14);
-    var nearby = window.getNearby ? window.getNearby(o.x, o.y, range+40) : orgs;
+    if(isCiliate) range = o.size * 2.8 + (o.isPlayer ? 42 : 30);
+    var nearby = window.getNearby ? window.getNearby(o.x, o.y, range+55) : orgs;
+    var ateThisFrame = false;
     for(var ai=0;ai<nearby.length;ai++){
       var ap=nearby[ai];
       if(!ap||!ap.alive||ap===o||ap.cyst||ap.dying) continue;
-      // Soft locks don't block player auto-eat
       if(!o.isPlayer){
         if(ap.divCD>0||ap.invuln>0) continue;
         if(ap.isPlayer && (gt - (ap.spawnTime||0)) < 20) continue;
@@ -804,26 +835,76 @@ function updateOrg(o,dt){
       var isCan=(o.sp.flags&&o.sp.flags.cannibal&&o.energy<25&&ap.sp.id===o.sp.id);
       var ok=false;
       if(inChain && ap.size < o.size*1.15) ok=true;
-      if(ap.size < o.size*0.95) ok=true; // graze smaller cells
+      if(ap.size < o.size*0.95) ok=true;
       if(isCan) ok=true;
-      // Producers: only graze much smaller debris/producers
+      // Ciliates ONLY eat their food chain (bacteria + algae + small ciliates) — not random junk
+      if(isCiliate){
+        ok = inChain && ap.size < o.size * 1.2;
+      }
       if(o.sp.cat==='producer' && !inChain){
         ok = ap.size < o.size*0.7 && (ap.sp.cat==='producer' || ap.sp.cat==='decomposer');
       }
       if(!ok) continue;
       if(ap.size >= o.size*1.25) continue;
       var dd=dist2(o,ap);
+      // Contact for most; filter zone (larger) for ciliates on tiny prey
       var need = (o.size + ap.size + (o.isPlayer?18:10));
+      if(isCiliate && ap.size < o.size*0.7) need = range;
       if(dd < need*need){
         if(o.isPlayer){
           if(typeof forceEat==='function') forceEat(o, ap);
           else { ap.divCD=0; ap.invuln=0; eatOrg(o,ap); }
+          if(isCiliate && window.showToast && Math.random()<0.35)
+            window.showToast('Фильтр: захватил добычу', '#9cf');
         } else {
           eatOrg(o, ap);
         }
+        ateThisFrame = true;
         break;
+      }
+    }
+    // Continuous filter siphon: even without full swallow, pull micro-nutrition
+    // from ambient bacteria/algae density (real paramecium style)
+    if(isCiliate && !ateThisFrame){
+      o._filterT = (o._filterT||0) + (typeof dt==='number'?dt:0.016);
+      if(o._filterT > 0.35){
+        o._filterT = 0;
+        var micro = 0;
+        var nb2 = window.getNearby ? window.getNearby(o.x, o.y, range+20) : orgs;
+        for(var fi=0; fi<nb2.length; fi++){
+          var fp = nb2[fi];
+          if(!fp||!fp.alive||fp===o) continue;
+          if(foodCats.indexOf(fp.sp.cat)<0) continue;
+          if(fp.size >= o.size*0.85) continue;
+          var ddf = dist2(o,fp);
+          if(ddf < range*range) micro++;
+        }
+        if(micro > 0){
+          // Siphon one smallest nearby prey preferentially
+          var best=null, bestS=1e9;
+          for(var fj=0; fj<nb2.length; fj++){
+            var fq=nb2[fj];
+            if(!fq||!fq.alive||fq===o) continue;
+            if(foodCats.indexOf(fq.sp.cat)<0) continue;
+            if(fq.size >= o.size*0.85) continue;
+            if(dist2(o,fq) > range*range) continue;
+            if(fq.size < bestS){ bestS=fq.size; best=fq; }
+          }
+          if(best){
+            if(o.isPlayer && typeof forceEat==='function') forceEat(o, best);
+            else eatOrg(o, best);
+            if(o.isPlayer && window.showToast && Math.random()<0.4)
+              window.showToast('Реснички: фильтр-питание', '#9cf');
+          } else {
+            // Ambient organic soup if prey fled — tiny trickle only near food density
+            var drip = Math.min(2.5, 0.4 + micro*0.35);
+            o.energy = Math.min(120, (o.energy||0) + drip*0.5);
+            o.massFood = (o.massFood||0) + drip*0.06;
+          }
+        }
       }
     }
   }
 }
+
 

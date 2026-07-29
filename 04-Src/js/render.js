@@ -334,6 +334,24 @@ function renderOrganisms(vL,vR,vT,vB){
       if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) continue; 
       ctx.save();ctx.translate(o.x,o.y);ctx.rotate(((typeof o.facing==='number')?o.facing:o.angle)||0);
       drawBody(o, o.size, c, c, true);
+      // Mini internals even in batch — avoid "dumb ovals"
+      if(zoom > 1.3 && o.size > 4){
+        var s=o.size;
+        ctx.fillStyle='rgba(120,60,140,0.55)';
+        ctx.beginPath();ctx.ellipse(-s*0.15,-s*0.05,s*0.22,s*0.16,0,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle='rgba(255,200,80,0.4)';
+        ctx.beginPath();ctx.arc(s*0.2,s*0.1,s*0.1,0,Math.PI*2);ctx.fill();
+        if(o.sp && o.sp.bio && o.sp.bio.cilia && zoom>1.6){
+          ctx.strokeStyle='rgba(255,255,255,0.25)';ctx.lineWidth=0.8;
+          for(var ci=0;ci<10;ci++){
+            var ca=ci/10*Math.PI*2 + (o.cilPhase||0)*0.5;
+            ctx.beginPath();
+            ctx.moveTo(Math.cos(ca)*s*0.95, Math.sin(ca)*s*0.7);
+            ctx.lineTo(Math.cos(ca)*s*1.25, Math.sin(ca)*s*0.95);
+            ctx.stroke();
+          }
+        }
+      }
       ctx.restore();
     }
     ctx.fill();

@@ -12,9 +12,26 @@ function render(){
   var vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
   
   // === STEP 1: BACKGROUND ===
-  // BOTH modes: living water color. Realistic is darker teal, never pure black.
+  // Split: sky-ish upper screen, water lower — so free-cam above surface isn't a blue void
   {
-    var wgrad=ctx.createLinearGradient(0,0,0,cv.height);
+    var skyFrac = 0;
+    if(typeof cam!=='undefined' && typeof zoom==='number' && zoom>0){
+      // fraction of screen above waterline y=0
+      var halfH = cv.height/(2*zoom);
+      var topW = cam.y - halfH, botW = cam.y + halfH;
+      if(botW > 0 && topW < 0) skyFrac = (-topW) / (botW - topW);
+      else if(botW <= 0) skyFrac = 1;
+      skyFrac = Math.max(0, Math.min(1, skyFrac));
+    }
+    var split = cv.height * skyFrac;
+    if(split > 2){
+      var sgrad=ctx.createLinearGradient(0,0,0,split);
+      sgrad.addColorStop(0, isReal?'#0a1840':'#0b1e48');
+      sgrad.addColorStop(1, isReal?'#3a6a9a':'#4a8ec8');
+      ctx.fillStyle=sgrad;
+      ctx.fillRect(0,0,cv.width,split);
+    }
+    var wgrad=ctx.createLinearGradient(0,split,0,cv.height);
     if(isReal){
       wgrad.addColorStop(0,'#0a2838');
       wgrad.addColorStop(0.4,'#0c3040');
@@ -25,8 +42,8 @@ function render(){
       wgrad.addColorStop(1,'#063848');
     }
     ctx.fillStyle=wgrad;
+    ctx.fillRect(0,split,cv.width,cv.height-split);
   }
-  ctx.fillRect(0,0,cv.width,cv.height);
   
   // === STEP 2: WORLD TRANSFORM ===
   ctx.save();
@@ -219,11 +236,23 @@ function initShoreCache() {
       c.fillStyle='rgba(90,140,40,0.6)';
       c.beginPath(); c.ellipse(1,-d.size*1.28,3,5,0,0,Math.PI*2); c.fill();
     } else if(d.type==='float'){
-      // Floating surface algae mat
-      c.fillStyle='rgba(40,100,35,0.55)';
-      c.beginPath(); c.ellipse(0,0,d.size*1.1,d.size*0.35,0,0,Math.PI*2); c.fill();
-      c.fillStyle='rgba(70,140,50,0.4)';
-      c.beginPath(); c.ellipse(-d.size*0.2,-1,d.size*0.5,d.size*0.18,0,0,Math.PI*2); c.fill();
+      // Floating surface algae mat (Spirogyra / pond scum — clumpy, not solid blob)
+      c.fillStyle='rgba(35,90,30,0.35)';
+      c.beginPath(); c.ellipse(2,2,d.size*1.15,d.size*0.4,0,0,Math.PI*2); c.fill();
+      for(var mi=0;mi<5;mi++){
+        var mx=Math.sin(mi*1.7+d.sway)*d.size*0.45;
+        var my=Math.cos(mi*1.3)*d.size*0.12;
+        var ms=d.size*(0.25+mi*0.08);
+        var mg=c.createRadialGradient(mx,my,0,mx,my,ms);
+        mg.addColorStop(0,'rgba(90,150,55,0.55)');
+        mg.addColorStop(0.7,'rgba(40,100,35,0.4)');
+        mg.addColorStop(1,'rgba(20,60,25,0)');
+        c.fillStyle=mg;
+        c.beginPath(); c.ellipse(mx,my,ms*1.2,ms*0.45,mi*0.4,0,Math.PI*2); c.fill();
+      }
+      // bubble holes
+      c.fillStyle='rgba(30,80,90,0.15)';
+      c.beginPath(); c.ellipse(-d.size*0.15,0,d.size*0.12,d.size*0.06,0,0,Math.PI*2); c.fill();
     } else {
       // Pebble
       c.fillStyle='rgba(100,85,60,0.7)'; c.beginPath(); c.ellipse(0,0,d.size,d.size*0.7,0,0,Math.PI*2); c.fill();

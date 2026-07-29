@@ -98,9 +98,10 @@ function doDivide(o){
 }
 
 function finishDivide(o){
-  o.dividing=false;o.energy*=0.5;
+  o.dividing=false;
+  o.energy = Math.max(5, (o.energy||0)*0.5);
   // Parent becomes ~half size (clearly visible), then slowly regrows via normal growth
-  var base = o.preDivSize || o.size;
+  var base = o.preDivSize || o.size || (o.sp.size||4);
   var half = Math.max(1.6, base * 0.5);
   o.size = half;
   // MUST re-accumulate mass/eats before next divide
@@ -108,18 +109,23 @@ function finishDivide(o){
   o.eatsSinceDiv = 0;
   o.birthSize = half;
   // Longer cooldown for predators — no spam divide
-  var cd = (typeof DIV_COOLDOWN==='number' ? DIV_COOLDOWN : 4);
-  if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) cd = Math.max(cd, 8);
-  if(o.sp.cat==='consumer2'||o.sp.cat==='consumer3') cd = Math.max(cd, 12);
+  var cd = (typeof DIV_COOLDOWN==='number' ? DIV_COOLDOWN : 6);
+  if(o.sp && o.sp.cat && o.sp.cat.indexOf('consumer')===0) cd = Math.max(cd, 8);
+  if(o.sp && (o.sp.cat==='consumer2'||o.sp.cat==='consumer3')) cd = Math.max(cd, 12);
   o.divCD = cd;
-  if(o===player||window.spectatorMode) window.playSound("divide");
+  try{ if(o===player||window.spectatorMode) window.playSound("divide"); }catch(_e){}
   // KEY FIX: push child AWAY with separation impulse + cooldown
-  var pushAng=rng(0,Math.PI*2);
-  var cx=o.x+Math.cos(pushAng)*DIV_SEPARATION;
-  var cy=o.y+Math.sin(pushAng)*DIV_SEPARATION;
+  var pushAng=(typeof rng==='function'?rng(0,Math.PI*2):Math.random()*Math.PI*2);
+  var sep = (typeof DIV_SEPARATION==='number'?DIV_SEPARATION:12);
+  var cx=o.x+Math.cos(pushAng)*sep;
+  var cy=o.y+Math.sin(pushAng)*sep;
   // Clamp child to puddle
-  var hw=halfW(cy)-15;cx=clamp(cx,-hw,hw);cy=clamp(cy,5,PD-10);
-  var child=spawnOrg(o.sp,cx,cy,false,o.energy);
+  try{
+    var hw=(typeof halfW==='function'?halfW(cy):500)-15;
+    cx=clamp(cx,-hw,hw); cy=clamp(cy,5,(typeof PD==='number'?PD:1000)-10);
+  }catch(_e){}
+  var child=null;
+  try{ child=spawnOrg(o.sp,cx,cy,false,o.energy); }catch(_e){ child=null; }
   if(child){
     child.generation=o.generation+1;child.energy=o.energy*0.9;
     child.size=Math.max(1.6, base * 0.5 * rng(0.95,1.05));
@@ -511,6 +517,29 @@ function updateOrg(o,dt){
   if(o.isPlayer && !o.alive && !o.dying){o.dying=true;o.deathT=0;o.deathCause='energy';}
   if(o.dying){o.deathT+=dt;o.size*=Math.pow(0.95,dt*60);if(o.deathT>1.2)o._remove=true;return;}
   if(!o.alive)return;
+  // Division progress FIRST — cannot be blocked by cyst/temp/move
+  if(o.dividing){
+    // Ensure visible progress even if sim dt is tiny / timeScale low
+    var step = dt;
+    if(!(step > 0)) step = 0.016;
+    if(step < 0.01) step = 0.01;
+    // ~0.6s wall-clock completion at 60fps
+    o.divT = (o.divT||0) + Math.max(step, 0.02);
+    if(o.preDivSize){
+      var prog=Math.min(1, o.divT/0.55);
+      o.size = Math.max(1.5, o.preDivSize * (1 - prog*0.5));
+    }
+    if(o.divT >= 0.55){
+      try { finishDivide(o); }
+      catch(err){
+        o.dividing=false; o.divCD=8; o.massFood=0; o.eatsSinceDiv=0;
+        o.size = Math.max(1.6, (o.preDivSize||o.size)*0.5);
+      }
+    }
+    o.age += step;
+    if(o.flash>0) o.flash=Math.max(0,o.flash-step*2);
+    return;
+  }
   o.age+=dt;
   // Reduced base metabolism and speed multiplier significantly to prevent fast infusoria from starving in 10s
   var baseMetab=(0.008 + o.sp.speed * o.speedMult * 0.003)*DIFF[difficulty].metab;
@@ -643,15 +672,7 @@ function updateOrg(o,dt){
     moveOrg(o,dt);
     if(o.isPlayer && window.playerContactEat) window.playerContactEat(dt);
   }
-  if(o.dividing){
-    o.divT+=dt;
-    // VISUAL: progressively shrink as it divides
-    if(o.preDivSize){
-      var prog=Math.min(1, o.divT/0.9);
-      o.size=o.preDivSize*(1-prog*0.45); // Shrink toward half during anim
-    }
-    if(o.divT>0.9)finishDivide(o);
-  }
+  // division handled at top of updateOrg
   if(!o.isPlayer&&!o.dividing&&!o.cyst&&canDivide(o)){
     if (o.sp.flags && o.sp.flags.gendered) {
         o.seekingMate = true;
@@ -703,8 +724,10 @@ function updateOrg(o,dt){
   if(o.sp.cat==='producer' && o.energy > 40){
     o.massFood = (o.massFood||0) + dt * 0.35 * clamp(o.energy/100, 0.2, 1);
   }
-  o.size = lerp(o.size, tgtSz, 0.9*dt);
-  if(o.size < floorSz) o.size = lerp(o.size, floorSz, 2*dt);
+  if(!o.dividing){
+    o.size = lerp(o.size, tgtSz, 0.9*dt);
+    if(o.size < floorSz) o.size = lerp(o.size, floorSz, 2*dt);
+  }
   if(o.flash>0)o.flash=Math.max(0,o.flash-dt*2);
   // Easy mode: gentle hint only — NEVER auto-spam divide
   // Division only via Q / button when canDivide() is true

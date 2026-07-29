@@ -488,7 +488,7 @@ function renderTarget(){
 function renderDayNight(){
   var dark=1-dayLight;if(dark>0.03){ctx.fillStyle='rgba(0,8,25,'+(dark*0.5)+')';ctx.fillRect(0,0,cv.width,cv.height);}
   if(settings.vignette){var g=ctx.createRadialGradient(cv.width/2,cv.height/2,Math.min(cv.width,cv.height)*0.3,cv.width/2,cv.height/2,Math.max(cv.width,cv.height)*0.7);
-    g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,'+(0.25+dark*0.2)+')');ctx.fillStyle=g;ctx.fillRect(0,0,cv.width,cv.height);}
+    g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,12,24,'+(0.12+dark*0.08)+')');ctx.fillStyle=g;ctx.fillRect(0,0,cv.width,cv.height);}
 }
 function renderHealthBars(){
   ctx.save();

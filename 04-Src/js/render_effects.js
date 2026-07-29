@@ -1,152 +1,164 @@
 "use strict";
 
 function renderSky(vL,vR,vT){
-  if(vT>=0)return;
+  // Sky only for the band above waterline (y < 0)
+  if(vT >= -1) return;
+  var skyBot = Math.min(0, (typeof arguments[3]==='number'?arguments[3]:0));
+  // h = height of sky region in world units
   var h = -vT;
-  if(h < 2) return;
-  var dl = (typeof dayLight==='number')?dayLight:0.5;
-  var t = (typeof tod==='number')?tod:12;
-  var g=ctx.createLinearGradient(0,vT,0,Math.min(0,vT+h));
+  if(h < 1) return;
 
-  // Atmospheric sky: zenith darker, horizon pale/warm
-  if(t >= 5 && t < 8){
-    g.addColorStop(0,'#152a55');
-    g.addColorStop(0.4,'#3d6aa8');
-    g.addColorStop(0.7,'#8eb0d0');
-    g.addColorStop(0.88,'#e0b888');
-    g.addColorStop(1,'#f0c898');
-  } else if(t >= 8 && t < 16.5){
-    g.addColorStop(0,'#0a1a3a');
-    g.addColorStop(0.35,'#1a4a8a');
-    g.addColorStop(0.7,'#4a8ec8');
-    g.addColorStop(0.9,'#7ab0d8');
-    g.addColorStop(1,'#a8cce0');
-  } else if(t >= 16.5 && t < 20){
-    g.addColorStop(0,'#0c1028');
-    g.addColorStop(0.35,'#2a2858');
-    g.addColorStop(0.65,'#a05040');
-    g.addColorStop(0.85,'#e07840');
-    g.addColorStop(1,'#f0a060');
+  var dl = (typeof dayLight==='number') ? dayLight : 0.6;
+  var t = (typeof tod==='number') ? tod : 12;
+  var z = (typeof zoom==='number' && zoom>0) ? zoom : 1;
+
+  // --- Sky gradient (always readable, never pitch black in daytime) ---
+  var g = ctx.createLinearGradient(0, vT, 0, 0);
+  if(t >= 5.5 && t < 8){
+    // dawn
+    g.addColorStop(0, '#1a2a5a');
+    g.addColorStop(0.55, '#6a90c0');
+    g.addColorStop(0.85, '#e8b888');
+    g.addColorStop(1, '#ffd0a0');
+  } else if(t >= 8 && t < 17){
+    // day — clear blue
+    g.addColorStop(0, '#0b1e4a');
+    g.addColorStop(0.35, '#1e5aaa');
+    g.addColorStop(0.7, '#4a9ad8');
+    g.addColorStop(0.92, '#8ec8e8');
+    g.addColorStop(1, '#b8dcf0');
+  } else if(t >= 17 && t < 20){
+    // dusk
+    g.addColorStop(0, '#0c0e28');
+    g.addColorStop(0.4, '#3a2860');
+    g.addColorStop(0.7, '#c06040');
+    g.addColorStop(1, '#f09050');
   } else {
-    g.addColorStop(0,'#010208');
-    g.addColorStop(0.7,'#060a18');
-    g.addColorStop(1,'#0c1830');
+    // night
+    g.addColorStop(0, '#02040c');
+    g.addColorStop(0.8, '#0a1228');
+    g.addColorStop(1, '#121c38');
   }
-  ctx.fillStyle=g;
-  ctx.fillRect(vL, vT, vR-vL, h);
+  ctx.fillStyle = g;
+  ctx.fillRect(vL - 20, vT - 2, (vR - vL) + 40, h + 4);
 
-  // Horizon haze band
-  if(dl > 0.15){
-    var hg = ctx.createLinearGradient(0, -Math.min(h*0.35, 80), 0, 2);
-    hg.addColorStop(0,'rgba(200,220,240,0)');
-    hg.addColorStop(0.6,'rgba(210,225,235,'+(0.12*dl)+')');
-    hg.addColorStop(1,'rgba(230,235,240,'+(0.22*dl)+')');
-    ctx.fillStyle=hg;
-    ctx.fillRect(vL, -Math.min(h*0.35,80), vR-vL, Math.min(h*0.35,80)+2);
+  // Horizon glow strip just above water
+  if(dl > 0.12){
+    var hg = ctx.createLinearGradient(0, -Math.min(h*0.4, 70), 0, 1);
+    hg.addColorStop(0, 'rgba(200,220,240,0)');
+    hg.addColorStop(0.7, 'rgba(220,235,250,' + (0.18*dl) + ')');
+    hg.addColorStop(1, 'rgba(255,250,230,' + (0.28*dl) + ')');
+    ctx.fillStyle = hg;
+    ctx.fillRect(vL, -Math.min(h*0.4, 70), vR-vL, Math.min(h*0.4, 70)+2);
   }
 
-  // Stars
-  if(dl < 0.28){
+  // Stars at night
+  if(dl < 0.25){
     ctx.save();
-    var seed = Math.floor((cam.x||0)/180);
-    for(var si=0; si<55; si++){
-      var sx = vL + ((si*97+seed*13)%Math.max(1,vR-vL));
-      var sy = vT + ((si*53+21)%Math.max(1,h*0.9));
-      ctx.globalAlpha = 0.25 + (si%6)*0.1;
-      ctx.fillStyle = (si%7===0) ? '#ffe9c0' : '#e8eeff';
-      ctx.beginPath(); ctx.arc(sx,sy,(si%4===0)?1.5:0.7,0,Math.PI*2); ctx.fill();
+    for(var si=0; si<40; si++){
+      var sx = vL + ((si*97 + Math.floor(cam.x/100)*13) % Math.max(1, vR-vL));
+      var sy = vT + 8 + ((si*53) % Math.max(1, h*0.85));
+      ctx.globalAlpha = 0.3 + (si%5)*0.12;
+      ctx.fillStyle = '#e8eeff';
+      ctx.beginPath(); ctx.arc(sx, sy, 0.8, 0, Math.PI*2); ctx.fill();
     }
     ctx.restore();
   }
 
-  // ---- SUN (natural disc + atmospheric bloom + crepuscular hint) ----
-  window._sunPos = null;
-  if(dl>0.04 && t > 4.2 && t < 20.2){
-    var dayProg = (t-5)/14;
-    dayProg = Math.max(0, Math.min(1, dayProg));
-    var elev = Math.sin(Math.PI * dayProg); // 0 dawn/dusk → 1 noon
-    // Sun always in the visible sky ABOVE water (y<0), relative to camera
-    var skyBot = 0;
-    var skyTop = Math.min(vT, -20);
-    var skyH = Math.max(40, skyBot - skyTop);
-    // Keep sun inside the intersection of sky and current view
-    var viewSkyTop = Math.max(skyTop, vT + 8);
-    var viewSkyBot = skyBot - 6; // waterline
-    if(viewSkyBot <= viewSkyTop) { viewSkyTop = vT + 8; viewSkyBot = Math.min(0, vT + h*0.5); }
-    var viewSkyH = Math.max(30, viewSkyBot - viewSkyTop);
-    // elev=1 noon → higher in sky band; elev=0 → near horizon
-    var sunY = viewSkyBot - viewSkyH * (0.22 + elev * 0.62);
-    var sunX = cam.x + (dayProg - 0.5) * Math.min(700, Math.max(200, (vR-vL)*0.45));
-    if(!isFinite(sunX)) sunX = cam.x;
-    if(!isFinite(sunY)) sunY = viewSkyTop + viewSkyH*0.4;
-    // Disc size scales gently with zoom so it stays readable
-    var z = (typeof zoom==='number' && zoom>0) ? zoom : 1;
+  // Soft cloud puffs (day only)
+  if(dl > 0.3 && window.skyClouds){
+    ctx.save();
+    for(var i=0; i<window.skyClouds.length; i++){
+      var c = window.skyClouds[i];
+      if(c.x + c.w < vL - 40 || c.x - c.w > vR + 40) continue;
+      var cy = Math.min(c.y, -18);
+      if(cy > -8) continue;
+      ctx.globalAlpha = 0.35 * dl;
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath(); ctx.ellipse(c.x, cy, c.w*0.45, c.h*0.35, 0, 0, Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(c.x - c.w*0.2, cy+2, c.w*0.28, c.h*0.28, 0, 0, Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(c.x + c.w*0.18, cy+1, c.w*0.25, c.h*0.26, 0, 0, Math.PI*2); ctx.fill();
+    }
+    ctx.restore();
+  }
 
-    var warm = (t<8 || t>16.5) ? 1.0 : 0.55;
-    // Color shifts: noon white-gold, morning/evening orange
-    var coreR = 255, coreG = Math.round(245 - warm*40), coreB = Math.round(220 - warm*90);
-    var rSun = (18 + elev*14) / Math.max(0.5, Math.min(z, 2.2)); // readable disc
-    if(rSun < 10) rSun = 10;
+  // ========== ONE SUN ==========
+  window._sunPos = null;
+  if(dl > 0.05 && t > 4.5 && t < 20.5){
+    var dayProg = Math.max(0, Math.min(1, (t - 5) / 14));
+    var elev = Math.sin(Math.PI * dayProg); // 0..1
+    // Keep sun inside the visible sky rectangle
+    var margin = 16;
+    var sunX = cam.x + (dayProg - 0.5) * Math.min(Math.max(vR-vL, 200)*0.5, 520);
+    // Near horizon at dawn/dusk, higher at noon — but always in sky band
+    // Prefer sun in upper-middle of visible sky; if camera deep, keep sun near horizon film
+    var sunY = -12 - elev * Math.min(h * 0.55, 140);
+    if(typeof cam!=='undefined' && cam.y > 20){
+      // keep sun close above waterline so it sits in frame with pads
+      sunY = -18 - elev * 28;
+    }
+    if(sunY < vT + margin) sunY = vT + margin;
+    if(sunY > -8) sunY = -8;
+    if(sunX < vL + margin) sunX = vL + margin;
+    if(sunX > vR - margin) sunX = vR - margin;
+
+    // Warm colors: noon white-gold, low sun orange
+    var warm = (t < 8 || t > 16.5) ? 1 : 0.45;
+    // Disc radius in WORLD units — large enough to read at typical zoom
+    var rSun = Math.max(14, (22 + elev * 10) / Math.max(0.55, Math.min(z, 2.0)));
 
     ctx.save();
-    // Huge atmospheric scatter (god-haze)
-    var big = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, 380 + elev*80);
-    big.addColorStop(0, 'rgba('+coreR+','+coreG+','+coreB+','+(0.55*dl)+')');
-    big.addColorStop(0.08, 'rgba(255,'+Math.round(220-warm*30)+','+Math.round(140-warm*40)+','+(0.28*dl)+')');
-    big.addColorStop(0.22, 'rgba(255,'+Math.round(200-warm*20)+',120,'+(0.12*dl)+')');
-    big.addColorStop(0.5, 'rgba(180,200,255,'+(0.05*dl)+')');
-    big.addColorStop(1, 'rgba(100,140,200,0)');
-    ctx.fillStyle = big;
-    ctx.beginPath(); ctx.arc(sunX, sunY, 380+elev*80, 0, Math.PI*2); ctx.fill();
+    // Atmospheric bloom (single, soft)
+    var bloomR = rSun * 7;
+    var bloom = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, bloomR);
+    bloom.addColorStop(0, 'rgba(255, 245, 200, ' + (0.55*dl) + ')');
+    bloom.addColorStop(0.15, 'rgba(255, 210, 120, ' + (0.28*dl) + ')');
+    bloom.addColorStop(0.4, 'rgba(255, 180, 80, ' + (0.1*dl) + ')');
+    bloom.addColorStop(1, 'rgba(255, 160, 60, 0)');
+    ctx.fillStyle = bloom;
+    ctx.beginPath(); ctx.arc(sunX, sunY, bloomR, 0, Math.PI*2); ctx.fill();
 
-    // Soft outer corona
-    var mid = ctx.createRadialGradient(sunX, sunY, rSun*0.3, sunX, sunY, rSun*6);
-    mid.addColorStop(0, 'rgba(255,252,240,'+(0.9*dl)+')');
-    mid.addColorStop(0.35, 'rgba(255,'+Math.round(230-warm*25)+','+Math.round(160-warm*50)+','+(0.45*dl)+')');
-    mid.addColorStop(1, 'rgba(255,200,100,0)');
+    // Outer soft halo
     ctx.globalCompositeOperation = 'screen';
-    ctx.fillStyle = mid;
-    ctx.beginPath(); ctx.arc(sunX, sunY, rSun*6, 0, Math.PI*2); ctx.fill();
+    var halo = ctx.createRadialGradient(sunX, sunY, rSun*0.2, sunX, sunY, rSun*3.2);
+    halo.addColorStop(0, 'rgba(255, 255, 240, ' + (0.95*dl) + ')');
+    halo.addColorStop(0.5, 'rgba(255, 220, 140, ' + (0.35*dl) + ')');
+    halo.addColorStop(1, 'rgba(255, 180, 80, 0)');
+    ctx.fillStyle = halo;
+    ctx.beginPath(); ctx.arc(sunX, sunY, rSun*3.2, 0, Math.PI*2); ctx.fill();
 
-    // Photosphere disc
+    // Solid photosphere (ALWAYS opaque warm disc — never gray)
     ctx.globalCompositeOperation = 'source-over';
-    var disc = ctx.createRadialGradient(sunX - rSun*0.25, sunY - rSun*0.25, 0, sunX, sunY, rSun);
-    disc.addColorStop(0, '#fffef8');
-    disc.addColorStop(0.45, 'rgb('+coreR+','+coreG+','+coreB+')');
-    disc.addColorStop(0.85, 'rgb(255,'+Math.round(200-warm*40)+','+Math.round(120-warm*30)+')');
-    disc.addColorStop(1, 'rgba(255,160,60,0.15)');
-    ctx.fillStyle = disc;
-    ctx.shadowColor = 'rgba(255,220,120,'+(0.65*dl)+')';
-    ctx.shadowBlur = 28 + elev*18;
+    var core = ctx.createRadialGradient(sunX - rSun*0.25, sunY - rSun*0.25, 0, sunX, sunY, rSun);
+    core.addColorStop(0, '#fffef5');
+    core.addColorStop(0.35, warm > 0.7 ? '#ffe08a' : '#fff2c0');
+    core.addColorStop(0.75, warm > 0.7 ? '#ffb040' : '#ffd078');
+    core.addColorStop(1, warm > 0.7 ? '#ff9020' : '#ffc060');
+    ctx.fillStyle = core;
+    ctx.shadowColor = 'rgba(255, 200, 80, 0.85)';
+    ctx.shadowBlur = 30;
     ctx.beginPath(); ctx.arc(sunX, sunY, rSun, 0, Math.PI*2); ctx.fill();
     ctx.shadowBlur = 0;
 
-    // Subtle limb darkening ring
-    ctx.strokeStyle = 'rgba(255,200,100,'+(0.25*dl)+')';
-    ctx.lineWidth = 1.5;
-    ctx.beginPath(); ctx.arc(sunX, sunY, rSun*1.05, 0, Math.PI*2); ctx.stroke();
-
-    // Short crepuscular rays (from sun, soft)
-    if(dl > 0.25){
+    // Short soft rays (few, subtle)
+    if(dl > 0.3){
       ctx.globalCompositeOperation = 'screen';
-      ctx.globalAlpha = 0.08 * dl;
-      for(var ri=0; ri<7; ri++){
-        var ang = -Math.PI/2 + (ri-3)*0.11 + Math.sin((gt||0)*0.05+ri)*0.02;
-        var len = 180 + ri*25 + elev*40;
-        var rw = 6 + ri*1.5;
+      ctx.globalAlpha = 0.12 * dl;
+      for(var ri=0; ri<5; ri++){
+        var ang = -Math.PI/2 + (ri-2)*0.14;
+        var len = rSun * (8 + ri);
         ctx.save();
         ctx.translate(sunX, sunY);
         ctx.rotate(ang);
-        var rg = ctx.createLinearGradient(0,0,0,len);
-        rg.addColorStop(0,'rgba(255,245,200,0.9)');
-        rg.addColorStop(0.4,'rgba(255,230,160,0.25)');
-        rg.addColorStop(1,'rgba(255,220,140,0)');
+        var rg = ctx.createLinearGradient(0, rSun, 0, len);
+        rg.addColorStop(0, 'rgba(255,240,180,0.9)');
+        rg.addColorStop(1, 'rgba(255,220,120,0)');
         ctx.fillStyle = rg;
         ctx.beginPath();
-        ctx.moveTo(-rw, rSun*0.8);
-        ctx.lineTo(rw, rSun*0.8);
-        ctx.lineTo(rw*2.5, len);
-        ctx.lineTo(-rw*2.5, len);
+        ctx.moveTo(-3, rSun);
+        ctx.lineTo(3, rSun);
+        ctx.lineTo(8, len);
+        ctx.lineTo(-8, len);
         ctx.closePath();
         ctx.fill();
         ctx.restore();
@@ -157,29 +169,6 @@ function renderSky(vL,vR,vT){
     ctx.restore();
 
     window._sunPos = {x:sunX, y:sunY, r:rSun, elev:elev, warm:warm, dl:dl};
-  }
-
-  // Volumetric-ish soft clouds (multi-blob, shaded)
-  if(window.skyClouds && dl>0.18) {
-    ctx.save();
-    for(var i=0; i<window.skyClouds.length; i++) {
-      var c = window.skyClouds[i];
-      if(c.x+c.w < vL-50 || c.x-c.w > vR+50) continue;
-      var cy = Math.min(c.y, -12);
-      var baseA = 0.28 + 0.35*dl;
-      // underside shade
-      ctx.fillStyle = 'rgba(160,175,195,'+(baseA*0.45)+')';
-      ctx.beginPath(); ctx.ellipse(c.x+4, cy+c.h*0.12, c.w*0.48, c.h*0.38, 0, 0, Math.PI*2); ctx.fill();
-      // main body
-      ctx.fillStyle = 'rgba(255,255,255,'+baseA+')';
-      ctx.beginPath(); ctx.ellipse(c.x, cy, c.w*0.5, c.h*0.42, 0, 0, Math.PI*2); ctx.fill();
-      ctx.beginPath(); ctx.ellipse(c.x-c.w*0.22, cy+2, c.w*0.3, c.h*0.32, 0, 0, Math.PI*2); ctx.fill();
-      ctx.beginPath(); ctx.ellipse(c.x+c.w*0.2, cy+1, c.w*0.28, c.h*0.3, 0, 0, Math.PI*2); ctx.fill();
-      // lit top edge
-      ctx.fillStyle = 'rgba(255,255,255,'+(baseA*0.5)+')';
-      ctx.beginPath(); ctx.ellipse(c.x-c.w*0.05, cy-c.h*0.12, c.w*0.22, c.h*0.14, 0, 0, Math.PI*2); ctx.fill();
-    }
-    ctx.restore();
   }
 }
 
@@ -216,12 +205,23 @@ function renderWater(vL,vR,vT,vB){
     sh.addColorStop(1, 'rgba(80,160,140,0)');
     ctx.fillStyle = sh;
     ctx.fillRect(vL, -4, vR-vL, PD*0.18);
-    // Surface line (meniscus)
-    ctx.strokeStyle = 'rgba(200,240,255,'+(0.35*dayLight)+')';
-    ctx.lineWidth = 1.5;
+    // Surface film — multi-frequency ripples (not a ruler line)
+    ctx.strokeStyle = 'rgba(210,240,255,'+(0.45*dayLight)+')';
+    ctx.lineWidth = 2.2;
     ctx.beginPath();
-    for(var sx=vL; sx<=vR; sx+=14){
-      var sy = Math.sin(sx*0.04 + (gt||0)*1.2)*1.2;
+    for(var sx=vL; sx<=vR; sx+=6){
+      var sy = Math.sin(sx*0.035 + (gt||0)*1.1)*2.0
+             + Math.sin(sx*0.11 + (gt||0)*1.7)*0.9
+             + Math.sin(sx*0.02 + (gt||0)*0.4)*1.3;
+      if(sx===vL) ctx.moveTo(sx, sy); else ctx.lineTo(sx, sy);
+    }
+    ctx.stroke();
+    // Second softer highlight line
+    ctx.strokeStyle = 'rgba(255,255,255,'+(0.15*dayLight)+')';
+    ctx.lineWidth = 1.0;
+    ctx.beginPath();
+    for(var sx=vL; sx<=vR; sx+=8){
+      var sy = Math.sin(sx*0.035 + (gt||0)*1.1)*2.0 + Math.sin(sx*0.11)*0.9 - 1.2;
       if(sx===vL) ctx.moveTo(sx, sy); else ctx.lineTo(sx, sy);
     }
     ctx.stroke();
@@ -315,6 +315,7 @@ function renderWater(vL,vR,vT,vB){
   
   // Natural lily pads (Nymphaea) + duckweed clusters on surface
   ctx.save();
+  if(typeof renderSnellWindow==='function') renderSnellWindow(vL,vR,vT,vB);
   drawNaturalLilypads(vL, vR, surfW);
   ctx.restore();
   
@@ -432,226 +433,277 @@ function renderParallax(vL,vR,vT,vB){
 }
 
 
-/** Natural lily pad: round leaf with characteristic V-notch + veins + rim */
-function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun){
+
+/** Pond surface vegetation — looks different from below vs above water */
+function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun, fromBelow){
   ctx.save();
   ctx.translate(cx, cy);
   ctx.rotate(rot || 0);
-  var notch = 0.42; // V-cleft half-angle (classic Nymphaea)
+  var notch = 0.4;
 
-  // Underwater contact shadow
-  ctx.fillStyle = 'rgba(5,25,20,0.28)';
-  ctx.beginPath();
-  ctx.ellipse(4, 6, rx*1.08, ry*1.25, 0, 0, Math.PI*2);
-  ctx.fill();
-
-  // Build leaf path in local unit circle then scale via transform
-  function leafPath(scaleR){
+  if(fromBelow){
+    // UNDERSIDE silhouette against bright surface (microbe looking up)
+    // Soft shadow cast into water
+    ctx.fillStyle = 'rgba(0, 15, 10, 0.35)';
     ctx.beginPath();
-    ctx.moveTo(Math.cos(notch)*rx*scaleR*0.05, Math.sin(notch)*ry*scaleR*0.05);
-    // outer rim with gentle scallops
-    var steps = 48;
-    var a0 = notch, a1 = Math.PI*2 - notch;
+    ctx.ellipse(0, 10, rx*1.05, Math.max(6, ry*2.2), 0, 0, Math.PI*2);
+    ctx.fill();
+
+    // Dark leaf underside (not neon green)
+    var ug = ctx.createRadialGradient(0, 0, 0, 0, 0, rx);
+    ug.addColorStop(0, 'rgba(25, 55, 28, 0.82)');
+    ug.addColorStop(0.6, 'rgba(15, 40, 20, 0.88)');
+    ug.addColorStop(1, 'rgba(8, 25, 12, 0.75)');
+    ctx.fillStyle = ug;
+    ctx.beginPath();
+    ctx.moveTo(0,0);
+    ctx.arc(0, 0, 1, notch, Math.PI*2 - notch, false);
+    ctx.closePath();
+    ctx.save(); ctx.scale(rx, Math.max(ry, rx*0.35)); ctx.fill(); ctx.restore();
+
+    // Thin bright rim (transmitted light through leaf edge)
+    ctx.strokeStyle = 'rgba(120, 180, 90, 0.35)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, rx*0.98, Math.max(ry, rx*0.35)*0.98, 0, notch, Math.PI*2-notch);
+    ctx.stroke();
+
+    // Hanging rootlets / rhizoids
+    ctx.strokeStyle = 'rgba(40, 70, 40, 0.45)';
+    ctx.lineWidth = 1.1;
+    for(var k=0; k<5; k++){
+      var a = -Math.PI/2 + (k-2)*0.35 + (seed%7)*0.02;
+      var len = 12 + (k%3)*7 + (seed%5);
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a)*rx*0.15, 2);
+      ctx.quadraticCurveTo(
+        Math.cos(a)*rx*0.1 + Math.sin(seed+k)*4,
+        len*0.5,
+        Math.cos(a)*rx*0.05 + Math.sin(seed*0.3+k)*6,
+        len
+      );
+      ctx.stroke();
+    }
+    ctx.restore();
+    return;
+  }
+
+  // TOP / surface view — solid natural leaf
+  ctx.fillStyle = 'rgba(0, 20, 12, 0.25)';
+  ctx.beginPath(); ctx.ellipse(3, 5, rx*1.05, ry*1.2, 0, 0, Math.PI*2); ctx.fill();
+
+  function leafPath(sc){
+    ctx.beginPath();
+    var steps = 40, a0 = notch, a1 = Math.PI*2 - notch;
     for(var i=0;i<=steps;i++){
       var a = a0 + (a1-a0)*(i/steps);
-      var scallop = 1 + Math.sin(a*6 + seed)*0.03 + Math.sin(a*3.5)*0.02;
-      var px = Math.cos(a)*rx*scaleR*scallop;
-      var py = Math.sin(a)*ry*scaleR*scallop;
+      var sca = 1 + Math.sin(a*5 + seed)*0.025;
+      var px = Math.cos(a)*rx*sc*sca;
+      var py = Math.sin(a)*ry*sc*sca;
       if(i===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
     }
-    // back to center along notch edges
     ctx.lineTo(0,0);
     ctx.closePath();
   }
-
-  // Solid body fill
   leafPath(1);
-  var lg = ctx.createRadialGradient(-rx*0.2, -ry*0.25, rx*0.05, 0, 0, rx);
-  var g0 = 95 + (seed%7)*3, g1 = 70 + (seed%5)*2, g2 = 48;
-  lg.addColorStop(0, 'rgb('+(g0-10)+','+(g0+25)+','+(g0-40)+')');
-  lg.addColorStop(0.4, 'rgb('+(g1-15)+','+(g1+20)+','+(g1-30)+')');
-  lg.addColorStop(0.78, 'rgb('+(g2)+','+(g2+22)+','+(g2-10)+')');
-  lg.addColorStop(1, 'rgb(28,58,30)');
+  var lg = ctx.createRadialGradient(-rx*0.2, -ry*0.25, 2, 0, 0, rx);
+  lg.addColorStop(0, '#5a9a48');
+  lg.addColorStop(0.4, '#3d7a38');
+  lg.addColorStop(0.8, '#2a5a28');
+  lg.addColorStop(1, '#1a3a1c');
   ctx.fillStyle = lg;
-  ctx.globalAlpha = 0.96;
   ctx.fill();
-  ctx.globalAlpha = 1;
-
-  // Darker rim
-  leafPath(1);
-  ctx.strokeStyle = 'rgba(18,48,20,0.75)';
-  ctx.lineWidth = 1.8;
+  ctx.strokeStyle = 'rgba(20,50,20,0.7)';
+  ctx.lineWidth = 1.6;
   ctx.stroke();
 
-  // Thin growth rings (very subtle)
-  ctx.strokeStyle = 'rgba(20,55,25,0.1)';
-  ctx.lineWidth = 0.9;
-  for(var ring=0.4; ring<=0.85; ring+=0.22){
-    ctx.beginPath();
-    var steps=36, a0=notch, a1=Math.PI*2-notch;
-    for(var i=0;i<=steps;i++){
-      var a=a0+(a1-a0)*(i/steps);
-      var px=Math.cos(a)*rx*ring, py=Math.sin(a)*ry*ring;
-      if(i===0)ctx.moveTo(px,py); else ctx.lineTo(px,py);
-    }
-    ctx.stroke();
-  }
-
-  // Veins — soft, not wireframe grid
+  // Soft veins (not wire grid)
   ctx.lineCap = 'round';
-  var veins = 11;
-  for(var v=0; v<veins; v++){
-    var a = notch + (Math.PI*2 - 2*notch) * (v+0.5)/veins;
+  for(var v=0; v<9; v++){
+    var a = notch + (Math.PI*2 - 2*notch)*(v+0.5)/9;
+    ctx.strokeStyle = 'rgba(30,70,30,' + (0.12 + (v%3===0?0.08:0)) + ')';
+    ctx.lineWidth = v%3===0 ? 1.2 : 0.6;
     ctx.beginPath();
-    ctx.strokeStyle = 'rgba(25,70,30,'+(0.14 + (v%3===0?0.08:0))+')';
-    ctx.lineWidth = (v%3===0) ? 1.3 : 0.7;
-    ctx.moveTo(Math.cos(a)*rx*0.06, Math.sin(a)*ry*0.06);
-    ctx.quadraticCurveTo(
-      Math.cos(a)*rx*0.5 + Math.sin(a)*rx*0.05,
-      Math.sin(a)*ry*0.5 - Math.cos(a)*ry*0.05,
-      Math.cos(a)*rx*0.9,
-      Math.sin(a)*ry*0.9
-    );
+    ctx.moveTo(Math.cos(a)*rx*0.08, Math.sin(a)*ry*0.08);
+    ctx.quadraticCurveTo(Math.cos(a)*rx*0.5, Math.sin(a)*ry*0.5, Math.cos(a)*rx*0.88, Math.sin(a)*ry*0.88);
     ctx.stroke();
   }
+  // Wet highlight
+  var hg = ctx.createRadialGradient(-rx*0.25, -ry*0.3, 0, -rx*0.25, -ry*0.3, rx*0.5);
+  hg.addColorStop(0, 'rgba(220,255,200,0.25)');
+  hg.addColorStop(1, 'rgba(100,160,80,0)');
+  ctx.fillStyle = hg;
+  ctx.beginPath(); ctx.ellipse(-rx*0.25, -ry*0.3, rx*0.4, ry*0.3, 0, 0, Math.PI*2); ctx.fill();
 
-  // Wet specular highlight
-  var hx = -rx*0.28, hy = -ry*0.32;
-  if(sun){
-    var sdx = sun.x - cx, sdy = sun.y - cy;
-    var sd = Math.sqrt(sdx*sdx+sdy*sdy)||1;
-    hx = -(sdx/sd) * rx * 0.3;
-    hy = -(sdy/sd) * ry * 0.3;
-  }
-  var hg2 = ctx.createRadialGradient(hx, hy, 0, hx, hy, rx*0.5);
-  hg2.addColorStop(0, 'rgba(230,255,210,0.28)');
-  hg2.addColorStop(0.45, 'rgba(180,230,150,0.1)');
-  hg2.addColorStop(1, 'rgba(100,160,80,0)');
-  ctx.fillStyle = hg2;
-  ctx.beginPath(); ctx.ellipse(hx, hy, rx*0.42, ry*0.32, 0, 0, Math.PI*2); ctx.fill();
-
-  // Notch (cleft) darker lips
-  ctx.strokeStyle = 'rgba(12,40,16,0.8)';
-  ctx.lineWidth = 2.0;
+  // Notch lips
+  ctx.strokeStyle = 'rgba(15,40,18,0.8)';
+  ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.moveTo(0,0);
-  ctx.lineTo(Math.cos(notch)*rx*0.98, Math.sin(notch)*ry*0.98);
-  ctx.moveTo(0,0);
-  ctx.lineTo(Math.cos(-notch)*rx*0.98, Math.sin(-notch)*ry*0.98);
+  ctx.moveTo(0,0); ctx.lineTo(Math.cos(notch)*rx*0.95, Math.sin(notch)*ry*0.95);
+  ctx.moveTo(0,0); ctx.lineTo(Math.cos(-notch)*rx*0.95, Math.sin(-notch)*ry*0.95);
   ctx.stroke();
-  // petiole hint at center
-  ctx.fillStyle = 'rgba(40,70,35,0.85)';
-  ctx.beginPath(); ctx.arc(0,0, Math.max(2, rx*0.04), 0, Math.PI*2); ctx.fill();
-
-  // Edge age spots
-  ctx.fillStyle = 'rgba(70,55,30,0.22)';
-  for(var sp=0; sp<3; sp++){
-    var sa = seed*0.5 + sp*2.1 + 1.2;
-    if(sa > Math.PI*2 - notch || sa < notch) sa = notch + 0.5 + sp;
-    ctx.beginPath();
-    ctx.ellipse(Math.cos(sa)*rx*0.72, Math.sin(sa)*ry*0.68, 3+sp, 1.6, sa, 0, Math.PI*2);
-    ctx.fill();
-  }
   ctx.restore();
 }
 
 function drawDuckweed(cx, cy, n, seed){
   ctx.save();
   for(var i=0;i<n;i++){
-    var ox = Math.sin(seed*1.3+i*2.1)*18 + Math.cos(i*0.9)*8;
-    var oy = Math.cos(seed*0.8+i*1.7)*6 + Math.sin(i*1.1)*3;
-    var s = 2.2 + (i%3)*0.7;
-    ctx.fillStyle = (i%2===0) ? 'rgba(70,140,50,0.85)' : 'rgba(50,120,40,0.8)';
-    ctx.beginPath(); ctx.ellipse(cx+ox, cy+oy, s*1.3, s*0.9, i*0.5, 0, Math.PI*2); ctx.fill();
-    // second lobe of Lemna
-    ctx.beginPath(); ctx.ellipse(cx+ox+s*0.9, cy+oy+0.5, s*1.1, s*0.75, i*0.5+0.3, 0, Math.PI*2); ctx.fill();
+    var ox = Math.sin(seed*1.3+i*2.1)*14 + Math.cos(i*0.9)*6;
+    var oy = Math.cos(seed*0.8+i*1.7)*4;
+    var s = 1.8 + (i%3)*0.5;
+    ctx.fillStyle = (i%2===0) ? 'rgba(80,150,55,0.8)' : 'rgba(55,125,45,0.75)';
+    ctx.beginPath(); ctx.ellipse(cx+ox, cy+oy, s*1.2, s*0.8, i*0.4, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx+ox+s*0.8, cy+oy+0.4, s, s*0.65, i*0.4+0.2, 0, Math.PI*2); ctx.fill();
   }
   ctx.restore();
 }
 
 function drawNaturalLilypads(vL, vR, surfW){
   var sun = window._sunPos;
-  var t = (typeof gt==='number')?gt:0;
-  // Deterministic pads across pond width
-  var pads = [];
-  for(var lp=-surfW+100; lp<surfW-40; lp+=380) {
-    // skip some for sparsity
-    var skip = Math.abs(Math.floor(lp/420)) % 5 === 2;
-    if(skip) continue;
-    var wy = Math.sin(lp*0.018 + t*0.04)*1.8;
-    var rx = 95 + Math.abs(Math.sin(lp*0.01))*55; // leaf radius (world units)
-    var ry = rx * (0.32 + Math.abs(Math.cos(lp*0.007))*0.1); // flattened perspective near surface
-    var rot = Math.sin(lp*0.003)*0.5 + 0.2;
-    pads.push({x:lp + Math.sin(lp*0.02)*30, y:wy - 1, rx:rx, ry:ry, rot:rot, seed:Math.abs(Math.floor(lp))});
-    // occasional smaller pad nearby
-    if(Math.abs(lp) % 7 !== 0){
-      pads.push({
-        x: lp + 70 + Math.cos(lp)*20,
-        y: wy + Math.sin(lp*0.05)*2,
-        rx: rx*0.55, ry: ry*0.55,
-        rot: rot + 0.8,
-        seed: Math.abs(Math.floor(lp))+3
-      });
+  var t = (typeof gt==='number') ? gt : 0;
+  // From below if camera is underwater looking up at surface
+  var fromBelow = (typeof cam!=='undefined' && cam.y > 18);
+  // Smaller pads — not continent-sized
+  for(var lp = -surfW + 140; lp < surfW - 40; lp += 480){
+    if(Math.abs(Math.floor(lp/480)) % 4 === 2) continue;
+    var wy = Math.sin(lp*0.018 + t*0.04)*1.5;
+    var rx = 38 + Math.abs(Math.sin(lp*0.01))*22; // was 95-150 — way too big
+    var ry = rx * (fromBelow ? 0.42 : 0.34);
+    var rot = Math.sin(lp*0.003)*0.45;
+    var px = lp + Math.sin(lp*0.02)*24;
+    if(px + rx < vL - 10 || px - rx > vR + 10) continue;
+    drawOneLilypad(px, wy - 0.5, rx, ry, rot, Math.abs(Math.floor(lp)), sun, fromBelow);
+    // smaller neighbor
+    if(Math.abs(lp) % 5 !== 0){
+      drawOneLilypad(px + rx*1.1, wy + 1, rx*0.5, ry*0.5, rot+0.7, Math.abs(Math.floor(lp))+2, sun, fromBelow);
     }
   }
-  // Draw only visible
-  for(var i=0;i<pads.length;i++){
-    var p = pads[i];
-    if(p.x+p.rx < vL-20 || p.x-p.rx > vR+20) continue;
-    drawOneLilypad(p.x, p.y, p.rx, p.ry, p.rot, p.seed, sun);
-  }
-  // Duckweed patches between pads
-  for(var d=-surfW+150; d<surfW; d+=520){
-    if(Math.abs(Math.floor(d/100))%3===0) continue;
-    var dy = Math.sin(d*0.02+t*0.05)*2;
-    if(d < vL-30 || d > vR+30) continue;
-    drawDuckweed(d, dy, 7 + (Math.abs(Math.floor(d))%5), d);
+  // Duckweed only when not deep below
+  if(!fromBelow || cam.y < 40){
+    for(var d = -surfW + 160; d < surfW; d += 560){
+      if(Math.abs(Math.floor(d/100)) % 3 === 0) continue;
+      if(d < vL - 20 || d > vR + 20) continue;
+      drawDuckweed(d, Math.sin(d*0.02+t*0.05)*1.5, 6, d);
+    }
   }
 }
 
-/** Sun glitter path on water surface (call from water/surface render) */
+/** Caustics + sun glitter near surface (underwater light) */
 function renderSunGlitter(vL, vR){
   var sun = window._sunPos;
-  if(!sun || sun.dl < 0.2) return;
+  var dl = (typeof dayLight==='number') ? dayLight : 0.5;
+  if(dl < 0.15) return;
   ctx.save();
-  ctx.globalCompositeOperation = 'screen';
-  // Specular column from sun down to surface
-  var gx = sun.x;
-  var gtop = Math.min(0, sun.y + 20);
-  var gg = ctx.createLinearGradient(gx, gtop, gx, 90);
-  gg.addColorStop(0, 'rgba(255,250,220,0)');
-  gg.addColorStop(0.3, 'rgba(255,245,200,'+(0.08*sun.dl)+')');
-  gg.addColorStop(0.85, 'rgba(255,240,180,'+(0.18*sun.dl)+')');
-  gg.addColorStop(1, 'rgba(255,230,150,0)');
-  ctx.fillStyle = gg;
-  ctx.beginPath();
-  ctx.moveTo(gx - 8, gtop);
-  ctx.lineTo(gx + 8, gtop);
-  ctx.lineTo(gx + 55, 70);
-  ctx.lineTo(gx - 55, 70);
-  ctx.closePath();
-  ctx.fill();
-  // Sparkles on surface
-  var t = (typeof gt==='number')?gt:0;
-  ctx.fillStyle = 'rgba(255,255,230,'+(0.35*sun.dl)+')';
-  for(var i=0;i<12;i++){
-    var sx = gx + Math.sin(t*1.3 + i*1.7)*70 + Math.cos(i*2.1)*20;
-    var sy = 2 + Math.abs(Math.sin(t*2+i))*6;
-    if(sx<vL||sx>vR) continue;
-    var sr = 1.2 + (i%3)*0.8;
-    ctx.globalAlpha = 0.3 + 0.5*Math.abs(Math.sin(t*3+i));
-    ctx.beginPath(); ctx.ellipse(sx, sy, sr*2.5, sr*0.6, 0, 0, Math.PI*2); ctx.fill();
+  // Underwater: projected warm sun on the surface (so never "two gray moons")
+  if(typeof cam!=='undefined' && cam.y > 15){
+    var sx = sun ? sun.x : cam.x;
+    var sr = sun ? Math.max(16, sun.r*1.3) : 22;
+    var sg2 = ctx.createRadialGradient(sx, -2, 0, sx, -2, sr*4);
+    sg2.addColorStop(0, 'rgba(255, 250, 220, ' + (0.85*dl) + ')');
+    sg2.addColorStop(0.2, 'rgba(255, 220, 120, ' + (0.45*dl) + ')');
+    sg2.addColorStop(0.55, 'rgba(255, 180, 60, ' + (0.12*dl) + ')');
+    sg2.addColorStop(1, 'rgba(255, 160, 40, 0)');
+    ctx.globalCompositeOperation = 'screen';
+    ctx.fillStyle = sg2;
+    ctx.beginPath(); ctx.arc(sx, -2, sr*4, 0, Math.PI*2); ctx.fill();
+    // solid warm core on film
+    ctx.globalCompositeOperation = 'source-over';
+    var core = ctx.createRadialGradient(sx, -1, 0, sx, -1, sr);
+    core.addColorStop(0, '#fffef0');
+    core.addColorStop(0.5, '#ffe08a');
+    core.addColorStop(1, 'rgba(255,160,40,0.15)');
+    ctx.fillStyle = core;
+    ctx.beginPath(); ctx.arc(sx, -1, sr, 0, Math.PI*2); ctx.fill();
   }
+
+  // Bright surface film
+  var band = ctx.createLinearGradient(0, -6, 0, 50);
+  band.addColorStop(0, 'rgba(200, 235, 255, ' + (0.14*dl) + ')');
+  band.addColorStop(0.35, 'rgba(160, 220, 240, ' + (0.08*dl) + ')');
+  band.addColorStop(1, 'rgba(80, 160, 180, 0)');
+  ctx.fillStyle = band;
+  ctx.fillRect(vL, -6, vR-vL, 56);
+
+  // God rays into water from sun X (or center)
+  var sx = sun ? sun.x : cam.x;
+  ctx.globalCompositeOperation = 'screen';
+  for(var i=0; i<6; i++){
+    var ang = (i-2.5)*0.08;
+    var gw = 18 + i*4;
+    var gg = ctx.createLinearGradient(sx, 0, sx + ang*200, 220);
+    gg.addColorStop(0, 'rgba(255, 250, 210, ' + (0.2*dl) + ')');
+    gg.addColorStop(0.4, 'rgba(200, 230, 170, ' + (0.08*dl) + ')');
+    gg.addColorStop(1, 'rgba(120, 180, 160, 0)');
+    ctx.fillStyle = gg;
+    ctx.beginPath();
+    ctx.moveTo(sx - gw*0.3, 0);
+    ctx.lineTo(sx + gw*0.3, 0);
+    ctx.lineTo(sx + ang*200 + gw, 220);
+    ctx.lineTo(sx + ang*200 - gw, 220);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  // Sparkles on surface
+  if(sun){
+    var tt = (typeof gt==='number') ? gt : 0;
+    ctx.fillStyle = 'rgba(255,255,230,0.55)';
+    for(var j=0; j<10; j++){
+      var spx = sun.x + Math.sin(tt*1.4 + j*1.7)*55;
+      var spy = Math.abs(Math.sin(tt*2.2 + j))*4;
+      if(spx < vL || spx > vR) continue;
+      ctx.globalAlpha = 0.25 + 0.5*Math.abs(Math.sin(tt*3+j));
+      ctx.beginPath(); ctx.ellipse(spx, spy, 3.5, 1.1, 0, 0, Math.PI*2); ctx.fill();
+    }
+  }
+  ctx.restore();
+}
+
+/** Snell's window — bright circle when looking up from underwater */
+function renderSnellWindow(vL, vR, vT, vB){
+  if(typeof cam==='undefined' || cam.y < 12) return;
+  if(vT > 30 || vB < -5) return; // surface not in view
+  var dl = (typeof dayLight==='number') ? dayLight : 0.5;
+  if(dl < 0.08) return;
+  var cx = cam.x;
+  var cy = 0;
+  // Angular size of Snell's window ~97° → large radius in world at depth
+  var depth = Math.max(20, cam.y);
+  var R = Math.min(depth * 1.35, (vR-vL)*0.55);
+
+  ctx.save();
+  // Dark TIR ring outside window (underwater looking up)
+  // Bright circular window
+  // Only a thin band just above water darkens (TIR), NOT the whole sky
+  ctx.fillStyle = 'rgba(0, 12, 28, ' + (0.15*Math.min(1, cam.y/140)) + ')';
+  ctx.fillRect(vL, -14, vR-vL, 16);
+  // Bright circular window
+  var sg = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
+  sg.addColorStop(0, 'rgba(200, 230, 255, ' + (0.42*dl) + ')');
+  sg.addColorStop(0.4, 'rgba(150, 200, 240, ' + (0.22*dl) + ')');
+  sg.addColorStop(0.75, 'rgba(80, 150, 210, ' + (0.1*dl) + ')');
+  sg.addColorStop(1, 'rgba(20, 40, 60, 0)');
+  ctx.globalCompositeOperation = 'screen';
+  ctx.fillStyle = sg;
+  ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2); ctx.fill();
+  ctx.globalCompositeOperation = 'source-over';
+
+  // Soft edge ring
+  ctx.strokeStyle = 'rgba(200, 230, 255, ' + (0.2*dl) + ')';
+  ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.arc(cx, cy, R*0.92, 0, Math.PI*2); ctx.stroke();
   ctx.restore();
 }
 window.drawNaturalLilypads = drawNaturalLilypads;
 window.renderSunGlitter = renderSunGlitter;
+window.renderSnellWindow = renderSnellWindow;
+
 
 function renderSunRays(vL,vR){
   if(dayLight<0.15)return;ctx.save();ctx.globalCompositeOperation='screen';
   for(var i=0;i<sunRays.length;i++){
     var sr=sunRays[i];if(sr.x<vL-100||sr.x>vR+100)continue;
-    var opacity=dayLight*0.25;
+    var opacity=dayLight*0.10;
     var g=ctx.createLinearGradient(sr.x,0,sr.x+sr.angle*300,PD*0.7);
     g.addColorStop(0,'rgba(255,250,210,'+(opacity*1.2)+')');g.addColorStop(0.35,'rgba(200,240,180,'+(opacity*0.55)+')');g.addColorStop(0.7,'rgba(120,200,160,'+(opacity*0.2)+')');g.addColorStop(1,'rgba(80,160,140,0)');
     ctx.fillStyle=g;ctx.beginPath();ctx.moveTo(sr.x-sr.w/2,0);ctx.lineTo(sr.x+sr.w/2,0);

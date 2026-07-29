@@ -165,13 +165,13 @@ function initWorld(){
     });
   }
   // Floating surface algae mats (natural pond scum / Spirogyra mats)
-  for(var fa=0; fa<22; fa++){
+  for(var fa=0; fa<8; fa++){
     var fhw = halfW(8);
     shoreDecor.push({
       x: rng(-fhw*0.9, fhw*0.9),
       y: rng(-6, 18),
       type: 'float',
-      size: rng(6, 16),
+      size: rng(3, 7),
       rot: rng(-0.2, 0.2),
       sway: rng(0, Math.PI*2),
       hasShadow: false

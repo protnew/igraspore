@@ -132,26 +132,46 @@ function initShoreCache() {
       c.fillStyle='rgba(0,0,0,0.15)';
       c.beginPath(); c.ellipse(2, 3, d.size*0.8, d.size*0.3, 0, 0, Math.PI*2); c.fill();
     }
-    if(d.type==='grass'){
-      c.strokeStyle='rgba(40,80,25,0.7)'; c.lineWidth=2;
-      for(var b=0;b<5;b++){
-        c.beginPath(); c.moveTo(b*2-4,d.size*0.3);
-        var sway=Math.sin(b*1.5)*4;
-        c.quadraticCurveTo(b*2-4+sway,d.size*0.1,b*2-4+sway*2,-d.size);
+    if(d.type==='grass' || d.type==='algae'){
+      // Natural filamentous algae / pond grass — green blades with midrib
+      for(var b=0;b<6;b++){
+        var baseX = b*2.2-6;
+        var sway=Math.sin(b*1.3+d.rot)*5;
+        var h = d.size*(0.7+ (b%3)*0.15);
+        var grd = c.createLinearGradient(baseX, d.size*0.3, baseX+sway, -h);
+        grd.addColorStop(0,'rgba(20,55,18,0.85)');
+        grd.addColorStop(0.5,'rgba(40,110,35,0.8)');
+        grd.addColorStop(1,'rgba(70,150,50,0.55)');
+        c.strokeStyle=grd; c.lineWidth=2.2; c.lineCap='round';
+        c.beginPath(); c.moveTo(baseX,d.size*0.35);
+        c.quadraticCurveTo(baseX+sway*0.5, d.size*0.05, baseX+sway, -h);
+        c.stroke();
+        // lighter edge
+        c.strokeStyle='rgba(120,190,80,0.35)'; c.lineWidth=0.8;
+        c.beginPath(); c.moveTo(baseX+0.6,d.size*0.3);
+        c.quadraticCurveTo(baseX+sway*0.5,0, baseX+sway*0.9, -h*0.85);
         c.stroke();
       }
     } else if(d.type==='reed'){
       // Tall reed with leaves
-      c.strokeStyle='rgba(60,100,30,0.6)'; c.lineWidth=2.5;
-      c.beginPath(); c.moveTo(0,d.size*0.3); c.lineTo(0,-d.size*1.2); c.stroke();
-      // Leaves
-      c.fillStyle='rgba(50,90,20,0.5)';
-      for(var lf=0;lf<3;lf++){
-        var ly=-d.size*0.3-lf*d.size*0.3;
-        c.save(); c.translate(0,ly); c.rotate(0.3+lf*0.2);
-        c.beginPath(); c.ellipse(d.size*0.3,0,d.size*0.25,d.size*0.06,0,0,Math.PI*2); c.fill();
+      c.strokeStyle='rgba(45,95,28,0.85)'; c.lineWidth=2.8; c.lineCap='round';
+      c.beginPath(); c.moveTo(0,d.size*0.35); c.quadraticCurveTo(3,-d.size*0.4, 1,-d.size*1.25); c.stroke();
+      c.fillStyle='rgba(55,120,30,0.7)';
+      for(var lf=0;lf<4;lf++){
+        var ly=-d.size*0.25-lf*d.size*0.28;
+        c.save(); c.translate(0,ly); c.rotate((lf%2? -1:1)*(0.4+lf*0.12));
+        c.beginPath(); c.ellipse(d.size*0.32,0,d.size*0.32,d.size*0.07,0,0,Math.PI*2); c.fill();
         c.restore();
       }
+      // tip
+      c.fillStyle='rgba(90,140,40,0.6)';
+      c.beginPath(); c.ellipse(1,-d.size*1.28,3,5,0,0,Math.PI*2); c.fill();
+    } else if(d.type==='float'){
+      // Floating surface algae mat
+      c.fillStyle='rgba(40,100,35,0.55)';
+      c.beginPath(); c.ellipse(0,0,d.size*1.1,d.size*0.35,0,0,Math.PI*2); c.fill();
+      c.fillStyle='rgba(70,140,50,0.4)';
+      c.beginPath(); c.ellipse(-d.size*0.2,-1,d.size*0.5,d.size*0.18,0,0,Math.PI*2); c.fill();
     } else {
       // Pebble
       c.fillStyle='rgba(100,85,60,0.7)'; c.beginPath(); c.ellipse(0,0,d.size,d.size*0.7,0,0,Math.PI*2); c.fill();

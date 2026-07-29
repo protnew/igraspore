@@ -2,74 +2,101 @@
 
 function renderSky(vL,vR,vT){
   if(vT>=0)return;
+  var h = -vT; // sky height in world units
   var g=ctx.createLinearGradient(0,vT,0,0);
-  if(dayLight>0.5){g.addColorStop(0,'#1a3050');g.addColorStop(1,'#3a6090');}
-  else{g.addColorStop(0,'#050818');g.addColorStop(1,'#0a1228');}
-  ctx.fillStyle=g;ctx.fillRect(vL,vT,vR-vL,-vT);
-  ctx.fillStyle=g;ctx.fillRect(vL,vT,vR-vL,-vT);
-  if(dayLight>0.05 && tod > 5 && tod < 19){
-    var dayProg = (tod-6)/12; // 0 to 1
-    // Sun is camera-relative, positioned in visible sky area
-    var sunX = cam.x + (dayProg - 0.5) * 600;
-    var sunY = vT * 0.6; // 60% up the sky area (between vT and 0)
-    if(dayLight>0.05){
-      ctx.save();ctx.globalAlpha=dayLight;
-      // Use cached gradient or create new (recreate only if sun moved significantly)
-      if(!window._sunGlowCache || window._sunGlowCache.x !== Math.round(sunX/50) || window._sunGlowCache.y !== Math.round(sunY/50)){
-        window._sunGlowCache = {x: Math.round(sunX/50), y: Math.round(sunY/50), grad: null};
-      }
-      if(!window._sunGlowCache.grad){
-        if(!isFinite(sunX)||!isFinite(sunY))sunX=0,sunY=-100;var sg=ctx.createRadialGradient(sunX,sunY,0,sunX,sunY,300);
-        sg.addColorStop(0,'rgba(255,250,220,1)');sg.addColorStop(0.15,'rgba(255,240,180,0.9)');sg.addColorStop(0.4,'rgba(255,220,120,0.4)');sg.addColorStop(0.7,'rgba(255,200,80,0.1)');sg.addColorStop(1,'rgba(255,190,60,0)');
-        window._sunGlowCache.grad = sg;
-      }
-      ctx.fillStyle=window._sunGlowCache.grad;ctx.beginPath();ctx.arc(sunX,sunY,300,0,Math.PI*2);ctx.fill();
-      ctx.fillStyle='rgba(255,250,230,1)';ctx.beginPath();ctx.arc(sunX,sunY,25,0,Math.PI*2);ctx.fill();
-      ctx.restore();
-    }
+  var dl = (typeof dayLight==='number')?dayLight:0.5;
+  var t = (typeof tod==='number')?tod:12;
+  // Natural palette by time of day
+  if(t >= 5 && t < 8){
+    // Morning: warm horizon, cool zenith
+    g.addColorStop(0,'#1a3a6a');
+    g.addColorStop(0.45,'#4a7ab0');
+    g.addColorStop(0.75,'#c8a070');
+    g.addColorStop(1,'#e8b070');
+  } else if(t >= 8 && t < 17){
+    // Day: clear blue
+    g.addColorStop(0,'#0b1e40');
+    g.addColorStop(0.55,'#1e5a9a');
+    g.addColorStop(1,'#5aa0d0');
+  } else if(t >= 17 && t < 20){
+    // Evening
+    g.addColorStop(0,'#0a1028');
+    g.addColorStop(0.5,'#3a2060');
+    g.addColorStop(0.8,'#c06040');
+    g.addColorStop(1,'#e09050');
+  } else {
+    // Night
+    g.addColorStop(0,'#02040c');
+    g.addColorStop(1,'#0a1428');
   }
-  
-  if(window.skyClouds && dayLight>0.2) {
+  ctx.fillStyle=g;ctx.fillRect(vL,vT,vR-vL,h);
+
+  // Stars at night
+  if(dl < 0.25){
+    ctx.save();
+    ctx.fillStyle='rgba(220,230,255,0.85)';
+    var seed = Math.floor(cam.x/200);
+    for(var si=0; si<40; si++){
+      var sx = vL + ((si*97+seed*13)%Math.max(1,vR-vL));
+      var sy = vT + ((si*53+21)%Math.max(1,h*0.85));
+      var sr = (si%3===0)?1.4:0.8;
+      ctx.globalAlpha = 0.4 + (si%5)*0.1;
+      ctx.beginPath(); ctx.arc(sx,sy,sr,0,Math.PI*2); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  // Sun (day / morning / evening)
+  if(dl>0.05 && t > 4.5 && t < 20){
+    var dayProg = (t-5)/14; // 0..1 across daylight
+    var sunX = cam.x + (dayProg - 0.5) * Math.min(900, (vR-vL)*0.7);
+    // Arc: high at noon, lower morning/evening
+    var elev = Math.sin(Math.PI * Math.max(0, Math.min(1, dayProg)));
+    var sunY = vT + h * (0.75 - elev * 0.55);
+    if(!isFinite(sunX)) sunX = cam.x;
+    if(!isFinite(sunY)) sunY = vT + h*0.4;
+    ctx.save();
+    // Warm corona
+    var corona = ctx.createRadialGradient(sunX,sunY,0,sunX,sunY,220);
+    var warm = (t<8||t>17) ? 1 : 0.7;
+    corona.addColorStop(0,'rgba(255,250,230,'+(0.95*dl)+')');
+    corona.addColorStop(0.12,'rgba(255,230,160,'+(0.7*dl*warm)+')');
+    corona.addColorStop(0.35,'rgba(255,200,100,'+(0.28*dl)+')');
+    corona.addColorStop(0.65,'rgba(255,180,80,'+(0.08*dl)+')');
+    corona.addColorStop(1,'rgba(255,170,60,0)');
+    ctx.fillStyle=corona;
+    ctx.beginPath(); ctx.arc(sunX,sunY,220,0,Math.PI*2); ctx.fill();
+    // Core
+    ctx.fillStyle='rgba(255,252,240,'+Math.min(1,dl+0.2)+')';
+    ctx.beginPath(); ctx.arc(sunX,sunY, 14+elev*10, 0, Math.PI*2); ctx.fill();
+    // Soft rim
+    ctx.strokeStyle='rgba(255,220,140,'+(0.35*dl)+')';
+    ctx.lineWidth=3;
+    ctx.beginPath(); ctx.arc(sunX,sunY, 18+elev*12, 0, Math.PI*2); ctx.stroke();
+    ctx.restore();
+    window._sunPos = {x:sunX, y:sunY};
+  }
+
+  // Soft clouds
+  if(window.skyClouds && dl>0.18) {
       ctx.save();
-      ctx.fillStyle = 'rgba(255,255,255,'+(0.6*dayLight)+')';
       for(var i=0; i<window.skyClouds.length; i++) {
           var c = window.skyClouds[i];
           if(c.x+c.w < vL || c.x-c.w > vR) continue;
+          var cy = Math.min(c.y, -8);
+          ctx.fillStyle = 'rgba(255,255,255,'+(0.35+0.35*dl)+')';
           ctx.beginPath();
-          ctx.ellipse(c.x, c.y, c.w*0.5, c.h*0.5, 0, 0, Math.PI*2);
+          ctx.ellipse(c.x, cy, c.w*0.5, c.h*0.45, 0, 0, Math.PI*2);
+          ctx.fill();
+          ctx.fillStyle = 'rgba(255,255,255,'+(0.25*dl)+')';
+          ctx.beginPath();
+          ctx.ellipse(c.x-c.w*0.25, cy+2, c.w*0.28, c.h*0.3, 0, 0, Math.PI*2);
           ctx.fill();
       }
       ctx.restore();
   }
-  
-  // === MOON: visible at night (dayLight < 0.3) ===
-  if(dayLight < 0.3 && vT < 0){
-    var moonX = cam.x + ((tod > 19 ? tod - 19 : tod + 5) / 10 - 0.5) * 600;
-    var moonY = vT * 0.5;
-    var moonAlpha = 1 - dayLight * 3; // brighter when darker
-    if(moonAlpha > 0.05){
-      ctx.save();
-      ctx.globalAlpha = Math.min(moonAlpha, 1);
-      // Moon glow
-      if(!isFinite(moonX)||!isFinite(moonY))moonX=0,moonY=-100;var mg = ctx.createRadialGradient(moonX, moonY, 0, moonX, moonY, 150);
-      mg.addColorStop(0, 'rgba(220,230,255,0.8)');
-      mg.addColorStop(0.2, 'rgba(200,215,255,0.4)');
-      mg.addColorStop(0.5, 'rgba(180,200,240,0.1)');
-      mg.addColorStop(1, 'rgba(160,190,230,0)');
-      ctx.fillStyle = mg;
-      ctx.beginPath(); ctx.arc(moonX, moonY, 150, 0, Math.PI*2); ctx.fill();
-      // Moon body
-      ctx.fillStyle = 'rgba(230,240,255,0.9)';
-      ctx.beginPath(); ctx.arc(moonX, moonY, 18, 0, Math.PI*2); ctx.fill();
-      // Moon craters (simple detail)
-      ctx.fillStyle = 'rgba(180,195,225,0.4)';
-      ctx.beginPath(); ctx.arc(moonX - 5, moonY - 3, 4, 0, Math.PI*2); ctx.fill();
-      ctx.beginPath(); ctx.arc(moonX + 6, moonY + 4, 3, 0, Math.PI*2); ctx.fill();
-      ctx.beginPath(); ctx.arc(moonX - 2, moonY + 7, 2.5, 0, Math.PI*2); ctx.fill();
-      ctx.restore();
-    }
-  }
 }
+
 
 function renderWater(vL,vR,vT,vB){
   ctx.save();
@@ -78,11 +105,14 @@ function renderWater(vL,vR,vT,vB){
   var grad = ctx.createLinearGradient(0, 0, 0, PD);
   var lightTop = lightAt(0)*realMul, lightMid = lightAt(PD*0.5)*realMul, lightBot = lightAt(PD)*realMul;
   
-  // Smoothly blend photic, twilight, and benthic zones
-  grad.addColorStop(0, 'rgb('+Math.round(10+lightTop*15)+','+Math.round(40+lightTop*40)+','+Math.round(60+lightTop*40)+')');
-  grad.addColorStop(0.5, 'rgb('+Math.round(10+lightMid*10)+','+Math.round(25+lightMid*20)+','+Math.round(50+lightMid*30)+')');
-  grad.addColorStop(1, 'rgb('+Math.round(15+lightBot*10)+','+Math.round(30+lightBot*10)+','+Math.round(25+lightBot*15)+')');
-  if(season===3) grad.addColorStop(0, 'rgba(180,195,210,0.8)'); // Winter surface
+  // Natural pond: green-blue photic zone → deep teal → dark benthos
+  var lt=lightTop, lm=lightMid, lb=lightBot;
+  grad.addColorStop(0, 'rgb('+Math.round(8+lt*18)+','+Math.round(55+lt*55)+','+Math.round(70+lt*50)+')');
+  grad.addColorStop(0.12, 'rgb('+Math.round(6+lt*14)+','+Math.round(45+lt*40)+','+Math.round(65+lt*45)+')');
+  grad.addColorStop(0.45, 'rgb('+Math.round(8+lm*12)+','+Math.round(30+lm*28)+','+Math.round(55+lm*35)+')');
+  grad.addColorStop(0.75, 'rgb('+Math.round(10+lb*8)+','+Math.round(22+lb*14)+','+Math.round(40+lb*22)+')');
+  grad.addColorStop(1, 'rgb('+Math.round(12+lb*6)+','+Math.round(18+lb*8)+','+Math.round(22+lb*10)+')');
+  if(season===3) grad.addColorStop(0, 'rgba(180,195,210,0.75)');
   
   ctx.fillStyle = grad;
   ctx.beginPath();
@@ -91,6 +121,34 @@ function renderWater(vL,vR,vT,vB){
   for(var dd=PD; dd>=0; dd-=10) ctx.lineTo(halfW(dd), dd);
   ctx.closePath();
   ctx.fill();
+  // SURFACE_SHIMMER — sunlit surface film + soft caustics near top
+  if(dayLight > 0.2){
+    ctx.save();
+    var sh = ctx.createLinearGradient(0, -2, 0, PD*0.18);
+    sh.addColorStop(0, 'rgba(180,230,255,'+(0.18*dayLight)+')');
+    sh.addColorStop(0.35, 'rgba(120,200,180,'+(0.08*dayLight)+')');
+    sh.addColorStop(1, 'rgba(80,160,140,0)');
+    ctx.fillStyle = sh;
+    ctx.fillRect(vL, -4, vR-vL, PD*0.18);
+    // Surface line (meniscus)
+    ctx.strokeStyle = 'rgba(200,240,255,'+(0.35*dayLight)+')';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    for(var sx=vL; sx<=vR; sx+=14){
+      var sy = Math.sin(sx*0.04 + (gt||0)*1.2)*1.2;
+      if(sx===vL) ctx.moveTo(sx, sy); else ctx.lineTo(sx, sy);
+    }
+    ctx.stroke();
+    // Caustic blobs
+    ctx.globalAlpha = 0.12*dayLight;
+    ctx.fillStyle = '#cfe';
+    for(var ci=0; ci<8; ci++){
+      var cx = cam.x + Math.sin(ci*1.7+(gt||0)*0.4)*180;
+      var cy = 20 + (ci%4)*18 + Math.cos(ci+(gt||0)*0.5)*6;
+      ctx.beginPath(); ctx.ellipse(cx, cy, 28+ci*3, 6, ci*0.2, 0, Math.PI*2); ctx.fill();
+    }
+    ctx.restore();
+  }
   
   // Volumetric Shadows from Clouds
   var isDay = (tod>6 && tod<18);
@@ -300,7 +358,7 @@ function renderSunRays(vL,vR){
     var sr=sunRays[i];if(sr.x<vL-100||sr.x>vR+100)continue;
     var opacity=dayLight*0.25;
     var g=ctx.createLinearGradient(sr.x,0,sr.x+sr.angle*300,PD*0.7);
-    g.addColorStop(0,'rgba(255,245,200,'+opacity+')');g.addColorStop(0.5,'rgba(255,235,150,'+opacity*0.5+')');g.addColorStop(1,'rgba(255,230,100,0)');
+    g.addColorStop(0,'rgba(255,250,210,'+(opacity*1.2)+')');g.addColorStop(0.35,'rgba(200,240,180,'+(opacity*0.55)+')');g.addColorStop(0.7,'rgba(120,200,160,'+(opacity*0.2)+')');g.addColorStop(1,'rgba(80,160,140,0)');
     ctx.fillStyle=g;ctx.beginPath();ctx.moveTo(sr.x-sr.w/2,0);ctx.lineTo(sr.x+sr.w/2,0);
     ctx.lineTo(sr.x+sr.w/2+sr.angle*PD*0.7+sr.w*0.3,PD*0.7);ctx.lineTo(sr.x-sr.w/2+sr.angle*PD*0.7-sr.w*0.3,PD*0.7);
     ctx.closePath();ctx.fill();

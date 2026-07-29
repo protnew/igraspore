@@ -92,6 +92,9 @@ window.getTempAt = function(x, y) {
 };
 
 function initWorld(){
+  // Reset clock to morning every new game
+  tod = 9.0;
+  dayLight = 0.85;
   orgs=[];parts=[];viruses=[];speciesPop={};popHist=[];
   window.eventLog = [];
   stats={births:0,deaths:0,deathCauses:[0,0,0,0,0]};
@@ -148,17 +151,30 @@ function initWorld(){
     }
   }
   // Sparse deep algae — individual, scattered
-  for(var da=0;da<25;da++){
-    var dd=rng(PD*0.15,PD*0.5);
+  for(var da=0;da<35;da++){
+    var dd=rng(PD*0.12,PD*0.55);
     var dhw=halfW(dd);
     shoreDecor.push({
-      x:rng(-dhw*0.8,dhw*0.8),
+      x:rng(-dhw*0.85,dhw*0.85),
       y:dd,
-      type:'grass',
-      size:rng(3,12),
-      rot:rng(-0.3,0.3),
+      type: Math.random()<0.7 ? 'algae' : 'grass',
+      size:rng(4,14),
+      rot:rng(-0.35,0.35),
       sway: rng(0, Math.PI*2),
       hasShadow: true
+    });
+  }
+  // Floating surface algae mats (natural pond scum / Spirogyra mats)
+  for(var fa=0; fa<22; fa++){
+    var fhw = halfW(8);
+    shoreDecor.push({
+      x: rng(-fhw*0.9, fhw*0.9),
+      y: rng(-6, 18),
+      type: 'float',
+      size: rng(6, 16),
+      rot: rng(-0.2, 0.2),
+      sway: rng(0, Math.PI*2),
+      hasShadow: false
     });
   }
   sedimentClumps=[];for(var i=0;i<25;i++){var hw=halfW(PD)-15;sedimentClumps.push({x:rng(-hw,hw),y:PD-rng(0,8),w:rng(15,40),h:rng(4,10),rot:rng(-0.3,0.3)});}

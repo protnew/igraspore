@@ -195,7 +195,16 @@ window.startTutorial = function(force){
 
 function startGame(isScreensaver){
   window.initAudio();
-  initWorld();var sp;
+  initWorld();
+  // Always start in the MORNING (clear light, sun up)
+  tod = 9.0;
+  season = 1; // spring-ish light
+  dayLight = 0.85;
+  try{
+    if(typeof updateTodUI==='function') updateTodUI();
+    var sl=document.getElementById('todR'); if(sl) sl.value=tod;
+  }catch(_e){}
+  var sp;
   if(selSpecies>=VIRUS_ID_START){sp=SPECIES_DB[0];selSpecies=0;}
   else sp=SPECIES_DB[selSpecies];
   var d=rng(PD*0.2,PD*0.5),hw=halfW(d)-20;
@@ -225,18 +234,31 @@ function startGame(isScreensaver){
      if(!foodPool.length) foodPool = [SPECIES_DB[0]];
      // Prefer rods/filaments so player sees non-circle shapes immediately
      var shaped = foodPool.filter(function(s){ return s.shape==='rod'||s.shape==='filament'||s.shape==='spiral'; });
-     for(var fi=0; fi<16; fi++){
+     var seedN = (sp.cat==='consumer2') ? 28 : 16; // инфузории — больше бактерий/водорослей вокруг
+     for(var fi=0; fi<seedN; fi++){
        var fsp;
        if(shaped.length && fi%2===0) fsp = shaped[fi % shaped.length];
        else fsp = foodPool[fi % foodPool.length];
-       var ang = rng(0, Math.PI*2), rr = rng(18, 100);
+       // Prefer producer/consumer1 for ciliates
+       if(sp.cat==='consumer2' && foodPool.length){
+         var pref = foodPool.filter(function(s){ return s.cat==='producer' || s.cat==='consumer1'; });
+         if(pref.length) fsp = pref[fi % pref.length];
+       }
+       var ang = rng(0, Math.PI*2), rr = rng(14, (sp.cat==='consumer2')?130:100);
        var fx = player.x + Math.cos(ang)*rr;
        var fy = clamp(player.y + Math.sin(ang)*rr*0.65, 20, PD-20);
        var fo = spawnOrg(fsp, fx, fy, false);
        if(fo){
-         fo.size = Math.min(fo.size, Math.max(1.0, player.size*0.55));
+         // Tiny food for filter feeders
+         var maxFood = (sp.cat==='consumer2') ? player.size*0.45 : player.size*0.55;
+         fo.size = Math.min(fo.size, Math.max(0.7, maxFood));
          fo.energy = 50; fo.divCD=0; fo.invuln=0; fo.alive=true;
        }
+     }
+     if(sp.cat==='consumer2'){
+       setTimeout(function(){
+         if(window.showToast) window.showToast('Инфузория: подплыви к бактериям/водорослям — реснички фильтруют сами', '#9cf');
+       }, 900);
      }
   }
   

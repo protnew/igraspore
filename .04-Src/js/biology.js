@@ -15,8 +15,8 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
   if(sp.locomotion === 'sessile') y = PD - sp.size;
   var o={x:x,y:y,vx:0,vy:0,sp:sp,species:sp.id,
     energy:sp.energy*0.7+rng(0,10),age:0,
-    size:sp.size*(0.85+rng(0,0.3)),
-    currentSize: sp.size,
+    size:Math.min(9, sp.size*(0.85+rng(0,0.3))),
+    currentSize: Math.min(9, sp.size),
     spawnTime: gt,
     angle:rng(0,Math.PI*2),facing:rng(0,Math.PI*2),massFood:0,eatsSinceDiv:0,birthSize:0,
     state:'idle',target:null,

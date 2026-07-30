@@ -12,35 +12,63 @@ function renderSky(vL,vR,vT){
   var t = (typeof tod==='number') ? tod : 12;
   var z = (typeof zoom==='number' && zoom>0) ? zoom : 1;
 
-  // --- Sky gradient (always readable, never pitch black in daytime) ---
+  // --- Sky: day blue / planetarium dusk (black zenith + fire horizon) / deep night ---
   var g = ctx.createLinearGradient(0, vT, 0, 0);
   if(t >= 5.5 && t < 8){
     // dawn
-    g.addColorStop(0, '#1a2a5a');
-    g.addColorStop(0.55, '#6a90c0');
-    g.addColorStop(0.85, '#e8b888');
-    g.addColorStop(1, '#ffd0a0');
-  } else if(t >= 8 && t < 17){
-    // day — clear blue
-    g.addColorStop(0, '#0b1e4a');
-    g.addColorStop(0.35, '#1e5aaa');
-    g.addColorStop(0.7, '#4a9ad8');
-    g.addColorStop(0.92, '#8ec8e8');
+    g.addColorStop(0, '#0a1028');
+    g.addColorStop(0.4, '#2a3a70');
+    g.addColorStop(0.7, '#c87850');
+    g.addColorStop(0.9, '#ffb070');
+    g.addColorStop(1, '#ffd8a8');
+  } else if(t >= 8 && t < 16.5){
+    // day
+    g.addColorStop(0, '#0a1848');
+    g.addColorStop(0.35, '#1a58a8');
+    g.addColorStop(0.7, '#4a98d0');
+    g.addColorStop(0.92, '#90c8e8');
     g.addColorStop(1, '#b8dcf0');
-  } else if(t >= 17 && t < 20){
-    // dusk
-    g.addColorStop(0, '#0c0e28');
-    g.addColorStop(0.4, '#3a2860');
-    g.addColorStop(0.7, '#c06040');
-    g.addColorStop(1, '#f09050');
+  } else if(t >= 16.5 && t < 21.5){
+    // PLANETARIUM sunset: black upper sky → violet → magenta → orange fire at horizon
+    g.addColorStop(0, '#000008');
+    g.addColorStop(0.25, '#05010f');
+    g.addColorStop(0.45, '#1a0840');
+    g.addColorStop(0.58, '#4a1868');
+    g.addColorStop(0.70, '#a02848');
+    g.addColorStop(0.82, '#e85828');
+    g.addColorStop(0.92, '#ff9020');
+    g.addColorStop(1, '#ffc060');
   } else {
-    // night
-    g.addColorStop(0, '#02040c');
-    g.addColorStop(0.8, '#0a1228');
-    g.addColorStop(1, '#121c38');
+    // deep night — black with faint blue horizon
+    g.addColorStop(0, '#000005');
+    g.addColorStop(0.7, '#020610');
+    g.addColorStop(0.9, '#060c20');
+    g.addColorStop(1, '#0a1430');
   }
   ctx.fillStyle = g;
   ctx.fillRect(vL - 20, vT - 2, (vR - vL) + 40, h + 4);
+
+  // Planetarium sunset extras: milky glow arc + secondary magenta band
+  if(t >= 16.5 && t < 21.5){
+    var duskK = 1;
+    if(t < 17.2) duskK = (t-16.5)/0.7;
+    else if(t > 20) duskK = Math.max(0, 1-(t-20)/1.5);
+    // Wide warm bloom along horizon
+    var hb = ctx.createRadialGradient(cam.x, 8, 0, cam.x, 8, Math.max(280, (vR-vL)*0.55));
+    hb.addColorStop(0, 'rgba(255,140,40,'+(0.55*duskK)+')');
+    hb.addColorStop(0.25, 'rgba(255,80,30,'+(0.28*duskK)+')');
+    hb.addColorStop(0.55, 'rgba(180,40,90,'+(0.12*duskK)+')');
+    hb.addColorStop(1, 'rgba(40,0,60,0)');
+    ctx.fillStyle = hb;
+    ctx.beginPath(); ctx.ellipse(cam.x, 4, Math.max(320,(vR-vL)*0.6), 70, 0, 0, Math.PI*2); ctx.fill();
+    // Violet airglow higher up
+    var vg = ctx.createLinearGradient(0, vT+h*0.2, 0, -20);
+    vg.addColorStop(0, 'rgba(80,20,140,0)');
+    vg.addColorStop(0.6, 'rgba(100,30,150,'+(0.12*duskK)+')');
+    vg.addColorStop(1, 'rgba(40,10,80,0)');
+    ctx.fillStyle = vg;
+    ctx.fillRect(vL, vT, vR-vL, h);
+  }
 
   // Horizon glow strip just above water
   if(dl > 0.12){
@@ -52,15 +80,28 @@ function renderSky(vL,vR,vT){
     ctx.fillRect(vL, -Math.min(h*0.4, 70), vR-vL, Math.min(h*0.4, 70)+2);
   }
 
-  // Stars at night
-  if(dl < 0.25){
+  // Stars — planetarium field (dusk + night). Fade near bright horizon.
+  if(dl < 0.55 || t >= 16.5 || t < 6){
     ctx.save();
-    for(var si=0; si<40; si++){
-      var sx = vL + ((si*97 + Math.floor(cam.x/100)*13) % Math.max(1, vR-vL));
-      var sy = vT + 8 + ((si*53) % Math.max(1, h*0.85));
-      ctx.globalAlpha = 0.3 + (si%5)*0.12;
-      ctx.fillStyle = '#e8eeff';
-      ctx.beginPath(); ctx.arc(sx, sy, 0.8, 0, Math.PI*2); ctx.fill();
+    var nStars = (dl < 0.2) ? 120 : 70;
+    var starA = (dl < 0.15) ? 0.95 : Math.max(0.25, 0.9 - dl*1.1);
+    for(var si=0; si<nStars; si++){
+      var sx = vL + ((si*97 + Math.floor((cam.x||0)/100)*13) % Math.max(1, vR-vL));
+      var sy = vT + 6 + ((si*53 + 17) % Math.max(1, h*0.78));
+      // fade stars near horizon during sunset
+      var nearH = 1 - Math.max(0, Math.min(1, (sy + 40) / Math.max(40, h*0.5)));
+      var a = starA * (0.35 + (si%7)*0.09) * (0.4 + 0.6*nearH);
+      if(a < 0.05) continue;
+      ctx.globalAlpha = a;
+      ctx.fillStyle = (si%11===0) ? '#ffe6b0' : (si%5===0) ? '#c8d8ff' : '#eef2ff';
+      var sr = (si%9===0) ? 1.6 : (si%4===0) ? 1.1 : 0.65;
+      ctx.beginPath(); ctx.arc(sx, sy, sr, 0, Math.PI*2); ctx.fill();
+      // tiny cross sparkle on bright stars
+      if(si%9===0 && a > 0.4){
+        ctx.globalAlpha = a*0.5;
+        ctx.fillRect(sx-sr*2.2, sy-0.4, sr*4.4, 0.8);
+        ctx.fillRect(sx-0.4, sy-sr*2.2, 0.8, sr*4.4);
+      }
     }
     ctx.restore();
   }
@@ -84,7 +125,7 @@ function renderSky(vL,vR,vT){
 
   // ========== ONE SUN ==========
   window._sunPos = null;
-  if(dl > 0.05 && t > 4.5 && t < 20.5){
+  if((dl > 0.04 || (t>=16.5 && t<21.2)) && t > 4.5 && t < 21.2){
     var dayProg = Math.max(0, Math.min(1, (t - 5) / 14));
     var elev = Math.sin(Math.PI * dayProg); // 0..1
     // Keep sun inside the visible sky rectangle
@@ -103,7 +144,8 @@ function renderSky(vL,vR,vT){
     if(sunX > vR - margin) sunX = vR - margin;
 
     // Warm colors: noon white-gold, low sun orange
-    var warm = (t < 8 || t > 16.5) ? 1 : 0.45;
+    var warm = (t < 8 || t > 16.0) ? 1.0 : 0.4;
+    if(t >= 16.5) warm = 1.0;
     // Disc radius in WORLD units — large enough to read at typical zoom
     var rSun = Math.max(14, (22 + elev * 10) / Math.max(0.55, Math.min(z, 2.0)));
 
@@ -131,9 +173,10 @@ function renderSky(vL,vR,vT){
     ctx.globalCompositeOperation = 'source-over';
     var core = ctx.createRadialGradient(sunX - rSun*0.25, sunY - rSun*0.25, 0, sunX, sunY, rSun);
     core.addColorStop(0, '#fffef5');
-    core.addColorStop(0.35, warm > 0.7 ? '#ffe08a' : '#fff2c0');
-    core.addColorStop(0.75, warm > 0.7 ? '#ffb040' : '#ffd078');
-    core.addColorStop(1, warm > 0.7 ? '#ff9020' : '#ffc060');
+    core.addColorStop(0.25, (t>=17) ? '#fff0c0' : (warm > 0.7 ? '#ffe08a' : '#fff2c0'));
+    core.addColorStop(0.55, (t>=17) ? '#ffb040' : (warm > 0.7 ? '#ffc050' : '#ffd078'));
+    core.addColorStop(0.85, (t>=18) ? '#ff6020' : (warm > 0.7 ? '#ff9020' : '#ffc060'));
+    core.addColorStop(1, (t>=18) ? 'rgba(255,40,10,0.2)' : 'rgba(255,160,40,0.15)');
     ctx.fillStyle = core;
     ctx.shadowColor = 'rgba(255, 200, 80, 0.85)';
     ctx.shadowBlur = 30;
@@ -196,6 +239,17 @@ function renderWater(vL,vR,vT,vB){
   for(var dd=PD; dd>=0; dd-=10) ctx.lineTo(halfW(dd), dd);
   ctx.closePath();
   ctx.fill();
+  // Dusk: warm planetarium reflection on water surface
+  if(typeof tod==='number' && tod >= 16.5 && tod < 21){
+    var dk = (tod < 18.5) ? (tod-16.5)/2 : Math.max(0, 1-(tod-18.5)/2.5);
+    var wg = ctx.createLinearGradient(0, -4, 0, PD*0.25);
+    wg.addColorStop(0, 'rgba(255,120,40,'+(0.22*dk)+')');
+    wg.addColorStop(0.35, 'rgba(200,60,80,'+(0.12*dk)+')');
+    wg.addColorStop(0.7, 'rgba(80,20,60,'+(0.05*dk)+')');
+    wg.addColorStop(1, 'rgba(20,0,30,0)');
+    ctx.fillStyle = wg;
+    ctx.fillRect(vL, -4, vR-vL, PD*0.25);
+  }
   // SURFACE_SHIMMER — sunlit surface film + soft caustics near top
   if(dayLight > 0.2){
     ctx.save();
@@ -504,11 +558,12 @@ function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun, fromBelow){
     ctx.closePath();
   }
   leafPath(1);
+  // Natural Nymphaea: deep olive, not neon lime
   var lg = ctx.createRadialGradient(-rx*0.2, -ry*0.25, 2, 0, 0, rx);
-  lg.addColorStop(0, '#5a9a48');
-  lg.addColorStop(0.4, '#3d7a38');
-  lg.addColorStop(0.8, '#2a5a28');
-  lg.addColorStop(1, '#1a3a1c');
+  lg.addColorStop(0, '#4a7a3a');
+  lg.addColorStop(0.35, '#3a6230');
+  lg.addColorStop(0.7, '#2a4a24');
+  lg.addColorStop(1, '#1a3218');
   ctx.fillStyle = lg;
   ctx.fill();
   ctx.strokeStyle = 'rgba(20,50,20,0.7)';
@@ -559,34 +614,78 @@ function drawDuckweed(cx, cy, n, seed){
 function drawNaturalLilypads(vL, vR, surfW){
   var sun = window._sunPos;
   var t = (typeof gt==='number') ? gt : 0;
-  // From below if camera is underwater looking up at surface
+  var dl = (typeof dayLight==='number') ? dayLight : 0.5;
   var fromBelow = (typeof cam!=='undefined' && cam.y > 18);
-  // Smaller pads — not continent-sized
-  for(var lp = -surfW + 140; lp < surfW - 40; lp += 480){
-    if(Math.abs(Math.floor(lp/480)) % 4 === 2) continue;
+  // Build pad list first
+  var pads = [];
+  for(var lp = -surfW + 160; lp < surfW - 40; lp += 580){
+    if(Math.abs(Math.floor(lp/580)) % 4 === 2) continue;
     var wy = Math.sin(lp*0.018 + t*0.04)*1.5;
-    var rx = 38 + Math.abs(Math.sin(lp*0.01))*22; // was 95-150 — way too big
-    var ry = rx * (fromBelow ? 0.42 : 0.34);
+    var rx = 120 + Math.abs(Math.sin(lp*0.01))*80;
+    var ry = rx * (fromBelow ? 0.48 : 0.36);
     var rot = Math.sin(lp*0.003)*0.45;
     var px = lp + Math.sin(lp*0.02)*24;
-    if(px + rx < vL - 10 || px - rx > vR + 10) continue;
-    drawOneLilypad(px, wy - 0.5, rx, ry, rot, Math.abs(Math.floor(lp)), sun, fromBelow);
-    // smaller neighbor
+    pads.push({x:px, y:wy-0.5, rx:rx, ry:ry, rot:rot, seed:Math.abs(Math.floor(lp))});
     if(Math.abs(lp) % 5 !== 0){
-      drawOneLilypad(px + rx*1.1, wy + 1, rx*0.5, ry*0.5, rot+0.7, Math.abs(Math.floor(lp))+2, sun, fromBelow);
+      pads.push({x:px+rx*1.05, y:wy+1, rx:rx*0.55, ry:ry*0.55, rot:rot+0.7, seed:Math.abs(Math.floor(lp))+2});
     }
   }
-  // Duckweed only when not deep below
-  if(!fromBelow || cam.y < 40){
-    for(var d = -surfW + 160; d < surfW; d += 560){
+
+  // --- VOLUMETRIC SHADOWS into water column (light blocked by pads) ---
+  if(dl > 0.08){
+    ctx.save();
+    // Shadow direction from sun (or straight down at night)
+    var shDirX = 0, shLen = 140 + dl*80;
+    if(sun){
+      // project away from sun horizontally a bit
+      shDirX = (cam.x - sun.x) * 0.08;
+      if(Math.abs(shDirX) > 80) shDirX = shDirX > 0 ? 80 : -80;
+    }
+    for(var i=0;i<pads.length;i++){
+      var p = pads[i];
+      if(p.x+p.rx < vL-30 || p.x-p.rx > vR+30) continue;
+      // Soft frustum shadow cone downward
+      var topW = p.rx * 1.05;
+      var botW = p.rx * (1.35 + dl*0.3);
+      var alpha = (fromBelow ? 0.22 : 0.32) * Math.min(1, dl+0.25);
+      var sg = ctx.createLinearGradient(p.x, 2, p.x + shDirX, shLen);
+      sg.addColorStop(0, 'rgba(0, 12, 18, ' + alpha + ')');
+      sg.addColorStop(0.35, 'rgba(0, 18, 22, ' + (alpha*0.55) + ')');
+      sg.addColorStop(0.75, 'rgba(0, 20, 28, ' + (alpha*0.18) + ')');
+      sg.addColorStop(1, 'rgba(0, 20, 30, 0)');
+      ctx.fillStyle = sg;
+      ctx.beginPath();
+      ctx.moveTo(p.x - topW, 1);
+      ctx.lineTo(p.x + topW, 1);
+      ctx.lineTo(p.x + shDirX + botW, shLen);
+      ctx.lineTo(p.x + shDirX - botW, shLen);
+      ctx.closePath();
+      ctx.fill();
+      // Contact shadow right under pad (darker disc)
+      ctx.fillStyle = 'rgba(0, 8, 12, ' + (alpha*1.1) + ')';
+      ctx.beginPath();
+      ctx.ellipse(p.x, 6, p.rx*0.95, Math.max(8, p.ry*1.8), 0, 0, Math.PI*2);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  // Draw pads
+  for(var i=0;i<pads.length;i++){
+    var p = pads[i];
+    if(p.x+p.rx < vL-10 || p.x-p.rx > vR+10) continue;
+    drawOneLilypad(p.x, p.y, p.rx, p.ry, p.rot, p.seed, sun, fromBelow);
+  }
+  // Duckweed
+  if(!fromBelow || (typeof cam!=='undefined' && cam.y < 50)){
+    for(var d = -surfW + 160; d < surfW; d += 520){
       if(Math.abs(Math.floor(d/100)) % 3 === 0) continue;
       if(d < vL - 20 || d > vR + 20) continue;
-      drawDuckweed(d, Math.sin(d*0.02+t*0.05)*1.5, 6, d);
+      drawDuckweed(d, Math.sin(d*0.02+t*0.05)*1.5, 8, d);
     }
   }
 }
 
-/** Caustics + sun glitter near surface (underwater light) */
 function renderSunGlitter(vL, vR){
   var sun = window._sunPos;
   var dl = (typeof dayLight==='number') ? dayLight : 0.5;
@@ -776,8 +875,7 @@ function renderNutrients(vL,vR,vT,vB){
 }
 
 function renderShadows(vL,vR,vT,vB){
-  // Microorganism shadows disabled — not convincing at microscopic scale.
-  // Light scattering in water doesn't produce sharp directional shadows.
+  // Organism-scale shadows off (muddy). Pad volumetric shadows drawn in drawNaturalLilypads.
   return;
 }
 

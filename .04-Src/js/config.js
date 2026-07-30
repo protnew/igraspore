@@ -136,16 +136,19 @@ VIRUS_SPECS.push({id:200,name:'Neuro-Parasite',cat:'virus',shape:'phage',color:'
 var MACROPHAGE_SP = {
     id: 999, name: "\u041c\u0430\u043a\u0440\u043e\u0444\u0430\u0433 (\u0418\u043c\u043c\u0443\u043d\u0438\u0442\u0435\u0442)", cat: "macrophage", shape: "circle", color: "#eeeeee",
     size: 20, speed: 1.2, energy: 100, repEnergy: 200, minAge: 5, isEuk: true,
-    tempRange: [0, 40], locomotion: "pseudopodia", flags: { immune: true, shell: true }, bio: {nucleus:true, vac:true, pseudo:true, mito:true, er:true, golgi:true}
+    tempRange: [0, 40], locomotion: "pseudopodia", flags: { noRandomSpawn: true, immune: true, shell: true }, bio: {nucleus:true, vac:true, pseudo:true, mito:true, er:true, golgi:true}
 };
-SPECIES_DB.push(MACROPHAGE_SP);
+// SPECIES_DB.push(MACROPHAGE_SP); // disabled mega immune cell
 
 var SPONGE_SP = {
-    id: 1000, name: "Sponge (Filter Feeder)", cat: "consumer2", shape: "irregular", color: "#6aa84f",
-    size: 25, speed: 0, energy: 100, repEnergy: 250, minAge: 10, isEuk: true,
-    tempRange: [0, 40], locomotion: "sessile", flags: { filter_feeder: true, shell: true }, bio: {nucleus:true, vac:true}
+    id: 1000, name: "Sponge (Filter Feeder)", cat: "consumer2", shape: "irregular", color: "#5a7a62",
+    size: 8, speed: 0, energy: 100, repEnergy: 9999, minAge: 10, isEuk: true,
+    tempRange: [0, 40], locomotion: "sessile",
+    // noRandomSpawn: never flood pond with giant green killers
+    flags: { filter_feeder: true, shell: true, noRandomSpawn: true }, bio: {nucleus:true, vac:true}
 };
-SPECIES_DB.push(SPONGE_SP);
+// SPONGE not in random pool — too big/wrong scale for micro game
+// // SPECIES_DB.push(SPONGE_SP); // disabled giant green filter
 
 var GENDERED_SP = {
     id: 1001, name: "Sexual Eukaryote", cat: "consumer3", shape: "oval", color: "#d9534f",
@@ -184,8 +187,8 @@ var PW=25000,PD=16000,BW=8000,MAX_ORG=3000,DAY_SEC=120,SPD_SCALE=16;
 var SPAWN_RATES={producer:2,consumer1:0.3,consumer2:0.08,consumer3:0.02,decomposer:0.2,macrophage:0.05,virus:0.1};
 var FOOD={consumer1:["producer"],consumer2:["producer","consumer1","consumer2"],consumer3:["producer","consumer1","consumer2"],decomposer:["producer","consumer1"],macrophage:["consumer1","consumer2","consumer3"]};
 var DIFF={easy:{spawn:2.0,energy:2.0,metab:0.3,virus:0.2},normal:{spawn:1.3,energy:1.3,metab:0.6,virus:0.5},hard:{spawn:0.8,energy:0.85,metab:1.0,virus:1.0}};
-var TGT={producer:1500,consumer1:150,consumer2:20,consumer3:5,decomposer:20,macrophage:10};
-var INIT_N={producer:1500,consumer1:250,consumer2:50,consumer3:10,decomposer:300,macrophage:10,virus:50};
+var TGT={producer:1500,consumer1:150,consumer2:20,consumer3:5,decomposer:20,macrophage:0};
+var INIT_N={producer:1500,consumer1:250,consumer2:50,consumer3:10,decomposer:300,macrophage:0,virus:50};
 var SEASONS=[{temp:16,light:0.85,ice:0,rain:0.15},{temp:24,light:1,ice:0,rain:0.08},{temp:10,light:0.7,ice:0.05,rain:0.25},{temp:3,light:0.45,ice:0.6,rain:0.03}];
 var SEASON_DAYS=2;
 var DCODE={STARVE:0,EATEN:1,TEMP:2,AGE:3,LYSIS:4};

@@ -497,11 +497,8 @@ function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun, fromBelow){
 
   if(fromBelow){
     // UNDERSIDE silhouette against bright surface (microbe looking up)
-    // Soft shadow cast into water
-    ctx.fillStyle = 'rgba(0, 15, 10, 0.35)';
-    ctx.beginPath();
-    ctx.ellipse(0, 10, rx*1.05, Math.max(6, ry*2.2), 0, 0, Math.PI*2);
-    ctx.fill();
+    // No large shadow orb under leaf (was reading as gray bubbles)
+
 
     // Dark leaf underside — matte silhouette, NO neon rings
     var ug = ctx.createRadialGradient(0, 0, 0, 0, 0, rx);
@@ -631,43 +628,34 @@ function drawNaturalLilypads(vL, vR, surfW){
     }
   }
 
-  // --- VOLUMETRIC SHADOWS into water column (light blocked by pads) ---
-  if(dl > 0.08){
+  // --- Soft light shafts under pads (NOT giant gray soap-bubbles) ---
+  if(dl > 0.12 && !fromBelow){
     ctx.save();
-    // Shadow direction from sun (or straight down at night)
-    var shDirX = 0, shLen = 140 + dl*80;
-    if(sun){
-      // project away from sun horizontally a bit
-      shDirX = (cam.x - sun.x) * 0.08;
-      if(Math.abs(shDirX) > 80) shDirX = shDirX > 0 ? 80 : -80;
-    }
+    var shDirX = sun ? Math.max(-40, Math.min(40, (cam.x - sun.x) * 0.05)) : 0;
+    var shLen = 70 + dl*40;
     for(var i=0;i<pads.length;i++){
       var p = pads[i];
-      if(p.x+p.rx < vL-30 || p.x-p.rx > vR+30) continue;
-      // Soft frustum shadow cone downward
-      var topW = p.rx * 1.05;
-      var botW = p.rx * (1.35 + dl*0.3);
-      var alpha = (fromBelow ? 0.35 : 0.48) * Math.min(1, dl+0.35);
+      if(p.x+p.rx < vL-20 || p.x-p.rx > vR+20) continue;
+      // Narrow tapered shaft — reads as shade, not a floating orb
+      var topW = p.rx * 0.55;
+      var botW = p.rx * 0.25;
+      var alpha = 0.14 * Math.min(1, dl);
       var sg = ctx.createLinearGradient(p.x, 2, p.x + shDirX, shLen);
-      sg.addColorStop(0, 'rgba(0, 12, 18, ' + alpha + ')');
-      sg.addColorStop(0.35, 'rgba(0, 18, 22, ' + (alpha*0.55) + ')');
-      sg.addColorStop(0.75, 'rgba(0, 20, 28, ' + (alpha*0.18) + ')');
+      sg.addColorStop(0, 'rgba(0, 20, 25, ' + alpha + ')');
+      sg.addColorStop(0.55, 'rgba(0, 25, 30, ' + (alpha*0.35) + ')');
       sg.addColorStop(1, 'rgba(0, 20, 30, 0)');
       ctx.fillStyle = sg;
       ctx.beginPath();
-      ctx.moveTo(p.x - topW, 1);
-      ctx.lineTo(p.x + topW, 1);
+      ctx.moveTo(p.x - topW, 2);
+      ctx.lineTo(p.x + topW, 2);
       ctx.lineTo(p.x + shDirX + botW, shLen);
       ctx.lineTo(p.x + shDirX - botW, shLen);
       ctx.closePath();
       ctx.fill();
-      // Contact shadow right under pad (darker disc)
-      ctx.fillStyle = 'rgba(0, 8, 12, ' + (alpha*1.1) + ')';
-      ctx.beginPath();
-      ctx.ellipse(p.x, 6, p.rx*0.95, Math.max(8, p.ry*1.8), 0, 0, Math.PI*2);
-      ctx.fill();
     }
     ctx.restore();
+  } else if(dl > 0.12 && fromBelow){
+    // From below: only subtle darkening of leaf underside already drawn — no gray bubbles
   }
 
   // Draw pads
@@ -757,7 +745,9 @@ function renderSunGlitter(vL, vR){
 }
 
 /** Snell's window — bright circle when looking up from underwater */
-function renderSnellWindow(vL, vR, vT, vB){
+function renderSnellWindow(vL, vR, vT, vB){ return; /* giant bubbles */ 
+  // disabled: looked like huge gray/blue bubbles
+  return;
   if(typeof cam==='undefined' || cam.y < 12) return;
   if(vT > 30 || vB < -5) return; // surface not in view
   var dl = (typeof dayLight==='number') ? dayLight : 0.5;

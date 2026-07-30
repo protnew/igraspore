@@ -218,12 +218,12 @@ function startGame(isScreensaver){
   } else {
      window.spectatorMode = false;
      freeCam = false;
-     // Spawn mid-depth where density is higher
-     var dY = PD * 0.28;
+     // Always start near the surface (photosphere) — any species
+     var dY = rng(18, 55);
      var hw0 = halfW(dY) - 30;
-     var px = rng(-hw0*0.3, hw0*0.3);
+     var px = rng(-hw0*0.35, hw0*0.35);
      player=spawnOrg(sp, px, dY, true);
-     if(!player)player=spawnOrg(sp,0,PD*0.3,true);
+     if(!player)player=spawnOrg(sp,0,35,true);
      player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y;
      // Seed nearby food cluster so player sees action immediately
      var foodCats = FOOD[sp.cat] || ['producer','consumer1'];

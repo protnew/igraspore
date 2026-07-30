@@ -183,8 +183,8 @@ function renderOrg(o, skipBody){
   // Bioluminescence at night for producers (gradient, NOT shadow — 50x faster)
   if(dayLight < 0.35 && o.sp.cat === 'producer' && o.alive) {
      var pulseR = sz * (2.5 + Math.sin(fc*0.1 + o.pulse)*0.5);
-     if(!isFinite(pulseR)||pulseR<=0)pulseR=sz*2;var glowG = ctx.createRadialGradient(0,0,0, 0,0,pulseR);
-     glowG.addColorStop(0, 'rgba(100,255,200,0.3)');
+     if(!isFinite(pulseR)||pulseR<=0)pulseR=sz*1.35;var glowG = ctx.createRadialGradient(0,0,0, 0,0,pulseR);
+     glowG.addColorStop(0, 'rgba(100,255,200,0.12)');
      glowG.addColorStop(1, 'rgba(100,255,200,0)');
      ctx.fillStyle = glowG;
      ctx.beginPath();

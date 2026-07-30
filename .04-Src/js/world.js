@@ -103,7 +103,7 @@ function initWorld(){
   gameStats={startTime:Date.now(),maxPop:0,maxPlayerSize:0,evoLvl:0};
   for(var i=0;i<SPECIES_DB.length;i++)speciesPop[i]={alive:0,born:0,deaths:[0,0,0,0,0]};
   for(var cat in INIT_N){
-    var pool=SPECIES_DB.filter(function(s){return s.cat===cat;});
+    var pool=SPECIES_DB.filter(function(s){return s.cat===cat && !(s.flags&&s.flags.noRandomSpawn) && (s.size||1)<12;});
     // Pick 1 to 3 distinct species from this category to populate initially
     var selectedSpecies = [];
     for(var k=0; k<Math.min(pool.length, 3); k++) {
@@ -341,7 +341,7 @@ function updateWorld(dt){
       }
     }
     for(var cat in TGT){
-      var pool=SPECIES_DB.filter(function(s){return s.cat===cat;});
+      var pool=SPECIES_DB.filter(function(s){return s.cat===cat && !(s.flags&&s.flags.noRandomSpawn) && (s.size||1)<12;});
       var bm=catBm[cat]||0;
       var avgBm=0; for(var i=0;i<pool.length;i++) avgBm+=pool[i].size*(pool[i].energy*0.7+5);
       avgBm = pool.length ? avgBm/pool.length : 500;

@@ -634,105 +634,118 @@ function organelleSetFor(o){
 }
 
 function renderOrganelleEdu(vL,vR,vT,vB){
-  if(typeof player==='undefined' || !player || !player.alive) return;
-  if(typeof zoom!=='number' || zoom < 2.6) {
+  if(typeof player==='undefined' || !player || !player.alive) {
+    var p0=document.getElementById('orgEduPanel'); if(p0) p0.style.display='none';
+    return;
+  }
+  // Only in deep zoom — anatomy mode
+  if(typeof zoom!=='number' || zoom < 3.2) {
     var pan0 = document.getElementById('orgEduPanel');
     if(pan0) pan0.style.display = 'none';
     return;
   }
   var o = player;
-  if(window.freeCam && typeof mx==='number'){
-    var wx = cam.x+(mx-cv.width/2)/zoom, wy = cam.y+(my-cv.height/2)/zoom;
-    var best=null,bd=50*50;
-    for(var i=0;i<orgs.length;i++){
-      var t=orgs[i]; if(!t||!t.alive) continue;
-      var dd=(t.x-wx)*(t.x-wx)+(t.y-wy)*(t.y-wy);
-      if(dd<bd && t.size*zoom>10){ bd=dd; best=t; }
+  // pick cell under cursor if free cam
+  if(typeof mx==='number'){
+    var wx0 = cam.x+(mx-cv.width/2)/zoom, wy0 = cam.y+(my-cv.height/2)/zoom;
+    var best=null,bd=(o.size*1.2)*(o.size*1.2);
+    // prefer player if mouse over player
+    var pdx=player.x-wx0, pdy=player.y-wy0;
+    if(pdx*pdx+pdy*pdy < (player.size*1.1)*(player.size*1.1)) best = player;
+    if(!best && window.freeCam){
+      bd = 40*40;
+      for(var i=0;i<orgs.length;i++){
+        var t=orgs[i]; if(!t||!t.alive) continue;
+        var dd=(t.x-wx0)*(t.x-wx0)+(t.y-wy0)*(t.y-wy0);
+        if(dd<bd && t.size*zoom>14){ bd=dd; best=t; }
+      }
     }
     if(best) o = best;
   }
+  // Must hover INSIDE the cell to show anatomy
+  var mouseWX = (typeof mx==='number') ? cam.x+(mx-cv.width/2)/zoom : null;
+  var mouseWY = (typeof my==='number') ? cam.y+(my-cv.height/2)/zoom : null;
+  var inside = false;
+  if(mouseWX!=null){
+    var idx=mouseWX-o.x, idy=mouseWY-o.y;
+    inside = (idx*idx+idy*idy) <= (o.size*1.05)*(o.size*1.05);
+  }
+  if(!inside){
+    var panH = document.getElementById('orgEduPanel');
+    if(panH) panH.style.display = 'none';
+    return; // no permanent labels swimming around
+  }
+
   var set = organelleSetFor(o);
   if(!set.length) return;
 
   var hovered = null;
-  var mouseWX = (typeof mx==='number') ? cam.x+(mx-cv.width/2)/zoom : null;
-  var mouseWY = (typeof my==='number') ? cam.y+(my-cv.height/2)/zoom : null;
-
   ctx.save();
   ctx.setTransform(1,0,0,1,0,0);
-  ctx.font = '12px system-ui,sans-serif';
-  ctx.textAlign = 'left';
-  ctx.textBaseline = 'middle';
 
   for(var k=0;k<set.length;k++){
     var it = set[k];
     var info = ORGANELLE_INFO[it.id]; if(!info) continue;
-    var wxp = o.x + it.x * o.size * 1.15;
-    var wyp = o.y + it.y * o.size * 1.15;
+    var wxp = o.x + it.x * o.size * 0.85;
+    var wyp = o.y + it.y * o.size * 0.85;
     var sx = (wxp - cam.x)*zoom + cv.width/2;
     var sy = (wyp - cam.y)*zoom + cv.height/2;
-    if(sx<-40||sy<-40||sx>cv.width+40||sy>cv.height+40) continue;
+    if(sx<-20||sy<-20||sx>cv.width+20||sy>cv.height+20) continue;
 
-    // pin
-    ctx.beginPath();
-    ctx.fillStyle = 'rgba(255,250,210,0.95)';
-    ctx.strokeStyle = 'rgba(40,100,70,0.9)';
-    ctx.lineWidth = 1.5;
-    ctx.arc(sx, sy, 4.5, 0, Math.PI*2);
-    ctx.fill(); ctx.stroke();
-
-    var lab = info.ru;
-    var tw = ctx.measureText(lab).width;
-    var offx = (it.x >= 0 ? 10 : -tw - 14);
-    // leader
-    ctx.beginPath();
-    ctx.strokeStyle = 'rgba(160,220,180,0.55)';
-    ctx.moveTo(sx, sy);
-    ctx.lineTo(sx + offx + (it.x>=0?0:tw), sy - 1);
-    ctx.stroke();
-    // chip
-    ctx.fillStyle = 'rgba(5,18,24,0.86)';
-    ctx.strokeStyle = 'rgba(120,200,160,0.5)';
-    roundRect(ctx, sx+offx-5, sy-10, tw+12, 20, 5);
-    ctx.fill(); ctx.stroke();
-    ctx.fillStyle = '#d8ffe8';
-    ctx.fillText(lab, sx+offx, sy);
-
+    var over = false;
     if(mouseWX!=null){
-      var mdx=mouseWX-wxp, mdy=mouseWY-wyp;
-      if(mdx*mdx+mdy*mdy < (o.size*0.65)*(o.size*0.65)) hovered = {id:it.id, info:info};
+      var mdx = mouseWX - wxp, mdy = mouseWY - wyp;
+      var hitR = Math.max(o.size*0.22, 6/zoom);
+      if(mdx*mdx+mdy*mdy < hitR*hitR) over = true;
+      // also screen-space comfort hit
+      var sdx = mx - sx, sdy = my - sy;
+      if(sdx*sdx+sdy*sdy < 16*16) over = true;
     }
-    // also hover near screen pin
-    if(typeof mx==='number'){
-      var sdx=mx-sx, sdy=my-sy;
-      if(sdx*sdx+sdy*sdy < 18*18) hovered = {id:it.id, info:info};
-    }
+    if(over) hovered = {id:it.id, info:info, sx:sx, sy:sy};
+
+    // Quiet pins only (no text) — text solely on hover
+    ctx.beginPath();
+    ctx.fillStyle = over ? 'rgba(255,240,160,0.95)' : 'rgba(220,240,220,0.35)';
+    ctx.strokeStyle = over ? 'rgba(255,220,100,0.9)' : 'rgba(120,180,140,0.35)';
+    ctx.lineWidth = over ? 2 : 1;
+    ctx.arc(sx, sy, over ? 5 : 3, 0, Math.PI*2);
+    ctx.fill(); ctx.stroke();
+  }
+
+  // Hover label chip next to pin ONLY
+  if(hovered){
+    var lab = hovered.info.ru;
+    ctx.font = 'bold 13px system-ui,sans-serif';
+    var tw = ctx.measureText(lab).width;
+    var lx = hovered.sx + 12, ly = hovered.sy - 16;
+    ctx.fillStyle = 'rgba(6,16,12,0.92)';
+    roundRect(ctx, lx-6, ly-12, tw+12, 22, 6); ctx.fill();
+    ctx.strokeStyle = 'rgba(180,220,160,0.5)';
+    ctx.stroke();
+    ctx.fillStyle = '#e8ffe0';
+    ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+    ctx.fillText(lab, lx, ly);
   }
   ctx.restore();
 
-  var focus = hovered;
-  if(!focus){
-    var rot = set[Math.floor(((gt||0)/3.5)) % set.length];
-    focus = {id:rot.id, info:ORGANELLE_INFO[rot.id]};
-  }
+  // Bottom panel only while inside cell
   ensureOrgEduPanel();
   var pan = document.getElementById('orgEduPanel');
-  if(pan && focus && focus.info){
-    pan.style.display = 'block';
-    var spn = (o.sp && o.sp.name) ? o.sp.name : '';
-    var catRu = {producer:'водоросль',consumer1:'бактерия',consumer2:'инфузория',consumer3:'хищник',decomposer:'редуцент'}[o.sp.cat]||o.sp.cat;
-    pan.innerHTML = '<div style="font-size:11px;opacity:.7;margin-bottom:2px">🔬 Анатомия клетки · '+spn+' <span style="opacity:.6">('+catRu+')</span></div>'+
-      '<div style="font-size:15px;font-weight:700;color:#b6ffd0">'+focus.info.ru+
-      ' <span style="font-weight:400;opacity:.65;font-size:12px">('+focus.info.en+')</span></div>'+
-      '<div style="font-size:12.5px;line-height:1.4;margin-top:4px;color:#e8f4ee">'+focus.info.desc+'</div>'+
-      '<div style="font-size:10px;opacity:.55;margin-top:5px">Наведи на точку · колёсико = приблизить · M = микроскоп</div>';
+  if(!pan) return;
+  pan.style.display = 'block';
+  var spn = (o.sp && o.sp.name) ? o.sp.name : 'клетка';
+  var cat = (o.sp && o.sp.cat) ? o.sp.cat : '';
+  var catRu = {producer:'водоросль',consumer1:'бактерия',consumer2:'инфузория',consumer3:'хищник',decomposer:'гриб'}[cat]||cat;
+  var focus = hovered ? hovered.info : null;
+  if(focus){
+    pan.innerHTML = '<div style="font-size:11px;opacity:.7;margin-bottom:2px">🔬 Анатомия · '+spn+' <span style="opacity:.55">('+catRu+')</span></div>'+
+      '<div style="font-size:15px;font-weight:700;color:#d4f5c8;margin:2px 0">'+focus.ru+
+      (focus.en?' <span style="opacity:.5;font-weight:500;font-size:12px">'+focus.en+'</span>':'')+'</div>'+
+      '<div style="font-size:12.5px;line-height:1.35;opacity:.92">'+focus.desc+'</div>';
+  } else {
+    pan.innerHTML = '<div style="font-size:11px;opacity:.7">🔬 Анатомия · '+spn+'</div>'+
+      '<div style="font-size:13px;opacity:.85;margin-top:4px">Наведи на точку внутри клетки — название и роль органа</div>';
   }
-}
-
-function roundRect(c,x,y,w,h,r){
-  c.beginPath();
-  c.moveTo(x+r,y); c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r);
-  c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath();
 }
 
 function ensureOrgEduPanel(){

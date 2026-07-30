@@ -126,7 +126,7 @@ function getLocomotion(cat,i){
   if(cat==='decomposer')return SHAPES.decomposer[i]==='circle'?'budding':'growth';
   return'drift';
 }
-var SPECIES_DB=mkSp(PN,'producer',3,7,0.04,0.15).concat(mkSp(CN1,'consumer1',3,7,1.0,2.4)).concat(mkSp(CN2,'consumer2',7,15,1.6,3.0)).concat(mkSp(CN3,'consumer3',10,18,2.2,4.2)).concat(mkSp(DN,'decomposer',3,6,0.8,2.0));
+var SPECIES_DB=mkSp(PN,'producer',3,5,0.04,0.15).concat(mkSp(CN1,'consumer1',3,7,1.0,2.4)).concat(mkSp(CN2,'consumer2',7,7,1.6,3.0)).concat(mkSp(CN3,'consumer3',10,8,2.2,4.2)).concat(mkSp(DN,'decomposer',3,6,0.8,2.0));
 // Virus species
 for(var i=0;i<SPECIES_DB.length;i++){SPECIES_DB[i].id=i;}
 var VIRUS_SPECS=[];

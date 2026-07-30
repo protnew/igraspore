@@ -450,40 +450,23 @@ function updateOrg(o,dt){
   }
   
   // Plant/vegetation collision — organisms navigate around solid plants
-  if(shoreDecor && shoreDecor.length > 0 && o.y < PD*0.15 && !o.cyst){
+  // Shore plants: decorative only near surface (never block player to waterline)
+  if(shoreDecor && shoreDecor.length > 0 && o.y < PD*0.15 && o.y > 25 && !o.cyst && !o.isPlayer){
     for(var pi=0; pi<shoreDecor.length; pi++){
       var plant=shoreDecor[pi];
-      if(plant.type==='pebble') continue; // Only grass/reed are solid
+      if(plant.type==='pebble' || plant.type==='float') continue;
       var pdx=o.x-plant.x, pdy=o.y-plant.y;
       var pdist2=pdx*pdx+pdy*pdy;
-      var pradius=plant.size*0.8;
+      var pradius=plant.size*0.55;
       if(pdist2 < pradius*pradius && pdist2 > 0.01){
         var pdist=Math.sqrt(pdist2);
         var push=(pradius-pdist)/pradius;
-        o.vx += (pdx/pdist)*push*8*dt*60;
-        o.vy += (pdy/pdist)*push*8*dt*60;
+        o.vx += (pdx/pdist)*push*4*dt*60;
+        o.vy += (pdy/pdist)*push*2*dt*60;
       }
     }
   }
-  // Lilypads: gentle nudge only (never wall off the surface)
-  if(o.y < 40 && o.y > -20) {
-     var lpNearest = Math.round((o.x - 50) / 600) * 600 + 50;
-     if(Math.abs(lpNearest) % 3 !== 0) {
-         var dx = o.x - lpNearest;
-         var dy = o.y - (-2);
-         var nx = dx / 280;
-         var ny = dy / 55;
-         var distSq = nx*nx + ny*ny;
-         if(distSq < 0.55) {
-             var dist = Math.sqrt(distSq) || 0.01;
-             var overlap = 0.55 - dist;
-             var force = overlap * 12 * dt; // decorative nudge only
-             o.vx += (nx / dist) * force;
-             // Prefer sliding along surface, not blasting downward
-             o.vy += (ny / dist) * force * 0.15; // barely affect depth
-         }
-     }
-  }
+  // Lilypads: NO collision — swim freely to surface (y≈0)
 
   // O2 & Temp effects
   var band = Math.max(0, Math.min(19, Math.floor(o.y / (PD/20))));

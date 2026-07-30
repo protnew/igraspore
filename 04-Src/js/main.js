@@ -246,7 +246,7 @@ function startGame(isScreensaver){
        }
        var ang = rng(0, Math.PI*2), rr = rng(14, (sp.cat==='consumer2')?130:100);
        var fx = player.x + Math.cos(ang)*rr;
-       var fy = clamp(player.y + Math.sin(ang)*rr*0.65, 20, PD-20);
+       var fy = clamp(player.y + Math.sin(ang)*rr*0.65, 0, PD-8);
        var fo = spawnOrg(fsp, fx, fy, false);
        if(fo){
          // Tiny food for filter feeders

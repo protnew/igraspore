@@ -236,7 +236,8 @@ function clampToPuddle(o){
      if(dot2<0){o.vx-=dot2*nRx;o.vy-=dot2*nRy;o.vx*=0.85;o.vy*=0.85;}
   }
   // Open surface at y≈0 (air-water interface). Soft bounce only above water.
-  if(o.y < -10){ o.y = -10; if(o.vy<0) o.vy = -o.vy*0.25; }
+  if(o.isPlayer){ if(o.y < -35){ o.y=-35; if(o.vy<0) o.vy=-o.vy*0.2; } }
+  else if(o.y < -8){ o.y = -8; if(o.vy<0) o.vy = -o.vy*0.25; }
   if(o.y > PD-8){ o.y = PD-8; if(o.vy>0) o.vy = -o.vy*0.3; }
 }
 

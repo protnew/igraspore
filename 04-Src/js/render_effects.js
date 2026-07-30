@@ -2,7 +2,7 @@
 
 function renderSky(vL,vR,vT){
   // Sky only for the band above waterline (y < 0)
-  if(vT >= -1) return;
+  if(vT >= 5) return; // still draw thin sky band near surface
   var skyBot = Math.min(0, (typeof arguments[3]==='number'?arguments[3]:0));
   // h = height of sky region in world units
   var h = -vT;
@@ -618,10 +618,10 @@ function drawNaturalLilypads(vL, vR, surfW){
   var fromBelow = (typeof cam!=='undefined' && cam.y > 18);
   // Build pad list first
   var pads = [];
-  for(var lp = -surfW + 160; lp < surfW - 40; lp += 580){
+  for(var lp = -surfW + 120; lp < surfW - 40; lp += 480){
     if(Math.abs(Math.floor(lp/580)) % 4 === 2) continue;
     var wy = Math.sin(lp*0.018 + t*0.04)*1.5;
-    var rx = 120 + Math.abs(Math.sin(lp*0.01))*80;
+    var rx = 160 + Math.abs(Math.sin(lp*0.01))*100;
     var ry = rx * (fromBelow ? 0.48 : 0.36);
     var rot = Math.sin(lp*0.003)*0.45;
     var px = lp + Math.sin(lp*0.02)*24;
@@ -647,7 +647,7 @@ function drawNaturalLilypads(vL, vR, surfW){
       // Soft frustum shadow cone downward
       var topW = p.rx * 1.05;
       var botW = p.rx * (1.35 + dl*0.3);
-      var alpha = (fromBelow ? 0.22 : 0.32) * Math.min(1, dl+0.25);
+      var alpha = (fromBelow ? 0.35 : 0.48) * Math.min(1, dl+0.35);
       var sg = ctx.createLinearGradient(p.x, 2, p.x + shDirX, shLen);
       sg.addColorStop(0, 'rgba(0, 12, 18, ' + alpha + ')');
       sg.addColorStop(0.35, 'rgba(0, 18, 22, ' + (alpha*0.55) + ')');

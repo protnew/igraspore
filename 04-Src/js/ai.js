@@ -61,7 +61,7 @@ function thrustAlongFacing(o, speed, dt, mul){
 function moveOrg(o,dt){
   var sp=o.sp;
   var speed=Math.max(sp.speed, 0.5)*SPD_SCALE*0.05;
-  if(o.isPlayer && !freeCam){
+  if(o.isPlayer){
     // Hierarchy: phyto slow, bacteria mid, ciliates/predators faster (usable control)
     var cat = o.sp && o.sp.cat;
     if(cat==='producer'){
@@ -78,7 +78,8 @@ function moveOrg(o,dt){
   ensureFacing(o);
 
   // ---- PLAYER MANUAL ----
-  if(o.isPlayer && !freeCam && !autoAI && !o.cyst && !o.dying){
+  // Always controllable (even if freeCam) unless pure autoAI
+  if(o.isPlayer && !autoAI && !o.cyst && !o.dying){
     var ax=0, ay=0;
     if(keys['w']||keys['arrowup']) ay-=1;
     if(keys['s']||keys['arrowdown']) ay+=1;
@@ -87,8 +88,15 @@ function moveOrg(o,dt){
     if(o.parasiticInfection){ ax=-ax; ay=-ay; }
     if(ax||ay){
       var m=Math.sqrt(ax*ax+ay*ay); ax/=m; ay/=m;
-      turnToward(o, Math.atan2(ay,ax), dt, 10);
-      thrustAlongFacing(o, speed, dt, 18);
+      // Strong direct swim (microbe games need snappy control)
+      var thr = Math.max(speed, 1.2) * dt * 90;
+      o.vx += ax * thr;
+      o.vy += ay * thr;
+      // Burst toward surface when holding up
+      if(ay < 0){
+        o.vy -= Math.max(2.5, thr * 1.2);
+      }
+      turnToward(o, Math.atan2(ay,ax), dt, 16);
       o.aiTarget=null; o.aiState='manual';
     }
     if(mouseDown && !moveTarget){
@@ -117,13 +125,13 @@ function moveOrg(o,dt){
   }
 
   // Linear damping (fluid drag) — no angular noise
-  var damp = (o.isPlayer && !freeCam) ? 0.90 : 0.93;
+  var damp = o.isPlayer ? 0.88 : 0.93;
   var dampDt = clamp(dt, 0, 0.05);
   o.vx *= Math.pow(damp, dampDt*60);
   o.vy *= Math.pow(damp, dampDt*60);
 
   // Hard speed ceiling — prevents rare "rocket" bursts (timeScale / stacked thrust)
-  var maxSwim = (o.isPlayer ? 9.5 : 6.5) * (o.speedMult || 1) * Math.max(0.6, Math.min(1.4, (sp.speed||1)/2));
+  var maxSwim = (o.isPlayer ? 18 : 6.5) * (o.speedMult || 1) * Math.max(0.6, Math.min(1.4, (sp.speed||1)/2));
   if(o.state === 'flee') maxSwim *= 1.15;
   if(o.state === 'hunt' && (o.energy||0) < 40) maxSwim *= 0.7; // weak when starving
   var spNow = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
@@ -165,7 +173,14 @@ function moveOrg(o,dt){
     }
     if(typeof PD!=='undefined'){
       // Surface y≈0 reachable (sky only above -12)
-      if(o.y < -12){ o.y = -12; if(o.vy<0) o.vy = Math.abs(o.vy)*0.25; }
+      
+  // SURFACE_REACH_BOOST: player can always swim up to waterline (y=0)
+  if(o.isPlayer && o.y < 80){
+    // if holding up / thrusting toward surface, don't damp vertical
+    if(o.vy < -0.2) o.vy *= 1.15;
+  }
+  if(o.isPlayer){ if(o.y < -30){ o.y = -30; if(o.vy<0) o.vy*=-0.2; } }
+  else if(o.y < -8){ o.y = -8; if(o.vy<0) o.vy = Math.abs(o.vy)*0.25; }
       if(o.y > PD-12){ o.y = PD-12; if(o.vy>0) o.vy = -Math.abs(o.vy)*0.35; }
     }
   }

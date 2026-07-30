@@ -171,7 +171,7 @@ function initWorld(){
       x: rng(-fhw*0.9, fhw*0.9),
       y: rng(-6, 18),
       type: 'float',
-      size: rng(3, 7),
+      size: rng(1.2, 2.5), // tiny scum flakes, not pad-scale
       rot: rng(-0.2, 0.2),
       sway: rng(0, Math.PI*2),
       hasShadow: false

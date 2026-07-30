@@ -32,28 +32,65 @@ function drawBody(o,sz,fc2,fd, batched){
   else if(sh==='colony'){if(batched)ctx.moveTo(sz,0);ctx.arc(0,0,sz,0,Math.PI*2);
     if(!batched){
       ctx.fill();ctx.stroke();
-      // Colonial arrangement: sphere of cells (Volvox-like) or chain (Anabaena-like)
-      var colType=o.sp.bio.chain?'chain':'sphere';
-      if(colType==='chain'){
-        // Linear chain of cells
-        ctx.fillStyle='rgba(80,160,80,0.5)';
-        for(var cc=-2;cc<=2;cc++){
-          ctx.beginPath();ctx.ellipse(cc*sz*0.8,0,sz*0.3,sz*0.25,0,0,Math.PI*2);ctx.fill();
+      // Colonial microbes are REAL (Volvox / Gloeocapsa / Microcystis) — show anatomy
+      var colType=(o.sp.bio&&o.sp.bio.chain)?'chain':'sphere';
+      var nm=(o.sp.name||'').toLowerCase();
+      if(colType==='chain' || nm.indexOf('anabaena')>=0 || nm.indexOf('nostoc')>=0){
+        // Filament / chain of cells with heterocysts
+        for(var cc=-3;cc<=3;cc++){
+          var isHet=(cc===-1||cc===2);
+          ctx.fillStyle=isHet?'rgba(40,90,50,0.85)':'rgba(70,160,70,0.75)';
+          ctx.beginPath();ctx.ellipse(cc*sz*0.55,0,sz*(isHet?0.28:0.32),sz*(isHet?0.28:0.26),0,0,Math.PI*2);ctx.fill();
+          ctx.strokeStyle='rgba(20,60,30,0.45)';ctx.lineWidth=Math.max(0.4,sz*0.04);
+          ctx.stroke();
         }
       } else {
-        // Sphere colony (Volvox-like)
-        ctx.fillStyle='rgba(100,200,100,0.5)';
-        for(var ci2=0;ci2<10;ci2++){
-          var ca=ci2/10*Math.PI*2;
-          var cr=sz*0.7;
-          ctx.beginPath();ctx.arc(Math.cos(ca)*cr,Math.sin(ca)*cr,sz*0.12,0,Math.PI*2);ctx.fill();
+        // Hollow gelatinous sphere — cells on SURFACE (Volvox-style), not a solid death-ball
+        // 1) translucent mucilage envelope
+        var muc=ctx.createRadialGradient(0,0,sz*0.15,0,0,sz);
+        muc.addColorStop(0,'rgba(180,230,160,0.12)');
+        muc.addColorStop(0.7,'rgba(90,170,80,0.22)');
+        muc.addColorStop(1,'rgba(40,110,50,0.35)');
+        ctx.fillStyle=muc;
+        ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle='rgba(60,140,70,0.55)';ctx.lineWidth=Math.max(0.8,sz*0.06);
+        ctx.stroke();
+        // 2) somatic cells dotted on sphere surface
+        var nCell=Math.min(22, 8+Math.floor(sz*1.6));
+        for(var ci2=0;ci2<nCell;ci2++){
+          var ca=ci2/nCell*Math.PI*2 + (o.pulse||0)*0.2;
+          var cr=sz*0.78;
+          var cx=Math.cos(ca)*cr, cy=Math.sin(ca)*cr*0.85;
+          ctx.fillStyle='rgba(50,140,55,0.9)';
+          ctx.beginPath();ctx.arc(cx,cy,Math.max(0.7,sz*0.09),0,Math.PI*2);ctx.fill();
+          // tiny flagella hint on outer cells
+          if(detail>=1 && ci2%3===0){
+            ctx.strokeStyle='rgba(120,200,130,0.35)';ctx.lineWidth=0.6;
+            ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx*1.18,cy*1.18);ctx.stroke();
+          }
         }
-        // Daughter colonies inside (smaller spheres)
-        if(detail>=1){ctx.fillStyle='rgba(120,220,120,0.3)';
-        for(var dc=0;dc<3;dc++){
-          var da=dc/3*Math.PI*2;
-          ctx.beginPath();ctx.arc(Math.cos(da)*sz*0.3,Math.sin(da)*sz*0.3,sz*0.15,0,Math.PI*2);ctx.fill();
-        }}
+        // 3) daughter colonies inside (Volvox gonidia) — real internal structure
+        if(detail>=0){
+          var nd=sz>4?3:2;
+          for(var dc=0;dc<nd;dc++){
+            var da=dc/nd*Math.PI*2+(o.wobble||0);
+            var dx=Math.cos(da)*sz*0.28, dy=Math.sin(da)*sz*0.22;
+            var dr=sz*(0.16+dc*0.03);
+            var dg=ctx.createRadialGradient(dx,dy,0,dx,dy,dr);
+            dg.addColorStop(0,'rgba(140,210,120,0.55)');
+            dg.addColorStop(1,'rgba(60,130,60,0.25)');
+            ctx.fillStyle=dg;
+            ctx.beginPath();ctx.arc(dx,dy,dr,0,Math.PI*2);ctx.fill();
+            ctx.strokeStyle='rgba(40,100,50,0.4)';ctx.lineWidth=0.7;ctx.stroke();
+          }
+        }
+        // toxic Microcystis: denser packed cells + slight yellow tinge label via flash only
+        if(o.sp.flags&&o.sp.flags.toxic){
+          ctx.strokeStyle='rgba(200,180,40,0.35)';
+          ctx.setLineDash([2,2]);
+          ctx.beginPath();ctx.arc(0,0,sz*1.05,0,Math.PI*2);ctx.stroke();
+          ctx.setLineDash([]);
+        }
       }
       return;
     }

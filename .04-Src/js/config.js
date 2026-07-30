@@ -156,6 +156,24 @@ var GENDERED_SP = {
     tempRange: [0, 40], locomotion: "flagella", flags: { gendered: true }, bio: {nucleus:true, vac:true, flag:true}
 };
 SPECIES_DB.push(GENDERED_SP);
+/* COLONY_PATCH */
+(function(){
+  for(var i=0;i<SPECIES_DB.length;i++){
+    var s=SPECIES_DB[i]; if(!s||!s.name) continue;
+    var n=s.name.toLowerCase();
+    if(n.indexOf('volvox')>=0 || n.indexOf('gloeocapsa')>=0 || n.indexOf('microcystis')>=0 ||
+       n.indexOf('pandorina')>=0 || n.indexOf('eudorina')>=0){
+      s.shape='colony';
+      s.bio=Object.assign({}, s.bio||{}, {colony:true, daughter:true});
+      // colonial algae are bigger than single cells but still micro (not lily-pad scale)
+      if(s.size<5) s.size=Math.min(8, s.size+2.5);
+      if(n.indexOf('microcystis')>=0){
+        s.flags=Object.assign({}, s.flags||{}, {toxic:true});
+      }
+    }
+  }
+})();
+
 
 var VIRUS_ID_START=100;
 // Wiki facts

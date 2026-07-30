@@ -12,3 +12,5 @@ coverage/
 07-QA-and-Testing/
 .04-Src/**/07-QA-and-Testing/
 backups/
+
+06-DevOps-and-Release/deploy-repo/

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>iGraSpore</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#000814;font-family:system-ui,Arial,sans-serif;user-select:none}
+canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
+.p{background:rgba(0,12,28,.92);border:1px solid #1a3a55;border-radius:8px;color:#ffffff;font-size:11px;backdrop-filter:blur(4px)}
+#hud{position:relative;z-index:10;pointer-events:none;padding:8px 12px;min-width:180px;max-width:240px;font-size:13px}
+#hud .nm{color:#ffffff;font-size:12px;font-weight:bold}
+#hud .la{color:#dddddd;font-size:12px;font-style:italic;margin-bottom:2px}
+#ebar{width:100%;height:6px;background:#200;border-radius:3px;overflow:hidden;margin:1px 0}
+#efill{height:100%;background:linear-gradient(90deg,#e33,#ee3,#3e3);transition:width .3s}
+#hud .st{font-size:12px;color:#ffffff;margin-top:1px;line-height:1.4}
+#topR{position:absolute;top:6px;right:6px;z-index:10;pointer-events:none;padding:4px 8px;min-width:100px;text-align:right}
+#topR .rw{font-size:12px;color:#ffffff;line-height:1.5}
+#weatherP{position:absolute;top:84px;right:6px;z-index:10;padding:3px 7px;pointer-events:none;font-size:12px;color:#ffffff;text-align:right;min-width:100px}
+#spdBar{position:absolute;top:6px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:2px;padding:5px 8px;background:rgba(0,12,28,.92);border:1px solid #1a3a55;border-radius:6px}
+.sb{padding:3px 7px;font-size:12px;color:#ffffff;background:#012;border:1px solid #234;border-radius:3px;cursor:pointer;min-width:30px;text-align:center;font-family:inherit;transition:all .1s}
+.sb:hover{background:#123;color:#ffffff}
+.sb.act{background:#1a4;color:#ffffff;border-color:#3c6}
+#todWrap{position:absolute;top:40px;left:50%;transform:translateX(-50%);z-index:10;display:flex;align-items:center;gap:5px;padding:3px 7px}
+#todR{-webkit-appearance:none;appearance:none;width:130px;height:5px;background:#123;border-radius:3px;outline:none}
+#todR::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;background:#fc4;border-radius:50%;cursor:pointer}
+#todR::-moz-range-thumb{width:12px;height:12px;background:#fc4;border-radius:50%;cursor:pointer;border:none}
+#todL{font-size:12px;color:#ffffff;min-width:34px;text-align:center;font-family:monospace}
+#seasL{font-size:8px;color:#ffffff;min-width:38px;text-align:center}
+#langB{position:absolute;top:50px;left:6px;z-index:10;display:flex;gap:4px;flex-wrap:wrap;max-width:180px}
+.lb{padding:1px 6px;font-size:8px;color:#ffffff;background:#011;border:1px solid #234;border-radius:2px;cursor:pointer;font-family:inherit}
+.lb:hover{background:#123;color:#ffffff}
+.lb.act{background:#246;color:#ffffff;border-color:#4af}
+#ecoP{display:none!important;position:relative;z-index:10;width:175px;padding:5px 7px;pointer-events:none}
+.ecT{font-size:8px;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.ecR{display:flex;align-items:center;gap:3px;margin:1px 0}
+.ecD{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.ecB{flex:1;height:4px;background:#112;border-radius:2px;overflow:hidden}
+.ecF{height:100%;transition:width .5s}
+.ecC{width:28px;text-align:right;font-weight:bold;color:#ffffff;font-size:12px}
+.ecSub{font-size:7px;color:#ffffff;margin-top:2px;border-top:1px solid #234;padding-top:2px;line-height:1.3}
+#camM{position:absolute;top:84px;left:50%;transform:translateX(-50%);z-index:10;padding:2px 8px;font-size:12px;color:#ffffff;display:none}
+#camM.free{color:#ffffff}
+#actBar{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);z-index:20;display:none;gap:8px;flex-wrap:wrap;justify-content:center;max-width:95%}
+.ab{padding:12px 16px;font-size:15px;color:#ffffff;background:#012;border:2px solid #456;border-radius:8px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all .1s;min-width:72px;min-height:48px;text-align:center;font-weight:800;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;user-select:none;-webkit-user-select:none}.ab .hk{font-size:11px;opacity:.75;font-weight:600}
+.ab:hover{background:#123;color:#ffffff;border-color:#4af;transform:translateY(-1px)}
+#renderModeBtn{position:absolute;top:60px;right:10px;z-index:15;padding:12px 24px;font-size:18px;font-weight:bold;border-radius:10px;cursor:pointer;transition:all .2s;display:none}
+#renderModeBtn.cartoon{background:linear-gradient(135deg,#1a3a6a,#2a5a8a);color:#fff;border:2px solid #4af}
+#renderModeBtn.realistic{background:linear-gradient(135deg,#2a1a0a,#4a3a1a);color:#fa4;border:2px solid #fa4}
+#renderModeBtn:hover{transform:scale(1.05)}
+.ab:active{transform:translateY(0)}
+.ab.act{background:#246;color:#ffffff;border-color:#4af}
+.ab .hk{font-size:7px;color:#dddddd;display:block}
+#keyHint{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);z-index:9;padding:2px 6px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:85%;pointer-events:none;transition:opacity 1s}
+#keyHint kbd{background:#123;border:1px solid #345;border-radius:2px;padding:0 3px;font-size:7px;color:#ffffff;font-family:inherit}
+#keyHint span{font-size:7px;color:#ffffff;display:inline-flex;align-items:center;gap:1px}
+#legP{position:relative;z-index:10;padding:4px 7px;pointer-events:none}
+.lgR{display:flex;align-items:center;gap:3px;font-size:7px;color:#ffffff;margin:1px 0}
+.lgD{width:8px;height:8px;border-radius:50%}
+#scaleW{position:absolute;bottom:6px;right:140px;z-index:10;pointer-events:none;color:#ffffff;font-size:8px;text-align:right}
+#scaleL{height:2px;background:#567;border-radius:1px;margin-bottom:1px}
+#tip{position:absolute;z-index:14;padding:5px 8px;font-size:12px;display:none;pointer-events:none;max-width:280px}
+.ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:40;display:none;flex-direction:column;align-items:center;justify-content:center}
+.ov.show{display:flex}
+#menuO{background:rgba(0,5,15,.97);overflow-y:auto;padding:40px 0;justify-content:flex-start;}
+#pauseO{background:rgba(0,5,15,.75)}
+#helpO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
+#deadO{background:rgba(0,5,15,.96)}
+#setO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
+#wikiO{background:rgba(0,5,15,.97);overflow:hidden}
+.tt{font-size:32px;color:#4ef;margin-bottom:3px;text-shadow:0 0 15px #2af}
+.sb2{font-size:12px;color:#678;margin-bottom:10px}
+.btn{padding:9px 26px;font-size:14px;background:#123;color:#bef;border:2px solid #345;border-radius:7px;cursor:pointer;font-family:inherit;margin:3px;transition:all .15s}
+.btn:hover{background:#234;border-color:#4af}
+.btn.sm{font-size:11px;padding:5px 14px}
+#catSel{display:flex;gap:3px;margin:6px 0;flex-wrap:wrap;justify-content:center}
+.cb{padding:4px 12px;font-size:12px;background:#012;color:#89c;border:1px solid #234;border-radius:3px;cursor:pointer;font-family:inherit;transition:all .1s}
+.cb:hover{background:#123;color:#cef}
+.cb.act{background:#246;color:#cef;border-color:#4af}
+.scrollbox{max-height:60vh;overflow-y:auto;max-width:900px;width:100%;padding:10px;}
+#spGrid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:8px}
+.scPrev{border:1px solid #1a3a55;border-radius:6px;margin-bottom:3px}
+.sc{width:165px;background:#012;border:2px solid #234;border-radius:8px;padding:8px;cursor:pointer;text-align:center;transition:all .12s;position:relative}
+.sc:hover{transform:scale(1.05);border-color:#4af;box-shadow:0 0 10px rgba(68,170,255,.3)}
+.sc.sel{border-color:#4af;box-shadow:0 0 12px rgba(68,170,255,.4)}
+.scN{color:#fff !important;text-shadow:1px 1px 3px #000 !important;font-size:12px;font-weight:bold;word-wrap:break-word;overflow-wrap:break-word;hyphens:auto;line-height:1.2;min-height:24px}
+.scL{color:#fff !important;text-shadow:1px 1px 3px #000 !important;font-size:8px;font-style:italic;word-wrap:break-word}
+.scC{font-size:7px;color:#fff !important;text-shadow:1px 1px 2px #000 !important;margin-top:1px}
+.scP{font-size:8px;font-weight:bold;color:#aef !important;text-shadow:1px 1px 2px #000 !important;margin-top:1px}
+.diff{padding:5px 14px;font-size:11px;background:#012;color:#89c;border:1px solid #234;border-radius:3px;cursor:pointer;font-family:inherit;margin:2px}
+.diff:hover{background:#123;color:#cef}
+.diff.act{background:#2a6;color:#fff;border-color:#4c8}
+.stbl{color:#bcd;font-size:12px;border-collapse:collapse;margin:0 auto}
+.stbl td{padding:3px 12px}
+.stbl .lbl{text-align:right;color:#678}
+.stbl .val{color:#4df;font-weight:bold}
+.sr{display:flex;justify-content:space-between;width:340px;margin:4px auto;color:#bcd;font-size:12px;align-items:center}
+.tg{width:34px;height:16px;background:#234;border-radius:8px;cursor:pointer;position:relative;flex-shrink:0}
+.tg.on{background:#2a6}
+.tg::after{content:'';width:12px;height:12px;background:#bcd;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .2s}
+.tg.on::after{left:20px}
+.slider-row{display:flex;justify-content:space-between;width:340px;margin:6px auto;align-items:center;font-size:12px;color:#bcd}
+.slider-row input[type=range]{-webkit-appearance:none;width:140px;height:4px;background:#234;border-radius:2px;outline:none}
+.slider-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;background:#4af;border-radius:50%;cursor:pointer}
+.slider-row input[type=range]::-moz-range-thumb{width:12px;height:12px;background:#4af;border-radius:50%;cursor:pointer;border:none}
+.slider-val{color:#4df;font-weight:bold;min-width:40px;text-align:right}
+/* CUSTOM SCROLLBARS */
+.scrollbox::-webkit-scrollbar{width:8px}
+.scrollbox::-webkit-scrollbar-track{background:rgba(0,10,25,.8);border-radius:4px}
+.scrollbox::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1a4a6a,#0e3050);border-radius:4px;border:1px solid #2a5070}
+.scrollbox::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#2a6a8a,#1e4060)}
+.scrollbox{-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8)}
+#wikiContent{overflow-y:auto;max-height:80vh;max-width:700px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8)}
+#wikiContent::-webkit-scrollbar{width:8px}
+#wikiContent::-webkit-scrollbar-track{background:rgba(0,10,25,.8);border-radius:4px}
+#wikiContent::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1a4a6a,#0e3050);border-radius:4px}
+.wiki-cat{color:#4df;font-size:16px;font-weight:bold;margin:14px 0 6px;border-bottom:1px solid #234;padding-bottom:3px}
+.wiki-entry{background:rgba(0,15,35,.6);border:1px solid #234;border-radius:6px;padding:8px 12px;margin:5px 0;font-size:11px;color:#bcd;line-height:1.5}
+.wiki-entry b{color:#4df}
+.wiki-entry .wl{color:#789;font-style:italic;font-size:12px}
+.wiki-entry .wf{color:#abc;margin-top:3px;font-size:12px}
+.wiki-search{width:300px;padding:6px 10px;background:#012;border:1px solid #345;border-radius:5px;color:#cef;font-size:12px;font-family:inherit;margin-bottom:8px}
+.wiki-search:focus{outline:none;border-color:#4af}
+
+#langSelWrap {
+  position: absolute; top: 18px; left: 12px; z-index: 200;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  outline: none; user-select: none;
+}
+.lang-curr {
+  background: rgba(10, 20, 35, 0.85); border: 1px solid #2a4055;
+  color: #fff; border-radius: 6px; padding: 8px 14px; cursor: pointer;
+  display: flex; align-items: center; font-size: 13px; font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4); backdrop-filter: blur(5px);
+  transition: background 0.2s, border-color 0.2s;
+}
+.lang-curr:hover { background: rgba(15, 30, 50, 0.95); border-color: #4af; }
+.lang-drop {
+  position: absolute; top: 100%; left: 0; margin-top: 6px;
+  background: rgba(10, 20, 35, 0.95); border: 1px solid #2a4055;
+  border-radius: 6px; overflow: hidden; width: max-content; min-width: 130px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  opacity: 0; visibility: hidden; transform: translateY(-10px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  max-height: 400px; overflow-y: auto;
+}
+.lang-drop::-webkit-scrollbar { width: 6px; }
+.lang-drop::-webkit-scrollbar-thumb { background: #2a4055; border-radius: 3px; }
+#langSelWrap:focus-within .lang-drop, #langSelWrap:hover .lang-drop {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.lang-item {
+  padding: 10px 16px; color: #bcd; font-size: 13px; cursor: pointer;
+  transition: background 0.15s, color 0.15s; border-bottom: 1px solid rgba(40, 60, 80, 0.3);
+}
+.lang-item:last-child { border-bottom: none; }
+.lang-item:hover { background: rgba(30, 60, 90, 0.8); color: #fff; }
+.lang-item.act { background: #1a4a6a; color: #4df; font-weight: bold; border-left: 3px solid #4df; padding-left: 13px; }
+
+.dna-btn {
+   background: rgba(20, 50, 100, 0.5);
+   border: 1px solid rgba(100, 200, 255, 0.2);
+   color: #eef;
+   padding: 10px 15px;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+   font-family: inherit;
+   font-size: 13px;
+   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+   backdrop-filter: blur(4px);
+}
+.dna-btn:hover {
+   background: rgba(40, 100, 200, 0.6);
+   border-color: rgba(100, 200, 255, 0.6);
+   transform: translateY(-2px);
+   box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 10px rgba(100,200,255,0.2);
+   color: #fff;
+}
+.dna-btn:active {
+   transform: translateY(1px);
+   box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* === UI SIMPLIFICATION === */
+#hud { min-width: 200px; }
+#hud .stat-row { display: flex; justify-content: space-between; align-items: center; margin: 4px 0; }
+#abar button { font-size: 14px; padding: 10px 16px; min-width: 50px; }
+#abar button:hover { transform: scale(1.1); }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 13px; margin: 3px 0; }
+.stat-label { color: #8af; font-weight: bold; }
+.stat-value { color: #fff; font-weight: bold; }
+.section-title { color: #4af; font-size: 14px; font-weight: bold; text-transform: uppercase; margin: 8px 0 4px; border-bottom: 1px solid #234; }
+/* Hide confusing ecosystem breakdown */
+#ecoDetail { display: none !important; }
+/* Make speed bar bigger */
+#spdBar button { font-size: 14px; padding: 6px 12px; }
+
+
+#tutorialLayer{display:none;position:fixed;inset:0;z-index:80;align-items:flex-end;justify-content:center;padding:0 12px 90px;background:rgba(0,8,20,.35);pointer-events:auto}
+#tutorialCard{max-width:520px;width:100%;background:rgba(6,18,36,.96);border:2px solid #3af;border-radius:14px;padding:18px 20px;color:#eef;box-shadow:0 12px 40px rgba(0,0,0,.55);pointer-events:auto}
+#tutorialTitle{font-size:20px;font-weight:800;margin:0 0 8px;color:#7df}
+#tutorialBody{font-size:15px;line-height:1.5;margin:0 0 14px;color:#dde}
+#tutorialCounter{font-size:12px;color:#8ab;margin-bottom:10px}
+#tutorialActions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+#tutNext,#tutSkip{pointer-events:auto;cursor:pointer;border-radius:10px;font-weight:800;font-size:15px;padding:12px 18px;border:2px solid #456;min-height:48px}
+#tutNext{background:#1a6;color:#fff;border-color:#2d8}
+#tutNext:hover{background:#1c7}
+#tutSkip{background:#123;color:#bcd}
+
+</style>
+</head>
+<body>
+<div style="position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:9999;color:rgba(255,255,255,0.4);font-size:12px;font-family:monospace;pointer-events:none;text-shadow:0 0 2px #000;">iGraSpore V2 - v0.14.3</div>
+<button id="renderModeBtn" class="cartoon" onclick="toggleRenderModeLarge()">🎨 МУЛЬТЯШНЫЙ</button>
+<canvas id="c"></canvas>
+<canvas id="mm" style="position:absolute;bottom:6px;right:6px;width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;z-index:10;cursor:pointer" title="Minimap"></canvas>
+<canvas id="pc" style="position:absolute;bottom:92px;right:6px;width:110px;height:55px;border:1px solid #1a3a55;border-radius:4px;z-index:10" title="Population graph"></canvas>
+<div id="leftContainer" style="position:absolute; top:6px; left:6px; display:flex; flex-direction:column; gap:8px; pointer-events:auto; z-index:10; width:180px;">
+  <div id="langSelWrap" tabindex="0" style="position:relative; width:130px; outline:none; pointer-events:auto; z-index:50;">
+    <div class="lang-curr" style="cursor:pointer; display:flex; align-items:center; font-size:13px; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.4); backdrop-filter:blur(5px); background:rgba(0,12,28,0.92); border:1px solid #1a3a55; border-radius:8px; color:#fff; padding:6px 12px;"><span style="font-size:14px;margin-right:6px">🌐</span> <span id="curLangTxt">Русский</span> <span style="font-size:12px;margin-left:6px;opacity:0.7">▼</span></div>
+    <div class="lang-drop" id="langSelDrop"></div>
+  </div>
+  <div id="hDivReady" style="position:fixed;left:12px;bottom:78px;z-index:40;color:#8ef;font:12px/1.3 sans-serif;text-shadow:0 1px 2px #000;max-width:240px;pointer-events:none"></div>
+<div id="hud" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
+  <div id="ecoP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
+  <div id="legP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
+</div>
+<div id="topR" class="p" style="display:none; top:6px; right:6px;"></div>
+<div id="weatherP" class="p" style="display:none; top:50px; right:6px;"></div>
+<div id="camM" style="top:5px; left:50%; transform:translateX(-50%);">FOLLOW</div>
+<div id="scaleBar" style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); color:#fff; border-bottom:2px solid #fff; padding-bottom:2px; font-size:12px; pointer-events:none; z-index:10; text-shadow:0 1px 2px #000;">100 μm</div>
+<div id="spdBar" style="display:none; z-index:10; top:25px; left:50%; transform:translateX(-50%);"></div>
+<div id="todWrap" class="p" style="display:none; z-index:10; top:60px; left:50%; transform:translateX(-50%);"></div>
+<div id="sandboxTools" class="p" style="display:none; z-index:10; top:80px; right:6px; background:rgba(0,30,10,0.8); border:1px solid #0f0; color:#0f0;">
+  <div style="font-weight:bold;margin-bottom:5px;text-align:center;">🛠 Sandbox</div>
+  <button class="btn" style="width:100%;margin-bottom:3px;background:#030;color:#0f0;border:1px solid #0f0;cursor:pointer;" id="btnAcid">Acid Rain</button>
+  <button class="btn" style="width:100%;margin-bottom:3px;background:#030;color:#0f0;border:1px solid #0f0;cursor:pointer;" id="btnEclipse">Eclipse</button>
+  <button class="btn" style="width:100%;background:#030;color:#0f0;border:1px solid #0f0;cursor:pointer;" id="btnLeaderboard">Leaderboard</button>
+</div>
+
+
+<div id="keyHint" class="p" style="display:none"></div>
+<div id="scaleW"></div>
+<div id="toast" style="display:none"></div>
+<div id="tip" class="p"></div>
+<div id="actBar">
+<div class="ab" id="bEat" title="Есть">ЕСТЬ<span class="hk">E</span></div>
+<div class="ab" id="bDiv" title="Делить">ДЕЛИТЬ<span class="hk">Q</span></div>
+<div class="ab" id="bCyst" title="Циста">ЦИСТА<span class="hk">R</span></div>
+<div class="ab" id="bAuto" title="Авто">АВТО<span class="hk">Tab</span></div>
+<div class="ab" id="bFree" title="Камера">КАМЕРА<span class="hk">F</span></div>
+<div class="ab" id="bMicro" title="Microscope Mode">&#128300;<span class="hk">M</span></div>
+<div class="ab" id="bRender" title="Render Mode (Realistic/Cartoon)">&#127912;<span class="hk">N</span></div>
+<div class="ab" id="bFol" title="Следить">СЛЕДИТЬ<span class="hk">V</span></div>
+<div class="ab" id="bWiki" title="Wiki/Bestiary">&#128218;<span class="hk">B</span></div>
+<div class="ab" id="bPause" title="Pause">&#9208;<span class="hk">P</span></div>
+<div class="ab" id="bZI" title="Zoom+">&#128269;+</div>
+<div class="ab" id="bZO" title="Zoom-">&#128269;-</div>
+<div class="ab" id="bSandbox" title="Sandbox Tools">&#128736;</div>
+</div>
+<div id="leaderboardO" class="ov">
+  <div class="tt">🏆 Leaderboard</div>
+  <div id="lbList" style="margin:10px 0; max-height:200px; overflow-y:auto; text-align:left; font-family:monospace; background:rgba(0,0,0,0.5); padding:10px;"></div>
+  <button class="btn" id="lbClose">CLOSE</button>
+</div>
+<div id="menuO" class="ov show">
+<div class="tt">iGraSpore <span style="font-size:12px;color:#789">v1.5.0 (c4d9e1)</span></div>
+<div class="sb2" id="menuSub"></div>
+<div style="margin-bottom:8px" id="diffWrap"></div>
+<div id="catSel"></div>
+<div class="scrollbox" id="spGrid"></div>
+<div style="margin-top:8px">
+  <button class="btn" id="startBtn"></button>
+  <button class="btn" id="screensaverBtn" style="background:#1a4a6a; border-color:#4df">Aquarium / Screensaver</button>
+</div>
+<div style="margin-top:4px"><button class="btn sm" id="helpBtn"></button> <button class="btn sm" id="setBtn2"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
+</div>
+<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button></div>
+<div id="helpO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="helpT"></div><div id="helpBody" style="color:#bcd;font-size:12px;line-height:1.6;max-width:560px"></div><button class="btn sm" id="helpClose" style="margin-top:12px"></button></div>
+<div id="setO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="setT"></div><div class="scrollbox" id="setBody" style="max-width:400px"></div><button class="btn sm" id="setClose" style="margin-top:12px"></button></div>
+<div id="wikiO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:6px" id="wikiT"></div><input type="text" class="wiki-search" id="wikiSearch" placeholder="Search..."><div id="wikiContent"></div><button class="btn sm" id="wikiClose" style="margin-top:10px"></button></div>
+<div id="deadO" class="ov"><div class="tt" style="color:#f44;font-size:24px" id="deadT"></div><div id="deadStats" style="margin-bottom:12px"></div><button class="btn" id="restartBtn"></button><button class="btn sm" id="menuBtn"></button></div>
+<div id="deadScreen"></div>
+
+<div id="dnaModal" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(10,25,45,0.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(100,200,255,0.3);border-radius:16px;padding:25px;z-index:100;color:#fff;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.6), inset 0 0 15px rgba(100,200,255,0.1); width:280px;transition:opacity 0.3s ease, transform 0.3s ease;">
+   <h2 style="margin:0 0 10px 0;color:#4df;text-shadow:0 0 8px rgba(77,221,255,0.5);font-size:18px;letter-spacing:1px;">🧬 МУТАЦИИ ДНК</h2>
+   <div style="font-size:13px;color:#bcd;margin-bottom:20px;background:rgba(0,0,0,0.3);padding:8px;border-radius:6px;">Очки мутации: <strong id="dnaPts" style="color:#ff0;font-size:18px;text-shadow:0 0 5px rgba(255,255,0,0.5);">0</strong></div>
+   <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:15px;font-size:13px;">
+       <button class="dna-btn" onclick="buyMutation('speed')">Ускорение жгутиков (5 ДНК)</button>
+       <button class="dna-btn" onclick="buyMutation('size')">Увеличение массы (8 ДНК)</button>
+       <button class="dna-btn" onclick="buyMutation('spikes')">Отрастить шипы (15 ДНК)</button>
+       <button class="dna-btn" onclick="buyMutation('shell')">Кремниевый панцирь (20 ДНК)</button>
+       <hr style="border-color:#444; margin: 15px 0; width: 100%;">
+       <h4 style="margin: 0 0 5px 0;">Import/Export DNA</h4>
+       <input type="text" id="dnaString" placeholder="Paste DNA code here..." style="width:100%; padding: 5px; margin-bottom: 10px; background:#222; color:#0f0; border:1px solid #444; box-sizing: border-box;">
+       <button class="dna-btn" onclick="exportDNA()">Export My DNA</button>
+       <button class="dna-btn" onclick="importDNA()">Import DNA</button>
+       <br>
+       <button onclick="closeDNAEditor()" style="background:rgba(255,60,60,0.4);border:1px solid rgba(255,100,100,0.4);padding:10px 15px;color:#fff;cursor:pointer;border-radius:8px;font-weight:bold;transition:all 0.2s;backdrop-filter:blur(4px);box-shadow:0 4px 6px rgba(0,0,0,0.2);" onmouseover="this.style.background='rgba(255,60,60,0.7)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,60,60,0.4)';this.style.transform='translateY(0)'">Закрыть</button>
+   </div>
+</div>
+
+<div id="tutorialLayer" style="display:none">
+  <div id="tutorialCard">
+    <div id="tutorialCounter">1 / 5</div>
+    <div id="tutorialTitle">Туториал</div>
+    <div id="tutorialBody">...</div>
+    <div id="tutorialActions">
+      <button type="button" id="tutSkip">Пропустить</button>
+      <button type="button" id="tutNext">Далее</button>
+    </div>
+  </div>
+</div>
+<script src="04-Src/js/config.js?v=1785389820"></script>
+<script src="04-Src/js/world.js?v=1785389820"></script>
+<script src="04-Src/js/organs.js?v=1785389820"></script>
+<script src="04-Src/js/biology.js?v=1785389820"></script>
+<script src="04-Src/js/ai.js?v=1785389820"></script>
+<script src="04-Src/js/render_effects.js?v=1785389820"></script>
+<script src="04-Src/js/render.js?v=1785389820"></script>
+<script src="04-Src/js/render_entities.js?v=1785389820"></script>
+<script src="04-Src/js/ui.js?v=1785389820"></script>
+<script src="04-Src/js/ui_menus.js?v=1785389820"></script>
+<script src="04-Src/js/main.js?v=1785389820"></script>
+<div id="globalTooltip" style="display:none; position:absolute; z-index:9999; background:rgba(10,20,35,0.95); border:1px solid #4af; color:#fff; padding:8px 12px; border-radius:6px; font-family:sans-serif; font-size:12px; pointer-events:none; box-shadow:0 4px 10px rgba(0,0,0,0.5); max-width:250px; text-shadow:0 1px 2px #000;"></div>
+
+
+
+</body>
+</html>

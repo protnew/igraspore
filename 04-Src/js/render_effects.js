@@ -146,8 +146,10 @@ function renderSky(vL,vR,vT){
     // Warm colors: noon white-gold, low sun orange
     var warm = (t < 8 || t > 16.0) ? 1.0 : 0.4;
     if(t >= 16.5) warm = 1.0;
-    // Disc radius in WORLD units — large enough to read at typical zoom
-    var rSun = Math.max(14, (22 + elev * 10) / Math.max(0.55, Math.min(z, 2.0)));
+    // FIXED angular size on SCREEN (px) — distance/zoom must NOT shrink the sun
+    // Perspective: sun is infinitely far → constant pixel radius, parallel rays
+    var rSunPx = 30 + elev * 6 + (t >= 16.5 || t < 8 ? 8 : 0);
+    var rSun = rSunPx / z; // convert to world units so after zoom it stays ~rSunPx px
 
     ctx.save();
     // Atmospheric bloom (single, soft)
@@ -183,33 +185,36 @@ function renderSky(vL,vR,vT){
     ctx.beginPath(); ctx.arc(sunX, sunY, rSun, 0, Math.PI*2); ctx.fill();
     ctx.shadowBlur = 0;
 
-    // Short soft rays (few, subtle)
-    if(dl > 0.3){
-      ctx.globalCompositeOperation = 'screen';
-      ctx.globalAlpha = 0.12 * dl;
-      for(var ri=0; ri<5; ri++){
-        var ang = -Math.PI/2 + (ri-2)*0.14;
-        var len = rSun * (8 + ri);
-        ctx.save();
-        ctx.translate(sunX, sunY);
-        ctx.rotate(ang);
-        var rg = ctx.createLinearGradient(0, rSun, 0, len);
-        rg.addColorStop(0, 'rgba(255,240,180,0.9)');
-        rg.addColorStop(1, 'rgba(255,220,120,0)');
-        ctx.fillStyle = rg;
-        ctx.beginPath();
-        ctx.moveTo(-3, rSun);
-        ctx.lineTo(3, rSun);
-        ctx.lineTo(8, len);
-        ctx.lineTo(-8, len);
-        ctx.closePath();
-        ctx.fill();
-        ctx.restore();
-      }
-      ctx.globalAlpha = 1;
-      ctx.globalCompositeOperation = 'source-over';
+        // Parallel god-rays in ONE direction (sun is far — rays don't fan from disc like a lamp)
+    // Direction: slightly downward-right/left from sun azimuth toward water
+    var rayDir = (dayProg - 0.5) * 0.55; // angle from vertical
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    for(var ri=0; ri<7; ri++){
+      var off = (ri - 3) * rSun * 1.15;
+      var lenW = rSun * 22;
+      ctx.save();
+      ctx.translate(sunX, sunY);
+      ctx.rotate(rayDir);
+      ctx.translate(off, 0);
+      var rg = ctx.createLinearGradient(0, rSun*0.6, 0, lenW);
+      rg.addColorStop(0, 'rgba(255,245,210,'+(0.22 - Math.abs(ri-3)*0.02)+')');
+      rg.addColorStop(0.35, 'rgba(255,220,150,0.08)');
+      rg.addColorStop(1, 'rgba(255,200,100,0)');
+      ctx.fillStyle = rg;
+      var hw = rSun * (0.22 + (ri===3?0.12:0));
+      ctx.beginPath();
+      ctx.moveTo(-hw, rSun*0.5);
+      ctx.lineTo(hw, rSun*0.5);
+      ctx.lineTo(hw*1.8, lenW);
+      ctx.lineTo(-hw*1.8, lenW);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
     }
+    ctx.globalCompositeOperation = 'source-over';
     ctx.restore();
+ctx.restore();
 
     window._sunPos = {x:sunX, y:sunY, r:rSun, elev:elev, warm:warm, dl:dl};
   }
@@ -613,49 +618,59 @@ function drawNaturalLilypads(vL, vR, surfW){
   var t = (typeof gt==='number') ? gt : 0;
   var dl = (typeof dayLight==='number') ? dayLight : 0.5;
   var fromBelow = (typeof cam!=='undefined' && cam.y > 18);
-  // Build pad list first
+  // Build pad list — MACRO scale vs bacteria (~size 3–9). Pads are plant leaves, not micro-debris.
+  // Fixed positions on waterline (no random bobbing / drifting).
   var pads = [];
-  for(var lp = -surfW + 120; lp < surfW - 40; lp += 480){
-    if(Math.abs(Math.floor(lp/580)) % 4 === 2) continue;
-    var wy = Math.sin(lp*0.018 + t*0.04)*1.5;
-    var rx = 160 + Math.abs(Math.sin(lp*0.01))*100;
-    var ry = rx * (fromBelow ? 0.48 : 0.36);
-    var rot = Math.sin(lp*0.003)*0.45;
-    var px = lp + Math.sin(lp*0.02)*24;
+  for(var lp = -surfW + 200; lp < surfW - 80; lp += 720){
+    if(Math.abs(Math.floor(lp/900)) % 5 === 2) continue; // gaps
+    var wy = 0; // glued to surface — no sin swim
+    // Primary pads: huge relative to microbes (rx ~ 420–620 world units)
+    var rx = 420 + Math.abs(Math.sin(lp*0.007))*200;
+    var ry = rx * (fromBelow ? 0.42 : 0.32);
+    var rot = Math.sin(lp*0.002)*0.22; // slight static tilt only
+    var px = lp; // stable X — no sway
     pads.push({x:px, y:wy-0.5, rx:rx, ry:ry, rot:rot, seed:Math.abs(Math.floor(lp))});
-    if(Math.abs(lp) % 5 !== 0){
-      pads.push({x:px+rx*1.05, y:wy+1, rx:rx*0.55, ry:ry*0.55, rot:rot+0.7, seed:Math.abs(Math.floor(lp))+2});
+    // Secondary satellite leaf — still large, not bacteria-sized
+    if(Math.abs(Math.floor(lp/720)) % 2 === 0){
+      pads.push({x:px+rx*0.95, y:wy+0.5, rx:rx*0.62, ry:ry*0.62, rot:rot+0.5, seed:Math.abs(Math.floor(lp))+3});
     }
   }
 
-  // --- Soft light shafts under pads (NOT giant gray soap-bubbles) ---
-  if(dl > 0.12 && !fromBelow){
+  // --- Pad shadows: ~50% of sunlight blocked (readable shade columns) ---
+  if(dl > 0.08){
     ctx.save();
-    var shDirX = sun ? Math.max(-40, Math.min(40, (cam.x - sun.x) * 0.05)) : 0;
-    var shLen = 70 + dl*40;
+    // Light direction from sun (parallel, one way)
+    var shAng = sun ? Math.max(-0.45, Math.min(0.45, (sun.x - cam.x) * 0.0008)) : 0;
+    var shLen = 160 + dl * 120; // deep into water column
     for(var i=0;i<pads.length;i++){
       var p = pads[i];
-      if(p.x+p.rx < vL-20 || p.x-p.rx > vR+20) continue;
-      // Narrow tapered shaft — reads as shade, not a floating orb
-      var topW = p.rx * 0.55;
-      var botW = p.rx * 0.25;
-      var alpha = 0.14 * Math.min(1, dl);
-      var sg = ctx.createLinearGradient(p.x, 2, p.x + shDirX, shLen);
-      sg.addColorStop(0, 'rgba(0, 20, 25, ' + alpha + ')');
-      sg.addColorStop(0.55, 'rgba(0, 25, 30, ' + (alpha*0.35) + ')');
-      sg.addColorStop(1, 'rgba(0, 20, 30, 0)');
+      if(p.x+p.rx < vL-40 || p.x-p.rx > vR+40) continue;
+      var topW = p.rx * 0.92;
+      var botW = p.rx * 0.55;
+      var shift = shAng * shLen;
+      // 50% of sunlight → alpha ~0.50 at top of shade (daylight modulated)
+      var alpha = 0.50 * Math.min(1, dl / 0.9);
+      if(fromBelow) alpha *= 0.72;
+      var sg = ctx.createLinearGradient(p.x, 1, p.x + shift, shLen);
+      sg.addColorStop(0, 'rgba(0, 10, 14, ' + alpha + ')');
+      sg.addColorStop(0.4, 'rgba(0, 14, 18, ' + (alpha * 0.55) + ')');
+      sg.addColorStop(0.85, 'rgba(0, 18, 22, ' + (alpha * 0.18) + ')');
+      sg.addColorStop(1, 'rgba(0, 20, 25, 0)');
       ctx.fillStyle = sg;
       ctx.beginPath();
-      ctx.moveTo(p.x - topW, 2);
-      ctx.lineTo(p.x + topW, 2);
-      ctx.lineTo(p.x + shDirX + botW, shLen);
-      ctx.lineTo(p.x + shDirX - botW, shLen);
+      ctx.moveTo(p.x - topW, 1);
+      ctx.lineTo(p.x + topW, 1);
+      ctx.lineTo(p.x + shift + botW, shLen);
+      ctx.lineTo(p.x + shift - botW, shLen);
       ctx.closePath();
+      ctx.fill();
+      // Contact shade tight under leaf (~darker rim)
+      ctx.fillStyle = 'rgba(0, 8, 10, ' + (alpha * 0.55) + ')';
+      ctx.beginPath();
+      ctx.ellipse(p.x, 4, p.rx * 0.9, Math.max(10, p.ry * 1.1), 0, 0, Math.PI*2);
       ctx.fill();
     }
     ctx.restore();
-  } else if(dl > 0.12 && fromBelow){
-    // From below: only subtle darkening of leaf underside already drawn — no gray bubbles
   }
 
   // Draw pads
@@ -669,7 +684,7 @@ function drawNaturalLilypads(vL, vR, surfW){
     for(var d = -surfW + 160; d < surfW; d += 520){
       if(Math.abs(Math.floor(d/100)) % 3 === 0) continue;
       if(d < vL - 20 || d > vR + 20) continue;
-      drawDuckweed(d, Math.sin(d*0.02+t*0.05)*1.5, 8, d);
+      drawDuckweed(d, 0.5, 10, d);
     }
   }
 }

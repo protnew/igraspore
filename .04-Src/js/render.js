@@ -1,3 +1,4 @@
+var renderMinimap = function(){}; // stub — real one defined below
 "use strict";
 function render(){
   if(!isFinite(cam.x))cam.x=0;

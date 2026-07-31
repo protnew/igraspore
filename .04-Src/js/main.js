@@ -90,7 +90,7 @@ function gameLoop(ts){
     if (state === 'playing') {
       updateHUD();updateTopRight();updateWeather();updateEcoPanel();updateLegend();
       if(typeof updateScaleBar === 'function') updateScaleBar();
-      if(fc%5===0)renderMinimap();if(fc%10===0)renderPopGraph();
+      if(fc%5===0 && typeof renderMinimap==='function')renderMinimap();if(fc%10===0 && typeof renderPopGraph==='function')renderPopGraph();
       if(fc%300===0) { // Every ~5 seconds
           try {
               var saved = JSON.parse(localStorage.getItem('igraspore_save') || '{"maxPop":0,"maxPlayerSize":0}');

@@ -763,3 +763,5 @@ window.renderOrganelleEdu = renderOrganelleEdu;
 window.ORGANELLE_INFO = ORGANELLE_INFO;
 
 window.renderMinimap = renderMinimap;
+
+window.renderPopGraph = typeof renderPopGraph!=="undefined" ? renderPopGraph : function(){};

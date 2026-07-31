@@ -2,6 +2,8 @@
 
 function drawBody(o,sz,fc2,fd, batched){
   var sh=o.sp.shape;
+  // Compute detail level locally (zoom-dependent)
+  var detail=(typeof zoom==="number"&&zoom>(6*(settings.renderMode==="realistic"?0.4:1.0))?2:(zoom>(4*(settings.renderMode==="realistic"?0.4:1.0))?1:0));
   if(!batched){
     var cyto=ctx.createRadialGradient(-sz*0.25,-sz*0.25,0,0,0,sz*1.1);
     cyto.addColorStop(0,fc2);

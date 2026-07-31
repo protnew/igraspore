@@ -103,7 +103,7 @@ function renderSky(vL,vR,vT){
         ctx.fillRect(sx-0.4, sy-sr*2.2, 0.8, sr*4.4);
       }
     }
-    ctx.restore();
+    ctx.rctx.restore();
   }
 
   // Soft cloud puffs (day only)
@@ -120,7 +120,7 @@ function renderSky(vL,vR,vT){
       ctx.beginPath(); ctx.ellipse(c.x - c.w*0.2, cy+2, c.w*0.28, c.h*0.28, 0, 0, Math.PI*2); ctx.fill();
       ctx.beginPath(); ctx.ellipse(c.x + c.w*0.18, cy+1, c.w*0.25, c.h*0.26, 0, 0, Math.PI*2); ctx.fill();
     }
-    ctx.restore();
+    ctx.rctx.restore();
   }
 
   // ========== ONE SUN ==========
@@ -202,8 +202,8 @@ function renderSky(vL,vR,vT){
     }
     ctx.fillStyle = glowG;
     ctx.beginPath(); ctx.arc(sunX, sunY, glowR, 0, Math.PI*2); ctx.fill();
-    ctx.restore();
-    ctx.restore();
+    ctx.rctx.restore();
+    ctx.rctx.restore();
 
     window._sunPos = {x:sunX, y:sunY, r:rSun, elev:elev, warm:warm, dl:dl};
   }
@@ -281,7 +281,7 @@ function renderWater(vL,vR,vT,vB){
       var cy = 20 + (ci%4)*18 + Math.cos(ci+(gt||0)*0.5)*6;
       ctx.beginPath(); ctx.ellipse(cx, cy, 28+ci*3, 6, ci*0.2, 0, Math.PI*2); ctx.fill();
     }
-    ctx.restore();
+    ctx.rctx.restore();
   }
   
   // Volumetric Shadows from Clouds
@@ -304,7 +304,7 @@ function renderWater(vL,vR,vT,vB){
           ctx.lineTo(sx2 + sunAngle*spread, PD); ctx.lineTo(sx1 + sunAngle*spread, PD);
           ctx.fill();
       }
-      ctx.restore();
+      ctx.rctx.restore();
   }
   
   // Ocean snow
@@ -320,7 +320,7 @@ function renderWater(vL,vR,vT,vB){
       ctx.fill();
   }
   
-  ctx.restore();
+  ctx.rctx.restore();
   // Surface light glow when sun is shining (gradient cached)
   if(dayLight>0.2){ctx.save();ctx.globalCompositeOperation='screen';
     if(!window._surfGlowCache){
@@ -330,7 +330,7 @@ function renderWater(vL,vR,vT,vB){
     }
     ctx.globalAlpha=dayLight;
     ctx.fillStyle=window._surfGlowCache;ctx.fillRect(-halfW(0),-5,halfW(0)*2,35);
-    ctx.restore();}
+    ctx.rctx.restore();}
   // Sun shafts penetrating deep water — visible from any depth
   if(dayLight > 0.15) {
     ctx.save();
@@ -354,7 +354,7 @@ function renderWater(vL,vR,vT,vB){
       ctx.closePath();
     }
     ctx.fill();
-    ctx.restore();
+    ctx.rctx.restore();
   }
   ctx.strokeStyle='rgba(140,200,240,'+(0.3+dayLight*0.3)+')';ctx.lineWidth=2;ctx.beginPath();
   var surfW=halfW(0);
@@ -365,7 +365,7 @@ function renderWater(vL,vR,vT,vB){
   ctx.save();
   if(typeof renderSnellWindow==='function') renderSnellWindow(vL,vR,vT,vB);
   drawNaturalLilypads(vL, vR, surfW);
-  ctx.restore();
+  ctx.rctx.restore();
   
   // Ice layer
   if(SEASONS[season].ice > 0) {
@@ -388,7 +388,7 @@ function renderWater(vL,vR,vT,vB){
           if(x===-surfW) ctx.moveTo(x, bot); else ctx.lineTo(x, bot);
       }
       ctx.stroke();
-      ctx.restore();
+      ctx.rctx.restore();
   }
   
   if(dayLight>0.3){ctx.fillStyle='rgba(200,230,255,'+(dayLight*0.06)+')';ctx.beginPath();
@@ -477,7 +477,7 @@ function renderParallax(vL,vR,vT,vB){
         }
      }
   }
-  ctx.restore();
+  ctx.rctx.restore();
 }
 
 
@@ -509,7 +509,7 @@ function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun, fromBelow){
     ctx.strokeStyle = 'rgba(0,0,0,0.35)';
     ctx.lineWidth = 0.04;
     ctx.stroke();
-    ctx.restore();
+    ctx.rctx.restore();
 
     // Hanging rootlets — brown-olive, thin
     ctx.strokeStyle = 'rgba(45, 55, 30, 0.4)';
@@ -527,7 +527,7 @@ function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun, fromBelow){
       );
       ctx.stroke();
     }
-    ctx.restore();
+    ctx.rctx.restore();
     return;
   }
 
@@ -615,7 +615,7 @@ function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun, fromBelow){
   ctx.moveTo(0,0); ctx.lineTo(Math.cos(notch)*rx*0.95, Math.sin(notch)*ry*0.95);
   ctx.moveTo(0,0); ctx.lineTo(Math.cos(-notch)*rx*0.95, Math.sin(-notch)*ry*0.95);
   ctx.stroke();
-  ctx.restore();
+  ctx.rctx.restore();
 }
 
 function drawDuckweed(cx, cy, n, seed){
@@ -628,7 +628,7 @@ function drawDuckweed(cx, cy, n, seed){
     ctx.beginPath(); ctx.ellipse(cx+ox, cy+oy, s*1.2, s*0.8, i*0.4, 0, Math.PI*2); ctx.fill();
     ctx.beginPath(); ctx.ellipse(cx+ox+s*0.8, cy+oy+0.4, s, s*0.65, i*0.4+0.2, 0, Math.PI*2); ctx.fill();
   }
-  ctx.restore();
+  ctx.rctx.restore();
 }
 
 function drawNaturalLilypads(vL, vR, surfW){
@@ -636,30 +636,29 @@ function drawNaturalLilypads(vL, vR, surfW){
   var t = (typeof gt==='number') ? gt : 0;
   var dl = (typeof dayLight==='number') ? dayLight : 0.5;
   var fromBelow = (typeof cam!=='undefined' && cam.y > 18);
-  // Build pad list — MACRO scale vs bacteria (~size 3–9). Pads are plant leaves, not micro-debris.
-  // Fixed positions on waterline (no random bobbing / drifting).
+  // Chaotic scatter across the surface — natural pond coverage
   var pads = [];
-  for(var lp = -surfW + 200; lp < surfW - 80; lp += 720){
-    if(Math.abs(Math.floor(lp/900)) % 5 === 2) continue; // gaps
-    var wy = 0; // glued to surface — no sin swim
-    // Primary pads: huge relative to microbes (rx ~ 420–620 world units)
-    var rx = 420 + Math.abs(Math.sin(lp*0.007))*200;
-    var ry = rx * (fromBelow ? 0.42 : 0.32);
-    var rot = Math.sin(lp*0.002)*0.22; // slight static tilt only
-    var px = lp; // stable X — no sway
-    pads.push({x:px, y:wy-0.5, rx:rx, ry:ry, rot:rot, seed:Math.abs(Math.floor(lp))});
-    // Secondary satellite leaf — still large, not bacteria-sized
-    if(Math.abs(Math.floor(lp/720)) % 2 === 0){
-      pads.push({x:px+rx*0.95, y:wy+0.5, rx:rx*0.62, ry:ry*0.62, rot:rot+0.5, seed:Math.abs(Math.floor(lp))+3});
+  // Deterministic pseudo-random from world X for stable pads
+  function padSeed(x){ var s=Math.sin(x*12.9898)*43758.5453; return s-Math.floor(s); }
+  for(var lp = -surfW + 150; lp < surfW - 50; lp += 280 + padSeed(lp)*200){
+    var skip = padSeed(lp*1.3);
+    if(skip < 0.25) continue; // organic gaps
+    var wy = Math.sin(lp*0.018 + t*0.04)*1.5 + padSeed(lp*2.1)*2;
+    var rx = 120 + padSeed(lp*0.7)*140;
+    var ry = rx * (fromBelow ? 0.48 : 0.36);
+    var rot = padSeed(lp*3.1)*Math.PI*2;
+    var px = lp + (padSeed(lp*4.2)-0.5)*80;
+    pads.push({x:px, y:wy-0.5, rx:rx, ry:ry, rot:rot, seed:Math.abs(Math.floor(lp*100))});
+    // Secondary smaller pad nearby
+    if(padSeed(lp*5.3) > 0.5){
+      pads.push({x:px+rx*0.8+padSeed(lp*6.1)*40, y:wy+1, rx:rx*0.5, ry:ry*0.5, rot:rot+0.7, seed:Math.abs(Math.floor(lp*100))+2});
     }
-  }
-
-  // --- Pad shadows: ~50% of sunlight blocked (readable shade columns) ---
+  }// --- Pad shadows: ~50% of sunlight blocked (readable shade columns) ---
   if(dl > 0.08){
     ctx.save();
     // Light direction from sun (parallel, one way)
     var shAng = sun ? Math.max(-0.45, Math.min(0.45, (sun.x - cam.x) * 0.0008)) : 0;
-    var shLen = 160 + dl * 120; // deep into water column
+    var shLen = 90 + dl * 60; // deep into water column
     for(var i=0;i<pads.length;i++){
       var p = pads[i];
       if(p.x+p.rx < vL-40 || p.x-p.rx > vR+40) continue;
@@ -667,7 +666,7 @@ function drawNaturalLilypads(vL, vR, surfW){
       var botW = p.rx * 0.55;
       var shift = shAng * shLen;
       // 50% of sunlight → alpha ~0.50 at top of shade (daylight modulated)
-      var alpha = 0.50 * Math.min(1, dl / 0.9);
+      var alpha = 0.35 * Math.min(1, dl / 0.9);
       if(fromBelow) alpha *= 0.72;
       var sg = ctx.createLinearGradient(p.x, 1, p.x + shift, shLen);
       sg.addColorStop(0, 'rgba(0, 10, 14, ' + alpha + ')');
@@ -688,7 +687,7 @@ function drawNaturalLilypads(vL, vR, surfW){
       ctx.ellipse(p.x, 4, p.rx * 0.9, Math.max(10, p.ry * 1.1), 0, 0, Math.PI*2);
       ctx.fill();
     }
-    ctx.restore();
+    ctx.rctx.restore();
   }
 
   // Draw pads
@@ -774,7 +773,7 @@ function renderSunGlitter(vL, vR){
       ctx.beginPath(); ctx.ellipse(spx, spy, 3.5, 1.1, 0, 0, Math.PI*2); ctx.fill();
     }
   }
-  ctx.restore();
+  ctx.rctx.restore();
 }
 
 /** Snell's window — bright circle when looking up from underwater */
@@ -809,7 +808,7 @@ function renderSnellWindow(vL, vR, vT, vB){ return; /* giant bubbles */
   ctx.globalCompositeOperation = 'source-over';
 
   // no hard ring — Snell is soft glow only
-  ctx.restore();
+  ctx.rctx.restore();
 }
 window.drawNaturalLilypads = drawNaturalLilypads;
 window.renderSunGlitter = renderSunGlitter;
@@ -827,7 +826,7 @@ function renderSunRays(vL,vR){
     ctx.lineTo(sr.x+sr.w/2+sr.angle*PD*0.7+sr.w*0.3,PD*0.7);ctx.lineTo(sr.x-sr.w/2+sr.angle*PD*0.7-sr.w*0.3,PD*0.7);
     ctx.closePath();ctx.fill();
   }
-  ctx.restore();
+  ctx.rctx.restore();
 }
 
 function renderSediment(vL,vR,vB){
@@ -867,7 +866,7 @@ function renderSediment(vL,vR,vB){
     ctx.save();ctx.translate(sc.x,sc.y);ctx.rotate(sc.rot);
     ctx.fillStyle='rgba(50,35,15,0.8)';ctx.beginPath();ctx.ellipse(0,0,sc.w,sc.h,0,0,Math.PI*2);ctx.fill();
     ctx.fillStyle='rgba(70,50,25,0.5)';ctx.beginPath();ctx.ellipse(-sc.w*0.3,-sc.h*0.2,sc.w*0.4,sc.h*0.3,0,0,Math.PI*2);ctx.fill();
-    ctx.restore();}
+    ctx.rctx.restore();}
   // Small rocks
   ctx.fillStyle='rgba(60,55,50,0.6)';
   for(var i=0;i<15;i++){
@@ -907,13 +906,13 @@ function renderBubbles(vL,vR,vT,vB){
   for(var i=0;i<o2Bubbles.length;i++){var b=o2Bubbles[i];
     if(b.x<vL||b.x>vR||b.y<vT||b.y>vB)continue;
     ctx.globalAlpha=b.life*0.5;ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);ctx.stroke();}
-  ctx.restore();
+  ctx.rctx.restore();
 }
 
 function renderRain(vL,vR,vT){
   ctx.save();ctx.strokeStyle='rgba(150,180,220,0.35)';ctx.lineWidth=1;
   for(var i=0;i<rainDrops.length;i++){var r=rainDrops[i];if(r.x<vL||r.x>vR||r.y<vT)continue;
     ctx.globalAlpha=r.life*0.5;ctx.beginPath();ctx.moveTo(r.x,r.y);ctx.lineTo(r.x-r.vx*2,r.y-r.vy*2);ctx.stroke();}
-  ctx.restore();
+  ctx.rctx.restore();
 }
 

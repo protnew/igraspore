@@ -185,36 +185,25 @@ function renderSky(vL,vR,vT){
     ctx.beginPath(); ctx.arc(sunX, sunY, rSun, 0, Math.PI*2); ctx.fill();
     ctx.shadowBlur = 0;
 
-        // Parallel god-rays in ONE direction (sun is far — rays don't fan from disc like a lamp)
-    // Direction: slightly downward-right/left from sun azimuth toward water
-    var rayDir = (dayProg - 0.5) * 0.55; // angle from vertical
+        // Soft atmospheric glow around sun — no harsh beam lines
     ctx.save();
-    ctx.globalCompositeOperation = 'lighter';
-    for(var ri=0; ri<7; ri++){
-      var off = (ri - 3) * rSun * 1.15;
-      var lenW = rSun * 22;
-      ctx.save();
-      ctx.translate(sunX, sunY);
-      ctx.rotate(rayDir);
-      ctx.translate(off, 0);
-      var rg = ctx.createLinearGradient(0, rSun*0.6, 0, lenW);
-      rg.addColorStop(0, 'rgba(255,245,210,'+(0.22 - Math.abs(ri-3)*0.02)+')');
-      rg.addColorStop(0.35, 'rgba(255,220,150,0.08)');
-      rg.addColorStop(1, 'rgba(255,200,100,0)');
-      ctx.fillStyle = rg;
-      var hw = rSun * (0.22 + (ri===3?0.12:0));
-      ctx.beginPath();
-      ctx.moveTo(-hw, rSun*0.5);
-      ctx.lineTo(hw, rSun*0.5);
-      ctx.lineTo(hw*1.8, lenW);
-      ctx.lineTo(-hw*1.8, lenW);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
+    var glowR = rSun * 4.5;
+    var glowG = ctx.createRadialGradient(sunX, sunY, rSun*0.5, sunX, sunY, glowR);
+    if(warm > 0.7){
+      glowG.addColorStop(0, 'rgba(255,200,120,0.35)');
+      glowG.addColorStop(0.3, 'rgba(255,180,80,0.15)');
+      glowG.addColorStop(0.7, 'rgba(255,160,60,0.04)');
+      glowG.addColorStop(1, 'rgba(255,140,40,0)');
+    } else {
+      glowG.addColorStop(0, 'rgba(255,250,230,0.28)');
+      glowG.addColorStop(0.3, 'rgba(255,240,200,0.10)');
+      glowG.addColorStop(0.7, 'rgba(255,230,180,0.03)');
+      glowG.addColorStop(1, 'rgba(255,220,160,0)');
     }
-    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = glowG;
+    ctx.beginPath(); ctx.arc(sunX, sunY, glowR, 0, Math.PI*2); ctx.fill();
     ctx.restore();
-ctx.restore();
+estore();
 
     window._sunPos = {x:sunX, y:sunY, r:rSun, elev:elev, warm:warm, dl:dl};
   }
@@ -542,62 +531,91 @@ function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun, fromBelow){
     return;
   }
 
-  // TOP / surface view — solid natural leaf
-  ctx.fillStyle = 'rgba(0, 20, 12, 0.25)';
-  ctx.beginPath(); ctx.ellipse(3, 5, rx*1.05, ry*1.2, 0, 0, Math.PI*2); ctx.fill();
+  // TOP / surface view — realistic Nymphaea leaf
+  // Contact shadow on water surface
+  ctx.fillStyle = 'rgba(0, 15, 10, 0.15)';
+  ctx.beginPath(); ctx.ellipse(4, 6, rx*1.08, ry*1.25, 0, 0, Math.PI*2); ctx.fill();
 
+  // Organic leaf path with wavy margin
   function leafPath(sc){
     ctx.beginPath();
-    var steps = 40, a0 = notch, a1 = Math.PI*2 - notch;
-    for(var i=0;i<=steps;i++){
-      var a = a0 + (a1-a0)*(i/steps);
-      var sca = 1 + Math.sin(a*5 + seed)*0.025;
-      var px = Math.cos(a)*rx*sc*sca;
-      var py = Math.sin(a)*ry*sc*sca;
-      if(i===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+    var steps = 60, a0 = notch, a1 = Math.PI*2 - notch;
+    for(var i2=0;i2<=steps;i2++){
+      var a = a0 + (a1-a0)*(i2/steps);
+      // Wavy edge — natural leaf margin
+      var wave = 1 + Math.sin(a*7 + seed*0.3)*0.035 + Math.sin(a*13 + seed*0.7)*0.015;
+      var px = Math.cos(a)*rx*sc*wave;
+      var py = Math.sin(a)*ry*sc*wave;
+      if(i2===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
     }
     ctx.lineTo(0,0);
     ctx.closePath();
   }
+
+  // Base leaf fill — deep natural green (Nymphaea alba / lutea tones)
   leafPath(1);
-  // Natural Nymphaea: deep olive, not neon lime
-  var lg = ctx.createRadialGradient(-rx*0.2, -ry*0.25, 2, 0, 0, rx);
-  lg.addColorStop(0, '#4a7a3a');
-  lg.addColorStop(0.35, '#3a6230');
-  lg.addColorStop(0.7, '#2a4a24');
-  lg.addColorStop(1, '#1a3218');
+  var lg = ctx.createRadialGradient(-rx*0.15, -ry*0.2, rx*0.05, 0, 0, rx*0.95);
+  lg.addColorStop(0, '#5a8a42');
+  lg.addColorStop(0.25, '#4a7538');
+  lg.addColorStop(0.55, '#3a5e2c');
+  lg.addColorStop(0.85, '#2a4622');
+  lg.addColorStop(1, '#1a3018');
   ctx.fillStyle = lg;
   ctx.fill();
-  ctx.strokeStyle = 'rgba(20,50,20,0.7)';
-  ctx.lineWidth = 1.6;
+
+  // Rim — darker wet edge
+  ctx.strokeStyle = 'rgba(15,40,15,0.5)';
+  ctx.lineWidth = 2;
   ctx.stroke();
 
-  // Soft veins (not wire grid)
+  // Palmate veins radiating from center — thicker primary, thin secondary
   ctx.lineCap = 'round';
-  for(var v=0; v<9; v++){
-    var a = notch + (Math.PI*2 - 2*notch)*(v+0.5)/9;
-    ctx.strokeStyle = 'rgba(30,70,30,' + (0.12 + (v%3===0?0.08:0)) + ')';
-    ctx.lineWidth = v%3===0 ? 1.2 : 0.6;
+  var nV = 11;
+  for(var v=0; v<nV; v++){
+    var va = notch + (Math.PI*2 - 2*notch)*(v+0.5)/nV;
+    var isMajor = (v % 3 === 0);
+    ctx.strokeStyle = isMajor ? 'rgba(20,55,20,0.45)' : 'rgba(30,65,28,0.22)';
+    ctx.lineWidth = isMajor ? 1.8 : 0.8;
     ctx.beginPath();
-    ctx.moveTo(Math.cos(a)*rx*0.08, Math.sin(a)*ry*0.08);
-    ctx.quadraticCurveTo(Math.cos(a)*rx*0.5, Math.sin(a)*ry*0.5, Math.cos(a)*rx*0.88, Math.sin(a)*ry*0.88);
+    ctx.moveTo(Math.cos(va)*rx*0.06, Math.sin(va)*ry*0.06);
+    ctx.quadraticCurveTo(
+      Math.cos(va)*rx*0.45 + Math.sin(va+seed)*3,
+      Math.sin(va)*ry*0.45,
+      Math.cos(va)*rx*0.9,
+      Math.sin(va)*ry*0.9
+    );
     ctx.stroke();
   }
-  // Wet highlight
-  var hg = ctx.createRadialGradient(-rx*0.25, -ry*0.3, 0, -rx*0.25, -ry*0.3, rx*0.5);
-  hg.addColorStop(0, 'rgba(220,255,200,0.25)');
-  hg.addColorStop(1, 'rgba(100,160,80,0)');
-  ctx.fillStyle = hg;
-  ctx.beginPath(); ctx.ellipse(-rx*0.25, -ry*0.3, rx*0.4, ry*0.3, 0, 0, Math.PI*2); ctx.fill();
 
-  // Notch lips
-  ctx.strokeStyle = 'rgba(15,40,18,0.8)';
-  ctx.lineWidth = 2;
+  // Water-repellent sheen — wet leaf glossy highlight
+  var hg = ctx.createRadialGradient(-rx*0.2, -ry*0.28, 0, -rx*0.2, -ry*0.28, rx*0.55);
+  hg.addColorStop(0, 'rgba(180,230,150,0.22)');
+  hg.addColorStop(0.5, 'rgba(120,180,90,0.08)');
+  hg.addColorStop(1, 'rgba(80,140,60,0)');
+  ctx.fillStyle = hg;
+  leafPath(0.85);
+  ctx.fill();
+
+  // Random age spots / blemishes for organic feel
+  if(seed % 3 === 0){
+    for(var sp=0; sp<3; sp++){
+      var sa = sp*2.1 + seed*0.5;
+      var sr = rx*(0.3 + (sp%2)*0.2);
+      ctx.fillStyle = 'rgba(60,80,30,0.15)';
+      ctx.beginPath();
+      ctx.arc(Math.cos(sa)*sr, Math.sin(sa)*sr*0.8, rx*0.04, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+
+  // Notch cut — V-shape where stem connects
+  ctx.strokeStyle = 'rgba(12,35,15,0.85)';
+  ctx.lineWidth = 2.5;
   ctx.beginPath();
   ctx.moveTo(0,0); ctx.lineTo(Math.cos(notch)*rx*0.95, Math.sin(notch)*ry*0.95);
   ctx.moveTo(0,0); ctx.lineTo(Math.cos(-notch)*rx*0.95, Math.sin(-notch)*ry*0.95);
   ctx.stroke();
-  ctx.restore();
+  ctx.restore();x.restore();
 }
 
 function drawDuckweed(cx, cy, n, seed){

@@ -207,6 +207,12 @@ function startGame(isScreensaver){
   var sp;
   if(selSpecies>=VIRUS_ID_START){sp=SPECIES_DB[0];selSpecies=0;}
   else sp=SPECIES_DB[selSpecies];
+  // Never start as colony (Volvox/Gloeocapsa/Microcystis) — looks like green death-ball
+  if(sp.shape==='colony'){
+    for(var ci=0; ci<SPECIES_DB.length; ci++){
+      if(SPECIES_DB[ci].cat==='consumer1' && SPECIES_DB[ci].shape!=='colony'){ selSpecies=ci; sp=SPECIES_DB[ci]; break; }
+    }
+  }
   var d=rng(PD*0.2,PD*0.5),hw=halfW(d)-20;
   
   if (isScreensaver) {

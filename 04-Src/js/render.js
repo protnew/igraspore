@@ -761,3 +761,5 @@ function ensureOrgEduPanel(){
 }
 window.renderOrganelleEdu = renderOrganelleEdu;
 window.ORGANELLE_INFO = ORGANELLE_INFO;
+
+window.renderMinimap = renderMinimap;

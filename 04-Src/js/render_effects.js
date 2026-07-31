@@ -203,7 +203,7 @@ function renderSky(vL,vR,vT){
     ctx.fillStyle = glowG;
     ctx.beginPath(); ctx.arc(sunX, sunY, glowR, 0, Math.PI*2); ctx.fill();
     ctx.restore();
-estore();
+    ctx.restore();
 
     window._sunPos = {x:sunX, y:sunY, r:rSun, elev:elev, warm:warm, dl:dl};
   }
@@ -615,7 +615,7 @@ function drawOneLilypad(cx, cy, rx, ry, rot, seed, sun, fromBelow){
   ctx.moveTo(0,0); ctx.lineTo(Math.cos(notch)*rx*0.95, Math.sin(notch)*ry*0.95);
   ctx.moveTo(0,0); ctx.lineTo(Math.cos(-notch)*rx*0.95, Math.sin(-notch)*ry*0.95);
   ctx.stroke();
-  ctx.restore();x.restore();
+  ctx.restore();
 }
 
 function drawDuckweed(cx, cy, n, seed){

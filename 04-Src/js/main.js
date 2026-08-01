@@ -230,7 +230,7 @@ function startGame(isScreensaver){
      var px = rng(-hw0*0.35, hw0*0.35);
      player=spawnOrg(sp, px, dY, true);
      if(!player)player=spawnOrg(sp,0,35,true);
-     player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y-20;player.acidResist=0.7;
+     player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y-20;player.acidResist=1.0;
 
 
      // Seed nearby food cluster so player sees action immediately

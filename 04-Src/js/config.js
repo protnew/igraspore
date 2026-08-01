@@ -80,7 +80,7 @@ function mkSp(arr,cat,minSz,maxSz,minSp,maxSp){
        }
        // Toxic Cyanobacteria
        if(bioName.includes('microcystis') || bioName.includes('lyngbya')) {
-           flags.toxic = true;
+           // Lyngbya toxin removed — was causing energy drain at game start
        }
     } else {
        // Venomous carnivores

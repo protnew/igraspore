@@ -733,7 +733,7 @@ function updateOrg(o,dt){
     if(o.isPlayer && window.playerContactEat) window.playerContactEat(dt);
   }
   // division handled at top of updateOrg
-  if(!o.isPlayer&&!o.dividing&&!o.cyst&&canDivide(o)){
+  if(!o.dividing&&!o.cyst&&canDivide(o)){
     if (o.sp.flags && o.sp.flags.gendered) {
         o.seekingMate = true;
         for(let j=0; j<orgs.length; j++) {

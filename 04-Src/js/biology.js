@@ -422,7 +422,6 @@ function spawnVirus(){
 }
 
 function updateOrg(o,dt){
-  if(o.isPlayer && window._dbgEn4){ if(!window._callCnt) window._callCnt=0; window._callCnt++; if(window._callCnt<=5) console.log('CALL #'+window._callCnt+' sp='+o.sp.name+' e='+o.energy.toFixed(1)); }
   if (typeof cam !== 'undefined' && window.spatialGrid) {
     var dx = cam.x - o.x, dy = cam.y - o.y;
     var inGrid = window.spatialGrid[Math.floor(o.x/1000)+','+Math.floor(o.y/1000)];

@@ -86,7 +86,14 @@ function gameLoop(ts){
   fAcc+=dt;fCnt++;if(fAcc>=0.5){fps=Math.round(fCnt/fAcc);fAcc=0;fCnt=0;}
   
   if(state==='playing' || state==='menu'){
-    updateWorld(realDt);
+    if(window._dbgFrame && typeof player!=='undefined' && player){
+      var _eB = player.energy;
+      updateWorld(realDt);
+      var _eA = player.energy;
+      if(Math.abs(_eA - _eB) > 0.5) console.log('FRAME: before='+_eB.toFixed(1)+' after='+_eA.toFixed(1)+' dE='+(_eA-_eB).toFixed(3)+' dt='+realDt.toFixed(4));
+    } else {
+      updateWorld(realDt);
+    }
     if (state === 'playing') {
       updateHUD();updateTopRight();updateWeather();updateEcoPanel();updateLegend();
       if(typeof updateScaleBar === 'function') updateScaleBar();

@@ -47,7 +47,7 @@ window.startSpectator = function() {
   window.initAudio();
   initWorld();
   player = null;
-  cam.x = 0; cam.y = 40; state = 'playing'; gt = 0; fc = 0;
+  cam.x = 0; cam.y = 20; state = 'playing'; gt = 0; fc = 0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display='block';
   document.getElementById('spdBar').style.display='flex';

@@ -66,6 +66,7 @@ window.addEventListener('load', function() {
 });
 
 function gameLoop3D(time) {
+  if (!gl || !canvas3d) { requestAnimationFrame(gameLoop3D); return; }
   // Clear
   gl.clearColor(0.01, 0.03, 0.05, 1.0);
   gl.clear(gl.COLOR_BUFFER_BIT);
@@ -79,7 +80,7 @@ function gameLoop3D(time) {
   
   // Render water
   var dayLight = (typeof window.dayLight === 'number') ? window.dayLight : 0.8;
-  renderWaterGL(time / 1000, dayLight, 0, 0, 1);
+  if (typeof renderWaterGL === 'function') renderWaterGL(time / 1000, dayLight, 0, 0, 1);
   
   // FPS
   frameCount++;

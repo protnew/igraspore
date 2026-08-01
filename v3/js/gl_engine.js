@@ -95,9 +95,10 @@ function updateOrganismBuffers(orgs) {
   var data = new Float32Array(orgs.length * 7);
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
+    if (!o || !o.sp) continue;
     var c = hexToRgb(o.sp.color || '#4a9');
-    data[i*7]   = o.x;
-    data[i*7+1] = o.y;
+    data[i*7]   = o.x || 0;
+    data[i*7+1] = o.y || 0;
     data[i*7+2] = o.size || 4;
     data[i*7+3] = c.r;
     data[i*7+4] = c.g;

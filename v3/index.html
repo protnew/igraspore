@@ -41,63 +41,7 @@ var ORG_FRAG = `precision highp float; varying vec3 vColor; uniform float uAlpha
 <script src="js/ui.js"></script>
 <script src="js/ui_menus.js"></script>
 <script src="js/gl_engine.js"></script>
-<script>
-// V3 main entry
-var canvas, gl3d;
-var waterProg, orgProg;
-var frameCount = 0;
-var lastFpsTime = performance.now();
-var fps = 0;
+<script src="js/main3d.js"></script>
 
-window.addEventListener('load', function() {
-  if (!initWebGL()) {
-    document.getElementById('loading').textContent = 'WebGL not supported!';
-    return;
-  }
-  
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('hud').style.display = 'block';
-  
-  // Init world
-  if (typeof initWorld === 'function') initWorld();
-  if (typeof initGame === 'function') initGame();
-  
-  requestAnimationFrame(gameLoop3D);
-});
-
-function gameLoop3D(time) {
-  if (!gl || !canvas3d) { requestAnimationFrame(gameLoop3D); return; }
-  // Clear
-  gl.clearColor(0.01, 0.03, 0.05, 1.0);
-  gl.clear(gl.COLOR_BUFFER_BIT);
-  
-  // Update world
-  if (typeof updateWorld === 'function') {
-    var dt = Math.min(0.05, (time - (window._lastTime||time)) / 1000);
-    window._lastTime = time;
-    updateWorld(dt);
-  }
-  
-  // Render water
-  var dayLight = (typeof window.dayLight === 'number') ? window.dayLight : 0.8;
-  if (typeof renderWaterGL === 'function') renderWaterGL(time / 1000, dayLight, 0, 0, 1);
-  
-  // FPS
-  frameCount++;
-  if (time - lastFpsTime > 1000) {
-    fps = Math.round(frameCount * 1000 / (time - lastFpsTime));
-    frameCount = 0;
-    lastFpsTime = time;
-    var hudFps = document.getElementById('hudFps');
-    if (hudFps) hudFps.textContent = 'FPS: ' + fps;
-    var hudPop = document.getElementById('hudPop');
-    if (hudPop && typeof orgs !== 'undefined') hudPop.textContent = 'Поп: ' + orgs.length;
-  }
-  
-  requestAnimationFrame(gameLoop3D);
-}
-
-window.addEventListener('resize', resizeGL);
-</script>
 </body>
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>iGraSpore V3 — WebGL</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #001016; overflow: hidden; font-family: -apple-system, sans-serif; }
+#glCanvas { display: block; }
+#hud { position: absolute; top: 6px; left: 6px; z-index: 10; background: rgba(0,15,25,0.75); color: #cde; padding: 8px 12px; border-radius: 8px; font-size: 13px; pointer-events: none; }
+#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #4a9; font-size: 24px; z-index: 100; }
+</style>
+</head>
+<body>
+<div id="loading">iGraSpore V3 — WebGL Engine loading...</div>
+<canvas id="glCanvas"></canvas>
+<div id="hud" style="display:none">
+  <div id="hudSpecies"></div>
+  <div id="hudEnergy"></div>
+  <div id="hudPop"></div>
+  <div id="hudFps"></div>
+</div>
+
+<script>
+// Inline shaders for now (will be loaded externally in production)
+var WATER_VERT = `attribute vec2 aPosition; attribute vec2 aTexCoord; uniform float uTime; varying vec2 vTexCoord; varying float vWaveHeight; float hash(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);} float sn(vec2 p){vec2 i=floor(p);vec2 f=fract(p);f=f*f*(3.-2.*f);float a=hash(i),b=hash(i+vec2(1,0)),c=hash(i+vec2(0,1)),d=hash(i+vec2(1,1));return mix(mix(a,b,f.x),mix(c,d,f.x),f.y);} void main(){vTexCoord=aTexCoord;vec2 wp=aPosition;float w=sn(wp*0.02+uTime*0.3)*2.0+sn(wp*0.05+uTime*0.5);vWaveHeight=w;gl_Position=vec4(aPosition,0.0,1.0);}`;
+
+var WATER_FRAG = `precision highp float; varying vec2 vTexCoord; varying float vWaveHeight; uniform float uTime; uniform float uDayLight; uniform vec2 uResolution; uniform vec2 uSunPos; float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);} float pn(vec2 p){vec2 i=floor(p);vec2 f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);} float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*pn(p);p*=2.;a*=.5;}return v;} void main(){vec2 uv=vTexCoord;float t=uTime*0.15;vec3 sc=vec3(0.05,0.35,0.30),dc=vec3(0.01,0.05,0.08);vec3 wc=mix(sc,dc,uv.y);wc*=(0.3+uDayLight*0.7);float r1=fbm(uv*8.+vec2(t,t*0.7)),r2=fbm(uv*16.+vec2(-t*0.5,t));float rp=r1*0.6+r2*0.4;float ca=pow(rp,3.)*2.;ca=clamp(ca,0.,1.);vec3 cc=vec3(0.6,0.9,0.8)*ca*uDayLight*0.5;float ds=length(uv*uResolution-uSunPos)/uResolution.x;float sg=exp(-ds*ds*20.)*uDayLight;float sp=pow(rp,8.)*sg*3.;vec3 gl_=vec3(1,0.95,0.7)*sp;vec3 col=wc+cc+gl_*0.5+vec3(vWaveHeight*0.02);gl_FragColor=vec4(col,1.0);}`;
+
+var ORG_VERT = `attribute vec2 aPosition; attribute vec2 aOffset; attribute float aSize; attribute vec3 aColor; attribute float aRotation; uniform vec2 uCamPos; uniform float uZoom; uniform vec2 uScreen; varying vec3 vColor; void main(){float c=cos(aRotation),s=sin(aRotation);vec2 rot=vec2(aPosition.x*c-aPosition.y*s,aPosition.x*s+aPosition.y*c)*aSize;vec2 wp=rot+aOffset-uCamPos;wp*=uZoom;wp+=uScreen*0.5;vec2 nc=wp/uScreen*2.0-1.0;nc.y=-nc.y;gl_Position=vec4(nc,0.0,1.0);vColor=aColor;}`;
+
+var ORG_FRAG = `precision highp float; varying vec3 vColor; uniform float uAlpha; void main(){gl_FragColor=vec4(vColor,uAlpha);}`;
+</script>
+
+<script src="js/config.js"></script>
+<script src="js/world.js"></script>
+<script src="js/organs.js"></script>
+<script src="js/biology.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/ui_menus.js"></script>
+<script src="js/gl_engine.js"></script>
+<script>
+// V3 main entry
+var canvas, gl3d;
+var waterProg, orgProg;
+var frameCount = 0;
+var lastFpsTime = performance.now();
+var fps = 0;
+
+window.addEventListener('load', function() {
+  if (!initWebGL()) {
+    document.getElementById('loading').textContent = 'WebGL not supported!';
+    return;
+  }
+  
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('hud').style.display = 'block';
+  
+  // Init world
+  if (typeof initWorld === 'function') initWorld();
+  if (typeof initGame === 'function') initGame();
+  
+  requestAnimationFrame(gameLoop3D);
+});
+
+function gameLoop3D(time) {
+  // Clear
+  gl.clearColor(0.01, 0.03, 0.05, 1.0);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+  
+  // Update world
+  if (typeof updateWorld === 'function') {
+    var dt = Math.min(0.05, (time - (window._lastTime||time)) / 1000);
+    window._lastTime = time;
+    updateWorld(dt);
+  }
+  
+  // Render water
+  var dayLight = (typeof window.dayLight === 'number') ? window.dayLight : 0.8;
+  renderWaterGL(time / 1000, dayLight, 0, 0, 1);
+  
+  // FPS
+  frameCount++;
+  if (time - lastFpsTime > 1000) {
+    fps = Math.round(frameCount * 1000 / (time - lastFpsTime));
+    frameCount = 0;
+    lastFpsTime = time;
+    var hudFps = document.getElementById('hudFps');
+    if (hudFps) hudFps.textContent = 'FPS: ' + fps;
+    var hudPop = document.getElementById('hudPop');
+    if (hudPop && typeof orgs !== 'undefined') hudPop.textContent = 'Поп: ' + orgs.length;
+  }
+  
+  requestAnimationFrame(gameLoop3D);
+}
+
+window.addEventListener('resize', resizeGL);
+</script>
+</body>
+</html>

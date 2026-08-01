@@ -57,7 +57,7 @@ window.startSpectator = function() {
   tw.innerHTML='<input type="range" id="todR" min="0" max="24" step="0.05" value="'+tod+'"><span id="todL">12:00</span><span id="seasL">'+tt('season1')+'</span>';
   var sl=document.getElementById('todR');
   sl.addEventListener('input',function(){tod=parseFloat(sl.value);updateTodUI();});
-  showSpeedBar(); updateLegend(); updateEcoPanel();
+  showSpeedBar(); /*SPEED_BAR_FORCE*/ try{var _sb=document.getElementById('spdBar');if(_sb){_sb.style.display='flex';_sb.style.zIndex='9999';}}catch(_e){} updateLegend(); updateEcoPanel();
 };
 
 window.focusTarget = null; window.focusTimer = 0; window.cinematicTime = 1;

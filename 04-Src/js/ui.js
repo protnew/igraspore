@@ -2,15 +2,26 @@
 function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight;}
 function showSpeedBar(){
   var sb=document.getElementById('spdBar');
-  var speeds=[{v:0,l:'\u23f8'},{v:0.5,l:'0.5x'},{v:1,l:'1x'},{v:5,l:'5x'},{v:25,l:'25x'}];
+  if(!sb) return;
+  var speeds=[{v:0,l:'\u23f8'},{v:0.25,l:'0.25x'},{v:0.5,l:'0.5x'},{v:1,l:'1x'},{v:2,l:'2x'},{v:5,l:'5x'},{v:10,l:'10x'}];
   sb.innerHTML='';
+  sb.style.cssText='position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:9999;display:flex!important;gap:4px;padding:6px 10px;background:rgba(0,12,28,0.95);border:1px solid #3a6a95;border-radius:8px;pointer-events:auto;box-shadow:0 2px 12px rgba(0,0,0,0.5);';
   for(var i=0;i<speeds.length;i++){
-    var b=document.createElement('div');b.className='sb'+(timeScale===speeds[i].v?' act':'');b.textContent=speeds[i].l;
-    b.setAttribute('data-ts',speeds[i].v);b.title=speeds[i].v===0?tt('paused'):speeds[i].l;
-    b.onclick=function(ev){timeScale=parseFloat(ev.target.getAttribute('data-ts'));showSpeedBar();};
+    var b=document.createElement('button');
+    b.type='button';
+    b.className='sb'+(Math.abs(timeScale-speeds[i].v)<0.001?' act':'');
+    b.textContent=speeds[i].l;
+    b.setAttribute('data-ts',speeds[i].v);
+    b.title=speeds[i].v===0?'Пауза':('Скорость '+speeds[i].l);
+    b.style.cssText='padding:6px 12px;font-size:14px;min-width:44px;cursor:pointer;border-radius:5px;border:1px solid #345;background:'+(Math.abs(timeScale-speeds[i].v)<0.001?'#1a6a3a':'#012')+';color:#fff;font-family:inherit;';
+    b.onclick=function(ev){
+      var el=ev.currentTarget||ev.target;
+      timeScale=parseFloat(el.getAttribute('data-ts'));
+      if(window.showToast) window.showToast('Время: '+(timeScale===0?'пауза':timeScale+'x'),'#8cf');
+      showSpeedBar();
+    };
     sb.appendChild(b);
   }
-  sb.style.display='flex';
 }
 
 var langNames = {

@@ -126,7 +126,7 @@ function getLocomotion(cat,i){
   if(cat==='decomposer')return SHAPES.decomposer[i]==='circle'?'budding':'growth';
   return'drift';
 }
-var SPECIES_DB=mkSp(PN,'producer',3,5,0.04,0.15).concat(mkSp(CN1,'consumer1',3,7,1.0,2.4)).concat(mkSp(CN2,'consumer2',4,7,1.6,3.0)).concat(mkSp(CN3,'consumer3',5,8,2.2,4.2)).concat(mkSp(DN,'decomposer',3,6,0.8,2.0));
+var SPECIES_DB=mkSp(PN,'producer',3,5,0.03,0.08).concat(mkSp(CN1,'consumer1',3,7,0.30,0.70)).concat(mkSp(CN2,'consumer2',4,7,0.60,1.20)).concat(mkSp(CN3,'consumer3',5,8,1.00,1.80)).concat(mkSp(DN,'decomposer',3,6,0.22,0.55));
 // Virus species
 for(var i=0;i<SPECIES_DB.length;i++){SPECIES_DB[i].id=i;}
 var VIRUS_SPECS=[];
@@ -266,7 +266,7 @@ var wind={x:0,y:0,strength:0};
 var isRaining=false,rainTimer=0,rainDrops=[];
 var autoAI=false,freeCam=false;
 var gameStats={startTime:0,maxPop:0,maxPlayerSize:0,evoLvl:0};
-var timeScale=0.5,lastT=0;
+var timeScale=1.0,lastT=0;
 var settings={particles:true,bubbles:true,currents:true,vignette:false,healthBars:true,shadows:true,density:1.0,lightMul:1.0,virusRate:0.7,renderMode:'cartoon',microscopeMode:false};
 var difficulty='easy',selCat='all',selSpecies=0;
 var mouseDown=false,moveTarget=null;

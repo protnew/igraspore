@@ -114,10 +114,13 @@ function renderSky(vL,vR,vT){
     var sunX = cam.x + (dayProg - 0.5) * Math.min(Math.max(vR-vL, 200)*0.5, 520);
     // Near horizon at dawn/dusk, higher at noon — but always in sky band
     // Prefer sun in upper-middle of visible sky; if camera deep, keep sun near horizon film
-    var sunY = -12 - elev * Math.min(h * 0.55, 140);
-    // Sun always high in sky — never near waterline
+    // Sun pinned near TOP of visible sky band
+    var skyTop = Math.min(vT + margin + 8, -40);
+    var sunY = skyTop + (1.0 - elev) * Math.min(Math.abs(skyTop) * 0.15, 30);
+    // Never below upper third of sky
+    var skyFloor = Math.min(-Math.max(80, Math.abs(vT) * 0.55), -60);
+    if(sunY > skyFloor) sunY = skyFloor;
     if(sunY < vT + margin) sunY = vT + margin;
-    if(sunY > -8) sunY = -8;
     if(sunX < vL + margin) sunX = vL + margin;
     if(sunX > vR - margin) sunX = vR - margin;
 
@@ -619,7 +622,7 @@ function drawNaturalLilypads(vL, vR, surfW){
   // Deterministic pseudo-random from world X for stable pads
   function padSeed(x){ var s=Math.sin(x*12.9898)*43758.5453; return s-Math.floor(s); }
   // CHAOTIC 2D SCATTER — natural pond coverage, not a line
-  for(var lp = -surfW + 30; lp < surfW; lp += 35 + padSeed(lp)*50){
+  for(var lp = -surfW + 200; lp < surfW; lp += 350 + padSeed(lp)*500){ // qty ÷10
     var skip = padSeed(lp*1.3);
     if(skip < 0.15) continue; // organic gaps
     // Y scatter: pads spread vertically across surface band
@@ -630,12 +633,12 @@ function drawNaturalLilypads(vL, vR, surfW){
     var px = lp + (padSeed(lp*4.2)-0.5)*120; // horizontal jitter
     pads.push({x:px, y:wy, rx:rx, ry:ry, rot:rot, seed:Math.abs(Math.floor(lp*100))});
     // Secondary pad — overlapping cluster (natural)
-    if(padSeed(lp*5.3) > 0.4){
+    if(padSeed(lp*5.3) > 0.85){ // rare secondary
       var off = padSeed(lp*6.1);
       pads.push({x:px+rx*(0.5+off*0.5), y:wy+padSeed(lp*7.1)*30-15, rx:rx*(0.4+off*0.3), ry:ry*(0.4+off*0.3), rot:rot+padSeed(lp*8.1)*2, seed:Math.abs(Math.floor(lp*100))+2});
     }
     // Tertiary small pad for density
-    if(padSeed(lp*9.1) > 0.6){
+    if(padSeed(lp*9.1) > 0.92){ // rare tertiary
       pads.push({x:px-rx*0.6+padSeed(lp*10.1)*50, y:wy-3+padSeed(lp*11.1)*5, rx:rx*0.3, ry:ry*0.3, rot:padSeed(lp*12.1)*4, seed:Math.abs(Math.floor(lp*100))+3});
     }
   }// --- Pad shadows: ~50% of sunlight blocked (readable shade columns) ---

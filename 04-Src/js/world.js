@@ -282,21 +282,7 @@ function updateWorld(dt){
      window.spatialGrid[k].push(o);
   }
 
-  for(var i=0;i<orgs.length;i++){
-    var o=orgs[i];
-    if(o.isPlayer && window._dbgEn2){
-      var _before=o.energy;
-      updateOrg(o,dt);
-      var _after=o.energy;
-      var _dE=_after-_before;
-      if(Math.abs(_dE)>0.01){
-        // Check which sub-functions drain
-        console.log('UPDATE: dE='+_dE.toFixed(3)+' before='+_before.toFixed(1)+' after='+_after.toFixed(1)+' dt='+dt.toFixed(4));
-      }
-    } else {
-      updateOrg(o,dt);
-    }
-  }
+  for(var i=0;i<orgs.length;i++)updateOrg(orgs[i],dt);
   updateInfections(dt);
   updateViruses(dt);
   if(window.eventManager) window.eventManager.update(dt);

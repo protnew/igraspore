@@ -422,6 +422,7 @@ function spawnVirus(){
 }
 
 function updateOrg(o,dt){
+  if(o.isPlayer && window._dbgEn3) o._enStart = o.energy;
   if (typeof cam !== 'undefined' && window.spatialGrid) {
     var dx = cam.x - o.x, dy = cam.y - o.y;
     var inGrid = window.spatialGrid[Math.floor(o.x/1000)+','+Math.floor(o.y/1000)];
@@ -666,6 +667,10 @@ function updateOrg(o,dt){
   }
   if(o.isPlayer) o._prevEn = o.energy;
 
+  if(o.isPlayer && window._dbgEn3 && typeof o._enStart !== 'undefined'){
+    var _total = o.energy - o._enStart;
+    if(Math.abs(_total) > 0.5) console.log('BIO: start='+o._enStart.toFixed(1)+' end='+o.energy.toFixed(1)+' dE='+_total.toFixed(3)+' dt='+dt.toFixed(4)+' state='+o.state);
+  }
   // Player energy floor/ceiling — never snap to weird negatives from stacked drains
   if(o.isPlayer){
     if(o.energy < 1) o.energy = 1; // keep controllable; death handled slowly below

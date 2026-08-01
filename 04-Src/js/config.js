@@ -205,9 +205,9 @@ function getWikiEntry(i){
 var PW=25000,PD=1200,BW=1500,MAX_ORG=8000,DAY_SEC=120,SPD_SCALE=16;
 var SPAWN_RATES={producer:2,consumer1:0.3,consumer2:0.08,consumer3:0.02,decomposer:0.2,macrophage:0.05,virus:0.1};
 var FOOD={consumer1:["producer"],consumer2:["producer","consumer1","consumer2"],consumer3:["producer","consumer1","consumer2"],decomposer:["producer","consumer1"],macrophage:["consumer1","consumer2","consumer3"]};
-var DIFF={easy:{spawn:2.0,energy:2.0,metab:0.3,virus:0.2},normal:{spawn:1.3,energy:1.3,metab:0.6,virus:0.5},hard:{spawn:0.8,energy:0.85,metab:1.0,virus:1.0}};
-var TGT={producer:1500,consumer1:400,consumer2:150,consumer3:60,decomposer:300,macrophage:0};
-var INIT_N={producer:800,consumer1:300,consumer2:120,consumer3:50,decomposer:250,macrophage:0,virus:20};
+var DIFF={easy:{spawn:1.5,energy:0.8,metab:0.3,virus:0.2},normal:{spawn:1.0,energy:1.0,metab:0.5,virus:0.4},hard:{spawn:0.7,energy:1.2,metab:0.8,virus:0.8}};
+var TGT={producer:3000,consumer1:200,consumer2:80,consumer3:30,decomposer:250,macrophage:0};
+var INIT_N={producer:2000,consumer1:150,consumer2:60,consumer3:25,decomposer:200,macrophage:0,virus:10};
 var SEASONS=[{temp:16,light:0.85,ice:0,rain:0.15},{temp:24,light:1,ice:0,rain:0.08},{temp:10,light:0.7,ice:0.05,rain:0.25},{temp:3,light:0.45,ice:0.6,rain:0.03}];
 var SEASON_DAYS=2;
 var DCODE={STARVE:0,EATEN:1,TEMP:2,AGE:3,LYSIS:4};

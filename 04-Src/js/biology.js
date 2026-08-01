@@ -603,6 +603,7 @@ function updateOrg(o,dt){
     var sun = (photo + nutr) * dt * DIFF[difficulty].energy;
     var resp = metab * dt * DIFF[difficulty].energy;
     o.energy += sun - resp;
+    if(o.isPlayer && window._dbgEn){console.log('PHOTO: sun='+sun.toFixed(4)+' resp='+resp.toFixed(4)+' dt='+dt.toFixed(4)+' e='+o.energy.toFixed(1));}
     var depthFrac = 1 - clamp((o.y||0) / (PD||10000), 0, 1);
     var dl = (typeof dayLight === 'number') ? dayLight : 1;
     if(dl >= 0.12 && sun > 0){
@@ -640,6 +641,7 @@ function updateOrg(o,dt){
       huntTax = 0.85;
     }
     o.energy-=metab*dt*DIFF[difficulty].energy * (2.0 - o2Lim) * huntTax;
+    if(o.isPlayer && window._dbgEn){console.log('RESP: metab='+metab.toFixed(5)+' o2Lim='+o2Lim.toFixed(2)+' tax='+huntTax.toFixed(2)+' drain='+(metab*dt*DIFF[difficulty].energy*(2.0-o2Lim)*huntTax).toFixed(4)+' e='+o.energy.toFixed(1));}
     globalO2 -= metab * dt * 0.05;
     globalCO2 += metab * dt * 0.05;
     // Soft floor for NPC predators: enter rest before zero-death

@@ -629,8 +629,6 @@ function updateOrg(o,dt){
       o.size = Math.min((o.sp.size||4) * 1.3, o.size + detrGain * 0.01);
     }
   }
-  
-  if(o.sp.ca
   if(o.sp.cat==='producer'){
     var photo=lightAt(o.y)*1.4;
     // BIO-001 FIX: No photosynthesis at night (lightMul check)

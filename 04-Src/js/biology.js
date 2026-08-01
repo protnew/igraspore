@@ -158,7 +158,7 @@ function finishDivide(o){
     o.offspring++;
   }
   o.flash=0.8;o.flashColor='#8ff';
-  if(settings.particles)for(var i=0;i<18;i++)parts.push({x:o.x,y:o.y,vx:rng(-4,4),vy:rng(-4,4),life:1.2,maxL:1.2,size:rng(2,6),color:i%2?'#8ff':'#fff'});
+  if(settings.particles)for(var i=0;i<3;i++)parts.push({x:o.x,y:o.y,vx:rng(-0.8,0.8),vy:rng(-0.8,0.8),life:0.6,maxL:0.6,size:rng(0.5,1.5),color:o.sp.color});
   if(o===player && window.showToast) window.showToast('Деление!', '#8ff');
   if (typeof window !== 'undefined' && state === 'menu' && window.focusTimer <= 0 && Math.random() < 0.2) { window.focusTarget = o; window.focusTimer = 2.0; }
 }
@@ -297,19 +297,13 @@ function eatOrg(pred,prey){
       }
       killOrg(prey,DCODE.EATEN);
       // Big burst
-      for(var i=0;i<20;i++){
-          var pAng = rng(0, Math.PI*2);
-          var spd = rng(2, 8);
-          parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:1.2,maxL:1.2,size:rng(2,6),color:prey.sp.color||'#ff8'});
+      for(var i=0;i<2;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.5,1.5);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.5,maxL:0.5,size:rng(0.5,1.2),color:prey.sp.color||'#ccc'});});
       }
       if(pred===player && window.showToast) window.showToast('+'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' масса', '#4f4');
       if (typeof window !== 'undefined' && state === 'menu' && (window.focusTimer||0) <= 0 && Math.random() < 0.15) { window.focusTarget = pred; window.focusTimer = 2.0; }
   } else {
       // partial nutrition already applied above via biteFrac — no second energy add
-      for(var i=0;i<12;i++){
-          var pAng = rng(0, Math.PI*2);
-          var spd = rng(1, 5);
-          parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.9,maxL:0.9,size:rng(2,5),color:prey.sp.color||'#fa4'});
+      for(var i=0;i<1;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.3,1.0);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.4,maxL:0.4,size:rng(0.5,1.0),color:prey.sp.color||'#ccc'});});
       }
       if(pred===player && window.showToast) window.showToast('Укус +'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' м', '#fa4');
   }
@@ -389,7 +383,7 @@ function updateInfections(dt){
         killOrg(o,DCODE.LYSIS);
         // Burst particles: cell debris + viral particles
         if(settings.particles){
-          for(var p=0;p<20;p++)parts.push({x:o.x,y:o.y,vx:rng(-6,6),vy:rng(-6,6),life:1.5,maxL:1.5,size:rng(2,6),color:p<10?'#f44':o.sp.color});
+          for(var p=0;p<4;p++)parts.push({x:o.x,y:o.y,vx:rng(-1,1),vy:rng(-1,1),life:0.8,maxL:0.8,size:rng(0.5,1.5),color:o.sp.color});
         }
       }
     }
@@ -608,7 +602,7 @@ function updateOrg(o,dt){
   }
   
   if(o.lastTemp !== undefined && Math.abs(o.lastTemp - curTemp) > 12) {
-      if(settings.particles) for(var k=0;k<5;k++) parts.push({x:o.x,y:o.y,vx:rng(-2,2),vy:rng(-2,2),life:rng(2,5),maxL:5,size:rng(1,3),color:o.sp.color});
+      if(settings.particles) parts.push({x:o.x,y:o.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.5,maxL:0.5,size:0.8,color:o.sp.color});
       killOrg(o, DCODE.STARVE); return;
   }
   o.lastTemp = window.getTempAt(o.x, o.y);
@@ -715,8 +709,7 @@ function updateOrg(o,dt){
 
   // Fluid Dynamics (Vortices/Trails)
   if (o.size > 20 && o.speedMult > 0.1 && (Math.abs(o.vx)>10 || Math.abs(o.vy)>10)) {
-     if(Math.random() < 0.2) {
-       parts.push({x:o.x-o.vx*0.1,y:o.y-o.vy*0.1,vx:-o.vy*0.1,vy:o.vx*0.1,life:rng(1,3),maxL:3,size:rng(2,4),color:'rgba(255,255,255,0.1)'});
+     /* trail removed */);
      }
   }
 

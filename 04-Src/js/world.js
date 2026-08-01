@@ -240,7 +240,7 @@ function clampToPuddle(o){
   else if(o.y < 2){ o.y = 2; if(o.vy<0) o.vy = -o.vy*0.25; }
   if(o.y > PD-8){ o.y = PD-8; if(o.vy>0) o.vy = -o.vy*0.3; }
   // Lily pad collision: bounce off pads near surface
-  if(o.y < 80 && window._lilyPads){
+  if(o.y < 100 && window._lilyPads && o.y > 0){
     for(var li=0; li<window._lilyPads.length; li++){
       var lp=window._lilyPads[li];
       var dx=o.x-lp.x, dy=(o.y-lp.y)*2.5;

@@ -180,7 +180,7 @@ function moveOrg(o,dt){
     if(o.vy < -0.2) o.vy *= 1.15;
   }
   if(o.isPlayer){ if(o.y < -30){ o.y = -30; if(o.vy<0) o.vy*=-0.2; } }
-  else if(o.y < -8){ o.y = -8; if(o.vy<0) o.vy = Math.abs(o.vy)*0.25; }
+  else if(o.y < 2){ o.y = 2; if(o.vy<0) o.vy = Math.abs(o.vy)*0.25; }
       if(o.y > PD-12){ o.y = PD-12; if(o.vy>0) o.vy = -Math.abs(o.vy)*0.35; }
     }
   }

@@ -12,39 +12,20 @@ function renderSky(vL,vR,vT){
   var t = (typeof tod==='number') ? tod : 12;
   var z = (typeof zoom==='number' && zoom>0) ? zoom : 1;
 
-  // --- Sky: day blue / planetarium dusk (black zenith + fire horizon) / deep night ---
-  var g = ctx.createLinearGradient(0, vT, 0, 0);
-  if(t >= 5.5 && t < 8){
-    // dawn
-    g.addColorStop(0, '#0a1028');
-    g.addColorStop(0.4, '#2a3a70');
-    g.addColorStop(0.7, '#c87850');
-    g.addColorStop(0.9, '#ffb070');
-    g.addColorStop(1, '#ffd8a8');
-  } else if(t >= 8 && t < 16.5){
-    // day
-    g.addColorStop(0, '#0a1848');
-    g.addColorStop(0.35, '#1a58a8');
-    g.addColorStop(0.7, '#4a98d0');
-    g.addColorStop(0.92, '#90c8e8');
-    g.addColorStop(1, '#b8dcf0');
-  } else if(t >= 16.5 && t < 21.5){
-    // PLANETARIUM sunset: black upper sky → violet → magenta → orange fire at horizon
-    g.addColorStop(0, '#000008');
-    g.addColorStop(0.25, '#05010f');
-    g.addColorStop(0.45, '#1a0840');
-    g.addColorStop(0.58, '#4a1868');
-    g.addColorStop(0.70, '#a02848');
-    g.addColorStop(0.82, '#e85828');
-    g.addColorStop(0.92, '#ff9020');
-    g.addColorStop(1, '#ffc060');
-  } else {
-    // deep night — black with faint blue horizon
-    g.addColorStop(0, '#000005');
-    g.addColorStop(0.7, '#020610');
-    g.addColorStop(0.9, '#060c20');
-    g.addColorStop(1, '#0a1430');
-  }
+  // --- SMOOTH sky: linear interpolation between palettes ---
+  var _hx=function(h){var n=parseInt(h.slice(1),16);return[(n>>16)&255,(n>>8)&255,n&255];};
+  var _rs=function(c){return'rgb('+c[0]+','+c[1]+','+c[2]+')';};
+  var _PAL={night:['#000005','#020610','#0a1430'],dawn:['#0a1028','#2a3a70','#ffd8a8'],day:['#0a1848','#1a58a8','#b8dcf0'],dusk:['#05010f','#4a1868','#ff9020']};
+  var _bl={night:0,dawn:0,day:0,dusk:0};
+  if(t<4.5||t>=21.5){_bl.night=1;}
+  else if(t<5.5){_bl.night=(5.5-t);_bl.dawn=1-_bl.night;}
+  else if(t<8){_bl.dawn=(8-t)/2.5;_bl.day=1-_bl.dawn;}
+  else if(t<16.5){_bl.day=1;}
+  else if(t<19){_bl.day=(19-t)/2.5;_bl.dusk=1-_bl.day;}
+  else if(t<21.5){_bl.dusk=(21.5-t)/2.5;_bl.night=1-_bl.dusk;}
+  var _blL=function(i){var r=0,g=0,b=0;for(var k in _bl){if(_bl[k]<0.01)continue;var c=_hx(_PAL[k][i]);r+=c[0]*_bl[k];g+=c[1]*_bl[k];b+=c[2]*_bl[k];}return'rgb('+Math.round(r)+','+Math.round(g)+','+Math.round(b)+')';};
+  var g=ctx.createLinearGradient(0,vT,0,0);
+  g.addColorStop(0,_blL(0));g.addColorStop(0.5,_blL(1));g.addColorStop(1,_blL(2));
   ctx.fillStyle = g;
   ctx.fillRect(vL - 20, vT - 2, (vR - vL) + 40, h + 4);
 

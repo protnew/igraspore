@@ -86,7 +86,7 @@ function doDivide(o){
   o.dividing=true; o.divT=0; o.state='dividing';
   o.preDivSize=o.size;
   // Spend mass/eats immediately — cannot chain-divide mid-animation
-  o.massFood = 0;
+  o.massFood = (o.massFood || 0) * 0.5;
   o.eatsSinceDiv = 0;
   return true;
 }
@@ -99,7 +99,7 @@ function finishDivide(o){
   var half = Math.max(1.6, base * 0.5);
   o.size = half;
   // MUST re-accumulate mass/eats before next divide
-  o.massFood = 0;
+  o.massFood = (o.massFood || 0) * 0.5;
   o.eatsSinceDiv = 0;
   o.birthSize = half;
   // Longer cooldown for predators — no spam divide

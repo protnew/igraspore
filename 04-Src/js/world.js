@@ -237,8 +237,22 @@ function clampToPuddle(o){
   }
   // Open surface at y≈0 (air-water interface). Soft bounce only above water.
   if(o.isPlayer){ if(o.y < -35){ o.y=-35; if(o.vy<0) o.vy=-o.vy*0.2; } }
-  else if(o.y < -8){ o.y = -8; if(o.vy<0) o.vy = -o.vy*0.25; }
+  else if(o.y < 2){ o.y = 2; if(o.vy<0) o.vy = -o.vy*0.25; }
   if(o.y > PD-8){ o.y = PD-8; if(o.vy>0) o.vy = -o.vy*0.3; }
+  // Lily pad collision: bounce off pads near surface
+  if(o.y < 80 && window._lilyPads){
+    for(var li=0; li<window._lilyPads.length; li++){
+      var lp=window._lilyPads[li];
+      var dx=o.x-lp.x, dy=(o.y-lp.y)*2.5;
+      var d2=dx*dx+dy*dy;
+      var minD=lp.rx*0.6;
+      if(d2 < minD*minD && o.y < lp.y+20){
+        // Push organism DOWN below the pad
+        o.y = lp.y + 20 + Math.random()*5;
+        if(o.vy<0) o.vy = Math.abs(o.vy)*0.3;
+      }
+    }
+  }
 }
 
 

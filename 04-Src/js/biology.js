@@ -598,10 +598,9 @@ function updateOrg(o,dt){
     if(dayLight<0.05) photo=0;
     var nutr=0;
     // Photosynthesis requires CO2 and produces O2
-    var co2Lim = Math.min(1.0, globalCO2 / 5.0); // CO2 abundant — not a bottleneck
-    photo *= co2Lim;
-    globalCO2 -= photo * dt * 0.01; // very slow drain
-    globalO2 += photo * dt * 0.01;
+    // Atmosphere is effectively infinite — CO2 never limits photosynthesis in a puddle
+    var co2Lim = 1.0;
+    // globalCO2/O2 tracked for display but never bottleneck gameplay
     if(photo > 0.1 && Math.random() < 0.05 * dt * 60 && typeof o2Bubbles !== 'undefined') {
         o2Bubbles.push({x: o.x + (Math.random()*2-1)*o.size, y: o.y, vy: -(Math.random()*1.5+0.5), r: Math.random()*2+1, life: 1});
     }
@@ -648,10 +647,10 @@ function updateOrg(o,dt){
     } else if(o.state === 'wander' || o.state === 'run'){
       huntTax = 0.85;
     }
-    o.energy-=metab*dt*DIFF[difficulty].energy * (2.0 - o2Lim) * huntTax;
-
-    globalO2 -= metab * dt * 0.05;
-    globalCO2 += metab * dt * 0.05;
+// Producers already handle their own energy via photosynthesis — skip general drain
+    if(o.sp.cat !== 'producer'){
+      o.energy-=metab*dt*DIFF[difficulty].energy * (2.0 - o2Lim) * huntTax;
+    }
     // Soft floor for NPC predators: enter rest before zero-death
     if(!o.isPlayer && o.energy < 18 && o.energy > 0 && !o.cyst && !o.dying){
       o.state = 'rest';

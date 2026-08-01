@@ -271,7 +271,7 @@ function startGame(isScreensaver){
   }
   
   // Start zoomed in enough to see neighbors (Spore/Agar feel)
-  state='playing';zoom=2.2;tZoom=2.2;gt=0;fc=0;lastT=0;
+  state='playing';zoom=1.8;tZoom=1.8;gt=0;fc=0;lastT=0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';

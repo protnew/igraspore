@@ -166,7 +166,12 @@ function finishDivide(o){
 function eatOrg(pred,prey){
   if(!prey||!prey.alive)return;
   // Eat cooldown — predators can't eat every frame (realistic digestion)
-  if(!pred.isPlayer && (pred.eatCD||0) > 0) return;
+  if(!pred.isPlayer && (pred.eatCD||0) > 0){
+    // Visual lunge even on cooldown — predator tried to bite
+    pred.flash = Math.max(pred.flash||0, 0.3);
+    pred.flashColor = '#f80';
+    return;
+  }
   // Player overrides soft locks on prey
   if(!(pred&&pred.isPlayer)){
     if(prey.divCD>0||prey.invuln>0)return;
@@ -175,7 +180,7 @@ function eatOrg(pred,prey){
   }
   // Set digestion cooldown (3-8 seconds depending on predator size)
   if(!pred.isPlayer){
-    pred.eatCD = 2.0 + (pred.sp.size||4) * 0.5; // 4-6 sec between meals
+    pred.eatCD = 1.0 + (pred.sp.size||4) * 0.3; // 2.5-4 sec between meals
   }
   if(prey.sp.cat==='consumer1' && Math.random()<0.15) {
      pred.parasite = prey.sp;

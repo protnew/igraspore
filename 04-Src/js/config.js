@@ -14,7 +14,7 @@ var CN2=["Paramecium caudatum","Paramecium bursaria","Stentor coeruleus","Stento
 var CN3=["Actinophrys sol","Actinosphaerium eichhorni","Raphidiophrys pallida","Rotaria rotatoria","Philodina roseola","Brachionus plicatilis","Keratella cochlearis","Asplanchna priodonta","Chaetonotus maximus","Lepidodermella squamata","Macrostomum lignano","Stenostomum leucops","Microstomum lineare","Prostoma graecense","Trichoplax adhaerens"];
 var DN=["Saccharomyces cerevisiae","Candida albicans","Mucor mucedo","Rhizopus stolonifer","Penicillium chrysogenum","Aspergillus niger","Batrachochytrium dendrobatidis","Chytriomyces aureus","Allomyces macrogynus","Bacillus subtilis","Pseudomonas putida","Streptomyces coelicolor","Cellulomonas fimi","Thermus aquaticus","Deinococcus radiodurans"];
 var VN=["T4 Bacteriophage","Lambda Phage","T7 Bacteriophage","Phi-6 Phage","MS2 Phage"];
-var CC={producer:"#2c2",consumer1:"#4af",consumer2:"#f80",consumer3:"#c4f",decomposer:"#a86",virus:"#f44",macrophage:"#eeeeee"};
+var CC={producer:"#22dd44",consumer1:"#33aaff",consumer2:"#ff9900",consumer3:"#dd44cc",decomposer:"#bb9966",virus:"#ff3333",macrophage:"#eeeeee"};
 var SHAPES={producer:["circle","rod","spiral","filament","filament","circle","circle","filament","circle","circle","colony","spiral","rod","circle","circle","star","rod","rod","circle","rod","spiral","rod","circle","circle","circle"],consumer1:["rod","circle","rod","rod","rod","rod","rod","circle","circle","circle","circle","circle","circle","circle","circle","spiral","circle","circle","bell","bell"],consumer2:["slipper","slipper","bell","bell","bell","bell","bell","bell","bell","oval","oval","oval","slipper","rod","rod","oval","bell","bell","bell","irregular","star","irregular","star","irregular","irregular"],consumer3:["star","star","star","rod","rod","bell","bell","bell","rod","rod","oval","rod","rod","rod","irregular"],decomposer:["circle","circle","filament","filament","filament","filament","circle","circle","filament","rod","rod","filament","rod","rod","circle"]};
 function bioFlags(cat,i){
   var b={nucleus:false,chloro:false,vac:false,flag:false,cilia:false,eye:false,pseudo:false,wall:false,biolum:false,stalk:false,oral:false,bud:false,chain:false,mito:false,golgi:false,er:false,trich:false,macro:false,ribo:false,plastid:false,contractile:false,pellicle:false,glide:false,nucleoid:false,thylakoid:false};
@@ -126,7 +126,7 @@ function getLocomotion(cat,i){
   if(cat==='decomposer')return SHAPES.decomposer[i]==='circle'?'budding':'growth';
   return'drift';
 }
-var SPECIES_DB=mkSp(PN,'producer',3,5,0.015,0.04).concat(mkSp(CN1,'consumer1',3,7,0.15,0.35)).concat(mkSp(CN2,'consumer2',4,7,0.30,0.60)).concat(mkSp(CN3,'consumer3',5,8,0.50,0.90)).concat(mkSp(DN,'decomposer',3,6,0.01,0.03));
+var SPECIES_DB=mkSp(PN,'producer',3,5,0.010,0.027).concat(mkSp(CN1,'consumer1',3,7,0.10,0.23).concat(mkSp(CN2,'consumer2',4,7,0.20,0.40)).concat(mkSp(CN3,'consumer3',5,8,0.33,0.60)).concat(mkSp(DN,'decomposer',3,6,0.007,0.02));
 // Virus species
 for(var i=0;i<SPECIES_DB.length;i++){SPECIES_DB[i].id=i;}
 var VIRUS_SPECS=[];

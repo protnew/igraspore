@@ -367,6 +367,11 @@ function updateWorld(dt){
       }
     }
   }
+  // HARD surface clamp — nobody escapes water
+  for(var _ci=0; _ci<orgs.length; _ci++){
+    var _co=orgs[_ci];
+    if(_co&&_co.alive&&_co.y<1){ _co.y=1; if(_co.vy<0) _co.vy=Math.abs(_co.vy)*0.3; }
+  }
   if(settings.bubbles){
     if(Math.random()<0.08){var bd=rng(PD*0.5,PD-10),bhw=halfW(bd)-10;o2Bubbles.push({x:rng(-bhw,bhw),y:bd,vy:-rng(0.5,1.5),r:rng(2,5),life:1});}
     if(typeof o2Bubbles !== 'undefined'){

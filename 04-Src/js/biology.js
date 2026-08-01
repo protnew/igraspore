@@ -297,14 +297,12 @@ function eatOrg(pred,prey){
       }
       killOrg(prey,DCODE.EATEN);
       // Big burst
-      for(var i=0;i<2;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.5,1.5);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.5,maxL:0.5,size:rng(0.5,1.2),color:prey.sp.color||'#ccc'});});
-      }
+      for(var i=0;i<2;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.5,1.5);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.5,maxL:0.5,size:rng(0.5,1.2),color:prey.sp.color||'#ccc'});}
       if(pred===player && window.showToast) window.showToast('+'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' масса', '#4f4');
       if (typeof window !== 'undefined' && state === 'menu' && (window.focusTimer||0) <= 0 && Math.random() < 0.15) { window.focusTarget = pred; window.focusTimer = 2.0; }
   } else {
       // partial nutrition already applied above via biteFrac — no second energy add
-      for(var i=0;i<1;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.3,1.0);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.4,maxL:0.4,size:rng(0.5,1.0),color:prey.sp.color||'#ccc'});});
-      }
+      for(var i=0;i<1;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.3,1.0);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.4,maxL:0.4,size:rng(0.5,1.0),color:prey.sp.color||'#ccc'});}
       if(pred===player && window.showToast) window.showToast('Укус +'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' м', '#fa4');
   }
 }
@@ -707,11 +705,7 @@ function updateOrg(o,dt){
     if(o.parasite && o.energy < 15){ o.parasite=null; if(window.showToast) window.showToast('Паразит сброшен','#fd8'); }
   }
 
-  // Fluid Dynamics (Vortices/Trails)
-  if (o.size > 20 && o.speedMult > 0.1 && (Math.abs(o.vx)>10 || Math.abs(o.vy)>10)) {
-     /* trail removed */);
-     }
-  }
+  // Fluid Dynamics (Vortices/Trails) — removed for realism
 
   // Flocking AI for Colony species
   if (o.sp.flags && o.sp.flags.chain && !o.dying && o.state !== 'flee' && o.state !== 'hunt') {

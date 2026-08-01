@@ -114,7 +114,7 @@ function initWorld(){
        var sp = selectedSpecies[s];
        var baseCnt = Math.round((INIT_N[cat]/3 + 10) * settings.density);
        for(var i=0;i<baseCnt;i++){
-         var d=(cat==='producer')?rng(2,40):rng(15,PD*0.5);var hw=Math.max(40,halfW(d)-40);
+         var d=(cat==='producer')?rng(2,80):rng(15,PD*0.15);var hw=Math.max(40,halfW(d)-40);
          spawnOrg(sp,rng(-hw,hw),d);
        }
     }
@@ -362,7 +362,7 @@ function updateWorld(dt){
       if(bm < TGT[cat]*avgBm*DIFF[difficulty].spawn*settings.density){
         var numToSpawn = (cat === 'producer') ? 15 : 1;
         for (var k=0; k<numToSpawn; k++) {
-           if(pool.length>0){var sp=pool[Math.floor(Math.random()*pool.length)];var d=(cat==='producer')?rng(2,40):rng(15,PD*0.5);var hw=Math.max(40,halfW(d)-30);spawnOrg(sp,rng(-hw,hw),d);}
+           if(pool.length>0){var sp=pool[Math.floor(Math.random()*pool.length)];var d=(cat==='producer')?rng(2,80):rng(15,PD*0.15);var hw=Math.max(40,halfW(d)-30);spawnOrg(sp,rng(-hw,hw),d);}
         }
       }
     }

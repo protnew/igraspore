@@ -126,7 +126,7 @@ function getLocomotion(cat,i){
   if(cat==='decomposer')return SHAPES.decomposer[i]==='circle'?'budding':'growth';
   return'drift';
 }
-var SPECIES_DB=mkSp(PN,'producer',3,5,0.03,0.08).concat(mkSp(CN1,'consumer1',3,7,0.30,0.70)).concat(mkSp(CN2,'consumer2',4,7,0.60,1.20)).concat(mkSp(CN3,'consumer3',5,8,1.00,1.80)).concat(mkSp(DN,'decomposer',3,6,0.22,0.55));
+var SPECIES_DB=mkSp(PN,'producer',3,5,0.015,0.04).concat(mkSp(CN1,'consumer1',3,7,0.15,0.35)).concat(mkSp(CN2,'consumer2',4,7,0.30,0.60)).concat(mkSp(CN3,'consumer3',5,8,0.50,0.90)).concat(mkSp(DN,'decomposer',3,6,0.11,0.28));
 // Virus species
 for(var i=0;i<SPECIES_DB.length;i++){SPECIES_DB[i].id=i;}
 var VIRUS_SPECS=[];
@@ -202,12 +202,12 @@ function getWikiEntry(i){
 }
 
 // === CONFIG ===
-var PW=25000,PD=400,BW=600,MAX_ORG=8000,DAY_SEC=120,SPD_SCALE=16;
+var PW=25000,PD=2000,BW=600,MAX_ORG=8000,DAY_SEC=120,SPD_SCALE=16;
 var SPAWN_RATES={producer:2,consumer1:0.3,consumer2:0.08,consumer3:0.02,decomposer:0.2,macrophage:0.05,virus:0.1};
 var FOOD={consumer1:["producer"],consumer2:["producer","consumer1","consumer2"],consumer3:["producer","consumer1","consumer2"],decomposer:["producer","consumer1"],macrophage:["consumer1","consumer2","consumer3"]};
 var DIFF={easy:{spawn:1.5,energy:0.8,metab:0.3,virus:0.2},normal:{spawn:1.0,energy:1.0,metab:0.5,virus:0.4},hard:{spawn:0.7,energy:1.2,metab:0.8,virus:0.8}};
-var TGT={producer:3000,consumer1:35,consumer2:18,consumer3:8,decomposer:80,macrophage:0};
-var INIT_N={producer:2500,consumer1:30,consumer2:15,consumer3:6,decomposer:60,macrophage:0,virus:2};
+var TGT={producer:4000,consumer1:60,consumer2:30,consumer3:12,decomposer:120,macrophage:0};
+var INIT_N={producer:3500,consumer1:50,consumer2:25,consumer3:10,decomposer:100,macrophage:0,virus:3};
 var SEASONS=[{temp:16,light:0.85,ice:0,rain:0.15},{temp:24,light:1,ice:0,rain:0.08},{temp:10,light:0.7,ice:0.05,rain:0.25},{temp:3,light:0.45,ice:0.6,rain:0.03}];
 var SEASON_DAYS=2;
 var DCODE={STARVE:0,EATEN:1,TEMP:2,AGE:3,LYSIS:4};

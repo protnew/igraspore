@@ -122,7 +122,14 @@ function gameLoop(ts){
       }
     }
   }else if(state==='gameover'){showDeadScreen();state='dead';}
-  if(state==='playing'||state==='menu')render();
+  if(state==='playing'||state==='menu'){
+    var _re = (typeof player!=='undefined' && player) ? player.energy : 0;
+    render();
+    if(window._dbgRender && typeof player!=='undefined' && player){
+      var _ra = player.energy;
+      if(Math.abs(_ra - _re) > 0.5) console.log('RENDER: before='+_re.toFixed(1)+' after='+_ra.toFixed(1)+' dE='+(_ra-_re).toFixed(3));
+    }
+  }
   requestAnimationFrame(gameLoop);
   }catch(e){console.error('gameLoop:',e.message,e.stack);requestAnimationFrame(gameLoop);}
 }

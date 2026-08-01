@@ -768,7 +768,8 @@ function updateOrg(o,dt){
           }
         }
     } else {
-        if(Math.random()<0.02*dt)doDivide(o);
+        var divP = o.isPlayer ? 0.5 : 0.02;
+        if(Math.random()<divP*dt)doDivide(o);
     }
   }
   if(o.energy<=0 && !o.isPlayer){

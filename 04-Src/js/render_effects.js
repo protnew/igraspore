@@ -641,7 +641,8 @@ function drawNaturalLilypads(vL, vR, surfW){
     if(padSeed(lp*9.1) > 0.92){ // rare tertiary
       pads.push({x:px-rx*0.6+padSeed(lp*10.1)*50, y:wy-3+padSeed(lp*11.1)*5, rx:rx*0.3, ry:ry*0.3, rot:padSeed(lp*12.1)*4, seed:Math.abs(Math.floor(lp*100))+3});
     }
-  }// --- Pad shadows: ~50% of sunlight blocked (readable shade columns) ---
+  }window._lilyPads = pads;
+  // --- Pad shadows: ~50% of sunlight blocked (readable shade columns) ---
   if(dl > 0.08){
     ctx.save();
     // Light direction from sun (parallel, one way)

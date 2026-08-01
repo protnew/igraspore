@@ -59,13 +59,13 @@ function mkSp(arr,cat,minSz,maxSz,minSp,maxSp){
     var ti=i/arr.length; var sz=minSz+(maxSz-minSz)*ti; var baseSp=minSp+(maxSp-minSp)*(0.6+ti*0.4); // NO +0.5 floor
     var loc=getLocomotion(cat,i);
     var finalSp=baseSp;
-    if(loc==='drift') finalSp*=0.05;
-    else if(loc==='budding'||loc==='growth') finalSp*=0.02;
-    else if(loc==='pseudopodia') finalSp*=0.1;
-    else if(loc==='glide') finalSp*=0.3;
-    else if(loc==='flagella') finalSp*=1.25;
-    else if(loc==='cilia') finalSp*=1.55; // filter cruise, not rocket
-    else if(loc==='cilia+stalk') finalSp*=1.0;
+    if(loc==='drift') finalSp*=0.25; // still barely moves
+    else if(loc==='budding'||loc==='growth') finalSp*=0.45; // slow crawl, not frozen
+    else if(loc==='pseudopodia') finalSp*=0.55;
+    else if(loc==='glide') finalSp*=0.35;
+    else if(loc==='flagella') finalSp*=1.0;
+    else if(loc==='cilia') finalSp*=1.15;
+    else if(loc==='cilia+stalk') finalSp*=0.7;
     
     var flags = {};
     var bioName = arr[i].toLowerCase();

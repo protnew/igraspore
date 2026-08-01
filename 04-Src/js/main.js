@@ -231,6 +231,23 @@ function startGame(isScreensaver){
      player=spawnOrg(sp, px, dY, true);
      if(!player)player=spawnOrg(sp,0,35,true);
      player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y-20;
+     // ENERGY TRAP: catch ALL writes to player.energy
+     (function(){
+       var _val = player.energy;
+       var _log = [];
+       Object.defineProperty(player, 'energy', {
+         get: function(){ return _val; },
+         set: function(v){
+           var caller = (new Error().stack).split('\n')[2] || '?';
+           var dE = v - _val;
+           if(Math.abs(dE) > 0.5 && _log.length < 40){
+             _log.push(Math.round(_val*10)/10+'>'+Math.round(v*10)/10+' dE='+Math.round(dE*100)/100+' @'+caller.trim().substring(0,60));
+           }
+           _val = v;
+         }
+       });
+       window._enLog = _log;
+     })();
      // Seed nearby food cluster so player sees action immediately
      var foodCats = FOOD[sp.cat] || ['producer','consumer1'];
      var foodPool = [];

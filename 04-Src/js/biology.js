@@ -326,11 +326,21 @@ function killOrg(o,cause){
       });
   }
   
-  // Gore & Fragments: Spawn detritus/meat chunks if the organism was large
-  if (cause !== DCODE.EATEN && o.size > 20) {
-     var numFrags = Math.floor(o.size / 10);
+  // ALL dead organisms create detritus (organic matter for decomposers)
+  if (cause !== DCODE.EATEN) {
+     // Small orgs: 1 detritus particle. Large: multiple.
+     var numFrags = Math.max(1, Math.floor(o.size / 4));
+     var fragR = Math.max(8, o.size * 2.5);
+     var fragInt = Math.max(0.3, o.size * 0.15);
      for(var f=0; f<numFrags; f++) {
-        nutrientClouds.push({x: o.x + rng(-o.size, o.size), y: o.y + rng(-o.size, o.size), r: rng(10, 20), intensity: rng(0.5, 1.5)});
+        nutrientClouds.push({
+          x: o.x + rng(-o.size, o.size),
+          y: o.y + rng(-o.size, o.size),
+          r: fragR,
+          intensity: fragInt,
+          vx: rng(-0.05, 0.05),
+          vy: rng(0.01, 0.1)  // detritus slowly sinks
+        });
      }
   }
 
@@ -599,6 +609,28 @@ function updateOrg(o,dt){
   o.lastTemp = window.getTempAt(o.x, o.y);
 
   // Eco-Balance 2.0 and Respiration
+  // DECOMPOSER FEEDING: absorb dissolved organic matter (detritus/nutrient clouds)
+  if(o.sp.cat==='decomposer'){
+    var detrGain = 0;
+    for(var dn=0; dn<nutrientClouds.length; dn++){
+      var nc = nutrientClouds[dn];
+      if(dist2(o, nc) < nc.r * nc.r){
+        // Absorb detritus — decomposer gains energy, cloud depletes
+        detrGain = nc.intensity * 0.8 * dt * DIFF[difficulty].energy;
+        nc.intensity -= detrGain * 0.3; // cloud slowly depletes
+        if(nc.intensity < 0.05) nutrientClouds.splice(dn, 1); // remove depleted cloud
+        break;
+      }
+    }
+    o.energy += detrGain;
+    // Decomposers also gain mass from feeding
+    if(detrGain > 0){
+      o.massFood = (o.massFood||0) + detrGain * 0.3;
+      o.size = Math.min((o.sp.size||4) * 1.3, o.size + detrGain * 0.01);
+    }
+  }
+  
+  if(o.sp.ca
   if(o.sp.cat==='producer'){
     var photo=lightAt(o.y)*1.4;
     // BIO-001 FIX: No photosynthesis at night (lightMul check)

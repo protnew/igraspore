@@ -204,7 +204,7 @@ function getWikiEntry(i){
 // === CONFIG ===
 var PW=25000,PD=2000,BW=600,MAX_ORG=8000,DAY_SEC=120,SPD_SCALE=16;
 var SPAWN_RATES={producer:2,consumer1:0.3,consumer2:0.08,consumer3:0.02,decomposer:0.2,macrophage:0.05,virus:0.1};
-var FOOD={consumer1:["producer"],consumer2:["producer","consumer1","consumer2"],consumer3:["producer","consumer1","consumer2"],decomposer:["producer","consumer1"],macrophage:["consumer1","consumer2","consumer3"]};
+var FOOD={consumer1:["producer"],consumer2:["producer","consumer1","consumer2"],consumer3:["producer","consumer1","consumer2"],decomposer:[],macrophage:["consumer1","consumer2","consumer3"]};
 var DIFF={easy:{spawn:1.5,energy:0.8,metab:0.3,virus:0.2},normal:{spawn:1.0,energy:1.0,metab:0.5,virus:0.4},hard:{spawn:0.7,energy:1.2,metab:0.8,virus:0.8}};
 var TGT={producer:4000,consumer1:60,consumer2:30,consumer3:12,decomposer:120,macrophage:0};
 var INIT_N={producer:3500,consumer1:50,consumer2:25,consumer3:10,decomposer:100,macrophage:0,virus:3};

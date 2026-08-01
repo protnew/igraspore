@@ -114,8 +114,22 @@ function initWorld(){
        var sp = selectedSpecies[s];
        var baseCnt = Math.round((INIT_N[cat]/3 + 10) * settings.density);
        for(var i=0;i<baseCnt;i++){
-         var d=(cat==='producer')?rng(2,80):rng(15,PD*0.15);var hw=Math.max(40,halfW(d)-40);
-         spawnOrg(sp,rng(-hw,hw),d);
+         // UNIFORM distribution across entire basin
+         var d, hw;
+         if(cat==='producer'){
+           // Phytoplankton: along entire surface
+           d = rng(2, 80);
+           hw = Math.max(40, halfW(d) - 20);
+         } else if(cat==='decomposer'){
+           // Decomposers: bottom dwellers
+           d = rng(PD*0.4, PD*0.85);
+           hw = Math.max(40, halfW(d) - 20);
+         } else {
+           // Predators/bacteria: uniform across depth
+           d = rng(15, PD*0.75);
+           hw = Math.max(40, halfW(d) - 20);
+         }
+         spawnOrg(sp, rng(-hw, hw), d);
        }
     }
   }
@@ -362,7 +376,14 @@ function updateWorld(dt){
       if(bm < TGT[cat]*avgBm*DIFF[difficulty].spawn*settings.density){
         var numToSpawn = (cat === 'producer') ? 15 : 1;
         for (var k=0; k<numToSpawn; k++) {
-           if(pool.length>0){var sp=pool[Math.floor(Math.random()*pool.length)];var d=(cat==='producer')?rng(2,80):rng(15,PD*0.15);var hw=Math.max(40,halfW(d)-30);spawnOrg(sp,rng(-hw,hw),d);}
+           if(pool.length>0){
+             var sp=pool[Math.floor(Math.random()*pool.length)];
+             var d, hw;
+             if(cat==='producer'){ d=rng(2,80); hw=Math.max(40,halfW(d)-20); }
+             else if(cat==='decomposer'){ d=rng(PD*0.4,PD*0.85); hw=Math.max(40,halfW(d)-20); }
+             else { d=rng(15,PD*0.75); hw=Math.max(40,halfW(d)-20); }
+             spawnOrg(sp,rng(-hw,hw),d);
+           }
         }
       }
     }

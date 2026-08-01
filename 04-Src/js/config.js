@@ -60,7 +60,7 @@ function mkSp(arr,cat,minSz,maxSz,minSp,maxSp){
     var loc=getLocomotion(cat,i);
     var finalSp=baseSp;
     if(loc==='drift') finalSp*=0.25; // still barely moves
-    else if(loc==='budding'||loc==='growth') finalSp*=0.45; // slow crawl, not frozen
+    else if(loc==='budding'||loc==='growth') finalSp*=0.10; // fungi: nearly stationary
     else if(loc==='pseudopodia') finalSp*=0.55;
     else if(loc==='glide') finalSp*=0.35;
     else if(loc==='flagella') finalSp*=1.0;
@@ -126,7 +126,7 @@ function getLocomotion(cat,i){
   if(cat==='decomposer')return SHAPES.decomposer[i]==='circle'?'budding':'growth';
   return'drift';
 }
-var SPECIES_DB=mkSp(PN,'producer',3,5,0.015,0.04).concat(mkSp(CN1,'consumer1',3,7,0.15,0.35)).concat(mkSp(CN2,'consumer2',4,7,0.30,0.60)).concat(mkSp(CN3,'consumer3',5,8,0.50,0.90)).concat(mkSp(DN,'decomposer',3,6,0.11,0.28));
+var SPECIES_DB=mkSp(PN,'producer',3,5,0.015,0.04).concat(mkSp(CN1,'consumer1',3,7,0.15,0.35)).concat(mkSp(CN2,'consumer2',4,7,0.30,0.60)).concat(mkSp(CN3,'consumer3',5,8,0.50,0.90)).concat(mkSp(DN,'decomposer',3,6,0.01,0.03));
 // Virus species
 for(var i=0;i<SPECIES_DB.length;i++){SPECIES_DB[i].id=i;}
 var VIRUS_SPECS=[];

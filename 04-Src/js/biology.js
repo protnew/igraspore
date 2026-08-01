@@ -453,9 +453,9 @@ function updateOrg(o,dt){
   if(o.eatCD>0) o.eatCD -= dt;
   if(o.invuln>0){
     o.invuln-=dt;
-    // Grace period: no metabolism, no energy drain — survive after division/spawn
+    // Grace period: no energy drain — survive after division/spawn
     o.energy = Math.max(o.energy, 30);
-    return;
+    // DON'T return — organism still moves and behaves normally
   }
   if(o.speedMult < 1.0) o.speedMult = Math.min(1.0, (o.speedMult||1.0) + dt*0.05);
   if(o.stomach && o.stomach.length>0){

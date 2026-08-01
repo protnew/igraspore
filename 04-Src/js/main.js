@@ -47,7 +47,7 @@ window.startSpectator = function() {
   window.initAudio();
   initWorld();
   player = null;
-  cam.x = 0; cam.y = 0; state = 'playing'; gt = 0; fc = 0;
+  cam.x = 0; cam.y = 40; state = 'playing'; gt = 0; fc = 0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display='block';
   document.getElementById('spdBar').style.display='flex';
@@ -271,7 +271,7 @@ function startGame(isScreensaver){
   }
   
   // Start zoomed in enough to see neighbors (Spore/Agar feel)
-  state='playing';zoom=1.2;tZoom=1.2;gt=0;fc=0;lastT=0;
+  state='playing';zoom=2.2;tZoom=2.2;gt=0;fc=0;lastT=0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';

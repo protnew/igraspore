@@ -409,6 +409,9 @@ function renderOrganisms(vL,vR,vT,vB){
         ctx.stroke();
         ctx.globalAlpha=1;
       }
+      // FULL internals in realistic/microscope — never empty pale balls
+      if(typeof drawOrgans==='function') drawOrgans(o, sz);
+      if(typeof drawAppendages==='function') drawAppendages(o, sz);
       // Player ring
       if(o.isPlayer){
         ctx.strokeStyle='rgba(80,255,200,0.95)';
@@ -420,10 +423,18 @@ function renderOrganisms(vL,vR,vT,vB){
       ctx.restore();
     }
   } else {
-  // CARTOON MODE: batch by color for performance
+  // CARTOON MODE: full anatomy for near/player/microscope; batch far only
+  var useMicro = !!settings.microscopeMode;
+  var fullR = useMicro ? 99999 : Math.max(180, 220/Math.max(zoom,0.5));
   for(var i=0;i<orgs.length;i++){
     var o=orgs[i];
     if(o.x<vL-40||o.x>vR+40||o.y<vT-40||o.y>vB+40)continue;
+    var dxp = o.x - cam.x, dyp = o.y - cam.y;
+    var near = o.isPlayer || (dxp*dxp+dyp*dyp) < fullR*fullR || zoom>1.8 || useMicro;
+    if(near){
+      renderOrg(o, false);
+      continue;
+    }
     var c=o.sp.color;
     if(!batches[c]) batches[c] = [];
     batches[c].push(o);
@@ -438,13 +449,20 @@ function renderOrganisms(vL,vR,vT,vB){
       if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) continue; 
       ctx.save();ctx.translate(o.x,o.y);ctx.rotate(((typeof o.facing==='number')?o.facing:o.angle)||0);
       drawBody(o, o.size, c, c, true);
-      // Mini internals even in batch — avoid "dumb ovals"
-      if(zoom > 1.3 && o.size > 4){
+      // Mini internals even in batch — NEVER pure pale ovals
+      if(zoom > 0.7 && o.size > 1.5){
         var s=o.size;
-        ctx.fillStyle='rgba(120,60,140,0.55)';
-        ctx.beginPath();ctx.ellipse(-s*0.15,-s*0.05,s*0.22,s*0.16,0,0,Math.PI*2);ctx.fill();
-        ctx.fillStyle='rgba(255,200,80,0.4)';
-        ctx.beginPath();ctx.arc(s*0.2,s*0.1,s*0.1,0,Math.PI*2);ctx.fill();
+        // nucleoid / nucleus
+        ctx.fillStyle='rgba(120,60,140,0.65)';
+        ctx.beginPath();ctx.ellipse(-s*0.12,-s*0.04,s*0.28,s*0.20,0,0,Math.PI*2);ctx.fill();
+        // thylakoid/chloroplast hint
+        ctx.fillStyle='rgba(40,160,70,0.55)';
+        ctx.beginPath();ctx.ellipse(s*0.18,s*0.08,s*0.18,s*0.10,0.4,0,Math.PI*2);ctx.fill();
+        // ribosome dots
+        ctx.fillStyle='rgba(220,220,240,0.45)';
+        for(var _ri=0;_ri<4;_ri++){ var ra=_ri*1.7+o.pulse*0.2; ctx.beginPath();ctx.arc(Math.cos(ra)*s*0.35,Math.sin(ra)*s*0.28,s*0.05,0,Math.PI*2);ctx.fill(); }
+        ctx.fillStyle='rgba(255,200,80,0.45)';
+        ctx.beginPath();ctx.arc(s*0.2,s*0.1,s*0.09,0,Math.PI*2);ctx.fill();
         if(o.sp && o.sp.bio && o.sp.bio.cilia && zoom>1.6){
           ctx.strokeStyle='rgba(255,255,255,0.25)';ctx.lineWidth=0.8;
           for(var ci=0;ci<10;ci++){
@@ -459,11 +477,10 @@ function renderOrganisms(vL,vR,vT,vB){
       ctx.restore();
     }
     ctx.fill();
-      for(var i=0;i<arr.length;i++){
+    // special states only (near orgs already full-rendered)
+    for(var i=0;i<arr.length;i++){
       var o = arr[i];
-      if(o.size * zoom < 3) continue;
       if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) renderOrg(o, false);
-      else renderOrg(o, true);
     }
   }
   } // end cartoon batch

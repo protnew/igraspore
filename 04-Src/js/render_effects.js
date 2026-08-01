@@ -626,7 +626,7 @@ function drawNaturalLilypads(vL, vR, surfW){
     var skip = padSeed(lp*1.3);
     if(skip < 0.15) continue; // organic gaps
     // Y scatter: pads spread vertically across surface band
-    var wy = padSeed(lp*2.1)*120 - 60 + Math.sin(lp*0.025 + t*0.03)*5;
+    var wy = Math.sin(lp*0.025 + t*0.03)*1.5 + (padSeed(lp*2.1)-0.5)*2.0; // surface only y≈0 ±2.5
     var rx = 25 + padSeed(lp*0.7)*57; // 25-82 (10x less area)
     var ry = rx * (fromBelow ? 0.48 : 0.36);
     var rot = padSeed(lp*3.1)*Math.PI*2;
@@ -641,7 +641,8 @@ function drawNaturalLilypads(vL, vR, surfW){
     if(padSeed(lp*9.1) > 0.92){ // rare tertiary
       pads.push({x:px-rx*0.6+padSeed(lp*10.1)*50, y:wy-3+padSeed(lp*11.1)*5, rx:rx*0.3, ry:ry*0.3, rot:padSeed(lp*12.1)*4, seed:Math.abs(Math.floor(lp*100))+3});
     }
-  }window._lilyPads = pads;
+  }for(var _pi=0;_pi<pads.length;_pi++){ if(pads[_pi].y < -1) pads[_pi].y = -1; if(pads[_pi].y > 4) pads[_pi].y = Math.min(pads[_pi].y, 3); }
+  window._lilyPads = pads;
   // --- Pad shadows: ~50% of sunlight blocked (readable shade columns) ---
   if(dl > 0.08){
     ctx.save();

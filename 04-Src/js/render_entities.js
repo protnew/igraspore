@@ -3,7 +3,9 @@
 function drawBody(o,sz,fc2,fd, batched){
   var sh=o.sp.shape;
   // Compute detail level locally (zoom-dependent)
-  var detail=(typeof zoom==="number"&&zoom>(6*(settings.renderMode==="realistic"?0.4:1.0))?2:(zoom>(4*(settings.renderMode==="realistic"?0.4:1.0))?1:0));
+  var _dtBase=(settings.microscopeMode?0.15:(settings.renderMode==="realistic"?0.35:0.55));
+  var detail=(typeof zoom==="number"&&zoom>(2.8*_dtBase)?2:(zoom>(1.2*_dtBase)?1:0));
+  if(settings.microscopeMode) detail=Math.max(detail,2);
   if(!batched){
     var cyto=ctx.createRadialGradient(-sz*0.25,-sz*0.25,0,0,0,sz*1.1);
     cyto.addColorStop(0,fc2);
@@ -218,6 +220,7 @@ function drawBody(o,sz,fc2,fd, batched){
 function renderOrg(o, skipBody){
   ctx.save();ctx.translate(o.x,o.y);
   var isReal=settings.renderMode==='realistic';
+  var sz=o.size;
   
   // Bioluminescence at night for producers (gradient, NOT shadow — 50x faster)
   if(dayLight < 0.35 && o.sp.cat === 'producer' && o.alive) {
@@ -299,10 +302,11 @@ function renderOrg(o, skipBody){
     ctx.stroke();
   }
   else if(!skipBody)drawBody(o,sz,bc,bd);
-  var organZoom=settings.renderMode==='realistic'?1.2:1.8;
-  if(zoom>organZoom)drawOrgans(o,sz);
-  var appZoom=settings.renderMode==='realistic'?1.0:1.4;
-  if(zoom>appZoom)drawAppendages(o,sz);
+  // Organs ALWAYS visible in play — not only at extreme zoom
+  var organZoom=settings.microscopeMode?0.3:(settings.renderMode==='realistic'?0.55:0.75);
+  if(zoom>organZoom || o.isPlayer || settings.microscopeMode) drawOrgans(o,sz);
+  var appZoom=settings.microscopeMode?0.3:(settings.renderMode==='realistic'?0.5:0.7);
+  if(zoom>appZoom || o.isPlayer || settings.microscopeMode) drawAppendages(o,sz);
   if(o.flash>0){
     ctx.globalAlpha=o.flash;
     ctx.fillStyle=o.flashColor||'#ff8';
@@ -357,8 +361,9 @@ function renderOrg(o, skipBody){
 
 function drawOrgans(o,sz){
   var org=o.organs;if(!org)return;
-  var detailThreshold=settings.renderMode==='realistic'?0.4:1.0;
-  var detail=zoom>(6*detailThreshold)?2:(zoom>(4*detailThreshold)?1:0);
+  var detailThreshold=settings.microscopeMode?0.15:(settings.renderMode==='realistic'?0.35:0.55);
+  var detail=zoom>(2.8*detailThreshold)?2:(zoom>(1.2*detailThreshold)?1:0);
+  if(settings.microscopeMode) detail=Math.max(detail,2);
   for(var i=0;i<org.length;i++){
     var g=org[i];ctx.save();
     if(g.t==='nuc'){
@@ -504,19 +509,38 @@ function drawOrgans(o,sz){
       }
     }
     else if(g.t==='nucleoid'){
-      ctx.strokeStyle='rgba(140,160,255,0.7)'; ctx.lineWidth=1; ctx.beginPath();
-      for(var k=0;k<16;k++){
-         var a=k/16*Math.PI*2; var rr=g.r*(0.5+Math.sin(k*134)*0.5);
+      // DNA nucleoid region — filled cloud + tangled filament
+      var ng2=ctx.createRadialGradient(g.x,g.y,0,g.x,g.y,g.r);
+      ng2.addColorStop(0,'rgba(160,180,255,0.55)');
+      ng2.addColorStop(1,'rgba(80,100,200,0.15)');
+      ctx.fillStyle=ng2; ctx.beginPath(); ctx.arc(g.x,g.y,g.r,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='rgba(140,160,255,0.85)'; ctx.lineWidth=Math.max(1,g.r*0.08); ctx.beginPath();
+      for(var k=0;k<24;k++){
+         var a=k/24*Math.PI*2 + o.pulse*0.1; var rr=g.r*(0.35+Math.sin(k*1.7+o.pulse)*0.45);
          var px=g.x+Math.cos(a)*rr, py=g.y+Math.sin(a)*rr;
          if(k===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
       }
       ctx.closePath(); ctx.stroke();
+      if(detail>=1){ ctx.fillStyle='rgba(200,220,255,0.5)';
+        for(var dk=0;dk<6;dk++){ var da=dk/6*Math.PI*2+o.pulse*0.2;
+          ctx.beginPath();ctx.arc(g.x+Math.cos(da)*g.r*0.4,g.y+Math.sin(da)*g.r*0.35,g.r*0.08,0,Math.PI*2);ctx.fill();}}
     }
     else if(g.t==='thylakoid'){
-      ctx.strokeStyle='rgba(30,120,60,0.4)'; ctx.lineWidth=1;
-      for(var k=1;k<=3;k++){
-         ctx.beginPath(); ctx.arc(g.x, g.y, g.r*(k/3), 0, Math.PI*2); ctx.stroke();
+      // Photosynthetic membranes — concentric rings + green fill
+      var tg=ctx.createRadialGradient(g.x,g.y,g.r*0.15,g.x,g.y,g.r);
+      tg.addColorStop(0,'rgba(80,200,100,0.35)');
+      tg.addColorStop(0.6,'rgba(30,140,70,0.25)');
+      tg.addColorStop(1,'rgba(10,80,40,0.1)');
+      ctx.fillStyle=tg; ctx.beginPath(); ctx.arc(g.x,g.y,g.r,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='rgba(20,140,60,0.7)'; ctx.lineWidth=Math.max(1,g.r*0.06);
+      var rings=detail>=2?5:(detail>=1?4:3);
+      for(var k=1;k<=rings;k++){
+         ctx.beginPath(); ctx.arc(g.x, g.y, g.r*(k/(rings+0.5)), 0, Math.PI*2); ctx.stroke();
       }
+      if(detail>=1){ ctx.strokeStyle='rgba(40,180,80,0.35)'; ctx.lineWidth=0.8;
+        for(var th=0;th<8;th++){ var ta=th/8*Math.PI*2+o.pulse*0.05;
+          ctx.beginPath();ctx.moveTo(g.x+Math.cos(ta)*g.r*0.2,g.y+Math.sin(ta)*g.r*0.2);
+          ctx.lineTo(g.x+Math.cos(ta)*g.r*0.85,g.y+Math.sin(ta)*g.r*0.85);ctx.stroke();}}
     }
     else if(g.t==='ribo'){ctx.fillStyle=g.c;ctx.beginPath();ctx.arc(g.x,g.y,g.r,0,Math.PI*2);ctx.fill();}
     else if(g.t==='trich'){

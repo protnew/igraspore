@@ -598,10 +598,10 @@ function updateOrg(o,dt){
     if(dayLight<0.05) photo=0;
     var nutr=0;
     // Photosynthesis requires CO2 and produces O2
-    var co2Lim = Math.min(1.0, globalCO2 / 50.0);
+    var co2Lim = Math.min(1.0, globalCO2 / 5.0); // CO2 abundant — not a bottleneck
     photo *= co2Lim;
-    globalCO2 -= photo * dt * 0.1;
-    globalO2 += photo * dt * 0.1;
+    globalCO2 -= photo * dt * 0.01; // very slow drain
+    globalO2 += photo * dt * 0.01;
     if(photo > 0.1 && Math.random() < 0.05 * dt * 60 && typeof o2Bubbles !== 'undefined') {
         o2Bubbles.push({x: o.x + (Math.random()*2-1)*o.size, y: o.y, vy: -(Math.random()*1.5+0.5), r: Math.random()*2+1, life: 1});
     }

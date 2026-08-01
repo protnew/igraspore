@@ -339,8 +339,8 @@ function updateWorld(dt){
       }
   }
   // Eco-Balance recovery (Atmosphere exchange)
-  if (globalCO2 < 100) globalCO2 += dt * 0.5;
-  if (globalO2 < 100) globalO2 += dt * 0.5;
+  globalCO2 = Math.min(999, globalCO2 + dt * 3.0); // atmosphere always replenishes
+  globalO2 = Math.min(999, globalO2 + dt * 2.0);
 
 
   spawnT+=dt;

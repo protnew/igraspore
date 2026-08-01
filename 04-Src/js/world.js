@@ -382,7 +382,7 @@ function updateWorld(dt){
                  var o = nearby[j];
                  if(o.alive && !(o.sp.flags&&o.sp.flags.toxic) && dist2(o,tc) < tc.r*tc.r) {
                      var res = o.acidResist || 0;
-                     o.energy -= dt*15 * Math.max(0, 1 - res); o.flash=0.5; o.flashColor='#0f0';
+                     o.energy -= dt*5 * Math.max(0, 1 - res); o.flash=0.5; o.flashColor='#0f0';
                      o.speedMult = 0.1 + 0.8 * res; // slows down less
                  }
              }

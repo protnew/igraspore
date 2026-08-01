@@ -54,9 +54,9 @@ function canDivide(o){
   if(o.size < minSz) return false;
   // Producers divide via photosynthesis, not eating — lower mass threshold
   var needMass = o.sp.cat === 'producer' ? 0.5 : Math.max(adult * 0.50, 2.2);
-  if(o.sp.cat && o.sp.cat.indexOf('consumer') === 0) needMass = Math.max(adult * 0.75, 3.0);
+  if(o.sp.cat && o.sp.cat.indexOf('consumer') === 0) needMass = Math.max(adult * 0.50, 1.5);
   if(o.sp.cat === 'consumer2' || o.sp.cat === 'consumer3' || o.sp.cat === 'macrophage')
-    needMass = Math.max(adult * 0.9, 4.0);
+    needMass = Math.max(adult * 0.60, 2.0);
   if((o.massFood || 0) < needMass) return false;
   return true;
 }
@@ -585,7 +585,7 @@ function updateOrg(o,dt){
 
   // Eco-Balance 2.0 and Respiration
   if(o.sp.cat==='producer'){
-    var photo=lightAt(o.y)*0.95;
+    var photo=lightAt(o.y)*1.4;
     // BIO-001 FIX: No photosynthesis at night (lightMul check)
     if(dayLight<0.05) photo=0;
     var nutr=0;
@@ -608,12 +608,12 @@ function updateOrg(o,dt){
     var dl = (typeof dayLight === 'number') ? dayLight : 1;
     if(dl >= 0.12 && sun > 0){
       // Daylight: net primary production → bank mass
-      var sunMass = sun * 0.55 + dl * dt * 0.45;
+      var sunMass = sun * 0.9 + dl * dt * 0.7;
       sunMass *= (0.55 + depthFrac * 0.9);
       o.massFood = (o.massFood||0) + sunMass;
       if(dl > 0.2){
         var adultCapP = (o.sp.size||4)*(o.sizeMult||1)*1.35;
-        o.size = Math.min(adultCapP, o.size + sunMass * 0.04);
+        o.size = Math.min(adultCapP, o.size + sunMass * 0.08);
       }
     } else {
       // Night / deep dark: no mass gain — respiration burns reserves

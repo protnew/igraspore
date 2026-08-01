@@ -267,12 +267,12 @@ function renderOrg(o, skipBody){
     }
     // Left daughter cell
     ctx.save();ctx.translate(-sep,0);
-    if(!skipBody)drawBody(o,sz*(1-dp*0.15),bc,bd);
-    drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
+    if(!skipBody)drawBody(o,sz*(1-dp*0.45),bc,bd);
+    drawOrgans(o,sz*(1-dp*0.45));ctx.restore();
     // Right daughter cell
     ctx.save();ctx.translate(sep,0);
-    if(!skipBody)drawBody(o,sz*(1-dp*0.15),bc,bd);
-    drawOrgans(o,sz*(1-dp*0.15));ctx.restore();
+    if(!skipBody)drawBody(o,sz*(1-dp*0.45),bc,bd);
+    drawOrgans(o,sz*(1-dp*0.45));ctx.restore();
     ctx.restore();return;}
   ctx.rotate(((typeof o.facing==='number')?o.facing:o.angle||0)+Math.sin(o.wobble)*0.012);
   if(isReal&&!skipBody){

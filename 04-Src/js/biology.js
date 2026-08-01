@@ -733,6 +733,16 @@ function updateOrg(o,dt){
     if(o.isPlayer && window.playerContactEat) window.playerContactEat(dt);
   }
   // division handled at top of updateOrg
+  if(!o.dividing&&!o.cyst){
+    if(o.isPlayer && window._dbgDiv && canDivide(o)){
+      console.log('DIVIDING NOW!');
+    } else if(o.isPlayer && window._dbgDiv){
+      var repE = o.sp.repEnergy || 80;
+      var adult = (o.sp.size||4) * (o.sizeMult||1);
+      var needMass = Math.max(adult*0.50, 2.2);
+      console.log('CANT_DIV: e='+Math.round(o.energy)+'/'+repE+' cd='+(o.divCD||0)+' age='+Math.round(o.age)+'/'+(o.sp.minAge||3)+' sz='+(o.size||0).toFixed(1)+'/'+(adult*0.9).toFixed(1)+' mass='+(o.massFood||0).toFixed(1)+'/'+needMass.toFixed(1));
+    }
+  }
   if(!o.dividing&&!o.cyst&&canDivide(o)){
     if (o.sp.flags && o.sp.flags.gendered) {
         o.seekingMate = true;

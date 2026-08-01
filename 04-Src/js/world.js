@@ -362,7 +362,7 @@ function updateWorld(dt){
       if(bm < TGT[cat]*avgBm*DIFF[difficulty].spawn*settings.density){
         var numToSpawn = (cat === 'producer') ? 15 : 1;
         for (var k=0; k<numToSpawn; k++) {
-           if(pool.length>0){var sp=pool[Math.floor(Math.random()*pool.length)];var d=rng(20,PD-30),hw=halfW(d)-25;spawnOrg(sp,rng(-hw,hw),d);}
+           if(pool.length>0){var sp=pool[Math.floor(Math.random()*pool.length)];var d=(cat==='producer')?rng(2,120):rng(15,PD*0.6);var hw=Math.max(40,halfW(d)-30);spawnOrg(sp,rng(-hw,hw),d);}
         }
       }
     }

@@ -119,6 +119,8 @@ function finishDivide(o){
     cx=clamp(cx,-hw,hw); cy=clamp(cy,5,(typeof PD==='number'?PD:1000)-10);
   }catch(_e){}
   var child=null;
+  // Producer children stay near surface
+  if(o.sp.cat==='producer' && cy > 120) cy = Math.min(cy, rng(2,120));
   try{ child=spawnOrg(o.sp,cx,cy,false,o.energy); }catch(_e){ child=null; }
   if(child){
     child.generation=o.generation+1;child.energy=o.energy*0.9;
@@ -128,6 +130,7 @@ function finishDivide(o){
     if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) ccd=Math.max(ccd,8);
     child.divCD=ccd;
     child.flash=0.7; child.flashColor='#8ff';
+    child.invuln = Math.max(child.invuln||0, 5); // child grace
     
     // Genetics & Mutations
     child.speedMult = o.speedMult;

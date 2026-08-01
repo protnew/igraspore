@@ -60,18 +60,21 @@ function thrustAlongFacing(o, speed, dt, mul){
 
 function moveOrg(o,dt){
   var sp=o.sp;
-  var speed=Math.max(sp.speed, 0.5)*SPD_SCALE*0.05;
+  // Respect species speed; tiny floor only so zero-speed never NaNs physics
+  var speed=Math.max(sp.speed, 0.01)*SPD_SCALE*0.05;
   if(o.isPlayer){
-    // Hierarchy: phyto slow, bacteria mid, ciliates/predators faster (usable control)
+    // Soft hierarchy multipliers — NO hard floors that erase balance
     var cat = o.sp && o.sp.cat;
     if(cat==='producer'){
-      speed = Math.max(speed, 0.55) * 1.45; // slow vs hunters, but can reach surface
+      speed *= 0.75; // еле плавает
     } else if(cat==='consumer1'){
-      speed = Math.max(speed, 1.1) * 1.35;
+      speed *= 1.0;
     } else if(cat==='consumer2'){
-      speed = Math.max(speed, 1.35) * 1.35; // ciliate cruise (filter, not chase)
+      speed *= 1.15;
+    } else if(cat==='consumer3' || cat==='macrophage'){
+      speed *= 1.35;
     } else {
-      speed = Math.max(speed, 2.1) * 1.85; // true hunters fastest
+      speed *= 0.95;
     }
   }
   if(o.speedMult) speed *= o.speedMult;

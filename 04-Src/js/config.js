@@ -56,7 +56,7 @@ function bioFlags(cat,i){
 function mkSp(arr,cat,minSz,maxSz,minSp,maxSp){
   var o=[];
   for(var i=0;i<arr.length;i++){
-    var ti=i/arr.length; var sz=minSz+(maxSz-minSz)*ti; var baseSp=minSp+(maxSp-minSp)*(0.6+ti*0.4)+0.5;
+    var ti=i/arr.length; var sz=minSz+(maxSz-minSz)*ti; var baseSp=minSp+(maxSp-minSp)*(0.6+ti*0.4); // NO +0.5 floor
     var loc=getLocomotion(cat,i);
     var finalSp=baseSp;
     if(loc==='drift') finalSp*=0.05;

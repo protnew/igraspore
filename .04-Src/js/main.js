@@ -229,6 +229,238 @@ function startGame(isScreensaver){
      var hw0 = halfW(dY) - 30;
      var px = rng(-hw0*0.35, hw0*0.35);
      player=spawnOrg(sp, px, dY, true);
+"use strict";
+window.audioCtx = null;
+window.spectatorMode = false;
+window.initAudio = function() {
+  if (!window.audioCtx) {
+    try { window.audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){}
+  }
+};
+window.playSound = function(type, x, y) {
+  if (!window.audioCtx) return;
+  try {
+    let t = window.audioCtx.currentTime;
+    let osc = window.audioCtx.createOscillator();
+    let gain = window.audioCtx.createGain();
+    let panner = null;
+    
+    if (x !== undefined && window.audioCtx.createStereoPanner) {
+       panner = window.audioCtx.createStereoPanner();
+       let panVal = (x - cam.x) / (cv.width/2/zoom);
+       panner.pan.value = Math.max(-1, Math.min(1, panVal));
+       osc.connect(gain);
+       gain.connect(panner);
+       panner.connect(window.audioCtx.destination);
+    } else {
+       osc.connect(gain); gain.connect(window.audioCtx.destination);
+    }
+    
+    if (type === 'eat') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(800, t);
+      osc.frequency.exponentialRampToValueAtTime(300, t + 0.1);
+      gain.gain.setValueAtTime(0.1, t);
+      gain.gain.exponentialRampToValueAtTime(0.01, t + 0.1);
+      osc.start(t); osc.stop(t + 0.1);
+    } else if (type === 'divide') {
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(400, t);
+      osc.frequency.exponentialRampToValueAtTime(800, t + 0.15);
+      gain.gain.setValueAtTime(0.1, t);
+      gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+      osc.start(t); osc.stop(t + 0.15);
+    }
+  } catch(e){}
+};
+window.startSpectator = function() {
+  window.spectatorMode = true;
+  window.initAudio();
+  initWorld();
+  player = null;
+  cam.x = 0; cam.y = 0; state = 'playing'; gt = 0; fc = 0;
+  document.getElementById('menuO').className='ov';
+  document.getElementById('hud').style.display='block';
+  document.getElementById('spdBar').style.display='flex';
+  document.getElementById('todWrap').style.display='flex';
+  document.getElementById('scaleW').style.display='block';
+  var tw=document.getElementById('todWrap');
+  tw.innerHTML='<input type="range" id="todR" min="0" max="24" step="0.05" value="'+tod+'"><span id="todL">12:00</span><span id="seasL">'+tt('season1')+'</span>';
+  var sl=document.getElementById('todR');
+  sl.addEventListener('input',function(){tod=parseFloat(sl.value);updateTodUI();});
+  showSpeedBar(); updateLegend(); updateEcoPanel();
+};
+
+window.focusTarget = null; window.focusTimer = 0; window.cinematicTime = 1;
+
+function gameLoop(ts){
+  try{
+  if(!lastT)lastT=ts;
+  if(state==='playing'&&!player){state='gameover';}
+  var dt=Math.min(0.05,(ts-lastT)/1000);lastT=ts;fc++;
+  
+  if (focusTimer > 0) {
+    focusTimer -= dt;
+    cinematicTime = 0.2; // Slow-mo
+    if (focusTarget && focusTarget.alive) {
+      cam.x += (focusTarget.x - cam.x) * 2 * dt;
+      cam.y += (focusTarget.y - cam.y) * 2 * dt;
+    }
+  } else {
+    cinematicTime = 1;
+    focusTarget = null;
+  }
+  
+  var realDt = dt * cinematicTime;
+  gt+=realDt;
+  
+  fAcc+=dt;fCnt++;if(fAcc>=0.5){fps=Math.round(fCnt/fAcc);fAcc=0;fCnt=0;}
+  
+  if(state==='playing' || state==='menu'){
+    updateWorld(realDt);
+    if (state === 'playing') {
+      updateHUD();updateTopRight();updateWeather();updateEcoPanel();updateLegend();
+      if(typeof updateScaleBar === 'function') updateScaleBar();
+      if(fc%5===0 && typeof window.renderMinimap==='function')window.renderMinimap();if(fc%10===0 && typeof window.renderPopGraph==='function')window.renderPopGraph();
+      if(fc%300===0) { // Every ~5 seconds
+          try {
+              var saved = JSON.parse(localStorage.getItem('igraspore_save') || '{"maxPop":0,"maxPlayerSize":0}');
+              if(gameStats.maxPop > saved.maxPop || gameStats.maxPlayerSize > saved.maxPlayerSize) {
+                  localStorage.setItem('igraspore_save', JSON.stringify({
+                      maxPop: Math.max(gameStats.maxPop, saved.maxPop),
+                      maxPlayerSize: Math.max(gameStats.maxPlayerSize, saved.maxPlayerSize)
+                  }));
+              }
+          } catch(e) {}
+      }
+      var cm=document.getElementById('camM');
+      if(freeCam){cm.textContent=tt('freeCam');cm.className='free';cm.style.display='block';}
+      else if(autoAI){cm.innerHTML='<span style="color:#0f0;text-shadow:0 0 5px #0f0;font-weight:bold;font-size:12px;">АВТО-ПИЛОТ ВКЛ</span>';cm.className='';cm.style.display='block';}
+      else cm.style.display='none';
+      if(gt>15)document.getElementById('keyHint').style.opacity='0.3';
+    } else {
+      // Menu Aquarium Logic
+      if (!focusTarget) {
+         cam.x += 20 * realDt;
+         if(cam.x > PW) cam.x = -PW;
+      }
+    }
+  }else if(state==='gameover'){showDeadScreen();state='dead';}
+  if(state==='playing'||state==='menu')render();
+  requestAnimationFrame(gameLoop);
+  }catch(e){console.error('gameLoop:',e.message,e.stack);requestAnimationFrame(gameLoop);}
+}
+
+
+// ========== ONBOARDING TUTORIAL (5 steps, real "Далее" clicks) ==========
+window.tutorialStep = 0;
+window.tutorialActive = false;
+window.TUTORIAL_STEPS = [
+  { title: 'Добро пожаловать', body: 'Вы — микроорганизм в луже. Цель: есть, расти, делиться. Нажмите «Далее».' },
+  { title: 'Движение', body: 'WASD — плыть. Мышь задаёт направление. Попробуйте сдвинуться, затем «Далее».' },
+  { title: 'Питание', body: 'Подойдите к меньшей клетке и нажмите ЕСТЬ (E). Должны появиться вспышка и «+энергия».' },
+  { title: 'Деление', body: 'При полной энергии нажмите ДЕЛИТЬ (Q). Клетка станет заметно меньше — это нормально.' },
+  { title: 'Готово', body: 'Камера: СЛЕДИТЬ / КАМЕРА. Режим: кнопка РЕАЛИСТИЧНЫЙ. Удачи в эволюции!' }
+];
+
+window.showTutorialStep = function(){
+  var layer = document.getElementById('tutorialLayer');
+  var title = document.getElementById('tutorialTitle');
+  var body = document.getElementById('tutorialBody');
+  var counter = document.getElementById('tutorialCounter');
+  var next = document.getElementById('tutNext');
+  var skip = document.getElementById('tutSkip');
+  if(!layer || !next) return;
+  if(!window.tutorialActive || window.tutorialStep >= window.TUTORIAL_STEPS.length){
+    layer.style.display = 'none';
+    window.tutorialActive = false;
+    return;
+  }
+  var s = window.TUTORIAL_STEPS[window.tutorialStep];
+  title.textContent = s.title;
+  body.textContent = s.body;
+  counter.textContent = (window.tutorialStep+1) + ' / ' + window.TUTORIAL_STEPS.length;
+  next.textContent = (window.tutorialStep === window.TUTORIAL_STEPS.length-1) ? 'Играть' : 'Далее';
+  layer.style.display = 'flex';
+  layer.style.pointerEvents = 'auto';
+  next.style.pointerEvents = 'auto';
+  if(skip) skip.style.pointerEvents = 'auto';
+  // Re-bind every show (handlers must work even if DOM order changed)
+  next.onclick = function(e){ if(e){ e.preventDefault(); e.stopPropagation(); } window.advanceTutorial(); };
+  if(skip) skip.onclick = function(e){ if(e){ e.preventDefault(); e.stopPropagation(); } window.skipTutorial(); };
+  // Also click on card shouldn't block, only buttons
+  var card = document.getElementById('tutorialCard');
+  if(card) card.style.pointerEvents = 'auto';
+};
+
+window.advanceTutorial = function(){
+  if(!window.tutorialActive) return;
+  window.tutorialStep++;
+  if(window.tutorialStep >= window.TUTORIAL_STEPS.length){
+    window.tutorialActive = false;
+    var layer = document.getElementById('tutorialLayer');
+    if(layer) layer.style.display = 'none';
+    if(window.showToast) window.showToast('Туториал пройден', '#4f4');
+    try { localStorage.setItem('igraspore_tut_v2','1'); } catch(e){}
+    return;
+  }
+  window.showTutorialStep();
+};
+
+window.skipTutorial = function(){
+  window.tutorialActive = false;
+  window.tutorialStep = 999;
+  var layer = document.getElementById('tutorialLayer');
+  if(layer) layer.style.display = 'none';
+  try { localStorage.setItem('igraspore_tut_v2','1'); } catch(e){}
+};
+
+window.startTutorial = function(force){
+  var seen = false;
+  try { seen = localStorage.getItem('igraspore_tut_v2') === '1'; } catch(e){}
+  if(seen && !force){ window.tutorialActive=false; return; }
+  window.tutorialActive = true;
+  window.tutorialStep = 0;
+  window.showTutorialStep();
+};
+
+function startGame(isScreensaver){
+  window.initAudio();
+  initWorld();
+  // Always start in the MORNING (clear light, sun up)
+  tod = 9.0;
+  season = 1; // spring-ish light
+  dayLight = 0.85;
+  try{
+    if(typeof updateTodUI==='function') updateTodUI();
+    var sl=document.getElementById('todR'); if(sl) sl.value=tod;
+  }catch(_e){}
+  var sp;
+  if(selSpecies>=VIRUS_ID_START){sp=SPECIES_DB[0];selSpecies=0;}
+  else sp=SPECIES_DB[selSpecies];
+  // Never start as colony (Volvox/Gloeocapsa/Microcystis) — looks like green death-ball
+  if(sp.shape==='colony'){
+    for(var ci=0; ci<SPECIES_DB.length; ci++){
+      if(SPECIES_DB[ci].cat==='consumer1' && SPECIES_DB[ci].shape!=='colony'){ selSpecies=ci; sp=SPECIES_DB[ci]; break; }
+    }
+  }
+  var d=rng(PD*0.2,PD*0.5),hw=halfW(d)-20;
+  
+  if (isScreensaver) {
+     window.spectatorMode = true;
+     freeCam = true;
+     window.screensaverAutoCam = true;
+     player = null;
+     cam.x = 0; cam.y = PD * 0.3;
+  } else {
+     window.spectatorMode = false;
+     freeCam = false;
+     // Always start near the surface (photosphere) — any species
+     var dY = rng(18, 55);
+     var hw0 = halfW(dY) - 30;
+     var px = rng(-hw0*0.35, hw0*0.35);
+     player=spawnOrg(sp, px, dY, true);
+  if(player) player.energy = 60;
      if(!player)player=spawnOrg(sp,0,35,true);
      player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y;
      // Seed nearby food cluster so player sees action immediately

@@ -267,7 +267,7 @@ var isRaining=false,rainTimer=0,rainDrops=[];
 var autoAI=false,freeCam=false;
 var gameStats={startTime:0,maxPop:0,maxPlayerSize:0,evoLvl:0};
 var timeScale=1.0,lastT=0;
-var settings={particles:true,bubbles:true,currents:true,vignette:false,healthBars:true,shadows:true,density:1.0,lightMul:1.0,virusRate:0.7,renderMode:'cartoon',microscopeMode:false};
+var settings={particles:true,bubbles:true,currents:true,vignette:false,healthBars:true,shadows:true,density:1.0,lightMul:1.0,virusRate:0.7,renderMode:'realistic',microscopeMode:false};
 var difficulty='easy',selCat='all',selSpecies=0;
 var mouseDown=false,moveTarget=null;
 var camKeys={w:false,a:false,s:false,d:false};

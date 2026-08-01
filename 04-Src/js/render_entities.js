@@ -283,7 +283,13 @@ function renderOrg(o, skipBody){
     var pr=rgb[0],pg=rgb[1],pb=rgb[2];
     var lum=Math.min(255, Math.round(pr*0.3+pg*0.59+pb*0.11)+100); // Boost brightness
     // Body: bright, semi-transparent
-    ctx.fillStyle='rgba('+lum+','+lum+','+Math.max(0,lum-15)+',0.75)';
+    // Phase contrast: translucent body with light/dark phase shift
+    var pcr=ctx.createRadialGradient(-sz*0.2,-sz*0.2,0,0,0,sz*1.1);
+    pcr.addColorStop(0,'rgba('+(lum+15)+','+(lum+15)+','+lum+',0.85)');
+    pcr.addColorStop(0.5,'rgba('+lum+','+lum+','+Math.max(0,lum-10)+',0.75)');
+    pcr.addColorStop(0.85,'rgba('+(lum-20)+','+(lum-20)+','+Math.max(0,lum-30)+',0.65)');
+    pcr.addColorStop(1,'rgba('+(lum-40)+','+(lum-40)+','+Math.max(0,lum-50)+',0.55)');
+    ctx.fillStyle=pcr;
     ctx.beginPath();
     // Draw same shape as body
     var sh2=o.sp.shape;
@@ -297,9 +303,14 @@ function renderOrg(o, skipBody){
     else{ctx.arc(0,0,sz,0,Math.PI*2);}
     ctx.fill();
     // Bright halo edge
-    ctx.strokeStyle='rgba(255,255,240,0.8)';
-    ctx.lineWidth=Math.max(1.5,sz*0.1);
+    // Phase contrast dark ring (diffraction edge)
+    ctx.strokeStyle='rgba(40,40,30,0.5)';
+    ctx.lineWidth=Math.max(0.5,sz*0.04);
     ctx.stroke();
+    // Subtle inner bright ring (phase shift)
+    ctx.strokeStyle='rgba(220,220,200,0.25)';
+    ctx.lineWidth=Math.max(0.3,sz*0.02);
+    ctx.beginPath();ctx.arc(0,0,sz*0.85,0,Math.PI*2);ctx.stroke();
   }
   else if(!skipBody)drawBody(o,sz,bc,bd);
   // Organs ALWAYS visible in play — not only at extreme zoom
@@ -308,13 +319,25 @@ function renderOrg(o, skipBody){
   var appZoom=settings.microscopeMode?0.3:(settings.renderMode==='realistic'?0.5:0.7);
   if(zoom>appZoom || o.isPlayer || settings.microscopeMode) drawAppendages(o,sz);
   if(o.flash>0){
-    ctx.globalAlpha=o.flash;
-    ctx.fillStyle=o.flashColor||'#ff8';
-    ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();
-    // Combat ring: red ring when attacked
-    if(o.flashColor==='#f44'||o.flashColor==='#f00'){
-      ctx.globalAlpha=o.flash*0.5;ctx.strokeStyle='#f44';ctx.lineWidth=2;
-      ctx.beginPath();ctx.arc(0,0,sz+4+o.flash*5,0,Math.PI*2);ctx.stroke();
+    // MICROSCOPE REALISM: subtle contrast shift, not flash
+    var fc2=o.flashColor||'#ff8';
+    if(fc2==='#f80'||fc2==='#8f8'){
+      // Eating/attack: brief contraction ring (phagocytosis)
+      ctx.globalAlpha=o.flash*0.4;
+      ctx.strokeStyle='rgba(200,200,180,'+o.flash*0.3+')';
+      ctx.lineWidth=Math.max(1,sz*0.08);
+      ctx.beginPath();ctx.arc(0,0,sz*(1.1+o.flash*0.15),0,Math.PI*2);ctx.stroke();
+    } else if(fc2==='#f44'||fc2==='#f00'){
+      // Damage: cell deformation ripple
+      ctx.globalAlpha=o.flash*0.3;
+      ctx.strokeStyle='rgba(180,160,140,'+o.flash*0.4+')';
+      ctx.lineWidth=1;
+      ctx.beginPath();ctx.arc(0,0,sz*(1.05+o.flash*0.2),0,Math.PI*2);ctx.stroke();
+    } else {
+      // Division/misc: very subtle brightening
+      ctx.globalAlpha=o.flash*0.25;
+      ctx.fillStyle='rgba(220,220,200,'+o.flash*0.2+')';
+      ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();
     }
     ctx.globalAlpha=1;
   }

@@ -90,6 +90,8 @@ function render(){
     if(settings.healthBars)renderHealthBars();
   }
   renderTooltip();
+  // Re-draw sun ON TOP of particles (prevents green halo from phytoplankton)
+  if(typeof renderSunOverlay==='function') renderSunOverlay();
   
   // === STEP 7: REALISTIC POST-PROCESSING ===
   if(isReal){

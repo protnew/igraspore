@@ -230,7 +230,7 @@ function startGame(isScreensaver){
      var px = rng(-hw0*0.35, hw0*0.35);
      player=spawnOrg(sp, px, dY, true);
      if(!player)player=spawnOrg(sp,0,35,true);
-     player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y;
+     player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y-20;
      // Seed nearby food cluster so player sees action immediately
      var foodCats = FOOD[sp.cat] || ['producer','consumer1'];
      var foodPool = [];
@@ -269,7 +269,7 @@ function startGame(isScreensaver){
   }
   
   // Start zoomed in enough to see neighbors (Spore/Agar feel)
-  state='playing';zoom=1.5;tZoom=1.5;gt=0;fc=0;lastT=0;
+  state='playing';zoom=1.2;tZoom=1.2;gt=0;fc=0;lastT=0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';
@@ -467,7 +467,7 @@ document.addEventListener('keydown',function(e){
     if(freeCam){
       // Detached -> reattach to player
       freeCam=false;
-      if(player&&player.alive){cam.x=player.x;cam.y=player.y;}
+      if(player&&player.alive){cam.x=player.x;cam.y=player.y-20;}
     } else {
       // Attached -> detach (free camera)
       freeCam=true;
@@ -524,7 +524,7 @@ function toggleRenderModeLarge(){
     if(smBtn){smBtn.style.background='#012';smBtn.style.borderColor='#345';}
   }
 }
-document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;if(player&&player.alive){cam.x=player.x;cam.y=player.y;}if(window.showToast)window.showToast('Камера: СЛЕДИТ','#4af');};
+document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;if(player&&player.alive){cam.x=player.x;cam.y=player.y-20;}if(window.showToast)window.showToast('Камера: СЛЕДИТ','#4af');};
 document.getElementById('bWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
 document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};
 document.getElementById('bZI').onclick=function(){tZoom=clamp(tZoom*1.3,0.01,100);};

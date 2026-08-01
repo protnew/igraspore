@@ -196,7 +196,7 @@ window.buyMutation = function(type) {
         if(type==='shell') { player.sp.flags.shell=true; }
         gameStats.dna -= costs[type];
         document.getElementById('dnaPts').innerText = Math.floor(gameStats.dna);
-        if(settings.particles) for(var k=0;k<15;k++) parts.push({x:player.x,y:player.y,vx:rng(-2,2),vy:rng(-2,2),life:2,maxL:2,size:3,color:'#0ff'});
+        if(settings.particles) for(var k=0;k<3;k++) parts.push({x:player.x,y:player.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.6,maxL:0.6,size:1,color:'#0ff'});
         if(typeof updateHUD === 'function') updateHUD();
     }
 };
@@ -216,7 +216,7 @@ window.importDNA = function() {
         player.sp = sp;
         player.color = sp.color;
         player.size = sp.size;
-        if(settings.particles) for(var k=0;k<15;k++) parts.push({x:player.x,y:player.y,vx:rng(-2,2),vy:rng(-2,2),life:2,maxL:2,size:3,color:'#f0f'});
+        if(settings.particles) for(var k=0;k<3;k++) parts.push({x:player.x,y:player.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.6,maxL:0.6,size:1,color:'#f0f'});
         document.getElementById('dnaString').value = 'DNA Imported Successfully!';
     } catch(e) {
         document.getElementById('dnaString').value = 'Invalid DNA String!';

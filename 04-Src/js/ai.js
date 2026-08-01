@@ -294,7 +294,7 @@ function forceEat(pred, prey){
       prey.alive=false; prey._remove=true;
     }
     if(settings.particles){
-      for(var k=0;k<8;k++) parts.push({x:pred.x,y:pred.y,vx:rng(-3,3),vy:rng(-3,3),life:rng(6,14),maxL:14,size:rng(2,4),color:'#8f8'});
+      parts.push({x:pred.x,y:pred.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.5,maxL:0.5,size:0.8,color:pred.sp.color});
     }
     if(pred.isPlayer && window.showToast) window.showToast('АВТО: +'+Math.round(gain)+' энергия', '#8f8');
     return true;

@@ -464,7 +464,7 @@ function updateOrg(o,dt){
       st.energy-=digestSpeed; o.energy+=digestSpeed;
       st.size-=dt*1.5;
       if(st.energy<=0 || st.size<=0) {
-         if(settings.particles) parts.push({x:o.x, y:o.y, vx:rng(-1,1), vy:rng(-1,1), life:rng(3,8), maxL:1, size:rng(2,4), color:'#864'});
+         if(settings.particles) parts.push({x:o.x, y:o.y, vx:rng(-0.3,0.3), vy:rng(-0.3,0.3), life:0.5, maxL:0.5, size:0.8, color:o.sp.color});
          o.stomach.splice(stIdx, 1);
       }
     }

@@ -134,10 +134,7 @@ function renderSky(vL,vR,vT){
     // Near horizon at dawn/dusk, higher at noon — but always in sky band
     // Prefer sun in upper-middle of visible sky; if camera deep, keep sun near horizon film
     var sunY = -12 - elev * Math.min(h * 0.55, 140);
-    if(typeof cam!=='undefined' && cam.y > 20){
-      // keep sun close above waterline so it sits in frame with pads
-      sunY = -18 - elev * 28;
-    }
+    // Sun always high in sky — never near waterline
     if(sunY < vT + margin) sunY = vT + margin;
     if(sunY > -8) sunY = -8;
     if(sunX < vL + margin) sunX = vL + margin;

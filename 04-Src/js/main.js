@@ -86,14 +86,7 @@ function gameLoop(ts){
   fAcc+=dt;fCnt++;if(fAcc>=0.5){fps=Math.round(fCnt/fAcc);fAcc=0;fCnt=0;}
   
   if(state==='playing' || state==='menu'){
-    if(window._dbgFrame && typeof player!=='undefined' && player){
-      var _eB = player.energy;
-      updateWorld(realDt);
-      var _eA = player.energy;
-      if(Math.abs(_eA - _eB) > 0.5) console.log('FRAME: before='+_eB.toFixed(1)+' after='+_eA.toFixed(1)+' dE='+(_eA-_eB).toFixed(3)+' dt='+realDt.toFixed(4));
-    } else {
-      updateWorld(realDt);
-    }
+    updateWorld(realDt);
     if (state === 'playing') {
       updateHUD();updateTopRight();updateWeather();updateEcoPanel();updateLegend();
       if(typeof updateScaleBar === 'function') updateScaleBar();
@@ -122,14 +115,7 @@ function gameLoop(ts){
       }
     }
   }else if(state==='gameover'){showDeadScreen();state='dead';}
-  if(state==='playing'||state==='menu'){
-    var _re = (typeof player!=='undefined' && player) ? player.energy : 0;
-    render();
-    if(window._dbgRender && typeof player!=='undefined' && player){
-      var _ra = player.energy;
-      if(Math.abs(_ra - _re) > 0.5) console.log('RENDER: before='+_re.toFixed(1)+' after='+_ra.toFixed(1)+' dE='+(_ra-_re).toFixed(3));
-    }
-  }
+if(state==='playing'||state==='menu')render();
   requestAnimationFrame(gameLoop);
   }catch(e){console.error('gameLoop:',e.message,e.stack);requestAnimationFrame(gameLoop);}
 }

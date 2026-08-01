@@ -657,18 +657,14 @@ function updateOrg(o,dt){
     }
   }
 
-  // ENERGY TRACE: comprehensive wrapper
-  if(o.isPlayer && window._dbgEn2 && typeof o._prevEn !== 'undefined'){
-    var dE = o.energy - o._prevEn;
-    if(Math.abs(dE) > 0.01){
-      console.log('dE=' + dE.toFixed(3) + ' before=' + o._prevEn.toFixed(1) + ' after=' + o.energy.toFixed(1) + ' dt=' + dt.toFixed(4) + ' state=' + o.state);
-    }
-  }
-  if(o.isPlayer) o._prevEn = o.energy;
-
-  // Player energy floor/ceiling — never snap to weird negatives from stacked drains
+  // Player energy floor/ceiling — prevent death spiral
   if(o.isPlayer){
-    if(o.energy < 1) o.energy = 1; // keep controllable; death handled slowly below
+    // Producer during day: never starve (photosynthesis sustains)
+    if(o.sp.cat==='producer' && typeof dayLight!=='undefined' && dayLight > 0.15){
+      if(o.energy < 40) o.energy = 40;
+    }
+    // Universal floor: keep controllable
+    if(o.energy < 1) o.energy = 1;
     if(o.energy > 120) o.energy = 120;
     if(o.parasite && o.energy < 15){ o.parasite=null; if(window.showToast) window.showToast('Паразит сброшен','#fd8'); }
   }

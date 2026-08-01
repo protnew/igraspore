@@ -37,7 +37,7 @@ function updateHUD(){
       '<div style="width:'+(eRatio*100)+'%;background:'+eColor+';height:100%;transition:width .3s;"></div>'+
     '</div>'+
     '<div style="font-size:13px;line-height:1.6;">'+
-      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span style="color:#fff;font-weight:bold;">'+Math.round(player.energy)+'/100</span><br>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span style="color:#fff;font-weight:bold;">'+Math.max(0,Math.round(player.energy))+'/100</span><br>'+
       '<span style="color:#8af;font-weight:bold;">'+tt('age')+':</span> <span style="color:#fff;">'+Math.round(player.age)+'s</span><br>'+
       '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span style="color:#fff;">'+player.offspring+'</span>'+
     '</div>'+
@@ -67,7 +67,7 @@ function updateWeather(){
       if(player.sp.cat && player.sp.cat.indexOf('consumer')===0) needM=Math.max(ad*0.75, 3.0);
       if(player.sp.cat==='consumer2'||player.sp.cat==='consumer3'||player.sp.cat==='macrophage') needM=Math.max(ad*0.9, 4.0);
       var m=player.massFood||0;
-      var en=Math.round(player.energy||0);
+      var en=Math.max(0,Math.round(player.energy||0));
       var rep=Math.round(player.sp.repEnergy||80);
       var line='Эн '+en+'/'+rep+' · Масса '+m.toFixed(1)+'/'+needM.toFixed(1);
       if(window.canDivide && window.canDivide(player)) hd.textContent=line+' · ГОТОВО (Q)';

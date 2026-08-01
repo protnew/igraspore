@@ -571,7 +571,7 @@ function updateOrg(o,dt){
   var tMax = o.sp.tempRange[1] + o.tempOffset + 12;
   if(curTemp<tMin||curTemp>tMax){
       if(!o.isPlayer && !o.cyst && o.energy > 20) { o.cyst = true; o.energy -= 10; o.vx=0; o.vy=0; }
-      if(o.isPlayer){ o.energy -= dt*0.4; } // mild stress only
+      if(o.isPlayer){ o.energy -= dt*0.1; } // mild stress only
       if(!o.cyst && o.energy<5&&Math.random()<0.0008*dt){killOrg(o,DCODE.TEMP);return;}
   } else {
       if(o.cyst && o.energy > 5 && !o.isPlayer) { o.cyst = false; }
@@ -625,7 +625,7 @@ function updateOrg(o,dt){
         o.size = Math.max((o.sp.size||4)*0.55, o.size - dt * 0.08 * dark);
       }
       // extra energy drain at night (no photo offset)
-      o.energy -= resp * (0.35 + dark * 0.5);
+      if(o.isPlayer){o.energy -= resp*(0.15+dark*0.2);}else{o.energy -= resp*(0.35+dark*0.5);}
     }
   }else{
     // Respiration: consumes O2, produces CO2

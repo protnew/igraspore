@@ -50,10 +50,10 @@ function canDivide(o){
   var repE = o.sp.repEnergy || 80;
   if(o.energy < repE) return false;
   var adult = (o.sp.size || 4) * (o.sizeMult || 1.0);
-  var minSz = Math.max(adult * 0.90, 2.2);
+  var minSz = Math.max(adult * 0.80, 2.0); // Easier: 80% instead of 90%
   if(o.size < minSz) return false;
-  // Mass from food/sun only — NO fixed eat-count gate
-  var needMass = Math.max(adult * 0.50, 2.2);
+  // Producers divide via photosynthesis, not eating — lower mass threshold
+  var needMass = o.sp.cat === 'producer' ? 0.5 : Math.max(adult * 0.50, 2.2);
   if(o.sp.cat && o.sp.cat.indexOf('consumer') === 0) needMass = Math.max(adult * 0.75, 3.0);
   if(o.sp.cat === 'consumer2' || o.sp.cat === 'consumer3' || o.sp.cat === 'macrophage')
     needMass = Math.max(adult * 0.9, 4.0);
@@ -733,16 +733,6 @@ function updateOrg(o,dt){
     if(o.isPlayer && window.playerContactEat) window.playerContactEat(dt);
   }
   // division handled at top of updateOrg
-  if(!o.dividing&&!o.cyst){
-    if(o.isPlayer && window._dbgDiv && canDivide(o)){
-      console.log('DIVIDING NOW!');
-    } else if(o.isPlayer && window._dbgDiv){
-      var repE = o.sp.repEnergy || 80;
-      var adult = (o.sp.size||4) * (o.sizeMult||1);
-      var needMass = Math.max(adult*0.50, 2.2);
-      console.log('CANT_DIV: e='+Math.round(o.energy)+'/'+repE+' cd='+(o.divCD||0)+' age='+Math.round(o.age)+'/'+(o.sp.minAge||3)+' sz='+(o.size||0).toFixed(1)+'/'+(adult*0.9).toFixed(1)+' mass='+(o.massFood||0).toFixed(1)+'/'+needMass.toFixed(1));
-    }
-  }
   if(!o.dividing&&!o.cyst&&canDivide(o)){
     if (o.sp.flags && o.sp.flags.gendered) {
         o.seekingMate = true;

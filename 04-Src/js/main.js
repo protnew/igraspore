@@ -231,6 +231,15 @@ function startGame(isScreensaver){
      player=spawnOrg(sp, px, dY, true);
      if(!player)player=spawnOrg(sp,0,35,true);
      player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y-20;
+     (function(){
+       var _v=player.energy,_l=[];
+       Object.defineProperty(player,'energy',{get:function(){return _v;},set:function(v){
+         var dE=v-_v,s=(new Error().stack).split('\n')[2]||'?';
+         if(Math.abs(dE)>0.3&&_l.length<50)_l.push(Math.round(_v*10)/10+'>'+Math.round(v*10)/10+' dE='+Math.round(dE*100)/100+' '+s.trim().substring(0,50));
+         _v=v;
+       }});
+       window._enLog=_l;
+     })();
 
      // Seed nearby food cluster so player sees action immediately
      var foodCats = FOOD[sp.cat] || ['producer','consumer1'];

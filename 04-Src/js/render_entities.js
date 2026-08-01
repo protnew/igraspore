@@ -281,14 +281,17 @@ function renderOrg(o, skipBody){
   if(isReal&&!skipBody){
     // PHASE CONTRAST: bright organisms, clearly visible on dark bg
     var pr=rgb[0],pg=rgb[1],pb=rgb[2];
-    var lum=Math.min(220, Math.round(pr*0.3+pg*0.59+pb*0.11)+60); // Phase contrast: moderate brightness
+    // Phase contrast: compress to gray range 110-175 (medium gray)
+    var rawLum=Math.round(pr*0.3+pg*0.59+pb*0.11);
+    var lum=110+Math.round(rawLum*0.25); // 110-175 range
     // Body: bright, semi-transparent
     // Phase contrast: translucent body with light/dark phase shift
-    var pcr=ctx.createRadialGradient(-sz*0.2,-sz*0.2,0,0,0,sz*1.1);
-    pcr.addColorStop(0,'rgba('+(lum+15)+','+(lum+15)+','+lum+',0.85)');
-    pcr.addColorStop(0.5,'rgba('+lum+','+lum+','+Math.max(0,lum-10)+',0.75)');
-    pcr.addColorStop(0.85,'rgba('+(lum-20)+','+(lum-20)+','+Math.max(0,lum-30)+',0.65)');
-    pcr.addColorStop(1,'rgba('+(lum-40)+','+(lum-40)+','+Math.max(0,lum-50)+',0.55)');
+    // Phase contrast: bright center → dark edge (Hale-effect)
+    var pcr=ctx.createRadialGradient(-sz*0.15,-sz*0.15,sz*0.1,0,0,sz*1.15);
+    pcr.addColorStop(0,'rgba('+(lum+25)+','+(lum+25)+','+(lum+20)+',0.7)');
+    pcr.addColorStop(0.35,'rgba('+(lum+5)+','+(lum+5)+','+lum+',0.6)');
+    pcr.addColorStop(0.7,'rgba('+lum+','+lum+','+Math.max(0,lum-5)+',0.55)');
+    pcr.addColorStop(1,'rgba('+(lum-25)+','+(lum-25)+','+Math.max(0,lum-30)+',0.45)');
     ctx.fillStyle=pcr;
     ctx.beginPath();
     // Draw same shape as body

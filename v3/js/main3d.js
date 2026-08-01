@@ -4,6 +4,44 @@
 
 "use strict";
 
+// === V2 COMPATIBILITY STUBS ===
+// These functions exist in V2 but reference Canvas 2D.
+// We stub them so V2 modules don't crash when loaded.
+function updateWorld(dt) {}
+function spawnOrg(sp, x, y, isPlayer, parentEnergy) {
+  // Minimal spawn for V3
+  var o = {
+    x: x, y: y, vx: 0, vy: 0,
+    size: (sp.size_min + sp.size_max) / 2 || 4,
+    energy: 60, hp: 100, mass: 2, age: 0,
+    sp: sp, species: sp.name, state: 'idle',
+    facing: 0, angle: 0, alive: true,
+    divideTimer: 0, eats: 0, isPlayer: isPlayer || false
+  };
+  orgs.push(o);
+  return o;
+}
+function rng(min, max) { return min + Math.random() * (max - min); }
+function halfW(d) { return 800; }
+var PD = 1000;
+var dayLight = 0.85;
+var stats = {births:0, deaths:0, deathCauses:[0,0,0,0,0]};
+var gameStats = {startTime:0, maxPop:0, maxPlayerSize:0, evoLvl:0};
+var speciesPop = {};
+var nutrientClouds = [];
+var shoreDecor = [];
+var globalCO2 = 150, globalO2 = 100;
+
+function initWorld3D() {
+  orgs = [];
+  parts = [];
+  viruses = [];
+  tod = 9.0;
+  dayLight = 0.85;
+  console.log('V3: initWorld3D done, SPECIES_DB=' + (typeof SPECIES_DB !== 'undefined' ? SPECIES_DB.length : 'N/A'));
+}
+
+
 // === GLOBALS (V2 compatibility stubs) ===
 var cv = { width: 0, height: 0 };  // stub — real canvas is glCanvas
 var ctx = null;                     // no Canvas 2D in V3
@@ -25,8 +63,9 @@ window.addEventListener('load', function() {
   cv.width = canvas3d.width;
   cv.height = canvas3d.height;
   
-  // Initialize game world (from V2 modules)
-  if (typeof initWorld === 'function') initWorld();
+  // V3: do NOT call V2 initWorld() — it uses Canvas-specific code
+  // Initialize our own world
+  initWorld3D();
   
   // Spawn player as single bacterium near surface
   spawnInitialOrganisms();
@@ -42,9 +81,9 @@ window.addEventListener('load', function() {
 
 function spawnInitialOrganisms() {
   // Spawn player near surface
-  if (typeof SPECIES !== 'undefined' && SPECIES.length > 0) {
+  if (typeof SPECIES_DB !== 'undefined' && SPECIES_DB.length > 0) {
     // Find a simple bacterium species
-    var playerSp = SPECIES.find(function(s) { return s.cat === 'producer' && s.shape !== 'colony'; }) || SPECIES[0];
+    var playerSp = SPECIES_DB.find(function(s) { return s.cat === 'producer' && s.shape !== 'colony'; }) || SPECIES_DB[0];
     
     player = {
       x: 0, y: 20,  // near surface
@@ -68,7 +107,7 @@ function spawnInitialOrganisms() {
     
     // Spawn ambient organisms
     for (var i = 0; i < 100; i++) {
-      var sp = SPECIES[Math.floor(Math.random() * Math.min(8, SPECIES.length))];
+      var sp = SPECIES_DB[Math.floor(Math.random() * Math.min(8, SPECIES_DB.length))];
       if (!sp || sp.shape === 'colony') continue;
       orgs.push({
         x: (Math.random() - 0.5) * 2000,
@@ -111,10 +150,7 @@ function gameLoop3D(time) {
   dayLight = Math.max(0.05, dayLight);  // never fully dark
   window.dayLight = dayLight;
   
-  // Update organisms (V2 biology/ai)
-  if (typeof updateWorld === 'function') {
-    try { updateWorld(dt); } catch(e) { /* V2 may reference ctx */ }
-  }
+  // V3: own world update (no V2 Canvas code)
   
   // Simple movement for organisms if V2 ai fails
   for (var i = 0; i < orgs.length; i++) {

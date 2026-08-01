@@ -68,7 +68,14 @@ function createProgram(vsSource, fsSource) {
 
 // Render water
 function renderWaterGL(time, dayLight, camX, camY, zoom) {
+  if (!waterProgram || !gl) return;
   gl.useProgram(waterProgram);
+  
+  // Debug: check if we're actually drawing
+  if (typeof window._waterDebug === 'undefined') {
+    window._waterDebug = 0;
+  }
+  window._waterDebug++;
   
   // Set uniforms
   gl.uniform1f(gl.getUniformLocation(waterProgram, 'uTime'), time);

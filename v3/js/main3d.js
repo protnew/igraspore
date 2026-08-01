@@ -191,7 +191,7 @@ function gameLoop3D(time) {
   
   // === RENDER ===
   // Clear
-  gl.clearColor(0.01, 0.03, 0.05, 1.0);
+  gl.clearColor(0.1, 0.4, 0.35, 1.0);  // teal test
   gl.clear(gl.COLOR_BUFFER_BIT);
   
   // Render water shader

@@ -19,7 +19,7 @@ function initWebGL() {
   canvas3d.style.left = '0';
   canvas3d.style.zIndex = '0';
   
-  gl = canvas3d.getContext('webgl', { antialias: true, alpha: false });
+  gl = canvas3d.getContext('webgl', { antialias: true, alpha: false, preserveDrawingBuffer: true });
   if (!gl) { console.error('WebGL not supported'); return false; }
   
   gl.enable(gl.BLEND);

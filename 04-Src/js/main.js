@@ -87,11 +87,6 @@ function gameLoop(ts){
   
   if(state==='playing' || state==='menu'){
     updateWorld(realDt);
-    if(window._dbgEvery && typeof player!=='undefined' && player && player.alive){
-      if(!window._fc) window._fc=0;
-      window._fc++;
-      if(window._fc<=30) console.log('EV: f='+window._fc+' e='+player.energy.toFixed(2)+' y='+player.y.toFixed(0)+' dl='+((typeof dayLight!=='undefined')?dayLight.toFixed(2):'?')+' ts='+player.sp.name);
-    }
     if (state === 'playing') {
       updateHUD();updateTopRight();updateWeather();updateEcoPanel();updateLegend();
       if(typeof updateScaleBar === 'function') updateScaleBar();

@@ -657,13 +657,8 @@ function updateOrg(o,dt){
     }
   }
 
-  // Player energy floor/ceiling — prevent death spiral
+  // Player energy floor/ceiling
   if(o.isPlayer){
-    // Producer during day: never starve (photosynthesis sustains)
-    if(o.sp.cat==='producer' && typeof dayLight!=='undefined' && dayLight > 0.15){
-      if(o.energy < 40) o.energy = 40;
-    }
-    // Universal floor: keep controllable
     if(o.energy < 1) o.energy = 1;
     if(o.energy > 120) o.energy = 120;
     if(o.parasite && o.energy < 15){ o.parasite=null; if(window.showToast) window.showToast('Паразит сброшен','#fd8'); }

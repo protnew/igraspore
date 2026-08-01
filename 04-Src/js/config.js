@@ -165,6 +165,7 @@ SPECIES_DB.push(GENDERED_SP);
        n.indexOf('pandorina')>=0 || n.indexOf('eudorina')>=0){
       s.shape='colony';
       s.bio=Object.assign({}, s.bio||{}, {colony:true, daughter:true});
+      s.flags=Object.assign({}, s.flags||{}, {noRandomSpawn:true}); // No green blob at start!
       // colonial algae are bigger than single cells but still micro (not lily-pad scale)
       if(s.size<5) s.size=Math.min(8, s.size+2.5);
       if(n.indexOf('microcystis')>=0){

@@ -640,18 +640,25 @@ function drawNaturalLilypads(vL, vR, surfW){
   var pads = [];
   // Deterministic pseudo-random from world X for stable pads
   function padSeed(x){ var s=Math.sin(x*12.9898)*43758.5453; return s-Math.floor(s); }
-  for(var lp = -surfW + 150; lp < surfW - 50; lp += 280 + padSeed(lp)*200){
+  // CHAOTIC 2D SCATTER — natural pond coverage, not a line
+  for(var lp = -surfW + 100; lp < surfW; lp += 120 + padSeed(lp)*150){
     var skip = padSeed(lp*1.3);
-    if(skip < 0.25) continue; // organic gaps
-    var wy = Math.sin(lp*0.018 + t*0.04)*1.5 + padSeed(lp*2.1)*2;
-    var rx = 120 + padSeed(lp*0.7)*140;
+    if(skip < 0.15) continue; // organic gaps
+    // Y scatter: pads spread vertically across surface band
+    var wy = padSeed(lp*2.1)*8 - 3 + Math.sin(lp*0.025 + t*0.03)*1.2;
+    var rx = 80 + padSeed(lp*0.7)*180; // 80-260
     var ry = rx * (fromBelow ? 0.48 : 0.36);
     var rot = padSeed(lp*3.1)*Math.PI*2;
-    var px = lp + (padSeed(lp*4.2)-0.5)*80;
-    pads.push({x:px, y:wy-0.5, rx:rx, ry:ry, rot:rot, seed:Math.abs(Math.floor(lp*100))});
-    // Secondary smaller pad nearby
-    if(padSeed(lp*5.3) > 0.5){
-      pads.push({x:px+rx*0.8+padSeed(lp*6.1)*40, y:wy+1, rx:rx*0.5, ry:ry*0.5, rot:rot+0.7, seed:Math.abs(Math.floor(lp*100))+2});
+    var px = lp + (padSeed(lp*4.2)-0.5)*120; // horizontal jitter
+    pads.push({x:px, y:wy, rx:rx, ry:ry, rot:rot, seed:Math.abs(Math.floor(lp*100))});
+    // Secondary pad — overlapping cluster (natural)
+    if(padSeed(lp*5.3) > 0.4){
+      var off = padSeed(lp*6.1);
+      pads.push({x:px+rx*(0.5+off*0.5), y:wy+padSeed(lp*7.1)*4-2, rx:rx*(0.4+off*0.3), ry:ry*(0.4+off*0.3), rot:rot+padSeed(lp*8.1)*2, seed:Math.abs(Math.floor(lp*100))+2});
+    }
+    // Tertiary small pad for density
+    if(padSeed(lp*9.1) > 0.6){
+      pads.push({x:px-rx*0.6+padSeed(lp*10.1)*50, y:wy-3+padSeed(lp*11.1)*5, rx:rx*0.3, ry:ry*0.3, rot:padSeed(lp*12.1)*4, seed:Math.abs(Math.floor(lp*100))+3});
     }
   }// --- Pad shadows: ~50% of sunlight blocked (readable shade columns) ---
   if(dl > 0.08){
@@ -916,3 +923,41 @@ function renderRain(vL,vR,vT){
   ctx.restore();
 }
 
+
+
+// Sun overlay — draws sun disc + glow ON TOP of particles (no green halo)
+function renderSunOverlay(){
+  if(typeof dayLight==='number' && dayLight < 0.05) return; // skip at deep night
+  var sun = window._sunPos;
+  if(!sun) return;
+  var sx = (sun.x - cam.x) * zoom + cv.width/2;
+  var sy = (sun.y - cam.y) * zoom + cv.height/2;
+  if(sx < -100 || sx > cv.width+100 || sy < -100 || sy > cv.height+100) return;
+  
+  ctx.save();
+  ctx.globalCompositeOperation = 'screen'; // additive blend for glow
+  
+  var dl = (typeof dayLight==='number') ? dayLight : 0.5;
+  var r = 30; // fixed pixel size — no perspective shrink
+  
+  // Outer glow
+  var g1 = ctx.createRadialGradient(sx, sy, 0, sx, sy, r*4);
+  g1.addColorStop(0, 'rgba(255, 240, 200, ' + (0.3*dl) + ')');
+  g1.addColorStop(0.3, 'rgba(255, 220, 150, ' + (0.15*dl) + ')');
+  g1.addColorStop(1, 'rgba(255, 200, 100, 0)');
+  ctx.fillStyle = g1;
+  ctx.fillRect(sx-r*4, sy-r*4, r*8, r*8);
+  
+  // Sun disc
+  var g2 = ctx.createRadialGradient(sx, sy, 0, sx, sy, r);
+  var warm = dl > 0.5 ? '255, 245, 220' : '255, 180, 100'; // warm at sunset
+  g2.addColorStop(0, 'rgba(' + warm + ', ' + Math.min(1, dl*1.2) + ')');
+  g2.addColorStop(0.7, 'rgba(255, 220, 140, ' + (0.7*dl) + ')');
+  g2.addColorStop(1, 'rgba(255, 180, 80, 0)');
+  ctx.fillStyle = g2;
+  ctx.beginPath();
+  ctx.arc(sx, sy, r, 0, Math.PI*2);
+  ctx.fill();
+  
+  ctx.restore();
+}

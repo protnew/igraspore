@@ -66,7 +66,7 @@ void main() {
   float sunGlitter = exp(-distToSun * distToSun * 20.0) * uDayLight;
   // Sparkle
   float sparkle = pow(ripples, 8.0) * sunGlitter * 3.0;
-  vec3 glitter = vec3(1.0, 0.95, 0.7) * sparkle;
+  vec3 glitterC = vec3(1.0, 0.95, 0.7) * sparkle;
   
   // === DEPTH FOG ===
   float fog = exp(-depthFactor * 2.0);

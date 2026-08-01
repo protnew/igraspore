@@ -6,15 +6,18 @@ var waterBuffer, orgBuffer;
 var canvas3d;
 
 function initWebGL() {
-  canvas3d = document.createElement('canvas');
-  canvas3d.id = 'glCanvas';
+  canvas3d = document.getElementById('glCanvas');
+  if (!canvas3d) {
+    canvas3d = document.createElement('canvas');
+    canvas3d.id = 'glCanvas';
+    document.body.insertBefore(canvas3d, document.body.firstChild);
+  }
   canvas3d.width = window.innerWidth;
   canvas3d.height = window.innerHeight;
   canvas3d.style.position = 'absolute';
   canvas3d.style.top = '0';
   canvas3d.style.left = '0';
   canvas3d.style.zIndex = '0';
-  document.body.insertBefore(canvas3d, document.body.firstChild);
   
   gl = canvas3d.getContext('webgl', { antialias: true, alpha: false });
   if (!gl) { console.error('WebGL not supported'); return false; }

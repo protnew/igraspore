@@ -645,7 +645,7 @@ function drawNaturalLilypads(vL, vR, surfW){
     var skip = padSeed(lp*1.3);
     if(skip < 0.15) continue; // organic gaps
     // Y scatter: pads spread vertically across surface band
-    var wy = padSeed(lp*2.1)*8 - 3 + Math.sin(lp*0.025 + t*0.03)*1.2;
+    var wy = padSeed(lp*2.1)*60 - 30 + Math.sin(lp*0.025 + t*0.03)*3;
     var rx = 80 + padSeed(lp*0.7)*180; // 80-260
     var ry = rx * (fromBelow ? 0.48 : 0.36);
     var rot = padSeed(lp*3.1)*Math.PI*2;
@@ -654,7 +654,7 @@ function drawNaturalLilypads(vL, vR, surfW){
     // Secondary pad — overlapping cluster (natural)
     if(padSeed(lp*5.3) > 0.4){
       var off = padSeed(lp*6.1);
-      pads.push({x:px+rx*(0.5+off*0.5), y:wy+padSeed(lp*7.1)*4-2, rx:rx*(0.4+off*0.3), ry:ry*(0.4+off*0.3), rot:rot+padSeed(lp*8.1)*2, seed:Math.abs(Math.floor(lp*100))+2});
+      pads.push({x:px+rx*(0.5+off*0.5), y:wy+padSeed(lp*7.1)*30-15, rx:rx*(0.4+off*0.3), ry:ry*(0.4+off*0.3), rot:rot+padSeed(lp*8.1)*2, seed:Math.abs(Math.floor(lp*100))+2});
     }
     // Tertiary small pad for density
     if(padSeed(lp*9.1) > 0.6){
@@ -927,33 +927,38 @@ function renderRain(vL,vR,vT){
 
 // Sun overlay — draws sun disc + glow ON TOP of particles (no green halo)
 function renderSunOverlay(){
-  if(typeof dayLight==='number' && dayLight < 0.05) return; // skip at deep night
+  if(typeof dayLight==='number' && dayLight < 0.05) return;
+  if(!window._sunPos) return;
   var sun = window._sunPos;
-  if(!sun) return;
   var sx = (sun.x - cam.x) * zoom + cv.width/2;
   var sy = (sun.y - cam.y) * zoom + cv.height/2;
-  if(sx < -100 || sx > cv.width+100 || sy < -100 || sy > cv.height+100) return;
+  if(sx < -200 || sx > cv.width+200 || sy < -200 || sy > cv.height+200) return;
   
   ctx.save();
-  ctx.globalCompositeOperation = 'screen'; // additive blend for glow
+  // Use source-over (opaque) so sun covers particles behind it
+  var dl = sun.dl || 0.5;
+  var r = sun.r * zoom; // actual screen radius
+  if(r < 8) r = 8;
+  if(r > 60) r = 60;
   
-  var dl = (typeof dayLight==='number') ? dayLight : 0.5;
-  var r = 30; // fixed pixel size — no perspective shrink
-  
-  // Outer glow
-  var g1 = ctx.createRadialGradient(sx, sy, 0, sx, sy, r*4);
-  g1.addColorStop(0, 'rgba(255, 240, 200, ' + (0.3*dl) + ')');
-  g1.addColorStop(0.3, 'rgba(255, 220, 150, ' + (0.15*dl) + ')');
-  g1.addColorStop(1, 'rgba(255, 200, 100, 0)');
+  // Outer atmospheric glow
+  var g1 = ctx.createRadialGradient(sx, sy, 0, sx, sy, r*5);
+  g1.addColorStop(0, 'rgba(255, 240, 200, ' + (0.4*dl) + ')');
+  g1.addColorStop(0.2, 'rgba(255, 220, 150, ' + (0.2*dl) + ')');
+  g1.addColorStop(0.5, 'rgba(255, 200, 100, ' + (0.08*dl) + ')');
+  g1.addColorStop(1, 'rgba(255, 180, 80, 0)');
   ctx.fillStyle = g1;
-  ctx.fillRect(sx-r*4, sy-r*4, r*8, r*8);
+  ctx.beginPath();
+  ctx.arc(sx, sy, r*5, 0, Math.PI*2);
+  ctx.fill();
   
-  // Sun disc
-  var g2 = ctx.createRadialGradient(sx, sy, 0, sx, sy, r);
-  var warm = dl > 0.5 ? '255, 245, 220' : '255, 180, 100'; // warm at sunset
-  g2.addColorStop(0, 'rgba(' + warm + ', ' + Math.min(1, dl*1.2) + ')');
-  g2.addColorStop(0.7, 'rgba(255, 220, 140, ' + (0.7*dl) + ')');
-  g2.addColorStop(1, 'rgba(255, 180, 80, 0)');
+  // Solid sun disc — opaque, covers everything behind
+  var warm = sun.warm > 0.7;
+  var g2 = ctx.createRadialGradient(sx-r*0.2, sy-r*0.2, 0, sx, sy, r);
+  g2.addColorStop(0, '#fffef5');
+  g2.addColorStop(0.3, warm ? '#ffe08a' : '#fff2c0');
+  g2.addColorStop(0.7, warm ? '#ffc050' : '#ffd078');
+  g2.addColorStop(1, warm ? '#ff9020' : '#ffc060');
   ctx.fillStyle = g2;
   ctx.beginPath();
   ctx.arc(sx, sy, r, 0, Math.PI*2);

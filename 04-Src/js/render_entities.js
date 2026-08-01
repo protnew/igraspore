@@ -281,7 +281,7 @@ function renderOrg(o, skipBody){
   if(isReal&&!skipBody){
     // PHASE CONTRAST: bright organisms, clearly visible on dark bg
     var pr=rgb[0],pg=rgb[1],pb=rgb[2];
-    var lum=Math.min(255, Math.round(pr*0.3+pg*0.59+pb*0.11)+100); // Boost brightness
+    var lum=Math.min(220, Math.round(pr*0.3+pg*0.59+pb*0.11)+60); // Phase contrast: moderate brightness
     // Body: bright, semi-transparent
     // Phase contrast: translucent body with light/dark phase shift
     var pcr=ctx.createRadialGradient(-sz*0.2,-sz*0.2,0,0,0,sz*1.1);
@@ -383,6 +383,32 @@ function renderOrg(o, skipBody){
 }
 
 function drawOrgans(o,sz){
+  // In realistic mode: skip colorful organelles, show only subtle granules
+  if(settings.renderMode==='realistic'){
+    var _dtR=(settings.microscopeMode?0.15:0.55);
+    var _detR=(zoom>(2.8*_dtR)?2:(zoom>(1.2*_dtR)?1:0));
+    if(_detR>=1){
+      // Subtle internal granules (phase contrast look)
+      var org=o.organs;if(!org)return;
+      var nVisible=Math.min(org.length, 5);
+      for(var gi=0;gi<nVisible;gi++){
+        var gg=org[gi];
+        // Lighter/darker spots — phase shift, not color
+        var isDense=(gg.t==='nuc'||gg.t==='mac');
+        ctx.fillStyle=isDense?'rgba(180,180,165,0.35)':'rgba(210,210,195,0.25)';
+        ctx.beginPath();ctx.arc(gg.x,gg.y,Math.max(0.8,gg.r*0.7),0,Math.PI*2);ctx.fill();
+      }
+      // Central darker area (nucleus zone)
+      if(org.length>0){
+        var nuc=org.find(function(g){return g.t==='nuc'||g.t==='mac';});
+        if(nuc){
+          ctx.fillStyle='rgba(140,140,125,0.3)';
+          ctx.beginPath();ctx.arc(nuc.x,nuc.y,nuc.r*0.6,0,Math.PI*2);ctx.fill();
+        }
+      }
+    }
+    return; // Skip all colorful organ rendering in realistic mode
+  }
   var org=o.organs;if(!org)return;
   var detailThreshold=settings.microscopeMode?0.15:(settings.renderMode==='realistic'?0.35:0.55);
   var detail=zoom>(2.8*detailThreshold)?2:(zoom>(1.2*detailThreshold)?1:0);

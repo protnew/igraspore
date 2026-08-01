@@ -114,7 +114,7 @@ function initWorld(){
        var sp = selectedSpecies[s];
        var baseCnt = Math.round((INIT_N[cat]/3 + 10) * settings.density);
        for(var i=0;i<baseCnt;i++){
-         var d=(cat==='producer')?rng(40,PD*0.70):rng(25,PD-40);var hw=Math.max(40,halfW(d)-40);
+         var d=(cat==='producer')?rng(2,120):rng(15,PD*0.6);var hw=Math.max(40,halfW(d)-40);
          spawnOrg(sp,rng(-hw,hw),d);
        }
     }

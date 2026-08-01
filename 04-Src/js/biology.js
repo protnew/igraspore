@@ -93,7 +93,7 @@ function doDivide(o){
 
 function finishDivide(o){
   o.dividing=false;
-  o.energy = Math.max(5, (o.energy||0)*0.5);
+  o.energy = Math.max(40, (o.energy||0)*0.55); // Survive after division!
   // Parent becomes ~half size (clearly visible), then slowly regrows via normal growth
   var base = o.preDivSize || o.size || (o.sp.size||4);
   var half = Math.max(1.6, base * 0.5);
@@ -106,7 +106,7 @@ function finishDivide(o){
   var cd = (typeof DIV_COOLDOWN==='number' ? DIV_COOLDOWN : 6);
   if(o.sp && o.sp.cat && o.sp.cat.indexOf('consumer')===0) cd = Math.max(cd, 8);
   if(o.sp && (o.sp.cat==='consumer2'||o.sp.cat==='consumer3')) cd = Math.max(cd, 12);
-  o.divCD = cd;
+  o.divCD = cd; o.invuln = Math.max(o.invuln||0, 5); // grace period
   try{ if(o===player||window.spectatorMode) window.playSound("divide"); }catch(_e){}
   // KEY FIX: push child AWAY with separation impulse + cooldown
   var pushAng=(typeof rng==='function'?rng(0,Math.PI*2):Math.random()*Math.PI*2);
@@ -431,7 +431,12 @@ function updateOrg(o,dt){
       dt *= 2;
     }
   }
-  if(o.invuln>0)o.invuln-=dt;
+  if(o.invuln>0){
+    o.invuln-=dt;
+    // Grace period: no metabolism, no energy drain — survive after division/spawn
+    o.energy = Math.max(o.energy, 30);
+    return;
+  }
   if(o.speedMult < 1.0) o.speedMult = Math.min(1.0, (o.speedMult||1.0) + dt*0.05);
   if(o.stomach && o.stomach.length>0){
     for(var stIdx=o.stomach.length-1; stIdx>=0; stIdx--){

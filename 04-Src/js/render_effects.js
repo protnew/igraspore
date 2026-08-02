@@ -924,9 +924,14 @@ function renderSunOverlay(){
   if(typeof dayLight==='number' && dayLight < 0.05) return;
   if(!window._sunPos) return;
   var sun = window._sunPos;
-  // Use stored screen coords — sun stays in sky regardless of zoom/camera
+  // Only draw sun when SKY is visible (camera near surface)
+  // When deep underwater, sun is NOT visible (realistic perspective)
+  var waterScreenY = (0 - cam.y) * zoom + cv.height/2; // y=0 is waterline
+  if(waterScreenY < 0) return; // entire screen is underwater — no sky
   var sx = sun.scrX || (sun.x - cam.x) * zoom + cv.width/2;
   var sy = sun.scrY || (sun.y - cam.y) * zoom + cv.height/2;
+  // Clamp sun Y to be above waterline on screen
+  if(sy > waterScreenY - 10) sy = waterScreenY - 10;
   if(sx < -200 || sx > cv.width+200 || sy < -200 || sy > cv.height+200) return;
   
   ctx.save();

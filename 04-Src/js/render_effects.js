@@ -1,6 +1,22 @@
 "use strict";
 
 function renderSky(vL,vR,vT){
+  // === SUN POSITION (always calculated, even when sky not drawn) ===
+  var _dl_sky = (typeof dayLight==='number') ? dayLight : 0.6;
+  var _t_sky = (typeof tod==='number') ? tod : 12;
+  var _z_sky = (typeof zoom==='number' && zoom>0) ? zoom : 1;
+  window._sunPos = null;
+  if((_dl_sky > 0.04 || (_t_sky>=16.5 && _t_sky<21.2)) && _t_sky > 4.5 && _t_sky < 21.2){
+    var _dayProg = Math.max(0, Math.min(1, (_t_sky - 5) / 14));
+    var _elev = Math.sin(Math.PI * _dayProg);
+    var _scrW = cv.width, _scrH = cv.height;
+    var _sunScrX = _scrW * (0.25 + _dayProg * 0.5);
+    var _sunScrY = _scrH * (0.04 + (1.0 - _elev) * 0.08);
+    var _rSun = Math.max(8, Math.min(22, 12 + _dl_sky * 10));
+    var _warm = (_t_sky < 8 || _t_sky >= 17) ? 1 : 0;
+    window._sunPos = {x:cam.x+(_sunScrX-_scrW/2)/_z_sky, y:cam.y+(_sunScrY-_scrH/2)/_z_sky, r:_rSun, elev:_elev, warm:_warm, dl:_dl_sky, scrX:_sunScrX, scrY:_sunScrY};
+  }
+
   // Sky only for the band above waterline (y < 0)
   if(vT >= 5) return; // still draw thin sky band near surface
   var skyBot = Math.min(0, (typeof arguments[3]==='number'?arguments[3]:0));
@@ -8,9 +24,9 @@ function renderSky(vL,vR,vT){
   var h = -vT;
   if(h < 1) return;
 
-  var dl = (typeof dayLight==='number') ? dayLight : 0.6;
-  var t = (typeof tod==='number') ? tod : 12;
-  var z = (typeof zoom==='number' && zoom>0) ? zoom : 1;
+  var dl = _dl_sky;
+  var t = _t_sky;
+  var z = _z_sky;
 
   // --- SMOOTH sky: linear interpolation between palettes ---
   var _hx=function(h){var n=parseInt(h.slice(1),16);return[(n>>16)&255,(n>>8)&255,n&255];};
@@ -181,7 +197,7 @@ function renderSky(vL,vR,vT){
     ctx.restore();
     ctx.restore();
 
-    window._sunPos = {x:sunX, y:sunY, r:rSun, elev:elev, warm:warm, dl:dl};
+    window._sunPos = {x:sunX, y:sunY, r:rSun, elev:elev, warm:warm, dl:dl, scrX:sunScrX, scrY:sunScrY};
   }
 }
 
@@ -908,8 +924,9 @@ function renderSunOverlay(){
   if(typeof dayLight==='number' && dayLight < 0.05) return;
   if(!window._sunPos) return;
   var sun = window._sunPos;
-  var sx = (sun.x - cam.x) * zoom + cv.width/2;
-  var sy = (sun.y - cam.y) * zoom + cv.height/2;
+  // Use stored screen coords — sun stays in sky regardless of zoom/camera
+  var sx = sun.scrX || (sun.x - cam.x) * zoom + cv.width/2;
+  var sy = sun.scrY || (sun.y - cam.y) * zoom + cv.height/2;
   if(sx < -200 || sx > cv.width+200 || sy < -200 || sy > cv.height+200) return;
   
   ctx.save();

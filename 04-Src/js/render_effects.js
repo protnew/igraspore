@@ -109,20 +109,15 @@ function renderSky(vL,vR,vT){
   if((dl > 0.04 || (t>=16.5 && t<21.2)) && t > 4.5 && t < 21.2){
     var dayProg = Math.max(0, Math.min(1, (t - 5) / 14));
     var elev = Math.sin(Math.PI * dayProg); // 0..1
-    // Keep sun inside the visible sky rectangle
+    // SUN IN SCREEN SPACE: pin to upper area of screen, convert to world coords
+    // Screen X: 25-75% of width, moves with time of day (left=dawn, right=dusk)
+    var scrW = cv.width, scrH = cv.height;
+    var sunScrX = scrW * (0.25 + dayProg * 0.5); // dawn left → dusk right
+    var sunScrY = scrH * (0.04 + (1.0 - elev) * 0.08); // higher at noon, lower at dawn/dusk
+    // Convert screen coords to world coords
     var margin = 16;
-    var sunX = cam.x + (dayProg - 0.5) * Math.min(Math.max(vR-vL, 200)*0.5, 520);
-    // Near horizon at dawn/dusk, higher at noon — but always in sky band
-    // Prefer sun in upper-middle of visible sky; if camera deep, keep sun near horizon film
-    // Sun pinned near TOP of visible sky band
-    var skyTop = Math.min(vT + margin + 8, -40);
-    var sunY = skyTop + (1.0 - elev) * Math.min(Math.abs(skyTop) * 0.15, 30);
-    // Never below upper third of sky
-    var skyFloor = Math.min(-Math.max(80, Math.abs(vT) * 0.55), -60);
-    if(sunY > skyFloor) sunY = skyFloor;
-    if(sunY < vT + margin) sunY = vT + margin;
-    if(sunX < vL + margin) sunX = vL + margin;
-    if(sunX > vR - margin) sunX = vR - margin;
+    var sunX = cam.x + (sunScrX - scrW/2) / z;
+    var sunY = cam.y + (sunScrY - scrH/2) / z;
 
     // Warm colors: noon white-gold, low sun orange
     var warm = (t < 8 || t > 16.0) ? 1.0 : 0.4;

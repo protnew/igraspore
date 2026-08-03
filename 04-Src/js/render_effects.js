@@ -921,38 +921,49 @@ function renderRain(vL,vR,vT){
 
 // Sun overlay — draws sun disc + glow ON TOP of particles (no green halo)
 function renderSunOverlay(){
+  // Sun is a SKY object (screen-space). Never draw below waterline.
+  // Soft fade when sky band shrinks (zoom/perspective) — no pop, no underwater disk.
   if(typeof dayLight==='number' && dayLight < 0.05) return;
   if(!window._sunPos) return;
   var sun = window._sunPos;
-  // Only draw sun when SKY is visible (camera near surface)
-  // When deep underwater, sun is NOT visible (realistic perspective)
-  var waterScreenY = (0 - cam.y) * zoom + cv.height/2; // y=0 is waterline
-  if(waterScreenY < 0) return; // entire screen is underwater — no sky
-  var sx = sun.scrX || (sun.x - cam.x) * zoom + cv.width/2;
-  var sy = sun.scrY || (sun.y - cam.y) * zoom + cv.height/2;
-  // Clamp sun Y to be above waterline on screen
-  if(sy > waterScreenY - 10) sy = waterScreenY - 10;
-  if(sx < -200 || sx > cv.width+200 || sy < -200 || sy > cv.height+200) return;
-  
+  var waterScreenY = (0 - cam.y) * zoom + cv.height/2; // y=0 waterline → screen
+  // hysteresis: hide only when sky fully gone; fade while shrinking
+  if(waterScreenY < 4) return;
+  var dl = sun.dl || dayLight || 0.5;
+  // Screen radius independent of world zoom (perspective: sun size stable in sky)
+  var elev = (typeof sun.elev==='number') ? sun.elev : 0.7;
+  var r = 14 + elev * 22; // 14..36 px
+  if(r > waterScreenY * 0.45) r = Math.max(6, waterScreenY * 0.45);
+  // Place sun INSIDE remaining sky band (not world→screen drift)
+  var sx = (typeof sun.scrX==='number') ? sun.scrX : (cv.width * (0.25 + elev * 0.35));
+  var skyFrac = 0.12 + (1 - elev) * 0.18; // higher at noon
+  var sy = Math.max(r + 4, waterScreenY * skyFrac);
+  // Hard clip: entire disk above waterline
+  if(sy + r > waterScreenY - 2) sy = waterScreenY - r - 2;
+  if(sy < r * 0.3) return;
+  // Fade alpha by sky band height (smooth, no flicker)
+  var fade = waterScreenY / (r * 5 + 40);
+  if(fade > 1) fade = 1;
+  if(fade < 0.05) return;
+  if(sx < -r*3 || sx > cv.width + r*3) return;
+
   ctx.save();
-  // Use source-over (opaque) so sun covers particles behind it
-  var dl = sun.dl || 0.5;
-  var r = sun.r * zoom; // actual screen radius
-  if(r < 8) r = 8;
-  if(r > 60) r = 60;
-  
-  // Outer atmospheric glow
-  var g1 = ctx.createRadialGradient(sx, sy, 0, sx, sy, r*5);
-  g1.addColorStop(0, 'rgba(255, 240, 200, ' + (0.4*dl) + ')');
-  g1.addColorStop(0.2, 'rgba(255, 220, 150, ' + (0.2*dl) + ')');
-  g1.addColorStop(0.5, 'rgba(255, 200, 100, ' + (0.08*dl) + ')');
+  // Clip drawing to sky band only — never bleed into water / organisms
+  ctx.beginPath();
+  ctx.rect(0, 0, cv.width, Math.max(0, waterScreenY));
+  ctx.clip();
+  ctx.globalAlpha = fade * Math.min(1, dl + 0.25);
+  // Outer glow
+  var g1 = ctx.createRadialGradient(sx, sy, 0, sx, sy, r*4.5);
+  g1.addColorStop(0, 'rgba(255, 240, 200, ' + (0.45*dl) + ')');
+  g1.addColorStop(0.25, 'rgba(255, 220, 150, ' + (0.22*dl) + ')');
+  g1.addColorStop(0.55, 'rgba(255, 200, 100, ' + (0.08*dl) + ')');
   g1.addColorStop(1, 'rgba(255, 180, 80, 0)');
   ctx.fillStyle = g1;
   ctx.beginPath();
-  ctx.arc(sx, sy, r*5, 0, Math.PI*2);
+  ctx.arc(sx, sy, r*4.5, 0, Math.PI*2);
   ctx.fill();
-  
-  // Solid sun disc — opaque, covers everything behind
+  // Solid disc
   var warm = sun.warm > 0.7;
   var g2 = ctx.createRadialGradient(sx-r*0.2, sy-r*0.2, 0, sx, sy, r);
   g2.addColorStop(0, '#fffef5');
@@ -963,6 +974,5 @@ function renderSunOverlay(){
   ctx.beginPath();
   ctx.arc(sx, sy, r, 0, Math.PI*2);
   ctx.fill();
-  
   ctx.restore();
 }

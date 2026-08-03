@@ -368,6 +368,25 @@ function updateWorld(dt){
         catBm[cat] = (catBm[cat]||0) + o.sp.size * o.energy;
       }
     }
+    // Density cap: cull excess producers (target ~≤70% of live pop feel; hard TGT)
+    var nP=0, nAll=0;
+    for(var j=0;j<orgs.length;j++){ if(orgs[j].alive){ nAll++; if(orgs[j].sp.cat==='producer') nP++; } }
+    window._trophic = {nP:nP,nAll:nAll,pct:nAll?nP/nAll:0};
+    if(nP > (TGT.producer||1800) * 1.08){
+      var need = nP - Math.floor((TGT.producer||1800));
+      if(need > 40) need = 40; // per spawn tick
+      // kill weakest non-player producers (low energy first)
+      var cands=[];
+      for(var j=0;j<orgs.length;j++){
+        var o=orgs[j];
+        if(o.alive && !o.isPlayer && o.sp.cat==='producer') cands.push(o);
+      }
+      cands.sort(function(a,b){return (a.energy||0)-(b.energy||0);});
+      for(var k=0;k<need && k<cands.length;k++){
+        if(typeof killOrg==='function') killOrg(cands[k], (typeof DCODE!=='undefined'?DCODE.STARVE:0));
+        else { cands[k].alive=false; cands[k].energy=0; }
+      }
+    }
     for(var cat in TGT){
       var pool=SPECIES_DB.filter(function(s){return s.cat===cat && !(s.flags&&s.flags.noRandomSpawn) && (s.size||1)<12;});
       var bm=catBm[cat]||0;
@@ -503,7 +522,16 @@ function updateCamera(dt){
   if(!freeCam&&player&&player.alive){
     var tx=player.x,ty=player.y;
     if(!isFinite(tx)||!isFinite(ty)){tx=0;ty=PD*0.3;}
-    // Direct smooth follow: fast lerp factor so camera stays on player
+    // Surface bias: near surface keep sky band visible when zoomed (magnify, not pure dive)
+    // waterScreenY≈(0-cam.y)*zoom+h/2 > ~80 → cam.y < (h/2-80)/zoom
+    if(typeof zoom==='number' && zoom>2.2 && ty < 120){
+      var h2 = (typeof cv!=='undefined' && cv && cv.height) ? cv.height*0.5 : 400;
+      var maxCamY = Math.max(8, (h2 - 90)/zoom); // keep ~90px sky
+      // Pull target toward surface so sun stays in sky while watching near-surface action
+      ty = Math.min(ty, maxCamY + 25);
+    } else {
+      ty = ty - 18; // slight upward look (was player.y-20 on attach)
+    }
     var followFactor=clamp(dtc*8,0,0.35);
     cam.x=lerp(cam.x,tx,followFactor);
     cam.y=lerp(cam.y,ty,followFactor);

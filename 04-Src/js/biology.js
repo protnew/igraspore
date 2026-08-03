@@ -273,8 +273,27 @@ function eatOrg(pred,prey){
   pred.eatsSinceDiv = (pred.eatsSinceDiv||0) + 1; // stats only
   pred._lastEnGain = energyGain;
   pred._lastMassGain = massGain;
-  pred.flash=0.7; pred.flashColor='#ff8';
-  prey.flash=0.9; prey.flashColor='#f44';
+  // Readable combat beat: warm strike flash + brief size pulse
+  pred.flash=0.55; pred.flashColor='#ffe066';
+  prey.flash=0.75; prey.flashColor='#ff6644';
+  pred._lungeT = 0.28;
+  // Contrast crumbs (not rainbow firework): 4-6 tiny shards, prey hue + warm white
+  if(typeof parts!=='undefined' && parts){
+    var pc = (prey.sp && prey.sp.color) || '#8c8';
+    var n = 4 + ((Math.random()*3)|0);
+    for(var pi=0;pi<n;pi++){
+      var ang = Math.random()*Math.PI*2;
+      var sp = 0.4 + Math.random()*1.2;
+      parts.push({
+        x:prey.x, y:prey.y,
+        vx:Math.cos(ang)*sp, vy:Math.sin(ang)*sp,
+        life:0.35+Math.random()*0.35, maxLife:0.7,
+        size:0.9+Math.random()*1.4,
+        color: (pi%2===0)? pc : '#fff2aa',
+        type:'debris'
+      });
+    }
+  }
   
   if (typeof window !== 'undefined' && window.playSound) {
     if(player&&dist2(player,pred)<2500 || player&&dist2(player,prey)<2500) window.playSound("eat", prey.x, prey.y);

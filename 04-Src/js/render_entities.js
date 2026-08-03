@@ -221,6 +221,14 @@ function renderOrg(o, skipBody){
   ctx.save();ctx.translate(o.x,o.y);
   var isReal=settings.renderMode==='realistic';
   var sz=o.size;
+  // Lunge squash BEFORE body (readable eat beat)
+  if(o._lungeT>0){
+    var lt=o._lungeT;
+    o._lungeT = lt - 0.05; // ~0.28s at 60fps-ish; clamped
+    if(o._lungeT<0) o._lungeT=0;
+    var s=1+lt*0.4;
+    ctx.scale(s, 1/Math.max(0.72, s*0.88));
+  }
   
   // Bioluminescence at night for producers (gradient, NOT shadow — 50x faster)
   if(dayLight < 0.35 && o.sp.cat === 'producer' && o.alive) {
@@ -247,9 +255,15 @@ function renderOrg(o, skipBody){
   // REALISTIC: phase contrast = luminance only (no color)
   // Reference photos show white/gray organisms, not colored
   if(settings.renderMode==='realistic'){
-    var g2=rgb[0]*0.3+rgb[1]*0.59+rgb[2]*0.11;
-    rgb=[Math.round(g2),Math.round(g2),Math.round(g2)];
-    tint=1;
+    // Phase-contrast-ish: muted luminance + keep 35% species hue (not corpse-gray icons)
+    var g2=rgb[0]*0.299+rgb[1]*0.587+rgb[2]*0.114;
+    var keep=0.35;
+    rgb=[Math.round(g2*(1-keep)+rgb[0]*keep),
+         Math.round(g2*(1-keep)+rgb[1]*keep),
+         Math.round(g2*(1-keep)+rgb[2]*keep)];
+    // Lift midtones so cells read on teal water
+    rgb[0]=Math.min(220, rgb[0]+28); rgb[1]=Math.min(220, rgb[1]+28); rgb[2]=Math.min(220, rgb[2]+22);
+    tint=1.05;
   }
   var bc=shadeRgb(rgb[0],rgb[1],rgb[2],tint),bd=shadeRgb(rgb[0],rgb[1],rgb[2],tint*0.5);
   if(o.dying)ctx.globalAlpha=clamp(1-o.deathT/1.2,0,1);
@@ -322,24 +336,26 @@ function renderOrg(o, skipBody){
   var appZoom=settings.microscopeMode?0.3:(settings.renderMode==='realistic'?0.5:0.7);
   if(zoom>appZoom || o.isPlayer || settings.microscopeMode) drawAppendages(o,sz);
   if(o.flash>0){
-    // MICROSCOPE REALISM: subtle contrast shift, not flash
+    // Combat-readable flash: strike = warm ring, damage = red ring (no rainbow fireworks)
     var fc2=o.flashColor||'#ff8';
-    if(fc2==='#f80'||fc2==='#8f8'){
-      // Eating/attack: brief contraction ring (phagocytosis)
-      ctx.globalAlpha=o.flash*0.4;
-      ctx.strokeStyle='rgba(200,200,180,'+o.flash*0.3+')';
-      ctx.lineWidth=Math.max(1,sz*0.08);
-      ctx.beginPath();ctx.arc(0,0,sz*(1.1+o.flash*0.15),0,Math.PI*2);ctx.stroke();
-    } else if(fc2==='#f44'||fc2==='#f00'){
-      // Damage: cell deformation ripple
-      ctx.globalAlpha=o.flash*0.3;
-      ctx.strokeStyle='rgba(180,160,140,'+o.flash*0.4+')';
-      ctx.lineWidth=1;
-      ctx.beginPath();ctx.arc(0,0,sz*(1.05+o.flash*0.2),0,Math.PI*2);ctx.stroke();
+    var isStrike = (fc2==='#f80'||fc2==='#8f8'||fc2==='#ffe066'||fc2==='#ff8'||fc2==='#ffaa44');
+    var isDmg = (fc2==='#f44'||fc2==='#f00'||fc2==='#ff6644'||fc2==='#ff4444');
+    if(isStrike){
+      ctx.globalAlpha=Math.min(1,o.flash*0.85);
+      ctx.strokeStyle='rgba(255,230,100,'+(0.55+o.flash*0.4)+')';
+      ctx.lineWidth=Math.max(1.5,sz*0.14);
+      ctx.beginPath();ctx.arc(0,0,sz*(1.15+o.flash*0.35),0,Math.PI*2);ctx.stroke();
+      ctx.globalAlpha=o.flash*0.35;
+      ctx.fillStyle='rgba(255,240,160,0.35)';
+      ctx.beginPath();ctx.arc(0,0,sz*(1.05+o.flash*0.2),0,Math.PI*2);ctx.fill();
+    } else if(isDmg){
+      ctx.globalAlpha=Math.min(1,o.flash*0.8);
+      ctx.strokeStyle='rgba(255,90,70,'+(0.5+o.flash*0.4)+')';
+      ctx.lineWidth=Math.max(1.2,sz*0.12);
+      ctx.beginPath();ctx.arc(0,0,sz*(1.1+o.flash*0.3),0,Math.PI*2);ctx.stroke();
     } else {
-      // Division/misc: very subtle brightening
-      ctx.globalAlpha=o.flash*0.25;
-      ctx.fillStyle='rgba(220,220,200,'+o.flash*0.2+')';
+      ctx.globalAlpha=o.flash*0.35;
+      ctx.fillStyle='rgba(220,220,200,'+o.flash*0.25+')';
       ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();
     }
     ctx.globalAlpha=1;

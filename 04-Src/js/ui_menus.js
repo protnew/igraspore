@@ -308,6 +308,7 @@ function showDeadScreen(){
 
 
 function toggleRenderMode(el){
+  window._rmodeUserPicked = true;
   settings.renderMode = settings.renderMode==='realistic' ? 'cartoon' : 'realistic';
   el.className='tg'+(settings.renderMode==='realistic'?' on':'');
   var lbl=document.getElementById('rmodeLbl');

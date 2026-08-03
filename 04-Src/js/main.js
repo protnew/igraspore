@@ -272,14 +272,22 @@ function startGame(isScreensaver){
   
   // Start zoomed in enough to see neighbors (Spore/Agar feel)
   state='playing';zoom=1.8;tZoom=1.8;gt=0;fc=0;lastT=0;
+  // Always start cartoon (user default). Realistic is opt-in via button only.
+  try {
+    if(!window._rmodeUserPicked){
+      settings.renderMode = 'cartoon';
+      if(typeof applyRenderMode==='function') applyRenderMode();
+    }
+  } catch(e){}
+  
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';
   document.getElementById('weatherP').style.display='block';
   document.getElementById('actBar').style.display='flex';
   document.getElementById('renderModeBtn').style.display='block';
-  if(settings.renderMode==='realistic'){var rb=document.getElementById('renderModeBtn');if(rb){rb.className='realistic';rb.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';}}
-  else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';}}
+  if(settings.renderMode==='realistic'){var rb=document.getElementById('renderModeBtn');if(rb){rb.className='realistic';rb.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';rb.title='Сейчас: реалистичный. Клик → мультяшный';}}
+  else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';rb2.title='Сейчас: мультяшный. Клик → реалистичный';}}
   var kh=document.getElementById('keyHint');
   kh.innerHTML='<div style="font-size:15px;font-weight:700;line-height:1.7;text-align:center">'+
     '<b>WASD</b> движение · <b>E</b> ЕСТЬ · <b>Q</b> ДЕЛИТЬ · <b>Tab</b> АВТО · <b>V</b> камера</div>';
@@ -519,6 +527,7 @@ document.getElementById('bMicro').onclick=function(){
 };
 document.getElementById('bRender').onclick=function(){ toggleRenderModeLarge(); };
 function toggleRenderModeLarge(){
+  window._rmodeUserPicked = true;
   settings.renderMode = settings.renderMode==='realistic' ? 'cartoon' : 'realistic';
   applyRenderMode();
   var btn=document.getElementById('renderModeBtn');

@@ -374,7 +374,7 @@ function updateWorld(dt){
     window._trophic = {nP:nP,nAll:nAll,pct:nAll?nP/nAll:0};
     if(nP > (TGT.producer||1800) * 1.08){
       var need = nP - Math.floor((TGT.producer||1800));
-      if(need > 40) need = 40; // per spawn tick
+      if(need > 25) need = 25; // per spawn tick
       // kill weakest non-player producers (low energy first)
       var cands=[];
       for(var j=0;j<orgs.length;j++){
@@ -522,15 +522,14 @@ function updateCamera(dt){
   if(!freeCam&&player&&player.alive){
     var tx=player.x,ty=player.y;
     if(!isFinite(tx)||!isFinite(ty)){tx=0;ty=PD*0.3;}
-    // Surface bias: near surface keep sky band visible when zoomed (magnify, not pure dive)
-    // waterScreenY≈(0-cam.y)*zoom+h/2 > ~80 → cam.y < (h/2-80)/zoom
-    if(typeof zoom==='number' && zoom>2.2 && ty < 120){
+    // Surface bias: if player is near surface and zoomed in, keep a sky band (magnify UX).
+    // If player dives (y large), follow normally — sun leaves when sky leaves viewport.
+    if(typeof zoom==='number' && zoom>2.5 && ty < 90){
       var h2 = (typeof cv!=='undefined' && cv && cv.height) ? cv.height*0.5 : 400;
-      var maxCamY = Math.max(8, (h2 - 90)/zoom); // keep ~90px sky
-      // Pull target toward surface so sun stays in sky while watching near-surface action
-      ty = Math.min(ty, maxCamY + 25);
+      var maxCamY = Math.max(10, (h2 - 100)/zoom); // keep ~100px sky while near surface
+      ty = Math.min(ty - 12, maxCamY + 20);
     } else {
-      ty = ty - 18; // slight upward look (was player.y-20 on attach)
+      ty = ty - 18;
     }
     var followFactor=clamp(dtc*8,0,0.35);
     cam.x=lerp(cam.x,tx,followFactor);

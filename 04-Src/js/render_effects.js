@@ -941,10 +941,10 @@ function renderSunOverlay(){
   // Hard clip: entire disk above waterline
   if(sy + r > waterScreenY - 2) sy = waterScreenY - r - 2;
   if(sy < r * 0.3) return;
-  // Fade alpha by sky band height (smooth, no flicker)
-  var fade = waterScreenY / (r * 5 + 40);
+  // Fade alpha by sky band height (smooth). Keep visible while sky >= ~1.2*r
+  var fade = waterScreenY / (r * 2.2 + 18);
   if(fade > 1) fade = 1;
-  if(fade < 0.05) return;
+  if(fade < 0.08) return;
   if(sx < -r*3 || sx > cv.width + r*3) return;
 
   ctx.save();

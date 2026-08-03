@@ -83,6 +83,9 @@ window.divideBlockReason = divideBlockReason;
 
 function doDivide(o){
   if(!canDivide(o)) return false;
+  // Reproduction rate slider (user setting)
+  var _dr=(typeof settings!=='undefined'&&settings.divRate)?settings.divRate:1.0;
+  if(_dr<1.0 && Math.random()>_dr) return false;
   o.dividing=true; o.divT=0; o.state='dividing';
   o.preDivSize=o.size;
   // Spend mass/eats immediately — cannot chain-divide mid-animation
@@ -165,6 +168,9 @@ function finishDivide(o){
 
 function eatOrg(pred,prey){
   if(!prey||!prey.alive)return;
+  // Predation rate slider (user setting)
+  var _pr=(typeof settings!=='undefined'&&settings.predation)?settings.predation:1.0;
+  if(!pred.isPlayer && _pr<1.0 && Math.random()>_pr) return;
   // Eat cooldown — predators can't eat every frame (realistic digestion)
   if(!pred.isPlayer && (pred.eatCD||0) > 0){
     // Visual lunge even on cooldown — predator tried to bite

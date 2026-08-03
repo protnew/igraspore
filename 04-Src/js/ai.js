@@ -61,7 +61,8 @@ function thrustAlongFacing(o, speed, dt, mul){
 function moveOrg(o,dt){
   var sp=o.sp;
   // Respect species speed; tiny floor only so zero-speed never NaNs physics
-  var speed=Math.max(sp.speed, 0.01)*SPD_SCALE*0.05;
+  var _ss=(typeof settings!=='undefined' && settings.simSpeed)?settings.simSpeed:0.33;
+  var speed=Math.max(sp.speed, 0.01)*SPD_SCALE*0.05*_ss/0.33;
   if(o.isPlayer){
     // Soft hierarchy multipliers — NO hard floors that erase balance
     var cat = o.sp && o.sp.cat;

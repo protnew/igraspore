@@ -290,6 +290,8 @@ function clampToPuddle(o){
 
 function updateWorld(dt){
   dt*=timeScale;
+  var _ss=(typeof settings!=='undefined' && settings.simSpeed)?settings.simSpeed:0.33;
+  dt*=_ss/0.33; // user speed multiplier (0.1..3.0)
   if(dt>0.5)dt=0.5; // PERF-015: Cap dt to prevent simulation explosion
   window.spatialGrid = {};
   window.spatialGridLarge = {};

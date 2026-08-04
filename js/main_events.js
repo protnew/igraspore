@@ -143,20 +143,28 @@ window.playerContactEat = function(dt){
   if(!player||!player.alive||player.cyst) return;
   window._playerContactEatT -= (dt||0.016);
   if(window._playerContactEatT>0) return;
-  window._playerContactEatT = 0.10;
-  var range = player.size + 18;
+  window._playerContactEatT = 0.08; // slightly faster
+  var range = player.size + 22;
   var range2 = range*range;
+  // Find BEST prey in range (smallest edible)
+  var best = null, bestSize = 1e18;
   for(var i=0;i<orgs.length;i++){
     var p=orgs[i];
     if(!p||!p.alive||p===player||p.cyst) continue;
-    if(p.size >= player.size*1.15) continue;
+    // Player can eat anything up to 1.3x its size (chip away if bigger)
+    if(p.size > player.size*1.5) continue;
     if(dist2(player,p) <= range2){
       if(player.sp.cat !== 'producer'){
-        if(typeof forceEat==='function') forceEat(player, p);
-        else { p.divCD=0;p.invuln=0; eatOrg(player,p); }
+        if(p.size < bestSize){ bestSize = p.size; best = p; }
       }
-      return;
     }
+  }
+  if(best){
+    // Clear prey invuln/divCD so player can ALWAYS eat
+    best.divCD = 0;
+    best.invuln = 0;
+    if(typeof forceEat==='function') forceEat(player, best);
+    else eatOrg(player, best);
   }
 };
 
@@ -171,6 +179,7 @@ document.addEventListener('keydown',function(e){
     if(freeCam){camKeys[ck]=true;e.preventDefault();}
     if(autoAI)autoAI=false;
   }
+  if(k===' '||k==='space'){ window.manualFeed&&window.manualFeed(); e.preventDefault(); }
   if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
   if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
   if(k==='escape'){
@@ -333,4 +342,43 @@ document.addEventListener('click', function(e){
   }
   setTimeout(updateStarUI, 500);
   setTimeout(updateStarUI, 2000);
+})();
+
+// Manual feed: Space key — player tries to eat NOW
+window._manualFeedCD = 0;
+window.manualFeed = function(){
+  if(!player||!player.alive||player.cyst) return false;
+  if(window._manualFeedCD > 0) {
+    if(window.showToast) window.showToast('Пищеварение... ('+Math.ceil(window._manualFeedCD)+'с)', '#fa0');
+    return false;
+  }
+  var range = player.size + 30; // larger range for manual
+  var range2 = range*range;
+  var best = null, bestSize = 1e18;
+  for(var i=0;i<orgs.length;i++){
+    var p=orgs[i];
+    if(!p||!p.alive||p===player||p.cyst) continue;
+    if(p.size > player.size*1.5) continue;
+    if(dist2(player,p) <= range2){
+      if(p.size < bestSize){ bestSize = p.size; best = p; }
+    }
+  }
+  if(best){
+    best.divCD = 0; best.invuln = 0;
+    if(typeof forceEat==='function') forceEat(player, best);
+    else eatOrg(player, best);
+    window._manualFeedCD = 0.5; // short CD for manual
+    player.flash = 1; player.flashColor = '#ff0';
+    if(window.showToast) window.showToast('КУСЬ! '+best.sp.name, '#8f8');
+    return true;
+  } else {
+    if(window.showToast) window.showToast('Нет добычи рядом', '#faa');
+    return false;
+  }
+};
+
+// Manual feed button
+(function(){
+  var b = document.getElementById('bFeed');
+  if(b) b.onclick = function(){ window.manualFeed&&window.manualFeed(); };
 })();

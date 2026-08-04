@@ -93,7 +93,8 @@ function render(){
   if(window.demoMode&&typeof renderDemoLabels==="function")renderDemoLabels();
     renderTooltip();
   // Re-draw sun ON TOP of particles (prevents green halo from phytoplankton)
-  if(typeof renderSunOverlay==='function') renderSunOverlay();
+  if(typeof renderSunOverlay==='function') if(typeof window.renderNightSky==='function') window.renderNightSky(ctx, cv, (typeof dayLight==='number'?dayLight:0.5), fc);
+    renderSunOverlay();
   
   // === STEP 7: REALISTIC POST-PROCESSING === (disabled — causes dark ovals)
   if(false && isReal){

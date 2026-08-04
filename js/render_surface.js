@@ -196,12 +196,12 @@ function drawNaturalLilypads(vL, vR, surfW){
   // Deterministic pseudo-random from world X for stable pads
   function padSeed(x){ var s=Math.sin(x*12.9898)*43758.5453; return s-Math.floor(s); }
   // CHAOTIC 2D SCATTER — natural pond coverage, not a line
-  for(var lp = -surfW + 50; lp < surfW; lp += 200 + padSeed(lp)*250){ // micro world lily density
+  for(var lp = -surfW + 50; lp < surfW; lp += 320 + padSeed(lp)*300){ // bigger pads, wider spacing
     var skip = padSeed(lp*1.3);
     if(skip < 0.15) continue; // organic gaps
     // Y scatter: pads spread vertically across surface band
     var wy = Math.sin(lp*0.025 + t*0.03)*1.5 + (padSeed(lp*2.1)-0.5)*2.0; // surface only y≈0 ±2.5
-    var rx = 25 + padSeed(lp*0.7)*57; // 25-82 (10x less area)
+    var rx = 50 + padSeed(lp*0.7)*114; // 50-164 (2x bigger)
     var ry = rx * (fromBelow ? 0.48 : 0.36);
     var rot = padSeed(lp*3.1)*Math.PI*2;
     var px = lp + (padSeed(lp*4.2)-0.5)*120; // horizontal jitter

@@ -168,7 +168,19 @@ document.addEventListener('keydown',function(e){
   if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
   if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
   if(k==='escape'){
-    if(window.demoMode && window.demoPossessed){ exitDemoPossess(); e.preventDefault(); }
+    if(window.demoMode && window.demoPossessed){ exitDemoPossess(); e.preventDefault(); return; }
+    // ESC → return to main menu from game or demo
+    if(state==='playing' || window.demoMode){
+      window.demoMode = false;
+      window.demoPossessed = null;
+      window.spectatorMode = false;
+      freeCam = false;
+      autoAI = false;
+      player = null;
+      state = 'menu';
+      document.getElementById('menuO').className = 'ov show';
+      e.preventDefault();
+    }
   }
   if(k==='v'){
     // V: Toggle camera follow player

@@ -49,6 +49,51 @@ window.STAR_PRESETS = [
       { color: '#fff8d0', core: '#ffffff', mid: '#ffe078', edge: '#ffc850', glow: 'rgba(255,240,180,0.42)', glowMid: 'rgba(255,220,140,0.20)', glowEnd: 'rgba(255,180,80,0)', offset: -0.10, sizeMul: 0.80 },
       { color: '#fff0a0', core: '#ffffe8', mid: '#ffd860', edge: '#ffb040', glow: 'rgba(255,235,140,0.42)', glowMid: 'rgba(255,210,100,0.20)', glowEnd: 'rgba(255,170,60,0)', offset: 0.10, sizeMul: 0.80 }
     ]
+  },
+  {
+    id: 'trinary',
+    name: { ru: 'Тройная система', en: 'Trinary System' },
+    skyTint: { dawn: '#d0a0ff', day: '#b0d0ff', dusk: '#ffa060' },
+    stars: [
+      { color: '#ffcc88', core: '#fff5e0', mid: '#ffaa50', edge: '#ff7020', glow: 'rgba(255,180,80,0.40)', glowMid: 'rgba(255,140,40,0.20)', glowEnd: 'rgba(255,100,20,0)', offset: -0.14, sizeMul: 0.70 },
+      { color: '#aaccff', core: '#ddffff', mid: '#88bbff', edge: '#4477cc', glow: 'rgba(120,180,255,0.40)', glowMid: 'rgba(80,140,255,0.20)', glowEnd: 'rgba(40,80,200,0)', offset: 0.00, sizeMul: 0.60 },
+      { color: '#ff88cc', core: '#ffd0e8', mid: '#ff60a0', edge: '#dd3070', glow: 'rgba(255,120,200,0.35)', glowMid: 'rgba(220,80,160,0.18)', glowEnd: 'rgba(180,40,100,0)', offset: 0.14, sizeMul: 0.55 }
+    ]
+  },
+  {
+    id: 'whiteDwarf',
+    name: { ru: 'Белый карлик', en: 'White Dwarf' },
+    skyTint: { dawn: '#ddeeff', day: '#cce8ff', dusk: '#aaccff' },
+    stars: [
+      { color: '#f8fbff', core: '#ffffff', mid: '#e0e8ff', edge: '#a0b8d8', glow: 'rgba(220,240,255,0.50)', glowMid: 'rgba(180,210,255,0.22)', glowEnd: 'rgba(120,160,220,0)', offset: 0, sizeMul: 0.50 }
+    ]
+  },
+  {
+    id: 'blueGiant',
+    name: { ru: 'Голубой гигант', en: 'Blue Giant' },
+    skyTint: { dawn: '#80b0ff', day: '#6090ee', dusk: '#4060cc' },
+    stars: [
+      { color: '#a0c8ff', core: '#ffffff', mid: '#80a8ff', edge: '#3060cc', glow: 'rgba(100,160,255,0.55)', glowMid: 'rgba(60,120,240,0.25)', glowEnd: 'rgba(20,60,180,0)', offset: 0, sizeMul: 1.50 }
+    ]
+  },
+  {
+    id: 'quadruple',
+    name: { ru: 'Четверная система', en: 'Quadruple System' },
+    skyTint: { dawn: '#c8a0e8', day: '#a8c0ff', dusk: '#e8a0c0' },
+    stars: [
+      { color: '#ffcc88', core: '#fff5e0', mid: '#ffaa50', edge: '#ff7020', glow: 'rgba(255,180,80,0.35)', glowMid: 'rgba(255,140,40,0.16)', glowEnd: 'rgba(255,100,20,0)', offset: -0.16, sizeMul: 0.55 },
+      { color: '#aaccff', core: '#ddffff', mid: '#88bbff', edge: '#4477cc', glow: 'rgba(120,180,255,0.35)', glowMid: 'rgba(80,140,255,0.16)', glowEnd: 'rgba(40,80,200,0)', offset: -0.05, sizeMul: 0.50 },
+      { color: '#ff88cc', core: '#ffd0e8', mid: '#ff60a0', edge: '#dd3070', glow: 'rgba(255,120,200,0.30)', glowMid: 'rgba(220,80,160,0.14)', glowEnd: 'rgba(180,40,100,0)', offset: 0.06, sizeMul: 0.45 },
+      { color: '#88ffcc', core: '#d0ffe8', mid: '#50cc88', edge: '#20aa55', glow: 'rgba(80,255,180,0.30)', glowMid: 'rgba(40,200,120,0.14)', glowEnd: 'rgba(20,160,80,0)', offset: 0.16, sizeMul: 0.45 }
+    ]
+  },
+  {
+    id: 'flare',
+    name: { ru: 'Звезда с вспышками', en: 'Flare Star' },
+    skyTint: { dawn: '#ff6040', day: '#ff8050', dusk: '#dd3010' },
+    stars: [
+      { color: '#ff6040', core: '#ffaa80', mid: '#ff5020', edge: '#cc1810', glow: 'rgba(255,80,40,0.50)', glowMid: 'rgba(220,60,30,0.25)', glowEnd: 'rgba(180,30,10,0)', offset: 0, sizeMul: 0.65, pulse: true }
+    ]
   }
 ];
 

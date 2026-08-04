@@ -46,9 +46,7 @@ function startDemoMode() {
     for (var si = 0; si < SPECIES_DB.length; si++) {
       var sp = SPECIES_DB[si];
       if (!sp || sp.cat !== grp.key) continue;
-      if (sp.noRandomSpawn) continue;
-      // Skip giant colony blobs in demo showcase
-      if (sp.shape === 'colony' && (sp.size || 8) > 6) continue;
+      // Include ALL species — even colonies (Volvox, Pandorina etc are playable in demo)
       pool.push(sp);
     }
     // At least one placeholder if pool empty

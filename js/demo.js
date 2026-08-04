@@ -93,6 +93,10 @@ function startDemoMode() {
   cam.y = rowY0 + (DEMO_GROUPS.length - 1) * rowGap * 0.45;
   zoom = 0.55;
   tZoom = 0.55;
+  window.lastInteractionTime = Date.now();
+  window.screensaverAutoCam = false;
+  window.focusTarget = null;
+  gt = 0;
 
   state = 'playing';
   try {

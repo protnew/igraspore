@@ -109,8 +109,8 @@ function gameLoop(ts){
       else if(autoAI){cm.innerHTML='<span style="color:#0f0;text-shadow:0 0 5px #0f0;font-weight:bold;font-size:12px;">АВТО-ПИЛОТ ВКЛ</span>';cm.className='';cm.style.display='block';}
       else cm.style.display='none';
       if(gt>15)document.getElementById('keyHint').style.opacity='0.3';
-    } else {
-      // Menu Aquarium Logic
+    } else if (!window.demoMode) {
+      // Menu Aquarium Logic (not in Demo gallery)
       if (!focusTarget) {
          cam.x += 20 * realDt;
          if(cam.x > PW) cam.x = -PW;

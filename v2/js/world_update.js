@@ -105,7 +105,7 @@ function updateWorld(dt){
       var bm=catBm[cat]||0;
       var avgBm=0; for(var i=0;i<pool.length;i++) avgBm+=pool[i].size*(pool[i].energy*0.7+5);
       avgBm = pool.length ? avgBm/pool.length : 500;
-      if(bm < TGT[cat]*avgBm*DIFF[difficulty].spawn*settings.density){
+      if(!window.demoMode && bm < TGT[cat]*avgBm*DIFF[difficulty].spawn*settings.density){
         var numToSpawn = (cat === 'producer') ? 15 : 1;
         for (var k=0; k<numToSpawn; k++) {
            if(pool.length>0){
@@ -268,7 +268,7 @@ function updateCamera(dt){
         window.screensaverAutoCam = false;
     }
 
-    if(window.screensaverAutoCam && !moved){
+    if(window.screensaverAutoCam && !moved && !window.demoMode){
       var _scTarget=null,_scMaxSize=0;
       for(var _i=0;_i<orgs.length;_i++){
         var _o=orgs[_i];

@@ -148,18 +148,18 @@ function renderSky(vL,vR,vT){
     // Atmospheric bloom (single, soft)
     var bloomR = rSun * 7;
     var bloom = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, bloomR);
-    bloom.addColorStop(0, 'rgba(255, 245, 200, ' + (0.55*dl) + ')');
-    bloom.addColorStop(0.15, 'rgba(255, 210, 120, ' + (0.28*dl) + ')');
-    bloom.addColorStop(0.4, 'rgba(255, 180, 80, ' + (0.1*dl) + ')');
-    bloom.addColorStop(1, 'rgba(255, 160, 60, 0)');
+    bloom.addColorStop(0, 'rgba(' + (_s0 ? _s0.coreRGB : '255, 245, 200') + ', ' + (0.55*dl) + ')');
+    bloom.addColorStop(0.15, 'rgba(' + (_s0 ? _s0.midRGB : '255, 210, 120') + ', ' + (0.28*dl) + ')');
+    bloom.addColorStop(0.4, 'rgba(' + (_s0 ? _s0.edgeRGB : '255, 180, 80') + ', ' + (0.1*dl) + ')');
+    bloom.addColorStop(1, 'rgba(' + (_s0 ? _s0.edgeRGB : '255, 160, 60') + ', 0)');
     ctx.fillStyle = bloom;
     ctx.beginPath(); ctx.arc(sunX, sunY, bloomR, 0, Math.PI*2); ctx.fill();
 
     // Outer soft halo
     ctx.globalCompositeOperation = 'screen';
     var halo = ctx.createRadialGradient(sunX, sunY, rSun*0.2, sunX, sunY, rSun*3.2);
-    halo.addColorStop(0, 'rgba(255, 255, 240, ' + (0.95*dl) + ')');
-    halo.addColorStop(0.5, 'rgba(255, 220, 140, ' + (0.35*dl) + ')');
+    halo.addColorStop(0, 'rgba(' + (_s0 ? _s0.coreRGB : '255, 255, 240') + ', ' + (0.95*dl) + ')');
+    halo.addColorStop(0.5, 'rgba(' + (_s0 ? _s0.midRGB : '255, 220, 140') + ', ' + (0.35*dl) + ')');
     halo.addColorStop(1, 'rgba(255, 180, 80, 0)');
     ctx.fillStyle = halo;
     ctx.beginPath(); ctx.arc(sunX, sunY, rSun*3.2, 0, Math.PI*2); ctx.fill();

@@ -138,3 +138,22 @@ window.STAR_PRESETS = [
     ]
   }
 ];
+// Helper: convert hex color to "r, g, b" string
+function _hexToRGB(hex){
+  if(!hex || hex.length < 7) return '255,245,200';
+  var r = parseInt(hex.slice(1,3),16);
+  var g = parseInt(hex.slice(3,5),16);
+  var b = parseInt(hex.slice(5,7),16);
+  return r+','+g+','+b;
+}
+// Patch star objects with RGB strings
+(function(){
+  if(!window.STAR_PRESETS) return;
+  window.STAR_PRESETS.forEach(function(p){
+    if(p.stars) p.stars.forEach(function(s){
+      s.coreRGB = _hexToRGB(s.core);
+      s.midRGB = _hexToRGB(s.mid);
+      s.edgeRGB = _hexToRGB(s.edge);
+    });
+  });
+})();

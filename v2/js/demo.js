@@ -180,7 +180,7 @@ function demoPickAtScreen(sx, sy) {
     var o = orgs[i];
     if (!o || !o.alive) continue;
     var dx = o.x - wx, dy = o.y - wy;
-    var r = (o.size || 8) + 10 / zoom;
+    var r = (o.size || 8) * 1.15 + 6 / Math.max(0.5, zoom);
     var d2 = dx * dx + dy * dy;
     if (d2 < r * r && d2 < bestD) { bestD = d2; best = o; }
   }

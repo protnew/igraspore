@@ -272,6 +272,9 @@ function drawNaturalLilypads(vL, vR, surfW){
 
 function renderSunGlitter(vL, vR){
   var sun = window._sunPos;
+  // Use star preset colors (not hardcoded yellow)
+  var _preset = (typeof window.getStarPreset==='function') ? window.getStarPreset() : null;
+  var _star0 = _preset ? _preset.stars[0] : null;
   var dl = (typeof dayLight==='number') ? dayLight : 0.5;
   if(dl < 0.15) return;
   ctx.save();
@@ -280,7 +283,7 @@ function renderSunGlitter(vL, vR){
     var sx = sun ? sun.x : cam.x;
     var sr = sun ? Math.max(16, sun.r*1.3) : 22;
     var sg2 = ctx.createRadialGradient(sx, -2, 0, sx, -2, sr*4);
-    sg2.addColorStop(0, 'rgba(255, 250, 220, ' + (0.85*dl) + ')');
+    _star0 ? (function(){ var s=_star0; return 'rgba('+parseInt(s.mid.slice(1,3),16)+','+parseInt(s.mid.slice(3,5),16)+','+parseInt(s.mid.slice(5,7),16)+','+(0.85*dl)+')'; })() : 'rgba(255, 250, 220, ' + (0.85*dl) + ')'
     sg2.addColorStop(0.2, 'rgba(255, 220, 120, ' + (0.45*dl) + ')');
     sg2.addColorStop(0.55, 'rgba(255, 180, 60, ' + (0.12*dl) + ')');
     sg2.addColorStop(1, 'rgba(255, 160, 40, 0)');
@@ -385,7 +388,10 @@ function renderSunRays(vL,vR){
     var sr=sunRays[i];if(sr.x<vL-100||sr.x>vR+100)continue;
     var opacity=dayLight*0.10;
     var g=ctx.createLinearGradient(sr.x,0,sr.x+sr.angle*300,PD*0.7);
-    g.addColorStop(0,'rgba(255,250,210,'+(opacity*1.2)+')');g.addColorStop(0.35,'rgba(200,240,180,'+(opacity*0.55)+')');g.addColorStop(0.7,'rgba(120,200,160,'+(opacity*0.2)+')');g.addColorStop(1,'rgba(80,160,140,0)');
+    var _ps=(typeof window.getStarPreset==='function')?window.getStarPreset():null;
+    var _s0=_ps?_ps.stars[0]:null;
+    var _r=_s0?parseInt(_s0.mid.slice(1,3),16):255,_g=_s0?parseInt(_s0.mid.slice(3,5),16):250,_b=_s0?parseInt(_s0.mid.slice(5,7),16):210;
+    g.addColorStop(0,'rgba('+_r+','+_g+','+_b+','+(opacity*1.2)+')');g.addColorStop(0.35,'rgba('+Math.round(_r*0.8)+','+Math.round(_g*0.95)+','+Math.round(_b*0.7)+','+(opacity*0.55)+')');g.addColorStop(0.7,'rgba(120,200,160,'+(opacity*0.2)+')');g.addColorStop(1,'rgba(80,160,140,0)');
     ctx.fillStyle=g;ctx.beginPath();ctx.moveTo(sr.x-sr.w/2,0);ctx.lineTo(sr.x+sr.w/2,0);
     ctx.lineTo(sr.x+sr.w/2+sr.angle*PD*0.7+sr.w*0.3,PD*0.7);ctx.lineTo(sr.x-sr.w/2+sr.angle*PD*0.7-sr.w*0.3,PD*0.7);
     ctx.closePath();ctx.fill();

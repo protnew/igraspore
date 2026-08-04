@@ -195,6 +195,9 @@ function demoPickAtScreen(sx, sy) {
 
 function updateDemoPinned(dt) {
   if (!window.demoMode) return;
+  // Lock daytime — demo is always noon (no night starvation)
+  dayLight = 0.95;
+  tod = 12;
   // Remove any non-gallery organisms that slipped in
   for (var k = orgs.length - 1; k >= 0; k--) {
     var ok = orgs[k];

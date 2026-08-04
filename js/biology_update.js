@@ -229,7 +229,7 @@ function updateOrg(o,dt){
         o.size = Math.max((o.sp.size||4)*0.55, o.size - dt * 0.08 * dark);
       }
       // extra energy drain at night (no photo offset)
-      if(o.isPlayer){o.energy -= resp*(0.15+dark*0.2);}else{o.energy -= resp*(0.35+dark*0.5);}
+      if(o.isPlayer){o.energy -= resp*(0.10+dark*0.15);}else{o.energy -= resp*(0.20+dark*0.30);}
     }
   }else{
     // Respiration: consumes O2, produces CO2

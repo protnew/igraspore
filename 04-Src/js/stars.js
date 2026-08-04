@@ -157,3 +157,29 @@ function _hexToRGB(hex){
     });
   });
 })();
+
+
+// ========== Star system selector functions ==========
+window.currentStarId = 'sol';
+window.getStarPreset = function(){
+  var id = window.currentStarId || 'sol';
+  for(var i=0; i<window.STAR_PRESETS.length; i++){
+    if(window.STAR_PRESETS[i].id === id) return window.STAR_PRESETS[i];
+  }
+  return window.STAR_PRESETS[0]; // fallback to sun
+};
+window.setStarSystem = function(id){
+  window.currentStarId = id;
+  try { localStorage.setItem('igraspore_star', id); } catch(e){}
+  // Update dropdown if present
+  var sel = document.getElementById('starSelect');
+  if(sel) sel.value = id;
+};
+
+// Load saved star from localStorage
+(function(){
+  try {
+    var saved = localStorage.getItem('igraspore_star');
+    if(saved) window.currentStarId = saved;
+  } catch(e){}
+})();

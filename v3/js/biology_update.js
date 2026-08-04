@@ -331,7 +331,7 @@ function updateOrg(o,dt){
     if(o.isPlayer && window.playerContactEat) window.playerContactEat(dt);
   }
   // division handled at top of updateOrg
-  if(!o.dividing&&!o.cyst&&canDivide(o)){
+  if(!window.demoMode && !o.dividing&&!o.cyst&&canDivide(o)){
     if (o.sp.flags && o.sp.flags.gendered) {
         o.seekingMate = true;
         for(let j=0; j<orgs.length; j++) {
@@ -367,7 +367,7 @@ function updateOrg(o,dt){
         }
     } else {
         var divP = o.isPlayer ? 0.5 : 0.02;
-        if(Math.random()<divP*dt)doDivide(o);
+        if(!window.demoMode && Math.random()<divP*dt)doDivide(o);
     }
   }
   if(o.energy<=0 && !o.isPlayer){

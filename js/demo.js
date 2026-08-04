@@ -91,8 +91,8 @@ function startDemoMode() {
   // Camera overview
   cam.x = 0;
   cam.y = rowY0 + (DEMO_GROUPS.length - 1) * rowGap * 0.45;
-  zoom = 0.55;
-  tZoom = 0.55;
+  zoom = 0.75;
+  tZoom = 0.75;
   window.lastInteractionTime = Date.now();
   window.screensaverAutoCam = false;
   window.focusTarget = null;
@@ -189,6 +189,14 @@ function demoPickAtScreen(sx, sy) {
 
 function updateDemoPinned(dt) {
   if (!window.demoMode) return;
+  // Remove any non-gallery organisms that slipped in
+  for (var k = orgs.length - 1; k >= 0; k--) {
+    var ok = orgs[k];
+    if (ok && !ok.demoGroup && !ok.isPlayer) {
+      ok.alive = false;
+      orgs.splice(k, 1);
+    }
+  }
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
     if (!o || !o.alive || !o.demoPinned) continue;

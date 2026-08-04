@@ -66,7 +66,7 @@ window.focusTarget = null; window.focusTimer = 0; window.cinematicTime = 1;
 function gameLoop(ts){
   try{
   if(!lastT)lastT=ts;
-  if(state==='playing'&&!player){state='gameover';}
+  if(state==='playing'&&!player&&!window.demoMode&&!window.spectatorMode){state='gameover';}
   var dt=Math.min(0.05,(ts-lastT)/1000);lastT=ts;fc++;
   
   if (focusTimer > 0) {

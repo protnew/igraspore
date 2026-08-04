@@ -287,3 +287,23 @@ window.demoPickAtScreen = demoPickAtScreen;
 window.updateDemoPinned = updateDemoPinned;
 window.renderDemoLabels = renderDemoLabels;
 window.updateDemoCamera = updateDemoCamera;
+
+
+function bindDemoButton(){
+  var b = document.getElementById('demoBtn');
+  if(!b) return;
+  b.onclick = function(){ startDemoMode(); };
+  // RU/EN label
+  try {
+    b.textContent = (typeof curLang!=='undefined' && curLang==='en') ? 'DEMO / Gallery' : 'ДЕМО / Галерея';
+  } catch(e){}
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded', bindDemoButton);
+} else {
+  bindDemoButton();
+}
+// Late bind (main_events may overwrite later)
+setTimeout(bindDemoButton, 0);
+setTimeout(bindDemoButton, 500);
+window.bindDemoButton = bindDemoButton;

@@ -361,7 +361,7 @@ function renderOrg(o, skipBody){
     }
     ctx.globalAlpha=1;
   }
-  if(o.isPlayer&&state==='playing'&&!window.demoMode){ctx.globalAlpha=0.5+Math.sin(fc*0.1)*0.3;ctx.strokeStyle='#4ff';ctx.lineWidth=2;
+  if(false&&o.isPlayer&&state==='playing'&&!window.demoMode){ctx.globalAlpha=0.5+Math.sin(fc*0.1)*0.3;ctx.strokeStyle='#4ff';ctx.lineWidth=2;
     ctx.beginPath();ctx.arc(0,0,sz+4,0,Math.PI*2);ctx.stroke();}
   // Realistic mode: scientific label at high zoom
   if(settings.renderMode==='realistic'&&zoom>5&&!o.dying){
@@ -377,7 +377,7 @@ function renderOrg(o, skipBody){
     ctx.restore();
   }
   // UI-003: Highlight edible prey with green ring
-  if(!o.isPlayer&&o.alive&&player&&player.alive&&state==='playing'&&zoom>3&&!window.demoMode){
+  if(false&&!o.isPlayer&&o.alive&&player&&player.alive&&state==='playing'&&zoom>3&&!window.demoMode){
     var foodCats2=FOOD[player.sp.cat]||[];
     if(foodCats2.indexOf(o.sp.cat)>=0&&o.size<player.size*0.88){
       ctx.globalAlpha=0.3+Math.sin(fc*0.15)*0.2;

@@ -134,7 +134,86 @@ function updateWorld(dt){
     }
   }
 
-  // Chemotaxis update
+        // TSK-WRD-013: Sediment decay — decomposers break down sediment
+  if(typeof window.sedimentClumps !== 'undefined' && window.sedimentClumps){
+    for(var si=window.sedimentClumps.length-1; si>=0; si--){
+      var sc = window.sedimentClumps[si];
+      if(!sc) continue;
+      for(var oi=0; oi<orgs.length; oi++){
+        var so = orgs[oi];
+        if(so.alive && so.sp.cat === 'consumer1' && Math.abs(so.x-sc.x)<sc.w && Math.abs(so.y-sc.y)<sc.h){
+          sc.w -= dt * 0.5; sc.h -= dt * 0.5;
+          so.energy += dt * 2; // nutrient gain
+          if(sc.w < 2 || sc.h < 2){
+            // Spawn nutrient cloud
+            if(typeof FOOD !== 'undefined' && FOOD.push) FOOD.push({x:sc.x, y:sc.y, energy:15, r:5});
+            window.sedimentClumps.splice(si, 1);
+          }
+          break;
+        }
+      }
+    }
+  }
+
+// TSK-WRD-012: Wind-driven surface currents during storms
+  if(typeof isRaining !== 'undefined' && isRaining && typeof wind !== 'undefined' && typeof currents !== 'undefined'){
+    if(Math.random() < 0.05 * dt){
+      currents.push({x: rng(-500, 500), y: rng(5, 150), vx: wind.x * 3, vy: wind.y * 0.5,
+                     r: 80, life: 10, temp: 0});
+    }
+  }
+
+// TSK-WRD-010: Dynamic hydrothermal vents — random eruption
+  if(typeof window.vents !== 'undefined' && window.vents){
+    for(var vi=0; vi<window.vents.length; vi++){
+      var v = window.vents[vi];
+      if(!v.eruptT || v.eruptT <= 0){
+        if(Math.random() < 0.0003 * dt){
+          v.erupting = true; v.eruptT = 15; v.origRadius = v.radius || 40;
+          v.radius = v.origRadius * 1.5;
+        }
+      } else {
+        v.eruptT -= dt;
+        if(v.eruptT <= 0){ v.erupting = false; v.radius = v.origRadius || 40; }
+      }
+    }
+  }
+
+  // TSK-WRD-014: Lightning strikes — rare catastrophe
+  if(typeof EventManager !== 'undefined' && typeof window.em !== 'undefined' && window.em){
+    if(!window._lightningT) window._lightningT = rng(60, 180);
+    window._lightningT -= dt;
+    if(window._lightningT <= 0){
+      window._lightningT = rng(120, 300); // next strike 2-5 min
+      var lx = rng(-500, 500), ly = rng(10, 200); // surface layer
+      window._lightningFlash = 0.5; // render reads this
+      for(var li=orgs.length-1; li>=0; li--){
+        var lo = orgs[li];
+        if(lo.alive && lo.y < 200 && Math.abs(lo.x - lx) < 300){
+          if(Math.random() < 0.8) killOrg(lo, (typeof DCODE!=='undefined'?DCODE.TEMP:0));
+        }
+      }
+    }
+    if(window._lightningFlash > 0) window._lightningFlash -= dt * 2;
+  }
+
+  // TSK-WRD-015: O2 bubble coalescence — merge intersecting bubbles
+  if(settings.bubbles && typeof o2Bubbles !== 'undefined' && o2Bubbles.length > 1){
+    for(var bi=0; bi<o2Bubbles.length-1; bi++){
+      for(var bj=bi+1; bj<o2Bubbles.length; bj++){
+        var ba=o2Bubbles[bi], bb=o2Bubbles[bj];
+        if(!ba || !bb) continue;
+        var ddx=ba.x-bb.x, ddy=ba.y-bb.y;
+        if(ddx*ddx+ddy*ddy < (ba.r+bb.r)*(ba.r+bb.r)){
+          ba.r = Math.sqrt(ba.r*ba.r + bb.r*bb.r); // conserve area
+          ba.vy = (ba.vy + bb.vy) / 2;
+          o2Bubbles.splice(bj, 1); bj--;
+        }
+      }
+    }
+  }
+
+// Chemotaxis update
   if(window.pheromones) {
      for(var i=window.pheromones.length-1; i>=0; i--) {
          window.pheromones[i].life -= dt * 0.1; // Fades in 10 seconds

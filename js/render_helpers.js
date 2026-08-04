@@ -358,6 +358,8 @@ function renderTooltip(){
 }
 var _mmCache=null,_mmFrame=0;
 function renderMinimap(){
+  // TSK-RND-021: Throttle to ~5fps (every 12 frames at 60fps)
+  if(typeof fc !== 'undefined' && fc % 12 !== 0) return;
   mc.clearRect(0,0,110,80);mc.fillStyle='rgba(0,12,28,0.85)';mc.fillRect(0,0,110,80);
   var sx=100/(PW*2),sy=70/PD;mc.save();mc.translate(5,5);
   mc.fillStyle='rgba(20,50,60,0.5)';mc.beginPath();mc.moveTo(0,0);mc.lineTo(100,0);mc.lineTo(100-(PW-BW)*sx,70);mc.lineTo((PW-BW)*sx,70);mc.closePath();mc.fill();

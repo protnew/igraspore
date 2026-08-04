@@ -231,7 +231,56 @@ function naturalAI(o, dt, speed){
     return;
   }
 
-  // --- Energy gates: never hunt to death ---
+    // TSK-AI-005: Gradual scent decay — flee from danger pheromones, weaker for older ones
+  if(typeof window.pheromones!=='undefined' && window.pheromones && window.pheromones.length>0){
+    var bestPh=null, bestInt=0;
+    for(var pi=0; pi<window.pheromones.length; pi++){
+      var ph=window.pheromones[pi];
+      if(ph.type!=='danger') continue;
+      var pdx=o.x-ph.x, pdy=o.y-ph.y, pd2=pdx*pdx+pdy*pdy;
+      var detR=150*(o.chemoSens||1.0);
+      if(pd2 < detR*detR){
+        var pdist=Math.sqrt(pd2);
+        var intensity=(ph.life||0.5)*(1-pdist/detR);
+        if(intensity>bestInt){ bestInt=intensity; bestPh=ph; }
+      }
+    }
+    if(bestPh && bestInt>0.15){
+      o.state='flee';
+      var fdx=o.x-bestPh.x, fdy=o.y-bestPh.y;
+      turnToward(o, Math.atan2(fdy,fdx), dt, 6);
+      thrustAlongFacing(o, speed*0.8, dt, 8*bestInt);
+    }
+  }
+
+    // TSK-AI-006: Mutualistic resource sharing
+  if(o.attachedTo && o.energy > 50){
+    var host = null;
+    for(var hi=0; hi<orgs.length; hi++){
+      if(orgs[hi].id === o.attachedTo && orgs[hi].alive){ host = orgs[hi]; break; }
+    }
+    if(host && host.energy < 40){
+      var transfer = Math.min(5 * dt, o.energy - 30);
+      if(transfer > 0){ o.energy -= transfer; host.energy += transfer * 0.9; }
+    }
+  }
+
+// TSK-AI-007: Thermotaxis — gradient search toward optimal temp
+  if(typeof window.getTempAt === 'function' && !o.cyst){
+    var curT = window.getTempAt(o.x, o.y);
+    var tOpt = ((o.sp.tempRange[0]+o.sp.tempRange[1])/2) + (o.tempOffset||0);
+    if(Math.abs(curT - tOpt) > 5){
+      var bestDir=null, bestDelta=999;
+      for(var ang=0; ang<Math.PI*2; ang+=Math.PI/2){
+        var nt = window.getTempAt(o.x+Math.cos(ang)*30, o.y+Math.sin(ang)*30);
+        var delta = Math.abs(nt - tOpt);
+        if(delta < bestDelta){ bestDelta = delta; bestDir = ang; }
+      }
+      if(bestDir !== null) steerToward(o, o.x+Math.cos(bestDir)*50, o.y+Math.sin(bestDir)*50, speed*0.6, dt, 5);
+    }
+  }
+
+// --- Energy gates: never hunt to death ---
   // <22: rest/cyst attempt; 22-38: only eat contact prey; 38-72: short hunts; >72: optional
   var en = (typeof o.energy === 'number') ? o.energy : 50;
   if(en < 22){
@@ -280,6 +329,8 @@ function naturalAI(o, dt, speed){
       o.huntT += dt;
       // Ciliates cruise gently; true predators pursue harder
       var huntMul = isCil ? 4.5 : (en < 40 ? 7 : (en < 55 ? 10 : 12));
+      // TSK-AI-008: Adaptive aggression — desperate sprint when starving
+      if(!isCil && en > 0 && en < 30){ huntMul *= 2; o.energy -= dt * 0.3; }
       turnToward(o, Math.atan2(dy,dx), dt, isCil ? 3 : (en < 40 ? 4 : 6));
       thrustAlongFacing(o, speed * (isCil ? 0.55 : 1), dt, huntMul);
       // Filter current does the catching for ciliates; predators bite on contact

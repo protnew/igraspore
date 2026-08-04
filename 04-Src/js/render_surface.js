@@ -284,18 +284,14 @@ function renderSunGlitter(vL, vR){
     var sr = sun ? Math.max(16, sun.r*1.3) : 22;
     var sg2 = ctx.createRadialGradient(sx, -2, 0, sx, -2, sr*4);
     _star0 ? (function(){ var s=_star0; return 'rgba('+parseInt(s.mid.slice(1,3),16)+','+parseInt(s.mid.slice(3,5),16)+','+parseInt(s.mid.slice(5,7),16)+','+(0.85*dl)+')'; })() : 'rgba(255, 250, 220, ' + (0.85*dl) + ')'
-    sg2.addColorStop(0.2, 'rgba(255, 220, 120, ' + (0.45*dl) + ')');
-    sg2.addColorStop(0.55, 'rgba(255, 180, 60, ' + (0.12*dl) + ')');
-    sg2.addColorStop(1, 'rgba(255, 160, 40, 0)');
+    _star0 ? (function(){ var s=_star0; sg2.addColorStop(0.2, 'rgba('+Math.round(parseInt(s.mid.slice(1,3),16)*0.86)+','+Math.round(parseInt(s.mid.slice(3,5),16)*0.86)+','+Math.round(parseInt(s.mid.slice(5,7),16)*0.74)+','+(0.45*dl)+')'); sg2.addColorStop(0.55, 'rgba('+Math.round(parseInt(s.edge.slice(1,3),16))+','+Math.round(parseInt(s.edge.slice(3,5),16))+','+Math.round(parseInt(s.edge.slice(5,7),16))+','+(0.12*dl)+')'); sg2.addColorStop(1, 'rgba(0,0,0,0)'); })() : (sg2.addColorStop(0.2, 'rgba(255, 220, 120, ' + (0.45*dl) + ')') || sg2.addColorStop(0.55, 'rgba(255, 180, 60, ' + (0.12*dl) + ')') || sg2.addColorStop(1, 'rgba(255, 160, 40, 0)'));
     ctx.globalCompositeOperation = 'screen';
     ctx.fillStyle = sg2;
     ctx.beginPath(); ctx.arc(sx, -2, sr*4, 0, Math.PI*2); ctx.fill();
     // solid warm core on film
     ctx.globalCompositeOperation = 'source-over';
     var core = ctx.createRadialGradient(sx, -1, 0, sx, -1, sr);
-    core.addColorStop(0, '#fffef0');
-    core.addColorStop(0.5, '#ffe08a');
-    core.addColorStop(1, 'rgba(255,160,40,0.15)');
+    _star0 ? (function(){ var s=_star0; core.addColorStop(0, s.core); core.addColorStop(0.5, s.mid); core.addColorStop(1, 'rgba(0,0,0,0)'); })() : (core.addColorStop(0, '#fffef0') || core.addColorStop(0.5, '#ffe08a') || core.addColorStop(1, 'rgba(255,160,40,0.15)'));
     ctx.fillStyle = core;
     ctx.beginPath(); ctx.arc(sx, -1, sr, 0, Math.PI*2); ctx.fill();
   }

@@ -124,9 +124,10 @@ function renderSunOverlay(){
     ctx.save();
     ctx.globalAlpha = fade * Math.min(1, dl + 0.25);
     var g2 = ctx.createRadialGradient(sx-r*0.2, sy-r*0.2, 0, sx, sy, r);
-    g2.addColorStop(0, '#fffef5');
-    g2.addColorStop(0.7, '#ffd078');
-    g2.addColorStop(1, '#ffc060');
+    var _sp2 = (typeof window.getStarPreset==='function') ? window.getStarPreset() : null;
+    var _sf = _sp2 ? _sp2.stars[0] : null;
+    if (_sf) { g2.addColorStop(0, _sf.core); g2.addColorStop(0.7, _sf.mid); g2.addColorStop(1, _sf.edge); }
+    else { g2.addColorStop(0, '#fffef5'); g2.addColorStop(0.7, '#ffd078'); g2.addColorStop(1, '#ffc060'); }
     ctx.fillStyle = g2;
     ctx.beginPath();
     ctx.arc(sx, sy, r, 0, Math.PI*2);

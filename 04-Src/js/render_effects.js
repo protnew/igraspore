@@ -167,11 +167,20 @@ function renderSky(vL,vR,vT){
     // Solid photosphere (ALWAYS opaque warm disc — never gray)
     ctx.globalCompositeOperation = 'source-over';
     var core = ctx.createRadialGradient(sunX - rSun*0.25, sunY - rSun*0.25, 0, sunX, sunY, rSun);
-    core.addColorStop(0, '#fffef5');
-    core.addColorStop(0.25, (t>=17) ? '#fff0c0' : (warm > 0.7 ? '#ffe08a' : '#fff2c0'));
-    core.addColorStop(0.55, (t>=17) ? '#ffb040' : (warm > 0.7 ? '#ffc050' : '#ffd078'));
-    core.addColorStop(0.85, (t>=18) ? '#ff6020' : (warm > 0.7 ? '#ff9020' : '#ffc060'));
-    core.addColorStop(1, (t>=18) ? 'rgba(255,40,10,0.2)' : 'rgba(255,160,40,0.15)');
+    var _sp = (typeof window.getStarPreset==='function') ? window.getStarPreset() : null;
+    var _s0 = _sp ? _sp.stars[0] : null;
+    if (_s0) {
+      core.addColorStop(0, _s0.core);
+      core.addColorStop(0.3, _s0.mid);
+      core.addColorStop(0.7, _s0.edge);
+      core.addColorStop(1, _s0.edge);
+    } else {
+      core.addColorStop(0, '#fffef5');
+      core.addColorStop(0.25, (t>=17) ? '#fff0c0' : (warm > 0.7 ? '#ffe08a' : '#fff2c0'));
+      core.addColorStop(0.55, (t>=17) ? '#ffb040' : (warm > 0.7 ? '#ffc050' : '#ffd078'));
+      core.addColorStop(0.85, (t>=18) ? '#ff6020' : (warm > 0.7 ? '#ff9020' : '#ffc060'));
+      core.addColorStop(1, (t>=18) ? 'rgba(255,40,10,0.2)' : 'rgba(255,160,40,0.15)');
+    }
     ctx.fillStyle = core;
     ctx.shadowColor = 'rgba(255, 200, 80, 0.85)';
     ctx.shadowBlur = 30;

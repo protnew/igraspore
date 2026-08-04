@@ -51,6 +51,64 @@ window.STAR_PRESETS = [
     ]
   },
   {
+    id: 'sirius',
+    name: { ru: 'Сириус A+B (белый+карлик)', en: 'Sirius A+B' },
+    skyTint: { dawn: '#c0e0ff', day: '#a8c8ff', dusk: '#80a0e0' },
+    stars: [
+      { color: '#f0f4ff', core: '#ffffff', mid: '#e0e8ff', edge: '#a0b8e0', glow: 'rgba(220,235,255,0.55)', glowMid: 'rgba(180,210,255,0.25)', glowEnd: 'rgba(100,140,220,0)', offset: -0.08, sizeMul: 1.20 },
+      { color: '#ddeeff', core: '#ffffff', mid: '#c0d0ff', edge: '#8090c0', glow: 'rgba(200,220,255,0.40)', glowMid: 'rgba(160,180,240,0.18)', glowEnd: 'rgba(80,100,200,0)', offset: 0.10, sizeMul: 0.35 }
+    ]
+  },
+  {
+    id: 'betelgeuse',
+    name: { ru: 'Бетельгейзе (красный сверхгигант)', en: 'Betelgeuse' },
+    skyTint: { dawn: '#ff8040', day: '#ff9050', dusk: '#dd4010' },
+    stars: [
+      { color: '#ff6030', core: '#ffaa80', mid: '#ff4818', edge: '#cc2008', glow: 'rgba(255,80,30,0.55)', glowMid: 'rgba(220,50,15,0.28)', glowEnd: 'rgba(180,20,5,0)', offset: 0, sizeMul: 1.80, pulse: true }
+    ]
+  },
+  {
+    id: 'rigel',
+    name: { ru: 'Ригель (голубой сверхгигант)', en: 'Rigel' },
+    skyTint: { dawn: '#80a8ff', day: '#6088ee', dusk: '#4060cc' },
+    stars: [
+      { color: '#a0c8ff', core: '#ffffff', mid: '#80a8ff', edge: '#3050bb', glow: 'rgba(100,160,255,0.60)', glowMid: 'rgba(60,110,240,0.28)', glowEnd: 'rgba(20,50,180,0)', offset: 0, sizeMul: 1.60 }
+    ]
+  },
+  {
+    id: 'vega',
+    name: { ru: 'Вега (бело-голубая)', en: 'Vega' },
+    skyTint: { dawn: '#d0e0ff', day: '#b0d0ff', dusk: '#90b0dd' },
+    stars: [
+      { color: '#e8f0ff', core: '#ffffff', mid: '#c8d8ff', edge: '#8099cc', glow: 'rgba(200,225,255,0.52)', glowMid: 'rgba(160,190,250,0.24)', glowEnd: 'rgba(100,130,210,0)', offset: 0, sizeMul: 1.15 }
+    ]
+  },
+  {
+    id: 'antares',
+    name: { ru: 'Антарес (красный сверхгигант)', en: 'Antares' },
+    skyTint: { dawn: '#ff5030', day: '#ff6040', dusk: '#cc1808' },
+    stars: [
+      { color: '#ff4020', core: '#ffa070', mid: '#ff3010', edge: '#bb1000', glow: 'rgba(255,60,20,0.58)', glowMid: 'rgba(220,40,10,0.28)', glowEnd: 'rgba(170,15,5,0)', offset: 0, sizeMul: 1.75 }
+    ]
+  },
+  {
+    id: 'alphacentauri',
+    name: { ru: 'Альфа Центавра A+B', en: 'Alpha Centauri A+B' },
+    skyTint: { dawn: '#ffd8b0', day: '#ffe8c8', dusk: '#ffa060' },
+    stars: [
+      { color: '#fff0d0', core: '#ffffff', mid: '#ffd888', edge: '#ffc050', glow: 'rgba(255,230,150,0.48)', glowMid: 'rgba(255,200,100,0.22)', glowEnd: 'rgba(255,170,60,0)', offset: -0.08, sizeMul: 1.00 },
+      { color: '#ffd080', core: '#fff5d0', mid: '#ffb840', edge: '#dd9020', glow: 'rgba(255,200,80,0.40)', glowMid: 'rgba(255,170,40,0.18)', glowEnd: 'rgba(220,140,20,0)', offset: 0.10, sizeMul: 0.85 }
+    ]
+  },
+  {
+    id: 'polaris',
+    name: { ru: 'Полярная звезда', en: 'Polaris' },
+    skyTint: { dawn: '#f0f4ff', day: '#e0e8ff', dusk: '#c0c8ee' },
+    stars: [
+      { color: '#fffaee', core: '#ffffff', mid: '#f0e8d0', edge: '#c0b890', glow: 'rgba(245,240,220,0.50)', glowMid: 'rgba(220,210,180,0.22)', glowEnd: 'rgba(180,170,130,0)', offset: 0, sizeMul: 0.95 }
+    ]
+  },
+  {
     id: 'trinary',
     name: { ru: 'Тройная система', en: 'Trinary System' },
     skyTint: { dawn: '#d0a0ff', day: '#b0d0ff', dusk: '#ffa060' },
@@ -58,22 +116,6 @@ window.STAR_PRESETS = [
       { color: '#ffcc88', core: '#fff5e0', mid: '#ffaa50', edge: '#ff7020', glow: 'rgba(255,180,80,0.40)', glowMid: 'rgba(255,140,40,0.20)', glowEnd: 'rgba(255,100,20,0)', offset: -0.14, sizeMul: 0.70 },
       { color: '#aaccff', core: '#ddffff', mid: '#88bbff', edge: '#4477cc', glow: 'rgba(120,180,255,0.40)', glowMid: 'rgba(80,140,255,0.20)', glowEnd: 'rgba(40,80,200,0)', offset: 0.00, sizeMul: 0.60 },
       { color: '#ff88cc', core: '#ffd0e8', mid: '#ff60a0', edge: '#dd3070', glow: 'rgba(255,120,200,0.35)', glowMid: 'rgba(220,80,160,0.18)', glowEnd: 'rgba(180,40,100,0)', offset: 0.14, sizeMul: 0.55 }
-    ]
-  },
-  {
-    id: 'whiteDwarf',
-    name: { ru: 'Белый карлик', en: 'White Dwarf' },
-    skyTint: { dawn: '#ddeeff', day: '#cce8ff', dusk: '#aaccff' },
-    stars: [
-      { color: '#f8fbff', core: '#ffffff', mid: '#e0e8ff', edge: '#a0b8d8', glow: 'rgba(220,240,255,0.50)', glowMid: 'rgba(180,210,255,0.22)', glowEnd: 'rgba(120,160,220,0)', offset: 0, sizeMul: 0.50 }
-    ]
-  },
-  {
-    id: 'blueGiant',
-    name: { ru: 'Голубой гигант', en: 'Blue Giant' },
-    skyTint: { dawn: '#80b0ff', day: '#6090ee', dusk: '#4060cc' },
-    stars: [
-      { color: '#a0c8ff', core: '#ffffff', mid: '#80a8ff', edge: '#3060cc', glow: 'rgba(100,160,255,0.55)', glowMid: 'rgba(60,120,240,0.25)', glowEnd: 'rgba(20,60,180,0)', offset: 0, sizeMul: 1.50 }
     ]
   },
   {
@@ -89,75 +131,10 @@ window.STAR_PRESETS = [
   },
   {
     id: 'flare',
-    name: { ru: 'Звезда с вспышками', en: 'Flare Star' },
-    skyTint: { dawn: '#ff6040', day: '#ff8050', dusk: '#dd3010' },
+    name: { ru: 'Звезда со вспышками (UV Ceti)', en: 'Flare Star (UV Ceti)' },
+    skyTint: { dawn: '#ff5030', day: '#ff6040', dusk: '#dd2010' },
     stars: [
-      { color: '#ff6040', core: '#ffaa80', mid: '#ff5020', edge: '#cc1810', glow: 'rgba(255,80,40,0.50)', glowMid: 'rgba(220,60,30,0.25)', glowEnd: 'rgba(180,30,10,0)', offset: 0, sizeMul: 0.65, pulse: true }
+      { color: '#ff5030', core: '#ff8060', mid: '#ff3818', edge: '#bb1000', glow: 'rgba(255,60,30,0.55)', glowMid: 'rgba(220,40,15,0.28)', glowEnd: 'rgba(180,20,5,0)', offset: 0, sizeMul: 0.60, pulse: true }
     ]
   }
 ];
-
-window.currentStarId = 'sol';
-
-window.getStarPreset = function() {
-  var id = window.currentStarId || 'sol';
-  for (var i = 0; i < window.STAR_PRESETS.length; i++) {
-    if (window.STAR_PRESETS[i].id === id) return window.STAR_PRESETS[i];
-  }
-  return window.STAR_PRESETS[0];
-};
-
-window.setStarSystem = function(id) {
-  window.currentStarId = id;
-  try { localStorage.setItem('igraspore_star', id); } catch(e) {}
-};
-
-try {
-  var saved = localStorage.getItem('igraspore_star');
-  if (saved) window.currentStarId = saved;
-} catch(e) {}
-
-window.renderStarsCustom = function(sun, fade, dl) {
-  var preset = window.getStarPreset();
-  var stars = preset.stars;
-  var sx = (typeof sun.scrX === 'number') ? sun.scrX : (cv.width * 0.5);
-  var baseR = 14 + (sun.elev || 0.7) * 22;
-  var waterScreenY = (0 - cam.y) * zoom + cv.height / 2;
-
-  ctx.save();
-  ctx.beginPath();
-  ctx.rect(0, 0, cv.width, Math.max(0, waterScreenY));
-  ctx.clip();
-  ctx.globalAlpha = fade * Math.min(1, dl + 0.25);
-
-  for (var si = 0; si < stars.length; si++) {
-    var st = stars[si];
-    var r = baseR * (st.sizeMul || 1.0);
-    if (st.pulse) { r *= 0.8 + 0.4 * Math.sin(fc * 0.15); }
-    var stx = sx + st.offset * cv.width * 0.15;
-    var sty = Math.max(r + 4, waterScreenY * (0.12 + (1 - (sun.elev || 0.7)) * 0.18));
-    if (sty + r > waterScreenY - 2) sty = waterScreenY - r - 2;
-    if (sty < r * 0.3) continue;
-
-    var g1 = ctx.createRadialGradient(stx, sty, 0, stx, sty, r * 4.5);
-    g1.addColorStop(0, st.glow);
-    g1.addColorStop(0.25, st.glowMid);
-    g1.addColorStop(0.55, st.glowEnd);
-    g1.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = g1;
-    ctx.beginPath();
-    ctx.arc(stx, sty, r * 4.5, 0, Math.PI * 2);
-    ctx.fill();
-
-    var g2 = ctx.createRadialGradient(stx - r * 0.2, sty - r * 0.2, 0, stx, sty, r);
-    g2.addColorStop(0, st.core);
-    g2.addColorStop(0.3, st.mid);
-    g2.addColorStop(0.7, st.edge);
-    g2.addColorStop(1, st.edge);
-    ctx.fillStyle = g2;
-    ctx.beginPath();
-    ctx.arc(stx, sty, r, 0, Math.PI * 2);
-    ctx.fill();
-  }
-  ctx.restore();
-};

@@ -164,7 +164,13 @@ window.playerContactEat = function(dt){
 var keys={};
 document.addEventListener('keydown',function(e){
   var k=e.key.toLowerCase();keys[k]=true;
-  if(k==='w'||k==='a'||k==='s'||k==='d'){if(freeCam)camKeys[k]=true;e.preventDefault();if(autoAI)autoAI=false;}
+  if(k==='w'||k==='a'||k==='s'||k==='d'||k==='arrowup'||k==='arrowdown'||k==='arrowleft'||k==='arrowright'){
+    // Map arrows to camKeys
+    var ck = k;
+    if(k==='arrowup')ck='w'; if(k==='arrowdown')ck='s'; if(k==='arrowleft')ck='a'; if(k==='arrowright')ck='d';
+    if(freeCam){camKeys[ck]=true;e.preventDefault();}
+    if(autoAI)autoAI=false;
+  }
   if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
   if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
   if(k==='escape'){
@@ -202,7 +208,9 @@ document.addEventListener('keydown',function(e){
   if(k==='r'){if(player&&player.alive)doCyst(player);}
   if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
 });
-document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=false;if(k==='w'||k==='a'||k==='s'||k==='d')camKeys[k]=false;});
+document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=false;if(k==='w'||k==='a'||k==='s'||k==='d'){camKeys[k]=false;}
+  if(k==='arrowup')camKeys.w=false; if(k==='arrowdown')camKeys.s=false;
+  if(k==='arrowleft')camKeys.a=false; if(k==='arrowright')camKeys.d=false;});
 
 mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;});
 

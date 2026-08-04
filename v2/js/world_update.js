@@ -253,7 +253,7 @@ function updateCamera(dt){
   if(!isFinite(cam.y))cam.y=PD*0.3;
   
   if(freeCam){
-    var cs=Math.min(420, 280 * Math.min(2.2, 1/Math.max(0.35, zoom))) * dtc;
+    var cs=Math.min(220, 140 * Math.min(2.0, 1/Math.max(0.35, zoom))) * dtc;
     var moved=false;
     if(camKeys.w){cam.y-=cs;moved=true;}if(camKeys.s){cam.y+=cs;moved=true;}
     if(camKeys.a){cam.x-=cs;moved=true;}if(camKeys.d){cam.x+=cs;moved=true;}

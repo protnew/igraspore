@@ -295,3 +295,22 @@ document.addEventListener('click', function(e){
   else rebindActions();
   window.rebindActions = rebindActions;
 })();
+
+// Star system selector
+(function(){
+  function updateStarUI(){
+    var sel = document.getElementById('starSelect');
+    if(!sel) return;
+    sel.value = window.currentStarId || 'sol';
+    sel.onchange = function(){
+      window.setStarSystem(sel.value);
+    };
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', updateStarUI);
+  } else {
+    updateStarUI();
+  }
+  setTimeout(updateStarUI, 500);
+  setTimeout(updateStarUI, 2000);
+})();

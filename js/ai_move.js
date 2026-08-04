@@ -98,12 +98,12 @@ function moveOrg(o,dt){
     if(ax||ay){
       var m=Math.sqrt(ax*ax+ay*ay); ax/=m; ay/=m;
       // Strong direct swim (microbe games need snappy control)
-      var thr = Math.max(speed, 1.2) * dt * 90;
+      var thr = Math.max(speed, 1.2) * dt * 45;
       o.vx += ax * thr;
       o.vy += ay * thr;
       // Burst toward surface when holding up
       if(ay < 0){
-        o.vy -= Math.max(2.5, thr * 1.2);
+        o.vy -= Math.max(1.2, thr * 0.6);
       }
       turnToward(o, Math.atan2(ay,ax), dt, 16);
       o.aiTarget=null; o.aiState='manual';

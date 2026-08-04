@@ -95,8 +95,8 @@ function render(){
   // Re-draw sun ON TOP of particles (prevents green halo from phytoplankton)
   if(typeof renderSunOverlay==='function') renderSunOverlay();
   
-  // === STEP 7: REALISTIC POST-PROCESSING ===
-  if(isReal){
+  // === STEP 7: REALISTIC POST-PROCESSING === (disabled — causes dark ovals)
+  if(false && isReal){
     var mw=cv.width,mh=cv.height,mcx=mw/2,mcy=mh/2;
     var mradius=Math.min(mw,mh)*0.48;
     
@@ -134,8 +134,8 @@ function render(){
     ctx.restore();
   }
   
-  // === STEP 8: MICROSCOPE OVERLAY (M) — optics ON water, never black fill ===
-  if(settings.microscopeMode && !isReal){
+  // === STEP 8: MICROSCOPE OVERLAY (M) — disabled (causes dark oval artifacts)
+  if(false && settings.microscopeMode && !isReal){
     var mw=cv.width, mh=cv.height, mcx=mw/2, mcy=mh/2;
     var mradius=Math.min(mw,mh)*0.48;
     ctx.save();

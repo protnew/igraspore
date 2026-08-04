@@ -116,32 +116,21 @@ function renderSunOverlay(){
   if(fade < 0.08) return;
   if(sx < -r*3 || sx > cv.width + r*3) return;
 
-  ctx.save();
-  // Clip drawing to sky band only — never bleed into water / organisms
-  ctx.beginPath();
-  ctx.rect(0, 0, cv.width, Math.max(0, waterScreenY));
-  ctx.clip();
-  ctx.globalAlpha = fade * Math.min(1, dl + 0.25);
-  // Outer glow
-  var g1 = ctx.createRadialGradient(sx, sy, 0, sx, sy, r*4.5);
-  g1.addColorStop(0, 'rgba(255, 240, 200, ' + (0.45*dl) + ')');
-  g1.addColorStop(0.25, 'rgba(255, 220, 150, ' + (0.22*dl) + ')');
-  g1.addColorStop(0.55, 'rgba(255, 200, 100, ' + (0.08*dl) + ')');
-  g1.addColorStop(1, 'rgba(255, 180, 80, 0)');
-  ctx.fillStyle = g1;
-  ctx.beginPath();
-  ctx.arc(sx, sy, r*4.5, 0, Math.PI*2);
-  ctx.fill();
-  // Solid disc
-  var warm = sun.warm > 0.7;
-  var g2 = ctx.createRadialGradient(sx-r*0.2, sy-r*0.2, 0, sx, sy, r);
-  g2.addColorStop(0, '#fffef5');
-  g2.addColorStop(0.3, warm ? '#ffe08a' : '#fff2c0');
-  g2.addColorStop(0.7, warm ? '#ffc050' : '#ffd078');
-  g2.addColorStop(1, warm ? '#ff9020' : '#ffc060');
-  ctx.fillStyle = g2;
-  ctx.beginPath();
-  ctx.arc(sx, sy, r, 0, Math.PI*2);
-  ctx.fill();
-  ctx.restore();
+  // Delegate to custom star renderer (supports binary/multi-star presets)
+  if (typeof window.renderStarsCustom === 'function') {
+    window.renderStarsCustom(sun, fade, dl);
+  } else {
+    // Fallback: basic sun
+    ctx.save();
+    ctx.globalAlpha = fade * Math.min(1, dl + 0.25);
+    var g2 = ctx.createRadialGradient(sx-r*0.2, sy-r*0.2, 0, sx, sy, r);
+    g2.addColorStop(0, '#fffef5');
+    g2.addColorStop(0.7, '#ffd078');
+    g2.addColorStop(1, '#ffc060');
+    ctx.fillStyle = g2;
+    ctx.beginPath();
+    ctx.arc(sx, sy, r, 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  }
 }

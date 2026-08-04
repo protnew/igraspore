@@ -35,10 +35,10 @@ function startDemoMode() {
   parts = [];
   player = null;
 
-  var rowY0 = 40;          // near surface
-  var rowGap = 95;         // vertical gap between groups
-  var colGap = 70;         // horizontal spacing within group
-  var maxPerRow = 10;
+  var rowY0 = 30;
+  var rowGap = 110;
+  var colGap = 55;
+  var maxPerRow = 13;
 
   for (var g = 0; g < DEMO_GROUPS.length; g++) {
     var grp = DEMO_GROUPS[g];
@@ -57,15 +57,23 @@ function startDemoMode() {
         if (SPECIES_DB[sj].cat === grp.key) { pool.push(SPECIES_DB[sj]); break; }
       }
     }
-    // Limit density
-    if (pool.length > maxPerRow) pool = pool.slice(0, maxPerRow);
+    // Show ALL species in gallery (not capped at 10)
+    // maxPerRow used for row wrapping only
+    var displayPool = pool;
 
-    var y = rowY0 + g * rowGap;
-    var totalW = (pool.length - 1) * colGap;
-    var x0 = -totalW / 2;
+    var displayCount = pool.length;
+    // If too many, use two sub-rows
+    var perSubRow = Math.min(displayCount, maxPerRow);
+    var subRows = Math.ceil(displayCount / perSubRow);
 
-    for (var i = 0; i < pool.length; i++) {
-      var x = x0 + i * colGap;
+    for (var i = 0; i < displayCount; i++) {
+      var subRow = Math.floor(i / perSubRow);
+      var colInRow = i % perSubRow;
+      var subRowOffset = subRow * 35;
+      var y = rowY0 + g * rowGap + subRowOffset;
+      var totalW = (Math.min(displayCount - subRow * perSubRow, perSubRow) - 1) * colGap;
+      var x0 = -totalW / 2;
+      var x = x0 + colInRow * colGap;
       // slight vertical jitter so row isn't a perfect line of "shadows"
       var yy = y + ((i % 3) - 1) * 8;
       var o = spawnOrg(pool[i], x, yy, false);

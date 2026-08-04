@@ -138,6 +138,7 @@ function exitDemoPossess() {
   if (player) {
     player.isPlayer = false;
     player.demoPinned = true;
+    player.invuln = 0; // remove demo invulnerability
     player.vx = 0; player.vy = 0;
     if (player.demoHomeX != null) { player.x = player.demoHomeX; player.y = player.demoHomeY; }
   }
@@ -168,6 +169,7 @@ function demoPossessOrg(o) {
   o.isPlayer = true;
   o.demoPinned = false; // allow movement while possessed
   o.energy = Math.max(o.energy, 80);
+  o.invuln = 9999; // Demo: can't be eaten while possessed
   player = o;
   window.demoPossessed = o;
   window.spectatorMode = false;

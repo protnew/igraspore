@@ -48,7 +48,7 @@ function renderFoodChain(){
     html += r.emoji+' <b style="color:'+col+'">'+nm+'</b>';
     html += ' <span style="opacity:.65">— '+r.desc+'</span>';
     if(r.eats){
-      html += ' <span style="opacity:.5">\\u2192</span> ';
+      html += ' <span style="opacity:.5">→</span> ';
       for(var e=0;e<r.eats.length;e++){
         var en = (typeof catName==='function') ? catName(r.eats[e]) : r.eats[e];
         var ec = (typeof roleColor==='function') ? roleColor(r.eats[e]) : '#8cf';

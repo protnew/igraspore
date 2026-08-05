@@ -27,8 +27,44 @@ function buildDiff(){
     b.onclick=function(ev){difficulty=ev.target.getAttribute('data-d');buildDiff();};dw.appendChild(b);}
 }
 
+
+function renderFoodChain(){
+  var el = document.getElementById('foodChainDiagram');
+  if(!el) return;
+  var ru = (curLang === 'ru');
+  var rows = [
+    {emoji:'\u{1F33F}', cat:'producer', eats:null, desc:ru?'делают еду из света':'make food from light'},
+    {emoji:'\u{1F535}', cat:'consumer1', eats:['producer'], desc:ru?'грызут зелёных':'nibble greens'},
+    {emoji:'\u{1F7E0}', cat:'consumer2', eats:['producer','consumer1'], desc:ru?'фильтруют мелочь':'filter small ones'},
+    {emoji:'\u{1F7E3}', cat:'consumer3', eats:['producer','consumer1','consumer2','consumer3'], desc:ru?'едят всех':'eat everyone'},
+    {emoji:'\u{1F9F9}', cat:'decomposer', eats:null, desc:ru?'убирают мёртвое':'clean up dead'},
+  ];
+  var html = '';
+  for(var i=0;i<rows.length;i++){
+    var r = rows[i];
+    var nm = (typeof catName==='function') ? catName(r.cat) : r.cat;
+    var col = (typeof roleColor==='function') ? roleColor(r.cat) : '#8cf';
+    html += '<div style="margin:2px 0">';
+    html += r.emoji+' <b style="color:'+col+'">'+nm+'</b>';
+    html += ' <span style="opacity:.65">— '+r.desc+'</span>';
+    if(r.eats){
+      html += ' <span style="opacity:.5">\\u2192</span> ';
+      for(var e=0;e<r.eats.length;e++){
+        var en = (typeof catName==='function') ? catName(r.eats[e]) : r.eats[e];
+        var ec = (typeof roleColor==='function') ? roleColor(r.eats[e]) : '#8cf';
+        html += '<span style="color:'+ec+'">'+en+'</span>';
+        if(e<r.eats.length-1) html += ', ';
+      }
+    }
+    html += '</div>';
+  }
+  el.innerHTML = html;
+}
+
+
 function buildCatSel(){
   var cs=document.getElementById('catSel');cs.innerHTML='';
+  if(typeof renderFoodChain==='function') renderFoodChain();
   var cats=[['all',tt('all')],['producer',tt('producer')],['consumer1',tt('consumer1')],['consumer2',tt('consumer2')],['consumer3',tt('consumer3')],['decomposer',tt('decomposer')],['virus',tt('virus')]];
   for(var i=0;i<cats.length;i++){var b=document.createElement('div');b.className='cb'+(selCat===cats[i][0]?' act':'');b.textContent=cats[i][1];b.setAttribute('data-c',cats[i][0]);
     b.style.borderLeft='4px solid '+(cats[i][0]==='all'?'#456':CC[cats[i][0]]||'#f44');b.onclick=function(ev){selCat=ev.target.getAttribute('data-c');buildCatSel();buildSpeciesGrid(); if(typeof catRole==='function' && selCat && selCat!=='all' && window.showToast){ var tip=catRole(selCat); if(tip) window.showToast(tip, CC[selCat]||'#8cf'); }};cs.appendChild(b);}
@@ -211,7 +247,27 @@ function buildSpeciesGrid(){
     var sp=SPECIES_DB[i];if(selCat!=='all'&&sp.cat!==selCat)continue;
     var c=document.createElement('div');c.className='sc'+(selSpecies===i?' sel':'');c.setAttribute('data-si',i);
     var pop=speciesPop[i]?speciesPop[i].alive:0;
-    c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas><div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2">'+sp.name+'</div><div class="scL">'+sp.size+'\u03bcm &middot; '+sp.shape+'</div><div class="scC">'+sp.locomotion+'</div><div class="scP">'+pop+' alive</div>';
+    var eatInfo='';
+    if(sp.cat==='producer'){ eatInfo='<span style="color:#8f8">\u{1F31E} ест свет</span>'; }
+    else if(sp.cat==='decomposer'){ eatInfo='<span style="color:#b96">\u{1F9F9} ест мёртвое</span>'; }
+    else {
+      var eatsCats = FOOD[sp.cat]||[];
+      var parts=[];
+      for(var ec=0;ec<eatsCats.length;ec++){
+        var cn = (typeof catName==='function')?catName(eatsCats[ec]):eatsCats[ec];
+        parts.push((typeof roleColor==='function'?'<span style="color:'+roleColor(eatsCats[ec])+'">':'<span>')+cn+'</span>');
+      }
+      eatInfo='<span style="font-size:8.5px">\u{1F5D1} ест: '+parts.join(', ')+'</span>';
+    }
+    var roleShort='';
+    if(typeof catName==='function'){ roleShort=catName(sp.cat); }
+    c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+
+      '<div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2">'+sp.name+'</div>'+
+      '<div class="scL">'+sp.size+'\u03bcm &middot; '+sp.shape+'</div>'+
+      '<div class="scC">'+sp.locomotion+'</div>'+
+      '<div style="font-size:8.5px;opacity:.75;margin-top:1px">'+roleShort+'</div>'+
+      '<div style="font-size:8.5px;margin-top:1px;line-height:1.2">'+eatInfo+'</div>'+
+      '<div class="scP">'+pop+' alive</div>';
     var pcv=c.querySelector('.scPrev');drawSpeciesPreview(pcv,sp,i);
     c.onclick=function(ev){selSpecies=parseInt(ev.currentTarget.getAttribute('data-si'));buildSpeciesGrid();};
     sg.appendChild(c);

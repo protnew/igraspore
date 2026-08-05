@@ -92,10 +92,14 @@ function updateWorld(dt){
       var cands=[];
       for(var j=0;j<orgs.length;j++){
         var o=orgs[j];
-        if(o.alive && !o.isPlayer && o.sp.cat==='producer') cands.push(o);
+        // NEVER cull player offspring / fresh divide children / invulnerable
+        if(o.alive && !o.isPlayer && o.sp.cat==='producer'
+           && !(o.invuln>0) && !o._fromDivide && !o._noCull
+           && !(o._parentRef && o._parentRef.isPlayer)) cands.push(o);
       }
       cands.sort(function(a,b){return (a.energy||0)-(b.energy||0);});
       for(var k=0;k<need && k<cands.length;k++){
+        if(cands[k].invuln>0 || cands[k]._fromDivide || cands[k]._noCull) continue;
         if(typeof killOrg==='function') killOrg(cands[k], (typeof DCODE!=='undefined'?DCODE.STARVE:0));
         else { cands[k].alive=false; cands[k].energy=0; }
       }

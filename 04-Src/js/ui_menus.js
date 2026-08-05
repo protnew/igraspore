@@ -62,8 +62,40 @@ function renderFoodChain(){
 }
 
 
+function getPoolCount(){
+  var poolN = 0;
+  try {
+    var dens = (typeof settings!=='undefined' && settings.density) ? settings.density : 1;
+    if(typeof INIT_N==='object'){
+      for(var k in INIT_N){ if(INIT_N.hasOwnProperty(k)) poolN += Math.round((INIT_N[k]||0)*dens); }
+    }
+    if(typeof DIFF!=='undefined' && typeof difficulty!=='undefined' && DIFF[difficulty] && DIFF[difficulty].spawn)
+      poolN = Math.round(poolN * DIFF[difficulty].spawn);
+  } catch(e){ poolN = 1600; }
+  if(!poolN) poolN = 1600;
+  return poolN;
+}
+function renderPoolBanner(){
+  var el = document.getElementById('poolBanner');
+  if(!el){
+    // insert above catSel
+    var cs = document.getElementById('catSel');
+    if(!cs || !cs.parentNode) return;
+    el = document.createElement('div');
+    el.id = 'poolBanner';
+    el.style.cssText = 'text-align:center;margin:6px 8px 10px;padding:8px 12px;border-radius:10px;background:rgba(40,80,120,0.45);border:1px solid rgba(120,200,255,0.35);color:#dff;font-size:13px;line-height:1.35';
+    cs.parentNode.insertBefore(el, cs);
+  }
+  var n = getPoolCount();
+  var kinds = (typeof SPECIES_DB!=='undefined') ? SPECIES_DB.length : 100;
+  var ru = (typeof curLang==='undefined' || curLang==='ru');
+  el.innerHTML = ru
+    ? ('\u{1F30A} <b>В бассейне будет ~'+n+' организмов</b> · '+kinds+' видов')
+    : ('\u{1F30A} <b>Pool will have ~'+n+' organisms</b> · '+kinds+' species');
+}
 function buildCatSel(){
   var cs=document.getElementById('catSel');cs.innerHTML='';
+  if(typeof renderPoolBanner==='function') renderPoolBanner();
   if(typeof renderFoodChain==='function') renderFoodChain();
   var cats=[['all',tt('all')],['producer',tt('producer')],['consumer1',tt('consumer1')],['consumer2',tt('consumer2')],['consumer3',tt('consumer3')],['decomposer',tt('decomposer')],['virus',tt('virus')]];
   for(var i=0;i<cats.length;i++){var b=document.createElement('div');b.className='cb'+(selCat===cats[i][0]?' act':'');b.textContent=cats[i][1];b.setAttribute('data-c',cats[i][0]);

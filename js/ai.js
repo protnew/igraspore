@@ -61,8 +61,16 @@ function playerAutoAI(o, dt, speed){
 function forceEat(pred, prey){
   if(!pred || !prey || !prey.alive) return false;
   if(prey === pred) return false;
-  prey.divCD = 0;
-  prey.invuln = 0;
+  // Fresh divide children cannot be eaten (grace period)
+  if((prey.invuln||0) > 0 || prey._fromDivide || prey._noCull){
+    if(!(pred && pred.isPlayer && (prey.invuln||0) < 0.3 && !prey._fromDivide)){
+      return false;
+    }
+  }
+  // Only player intentional bite may soften short locks — never wipe fresh twins
+  if(pred && pred.isPlayer && !prey._fromDivide && (prey.invuln||0) < 0.5){
+    prey.divCD = 0;
+  }
   var before = pred.eaten || 0;
   if(typeof eatOrg === 'function') eatOrg(pred, prey);
   if((pred.eaten||0) > before){

@@ -15,8 +15,16 @@ function updateOrg(o,dt){
   if(o.invuln>0){
     o.invuln-=dt;
     // Grace period: no energy drain — survive after division/spawn
-    o.energy = Math.max(o.energy, 30);
+    o.energy = Math.max(o.energy, 40);
     // DON'T return — organism still moves and behaves normally
+  }
+  // Protect freshly divided twin for a while, then become normal
+  if(o._noCull>0){ o._noCull -= dt; if(o._noCull<=0) o._noCull=0; }
+  if(o._fromDivide){
+    o._divideAge = (o._divideAge||0) + dt;
+    if(o._divideAge > 15 && (o.invuln||0)<=0 && (o._noCull||0)<=0){
+      o._fromDivide = false; // now normal organism
+    }
   }
   if(o.speedMult < 1.0) o.speedMult = Math.min(1.0, (o.speedMult||1.0) + dt*0.05);
   if(o.stomach && o.stomach.length>0){

@@ -120,7 +120,8 @@ function finishDivide(o){
   if(sp && sp.cat && sp.cat.indexOf('consumer') === 0) cd = Math.max(cd, 8);
   if(sp && (sp.cat === 'consumer2' || sp.cat === 'consumer3')) cd = Math.max(cd, 12);
   o.divCD = cd;
-  o.invuln = Math.max(o.invuln || 0, 5);
+  o.invuln = Math.max(o.invuln || 0, 8);
+  o._noCull = Math.max(o._noCull||0, 12);
   o.flash = 0.9;
   o.flashColor = '#8ff';
 
@@ -182,9 +183,14 @@ function finishDivide(o){
     child.massFood = 0;
     child.eatsSinceDiv = 0;
     child.divCD = cd;
-    child.flash = 1.2;
+    child.flash = 1.4;
     child.flashColor = '#8ff';
-    child.invuln = Math.max(child.invuln || 0, 6);
+    child.invuln = Math.max(child.invuln || 0, 14); // long grace — do not disappear
+    child._noCull = 20; // seconds protected from density cull
+    child._fromDivide = true;
+    child._divideAge = 0;
+    // Give enough energy so child doesn't starve immediately
+    child.energy = Math.max(70, child.energy || 0);
     child.speedMult = o.speedMult || 1;
     child.sizeMult = o.sizeMult || 1;
     child.tempOffset = o.tempOffset || 0;
@@ -250,11 +256,12 @@ function eatOrg(pred,prey){
     pred.flashColor = '#f80';
     return;
   }
-  // Player overrides soft locks on prey
+  // Fresh twins / invuln cannot be eaten
+  if(prey._fromDivide || prey._noCull) return;
   if(!(pred&&pred.isPlayer)){
     if(prey.divCD>0||prey.invuln>0)return;
   } else {
-    if(prey.invuln>0.8)return;
+    if(prey.invuln>0.5)return;
   }
   // Set digestion cooldown (3-8 seconds depending on predator size)
   if(!pred.isPlayer){

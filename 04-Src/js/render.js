@@ -31,7 +31,7 @@ function render(){
       sgrad.addColorStop(0, isReal?'#0a1840':'#0b1e48');
       sgrad.addColorStop(1, isReal?'#3a6a9a':'#4a8ec8');
       ctx.fillStyle=sgrad;
-      ctx.fillRect(0,0,cv.width,split);
+      ctx.fillRect(0,0,cv.width|0,split|0); // TSK-RND-020
     }
     var wgrad=ctx.createLinearGradient(0,split,0,cv.height);
     if(isReal){

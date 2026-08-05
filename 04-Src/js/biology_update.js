@@ -20,7 +20,8 @@ function updateOrg(o,dt){
   if(o.stomach && o.stomach.length>0){
     for(var stIdx=o.stomach.length-1; stIdx>=0; stIdx--){
       var st=o.stomach[stIdx];
-      var digestSpeed=dt*15;
+      var _ds = (o.digestSpeed||1.0);
+      var digestSpeed=dt*15*_ds;
       if(digestSpeed>st.energy*0.1) digestSpeed=st.energy*0.1;
       if(st.energy<digestSpeed) digestSpeed=st.energy;
       st.energy-=digestSpeed; o.energy+=digestSpeed;
@@ -138,11 +139,20 @@ function updateOrg(o,dt){
   o.age+=dt;
   // Reduced base metabolism and speed multiplier significantly to prevent fast infusoria from starving in 10s
   var baseMetab=(0.008 + o.sp.speed * o.speedMult * 0.003)*DIFF[difficulty].metab;
+  // TSK-BIO-011: Flagella efficiency — high speed = exponential energy cost
+  if(o.sp.locomotion==='flagella' || o.sp.locomotion==='cilia') baseMetab *= Math.pow(o.speedMult||1, 1.5);
   var metabMult = o.inBiofilm ? 0.3 : 1.0;
+  // TSK-BIO-012: cellWall reduces speed, increases durability
+  if(o.cellWall > 0) metabMult *= (1 + o.cellWall * 0.2); // thicker wall = more energy
+  // TSK-BIO-005: Age-related metabolic degradation for Eukaryotes
+  if(o.isEuk && o.age > 500) metabMult *= Math.pow(1.05, (o.age - 500) / 10);
   var metab = baseMetab * metabMult;
   if(metab*dt > 2) metab = 2/dt;
   if(o.parasite) {
-     o.energy -= dt*(o.isPlayer?2.5:8); o.flash=0.1; o.flashColor='#f0f';
+     // TSK-BIO-023: drain scales with parasite/host size ratio
+     var _psize = (o.parasite.size||4);
+     var _pdrain = (_psize / Math.max(1, o.size||4)) * 15;
+     o.energy -= dt*(o.isPlayer?Math.min(5,_pdrain*0.4):_pdrain); o.flash=0.1; o.flashColor='#f0f';
      if(Math.random()<0.02*dt) {
         var p = spawnOrg(o.parasite, o.x+rng(-10,10), o.y+rng(-10,10));
         if(p) { p.size*=0.5; p.energy=20; }
@@ -151,8 +161,9 @@ function updateOrg(o,dt){
   
   var tempBand = Math.max(0, Math.min(19, Math.floor(o.y / (PD/20))));
   var curTemp = window.getTempAt(o.x, o.y);
-  var tMin = o.sp.tempRange[0] + o.tempOffset - 5;
-  var tMax = o.sp.tempRange[1] + o.tempOffset + 12;
+  var _hs = o.heatShock || 0;
+  var tMin = o.sp.tempRange[0] + o.tempOffset - 5 - _hs*5;
+  var tMax = o.sp.tempRange[1] + o.tempOffset + 12 + _hs*5;
   if(curTemp<tMin||curTemp>tMax){
       if(!o.isPlayer && !o.cyst && o.energy > 20) { o.cyst = true; o.energy -= 10; o.vx=0; o.vy=0; }
       if(o.isPlayer){ o.energy -= dt*0.1; } // mild stress only
@@ -189,7 +200,8 @@ function updateOrg(o,dt){
     }
   }
   if(o.sp.cat==='producer'){
-    var photo=lightAt(o.y)*1.4;
+    var _pa = o.photoAdapt || 0;
+    var photo=lightAt(o.y - _pa*200)*1.4; // TSK-BIO-018: depth-adapted photosynthesis
     // BIO-001 FIX: No photosynthesis at night (lightMul check)
     if(dayLight<0.05) photo=0;
     var nutr=0;
@@ -288,7 +300,16 @@ function updateOrg(o,dt){
     }
   }
 
-  if(o.cyst){o.energy-=0.015*dt;o.cystT=(o.cystT||0)+dt;if(o.cystT>25){o.cyst=false;o.cystT=0;}}
+  // TSK-BIO-013: Bioluminescence energy drain + flash defense
+  if(o.sp.biolum && !o.cyst){
+    o.energy -= dt * 0.5;
+    if(o._attackedBy){ o._attackedBy.speedMult *= 0.5; o._attackedBy._blinded = 2; o._attackedBy = null; }
+  }
+  // TSK-BIO-017: Biofilm formation — settle at bottom, -70% metab
+  if((o.biofilmGene||0) > 0.5 && !o.cyst && o.y > (typeof PD!=='undefined'?PD:1000) - 50){
+    o.inBiofilm = true; o.vx *= 0.3; o.vy *= 0.3;
+  }
+  if(o.cyst){o.energy-=0.015*dt;o.cystT=(o.cystT||0)+dt;var _cystMax=25+(o.generation||0)*2; if(o.cystT>_cystMax){o.cyst=false;o.cystT=0;}}
   else {
     // #22 Chemotaxis: move toward nearest nutrient cloud (for producers/decomposers)
     if((o.sp.cat==='producer'||o.sp.cat==='decomposer')&&nutrientClouds&&nutrientClouds.length>0){

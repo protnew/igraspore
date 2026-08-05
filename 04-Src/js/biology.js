@@ -29,7 +29,7 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
     wobble:rng(0,Math.PI*2),pulse:rng(0,Math.PI*2),
     flagPhase:rng(0,Math.PI*2),cilPhase:rng(0,Math.PI*2),
     glideTrail:[],
-    generation:0,offspring:0,eaten:0, speedMult:1.0, sizeMult:1.0, tempOffset:0.0, o2Offset:0.0, acidResist:0.0, stomach:[], inBiofilm:false, biofilmT:0,
+    generation:0,offspring:0,eaten:0, speedMult:1.0, sizeMult:1.0, tempOffset:0.0, o2Offset:0.0, acidResist:0.0, chemoSens:1.0, heatShock:0.0, cellWall:0.0, photoAdapt:0.0, asymDiv:0.5, stomach:[], inBiofilm:false, biofilmT:0,
     isPlayer:!!isPlayer,alive:true,_remove:false,
     gender: Math.random() < 0.5 ? 'M' : 'F', seekingMate: false,
     invuln:isPlayer?10:0
@@ -97,7 +97,8 @@ function doDivide(o){
 
 function finishDivide(o){
   o.dividing=false;
-  o.energy = Math.max(40, (o.energy||0)*0.55); // Survive after division!
+  var _ad = o.asymDiv !== undefined ? o.asymDiv : 0.55;
+  o.energy = Math.max(40, (o.energy||0)*_ad); // TSK-BIO-007: asymmetric division
   // Parent becomes ~half size (clearly visible), then slowly regrows via normal growth
   var base = o.preDivSize || o.size || (o.sp.size||4);
   var half = Math.max(1.6, base * 0.5);
@@ -127,7 +128,10 @@ function finishDivide(o){
   if(o.sp.cat==='producer' && cy > 120) cy = Math.min(cy, rng(2,120));
   try{ child=spawnOrg(o.sp,cx,cy,false,o.energy); }catch(_e){ child=null; }
   if(child){
-    child.generation=o.generation+1;child.energy=o.energy*0.9;
+    child.generation=o.generation+1;
+    // TSK-BIO-004: Genetic drift — ±1% per generation even without mutation
+    child.speedMult = (child.speedMult||1) * (1 + (Math.random()-0.5)*0.02);
+    child.sizeMult = (child.sizeMult||1) * (1 + (Math.random()-0.5)*0.02);child.energy=o.energy*0.9;
     child.size=Math.max(1.6, base * 0.5 * rng(0.95,1.05));
     child.massFood=0; child.eatsSinceDiv=0; child.birthSize=child.size;
     var ccd = (typeof DIV_COOLDOWN==='number'?DIV_COOLDOWN:4);
@@ -142,21 +146,32 @@ function finishDivide(o){
     child.tempOffset = o.tempOffset;
     child.o2Offset = o.o2Offset;
     child.acidResist = o.acidResist;
+    child.chemoSens = o.chemoSens || 1.0;
+    child.heatShock = o.heatShock || 0.0;
+    child.cellWall = o.cellWall || 0.0;
+    child.photoAdapt = o.photoAdapt || 0.0;
+    child.asymDiv = o.asymDiv !== undefined ? o.asymDiv : 0.5;
 
     if(Math.random() < 0.15) {
        var gene = Math.floor(Math.random()*5);
        if(gene===0) child.speedMult *= rng(0.9, 1.1);
        if(gene===1) child.sizeMult *= rng(0.9, 1.1);
        if(gene===2) child.tempOffset += rng(-2, 2);
-       if(gene===3) child.o2Offset += rng(-5.0, 5.0);
+       if(gene===3) child.o2Offset += rng(-10.0, 5.0); // TSK-BIO-009: allow deeper O2 adaptation
        if(gene===4) child.acidResist += rng(-0.2, 0.2);
+       if(gene===5) child.chemoSens *= rng(0.9, 1.1);
+       child.chemoSens = Math.max(0.5, Math.min(2.0, child.chemoSens||1.0));
+       if(gene===9) child.asymDiv = Math.max(0.3, Math.min(0.7, (child.asymDiv||0.5) + rng(-0.05, 0.05)));
+       if(gene===8) child.photoAdapt = Math.max(-0.5, Math.min(0.5, (child.photoAdapt||0) + rng(-0.1, 0.1)));
+       if(gene===7) child.cellWall = Math.max(0, Math.min(1.0, (child.cellWall||0) + rng(-0.1, 0.1)));
+       if(gene===6) child.heatShock = Math.max(0, Math.min(1.0, (child.heatShock||0) + rng(0, 0.15)));
        
        child.acidResist = Math.max(0, Math.min(1, child.acidResist));
        child.speedMult = Math.max(0.1, Math.min(5.0, child.speedMult));
     }
 
     // Push apart
-    var pushForce=3;
+    var pushForce=3*(o.divForce||1.0);
     o.vx+=Math.cos(pushAng)*pushForce;o.vy+=Math.sin(pushAng)*pushForce;
     child.vx-=Math.cos(pushAng)*pushForce;child.vy-=Math.sin(pushAng)*pushForce;
     o.offspring++;
@@ -196,11 +211,12 @@ function eatOrg(pred,prey){
      return;
   }
   if (prey.sp.flags && prey.sp.flags.venom) {
-     // Venom: paralyzes predator for several seconds
-     pred.speedMult = 0.05; // Almost paralyzed
+     // TSK-BIO-008: Venom scales inversely with pred/prey size ratio
+     var _vscale = Math.max(0.1, Math.min(1.0, prey.size / Math.max(1, pred.size)));
+     pred.speedMult = Math.max(0.05, 1.0 - 0.95 * _vscale);
      pred.flashColor = '#0f0'; pred.flash = 0.8;
-     pred.energy -= 20; // Venom damage
-     pred.venomTimer = 5; // 5 seconds of venom effect
+     pred.energy -= 20 * _vscale;
+     pred.venomTimer = 5 * _vscale;
   }
   
   // Snapshot prey nutrition BEFORE damage (meal size must matter)
@@ -236,7 +252,11 @@ function eatOrg(pred,prey){
     biteFrac = dmg / preySize0;
     prey.size -= dmg;
   }
-  // if(settings.particles) window.dmgIndicators.push({x:prey.x, y:prey.y, val:Math.round(dmg), life:1.0});
+  // if(settings.particles) {
+      if(!window.dmgIndicators) window.dmgIndicators = [];
+      if(window.dmgIndicators.length >= 20) window.dmgIndicators.shift(); // TSK-RND-025
+      window.dmgIndicators.push({x:prey.x, y:prey.y, val:Math.round(dmg), life:1.0});
+    }
   
   // Total nutrition from ORIGINAL prey size/energy × bite fraction
   var preyMass = preySize0;

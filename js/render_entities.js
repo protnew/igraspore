@@ -288,7 +288,7 @@ function renderOrg(o, skipBody){
   if(o.infected){ctx.fillStyle='rgba(255,50,50,0.15)';ctx.beginPath();ctx.arc(0,0,sz*1.2,0,Math.PI*2);ctx.fill();}
   if(o.dividing){
     // Mitosis animation: nucleus divides first, then cytokinesis (cell splits)
-    var dp=o.divT/1.3;
+    var dp=Math.min(1, o.divT/0.55); // match finishDivide threshold
     var sep=sz*dp*0.5;
     // Furrow (cleavage) appears in the middle during late mitosis
     if(dp>0.3&&zoom>4){

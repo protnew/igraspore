@@ -275,7 +275,7 @@ function buildSpeciesGrid(){
 }
 
 function updateMenuTexts(){
-  document.getElementById('menuSub').textContent=tt('menuSub');
+  document.getElementById('menuSub').innerHTML=tt('menuSub')+'<br><span style="color:#8cf;font-size:11px">\u{1F9CA} В бассейне: <b style="color:#fff">'+orgs.filter(o=>o.alive).length+'</b> организмов · '+SPECIES_DB.length+' видов</span>';
   document.getElementById('startBtn').textContent=tt('start');
   document.getElementById('helpBtn').textContent=tt('help');
   document.getElementById('setBtn2').textContent=tt('set');

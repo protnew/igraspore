@@ -112,10 +112,10 @@ function finishDivide(o){
   if(o.sp && o.sp.cat && o.sp.cat.indexOf('consumer')===0) cd = Math.max(cd, 8);
   if(o.sp && (o.sp.cat==='consumer2'||o.sp.cat==='consumer3')) cd = Math.max(cd, 12);
   o.divCD = cd; o.invuln = Math.max(o.invuln||0, 5); // grace period
-  try{ if(o===player||window.spectatorMode) window.playSound("divide"); }catch(_e){}
+  try{ if(o===player||window.spectatorMode){ window.playSound("divide"); if(window.showToast) window.showToast('\u{270C} Разделился! Появилась вторая клетка', '#8f8'); } }catch(_e){}
   // KEY FIX: push child AWAY with separation impulse + cooldown
   var pushAng=(typeof rng==='function'?rng(0,Math.PI*2):Math.random()*Math.PI*2);
-  var sep = (typeof DIV_SEPARATION==='number'?DIV_SEPARATION:12);
+  var sep = (typeof DIV_SEPARATION==='number'?DIV_SEPARATION:25); // increased for visibility
   var cx=o.x+Math.cos(pushAng)*sep;
   var cy=o.y+Math.sin(pushAng)*sep;
   // Clamp child to puddle
@@ -132,12 +132,12 @@ function finishDivide(o){
     // TSK-BIO-004: Genetic drift — ±1% per generation even without mutation
     child.speedMult = (child.speedMult||1) * (1 + (Math.random()-0.5)*0.02);
     child.sizeMult = (child.sizeMult||1) * (1 + (Math.random()-0.5)*0.02);child.energy=o.energy*0.9;
-    child.size=Math.max(1.6, base * 0.5 * rng(0.95,1.05));
+    child.size=Math.max(2.0, base * 0.55 * rng(0.95,1.05)); // slightly bigger child
     child.massFood=0; child.eatsSinceDiv=0; child.birthSize=child.size;
     var ccd = (typeof DIV_COOLDOWN==='number'?DIV_COOLDOWN:4);
     if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) ccd=Math.max(ccd,8);
     child.divCD=ccd;
-    child.flash=0.7; child.flashColor='#8ff';
+    child.flash=1.0; child.flashColor='#8ff'; // stronger flash so visible
     child.invuln = Math.max(child.invuln||0, 5); // child grace
     
     // Genetics & Mutations

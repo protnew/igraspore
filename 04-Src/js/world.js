@@ -192,7 +192,7 @@ function initWorld(){
       hasShadow: false
     });
   }
-  sedimentClumps=[];for(var i=0;i<25;i++){var hw=halfW(PD)-15;sedimentClumps.push({x:rng(-hw,hw),y:PD-rng(0,8),w:rng(15,40),h:rng(4,10),rot:rng(-0.3,0.3)});}
+  window.sedimentClumps=[];for(var i=0;i<25;i++){var hw=halfW(PD)-15;window.sedimentClumps.push({x:rng(-hw,hw),y:PD-rng(0,8),w:rng(15,40),h:rng(4,10),rot:rng(-0.3,0.3)});}
   sunRays=[];for(var i=0;i<12;i++)sunRays.push({x:rng(-PW*0.8,PW*0.8),w:rng(40,100),angle:rng(-0.15,0.15)});
   window.hydroVents = [];
   for(var i=0; i<4; i++) {

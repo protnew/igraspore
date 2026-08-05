@@ -289,7 +289,7 @@ function renderOrg(o, skipBody){
   if(o.dividing){
     // Mitosis animation: nucleus divides first, then cytokinesis (cell splits)
     var dp=Math.min(1, o.divT/0.55); // match finishDivide threshold
-    var sep=sz*dp*0.5;
+    var sep=sz*dp*1.15; // wider so two halves clearly separate
     // Furrow (cleavage) appears in the middle during late mitosis
     if(dp>0.3&&zoom>4){
       ctx.strokeStyle='rgba(0,0,0,0.2)';ctx.lineWidth=sz*dp*0.15;

@@ -275,7 +275,22 @@ function buildSpeciesGrid(){
 }
 
 function updateMenuTexts(){
-  document.getElementById('menuSub').innerHTML=tt('menuSub')+'<br><span style="color:#8cf;font-size:11px">\u{1F9CA} В бассейне: <b style="color:#fff">'+orgs.filter(o=>o.alive).length+'</b> организмов · '+SPECIES_DB.length+' видов</span>';
+  (function(){
+    var poolN = 0;
+    try {
+      var dens = (typeof settings!=='undefined' && settings.density) ? settings.density : 1;
+      if(typeof INIT_N==='object'){
+        for(var k in INIT_N){ if(INIT_N.hasOwnProperty(k)) poolN += Math.round((INIT_N[k]||0)*dens); }
+      }
+      // difficulty can scale spawn
+      if(typeof DIFF!=='undefined' && typeof difficulty!=='undefined' && DIFF[difficulty] && DIFF[difficulty].spawn)
+        poolN = Math.round(poolN * DIFF[difficulty].spawn);
+    } catch(e){ poolN = 1600; }
+    if(!poolN) poolN = 1600;
+    var el = document.getElementById('menuSub');
+    if(el) el.innerHTML = tt('menuSub') +
+      '<br><span style="color:#8cf;font-size:11px">\u{1F30A} В бассейне будет: <b style="color:#fff">~'+poolN+'</b> организмов · '+SPECIES_DB.length+' видов</span>';
+  })();
   document.getElementById('startBtn').textContent=tt('start');
   document.getElementById('helpBtn').textContent=tt('help');
   document.getElementById('setBtn2').textContent=tt('set');

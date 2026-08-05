@@ -96,91 +96,147 @@ function doDivide(o){
 }
 
 function finishDivide(o){
-  o.dividing=false;
-  var _ad = o.asymDiv !== undefined ? o.asymDiv : 0.55;
-  o.energy = Math.max(40, (o.energy||0)*_ad); // TSK-BIO-007: asymmetric division
-  // Parent becomes ~half size (clearly visible), then slowly regrows via normal growth
-  var base = o.preDivSize || o.size || (o.sp.size||4);
-  var half = Math.max(1.6, base * 0.5);
+  // Snapshot BEFORE mutating parent
+  var base = o.preDivSize || o.size || (o.sp && o.sp.size) || 4;
+  var parentEnergy = o.energy || 80;
+  var parentGen = (typeof o.generation === 'number' && isFinite(o.generation)) ? o.generation : 0;
+  var sp = o.sp;
+  var px = o.x, py = o.y;
+  var pushAng = (typeof o.facing === 'number') ? o.facing : ((typeof rng==='function')?rng(0,Math.PI*2):Math.random()*Math.PI*2);
+  // Always spawn to the SIDE so player clearly sees two cells
+  if(o.isPlayer) pushAng = (typeof o.facing==='number' ? o.facing : 0) + Math.PI/2;
+
+  o.dividing = false;
+  var _ad = (o.asymDiv !== undefined && isFinite(o.asymDiv)) ? o.asymDiv : 0.55;
+  o.energy = Math.max(40, parentEnergy * _ad);
+  var half = Math.max(2.0, base * 0.5);
   o.size = half;
-  // MUST re-accumulate mass/eats before next divide
   o.massFood = (o.massFood || 0) * 0.5;
   o.eatsSinceDiv = 0;
   o.birthSize = half;
-  // Longer cooldown for predators — no spam divide
-  var cd = (typeof DIV_COOLDOWN==='number' ? DIV_COOLDOWN : 6);
-  if(o.sp && o.sp.cat && o.sp.cat.indexOf('consumer')===0) cd = Math.max(cd, 8);
-  if(o.sp && (o.sp.cat==='consumer2'||o.sp.cat==='consumer3')) cd = Math.max(cd, 12);
-  o.divCD = cd; o.invuln = Math.max(o.invuln||0, 5); // grace period
-  try{ if(o===player||window.spectatorMode){ window.playSound("divide"); if(window.showToast) window.showToast('\u{270C} Разделился! Появилась вторая клетка', '#8f8'); } }catch(_e){}
-  // KEY FIX: push child AWAY with separation impulse + cooldown
-  var pushAng=(typeof rng==='function'?rng(0,Math.PI*2):Math.random()*Math.PI*2);
-  var sep = (typeof DIV_SEPARATION==='number'?DIV_SEPARATION:25); // increased for visibility
-  var cx=o.x+Math.cos(pushAng)*sep;
-  var cy=o.y+Math.sin(pushAng)*sep;
-  // Clamp child to puddle
-  try{
-    var hw=(typeof halfW==='function'?halfW(cy):500)-15;
-    cx=clamp(cx,-hw,hw); cy=clamp(cy,5,(typeof PD==='number'?PD:1000)-10);
-  }catch(_e){}
-  var child=null;
-  // Producer children stay near surface
-  if(o.sp.cat==='producer' && cy > 120) cy = Math.min(cy, rng(2,120));
-  try{ child=spawnOrg(o.sp,cx,cy,false,o.energy); }catch(_e){ child=null; }
-  if(child){
-    child.generation=o.generation+1;
-    // TSK-BIO-004: Genetic drift — ±1% per generation even without mutation
-    child.speedMult = (child.speedMult||1) * (1 + (Math.random()-0.5)*0.02);
-    child.sizeMult = (child.sizeMult||1) * (1 + (Math.random()-0.5)*0.02);child.energy=o.energy*0.9;
-    child.size=Math.max(2.0, base * 0.55 * rng(0.95,1.05)); // slightly bigger child
-    child.massFood=0; child.eatsSinceDiv=0; child.birthSize=child.size;
-    var ccd = (typeof DIV_COOLDOWN==='number'?DIV_COOLDOWN:4);
-    if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) ccd=Math.max(ccd,8);
-    child.divCD=ccd;
-    child.flash=1.0; child.flashColor='#8ff'; // stronger flash so visible
-    child.invuln = Math.max(child.invuln||0, 5); // child grace
-    
-    // Genetics & Mutations
-    child.speedMult = o.speedMult;
-    child.sizeMult = o.sizeMult;
-    child.tempOffset = o.tempOffset;
-    child.o2Offset = o.o2Offset;
-    child.acidResist = o.acidResist;
-    child.chemoSens = o.chemoSens || 1.0;
-    child.heatShock = o.heatShock || 0.0;
-    child.cellWall = o.cellWall || 0.0;
-    child.photoAdapt = o.photoAdapt || 0.0;
-    child.asymDiv = o.asymDiv !== undefined ? o.asymDiv : 0.5;
+  if(typeof o.generation !== 'number' || !isFinite(o.generation)) o.generation = 0;
 
-    if(Math.random() < 0.15) {
-       var gene = Math.floor(Math.random()*5);
-       if(gene===0) child.speedMult *= rng(0.9, 1.1);
-       if(gene===1) child.sizeMult *= rng(0.9, 1.1);
-       if(gene===2) child.tempOffset += rng(-2, 2);
-       if(gene===3) child.o2Offset += rng(-10.0, 5.0); // TSK-BIO-009: allow deeper O2 adaptation
-       if(gene===4) child.acidResist += rng(-0.2, 0.2);
-       if(gene===5) child.chemoSens *= rng(0.9, 1.1);
-       child.chemoSens = Math.max(0.5, Math.min(2.0, child.chemoSens||1.0));
-       if(gene===9) child.asymDiv = Math.max(0.3, Math.min(0.7, (child.asymDiv||0.5) + rng(-0.05, 0.05)));
-       if(gene===8) child.photoAdapt = Math.max(-0.5, Math.min(0.5, (child.photoAdapt||0) + rng(-0.1, 0.1)));
-       if(gene===7) child.cellWall = Math.max(0, Math.min(1.0, (child.cellWall||0) + rng(-0.1, 0.1)));
-       if(gene===6) child.heatShock = Math.max(0, Math.min(1.0, (child.heatShock||0) + rng(0, 0.15)));
-       
-       child.acidResist = Math.max(0, Math.min(1, child.acidResist));
-       child.speedMult = Math.max(0.1, Math.min(5.0, child.speedMult));
+  var cd = (typeof DIV_COOLDOWN === 'number' ? DIV_COOLDOWN : 6);
+  if(sp && sp.cat && sp.cat.indexOf('consumer') === 0) cd = Math.max(cd, 8);
+  if(sp && (sp.cat === 'consumer2' || sp.cat === 'consumer3')) cd = Math.max(cd, 12);
+  o.divCD = cd;
+  o.invuln = Math.max(o.invuln || 0, 5);
+  o.flash = 0.9;
+  o.flashColor = '#8ff';
+
+  // Separation large enough to see two distinct cells
+  var sep = (typeof DIV_SEPARATION === 'number' ? DIV_SEPARATION : 36);
+  if(o.isPlayer) sep = Math.max(sep, 40);
+  var cx = px + Math.cos(pushAng) * sep;
+  var cy = py + Math.sin(pushAng) * sep;
+  try {
+    var hw = (typeof halfW === 'function' ? halfW(cy) : 500) - 15;
+    if(typeof clamp === 'function'){ cx = clamp(cx, -hw, hw); cy = clamp(cy, 5, (typeof PD==='number'?PD:1000)-10); }
+  } catch(_e) {}
+  // Keep producer children near surface, but never far from parent X
+  if(sp && sp.cat === 'producer' && cy > 100) cy = Math.min(cy, Math.max(5, py + 8));
+
+  var child = null;
+  try {
+    child = spawnOrg(sp, cx, cy, false, parentEnergy * (1 - _ad));
+  } catch(err) {
+    console.error('finishDivide spawnOrg failed', err);
+    child = null;
+  }
+
+  // HARD FALLBACK: if spawn failed, force-create minimal child
+  if(!child){
+    try {
+      if(orgs.length < (typeof MAX_ORG==='number'?MAX_ORG:8000)){
+        child = {
+          x:cx, y:cy, vx:0, vy:0, sp:sp, species:sp.id,
+          energy: Math.max(35, parentEnergy * 0.45),
+          age:0, size: Math.max(2.0, base * 0.55),
+          currentSize: Math.max(2.0, base * 0.55),
+          angle: pushAng + Math.PI, facing: pushAng + Math.PI,
+          massFood:0, eatsSinceDiv:0, birthSize: Math.max(2.0, base * 0.55),
+          state:'idle', target:null, dividing:false, divT:0,
+          cyst:false, cystT:0, divCD: cd, infected:false,
+          dying:false, deathT:0, deathCause:-1,
+          flash:1.2, flashColor:'#8ff', invuln:6,
+          alive:true, isPlayer:false, generation: parentGen + 1,
+          speedMult: o.speedMult || 1, sizeMult: o.sizeMult || 1,
+          wobble:0, pulse:0, flagPhase:0, cilPhase:0, glideTrail:[],
+          organs: (typeof genOrgans==='function'?genOrgans({sp:sp,size:base*0.55}):[]),
+          offspring:0, _fromDivide:true
+        };
+        orgs.push(child);
+        if(speciesPop[sp.id]){ speciesPop[sp.id].alive = (speciesPop[sp.id].alive||0)+1; }
+      }
+    } catch(err2){ console.error('finishDivide fallback failed', err2); child = null; }
+  }
+
+  if(child){
+    child.alive = true;
+    child.generation = parentGen + 1;
+    child._fromDivide = true;
+    child._parentRef = o;
+    child.energy = Math.max(35, parentEnergy * (1 - _ad));
+    child.size = Math.max(2.0, base * 0.55);
+    child.birthSize = child.size;
+    child.massFood = 0;
+    child.eatsSinceDiv = 0;
+    child.divCD = cd;
+    child.flash = 1.2;
+    child.flashColor = '#8ff';
+    child.invuln = Math.max(child.invuln || 0, 6);
+    child.speedMult = o.speedMult || 1;
+    child.sizeMult = o.sizeMult || 1;
+    child.tempOffset = o.tempOffset || 0;
+    child.o2Offset = o.o2Offset || 0;
+    child.acidResist = o.acidResist || 0;
+    child.chemoSens = o.chemoSens || 1.0;
+    child.heatShock = o.heatShock || 0;
+    child.cellWall = o.cellWall || 0;
+    child.photoAdapt = o.photoAdapt || 0;
+    child.asymDiv = o.asymDiv !== undefined ? o.asymDiv : 0.5;
+    child.cystThreshold = o.cystThreshold;
+    child.biofilmGene = o.biofilmGene;
+    child.digestSpeed = o.digestSpeed;
+    child.divForce = o.divForce || 1;
+
+    // Light mutation chance
+    if(Math.random() < 0.12){
+      var gene = Math.floor(Math.random()*5);
+      if(gene===0) child.speedMult *= (0.92 + Math.random()*0.16);
+      if(gene===1) child.sizeMult *= (0.92 + Math.random()*0.16);
+      if(gene===2) child.tempOffset = (child.tempOffset||0) + (Math.random()*4-2);
     }
 
-    // Push apart
-    var pushForce=3*(o.divForce||1.0);
-    o.vx+=Math.cos(pushAng)*pushForce;o.vy+=Math.sin(pushAng)*pushForce;
-    child.vx-=Math.cos(pushAng)*pushForce;child.vy-=Math.sin(pushAng)*pushForce;
-    o.offspring++;
+    var pushForce = 4.5 * (o.divForce || 1.0);
+    o.vx = (o.vx||0) + Math.cos(pushAng) * pushForce;
+    o.vy = (o.vy||0) + Math.sin(pushAng) * pushForce;
+    child.vx = (child.vx||0) - Math.cos(pushAng) * pushForce;
+    child.vy = (child.vy||0) - Math.sin(pushAng) * pushForce;
+    o.offspring = (o.offspring || 0) + 1;
+
+    // Camera nudge: keep both cells on screen after player divide
+    if(o.isPlayer || o === player){
+      try {
+        if(typeof cam !== 'undefined'){
+          cam.x = (px + cx) * 0.5;
+          cam.y = (py + cy) * 0.5;
+        }
+        if(window.showToast) window.showToast('✌️ Разделился! Вторая клетка рядом', '#8f8');
+        if(window.playSound) window.playSound('divide');
+      } catch(_e){}
+    }
+  } else {
+    if((o.isPlayer || o === player) && window.showToast) window.showToast('Деление: вторая клетка не создалась', '#f88');
   }
-  o.flash=0.8;o.flashColor='#8ff';
-  if(settings.particles)for(var i=0;i<3;i++)parts.push({x:o.x,y:o.y,vx:rng(-0.8,0.8),vy:rng(-0.8,0.8),life:0.6,maxL:0.6,size:rng(0.5,1.5),color:o.sp.color});
-  if(o===player && window.showToast) window.showToast('Деление!', '#8ff');
-  if (typeof window !== 'undefined' && state === 'menu' && window.focusTimer <= 0 && Math.random() < 0.2) { window.focusTarget = o; window.focusTimer = 2.0; }
+
+  try {
+    if(settings && settings.particles && typeof parts !== 'undefined'){
+      for(var i=0;i<5;i++) parts.push({x:px,y:py,vx:(Math.random()-0.5)*2,vy:(Math.random()-0.5)*2,life:0.7,maxL:0.7,size:1+Math.random(),color:(sp&&sp.color)||'#8ff'});
+    }
+  } catch(_e){}
 }
+
 
 function eatOrg(pred,prey){
   if(!prey||!prey.alive)return;

@@ -163,6 +163,7 @@ function findBestPrey(o, radius, forPlayer){
       if(p.sp.cat==='producer') score *= ((o.energy||100) < 45 ? 0.35 : 0.55);
       if(p.sp.cat==='consumer1') score *= 0.65;
       if(p.size > o.size) score *= 1.45; // крупнее себя — можно, но менее желанно
+      if(p._lilyCover) score *= 2.8; // добыча под кувшинкой — почти не видим
     }
     if(score < bd){ bd = score; best = p; }
   }
@@ -233,6 +234,32 @@ function naturalAI(o, dt, speed){
   if(predator && pbd < 200*200){
     o.state='flee';
     var dx=o.x-predator.x, dy=o.y-predator.y;
+    // 7) Стая мелких: если рядом много своих — отбиваемся (толкаем хищника)
+    if(cat==='consumer1' || cat==='producer'){
+      var allies=0;
+      for(var ai2=0; ai2<nearThreat.length; ai2++){
+        var a=nearThreat[ai2];
+        if(!a||!a.alive||a===o) continue;
+        if(a.sp.cat!==cat) continue;
+        if(dist2(o,a) < 55*55) allies++;
+      }
+      if(allies >= 6){
+        // коллективный «укус/толчок»
+        predator.vx = (predator.vx||0) - dx*0.002;
+        predator.vy = (predator.vy||0) - dy*0.002;
+        predator.flash = Math.max(predator.flash||0, 0.2);
+        predator.flashColor = '#8cf';
+        if(allies >= 10 && Math.random() < 0.15*dt){
+          predator.energy = Math.max(1, (predator.energy||0) - 0.8);
+          predator.aiTarget = null; // сбить фокус
+        }
+        // в стае бежим чуть медленнее, но держимся кучно
+        turnToward(o, Math.atan2(dy,dx), dt, 5);
+        thrustAlongFacing(o, speed*0.7, dt, 10);
+        o.aiTarget=null;
+        return;
+      }
+    }
     turnToward(o, Math.atan2(dy,dx), dt, 8);
     thrustAlongFacing(o, speed, dt, 16);
     // cancel hunt lock while fleeing

@@ -395,15 +395,21 @@ function updateOrg(o,dt){
         if(!window.demoMode && Math.random()<divP*dt)doDivide(o);
     }
   }
-  if(o.energy<=0 && !o.isPlayer){
-    // Last chance: cyst instead of instant death once
+  if(o.energy<=0){
+    // 10) Голод → циста («заснул»), а не мгновенная смерть (1 раз)
     if(!o.cyst && !o._starvedOnce){
       o._starvedOnce = true;
-      o.cyst = true; o.energy = 8; o.vx=0; o.vy=0; o.aiTarget=null;
+      o.cyst = true; o.energy = 10; o.vx=0; o.vy=0; o.aiTarget=null; o.state='rest';
+      if(o.isPlayer && window.showToast) window.showToast('Голод: впал в цисту — найди еду и проснись', '#fc8');
       return;
     }
   }
-  if(o.energy<=-8){killOrg(o,DCODE.STARVE);return;}
+  // Циста игрока: можно «проснуться» если энергия подросла / рядом еда
+  if(o.isPlayer && o.cyst && o.energy>=18){
+    o.cyst=false; o.cystT=0;
+    if(window.showToast) window.showToast('Проснулся из цисты', '#8f8');
+  }
+  if(o.energy<=-12){killOrg(o,DCODE.STARVE);return;}
   if(o.sp.isEuk&&o.age>500){o.energy-=0.15*dt;if(o.energy<5&&Math.random()<0.004*dt){killOrg(o,DCODE.AGE);return;}}
   // Size from species baseline + mass bank (feeding), energy only mild factor
   var adult0 = o.sp.size*(o.sizeMult||1.0);

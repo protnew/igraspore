@@ -222,6 +222,18 @@ function renderOrg(o, skipBody){
   ctx.save();ctx.translate(o.x,o.y);
   var isReal=settings.renderMode==='realistic';
   var sz=o.size;
+  // 2) Подсветка еды: цветное кольцо вокруг того, кого ты можешь съесть
+  if(!skipBody && typeof player!=='undefined' && player && player.alive && o!==player && o.alive && !o.cyst && typeof isEdibleFor==='function' && isEdibleFor(player,o)){
+    var rc = (typeof roleColor==='function') ? roleColor(o.sp.cat) : '#8f8';
+    var pulse = 0.45 + 0.25*Math.sin((typeof gt==='number'?gt:0)*4 + o.x*0.01);
+    ctx.beginPath();
+    ctx.strokeStyle = rc;
+    ctx.globalAlpha = pulse;
+    ctx.lineWidth = Math.max(0.6, 1.8/Math.max(0.5,(typeof zoom==='number'?zoom:1)));
+    ctx.arc(0,0, sz*1.25+2, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
   // Lunge squash BEFORE body (readable eat beat)
   if(o._lungeT>0){
     var lt=o._lungeT;

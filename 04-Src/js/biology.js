@@ -246,11 +246,24 @@ function eatOrg(pred,prey){
     biteFrac = 1;
     prey.size = 0;
   } else {
-    // Bigger target → bigger bite chunk (still less than full swallow)
-    dmg = Math.max(pred.size * 0.55, preySize0 * 0.35);
+    // 3) Укус более крупного: маленький кусок + риск отдачи (не проглотил целиком)
+    var ratio = preySize0 / Math.max(0.5, pred.size);
+    // чем крупнее добыча, тем меньше откусываем
+    var chunk = pred.size * (ratio > 1.3 ? 0.18 : (ratio > 1.1 ? 0.28 : 0.40));
+    dmg = Math.max(pred.size * 0.12, Math.min(chunk, preySize0 * 0.22));
     if(dmg > prey.size) dmg = prey.size;
     biteFrac = dmg / preySize0;
     prey.size -= dmg;
+    // отпугивание/отдача
+    prey.flash = Math.max(prey.flash||0, 0.45);
+    prey.flashColor = '#fa4';
+    prey.vx = (prey.vx||0) + (prey.x - pred.x) * 0.08;
+    prey.vy = (prey.vy||0) + (prey.y - pred.y) * 0.08;
+    if(pred.isPlayer && window.showToast && Math.random()<0.35){
+      window.showToast('Откусил кусок — крупная добыча!', '#fa4');
+    }
+    // охотник тоже чуть устаёт от риска
+    if(ratio > 1.2) pred.energy = Math.max(1, (pred.energy||0) - 1.5);
   }
   // TSK-RND-025: dmg indicators capped to 20
   if(settings.particles) {

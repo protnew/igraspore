@@ -331,6 +331,67 @@ var sliderDragging=false;
 var currents=[],nutrientClouds=[],o2Bubbles=[],shoreDecor=[],sedimentClumps=[],sunRays=[];
 var speciesPop={};
 
+
+// === UX: role card + food scent (plain language) ===
+function showRoleCard(sp){
+  if(!sp) return;
+  try{
+    var old = document.getElementById('roleCard');
+    if(old) old.remove();
+    var cat = sp.cat || '';
+    var name = (typeof catName==='function' ? catName(cat) : cat);
+    var role = (typeof catRole==='function' ? catRole(cat) : '');
+    var eats = (typeof foodListRu==='function' ? foodListRu(cat) : '—');
+    if(cat==='producer') eats = (curLang==='ru' ? 'свет + вода + минералы' : 'light + water + minerals');
+    var d = document.createElement('div');
+    d.id = 'roleCard';
+    d.style.cssText = 'position:fixed;left:50%;top:18%;transform:translateX(-50%);z-index:9999;max-width:520px;width:92%;background:rgba(6,18,14,0.94);border:1px solid rgba(140,220,160,0.45);border-radius:14px;padding:14px 16px;color:#e8ffe8;font:14px/1.4 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.45)';
+    d.innerHTML =
+      '<div style="font-size:12px;opacity:.7;margin-bottom:4px">Ты кто / кого ешь</div>'+
+      '<div style="font-size:18px;font-weight:700;color:#c8ffc0;margin-bottom:6px">'+(sp.name||name)+' · '+name+'</div>'+
+      '<div style="opacity:.95;margin-bottom:8px">'+(role||'')+'</div>'+
+      '<div style="background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;margin-bottom:8px"><b>Еда:</b> '+eats+'</div>'+
+      '<div style="opacity:.8;font-size:12.5px">Подсказка: еда подсвечена цветным кольцом. Полоска «Запах еды» справа вверху.</div>'+
+      '<button id="roleCardOk" style="margin-top:10px;width:100%;padding:10px;border:0;border-radius:10px;background:#2d8f55;color:#fff;font-weight:700;cursor:pointer">Понятно — плыву</button>';
+    document.body.appendChild(d);
+    var close = function(){ var el=document.getElementById('roleCard'); if(el) el.remove(); };
+    var btn = document.getElementById('roleCardOk');
+    if(btn) btn.onclick = close;
+    setTimeout(close, 12000);
+  }catch(e){}
+}
+
+function foodScentStrength(o){
+  if(!o || !o.alive || !o.sp) return 0;
+  var cats = (typeof FOOD!=='undefined' && FOOD[o.sp.cat]) ? FOOD[o.sp.cat] : [];
+  if(o.sp.cat==='producer') return Math.max(0, Math.min(1, (typeof dayLight==='number'?dayLight:1)));
+  if(!cats.length) return 0;
+  var best = 1e15;
+  var list = (window.getNearby ? window.getNearby(o.x,o.y,140) : (typeof orgs!=='undefined'?orgs:[]));
+  for(var i=0;i<list.length;i++){
+    var p = list[i];
+    if(!p||!p.alive||p===o||p.cyst) continue;
+    if(cats.indexOf(p.sp.cat)<0) continue;
+    var dx=p.x-o.x, dy=p.y-o.y, d=dx*dx+dy*dy;
+    if(d<best) best=d;
+  }
+  if(best>1e14) return 0;
+  var dist = Math.sqrt(best);
+  return Math.max(0, Math.min(1, 1 - dist/140));
+}
+
+function isEdibleFor(pred, prey){
+  if(!pred||!prey||!pred.sp||!prey.sp) return false;
+  if(pred.sp.cat==='producer') return false;
+  var cats = (typeof FOOD!=='undefined' && FOOD[pred.sp.cat]) ? FOOD[pred.sp.cat] : [];
+  return cats.indexOf(prey.sp.cat) >= 0;
+}
+
+function roleColor(cat){
+  if(typeof CC!=='undefined' && CC[cat]) return CC[cat];
+  return {producer:'#22dd44',consumer1:'#33aaff',consumer2:'#ff9900',consumer3:'#dd44cc',decomposer:'#bb9966'}[cat]||'#8cf';
+}
+
 function halfW(d){d=Math.max(0,Math.min(d,PD));return PW-(PW-BW)*d/PD;}
 function lightAt(d){return Math.max(0.1,dayLight*Math.exp(-0.0002*d)*settings.lightMul);}
 function clamp(v,a,b){return v<a?a:v>b?b:v;}

@@ -31,7 +31,7 @@ function buildCatSel(){
   var cs=document.getElementById('catSel');cs.innerHTML='';
   var cats=[['all',tt('all')],['producer',tt('producer')],['consumer1',tt('consumer1')],['consumer2',tt('consumer2')],['consumer3',tt('consumer3')],['decomposer',tt('decomposer')],['virus',tt('virus')]];
   for(var i=0;i<cats.length;i++){var b=document.createElement('div');b.className='cb'+(selCat===cats[i][0]?' act':'');b.textContent=cats[i][1];b.setAttribute('data-c',cats[i][0]);
-    b.style.borderLeft='4px solid '+(cats[i][0]==='all'?'#456':CC[cats[i][0]]||'#f44');b.onclick=function(ev){selCat=ev.target.getAttribute('data-c');buildCatSel();buildSpeciesGrid();};cs.appendChild(b);}
+    b.style.borderLeft='4px solid '+(cats[i][0]==='all'?'#456':CC[cats[i][0]]||'#f44');b.onclick=function(ev){selCat=ev.target.getAttribute('data-c');buildCatSel();buildSpeciesGrid(); if(typeof catRole==='function' && selCat && selCat!=='all' && window.showToast){ var tip=catRole(selCat); if(tip) window.showToast(tip, CC[selCat]||'#8cf'); }};cs.appendChild(b);}
 }
 
 function drawSpeciesPreview(canvas,sp,idx){
@@ -235,8 +235,19 @@ function updateMenuTexts(){
     :'<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>F</kbd> Free cam</span><span><kbd>V</kbd> Follow</span><span><kbd>E</kbd> Eat</span><span><kbd>Q</kbd> Divide</span><span><kbd>Tab</kbd> Auto</span><span><kbd>B</kbd> Wiki</span><span><kbd>P</kbd> Pause</span>';
   document.getElementById('keyHint').innerHTML=hk;
   document.getElementById('helpBody').innerHTML=curLang==='ru'?
-    '<p><b style="color:#4df">\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435:</b> WASD \u2014 \u043f\u043b\u0430\u0432\u0430\u043d\u0438\u0435. \u0412\u0432\u0435\u0440\u0445 = \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u044c, \u0432\u043d\u0438\u0437 = \u0434\u043d\u043e. \u041b\u041a\u041c \u2014 \u043f\u043b\u044b\u0442\u044c \u043a \u043a\u0443\u0440\u0441\u043e\u0440\u0443.</p><p><b style="color:#4df">\u041a\u0430\u043c\u0435\u0440\u0430:</b> F \u2014 \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u044b\u0439 \u043f\u043e\u043b\u0451\u0442. V \u2014 \u0432\u0435\u0440\u043d\u0443\u0442\u044c\u0441\u044f \u043a \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043c\u0443.</p><p><b style="color:#4df">\u0421\u043a\u043e\u0440\u043e\u0441\u0442\u044c:</b> \u041e\u0442 0.1x \u0434\u043e 100x. 0.1x \u2014 \u0434\u043b\u044f \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u0438\u044f \u0434\u0435\u0442\u0430\u043b\u0435\u0439 \u043a\u043b\u0435\u0442\u043a\u0438.</p><p><b style="color:#4df">\u0412\u0438\u0440\u0443\u0441\u044b:</b> \u0411\u0430\u043a\u0442\u0435\u0440\u0438\u043e\u0444\u0430\u0433\u0438 \u0437\u0430\u0440\u0430\u0436\u0430\u044e\u0442 \u0431\u0430\u043a\u0442\u0435\u0440\u0438\u0438 \u0438 \u0432\u044b\u0437\u044b\u0432\u0430\u044e\u0442 \u043b\u0438\u0437\u0438\u0441 (\u0440\u0430\u0437\u0440\u044b\u0432 \u043a\u043b\u0435\u0442\u043a\u0438).</p><p><b style="color:#4df">\u0414\u0435\u043b\u0435\u043d\u0438\u0435:</b> \u041f\u0440\u0438 \u0434\u043e\u0441\u0442\u0430\u0442\u043e\u0447\u043d\u043e\u0439 \u044d\u043d\u0435\u0440\u0433\u0438\u0438 \u043a\u043b\u0435\u0442\u043a\u0430 \u0434\u0435\u043b\u0438\u0442\u0441\u044f \u043d\u0430\u0434\u0432\u043e\u0435. Q \u2014 \u0432\u0440\u0443\u0447\u043d\u0443\u044e.</p>'
-    :'<p><b style="color:#4df">Controls:</b> WASD to swim. Up = surface, down = sediment. Hold LMB to swim toward cursor.</p><p><b style="color:#4df">Camera:</b> F = free camera. V = return to organism.</p><p><b style="color:#4df">Speed:</b> 0.1x to 100x. 0.1x for observing cell details.</p><p><b style="color:#4df">Viruses:</b> Bacteriophages infect bacteria and cause lysis (cell rupture).</p><p><b style="color:#4df">Division:</b> With enough energy, cells divide in two. Q = manual.</p>';
+    '<p><b style="color:#4df">Управление:</b> WASD — плавание. Вверх = поверхность, вниз = дно. ЛКМ — плыть к курсору. Пробел — укус.</p>'+
+    '<p><b style="color:#8f8">Кто кого ест (просто):</b></p>'+
+    '<p style="line-height:1.45">🌱 <b>Зелёные</b> — не охотятся. Кормятся светом (как растения). Это основной корм пруда.<br>'+
+    '🔵 <b>Мелкие едоки</b> — бактерии. Грызут зелёных.<br>'+
+    '🟠 <b>Средние едоки</b> — инфузории. Фильтруют воду: затягивают бактерий и зелёных. Не прыгают на гигантов.<br>'+
+    '🟣 <b>Крупные охотники</b> — едят зелёных, бактерий и средних. Можно кусать и чуть более крупных (опасно). Без еды живут долго.</p>'+
+    '<p><b style="color:#4df">Камера:</b> F — свободный полёт. V — вернуться к клетке. Колесо — зум.</p>'+
+    '<p><b style="color:#4df">Деление:</b> Наелся и вырос — делишься на двоих. Q — вручную.</p>'
+    :'<p><b style="color:#4df">Controls:</b> WASD swim. Space = bite. LMB = swim to cursor.</p>'+
+    '<p><b style="color:#8f8">Who eats whom:</b></p>'+
+    '<p>🌱 Greens eat light. 🔵 Small eaters eat greens. 🟠 Mid eaters filter bacteria+greens. 🟣 Big hunters eat greens, bacteria and mid-eaters — and can bite slightly larger prey.</p>'+
+    '<p><b style="color:#4df">Camera:</b> F free cam, V back to cell. Wheel = zoom.</p>'+
+    '<p><b style="color:#4df">Division:</b> Eat, grow, split. Q = manual.</p>';
   buildDiff();buildCatSel();buildSpeciesGrid();
 }
 

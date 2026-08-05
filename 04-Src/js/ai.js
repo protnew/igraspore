@@ -132,13 +132,19 @@ function findBestPrey(o, radius, forPlayer){
       if(p.isPlayer && !forPlayer && (gt - (p.spawnTime||0)) < 20) continue;
       ok = true;
     } else if(forPlayer){
-      if(inChain && p.size < o.size * 1.25) ok = true;
-      if(p.size < o.size * 0.98) ok = true;
+      // Игрок: можно есть зелёных всегда (в цепочке) + кусать крупнее себя (укус, не глоток)
       if(inChain && p.sp.cat === 'producer') ok = true;
-      if(p.size > o.size * 1.35 && !inChain) ok = false;
+      if(inChain && p.size < o.size * 1.55) ok = true;
+      if(p.size < o.size * 1.05) ok = true; // мельче себя — почти всегда
+      if(p.size > o.size * 1.7 && !inChain) ok = false;
+      if(!inChain && p.size >= o.size * 1.05) ok = false;
     } else {
+      // Охотники: едят по FOOD (у consumer3 есть зелёные/фито)
       if(!inChain) continue;
-      if(p.size >= o.size * 0.95) continue;
+      var maxPrey = (o.sp && o.sp.cat === 'consumer3')
+        ? ((o.energy||0) < 35 ? o.size * 1.55 : o.size * 1.25)
+        : o.size * 0.95;
+      if(p.size >= maxPrey) continue;
       if(p.isPlayer && (gt - (p.spawnTime||0)) < 15) continue;
       ok = true;
     }
@@ -153,7 +159,10 @@ function findBestPrey(o, radius, forPlayer){
       if(p.sp.cat === 'producer') score *= 0.70;
     } else {
       if(forPlayer && inChain) score *= 0.55;
-      if(forPlayer && p.sp.cat==='producer') score *= 0.75;
+      // Зелёные — нормальная еда охотника (особенно когда голоден)
+      if(p.sp.cat==='producer') score *= ((o.energy||100) < 45 ? 0.35 : 0.55);
+      if(p.sp.cat==='consumer1') score *= 0.65;
+      if(p.size > o.size) score *= 1.45; // крупнее себя — можно, но менее желанно
     }
     if(score < bd){ bd = score; best = p; }
   }
@@ -330,7 +339,7 @@ function naturalAI(o, dt, speed){
       // Ciliates cruise gently; true predators pursue harder
       var huntMul = isCil ? 4.5 : (en < 40 ? 7 : (en < 55 ? 10 : 12));
       // TSK-AI-008: Adaptive aggression — desperate sprint when starving
-      if(!isCil && en > 0 && en < 30){ huntMul *= 2; o.energy -= dt * 0.3; }
+      if(!isCil && en > 0 && en < 30){ huntMul *= 1.35; o.energy -= dt * 0.03; } // x10 softer hunger-sprint
       turnToward(o, Math.atan2(dy,dx), dt, isCil ? 3 : (en < 40 ? 4 : 6));
       thrustAlongFacing(o, speed * (isCil ? 0.55 : 1), dt, huntMul);
       // Filter current does the catching for ciliates; predators bite on contact

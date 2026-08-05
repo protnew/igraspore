@@ -185,7 +185,7 @@ function renderOrganelleEdu(vL,vR,vT,vB){
   pan.style.display = 'block';
   var spn = (o.sp && o.sp.name) ? o.sp.name : 'клетка';
   var cat = (o.sp && o.sp.cat) ? o.sp.cat : '';
-  var catRu = {producer:'водоросль',consumer1:'бактерия',consumer2:'инфузория',consumer3:'хищник',decomposer:'гриб'}[cat]||cat;
+  var catRu = (typeof catName==='function'?catName(cat):null) || {producer:'зелёные',consumer1:'мелкий едок',consumer2:'средний едок',consumer3:'крупный охотник',decomposer:'уборщик'}[cat]||cat;
   var focus = hovered ? hovered.info : null;
   if(focus){
     pan.innerHTML = '<div style="font-size:11px;opacity:.7;margin-bottom:2px">🔬 Анатомия · '+spn+' <span style="opacity:.55">('+catRu+')</span></div>'+

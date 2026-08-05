@@ -139,6 +139,10 @@ function updateOrg(o,dt){
   o.age+=dt;
   // Reduced base metabolism and speed multiplier significantly to prevent fast infusoria from starving in 10s
   var baseMetab=(0.008 + o.sp.speed * o.speedMult * 0.003)*DIFF[difficulty].metab;
+  // Хищники (consumer3): расход энергии x0.1 — живут ~в 10 раз дольше без еды
+  if(o.sp && o.sp.cat === 'consumer3') baseMetab *= 0.10;
+  // Средние едоки чуть экономнее
+  if(o.sp && o.sp.cat === 'consumer2') baseMetab *= 0.55;
   // TSK-BIO-011: Flagella efficiency — high speed = exponential energy cost
   if(o.sp.locomotion==='flagella' || o.sp.locomotion==='cilia') baseMetab *= Math.pow(o.speedMult||1, 1.5);
   var metabMult = o.inBiofilm ? 0.3 : 1.0;

@@ -3,7 +3,7 @@ function hslToHex(h,s,l){l/=100;var a=s*Math.min(l,1-l)/100;var f=function(n){va
 var LANGS={ru:'\u0420\u0443',en:'EN',zh:'\u4e2d',es:'ES',hi:'Hi',ar:'\u0639',pt:'PT',fr:'FR',de:'DE',ja:'\u65e5',ko:'\ud55c'};
 var curLang='ru',T={};
 T.ru={menuSub:'\u0421\u0438\u043c\u0443\u043b\u044f\u0446\u0438\u044f \u043c\u0438\u043a\u0440\u043e\u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043c\u043e\u0432 \u2014 100 \u0432\u0438\u0434\u043e\u0432 + \u0432\u0438\u0440\u0443\u0441\u044b. \u0420\u0430\u0437\u0440\u0435\u0437 \u0432\u043e\u0434\u043e\u0451\u043c\u0430 \u0441\u0431\u043e\u043a\u0443.',start:'\u041d\u0410\u0427\u0410\u0422\u042c',help:'\u041a\u0410\u041a \u0418\u0413\u0420\u0410\u0422\u042c',set:'\u041d\u0410\u0421\u0422\u0420\u041e\u0419\u041a\u0418',wiki:'\u0412\u0418\u041a\u0418',diffE:'\u041b\u0451\u0433\u043a\u0438\u0439',diffN:'\u041e\u0431\u044b\u0447\u043d\u044b\u0439',diffH:'\u0421\u043b\u043e\u0436\u043d\u044b\u0439',all:'\u0412\u0441\u0435',producer:'\u0412\u043e\u0434\u043e\u0440\u043e\u0441\u043b\u0438',consumer1:'\u0411\u0430\u043a\u0442\u0435\u0440\u0438\u0438',consumer2:'\u0418\u043d\u0444\u0443\u0437\u043e\u0440\u0438\u0438',consumer3:'\u0425\u0438\u0449\u043d\u0438\u043a\u0438',decomposer:'\u0413\u0440\u0438\u0431\u043a\u0438',virus:'\u0412\u0438\u0440\u0443\u0441\u044b',paused:'\u041f\u0410\u0423\u0417\u0410',resume:'\u041f\u0420\u041e\u0414\u041e\u041b\u0416\u0418\u0422\u042c',dead:'\u0412\u042b\u041c\u0418\u0420\u0410\u041d\u0418\u0415',restart:'\u0417\u0410\u041d\u041e\u0412\u041e',menu:'\u0412 \u041c\u0415\u041d\u042e',close:'\u0417\u0410\u041a\u0420\u042b\u0422\u042c',energy:'\u042d\u043d\u0435\u0440\u0433\u0438\u044f',age:'\u0412\u043e\u0437\u0440\u0430\u0441\u0442',eaten:'\u0421\u044a\u0435\u0434\u0435\u043d\u043e',divs:'\u0414\u0435\u043b\u0435\u043d\u0438\u0439',pop:'\u041f\u043e\u043f-\u0446\u0438\u044f',fps:'FPS',light:'\u0421\u0432\u0435\u0442',temp:'\u0422\u0435\u043c\u043f',days:'\u0414\u043d\u0435\u0439',selectSp:'\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043c',autoOn:'\u0410\u0412\u0422\u041e',season0:'\u0412\u0435\u0441\u043d\u0430',season1:'\u041b\u0435\u0442\u043e',season2:'\u041e\u0441\u0435\u043d\u044c',season3:'\u0417\u0438\u043c\u0430',clear:'\u042f\u0441\u043d\u043e',rainy:'\u0414\u043e\u0436\u0434\u044c',gameTime:'\u0412\u0440\u0435\u043c\u044f',maxPop:'\u041c\u0430\u043a\u0441. \u043f\u043e\u043f',offspring:'\u041f\u043e\u0442\u043e\u043c\u043a\u043e\u0432',dStarve:'\u0413\u043e\u043b\u043e\u0434',dEaten:'\u0421\u044a\u0435\u0434\u0435\u043d\u043e',dTemp:'\u0422\u0435\u043c\u043f',dAge:'\u0421\u0442\u0430\u0440\u043e\u0441\u0442\u044c',dLysis:'\u041b\u0438\u0437\u0438\u0441',dCauses:'\u041f\u0440\u0438\u0447\u0438\u043d\u044b \u0433\u0438\u0431\u0435\u043b\u0438',settingsT:'\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438',particles:'\u0427\u0430\u0441\u0442\u0438\u0446\u044b',bubbles:'\u041f\u0443\u0437\u044b\u0440\u044c\u043a\u0438',currents:'\u0422\u0435\u0447\u0435\u043d\u0438\u044f',vignette:'\u0412\u0438\u043d\u044c\u0435\u0442\u043a\u0430',healthBars:'\u0428\u043a\u0430\u043b\u044b',shadows:'\u0422\u0435\u043d\u0438',freeCam:'\u0421\u0432\u043e\u0431. \u043a\u0430\u043c\u0435\u0440\u0430',density:'\u041f\u043b\u043e\u0442\u043d\u043e\u0441\u0442\u044c',lightInt:'\u0418\u043d\u0442. \u0441\u0432\u0435\u0442\u0430',virusRate:'\u0427\u0430\u0441\u0442\u043e\u0442\u0430 \u0432\u0438\u0440\u0443\u0441\u043e\u0432',wikiT:'\u0412\u0438\u043a\u0438: \u0436\u0438\u0442\u0435\u043b\u0438 \u043b\u0443\u0436\u0438',simSpeed:'\u0421\u043a\u043e\u0440\u043e\u0441\u0442\u044c',predation:'\u0425\u0438\u0449\u043d\u0438\u043a\u0438',divRate:'\u0420\u0430\u0437\u043c\u043d\u043e\u0436\u0435\u043d\u0438\u0435'};
-T.en={menuSub:'Microorganism Simulation — 100 species + viruses. Pond cross-section view.',start:'START',help:'HOW TO PLAY',set:'SETTINGS',wiki:'WIKI',diffE:'Easy',diffN:'Normal',diffH:'Hard',all:'All',producer:'Algae',consumer1:'Bacteria',consumer2:'Ciliates',consumer3:'Predators',decomposer:'Fungi',virus:'Viruses',paused:'PAUSED',resume:'RESUME',dead:'EXTINCT',restart:'RESTART',menu:'MENU',close:'CLOSE',energy:'Energy',age:'Age',eaten:'Eaten',divs:'Divisions',pop:'Pop',fps:'FPS',light:'Light',temp:'Temp',days:'Days',selectSp:'Select organism',autoOn:'AUTO',season0:'Spring',season1:'Summer',season2:'Autumn',season3:'Winter',clear:'Clear',rainy:'Rain',gameTime:'Time',maxPop:'Max Pop',offspring:'Offspring',dStarve:'Starved',dEaten:'Eaten',dTemp:'Temp',dAge:'Old age',dLysis:'Lysis',dCauses:'Death Causes',settingsT:'Settings',particles:'Particles',bubbles:'Bubbles',currents:'Currents',vignette:'Vignette',healthBars:'Health Bars',shadows:'Shadows',freeCam:'Free Cam',density:'Density',lightInt:'Light Intensity',virusRate:'Virus Rate',wikiT:'Wiki: Pond Life',simSpeed:'Speed',predation:'Predators',divRate:'Reproduction'};
+T.en={menuSub:'Microorganism Simulation — 100 species + viruses. Pond cross-section view.',start:'START',help:'HOW TO PLAY',set:'SETTINGS',wiki:'WIKI',diffE:'Easy',diffN:'Normal',diffH:'Hard',all:'All',producer:'Greens (food)',consumer1:'Small eaters',consumer2:'Mid eaters',consumer3:'Big hunters',decomposer:'Cleaners (fungi)',virus:'Viruses',paused:'PAUSED',resume:'RESUME',dead:'EXTINCT',restart:'RESTART',menu:'MENU',close:'CLOSE',energy:'Energy',age:'Age',eaten:'Eaten',divs:'Divisions',pop:'Pop',fps:'FPS',light:'Light',temp:'Temp',days:'Days',selectSp:'Select organism',autoOn:'AUTO',season0:'Spring',season1:'Summer',season2:'Autumn',season3:'Winter',clear:'Clear',rainy:'Rain',gameTime:'Time',maxPop:'Max Pop',offspring:'Offspring',dStarve:'Starved',dEaten:'Eaten',dTemp:'Temp',dAge:'Old age',dLysis:'Lysis',dCauses:'Death Causes',settingsT:'Settings',particles:'Particles',bubbles:'Bubbles',currents:'Currents',vignette:'Vignette',healthBars:'Health Bars',shadows:'Shadows',freeCam:'Free Cam',density:'Density',lightInt:'Light Intensity',virusRate:'Virus Rate',wikiT:'Wiki: Pond Life',simSpeed:'Speed',predation:'Predators',divRate:'Reproduction'};
 for(var l in LANGS){if(!T[l]){T[l]={};var ks=Object.keys(T.en);for(var k=0;k<ks.length;k++)T[l][ks[k]]=T.en[ks[k]];}}
 function tt(k){return(T[curLang]&&T[curLang][k])||T.en[k]||k;}
 
@@ -190,7 +190,7 @@ function getWikiEntry(i){
     var sp=SPECIES_DB[i];var w=WIKI[String(i)]||{};
     var loc=w.loc||sp.locomotion||'-';
     var div=w.div||(sp.cat==='decomposer'?'\u041f\u043e\u0447\u043a\u043e\u0432\u0430\u043d\u0438\u0435':'\u0414\u0435\u043b\u0435\u043d\u0438\u0435 \u043d\u0430\u0434\u0432\u043e\u0435');
-    var food=w.food||(FOOD[sp.cat]?FOOD[sp.cat].join(', '):'\u0421\u043e\u043b\u043d\u0446\u0435 + CO\u2082');
+    var food=w.food||(typeof foodListRu==='function'?foodListRu(sp.cat):(FOOD[sp.cat]?FOOD[sp.cat].join(', '):'\u0421\u043e\u043b\u043d\u0446\u0435 + CO\u2082'));
     var pred=w.pred||'-';
     var defs=[];
     if(sp.flags && sp.flags.shell) defs.push("\u041a\u0440\u0435\u043c\u043d\u0438\u0435\u0432\u044b\u0439 \u043f\u0430\u043d\u0446\u0438\u0440\u044c");
@@ -204,7 +204,63 @@ function getWikiEntry(i){
 // === CONFIG ===
 var PW=25000,PD=2000,BW=600,MAX_ORG=8000,DAY_SEC=120,SPD_SCALE=16;
 var SPAWN_RATES={producer:2,consumer1:0.3,consumer2:0.08,consumer3:0.02,decomposer:0.2,macrophage:0.05,virus:0.1};
-var FOOD={consumer1:["producer"],consumer2:["producer","consumer1","consumer2"],consumer3:["producer","consumer1","consumer2"],decomposer:[],macrophage:["consumer1","consumer2","consumer3"]};
+var FOOD={consumer1:["producer"],consumer2:["producer","consumer1","consumer2"],consumer3:["producer","consumer1","consumer2","consumer3"],decomposer:[],macrophage:["consumer1","consumer2","consumer3"]};
+// Кто есть кто — простыми словами (для UI/вики/подростка)
+var CAT_ROLE={
+  producer:{
+    ru:'Зелёные. Не охотятся. Едят свет и воду — как крошечные растения. Кормят всех остальных.',
+    en:'Greens. No hunting. They eat light and water — tiny plants. Feed everyone else.'
+  },
+  consumer1:{
+    ru:'Мелкие едоки (бактерии). Кусают зелёных. Сами — еда для средних и крупных.',
+    en:'Small eaters (bacteria). Nibble greens. Food for mid and big eaters.'
+  },
+  consumer2:{
+    ru:'Средние едоки (инфузории). Фильтруют воду: затягивают бактерий и зелёных. Не кидаются на гигантов.',
+    en:'Mid eaters (ciliates). Filter water: pull in bacteria and greens. Do not tackle giants.'
+  },
+  consumer3:{
+    ru:'Крупные охотники. Едят зелёных, бактерий и средних. Могут кусать и тех, кто чуть крупнее — но это рискованно. Без еды живут долго, но голод всё равно опасен.',
+    en:'Big hunters. Eat greens, bacteria and mid-eaters. Can bite slightly larger prey — risky. Live long without food, but hunger still kills.'
+  },
+  decomposer:{
+    ru:'Уборщики. Разлагают мёртвое — не охотятся на живых.',
+    en:'Cleaners. Break down the dead — do not hunt the living.'
+  },
+  macrophage:{
+    ru:'Стражи. Атакуют больных и опасных — «иммунитет» пруда.',
+    en:'Guards. Attack sick/dangerous cells — the pond immune system.'
+  }
+};
+var CAT_NAME={
+  producer:{ru:'Зелёные (корм)',en:'Greens'},
+  consumer1:{ru:'Мелкие едоки',en:'Small eaters'},
+  consumer2:{ru:'Средние едоки',en:'Mid eaters'},
+  consumer3:{ru:'Крупные охотники',en:'Big hunters'},
+  decomposer:{ru:'Уборщики',en:'Cleaners'},
+  macrophage:{ru:'Стражи',en:'Guards'},
+  virus:{ru:'Вирусы',en:'Viruses'}
+};
+function catName(cat){
+  var n = CAT_NAME[cat];
+  if(!n) return cat;
+  return (curLang==='ru' ? n.ru : n.en) || cat;
+}
+function catRole(cat){
+  var r = CAT_ROLE[cat];
+  if(!r) return '';
+  return (curLang==='ru' ? r.ru : r.en) || '';
+}
+function foodListRu(cat){
+  var arr = FOOD[cat]||[];
+  if(!arr.length){
+    if(cat==='producer') return curLang==='ru'?'свет + вода + минералы':'light + water + minerals';
+    if(cat==='decomposer') return curLang==='ru'?'мёртвые остатки':'dead matter';
+    return '—';
+  }
+  return arr.map(catName).join(', ');
+}
+
 var DIFF={easy:{spawn:1.5,energy:0.8,metab:0.3,virus:0.2},normal:{spawn:1.0,energy:1.0,metab:0.5,virus:0.4},hard:{spawn:0.7,energy:1.2,metab:0.8,virus:0.8}};
 var TGT={producer:1400,consumer1:160,consumer2:80,consumer3:40,decomposer:160,macrophage:0};
 var INIT_N={producer:1200,consumer1:150,consumer2:75,consumer3:40,decomposer:150,macrophage:0,virus:3};

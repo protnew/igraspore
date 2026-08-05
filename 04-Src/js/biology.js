@@ -252,11 +252,12 @@ function eatOrg(pred,prey){
     biteFrac = dmg / preySize0;
     prey.size -= dmg;
   }
-  // if(settings.particles) {
+  // TSK-RND-025: dmg indicators capped to 20
+  if(settings.particles) {
       if(!window.dmgIndicators) window.dmgIndicators = [];
-      if(window.dmgIndicators.length >= 20) window.dmgIndicators.shift(); // TSK-RND-025
+      if(window.dmgIndicators.length >= 20) window.dmgIndicators.shift();
       window.dmgIndicators.push({x:prey.x, y:prey.y, val:Math.round(dmg), life:1.0});
-    }
+  }
   
   // Total nutrition from ORIGINAL prey size/energy × bite fraction
   var preyMass = preySize0;

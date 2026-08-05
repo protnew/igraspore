@@ -1,5 +1,7 @@
 // biology_update.js — per-frame organism update (extracted from biology.js)
 function updateOrg(o,dt){
+  // 5) укрытие у кувшинок — каждый тик
+  if(typeof updateLilyCover==='function') updateLilyCover(o);
   if (typeof cam !== 'undefined' && window.spatialGrid) {
     var dx = cam.x - o.x, dy = cam.y - o.y;
     var inGrid = window.spatialGrid[Math.floor(o.x/1000)+','+Math.floor(o.y/1000)];
@@ -277,8 +279,20 @@ function updateOrg(o,dt){
   }
 
   // Player energy floor/ceiling
+  // 10) Не держим floor=1 навсегда: при истощении → циста (один раз)
   if(o.isPlayer){
-    if(o.energy < 1) o.energy = 1;
+    if(o.energy < 1){
+      if(!o.cyst && !o._starvedOnce){
+        o._starvedOnce = true;
+        o.cyst = true; o.energy = 10; o.vx=0; o.vy=0; o.aiTarget=null; o.state='rest';
+        if(window.showToast) window.showToast('Голод: впал в цисту — найди еду и проснись', '#fc8');
+      } else if(o.cyst){
+        o.energy = Math.max(o.energy, 0);
+      } else {
+        // уже был cyst — можно умереть глубже
+        o.energy = Math.max(o.energy, -15);
+      }
+    }
     if(o.energy > 120) o.energy = 120;
     if(o.parasite && o.energy < 15){ o.parasite=null; if(window.showToast) window.showToast('Паразит сброшен','#fd8'); }
   }

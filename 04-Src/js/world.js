@@ -289,6 +289,26 @@ function clampToPuddle(o){
 
 
 
+
+function updateLilyCover(o){
+  o._lilyCover = false;
+  if(!o || o.y >= 130 || !window._lilyPads) return false;
+  for(var li=0; li<window._lilyPads.length; li++){
+    var lp=window._lilyPads[li];
+    var dx=o.x-lp.x, dy=(o.y-(lp.y||0))*2.0;
+    var d2=dx*dx+dy*dy;
+    var coverR = (lp.rx||20) * 1.25;
+    if(d2 < coverR*coverR){
+      if((o.size||4) <= 6.0 || (o.sp && (o.sp.cat==='producer'||o.sp.cat==='consumer1'||o.sp.cat==='consumer2'))){
+        o._lilyCover = true;
+        return true;
+      }
+    }
+  }
+  return false;
+}
+window.updateLilyCover = updateLilyCover;
+
 // === VIRUS INFECTION ===
 
 

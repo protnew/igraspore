@@ -87,8 +87,8 @@ function moveOrg(o,dt){
   ensureFacing(o);
 
   // ---- PLAYER MANUAL ----
-  // Always controllable (even if freeCam) unless pure autoAI
-  if(o.isPlayer && !autoAI && !o.cyst && !o.dying){
+  // When freeCam: WASD flies camera only — do NOT move the cell
+  if(o.isPlayer && !autoAI && !freeCam && !o.cyst && !o.dying){
     var ax=0, ay=0;
     if(keys['w']||keys['arrowup']) ay-=1;
     if(keys['s']||keys['arrowdown']) ay+=1;

@@ -1,17 +1,55 @@
 "use strict";
 
 
+function countCat(cat){
+  if(cat==='virus') return (typeof VIRUS_SPECS!=='undefined')?VIRUS_SPECS.length:0;
+  if(cat==='all') return SPECIES_DB.length;
+  var n=0; for(var i=0;i<SPECIES_DB.length;i++){ if(SPECIES_DB[i]&&SPECIES_DB[i].cat===cat) n++; }
+  return n;
+}
 function buildCatSel(){
-  var cs=document.getElementById('catSel');cs.innerHTML='';
+  var cs=document.getElementById('catSel'); if(!cs) return; cs.innerHTML='';
   if(typeof renderPoolBanner==='function') renderPoolBanner();
   if(typeof renderFoodChain==='function') renderFoodChain();
+  if(typeof selCat==='undefined' || !selCat) selCat='all';
   var cats=[['all',tt('all')],['producer',tt('producer')],['consumer1',tt('consumer1')],['consumer2',tt('consumer2')],['consumer3',tt('consumer3')],['decomposer',tt('decomposer')],['virus',tt('virus')]];
-  for(var i=0;i<cats.length;i++){var b=document.createElement('div');b.className='cb'+(selCat===cats[i][0]?' act':'');b.textContent=cats[i][1];b.setAttribute('data-c',cats[i][0]);
-    b.style.borderLeft='4px solid '+(cats[i][0]==='all'?'#456':CC[cats[i][0]]||'#f44');b.onclick=function(ev){selCat=ev.target.getAttribute('data-c');buildCatSel();buildSpeciesGrid(); if(typeof catRole==='function' && selCat && selCat!=='all' && window.showToast){ var tip=catRole(selCat); if(tip) window.showToast(tip, CC[selCat]||'#8cf'); }};cs.appendChild(b);}
+  for(var i=0;i<cats.length;i++){
+    var key=cats[i][0], label=cats[i][1], n=countCat(key);
+    var b=document.createElement('div');
+    b.className='cb'+(selCat===key?' act':'');
+    b.setAttribute('data-c', key);
+    b.innerHTML=label+' <span style="opacity:.55;font-size:10px">('+n+')</span>';
+    b.style.borderLeft='4px solid '+(key==='all'?'#456':(CC[key]||'#f44'));
+    b.style.cursor='pointer';
+    b.onclick=function(ev){
+      var el=ev.currentTarget||ev.target;
+      var c=el.getAttribute('data-c');
+      if(!c && el.parentElement) c=el.parentElement.getAttribute('data-c');
+      if(!c) return;
+      selCat=c;
+      buildCatSel();
+      buildSpeciesGrid();
+      var sg=document.getElementById('spGrid'); if(sg) sg.scrollTop=0;
+      if(typeof catRole==='function' && selCat && selCat!=='all' && window.showToast){
+        var tip=catRole(selCat); if(tip) window.showToast(tip, CC[selCat]||'#8cf');
+      }
+    };
+    cs.appendChild(b);
+  }
 }
 
 function buildSpeciesGrid(){
-  var sg=document.getElementById('spGrid');sg.innerHTML='';
+  var sg=document.getElementById('spGrid'); if(!sg) return; sg.innerHTML='';
+  if(typeof selCat==='undefined' || !selCat) selCat='all';
+  // Status line: what filter is active
+  var shownN = (selCat==='virus') ? ((typeof VIRUS_SPECS!=='undefined')?VIRUS_SPECS.length:0)
+              : (selCat==='all' ? SPECIES_DB.length : countCat(selCat));
+  var st=document.createElement('div');
+  st.id='spFilterStatus';
+  st.style.cssText='width:100%;padding:4px 8px;margin:0 0 6px 0;font-size:11px;color:#9cf;background:rgba(0,40,60,0.45);border-radius:6px;border:1px solid rgba(80,140,180,0.35)';
+  var catLabel = (selCat==='all') ? tt('all') : (typeof catName==='function'?catName(selCat):selCat);
+  st.textContent = 'Показано: '+shownN+' видов · фильтр: '+catLabel+(selCat==='producer'?' (есть колонии)':'');
+  sg.appendChild(st);
   if(selCat==='virus'){
     for(var vi=0;vi<VIRUS_SPECS.length;vi++){
       var vs=VIRUS_SPECS[vi];
@@ -22,8 +60,22 @@ function buildSpeciesGrid(){
     }
     return;
   }
+  // Build index list, colonies first so they are visible without scrolling
+  var idxs=[];
   for(var i=0;i<SPECIES_DB.length;i++){
-    var sp=SPECIES_DB[i];if(selCat!=='all'&&sp.cat!==selCat)continue;
+    var sp0=SPECIES_DB[i]; if(!sp0) continue;
+    if(selCat!=='all'&&sp0.cat!==selCat) continue;
+    idxs.push(i);
+  }
+  idxs.sort(function(a,b){
+    var ca=(SPECIES_DB[a].shape==='colony'||(SPECIES_DB[a].bio&&SPECIES_DB[a].bio.colony))?0:1;
+    var cb=(SPECIES_DB[b].shape==='colony'||(SPECIES_DB[b].bio&&SPECIES_DB[b].bio.colony))?0:1;
+    if(ca!==cb) return ca-cb;
+    return a-b;
+  });
+  for(var ii=0;ii<idxs.length;ii++){
+    var i=idxs[ii];
+    var sp=SPECIES_DB[i];
     var c=document.createElement('div');c.className='sc'+(selSpecies===i?' sel':'');c.setAttribute('data-si',i);
     var pop=speciesPop[i]?speciesPop[i].alive:0;
     var eatInfo='';
@@ -41,7 +93,9 @@ function buildSpeciesGrid(){
     var roleShort='';
     if(typeof catName==='function'){ roleShort=catName(sp.cat); }
     var spNum=(typeof sp.num==='number')?sp.num:(i+1);
-    var colonyTag=(sp.shape==='colony'||(sp.bio&&sp.bio.colony))?' · колония':'';
+    var isCol=(sp.shape==='colony'||(sp.bio&&sp.bio.colony));
+    var colonyTag=isCol?' · КОЛОНИЯ':'';
+    if(isCol){c.style.boxShadow='inset 0 0 0 2px #4c8';c.style.background='rgba(20,60,30,0.55)';}
     c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+
       '<div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+
       '<div class="scL">'+(Math.round(sp.size*10)/10)+'\u03bcm &middot; '+sp.shape+colonyTag+'</div>'+

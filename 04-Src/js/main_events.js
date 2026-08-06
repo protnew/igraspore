@@ -1,6 +1,15 @@
 // main_events.js — event listeners + init
 // === EVENT LISTENERS ===
-cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
+cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();var nx=e.clientX-r.left,ny=e.clientY-r.top;
+  // Free-cam drag pan (hold LMB)
+  if(freeCam && mouseDown && !window.demoPossessed){
+    var dx=(nx-mx)/Math.max(0.2,zoom);
+    var dy=(ny-my)/Math.max(0.2,zoom);
+    cam.x-=dx; cam.y-=dy;
+    window.screensaverAutoCam=false;
+    window.lastInteractionTime=Date.now();
+  }
+  mx=nx;my=ny;});
 cv.addEventListener('mousedown',function(e){e.preventDefault();var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;
   if(e.button===0){
     mouseDown=true;
@@ -181,7 +190,7 @@ document.addEventListener('keydown',function(e){
   }
   if(k===' '||k==='space'){ window.manualFeed&&window.manualFeed(); e.preventDefault(); }
   if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
-  if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
+  if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Полёт: WASD / мышь':'Камера: следит','#4af');var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?'ПОЛЁТ WASD':'';}}
   if(k==='escape'){
     if(window.demoMode && window.demoPossessed){ exitDemoPossess(); e.preventDefault(); return; }
     // ESC → return to main menu from game or demo
@@ -227,7 +236,7 @@ document.getElementById('bEat').onclick=function(){ window.tryPlayerEat && windo
 document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast('Деление...','#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa');}}};
 document.getElementById('bCyst').onclick=function(){if(player&&player.alive)doCyst(player);};
 document.getElementById('bAuto').onclick=function(){if(player&&player.alive)autoAI=!autoAI;};
-document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Камера: СВОБОДНО':'Камера: СЛЕДИТ','#4af');};
+document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Свободный полёт: WASD / тяни мышью':'Камера: следит за клеткой','#4af');var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?'ПОЛЁТ WASD':'';cm.className=freeCam?'free':'';}};
 
 document.getElementById('bMicro').onclick=function(){
   settings.microscopeMode=!settings.microscopeMode;

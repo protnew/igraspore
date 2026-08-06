@@ -83,6 +83,13 @@ function startDemoMode() {
       // Continuous species number (same as menu #N), not per-row index
       o.demoIndex = (pool[i] && typeof pool[i].num === 'number') ? pool[i].num : (i + 1);
       o.demoSpNum = o.demoIndex;
+      // Colonies must be obviously visible in gallery (use o.sp — not outer-loop sp)
+      if(o.sp && (o.sp.shape==='colony' || (o.sp.bio && o.sp.bio.colony))){
+        o.size = Math.max(o.size||0, 6.5);
+        o.birthSize = o.size;
+        o.sizeMult = 1;
+        o.demoColony = true;
+      }
       o.vx = 0; o.vy = 0;
       o.energy = 90;
       o.facing = 0;
@@ -275,13 +282,14 @@ function renderDemoLabels() {
       ctx.fillText(num, scx + 1, ty + 1);
       ctx.fillStyle = (o.isPlayer ? '#4ff' : '#e8fff0');
       ctx.fillText(num, scx, ty);
-      // short name under number
-      if (zoom >= 0.9 && o.sp && o.sp.name) {
+      // short name under number (+ КОЛОНИЯ tag)
+      if (zoom >= 0.7 && o.sp && o.sp.name) {
         var short = o.sp.name.split(' ')[0];
+        if(o.demoColony || o.sp.shape==='colony') short = short + ' ·колония';
         ctx.font = Math.max(8, Math.min(11, 9 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
         ctx.fillStyle = 'rgba(0,0,0,0.55)';
         ctx.fillText(short, scx + 1, ty + 14);
-        ctx.fillStyle = 'rgba(200,230,255,0.85)';
+        ctx.fillStyle = (o.demoColony||o.sp.shape==='colony') ? '#8f8' : 'rgba(200,230,255,0.85)';
         ctx.fillText(short, scx, ty + 13);
       }
     }

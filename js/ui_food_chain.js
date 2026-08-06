@@ -155,11 +155,42 @@ function drawSpeciesPreview(canvas,sp,idx){
     default:ctx2.arc(0,0,sz,0,6.283);
   }
   ctx2.fill();ctx2.stroke();
+  // COLONY override — multi-cell aggregate (must not look like a single green ball)
+  if(sh==='colony' || (sp.bio&&sp.bio.colony)){
+    ctx2.clearRect(-W/2,-H/2,W,H);
+    // restore bg under cells
+    var bg2=ctx2.createRadialGradient(0,0,0,0,0,W*0.45);
+    bg2.addColorStop(0,'rgba(20,50,80,0.55)');bg2.addColorStop(1,'rgba(5,15,30,0.75)');
+    ctx2.fillStyle=bg2;ctx2.beginPath();ctx2.arc(0,0,W*0.48,0,6.283);ctx2.fill();
+    // thin mucilage
+    ctx2.fillStyle='rgba(80,160,70,0.18)';
+    ctx2.beginPath();ctx2.arc(0,0,sz*1.15,0,6.283);ctx2.fill();
+    ctx2.strokeStyle='rgba(100,190,90,0.7)';ctx2.lineWidth=2;
+    ctx2.beginPath();ctx2.arc(0,0,sz*1.15,0,6.283);ctx2.stroke();
+    // 12-16 packed cells
+    var nC=16, GA=2.399963;
+    for(var ci=0;ci<nC;ci++){
+      var t=ci/(nC-0.5), a=ci*GA, rr=sz*(0.15+0.78*Math.sqrt(t));
+      var cx=Math.cos(a)*rr, cy=Math.sin(a)*rr*0.9;
+      var cr=sz*(0.16+0.04*(1-t));
+      var cg=ctx2.createRadialGradient(cx-cr*0.3,cy-cr*0.3,0,cx,cy,cr);
+      cg.addColorStop(0,'rgba(140,220,100,1)');cg.addColorStop(0.6,sp.color||'#3a8');cg.addColorStop(1,'rgba(20,80,30,0.95)');
+      ctx2.fillStyle=cg;ctx2.beginPath();ctx2.arc(cx,cy,cr,0,6.283);ctx2.fill();
+      ctx2.strokeStyle='rgba(20,70,30,0.55)';ctx2.lineWidth=1;ctx2.stroke();
+      // chloroplast
+      ctx2.fillStyle='rgba(20,70,25,0.8)';ctx2.beginPath();ctx2.arc(cx+cr*0.15,cy,cr*0.3,0,6.283);ctx2.fill();
+    }
+    // badge text
+    ctx2.fillStyle='rgba(0,0,0,0.55)';ctx2.fillRect(-sz*1.2, sz*1.2, sz*2.4, 14);
+    ctx2.fillStyle='#9f6';ctx2.font='bold 11px system-ui,sans-serif';ctx2.textAlign='center';ctx2.textBaseline='top';
+    ctx2.fillText('КОЛОНИЯ',0,sz*1.25);
+  } else {
   // Highlight (specular)
   ctx2.fillStyle='rgba(255,255,255,0.15)';
   ctx2.beginPath();ctx2.ellipse(-sz*0.3,-sz*0.3,sz*0.3,sz*0.15,-0.4,0,6.283);ctx2.fill();
-  // Internal organelles (textbook style)
-  var b=sp.bio;
+  }
+  // Internal organelles (textbook style) — skip for colonies (already drawn)
+  var b=(sh==='colony'||(sp.bio&&sp.bio.colony))?null:sp.bio;
   if(b){
     // Nucleus — with nucleolus and chromatin dots
     if(b.nucleus){

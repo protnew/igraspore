@@ -85,7 +85,7 @@ function startDemoMode() {
       o.demoSpNum = o.demoIndex;
       // Colonies must be obviously visible in gallery (use o.sp — not outer-loop sp)
       if(o.sp && (o.sp.shape==='colony' || (o.sp.bio && o.sp.bio.colony))){
-        o.size = Math.max(o.size||0, 6.5);
+        o.size = Math.max(o.size||0, 10);
         o.birthSize = o.size;
         o.sizeMult = 1;
         o.demoColony = true;
@@ -227,7 +227,7 @@ function updateDemoPinned(dt) {
     o.vx = 0;
     o.vy = 0;
     if(o.demoColony || (o.sp && o.sp.shape==='colony')){
-      o.size = Math.max(o.size||0, 7);
+      o.size = Math.max(o.size||0, 10);
       o.demoColony = true;
     }
     o.energy = Math.min(100, (o.energy || 80) + dt * 2); // keep alive
@@ -289,7 +289,7 @@ function renderDemoLabels() {
       // short name under number (+ КОЛОНИЯ tag)
       if (zoom >= 0.7 && o.sp && o.sp.name) {
         var short = o.sp.name.split(' ')[0];
-        if(o.demoColony || o.sp.shape==='colony') short = short + ' ·колония';
+        if(o.demoColony || o.sp.shape==='colony') short = '⬡КОЛОНИЯ ' + short;
         ctx.font = Math.max(8, Math.min(11, 9 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
         ctx.fillStyle = 'rgba(0,0,0,0.55)';
         ctx.fillText(short, scx + 1, ty + 14);

@@ -46,9 +46,17 @@ function buildSpeciesGrid(){
               : (selCat==='all' ? SPECIES_DB.length : countCat(selCat));
   var st=document.createElement('div');
   st.id='spFilterStatus';
-  st.style.cssText='width:100%;padding:4px 8px;margin:0 0 6px 0;font-size:11px;color:#9cf;background:rgba(0,40,60,0.45);border-radius:6px;border:1px solid rgba(80,140,180,0.35)';
+  st.style.cssText='width:100%;padding:8px 10px;margin:0 0 8px 0;font-size:13px;font-weight:700;color:#dff;background:linear-gradient(90deg,rgba(0,80,40,0.75),rgba(0,40,70,0.75));border-radius:8px;border:2px solid #4c8;box-shadow:0 0 12px rgba(60,180,100,0.35)';
   var catLabel = (selCat==='all') ? tt('all') : (typeof catName==='function'?catName(selCat):selCat);
-  st.textContent = 'Показано: '+shownN+' видов · фильтр: '+catLabel+(selCat==='producer'?' (есть колонии)':'');
+  var colN = 0;
+  if(selCat==='all'||selCat==='producer'){
+    for(var ci=0;ci<SPECIES_DB.length;ci++){
+      var sx=SPECIES_DB[ci]; if(sx&&(sx.shape==='colony'||(sx.bio&&sx.bio.colony))&&(selCat==='all'||sx.cat===selCat)) colN++;
+    }
+  }
+  st.innerHTML = 'Фильтр: <span style="color:#8f8">'+catLabel+'</span> · показано <span style="color:#ff8">'+shownN+'</span> видов'
+    +(colN?(' · <span style="color:#9f6">колоний: '+colN+'</span> (вверху списка)'):'')
+    +' <span style="opacity:.6;font-weight:400;font-size:11px">· нажми другую кнопку чтобы сменить</span>';
   sg.appendChild(st);
   if(selCat==='virus'){
     for(var vi=0;vi<VIRUS_SPECS.length;vi++){
@@ -94,9 +102,10 @@ function buildSpeciesGrid(){
     if(typeof catName==='function'){ roleShort=catName(sp.cat); }
     var spNum=(typeof sp.num==='number')?sp.num:(i+1);
     var isCol=(sp.shape==='colony'||(sp.bio&&sp.bio.colony));
-    var colonyTag=isCol?' · КОЛОНИЯ':'';
-    if(isCol){c.style.boxShadow='inset 0 0 0 2px #4c8';c.style.background='rgba(20,60,30,0.55)';}
-    c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+
+    var colonyTag=isCol?'':'';
+    var colonyBadge=isCol?'<div style="background:#2a6;color:#efc;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;margin:2px auto;display:inline-block;letter-spacing:0.5px">⬡ КОЛОНИЯ · куча клеток</div>':'';
+    if(isCol){c.style.boxShadow='inset 0 0 0 3px #5d5,0 0 14px rgba(80,200,100,0.45)';c.style.background='rgba(10,50,20,0.75)';c.style.order='-1';}
+    c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+colonyBadge+
       '<div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+
       '<div class="scL">'+(Math.round(sp.size*10)/10)+'\u03bcm &middot; '+sp.shape+colonyTag+'</div>'+
       '<div class="scC">'+sp.locomotion+'</div>'+

@@ -270,8 +270,12 @@ function startGame(isScreensaver){
      }
      if(sp.cat==='consumer2'){
        setTimeout(function(){
-         if(window.showToast) window.showToast('Инфузория: подплыви к бактериям/водорослям — реснички фильтруют сами', '#9cf');
+         if(window.showToast) window.showToast('Средний едок: подплыви к зелёным/бактериям — реснички фильтруют сами', '#9cf');
        }, 900);
+     }
+     // 1) Карточка «ты кто / кого ешь»
+     if(!isScreensaver && typeof showRoleCard==='function'){
+       setTimeout(function(){ try{ showRoleCard(sp); }catch(_e){} }, 600);
      }
   }
   
@@ -307,7 +311,7 @@ function startGame(isScreensaver){
   labelBtn('bDiv','ДЕЛИТЬ','Q');
   labelBtn('bCyst','ЦИСТА','R');
   labelBtn('bAuto','АВТО','Tab');
-  labelBtn('bFree','КАМЕРА','F');
+  labelBtn('bFree','ПОЛЁТ','F');
   labelBtn('bFol','СЛЕДИТЬ','V');
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');

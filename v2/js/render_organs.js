@@ -338,11 +338,13 @@ function renderViruses(vL,vR,vT,vB){
     ctx.save();ctx.translate(v.x,v.y);ctx.rotate(v.angle+Math.sin(v.wobble)*0.03);
     ctx.fillStyle='#f44';ctx.strokeStyle='#a00';ctx.lineWidth=0.5;
     // Head (icosahedron look)
-    ctx.beginPath();ctx.arc(0,0,3,0,Math.PI*2);ctx.fill();ctx.stroke();
+    ctx.beginPath();ctx.arc(0,0,5.5,0,Math.PI*2);ctx.fill();ctx.stroke();
+    // glow
+    ctx.fillStyle='rgba(255,80,80,0.25)';ctx.beginPath();ctx.arc(0,0,9,0,Math.PI*2);ctx.fill();
     // Tail
-    ctx.strokeStyle='#f44';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(0,8);ctx.stroke();
+    ctx.strokeStyle='#f44';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,5.5);ctx.lineTo(0,13);ctx.stroke();
     // Tail fibers
-    ctx.lineWidth=0.8;
+    ctx.lineWidth=1.2;
     ctx.beginPath();ctx.moveTo(0,8);ctx.lineTo(-2,11);ctx.moveTo(0,8);ctx.lineTo(2,11);ctx.stroke();
     ctx.restore();
   }

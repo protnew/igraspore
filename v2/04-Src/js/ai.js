@@ -1,202 +1,4 @@
-"use strict";
-
-window.getNearby = function(x, y, radius) {
-   var res=[];
-   if(!window.spatialGrid) return orgs;
-   var CELL=400;
-   var r = Math.ceil(radius/CELL);
-   var cx = Math.floor(x/CELL);
-   var cy = Math.floor(y/CELL);
-   for(var gx=cx-r; gx<=cx+r; gx++){
-     for(var gy=cy-r; gy<=cy+r; gy++){
-        var arr = window.spatialGrid[gx+','+gy];
-        if(arr) {
-            for(var i=0; i<arr.length; i++) res.push(arr[i]);
-        }
-     }
-   }
-   // Fallback: if grid empty / too sparse, scan all (still rare)
-   if(res.length < 3 && orgs && orgs.length) {
-     // also pull a few global candidates for hunters
-     for(var i=0;i<orgs.length && res.length<40;i++){
-       var o=orgs[i];
-       if(!o||!o.alive) continue;
-       var dx=o.x-x, dy=o.y-y;
-       if(dx*dx+dy*dy <= radius*radius) res.push(o);
-     }
-   }
-   return res;
-};
-
-function ensureFacing(o){
-  if(typeof o.facing !== 'number' || !isFinite(o.facing)){
-    o.facing = (typeof o.angle==='number' && isFinite(o.angle)) ? o.angle : (Math.random()*Math.PI*2);
-  }
-  // keep o.angle in sync for legacy code
-  o.angle = o.facing;
-}
-
-/** Smooth heading toward desired direction (rad). No continuous spin. */
-function turnToward(o, desired, dt, turnSpeed){
-  ensureFacing(o);
-  var da = desired - o.facing;
-  while(da >  Math.PI) da -= Math.PI*2;
-  while(da < -Math.PI) da += Math.PI*2;
-  var maxTurn = (turnSpeed||2.8) * dt; // rad/sec
-  if(da >  maxTurn) da =  maxTurn;
-  if(da < -maxTurn) da = -maxTurn;
-  o.facing += da;
-  o.angle = o.facing;
-}
-
-function thrustAlongFacing(o, speed, dt, mul){
-  ensureFacing(o);
-  // Cap thrust: high mul near prey caused "teleport dashes"
-  var m = Math.min(mul||12, o.isPlayer ? 16 : 12);
-  var thr = speed * dt * m;
-  o.vx += Math.cos(o.facing) * thr;
-  o.vy += Math.sin(o.facing) * thr;
-}
-
-function moveOrg(o,dt){
-  var sp=o.sp;
-  var speed=Math.max(sp.speed, 0.5)*SPD_SCALE*0.05;
-  if(o.isPlayer){
-    // Hierarchy: phyto slow, bacteria mid, ciliates/predators faster (usable control)
-    var cat = o.sp && o.sp.cat;
-    if(cat==='producer'){
-      speed = Math.max(speed, 0.55) * 1.45; // slow vs hunters, but can reach surface
-    } else if(cat==='consumer1'){
-      speed = Math.max(speed, 1.1) * 1.35;
-    } else if(cat==='consumer2'){
-      speed = Math.max(speed, 1.35) * 1.35; // ciliate cruise (filter, not chase)
-    } else {
-      speed = Math.max(speed, 2.1) * 1.85; // true hunters fastest
-    }
-  }
-  if(o.speedMult) speed *= o.speedMult;
-  ensureFacing(o);
-
-  // ---- PLAYER MANUAL ----
-  // Always controllable (even if freeCam) unless pure autoAI
-  if(o.isPlayer && !autoAI && !o.cyst && !o.dying){
-    var ax=0, ay=0;
-    if(keys['w']||keys['arrowup']) ay-=1;
-    if(keys['s']||keys['arrowdown']) ay+=1;
-    if(keys['a']||keys['arrowleft']) ax-=1;
-    if(keys['d']||keys['arrowright']) ax+=1;
-    if(o.parasiticInfection){ ax=-ax; ay=-ay; }
-    if(ax||ay){
-      var m=Math.sqrt(ax*ax+ay*ay); ax/=m; ay/=m;
-      // Strong direct swim (microbe games need snappy control)
-      var thr = Math.max(speed, 1.2) * dt * 90;
-      o.vx += ax * thr;
-      o.vy += ay * thr;
-      // Burst toward surface when holding up
-      if(ay < 0){
-        o.vy -= Math.max(2.5, thr * 1.2);
-      }
-      turnToward(o, Math.atan2(ay,ax), dt, 16);
-      o.aiTarget=null; o.aiState='manual';
-    }
-    if(mouseDown && !moveTarget){
-      var wx=cam.x+(mx-cv.width/2)/zoom, wy=cam.y+(my-cv.height/2)/zoom;
-      var dx=wx-o.x, dy=wy-o.y, d=Math.sqrt(dx*dx+dy*dy);
-      if(d>8){
-        turnToward(o, Math.atan2(dy,dx), dt, 10);
-        thrustAlongFacing(o, speed, dt, 18);
-      }
-    }
-    if(moveTarget){
-      var dx=moveTarget.x-o.x, dy=moveTarget.y-o.y, d=Math.sqrt(dx*dx+dy*dy);
-      if(d>12){
-        turnToward(o, Math.atan2(dy,dx), dt, 8);
-        thrustAlongFacing(o, speed, dt, 18);
-      } else moveTarget=null;
-    }
-  }
-  // ---- PLAYER AUTOPILOT ----
-  else if(o.isPlayer && autoAI && !o.cyst && !o.dying){
-    playerAutoAI(o, dt, speed);
-  }
-  // ---- NPC: natural run-and-tumble ----
-  else if(!o.isPlayer && !o.cyst && !o.dying){
-    naturalAI(o, dt, speed);
-  }
-
-  // Linear damping (fluid drag) — no angular noise
-  var damp = o.isPlayer ? 0.88 : 0.93;
-  var dampDt = clamp(dt, 0, 0.05);
-  o.vx *= Math.pow(damp, dampDt*60);
-  o.vy *= Math.pow(damp, dampDt*60);
-
-  // Hard speed ceiling — prevents rare "rocket" bursts (timeScale / stacked thrust)
-  var maxSwim = (o.isPlayer ? 18 : 6.5) * (o.speedMult || 1) * Math.max(0.6, Math.min(1.4, (sp.speed||1)/2));
-  if(o.state === 'flee') maxSwim *= 1.15;
-  if(o.state === 'hunt' && (o.energy||0) < 40) maxSwim *= 0.7; // weak when starving
-  var spNow = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
-  if(spNow > maxSwim && spNow > 1e-6){
-    var sc = maxSwim / spNow;
-    o.vx *= sc; o.vy *= sc;
-  }
-
-  // Kill sideways orbit: keep velocity mostly along facing when moving
-  var spMag = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
-  if(spMag > 0.4 && (!o.isPlayer || autoAI || freeCam)){
-    var fx=Math.cos(o.facing), fy=Math.sin(o.facing);
-    var along = o.vx*fx + o.vy*fy;
-    if(along < 0) along = 0; // don't reverse into spin
-    // blend 85% along heading, 15% residual
-    o.vx = o.vx*0.15 + fx * along * 0.85;
-    o.vy = o.vy*0.15 + fy * along * 0.85;
-  }
-
-  // Very weak environmental drift (currents) — translation only, NO torque
-  if(settings.currents && !o.dying && !o.cyst){
-    var globalVx = Math.sin(o.y * 0.0008 + (fc||0) * 0.0005) * 0.6;
-    var globalVy = Math.sin(o.x * 0.0006 + (fc||0) * 0.0004) * 0.25;
-    o.vx += globalVx * dt * 0.35;
-    o.vy += globalVy * dt * 0.35;
-  }
-
-  if(o.cyst) o.vy += 8 * dt;
-
-  // Integrate position
-  o.x += o.vx * dt * 60;
-  o.y += o.vy * dt * 60;
-
-  if(typeof clampToPuddle === 'function') clampToPuddle(o);
-  else {
-    if(typeof PW!=='undefined'){
-      if(o.x<20){o.x=20;o.vx=Math.abs(o.vx)*0.4; turnToward(o, 0, 1, 20);}
-      if(o.x>PW-20){o.x=PW-20;o.vx=-Math.abs(o.vx)*0.4; turnToward(o, Math.PI, 1, 20);}
-    }
-    if(typeof PD!=='undefined'){
-      // Surface y≈0 reachable (sky only above -12)
-      
-  // SURFACE_REACH_BOOST: player can always swim up to waterline (y=0)
-  if(o.isPlayer && o.y < 80){
-    // if holding up / thrusting toward surface, don't damp vertical
-    if(o.vy < -0.2) o.vy *= 1.15;
-  }
-  if(o.isPlayer){ if(o.y < -30){ o.y = -30; if(o.vy<0) o.vy*=-0.2; } }
-  else if(o.y < -8){ o.y = -8; if(o.vy<0) o.vy = Math.abs(o.vy)*0.25; }
-      if(o.y > PD-12){ o.y = PD-12; if(o.vy>0) o.vy = -Math.abs(o.vy)*0.35; }
-    }
-  }
-
-  // Gentle visual phase — slow at any zoom (organs must not "vibrate")
-  o.wobble = (o.wobble||0) + dt * 0.35;
-  o.pulse = (o.pulse||0) + dt * 0.45;
-  o.flagPhase = (o.flagPhase||0) + dt * 2.2;
-  o.cilPhase = (o.cilPhase||0) + dt * 3.5;
-
-  if(o.divCD>0) o.divCD -= dt;
-}
-
-// ============================================================
-// PLAYER AUTOPILOT — always hunts edible targets
-// ============================================================
+// ai.js — playerAutoAI, forceEat, findBestPrey, filterFeed, naturalAI, aiOrg
 function playerAutoAI(o, dt, speed){
   o.state = 'auto';
   var en = (typeof o.energy === 'number') ? o.energy : 50;
@@ -259,8 +61,16 @@ function playerAutoAI(o, dt, speed){
 function forceEat(pred, prey){
   if(!pred || !prey || !prey.alive) return false;
   if(prey === pred) return false;
-  prey.divCD = 0;
-  prey.invuln = 0;
+  // Fresh divide children cannot be eaten (grace period)
+  if((prey.invuln||0) > 0 || prey._fromDivide || prey._noCull){
+    if(!(pred && pred.isPlayer && (prey.invuln||0) < 0.3 && !prey._fromDivide)){
+      return false;
+    }
+  }
+  // Only player intentional bite may soften short locks — never wipe fresh twins
+  if(pred && pred.isPlayer && !prey._fromDivide && (prey.invuln||0) < 0.5){
+    prey.divCD = 0;
+  }
   var before = pred.eaten || 0;
   if(typeof eatOrg === 'function') eatOrg(pred, prey);
   if((pred.eaten||0) > before){
@@ -292,7 +102,7 @@ function forceEat(pred, prey){
       prey.alive=false; prey._remove=true;
     }
     if(settings.particles){
-      for(var k=0;k<8;k++) parts.push({x:pred.x,y:pred.y,vx:rng(-3,3),vy:rng(-3,3),life:rng(6,14),maxL:14,size:rng(2,4),color:'#8f8'});
+      parts.push({x:pred.x,y:pred.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.5,maxL:0.5,size:0.8,color:pred.sp.color});
     }
     if(pred.isPlayer && window.showToast) window.showToast('АВТО: +'+Math.round(gain)+' энергия', '#8f8');
     return true;
@@ -330,13 +140,19 @@ function findBestPrey(o, radius, forPlayer){
       if(p.isPlayer && !forPlayer && (gt - (p.spawnTime||0)) < 20) continue;
       ok = true;
     } else if(forPlayer){
-      if(inChain && p.size < o.size * 1.25) ok = true;
-      if(p.size < o.size * 0.98) ok = true;
+      // Игрок: можно есть зелёных всегда (в цепочке) + кусать крупнее себя (укус, не глоток)
       if(inChain && p.sp.cat === 'producer') ok = true;
-      if(p.size > o.size * 1.35 && !inChain) ok = false;
+      if(inChain && p.size < o.size * 1.55) ok = true;
+      if(p.size < o.size * 1.05) ok = true; // мельче себя — почти всегда
+      if(p.size > o.size * 1.7 && !inChain) ok = false;
+      if(!inChain && p.size >= o.size * 1.05) ok = false;
     } else {
+      // Охотники: едят по FOOD (у consumer3 есть зелёные/фито)
       if(!inChain) continue;
-      if(p.size >= o.size * 0.95) continue;
+      var maxPrey = (o.sp && o.sp.cat === 'consumer3')
+        ? ((o.energy||0) < 35 ? o.size * 1.55 : o.size * 1.25)
+        : o.size * 0.95;
+      if(p.size >= maxPrey) continue;
       if(p.isPlayer && (gt - (p.spawnTime||0)) < 15) continue;
       ok = true;
     }
@@ -351,7 +167,11 @@ function findBestPrey(o, radius, forPlayer){
       if(p.sp.cat === 'producer') score *= 0.70;
     } else {
       if(forPlayer && inChain) score *= 0.55;
-      if(forPlayer && p.sp.cat==='producer') score *= 0.75;
+      // Зелёные — нормальная еда охотника (особенно когда голоден)
+      if(p.sp.cat==='producer') score *= ((o.energy||100) < 45 ? 0.35 : 0.55);
+      if(p.sp.cat==='consumer1') score *= 0.65;
+      if(p.size > o.size) score *= 1.45; // крупнее себя — можно, но менее желанно
+      if(p._lilyCover) score *= 2.8; // добыча под кувшинкой — почти не видим
     }
     if(score < bd){ bd = score; best = p; }
   }
@@ -403,6 +223,9 @@ window.filterFeedPull = filterFeedPull;
 // NO continuous clockwise/counterclockwise spinning
 // ============================================================
 function naturalAI(o, dt, speed){
+  if(!(dt>0)) dt = 0.016;
+  if(!(speed>0)) speed = (o && o.sp && o.sp.speed) ? o.sp.speed : ((o && o.speed)||1);
+  if(!o || !o.sp) return;
   var cat = o.sp.cat;
   var foodCats = (typeof FOOD!=='undefined' && FOOD[cat]) ? FOOD[cat] : [];
 
@@ -422,6 +245,32 @@ function naturalAI(o, dt, speed){
   if(predator && pbd < 200*200){
     o.state='flee';
     var dx=o.x-predator.x, dy=o.y-predator.y;
+    // 7) Стая мелких: если рядом много своих — отбиваемся (толкаем хищника)
+    if(cat==='consumer1' || cat==='producer'){
+      var allies=0;
+      for(var ai2=0; ai2<nearThreat.length; ai2++){
+        var a=nearThreat[ai2];
+        if(!a||!a.alive||a===o) continue;
+        if(a.sp.cat!==cat) continue;
+        if(dist2(o,a) < 55*55) allies++;
+      }
+      if(allies >= 6){
+        // коллективный «укус/толчок»
+        predator.vx = (predator.vx||0) - dx*0.002;
+        predator.vy = (predator.vy||0) - dy*0.002;
+        predator.flash = Math.max(predator.flash||0, 0.2);
+        predator.flashColor = '#8cf';
+        if(allies >= 10 && Math.random() < 0.15*dt){
+          predator.energy = Math.max(1, (predator.energy||0) - 0.8);
+          predator.aiTarget = null; // сбить фокус
+        }
+        // в стае бежим чуть медленнее, но держимся кучно
+        turnToward(o, Math.atan2(dy,dx), dt, 5);
+        thrustAlongFacing(o, speed*0.7, dt, 10);
+        o.aiTarget=null;
+        return;
+      }
+    }
     turnToward(o, Math.atan2(dy,dx), dt, 8);
     thrustAlongFacing(o, speed, dt, 16);
     // cancel hunt lock while fleeing
@@ -429,7 +278,57 @@ function naturalAI(o, dt, speed){
     return;
   }
 
-  // --- Energy gates: never hunt to death ---
+    // TSK-AI-005: Gradual scent decay — flee from danger pheromones, weaker for older ones
+  if(typeof window.pheromones!=='undefined' && window.pheromones && window.pheromones.length>0){
+    var bestPh=null, bestInt=0;
+    for(var pi=0; pi<window.pheromones.length; pi++){
+      var ph=window.pheromones[pi];
+      if(ph.type!=='danger') continue;
+      var pdx=o.x-ph.x, pdy=o.y-ph.y, pd2=pdx*pdx+pdy*pdy;
+      var detR=150*(o.chemoSens||1.0);
+      if(pd2 < detR*detR){
+        var pdist=Math.sqrt(pd2);
+        var intensity=(ph.life||0.5)*(1-pdist/detR);
+        if(intensity>bestInt){ bestInt=intensity; bestPh=ph; }
+      }
+    }
+    if(bestPh && bestInt>0.15){
+      o.state='flee';
+      var fdx=o.x-bestPh.x, fdy=o.y-bestPh.y;
+      turnToward(o, Math.atan2(fdy,fdx), dt, 6);
+      thrustAlongFacing(o, speed*0.8, dt, 8*bestInt);
+    }
+  }
+
+    // TSK-AI-006: Mutualistic resource sharing
+  if(o.attachedTo && o.energy > 50){
+    var host = null;
+    for(var hi=0; hi<orgs.length; hi++){
+      if(orgs[hi].id === o.attachedTo && orgs[hi].alive){ host = orgs[hi]; break; }
+    }
+    if(host && host.energy < 40){
+      var transfer = Math.min(5 * dt, o.energy - 30);
+      if(transfer > 0){ o.energy -= transfer; host.energy += transfer * 0.9; }
+    }
+  }
+
+// TSK-AI-007: Thermotaxis — gradient search toward optimal temp
+  if(typeof window.getTempAt === 'function' && !o.cyst){
+    var curT = window.getTempAt(o.x, o.y);
+    var tr = o.sp.tempRange || [10,30];
+    var tOpt = ((tr[0]+tr[1])/2) + (o.tempOffset||0);
+    if(Math.abs(curT - tOpt) > 5){
+      var bestDir=null, bestDelta=999;
+      for(var ang=0; ang<Math.PI*2; ang+=Math.PI/2){
+        var nt = window.getTempAt(o.x+Math.cos(ang)*30, o.y+Math.sin(ang)*30);
+        var delta = Math.abs(nt - tOpt);
+        if(delta < bestDelta){ bestDelta = delta; bestDir = ang; }
+      }
+      if(bestDir !== null) steerToward(o, o.x+Math.cos(bestDir)*50, o.y+Math.sin(bestDir)*50, speed*0.6, dt, 5);
+    }
+  }
+
+// --- Energy gates: never hunt to death ---
   // <22: rest/cyst attempt; 22-38: only eat contact prey; 38-72: short hunts; >72: optional
   var en = (typeof o.energy === 'number') ? o.energy : 50;
   if(en < 22){
@@ -478,6 +377,8 @@ function naturalAI(o, dt, speed){
       o.huntT += dt;
       // Ciliates cruise gently; true predators pursue harder
       var huntMul = isCil ? 4.5 : (en < 40 ? 7 : (en < 55 ? 10 : 12));
+      // TSK-AI-008: Adaptive aggression — desperate sprint when starving
+      if(!isCil && en > 0 && en < 30){ huntMul *= 1.35; o.energy -= dt * 0.03; } // x10 softer hunger-sprint
       turnToward(o, Math.atan2(dy,dx), dt, isCil ? 3 : (en < 40 ? 4 : 6));
       thrustAlongFacing(o, speed * (isCil ? 0.55 : 1), dt, huntMul);
       // Filter current does the catching for ciliates; predators bite on contact

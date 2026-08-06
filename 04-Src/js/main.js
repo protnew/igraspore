@@ -311,7 +311,7 @@ function startGame(isScreensaver){
   labelBtn('bDiv','ДЕЛИТЬ','Q');
   labelBtn('bCyst','ЦИСТА','R');
   labelBtn('bAuto','АВТО','Tab');
-  labelBtn('bFree','КАМЕРА','F');
+  labelBtn('bFree','ПОЛЁТ','F');
   labelBtn('bFol','СЛЕДИТЬ','V');
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');

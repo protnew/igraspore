@@ -50,50 +50,71 @@ function drawBody(o,sz,fc2,fd, batched){
           ctx.stroke();
         }
       } else {
-        // Hollow gelatinous sphere — cells on SURFACE (Volvox-style), not a solid death-ball
-        // 1) translucent mucilage envelope
-        var muc=ctx.createRadialGradient(0,0,sz*0.15,0,0,sz);
-        muc.addColorStop(0,'rgba(180,230,160,0.12)');
-        muc.addColorStop(0.7,'rgba(90,170,80,0.22)');
-        muc.addColorStop(1,'rgba(40,110,50,0.35)');
+        // Colony = pack of microbes in thin mucilage (NOT a green fog ball)
+        // visScale shrinks envelope ~2x feel vs old solid blob
+        var VS = (o.sp && o.sp.visScale) ? o.sp.visScale : 0.85;
+        var R = sz * VS;
+        // 1) very thin translucent envelope (low alpha — structure reads, not fog)
+        var muc=ctx.createRadialGradient(0,0,R*0.2,0,0,R);
+        muc.addColorStop(0,'rgba(160,220,140,0.06)');
+        muc.addColorStop(0.75,'rgba(80,160,70,0.10)');
+        muc.addColorStop(1,'rgba(40,100,45,0.22)');
         ctx.fillStyle=muc;
-        ctx.beginPath();ctx.arc(0,0,sz,0,Math.PI*2);ctx.fill();
-        ctx.strokeStyle='rgba(60,140,70,0.55)';ctx.lineWidth=Math.max(0.8,sz*0.06);
+        ctx.beginPath();ctx.arc(0,0,R,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle='rgba(50,120,55,0.45)';ctx.lineWidth=Math.max(0.6,R*0.05);
         ctx.stroke();
-        // 2) somatic cells dotted on sphere surface
-        var nCell=Math.min(22, 8+Math.floor(sz*1.6));
+        // 2) packed cells — golden-angle spiral (looks like real Volvox/Gloeocapsa aggregate)
+        var nCell=Math.min(28, 12+Math.floor(R*2.2));
+        var GA=2.399963; // golden angle
         for(var ci2=0;ci2<nCell;ci2++){
-          var ca=ci2/nCell*Math.PI*2 + (o.pulse||0)*0.2;
-          var cr=sz*0.78;
-          var cx=Math.cos(ca)*cr, cy=Math.sin(ca)*cr*0.85;
-          ctx.fillStyle='rgba(50,140,55,0.9)';
-          ctx.beginPath();ctx.arc(cx,cy,Math.max(0.7,sz*0.09),0,Math.PI*2);ctx.fill();
-          // tiny flagella hint on outer cells
-          if(detail>=1 && ci2%3===0){
-            ctx.strokeStyle='rgba(120,200,130,0.35)';ctx.lineWidth=0.6;
-            ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx*1.18,cy*1.18);ctx.stroke();
+          var t=ci2/(nCell-0.5);
+          var ca=ci2*GA + (o.pulse||0)*0.15;
+          var cr=R*(0.18+0.72*Math.sqrt(t));
+          var cx=Math.cos(ca)*cr, cy=Math.sin(ca)*cr*0.88;
+          var cellR=Math.max(0.55, R*(0.10+0.03*(1-t)));
+          // cell body
+          var cg=ctx.createRadialGradient(cx-cellR*0.25,cy-cellR*0.25,0,cx,cy,cellR);
+          cg.addColorStop(0,'rgba(120,200,90,0.95)');
+          cg.addColorStop(0.55,'rgba(55,140,55,0.92)');
+          cg.addColorStop(1,'rgba(30,90,40,0.85)');
+          ctx.fillStyle=cg;
+          ctx.beginPath();ctx.arc(cx,cy,cellR,0,Math.PI*2);ctx.fill();
+          // chloroplast / pyrenoid dot
+          ctx.fillStyle='rgba(20,70,30,0.75)';
+          ctx.beginPath();ctx.arc(cx+cellR*0.15,cy,cellR*0.28,0,Math.PI*2);ctx.fill();
+          // membrane
+          ctx.strokeStyle='rgba(25,70,35,0.4)';ctx.lineWidth=Math.max(0.4,cellR*0.12);
+          ctx.beginPath();ctx.arc(cx,cy,cellR,0,Math.PI*2);ctx.stroke();
+          // outer flagella hints
+          if(detail>=1 && t>0.7 && ci2%2===0){
+            ctx.strokeStyle='rgba(140,210,140,0.35)';ctx.lineWidth=0.55;
+            var fx=cx*1.12/Math.max(0.01,Math.hypot(cx,cy))*R, fy=cy*1.12/Math.max(0.01,Math.hypot(cx,cy))*R;
+            ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+(cx>0?1:-1)*cellR*1.6, cy+(cy>0?1:-1)*cellR*0.8);ctx.stroke();
           }
         }
-        // 3) daughter colonies inside (Volvox gonidia) — real internal structure
+        // 3) 1–2 daughter packets inside (Volvox gonidia)
         if(detail>=0){
-          var nd=sz>4?3:2;
+          var nd=R>3?2:1;
           for(var dc=0;dc<nd;dc++){
-            var da=dc/nd*Math.PI*2+(o.wobble||0);
-            var dx=Math.cos(da)*sz*0.28, dy=Math.sin(da)*sz*0.22;
-            var dr=sz*(0.16+dc*0.03);
-            var dg=ctx.createRadialGradient(dx,dy,0,dx,dy,dr);
-            dg.addColorStop(0,'rgba(140,210,120,0.55)');
-            dg.addColorStop(1,'rgba(60,130,60,0.25)');
-            ctx.fillStyle=dg;
+            var da=dc/Math.max(1,nd)*Math.PI*2+(o.wobble||0);
+            var dx=Math.cos(da)*R*0.22, dy=Math.sin(da)*R*0.18;
+            var dr=R*0.14;
+            ctx.fillStyle='rgba(90,170,80,0.35)';
             ctx.beginPath();ctx.arc(dx,dy,dr,0,Math.PI*2);ctx.fill();
-            ctx.strokeStyle='rgba(40,100,50,0.4)';ctx.lineWidth=0.7;ctx.stroke();
+            ctx.strokeStyle='rgba(40,100,50,0.45)';ctx.lineWidth=0.6;ctx.stroke();
+            // mini-cells inside daughter
+            for(var mc=0;mc<4;mc++){
+              var ma=mc/4*Math.PI*2;
+              ctx.fillStyle='rgba(60,140,55,0.85)';
+              ctx.beginPath();ctx.arc(dx+Math.cos(ma)*dr*0.45, dy+Math.sin(ma)*dr*0.45, dr*0.22,0,Math.PI*2);ctx.fill();
+            }
           }
         }
-        // toxic Microcystis: denser packed cells + slight yellow tinge label via flash only
+        // toxic Microcystis: denser edge ring
         if(o.sp.flags&&o.sp.flags.toxic){
-          ctx.strokeStyle='rgba(200,180,40,0.35)';
+          ctx.strokeStyle='rgba(200,180,40,0.4)';
           ctx.setLineDash([2,2]);
-          ctx.beginPath();ctx.arc(0,0,sz*1.05,0,Math.PI*2);ctx.stroke();
+          ctx.beginPath();ctx.arc(0,0,R*1.06,0,Math.PI*2);ctx.stroke();
           ctx.setLineDash([]);
         }
       }
@@ -222,6 +243,18 @@ function renderOrg(o, skipBody){
   ctx.save();ctx.translate(o.x,o.y);
   var isReal=settings.renderMode==='realistic';
   var sz=o.size;
+  // 2) Подсветка еды: цветное кольцо вокруг того, кого ты можешь съесть
+  if(!skipBody && typeof player!=='undefined' && player && player.alive && o!==player && o.alive && !o.cyst && typeof isEdibleFor==='function' && isEdibleFor(player,o)){
+    var rc = (typeof roleColor==='function') ? roleColor(o.sp.cat) : '#8f8';
+    var pulse = 0.45 + 0.25*Math.sin((typeof gt==='number'?gt:0)*4 + o.x*0.01);
+    ctx.beginPath();
+    ctx.strokeStyle = rc;
+    ctx.globalAlpha = pulse;
+    ctx.lineWidth = Math.max(0.6, 1.8/Math.max(0.5,(typeof zoom==='number'?zoom:1)));
+    ctx.arc(0,0, sz*1.25+2, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
   // Lunge squash BEFORE body (readable eat beat)
   if(o._lungeT>0){
     var lt=o._lungeT;
@@ -276,8 +309,8 @@ function renderOrg(o, skipBody){
   if(o.infected){ctx.fillStyle='rgba(255,50,50,0.15)';ctx.beginPath();ctx.arc(0,0,sz*1.2,0,Math.PI*2);ctx.fill();}
   if(o.dividing){
     // Mitosis animation: nucleus divides first, then cytokinesis (cell splits)
-    var dp=o.divT/1.3;
-    var sep=sz*dp*0.5;
+    var dp=Math.min(1, o.divT/0.55); // match finishDivide threshold
+    var sep=sz*dp*1.15; // wider so two halves clearly separate
     // Furrow (cleavage) appears in the middle during late mitosis
     if(dp>0.3&&zoom>4){
       ctx.strokeStyle='rgba(0,0,0,0.2)';ctx.lineWidth=sz*dp*0.15;

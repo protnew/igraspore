@@ -31,7 +31,7 @@ function render(){
       sgrad.addColorStop(0, isReal?'#0a1840':'#0b1e48');
       sgrad.addColorStop(1, isReal?'#3a6a9a':'#4a8ec8');
       ctx.fillStyle=sgrad;
-      ctx.fillRect(0,0,cv.width,split);
+      ctx.fillRect(0,0,cv.width|0,split|0); // TSK-RND-020
     }
     var wgrad=ctx.createLinearGradient(0,split,0,cv.height);
     if(isReal){
@@ -93,7 +93,8 @@ function render(){
   if(window.demoMode&&typeof renderDemoLabels==="function")renderDemoLabels();
     renderTooltip();
   // Re-draw sun ON TOP of particles (prevents green halo from phytoplankton)
-  if(typeof renderSunOverlay==='function') renderSunOverlay();
+  if(typeof renderSunOverlay==='function') if(typeof window.renderNightSky==='function') window.renderNightSky(ctx, cv, (typeof dayLight==='number'?dayLight:0.5), fc);
+    renderSunOverlay();
   
   // === STEP 7: REALISTIC POST-PROCESSING === (disabled — causes dark ovals)
   if(false && isReal){

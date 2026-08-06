@@ -87,8 +87,8 @@ function moveOrg(o,dt){
   ensureFacing(o);
 
   // ---- PLAYER MANUAL ----
-  // Always controllable (even if freeCam) unless pure autoAI
-  if(o.isPlayer && !autoAI && !o.cyst && !o.dying){
+  // When freeCam: WASD flies camera only — do NOT move the cell
+  if(o.isPlayer && !autoAI && !freeCam && !o.cyst && !o.dying){
     var ax=0, ay=0;
     if(keys['w']||keys['arrowup']) ay-=1;
     if(keys['s']||keys['arrowdown']) ay+=1;
@@ -140,7 +140,7 @@ function moveOrg(o,dt){
   o.vy *= Math.pow(damp, dampDt*60);
 
   // Hard speed ceiling — prevents rare "rocket" bursts (timeScale / stacked thrust)
-  var maxSwim = (o.isPlayer ? 18 : 6.5) * (o.speedMult || 1) * Math.max(0.6, Math.min(1.4, (sp.speed||1)/2));
+  var maxSwim = (o.isPlayer ? 9 : 3.25) * (o.speedMult || 1) * (typeof SPEED_SCALE!=='undefined'?SPEED_SCALE:0.5) * Math.max(0.6, Math.min(1.4, (sp.speed||1)/2));
   if(o.state === 'flee') maxSwim *= 1.15;
   if(o.state === 'hunt' && (o.energy||0) < 40) maxSwim *= 0.7; // weak when starving
   var spNow = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
@@ -171,8 +171,8 @@ function moveOrg(o,dt){
   if(o.cyst) o.vy += 8 * dt;
 
   // Integrate position
-  o.x += o.vx * dt * 60;
-  o.y += o.vy * dt * 60;
+  o.x += o.vx * dt * 60 * (typeof SPEED_SCALE!=='undefined'?SPEED_SCALE:0.5);
+  o.y += o.vy * dt * 60 * (typeof SPEED_SCALE!=='undefined'?SPEED_SCALE:0.5);
 
   if(typeof clampToPuddle === 'function') clampToPuddle(o);
   else {

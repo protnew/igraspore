@@ -1,225 +1,146 @@
 "use strict";
 
-function buildLangBar() {
-  var lb = document.getElementById('langSelDrop');
-  if(!lb) return;
-  lb.innerHTML = '';
-  document.getElementById('curLangTxt').textContent = langNames[curLang] || curLang;
-  for(var l in LANGS) {
-    var b = document.createElement('div');
-    b.className = 'lang-item' + (curLang === l ? ' act' : '');
-    b.textContent = langNames[l] || LANGS[l];
-    b.setAttribute('data-lang', l);
-    b.onclick = function(ev) {
-      curLang = ev.target.getAttribute('data-lang');
-      buildLangBar();
-      updateMenuTexts();
-      document.getElementById('langSelWrap').blur();
-    };
-    lb.appendChild(b);
-  }
-}
 
-function buildDiff(){
-  var dw=document.getElementById('diffWrap');dw.innerHTML='';
-  var diffs=[['easy',tt('diffE')],['normal',tt('diffN')],['hard',tt('diffH')]];
-  for(var i=0;i<diffs.length;i++){var b=document.createElement('div');b.className='diff'+(difficulty===diffs[i][0]?' act':'');b.textContent=diffs[i][1];b.setAttribute('data-d',diffs[i][0]);
-    b.onclick=function(ev){difficulty=ev.target.getAttribute('data-d');buildDiff();};dw.appendChild(b);}
+function countCat(cat){
+  if(cat==='virus') return (typeof VIRUS_SPECS!=='undefined')?VIRUS_SPECS.length:0;
+  if(cat==='all') return SPECIES_DB.length;
+  var n=0; for(var i=0;i<SPECIES_DB.length;i++){ if(SPECIES_DB[i]&&SPECIES_DB[i].cat===cat) n++; }
+  return n;
 }
-
 function buildCatSel(){
-  var cs=document.getElementById('catSel');cs.innerHTML='';
+  var cs=document.getElementById('catSel'); if(!cs) return; cs.innerHTML='';
+  if(typeof renderPoolBanner==='function') renderPoolBanner();
+  if(typeof renderFoodChain==='function') renderFoodChain();
+  if(typeof selCat==='undefined' || !selCat) selCat='all';
   var cats=[['all',tt('all')],['producer',tt('producer')],['consumer1',tt('consumer1')],['consumer2',tt('consumer2')],['consumer3',tt('consumer3')],['decomposer',tt('decomposer')],['virus',tt('virus')]];
-  for(var i=0;i<cats.length;i++){var b=document.createElement('div');b.className='cb'+(selCat===cats[i][0]?' act':'');b.textContent=cats[i][1];b.setAttribute('data-c',cats[i][0]);
-    b.style.borderLeft='4px solid '+(cats[i][0]==='all'?'#456':CC[cats[i][0]]||'#f44');b.onclick=function(ev){selCat=ev.target.getAttribute('data-c');buildCatSel();buildSpeciesGrid();};cs.appendChild(b);}
-}
-
-function drawSpeciesPreview(canvas,sp,idx){
-  var ctx2=canvas.getContext('2d');
-(function(){
-  var origCRG2 = ctx2.createRadialGradient.bind(ctx2);
-  ctx2.createRadialGradient = function(x0,y0,r0,x1,y1,r1){
-    if(!isFinite(x0))x0=0;if(!isFinite(y0))y0=0;if(!isFinite(r0)||r0<0)r0=0;
-    if(!isFinite(x1))x1=0;if(!isFinite(y1))y1=0;if(!isFinite(r1)||r1<0)r1=1;
-    return origCRG2(x0,y0,r0,x1,y1,r1);
-  };
-})();
-  var W=canvas.width,H=canvas.height;
-  ctx2.clearRect(0,0,W,H);
-  // Water-like background gradient
-  var bg=ctx2.createRadialGradient(W/2,H/2,0,W/2,H/2,W*0.6);
-  bg.addColorStop(0,'rgba(20,50,80,0.6)');
-  bg.addColorStop(1,'rgba(5,15,30,0.8)');
-  ctx2.fillStyle=bg;ctx2.fillRect(0,0,W,H);
-  // Subtle bubbles
-  ctx2.strokeStyle='rgba(150,200,230,0.15)';ctx2.lineWidth=0.5;
-  for(var bi=0;bi<5;bi++){var bx=rng(5,W-5),by=rng(5,H-5);ctx2.beginPath();ctx2.arc(bx,by,rng(1,3),0,6.283);ctx2.stroke();}
-  var sz=Math.min(W,H)*0.35;
-  ctx2.save();ctx2.translate(W/2,H/2);
-  var rgb=hex2rgb(sp.color);
-  var r0=rgb[0],g0=rgb[1],b0=rgb[2];
-  // Body fill with gradient (3D look)
-  var bodyGr=ctx2.createRadialGradient(-sz*0.3,-sz*0.3,0,0,0,sz*1.2);
-  bodyGr.addColorStop(0,shadeRgb(r0,g0,b0,1.3));
-  bodyGr.addColorStop(0.6,sp.color);
-  bodyGr.addColorStop(1,shadeRgb(r0,g0,b0,0.5));
-  ctx2.fillStyle=bodyGr;
-  ctx2.strokeStyle=shadeRgb(r0,g0,b0,0.4);
-  ctx2.lineWidth=1.5;
-  // Draw shape with smooth path
-  var sh=sp.shape;
-  ctx2.beginPath();
-  switch(sh){
-    case'circle':ctx2.arc(0,0,sz,0,6.283);break;
-    case'rod':ctx2.ellipse(0,0,sz,sz*0.45,0,0,6.283);break;
-    case'spiral':for(var i=0;i<40;i++){var t=i/39;var a=t*Math.PI*4;var r=sz*0.85*(1-t*0.3);var x=Math.cos(a)*r,y=Math.sin(a)*r*0.4;if(i===0)ctx2.moveTo(x,y);else ctx2.lineTo(x,y);}break;
-    case'filament':ctx2.rect(-sz*1.5,-sz*0.2,sz*3,sz*0.4);break;
-    case'colony':for(var i=0;i<8;i++){var a=i/8*Math.PI*2;ctx2.moveTo(Math.cos(a)*sz*0.8+sz*0.3,Math.sin(a)*sz*0.8);ctx2.arc(Math.cos(a)*sz*0.8,Math.sin(a)*sz*0.8,sz*0.3,0,6.283);}break;
-    case'slipper':ctx2.ellipse(-sz*0.15,0,sz,sz*0.45,0,0,6.283);break;
-    case'bell':ctx2.moveTo(-sz*0.7,-sz*0.3);ctx2.quadraticCurveTo(0,-sz*1.1,sz*0.7,-sz*0.3);ctx2.quadraticCurveTo(sz*0.5,sz*0.8,0,sz);ctx2.quadraticCurveTo(-sz*0.5,sz*0.8,-sz*0.7,-sz*0.3);break;
-    case'oval':ctx2.ellipse(0,0,sz,sz*0.6,0,0,6.283);break;
-    case'star':for(var i=0;i<12;i++){var a=i/12*Math.PI*2-Math.PI/2;var rr=i%2===0?sz:sz*0.45;var x=Math.cos(a)*rr,y=Math.sin(a)*rr;if(i===0)ctx2.moveTo(x,y);else ctx2.lineTo(x,y);}ctx2.closePath();break;
-    case'irregular':for(var i=0;i<10;i++){var a=i/10*Math.PI*2;var rr=sz*(0.7+0.3*Math.sin(a*3+1+idx*0.1));var x=Math.cos(a)*rr,y=Math.sin(a)*rr;if(i===0)ctx2.moveTo(x,y);else ctx2.lineTo(x,y);}ctx2.closePath();break;
-    default:ctx2.arc(0,0,sz,0,6.283);
+  for(var i=0;i<cats.length;i++){
+    var key=cats[i][0], label=cats[i][1], n=countCat(key);
+    var b=document.createElement('div');
+    b.className='cb'+(selCat===key?' act':'');
+    b.setAttribute('data-c', key);
+    b.innerHTML=label+' <span style="opacity:.55;font-size:10px">('+n+')</span>';
+    b.style.borderLeft='4px solid '+(key==='all'?'#456':(CC[key]||'#f44'));
+    b.style.cursor='pointer';
+    b.onclick=function(ev){
+      var el=ev.currentTarget||ev.target;
+      var c=el.getAttribute('data-c');
+      if(!c && el.parentElement) c=el.parentElement.getAttribute('data-c');
+      if(!c) return;
+      selCat=c; try{window.selCat=c;}catch(e){}
+      buildCatSel();
+      buildSpeciesGrid();
+      var sg=document.getElementById('spGrid'); if(sg) sg.scrollTop=0;
+      if(typeof catRole==='function' && selCat && selCat!=='all' && window.showToast){
+        var tip=catRole(selCat); if(tip) window.showToast(tip, CC[selCat]||'#8cf');
+      }
+    };
+    cs.appendChild(b);
   }
-  ctx2.fill();ctx2.stroke();
-  // Highlight (specular)
-  ctx2.fillStyle='rgba(255,255,255,0.15)';
-  ctx2.beginPath();ctx2.ellipse(-sz*0.3,-sz*0.3,sz*0.3,sz*0.15,-0.4,0,6.283);ctx2.fill();
-  // Internal organelles (textbook style)
-  var b=sp.bio;
-  if(b){
-    // Nucleus — with nucleolus and chromatin dots
-    if(b.nucleus){
-      ctx2.fillStyle='rgba(147,88,160,0.85)';ctx2.beginPath();ctx2.arc(0,0,sz*0.24,0,6.283);ctx2.fill();
-      ctx2.fillStyle='rgba(192,96,192,0.9)';ctx2.beginPath();ctx2.arc(sz*0.05,sz*0.03,sz*0.1,0,6.283);ctx2.fill();
-      // Nuclear membrane
-      ctx2.strokeStyle='rgba(120,60,130,0.6)';ctx2.lineWidth=1;ctx2.beginPath();ctx2.arc(0,0,sz*0.24,0,6.283);ctx2.stroke();
-    }
-    // Macronucleus (ciliates) — bean-shaped
-    if(b.macro){
-      ctx2.fillStyle='rgba(160,80,160,0.8)';ctx2.beginPath();
-      ctx2.ellipse(-sz*0.3,0,sz*0.3,sz*0.18,0,0,6.283);ctx2.fill();
-      ctx2.strokeStyle='rgba(130,60,130,0.5)';ctx2.lineWidth=0.8;ctx2.stroke();
-      // Micronucleus
-      ctx2.fillStyle='rgba(192,112,192,0.9)';ctx2.beginPath();ctx2.arc(sz*0.15,-sz*0.15,sz*0.06,0,6.283);ctx2.fill();
-    }
-    // Chloroplasts — green discs with thylakoid lines
-    if(b.chloro){var cn=4+Math.floor(sz/3);
-      for(var i=0;i<cn;i++){var a=i/cn*Math.PI*2+0.3;
-        var cx2=Math.cos(a)*sz*0.5,cy2=Math.sin(a)*sz*0.42;
-        ctx2.save();ctx2.translate(cx2,cy2);ctx2.rotate(a);
-        var chlGr=ctx2.createRadialGradient(0,0,0,0,0,sz*0.15);
-        chlGr.addColorStop(0,'#4caf4c');chlGr.addColorStop(1,'#1a6a1a');
-        ctx2.fillStyle=chlGr;ctx2.beginPath();ctx2.ellipse(0,0,sz*0.15,sz*0.08,0,0,6.283);ctx2.fill();
-        ctx2.strokeStyle='rgba(20,80,20,0.4)';ctx2.lineWidth=0.5;
-        ctx2.beginPath();ctx2.moveTo(-sz*0.1,0);ctx2.lineTo(sz*0.1,0);ctx2.stroke();
-        ctx2.restore();}}
-    // Mitochondria — red sausage shapes with cristae
-    if(b.mito){for(var i=0;i<3;i++){var a=rng(0,6.28),r=rng(sz*0.2,sz*0.5);
-      ctx2.save();ctx2.translate(Math.cos(a)*r,Math.sin(a)*r);ctx2.rotate(a+rng(0,1));
-      ctx2.fillStyle='rgba(204,68,68,0.7)';
-      ctx2.beginPath();ctx2.ellipse(0,0,sz*0.14,sz*0.05,0,0,6.283);ctx2.fill();
-      ctx2.strokeStyle='rgba(140,30,30,0.5)';ctx2.lineWidth=0.5;
-      for(var ci=0;ci<3;ci++){ctx2.beginPath();ctx2.moveTo(-sz*0.08+ci*sz*0.06,-sz*0.03);ctx2.lineTo(-sz*0.08+ci*sz*0.06,sz*0.03);ctx2.stroke();}
-      ctx2.restore();}}
-        if(b.nucleoid){
-      ctx2.strokeStyle='rgba(140,160,255,0.7)'; ctx2.lineWidth=1.5; ctx2.beginPath();
-      for(var k=0;k<16;k++){
-         var a=k/16*Math.PI*2; var rr=sz*0.35*(0.5+Math.sin(k*134)*0.5);
-         var px=Math.cos(a)*rr, py=Math.sin(a)*rr;
-         if(k===0) ctx2.moveTo(px,py); else ctx2.lineTo(px,py);
-      }
-      ctx2.closePath(); ctx2.stroke();
-    }
-    if(b.thylakoid){
-      ctx2.strokeStyle='rgba(30,120,60,0.4)'; ctx2.lineWidth=1.5;
-      for(var k=1;k<=3;k++){
-         ctx2.beginPath(); ctx2.arc(0, 0, sz*0.6*(k/3), 0, 6.283); ctx2.stroke();
-      }
-    }
-    // Contractile vacuole — star shape
-    if(b.contractile){
-      ctx2.fillStyle='rgba(100,180,255,0.4)';ctx2.strokeStyle='rgba(80,160,240,0.6)';ctx2.lineWidth=1;
-      ctx2.beginPath();
-      for(var j=0;j<10;j++){
-        var a=j/10*Math.PI*2; var rr=(j%2===0)?sz*0.12:sz*0.06;
-        var vx=sz*0.35+Math.cos(a)*rr, vy=-sz*0.15+Math.sin(a)*rr;
-        if(j===0) ctx2.moveTo(vx,vy); else ctx2.lineTo(vx,vy);
-      }
-      ctx2.closePath(); ctx2.fill(); ctx2.stroke();
-    }
-    // Oral groove / cytostome
-    if(b.oral){ctx2.fillStyle='rgba(221,136,68,0.6)';ctx2.beginPath();
-      ctx2.ellipse(sz*0.35,sz*0.2,sz*0.1,sz*0.06,0.3,0,6.283);ctx2.fill();}
-    // Eyespot (stigma) — red dot
-    if(b.eye){ctx2.fillStyle='#ff6600';ctx2.beginPath();ctx2.arc(sz*0.45,-sz*0.05,sz*0.06,0,6.283);ctx2.fill();
-      ctx2.fillStyle='#ffaa00';ctx2.beginPath();ctx2.arc(sz*0.45,-sz*0.05,sz*0.03,0,6.283);ctx2.fill();}
-    // Ribosomes — tiny dots
-    if(b.ribo){ctx2.fillStyle='rgba(220,220,220,0.5)';
-      for(var ri=0;ri<8;ri++){ctx2.beginPath();ctx2.arc(rng(-sz*0.5,sz*0.5),rng(-sz*0.45,sz*0.45),sz*0.025,0,6.283);ctx2.fill();}}
-    // Food vacuoles — yellowish bubbles
-    if(b.vac&&!b.contractile){ctx2.fillStyle='rgba(200,180,80,0.3)';
-      ctx2.beginPath();ctx2.arc(-sz*0.2,sz*0.2,sz*0.08,0,6.283);ctx2.fill();}
-    // Trichocysts — small lines near surface
-    if(b.trich){ctx2.strokeStyle='rgba(255,200,200,0.4)';ctx2.lineWidth=0.5;
-      for(var ti=0;ti<8;ti++){var ta=ti/8*Math.PI*2;ctx2.beginPath();ctx2.moveTo(Math.cos(ta)*sz*0.85,Math.sin(ta)*sz*0.85);ctx2.lineTo(Math.cos(ta)*sz*0.98,Math.sin(ta)*sz*0.98);ctx2.stroke();}}
-  }
-  // Cilia — hair-like structures around cell
-  if(b&&b.cilia){ctx2.strokeStyle=shadeRgb(r0,g0,b0,0.5);ctx2.lineWidth=0.8;
-    var cn2=Math.max(8,Math.floor(sz*1.5));
-    for(var i=0;i<cn2;i++){var a=i/cn2*Math.PI*2;
-      var wave=Math.sin(i*0.5)*sz*0.05;
-      ctx2.beginPath();ctx2.moveTo(Math.cos(a)*sz*0.92,Math.sin(a)*sz*0.92);
-      ctx2.lineTo(Math.cos(a)*(sz*1.15+wave),Math.sin(a)*(sz*1.15+wave));ctx2.stroke();}}
-  // Flagella — whip-like tail
-  if(b&&b.flag){ctx2.strokeStyle=shadeRgb(r0,g0,b0,0.6);ctx2.lineWidth=1.2;
-    var fn2=b.eye?1:2;
-    for(var fi=0;fi<fn2;fi++){
-      var fa=(fi-(fn2-1)/2)*sz*0.3;
-      ctx2.beginPath();ctx2.moveTo(fa,sz*0.5);
-      for(var w=0;w<8;w++){var t=w/7;var wx=fa+Math.sin(w*0.9+idx)*sz*0.18*(1-t*0.5);var wy=sz*0.5+t*sz*1.3;ctx2.lineTo(wx,wy);}
-      ctx2.stroke();}}
-  // Pseudopodia — blobby extensions
-  if(b&&b.pseudo){ctx2.fillStyle=bodyGr;ctx2.strokeStyle=shadeRgb(r0,g0,b0,0.4);ctx2.lineWidth=1;
-    for(var i=0;i<5;i++){var a=i/5*Math.PI*2+0.3;
-      ctx2.beginPath();ctx2.moveTo(0,0);
-      var endX=Math.cos(a)*sz*1.3,endY=Math.sin(a)*sz*1.3;
-      var midX=Math.cos(a+0.5)*sz*0.7,midY=Math.sin(a+0.5)*sz*0.7;
-      ctx2.quadraticCurveTo(midX,midY,endX,endY);
-      ctx2.quadraticCurveTo(Math.cos(a-0.3)*sz*0.8,Math.sin(a-0.3)*sz*0.8,0,0);
-      ctx2.fill();}}
-  ctx2.restore();
-  // Border
-  ctx2.strokeStyle='rgba(68,170,255,0.2)';ctx2.lineWidth=1;
-  ctx2.strokeRect(0.5,0.5,W-1,H-1);
 }
 
 function buildSpeciesGrid(){
-  var sg=document.getElementById('spGrid');sg.innerHTML='';
+  var sg=document.getElementById('spGrid'); if(!sg) return; sg.innerHTML='';
+  if(typeof selCat==='undefined' || !selCat) selCat='all';
+  // Status line: what filter is active
+  var shownN = (selCat==='virus') ? ((typeof VIRUS_SPECS!=='undefined')?VIRUS_SPECS.length:0)
+              : (selCat==='all' ? SPECIES_DB.length : countCat(selCat));
+  var st=document.createElement('div');
+  st.id='spFilterStatus';
+  st.style.cssText='width:100%;padding:8px 10px;margin:0 0 8px 0;font-size:13px;font-weight:700;color:#dff;background:linear-gradient(90deg,rgba(0,80,40,0.75),rgba(0,40,70,0.75));border-radius:8px;border:2px solid #4c8;box-shadow:0 0 12px rgba(60,180,100,0.35)';
+  var catLabel = (selCat==='all') ? tt('all') : (typeof catName==='function'?catName(selCat):selCat);
+  var colN = 0;
+  if(selCat==='all'||selCat==='producer'){
+    for(var ci=0;ci<SPECIES_DB.length;ci++){
+      var sx=SPECIES_DB[ci]; if(sx&&(sx.shape==='colony'||(sx.bio&&sx.bio.colony))&&(selCat==='all'||sx.cat===selCat)) colN++;
+    }
+  }
+  st.innerHTML = 'Фильтр: <span style="color:#8f8">'+catLabel+'</span> · показано <span style="color:#ff8">'+shownN+'</span> видов'
+    +(colN?(' · <span style="color:#9f6">колоний: '+colN+'</span> (вверху списка)'):'')
+    +' <span style="opacity:.6;font-weight:400;font-size:11px">· нажми другую кнопку чтобы сменить</span>';
+  sg.appendChild(st);
   if(selCat==='virus'){
     for(var vi=0;vi<VIRUS_SPECS.length;vi++){
       var vs=VIRUS_SPECS[vi];
       var c=document.createElement('div');c.className='sc'+(selSpecies===VIRUS_ID_START+vi?' sel':'');c.setAttribute('data-si',VIRUS_ID_START+vi);
-      c.innerHTML='<div class="scN" style="color:'+vs.color+'">'+vs.name+'</div><div class="scL">'+vs.size+'\u03bcm</div><div class="scC">\u2620 \u0412\u0438\u0440\u0443\u0441</div><div class="scP">-</div>';
+      var vnum=(typeof vs.num==='number')?vs.num:(SPECIES_DB.length+1+vi);c.innerHTML='<div class="scN" style="color:'+vs.color+'"><span style="opacity:.7;font-size:10px;margin-right:4px">#'+vnum+'</span>'+vs.name+'</div><div class="scL">'+vs.size+'\u03bcm</div><div class="scC">\u2620 \u0412\u0438\u0440\u0443\u0441</div><div class="scP">-</div>';
       c.onclick=function(ev){selSpecies=parseInt(ev.currentTarget.getAttribute('data-si'));buildSpeciesGrid();};
       sg.appendChild(c);
     }
     return;
   }
+  // Build index list, colonies first so they are visible without scrolling
+  var idxs=[];
   for(var i=0;i<SPECIES_DB.length;i++){
-    var sp=SPECIES_DB[i];if(selCat!=='all'&&sp.cat!==selCat)continue;
+    var sp0=SPECIES_DB[i]; if(!sp0) continue;
+    if(selCat!=='all'&&sp0.cat!==selCat) continue;
+    idxs.push(i);
+  }
+  idxs.sort(function(a,b){
+    var ca=(SPECIES_DB[a].shape==='colony'||(SPECIES_DB[a].bio&&SPECIES_DB[a].bio.colony))?0:1;
+    var cb=(SPECIES_DB[b].shape==='colony'||(SPECIES_DB[b].bio&&SPECIES_DB[b].bio.colony))?0:1;
+    if(ca!==cb) return ca-cb;
+    return a-b;
+  });
+  for(var ii=0;ii<idxs.length;ii++){
+    var i=idxs[ii];
+    var sp=SPECIES_DB[i];
     var c=document.createElement('div');c.className='sc'+(selSpecies===i?' sel':'');c.setAttribute('data-si',i);
     var pop=speciesPop[i]?speciesPop[i].alive:0;
-    c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas><div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2">'+sp.name+'</div><div class="scL">'+sp.size+'\u03bcm &middot; '+sp.shape+'</div><div class="scC">'+sp.locomotion+'</div><div class="scP">'+pop+' alive</div>';
-    var pcv=c.querySelector('.scPrev');drawSpeciesPreview(pcv,sp,i);
+    var eatInfo='';
+    if(sp.cat==='producer'){ eatInfo='<span style="color:#8f8">\u{1F31E} ест свет</span>'; }
+    else if(sp.cat==='decomposer'){ eatInfo='<span style="color:#b96">\u{1F9F9} ест мёртвое</span>'; }
+    else {
+      var eatsCats = FOOD[sp.cat]||[];
+      var parts=[];
+      for(var ec=0;ec<eatsCats.length;ec++){
+        var cn = (typeof catName==='function')?catName(eatsCats[ec]):eatsCats[ec];
+        parts.push((typeof roleColor==='function'?'<span style="color:'+roleColor(eatsCats[ec])+'">':'<span>')+cn+'</span>');
+      }
+      eatInfo='<span style="font-size:8.5px">\u{1F5D1} ест: '+parts.join(', ')+'</span>';
+    }
+    var roleShort='';
+    if(typeof catName==='function'){ roleShort=catName(sp.cat); }
+    var spNum=(typeof sp.num==='number')?sp.num:(i+1);
+    var isCol=(sp.shape==='colony'||(sp.bio&&sp.bio.colony));
+    var colonyTag=isCol?'':'';
+    var colonyBadge=isCol?'<div style="background:#2a6;color:#efc;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;margin:2px auto;display:inline-block;letter-spacing:0.5px">⬡ КОЛОНИЯ · куча клеток</div>':'';
+    if(isCol){c.style.boxShadow='inset 0 0 0 3px #5d5,0 0 14px rgba(80,200,100,0.45)';c.style.background='rgba(10,50,20,0.75)';c.style.order='-1';}
+    c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+colonyBadge+
+      '<div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+
+      '<div class="scL">'+(Math.round(sp.size*10)/10)+'\u03bcm &middot; '+sp.shape+colonyTag+'</div>'+
+      '<div class="scC">'+sp.locomotion+'</div>'+
+      '<div style="font-size:8.5px;opacity:.75;margin-top:1px">'+roleShort+'</div>'+
+      '<div style="font-size:8.5px;margin-top:1px;line-height:1.2">'+eatInfo+'</div>'+
+      '<div class="scP">'+pop+' alive</div>';
+    var pcv=c.querySelector('.scPrev'); try{ if(pcv&&typeof drawSpeciesPreview==='function') drawSpeciesPreview(pcv,sp,i); }catch(ePrev){ if(pcv){ var cxp=pcv.getContext('2d'); if(cxp){ cxp.fillStyle=sp.color||'#4c8'; cxp.beginPath(); cxp.arc(60,60,28,0,6.28); cxp.fill(); } } }
     c.onclick=function(ev){selSpecies=parseInt(ev.currentTarget.getAttribute('data-si'));buildSpeciesGrid();};
     sg.appendChild(c);
+  }
+  if(document.querySelectorAll('#spGrid .sc').length===0){
+    var empty=document.createElement('div');
+    empty.style.cssText='padding:12px;color:#f89;font-size:12px';
+    empty.textContent='Нет видов в категории «'+(typeof catName==='function'?catName(selCat):selCat)+'». Нажмите «Все».';
+    sg.appendChild(empty);
   }
 }
 
 function updateMenuTexts(){
-  document.getElementById('menuSub').textContent=tt('menuSub');
+  (function(){
+    var poolN = 0;
+    try {
+      var dens = (typeof settings!=='undefined' && settings.density) ? settings.density : 1;
+      if(typeof INIT_N==='object'){
+        for(var k in INIT_N){ if(INIT_N.hasOwnProperty(k)) poolN += Math.round((INIT_N[k]||0)*dens); }
+      }
+      // difficulty can scale spawn
+      if(typeof DIFF!=='undefined' && typeof difficulty!=='undefined' && DIFF[difficulty] && DIFF[difficulty].spawn)
+        poolN = Math.round(poolN * DIFF[difficulty].spawn);
+    } catch(e){ poolN = 1600; }
+    if(!poolN) poolN = 1600;
+    var el = document.getElementById('menuSub');
+    if(el) el.innerHTML = tt('menuSub') +
+      '<br><span style="color:#8cf;font-size:11px">\u{1F30A} В бассейне будет: <b style="color:#fff">~'+poolN+'</b> организмов · '+SPECIES_DB.length+' видов</span>';
+  })();
   document.getElementById('startBtn').textContent=tt('start');
   document.getElementById('helpBtn').textContent=tt('help');
   document.getElementById('setBtn2').textContent=tt('set');
@@ -235,159 +156,18 @@ function updateMenuTexts(){
     :'<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>F</kbd> Free cam</span><span><kbd>V</kbd> Follow</span><span><kbd>E</kbd> Eat</span><span><kbd>Q</kbd> Divide</span><span><kbd>Tab</kbd> Auto</span><span><kbd>B</kbd> Wiki</span><span><kbd>P</kbd> Pause</span>';
   document.getElementById('keyHint').innerHTML=hk;
   document.getElementById('helpBody').innerHTML=curLang==='ru'?
-    '<p><b style="color:#4df">\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435:</b> WASD \u2014 \u043f\u043b\u0430\u0432\u0430\u043d\u0438\u0435. \u0412\u0432\u0435\u0440\u0445 = \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u044c, \u0432\u043d\u0438\u0437 = \u0434\u043d\u043e. \u041b\u041a\u041c \u2014 \u043f\u043b\u044b\u0442\u044c \u043a \u043a\u0443\u0440\u0441\u043e\u0440\u0443.</p><p><b style="color:#4df">\u041a\u0430\u043c\u0435\u0440\u0430:</b> F \u2014 \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u044b\u0439 \u043f\u043e\u043b\u0451\u0442. V \u2014 \u0432\u0435\u0440\u043d\u0443\u0442\u044c\u0441\u044f \u043a \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043c\u0443.</p><p><b style="color:#4df">\u0421\u043a\u043e\u0440\u043e\u0441\u0442\u044c:</b> \u041e\u0442 0.1x \u0434\u043e 100x. 0.1x \u2014 \u0434\u043b\u044f \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u0438\u044f \u0434\u0435\u0442\u0430\u043b\u0435\u0439 \u043a\u043b\u0435\u0442\u043a\u0438.</p><p><b style="color:#4df">\u0412\u0438\u0440\u0443\u0441\u044b:</b> \u0411\u0430\u043a\u0442\u0435\u0440\u0438\u043e\u0444\u0430\u0433\u0438 \u0437\u0430\u0440\u0430\u0436\u0430\u044e\u0442 \u0431\u0430\u043a\u0442\u0435\u0440\u0438\u0438 \u0438 \u0432\u044b\u0437\u044b\u0432\u0430\u044e\u0442 \u043b\u0438\u0437\u0438\u0441 (\u0440\u0430\u0437\u0440\u044b\u0432 \u043a\u043b\u0435\u0442\u043a\u0438).</p><p><b style="color:#4df">\u0414\u0435\u043b\u0435\u043d\u0438\u0435:</b> \u041f\u0440\u0438 \u0434\u043e\u0441\u0442\u0430\u0442\u043e\u0447\u043d\u043e\u0439 \u044d\u043d\u0435\u0440\u0433\u0438\u0438 \u043a\u043b\u0435\u0442\u043a\u0430 \u0434\u0435\u043b\u0438\u0442\u0441\u044f \u043d\u0430\u0434\u0432\u043e\u0435. Q \u2014 \u0432\u0440\u0443\u0447\u043d\u0443\u044e.</p>'
-    :'<p><b style="color:#4df">Controls:</b> WASD to swim. Up = surface, down = sediment. Hold LMB to swim toward cursor.</p><p><b style="color:#4df">Camera:</b> F = free camera. V = return to organism.</p><p><b style="color:#4df">Speed:</b> 0.1x to 100x. 0.1x for observing cell details.</p><p><b style="color:#4df">Viruses:</b> Bacteriophages infect bacteria and cause lysis (cell rupture).</p><p><b style="color:#4df">Division:</b> With enough energy, cells divide in two. Q = manual.</p>';
+    '<p><b style="color:#4df">Управление:</b> WASD — плавание. Вверх = поверхность, вниз = дно. ЛКМ — плыть к курсору. Пробел — укус.</p>'+
+    '<p><b style="color:#8f8">Кто кого ест (просто):</b></p>'+
+    '<p style="line-height:1.45">🌱 <b>Зелёные</b> — не охотятся. Кормятся светом (как растения). Это основной корм пруда.<br>'+
+    '🔵 <b>Мелкие едоки</b> — бактерии. Грызут зелёных.<br>'+
+    '🟠 <b>Средние едоки</b> — инфузории. Фильтруют воду: затягивают бактерий и зелёных. Не прыгают на гигантов.<br>'+
+    '🟣 <b>Крупные охотники</b> — едят зелёных, бактерий и средних. Можно кусать и чуть более крупных (опасно). Без еды живут долго.</p>'+
+    '<p><b style="color:#4df">Камера:</b> F — свободный полёт. V — вернуться к клетке. Колесо — зум.</p>'+
+    '<p><b style="color:#4df">Деление:</b> Наелся и вырос — делишься на двоих. Q — вручную.</p>'
+    :'<p><b style="color:#4df">Controls:</b> WASD swim. Space = bite. LMB = swim to cursor.</p>'+
+    '<p><b style="color:#8f8">Who eats whom:</b></p>'+
+    '<p>🌱 Greens eat light. 🔵 Small eaters eat greens. 🟠 Mid eaters filter bacteria+greens. 🟣 Big hunters eat greens, bacteria and mid-eaters — and can bite slightly larger prey.</p>'+
+    '<p><b style="color:#4df">Camera:</b> F free cam, V back to cell. Wheel = zoom.</p>'+
+    '<p><b style="color:#4df">Division:</b> Eat, grow, split. Q = manual.</p>';
   buildDiff();buildCatSel();buildSpeciesGrid();
 }
-
-function showDeadScreen(){
-  var ds=document.getElementById('deadStats');var playSec=Math.round((Date.now()-gameStats.startTime)/1000);
-  var html='';
-  
-  // Pond Stats
-  var globalBorn = 0; var globalAlive = orgs.length;
-  for(var i=0;i<SPECIES_DB.length;i++) globalBorn += (speciesPop[i] ? speciesPop[i].born : 0);
-  var globalDead = globalBorn - globalAlive;
-  html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(curLang==='ru'?'Статистика Водоёма':'Pond Statistics')+'</div>';
-  html+='<table class="stbl" style="margin-bottom:10px">';
-  html+='<tr><td class="lbl">'+tt('days')+'</td><td class="val">'+totalDays+'</td></tr>';
-  html+='<tr><td class="lbl">'+(curLang==='ru'?'Живых':'Alive')+'</td><td class="val">'+globalAlive+'</td></tr>';
-  html+='<tr><td class="lbl">'+(curLang==='ru'?'Родилось':'Born')+'</td><td class="val">'+globalBorn+'</td></tr>';
-  html+='<tr><td class="lbl">'+(curLang==='ru'?'Погибло':'Dead')+'</td><td class="val">'+globalDead+'</td></tr>';
-  html+='</table>';
-
-  // Species Stats
-  if(player && player.sp) {
-    var spData = speciesPop[player.sp.id];
-    html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(curLang==='ru'?'Ваш вид: ':'Your species: ')+player.sp.name+'</div>';
-    html+='<table class="stbl" style="margin-bottom:10px">';
-    html+='<tr><td class="lbl">'+(curLang==='ru'?'Сейчас живы':'Currently alive')+'</td><td class="val">'+spData.alive+'</td></tr>';
-    html+='<tr><td class="lbl">'+(curLang==='ru'?'Всего родилось':'Total born')+'</td><td class="val">'+spData.born+'</td></tr>';
-    html+='</table>';
-  }
-
-  // Personal Stats
-  html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(curLang==='ru'?'Ваша клетка':'Your cell')+'</div>';
-  html+='<table class="stbl">';
-  html+='<tr><td class="lbl">'+tt('gameTime')+'</td><td class="val">'+playSec+'s</td></tr>';
-  html+='<tr><td class="lbl">'+tt('offspring')+'</td><td class="val">'+(player?player.offspring:0)+'</td></tr>';
-  html+='<tr><td class="lbl">'+tt('eaten')+'</td><td class="val">'+(player?player.eaten:0)+'</td></tr>';
-  html+='</table>';
-  
-  // Causes with Tips
-  var TIPS_RU = [
-    "Совет: Чаще питайтесь, держитесь ближе к скоплениям еды или ускорьте свой вид.",
-    "Совет: Избегайте хищников, используйте Режим везения для бегства.",
-    "Совет: Следите за термометром. Мутируйте температурный диапазон.",
-    "Совет: Старость неизбежна. Важно успеть разделиться до гибели.",
-    "Совет: Лизис (разрыв мембраны) вызывает вирус. Держитесь от них подальше."
-  ];
-  var TIPS_EN = [
-    "Tip: Eat more often, stay near food clusters, or mutate speed.",
-    "Tip: Avoid predators, use Grace Period to run away.",
-    "Tip: Watch the thermometer. Mutate your temp range.",
-    "Tip: Old age is inevitable. Divide before you die.",
-    "Tip: Lysis is caused by viruses. Stay away from them."
-  ];
-  var tips = curLang==='ru' ? TIPS_RU : TIPS_EN;
-
-  html+='<div style="margin-top:12px;color:#4af;font-size:12px;text-align:center;font-weight:bold;">'+tt('dCauses')+' (Global)</div>';
-  html+='<table class="stbl" style="margin-bottom:10px">';
-  for(var d=0;d<5;d++){
-    var dl=(curLang==='ru'?DLAB_RU:DLAB_EN)[d];
-    if(stats.deathCauses[d] > 0 || d===0) {
-      html+='<tr><td class="lbl" style="color:#faa">'+dl+'</td><td class="val" style="color:#fff">'+stats.deathCauses[d]+'</td></tr>';
-      html+='<tr><td colspan="2" style="font-size:10px; color:#aaa; padding-bottom:6px; font-style:italic;">'+tips[d]+'</td></tr>';
-    }
-  }
-  html+='</table>';
-  
-  ds.innerHTML=html;
-  document.getElementById('deadT').textContent=tt('dead');document.getElementById('deadO').className='ov show';
-}
-
-
-function toggleRenderMode(el){
-  settings.renderMode = settings.renderMode==='realistic' ? 'cartoon' : 'realistic';
-  el.className='tg'+(settings.renderMode==='realistic'?' on':'');
-  var lbl=document.getElementById('rmodeLbl');
-  if(lbl) lbl.innerHTML = settings.renderMode==='realistic' ? '🔬 Realistic' : '🎨 Cartoon';
-  // Apply visual changes
-  applyRenderMode();
-}
-function applyRenderMode(){
-  if(settings.renderMode==='realistic'){
-    // Realistic: darker, deeper colors, less saturation, more particles
-    settings.particles=true; settings.bubbles=true; settings.vignette=true;
-    settings.lightMul=1.2;
-  } else {
-    // Cartoon: brighter, more saturated, simpler
-    settings.lightMul=1.0;
-  }
-}
-
-function buildSettings(){
-  var sb=document.getElementById('setBody');
-  var opts=[['particles',tt('particles')],['bubbles',tt('bubbles')],['currents',tt('currents')],['vignette',tt('vignette')],['healthBars',tt('healthBars')],['shadows',tt('shadows')]];
-  var html='';
-  for(var i=0;i<opts.length;i++)html+='<div class="sr"><span>'+opts[i][1]+'</span><div class="tg'+(settings[opts[i][0]]?' on':'')+'" data-s="'+opts[i][0]+'" onclick="toggleSet(this)"></div></div>';
-  // Render mode toggle: Realistic vs Cartoon
-  html+='<div class="sr"><span>'+(window._t_renderMode||'Camera Mode')+': <b id="rmodeLbl">'+(settings.renderMode==='realistic'?'🔬 Realistic':'🎨 Cartoon')+'</b></span><div class="tg'+(settings.renderMode==='realistic'?' on':'')+'" id="rmodeTg" onclick="toggleRenderMode(this)"></div></div>';
-  // Sliders
-  html+='<div class="slider-row"><span>'+tt('density')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.density+'" oninput="settings.density=parseFloat(this.value)" /><span class="slider-val">'+settings.density.toFixed(1)+'</span></div>';
-  html+='<div class="slider-row"><span>'+tt('lightInt')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.lightMul+'" oninput="settings.lightMul=parseFloat(this.value)" /><span class="slider-val">'+settings.lightMul.toFixed(1)+'</span></div>';
-  html+='<div class="slider-row"><span>'+tt('virusRate')+'</span><input type="range" min="0" max="2" step="0.1" value="'+settings.virusRate+'" oninput="settings.virusRate=parseFloat(this.value)" /><span class="slider-val">'+settings.virusRate.toFixed(1)+'</span></div>';
-  sb.innerHTML=html;
-}
-
-function toggleSet(el){var k=el.getAttribute('data-s');settings[k]=!settings[k];el.className='tg'+(settings[k]?' on':'');}
-
-function buildWiki(filter){
-  var wc=document.getElementById('wikiContent');var html='';
-  var search=(filter||'').toLowerCase();
-  var cats=[['producer',tt('producer')],['consumer1',tt('consumer1')],['consumer2',tt('consumer2')],['consumer3',tt('consumer3')],['decomposer',tt('decomposer')],['virus',tt('virus')]];
-  for(var ci=0;ci<cats.length;ci++){
-    var cat=cats[ci][0],catName=cats[ci][1];
-    if(cat==='virus'){
-      var hasVirus=false;
-      for(var vi=0;vi<VIRUS_SPECS.length;vi++){var vs=VIRUS_SPECS[vi];
-        if(search&&vs.name.toLowerCase().indexOf(search)<0)continue;
-        if(!hasVirus){html+='<div class="wiki-cat" style="color:'+CC.virus+'">'+catName+'</div>';hasVirus=true;}
-        html+='<div class="wiki-entry"><b style="color:'+vs.color+'">'+vs.name+'</b><div class="wl">\u0420\u0430\u0437\u043c\u0435\u0440: '+vs.size+'\u03bcm</div>'+
-          '<div class="wf">'+(curLang==='ru'?'\u0411\u0430\u043a\u0442\u0435\u0440\u0438\u043e\u0444\u0430\u0433. \u0417\u0430\u0440\u0430\u0436\u0430\u0435\u0442 \u0431\u0430\u043a\u0442\u0435\u0440\u0438\u0438, \u0432\u044b\u0437\u044b\u0432\u0430\u0435\u0442 \u043b\u0438\u0437\u0438\u0441 \u0438 \u0432\u044b\u043f\u0443\u0441\u043a\u0430\u0435\u0442 \u0434\u043e 8 \u043d\u043e\u0432\u044b\u0445 \u0447\u0430\u0441\u0442\u0438\u0446.':'Bacteriophage. Infects bacteria, causes lysis, releases up to 8 new virions.')+'</div></div>';
-      }
-      continue;
-    }
-    var pool=SPECIES_DB.filter(function(s){return s.cat===cat;});
-    if(pool.length===0)continue;
-    if(search){
-      pool=pool.filter(function(s){return s.name.toLowerCase().indexOf(search)>=0;});
-      if(pool.length===0)continue;
-    }
-    html+='<div class="wiki-cat" style="color:'+CC[cat]+'">'+catName+' ('+pool.length+')</div>';
-    for(var si=0;si<pool.length;si++){
-      var sp=pool[si];var w=getWikiEntry(sp.id);
-      var organs=[];
-      if(sp.bio.chloro)organs.push(curLang==='ru'?'\u0445\u043b\u043e\u0440\u043e\u043f\u043b\u0430\u0441\u0442\u044b':'chloroplasts');
-      if(sp.bio.nucleus)organs.push(curLang==='ru'?'\u044f\u0434\u0440\u043e':'nucleus');
-      if(sp.bio.macro)organs.push(curLang==='ru'?'\u043c\u0430\u043a\u0440\u043e/\u043c\u0438\u043a\u0440\u043e\u043d\u0443\u043a\u043b\u0435\u0443\u0441':'macro/micronucleus');
-      if(sp.bio.cilia)organs.push(curLang==='ru'?'\u0440\u0435\u0441\u043d\u0438\u0447\u043a\u0438':'cilia');
-      if(sp.bio.flag)organs.push(curLang==='ru'?'\u0436\u0433\u0443\u0442\u0438\u043a':'flagella');
-      if(sp.bio.pseudo)organs.push(curLang==='ru'?'\u043f\u0441\u0435\u0432\u0434\u043e\u043f\u043e\u0434\u0438\u0438':'pseudopodia');
-      if(sp.bio.mito)organs.push(curLang==='ru'?'\u043c\u0438\u0442\u043e\u0445\u043e\u043d\u0434\u0440\u0438\u0438':'mitochondria');
-      if(sp.bio.golgi)organs.push(curLang==='ru'?'\u0433\u043e\u043b\u044c\u0434\u0436\u0438':'Golgi');
-      if(sp.bio.trich)organs.push(curLang==='ru'?'\u0442\u0440\u0438\u0445\u043e\u0446\u0438\u0441\u0442\u044b':'trichocysts');
-      if(sp.bio.contractile)organs.push(curLang==='ru'?'\u0441\u043e\u043a\u0440. \u0432\u0430\u043a\u0443\u043e\u043b\u044c':'contractile vacuole');
-      html+='<div class="wiki-entry"><b style="color:'+sp.color+'">'+sp.name+'</b>'+
-        '<div class="wl">'+sp.size+'\u03bcm \u00b7 '+sp.speed+'\u03bcm/s \u00b7 '+sp.locomotion+'</div>'+
-        '<div class="wf"><b>'+(curLang==='ru'?'\u0414\u0432\u0438\u0436\u0435\u043d\u0438\u0435':'Locomotion')+':</b> '+w.loc+
-        ' \u00b7 <b>'+(curLang==='ru'?'\u0414\u0435\u043b\u0435\u043d\u0438\u0435':'Division')+':</b> '+w.div+
-        ' \u00b7 <b>'+(curLang==='ru'?'\u041f\u0438\u0449\u0430':'Food')+':</b> '+w.food+
-        ' \u00b7 <b>'+(curLang==='ru'?'\u0412\u0440\u0430\u0433\u0438':'Predators')+':</b> '+w.pred+'</div>'+
-        (organs.length?'<div style="color:#678;font-size:9px;margin-top:2px"><b>'+(curLang==='ru'?'\u041e\u0440\u0433\u0430\u043d\u0435\u043b\u043b\u044b':'Organelles')+':</b> '+organs.join(', ')+'</div>':'')+
-        '</div>';
-    }
-  }
-  wc.innerHTML=html;
-}
-

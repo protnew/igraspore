@@ -40,12 +40,23 @@ function updateHUD(){
   var h=document.getElementById('hud');h.style.display='block';
   var eRatio=clamp(player.energy/100,0,1);
   var eColor = eRatio>0.6?'#4f4':eRatio>0.3?'#ff4':'#f44';
+  // 8) Запах еды — понятная полоска для новичка
+  var scent = (typeof foodScentStrength==='function') ? foodScentStrength(player) : 0;
+  var sColor = scent>0.55?'#4f4':scent>0.25?'#fc4':'#678';
+  var sLabel = curLang==='ru' ? 'Запах еды' : 'Food scent';
+  var cover = player._lilyCover ? (curLang==='ru'?' · укрытие':' · cover') : '';
+  var cyst = player.cyst ? (curLang==='ru'?' · ЦИСТА':' · CYST') : '';
+  var role = (typeof catName==='function') ? catName(player.sp.cat) : '';
   // SIMPLE CLEAN HUD: only essential stats
   h.innerHTML = 
-    '<div style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:4px;">'+player.sp.name+'</div>'+
-    '<div style="font-size:12px;color:#89f;margin-bottom:8px;">Gen '+player.generation+' \u00b7 '+player.size.toFixed(1)+'\u03bcm</div>'+
-    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:18px;overflow:hidden;margin-bottom:6px;">'+
+    '<div style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:2px;">'+player.sp.name+'</div>'+
+    '<div style="font-size:12px;color:#89f;margin-bottom:6px;">'+role+' · Gen '+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst+'</div>'+
+    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:18px;overflow:hidden;margin-bottom:4px;">'+
       '<div style="width:'+(eRatio*100)+'%;background:'+eColor+';height:100%;transition:width .3s;"></div>'+
+    '</div>'+
+    '<div style="font-size:11px;color:#9ab;margin:0 0 2px 0">'+sLabel+'</div>'+
+    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:12px;overflow:hidden;margin-bottom:6px;">'+
+      '<div style="width:'+(scent*100)+'%;background:'+sColor+';height:100%;transition:width .2s;"></div>'+
     '</div>'+
     '<div style="font-size:13px;line-height:1.6;">'+
       '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span style="color:#fff;font-weight:bold;">'+Math.max(0,Math.round(player.energy))+'/100</span><br>'+
@@ -102,7 +113,7 @@ function updateLegend(){
   var items=[
     ['#2c2','Водоросли'],
     ['#4af','Бактерии'],
-    ['#f80','Хищники'],
+    ['#dd44cc','Крупные охотники'],
     ['#c4f','Крупные'],
     ['#a86','Разлагатели'],
     ['#f44','Вирусы']

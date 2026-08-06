@@ -103,8 +103,13 @@ function initWorld(){
   globalCO2 = 150; globalO2 = 100;
   gameStats={startTime:Date.now(),maxPop:0,maxPlayerSize:0,evoLvl:0};
   for(var i=0;i<SPECIES_DB.length;i++)speciesPop[i]={alive:0,born:0,deaths:[0,0,0,0,0]};
+  // v2: spawn initial viruses
+  for(var vi=0;vi<Math.max(3,Math.round(5*(DIFF[difficulty]||{}).virus||0.4));vi++){
+    if(typeof spawnVirus==='function'){try{spawnVirus();}catch(e){}
+    } else { viruses.push({x:rng(-300,300),y:rng(50,PD*0.6),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),sp:VIRUS_SPECS[0]||{name:'Phage',color:'#f44',shape:'phage',size:4},life:300,infected:null}); }
+  }
   for(var cat in INIT_N){
-    var pool=SPECIES_DB.filter(function(s){return s.cat===cat && !(s.flags&&s.flags.noRandomSpawn) && (s.size||1)<12;});
+    var pool=SPECIES_DB.filter(function(s){return s.cat===cat && !(s.flags&&s.flags.noRandomSpawn) && (s.size||1)<12 && s.shape!=='colony' && !(s.bio&&s.bio.colony);}); // v2: no colonies at start (no green blob)
     // Pick 1 to 3 distinct species from this category to populate initially
     var selectedSpecies = [];
     for(var k=0; k<Math.min(pool.length, 3); k++) {
@@ -134,7 +139,7 @@ function initWorld(){
        }
     }
   }
-  nutrientClouds=[];for(var i=0;i<15;i++){var d=rng(PD*0.4,PD-20),hw=halfW(d)-20;nutrientClouds.push({x:rng(-hw,hw),y:d,r:rng(60,150),intensity:rng(0.4,0.9),vx:rng(-0.08,0.08),vy:rng(-0.02,0.02)});}
+  nutrientClouds=[];for(var i=0;i<15;i++){var d=rng(PD*0.4,PD-20),hw=halfW(d)-20;nutrientClouds.push({x:rng(-hw,hw),y:d,r:rng(28,70),intensity:rng(0.35,0.7),vx:rng(-0.08,0.08),vy:rng(-0.02,0.02),cells:14+((Math.random()*10)|0)});}
   shoreDecor=[];
   // Shore vegetation: SCATTERED clusters (not solid wall), varying depth/size
   // Each cluster has 2-5 plants grouped naturally with gaps between clusters
@@ -192,7 +197,7 @@ function initWorld(){
       hasShadow: false
     });
   }
-  sedimentClumps=[];for(var i=0;i<25;i++){var hw=halfW(PD)-15;sedimentClumps.push({x:rng(-hw,hw),y:PD-rng(0,8),w:rng(15,40),h:rng(4,10),rot:rng(-0.3,0.3)});}
+  window.sedimentClumps=[];for(var i=0;i<25;i++){var hw=halfW(PD)-15;window.sedimentClumps.push({x:rng(-hw,hw),y:PD-rng(0,8),w:rng(15,40),h:rng(4,10),rot:rng(-0.3,0.3)});}
   sunRays=[];for(var i=0;i<12;i++)sunRays.push({x:rng(-PW*0.8,PW*0.8),w:rng(40,100),angle:rng(-0.15,0.15)});
   window.hydroVents = [];
   for(var i=0; i<4; i++) {
@@ -254,17 +259,24 @@ function clampToPuddle(o){
   if(o.y < 1){ o.y = 1; if(o.vy<0) o.vy = -Math.abs(o.vy)*0.3; } // NEVER above surface
   if(o.y < 1){ o.y = 1; if(o.vy<0) o.vy*=-0.3; } /*SURFACE_HARD_CLAMP*/
   if(o.y > PD-8){ o.y = PD-8; if(o.vy>0) o.vy = -o.vy*0.3; }
-  // Lily pad collision: bounce off pads near surface
-  if(o.y < 100 && window._lilyPads && o.y > 0){
+  // Lily pad: small orgs get COVER (укрытие), large still bounce lightly
+  o._lilyCover = false;
+  if(o.y < 120 && window._lilyPads && o.y > -5){
     for(var li=0; li<window._lilyPads.length; li++){
       var lp=window._lilyPads[li];
-      var dx=o.x-lp.x, dy=(o.y-lp.y)*2.5;
+      var dx=o.x-lp.x, dy=(o.y-lp.y)*2.2;
       var d2=dx*dx+dy*dy;
-      var minD=lp.rx*0.6;
-      if(d2 < minD*minD && o.y < lp.y+20){
-        // Push organism DOWN below the pad
-        o.y = Math.max(8, lp.y + 12) + Math.random()*5;
-        if(o.vy<0) o.vy = Math.abs(o.vy)*0.3;
+      var coverR = (lp.rx||20) * 1.15;
+      if(d2 < coverR*coverR){
+        // 5) Укрытие у кувшинок для мелких
+        if((o.size||4) <= 5.5 || (o.sp && (o.sp.cat==='producer'||o.sp.cat==='consumer1'))){
+          o._lilyCover = true;
+          o.vx = (o.vx||0)*0.92;
+          o.vy = (o.vy||0)*0.92;
+        } else if(d2 < (lp.rx*0.55)*(lp.rx*0.55) && o.y < lp.y+18){
+          o.y = Math.max(8, lp.y + 12) + Math.random()*5;
+          if(o.vy<0) o.vy = Math.abs(o.vy)*0.3;
+        }
       }
     }
   }
@@ -281,6 +293,26 @@ function clampToPuddle(o){
 
 
 
+
+
+function updateLilyCover(o){
+  o._lilyCover = false;
+  if(!o || o.y >= 130 || !window._lilyPads) return false;
+  for(var li=0; li<window._lilyPads.length; li++){
+    var lp=window._lilyPads[li];
+    var dx=o.x-lp.x, dy=(o.y-(lp.y||0))*2.0;
+    var d2=dx*dx+dy*dy;
+    var coverR = (lp.rx||20) * 1.25;
+    if(d2 < coverR*coverR){
+      if((o.size||4) <= 6.0 || (o.sp && (o.sp.cat==='producer'||o.sp.cat==='consumer1'||o.sp.cat==='consumer2'))){
+        o._lilyCover = true;
+        return true;
+      }
+    }
+  }
+  return false;
+}
+window.updateLilyCover = updateLilyCover;
 
 // === VIRUS INFECTION ===
 

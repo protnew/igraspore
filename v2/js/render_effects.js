@@ -148,18 +148,18 @@ function renderSky(vL,vR,vT){
     // Atmospheric bloom (single, soft)
     var bloomR = rSun * 7;
     var bloom = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, bloomR);
-    bloom.addColorStop(0, 'rgba(255, 245, 200, ' + (0.55*dl) + ')');
-    bloom.addColorStop(0.15, 'rgba(255, 210, 120, ' + (0.28*dl) + ')');
-    bloom.addColorStop(0.4, 'rgba(255, 180, 80, ' + (0.1*dl) + ')');
-    bloom.addColorStop(1, 'rgba(255, 160, 60, 0)');
+    bloom.addColorStop(0, 'rgba(' + (_s0 ? _s0.coreRGB : '255, 245, 200') + ', ' + (0.55*dl) + ')');
+    bloom.addColorStop(0.15, 'rgba(' + (_s0 ? _s0.midRGB : '255, 210, 120') + ', ' + (0.28*dl) + ')');
+    bloom.addColorStop(0.4, 'rgba(' + (_s0 ? _s0.edgeRGB : '255, 180, 80') + ', ' + (0.1*dl) + ')');
+    bloom.addColorStop(1, 'rgba(' + (_s0 ? _s0.edgeRGB : '255, 160, 60') + ', 0)');
     ctx.fillStyle = bloom;
     ctx.beginPath(); ctx.arc(sunX, sunY, bloomR, 0, Math.PI*2); ctx.fill();
 
     // Outer soft halo
     ctx.globalCompositeOperation = 'screen';
     var halo = ctx.createRadialGradient(sunX, sunY, rSun*0.2, sunX, sunY, rSun*3.2);
-    halo.addColorStop(0, 'rgba(255, 255, 240, ' + (0.95*dl) + ')');
-    halo.addColorStop(0.5, 'rgba(255, 220, 140, ' + (0.35*dl) + ')');
+    halo.addColorStop(0, 'rgba(' + (_s0 ? _s0.coreRGB : '255, 255, 240') + ', ' + (0.95*dl) + ')');
+    halo.addColorStop(0.5, 'rgba(' + (_s0 ? _s0.midRGB : '255, 220, 140') + ', ' + (0.35*dl) + ')');
     halo.addColorStop(1, 'rgba(255, 180, 80, 0)');
     ctx.fillStyle = halo;
     ctx.beginPath(); ctx.arc(sunX, sunY, rSun*3.2, 0, Math.PI*2); ctx.fill();
@@ -167,11 +167,20 @@ function renderSky(vL,vR,vT){
     // Solid photosphere (ALWAYS opaque warm disc — never gray)
     ctx.globalCompositeOperation = 'source-over';
     var core = ctx.createRadialGradient(sunX - rSun*0.25, sunY - rSun*0.25, 0, sunX, sunY, rSun);
-    core.addColorStop(0, '#fffef5');
-    core.addColorStop(0.25, (t>=17) ? '#fff0c0' : (warm > 0.7 ? '#ffe08a' : '#fff2c0'));
-    core.addColorStop(0.55, (t>=17) ? '#ffb040' : (warm > 0.7 ? '#ffc050' : '#ffd078'));
-    core.addColorStop(0.85, (t>=18) ? '#ff6020' : (warm > 0.7 ? '#ff9020' : '#ffc060'));
-    core.addColorStop(1, (t>=18) ? 'rgba(255,40,10,0.2)' : 'rgba(255,160,40,0.15)');
+    var _sp = (typeof window.getStarPreset==='function') ? window.getStarPreset() : null;
+    var _s0 = _sp ? _sp.stars[0] : null;
+    if (_s0) {
+      core.addColorStop(0, _s0.core);
+      core.addColorStop(0.3, _s0.mid);
+      core.addColorStop(0.7, _s0.edge);
+      core.addColorStop(1, _s0.edge);
+    } else {
+      core.addColorStop(0, '#fffef5');
+      core.addColorStop(0.25, (t>=17) ? '#fff0c0' : (warm > 0.7 ? '#ffe08a' : '#fff2c0'));
+      core.addColorStop(0.55, (t>=17) ? '#ffb040' : (warm > 0.7 ? '#ffc050' : '#ffd078'));
+      core.addColorStop(0.85, (t>=18) ? '#ff6020' : (warm > 0.7 ? '#ff9020' : '#ffc060'));
+      core.addColorStop(1, (t>=18) ? 'rgba(255,40,10,0.2)' : 'rgba(255,160,40,0.15)');
+    }
     ctx.fillStyle = core;
     ctx.shadowColor = 'rgba(255, 200, 80, 0.85)';
     ctx.shadowBlur = 30;

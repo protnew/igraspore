@@ -1,6 +1,15 @@
 // main_events.js — event listeners + init
 // === EVENT LISTENERS ===
-cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
+cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();var nx=e.clientX-r.left,ny=e.clientY-r.top;
+  // Free-cam drag pan (hold LMB)
+  if(freeCam && mouseDown && !window.demoPossessed){
+    var dx=(nx-mx)/Math.max(0.2,zoom);
+    var dy=(ny-my)/Math.max(0.2,zoom);
+    cam.x-=dx; cam.y-=dy;
+    window.screensaverAutoCam=false;
+    window.lastInteractionTime=Date.now();
+  }
+  mx=nx;my=ny;});
 cv.addEventListener('mousedown',function(e){e.preventDefault();var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;
   if(e.button===0){
     mouseDown=true;
@@ -143,20 +152,28 @@ window.playerContactEat = function(dt){
   if(!player||!player.alive||player.cyst) return;
   window._playerContactEatT -= (dt||0.016);
   if(window._playerContactEatT>0) return;
-  window._playerContactEatT = 0.10;
-  var range = player.size + 18;
+  window._playerContactEatT = 0.08; // slightly faster
+  var range = player.size + 22;
   var range2 = range*range;
+  // Find BEST prey in range (smallest edible)
+  var best = null, bestSize = 1e18;
   for(var i=0;i<orgs.length;i++){
     var p=orgs[i];
     if(!p||!p.alive||p===player||p.cyst) continue;
-    if(p.size >= player.size*1.15) continue;
+    // Player can eat anything up to 1.3x its size (chip away if bigger)
+    if(p.size > player.size*1.5) continue;
     if(dist2(player,p) <= range2){
       if(player.sp.cat !== 'producer'){
-        if(typeof forceEat==='function') forceEat(player, p);
-        else { p.divCD=0;p.invuln=0; eatOrg(player,p); }
+        if(p.size < bestSize){ bestSize = p.size; best = p; }
       }
-      return;
     }
+  }
+  if(best){
+    // Clear prey invuln/divCD so player can ALWAYS eat
+    best.divCD = 0;
+    best.invuln = 0;
+    if(typeof forceEat==='function') forceEat(player, best);
+    else eatOrg(player, best);
   }
 };
 
@@ -164,9 +181,16 @@ window.playerContactEat = function(dt){
 var keys={};
 document.addEventListener('keydown',function(e){
   var k=e.key.toLowerCase();keys[k]=true;
-  if(k==='w'||k==='a'||k==='s'||k==='d'){if(freeCam)camKeys[k]=true;e.preventDefault();if(autoAI)autoAI=false;}
+  if(k==='w'||k==='a'||k==='s'||k==='d'||k==='arrowup'||k==='arrowdown'||k==='arrowleft'||k==='arrowright'){
+    // Map arrows to camKeys
+    var ck = k;
+    if(k==='arrowup')ck='w'; if(k==='arrowdown')ck='s'; if(k==='arrowleft')ck='a'; if(k==='arrowright')ck='d';
+    if(freeCam){camKeys[ck]=true;e.preventDefault();}
+    if(autoAI)autoAI=false;
+  }
+  if(k===' '||k==='space'){ window.manualFeed&&window.manualFeed(); e.preventDefault(); }
   if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
-  if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
+  if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Полёт: WASD / мышь / колёсико':'Камера: следит за клеткой','#4af');var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?'✈ ПОЛЁТ WASD':'';}var bf=document.getElementById('bFree');if(bf){bf.style.background=freeCam?'#2a6':'';bf.style.boxShadow=freeCam?'0 0 12px #4c8':'';}}
   if(k==='escape'){
     if(window.demoMode && window.demoPossessed){ exitDemoPossess(); e.preventDefault(); return; }
     // ESC → return to main menu from game or demo
@@ -202,7 +226,9 @@ document.addEventListener('keydown',function(e){
   if(k==='r'){if(player&&player.alive)doCyst(player);}
   if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
 });
-document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=false;if(k==='w'||k==='a'||k==='s'||k==='d')camKeys[k]=false;});
+document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=false;if(k==='w'||k==='a'||k==='s'||k==='d'){camKeys[k]=false;}
+  if(k==='arrowup')camKeys.w=false; if(k==='arrowdown')camKeys.s=false;
+  if(k==='arrowleft')camKeys.a=false; if(k==='arrowright')camKeys.d=false;});
 
 mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;});
 
@@ -210,7 +236,7 @@ document.getElementById('bEat').onclick=function(){ window.tryPlayerEat && windo
 document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast('Деление...','#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa');}}};
 document.getElementById('bCyst').onclick=function(){if(player&&player.alive)doCyst(player);};
 document.getElementById('bAuto').onclick=function(){if(player&&player.alive)autoAI=!autoAI;};
-document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Камера: СВОБОДНО':'Камера: СЛЕДИТ','#4af');};
+document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'✈ Полёт: WASD / стрелки / мышь / колёсико':'Камера: следит за клеткой','#4af');var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?'✈ ПОЛЁТ WASD':'';cm.className=freeCam?'free':'';}var bf=document.getElementById('bFree');if(bf){bf.style.background=freeCam?'#2a6':'';bf.style.boxShadow=freeCam?'0 0 12px #4c8':'';}};
 
 document.getElementById('bMicro').onclick=function(){
   settings.microscopeMode=!settings.microscopeMode;
@@ -325,4 +351,43 @@ document.addEventListener('click', function(e){
   }
   setTimeout(updateStarUI, 500);
   setTimeout(updateStarUI, 2000);
+})();
+
+// Manual feed: Space key — player tries to eat NOW
+window._manualFeedCD = 0;
+window.manualFeed = function(){
+  if(!player||!player.alive||player.cyst) return false;
+  if(window._manualFeedCD > 0) {
+    if(window.showToast) window.showToast('Пищеварение... ('+Math.ceil(window._manualFeedCD)+'с)', '#fa0');
+    return false;
+  }
+  var range = player.size + 30; // larger range for manual
+  var range2 = range*range;
+  var best = null, bestSize = 1e18;
+  for(var i=0;i<orgs.length;i++){
+    var p=orgs[i];
+    if(!p||!p.alive||p===player||p.cyst) continue;
+    if(p.size > player.size*1.5) continue;
+    if(dist2(player,p) <= range2){
+      if(p.size < bestSize){ bestSize = p.size; best = p; }
+    }
+  }
+  if(best){
+    best.divCD = 0; best.invuln = 0;
+    if(typeof forceEat==='function') forceEat(player, best);
+    else eatOrg(player, best);
+    window._manualFeedCD = 0.5; // short CD for manual
+    player.flash = 1; player.flashColor = '#ff0';
+    if(window.showToast) window.showToast('КУСЬ! '+best.sp.name, '#8f8');
+    return true;
+  } else {
+    if(window.showToast) window.showToast('Нет добычи рядом', '#faa');
+    return false;
+  }
+};
+
+// Manual feed button
+(function(){
+  var b = document.getElementById('bFeed');
+  if(b) b.onclick = function(){ window.manualFeed&&window.manualFeed(); };
 })();

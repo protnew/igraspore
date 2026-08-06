@@ -91,7 +91,7 @@ function mkSp(arr,cat,minSz,maxSz,minSp,maxSp){
     
     o.push({
       id:o.length, name:arr[i], cat:cat, shape:SHAPES[cat]?SHAPES[cat][i%SHAPES[cat].length]:'circle',
-      color:(cat==='producer'?hslToHex(((100+i*15)%160),90,(40+i%3*10)):CC[cat]),
+      color:(cat==='producer'?hslToHex((90+(i*8)%50),85,(38+i%3*8)):CC[cat]),
       size:Math.round(sz*10)/10, speed:Math.round(finalSp*1000)/1000,
       energy:55+Math.floor(Math.random()*25), repEnergy:60+Math.floor(Math.random()*8),
       minAge:4+Math.floor(Math.random()*5), isEuk:cat!=='consumer1'&&!(cat==='producer'&&i<8),

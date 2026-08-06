@@ -26,7 +26,7 @@ function buildCatSel(){
       var c=el.getAttribute('data-c');
       if(!c && el.parentElement) c=el.parentElement.getAttribute('data-c');
       if(!c) return;
-      selCat=c;
+      selCat=c; try{window.selCat=c;}catch(e){}
       buildCatSel();
       buildSpeciesGrid();
       var sg=document.getElementById('spGrid'); if(sg) sg.scrollTop=0;
@@ -103,9 +103,15 @@ function buildSpeciesGrid(){
       '<div style="font-size:8.5px;opacity:.75;margin-top:1px">'+roleShort+'</div>'+
       '<div style="font-size:8.5px;margin-top:1px;line-height:1.2">'+eatInfo+'</div>'+
       '<div class="scP">'+pop+' alive</div>';
-    var pcv=c.querySelector('.scPrev');drawSpeciesPreview(pcv,sp,i);
+    var pcv=c.querySelector('.scPrev'); try{ if(pcv&&typeof drawSpeciesPreview==='function') drawSpeciesPreview(pcv,sp,i); }catch(ePrev){ if(pcv){ var cxp=pcv.getContext('2d'); if(cxp){ cxp.fillStyle=sp.color||'#4c8'; cxp.beginPath(); cxp.arc(60,60,28,0,6.28); cxp.fill(); } } }
     c.onclick=function(ev){selSpecies=parseInt(ev.currentTarget.getAttribute('data-si'));buildSpeciesGrid();};
     sg.appendChild(c);
+  }
+  if(document.querySelectorAll('#spGrid .sc').length===0){
+    var empty=document.createElement('div');
+    empty.style.cssText='padding:12px;color:#f89;font-size:12px';
+    empty.textContent='Нет видов в категории «'+(typeof catName==='function'?catName(selCat):selCat)+'». Нажмите «Все».';
+    sg.appendChild(empty);
   }
 }
 

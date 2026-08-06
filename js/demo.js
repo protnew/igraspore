@@ -226,6 +226,10 @@ function updateDemoPinned(dt) {
     o.y = o.demoHomeY + Math.sin(o.demoBobPhase) * 2.2;
     o.vx = 0;
     o.vy = 0;
+    if(o.demoColony || (o.sp && o.sp.shape==='colony')){
+      o.size = Math.max(o.size||0, 7);
+      o.demoColony = true;
+    }
     o.energy = Math.min(100, (o.energy || 80) + dt * 2); // keep alive
     o.state = 'idle';
     o.aiTarget = null;

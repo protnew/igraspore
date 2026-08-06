@@ -65,7 +65,7 @@ function renderFoodChain(){
     rowsEl[ri].onclick=function(ev){
       var c=(ev.currentTarget||ev.target).getAttribute('data-c');
       if(!c) return;
-      selCat=c;
+      selCat=c; try{window.selCat=c;}catch(e){}
       if(typeof buildCatSel==='function') buildCatSel();
       if(typeof buildSpeciesGrid==='function') buildSpeciesGrid();
       var sg=document.getElementById('spGrid'); if(sg) sg.scrollTop=0;

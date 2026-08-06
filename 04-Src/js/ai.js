@@ -223,6 +223,9 @@ window.filterFeedPull = filterFeedPull;
 // NO continuous clockwise/counterclockwise spinning
 // ============================================================
 function naturalAI(o, dt, speed){
+  if(!(dt>0)) dt = 0.016;
+  if(!(speed>0)) speed = (o && o.sp && o.sp.speed) ? o.sp.speed : ((o && o.speed)||1);
+  if(!o || !o.sp) return;
   var cat = o.sp.cat;
   var foodCats = (typeof FOOD!=='undefined' && FOOD[cat]) ? FOOD[cat] : [];
 

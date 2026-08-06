@@ -134,7 +134,7 @@ function initWorld(){
        }
     }
   }
-  nutrientClouds=[];for(var i=0;i<15;i++){var d=rng(PD*0.4,PD-20),hw=halfW(d)-20;nutrientClouds.push({x:rng(-hw,hw),y:d,r:rng(60,150),intensity:rng(0.4,0.9),vx:rng(-0.08,0.08),vy:rng(-0.02,0.02)});}
+  nutrientClouds=[];for(var i=0;i<15;i++){var d=rng(PD*0.4,PD-20),hw=halfW(d)-20;nutrientClouds.push({x:rng(-hw,hw),y:d,r:rng(28,70),intensity:rng(0.35,0.7),vx:rng(-0.08,0.08),vy:rng(-0.02,0.02),cells:14+((Math.random()*10)|0)});}
   shoreDecor=[];
   // Shore vegetation: SCATTERED clusters (not solid wall), varying depth/size
   // Each cluster has 2-5 plants grouped naturally with gaps between clusters

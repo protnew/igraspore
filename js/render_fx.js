@@ -50,16 +50,37 @@ function renderSediment(vL,vR,vB){
 function renderNutrients(vL,vR,vT,vB){
   for(var i=0;i<nutrientClouds.length;i++){var nc=nutrientClouds[i];
     if(nc.x<vL-nc.r||nc.x>vR+nc.r||nc.y<vT-nc.r||nc.y>vB+nc.r)continue;
+    // Soft envelope (faint) — not a green fog wall
     var g=ctx.createRadialGradient(nc.x,nc.y,0,nc.x,nc.y,nc.r);
-    g.addColorStop(0,'rgba(100,140,70,'+(nc.intensity*0.1)+')');g.addColorStop(1,'rgba(100,140,70,0)');
-    ctx.fillStyle=g;ctx.beginPath();ctx.arc(nc.x,nc.y,nc.r,0,Math.PI*2);ctx.fill();}
+    g.addColorStop(0,'rgba(100,150,70,'+(nc.intensity*0.06)+')');
+    g.addColorStop(0.7,'rgba(90,140,60,'+(nc.intensity*0.04)+')');
+    g.addColorStop(1,'rgba(100,140,70,0)');
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(nc.x,nc.y,nc.r,0,Math.PI*2);ctx.fill();
+    // Internal structure: packed tiny microbes (aggregate, not fog)
+    var nC = nc.cells || 16;
+    var GA=2.399963;
+    for(var ci=0;ci<nC;ci++){
+      var t=ci/(nC-0.5);
+      var ang=ci*GA + (nc.x+nc.y)*0.01;
+      var rr=nc.r*(0.12+0.78*Math.sqrt(t))*0.92;
+      var cx=nc.x+Math.cos(ang)*rr;
+      var cy=nc.y+Math.sin(ang)*rr*0.85;
+      var cr=Math.max(0.8, nc.r*(0.045+0.02*(1-t)));
+      ctx.fillStyle='rgba(70,150,55,'+(0.35+nc.intensity*0.35)+')';
+      ctx.beginPath();ctx.arc(cx,cy,cr,0,Math.PI*2);ctx.fill();
+      if(cr>1.2){
+        ctx.fillStyle='rgba(30,90,35,0.45)';
+        ctx.beginPath();ctx.arc(cx+cr*0.2,cy,cr*0.3,0,Math.PI*2);ctx.fill();
+      }
+    }
+  }
     
   if (window.toxicClouds) {
       for(var i=0;i<window.toxicClouds.length;i++){
           var tc=window.toxicClouds[i];
           if(tc.x<vL-tc.r||tc.x>vR+tc.r||tc.y<vT-tc.r||tc.y>vB+tc.r)continue;
           var tg=ctx.createRadialGradient(tc.x,tc.y,0,tc.x,tc.y,tc.r);
-          tg.addColorStop(0,'rgba(50,255,50,'+(Math.max(0, tc.life*0.5))+')');
+          tg.addColorStop(0,'rgba(50,200,50,'+(Math.max(0, tc.life*0.22))+')');
           tg.addColorStop(1,'rgba(50,255,50,0)');
           ctx.fillStyle=tg;ctx.beginPath();ctx.arc(tc.x,tc.y,tc.r,0,Math.PI*2);ctx.fill();
       }

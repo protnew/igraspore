@@ -16,7 +16,7 @@ function buildSpeciesGrid(){
     for(var vi=0;vi<VIRUS_SPECS.length;vi++){
       var vs=VIRUS_SPECS[vi];
       var c=document.createElement('div');c.className='sc'+(selSpecies===VIRUS_ID_START+vi?' sel':'');c.setAttribute('data-si',VIRUS_ID_START+vi);
-      c.innerHTML='<div class="scN" style="color:'+vs.color+'">'+vs.name+'</div><div class="scL">'+vs.size+'\u03bcm</div><div class="scC">\u2620 \u0412\u0438\u0440\u0443\u0441</div><div class="scP">-</div>';
+      var vnum=(typeof vs.num==='number')?vs.num:(SPECIES_DB.length+1+vi);c.innerHTML='<div class="scN" style="color:'+vs.color+'"><span style="opacity:.7;font-size:10px;margin-right:4px">#'+vnum+'</span>'+vs.name+'</div><div class="scL">'+vs.size+'\u03bcm</div><div class="scC">\u2620 \u0412\u0438\u0440\u0443\u0441</div><div class="scP">-</div>';
       c.onclick=function(ev){selSpecies=parseInt(ev.currentTarget.getAttribute('data-si'));buildSpeciesGrid();};
       sg.appendChild(c);
     }
@@ -40,9 +40,11 @@ function buildSpeciesGrid(){
     }
     var roleShort='';
     if(typeof catName==='function'){ roleShort=catName(sp.cat); }
+    var spNum=(typeof sp.num==='number')?sp.num:(i+1);
+    var colonyTag=(sp.shape==='colony'||(sp.bio&&sp.bio.colony))?' · колония':'';
     c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+
-      '<div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2">'+sp.name+'</div>'+
-      '<div class="scL">'+sp.size+'\u03bcm &middot; '+sp.shape+'</div>'+
+      '<div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+
+      '<div class="scL">'+sp.size+'\u03bcm &middot; '+sp.shape+colonyTag+'</div>'+
       '<div class="scC">'+sp.locomotion+'</div>'+
       '<div style="font-size:8.5px;opacity:.75;margin-top:1px">'+roleShort+'</div>'+
       '<div style="font-size:8.5px;margin-top:1px;line-height:1.2">'+eatInfo+'</div>'+

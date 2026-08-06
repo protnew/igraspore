@@ -436,6 +436,10 @@ function updateOrg(o,dt){
   if(o.sp.isEuk&&o.age>500){o.energy-=0.15*dt;if(o.energy<5&&Math.random()<0.004*dt){killOrg(o,DCODE.AGE);return;}}
   // Size from species baseline + mass bank (feeding), energy only mild factor
   var adult0 = o.sp.size*(o.sizeMult||1.0);
+  // Colonies stay compact — no green fog megaball from mass growth
+  if(o.sp && (o.sp.shape==='colony' || (o.sp.bio&&o.sp.bio.colony))){
+    adult0 = Math.min(adult0, 4.5);
+  }
   var massFactor = clamp((o.massFood||0) / Math.max(adult0*0.8, 2), 0, 1.2);
   var enFactor = 0.55 + clamp(o.energy/Math.max(o.sp.repEnergy||100,1), 0, 1)*0.45;
   // After divide, birthSize anchors the floor; grow toward adult as mass accrues

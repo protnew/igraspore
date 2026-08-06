@@ -156,8 +156,20 @@ var GENDERED_SP = {
     tempRange: [0, 40], locomotion: "flagella", flags: { gendered: true }, bio: {nucleus:true, vac:true, flag:true}
 };
 SPECIES_DB.push(GENDERED_SP);
-/* COLONY_PATCH */
+/* COLONY_PATCH + continuous species numbers */
 (function(){
+  // Continuous numbering for ALL species (1..N) — menu + demo + HUD
+  for(var i=0;i<SPECIES_DB.length;i++){
+    var s=SPECIES_DB[i]; if(!s) continue;
+    s.num = i+1; // сквозной номер
+    s.id = (typeof s.id==='number') ? s.id : i;
+  }
+  // Viruses continue after last species
+  if(typeof VIRUS_SPECS!=='undefined'){
+    for(var vi=0;vi<VIRUS_SPECS.length;vi++){
+      VIRUS_SPECS[vi].num = SPECIES_DB.length + 1 + vi;
+    }
+  }
   for(var i=0;i<SPECIES_DB.length;i++){
     var s=SPECIES_DB[i]; if(!s||!s.name) continue;
     var n=s.name.toLowerCase();
@@ -165,9 +177,12 @@ SPECIES_DB.push(GENDERED_SP);
        n.indexOf('pandorina')>=0 || n.indexOf('eudorina')>=0){
       s.shape='colony';
       s.bio=Object.assign({}, s.bio||{}, {colony:true, daughter:true});
-      s.flags=Object.assign({}, s.flags||{}, {noRandomSpawn:true}); // No green blob at start!
-      // colonial algae are bigger than single cells but still micro (not lily-pad scale)
-      if(s.size<5) s.size=Math.min(8, s.size+2.5);
+      // playable in menu/demo; still rare in random world spawn
+      s.flags=Object.assign({}, s.flags||{}, {noRandomSpawn:true, colony:true});
+      // ~2x smaller than before (was up to 8) — still larger than single cells
+      var base = s.size || 3;
+      s.size = Math.max(2.8, Math.min(4.2, base * 0.55 + 1.2));
+      s.visScale = 0.85; // extra visual shrink of gelatin envelope
       if(n.indexOf('microcystis')>=0){
         s.flags=Object.assign({}, s.flags||{}, {toxic:true});
       }

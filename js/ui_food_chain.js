@@ -134,7 +134,7 @@ function drawSpeciesPreview(canvas,sp,idx){
     case'rod':ctx2.ellipse(0,0,sz,sz*0.45,0,0,6.283);break;
     case'spiral':for(var i=0;i<40;i++){var t=i/39;var a=t*Math.PI*4;var r=sz*0.85*(1-t*0.3);var x=Math.cos(a)*r,y=Math.sin(a)*r*0.4;if(i===0)ctx2.moveTo(x,y);else ctx2.lineTo(x,y);}break;
     case'filament':ctx2.rect(-sz*1.5,-sz*0.2,sz*3,sz*0.4);break;
-    case'colony':for(var i=0;i<8;i++){var a=i/8*Math.PI*2;ctx2.moveTo(Math.cos(a)*sz*0.8+sz*0.3,Math.sin(a)*sz*0.8);ctx2.arc(Math.cos(a)*sz*0.8,Math.sin(a)*sz*0.8,sz*0.3,0,6.283);}break;
+    case'colony':ctx2.globalAlpha=0.25;ctx2.arc(0,0,sz,0,6.283);ctx2.fill();ctx2.globalAlpha=1;for(var i=0;i<14;i++){var a=i*2.399963;var rr=sz*(0.15+0.7*Math.sqrt(i/13));var cx=Math.cos(a)*rr,cy=Math.sin(a)*rr*0.88;ctx2.moveTo(cx+sz*0.18,cy);ctx2.arc(cx,cy,sz*0.16,0,6.283);}break;
     case'slipper':ctx2.ellipse(-sz*0.15,0,sz,sz*0.45,0,0,6.283);break;
     case'bell':ctx2.moveTo(-sz*0.7,-sz*0.3);ctx2.quadraticCurveTo(0,-sz*1.1,sz*0.7,-sz*0.3);ctx2.quadraticCurveTo(sz*0.5,sz*0.8,0,sz);ctx2.quadraticCurveTo(-sz*0.5,sz*0.8,-sz*0.7,-sz*0.3);break;
     case'oval':ctx2.ellipse(0,0,sz,sz*0.6,0,0,6.283);break;

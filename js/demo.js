@@ -80,7 +80,9 @@ function startDemoMode() {
       o.demoGroup = g + 1;
       o.demoGroupKey = grp.key;
       o.demoLabel = (curLang === 'en' ? grp.en : grp.ru);
-      o.demoIndex = i + 1;
+      // Continuous species number (same as menu #N), not per-row index
+      o.demoIndex = (pool[i] && typeof pool[i].num === 'number') ? pool[i].num : (i + 1);
+      o.demoSpNum = o.demoIndex;
       o.vx = 0; o.vy = 0;
       o.energy = 90;
       o.facing = 0;
@@ -263,14 +265,25 @@ function renderDemoLabels() {
 
     // Small index under each cell
     if (o.demoIndex) {
-      var num = String(o.demoGroup || '') + '.' + String(o.demoIndex);
-      ctx.font = 'bold ' + Math.max(10, Math.min(14, 11 * Math.sqrt(zoom))) + 'px monospace';
+      // сквозной номер вида: #12
+      var num = '#' + String(o.demoSpNum || o.demoIndex);
+      ctx.font = 'bold ' + Math.max(10, Math.min(15, 12 * Math.sqrt(zoom))) + 'px monospace';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'top';
-      ctx.fillStyle = 'rgba(0,0,0,0.55)';
-      ctx.fillText(num, scx + 1, scy + (o.size || 8) * zoom + 5);
-      ctx.fillStyle = (o.isPlayer ? '#4ff' : '#def');
-      ctx.fillText(num, scx, scy + (o.size || 8) * zoom + 4);
+      var ty = scy + (o.size || 8) * zoom + 4;
+      ctx.fillStyle = 'rgba(0,0,0,0.65)';
+      ctx.fillText(num, scx + 1, ty + 1);
+      ctx.fillStyle = (o.isPlayer ? '#4ff' : '#e8fff0');
+      ctx.fillText(num, scx, ty);
+      // short name under number
+      if (zoom >= 0.9 && o.sp && o.sp.name) {
+        var short = o.sp.name.split(' ')[0];
+        ctx.font = Math.max(8, Math.min(11, 9 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
+        ctx.fillStyle = 'rgba(0,0,0,0.55)';
+        ctx.fillText(short, scx + 1, ty + 14);
+        ctx.fillStyle = 'rgba(200,230,255,0.85)';
+        ctx.fillText(short, scx, ty + 13);
+      }
     }
 
     // Possessed: simple thin ring (not the "lens" spam)

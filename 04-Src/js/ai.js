@@ -315,7 +315,8 @@ function naturalAI(o, dt, speed){
 // TSK-AI-007: Thermotaxis — gradient search toward optimal temp
   if(typeof window.getTempAt === 'function' && !o.cyst){
     var curT = window.getTempAt(o.x, o.y);
-    var tOpt = ((o.sp.tempRange[0]+o.sp.tempRange[1])/2) + (o.tempOffset||0);
+    var tr = o.sp.tempRange || [10,30];
+    var tOpt = ((tr[0]+tr[1])/2) + (o.tempOffset||0);
     if(Math.abs(curT - tOpt) > 5){
       var bestDir=null, bestDelta=999;
       for(var ang=0; ang<Math.PI*2; ang+=Math.PI/2){

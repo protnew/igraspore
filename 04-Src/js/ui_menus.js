@@ -44,7 +44,7 @@ function buildSpeciesGrid(){
     var colonyTag=(sp.shape==='colony'||(sp.bio&&sp.bio.colony))?' · колония':'';
     c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+
       '<div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+
-      '<div class="scL">'+sp.size+'\u03bcm &middot; '+sp.shape+colonyTag+'</div>'+
+      '<div class="scL">'+(Math.round(sp.size*10)/10)+'\u03bcm &middot; '+sp.shape+colonyTag+'</div>'+
       '<div class="scC">'+sp.locomotion+'</div>'+
       '<div style="font-size:8.5px;opacity:.75;margin-top:1px">'+roleShort+'</div>'+
       '<div style="font-size:8.5px;margin-top:1px;line-height:1.2">'+eatInfo+'</div>'+

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40"><defs><linearGradient id="sc" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#d8a070" stop-opacity="0.9"/><stop offset="100%" stop-color="#a06030" stop-opacity="0.8"/></linearGradient></defs>
+<path d="M5,20 Q12,5 20,20 Q28,35 36,20 Q44,5 52,20 Q60,35 68,20 Q72,12 75,20" fill="none" stroke="url(#sc)" stroke-width="8" stroke-linecap="round"/>
+<path d="M5,20 Q12,5 20,20 Q28,35 36,20 Q44,5 52,20 Q60,35 68,20 Q72,12 75,20" fill="none" stroke="#805020" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+</svg>

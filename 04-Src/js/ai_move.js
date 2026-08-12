@@ -60,6 +60,8 @@ function thrustAlongFacing(o, speed, dt, mul){
 }
 
 function moveOrg(o,dt){
+  // Sessile organisms (Vorticella, Zoothamnium, sponges) — permanently attached, zero movement
+  if(o.locomotion==='sessile' || (o.sp && o.sp.locomotion==='sessile')){ o.vx=0; o.vy=0; return; }
   // Demo gallery: pinned organisms stay put (handled in updateDemoPinned)
   if(o.demoPinned && !o.isPlayer){
     o.vx=0; o.vy=0; return;
@@ -171,8 +173,8 @@ function moveOrg(o,dt){
   if(o.cyst) o.vy += 8 * dt;
 
   // Integrate position
-  o.x += o.vx * dt * 60 * (typeof SPEED_SCALE!=='undefined'?SPEED_SCALE:0.5);
-  o.y += o.vy * dt * 60 * (typeof SPEED_SCALE!=='undefined'?SPEED_SCALE:0.5);
+  o.x += o.vx * dt * 30; // v2: halved from 60
+  o.y += o.vy * dt * 30;
 
   if(typeof clampToPuddle === 'function') clampToPuddle(o);
   else {

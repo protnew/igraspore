@@ -123,6 +123,56 @@ function renderOrganisms(vL,vR,vT,vB){
   }
   var batches = {};
   var isRealistic = settings.renderMode === 'realistic';
+  var isBioicons = settings.renderMode === 'bioicons';
+  var isSwiss = settings.renderMode === 'swiss';
+  if(isSwiss && typeof drawSwissCell === 'function'){
+    var zS = (typeof zoom==='number' && zoom>0) ? zoom : 1;
+    // far zoom: hard cap full sprites, rest as dots
+    var fullBudget = zS < 0.55 ? 40 : (zS < 1.0 ? 90 : 99999);
+    var fullDrawn = 0;
+    for(var si0=0;si0<orgs.length;si0++){
+      var so0=orgs[si0];
+      if(!so0.alive)continue;
+      if(so0.x<vL-60||so0.x>vR+60||so0.y<vT-60||so0.y>vB+60)continue;
+      var szS=Math.max(so0.size, 2.2);
+      var shS=(so0.sp&&so0.sp.shape)?so0.sp.shape:'circle';
+      var isPl = !!so0.isPlayer;
+      if(!isPl && fullDrawn >= fullBudget){
+        // ultra-cheap far marker
+        ctx.beginPath();
+        ctx.arc(so0.x, so0.y, Math.max(0.7, szS*0.35), 0, Math.PI*2);
+        ctx.fillStyle = (so0.sp&&so0.sp.color) ? so0.sp.color : '#cfd3d8';
+        ctx.globalAlpha = 0.85; ctx.fill(); ctx.globalAlpha = 1;
+        continue;
+      }
+      drawSwissCell(ctx, so0, szS, shS);
+      if(!isPl) fullDrawn++;
+    }
+    // player ring so control target is obvious
+    if(player && player.alive){
+      ctx.save();
+      ctx.strokeStyle = 'rgba(80,220,255,0.85)';
+      ctx.lineWidth = Math.max(0.6, 1.2/zS);
+      ctx.setLineDash([3/zS, 2/zS]);
+      ctx.beginPath();
+      ctx.arc(player.x, player.y, Math.max(player.size*1.6, 3.5), 0, Math.PI*2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.restore();
+    }
+    return;
+  }
+  if(isBioicons && typeof drawBioicon === 'function' && window.bioiconsReady()){
+    for(var bi0=0;bi0<orgs.length;bi0++){
+      var bo0=orgs[bi0];
+      if(!bo0.alive)continue;
+      if(bo0.x<vL-60||bo0.x>vR+60||bo0.y<vT-60||bo0.y>vB+60)continue;
+      var sz0=Math.max(bo0.size,3);
+      var sh0=(bo0.sp&&bo0.sp.shape)?bo0.sp.shape:'circle';
+      drawBioicon(ctx, bo0, sz0, sh0);
+    }
+    return;
+  }
   // REALISTIC MODE: render each organism individually with phase contrast effect
   if(isRealistic){
     // PHASE CONTRAST / DARK FIELD: bright shapes on black (rods, cocci, filaments)

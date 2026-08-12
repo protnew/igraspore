@@ -13,6 +13,30 @@ cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();var
 cv.addEventListener('mousedown',function(e){e.preventDefault();var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;
   if(e.button===0){
     mouseDown=true;
+    // Virus mode: click organism to infect it
+    if(window.virusPlayer && window.virusPlayerSpec){ cv.style.cursor='crosshair';
+      var _vwx=cam.x+(mx-cv.width/2)/zoom;
+      var _vwy=cam.y+(my-cv.height/2)/zoom;
+      var _bestO=null,_bestD=60/zoom;
+      for(var _vo=0;_vo<orgs.length;_vo++){
+        var _oo=orgs[_vo]; if(!_oo.alive||_oo.infected||_oo.cyst) continue;
+        // Phage: bacteria only (producer+consumer1 non-euk)
+        var _canInf=( _oo.sp.cat==='producer'||_oo.sp.cat==='consumer1')&&!_oo.sp.isEuk;
+        if(window.virusPlayerSpec.type==='parasite') _canInf=_oo.isPlayer;
+        if(!_canInf) continue;
+        var _dd=Math.hypot(_oo.x-_vwx,_oo.y-_vwy);
+        if(_dd<_bestD && _dd<((_oo.size||4)+10)){_bestD=_dd;_bestO=_oo;}
+      }
+      if(_bestO){
+        // Infect target cell — start lytic cycle
+        _bestO.infected=true; _bestO.infectionT=0;
+        _bestO.virusType=window.virusPlayerSpec;
+        _bestO.flashColor='#f44'; _bestO.flashT=1.0;
+        if(window.virusPlayerSpec.type==='parasite') _bestO.parasiticInfection=true;
+        if(window.showToast) window.showToast('Клетка инфицирована! Лизис через 10-20\u0441','#f66');
+        return;
+      }
+    }
     // Demo: click organism to possess / release
     if(window.demoMode && typeof demoPickAtScreen==='function'){
       var hit=demoPickAtScreen(mx,my);
@@ -28,7 +52,16 @@ cv.addEventListener('wheel',function(e){e.preventDefault();tZoom=clamp(tZoom*(e.
 var touchId=null;
 cv.addEventListener('touchstart',function(e){e.preventDefault();var t=e.touches[0];var r=cv.getBoundingClientRect();mx=t.clientX-r.left;my=t.clientY-r.top;mouseDown=true;touchId=t.identifier;},{passive:false});
 cv.addEventListener('touchmove',function(e){e.preventDefault();for(var i=0;i<e.touches.length;i++){var t=e.touches[i];if(t.identifier===touchId){var r=cv.getBoundingClientRect();mx=t.clientX-r.left;my=t.clientY-r.top;break;}}},{passive:false});
-cv.addEventListener('touchend',function(e){mouseDown=false;if(e.touches.length===0)touchId=null;},{passive:false});
+cv.addEventListener('touchend',function(e){
+  mouseDown=false;
+  // Demo: tap to possess/release (mobile)
+  if(window.demoMode && typeof demoPickAtScreen==='function'){
+    var hit=demoPickAtScreen(mx,my);
+    if(hit){ demoPossessOrg(hit); }
+    else if(window.demoPossessed){ exitDemoPossess(); }
+  }
+  if(e.touches.length===0)touchId=null;
+},{passive:false});
 
 // Web Audio API MVP (Task 40)
 var audioCtx = null;
@@ -180,7 +213,10 @@ window.playerContactEat = function(dt){
 
 var keys={};
 document.addEventListener('keydown',function(e){
-  var k=e.key.toLowerCase();keys[k]=true;
+  var k=e.key.toLowerCase();
+  var code=e.code||'';
+  if(code==='KeyW')k='w'; else if(code==='KeyA')k='a'; else if(code==='KeyS')k='s'; else if(code==='KeyD')k='d';
+  keys[k]=true;
   if(k==='w'||k==='a'||k==='s'||k==='d'||k==='arrowup'||k==='arrowdown'||k==='arrowleft'||k==='arrowright'){
     // Map arrows to camKeys
     var ck = k;
@@ -226,11 +262,14 @@ document.addEventListener('keydown',function(e){
   if(k==='r'){if(player&&player.alive)doCyst(player);}
   if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
 });
-document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=false;if(k==='w'||k==='a'||k==='s'||k==='d'){camKeys[k]=false;}
+document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();
+  var code=e.code||'';
+  if(code==='KeyW')k='w'; else if(code==='KeyA')k='a'; else if(code==='KeyS')k='s'; else if(code==='KeyD')k='d';
+  keys[k]=false;if(k==='w'||k==='a'||k==='s'||k==='d'){camKeys[k]=false;}
   if(k==='arrowup')camKeys.w=false; if(k==='arrowdown')camKeys.s=false;
   if(k==='arrowleft')camKeys.a=false; if(k==='arrowright')camKeys.d=false;});
 
-mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;});
+mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;try{var cm=document.getElementById('camM');if(cm){cm.style.display='block';cm.textContent='✈ ПОЛЁТ WASD';cm.className='free';}var bf=document.getElementById('bFree');if(bf){bf.style.background='#2a6';bf.style.boxShadow='0 0 12px #4c8';}if(window.showToast)window.showToast('✈ Полёт камеры. СЛЕДИТЬ (V) — вернуться к клетке','#4af');}catch(_e){}});
 
 document.getElementById('bEat').onclick=function(){ window.tryPlayerEat && window.tryPlayerEat(); };
 document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast('Деление...','#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa');}}};
@@ -259,15 +298,34 @@ document.getElementById('bMicro').onclick=function(){
 document.getElementById('bRender').onclick=function(){ toggleRenderModeLarge(); };
 function toggleRenderModeLarge(){
   window._rmodeUserPicked = true;
-  settings.renderMode = settings.renderMode==='realistic' ? 'cartoon' : 'realistic';
+  // Cycle: cartoon → bioicons → swiss → cartoon (realistic removed per user request)
+  if(settings.renderMode==='cartoon') settings.renderMode='bioicons';
+  else if(settings.renderMode==='realistic') settings.renderMode='bioicons';
+  else if(settings.renderMode==='bioicons') settings.renderMode='swiss';
+  else if(settings.renderMode==='swiss') settings.renderMode='cartoon';
+  else settings.renderMode='cartoon';
   applyRenderMode();
+  // Load bioicons sprites on first switch
+  if(settings.renderMode==='bioicons' && typeof window.loadBioicons==='function' && !window.bioiconsReady()){
+    window.loadBioicons();
+  }
+  if(settings.renderMode==='swiss' && typeof window.loadSwissSprites==='function' && !window.swissReady()){
+    window.loadSwissSprites();
+  }
   var btn=document.getElementById('renderModeBtn');
   var smBtn=document.getElementById('bRender');
   if(settings.renderMode==='realistic'){
-    if(btn){btn.className='realistic';btn.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';}
-    if(smBtn){smBtn.style.background='#4a3a1a';smBtn.style.borderColor='#fa4';}
+    // Realistic removed from UI — auto-skip to bioicons
+    settings.renderMode='bioicons';
+  }
+  if(settings.renderMode==='bioicons'){
+    if(btn){btn.className='bioicons';btn.innerHTML='🧬 БИОИКОНКИ';btn.title='Сейчас: научные иконки bioicons.com. Клик → SwissBioPics';}
+    if(smBtn){smBtn.style.background='#1a1a4a';smBtn.style.borderColor='#a4f';}
+  } else if(settings.renderMode==='swiss'){
+    if(btn){btn.className='swiss';btn.innerHTML='📗 SWISSBIOPICS';btn.title='Сейчас: схема SwissBioPics. Клик → мультяшный';}
+    if(smBtn){smBtn.style.background='#2a2a2a';smBtn.style.borderColor='#bbb';}
   } else {
-    if(btn){btn.className='cartoon';btn.innerHTML='🎨 МУЛЬТЯШНЫЙ';}
+    if(btn){btn.className='cartoon';btn.innerHTML='🎨 МУЛЬТЯШНЫЙ';btn.title='Сейчас: мультяшный. Клик → реалистичный';}
     if(smBtn){smBtn.style.background='#012';smBtn.style.borderColor='#345';}
   }
 }
@@ -299,7 +357,7 @@ window.addEventListener('resize',resize);
 window.addEventListener('mousemove', function(e){window.mouseX=e.clientX;window.mouseY=e.clientY;});
 
 // === INIT ===
-resize();buildLangBar();buildDiff();buildCatSel();
+resize();if(typeof buildLangBar==='function')buildLangBar();if(typeof buildDiff==='function')buildDiff();if(typeof buildCatSel==='function')buildCatSel();
 for(var i=0;i<SPECIES_DB.length;i++)speciesPop[i]={alive:0,born:0,deaths:[0,0,0,0,0]};
 buildSpeciesGrid();updateMenuTexts();initWorld();
 requestAnimationFrame(gameLoop);

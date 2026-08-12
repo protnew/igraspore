@@ -64,7 +64,7 @@ function updateViruses(dt){
 }
 
 function spawnVirus(){
-  if(viruses.length>30)return;
+  if(viruses.length>80)return;
   var vi=Math.floor(Math.random()*VIRUS_SPECS.length);
   var vs=VIRUS_SPECS[vi];
   var d=rng(50,PD-50),hw=halfW(d)-20;

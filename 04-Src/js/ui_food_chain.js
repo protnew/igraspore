@@ -299,6 +299,26 @@ function drawSpeciesPreview(canvas,sp,idx){
 }
 
 function showDeadScreen(){
+  // Virus spectator mode — show infection stats, not death
+  if(window.virusPlayer){
+    var _ds2=document.getElementById('deadStats');
+    var _inf=0,_lysed=0;
+    for(var _vi3=0;_vi3<orgs.length;_vi3++){
+      if(orgs[_vi3].infected) _inf++;
+      if(orgs[_vi3].virusLysed) _lysed++;
+    }
+    var _vh='<div style="color:#f66;font-size:14px;text-align:center;margin-bottom:8px;font-weight:bold;">'+(curLang==='ru'?'РЕЖИМ ВИРУСА':'VIRUS MODE')+'</div>';
+    _vh+='<table class="stbl">';
+    _vh+='<tr><td class="lbl">'+(curLang==='ru'?'Инфицировано':'Infected')+'</td><td class="val">'+_inf+'</td></tr>';
+    _vh+='<tr><td class="lbl">'+(curLang==='ru'?'Лизировано':'Lysed')+'</td><td class="val">'+_lysed+'</td></tr>';
+    _vh+='<tr><td class="lbl">'+(curLang==='ru'?'Фагов':'Phages')+'</td><td class="val">'+viruses.length+'</td></tr>';
+    _vh+='<tr><td class="lbl">'+tt('days')+'</td><td class="val">'+totalDays+'</td></tr>';
+    _vh+='</table>';
+    _ds2.innerHTML=_vh;
+    document.getElementById('deadScreen').style.display='block';
+    return;
+  }
+
   var ds=document.getElementById('deadStats');var playSec=Math.round((Date.now()-gameStats.startTime)/1000);
   var html='';
   
@@ -375,12 +395,17 @@ function toggleRenderMode(el){
 }
 
 function applyRenderMode(){
+  window._swissStrict = (settings.renderMode==='swiss');
   if(settings.renderMode==='realistic'){
     // Realistic: darker, deeper colors, less saturation, more particles
     settings.particles=true; settings.bubbles=true; settings.vignette=true;
     settings.lightMul=1.2;
+  } else if(settings.renderMode==='swiss'){
+    // Swiss only changes organism art — keep full pond FX/color
+    settings.particles=true; settings.bubbles=true; settings.vignette=false;
+    settings.lightMul=1.0;
   } else {
-    // Cartoon: brighter, more saturated, simpler
+    // Cartoon / bioicons: brighter, more saturated, simpler
     settings.lightMul=1.0;
   }
 }

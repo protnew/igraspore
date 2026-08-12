@@ -10,6 +10,8 @@ function render(){
   // minimap early-return removed
   
   var isReal=settings.renderMode==='realistic';
+  var isSwiss=settings.renderMode==='swiss';
+  var isClean=isReal||isSwiss; // Swiss = clean schematic, no decorative clouds/bubbles
   var vw=cv.width/zoom,vh=cv.height/zoom;
   var vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
   
@@ -59,11 +61,11 @@ function render(){
     renderWater(vL,vR,vT,vB);
     renderSunRays(vL,vR);
     renderSediment(vL,vR,vB);
-    if(!isReal) renderNutrients(vL,vR,vT,vB);
+    if(!isClean) renderNutrients(vL,vR,vT,vB);
     renderShore(vL,vR,vT);
-    if(settings.shadows && !isReal) renderShadows(vL,vR,vT,vB);
+    if(settings.shadows && !isClean) renderShadows(vL,vR,vT,vB);
     if(settings.bubbles) renderBubbles(vL,vR,vT,vB);
-    if(!isReal){ renderParallax(vL,vR,vT,vB); renderTrails(vL,vR,vT,vB); }
+    if(!isClean){ renderParallax(vL,vR,vT,vB); renderTrails(vL,vR,vT,vB); } // gated by isClean above
   }
   
   // === STEP 4: ORGANISMS (both modes) ===
@@ -75,7 +77,7 @@ function render(){
   // === STEP 5: EFFECTS ===
   {
     renderParticles(vL,vR,vT,vB);
-    if(!isReal && isRaining) renderRain(vL,vR,vT);
+    if(!isClean && isRaining) renderRain(vL,vR,vT);
   }
   if(moveTarget)renderTarget();
   
@@ -86,7 +88,7 @@ function render(){
   
   // === STEP 6: SCREEN-SPACE OVERLAYS ===
   if(typeof renderOrganelleEdu==='function') renderOrganelleEdu(vL,vR,vT,vB);
-  if(!isReal){
+  if(!isClean){
     renderDayNight();
     if(settings.healthBars)renderHealthBars();
   }

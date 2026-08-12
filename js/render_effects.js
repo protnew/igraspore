@@ -219,7 +219,7 @@ function renderWater(vL,vR,vT,vB){
   var grad = ctx.createLinearGradient(0, 0, 0, PD);
   var lightTop = lightAt(0)*realMul, lightMid = lightAt(PD*0.5)*realMul, lightBot = lightAt(PD)*realMul;
   
-  // Natural pond: green-blue photic zone → deep teal → dark benthos
+  // Natural pond colors ALWAYS (swiss mode only changes organism drawing, not world)
   var lt=lightTop, lm=lightMid, lb=lightBot;
   grad.addColorStop(0, 'rgb('+Math.round(12+lt*28)+','+Math.round(70+lt*65)+','+Math.round(85+lt*55)+')');
   grad.addColorStop(0.12, 'rgb('+Math.round(10+lt*20)+','+Math.round(55+lt*48)+','+Math.round(75+lt*50)+')');

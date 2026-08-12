@@ -8,6 +8,7 @@ for(var l in LANGS){if(!T[l]){T[l]={};var ks=Object.keys(T.en);for(var k=0;k<ks.
 function tt(k){return(T[curLang]&&T[curLang][k])||T.en[k]||k;}
 
 // === SPECIES DATABASE — 100 species + 5 virus types ===
+var SPEED_SCALE=0.5; if(typeof window!=='undefined')window.SPEED_SCALE=0.5; // v2: global movement speed halved
 var PN=["Synechocystis sp.","Anabaena variabilis","Spirulina platensis","Nostoc punctiforme","Oscillatoria limnetica","Microcystis aeruginosa","Gloeocapsa sp.","Lyngbya majuscula","Chlamydomonas reinhardtii","Chlorella vulgaris","Volvox globator","Euglena gracilis","Scenedesmus quadricauda","Haematococcus pluvialis","Dunaliella salina","Micrasterias rotata","Navicula sp.","Pinnularia viridis","Cyclotella meneghiniana","Diatoma vulgare","Rhodospirillum rubrum","Chromatium vinosum","Porphyridium cruentum","Prochlorococcus marinus","Chroococcidiopsis thermalis"];
 var CN1=["Bdellovibrio bacteriovorus","Vampirococcus sp.","Daptobacter sp.","Myxococcus xanthus","Bacteriovorax stolpii","Halobacteriovorax sp.","Peredibacter starrii","Monas guttula","Oikomonas termo","Anthophysa vegetans","Chilomonas paramecium","Cercomonas longicauda","Heteromita globosa","Bodo saltans","Procryptobia sorokini","Trypanosoma brucei","Leishmania donovani","Monosiga brevicollis","Salpingoeca rosetta","Codonosiga botrytis"];
 var CN2=["Paramecium caudatum","Paramecium bursaria","Stentor coeruleus","Stentor polymorphus","Vorticella campanula","Vorticella microstoma","Didinium nasutum","Spirostomum ambiguum","Blepharisma americanum","Euplotes patella","Stylonychia pustulata","Oxytricha trifallax","Tetrahymena thermophila","Coleps hirtus","Litonotus lamella","Dileptus anser","Urocentrum turbo","Zoothamnium arbuscula","Opercularia coarctata","Amoeba proteus","Arcella vulgaris","Difflugia oblonga","Euglypha alveolata","Nebela collaris","Centropyxis aculeata"];
@@ -15,7 +16,7 @@ var CN3=["Actinophrys sol","Actinosphaerium eichhorni","Raphidiophrys pallida","
 var DN=["Saccharomyces cerevisiae","Candida albicans","Mucor mucedo","Rhizopus stolonifer","Penicillium chrysogenum","Aspergillus niger","Batrachochytrium dendrobatidis","Chytriomyces aureus","Allomyces macrogynus","Bacillus subtilis","Pseudomonas putida","Streptomyces coelicolor","Cellulomonas fimi","Thermus aquaticus","Deinococcus radiodurans"];
 var VN=["T4 Bacteriophage","Lambda Phage","T7 Bacteriophage","Phi-6 Phage","MS2 Phage"];
 var CC={producer:"#22dd44",consumer1:"#33aaff",consumer2:"#ff9900",consumer3:"#dd44cc",decomposer:"#bb9966",virus:"#ff3333",macrophage:"#eeeeee"};
-var SHAPES={producer:["circle","rod","spiral","filament","filament","circle","circle","filament","circle","circle","colony","spiral","rod","circle","circle","star","rod","rod","circle","rod","spiral","rod","circle","circle","circle"],consumer1:["rod","circle","rod","rod","rod","rod","rod","circle","circle","circle","circle","circle","circle","circle","circle","spiral","circle","circle","bell","bell"],consumer2:["slipper","slipper","bell","bell","bell","bell","bell","bell","bell","oval","oval","oval","slipper","rod","rod","oval","bell","bell","bell","irregular","star","irregular","star","irregular","irregular"],consumer3:["star","star","star","rod","rod","bell","bell","bell","rod","rod","oval","rod","rod","rod","irregular"],decomposer:["circle","circle","filament","filament","filament","filament","circle","circle","filament","rod","rod","filament","rod","rod","circle"]};
+var SHAPES={producer:["circle","filament","spiral","colony","filament","colony","colony","filament","bell","circle","colony","oval","colony","oval","oval","star","rod","rod","circle","rod","spiral","rod","circle","circle","colony"],consumer1:["comma","circle","rod","rod","rod","rod","rod","oval","oval","oval","oval","irregular","circle","comma","comma","filament","oval","bell","bell","bell"],consumer2:["slipper","slipper","bell","bell","bell","bell","oval","rod","slipper","irregular","irregular","irregular","oval","oval","slipper","rod","oval","bell","bell","irregular","irregular","irregular","irregular","irregular","irregular"],consumer3:["star","star","star","oval","oval","oval","star","oval","rod","rod","oval","rod","rod","rod","irregular"],decomposer:["circle","circle","filament","filament","filament","filament","circle","circle","filament","rod","rod","filament","rod","rod","circle"]};
 function bioFlags(cat,i){
   var b={nucleus:false,chloro:false,vac:false,flag:false,cilia:false,eye:false,pseudo:false,wall:false,biolum:false,stalk:false,oral:false,bud:false,chain:false,mito:false,golgi:false,er:false,trich:false,macro:false,ribo:false,plastid:false,contractile:false,pellicle:false,glide:false,nucleoid:false,thylakoid:false};
   if(cat==='producer'){
@@ -104,23 +105,38 @@ function mkSp(arr,cat,minSz,maxSz,minSp,maxSp){
   return o;
 }
 function getLocomotion(cat,i){
+  // Sessile ONLY by true biology (peritrich stalks), never by shape=bell alone (Stentor swims!)
+  var nm='';
+  try{
+    if(cat==='consumer2'&&typeof CN2!=='undefined') nm=CN2[i]||'';
+    if(cat==='consumer1'&&typeof CN1!=='undefined') nm=CN1[i]||'';
+  }catch(e){}
+  if(/Vorticella|Zoothamnium|Opercularia/i.test(nm)) return 'sessile';
+  // Choanoflagellates often stalked/sessile in nature
+  if(/Codonosiga|Salpingoeca/i.test(nm)) return 'sessile';
   if(cat==='producer'){
     var sh=SHAPES.producer[i];
-    if(sh==='spiral'||i===8||i===11||i===13||i===14)return'flagella';
+    if(sh==='spiral'||sh==='bell'||i===8||i===11||i===13||i===14)return'flagella';
+    if(sh==='filament'||sh==='colony')return'drift'; // cyanobacterial filaments/colonies float/glide slowly
     if(i<8||sh==='rod')return'glide';
     return'drift';
   }
-  if(cat==='consumer1')return SHAPES.consumer1[i]==='rod'?'glide':'flagella';
+  if(cat==='consumer1'){
+    var sh1=SHAPES.consumer1[i];
+    if(sh1==='comma')return'flagella'; // Bdellovibrio swims with polar flagellum
+    if(sh1==='rod')return'glide';
+    if(sh1==='filament')return'flagella'; // Trypanosoma undulating
+    return'flagella';
+  }
   if(cat==='consumer2'){
     var sh=SHAPES.consumer2[i];
-    if(sh==='bell')return'cilia+stalk';
-    if(sh==='slipper'||sh==='oval'||sh==='rod')return'cilia';
-    return'pseudopodia';
+    if(sh==='slipper'||sh==='oval'||sh==='rod'||sh==='bell')return'cilia'; // Stentor free-swims with cilia
+    return'pseudopodia'; // Amoeba / testates
   }
   if(cat==='consumer3'){
     var sh=SHAPES.consumer3[i];
-    if(sh==='bell')return'cilia';
-    if(sh==='rod'||sh==='oval')return'flagella';
+    if(sh==='star')return'pseudopodia'; // heliozoa axopodia, slow
+    if(sh==='oval'||sh==='rod')return'cilia'; // rotifers/gastrotrichs ciliary
     return'pseudopodia';
   }
   if(cat==='decomposer')return SHAPES.decomposer[i]==='circle'?'budding':'growth';
@@ -130,8 +146,8 @@ var SPECIES_DB=mkSp(PN,'producer',3,5,0.010,0.027).concat(mkSp(CN1,'consumer1',3
 // Virus species
 for(var i=0;i<SPECIES_DB.length;i++){SPECIES_DB[i].id=i;}
 var VIRUS_SPECS=[];
-for(var vi=0;vi<VN.length;vi++){VIRUS_SPECS.push({id:100+vi,name:VN[vi],cat:'virus',shape:'phage',color:'#f44',size:4,speed:2.5,infectRate:0.3,energy:0,repEnergy:0,minAge:0,isEuk:false,tempRange:[0,40],locomotion:'drift'});}
-VIRUS_SPECS.push({id:200,name:'Neuro-Parasite',cat:'virus',shape:'phage',color:'#f0f',size:4,speed:3.5,infectRate:0.5,energy:0,repEnergy:0,minAge:0,isEuk:false,tempRange:[0,40],locomotion:'drift',type:'parasite'});
+for(var vi=0;vi<VN.length;vi++){VIRUS_SPECS.push({id:100+vi,name:VN[vi],cat:'virus',shape:'phage',color:'#f44',size:4,speed:0.35,infectRate:0.3,energy:0,repEnergy:0,minAge:0,isEuk:false,tempRange:[0,40],locomotion:'drift'});}
+VIRUS_SPECS.push({id:200,name:'Neuro-Parasite',cat:'virus',shape:'phage',color:'#f0f',size:4,speed:0.4,infectRate:0.5,energy:0,repEnergy:0,minAge:0,isEuk:false,tempRange:[0,40],locomotion:'drift',type:'parasite'});
 
 var MACROPHAGE_SP = {
     id: 999, name: "\u041c\u0430\u043a\u0440\u043e\u0444\u0430\u0433 (\u0418\u043c\u043c\u0443\u043d\u0438\u0442\u0435\u0442)", cat: "macrophage", shape: "circle", color: "#eeeeee",
@@ -181,8 +197,8 @@ SPECIES_DB.push(GENDERED_SP);
       s.flags=Object.assign({}, s.flags||{}, {noRandomSpawn:true, colony:true});
       // ~2x smaller than before (was up to 8) — still larger than single cells
       var base = s.size || 3;
-      s.size = Math.max(2.8, Math.min(4.2, base * 0.55 + 1.2));
-      s.visScale = 0.85; // extra visual shrink of gelatin envelope
+      s.size = Math.max(9, Math.min(14, base * 1.5 + 5)); // v2: 3× bigger — visible clusters, not bacteria-sized
+      s.visScale = 1.0; // v2: full visual size (was shrunk 0.85)
       if(n.indexOf('microcystis')>=0){
         s.flags=Object.assign({}, s.flags||{}, {toxic:true});
       }
@@ -277,8 +293,8 @@ function foodListRu(cat){
 }
 
 var DIFF={easy:{spawn:1.5,energy:0.8,metab:0.3,virus:0.2},normal:{spawn:1.0,energy:1.0,metab:0.5,virus:0.4},hard:{spawn:0.7,energy:1.2,metab:0.8,virus:0.8}};
-var TGT={producer:1400,consumer1:160,consumer2:80,consumer3:40,decomposer:160,macrophage:0};
-var INIT_N={producer:1200,consumer1:150,consumer2:75,consumer3:40,decomposer:150,macrophage:0,virus:3};
+var TGT={producer:1400,consumer1:160,consumer2:100,consumer3:40,decomposer:160,macrophage:0};
+var INIT_N={producer:1200,consumer1:150,consumer2:90,consumer3:40,decomposer:150,macrophage:0,virus:3};
 var SEASONS=[{temp:16,light:0.85,ice:0,rain:0.15},{temp:24,light:1,ice:0,rain:0.08},{temp:10,light:0.7,ice:0.05,rain:0.25},{temp:3,light:0.45,ice:0.6,rain:0.03}];
 var SEASON_DAYS=2;
 var DCODE={STARVE:0,EATEN:1,TEMP:2,AGE:3,LYSIS:4};

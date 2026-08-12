@@ -70,7 +70,7 @@ function updateOrg(o,dt){
   if(o.sp.cat === 'producer' && isDay) O2_GRID[band] = Math.min(150, O2_GRID[band] + o.size*dt*0.8);
   else if(o.sp.isEuk || o.sp.cat==='consumer1') O2_GRID[band] -= o.size*dt*0.05;
   
-  if(O2_GRID[band] < 15 && !o.cyst && o.sp.isEuk) { o.energy -= dt*5; o.flash=0.1; o.flashColor='#f00'; }
+  if(O2_GRID[band] < 15 && !o.cyst && o.sp.isEuk && o.sp.cat !== 'decomposer' && !(o.invuln>0) && (o.age||0)>8) { o.energy -= dt*2.2; o.flash=0.1; o.flashColor='#f00'; }
   let curT = window.getTempAt(o.x, o.y);
   if(!o.cyst && (curT < 2 || curT > 35)) doCyst(o);
   
@@ -152,15 +152,20 @@ function updateOrg(o,dt){
   var baseMetab=(0.008 + o.sp.speed * o.speedMult * 0.003)*DIFF[difficulty].metab;
   // Хищники (consumer3): расход энергии x0.1 — живут ~в 10 раз дольше без еды
   if(o.sp && o.sp.cat === 'consumer3') baseMetab *= 0.10;
-  // Средние едоки чуть экономнее
-  if(o.sp && o.sp.cat === 'consumer2') baseMetab *= 0.55;
+  // Средние едоки чуть экономнее (как фильтрующие инфузории — низкий базальный расход)
+  if(o.sp && o.sp.cat === 'consumer2') baseMetab *= 0.35;
+  // Сапротрофы: медленный метаболизм, живут на детрите
+  if(o.sp && o.sp.cat === 'decomposer') baseMetab *= 0.38;
   // TSK-BIO-011: Flagella efficiency — high speed = exponential energy cost
-  if(o.sp.locomotion==='flagella' || o.sp.locomotion==='cilia') baseMetab *= Math.pow(o.speedMult||1, 1.5);
+  if(o.sp.locomotion==='flagella' || o.sp.locomotion==='cilia'){
+    var _exp = (o.sp.cat==='consumer2') ? 1.0 : 1.5; // filter-feeders: lower idle tax
+    baseMetab *= Math.pow(o.speedMult||1, _exp);
+  }
   var metabMult = o.inBiofilm ? 0.3 : 1.0;
   // TSK-BIO-012: cellWall reduces speed, increases durability
   if(o.cellWall > 0) metabMult *= (1 + o.cellWall * 0.2); // thicker wall = more energy
   // TSK-BIO-005: Age-related metabolic degradation for Eukaryotes
-  if(o.isEuk && o.age > 500) metabMult *= Math.pow(1.05, (o.age - 500) / 10);
+  if(o.isEuk && o.age > 500 && o.sp.cat !== 'decomposer') metabMult *= Math.pow(1.05, (o.age - 500) / 10);
   var metab = baseMetab * metabMult;
   if(metab*dt > 2) metab = 2/dt;
   if(o.parasite) {
@@ -187,11 +192,22 @@ function updateOrg(o,dt){
       if(o.cyst && o.energy > 5 && !o.isPlayer) { o.cyst = false; }
   }
   
-  if(o.lastTemp !== undefined && Math.abs(o.lastTemp - curTemp) > 12) {
-      if(settings.particles) parts.push({x:o.x,y:o.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.5,maxL:0.5,size:0.8,color:o.sp.color});
-      killOrg(o, DCODE.STARVE); return;
+  // Temperature tolerance: large swings cause stress, not instant death
+  if(o.lastTemp !== undefined && Math.abs(o.lastTemp - curTemp) > 25) {
+      o.energy -= dt * 0.5; // stress penalty, not death
   }
   o.lastTemp = window.getTempAt(o.x, o.y);
+
+  // Filter-feeding ciliates (consumer2): passive absorption of ambient bacteria
+  // Real paramecia filter ~1000 bacteria/hour — continuous trickle energy
+  if(o.sp.cat === 'consumer2'){
+    var depthF2 = 0;
+    if(typeof PD==='number' && PD>0) depthF2 = Math.max(0, Math.min(1, 1 - (o.y||0)/PD));
+    // More food near surface (bacteria density)
+    var ffGain = (0.008 + depthF2*0.020) * dt * (DIFF[difficulty]?DIFF[difficulty].energy:1);
+    o.energy += ffGain;
+    if(ffGain > 0){ o.massFood = (o.massFood||0) + ffGain * 0.2; }
+  }
 
   // Eco-Balance 2.0 and Respiration
   // DECOMPOSER FEEDING: absorb dissolved organic matter (detritus/nutrient clouds)
@@ -199,19 +215,24 @@ function updateOrg(o,dt){
     var detrGain = 0;
     for(var dn=0; dn<nutrientClouds.length; dn++){
       var nc = nutrientClouds[dn];
-      if(dist2(o, nc) < nc.r * nc.r){
+      if(dist2(o, nc) < (nc.r*1.35) * (nc.r*1.35)){
         // Absorb detritus — decomposer gains energy, cloud depletes
-        detrGain = nc.intensity * 0.8 * dt * DIFF[difficulty].energy;
-        nc.intensity -= detrGain * 0.3; // cloud slowly depletes
-        if(nc.intensity < 0.05) nutrientClouds.splice(dn, 1); // remove depleted cloud
+        // life-like: slower cloud drain, slightly better absorb efficiency
+        detrGain = nc.intensity * 1.15 * dt * DIFF[difficulty].energy;
+        nc.intensity -= detrGain * 0.18;
+        if(nc.intensity < 0.05) nutrientClouds.splice(dn, 1);
         break;
       }
     }
+    // Ambient DOM increases with depth (real lakes: DOC/sediment flux) — gentle baseline niche
+    var depthF = 0;
+    if(typeof PD==='number' && PD>0) depthF = Math.max(0, Math.min(1, (o.y||0)/PD));
+    var domGain = (0.4 + depthF*0.6) * dt * (DIFF[difficulty]?DIFF[difficulty].energy:1);
+    detrGain += domGain;
     o.energy += detrGain;
-    // Decomposers also gain mass from feeding
     if(detrGain > 0){
-      o.massFood = (o.massFood||0) + detrGain * 0.3;
-      o.size = Math.min((o.sp.size||4) * 1.3, o.size + detrGain * 0.01);
+      o.massFood = (o.massFood||0) + detrGain * 0.35;
+      o.size = Math.min((o.sp.size||4) * 1.3, o.size + detrGain * 0.012);
     }
   }
   if(o.sp.cat==='producer'){
@@ -261,6 +282,9 @@ function updateOrg(o,dt){
   }else{
     // Respiration: consumes O2, produces CO2
     var o2Lim = Math.min(1.0, Math.max(0, globalO2 + o.o2Offset) / 50.0);
+    // Bottom-dwellers (decomposers) tolerate low O2 — cap penalty
+    var o2TaxCap = (o.sp.cat === 'decomposer') ? 1.0 : 2.0; // facultative anaerobes: zero O2 penalty
+    var o2Mul = o2TaxCap - o2Lim * (o2TaxCap - 1.0); // ranges 1.0 (full O2) to o2TaxCap (no O2)
     var huntTax = 1.0;
     if(o.state === 'hunt'){
       // Short sprint cost — NOT a death spiral. Cap extra burn.
@@ -272,7 +296,7 @@ function updateOrg(o,dt){
     }
 // Producers already handle their own energy via photosynthesis — skip general drain
     if(o.sp.cat !== 'producer'){
-      o.energy-=metab*dt*DIFF[difficulty].energy * (2.0 - o2Lim) * huntTax;
+      o.energy-=metab*dt*DIFF[difficulty].energy * o2Mul * huntTax;
     }
     // Soft floor for NPC predators: enter rest before zero-death
     if(!o.isPlayer && o.energy < 18 && o.energy > 0 && !o.cyst && !o.dying){
@@ -378,175 +402,7 @@ function updateOrg(o,dt){
     moveOrg(o,dt);
     if(o.isPlayer && window.playerContactEat) window.playerContactEat(dt);
   }
-  // division handled at top of updateOrg
-  if(!window.demoMode && !o.dividing&&!o.cyst&&canDivide(o)){
-    if (o.sp.flags && o.sp.flags.gendered) {
-        o.seekingMate = true;
-        for(let j=0; j<orgs.length; j++) {
-            let m = orgs[j];
-            if (m !== o && m.alive && m.seekingMate && m.sp.id === o.sp.id && m.gender !== o.gender) {
-                let d = Math.hypot(o.x - m.x, o.y - m.y);
-                if (d < o.size + m.size + 15) {
-                    o.energy -= o.sp.repEnergy * 0.5;
-                    m.energy -= m.sp.repEnergy * 0.5;
-                    o.seekingMate = false; m.seekingMate = false;
-                    doDivide(o); doDivide(m);
-                    break;
-                } else if (d < 400) {
-                    let ax = m.x - o.x; let ay = m.y - o.y;
-                    let len = Math.hypot(ax, ay);
-                    o.vx += (ax/len) * o.sp.speed * 0.1;
-                    o.vy += (ay/len) * o.sp.speed * 0.1;
-                }
-            }
-        }
-    } else if (o.sp.cat === 'consumer1' && Math.random() < 0.001 * dt) {
-        // #29 Bacterial conjugation: exchange plasmid via pilus
-        for (var bj = 0; bj < orgs.length; bj++) {
-          var bn = orgs[bj];
-          if (bn !== o && bn.alive && bn.sp.id === o.sp.id && dist2(o, bn) < 400) {
-            o.conjugating = 0.5; bn.conjugating = 0.5;
-            // Exchange energy (plasmid transfer simulation)
-            var avg = (o.energy + bn.energy) / 2;
-            o.energy = avg; bn.energy = avg;
-            o.conjugatePartner = bn; bn.conjugatePartner = o;
-            break;
-          }
-        }
-    } else {
-        var divP = o.isPlayer ? 0.5 : 0.02;
-        if(!window.demoMode && Math.random()<divP*dt)doDivide(o);
-    }
-  }
-  if(o.energy<=0){
-    // 10) Голод → циста («заснул»), а не мгновенная смерть (1 раз)
-    if(!o.cyst && !o._starvedOnce){
-      o._starvedOnce = true;
-      o.cyst = true; o.energy = 10; o.vx=0; o.vy=0; o.aiTarget=null; o.state='rest';
-      if(o.isPlayer && window.showToast) window.showToast('Голод: впал в цисту — найди еду и проснись', '#fc8');
-      return;
-    }
-  }
-  // Циста игрока: можно «проснуться» если энергия подросла / рядом еда
-  if(o.isPlayer && o.cyst && o.energy>=18){
-    o.cyst=false; o.cystT=0;
-    if(window.showToast) window.showToast('Проснулся из цисты', '#8f8');
-  }
-  if(o.energy<=-12){killOrg(o,DCODE.STARVE);return;}
-  if(o.sp.isEuk&&o.age>500){o.energy-=0.15*dt;if(o.energy<5&&Math.random()<0.004*dt){killOrg(o,DCODE.AGE);return;}}
-  // Size from species baseline + mass bank (feeding), energy only mild factor
-  var adult0 = o.sp.size*(o.sizeMult||1.0);
-  // Colonies stay compact in play — but demo gallery keeps enlarged showcase size
-  if(o.sp && (o.sp.shape==='colony' || (o.sp.bio&&o.sp.bio.colony))){
-    if(o.demoPinned || o.demoColony){ adult0 = Math.max(adult0, o.size||6.5); }
-    else { adult0 = Math.min(adult0, 4.5); }
-  }
-  var massFactor = clamp((o.massFood||0) / Math.max(adult0*0.8, 2), 0, 1.2);
-  var enFactor = 0.55 + clamp(o.energy/Math.max(o.sp.repEnergy||100,1), 0, 1)*0.45;
-  // After divide, birthSize anchors the floor; grow toward adult as mass accrues
-  var floorSz = Math.max(o.birthSize|| (adult0*0.45), adult0*0.4);
-  var tgtSz = floorSz + (adult0*1.05 - floorSz) * Math.min(1, massFactor*0.85 + (enFactor-0.55)*0.4);
-  // Consumers without food stay small; producers grow slowly via photo energy→mass trickle
-  // Night mass handled in producer photo block (loss, not gain)
 
-  if(!o.dividing){
-    o.size = lerp(o.size, tgtSz, 0.9*dt);
-    if(o.size < floorSz) o.size = lerp(o.size, floorSz, 2*dt);
-  }
-  if(o.flash>0)o.flash=Math.max(0,o.flash-dt*2);
-  // Easy mode: gentle hint only — NEVER auto-spam divide
-  // Division only via Q / button when canDivide() is true
-
-  // AUTO-EAT on contact — player AND NPCs (no E key needed)
-  // consumer2 (инфузории) = фильтр-питание: заглатывают бактерий/водоросли в зоне рта
-  if(o.alive&&!o.dividing&&!o.cyst&&!o.dying){
-    var foodCats=FOOD[o.sp.cat]||[];
-    var isCiliate = (o.sp.cat==='consumer2');
-    var range = o.size + (o.isPlayer ? 22 : 14);
-    if(isCiliate) range = o.size * 2.8 + (o.isPlayer ? 42 : 30);
-    var nearby = window.getNearby ? window.getNearby(o.x, o.y, range+55) : orgs;
-    var ateThisFrame = false;
-    for(var ai=0;ai<nearby.length;ai++){
-      var ap=nearby[ai];
-      if(!ap||!ap.alive||ap===o||ap.cyst||ap.dying) continue;
-      if(!o.isPlayer){
-        if(ap.divCD>0||ap.invuln>0) continue;
-        if(ap.isPlayer && (gt - (ap.spawnTime||0)) < 20) continue;
-      } else {
-        if(ap.invuln>0.8) continue;
-      }
-      var inChain = foodCats.indexOf(ap.sp.cat) >= 0;
-      var isCan=(o.sp.flags&&o.sp.flags.cannibal&&o.energy<25&&ap.sp.id===o.sp.id);
-      var ok=false;
-      if(inChain && ap.size < o.size*1.15) ok=true;
-      if(ap.size < o.size*0.95) ok=true;
-      if(isCan) ok=true;
-      // Ciliates ONLY eat their food chain (bacteria + algae + small ciliates) — not random junk
-      if(isCiliate){
-        ok = inChain && ap.size < o.size * 1.2;
-      }
-      if(o.sp.cat==='producer' && !inChain){
-        ok = ap.size < o.size*0.7 && (ap.sp.cat==='producer' || ap.sp.cat==='decomposer');
-      }
-      if(!ok) continue;
-      if(ap.size >= o.size*1.25) continue;
-      var dd=dist2(o,ap);
-      // Contact for most; filter zone (larger) for ciliates on tiny prey
-      var need = (o.size + ap.size + (o.isPlayer?18:10));
-      if(isCiliate && ap.size < o.size*0.7) need = range;
-      if(dd < need*need){
-        if(o.isPlayer){
-          if(typeof forceEat==='function') forceEat(o, ap);
-          else { ap.divCD=0; ap.invuln=0; eatOrg(o,ap); }
-          if(isCiliate && window.showToast && Math.random()<0.35)
-            window.showToast('Фильтр: захватил добычу', '#9cf');
-        } else {
-          eatOrg(o, ap);
-        }
-        ateThisFrame = true;
-        break;
-      }
-    }
-    // Continuous filter siphon: even without full swallow, pull micro-nutrition
-    // from ambient bacteria/algae density (real paramecium style)
-    if(isCiliate && !ateThisFrame){
-      o._filterT = (o._filterT||0) + (typeof dt==='number'?dt:0.016);
-      if(o._filterT > 0.35){
-        o._filterT = 0;
-        var micro = 0;
-        var nb2 = window.getNearby ? window.getNearby(o.x, o.y, range+20) : orgs;
-        for(var fi=0; fi<nb2.length; fi++){
-          var fp = nb2[fi];
-          if(!fp||!fp.alive||fp===o) continue;
-          if(foodCats.indexOf(fp.sp.cat)<0) continue;
-          if(fp.size >= o.size*0.85) continue;
-          var ddf = dist2(o,fp);
-          if(ddf < range*range) micro++;
-        }
-        if(micro > 0){
-          // Siphon one smallest nearby prey preferentially
-          var best=null, bestS=1e9;
-          for(var fj=0; fj<nb2.length; fj++){
-            var fq=nb2[fj];
-            if(!fq||!fq.alive||fq===o) continue;
-            if(foodCats.indexOf(fq.sp.cat)<0) continue;
-            if(fq.size >= o.size*0.85) continue;
-            if(dist2(o,fq) > range*range) continue;
-            if(fq.size < bestS){ bestS=fq.size; best=fq; }
-          }
-          if(best){
-            if(o.isPlayer && typeof forceEat==='function') forceEat(o, best);
-            else eatOrg(o, best);
-            if(o.isPlayer && window.showToast && Math.random()<0.4)
-              window.showToast('Реснички: фильтр-питание', '#9cf');
-          } else {
-            // Ambient organic soup if prey fled — tiny trickle only near food density
-            var drip = Math.min(2.5, 0.4 + micro*0.35);
-            o.energy = Math.min(120, (o.energy||0) + drip*0.5);
-            o.massFood = (o.massFood||0) + drip*0.06;
-          }
-        }
-      }
-    }
-  }
+  // Delegate division/cyst/eating to interaction module (refactored for <500 line limit)
+  if(typeof window.updateOrgInteract==='function') window.updateOrgInteract(o, dt);
 }

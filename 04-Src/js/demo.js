@@ -117,6 +117,13 @@ function startDemoMode() {
   try {
     document.getElementById('menuO').className = 'ov';
     var p = document.getElementById('pauseO'); if (p) p.className = 'ov';
+    // Show action bar + render mode controls (same as startGame)
+    var ab = document.getElementById('actBar'); if(ab) ab.style.display='flex';
+    var rb = document.getElementById('renderModeBtn'); if(rb) rb.style.display='block';
+    var tr = document.getElementById('topR'); if(tr) tr.style.display='block';
+    var wp = document.getElementById('weatherP'); if(wp) wp.style.display='block';
+    // Apply current render mode button label
+    if (typeof applyRenderMode === 'function') applyRenderMode();
   } catch (e) {}
 
   // HUD: free-cam controls tip
@@ -177,15 +184,21 @@ function demoPossessOrg(o) {
   }
   o.isPlayer = true;
   o.demoPinned = false; // allow movement while possessed
-  o.energy = Math.max(o.energy, 80);
+  o.energy = Math.max(o.energy, 85);
   o.invuln = 9999; // Demo: can't be eaten while possessed
+  o.cyst = false; o.cystT = 0; // clear any dormant state
+  o.vx = 0; o.vy = 0;
   player = o;
   window.demoPossessed = o;
   window.spectatorMode = false;
   freeCam = false;
+  autoAI = false;
+  try{ camKeys={w:false,a:false,s:false,d:false}; }catch(_e){}
+  try{ if(typeof keys==='object'){ for(var _k in keys) keys[_k]=false; } }catch(_e){}
   cam.x = o.x;
-  cam.y = o.y;
+  cam.y = o.y - 10;
   tZoom = Math.max(zoom, 1.2);
+  if(window.showToast) window.showToast('Управление: WASD / мышь · ЕСТЬ (E) · ДЕЛИТЬ (Q)','#4cf');
 }
 
 function demoPickAtScreen(sx, sy) {
@@ -197,7 +210,7 @@ function demoPickAtScreen(sx, sy) {
     var o = orgs[i];
     if (!o || !o.alive) continue;
     var dx = o.x - wx, dy = o.y - wy;
-    var r = (o.size || 8) * 1.15 + 6 / Math.max(0.5, zoom);
+    var r = (o.size || 8) * 2.5 + 16 / Math.max(0.5, zoom);
     var d2 = dx * dx + dy * dy;
     if (d2 < r * r && d2 < bestD) { bestD = d2; best = o; }
   }

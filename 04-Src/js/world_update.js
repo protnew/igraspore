@@ -23,6 +23,15 @@ function updateWorld(dt){
      window.spatialGrid[k].push(o);
   }
 
+  // Sessile organisms: lock to spawn position (attached to substrate)
+  for(var _si=0;_si<orgs.length;_si++){
+    var _so=orgs[_si];
+    if(_so.alive && (_so.locomotion==='sessile' || (_so.sp && _so.sp.locomotion==='sessile'))){
+      if(!_so.sessileHome) _so.sessileHome={x:_so.x, y:_so.y};
+      _so.x=_so.sessileHome.x; _so.y=_so.sessileHome.y;
+      _so.vx=0; _so.vy=0;
+    }
+  }
   for(var i=0;i<orgs.length;i++)updateOrg(orgs[i],dt);
   updateInfections(dt);
   updateViruses(dt);
@@ -104,12 +113,14 @@ function updateWorld(dt){
         else { cands[k].alive=false; cands[k].energy=0; }
       }
     }
+    // NICHE_SOFT_FLOOR: if a trophic level nearly empty, slightly raise spawn pressure (not hard control)
+    var _aliveByCat={}; for(var _ai=0;_ai<orgs.length;_ai++){ if(orgs[_ai].alive&&orgs[_ai].sp){ var _c=orgs[_ai].sp.cat; _aliveByCat[_c]=(_aliveByCat[_c]||0)+1; } }
     for(var cat in TGT){
-      var pool=SPECIES_DB.filter(function(s){return s.cat===cat && !(s.flags&&s.flags.noRandomSpawn) && (s.size||1)<12;});
+      var pool=SPECIES_DB.filter(function(s){return s.cat===cat && !(s.flags&&s.flags.noRandomSpawn) && (s.size||1)<16;})
       var bm=catBm[cat]||0;
       var avgBm=0; for(var i=0;i<pool.length;i++) avgBm+=pool[i].size*(pool[i].energy*0.7+5);
       avgBm = pool.length ? avgBm/pool.length : 500;
-      if(!window.demoMode && bm < TGT[cat]*avgBm*DIFF[difficulty].spawn*settings.density){
+      if(!window.demoMode && bm < TGT[cat]*avgBm*DIFF[difficulty].spawn*settings.density * ( (_aliveByCat[cat]||0) < Math.max(12, (TGT[cat]||40)*0.22) ? 0.68 : 1 )){ // NICHE_SOFT_FLOOR
         var numToSpawn = (cat === 'producer') ? 15 : 1;
         for (var k=0; k<numToSpawn; k++) {
            if(pool.length>0){
@@ -138,19 +149,19 @@ function updateWorld(dt){
     }
   }
 
-        // TSK-WRD-013: Sediment decay — decomposers break down sediment
+        // TSK-WRD-013: Sediment decay — decomposers (not consumers) break down sediment like in nature
   if(typeof window.sedimentClumps !== 'undefined' && window.sedimentClumps){
     for(var si=window.sedimentClumps.length-1; si>=0; si--){
       var sc = window.sedimentClumps[si];
       if(!sc) continue;
       for(var oi=0; oi<orgs.length; oi++){
         var so = orgs[oi];
-        if(so.alive && so.sp.cat === 'consumer1' && Math.abs(so.x-sc.x)<sc.w && Math.abs(so.y-sc.y)<sc.h){
-          sc.w -= dt * 0.5; sc.h -= dt * 0.5;
-          so.energy += dt * 2; // nutrient gain
+        if(so.alive && so.sp && so.sp.cat === 'decomposer' && Math.abs(so.x-sc.x)<(sc.w+so.size*2) && Math.abs(so.y-sc.y)<(sc.h+so.size*2)){
+          sc.w -= dt * 0.6; sc.h -= dt * 0.6;
+          so.energy += dt * 2.4 * (DIFF[difficulty]?DIFF[difficulty].energy:1); // bottom scavenger niche
+          so.massFood = (so.massFood||0) + dt * 0.4;
           if(sc.w < 2 || sc.h < 2){
-            // Spawn nutrient cloud
-            if(typeof FOOD !== 'undefined' && FOOD.push) FOOD.push({x:sc.x, y:sc.y, energy:15, r:5});
+            if(typeof nutrientClouds !== 'undefined') nutrientClouds.push({x:sc.x,y:sc.y,r:rng(12,28),intensity:rng(0.5,1.2),vx:rng(-0.02,0.02),vy:rng(-0.01,0.04)});
             window.sedimentClumps.splice(si, 1);
           }
           break;
@@ -318,18 +329,11 @@ function updateCamera(dt){
   if(!freeCam&&player&&player.alive){
     var tx=player.x,ty=player.y;
     if(!isFinite(tx)||!isFinite(ty)){tx=0;ty=PD*0.3;}
-    // Surface bias: if player is near surface and zoomed in, keep a sky band (magnify UX).
-    // If player dives (y large), follow normally — sun leaves when sky leaves viewport.
-    if(typeof zoom==='number' && zoom>2.5 && ty < 90){
-      var h2 = (typeof cv!=='undefined' && cv && cv.height) ? cv.height*0.5 : 400;
-      var maxCamY = Math.max(10, (h2 - 100)/zoom); // keep ~100px sky while near surface
-      ty = Math.min(ty - 12, maxCamY + 20);
-    } else {
-      ty = ty - 18;
-    }
-    var followFactor=clamp(dtc*8,0,0.35);
-    cam.x=lerp(cam.x,tx,followFactor);
-    cam.y=lerp(cam.y,ty,followFactor);
+    ty = ty - Math.max(4, 14 / Math.max(1, zoom * 0.5));
+    // Higher follow factor at high zoom so camera stays locked on player
+    var followFactor = clamp(dtc * 12, 0, zoom > 3 ? 0.55 : 0.35);
+    cam.x = lerp(cam.x, tx, followFactor);
+    cam.y = lerp(cam.y, ty, followFactor);
   }
   
   if(!isFinite(cam.x))cam.x=0;
@@ -338,8 +342,13 @@ function updateCamera(dt){
   if(freeCam){
     var cs=Math.min(220, 140 * Math.min(2.0, 1/Math.max(0.35, zoom))) * dtc;
     var moved=false;
-    if(camKeys.w){cam.y-=cs;moved=true;}if(camKeys.s){cam.y+=cs;moved=true;}
-    if(camKeys.a){cam.x-=cs;moved=true;}if(camKeys.d){cam.x+=cs;moved=true;}
+    // camKeys (desktop) OR keys (mobile joystick) — both drive free camera
+    var up = camKeys.w || keys['w'] || keys['arrowup'];
+    var dn = camKeys.s || keys['s'] || keys['arrowdown'];
+    var lf = camKeys.a || keys['a'] || keys['arrowleft'];
+    var rt = camKeys.d || keys['d'] || keys['arrowright'];
+    if(up){cam.y-=cs;moved=true;}if(dn){cam.y+=cs;moved=true;}
+    if(lf){cam.x-=cs;moved=true;}if(rt){cam.x+=cs;moved=true;}
     if(moved) window.screensaverAutoCam=false;
     
     if (moved) window.lastInteractionTime = Date.now();

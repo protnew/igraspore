@@ -1,5 +1,8 @@
+
 // ai.js — playerAutoAI, forceEat, findBestPrey, filterFeed, naturalAI, aiOrg
 function playerAutoAI(o, dt, speed){
+  if(o.sp && o.sp.locomotion==='sessile') return;
+
   o.state = 'auto';
   var en = (typeof o.energy === 'number') ? o.energy : 50;
 
@@ -223,6 +226,8 @@ window.filterFeedPull = filterFeedPull;
 // NO continuous clockwise/counterclockwise spinning
 // ============================================================
 function naturalAI(o, dt, speed){
+  if(o.sp && o.sp.locomotion==='sessile') return; // stalked ciliates don't move
+
   if(!(dt>0)) dt = 0.016;
   if(!(speed>0)) speed = (o && o.sp && o.sp.speed) ? o.sp.speed : ((o && o.speed)||1);
   if(!o || !o.sp) return;

@@ -333,19 +333,39 @@ function drawAppendages(o,sz){
 
 function renderViruses(vL,vR,vT,vB){
   ctx.save();
+  if(settings.renderMode==='swiss' && typeof drawSwissVirus==='function'){
+    for(var si=0;si<viruses.length;si++){
+      var sv=viruses[si];
+      if(sv.x<vL-30||sv.x>vR+30||sv.y<vT-30||sv.y>vB+30)continue;
+      drawSwissVirus(ctx, sv);
+    }
+    ctx.restore();
+    return;
+  }
+  var PHAGE_R=11; // was 5.5 — doubled for visibility
   for(var i=0;i<viruses.length;i++){
-    var v=viruses[i];if(v.x<vL-20||v.x>vR+20||v.y<vT-20||v.y>vB+20)continue;
+    var v=viruses[i];if(v.x<vL-30||v.x>vR+30||v.y<vT-30||v.y>vB+30)continue;
     ctx.save();ctx.translate(v.x,v.y);ctx.rotate(v.angle+Math.sin(v.wobble)*0.03);
-    ctx.fillStyle='#f44';ctx.strokeStyle='#a00';ctx.lineWidth=0.5;
-    // Head (icosahedron look)
-    ctx.beginPath();ctx.arc(0,0,5.5,0,Math.PI*2);ctx.fill();ctx.stroke();
-    // glow
-    ctx.fillStyle='rgba(255,80,80,0.25)';ctx.beginPath();ctx.arc(0,0,9,0,Math.PI*2);ctx.fill();
-    // Tail
-    ctx.strokeStyle='#f44';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,5.5);ctx.lineTo(0,13);ctx.stroke();
+    // Outer glow — makes phages visible even at low zoom
+    ctx.fillStyle='rgba(255,60,60,0.18)';ctx.beginPath();ctx.arc(0,0,PHAGE_R*2,0,Math.PI*2);ctx.fill();
+    // Head (icosahedron)
+    var hg=ctx.createRadialGradient(-3,-3,0,0,0,PHAGE_R);
+    hg.addColorStop(0,'#ffaaa0');hg.addColorStop(0.5,'#f44');hg.addColorStop(1,'#a00');
+    ctx.fillStyle=hg;ctx.strokeStyle='#600';ctx.lineWidth=1;
+    ctx.beginPath();ctx.arc(0,0,PHAGE_R,0,Math.PI*2);ctx.fill();ctx.stroke();
+    // Tail sheath
+    ctx.strokeStyle='#c33';ctx.lineWidth=3;
+    ctx.beginPath();ctx.moveTo(0,PHAGE_R);ctx.lineTo(0,PHAGE_R*2.4);ctx.stroke();
+    // Base plate
+    ctx.fillStyle='#a00';
+    ctx.beginPath();ctx.ellipse(0,PHAGE_R*2.4,4,2,0,0,Math.PI*2);ctx.fill();
     // Tail fibers
-    ctx.lineWidth=1.2;
-    ctx.beginPath();ctx.moveTo(0,8);ctx.lineTo(-2,11);ctx.moveTo(0,8);ctx.lineTo(2,11);ctx.stroke();
+    ctx.lineWidth=1.5;ctx.strokeStyle='#c33';
+    ctx.beginPath();
+    ctx.moveTo(-1,PHAGE_R*2.2);ctx.lineTo(-6,PHAGE_R*2.8);
+    ctx.moveTo(1,PHAGE_R*2.2);ctx.lineTo(6,PHAGE_R*2.8);
+    ctx.moveTo(0,PHAGE_R*2.4);ctx.lineTo(0,PHAGE_R*3.0);
+    ctx.stroke();
     ctx.restore();
   }
   ctx.restore();

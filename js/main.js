@@ -46,6 +46,8 @@ window.playSound = function(type, x, y) {
 window.startSpectator = function() {
   window.spectatorMode = true;
   window.initAudio();
+  // Set _swissStrict BEFORE initWorld so spawn pool filter works
+  window._swissStrict = (settings.renderMode==='swiss');
   initWorld();
   player = null;
   cam.x = 0; cam.y = 20; state = 'playing'; gt = 0; fc = 0;
@@ -200,6 +202,7 @@ function startGame(isScreensaver){
   window.demoPossessed = null;
   try{ var dt=document.getElementById("demoTip"); if(dt) dt.style.display="none"; }catch(_e){}
   window.initAudio();
+  window._swissStrict = (settings.renderMode==='swiss');
   initWorld();
   // Always start in the MORNING (clear light, sun up)
   tod = 9.0;
@@ -210,25 +213,61 @@ function startGame(isScreensaver){
     var sl=document.getElementById('todR'); if(sl) sl.value=tod;
   }catch(_e){}
   var sp;
-  if(selSpecies>=VIRUS_ID_START){sp=SPECIES_DB[0];selSpecies=0;}
-  else sp=SPECIES_DB[selSpecies];
+  var _isVirusPick=(selSpecies>=VIRUS_ID_START);
+  if(_isVirusPick){
+    var _vi2=selSpecies-VIRUS_ID_START;
+    window.virusPlayerSpec=VIRUS_SPECS[_vi2]||VIRUS_SPECS[0];
+    window.virusPlayer=true;
+    try{cv.style.cursor='crosshair';}catch(_e){}
+    sp=null;
+  } else {
+    window.virusPlayer=false; window.virusPlayerSpec=null;
+    sp=SPECIES_DB[selSpecies];
+  }
   // Never start as colony (Volvox/Gloeocapsa/Microcystis) — looks like green death-ball
-  if(sp.shape==='colony'){
+  if(sp&&sp.shape==='colony'){
     for(var ci=0; ci<SPECIES_DB.length; ci++){
       if(SPECIES_DB[ci].cat==='consumer1' && SPECIES_DB[ci].shape!=='colony'){ selSpecies=ci; sp=SPECIES_DB[ci]; break; }
     }
   }
   var d=rng(PD*0.2,PD*0.5),hw=halfW(d)-20;
   
-  if (isScreensaver) {
+  if(window.virusPlayer){
+    // VIRUS SPECTATOR MODE — phages are non-motile, player controls infection spread
+    window.spectatorMode=true; freeCam=true; autoAI=false;
+    window.screensaverAutoCam=false;
+    player=null;
+    cam.x=0; cam.y=PD*0.35;
+    // Spawn extra viruses near bacteria so player sees them
+    var _vspec=window.virusPlayerSpec;
+    for(var _vsi=0;_vsi<8&&viruses.length<20;_vsi++){
+      var _vd=rng(20,150),_vhw=Math.max(60,halfW(_vd)-20);
+      viruses.push({x:rng(-_vhw,_vhw),y:_vd,vx:rng(-0.15,0.15),vy:rng(-0.15,0.15),
+        sp:_vspec,target:null,age:0,angle:rng(0,6.28),wobble:rng(0,6.28)});
+    }
+  } else if (isScreensaver) {
      window.spectatorMode = true;
      freeCam = true;
      window.screensaverAutoCam = true;
      player = null;
      cam.x = 0; cam.y = PD * 0.3;
-  } else {
+    // Snap camera to nearest bacteria so player can immediately interact
+    var _nearestBact=null,_nearestD=1e9;
+    for(var _nb=0;_nb<orgs.length;_nb++){
+      var _bo=orgs[_nb];
+      if(!_bo.alive||_bo.sp.isEuk) continue;
+      if(_bo.sp.cat!=='producer'&&_bo.sp.cat!=='consumer1') continue;
+      var _bd=Math.hypot(_bo.x-cam.x,_bo.y-cam.y);
+      if(_bd<_nearestD){_nearestD=_bd;_nearestBact=_bo;}
+    }
+    if(_nearestBact){cam.x=_nearestBact.x;cam.y=_nearestBact.y-30;tZoom=1.5;zoom=1.5;}
+  } else if(!window.virusPlayer) {
+     cv.style.cursor='default';
      window.spectatorMode = false;
      freeCam = false;
+     autoAI = false;
+     try{ camKeys={w:false,a:false,s:false,d:false}; }catch(_e){}
+     try{ if(typeof keys==='object'){ for(var _k in keys) keys[_k]=false; } }catch(_e){}
      // Always start near the surface (photosphere) — any species
      var dY = rng(18, 55);
      var hw0 = halfW(dY) - 30;
@@ -238,11 +277,13 @@ function startGame(isScreensaver){
      player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y-20;player.acidResist=1.0;
 
 
+     if(!window.virusPlayer){
      // Seed nearby food cluster so player sees action immediately
      var foodCats = FOOD[sp.cat] || ['producer','consumer1'];
      var foodPool = [];
      for(var si=0; si<SPECIES_DB.length; si++){
-       if(foodCats.indexOf(SPECIES_DB[si].cat)>=0) foodPool.push(SPECIES_DB[si]);
+       var _s=SPECIES_DB[si];
+       if(foodCats.indexOf(_s.cat)>=0 && !(_s.flags&&_s.flags.noRandomSpawn)) foodPool.push(_s);
      }
      if(!foodPool.length) foodPool = [SPECIES_DB[0]];
      // Prefer rods/filaments so player sees non-circle shapes immediately
@@ -273,8 +314,9 @@ function startGame(isScreensaver){
          if(window.showToast) window.showToast('Средний едок: подплыви к зелёным/бактериям — реснички фильтруют сами', '#9cf');
        }, 900);
      }
+     } // end !virusPlayer food seed
      // 1) Карточка «ты кто / кого ешь»
-     if(!isScreensaver && typeof showRoleCard==='function'){
+     if(!isScreensaver && !window.virusPlayer && typeof showRoleCard==='function'){
        setTimeout(function(){ try{ showRoleCard(sp); }catch(_e){} }, 600);
      }
   }
@@ -295,11 +337,18 @@ function startGame(isScreensaver){
   document.getElementById('weatherP').style.display='block';
   document.getElementById('actBar').style.display='flex';
   document.getElementById('renderModeBtn').style.display='block';
-  if(settings.renderMode==='realistic'){var rb=document.getElementById('renderModeBtn');if(rb){rb.className='realistic';rb.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';rb.title='Сейчас: реалистичный. Клик → мультяшный';}}
+  if(settings.renderMode==='realistic'){var rb=document.getElementById('renderModeBtn');if(rb){rb.className='realistic';rb.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';rb.title='Сейчас: реалистичный. Клик → научные иконки';}}
+  else if(settings.renderMode==='bioicons'){var rb3=document.getElementById('renderModeBtn');if(rb3){rb3.className='bioicons';rb3.innerHTML='🧬 БИОИКОНКИ';rb3.title='Сейчас: научные иконки. Клик → SwissBioPics';}}
+  else if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISSBIOPICS';rb4.title='Сейчас: схема SwissBioPics. Клик → мультяшный';}}
   else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';rb2.title='Сейчас: мультяшный. Клик → реалистичный';}}
   var kh=document.getElementById('keyHint');
-  kh.innerHTML='<div style="font-size:15px;font-weight:700;line-height:1.7;text-align:center">'+
+  if(window.virusPlayer){
+    kh.innerHTML='<div style="font-size:15px;font-weight:700;line-height:1.7;text-align:center">'+
+    '<b>WASD</b> камера · <b>V</b> следить · клик по клетке = инфицировать</div>';
+  } else {
+    kh.innerHTML='<div style="font-size:15px;font-weight:700;line-height:1.7;text-align:center">'+
     '<b>WASD</b> движение · <b>E</b> ЕСТЬ · <b>Q</b> ДЕЛИТЬ · <b>Tab</b> АВТО · <b>V</b> камера</div>';
+  }
   kh.style.display='flex';
   // Large Russian labels on primary action buttons
   function labelBtn(id, text, hk){
@@ -323,6 +372,14 @@ function startGame(isScreensaver){
   sl.addEventListener('touchstart',function(){sliderDragging=true;});
   sl.addEventListener('touchend',function(){sliderDragging=false;tod=parseFloat(sl.value);});
   showSpeedBar();updateLegend();updateEcoPanel();
-  if(!isScreensaver){ setTimeout(function(){ window.startTutorial(false); }, 300); }
+  if(window.virusPlayer){
+    // Virus spectator banner
+    setTimeout(function(){
+      if(window.showToast){
+        var _vn=(window.virusPlayerSpec&&window.virusPlayerSpec.name)?window.virusPlayerSpec.name:'Phage';
+        window.showToast('\u2620 \u0420\u0435\u0436\u0438\u043c \u0432\u0438\u0440\u0443\u0441\u0430: '+_vn+'\n\u041a\u043b\u0438\u043a\u043d\u0438 \u043f\u043e \u0431\u0430\u043a\u0442\u0435\u0440\u0438\u0438 = \u0438\u043d\u0444\u0438\u0446\u0438\u0440\u043e\u0432\u0430\u0442\u044c · WASD = \u043a\u0430\u043c\u0435\u0440\u0430','#f66',6000);
+      }
+    }, 800);
+  } else if(!isScreensaver){ setTimeout(function(){ window.startTutorial(false); }, 300); }
 }
 

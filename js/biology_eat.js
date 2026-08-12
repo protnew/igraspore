@@ -180,7 +180,7 @@ function eatOrg(pred,prey){
       // Big burst
       for(var i=0;i<3;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.3,1.0);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:1.0,maxL:1.0,size:rng(0.8,1.5),color:prey.sp.color||'#ccc'});}
       if(pred===player && window.showToast) window.showToast('+'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' масса', '#4f4');
-      if (typeof window !== 'undefined' && state === 'menu' && (window.focusTimer||0) <= 0 && Math.random() < 0.15) { window.focusTarget = pred; window.focusTimer = 2.0; }
+      if (typeof window !== 'undefined' && state === 'menu' && (window.focusTimer||0) <= 0 && Math.random() < 0.15) { /* cinematic disabled */ }
   } else {
       // partial nutrition already applied above via biteFrac — no second energy add
       for(var i=0;i<2;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.3,0.8);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.8,maxL:0.8,size:rng(0.6,1.2),color:prey.sp.color||'#ccc'});}
@@ -205,12 +205,13 @@ function killOrg(o,cause){
       });
   }
   
-  // ALL dead organisms create detritus (organic matter for decomposers)
-  if (cause !== DCODE.EATEN) {
-     // Small orgs: 1 detritus particle. Large: multiple.
+  // Detritus: full on natural death; ~30% leftovers when eaten (trophic transfer ~10-20% + scraps)
+  {
+     var eaten = (typeof DCODE!=='undefined' && cause === DCODE.EATEN);
      var numFrags = Math.max(1, Math.floor(o.size / 4));
+     if(eaten) numFrags = Math.max(1, Math.floor(numFrags * 0.35));
      var fragR = Math.max(8, o.size * 2.5);
-     var fragInt = Math.max(0.3, o.size * 0.15);
+     var fragInt = Math.max(0.3, o.size * 0.15) * (eaten ? 0.35 : 1);
      for(var f=0; f<numFrags; f++) {
         nutrientClouds.push({
           x: o.x + rng(-o.size, o.size),
@@ -218,7 +219,7 @@ function killOrg(o,cause){
           r: fragR,
           intensity: fragInt,
           vx: rng(-0.05, 0.05),
-          vy: rng(0.01, 0.1)  // detritus slowly sinks
+          vy: rng(0.3, 1.0)  // sinks FAST toward decomposer niche
         });
      }
   }

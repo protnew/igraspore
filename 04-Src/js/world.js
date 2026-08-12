@@ -103,13 +103,26 @@ function initWorld(){
   globalCO2 = 150; globalO2 = 100;
   gameStats={startTime:Date.now(),maxPop:0,maxPlayerSize:0,evoLvl:0};
   for(var i=0;i<SPECIES_DB.length;i++)speciesPop[i]={alive:0,born:0,deaths:[0,0,0,0,0]};
-  // v2: spawn initial viruses
-  for(var vi=0;vi<Math.max(3,Math.round(5*(DIFF[difficulty]||{}).virus||0.4));vi++){
-    if(typeof spawnVirus==='function'){try{spawnVirus();}catch(e){}
-    } else { viruses.push({x:rng(-300,300),y:rng(50,PD*0.6),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),sp:VIRUS_SPECS[0]||{name:'Phage',color:'#f44',shape:'phage',size:4},life:300,infected:null}); }
+  // v2: spawn initial viruses (direct creation, no dependency on spawnVirus)
+  var vCount=Math.max(15,Math.round(25*((DIFF[difficulty]||{}).virus||0.4))); // v2: 15-25 viruses at start
+  var vPool=VIRUS_SPECS||[];
+  if(vPool.length===0)vPool=[{name:'Phage',color:'#f44',shape:'phage',size:4}];
+  for(var vi=0;vi<vCount;vi++){
+    var vsp=vPool[vi%vPool.length];
+    viruses.push({x:rng(-400,400),y:rng(30,200),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),
+      sp:vsp,target:null,age:0,angle:rng(0,6.28),wobble:rng(0,6.28)});
   }
   for(var cat in INIT_N){
-    var pool=SPECIES_DB.filter(function(s){return s.cat===cat && !(s.flags&&s.flags.noRandomSpawn) && (s.size||1)<12 && s.shape!=='colony' && !(s.bio&&s.bio.colony);}); // v2: no colonies at start (no green blob)
+    var pool=SPECIES_DB.filter(function(s){
+      if(s.cat!==cat) return false;
+      if(s.flags&&s.flags.noRandomSpawn) return false;
+      if((s.size||1)>=16) return false;
+      // Swiss accuracy: skip species with only approximate sprites when in strict swiss mode
+      if(window._swissStrict && typeof isSwissApprox==='function' && isSwissApprox({sp:s})){
+        return false;
+      }
+      return true;
+    });
     // Pick 1 to 3 distinct species from this category to populate initially
     var selectedSpecies = [];
     for(var k=0; k<Math.min(pool.length, 3); k++) {
@@ -128,7 +141,7 @@ function initWorld(){
            hw = Math.max(40, halfW(d) - 20);
          } else if(cat==='decomposer'){
            // Decomposers: bottom dwellers
-           d = rng(PD*0.4, PD*0.85);
+           d = rng(PD*0.3, PD*0.7);
            hw = Math.max(40, halfW(d) - 20);
          } else {
            // Predators/bacteria: uniform across depth
@@ -139,7 +152,26 @@ function initWorld(){
        }
     }
   }
-  nutrientClouds=[];for(var i=0;i<15;i++){var d=rng(PD*0.4,PD-20),hw=halfW(d)-20;nutrientClouds.push({x:rng(-hw,hw),y:d,r:rng(28,70),intensity:rng(0.35,0.7),vx:rng(-0.08,0.08),vy:rng(-0.02,0.02),cells:14+((Math.random()*10)|0)});}
+  nutrientClouds=[];
+  for(var i=0;i<22;i++){
+    var cy=rng(15,180);
+    var cw=halfW(cy)-10;
+    var ctype=Math.random();
+    var hue,sat,lit;
+    if(ctype<0.35){hue=95;sat=60;lit=50;}
+    else if(ctype<0.6){hue=40;sat=55;lit=60;}
+    else if(ctype<0.8){hue=20;sat=45;lit=55;}
+    else{hue=180;sat=35;lit=60;}
+    nutrientClouds.push({x:rng(-cw,cw),y:cy,r:rng(30,65),intensity:rng(0.3,0.65),vx:rng(-0.08,0.08),vy:rng(-0.01,0.03),cells:14+((Math.random()*12)|0),hue:hue,sat:sat,lit:lit,type:ctype<0.35?'algae':ctype<0.6?'detritus':ctype<0.8?'nutrient':'bacterial'});
+  }
+  // DEEP_DOM_BAND: bottom organic layer for decomposers (life-like sediment DOC)
+  if(typeof nutrientClouds!=='undefined'){
+    for(var _di=0;_di<25;_di++){
+      var _dy = PD*0.35 + rng(0, PD*0.45);
+      var _hw = Math.max(40, halfW(_dy)-20);
+      nutrientClouds.push({x:rng(-_hw,_hw), y:_dy, r:rng(22,55), intensity:rng(1.0,2.0), vx:rng(-0.02,0.02), vy:rng(-0.005,0.02), kind:'detritus'});
+    }
+  }
   shoreDecor=[];
   // Shore vegetation: SCATTERED clusters (not solid wall), varying depth/size
   // Each cluster has 2-5 plants grouped naturally with gaps between clusters

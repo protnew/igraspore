@@ -16,7 +16,7 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
   if(orgs.length>=MAX_ORG)return null;
   if(sp.locomotion === 'sessile') y = PD - sp.size;
   var o={x:x,y:y,vx:0,vy:0,sp:sp,species:sp.id,
-    energy:sp.energy*0.7+rng(0,10),age:0,
+    energy:Math.max(55, sp.energy*0.85+rng(0,15)),age:0,
     size:Math.min(9, sp.size*(0.85+rng(0,0.3))),
     currentSize: Math.min(9, sp.size),
     spawnTime: gt,
@@ -33,7 +33,7 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
     generation:0,offspring:0,eaten:0, speedMult:1.0, sizeMult:1.0, tempOffset:0.0, o2Offset:0.0, acidResist:0.0, chemoSens:1.0, heatShock:0.0, cellWall:0.0, photoAdapt:0.0, asymDiv:0.5, cystThreshold:5.0, biofilmGene:0.0, digestSpeed:1.0, divForce:1.0, stomach:[], inBiofilm:false, biofilmT:0,
     isPlayer:!!isPlayer,alive:true,_remove:false,
     gender: Math.random() < 0.5 ? 'M' : 'F', seekingMate: false,
-    invuln:isPlayer?10:0
+    invuln:isPlayer?12:4
   };
   o.organs=genOrgans(o);
   orgs.push(o);

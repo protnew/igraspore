@@ -48,13 +48,17 @@ function renderSediment(vL,vR,vB){
 }
 
 function renderNutrients(vL,vR,vT,vB){
+  // LOD: at far zoom, nutrient clouds cover entire screen → green tint. Skip.
+  if(typeof zoom==='number' && zoom < 0.6) return;
   for(var i=0;i<nutrientClouds.length;i++){var nc=nutrientClouds[i];
     if(nc.x<vL-nc.r||nc.x>vR+nc.r||nc.y<vT-nc.r||nc.y>vB+nc.r)continue;
-    // Soft envelope (faint) — not a green fog wall
+    // v2: per-cloud color variety (green/yellow/brown/cyan)
+    var hue=nc.hue||95, sat=nc.sat||60, lit=nc.lit||50;
+    var _zoomAlpha = (typeof zoom==='number' && zoom < 1.0) ? Math.max(0.3, (zoom - 0.4) / 0.6) : 1.0;
     var g=ctx.createRadialGradient(nc.x,nc.y,0,nc.x,nc.y,nc.r);
-    g.addColorStop(0,'rgba(100,150,70,'+(nc.intensity*0.06)+')');
-    g.addColorStop(0.7,'rgba(90,140,60,'+(nc.intensity*0.04)+')');
-    g.addColorStop(1,'rgba(100,140,70,0)');
+    g.addColorStop(0,'hsla('+hue+','+sat+'%,'+lit+'%,'+(nc.intensity*0.08*_zoomAlpha)+')');
+    g.addColorStop(0.7,'hsla('+hue+','+sat+'%,'+(lit-10)+'%,'+(nc.intensity*0.05*_zoomAlpha)+')');
+    g.addColorStop(1,'hsla('+hue+','+sat+'%,'+lit+'%,0)');
     ctx.fillStyle=g;ctx.beginPath();ctx.arc(nc.x,nc.y,nc.r,0,Math.PI*2);ctx.fill();
     // Internal structure: packed tiny microbes (aggregate, not fog)
     var nC = nc.cells || 16;
@@ -66,7 +70,7 @@ function renderNutrients(vL,vR,vT,vB){
       var cx=nc.x+Math.cos(ang)*rr;
       var cy=nc.y+Math.sin(ang)*rr*0.85;
       var cr=Math.max(0.8, nc.r*(0.045+0.02*(1-t)));
-      ctx.fillStyle='rgba(70,150,55,'+(0.35+nc.intensity*0.35)+')';
+      ctx.fillStyle='hsla('+hue+',55%,45%,'+(0.35+nc.intensity*0.35)+')';
       ctx.beginPath();ctx.arc(cx,cy,cr,0,Math.PI*2);ctx.fill();
       if(cr>1.2){
         ctx.fillStyle='rgba(30,90,35,0.45)';

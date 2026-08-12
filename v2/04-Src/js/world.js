@@ -103,10 +103,14 @@ function initWorld(){
   globalCO2 = 150; globalO2 = 100;
   gameStats={startTime:Date.now(),maxPop:0,maxPlayerSize:0,evoLvl:0};
   for(var i=0;i<SPECIES_DB.length;i++)speciesPop[i]={alive:0,born:0,deaths:[0,0,0,0,0]};
-  // v2: spawn initial viruses
-  for(var vi=0;vi<Math.max(3,Math.round(5*(DIFF[difficulty]||{}).virus||0.4));vi++){
-    if(typeof spawnVirus==='function'){try{spawnVirus();}catch(e){}
-    } else { viruses.push({x:rng(-300,300),y:rng(50,PD*0.6),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),sp:VIRUS_SPECS[0]||{name:'Phage',color:'#f44',shape:'phage',size:4},life:300,infected:null}); }
+  // v2: spawn initial viruses (direct creation, no dependency on spawnVirus)
+  var vCount=Math.max(5,Math.round(8*((DIFF[difficulty]||{}).virus||0.4)));
+  var vPool=VIRUS_SPECS||[];
+  if(vPool.length===0)vPool=[{name:'Phage',color:'#f44',shape:'phage',size:4}];
+  for(var vi=0;vi<vCount;vi++){
+    var vsp=vPool[vi%vPool.length];
+    viruses.push({x:rng(-300,300),y:rng(50,Math.max(100,PD*0.5)),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),
+      sp:vsp,target:null,age:0,angle:rng(0,6.28),wobble:rng(0,6.28)});
   }
   for(var cat in INIT_N){
     var pool=SPECIES_DB.filter(function(s){return s.cat===cat && !(s.flags&&s.flags.noRandomSpawn) && (s.size||1)<12 && s.shape!=='colony' && !(s.bio&&s.bio.colony);}); // v2: no colonies at start (no green blob)

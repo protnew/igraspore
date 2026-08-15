@@ -47,9 +47,11 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 .ab:active{transform:translateY(0)}
 .ab.act{background:#246;color:#ffffff;border-color:#4af}
 .ab .hk{font-size:7px;color:#dddddd;display:block}
-#keyHint{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);z-index:9;padding:2px 6px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:85%;pointer-events:none;transition:opacity 1s}
-#keyHint kbd{background:#123;border:1px solid #345;border-radius:2px;padding:0 3px;font-size:7px;color:#ffffff;font-family:inherit}
-#keyHint span{font-size:7px;color:#ffffff;display:inline-flex;align-items:center;gap:1px}
+#keyHint{position:absolute;bottom:78px;left:50%;transform:translateX(-50%);z-index:45;padding:6px 10px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;max-width:90%;pointer-events:auto;transition:opacity 1s;background:rgba(0,12,28,0.88);border:1px solid #345;border-radius:8px}
+#keyHint kbd{background:#123;border:1px solid #456;border-radius:4px;padding:2px 7px;font-size:15px;font-weight:800;color:#ffffff;font-family:inherit;min-width:22px;text-align:center}
+#keyHint span{font-size:14px;color:#ffffff;display:inline-flex;align-items:center;gap:4px}
+#keyHint.collapsed .kh-keys{display:none}
+#khToggle{pointer-events:auto;cursor:pointer;border:1px solid #3a6a95;background:#012;color:#def;border-radius:6px;padding:6px 10px;font:700 13px/1 system-ui,sans-serif}
 #legP{position:relative;z-index:10;padding:4px 7px;pointer-events:none}
 .lgR{display:flex;align-items:center;gap:3px;font-size:7px;color:#ffffff;margin:1px 0}
 .lgD{width:8px;height:8px;border-radius:50%}

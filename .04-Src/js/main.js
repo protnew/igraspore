@@ -110,7 +110,7 @@ function gameLoop(ts){
       if(freeCam){cm.textContent=tt('freeCam');cm.className='free';cm.style.display='block';}
       else if(autoAI){cm.innerHTML='<span style="color:#0f0;text-shadow:0 0 5px #0f0;font-weight:bold;font-size:12px;">АВТО-ПИЛОТ ВКЛ</span>';cm.className='';cm.style.display='block';}
       else cm.style.display='none';
-      if(gt>15)document.getElementById('keyHint').style.opacity='0.3';
+      if(typeof window.tickKeyHint==='function') window.tickKeyHint();
     } else if (!window.demoMode) {
       // Menu Aquarium Logic (not in Demo gallery)
       if (!focusTarget) {
@@ -339,14 +339,9 @@ function startGame(isScreensaver){
   if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISSBIOPICS';rb4.title='Сейчас: схема SwissBioPics. Клик → мультяшный';}}
   else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';rb2.title='Сейчас: мультяшный. Клик → SwissBioPics';}}
   var kh=document.getElementById('keyHint');
-  if(window.virusPlayer){
-    kh.innerHTML='<div style="font-size:15px;font-weight:700;line-height:1.7;text-align:center">'+
-    '<b>WASD</b> камера · <b>V</b> следить · клик по клетке = инфицировать</div>';
-  } else {
-    kh.innerHTML='<div style="font-size:15px;font-weight:700;line-height:1.7;text-align:center">'+
-    '<b>WASD</b> движение · <b>E</b> ЕСТЬ · <b>Q</b> ДЕЛИТЬ · <b>Tab</b> АВТО · <b>V</b> камера</div>';
-  }
-  kh.style.display='flex';
+  window._keyHintCollapsed=false; window._keyHintStart=Date.now();
+  if(typeof window.buildKeyHint==='function') window.buildKeyHint();
+  else if(kh){ kh.style.display='flex'; }
   // Large Russian labels on primary action buttons
   function labelBtn(id, text, hk){
     var b=document.getElementById(id); if(!b) return;

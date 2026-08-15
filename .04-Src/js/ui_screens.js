@@ -115,11 +115,14 @@ function showDeadScreen(){
 
 function toggleRenderMode(el){
   window._rmodeUserPicked = true;
-  settings.renderMode = settings.renderMode==='realistic' ? 'cartoon' : 'realistic';
-  el.className='tg'+(settings.renderMode==='realistic'?' on':'');
+  if(settings.renderMode!=='cartoon' && settings.renderMode!=='swiss'){
+    settings.renderMode='cartoon';
+  } else {
+    settings.renderMode = settings.renderMode==='swiss' ? 'cartoon' : 'swiss';
+  }
+  el.className='tg'+(settings.renderMode==='swiss'?' on':'');
   var lbl=document.getElementById('rmodeLbl');
-  if(lbl) lbl.innerHTML = settings.renderMode==='realistic' ? '🔬 Realistic' : '🎨 Cartoon';
-  // Apply visual changes
+  if(lbl) lbl.innerHTML = settings.renderMode==='swiss' ? '📗 SwissBioPics' : '🎨 Cartoon';
   applyRenderMode();
 }
 
@@ -144,8 +147,8 @@ function buildSettings(){
   var opts=[['particles',tt('particles')],['bubbles',tt('bubbles')],['currents',tt('currents')],['vignette',tt('vignette')],['healthBars',tt('healthBars')],['shadows',tt('shadows')]];
   var html='';
   for(var i=0;i<opts.length;i++)html+='<div class="sr"><span>'+opts[i][1]+'</span><div class="tg'+(settings[opts[i][0]]?' on':'')+'" data-s="'+opts[i][0]+'" onclick="toggleSet(this)"></div></div>';
-  // Render mode toggle: Realistic vs Cartoon
-  html+='<div class="sr"><span>'+(window._t_renderMode||'Camera Mode')+': <b id="rmodeLbl">'+(settings.renderMode==='realistic'?'🔬 Realistic':'🎨 Cartoon')+'</b></span><div class="tg'+(settings.renderMode==='realistic'?' on':'')+'" id="rmodeTg" onclick="toggleRenderMode(this)"></div></div>';
+  // Render mode toggle: cartoon ↔ swiss (same 2-mode cycle as N / big button)
+  html+='<div class="sr"><span>'+(window._t_renderMode||'Render Mode')+': <b id="rmodeLbl">'+(settings.renderMode==='swiss'?'📗 SwissBioPics':'🎨 Cartoon')+'</b></span><div class="tg'+(settings.renderMode==='swiss'?' on':'')+'" id="rmodeTg" onclick="toggleRenderMode(this)"></div></div>';
   // Sliders
   html+='<div class="slider-row"><span>'+tt('density')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.density+'" oninput="settings.density=parseFloat(this.value)" /><span class="slider-val">'+settings.density.toFixed(1)+'</span></div>';
   html+='<div class="slider-row"><span>'+tt('lightInt')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.lightMul+'" oninput="settings.lightMul=parseFloat(this.value)" /><span class="slider-val">'+settings.lightMul.toFixed(1)+'</span></div>';

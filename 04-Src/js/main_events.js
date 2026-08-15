@@ -298,10 +298,14 @@ document.getElementById('bMicro').onclick=function(){
 document.getElementById('bRender').onclick=function(){ toggleRenderModeLarge(); };
 function toggleRenderModeLarge(){
   window._rmodeUserPicked = true;
-  // Cycle: cartoon ↔ swiss. bioicons removed (gray cartoon, no third language).
-  if(settings.renderMode==='swiss') settings.renderMode='cartoon';
-  else settings.renderMode='swiss';
-  if(settings.renderMode==='bioicons' || settings.renderMode==='realistic') settings.renderMode='cartoon';
+  // 2-mode cycle only. Leftover (bioicons/realistic/unknown) lands on cartoon, no extra flip.
+  if(settings.renderMode!=='cartoon' && settings.renderMode!=='swiss'){
+    settings.renderMode='cartoon';
+  } else if(settings.renderMode==='swiss'){
+    settings.renderMode='cartoon';
+  } else {
+    settings.renderMode='swiss';
+  }
   applyRenderMode();
   if(settings.renderMode==='swiss' && typeof window.loadSwissSprites==='function' && !window.swissReady()){
     window.loadSwissSprites();

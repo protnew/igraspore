@@ -133,7 +133,7 @@ window.TUTORIAL_STEPS = [
   { title: 'Движение', body: 'WASD — плыть. Мышь задаёт направление. Попробуйте сдвинуться, затем «Далее».' },
   { title: 'Питание', body: 'Подойдите к меньшей клетке и нажмите ЕСТЬ (E). Должны появиться вспышка и «+энергия».' },
   { title: 'Деление', body: 'При полной энергии нажмите ДЕЛИТЬ (Q). Клетка станет заметно меньше — это нормально.' },
-  { title: 'Готово', body: 'Камера: СЛЕДИТЬ / КАМЕРА. Режим: кнопка РЕАЛИСТИЧНЫЙ. Удачи в эволюции!' }
+  { title: 'Готово', body: 'Камера: СЛЕДИТЬ / ПОЛЁТ. Картинка: МУЛЬТЯШНЫЙ или SWISS. Удачи в эволюции!' }
 ];
 
 window.showTutorialStep = function(){
@@ -155,7 +155,7 @@ window.showTutorialStep = function(){
   counter.textContent = (window.tutorialStep+1) + ' / ' + window.TUTORIAL_STEPS.length;
   next.textContent = (window.tutorialStep === window.TUTORIAL_STEPS.length-1) ? 'Играть' : 'Далее';
   layer.style.display = 'flex';
-  layer.style.pointerEvents = 'auto';
+  layer.style.pointerEvents = 'none';
   next.style.pointerEvents = 'auto';
   if(skip) skip.style.pointerEvents = 'auto';
   // Re-bind every show (handlers must work even if DOM order changed)

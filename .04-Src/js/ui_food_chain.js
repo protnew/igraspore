@@ -16,10 +16,10 @@ function renderFoodChain(){
     var r = rows[i];
     var nm = (typeof catName==='function') ? catName(r.cat) : r.cat;
     var col = (typeof roleColor==='function') ? roleColor(r.cat) : '#8cf';
-    html += '<div class="fc-row" data-c="'+r.cat+'" style="margin:2px 0;padding:3px 4px;border-radius:4px;cursor:pointer;border:1px solid transparent" onmouseover="this.style.background=\'rgba(80,140,100,0.2)\'" onmouseout="this.style.background=\'transparent\'">';
+    html += '<div class="fc-row" data-c="'+r.cat+'" style="margin:2px 0;padding:3px 4px;border-radius:4px;border:1px solid transparent">';
     html += r.emoji+' <b style="color:'+col+'">'+nm+'</b>';
     html += ' <span style="opacity:.65">— '+r.desc+'</span>';
-    html += ' <span style="opacity:.45;font-size:10px">(клик = фильтр)</span>';
+    html += ' <span style="opacity:.4;font-size:10px">(\u0441\u0445\u0435\u043c\u0430)</span>';
     if(r.eats){
       html += ' <span style="opacity:.5">→</span> ';
       for(var e=0;e<r.eats.length;e++){
@@ -32,18 +32,9 @@ function renderFoodChain(){
     html += '</div>';
   }
   el.innerHTML = html;
-  var rowsEl = el.querySelectorAll('.fc-row');
-  for(var ri=0;ri<rowsEl.length;ri++){
-    rowsEl[ri].onclick=function(ev){
-      var c=(ev.currentTarget||ev.target).getAttribute('data-c');
-      if(!c) return;
-      selCat=c; try{window.selCat=c;}catch(e){}
-      if(typeof buildCatSel==='function') buildCatSel();
-      if(typeof buildSpeciesGrid==='function') buildSpeciesGrid();
-      var sg=document.getElementById('spGrid'); if(sg) sg.scrollTop=0;
-    };
-  }
+  // Legend only. Species pick is #spGrid + #catSel — not a second menu.
 }
+
 
 function getPoolCount(){
   var poolN = 0;

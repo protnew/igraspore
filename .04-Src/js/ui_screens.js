@@ -203,7 +203,12 @@ function buildWiki(filter){
     var art='';
     try{ if(typeof window.getWikiArticle==='function') art=window.getWikiArticle(sp)||''; }catch(eA){ art=''; }
     if(!art) art=fallback||'';
-    return art ? ('<div class="wa">'+art+'</div>') : '';
+    var wp='';
+    try{ if(typeof window.wikiPage==='function') wp=window.wikiPage(sp)||''; }catch(eP){ wp=''; }
+    var out='';
+    if(art) out+='<div class="wa">'+art+'</div>';
+    if(wp) out+='<div class="ww"><a href="'+wp+'" target="_blank" rel="noopener noreferrer">Wikipedia</a></div>';
+    return out;
   }
   function factsRow(w){
     if(!w) w={loc:'-',div:'-',food:'-',pred:'-'};

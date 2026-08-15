@@ -297,3 +297,10 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
   flex-direction: row; touch-action: manipulation;
 }
 /* removed #mTopBar */ .mBtn { width: 40px; height: 40px; border-radius: 8px; font-size: 18px; }
+
+/* start menu: one picker + always-visible Demo/Aquarium */
+.menu-actions{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;width:100%;max-width:920px;padding:8px 6px 10px;margin:0 auto 4px;background:rgba(0,8,18,.96);border-bottom:1px solid rgba(80,140,160,.25)}
+#foodChainBar,#foodChainDiagram{display:none!important}
+#spGrid{max-height:42vh}
+.wiki-entry .ww{margin-top:5px;font-size:12px}
+.wiki-entry .ww a{color:#7cf;text-decoration:underline}

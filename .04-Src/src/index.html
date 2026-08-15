@@ -4,39 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <title>iGraSpore — Microorganism Life Simulation</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0e14;overflow:hidden;font-family:'Courier New',monospace;color:#c8d6e5}
-canvas#c{display:block;position:absolute;top:0;left:0}
-#hud{position:fixed;top:8px;left:8px;z-index:10;font-size:12px;pointer-events:none}
-#hud div{margin:2px 0;padding:2px 6px;background:rgba(0,0,0,0.6);border-radius:3px;display:inline-block;margin-right:4px}
-#hud .val{color:#48dbfb;font-weight:bold}
-#minimap-wrap{position:fixed;bottom:8px;right:8px;z-index:10;border:1px solid #2d3436;border-radius:4px;overflow:hidden}
-#mm{display:block;background:#0a0e14}
-#species-modal{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:20;background:rgba(10,14,20,0.95);border:1px solid #48dbfb;border-radius:8px;padding:16px;max-width:90vw;max-height:80vh;overflow-y:auto;font-size:11px}
-#species-modal h3{color:#48dbfb;margin-bottom:8px}
-#species-modal table{width:100%;border-collapse:collapse}
-#species-modal th,td{padding:3px 6px;text-align:left;border-bottom:1px solid #1e272e}
-#species-modal th{color:#48dbfb;position:sticky;top:0;background:rgba(10,14,20,0.95)}
-#death-screen{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:30;background:rgba(0,0,0,0.85);display:none;flex-direction:column;align-items:center;justify-content:center}
-#death-screen h2{color:#ff6b6b;font-size:28px;margin-bottom:12px}
-#death-screen p{color:#c8d6e5;margin:4px 0}
-#death-screen button{margin-top:16px;padding:8px 24px;background:#48dbfb;color:#0a0e14;border:none;border-radius:4px;font-size:14px;cursor:pointer}
-#menu-screen{position:fixed;top:0;left:0;width:100%;height:100%;z-index:40;background:rgba(10,14,20,0.97);display:flex;flex-direction:column;align-items:center;justify-content:center}
-#menu-screen h1{font-size:36px;color:#48dbfb;margin-bottom:8px}
-#menu-screen p{color:#78849a;margin:4px 0;font-size:14px}
-#menu-screen button{margin-top:20px;padding:10px 32px;background:#48dbfb;color:#0a0e14;border:none;border-radius:6px;font-size:16px;cursor:pointer;font-weight:bold}
-#menu-screen button:hover{background:#0abde3}
-#controls-help{margin-top:20px;font-size:11px;color:#576574;text-align:center;line-height:1.6}
-#mobile-controls{display:none;position:fixed;bottom:20px;left:20px;z-index:20;}
-#mobile-controls button{width:50px;height:50px;border-radius:25px;background:rgba(72,219,251,0.3);border:2px solid #48dbfb;color:#fff;font-size:24px;margin-right:10px;pointer-events:auto;}
-#mobile-controls button:active{background:rgba(72,219,251,0.7);}
-#zoom-controls{position:fixed;right:20px;bottom:20px;z-index:20;}
-#zoom-controls button{display:block;width:40px;height:40px;margin-top:10px;background:#2d3436;color:#fff;border:1px solid #48dbfb;border-radius:20px;font-size:20px;cursor:pointer;}
-#zoom-controls button:hover{background:#48dbfb;color:#0a0e14;}
-#sp-filters button{padding:4px 8px;background:#2d3436;color:#c8d6e5;border:1px solid #48dbfb;border-radius:4px;cursor:pointer;margin-right:4px;}
-#sp-filters button:hover{background:#48dbfb;color:#0a0e14;}
-</style>
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <canvas id="c"></canvas>
@@ -1247,5 +1215,33 @@ function init(){
 
 init();
 </script>
+
+  <script src="04-Src/js/config.js?v=1786628495"></script>
+  <script src="04-Src/js/locomotion.js?v=1786628495"></script>
+  <script src="04-Src/js/organs.js?v=1786628495"></script>
+  <script src="04-Src/js/world.js?v=1786628495"></script>
+  <script src="04-Src/js/biology.js?v=1786628495"></script>
+  <script src="04-Src/js/biology_update_core.js?v=1786628495"></script>
+  <script src="04-Src/js/biology_update_interact.js?v=1786628495"></script>
+  <script src="04-Src/js/biology_eat.js?v=1786628495"></script>
+  <script src="04-Src/js/biology_divide.js?v=1786628495"></script>
+  <script src="04-Src/js/biology_virus.js?v=1786628495"></script>
+  <script src="04-Src/js/world_update.js?v=1786628495"></script>
+  <script src="04-Src/js/ai_move.js?v=1786628495"></script>
+  <script src="04-Src/js/ai.js?v=1786628495"></script>
+  <script src="04-Src/js/render_effects.js?v=1786628495"></script>
+  <script src="04-Src/js/render_surface.js?v=1786628495"></script>
+  <script src="04-Src/js/render_fx.js?v=1786628495"></script>
+  <script src="04-Src/js/render_swiss.js?v=1786632574"></script>
+  <script src="04-Src/js/render_helpers.js?v=1786628495"></script>
+  <script src="04-Src/js/render.js?v=1786628495"></script>
+  <script src="04-Src/js/render_entities.js?v=1786628495"></script>
+  <script src="04-Src/js/render_organs.js?v=1786628495"></script>
+  <script src="04-Src/js/render_edu.js?v=1786628495"></script>
+  <script src="04-Src/js/ui.js?v=1786628495"></script>
+  <script src="04-Src/js/ui_food_chain.js?v=1786628495"></script>
+  <script src="04-Src/js/ui_menus.js?v=1786628495"></script>
+  <script src="04-Src/js/main.js?v=1786628495"></script>
+  <script src="04-Src/js/main_events.js?v=1786628495"></script>
 </body>
 </html>

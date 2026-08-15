@@ -1,0 +1,23 @@
+{
+  "name": "igraspore-v2-src",
+  "private": true,
+  "description": "iGraSpore V2 SoT — unit + e2e toolchain lives here (node_modules isolated from Obsidian vault)",
+  "scripts": {
+    "test": "vitest run --config ../vitest.config.js",
+    "test:unit": "vitest run --config ../vitest.config.js",
+    "test:coverage": "vitest run --coverage --config ../vitest.config.js",
+    "test:e2e": "playwright test --config ../playwright.config.js",
+    "test:e2e:c": "playwright test --config ../playwright.config.js --grep \"\\[C0\"",
+    "test:e2e:s": "playwright test --config ../playwright.config.js --grep \"\\[S0\"",
+    "test:e2e:r": "playwright test --config ../playwright.config.js --grep \"\\[R\"",
+    "test:e2e:u": "playwright test --config ../playwright.config.js --grep \"\\[U0\"",
+    "test:e2e:sl": "playwright test --config ../playwright.config.js --grep \"\\[SL\"",
+    "test:qa-unit": "node 07-QA-and-Testing/qa_unit.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.54.2",
+    "@vitest/coverage-v8": "3.2.4",
+    "jsdom": "26.1.0",
+    "vitest": "3.2.4"
+  }
+}

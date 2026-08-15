@@ -2,10 +2,12 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 
-const srcDir = path.resolve(__dirname, '../../04-Src/js');
+const srcDir = path.resolve(__dirname, '../../js');
 const configCode = fs.readFileSync(path.join(srcDir, 'config.js'), 'utf-8');
 const uiCode = fs.readFileSync(path.join(srcDir, 'ui.js'), 'utf-8');
 const uiMenusCode = fs.readFileSync(path.join(srcDir, 'ui_menus.js'), 'utf-8');
+const uiFoodChainCode = fs.readFileSync(path.join(srcDir, 'ui_food_chain.js'), 'utf-8');
+const uiScreensCode = fs.readFileSync(path.join(srcDir, 'ui_screens.js'), 'utf-8');
 
 const script = `
   window.window = window;
@@ -16,13 +18,24 @@ const script = `
   window.c = document.getElementById('c');
   window.mm = document.getElementById('mm');
   window.pc = document.getElementById('pc');
-  window.c.getContext = () => ({ fill: () => {}, stroke: () => {}, beginPath: () => {}, arc: () => {} });
-  window.mm.getContext = () => ({ fill: () => {} });
-  window.pc.getContext = () => ({ fill: () => {} });
+  window.c.getContext = () => ({
+      fill(){},stroke(){},beginPath(){},arc(){},rect(){},fillRect(){},strokeRect(){},clearRect(){},
+      save(){},restore(){},translate(){},rotate(){},scale(){},closePath(){},moveTo(){},lineTo(){},
+      createRadialGradient: () => ({ addColorStop(){} }),
+      createLinearGradient: () => ({ addColorStop(){} }),
+      measureText: () => ({ width: 10 }),
+      clip(){},drawImage(){},putImageData(){},getImageData: () => ({ data: new Uint8ClampedArray([0,0,0,0]) }),
+      fillStyle:'',strokeStyle:'',lineWidth:1,font:'',globalAlpha:1,globalCompositeOperation:'source-over',
+      shadowColor:'',shadowBlur:0,shadowOffsetX:0,shadowOffsetY:0,textAlign:'left',textBaseline:'alphabetic'
+    });
+  window.mm.getContext = () => ({ fill(){},stroke(){},beginPath(){},arc(){},fillRect(){},clearRect(){},createRadialGradient:()=>({addColorStop(){}}),createLinearGradient:()=>({addColorStop(){}}) });
+  window.pc.getContext = () => ({ fill(){},stroke(){},beginPath(){},arc(){},fillRect(){},clearRect(){},createRadialGradient:()=>({addColorStop(){}}),createLinearGradient:()=>({addColorStop(){}}) });
   
   ${configCode}
   ${uiCode}
   ${uiMenusCode}
+  ${uiFoodChainCode}
+  ${uiScreensCode}
   
   window.api = {
     openDNAEditor: () => window.openDNAEditor(),
@@ -43,7 +56,10 @@ const script = `
   };
 `;
 
-eval(script);
+try { eval(script); } catch(e) {
+  console.error('EVAL ERROR:', e.message, '\nStack:', e.stack?.split('\n').slice(0,5).join('\n'));
+  throw e;
+}
 
 describe('ui and ui_menus logic', () => {
   beforeEach(() => {

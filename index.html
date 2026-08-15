@@ -1,226 +1,51 @@
 <!DOCTYPE html>
+<!-- build-stamp:20260811172633 cursor-fix -->
 <html lang="ru">
 <head>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0a4a52">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="iGraSpore">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 <title>iGraSpore</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;height:100%;overflow:hidden;background:#000814;font-family:system-ui,Arial,sans-serif;user-select:none}
-canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
-.p{background:rgba(0,12,28,.92);border:1px solid #1a3a55;border-radius:8px;color:#ffffff;font-size:11px;backdrop-filter:blur(4px)}
-#hud{position:relative;z-index:10;pointer-events:none;padding:8px 12px;min-width:160px;max-width:200px;font-size:13px}
-#hud .nm{color:#ffffff;font-size:12px;font-weight:bold}
-#hud .la{color:#dddddd;font-size:12px;font-style:italic;margin-bottom:2px}
-#ebar{width:100%;height:6px;background:#200;border-radius:3px;overflow:hidden;margin:1px 0}
-#efill{height:100%;background:linear-gradient(90deg,#e33,#ee3,#3e3);transition:width .3s}
-#hud .st{font-size:12px;color:#ffffff;margin-top:1px;line-height:1.4}
-#topR{position:absolute;top:6px;right:6px;z-index:10;pointer-events:none;padding:4px 8px;min-width:100px;text-align:right}
-#topR .rw{font-size:12px;color:#ffffff;line-height:1.5}
-#weatherP{display:none!important};z-index:10;padding:3px 7px;pointer-events:none;font-size:12px;color:#ffffff;text-align:right;min-width:100px}
-#spdBar{position:absolute;top:6px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:2px;padding:5px 8px;background:rgba(0,12,28,.92);border:1px solid #1a3a55;border-radius:6px}
-.sb{padding:3px 7px;font-size:12px;color:#ffffff;background:#012;border:1px solid #234;border-radius:3px;cursor:pointer;min-width:30px;text-align:center;font-family:inherit;transition:all .1s}
-.sb:hover{background:#123;color:#ffffff}
-.sb.act{background:#1a4;color:#ffffff;border-color:#3c6}
-#todWrap{position:absolute;top:40px;left:50%;transform:translateX(-50%);z-index:10;display:flex;align-items:center;gap:5px;padding:3px 7px}
-#todR{-webkit-appearance:none;appearance:none;width:130px;height:5px;background:#123;border-radius:3px;outline:none}
-#todR::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;background:#fc4;border-radius:50%;cursor:pointer}
-#todR::-moz-range-thumb{width:12px;height:12px;background:#fc4;border-radius:50%;cursor:pointer;border:none}
-#todL{font-size:12px;color:#ffffff;min-width:34px;text-align:center;font-family:monospace}
-#seasL{font-size:8px;color:#ffffff;min-width:38px;text-align:center}
-#langB{position:absolute;top:50px;left:6px;z-index:10;display:flex;gap:4px;flex-wrap:wrap;max-width:180px}
-.lb{padding:1px 6px;font-size:8px;color:#ffffff;background:#011;border:1px solid #234;border-radius:2px;cursor:pointer;font-family:inherit}
-.lb:hover{background:#123;color:#ffffff}
-.lb.act{background:#246;color:#ffffff;border-color:#4af}
-#ecoP{display:none!important;position:relative;z-index:10;width:175px;padding:5px 7px;pointer-events:none}
-.ecT{font-size:8px;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
-.ecR{display:flex;align-items:center;gap:3px;margin:1px 0}
-.ecD{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.ecB{flex:1;height:4px;background:#112;border-radius:2px;overflow:hidden}
-.ecF{height:100%;transition:width .5s}
-.ecC{width:28px;text-align:right;font-weight:bold;color:#ffffff;font-size:12px}
-.ecSub{font-size:7px;color:#ffffff;margin-top:2px;border-top:1px solid #234;padding-top:2px;line-height:1.3}
-#camM{position:absolute;top:84px;left:50%;transform:translateX(-50%);z-index:10;padding:2px 8px;font-size:12px;color:#ffffff;display:none}
-#camM.free{color:#ffffff}
-#actBar{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);z-index:20;display:none;gap:8px;flex-wrap:wrap;justify-content:center;max-width:95%}
-.ab{padding:12px 16px;font-size:15px;color:#ffffff;background:#012;border:2px solid #456;border-radius:8px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all .1s;min-width:72px;min-height:48px;text-align:center;font-weight:800;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;user-select:none;-webkit-user-select:none}.ab .hk{font-size:11px;opacity:.75;font-weight:600}
-.ab:hover{background:#123;color:#ffffff;border-color:#4af;transform:translateY(-1px)}
-#renderModeBtn{position:absolute;top:90px;right:6px;z-index:15;padding:12px 24px;font-size:18px;font-weight:bold;border-radius:10px;cursor:pointer;transition:all .2s;display:none}
-#renderModeBtn.cartoon{background:linear-gradient(135deg,#1a3a6a,#2a5a8a);color:#fff;border:2px solid #4af}
-#renderModeBtn.realistic{background:linear-gradient(135deg,#2a1a0a,#4a3a1a);color:#fa4;border:2px solid #fa4}
-#renderModeBtn:hover{transform:scale(1.05)}
-.ab:active{transform:translateY(0)}
-.ab.act{background:#246;color:#ffffff;border-color:#4af}
-.ab .hk{font-size:7px;color:#dddddd;display:block}
-#keyHint{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);z-index:9;padding:2px 6px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:85%;pointer-events:none;transition:opacity 1s}
-#keyHint kbd{background:#123;border:1px solid #345;border-radius:2px;padding:0 3px;font-size:7px;color:#ffffff;font-family:inherit}
-#keyHint span{font-size:7px;color:#ffffff;display:inline-flex;align-items:center;gap:1px}
-#legP{position:relative;z-index:10;padding:4px 7px;pointer-events:none}
-.lgR{display:flex;align-items:center;gap:3px;font-size:7px;color:#ffffff;margin:1px 0}
-.lgD{width:8px;height:8px;border-radius:50%}
-#scaleW{position:absolute;bottom:6px;right:140px;z-index:10;pointer-events:none;color:#ffffff;font-size:8px;text-align:right}
-#scaleL{height:2px;background:#567;border-radius:1px;margin-bottom:1px}
-#tip{position:absolute;z-index:14;padding:5px 8px;font-size:12px;display:none;pointer-events:none;max-width:280px}
-.ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:40;display:none;flex-direction:column;align-items:center;justify-content:center}
-.ov.show{display:flex}
-#menuO{background:rgba(0,5,15,.97);overflow-y:auto;padding:40px 0;justify-content:flex-start;}
-#pauseO{background:rgba(0,5,15,.75)}
-#helpO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
-#deadO{background:rgba(0,5,15,.96)}
-#setO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
-#wikiO{background:rgba(0,5,15,.97);overflow:hidden}
-.tt{font-size:32px;color:#4ef;margin-bottom:3px;text-shadow:0 0 15px #2af}
-.sb2{font-size:12px;color:#678;margin-bottom:10px}
-.btn{padding:9px 26px;font-size:14px;background:#123;color:#bef;border:2px solid #345;border-radius:7px;cursor:pointer;font-family:inherit;margin:3px;transition:all .15s}
-.btn:hover{background:#234;border-color:#4af}
-.btn.sm{font-size:11px;padding:5px 14px}
-#catSel{display:flex;gap:3px;margin:6px 0;flex-wrap:wrap;justify-content:center}
-.cb{padding:4px 12px;font-size:12px;background:#012;color:#89c;border:1px solid #234;border-radius:3px;cursor:pointer;font-family:inherit;transition:all .1s}
-.cb:hover{background:#123;color:#cef}
-.cb.act{background:#246;color:#cef;border-color:#4af}
-.scrollbox{max-height:60vh;overflow-y:auto;max-width:900px;width:100%;padding:10px;}
-#spGrid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:8px}
-.scPrev{border:1px solid #1a3a55;border-radius:6px;margin-bottom:3px}
-.sc{width:165px;background:#012;border:2px solid #234;border-radius:8px;padding:8px;cursor:pointer;text-align:center;transition:all .12s;position:relative}
-.sc:hover{transform:scale(1.05);border-color:#4af;box-shadow:0 0 10px rgba(68,170,255,.3)}
-.sc.sel{border-color:#4af;box-shadow:0 0 12px rgba(68,170,255,.4)}
-.scN{color:#fff !important;text-shadow:1px 1px 3px #000 !important;font-size:12px;font-weight:bold;word-wrap:break-word;overflow-wrap:break-word;hyphens:auto;line-height:1.2;min-height:24px}
-.scL{color:#fff !important;text-shadow:1px 1px 3px #000 !important;font-size:8px;font-style:italic;word-wrap:break-word}
-.scC{font-size:7px;color:#fff !important;text-shadow:1px 1px 2px #000 !important;margin-top:1px}
-.scP{font-size:8px;font-weight:bold;color:#aef !important;text-shadow:1px 1px 2px #000 !important;margin-top:1px}
-.diff{padding:5px 14px;font-size:11px;background:#012;color:#89c;border:1px solid #234;border-radius:3px;cursor:pointer;font-family:inherit;margin:2px}
-.diff:hover{background:#123;color:#cef}
-.diff.act{background:#2a6;color:#fff;border-color:#4c8}
-.stbl{color:#bcd;font-size:12px;border-collapse:collapse;margin:0 auto}
-.stbl td{padding:3px 12px}
-.stbl .lbl{text-align:right;color:#678}
-.stbl .val{color:#4df;font-weight:bold}
-.sr{display:flex;justify-content:space-between;width:340px;margin:4px auto;color:#bcd;font-size:12px;align-items:center}
-.tg{width:34px;height:16px;background:#234;border-radius:8px;cursor:pointer;position:relative;flex-shrink:0}
-.tg.on{background:#2a6}
-.tg::after{content:'';width:12px;height:12px;background:#bcd;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .2s}
-.tg.on::after{left:20px}
-.slider-row{display:flex;justify-content:space-between;width:340px;margin:6px auto;align-items:center;font-size:12px;color:#bcd}
-.slider-row input[type=range]{-webkit-appearance:none;width:140px;height:4px;background:#234;border-radius:2px;outline:none}
-.slider-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;background:#4af;border-radius:50%;cursor:pointer}
-.slider-row input[type=range]::-moz-range-thumb{width:12px;height:12px;background:#4af;border-radius:50%;cursor:pointer;border:none}
-.slider-val{color:#4df;font-weight:bold;min-width:40px;text-align:right}
-/* CUSTOM SCROLLBARS */
-.scrollbox::-webkit-scrollbar{width:8px}
-.scrollbox::-webkit-scrollbar-track{background:rgba(0,10,25,.8);border-radius:4px}
-.scrollbox::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1a4a6a,#0e3050);border-radius:4px;border:1px solid #2a5070}
-.scrollbox::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#2a6a8a,#1e4060)}
-.scrollbox{-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8)}
-#wikiContent{overflow-y:auto;max-height:80vh;max-width:700px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8)}
-#wikiContent::-webkit-scrollbar{width:8px}
-#wikiContent::-webkit-scrollbar-track{background:rgba(0,10,25,.8);border-radius:4px}
-#wikiContent::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1a4a6a,#0e3050);border-radius:4px}
-.wiki-cat{color:#4df;font-size:16px;font-weight:bold;margin:14px 0 6px;border-bottom:1px solid #234;padding-bottom:3px}
-.wiki-entry{background:rgba(0,15,35,.6);border:1px solid #234;border-radius:6px;padding:8px 12px;margin:5px 0;font-size:11px;color:#bcd;line-height:1.5}
-.wiki-entry b{color:#4df}
-.wiki-entry .wl{color:#789;font-style:italic;font-size:12px}
-.wiki-entry .wf{color:#abc;margin-top:3px;font-size:12px}
-.wiki-search{width:300px;padding:6px 10px;background:#012;border:1px solid #345;border-radius:5px;color:#cef;font-size:12px;font-family:inherit;margin-bottom:8px}
-.wiki-search:focus{outline:none;border-color:#4af}
 
-#langSelWrap {
-  position: absolute; top: 18px; left: 12px; z-index: 15;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  outline: none; user-select: none;
-}
-.lang-curr {
-  background: rgba(10, 20, 35, 0.85); border: 1px solid #2a4055;
-  color: #fff; border-radius: 6px; padding: 8px 14px; cursor: pointer;
-  display: flex; align-items: center; font-size: 13px; font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4); backdrop-filter: blur(5px);
-  transition: background 0.2s, border-color 0.2s;
-}
-.lang-curr:hover { background: rgba(15, 30, 50, 0.95); border-color: #4af; }
-.lang-drop {
-  position: absolute; top: 100%; left: 0; margin-top: 6px;
-  background: rgba(10, 20, 35, 0.95); border: 1px solid #2a4055;
-  border-radius: 6px; overflow: hidden; width: max-content; min-width: 130px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  opacity: 0; visibility: hidden; transform: translateY(-10px);
-  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-  max-height: 400px; overflow-y: auto;
-}
-.lang-drop::-webkit-scrollbar { width: 6px; }
-.lang-drop::-webkit-scrollbar-thumb { background: #2a4055; border-radius: 3px; }
-#langSelWrap:focus-within .lang-drop, #langSelWrap:hover .lang-drop {
-  opacity: 1; visibility: visible; transform: translateY(0);
-}
-.lang-item {
-  padding: 10px 16px; color: #bcd; font-size: 13px; cursor: pointer;
-  transition: background 0.15s, color 0.15s; border-bottom: 1px solid rgba(40, 60, 80, 0.3);
-}
-.lang-item:last-child { border-bottom: none; }
-.lang-item:hover { background: rgba(30, 60, 90, 0.8); color: #fff; }
-.lang-item.act { background: #1a4a6a; color: #4df; font-weight: bold; border-left: 3px solid #4df; padding-left: 13px; }
-
-.dna-btn {
-   background: rgba(20, 50, 100, 0.5);
-   border: 1px solid rgba(100, 200, 255, 0.2);
-   color: #eef;
-   padding: 10px 15px;
-   border-radius: 8px;
-   cursor: pointer;
-   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-   font-family: inherit;
-   font-size: 13px;
-   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-   backdrop-filter: blur(4px);
-}
-.dna-btn:hover {
-   background: rgba(40, 100, 200, 0.6);
-   border-color: rgba(100, 200, 255, 0.6);
-   transform: translateY(-2px);
-   box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 10px rgba(100,200,255,0.2);
-   color: #fff;
-}
-.dna-btn:active {
-   transform: translateY(1px);
-   box-shadow: 0 2px 4px rgba(0,0,0,0.4);
-}
-
-/* === UI SIMPLIFICATION === */
-#hud { min-width: 200px; }
-#hud .stat-row { display: flex; justify-content: space-between; align-items: center; margin: 4px 0; }
-#abar button { font-size: 14px; padding: 10px 16px; min-width: 50px; }
-#abar button:hover { transform: scale(1.1); }
-.legend-item { display: flex; align-items: center; gap: 6px; font-size: 13px; margin: 3px 0; }
-.stat-label { color: #8af; font-weight: bold; }
-.stat-value { color: #fff; font-weight: bold; }
-.section-title { color: #4af; font-size: 14px; font-weight: bold; text-transform: uppercase; margin: 8px 0 4px; border-bottom: 1px solid #234; }
-/* Hide confusing ecosystem breakdown */
-#ecoDetail { display: none !important; }
-/* Make speed bar bigger */
-#spdBar button { font-size: 14px; padding: 6px 12px; }
-
-
-#tutorialLayer{display:none;position:fixed;inset:0;z-index:80;align-items:flex-end;justify-content:center;padding:0 12px 90px;background:rgba(0,8,20,.35);pointer-events:auto}
-#tutorialCard{max-width:520px;width:100%;background:rgba(6,18,36,.96);border:2px solid #3af;border-radius:14px;padding:18px 20px;color:#eef;box-shadow:0 12px 40px rgba(0,0,0,.55);pointer-events:auto}
-#tutorialTitle{font-size:20px;font-weight:800;margin:0 0 8px;color:#7df}
-#tutorialBody{font-size:15px;line-height:1.5;margin:0 0 14px;color:#dde}
-#tutorialCounter{font-size:12px;color:#8ab;margin-bottom:10px}
-#tutorialActions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
-#tutNext,#tutSkip{pointer-events:auto;cursor:pointer;border-radius:10px;font-weight:800;font-size:15px;padding:12px 18px;border:2px solid #456;min-height:48px}
-#tutNext{background:#1a6;color:#fff;border-color:#2d8}
-#tutNext:hover{background:#1c7}
-#tutSkip{background:#123;color:#bcd}
-
-</style>
 
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+
+
+  <link rel="stylesheet" href="style.css?v=2026081305">
 </head>
 <body>
-<div style="position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:9999;color:rgba(255,255,255,0.4);font-size:12px;font-family:monospace;pointer-events:none;text-shadow:0 0 2px #000;">iGraSpore V2 - v0.14.3</div>
+<div style="position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:9999;color:rgba(255,255,255,0.4);font-size:12px;font-family:monospace;pointer-events:none;text-shadow:0 0 2px #000;">iGraSpore V2 - v2.0.0</div>
 <button id="renderModeBtn" class="cartoon" onclick="toggleRenderModeLarge()">🎨 МУЛЬТЯШНЫЙ</button>
+<select id="starSelectGame" style="position:absolute;top:48px;right:6px;z-index:9998;background:#0a1a2a;color:#8cf;border:1px solid #4c8;padding:4px 8px;border-radius:6px;font-size:11px;cursor:pointer;" title="Выбор звезды/солнца" onchange="window.setStarSystem(this.value);">
+    <option value="sol">☀ Солнце</option>
+    <option value="sirius">★ Сириус</option>
+    <option value="betelgeuse">★ Бетельгейзе</option>
+    <option value="rigel">★ Ригель</option>
+    <option value="vega">★ Вега</option>
+    <option value="antares">★ Антарес</option>
+    <option value="alphacentauri">★ α Центавра</option>
+</select>
 <canvas id="c"></canvas>
-<canvas id="mm" style="position:absolute;bottom:6px;right:6px;width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;z-index:10;cursor:pointer" title="Minimap"></canvas>
-<canvas id="pc" style="position:absolute;bottom:92px;right:6px;width:110px;height:55px;border:1px solid #1a3a55;border-radius:4px;z-index:10" title="Population graph"></canvas>
+<div id="mmWrap" style="position:absolute;bottom:6px;right:6px;z-index:10;width:110px">
+<canvas id="mm" style="width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;cursor:pointer;display:block;background:rgba(0,20,40,0.45)" title="Миникарта — где вы в пруду. Клик = прыжок камеры"></canvas>
+<div style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">КАРТА</div>
+</div>
+<div id="pcWrap" style="position:absolute;bottom:92px;right:6px;z-index:10;width:110px">
+<canvas id="pc" style="width:110px;height:55px;border:1px solid #1a3a55;border-radius:4px;display:block;background:rgba(0,20,40,0.45)" title="График популяции — сколько микробов во времени"></canvas>
+<div style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">ПОПУЛЯЦИЯ</div>
+</div>
 <div id="leftContainer" style="position:absolute; top:6px; left:6px; display:flex; flex-direction:column; gap:8px; pointer-events:auto; z-index:10; width:180px;">
   <div id="langSelWrap" tabindex="0" style="position:relative; width:130px; outline:none; pointer-events:auto; z-index:50;">
     <div class="lang-curr" style="cursor:pointer; display:flex; align-items:center; font-size:13px; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.4); backdrop-filter:blur(5px); background:rgba(0,12,28,0.92); border:1px solid #1a3a55; border-radius:8px; color:#fff; padding:6px 12px;"><span style="font-size:14px;margin-right:6px">🌐</span> <span id="curLangTxt">Русский</span> <span style="font-size:12px;margin-left:6px;opacity:0.7">▼</span></div>
@@ -253,8 +78,9 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 <div class="ab" id="bEat" title="Есть">ЕСТЬ<span class="hk">E</span></div>
 <div class="ab" id="bDiv" title="Делить">ДЕЛИТЬ<span class="hk">Q</span></div>
 <div class="ab" id="bCyst" title="Циста">ЦИСТА<span class="hk">R</span></div>
+<div class="ab" id="bFeed" title="Ручное питание" style="background:#1a3a0a;border-color:#8c4">🍽 КУСЬ<span class="hk">Space</span></div>
 <div class="ab" id="bAuto" title="Авто">АВТО<span class="hk">Tab</span></div>
-<div class="ab" id="bFree" title="Камера">КАМЕРА<span class="hk">F</span></div>
+<div class="ab" id="bFree" title="Свободный полёт: F или WASD / мышь">ПОЛЁТ F<span class="hk">F</span></div>
 <div class="ab" id="bMicro" title="Microscope Mode">&#128300;<span class="hk">M</span></div>
 <div class="ab" id="bRender" title="Render Mode (Realistic/Cartoon)">&#127912;<span class="hk">N</span></div>
 <div class="ab" id="bFol" title="Следить">СЛЕДИТЬ<span class="hk">V</span></div>
@@ -274,10 +100,34 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 <div class="sb2" id="menuSub"></div>
 <div style="margin-bottom:8px" id="diffWrap"></div>
 <div id="catSel"></div>
-<div class="scrollbox" id="spGrid"></div>
+  <!-- Пищевая цепь: наглядная схема «кто кого ест» -->
+  <div id="foodChainBar" style="margin:4px 0 6px 0;padding:6px 8px;background:rgba(0,20,10,0.5);border-radius:8px;border:1px solid rgba(100,160,120,0.25)">
+    <div style="font-size:9px;color:#7a9;margin-bottom:3px">🌱 Кто кого ест:</div>
+    <div id="foodChainDiagram" style="font-size:9px;line-height:1.5"></div>
+  </div>
+  <div class="scrollbox" id="spGrid"></div>
 <div style="margin-top:8px">
   <button class="btn" id="startBtn"></button>
+  <button class="btn" id="demoBtn" style="background:#1a3a2a;border-color:#4c8">ДЕМО / Галерея</button>
   <button class="btn" id="screensaverBtn" style="background:#1a4a6a; border-color:#4df">Aquarium / Screensaver</button>
+  <select id="starSelect" style="background:#0a1a2a;color:#8cf;border:1px solid #4c8;padding:6px 12px;border-radius:6px;font-size:13px;cursor:pointer;">
+    <option value="sol">☀ Солнце</option>
+    <option value="sirius">★ Сириус A+B</option>
+    <option value="betelgeuse">★ Бетельгейзе</option>
+    <option value="rigel">★ Ригель</option>
+    <option value="vega">★ Вега</option>
+    <option value="antares">★ Антарес</option>
+    <option value="alphacentauri">★ Альфа Центавра A+B</option>
+    <option value="polaris">★ Полярная</option>
+    <option value="binary">★ Двойная (синяя+оранжевая)</option>
+    <option value="twin">★★ Близнецы</option>
+    <option value="trinary">★★★ Тройная</option>
+    <option value="quadruple">★★★★ Четверная</option>
+    <option value="dwarf">★ Красный карлик</option>
+    <option value="giant">★ Оранжевый гигант</option>
+    <option value="flare">★ Вспышечная (UV Ceti)</option>
+    <option value="pulsar">★ Нейтронная (пульсар)</option>
+  </select>
 </div>
 <div style="margin-top:4px"><button class="btn sm" id="helpBtn"></button> <button class="btn sm" id="setBtn2"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
 </div>
@@ -317,20 +167,434 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
     </div>
   </div>
 </div>
-<script src="04-Src/js/config.js?v=1785546799"></script>
-<script src="04-Src/js/world.js?v=1785546799"></script>
-<script src="04-Src/js/organs.js?v=1785546799"></script>
-<script src="04-Src/js/biology.js?v=1785546799"></script>
-<script src="04-Src/js/ai.js?v=1785546799"></script>
-<script src="04-Src/js/render_effects.js?v=1785546799"></script>
-<script src="04-Src/js/render.js?v=1785546799"></script>
-<script src="04-Src/js/render_entities.js?v=1785546799"></script>
-<script src="04-Src/js/ui.js?v=1785546799"></script>
-<script src="04-Src/js/ui_menus.js?v=1785546799"></script>
-<script src="04-Src/js/main.js?v=1785546799"></script>
+<script src="04-Src/js/config.js?v=20260812075654"></script>
+<script src="04-Src/js/locomotion.js?v=20260812075654"></script>
+<script src="04-Src/js/organs.js?v=20260812075654"></script>
+<script src="04-Src/js/world.js?v=20260812075654"></script>
+<script src="04-Src/js/world_update.js?v=20260812075654"></script>
+<script src="04-Src/js/biology.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_divide.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_eat.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_virus.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_update.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_update_core.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_update_interact.js?v=20260812075654"></script>
+<script src="04-Src/js/ai_move.js?v=20260812075654"></script>
+<script src="04-Src/js/ai.js?v=20260812075654"></script>
+<script src="04-Src/js/render_effects.js?v=20260812075654"></script>
+<script src="04-Src/js/render_surface.js?v=20260812075654"></script>
+<script src="04-Src/js/render_fx.js?v=20260812075654"></script>
+<script src="04-Src/js/render_helpers.js?v=20260812075654"></script>
+<script>
+/* bioicons render mode v2 — phase-contrast microscopy cell rendering */
+(function(){
+'use strict';
+window._bioDebug = 'IIFE_RAN';
+var bioReady = true;
+
+/* ── helpers ── */
+function hx(s){
+  if(!s) return {r:120,g:180,b:80};
+  if(s[0]==='#'){var h=s.slice(1);if(h.length===3)h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2];return{r:parseInt(h.slice(0,2),16),g:parseInt(h.slice(2,4),16),b:parseInt(h.slice(4,6),16)};}
+  var m=s.match(/(\d+)/g);if(m&&m.length>=3)return{r:+m[0],g:+m[1],b:+m[2]};
+  return{r:120,g:180,b:80};
+}
+function L(c,a){return 'rgba('+Math.min(255,c.r+(255-c.r)*a|0)+','+Math.min(255,c.g+(255-c.g)*a|0)+','+Math.min(255,c.b+(255-c.b)*a|0)+',1)';}
+function D(c,a){return 'rgba('+(c.r*(1-a)|0)+','+(c.g*(1-a)|0)+','+(c.b*(1-a)|0)+',1)';}
+
+/* ── Phase halo: bright ring around every cell (phase contrast signature) ── */
+function halo(ctx,r){
+  var g=ctx.createRadialGradient(0,0,r*0.85,0,0,r*1.3);
+  g.addColorStop(0,'rgba(255,250,240,0)');
+  g.addColorStop(0.4,'rgba(255,250,240,0.18)');
+  g.addColorStop(1,'rgba(255,250,240,0)');
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,r*1.3,0,Math.PI*2);ctx.fill();
+}
+
+/* ── Granules: small refractive dots inside cytoplasm ── */
+function granules(ctx,sz,col,n,seed){
+  ctx.save();ctx.fillStyle=L(col,0.35);
+  var rng=seed||1;
+  for(var i=0;i<n;i++){
+    rng=(rng*9301+49297)%233280;var a=rng/233280*Math.PI*2;
+    rng=(rng*9301+49297)%233280;var rr=rng/233280*sz*0.35;
+    var px=Math.cos(a)*rr,py=Math.sin(a)*rr;
+    var gr=ctx.createRadialGradient(px,py,0,px,py,sz*0.08);
+    gr.addColorStop(0,L(col,0.6));gr.addColorStop(1,L(col,0));
+    ctx.fillStyle=gr;
+    ctx.beginPath();ctx.arc(px,py,sz*0.08,0,Math.PI*2);ctx.fill();
+  }
+  ctx.restore();
+}
+
+/* ── 1. COCCUS — sphere with halo, nucleoid, granules ── */
+function drawCoccus(ctx,sz,col){
+  var r=sz*0.42,c=hx(col);
+  halo(ctx,r);
+  /* cytoplasm: phase gradient (bright center → dark rim) */
+  var g=ctx.createRadialGradient(-r*0.2,-r*0.2,r*0.1,0,0,r);
+  g.addColorStop(0,L(c,0.5));g.addColorStop(0.5,col);g.addColorStop(0.85,D(c,0.2));g.addColorStop(1,D(c,0.5));
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();
+  /* membrane ring */
+  ctx.strokeStyle=D(c,0.5);ctx.lineWidth=Math.max(0.8,r*0.05);ctx.stroke();
+  /* nucleoid (irregular dense region) */
+  ctx.save();ctx.globalAlpha=0.5;ctx.fillStyle=D(c,0.35);
+  ctx.beginPath();ctx.ellipse(r*0.1,r*0.05,r*0.25,r*0.18,0.3,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* granules */
+  granules(ctx,r*2,c,4,Math.floor(sz*7));
+  /* specular highlight */
+  ctx.fillStyle='rgba(255,255,250,0.35)';
+  ctx.beginPath();ctx.ellipse(-r*0.35,-r*0.35,r*0.18,r*0.12,-0.4,0,Math.PI*2);ctx.fill();
+}
+
+/* ── 2. ROD — bacillus with polar granules, septation line ── */
+function drawRod(ctx,sz,col){
+  var L2=sz*0.72,W=sz*0.3,R=W,c=hx(col);
+  halo(ctx,Math.max(L2,W));
+  /* body capsule */
+  var g=ctx.createLinearGradient(0,-W,0,W);
+  g.addColorStop(0,L(c,0.4));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.35));
+  ctx.fillStyle=g;ctx.beginPath();
+  ctx.moveTo(-L2+R,-W);ctx.lineTo(L2-R,-W);ctx.arc(L2-R,0,R,-Math.PI/2,Math.PI/2);
+  ctx.lineTo(-L2+R,W);ctx.arc(-L2+R,0,R,Math.PI/2,-Math.PI/2);
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.45);ctx.lineWidth=Math.max(0.8,W*0.08);ctx.stroke();
+  /* septation (division plane) */
+  ctx.strokeStyle=D(c,0.3);ctx.lineWidth=1;ctx.globalAlpha=0.4;
+  ctx.beginPath();ctx.moveTo(0,-W*0.85);ctx.lineTo(0,W*0.85);ctx.stroke();ctx.globalAlpha=1;
+  /* polar granules */
+  granules(ctx,W*2,c,3,Math.floor(sz*5));
+  /* specular */
+  ctx.fillStyle='rgba(255,255,250,0.2)';
+  ctx.beginPath();ctx.ellipse(-L2*0.3,-W*0.4,W*0.3,W*0.12,0,0,Math.PI*2);ctx.fill();
+}
+
+/* ── 3. SPIRAL — thick sinusoidal body with visible coils ── */
+function drawSpiral(ctx,sz,col){
+  var L2=sz*0.85,c=hx(col);
+  halo(ctx,sz*0.5);
+  /* main wave body — dark core */
+  ctx.lineCap='round';
+  ctx.beginPath();
+  var steps=24;
+  for(var i=0;i<=steps;i++){var t=i/steps,x=-L2+2*L2*t,y=Math.sin(t*Math.PI*3.5)*sz*0.22;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.strokeStyle=D(c,0.35);ctx.lineWidth=Math.max(3,sz*0.22);ctx.stroke();
+  /* bright overlay (phase contrast) */
+  ctx.strokeStyle=col;ctx.lineWidth=Math.max(1.5,sz*0.1);ctx.stroke();
+  /* thin inner highlight */
+  ctx.strokeStyle=L(c,0.4);ctx.lineWidth=Math.max(0.8,sz*0.04);ctx.stroke();
+  /* cross-bands at coil peaks */
+  ctx.strokeStyle=D(c,0.25);ctx.lineWidth=1;ctx.globalAlpha=0.4;
+  for(var s=0;s<7;s++){var t2=(s+0.5)/7,x2=-L2+2*L2*t2,y2=Math.sin(t2*Math.PI*3.5)*sz*0.22;
+    ctx.beginPath();ctx.moveTo(x2-sz*0.08,y2);ctx.lineTo(x2+sz*0.08,y2);ctx.stroke();}
+  ctx.globalAlpha=1;
+}
+
+/* ── 4. FILAMENT — chain of cells with septa and sheath ── */
+function drawFilament(ctx,sz,col){
+  var L2=sz*1.1,W=sz*0.22,c=hx(col);
+  halo(ctx,sz*0.4);
+  /* outer sheath */
+  ctx.strokeStyle=D(c,0.2);ctx.lineWidth=W*2.8;ctx.lineCap='round';ctx.globalAlpha=0.3;
+  ctx.beginPath();
+  for(var i=0;i<=20;i++){var t=i/20,x=-L2+2*L2*t,y=Math.sin(t*Math.PI*4)*sz*0.06;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.stroke();ctx.globalAlpha=1;
+  /* cell chain (bright core) */
+  ctx.strokeStyle=col;ctx.lineWidth=W*1.6;
+  ctx.beginPath();
+  for(var i=0;i<=20;i++){var t=i/20,x=-L2+2*L2*t,y=Math.sin(t*Math.PI*4)*sz*0.06;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.stroke();
+  /* septa (cell walls between segments) */
+  ctx.strokeStyle=D(c,0.5);ctx.lineWidth=1;
+  for(var s=1;s<=4;s++){var t2=s/5,x2=-L2+2*L2*t2,y2=Math.sin(t2*Math.PI*4)*sz*0.06;
+    ctx.beginPath();ctx.moveTo(x2,y2-W);ctx.lineTo(x2,y2+W);ctx.stroke();}
+  /* heterocyst (specialized nitrogen-fixing cell) */
+  ctx.fillStyle=D(c,0.3);
+  ctx.beginPath();ctx.arc(-L2*0.6,Math.sin(0.2*Math.PI*4)*sz*0.06,W*1.3,0,Math.PI*2);ctx.fill();
+}
+
+/* ── 5. COMMA — vibrio crescent with polar flagellum ── */
+function drawComma(ctx,sz,col){
+  var r=sz*0.42,c=hx(col);
+  halo(ctx,r);
+  /* crescent body */
+  var g=ctx.createRadialGradient(-r*0.15,-r*0.15,0,0,0,r);
+  g.addColorStop(0,L(c,0.5));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.4));
+  ctx.fillStyle=g;
+  ctx.beginPath();ctx.arc(0,0,r,0.4,Math.PI*1.6);
+  ctx.quadraticCurveTo(-r*0.4,r*0.6,0,r*0.1);ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.5);ctx.lineWidth=Math.max(0.8,r*0.06);ctx.stroke();
+  /* flagellum tail */
+  ctx.strokeStyle=L(c,0.3);ctx.lineWidth=1.5;ctx.globalAlpha=0.7;
+  ctx.beginPath();ctx.moveTo(r*0.7,-r*0.4);
+  ctx.quadraticCurveTo(r*1.5,-r*0.8,r*1.8,-r*0.2);
+  ctx.stroke();ctx.globalAlpha=1;
+  granules(ctx,r*1.5,c,2,sz*3);
+}
+
+/* ── 6. COLONY — cluster of cocci in gelatinous matrix ── */
+function drawColony(ctx,sz,col){
+  var beadR=sz*0.18,c=hx(col);
+  /* gelatinous sheath */
+  ctx.fillStyle='rgba(255,255,240,0.08)';
+  ctx.beginPath();ctx.arc(0,0,sz*0.6,0,Math.PI*2);ctx.fill();
+  /* beads */
+  var pos=[[-0.25,-0.15],[0.2,-0.2],[0,0.15],[-0.3,0.25],[0.3,0.1],[0.15,0.35],[-0.1,-0.4]];
+  for(var i=0;i<pos.length;i++){
+    var bx=pos[i][0]*sz,by=pos[i][1]*sz;
+    halo(ctx,beadR);
+    var g=ctx.createRadialGradient(bx-beadR*0.3,by-beadR*0.3,0,bx,by,beadR);
+    g.addColorStop(0,L(c,0.4));g.addColorStop(0.7,col);g.addColorStop(1,D(c,0.3));
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(bx,by,beadR,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle=D(c,0.4);ctx.lineWidth=0.8;ctx.stroke();
+  }
+}
+
+/* ── 7. BELL — ciliate with oral groove, macronucleus, cilia ── */
+function drawBell(ctx,sz,col){
+  var r=sz*0.48,c=hx(col);
+  halo(ctx,r);
+  /* body — pitcher/bell shape */
+  var g=ctx.createRadialGradient(-r*0.15,-r*0.25,0,0,0,r*1.1);
+  g.addColorStop(0,L(c,0.45));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.35));
+  ctx.fillStyle=g;
+  ctx.beginPath();
+  ctx.moveTo(0,-r*0.9);
+  ctx.bezierCurveTo(r*0.7,-r*0.8,r*0.95,-r*0.1,r*0.65,r*0.55);
+  ctx.bezierCurveTo(r*0.3,r*0.95,-r*0.3,r*0.95,-r*0.65,r*0.55);
+  ctx.bezierCurveTo(-r*0.95,-r*0.1,-r*0.7,-r*0.8,0,-r*0.9);
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.45);ctx.lineWidth=Math.max(0.8,r*0.05);ctx.stroke();
+  /* macronucleus (C-shaped or ovoid, denser) */
+  ctx.save();ctx.globalAlpha=0.4;ctx.fillStyle=D(c,0.3);
+  ctx.beginPath();ctx.ellipse(-r*0.05,r*0.05,r*0.28,r*0.14,0.2,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* contractile vacuole */
+  ctx.save();ctx.globalAlpha=0.3;ctx.fillStyle='rgba(200,230,255,0.5)';
+  ctx.beginPath();ctx.arc(-r*0.35,-r*0.1,r*0.12,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* oral groove */
+  ctx.strokeStyle=D(c,0.4);ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.arc(r*0.3,r*0.15,r*0.2,-0.8,1.2);ctx.stroke();
+  /* cilia ring */
+  ctx.strokeStyle=L(c,0.25);ctx.lineWidth=1;ctx.globalAlpha=0.5;
+  for(var a=0;a<Math.PI*2;a+=Math.PI/10){
+    var cx2=Math.cos(a)*r*0.92,cy2=Math.sin(a)*r*0.92;
+    var ex=cx2+Math.cos(a)*sz*0.08,ey=cy2+Math.sin(a)*sz*0.08;
+    ctx.beginPath();ctx.moveTo(cx2,cy2);ctx.lineTo(ex,ey);ctx.stroke();
+  }
+  ctx.globalAlpha=1;
+  /* food vacuoles */
+  granules(ctx,r*1.5,c,3,sz*4);
+}
+
+/* ── 8. OVAL — yeast/fungal cell with bud scar and vacuole ── */
+function drawOval(ctx,sz,col){
+  var rx=sz*0.4,ry=sz*0.46,c=hx(col);
+  halo(ctx,Math.max(rx,ry));
+  var g=ctx.createRadialGradient(-rx*0.25,-ry*0.25,0,0,0,Math.max(rx,ry));
+  g.addColorStop(0,L(c,0.45));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.35));
+  ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(0,0,rx,ry,0,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle=D(c,0.45);ctx.lineWidth=Math.max(0.8,sz*0.04);ctx.stroke();
+  /* large central vacuole */
+  ctx.save();ctx.globalAlpha=0.3;ctx.fillStyle='rgba(220,240,255,0.5)';
+  ctx.beginPath();ctx.ellipse(-rx*0.05,ry*0.1,rx*0.3,ry*0.25,0,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* nucleus */
+  ctx.save();ctx.globalAlpha=0.4;ctx.fillStyle=D(c,0.25);
+  ctx.beginPath();ctx.arc(rx*0.15,0,rx*0.18,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* bud scar */
+  ctx.strokeStyle=D(c,0.3);ctx.lineWidth=1.5;ctx.globalAlpha=0.5;
+  ctx.beginPath();ctx.arc(rx*0.5,-ry*0.4,sz*0.08,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=1;
+  granules(ctx,Math.max(rx,ry)*1.5,c,3,sz*6);
+}
+
+/* ── slipper (Paramecium) — elongated slipper with cilia ── */
+function drawSlipper(ctx,sz,col){
+  var L2=sz*0.7,W=sz*0.28,c=hx(col);
+  halo(ctx,Math.max(L2,W));
+  var g=ctx.createLinearGradient(0,-W,0,W);
+  g.addColorStop(0,L(c,0.4));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.35));
+  ctx.fillStyle=g;
+  ctx.beginPath();ctx.ellipse(0,0,L2,W,0,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle=D(c,0.4);ctx.lineWidth=Math.max(0.8,W*0.08);ctx.stroke();
+  /* oral groove */
+  ctx.strokeStyle=D(c,0.35);ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(-L2*0.3,-W*0.5);
+  ctx.quadraticCurveTo(-L2*0.1,W*0.3,L2*0.3,W*0.2);ctx.stroke();
+  /* macronucleus */
+  ctx.save();ctx.globalAlpha=0.4;ctx.fillStyle=D(c,0.3);
+  ctx.beginPath();ctx.ellipse(L2*0.1,0,W*0.4,W*0.2,0,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* cilia */
+  ctx.strokeStyle=L(c,0.2);ctx.lineWidth=1;ctx.globalAlpha=0.4;
+  for(var a=0;a<Math.PI*2;a+=Math.PI/12){
+    var cx2=Math.cos(a)*L2,cy2=Math.sin(a)*W;
+    ctx.beginPath();ctx.moveTo(cx2,cy2);
+    ctx.lineTo(cx2+Math.cos(a)*sz*0.06,cy2+Math.sin(a)*sz*0.06);ctx.stroke();}
+  ctx.globalAlpha=1;
+  granules(ctx,W*2,c,4,sz*8);
+}
+
+/* ── irregular (amoeboid) — blobby shape with pseudopods ── */
+function drawIrregular(ctx,sz,col){
+  var r=sz*0.4,c=hx(col);
+  halo(ctx,r);
+  var g=ctx.createRadialGradient(-r*0.2,-r*0.2,0,0,0,r*1.2);
+  g.addColorStop(0,L(c,0.4));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.3));
+  ctx.fillStyle=g;
+  ctx.beginPath();
+  var pts=8;
+  for(var i=0;i<=pts;i++){
+    var a=i/pts*Math.PI*2;
+    var rr=r*(0.7+0.4*Math.sin(a*3+sz*0.1));
+    var x=Math.cos(a)*rr,y=Math.sin(a)*rr;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.35);ctx.lineWidth=Math.max(0.8,r*0.05);ctx.stroke();
+  granules(ctx,r*1.5,c,5,sz*9);
+}
+
+/* ── star (stellate) — radiating arms ── */
+function drawStar(ctx,sz,col){
+  var r=sz*0.45,c=hx(col);
+  halo(ctx,r);
+  var g=ctx.createRadialGradient(0,0,0,0,0,r);
+  g.addColorStop(0,L(c,0.4));g.addColorStop(1,D(c,0.3));
+  ctx.fillStyle=g;ctx.beginPath();
+  var arms=5;
+  for(var i=0;i<arms*2;i++){
+    var a=i/(arms*2)*Math.PI*2;
+    var rr=(i%2===0)?r:r*0.4;
+    var x=Math.cos(a)*rr,y=Math.sin(a)*rr;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.4);ctx.lineWidth=1;ctx.stroke();
+  granules(ctx,r*1.2,c,3,sz*4);
+}
+
+/* ── shape → draw function ── */
+var SF={
+  'circle':drawCoccus,'rod':drawRod,'spiral':drawSpiral,'filament':drawFilament,
+  'comma':drawComma,'colony':drawColony,'bell':drawBell,'oval':drawOval,
+  'slipper':drawSlipper,'irregular':drawIrregular,'star':drawStar,
+};
+
+window.loadBioicons=function(){};
+window.bioiconsReady=function(){return bioReady;};
+
+window.drawBioicon=function(ctx,o,sz,sh){
+  var col=(o.sp&&o.sp.color)?o.sp.color:'#80c060';
+  if(!col||(!col.startsWith('#')&&col.indexOf('rgb')<0&&col.indexOf('rgba')<0))col='#80c060';
+  if(col.indexOf('rgb')>=0){var m=col.match(/(\d+)/g);if(m&&m.length>=3){
+    var hr=(+m[0]).toString(16);if(hr.length<2)hr='0'+hr;
+    var hg=(+m[1]).toString(16);if(hg.length<2)hg='0'+hg;
+    var hb=(+m[2]).toString(16);if(hb.length<2)hb='0'+hb;
+    col='#'+hr+hg+hb;}}
+  var drawSz=Math.max(22,Math.min(80,sz*8));
+  var fn=SF[sh]||drawCoccus;
+  ctx.save();ctx.translate(o.x,o.y);
+  var ang=(typeof o.facing==='number'&&isFinite(o.facing))?o.facing:(typeof o.angle==='number'&&isFinite(o.angle))?o.angle:0;
+  if(sh==='rod'||sh==='spiral'||sh==='filament'||sh==='comma'||sh==='slipper')ctx.rotate(ang);
+  fn(ctx,drawSz,col);
+  ctx.restore();
+  /* infection ring */
+  if(o.infectionT>0){
+    ctx.save();ctx.strokeStyle='rgba(255,40,40,0.6)';ctx.lineWidth=2;
+    ctx.setLineDash([4,3]);
+    ctx.beginPath();ctx.arc(o.x,o.y,drawSz*0.7,0,Math.PI*2);ctx.stroke();
+    ctx.setLineDash([]);ctx.restore();
+  }
+  /* division glow */
+  if(o.dividing){
+    ctx.save();ctx.strokeStyle='rgba(100,255,100,0.5)';ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.arc(o.x,o.y,drawSz*0.6,0,Math.PI*2);ctx.stroke();ctx.restore();
+  }
+  return true;
+};
+
+window.drawVirusBioicon=function(ctx,v){
+  var ds=20;ctx.save();ctx.translate(v.x,v.y);ctx.rotate(v.angle||0);
+  /* outer glow */
+  ctx.fillStyle='rgba(255,60,60,0.12)';ctx.beginPath();ctx.arc(0,0,ds*0.8,0,Math.PI*2);ctx.fill();
+  /* icosahedral head with phase halo */
+  halo(ctx,ds*0.4);
+  var g=ctx.createRadialGradient(-ds*0.1,-ds*0.1,0,0,0,ds*0.35);
+  g.addColorStop(0,'#ffddd0');g.addColorStop(0.5,'#e44');g.addColorStop(1,'#800');
+  ctx.fillStyle=g;
+  ctx.beginPath();ctx.arc(0,0,ds*0.35,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#600';ctx.lineWidth=1;ctx.stroke();
+  /* collar */
+  ctx.fillStyle='#c33';ctx.beginPath();ctx.ellipse(0,ds*0.38,ds*0.12,ds*0.04,0,0,Math.PI*2);ctx.fill();
+  /* tail sheath */
+  ctx.strokeStyle='#b22';ctx.lineWidth=ds*0.1;
+  ctx.beginPath();ctx.moveTo(0,ds*0.4);ctx.lineTo(0,ds*0.72);ctx.stroke();
+  /* base plate */
+  ctx.fillStyle='#900';ctx.beginPath();ctx.ellipse(0,ds*0.72,ds*0.1,ds*0.04,0,0,Math.PI*2);ctx.fill();
+  /* tail fibers */
+  ctx.strokeStyle='#a33';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(-ds*0.03,ds*0.72);ctx.lineTo(-ds*0.2,ds*0.88);
+  ctx.moveTo(ds*0.03,ds*0.72);ctx.lineTo(ds*0.2,ds*0.88);
+  ctx.moveTo(0,ds*0.74);ctx.lineTo(0,ds*0.92);ctx.stroke();
+  ctx.restore();return true;
+};
+
+})();
+
+</script>
+  <script src="04-Src/js/render.js?v=20260812075654"></script>
+<script src="04-Src/js/render_entities.js?v=20260812075654"></script>
+<script src="04-Src/js/render_organs.js?v=20260812075654"></script>
+<script src="04-Src/js/render_edu.js?v=20260812075654"></script>
+<script src="04-Src/js/render_bio_v3.js?v=20260812075654"></script>
+<script src="04-Src/js/render_swiss.js?v=20260812075654"></script>
+<script src="04-Src/js/ui.js?v=20260812075654"></script>
+<script src="04-Src/js/ui_menus.js?v=20260812075654"></script>
+<script src="04-Src/js/ui_food_chain.js?v=20260812075654"></script>
+<script src="04-Src/js/ui_screens.js?v=20260815120000"></script>
+<script src="04-Src/js/main.js?v=20260812075654"></script>
+<script src="04-Src/js/main_events.js?v=20260812075654"></script>
+<script src="04-Src/js/demo.js?v=20260812075654"></script>
+<script src="04-Src/js/stars.js?v=20260812075654"></script>
+<script src="04-Src/js/night_sky.js?v=20260812075654"></script>
 <div id="globalTooltip" style="display:none; position:absolute; z-index:9999; background:rgba(10,20,35,0.95); border:1px solid #4af; color:#fff; padding:8px 12px; border-radius:6px; font-family:sans-serif; font-size:12px; pointer-events:none; box-shadow:0 4px 10px rgba(0,0,0,0.5); max-width:250px; text-shadow:0 1px 2px #000;"></div>
 
 
 
+<script src="04-Src/js/mobile.js?v=20260812075654"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
+
+<div id="apkBtn" style="position:fixed;top:10px;right:10px;z-index:9999;background:#0a4a52;color:#5ed4a0;padding:8px 14px;border-radius:20px;font-family:Arial;font-size:12px;font-weight:bold;cursor:pointer;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.5);display:flex;align-items:center;gap:6px;" onclick="window.location.href='/igraspore.apk'">
+  📱 APK
+</div>
+
+<script>
+// Sync game-time star selector with current value
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    var gameSel = document.getElementById('starSelectGame');
+    if(gameSel && window.currentStarId) gameSel.value = window.currentStarId;
+    // Also sync when menu star selector changes
+    var menuSel = document.getElementById('starSelect');
+    if(menuSel) {
+      menuSel.addEventListener('change', function(){
+        if(gameSel) gameSel.value = menuSel.value;
+    // Also sync game selector -> system
+    if(gameSel) gameSel.addEventListener('change', function(){
+      if(window.setStarSystem) window.setStarSystem(gameSel.value);
+    });
+      });
+    }
+  }, 1000);
+});
+</script>
 </body>
 </html>
+
+<!-- Build: 20260811190808 audit-fix -->

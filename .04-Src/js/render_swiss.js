@@ -313,14 +313,6 @@ function drawSprite(ctx, o, sz, shapeKey){
     ctx.globalAlpha = 1;
   }
 
-  if (o.dividing || (o.divT && o.divT > 0)) {
-    ctx.strokeStyle = 'rgba(40,40,40,0.75)';
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.moveTo(0, -dh*0.42);
-    ctx.lineTo(0, dh*0.42);
-    ctx.stroke();
-  }
 
   if (o.energy < 28) {
     ctx.globalAlpha = 0.18;
@@ -385,6 +377,19 @@ window.drawSwissCell = function(ctx, o, sz, sh){
     ctx.restore();
   }
   if (loadState === 'ready' && sprites[key]) {
+    if (o.dividing) {
+      var _da=(typeof DIV_ANIM==='number')?DIV_ANIM:1.25;
+      var prog = Math.min(1, (o.divT||0)/_da);
+      var ease = prog*prog*(3-2*prog);
+      var vis = o.preDivSize || sz;
+      var lobe = vis * (1 - ease * 0.48);
+      var sep = vis * ease * 0.62;
+      var left = {x:o.x-sep, y:o.y, facing:o.facing, angle:o.angle, sp:o.sp, energy:o.energy, isPlayer:o.isPlayer};
+      var right = {x:o.x+sep, y:o.y, facing:o.facing, angle:o.angle, sp:o.sp, energy:o.energy, isPlayer:o.isPlayer};
+      drawSprite(ctx, left, lobe, key);
+      drawSprite(ctx, right, lobe, key);
+      return true;
+    }
     if (drawSprite(ctx, o, sz, key)) return true;
   }
   // try generic circle sprite

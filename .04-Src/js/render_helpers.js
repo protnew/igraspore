@@ -250,11 +250,7 @@ function renderOrganisms(vL,vR,vT,vB){
         ctx.fill();
       }
       // Dividing pair hint
-      if(o.dividing){
-        ctx.strokeStyle='rgba(180,220,255,0.9)';
-        ctx.lineWidth=Math.max(1,sz*0.08);
-        ctx.beginPath(); ctx.moveTo(0,-sz*0.9); ctx.lineTo(0,sz*0.9); ctx.stroke();
-      }
+
       // Flash highlight
       if(o.flash && o.flash>0){
         ctx.globalAlpha=Math.min(0.85, o.flash);
@@ -350,6 +346,7 @@ function renderOrganisms(vL,vR,vT,vB){
 function renderParticles(vL,vR,vT,vB){
   ctx.save();
   for(var i=0;i<parts.length;i++){var p=parts[i];
+    if(p.y < 1) continue;
     ctx.globalAlpha=clamp(p.life,0,1);
     var col = p.color;
     if(p.life < p.maxL * 0.5 && (col==='#f44' || col==='#ff4444')) col = '#6b4c3a'; // Blood darkens to brown

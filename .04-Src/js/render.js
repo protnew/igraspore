@@ -58,6 +58,10 @@ function render(){
   // === STEP 3: ENVIRONMENT — water/sky/algae ALWAYS (fix black water) ===
   {
     renderSky(vL,vR,vT);
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(vL-80, 0, (vR-vL)+160, (typeof PD==='number'?PD:2000)+80);
+    ctx.clip();
     renderWater(vL,vR,vT,vB);
     renderSunRays(vL,vR);
     renderSediment(vL,vR,vB);
@@ -83,6 +87,7 @@ function render(){
   
   // World-space organelle pins (still in world transform)
   if(typeof renderOrganelleEdu==='function'){ /* panel is screen-space; pins need dual */ }
+  ctx.restore(); // end water clip (do not paint sky)
 
   ctx.restore(); // End world transform
   

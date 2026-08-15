@@ -304,6 +304,7 @@ var DLAB_RU=['\u0413\u043e\u043b\u043e\u0434','\u0421\u044a\u0435\u0434\u0435\u0
 var DLAB_EN=['Starved','Eaten','Temp','Old age','Lysis'];
 var DIV_COOLDOWN=6;
 var DIV_SEPARATION=40;
+var DIV_ANIM=1.25;
 
 // === GAME STATE ===
 // GLOBAL GUARD: prevent createRadialGradient from crashing on NaN/Infinity

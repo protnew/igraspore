@@ -75,8 +75,11 @@ window.updateOrgInteract = function(o, dt) {
   // Night mass handled in producer photo block (loss, not gain)
 
   if(!o.dividing){
-    o.size = lerp(o.size, tgtSz, 0.9*dt);
-    if(o.size < floorSz) o.size = lerp(o.size, floorSz, 2*dt);
+    if(typeof o._divGrow==='number' && o._divGrow < 8) o._divGrow += dt;
+    var growK = (typeof o._divGrow==='number' && o._divGrow < 8) ? 0.11*dt : 0.35*dt;
+    if(growK > 0.08) growK = 0.08;
+    o.size = lerp(o.size, tgtSz, growK);
+    if(o.size < floorSz) o.size = lerp(o.size, floorSz, Math.min(0.08, 0.6*dt));
   }
   if(o.flash>0)o.flash=Math.max(0,o.flash-dt*2);
   // Easy mode: gentle hint only — NEVER auto-spam divide

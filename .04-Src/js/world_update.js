@@ -145,7 +145,7 @@ function updateWorld(dt){
     if(typeof o2Bubbles !== 'undefined'){
     for(var i=o2Bubbles.length-1;i>=0;i--){
        var b=o2Bubbles[i]; b.y+=b.vy*dt*60; b.life-=dt*0.5;
-       if(b.life<=0 || b.y<=0) o2Bubbles.splice(i,1);
+       if(b.life<=0 || b.y<=3) o2Bubbles.splice(i,1);
     }
   }
 

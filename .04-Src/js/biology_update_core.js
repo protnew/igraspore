@@ -128,13 +128,12 @@ function updateOrg(o,dt){
   if(o.dividing){
     // Ensure visible progress even if sim dt is tiny / timeScale low
     var step = (dt > 0) ? dt : 0;
-    // sim-time: 10x completes ~10x faster (was floored to 0.02/frame = wall-clock lock)
+    // cap per frame so 10x / hitch cannot skip the split animation
+    if(step > 0.03) step = 0.03;
     o.divT = (o.divT||0) + step;
-    if(o.preDivSize){
-      var prog=Math.min(1, o.divT/0.55);
-      o.size = Math.max(1.5, o.preDivSize * (1 - prog*0.5));
-    }
-    if(o.divT >= 0.55){
+    // keep physical size until finish — render draws two shrinking lobes
+    if(o.preDivSize) o.size = o.preDivSize;
+    if(o.divT >= ((typeof DIV_ANIM==='number')?DIV_ANIM:1.25)){
       try { finishDivide(o); }
       catch(err){
         o.dividing=false; o.divCD=8; o.massFood=0; o.eatsSinceDiv=0;
@@ -243,7 +242,7 @@ function updateOrg(o,dt){
     // Atmosphere is effectively infinite — CO2 never limits photosynthesis in a puddle
     var co2Lim = 1.0;
     // globalCO2/O2 tracked for display but never bottleneck gameplay
-    if(photo > 0.1 && Math.random() < 0.05 * dt * 60 && typeof o2Bubbles !== 'undefined') {
+    if(photo > 0.1 && o.y > 12 && Math.random() < 0.05 * dt * 60 && typeof o2Bubbles !== 'undefined') {
         o2Bubbles.push({x: o.x + (Math.random()*2-1)*o.size, y: o.y, vy: -(Math.random()*1.5+0.5), r: Math.random()*2+1, life: 1});
     }
 
@@ -260,7 +259,7 @@ function updateOrg(o,dt){
       var sunMass = sun * 0.9 + dl * dt * 0.7;
       sunMass *= (0.55 + depthFrac * 0.9);
       o.massFood = (o.massFood||0) + sunMass;
-      if(dl > 0.2){
+      if(dl > 0.2 && !(typeof o._divGrow==='number' && o._divGrow < 7)){
         var adultCapP = (o.sp.size||4)*(o.sizeMult||1)*1.35;
         o.size = Math.min(adultCapP, o.size + sunMass * 0.08);
       }

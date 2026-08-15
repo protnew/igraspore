@@ -128,7 +128,7 @@ function renderOrganisms(vL,vR,vT,vB){
   if(isSwiss && typeof drawSwissCell === 'function'){
     var zS = (typeof zoom==='number' && zoom>0) ? zoom : 1;
     // far zoom: hard cap full sprites, rest as dots
-    var fullBudget = zS < 0.55 ? 40 : (zS < 1.0 ? 90 : 99999);
+    var fullBudget = window.demoMode ? 99999 : (zS < 0.55 ? 40 : (zS < 1.0 ? 90 : 99999));
     var fullDrawn = 0;
     for(var si0=0;si0<orgs.length;si0++){
       var so0=orgs[si0];

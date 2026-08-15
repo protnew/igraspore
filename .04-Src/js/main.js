@@ -91,6 +91,7 @@ function gameLoop(ts){
   if(state==='playing' || state==='menu'){
     updateWorld(realDt);
     if(window.demoMode&&typeof updateDemoPinned==="function") updateDemoPinned(realDt||dt||0.016);
+    if(window.demoMode&&typeof updateDemoCamera==="function") updateDemoCamera(realDt||dt||0.016);
     if (state === 'playing') {
       updateHUD();updateTopRight();updateWeather();updateEcoPanel();updateLegend();
       if(typeof updateScaleBar === 'function') updateScaleBar();

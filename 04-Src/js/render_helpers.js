@@ -128,7 +128,7 @@ function renderOrganisms(vL,vR,vT,vB){
   if(isSwiss && typeof drawSwissCell === 'function'){
     var zS = (typeof zoom==='number' && zoom>0) ? zoom : 1;
     // far zoom: hard cap full sprites, rest as dots
-    var fullBudget = zS < 0.55 ? 40 : (zS < 1.0 ? 90 : 99999);
+    var fullBudget = window.demoMode ? 99999 : (zS < 0.55 ? 40 : (zS < 1.0 ? 90 : 99999));
     var fullDrawn = 0;
     for(var si0=0;si0<orgs.length;si0++){
       var so0=orgs[si0];
@@ -250,11 +250,7 @@ function renderOrganisms(vL,vR,vT,vB){
         ctx.fill();
       }
       // Dividing pair hint
-      if(o.dividing){
-        ctx.strokeStyle='rgba(180,220,255,0.9)';
-        ctx.lineWidth=Math.max(1,sz*0.08);
-        ctx.beginPath(); ctx.moveTo(0,-sz*0.9); ctx.lineTo(0,sz*0.9); ctx.stroke();
-      }
+
       // Flash highlight
       if(o.flash && o.flash>0){
         ctx.globalAlpha=Math.min(0.85, o.flash);
@@ -302,7 +298,7 @@ function renderOrganisms(vL,vR,vT,vB){
     ctx.beginPath();
     for(var i=0;i<arr.length;i++){
       var o = arr[i];
-      if(o.size * zoom < 3) { ctx.fillRect(o.x - o.size, o.y - o.size, o.size*2, o.size*2); continue; }
+      if(o.size * zoom < 3) { ctx.beginPath(); ctx.arc(o.x, o.y, Math.max(0.8, o.size), 0, Math.PI*2); ctx.fill(); continue; }
       if(o.dividing || o.dying || o.cyst || o.infected || o.flash>0) continue; 
       ctx.save();ctx.translate(o.x,o.y);ctx.rotate(((typeof o.facing==='number')?o.facing:o.angle)||0);
       drawBody(o, o.size, c, c, true);
@@ -350,6 +346,7 @@ function renderOrganisms(vL,vR,vT,vB){
 function renderParticles(vL,vR,vT,vB){
   ctx.save();
   for(var i=0;i<parts.length;i++){var p=parts[i];
+    if(p.y < 1) continue;
     ctx.globalAlpha=clamp(p.life,0,1);
     var col = p.color;
     if(p.life < p.maxL * 0.5 && (col==='#f44' || col==='#ff4444')) col = '#6b4c3a'; // Blood darkens to brown
@@ -410,6 +407,7 @@ var _mmCache=null,_mmFrame=0;
 function renderMinimap(){
   // TSK-RND-021: Throttle to ~5fps (every 12 frames at 60fps)
   if(typeof fc !== 'undefined' && fc % 12 !== 0) return;
+  if(mm && (mm.width!==110 || mm.height!==80)){ mm.width=110; mm.height=80; }
   mc.clearRect(0,0,110,80);mc.fillStyle='rgba(0,12,28,0.85)';mc.fillRect(0,0,110,80);
   var sx=100/(PW*2),sy=70/PD;mc.save();mc.translate(5,5);
   mc.fillStyle='rgba(20,50,60,0.5)';mc.beginPath();mc.moveTo(0,0);mc.lineTo(100,0);mc.lineTo(100-(PW-BW)*sx,70);mc.lineTo((PW-BW)*sx,70);mc.closePath();mc.fill();
@@ -419,11 +417,32 @@ function renderMinimap(){
   mc.strokeRect(5+(cam.x-vw/2+PW)*sx,5+(cam.y-vh/2)*sy,vw*sx,vh*sy);
 }
 function renderPopGraph(){
+  if(pc && (pc.width!==110 || pc.height!==55)){ pc.width=110; pc.height=55; }
   pcc.clearRect(0,0,110,55);pcc.fillStyle='rgba(0,12,28,0.6)';pcc.fillRect(0,0,110,55);
-  if(popHist.length<2)return;var maxP=1;
+  if(popHist.length<2){
+    var cats0=['producer','consumer1','consumer2','consumer3','decomposer'];
+    var cols0={producer:'#2c2',consumer1:'#4af',consumer2:'#f80',consumer3:'#c4f',decomposer:'#a86'};
+    var tot=0, cur={};
+    for(var ci=0;ci<cats0.length;ci++){
+      var cnt=0; if(typeof orgs!=='undefined'){ for(var j=0;j<orgs.length;j++) if(orgs[j]&&orgs[j].alive&&orgs[j].sp&&orgs[j].sp.cat===cats0[ci]) cnt++; }
+      cur[cats0[ci]]=cnt; tot+=cnt;
+    }
+    if(tot<1) tot=1;
+    var bw=18, gap=3, x0=6;
+    for(var ci=0;ci<cats0.length;ci++){
+      var h=Math.max(2, (cur[cats0[ci]]/tot)*48);
+      pcc.fillStyle=cols0[cats0[ci]];
+      pcc.fillRect(x0+ci*(bw+gap), 53-h, bw, h);
+    }
+    return;
+  }
+  var maxP=1;
   for(var i=0;i<popHist.length;i++){var t=0;for(var c in popHist[i])t+=popHist[i][c];if(t>maxP)maxP=t;}
   var cats=['producer','consumer1','consumer2','consumer3','decomposer'];
   var cols={producer:'#2c2',consumer1:'#4af',consumer2:'#f80',consumer3:'#c4f',decomposer:'#a86'};
   for(var ci=0;ci<cats.length;ci++){pcc.strokeStyle=cols[cats[ci]];pcc.lineWidth=1.5;pcc.beginPath();
     for(var i=0;i<popHist.length;i++){var x=i/(popHist.length-1)*110;var y=55-(popHist[i][cats[ci]]||0)/maxP*52;if(i===0)pcc.moveTo(x,y);else pcc.lineTo(x,y);}pcc.stroke();}
 }
+window.renderMinimap = renderMinimap;
+window.renderPopGraph = renderPopGraph;
+

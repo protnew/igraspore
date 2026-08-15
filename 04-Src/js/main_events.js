@@ -2,12 +2,16 @@
 // === EVENT LISTENERS ===
 cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();var nx=e.clientX-r.left,ny=e.clientY-r.top;
   // Free-cam drag pan (hold LMB)
+  if(window._demoDown){
+    if(Math.hypot(nx-window._demoDown.x, ny-window._demoDown.y)>8) window._demoDown.moved=true;
+  }
   if(freeCam && mouseDown && !window.demoPossessed){
     var dx=(nx-mx)/Math.max(0.2,zoom);
     var dy=(ny-my)/Math.max(0.2,zoom);
     cam.x-=dx; cam.y-=dy;
     window.screensaverAutoCam=false;
     window.lastInteractionTime=Date.now();
+    if(window._demoFly) window._demoFly=null;
   }
   mx=nx;my=ny;});
 cv.addEventListener('mousedown',function(e){e.preventDefault();var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;
@@ -37,29 +41,36 @@ cv.addEventListener('mousedown',function(e){e.preventDefault();var r=cv.getBound
         return;
       }
     }
-    // Demo: click organism to possess / release
-    if(window.demoMode && typeof demoPickAtScreen==='function'){
+    if(window.demoMode){
+      window._demoDown={x:mx,y:my,moved:false};
+    }
+  }
+  if(e.button===2){var wx=cam.x+(mx-cv.width/2)/zoom,wy=cam.y+(my-cv.height/2)/zoom;moveTarget={x:wx,y:wy};}});
+cv.addEventListener('mouseup',function(e){
+  if(e.button===0){
+    mouseDown=false;
+    if(window.demoMode && window._demoDown && !window._demoDown.moved && typeof demoPickAtScreen==='function'){
       var hit=demoPickAtScreen(mx,my);
       if(hit){ demoPossessOrg(hit); }
       else if(window.demoPossessed){ exitDemoPossess(); }
     }
+    window._demoDown=null;
   }
-  if(e.button===2){var wx=cam.x+(mx-cv.width/2)/zoom,wy=cam.y+(my-cv.height/2)/zoom;moveTarget={x:wx,y:wy};}});
-cv.addEventListener('mouseup',function(e){if(e.button===0)mouseDown=false;});
+});
 cv.addEventListener('contextmenu',function(e){e.preventDefault();});
 cv.addEventListener('wheel',function(e){e.preventDefault();tZoom=clamp(tZoom*(e.deltaY>0?0.85:1.15),0.05,50);},{passive:false});
 
 var touchId=null;
-cv.addEventListener('touchstart',function(e){e.preventDefault();var t=e.touches[0];var r=cv.getBoundingClientRect();mx=t.clientX-r.left;my=t.clientY-r.top;mouseDown=true;touchId=t.identifier;},{passive:false});
-cv.addEventListener('touchmove',function(e){e.preventDefault();for(var i=0;i<e.touches.length;i++){var t=e.touches[i];if(t.identifier===touchId){var r=cv.getBoundingClientRect();mx=t.clientX-r.left;my=t.clientY-r.top;break;}}},{passive:false});
+cv.addEventListener('touchstart',function(e){e.preventDefault();var t=e.touches[0];var r=cv.getBoundingClientRect();mx=t.clientX-r.left;my=t.clientY-r.top;mouseDown=true;touchId=t.identifier;if(window.demoMode)window._demoDown={x:mx,y:my,moved:false};},{passive:false});
+cv.addEventListener('touchmove',function(e){e.preventDefault();for(var i=0;i<e.touches.length;i++){var t=e.touches[i];if(t.identifier===touchId){var r=cv.getBoundingClientRect();var nx=t.clientX-r.left,ny=t.clientY-r.top;if(window._demoDown&&Math.hypot(nx-window._demoDown.x,ny-window._demoDown.y)>8)window._demoDown.moved=true;if(freeCam&&!window.demoPossessed){cam.x-=(nx-mx)/Math.max(0.2,zoom);cam.y-=(ny-my)/Math.max(0.2,zoom);if(window._demoFly)window._demoFly=null;}mx=nx;my=ny;break;}}},{passive:false});
 cv.addEventListener('touchend',function(e){
   mouseDown=false;
-  // Demo: tap to possess/release (mobile)
-  if(window.demoMode && typeof demoPickAtScreen==='function'){
+  if(window.demoMode && window._demoDown && !window._demoDown.moved && typeof demoPickAtScreen==='function'){
     var hit=demoPickAtScreen(mx,my);
     if(hit){ demoPossessOrg(hit); }
     else if(window.demoPossessed){ exitDemoPossess(); }
   }
+  window._demoDown=null;
   if(e.touches.length===0)touchId=null;
 },{passive:false});
 
@@ -226,6 +237,9 @@ document.addEventListener('keydown',function(e){
   }
   if(k===' '||k==='space'){ window.manualFeed&&window.manualFeed(); e.preventDefault(); }
   if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
+  if(window.demoMode && (k==='1'||k==='2'||k==='3'||k==='4'||k==='5') && typeof demoFlyToGroup==='function'){
+    demoFlyToGroup(parseInt(k,10)); e.preventDefault(); return;
+  }
   if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Полёт: WASD / мышь / колёсико':'Камера: следит за клеткой');var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?'✈ ПОЛЁТ WASD':'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}}
   if(k==='escape'){
     if(window.demoMode && window.demoPossessed){ exitDemoPossess(); e.preventDefault(); return; }

@@ -134,7 +134,7 @@ function applyRenderMode(){
     settings.particles=true; settings.bubbles=true; settings.vignette=false;
     settings.lightMul=1.0;
   } else {
-    // Cartoon / bioicons: brighter, more saturated, simpler
+    // Cartoon: brighter, more saturated, simpler
     settings.lightMul=1.0;
   }
 }

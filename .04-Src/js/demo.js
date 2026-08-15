@@ -98,8 +98,11 @@ function startDemoMode() {
       o.state = 'idle';
       // gentle idle wobble only (no travel)
       o.demoBobPhase = Math.random() * Math.PI * 2;
+      o.x = x; o.y = yy;
       o.demoHomeX = x;
       o.demoHomeY = yy;
+      o.sessileHome = {x:x, y:yy};
+      o.invuln = 9999;
     }
   }
 
@@ -168,7 +171,7 @@ function exitDemoPossess() {
   if (player) {
     player.isPlayer = false;
     player.demoPinned = true;
-    player.invuln = 0; // remove demo invulnerability
+    player.invuln = 9999;
     player.vx = 0; player.vy = 0;
     if (player.demoHomeX != null) { player.x = player.demoHomeX; player.y = player.demoHomeY; }
   }
@@ -197,9 +200,11 @@ function demoPossessOrg(o) {
     return;
   }
   o.isPlayer = true;
-  o.demoPinned = false; // allow movement while possessed
+  o.demoPinned = false;
   o.energy = Math.max(o.energy, 85);
-  o.invuln = 9999; // Demo: can't be eaten while possessed
+  o.invuln = 9999;
+  if(o.demoHomeX != null) o.sessileHome = {x:o.demoHomeX, y:o.demoHomeY};
+  if(o.y > 800 && o.demoHomeY != null) { o.x = o.demoHomeX; o.y = o.demoHomeY; }
   o.cyst = false; o.cystT = 0; // clear any dormant state
   o.vx = 0; o.vy = 0;
   player = o;
@@ -246,7 +251,9 @@ function updateDemoPinned(dt) {
   }
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
-    if (!o || !o.alive || !o.demoPinned) continue;
+    if (!o || !o.alive) continue;
+    if (o.demoGroup) o.invuln = 9999;
+    if (!o.demoPinned) continue;
     // Stay home with tiny bob — no travel, no AI drift
     o.demoBobPhase = (o.demoBobPhase || 0) + dt * 1.2;
     o.x = o.demoHomeX;

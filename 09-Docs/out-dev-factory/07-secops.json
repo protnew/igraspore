@@ -1,0 +1,16 @@
+{
+  "role": "07-secops",
+  "writes_product": false,
+  "date": "2026-09-10",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "CRITICAL",
+      "where": "git config remote.origin.url soderzhit user:token@github.com/protnew/igraspore.git",
+      "what": "PAT/token vshit v origin URL. Znachenie v otchet ne kopirovat.",
+      "why": "Lyuboy git remote -v / log utekaet v chat i kopii.",
+      "ac": "Ne pechatat token. Ne rollback kommitov. Posle delay: ubrat credential iz remote, rotirivat PAT.",
+      "test_how": "git config --get remote.origin.url soderzhit ':' pered @github.com"
+    }
+  ]
+}

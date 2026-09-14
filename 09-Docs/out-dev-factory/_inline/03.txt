@@ -1,0 +1,19 @@
+РОЛЬ 03-cpo. АНАЛИЗ. Код/git/новые .db не создавать. Файлов не читать и не писать.
+Контракт: декомпозиция продукта, ROI user_value/effort. Не разгонять до 100k задач. Ядро в findings, остальное ICEBOX. 20×20 снять. Бенчмарк Thrive/конкурентов по фактам досье, без выдуманного LOC.
+Выход JSON {role:"03-cpo",writes_product:false,findings:[...]} ≤5, 1 CRITICAL max. ID тикетов брать из бэклога (TSK-*), не плодить P2.
+
+ФАКТЫ 2026-09-10:
+SQLite 08-Backlog/backlog_iGraSpore_V2.db 385024b mtime 2026-08-04T23:18:10
+tables tasks=70 tasks_history=370 schema_migrations=3
+status: DONE 68, ICEBOX 2
+ICEBOX: TSK-PROD-001 Product/Goals "ICEBOX: first goal/challenge mode" score 33.33
+TSK-PROD-002 Product/Editor "ICEBOX: simple organelle editor" score 27.5
+BY BLOCK DONE: AI 8, AI/Controls 2, Biology 13, Camera 2, Genetics 12, Onboarding 1, QA 2, Realistic Render 3, Rendering 10, UI 3, UX 4, World 8
+created 2026-07-27 .. 2026-07-29, MAX(updated_at)=2026-07-29T08:16:56 — бэклог не трогали ~6 недель при коммитах 2026-08-15
+Sample TSK-AI-001 title Purposeful autopilot, loc_capacity 20, user_value 8, status DONE (обрезано DO в дампе первой строки — считать DONE как GROUP BY)
+D3 DECISIONS: SSOT этот db; BACKLOG.md и lang snapshots deprecated (git status показывает D этих md)
+Live https://igraspore.pages.dev 200 Canvas 100 видов (README). Thrive = конкурент (Godot download, ~15 fictional). README unique niches: browser, 100 real species, educational, mobile, embed.
+Два дерева js 13 diff; тесты .04-Src; live 04-Src. Не решать развилку рендера — handoff 01.
+APK disk v2.4 4844415b; live /igraspore.apk = HTML 17917. Handoff 06.
+Не создавать задачи «закрыть 68 DONE». Только дыры ядра: мёртвый бэклог vs live drift, ICEBOX продукт, плотность vs Thrive.
+Ответ ТОЛЬКО JSON.

@@ -1,0 +1,14 @@
+РОЛЬ 04-ux. АНАЛИЗ. Код/CSS продукта не писать. Файлов не читать/не писать.
+Вектор: живой экран, 4 состояния UI, CSS. Выход JSON {role:"04-ux",writes_product:false,findings:[≤5, 1 CRITICAL max]} what/why/ac≤200.
+
+ФАКТЫ 2026-09-10:
+Live https://igraspore.pages.dev 200 HTML 17917b stamp 1786825630 canvas#c
+Disk style.css 20615b / 307 lines mtime 2026-08-15T22:14:08, index link style.css?v=1786825630, 0 <style> в HTML.
+HUD ids: renderModeBtn starSelectGame c mmWrap mm pcWrap pc leftContainer langSelWrap hud ecoP actBar bEat bDiv bCyst bFeed bAuto bFree bMicro bRender bFol bWiki btnAcid btnEclipse btnLeaderboard
+Кнопки в HTML: МУЛЬТЯШНЫЙ, Acid Rain, Eclipse, Leaderboard, CLOSE, ДЕМО, АКВАРИУМ, апгрейды ДНК, Export My DNA.
+localStorage ключи: igraspore_save (maxPop/maxPlayerSize), igraspore_tut_v2, igraspore_star. Нет cookie/indexedDB в 04-Src/js.
+innerHTML: ui_screens.js 11, ui_menus.js 9, ui.js 6, main.js 6 — handoff 07.
+Live грузит 04-Src/js; CODE_ISOLATION велит код в .04-Src — handoff 01/08.
+github.io другая поверхность stamp 20260811172633 — не UX-канон.
+Кадра Playwright в этом ходе нет — не выдумывать пиксели. CSS>500 не гейт.
+Ответ ТОЛЬКО JSON.

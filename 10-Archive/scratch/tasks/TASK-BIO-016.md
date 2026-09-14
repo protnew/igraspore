@@ -1,0 +1,4 @@
+# TASK BIO-016
+
+Status: BLOCKED (subagent env)
+BLOCKED: subagent cannot access files. Parent will implement directly.

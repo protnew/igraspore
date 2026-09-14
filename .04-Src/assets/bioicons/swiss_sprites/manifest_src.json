@@ -1,0 +1,110 @@
+{
+  "circle": {
+    "src": "microbiology/SwissBioPics--Bacteria2M_coccus.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\circle.svg",
+    "src_kb": 1156,
+    "clean_kb": 1139
+  },
+  "rod": {
+    "src": "microbiology/SwissBioPics--Bacteria2M_rod.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\rod.svg",
+    "src_kb": 1222,
+    "clean_kb": 1204
+  },
+  "spiral": {
+    "src": "microbiology/SwissBioPics--Bacteria2M_spiral.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\spiral.svg",
+    "src_kb": 1146,
+    "clean_kb": 1128
+  },
+  "filament": {
+    "src": "microbiology/SwissBioPics--Bacteria1M_filamentous.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\filament.svg",
+    "src_kb": 1201,
+    "clean_kb": 1186
+  },
+  "comma": {
+    "src": "microbiology/SwissBioPics--Bacteria2M_comma.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\comma.svg",
+    "src_kb": 1310,
+    "clean_kb": 1292
+  },
+  "colony": {
+    "src": "microbiology/SwissBioPics--Bacteria2M_Nostoc.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\colony.svg",
+    "src_kb": 1363,
+    "clean_kb": 1346
+  },
+  "oval": {
+    "src": "microbiology/SwissBioPics--Pombe_cells.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\oval.svg",
+    "src_kb": 482,
+    "clean_kb": 440
+  },
+  "slipper": {
+    "src": "microbiology/SwissBioPics--Eukaryota_cells.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\slipper.svg",
+    "src_kb": 591,
+    "clean_kb": 526
+  },
+  "bell": {
+    "src": "microbiology/SwissBioPics--Chlamydomona_cells.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\bell.svg",
+    "src_kb": 272,
+    "clean_kb": 224
+  },
+  "irregular": {
+    "src": "microbiology/SwissBioPics--Fungal_cells.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\irregular.svg",
+    "src_kb": 534,
+    "clean_kb": 497
+  },
+  "star": {
+    "src": "microbiology/SwissBioPics--Bacteria1M_tetrad.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\star.svg",
+    "src_kb": 1683,
+    "clean_kb": 1668
+  },
+  "phage": {
+    "src": "viruses/DBCLS--phage.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\phage.svg",
+    "src_kb": 393,
+    "clean_kb": 393
+  },
+  "trypanosoma": {
+    "src": "microbiology/SwissBioPics--Trypanosoma.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\trypanosoma.svg",
+    "src_kb": 281,
+    "clean_kb": 241
+  },
+  "yeast": {
+    "src": "microbiology/SwissBioPics--Yeast_cells.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\yeast.svg",
+    "src_kb": 435,
+    "clean_kb": 390
+  },
+  "volvox": {
+    "src": "plants-algae/DBCLS--volvox.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\volvox.svg",
+    "src_kb": 428,
+    "clean_kb": 437
+  },
+  "archaea": {
+    "src": "microbiology/SwissBioPics--Archaea_cells.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\archaea.svg",
+    "src_kb": 517,
+    "clean_kb": 507
+  },
+  "diplococci": {
+    "src": "microbiology/SwissBioPics--Bacteria1M_diplococci.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\diplococci.svg",
+    "src_kb": 1299,
+    "clean_kb": 1284
+  },
+  "trichormus": {
+    "src": "microbiology/SwissBioPics--Bacteria2M_trichormus.svg",
+    "clean": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\assets\\bioicons\\swiss_sprites\\_clean_svg\\trichormus.svg",
+    "src_kb": 1421,
+    "clean_kb": 1405
+  }
+}

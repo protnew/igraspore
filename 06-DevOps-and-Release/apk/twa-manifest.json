@@ -1,0 +1,41 @@
+{
+  "packageId": "com.igraspore.app",
+  "host": "igraspore.pages.dev",
+  "name": "iGraSpore",
+  "launcherName": "iGraSpore",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "themeColor": "#0a4a52",
+  "themeColorDark": "#022830",
+  "navigationColor": "#0a4a52",
+  "navigationColorDark": "#022830",
+  "navigationDividerColor": "#0a4a52",
+  "navigationDividerColorDark": "#022830",
+  "backgroundColor": "#022830",
+  "enableNotifications": false,
+  "startUrl": "/?source=twa",
+  "iconUrl": "https://igraspore.pages.dev/icons/icon-512.png",
+  "maskableIconUrl": "https://igraspore.pages.dev/icons/maskable-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\_apk\\igraspore.keystore",
+    "alias": "igraspore",
+    "password": "igraspore123"
+  },
+  "appVersionName": "2.0.0",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "iGraSpore",
+  "webManifestUrl": "https://igraspore.pages.dev/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": false,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://igraspore.pages.dev/",
+  "minLinksSdkVersion": 16,
+  "_comment": "TWA manifest for iGraSpore PWA"
+}

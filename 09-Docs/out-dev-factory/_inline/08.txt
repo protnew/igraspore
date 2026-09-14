@@ -1,0 +1,11 @@
+РОЛЬ 08-controller. АНАЛИЗ. Код не писать. Файлов не читать/не писать.
+Вектор: противоречия SoT, гейты, не победитель за соседа. JSON role 08-controller.
+
+ФАКТЫ 2026-09-10:
+SoT1 live+index: Canvas 34 модуля 04-Src/js stamp 1786825630
+SoT2 DECISIONS D1: WebGL raw 176 > Canvas 84, V3 hybrid. Файл 1080b 2026-08-06. D2 waiver 547 lines vs live biology_update_core 411 lines 19041b.
+SoT3 AGENTS.md/CODE_ISOLATION 2026-07-27: код ТОЛЬКО .04-Src; видимый 04-Src = pointer. Факт: 04-Src/js 34 полных js, 13 md5≠ .04-Src/js, live читает видимое.
+SoT4 README Live=github.io single HTML; github.io stamp 20260811 34178b ≠ pages.dev.
+Бэклог 68 DONE на 2026-07-29, коммиты до 2026-08-15, 2 ICEBOX TSK-PROD-001/002.
+Тесты vitest include .04-Src/js не live дерево.
+Не выбирать рендер — finding + handoff 01. Ответ ТОЛЬКО JSON.

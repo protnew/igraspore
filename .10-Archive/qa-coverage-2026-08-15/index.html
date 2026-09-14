@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<!-- build-stamp:20260811172633 cursor-fix -->
+<html lang="ru">
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0a4a52">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="iGraSpore">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>iGraSpore</title>
+
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+
+  <link rel="stylesheet" href="style.css?v=2026081305">
+</head>
+<body>
+<div style="position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:9999;color:rgba(255,255,255,0.4);font-size:12px;font-family:monospace;pointer-events:none;text-shadow:0 0 2px #000;">iGraSpore V2 - v2.0.0</div>
+<button id="renderModeBtn" class="cartoon" onclick="toggleRenderModeLarge()">🎨 МУЛЬТЯШНЫЙ</button>
+<select id="starSelectGame" style="position:absolute;top:48px;right:6px;z-index:9998;background:#0a1a2a;color:#8cf;border:1px solid #4c8;padding:4px 8px;border-radius:6px;font-size:11px;cursor:pointer;" title="Выбор звезды/солнца" onchange="window.setStarSystem(this.value);">
+    <option value="sol">☀ Солнце</option>
+    <option value="sirius">★ Сириус</option>
+    <option value="betelgeuse">★ Бетельгейзе</option>
+    <option value="rigel">★ Ригель</option>
+    <option value="vega">★ Вега</option>
+    <option value="antares">★ Антарес</option>
+    <option value="alphacentauri">★ α Центавра</option>
+</select>
+<canvas id="c"></canvas>
+<div id="mmWrap" style="position:absolute;bottom:6px;right:6px;z-index:10;width:110px">
+<canvas id="mm" style="width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;cursor:pointer;display:block;background:rgba(0,20,40,0.45)" title="Миникарта — где вы в пруду. Клик = прыжок камеры"></canvas>
+<div style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">КАРТА</div>
+</div>
+<div id="pcWrap" style="position:absolute;bottom:92px;right:6px;z-index:10;width:110px">
+<canvas id="pc" style="width:110px;height:55px;border:1px solid #1a3a55;border-radius:4px;display:block;background:rgba(0,20,40,0.45)" title="График популяции — сколько микробов во времени"></canvas>
+<div style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">ПОПУЛЯЦИЯ</div>
+</div>
+<div id="leftContainer" style="position:absolute; top:6px; left:6px; display:flex; flex-direction:column; gap:8px; pointer-events:auto; z-index:10; width:180px;">
+  <div id="langSelWrap" tabindex="0" style="position:relative; width:130px; outline:none; pointer-events:auto; z-index:50;">
+    <div class="lang-curr" style="cursor:pointer; display:flex; align-items:center; font-size:13px; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.4); backdrop-filter:blur(5px); background:rgba(0,12,28,0.92); border:1px solid #1a3a55; border-radius:8px; color:#fff; padding:6px 12px;"><span style="font-size:14px;margin-right:6px">🌐</span> <span id="curLangTxt">Русский</span> <span style="font-size:12px;margin-left:6px;opacity:0.7">▼</span></div>
+    <div class="lang-drop" id="langSelDrop"></div>
+  </div>
+  <div id="hDivReady" style="position:fixed;left:12px;bottom:78px;z-index:40;color:#8ef;font:12px/1.3 sans-serif;text-shadow:0 1px 2px #000;max-width:240px;pointer-events:none"></div>
+<div id="hud" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
+  <div id="ecoP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
+  <div id="legP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
+</div>
+<div id="topR" class="p" style="display:none; top:6px; right:6px;"></div>
+<div id="weatherP" class="p" style="display:none; top:50px; right:6px;"></div>
+<div id="camM" style="top:5px; left:50%; transform:translateX(-50%);">FOLLOW</div>
+<div id="scaleBar" style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); color:#fff; border-bottom:2px solid #fff; padding-bottom:2px; font-size:12px; pointer-events:none; z-index:10; text-shadow:0 1px 2px #000;">100 μm</div>
+<div id="spdBar" style="display:none; z-index:10; top:25px; left:50%; transform:translateX(-50%);"></div>
+<div id="todWrap" class="p" style="display:none; z-index:10; top:60px; left:50%; transform:translateX(-50%);"></div>
+<div id="sandboxTools" class="p" style="display:none; z-index:10; top:80px; right:6px; background:rgba(0,30,10,0.8); border:1px solid #0f0; color:#0f0;">
+  <div style="font-weight:bold;margin-bottom:5px;text-align:center;">🛠 Sandbox</div>
+  <button class="btn" style="width:100%;margin-bottom:3px;background:#030;color:#0f0;border:1px solid #0f0;cursor:pointer;" id="btnAcid">Acid Rain</button>
+  <button class="btn" style="width:100%;margin-bottom:3px;background:#030;color:#0f0;border:1px solid #0f0;cursor:pointer;" id="btnEclipse">Eclipse</button>
+  <button class="btn" style="width:100%;background:#030;color:#0f0;border:1px solid #0f0;cursor:pointer;" id="btnLeaderboard">Leaderboard</button>
+</div>
+
+
+<div id="keyHint" class="p" style="display:none"></div>
+<div id="scaleW"></div>
+<div id="toast" style="display:none"></div>
+<div id="tip" class="p"></div>
+<div id="actBar">
+<div class="ab" id="bEat" title="Есть">ЕСТЬ<span class="hk">E</span></div>
+<div class="ab" id="bDiv" title="Делить">ДЕЛИТЬ<span class="hk">Q</span></div>
+<div class="ab" id="bCyst" title="Циста">ЦИСТА<span class="hk">R</span></div>
+<div class="ab" id="bFeed" title="Ручное питание" style="background:#1a3a0a;border-color:#8c4">🍽 КУСЬ<span class="hk">Space</span></div>
+<div class="ab" id="bAuto" title="Авто">АВТО<span class="hk">Tab</span></div>
+<div class="ab" id="bFree" title="Свободный полёт: F или WASD / мышь">ПОЛЁТ F<span class="hk">F</span></div>
+<div class="ab" id="bMicro" title="Microscope Mode">&#128300;<span class="hk">M</span></div>
+<div class="ab" id="bRender" title="Render Mode (Realistic/Cartoon)">&#127912;<span class="hk">N</span></div>
+<div class="ab" id="bFol" title="Следить">СЛЕДИТЬ<span class="hk">V</span></div>
+<div class="ab" id="bWiki" title="Wiki/Bestiary">&#128218;<span class="hk">B</span></div>
+<div class="ab" id="bPause" title="Pause">&#9208;<span class="hk">P</span></div>
+<div class="ab" id="bZI" title="Zoom+">&#128269;+</div>
+<div class="ab" id="bZO" title="Zoom-">&#128269;-</div>
+<div class="ab" id="bSandbox" title="Sandbox Tools">&#128736;</div>
+</div>
+<div id="leaderboardO" class="ov">
+  <div class="tt">🏆 Leaderboard</div>
+  <div id="lbList" style="margin:10px 0; max-height:200px; overflow-y:auto; text-align:left; font-family:monospace; background:rgba(0,0,0,0.5); padding:10px;"></div>
+  <button class="btn" id="lbClose">CLOSE</button>
+</div>
+<div id="menuO" class="ov show">
+<div class="tt">iGraSpore <span style="font-size:12px;color:#789">v1.5.0 (c4d9e1)</span></div>
+<div class="sb2" id="menuSub"></div>
+<div style="margin-bottom:8px" id="diffWrap"></div>
+<div id="catSel"></div>
+  <!-- Пищевая цепь: наглядная схема «кто кого ест» -->
+  <div id="foodChainBar" style="margin:4px 0 6px 0;padding:6px 8px;background:rgba(0,20,10,0.5);border-radius:8px;border:1px solid rgba(100,160,120,0.25)">
+    <div style="font-size:9px;color:#7a9;margin-bottom:3px">🌱 Кто кого ест:</div>
+    <div id="foodChainDiagram" style="font-size:9px;line-height:1.5"></div>
+  </div>
+  <div class="scrollbox" id="spGrid"></div>
+<div style="margin-top:8px">
+  <button class="btn" id="startBtn"></button>
+  <button class="btn" id="demoBtn" style="background:#1a3a2a;border-color:#4c8">ДЕМО / Галерея</button>
+  <button class="btn" id="screensaverBtn" style="background:#1a4a6a; border-color:#4df">Aquarium / Screensaver</button>
+  <select id="starSelect" style="background:#0a1a2a;color:#8cf;border:1px solid #4c8;padding:6px 12px;border-radius:6px;font-size:13px;cursor:pointer;">
+    <option value="sol">☀ Солнце</option>
+    <option value="sirius">★ Сириус A+B</option>
+    <option value="betelgeuse">★ Бетельгейзе</option>
+    <option value="rigel">★ Ригель</option>
+    <option value="vega">★ Вега</option>
+    <option value="antares">★ Антарес</option>
+    <option value="alphacentauri">★ Альфа Центавра A+B</option>
+    <option value="polaris">★ Полярная</option>
+    <option value="binary">★ Двойная (синяя+оранжевая)</option>
+    <option value="twin">★★ Близнецы</option>
+    <option value="trinary">★★★ Тройная</option>
+    <option value="quadruple">★★★★ Четверная</option>
+    <option value="dwarf">★ Красный карлик</option>
+    <option value="giant">★ Оранжевый гигант</option>
+    <option value="flare">★ Вспышечная (UV Ceti)</option>
+    <option value="pulsar">★ Нейтронная (пульсар)</option>
+  </select>
+</div>
+<div style="margin-top:4px"><button class="btn sm" id="helpBtn"></button> <button class="btn sm" id="setBtn2"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
+</div>
+<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button></div>
+<div id="helpO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="helpT"></div><div id="helpBody" style="color:#bcd;font-size:12px;line-height:1.6;max-width:560px"></div><button class="btn sm" id="helpClose" style="margin-top:12px"></button></div>
+<div id="setO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="setT"></div><div class="scrollbox" id="setBody" style="max-width:400px"></div><button class="btn sm" id="setClose" style="margin-top:12px"></button></div>
+<div id="wikiO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:6px" id="wikiT"></div><input type="text" class="wiki-search" id="wikiSearch" placeholder="Search..."><div id="wikiContent"></div><button class="btn sm" id="wikiClose" style="margin-top:10px"></button></div>
+<div id="deadO" class="ov"><div class="tt" style="color:#f44;font-size:24px" id="deadT"></div><div id="deadStats" style="margin-bottom:12px"></div><button class="btn" id="restartBtn"></button><button class="btn sm" id="menuBtn"></button></div>
+<div id="deadScreen"></div>
+
+<div id="dnaModal" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(10,25,45,0.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(100,200,255,0.3);border-radius:16px;padding:25px;z-index:100;color:#fff;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.6), inset 0 0 15px rgba(100,200,255,0.1); width:280px;transition:opacity 0.3s ease, transform 0.3s ease;">
+   <h2 style="margin:0 0 10px 0;color:#4df;text-shadow:0 0 8px rgba(77,221,255,0.5);font-size:18px;letter-spacing:1px;">🧬 МУТАЦИИ ДНК</h2>
+   <div style="font-size:13px;color:#bcd;margin-bottom:20px;background:rgba(0,0,0,0.3);padding:8px;border-radius:6px;">Очки мутации: <strong id="dnaPts" style="color:#ff0;font-size:18px;text-shadow:0 0 5px rgba(255,255,0,0.5);">0</strong></div>
+   <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:15px;font-size:13px;">
+       <button class="dna-btn" onclick="buyMutation('speed')">Ускорение жгутиков (5 ДНК)</button>
+       <button class="dna-btn" onclick="buyMutation('size')">Увеличение массы (8 ДНК)</button>
+       <button class="dna-btn" onclick="buyMutation('spikes')">Отрастить шипы (15 ДНК)</button>
+       <button class="dna-btn" onclick="buyMutation('shell')">Кремниевый панцирь (20 ДНК)</button>
+       <hr style="border-color:#444; margin: 15px 0; width: 100%;">
+       <h4 style="margin: 0 0 5px 0;">Import/Export DNA</h4>
+       <input type="text" id="dnaString" placeholder="Paste DNA code here..." style="width:100%; padding: 5px; margin-bottom: 10px; background:#222; color:#0f0; border:1px solid #444; box-sizing: border-box;">
+       <button class="dna-btn" onclick="exportDNA()">Export My DNA</button>
+       <button class="dna-btn" onclick="importDNA()">Import DNA</button>
+       <br>
+       <button onclick="closeDNAEditor()" style="background:rgba(255,60,60,0.4);border:1px solid rgba(255,100,100,0.4);padding:10px 15px;color:#fff;cursor:pointer;border-radius:8px;font-weight:bold;transition:all 0.2s;backdrop-filter:blur(4px);box-shadow:0 4px 6px rgba(0,0,0,0.2);" onmouseover="this.style.background='rgba(255,60,60,0.7)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,60,60,0.4)';this.style.transform='translateY(0)'">Закрыть</button>
+   </div>
+</div>
+
+<div id="tutorialLayer" style="display:none">
+  <div id="tutorialCard">
+    <div id="tutorialCounter">1 / 5</div>
+    <div id="tutorialTitle">Туториал</div>
+    <div id="tutorialBody">...</div>
+    <div id="tutorialActions">
+      <button type="button" id="tutSkip">Пропустить</button>
+      <button type="button" id="tutNext">Далее</button>
+    </div>
+  </div>
+</div>
+<script src="04-Src/js/config.js?v=20260812075654"></script>
+<script src="04-Src/js/locomotion.js?v=20260812075654"></script>
+<script src="04-Src/js/organs.js?v=20260812075654"></script>
+<script src="04-Src/js/world.js?v=20260812075654"></script>
+<script src="04-Src/js/world_update.js?v=20260812075654"></script>
+<script src="04-Src/js/biology.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_divide.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_eat.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_virus.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_update.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_update_core.js?v=20260812075654"></script>
+<script src="04-Src/js/biology_update_interact.js?v=20260812075654"></script>
+<script src="04-Src/js/ai_move.js?v=20260812075654"></script>
+<script src="04-Src/js/ai.js?v=20260812075654"></script>
+<script src="04-Src/js/render_effects.js?v=20260812075654"></script>
+<script src="04-Src/js/render_surface.js?v=20260812075654"></script>
+<script src="04-Src/js/render_fx.js?v=20260812075654"></script>
+<script src="04-Src/js/render_helpers.js?v=20260812075654"></script>
+<script>
+/* bioicons render mode v2 — phase-contrast microscopy cell rendering */
+(function(){
+'use strict';
+window._bioDebug = 'IIFE_RAN';
+var bioReady = true;
+
+/* ── helpers ── */
+function hx(s){
+  if(!s) return {r:120,g:180,b:80};
+  if(s[0]==='#'){var h=s.slice(1);if(h.length===3)h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2];return{r:parseInt(h.slice(0,2),16),g:parseInt(h.slice(2,4),16),b:parseInt(h.slice(4,6),16)};}
+  var m=s.match(/(\d+)/g);if(m&&m.length>=3)return{r:+m[0],g:+m[1],b:+m[2]};
+  return{r:120,g:180,b:80};
+}
+function L(c,a){return 'rgba('+Math.min(255,c.r+(255-c.r)*a|0)+','+Math.min(255,c.g+(255-c.g)*a|0)+','+Math.min(255,c.b+(255-c.b)*a|0)+',1)';}
+function D(c,a){return 'rgba('+(c.r*(1-a)|0)+','+(c.g*(1-a)|0)+','+(c.b*(1-a)|0)+',1)';}
+
+/* ── Phase halo: bright ring around every cell (phase contrast signature) ── */
+function halo(ctx,r){
+  var g=ctx.createRadialGradient(0,0,r*0.85,0,0,r*1.3);
+  g.addColorStop(0,'rgba(255,250,240,0)');
+  g.addColorStop(0.4,'rgba(255,250,240,0.18)');
+  g.addColorStop(1,'rgba(255,250,240,0)');
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,r*1.3,0,Math.PI*2);ctx.fill();
+}
+
+/* ── Granules: small refractive dots inside cytoplasm ── */
+function granules(ctx,sz,col,n,seed){
+  ctx.save();ctx.fillStyle=L(col,0.35);
+  var rng=seed||1;
+  for(var i=0;i<n;i++){
+    rng=(rng*9301+49297)%233280;var a=rng/233280*Math.PI*2;
+    rng=(rng*9301+49297)%233280;var rr=rng/233280*sz*0.35;
+    var px=Math.cos(a)*rr,py=Math.sin(a)*rr;
+    var gr=ctx.createRadialGradient(px,py,0,px,py,sz*0.08);
+    gr.addColorStop(0,L(col,0.6));gr.addColorStop(1,L(col,0));
+    ctx.fillStyle=gr;
+    ctx.beginPath();ctx.arc(px,py,sz*0.08,0,Math.PI*2);ctx.fill();
+  }
+  ctx.restore();
+}
+
+/* ── 1. COCCUS — sphere with halo, nucleoid, granules ── */
+function drawCoccus(ctx,sz,col){
+  var r=sz*0.42,c=hx(col);
+  halo(ctx,r);
+  /* cytoplasm: phase gradient (bright center → dark rim) */
+  var g=ctx.createRadialGradient(-r*0.2,-r*0.2,r*0.1,0,0,r);
+  g.addColorStop(0,L(c,0.5));g.addColorStop(0.5,col);g.addColorStop(0.85,D(c,0.2));g.addColorStop(1,D(c,0.5));
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();
+  /* membrane ring */
+  ctx.strokeStyle=D(c,0.5);ctx.lineWidth=Math.max(0.8,r*0.05);ctx.stroke();
+  /* nucleoid (irregular dense region) */
+  ctx.save();ctx.globalAlpha=0.5;ctx.fillStyle=D(c,0.35);
+  ctx.beginPath();ctx.ellipse(r*0.1,r*0.05,r*0.25,r*0.18,0.3,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* granules */
+  granules(ctx,r*2,c,4,Math.floor(sz*7));
+  /* specular highlight */
+  ctx.fillStyle='rgba(255,255,250,0.35)';
+  ctx.beginPath();ctx.ellipse(-r*0.35,-r*0.35,r*0.18,r*0.12,-0.4,0,Math.PI*2);ctx.fill();
+}
+
+/* ── 2. ROD — bacillus with polar granules, septation line ── */
+function drawRod(ctx,sz,col){
+  var L2=sz*0.72,W=sz*0.3,R=W,c=hx(col);
+  halo(ctx,Math.max(L2,W));
+  /* body capsule */
+  var g=ctx.createLinearGradient(0,-W,0,W);
+  g.addColorStop(0,L(c,0.4));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.35));
+  ctx.fillStyle=g;ctx.beginPath();
+  ctx.moveTo(-L2+R,-W);ctx.lineTo(L2-R,-W);ctx.arc(L2-R,0,R,-Math.PI/2,Math.PI/2);
+  ctx.lineTo(-L2+R,W);ctx.arc(-L2+R,0,R,Math.PI/2,-Math.PI/2);
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.45);ctx.lineWidth=Math.max(0.8,W*0.08);ctx.stroke();
+  /* septation (division plane) */
+  ctx.strokeStyle=D(c,0.3);ctx.lineWidth=1;ctx.globalAlpha=0.4;
+  ctx.beginPath();ctx.moveTo(0,-W*0.85);ctx.lineTo(0,W*0.85);ctx.stroke();ctx.globalAlpha=1;
+  /* polar granules */
+  granules(ctx,W*2,c,3,Math.floor(sz*5));
+  /* specular */
+  ctx.fillStyle='rgba(255,255,250,0.2)';
+  ctx.beginPath();ctx.ellipse(-L2*0.3,-W*0.4,W*0.3,W*0.12,0,0,Math.PI*2);ctx.fill();
+}
+
+/* ── 3. SPIRAL — thick sinusoidal body with visible coils ── */
+function drawSpiral(ctx,sz,col){
+  var L2=sz*0.85,c=hx(col);
+  halo(ctx,sz*0.5);
+  /* main wave body — dark core */
+  ctx.lineCap='round';
+  ctx.beginPath();
+  var steps=24;
+  for(var i=0;i<=steps;i++){var t=i/steps,x=-L2+2*L2*t,y=Math.sin(t*Math.PI*3.5)*sz*0.22;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.strokeStyle=D(c,0.35);ctx.lineWidth=Math.max(3,sz*0.22);ctx.stroke();
+  /* bright overlay (phase contrast) */
+  ctx.strokeStyle=col;ctx.lineWidth=Math.max(1.5,sz*0.1);ctx.stroke();
+  /* thin inner highlight */
+  ctx.strokeStyle=L(c,0.4);ctx.lineWidth=Math.max(0.8,sz*0.04);ctx.stroke();
+  /* cross-bands at coil peaks */
+  ctx.strokeStyle=D(c,0.25);ctx.lineWidth=1;ctx.globalAlpha=0.4;
+  for(var s=0;s<7;s++){var t2=(s+0.5)/7,x2=-L2+2*L2*t2,y2=Math.sin(t2*Math.PI*3.5)*sz*0.22;
+    ctx.beginPath();ctx.moveTo(x2-sz*0.08,y2);ctx.lineTo(x2+sz*0.08,y2);ctx.stroke();}
+  ctx.globalAlpha=1;
+}
+
+/* ── 4. FILAMENT — chain of cells with septa and sheath ── */
+function drawFilament(ctx,sz,col){
+  var L2=sz*1.1,W=sz*0.22,c=hx(col);
+  halo(ctx,sz*0.4);
+  /* outer sheath */
+  ctx.strokeStyle=D(c,0.2);ctx.lineWidth=W*2.8;ctx.lineCap='round';ctx.globalAlpha=0.3;
+  ctx.beginPath();
+  for(var i=0;i<=20;i++){var t=i/20,x=-L2+2*L2*t,y=Math.sin(t*Math.PI*4)*sz*0.06;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.stroke();ctx.globalAlpha=1;
+  /* cell chain (bright core) */
+  ctx.strokeStyle=col;ctx.lineWidth=W*1.6;
+  ctx.beginPath();
+  for(var i=0;i<=20;i++){var t=i/20,x=-L2+2*L2*t,y=Math.sin(t*Math.PI*4)*sz*0.06;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.stroke();
+  /* septa (cell walls between segments) */
+  ctx.strokeStyle=D(c,0.5);ctx.lineWidth=1;
+  for(var s=1;s<=4;s++){var t2=s/5,x2=-L2+2*L2*t2,y2=Math.sin(t2*Math.PI*4)*sz*0.06;
+    ctx.beginPath();ctx.moveTo(x2,y2-W);ctx.lineTo(x2,y2+W);ctx.stroke();}
+  /* heterocyst (specialized nitrogen-fixing cell) */
+  ctx.fillStyle=D(c,0.3);
+  ctx.beginPath();ctx.arc(-L2*0.6,Math.sin(0.2*Math.PI*4)*sz*0.06,W*1.3,0,Math.PI*2);ctx.fill();
+}
+
+/* ── 5. COMMA — vibrio crescent with polar flagellum ── */
+function drawComma(ctx,sz,col){
+  var r=sz*0.42,c=hx(col);
+  halo(ctx,r);
+  /* crescent body */
+  var g=ctx.createRadialGradient(-r*0.15,-r*0.15,0,0,0,r);
+  g.addColorStop(0,L(c,0.5));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.4));
+  ctx.fillStyle=g;
+  ctx.beginPath();ctx.arc(0,0,r,0.4,Math.PI*1.6);
+  ctx.quadraticCurveTo(-r*0.4,r*0.6,0,r*0.1);ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.5);ctx.lineWidth=Math.max(0.8,r*0.06);ctx.stroke();
+  /* flagellum tail */
+  ctx.strokeStyle=L(c,0.3);ctx.lineWidth=1.5;ctx.globalAlpha=0.7;
+  ctx.beginPath();ctx.moveTo(r*0.7,-r*0.4);
+  ctx.quadraticCurveTo(r*1.5,-r*0.8,r*1.8,-r*0.2);
+  ctx.stroke();ctx.globalAlpha=1;
+  granules(ctx,r*1.5,c,2,sz*3);
+}
+
+/* ── 6. COLONY — cluster of cocci in gelatinous matrix ── */
+function drawColony(ctx,sz,col){
+  var beadR=sz*0.18,c=hx(col);
+  /* gelatinous sheath */
+  ctx.fillStyle='rgba(255,255,240,0.08)';
+  ctx.beginPath();ctx.arc(0,0,sz*0.6,0,Math.PI*2);ctx.fill();
+  /* beads */
+  var pos=[[-0.25,-0.15],[0.2,-0.2],[0,0.15],[-0.3,0.25],[0.3,0.1],[0.15,0.35],[-0.1,-0.4]];
+  for(var i=0;i<pos.length;i++){
+    var bx=pos[i][0]*sz,by=pos[i][1]*sz;
+    halo(ctx,beadR);
+    var g=ctx.createRadialGradient(bx-beadR*0.3,by-beadR*0.3,0,bx,by,beadR);
+    g.addColorStop(0,L(c,0.4));g.addColorStop(0.7,col);g.addColorStop(1,D(c,0.3));
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(bx,by,beadR,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle=D(c,0.4);ctx.lineWidth=0.8;ctx.stroke();
+  }
+}
+
+/* ── 7. BELL — ciliate with oral groove, macronucleus, cilia ── */
+function drawBell(ctx,sz,col){
+  var r=sz*0.48,c=hx(col);
+  halo(ctx,r);
+  /* body — pitcher/bell shape */
+  var g=ctx.createRadialGradient(-r*0.15,-r*0.25,0,0,0,r*1.1);
+  g.addColorStop(0,L(c,0.45));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.35));
+  ctx.fillStyle=g;
+  ctx.beginPath();
+  ctx.moveTo(0,-r*0.9);
+  ctx.bezierCurveTo(r*0.7,-r*0.8,r*0.95,-r*0.1,r*0.65,r*0.55);
+  ctx.bezierCurveTo(r*0.3,r*0.95,-r*0.3,r*0.95,-r*0.65,r*0.55);
+  ctx.bezierCurveTo(-r*0.95,-r*0.1,-r*0.7,-r*0.8,0,-r*0.9);
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.45);ctx.lineWidth=Math.max(0.8,r*0.05);ctx.stroke();
+  /* macronucleus (C-shaped or ovoid, denser) */
+  ctx.save();ctx.globalAlpha=0.4;ctx.fillStyle=D(c,0.3);
+  ctx.beginPath();ctx.ellipse(-r*0.05,r*0.05,r*0.28,r*0.14,0.2,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* contractile vacuole */
+  ctx.save();ctx.globalAlpha=0.3;ctx.fillStyle='rgba(200,230,255,0.5)';
+  ctx.beginPath();ctx.arc(-r*0.35,-r*0.1,r*0.12,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* oral groove */
+  ctx.strokeStyle=D(c,0.4);ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.arc(r*0.3,r*0.15,r*0.2,-0.8,1.2);ctx.stroke();
+  /* cilia ring */
+  ctx.strokeStyle=L(c,0.25);ctx.lineWidth=1;ctx.globalAlpha=0.5;
+  for(var a=0;a<Math.PI*2;a+=Math.PI/10){
+    var cx2=Math.cos(a)*r*0.92,cy2=Math.sin(a)*r*0.92;
+    var ex=cx2+Math.cos(a)*sz*0.08,ey=cy2+Math.sin(a)*sz*0.08;
+    ctx.beginPath();ctx.moveTo(cx2,cy2);ctx.lineTo(ex,ey);ctx.stroke();
+  }
+  ctx.globalAlpha=1;
+  /* food vacuoles */
+  granules(ctx,r*1.5,c,3,sz*4);
+}
+
+/* ── 8. OVAL — yeast/fungal cell with bud scar and vacuole ── */
+function drawOval(ctx,sz,col){
+  var rx=sz*0.4,ry=sz*0.46,c=hx(col);
+  halo(ctx,Math.max(rx,ry));
+  var g=ctx.createRadialGradient(-rx*0.25,-ry*0.25,0,0,0,Math.max(rx,ry));
+  g.addColorStop(0,L(c,0.45));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.35));
+  ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(0,0,rx,ry,0,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle=D(c,0.45);ctx.lineWidth=Math.max(0.8,sz*0.04);ctx.stroke();
+  /* large central vacuole */
+  ctx.save();ctx.globalAlpha=0.3;ctx.fillStyle='rgba(220,240,255,0.5)';
+  ctx.beginPath();ctx.ellipse(-rx*0.05,ry*0.1,rx*0.3,ry*0.25,0,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* nucleus */
+  ctx.save();ctx.globalAlpha=0.4;ctx.fillStyle=D(c,0.25);
+  ctx.beginPath();ctx.arc(rx*0.15,0,rx*0.18,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* bud scar */
+  ctx.strokeStyle=D(c,0.3);ctx.lineWidth=1.5;ctx.globalAlpha=0.5;
+  ctx.beginPath();ctx.arc(rx*0.5,-ry*0.4,sz*0.08,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=1;
+  granules(ctx,Math.max(rx,ry)*1.5,c,3,sz*6);
+}
+
+/* ── slipper (Paramecium) — elongated slipper with cilia ── */
+function drawSlipper(ctx,sz,col){
+  var L2=sz*0.7,W=sz*0.28,c=hx(col);
+  halo(ctx,Math.max(L2,W));
+  var g=ctx.createLinearGradient(0,-W,0,W);
+  g.addColorStop(0,L(c,0.4));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.35));
+  ctx.fillStyle=g;
+  ctx.beginPath();ctx.ellipse(0,0,L2,W,0,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle=D(c,0.4);ctx.lineWidth=Math.max(0.8,W*0.08);ctx.stroke();
+  /* oral groove */
+  ctx.strokeStyle=D(c,0.35);ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(-L2*0.3,-W*0.5);
+  ctx.quadraticCurveTo(-L2*0.1,W*0.3,L2*0.3,W*0.2);ctx.stroke();
+  /* macronucleus */
+  ctx.save();ctx.globalAlpha=0.4;ctx.fillStyle=D(c,0.3);
+  ctx.beginPath();ctx.ellipse(L2*0.1,0,W*0.4,W*0.2,0,0,Math.PI*2);ctx.fill();ctx.restore();
+  /* cilia */
+  ctx.strokeStyle=L(c,0.2);ctx.lineWidth=1;ctx.globalAlpha=0.4;
+  for(var a=0;a<Math.PI*2;a+=Math.PI/12){
+    var cx2=Math.cos(a)*L2,cy2=Math.sin(a)*W;
+    ctx.beginPath();ctx.moveTo(cx2,cy2);
+    ctx.lineTo(cx2+Math.cos(a)*sz*0.06,cy2+Math.sin(a)*sz*0.06);ctx.stroke();}
+  ctx.globalAlpha=1;
+  granules(ctx,W*2,c,4,sz*8);
+}
+
+/* ── irregular (amoeboid) — blobby shape with pseudopods ── */
+function drawIrregular(ctx,sz,col){
+  var r=sz*0.4,c=hx(col);
+  halo(ctx,r);
+  var g=ctx.createRadialGradient(-r*0.2,-r*0.2,0,0,0,r*1.2);
+  g.addColorStop(0,L(c,0.4));g.addColorStop(0.5,col);g.addColorStop(1,D(c,0.3));
+  ctx.fillStyle=g;
+  ctx.beginPath();
+  var pts=8;
+  for(var i=0;i<=pts;i++){
+    var a=i/pts*Math.PI*2;
+    var rr=r*(0.7+0.4*Math.sin(a*3+sz*0.1));
+    var x=Math.cos(a)*rr,y=Math.sin(a)*rr;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.35);ctx.lineWidth=Math.max(0.8,r*0.05);ctx.stroke();
+  granules(ctx,r*1.5,c,5,sz*9);
+}
+
+/* ── star (stellate) — radiating arms ── */
+function drawStar(ctx,sz,col){
+  var r=sz*0.45,c=hx(col);
+  halo(ctx,r);
+  var g=ctx.createRadialGradient(0,0,0,0,0,r);
+  g.addColorStop(0,L(c,0.4));g.addColorStop(1,D(c,0.3));
+  ctx.fillStyle=g;ctx.beginPath();
+  var arms=5;
+  for(var i=0;i<arms*2;i++){
+    var a=i/(arms*2)*Math.PI*2;
+    var rr=(i%2===0)?r:r*0.4;
+    var x=Math.cos(a)*rr,y=Math.sin(a)*rr;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle=D(c,0.4);ctx.lineWidth=1;ctx.stroke();
+  granules(ctx,r*1.2,c,3,sz*4);
+}
+
+/* ── shape → draw function ── */
+var SF={
+  'circle':drawCoccus,'rod':drawRod,'spiral':drawSpiral,'filament':drawFilament,
+  'comma':drawComma,'colony':drawColony,'bell':drawBell,'oval':drawOval,
+  'slipper':drawSlipper,'irregular':drawIrregular,'star':drawStar,
+};
+
+window.loadBioicons=function(){};
+window.bioiconsReady=function(){return bioReady;};
+
+window.drawBioicon=function(ctx,o,sz,sh){
+  var col=(o.sp&&o.sp.color)?o.sp.color:'#80c060';
+  if(!col||(!col.startsWith('#')&&col.indexOf('rgb')<0&&col.indexOf('rgba')<0))col='#80c060';
+  if(col.indexOf('rgb')>=0){var m=col.match(/(\d+)/g);if(m&&m.length>=3){
+    var hr=(+m[0]).toString(16);if(hr.length<2)hr='0'+hr;
+    var hg=(+m[1]).toString(16);if(hg.length<2)hg='0'+hg;
+    var hb=(+m[2]).toString(16);if(hb.length<2)hb='0'+hb;
+    col='#'+hr+hg+hb;}}
+  var drawSz=Math.max(22,Math.min(80,sz*8));
+  var fn=SF[sh]||drawCoccus;
+  ctx.save();ctx.translate(o.x,o.y);
+  var ang=(typeof o.facing==='number'&&isFinite(o.facing))?o.facing:(typeof o.angle==='number'&&isFinite(o.angle))?o.angle:0;
+  if(sh==='rod'||sh==='spiral'||sh==='filament'||sh==='comma'||sh==='slipper')ctx.rotate(ang);
+  fn(ctx,drawSz,col);
+  ctx.restore();
+  /* infection ring */
+  if(o.infectionT>0){
+    ctx.save();ctx.strokeStyle='rgba(255,40,40,0.6)';ctx.lineWidth=2;
+    ctx.setLineDash([4,3]);
+    ctx.beginPath();ctx.arc(o.x,o.y,drawSz*0.7,0,Math.PI*2);ctx.stroke();
+    ctx.setLineDash([]);ctx.restore();
+  }
+  /* division glow */
+  if(o.dividing){
+    ctx.save();ctx.strokeStyle='rgba(100,255,100,0.5)';ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.arc(o.x,o.y,drawSz*0.6,0,Math.PI*2);ctx.stroke();ctx.restore();
+  }
+  return true;
+};
+
+window.drawVirusBioicon=function(ctx,v){
+  var ds=20;ctx.save();ctx.translate(v.x,v.y);ctx.rotate(v.angle||0);
+  /* outer glow */
+  ctx.fillStyle='rgba(255,60,60,0.12)';ctx.beginPath();ctx.arc(0,0,ds*0.8,0,Math.PI*2);ctx.fill();
+  /* icosahedral head with phase halo */
+  halo(ctx,ds*0.4);
+  var g=ctx.createRadialGradient(-ds*0.1,-ds*0.1,0,0,0,ds*0.35);
+  g.addColorStop(0,'#ffddd0');g.addColorStop(0.5,'#e44');g.addColorStop(1,'#800');
+  ctx.fillStyle=g;
+  ctx.beginPath();ctx.arc(0,0,ds*0.35,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#600';ctx.lineWidth=1;ctx.stroke();
+  /* collar */
+  ctx.fillStyle='#c33';ctx.beginPath();ctx.ellipse(0,ds*0.38,ds*0.12,ds*0.04,0,0,Math.PI*2);ctx.fill();
+  /* tail sheath */
+  ctx.strokeStyle='#b22';ctx.lineWidth=ds*0.1;
+  ctx.beginPath();ctx.moveTo(0,ds*0.4);ctx.lineTo(0,ds*0.72);ctx.stroke();
+  /* base plate */
+  ctx.fillStyle='#900';ctx.beginPath();ctx.ellipse(0,ds*0.72,ds*0.1,ds*0.04,0,0,Math.PI*2);ctx.fill();
+  /* tail fibers */
+  ctx.strokeStyle='#a33';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(-ds*0.03,ds*0.72);ctx.lineTo(-ds*0.2,ds*0.88);
+  ctx.moveTo(ds*0.03,ds*0.72);ctx.lineTo(ds*0.2,ds*0.88);
+  ctx.moveTo(0,ds*0.74);ctx.lineTo(0,ds*0.92);ctx.stroke();
+  ctx.restore();return true;
+};
+
+})();
+
+</script>
+  <script src="04-Src/js/render.js?v=20260812075654"></script>
+<script src="04-Src/js/render_entities.js?v=20260812075654"></script>
+<script src="04-Src/js/render_organs.js?v=20260812075654"></script>
+<script src="04-Src/js/render_edu.js?v=20260812075654"></script>
+<script src="04-Src/js/render_bio_v3.js?v=20260812075654"></script>
+<script src="04-Src/js/render_swiss.js?v=20260812075654"></script>
+<script src="04-Src/js/ui.js?v=20260812075654"></script>
+<script src="04-Src/js/ui_menus.js?v=20260812075654"></script>
+<script src="04-Src/js/ui_food_chain.js?v=20260812075654"></script>
+<script src="04-Src/js/main.js?v=20260812075654"></script>
+<script src="04-Src/js/main_events.js?v=20260812075654"></script>
+<script src="04-Src/js/demo.js?v=20260812075654"></script>
+<script src="04-Src/js/stars.js?v=20260812075654"></script>
+<script src="04-Src/js/night_sky.js?v=20260812075654"></script>
+<div id="globalTooltip" style="display:none; position:absolute; z-index:9999; background:rgba(10,20,35,0.95); border:1px solid #4af; color:#fff; padding:8px 12px; border-radius:6px; font-family:sans-serif; font-size:12px; pointer-events:none; box-shadow:0 4px 10px rgba(0,0,0,0.5); max-width:250px; text-shadow:0 1px 2px #000;"></div>
+
+
+
+<script src="04-Src/js/mobile.js?v=20260812075654"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
+
+<div id="apkBtn" style="position:fixed;top:10px;right:10px;z-index:9999;background:#0a4a52;color:#5ed4a0;padding:8px 14px;border-radius:20px;font-family:Arial;font-size:12px;font-weight:bold;cursor:pointer;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.5);display:flex;align-items:center;gap:6px;" onclick="window.location.href='/igraspore.apk'">
+  📱 APK
+</div>
+
+<script>
+// Sync game-time star selector with current value
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    var gameSel = document.getElementById('starSelectGame');
+    if(gameSel && window.currentStarId) gameSel.value = window.currentStarId;
+    // Also sync when menu star selector changes
+    var menuSel = document.getElementById('starSelect');
+    if(menuSel) {
+      menuSel.addEventListener('change', function(){
+        if(gameSel) gameSel.value = menuSel.value;
+    // Also sync game selector -> system
+    if(gameSel) gameSel.addEventListener('change', function(){
+      if(window.setStarSystem) window.setStarSystem(gameSel.value);
+    });
+      });
+    }
+  }, 1000);
+});
+</script>
+</body>
+</html>
+
+<!-- Build: 20260811190808 audit-fix -->

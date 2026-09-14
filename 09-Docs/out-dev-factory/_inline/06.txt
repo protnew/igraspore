@@ -1,0 +1,14 @@
+РОЛЬ 06-devops. АНАЛИЗ. wrangler/git/Pages не трогать. Файлов не читать/не писать.
+Выход JSON role 06-devops. ≤5 findings, 1 CRITICAL.
+
+ФАКТЫ 2026-09-10:
+Live канон https://igraspore.pages.dev GET 200 17917b stamp 1786825630 = диск index.html, 34 src 04-Src/js.
+/04-Src/js/biology_update_core.js 200 19041b. /.04-Src/js/... SPA HTML 17917 (скрытое дерево не залито).
+/igraspore.apk 200 тело HTML 17917 — кнопки APK на Pages нет бинарника. На диске apk v2.4 4844415b в 06-DevOps-and-Release/apk/.
+sw.js live 200 2294b. manifest 200 1231b.
+github.io 200 34178b stamp 20260811172633 — другая поверхность.
+deploy-repo/index.html 26612b mtime 2026-08-06 21 script (нет wiki/demo/swiss/biology_divide…) — старше live.
+Git: branch master HEAD f7427a8 2026-08-15 ahead 9 of origin/master=origin/main 3efbbe1. dirty 389 (D273 M20 ??96). remote origin github.com/protnew/igraspore.git с embedded credential — handoff 07, токен в чат не писать.
+vitest include .04-Src/js; playwright.config.js baseURL https://igraspore.pages.dev testDir ./07-QA-and-Testing/playwright (видимый).
+package.json root thin pointer --prefix .04-Src. node_modules в корне проекта есть (изоляция нарушена vs AGENTS.md).
+Не пушить. Ответ ТОЛЬКО JSON.

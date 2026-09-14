@@ -5,7 +5,7 @@ const c = document.createElement('canvas'); c.id = 'c'; document.body.appendChil
 const mm = document.createElement('canvas'); mm.id = 'mm'; document.body.appendChild(mm);
 const pc = document.createElement('canvas'); pc.id = 'pc'; document.body.appendChild(pc);
 
-import configFuncs from '../../04-Src/js/config.js';
+import configFuncs from '../../js/config.js';
 
 const { clamp, rng, lerp, dist2, hex2rgb, shadeRgb, hslToHex, halfW } = configFuncs;
 

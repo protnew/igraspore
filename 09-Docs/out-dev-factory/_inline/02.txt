@@ -1,0 +1,21 @@
+РОЛЬ 02-tables. АНАЛИЗ. Код/git/БД не трогать. Файлов не читать и не писать.
+Контракт: пруфы/веса/математика таблиц. Масштаб 5–6×8–12. 20×20 не закон. Пути Choser не писать. Математику итогов в уме не «считать как факт без чисел из досье».
+Выход JSON {role:"02-tables",writes_product:false,findings:[...]} ≤5, 1 CRITICAL max. what/why/ac ≤200.
+
+ФАКТЫ 2026-09-10:
+Папка C:\Obsidian\New\Projects\08-iGraSpore_V2\01-Architecture\Таблицы выбора\ (8 файлов, все июнь 2026):
+biomes_eco_architecture.md 3434b pipe-rows 6 mtime 2026-06-18
+cinematic_and_flagella_architecture.md 4299b pipe-rows 10 mtime 2026-06-18
+decision_ecosystem.md 2423b pipe-rows 7 mtime 2026-06-18
+decision_sprint30.md 2785b pipe-rows 9 mtime 2026-06-18
+K_Биопленки.md 3342b pipe-rows 5 mtime 2026-06-20
+K_Генетика_и_Мутации.md 5647b pipe-rows 7 mtime 2026-06-20
+multicellular_architecture.md 3076b pipe-rows 5 mtime 2026-06-18
+oxygen_architecture.md 3353b pipe-rows 5 mtime 2026-06-18
+README заглушки: 01-Decision-Tables 91b, 02-C4 83b, 03-System-Specs 85b.
+DECISIONS.md D1 числа WebGL 176 / Three 165 / Canvas 84 без таблицы 8–12 критериев в этом файле (1080b).
+Live канон Canvas 34 модуля 04-Src/js, не WebGL.
+Старый отчёт 01-forks 2026-09-06 уже ставил Winner A Canvas+04-Src; не копировать слепо — сверить с фактами этого хода (live=disk 17917, 13 js diff двух деревьев).
+Проект не Choser: сид в choser.db запрещён.
+Если таблица <5 объектов или <8 критериев — REJECT в finding, не чинить файлы.
+Ответ ТОЛЬКО JSON.

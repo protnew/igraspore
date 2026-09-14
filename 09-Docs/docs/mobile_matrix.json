@@ -1,0 +1,358 @@
+{
+  "title": "iGraSpore Mobile — таблица выбора",
+  "subtitle": "Скорость до UX + no-rewrite + mid-phone FPS + touch + $0",
+  "params": [
+    {
+      "name": "Скорость до mobile UX",
+      "weight": 18,
+      "reverse": false
+    },
+    {
+      "name": "Сохранить Canvas/JS",
+      "weight": 16,
+      "reverse": false
+    },
+    {
+      "name": "FPS mid-phone",
+      "weight": 14,
+      "reverse": false
+    },
+    {
+      "name": "Touch-управление",
+      "weight": 12,
+      "reverse": false
+    },
+    {
+      "name": "TCO / free",
+      "weight": 10,
+      "reverse": false
+    },
+    {
+      "name": "Offline / PWA",
+      "weight": 8,
+      "reverse": false
+    },
+    {
+      "name": "Store ready",
+      "weight": 7,
+      "reverse": false
+    },
+    {
+      "name": "Батарея",
+      "weight": 6,
+      "reverse": false
+    },
+    {
+      "name": "Один codebase",
+      "weight": 5,
+      "reverse": false
+    },
+    {
+      "name": "Нативный UX",
+      "weight": 4,
+      "reverse": false
+    }
+  ],
+  "services": [
+    {
+      "name": "Responsive Web+Touch",
+      "price": 0,
+      "link": "[MDN Touch](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)",
+      "scores": [
+        10,
+        10,
+        7,
+        8,
+        10,
+        4,
+        2,
+        7,
+        10,
+        5
+      ],
+      "descs": [
+        "1–2 нед CSS+input",
+        "0 rewrite",
+        "cap density/particles",
+        "joystick+buttons",
+        "CF Pages $0",
+        "нет SW пока",
+        "нет store",
+        "pause on blur",
+        "тот же URL",
+        "базовый touch"
+      ],
+      "verdict": "WINNER — делать сейчас"
+    },
+    {
+      "name": "PWA",
+      "price": 0,
+      "link": "[web.dev PWA](https://web.dev/progressive-web-apps/)",
+      "scores": [
+        9,
+        10,
+        7,
+        8,
+        10,
+        10,
+        3,
+        7,
+        10,
+        6
+      ],
+      "descs": [
+        "+3–5д после web",
+        "0 rewrite",
+        "как web",
+        "как web",
+        "$0",
+        "install+offline",
+        "TWA later",
+        "как web",
+        "один",
+        "Add to HS"
+      ],
+      "verdict": "Шаг 2"
+    },
+    {
+      "name": "Capacitor",
+      "price": 25,
+      "link": "[Capacitor](https://capacitorjs.com/)",
+      "scores": [
+        7,
+        9,
+        6,
+        9,
+        8,
+        8,
+        9,
+        6,
+        8,
+        8
+      ],
+      "descs": [
+        "2–3 нед wrap",
+        "WebView same JS",
+        "WV overhead",
+        "plugins touch",
+        "Apple dev $99/y",
+        "local assets",
+        "Play+AppStore",
+        "WV drain",
+        "shared web",
+        "haptics plugins"
+      ],
+      "verdict": "Store когда надо"
+    },
+    {
+      "name": "Tauri 2 mobile",
+      "price": 0,
+      "link": "[Tauri](https://v2.tauri.app/)",
+      "scores": [
+        5,
+        8,
+        6,
+        7,
+        9,
+        6,
+        5,
+        6,
+        7,
+        6
+      ],
+      "descs": [
+        "mobile young",
+        "web frontend",
+        "ok",
+        "custom",
+        "$0",
+        "partial",
+        "maturing",
+        "ok",
+        "shared",
+        "limited"
+      ],
+      "verdict": "Рано"
+    },
+    {
+      "name": "Cordova",
+      "price": 0,
+      "link": "[Cordova](https://cordova.apache.org/)",
+      "scores": [
+        6,
+        8,
+        5,
+        7,
+        9,
+        7,
+        7,
+        5,
+        7,
+        6
+      ],
+      "descs": [
+        " bekапы",
+        "WebView",
+        "old stack",
+        "plugins",
+        "$0",
+        "ok",
+        "stores",
+        "worse",
+        "shared",
+        "legacy"
+      ],
+      "verdict": "Не брать"
+    },
+    {
+      "name": "Flutter WebView",
+      "price": 0,
+      "link": "[Flutter](https://flutter.dev/)",
+      "scores": [
+        5,
+        7,
+        5,
+        7,
+        8,
+        6,
+        8,
+        5,
+        4,
+        7
+      ],
+      "descs": [
+        "shell+bridge",
+        "JS in WV",
+        "double runtime",
+        "good touch",
+        "$0",
+        "partial",
+        "good stores",
+        "heavier",
+        "2 stacks",
+        "good"
+      ],
+      "verdict": "Лишний слой"
+    },
+    {
+      "name": "RN WebView",
+      "price": 0,
+      "link": "[RN](https://reactnative.dev/)",
+      "scores": [
+        5,
+        7,
+        5,
+        7,
+        8,
+        6,
+        8,
+        5,
+        4,
+        7
+      ],
+      "descs": [
+        "shell",
+        "JS in WV",
+        "bridge cost",
+        "ok",
+        "$0",
+        "partial",
+        "stores",
+        "ok",
+        "2 stacks",
+        "ok"
+      ],
+      "verdict": "Лишний слой"
+    },
+    {
+      "name": "Godot export",
+      "price": 0,
+      "link": "[Godot](https://godotengine.org/)",
+      "scores": [
+        2,
+        1,
+        8,
+        7,
+        7,
+        5,
+        7,
+        6,
+        2,
+        7
+      ],
+      "descs": [
+        "месяцы rewrite",
+        "lose JS sim",
+        "good 2D",
+        "ok",
+        "$0 engine",
+        "export",
+        "yes",
+        "ok",
+        "new codebase",
+        "ok"
+      ],
+      "verdict": "Rewrite"
+    },
+    {
+      "name": "Unity",
+      "price": 0,
+      "link": "[Unity](https://unity.com/)",
+      "scores": [
+        1,
+        0,
+        8,
+        8,
+        4,
+        5,
+        8,
+        5,
+        1,
+        8
+      ],
+      "descs": [
+        "full rewrite",
+        "0 reuse",
+        "good",
+        "good",
+        "license risk",
+        "ok",
+        "excellent",
+        "heavier",
+        "new",
+        "excellent"
+      ],
+      "verdict": "Overkill"
+    },
+    {
+      "name": "Native K/Swift",
+      "price": 5000,
+      "link": "[Android](https://developer.android.com/)",
+      "scores": [
+        1,
+        0,
+        9,
+        9,
+        2,
+        6,
+        10,
+        8,
+        0,
+        10
+      ],
+      "descs": [
+        "6–12 мес×2",
+        "0",
+        "best",
+        "best",
+        "dev cost",
+        "ok",
+        "best",
+        "best",
+        "2 codebases",
+        "best"
+      ],
+      "verdict": "Только hit-продукт"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+РОЛЬ 09-qa. АНАЛИЗ. Тесты в репо не писать, vitest/playwright не запускать если нет FS (нет). JSON role 09-qa. Имя отчёта 09-qa-audit не 09-qa. ≤5 findings.
+
+ФАКТЫ 2026-09-10:
+vitest.config.js include .04-Src/07-QA-and-Testing/vitest/**  coverage include .04-Src/js/**  plugin только пути с /.04-Src/js/
+21 vitest файла, часть dirty в git (.04-Src/07-QA-and-Testing/vitest/*.test.js M).
+coverage-summary.json mtime 2026-08-15T11:31:22 в .04-Src/07-QA-and-Testing/coverage — старше суток на 10.09 → лог ≠ Zero-Point.
+.04-Src/coverage HTML июнь 2026-06-27 — мёртвый.
+playwright.config.js baseURL https://igraspore.pages.dev testDir ./07-QA-and-Testing/playwright (видимый) timeout 120s chromium only.
+Specs: .04-Src/.../canvas.spec.js 1254b simulation.spec.js 2284b; видимый 07-QA-and-Testing/playwright/regression.spec.js 28520b.
+ZERO_POINT_SCAN.md 4898b в 07-QA-and-Testing; zero-point-2026-08-15 папка.
+locomotion.js stub 22 строки / 419b; locomotion.test.js 1223b 2026-08-04.
+В этом ходе vitest НЕ гоняли — не писать N/N pass. Ответ ТОЛЬКО JSON.

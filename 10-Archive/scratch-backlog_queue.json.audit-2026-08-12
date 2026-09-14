@@ -1,0 +1,322 @@
+[
+  {
+    "id": "TSK-QA-001",
+    "block": "QA",
+    "subblock": "Functional",
+    "title": "Functional tests: real button clicks",
+    "desc": "mouse click -> state assert.",
+    "ac": "PW suite covers actions",
+    "loc": null,
+    "priority": 45.0
+  },
+  {
+    "id": "TSK-AI-008",
+    "block": "AI",
+    "subblock": "Behavior",
+    "title": "Adaptive Aggression based on Energy",
+    "desc": "Modify the hunt state in ai.js. If a predators energy is < 30, its sprint/dash multiplier should double, but consume energy 3x faster, representing a desperate attack.",
+    "ac": "Max 15 LOC. Sprint multiplier logic should only trigger <30 energy.",
+    "loc": 15,
+    "priority": 6.0
+  },
+  {
+    "id": "TSK-BIO-009",
+    "block": "Genetics",
+    "subblock": "Adaptation",
+    "title": "O2 tolerance offset mutation ranges",
+    "desc": "Expand the o2Offset mutation to allow organisms to adapt to anoxic environments (deep water) by reducing their O2 respiration dependency over generations.",
+    "ac": "o2Offset shifts limit by up to -10, reducing respiration O2 cost. LOC < 30. Passes Vitest.",
+    "loc": 30,
+    "priority": 6.0
+  },
+  {
+    "id": "TSK-BIO-012",
+    "block": "Genetics",
+    "subblock": "Morphology",
+    "title": "Cell wall thickness mutation",
+    "desc": "Introduce `cellWall` thickness trait. Higher thickness increases acidResist and reduces predation damage, but lowers speedMult.",
+    "ac": "cellWall trait added. Impacts speed and damage taken. LOC < 40.",
+    "loc": 40,
+    "priority": 6.0
+  },
+  {
+    "id": "TSK-BIO-018",
+    "block": "Genetics",
+    "subblock": "Metabolism",
+    "title": "Photosynthesis efficiency vs depth mutation",
+    "desc": "Introduce `photoAdapt` gene. Determines if algae are optimized for high-light (surface) or low-light (deep water) environments.",
+    "ac": "photoAdapt shifts the optimal light level for photosynthesis. LOC < 35. Passes Vitest.",
+    "loc": 35,
+    "priority": 6.0
+  },
+  {
+    "id": "TSK-BIO-022",
+    "block": "Genetics",
+    "subblock": "Adaptation",
+    "title": "Heat shock proteins mutation",
+    "desc": "Allow `tempOffset` mutation to broaden the survivable temperature range, not just shift it. (e.g. tMin-5 to tMax+12 becomes tMin-10 to tMax+20).",
+    "ac": "tempRange dynamically expanded by heatShock gene. LOC < 25.",
+    "loc": 25,
+    "priority": 6.0
+  },
+  {
+    "id": "TSK-AI-006",
+    "block": "AI",
+    "subblock": "Symbiosis",
+    "title": "Mutualistic Resource Sharing",
+    "desc": "Expand the consumer1/consumer3 symbiosis in ai.js. If attachedTo is active, the attached consumer1 should passively share 5% of its energy every second with the host if the hosts energy is <40%.",
+    "ac": "Max 20 LOC. Energy transfer must not create infinite energy loops.",
+    "loc": 20,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-WRD-010",
+    "block": "World",
+    "subblock": "Environment",
+    "title": "Dynamic Hydrothermal Vents",
+    "desc": "In world.js, vents are static. Add logic in updateWorld where vents randomly erupt (temp spikes to 120, radius expands by 50%) for 15 seconds, creating localized hazards for non-extremophiles.",
+    "ac": "Max 40 LOC. Visual indicator required when vent is erupting.",
+    "loc": 40,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-WRD-013",
+    "block": "World",
+    "subblock": "Environment",
+    "title": "Sediment Decay Cycle",
+    "desc": "In world.js, sedimentClumps are static. Allow decomposers to attach to them, slowly reducing their width and height. When depleted, spawn a nutrient cloud and remove the clump.",
+    "ac": "Max 45 LOC. Decomposers must correctly identify clumps as food sources.",
+    "loc": 45,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-WRD-014",
+    "block": "World",
+    "subblock": "Weather",
+    "title": "Lightning Strikes (Catastrophe)",
+    "desc": "Add a lightning event to EventManager. Triggers a localized flash, instantly killing 80% of organisms within a 300px radius of the strike on the surface layer (y < 200).",
+    "ac": "Max 50 LOC. Flash effect must be rendered, log event added.",
+    "loc": 50,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-RND-020",
+    "block": "Rendering",
+    "subblock": "Canvas",
+    "title": "Integer Coordinate Rendering",
+    "desc": "Anti-aliasing of sub-pixel coordinates in ctx.arc and ctx.lineTo reduces performance. Bitwise-OR | 0 all x,y coordinates passed to rendering functions to force integer rendering.",
+    "ac": "Max 20 LOC. ctx.arc(p.x|0, p.y|0, ...) applied across render.js.",
+    "loc": 20,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-RND-021",
+    "block": "Rendering",
+    "subblock": "UI",
+    "title": "Throttle Minimap Updates",
+    "desc": "renderMinimap() redraws the entire 100x70 canvas every frame. Throttle this to update only 5 times a second (every 12 frames), as pixel-perfect real-time tracking is unnoticeable at that scale.",
+    "ac": "Max 10 LOC. Add a fc % 12 === 0 check before redrawing mc.",
+    "loc": 10,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-BIO-005",
+    "block": "Biology",
+    "subblock": "Aging",
+    "title": "Age-related metabolic degradation for Eukaryotes",
+    "desc": "Scale baseMetab by age for Eukaryotes. After age 500, metab should exponentially increase by 1.05^((age-500)/10).",
+    "ac": "baseMetab multiplier applied based on age > 500 for isEuk. LOC < 15. Passes Vitest.",
+    "loc": 15,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-BIO-008",
+    "block": "Biology",
+    "subblock": "Predation",
+    "title": "Venom effect strength linked to size",
+    "desc": "Make the venom effect (speedMult drop) scale dynamically with the ratio of predator size to venomous prey size. Huge predators ignore tiny venom.",
+    "ac": "Venom penalty is inversely proportional to pred.size/prey.size. LOC < 25.",
+    "loc": 25,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-BIO-011",
+    "block": "Biology",
+    "subblock": "Locomotion",
+    "title": "Flagella efficiency mutation",
+    "desc": "Link flagella speed boost to a new metabolic cost. Faster flagella (higher speedMult) exponentially increase baseMetab.",
+    "ac": "baseMetab calculation includes speedMult^1.5 for flagella users. LOC < 20. Passes Vitest.",
+    "loc": 20,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-BIO-016",
+    "block": "Genetics",
+    "subblock": "Sensors",
+    "title": "Chemotaxis pheromone sensitivity mutation",
+    "desc": "Add `chemoSens` gene. High sensitivity allows detecting food/danger from 2x distance but consumes slightly more energy.",
+    "ac": "Detection radius multiplied by chemoSens. Energy drain +0.1. LOC < 30. Passes Vitest.",
+    "loc": 30,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-BIO-017",
+    "block": "Biology",
+    "subblock": "Behavior",
+    "title": "Biofilm formation genetic trait",
+    "desc": "Organisms with `biofilm` trait aggregate on the bottom (y > PD-50) and reduce their metab by 70%.",
+    "ac": "biofilm behavior logic added near bottom of puddle. LOC < 40.",
+    "loc": 40,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-BIO-021",
+    "block": "Biology",
+    "subblock": "Digestion",
+    "title": "Predator digestion rate mutation",
+    "desc": "Add `digestSpeed` trait. Faster digestion empties stomach quicker (allowing more eating) but recovers 10% less energy total.",
+    "ac": "digestSpeed modifies stomach energy/size reduction. LOC < 30. Passes Vitest.",
+    "loc": 30,
+    "priority": 5.33
+  },
+  {
+    "id": "TSK-AI-007",
+    "block": "AI",
+    "subblock": "Navigation",
+    "title": "Thermotaxis Optimization",
+    "desc": "The tempRange migration in ai.js checks direct up/down nodes. Implement a localized gradient descent search (checking 4 adjacent cells) instead of just up/down to allow lateral movement towards optimal temperature bands.",
+    "ac": "Max 35 LOC. Entities must migrate smoothly diagonally if needed.",
+    "loc": 35,
+    "priority": 4.67
+  },
+  {
+    "id": "TSK-WRD-012",
+    "block": "World",
+    "subblock": "Weather",
+    "title": "Wind-driven Currents",
+    "desc": "Connect isRaining and wind.x to the currents array in world.js. When a storm starts, dynamically spawn temporary surface currents that drag organisms and particles in the winds direction.",
+    "ac": "Max 35 LOC. Surface currents must fade out when the storm ends.",
+    "loc": 35,
+    "priority": 4.67
+  },
+  {
+    "id": "TSK-RND-022",
+    "block": "Rendering",
+    "subblock": "Effects",
+    "title": "Optimize God Rays (Sun Rays)",
+    "desc": "renderSunRays() uses CompositeOperation=lighter and multiple gradient calculations per frame. Cache the gradient for the sun rays, only recalculating it if tod transitions significantly.",
+    "ac": "Max 30 LOC. Gradient object should be stored globally and updated conditionally.",
+    "loc": 30,
+    "priority": 4.67
+  },
+  {
+    "id": "TSK-RND-023",
+    "block": "Rendering",
+    "subblock": "Text",
+    "title": "Cache Text Rendering for Event Logs",
+    "desc": "renderEventLogs() uses fillText with drop shadows (shadowBlur) which is extremely slow. Render each new log string once to a tiny hidden canvas, and drawImage that canvas while reducing alpha.",
+    "ac": "Max 50 LOC. Avoid shadowBlur during the main render loop.",
+    "loc": 50,
+    "priority": 4.67
+  },
+  {
+    "id": "TSK-BIO-003",
+    "block": "Biology",
+    "subblock": "Metabolism",
+    "title": "Cyst formation genetic threshold",
+    "desc": "Make the cyst formation threshold (currently hardcoded <5 energy or extreme temp) dependent on a new genetic variable `cystThreshold`.",
+    "ac": "cystThreshold integrated into doCyst checks. Defaults to 5. LOC < 40.",
+    "loc": 40,
+    "priority": 4.67
+  },
+  {
+    "id": "TSK-BIO-007",
+    "block": "Biology",
+    "subblock": "Reproduction",
+    "title": "Reproduction energy cost split scaling",
+    "desc": "Instead of a hard 50/50 energy split during division, allow asymmetric division (e.g., 60/40) based on a new `asymDiv` genetic trait, common in budding.",
+    "ac": "asymDiv trait added. Energy split uses asymDiv ratio. LOC < 30. Passes Vitest.",
+    "loc": 30,
+    "priority": 4.67
+  },
+  {
+    "id": "TSK-BIO-013",
+    "block": "Biology",
+    "subblock": "Metabolism",
+    "title": "Bioluminescence energy consumption",
+    "desc": "If an organism has bioluminescence flags, drain 0.5 energy/sec but reduce predation risk from non-sight predators by blinding them temporarily.",
+    "ac": "Bioluminescence drains energy, flashes attackers. LOC < 30. Passes Vitest.",
+    "loc": 30,
+    "priority": 4.67
+  },
+  {
+    "id": "TSK-BIO-023",
+    "block": "Biology",
+    "subblock": "Parasitism",
+    "title": "Parasitic infection energy drain scaling",
+    "desc": "Scale the parasite energy drain (currently hardcoded 8/s) based on the relative size of the parasite to the host.",
+    "ac": "Parasite drain formula updated to (parasiteSize/hostSize)*15. LOC < 20.",
+    "loc": 20,
+    "priority": 4.67
+  },
+  {
+    "id": "TSK-AI-005",
+    "block": "AI",
+    "subblock": "Senses",
+    "title": "Gradual Scent Decay for Chemotaxis",
+    "desc": "In ai.js, pheromones use direct distance. Update chemotaxis to calculate an intensity map based on ph.life and distance combined, so older danger pheromones elicit a weaker fleeing response.",
+    "ac": "Max 25 LOC. Organisms must flee less aggressively from older pheromones.",
+    "loc": 25,
+    "priority": 4.0
+  },
+  {
+    "id": "TSK-WRD-015",
+    "block": "World",
+    "subblock": "Environment",
+    "title": "O2 Bubble Coalescence",
+    "desc": "In world.js, O2 bubbles currently move independently. Add a small proximity check: if two bubbles intersect, merge them into one larger bubble with increased vy, simulating realistic gas physics.",
+    "ac": "Max 25 LOC. Bubble array length must decrease during merges to optimize rendering.",
+    "loc": 25,
+    "priority": 4.0
+  },
+  {
+    "id": "TSK-RND-025",
+    "block": "Rendering",
+    "subblock": "Effects",
+    "title": "Throttle Damage Indicators",
+    "desc": "window.dmgIndicators processes and renders every frame for every instance of damage. Cap the visible indicators to the 20 most recent; aggregate damage numbers if they occur within 5px of each other.",
+    "ac": "Max 35 LOC. Visual clutter reduced, text rendering overhead minimized.",
+    "loc": 35,
+    "priority": 4.0
+  },
+  {
+    "id": "TSK-BIO-004",
+    "block": "Genetics",
+    "subblock": "Drift",
+    "title": "Genetic drift over generations",
+    "desc": "Implement passive genetic drift where sizeMult and speedMult slowly shift by +/- 1% every generation even without active mutation events.",
+    "ac": "generation increments trigger 1% drift. LOC < 20. Passes Vitest.",
+    "loc": 20,
+    "priority": 4.0
+  },
+  {
+    "id": "TSK-BIO-015",
+    "block": "Biology",
+    "subblock": "Survival",
+    "title": "Spore survival time vs DNA points",
+    "desc": "Scale the maximum cyst survival time (currently 25s) with accumulated DNA points or generation number. Older lineages survive longer.",
+    "ac": "cystT limit scaled by generation (25s + gen*2s). LOC < 15.",
+    "loc": 15,
+    "priority": 4.0
+  },
+  {
+    "id": "TSK-BIO-024",
+    "block": "Genetics",
+    "subblock": "Reproduction",
+    "title": "Separation impulse force mutation",
+    "desc": "Make the DIV_SEPARATION push force a genetic trait `divForce`. Some cells separate violently, others stick together forming chains.",
+    "ac": "pushForce uses divForce trait. Low divForce enables chain forming. LOC < 25. Passes Vitest.",
+    "loc": 25,
+    "priority": 4.0
+  }
+]

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 80"><defs><radialGradient id="ph" cx="35%" cy="35%"><stop offset="0%" stop-color="#e0e0ff" stop-opacity="0.95"/><stop offset="70%" stop-color="#7070a0" stop-opacity="0.8"/><stop offset="100%" stop-color="#404060" stop-opacity="0.6"/></radialGradient></defs>
+<polygon points="20,4 32,18 20,28 8,18" fill="url(#ph)" stroke="#505080" stroke-width="1.5"/>
+<line x1="20" y1="28" x2="20" y2="52" stroke="#8080a0" stroke-width="3"/>
+<polygon points="20,48 24,55 20,62 16,55" fill="#7070a0" opacity="0.6"/>
+<line x1="20" y1="52" x2="12" y2="65" stroke="#606080" stroke-width="1.5"/>
+<line x1="20" y1="52" x2="28" y2="65" stroke="#606080" stroke-width="1.5"/>
+<line x1="20" y1="52" x2="20" y2="68" stroke="#606080" stroke-width="1.5"/>
+<line x1="20" y1="52" x2="15" y2="60" stroke="#606080" stroke-width="1"/>
+<line x1="20" y1="52" x2="25" y2="60" stroke="#606080" stroke-width="1"/>
+</svg>

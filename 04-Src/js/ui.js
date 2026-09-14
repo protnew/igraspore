@@ -2,15 +2,26 @@
 function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight;}
 function showSpeedBar(){
   var sb=document.getElementById('spdBar');
-  var speeds=[{v:0,l:'\u23f8'},{v:0.5,l:'0.5x'},{v:1,l:'1x'},{v:5,l:'5x'},{v:25,l:'25x'}];
+  if(!sb) return;
+  var speeds=[{v:0,l:'\u23f8'},{v:0.25,l:'0.25x'},{v:0.5,l:'0.5x'},{v:1,l:'1x'},{v:2,l:'2x'},{v:5,l:'5x'},{v:10,l:'10x'}];
   sb.innerHTML='';
+  sb.style.cssText='position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:9999;display:flex!important;gap:4px;padding:6px 10px;background:rgba(0,12,28,0.95);border:1px solid #3a6a95;border-radius:8px;pointer-events:auto;box-shadow:0 2px 12px rgba(0,0,0,0.5);';
   for(var i=0;i<speeds.length;i++){
-    var b=document.createElement('div');b.className='sb'+(timeScale===speeds[i].v?' act':'');b.textContent=speeds[i].l;
-    b.setAttribute('data-ts',speeds[i].v);b.title=speeds[i].v===0?tt('paused'):speeds[i].l;
-    b.onclick=function(ev){timeScale=parseFloat(ev.target.getAttribute('data-ts'));showSpeedBar();};
+    var b=document.createElement('button');
+    b.type='button';
+    b.className='sb'+(Math.abs(timeScale-speeds[i].v)<0.001?' act':'');
+    b.textContent=speeds[i].l;
+    b.setAttribute('data-ts',speeds[i].v);
+    b.title=speeds[i].v===0?'Пауза':('Скорость '+speeds[i].l);
+    b.style.cssText='padding:6px 12px;font-size:14px;min-width:44px;cursor:pointer;border-radius:5px;border:1px solid #345;background:'+(Math.abs(timeScale-speeds[i].v)<0.001?'#1a6a3a':'#012')+';color:#fff;font-family:inherit;';
+    b.onclick=function(ev){
+      var el=ev.currentTarget||ev.target;
+      timeScale=parseFloat(el.getAttribute('data-ts'));
+      if(window.showToast) window.showToast('Время: '+(timeScale===0?'пауза':timeScale+'x'),'#8cf');
+      showSpeedBar();
+    };
     sb.appendChild(b);
   }
-  sb.style.display='flex';
 }
 
 var langNames = {
@@ -29,12 +40,23 @@ function updateHUD(){
   var h=document.getElementById('hud');h.style.display='block';
   var eRatio=clamp(player.energy/100,0,1);
   var eColor = eRatio>0.6?'#4f4':eRatio>0.3?'#ff4':'#f44';
+  // 8) Запах еды — понятная полоска для новичка
+  var scent = (typeof foodScentStrength==='function') ? foodScentStrength(player) : 0;
+  var sColor = scent>0.55?'#4f4':scent>0.25?'#fc4':'#678';
+  var sLabel = curLang==='ru' ? 'Запах еды' : 'Food scent';
+  var cover = player._lilyCover ? (curLang==='ru'?' · укрытие':' · cover') : '';
+  var cyst = player.cyst ? (curLang==='ru'?' · ЦИСТА':' · CYST') : '';
+  var role = (typeof catName==='function') ? catName(player.sp.cat) : '';
   // SIMPLE CLEAN HUD: only essential stats
   h.innerHTML = 
-    '<div style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:4px;">'+player.sp.name+'</div>'+
-    '<div style="font-size:12px;color:#89f;margin-bottom:8px;">Gen '+player.generation+' \u00b7 '+player.size.toFixed(1)+'\u03bcm</div>'+
-    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:18px;overflow:hidden;margin-bottom:6px;">'+
+    '<div style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:2px;">'+player.sp.name+'</div>'+
+    '<div style="font-size:12px;color:#89f;margin-bottom:6px;">'+role+' · Gen '+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst+'</div>'+
+    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:18px;overflow:hidden;margin-bottom:4px;">'+
       '<div style="width:'+(eRatio*100)+'%;background:'+eColor+';height:100%;transition:width .3s;"></div>'+
+    '</div>'+
+    '<div style="font-size:11px;color:#9ab;margin:0 0 2px 0">'+sLabel+'</div>'+
+    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:12px;overflow:hidden;margin-bottom:6px;">'+
+      '<div style="width:'+(scent*100)+'%;background:'+sColor+';height:100%;transition:width .2s;"></div>'+
     '</div>'+
     '<div style="font-size:13px;line-height:1.6;">'+
       '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span style="color:#fff;font-weight:bold;">'+Math.max(0,Math.round(player.energy))+'/100</span><br>'+
@@ -91,7 +113,7 @@ function updateLegend(){
   var items=[
     ['#2c2','Водоросли'],
     ['#4af','Бактерии'],
-    ['#f80','Хищники'],
+    ['#dd44cc','Крупные охотники'],
     ['#c4f','Крупные'],
     ['#a86','Разлагатели'],
     ['#f44','Вирусы']
@@ -185,7 +207,7 @@ window.buyMutation = function(type) {
         if(type==='shell') { player.sp.flags.shell=true; }
         gameStats.dna -= costs[type];
         document.getElementById('dnaPts').innerText = Math.floor(gameStats.dna);
-        if(settings.particles) for(var k=0;k<15;k++) parts.push({x:player.x,y:player.y,vx:rng(-2,2),vy:rng(-2,2),life:2,maxL:2,size:3,color:'#0ff'});
+        if(settings.particles) for(var k=0;k<3;k++) parts.push({x:player.x,y:player.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.6,maxL:0.6,size:1,color:'#0ff'});
         if(typeof updateHUD === 'function') updateHUD();
     }
 };
@@ -205,7 +227,7 @@ window.importDNA = function() {
         player.sp = sp;
         player.color = sp.color;
         player.size = sp.size;
-        if(settings.particles) for(var k=0;k<15;k++) parts.push({x:player.x,y:player.y,vx:rng(-2,2),vy:rng(-2,2),life:2,maxL:2,size:3,color:'#f0f'});
+        if(settings.particles) for(var k=0;k<3;k++) parts.push({x:player.x,y:player.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.6,maxL:0.6,size:1,color:'#f0f'});
         document.getElementById('dnaString').value = 'DNA Imported Successfully!';
     } catch(e) {
         document.getElementById('dnaString').value = 'Invalid DNA String!';

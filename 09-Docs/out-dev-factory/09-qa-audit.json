@@ -1,0 +1,25 @@
+{
+  "role": "09-qa-audit",
+  "writes_product": false,
+  "date": "2026-09-10",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "MAJOR",
+      "where": "vitest.config.js include .04-Src/07-QA-and-Testing/vitest + coverage include .04-Src/js; plugin transform tolko /.04-Src/js/; coverage-summary.json mtime 2026-08-15T11:31:22",
+      "what": "Testy b'yut skrytoe derevo. Live=04-Src (13 md5 diff). Coverage-log starshe sutok na 2026-09-10. Vitest v etom hode ne gonyali.",
+      "why": "Zelenyy vitest po .04-Src ne dokazyvaet Pages. Zero-Point po staromu json - lozh.",
+      "ac": "Ne pisat testy v repo. Ne utverzhdat N/N pass. Log != Zero-Point.",
+      "test_how": "vitest.config.js stroki include; coverage mtime 2026-08-15; dirty vitest M"
+    },
+    {
+      "id": "F2",
+      "severity": "MINOR",
+      "where": "playwright.config.js baseURL https://igraspore.pages.dev testDir ./07-QA-and-Testing/playwright (vidimyy); specs canvas 1254b simulation 2284b v .04-Src; regression 28520b v vidimom 07-QA",
+      "what": "e2e baseURL = kanon Pages. Dva kornja specov. Progon e2e v etom hode ne delali.",
+      "why": "testDir vidimyy, unit - skrytyy. Agent zapustit ne tot folder.",
+      "ac": "Ne gonyat e2e v analize. Kadrov net.",
+      "test_how": "playwright.config.js baseURL; glob spec.js"
+    }
+  ]
+}

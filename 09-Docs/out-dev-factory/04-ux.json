@@ -1,0 +1,16 @@
+{
+  "role": "04-ux",
+  "writes_product": false,
+  "date": "2026-09-10",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "MAJOR",
+      "where": "index.html ids hud/actBar/bEat..; style.css 20615b 307 lines mtime 2026-08-15T22:14:08; kadra Playwright v etom hode net",
+      "what": "Zhivoy HTML: canvas#c, HUD, DEMO/AKVARIUM, 2 rezhima MULT/SWISS. CSS podklyuchen style.css?v=1786825630. Pixel-dyry ne utverzhdat bez kadra.",
+      "why": "UX-apgreyd CSS v etom hode zapreschen. Vydumannyj piksel = brak.",
+      "ac": "Kod/CSS ne pisat. Chetyre sostoyaniya UI ne snyaty kadrrom.",
+      "test_how": "index 239 lines 0 style block; link style.css; GET pages.dev 17917"
+    }
+  ]
+}

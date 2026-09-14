@@ -1,0 +1,2252 @@
+{
+  "microbiology/Camila-Knecht--isolation.svg": {
+    "license": "cc-0",
+    "category": "Microbiology",
+    "author": "Camila-Knecht",
+    "original_path": "cc-0/Microbiology/Camila-Knecht/isolation.svg"
+  },
+  "microbiology/Divakar-Badal--inverted_microscope.svg": {
+    "license": "cc-0",
+    "category": "Microbiology",
+    "author": "Divakar-Badal",
+    "original_path": "cc-0/Microbiology/Divakar-Badal/inverted_microscope.svg"
+  },
+  "microbiology/Ewa-Oz--Yeast.svg": {
+    "license": "cc-0",
+    "category": "Microbiology",
+    "author": "Ewa-Oz",
+    "original_path": "cc-0/Microbiology/Ewa-Oz/Yeast.svg"
+  },
+  "microbiology/Geomicrobio--Tree_Life_Prokarytes.svg": {
+    "license": "cc-0",
+    "category": "Microbiology",
+    "author": "Geomicrobio",
+    "original_path": "cc-0/Microbiology/Geomicrobio/Tree_Life_Prokarytes.svg"
+  },
+  "microbiology/James-Lloyd--Bacteria_Swimming.svg": {
+    "license": "cc-0",
+    "category": "Microbiology",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Microbiology/James-Lloyd/Bacteria_Swimming.svg"
+  },
+  "microbiology/James-Lloyd--Phage.svg": {
+    "license": "cc-0",
+    "category": "Microbiology",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Microbiology/James-Lloyd/Phage.svg"
+  },
+  "microbiology/OpenClipart--96-well-plate-2d.svg": {
+    "license": "cc-0",
+    "category": "Microbiology",
+    "author": "OpenClipart",
+    "original_path": "cc-0/Microbiology/OpenClipart/96-well-plate-2d.svg"
+  },
+  "microbiology/OpenClipart--agarose-gel.svg": {
+    "license": "cc-0",
+    "category": "Microbiology",
+    "author": "OpenClipart",
+    "original_path": "cc-0/Microbiology/OpenClipart/agarose-gel.svg"
+  },
+  "microbiology/Pauline_Franz--generic-bacterium.svg": {
+    "license": "cc-0",
+    "category": "Microbiology",
+    "author": "Pauline_Franz",
+    "original_path": "cc-0/Microbiology/Pauline_Franz/generic-bacterium.svg"
+  },
+  "viruses/KeHan--12_wp_plaque.svg": {
+    "license": "cc-0",
+    "category": "Viruses",
+    "author": "KeHan",
+    "original_path": "cc-0/Viruses/KeHan/12_wp_plaque.svg"
+  },
+  "viruses/Marcel_Tisch--virus-sketch.svg": {
+    "license": "cc-0",
+    "category": "Viruses",
+    "author": "Marcel_Tisch",
+    "original_path": "cc-0/Viruses/Marcel_Tisch/virus-sketch.svg"
+  },
+  "viruses/Simon_Dürr--sars-cov-2-spike-closed.svg": {
+    "license": "cc-0",
+    "category": "Viruses",
+    "author": "Simon_Dürr",
+    "original_path": "cc-0/Viruses/Simon_Dürr/sars-cov-2-spike-closed.svg"
+  },
+  "viruses/Simon_Dürr--sars-cov-2-spike-open.svg": {
+    "license": "cc-0",
+    "category": "Viruses",
+    "author": "Simon_Dürr",
+    "original_path": "cc-0/Viruses/Simon_Dürr/sars-cov-2-spike-open.svg"
+  },
+  "viruses/kehan--virus_titer_plaque_assay.svg": {
+    "license": "cc-0",
+    "category": "Viruses",
+    "author": "kehan",
+    "original_path": "cc-0/Viruses/kehan/virus_titer_plaque_assay.svg"
+  },
+  "plants-algae/Gina-Vong--DicotSeedling.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "Gina-Vong",
+    "original_path": "cc-0/Plants_Algae/Gina-Vong/DicotSeedling.svg"
+  },
+  "plants-algae/Gina-Vong--Dicot_ApicalHook.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "Gina-Vong",
+    "original_path": "cc-0/Plants_Algae/Gina-Vong/Dicot_ApicalHook.svg"
+  },
+  "plants-algae/Gina-Vong--Leaf.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "Gina-Vong",
+    "original_path": "cc-0/Plants_Algae/Gina-Vong/Leaf.svg"
+  },
+  "plants-algae/Gina-Vong--Lemna.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "Gina-Vong",
+    "original_path": "cc-0/Plants_Algae/Gina-Vong/Lemna.svg"
+  },
+  "plants-algae/James-Lloyd--ArabidopsisSeedlings.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/ArabidopsisSeedlings.svg"
+  },
+  "plants-algae/James-Lloyd--ArabidopsisTopView.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/ArabidopsisTopView.svg"
+  },
+  "plants-algae/James-Lloyd--Arabidopsis_DeepRoots.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/Arabidopsis_DeepRoots.svg"
+  },
+  "plants-algae/James-Lloyd--Arabidopsis_NormalRoots.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/Arabidopsis_NormalRoots.svg"
+  },
+  "plants-algae/James-Lloyd--Arabidopsis_ShallowRoots.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/Arabidopsis_ShallowRoots.svg"
+  },
+  "plants-algae/James-Lloyd--MossColony.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/MossColony.svg"
+  },
+  "plants-algae/James-Lloyd--Moss_Gametophore.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/Moss_Gametophore.svg"
+  },
+  "plants-algae/James-Lloyd--Moss_Protonema.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/Moss_Protonema.svg"
+  },
+  "plants-algae/James-Lloyd--Moss_Protonema_Buds.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/Moss_Protonema_Buds.svg"
+  },
+  "plants-algae/James-Lloyd--TomatoFruit.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "James-Lloyd",
+    "original_path": "cc-0/Plants_Algae/James-Lloyd/TomatoFruit.svg"
+  },
+  "plants-algae/Samuel-Nestor-Meckoni--Utricularia_trap.svg": {
+    "license": "cc-0",
+    "category": "Plants_Algae",
+    "author": "Samuel-Nestor-Meckoni",
+    "original_path": "cc-0/Plants_Algae/Samuel-Nestor-Meckoni/Utricularia_trap.svg"
+  },
+  "cell-types/ASE--cell_balance.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "ASE",
+    "original_path": "cc-0/Cell_types/ASE/cell_balance.svg"
+  },
+  "cell-types/ASE--cell_imbalance.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "ASE",
+    "original_path": "cc-0/Cell_types/ASE/cell_imbalance.svg"
+  },
+  "cell-types/Daniel-Marcos--Smooth_muscle_cell_v2.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Daniel-Marcos",
+    "original_path": "cc-0/Cell_types/Daniel-Marcos/Smooth_muscle_cell_v2.svg"
+  },
+  "cell-types/Daniel-Marcos--smooth_muscle_cell_v1.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Daniel-Marcos",
+    "original_path": "cc-0/Cell_types/Daniel-Marcos/smooth_muscle_cell_v1.svg"
+  },
+  "cell-types/EwaOz--redbloodcell.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "EwaOz",
+    "original_path": "cc-0/Cell_types/EwaOz/redbloodcell.svg"
+  },
+  "cell-types/JhonnyXC--cell_group.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "JhonnyXC",
+    "original_path": "cc-0/Cell_types/JhonnyXC/cell_group.svg"
+  },
+  "cell-types/Marnie-Maddock--simple_cardiomyocyte.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Marnie-Maddock",
+    "original_path": "cc-0/Cell_types/Marnie-Maddock/simple_cardiomyocyte.svg"
+  },
+  "cell-types/Marnie-Maddock--simple_cell1.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Marnie-Maddock",
+    "original_path": "cc-0/Cell_types/Marnie-Maddock/simple_cell1.svg"
+  },
+  "cell-types/Xi-Chen--1cell_pn4_zygote.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/1cell_pn4_zygote.svg"
+  },
+  "cell-types/Xi-Chen--2c_embryo.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/2c_embryo.svg"
+  },
+  "cell-types/Xi-Chen--4c_embryo_style1.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/4c_embryo_style1.svg"
+  },
+  "cell-types/Xi-Chen--4c_embryo_style2.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/4c_embryo_style2.svg"
+  },
+  "cell-types/Xi-Chen--8c_embryo.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/8c_embryo.svg"
+  },
+  "cell-types/Xi-Chen--MII_Oocyte.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/MII_Oocyte.svg"
+  },
+  "cell-types/Xi-Chen--early_blastocyst_embryo.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/early_blastocyst_embryo.svg"
+  },
+  "cell-types/Xi-Chen--late_blastocyst_embryo.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/late_blastocyst_embryo.svg"
+  },
+  "cell-types/Xi-Chen--morula_embryo.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/morula_embryo.svg"
+  },
+  "cell-types/Xi-Chen--sperm.svg": {
+    "license": "cc-0",
+    "category": "Cell_types",
+    "author": "Xi-Chen",
+    "original_path": "cc-0/Cell_types/Xi-Chen/sperm.svg"
+  },
+  "microbiology/Servier--12-well-plate.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/12-well-plate.svg"
+  },
+  "microbiology/Servier--24-well-plate.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/24-well-plate.svg"
+  },
+  "microbiology/Servier--48-well-plate.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/48-well-plate.svg"
+  },
+  "microbiology/Servier--6-well-plate.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/6-well-plate.svg"
+  },
+  "microbiology/Servier--bacterium-interior.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/bacterium-interior.svg"
+  },
+  "microbiology/Servier--bacterium.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/bacterium.svg"
+  },
+  "microbiology/Servier--bottle-medium-green.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/bottle-medium-green.svg"
+  },
+  "microbiology/Servier--bottle-medium-orange.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/bottle-medium-orange.svg"
+  },
+  "microbiology/Servier--bottle-medium-pink.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/bottle-medium-pink.svg"
+  },
+  "microbiology/Servier--bunsen-burner.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/bunsen-burner.svg"
+  },
+  "microbiology/Servier--cap-pipette.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/cap-pipette.svg"
+  },
+  "microbiology/Servier--cell-culture-equipment-1.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/cell-culture-equipment-1.svg"
+  },
+  "microbiology/Servier--cell-culture-equipment-4.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/cell-culture-equipment-4.svg"
+  },
+  "microbiology/Servier--cell-culture-equipment.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/cell-culture-equipment.svg"
+  },
+  "microbiology/Servier--cell-cultuure-quipment-3.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/cell-cultuure-quipment-3.svg"
+  },
+  "microbiology/Servier--cell-scraper.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/cell-scraper.svg"
+  },
+  "microbiology/Servier--counting-chamber-2d-2.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/counting-chamber-2d-2.svg"
+  },
+  "microbiology/Servier--counting-chamber-3d-1.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/counting-chamber-3d-1.svg"
+  },
+  "microbiology/Servier--counting-chamber-lemaur.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/counting-chamber-lemaur.svg"
+  },
+  "microbiology/Servier--counting-chamber-neubauer.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/counting-chamber-neubauer.svg"
+  },
+  "microbiology/Servier--counting-chamber-thoma.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/counting-chamber-thoma.svg"
+  },
+  "microbiology/Servier--counting-chamber.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/counting-chamber.svg"
+  },
+  "microbiology/Servier--counting-raster.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/counting-raster.svg"
+  },
+  "microbiology/Servier--culture-flask-empty.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/culture-flask-empty.svg"
+  },
+  "microbiology/Servier--culture-flask-filled-lid.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/culture-flask-filled-lid.svg"
+  },
+  "microbiology/Servier--culture-flask-filled-nolid.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/culture-flask-filled-nolid.svg"
+  },
+  "microbiology/Servier--culture-flask-stacked.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/culture-flask-stacked.svg"
+  },
+  "microbiology/Servier--falcon-15ml-empty.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/falcon-15ml-empty.svg"
+  },
+  "microbiology/Servier--falcon-15ml-pink.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/falcon-15ml-pink.svg"
+  },
+  "microbiology/Servier--falcon-50ml-empty.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/falcon-50ml-empty.svg"
+  },
+  "microbiology/Servier--falcon-50ml-pink.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/falcon-50ml-pink.svg"
+  },
+  "microbiology/Servier--glass-slide-flat.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/glass-slide-flat.svg"
+  },
+  "microbiology/Servier--glass-slide-top.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/glass-slide-top.svg"
+  },
+  "microbiology/Servier--microtube-closed- pink.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/microtube-closed- pink.svg"
+  },
+  "microbiology/Servier--microtube-closed-blue.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/microtube-closed-blue.svg"
+  },
+  "microbiology/Servier--microtube-closed-translucent.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/microtube-closed-translucent.svg"
+  },
+  "microbiology/Servier--microtube-open-blue.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/microtube-open-blue.svg"
+  },
+  "microbiology/Servier--microtube-open-pink.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/microtube-open-pink.svg"
+  },
+  "microbiology/Servier--microtube-open-translucent.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/microtube-open-translucent.svg"
+  },
+  "microbiology/Servier--multiwell-plate-2d.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/multiwell-plate-2d.svg"
+  },
+  "microbiology/Servier--multiwell-plate-3d.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/multiwell-plate-3d.svg"
+  },
+  "microbiology/Servier--multiwell-plate-liquids.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/multiwell-plate-liquids.svg"
+  },
+  "microbiology/Servier--pet.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/pet.svg"
+  },
+  "microbiology/Servier--petri-dish-blue.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-blue.svg"
+  },
+  "microbiology/Servier--petri-dish-brown.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-brown.svg"
+  },
+  "microbiology/Servier--petri-dish-green.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-green.svg"
+  },
+  "microbiology/Servier--petri-dish-lid-blue.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-lid-blue.svg"
+  },
+  "microbiology/Servier--petri-dish-lid-brown.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-lid-brown.svg"
+  },
+  "microbiology/Servier--petri-dish-lid-green.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-lid-green.svg"
+  },
+  "microbiology/Servier--petri-dish-lid-red.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-lid-red.svg"
+  },
+  "microbiology/Servier--petri-dish-lid-yellow.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-lid-yellow.svg"
+  },
+  "microbiology/Servier--petri-dish-red.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-red.svg"
+  },
+  "microbiology/Servier--petri-dish-top-brown.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-top-brown.svg"
+  },
+  "microbiology/Servier--petri-dish-top-gray.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-top-gray.svg"
+  },
+  "microbiology/Servier--petri-dish-top-red.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-top-red.svg"
+  },
+  "microbiology/Servier--petri-dish-top-yellow.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-top-yellow.svg"
+  },
+  "microbiology/Servier--petri-dish-with-bacteria-brown.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-with-bacteria-brown.svg"
+  },
+  "microbiology/Servier--petri-dish-with-bacteria-gray.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-with-bacteria-gray.svg"
+  },
+  "microbiology/Servier--petri-dish-with-bacteria-red.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-with-bacteria-red.svg"
+  },
+  "microbiology/Servier--petri-dish-with-bacteria-yellow.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-with-bacteria-yellow.svg"
+  },
+  "microbiology/Servier--petri-dish-with-colony-brown.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-with-colony-brown.svg"
+  },
+  "microbiology/Servier--petri-dish-with-colony-lightgray.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-with-colony-lightgray.svg"
+  },
+  "microbiology/Servier--petri-dish-with-colony-lightyellow.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-with-colony-lightyellow.svg"
+  },
+  "microbiology/Servier--petri-dish-with-colony-red.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-with-colony-red.svg"
+  },
+  "microbiology/Servier--petri-dish-yellow.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/petri-dish-yellow.svg"
+  },
+  "microbiology/Servier--stem-cell-cultivation.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/stem-cell-cultivation.svg"
+  },
+  "microbiology/Servier--tube-empty-bluecap.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-empty-bluecap.svg"
+  },
+  "microbiology/Servier--tube-empty-pink.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-empty-pink.svg"
+  },
+  "microbiology/Servier--tube-filled-graycap.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-filled-graycap.svg"
+  },
+  "microbiology/Servier--tube-filled-greencap.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-filled-greencap.svg"
+  },
+  "microbiology/Servier--tube-red-bluecap.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-red-bluecap.svg"
+  },
+  "microbiology/Servier--tube-screwcap-closed-green.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-screwcap-closed-green.svg"
+  },
+  "microbiology/Servier--tube-screwcap-closed-orange.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-screwcap-closed-orange.svg"
+  },
+  "microbiology/Servier--tube-screwcap-closed-pink.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-screwcap-closed-pink.svg"
+  },
+  "microbiology/Servier--tube-screwcap-open-green.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-screwcap-open-green.svg"
+  },
+  "microbiology/Servier--tube-screwcap-open-orange.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-screwcap-open-orange.svg"
+  },
+  "microbiology/Servier--tube-screwcap-open-pink.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tube-screwcap-open-pink.svg"
+  },
+  "microbiology/Servier--tubes-empty-graycap.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tubes-empty-graycap.svg"
+  },
+  "microbiology/Servier--tubes-empty-greencap.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tubes-empty-greencap.svg"
+  },
+  "microbiology/Servier--tubes-filled-pinkcap.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/tubes-filled-pinkcap.svg"
+  },
+  "microbiology/Servier--wooden-clamp.svg": {
+    "license": "cc-by-3.0",
+    "category": "Microbiology",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Microbiology/Servier/wooden-clamp.svg"
+  },
+  "viruses/Servier--adeno-virus-interior.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/adeno-virus-interior.svg"
+  },
+  "viruses/Servier--adeno-virus.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/adeno-virus.svg"
+  },
+  "viruses/Servier--hepatitis-virus-interior.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/hepatitis-virus-interior.svg"
+  },
+  "viruses/Servier--hepatits-virus.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/hepatits-virus.svg"
+  },
+  "viruses/Servier--herpes-simplex-interior.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/herpes-simplex-interior.svg"
+  },
+  "viruses/Servier--herpes-simplex-virus.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/herpes-simplex-virus.svg"
+  },
+  "viruses/Servier--hiv-virus-interior.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/hiv-virus-interior.svg"
+  },
+  "viruses/Servier--hiv-virus.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/hiv-virus.svg"
+  },
+  "viruses/Servier--influenza-virus-interior.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/influenza-virus-interior.svg"
+  },
+  "viruses/Servier--influenza-virus.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/influenza-virus.svg"
+  },
+  "viruses/Servier--phage-2-interior.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/phage-2-interior.svg"
+  },
+  "viruses/Servier--phage-2.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/phage-2.svg"
+  },
+  "viruses/Servier--tobacco-mosaic-virus.svg": {
+    "license": "cc-by-3.0",
+    "category": "Viruses",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Viruses/Servier/tobacco-mosaic-virus.svg"
+  },
+  "plants-algae/Servier--ananas.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/ananas.svg"
+  },
+  "plants-algae/Servier--banana.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/banana.svg"
+  },
+  "plants-algae/Servier--bell-pepper.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/bell-pepper.svg"
+  },
+  "plants-algae/Servier--cabbage.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/cabbage.svg"
+  },
+  "plants-algae/Servier--carrot.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/carrot.svg"
+  },
+  "plants-algae/Servier--eggplant.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/eggplant.svg"
+  },
+  "plants-algae/Servier--kiwi.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/kiwi.svg"
+  },
+  "plants-algae/Servier--leek.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/leek.svg"
+  },
+  "plants-algae/Servier--lemon.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/lemon.svg"
+  },
+  "plants-algae/Servier--olive.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/olive.svg"
+  },
+  "plants-algae/Servier--orange.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/orange.svg"
+  },
+  "plants-algae/Servier--paprika.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/paprika.svg"
+  },
+  "plants-algae/Servier--peach-1.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/peach-1.svg"
+  },
+  "plants-algae/Servier--peach-2.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/peach-2.svg"
+  },
+  "plants-algae/Servier--pear.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/pear.svg"
+  },
+  "plants-algae/Servier--potato.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/potato.svg"
+  },
+  "plants-algae/Servier--radish.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/radish.svg"
+  },
+  "plants-algae/Servier--raspberry.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/raspberry.svg"
+  },
+  "plants-algae/Servier--strawberry.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/strawberry.svg"
+  },
+  "plants-algae/Servier--tomato.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/tomato.svg"
+  },
+  "plants-algae/Servier--white-beans.svg": {
+    "license": "cc-by-3.0",
+    "category": "Plants_Algae",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Plants_Algae/Servier/white-beans.svg"
+  },
+  "parasites/Servier--Trichomonas-T_intestinalis.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/Trichomonas-T_intestinalis.svg"
+  },
+  "parasites/Servier--anclystoma-duodenale-adult.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/anclystoma-duodenale-adult.svg"
+  },
+  "parasites/Servier--anclystoma-duodenale-eggs.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/anclystoma-duodenale-eggs.svg"
+  },
+  "parasites/Servier--anclystoma-duodenale-larva.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/anclystoma-duodenale-larva.svg"
+  },
+  "parasites/Servier--ascaris-lumbricoides-eggs-2.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/ascaris-lumbricoides-eggs-2.svg"
+  },
+  "parasites/Servier--ascaris-lumbricoides-eggs.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/ascaris-lumbricoides-eggs.svg"
+  },
+  "parasites/Servier--ascaris-lumbricoides-female-adult.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/ascaris-lumbricoides-female-adult.svg"
+  },
+  "parasites/Servier--ascaris-lumbricoides-male-adult.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/ascaris-lumbricoides-male-adult.svg"
+  },
+  "parasites/Servier--bilharzie-adult.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/bilharzie-adult.svg"
+  },
+  "parasites/Servier--bilharzie-cercaria.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/bilharzie-cercaria.svg"
+  },
+  "parasites/Servier--bilharzie-egg.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/bilharzie-egg.svg"
+  },
+  "parasites/Servier--bilharzie-miracidum.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/bilharzie-miracidum.svg"
+  },
+  "parasites/Servier--cyst-eminuta.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/cyst-eminuta.svg"
+  },
+  "parasites/Servier--echinococcus_granulosus-adult.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/echinococcus_granulosus-adult.svg"
+  },
+  "parasites/Servier--echinococcus_granulosus-egg.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/echinococcus_granulosus-egg.svg"
+  },
+  "parasites/Servier--echinococcus_granulosus-hydatid-cyst.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/echinococcus_granulosus-hydatid-cyst.svg"
+  },
+  "parasites/Servier--gametocyte-female.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/gametocyte-female.svg"
+  },
+  "parasites/Servier--gametocyte-male.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/gametocyte-male.svg"
+  },
+  "parasites/Servier--giardia_intestinalis-cyst.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/giardia_intestinalis-cyst.svg"
+  },
+  "parasites/Servier--giardia_intestinalis-trophozoite.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/giardia_intestinalis-trophozoite.svg"
+  },
+  "parasites/Servier--leishmania-amastigote.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/leishmania-amastigote.svg"
+  },
+  "parasites/Servier--leishmania-promastigote.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/leishmania-promastigote.svg"
+  },
+  "parasites/Servier--liver-fluke-adult.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/liver-fluke-adult.svg"
+  },
+  "parasites/Servier--liver-fluke-cercaria.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/liver-fluke-cercaria.svg"
+  },
+  "parasites/Servier--liver-fluke-embyronated-egg.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/liver-fluke-embyronated-egg.svg"
+  },
+  "parasites/Servier--liver-fluke-metacercaria.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/liver-fluke-metacercaria.svg"
+  },
+  "parasites/Servier--liver-fluke-myracidum.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/liver-fluke-myracidum.svg"
+  },
+  "parasites/Servier--liver-fluke-redia.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/liver-fluke-redia.svg"
+  },
+  "parasites/Servier--liver-fluke-sporocyt.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/liver-fluke-sporocyt.svg"
+  },
+  "parasites/Servier--liver-fluke-unembryonated-egg.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/liver-fluke-unembryonated-egg.svg"
+  },
+  "parasites/Servier--louse-adult.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/louse-adult.svg"
+  },
+  "parasites/Servier--louse-egg.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/louse-egg.svg"
+  },
+  "parasites/Servier--merozoites.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/merozoites.svg"
+  },
+  "parasites/Servier--morpion.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/morpion.svg"
+  },
+  "parasites/Servier--oocyst.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/oocyst.svg"
+  },
+  "parasites/Servier--plasmodium-female-2.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/plasmodium-female-2.svg"
+  },
+  "parasites/Servier--plasmodium-female.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/plasmodium-female.svg"
+  },
+  "parasites/Servier--plasmodium-male-2.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/plasmodium-male-2.svg"
+  },
+  "parasites/Servier--plasmodium-male.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/plasmodium-male.svg"
+  },
+  "parasites/Servier--scabies.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/scabies.svg"
+  },
+  "parasites/Servier--sporozoites.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/sporozoites.svg"
+  },
+  "parasites/Servier--taenia-cysticerus.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/taenia-cysticerus.svg"
+  },
+  "parasites/Servier--taenia-egg.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/taenia-egg.svg"
+  },
+  "parasites/Servier--taenia-t_saginata.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/taenia-t_saginata.svg"
+  },
+  "parasites/Servier--taenia-t_solium.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/taenia-t_solium.svg"
+  },
+  "parasites/Servier--throphozoite-ehystolica.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/throphozoite-ehystolica.svg"
+  },
+  "parasites/Servier--toxoplasma_gondii-bradyzoite.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/toxoplasma_gondii-bradyzoite.svg"
+  },
+  "parasites/Servier--toxoplasma_gondii-gamete.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/toxoplasma_gondii-gamete.svg"
+  },
+  "parasites/Servier--toxoplasma_gondii-merozoite.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/toxoplasma_gondii-merozoite.svg"
+  },
+  "parasites/Servier--toxoplasma_gondii-oocyst.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/toxoplasma_gondii-oocyst.svg"
+  },
+  "parasites/Servier--toxoplasma_gondii-sporocyst.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/toxoplasma_gondii-sporocyst.svg"
+  },
+  "parasites/Servier--toxoplasma_gondii-sporulated-oocyst.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/toxoplasma_gondii-sporulated-oocyst.svg"
+  },
+  "parasites/Servier--trichinella-female.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/trichinella-female.svg"
+  },
+  "parasites/Servier--trichinella-larva.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/trichinella-larva.svg"
+  },
+  "parasites/Servier--trichinella-male.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/trichinella-male.svg"
+  },
+  "parasites/Servier--trichomonas-t_vaginalis.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/trichomonas-t_vaginalis.svg"
+  },
+  "parasites/Servier--trichuris-eggs-2.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/trichuris-eggs-2.svg"
+  },
+  "parasites/Servier--trichuris-eggs.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/trichuris-eggs.svg"
+  },
+  "parasites/Servier--trichuris-female.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/trichuris-female.svg"
+  },
+  "parasites/Servier--trichuris-male.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/trichuris-male.svg"
+  },
+  "parasites/Servier--trypanosoma.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/trypanosoma.svg"
+  },
+  "parasites/Servier--zygote.svg": {
+    "license": "cc-by-3.0",
+    "category": "Parasites",
+    "author": "Servier",
+    "original_path": "cc-by-3.0/Parasites/Servier/zygote.svg"
+  },
+  "microbiology/Andi-Wilson--Centrifuge.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Centrifuge.svg"
+  },
+  "microbiology/Andi-Wilson--Conidia.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Conidia.svg"
+  },
+  "microbiology/Andi-Wilson--Conidia_germlings_mycelium_three.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Conidia_germlings_mycelium_three.svg"
+  },
+  "microbiology/Andi-Wilson--Conidia_germlings_myeclium.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Conidia_germlings_myeclium.svg"
+  },
+  "microbiology/Andi-Wilson--Conidia_germlings_myeclium_colour.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Conidia_germlings_myeclium_colour.svg"
+  },
+  "microbiology/Andi-Wilson--Conidia_orange.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Conidia_orange.svg"
+  },
+  "microbiology/Andi-Wilson--Conidia_red.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Conidia_red.svg"
+  },
+  "microbiology/Andi-Wilson--Conidia_yellow.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Conidia_yellow.svg"
+  },
+  "microbiology/Andi-Wilson--Eppendorf_dilutionseries.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Eppendorf_dilutionseries.svg"
+  },
+  "microbiology/Andi-Wilson--Erlenmeyer_withcirclelabel.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Erlenmeyer_withcirclelabel.svg"
+  },
+  "microbiology/Andi-Wilson--Erlenmeyer_withlabels.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Erlenmeyer_withlabels.svg"
+  },
+  "microbiology/Andi-Wilson--Erlenmeyer_withrectanglelabel.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Erlenmeyer_withrectanglelabel.svg"
+  },
+  "microbiology/Andi-Wilson--Falcon_conidia_germlings_mycelia.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Falcon_conidia_germlings_mycelia.svg"
+  },
+  "microbiology/Andi-Wilson--Falcon_label.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Falcon_label.svg"
+  },
+  "microbiology/Andi-Wilson--Falcon_sorbitol_overlay.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Falcon_sorbitol_overlay.svg"
+  },
+  "microbiology/Andi-Wilson--Germlings.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Germlings.svg"
+  },
+  "microbiology/Andi-Wilson--Germlings_orange.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Germlings_orange.svg"
+  },
+  "microbiology/Andi-Wilson--Germlings_red.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Germlings_red.svg"
+  },
+  "microbiology/Andi-Wilson--Germlings_yellow.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Germlings_yellow.svg"
+  },
+  "microbiology/Andi-Wilson--Mycelium.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Mycelium.svg"
+  },
+  "microbiology/Andi-Wilson--Mycelium_orange.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Mycelium_orange.svg"
+  },
+  "microbiology/Andi-Wilson--Mycelium_red.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Mycelium_red.svg"
+  },
+  "microbiology/Andi-Wilson--Mycelium_yellow.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Mycelium_yellow.svg"
+  },
+  "microbiology/Andi-Wilson--Pacbiosequencer.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "Andi-Wilson",
+    "original_path": "cc-by-4.0/Microbiology/Andi-Wilson/Pacbiosequencer.svg"
+  },
+  "microbiology/DBCLS--Bacillus_subtilis.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Microbiology/DBCLS/Bacillus_subtilis.svg"
+  },
+  "microbiology/DBCLS--Hexamastix.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Microbiology/DBCLS/Hexamastix.svg"
+  },
+  "microbiology/DBCLS--Negative_Bacteria.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Microbiology/DBCLS/Negative_Bacteria.svg"
+  },
+  "microbiology/DBCLS--Positive_Bacteria.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Microbiology/DBCLS/Positive_Bacteria.svg"
+  },
+  "microbiology/DBCLS--electrophoresis-gel.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Microbiology/DBCLS/electrophoresis-gel.svg"
+  },
+  "microbiology/DBCLS--fission_yeast.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Microbiology/DBCLS/fission_yeast.svg"
+  },
+  "microbiology/DBCLS--parva.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Microbiology/DBCLS/parva.svg"
+  },
+  "microbiology/SwissBioPics--Animal_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Animal_cells.svg"
+  },
+  "microbiology/SwissBioPics--Apicomplexa_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Apicomplexa_cells.svg"
+  },
+  "microbiology/SwissBioPics--Archaea_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Archaea_cells.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria1M_clubrod.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria1M_clubrod.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria1M_coccus.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria1M_coccus.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria1M_diplococci.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria1M_diplococci.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria1M_filamentous.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria1M_filamentous.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria1M_rod.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria1M_rod.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria1M_tetrad.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria1M_tetrad.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria1Mplus_rod.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria1Mplus_rod.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria2M_Nostoc.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria2M_Nostoc.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria2M_coccus.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria2M_coccus.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria2M_comma.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria2M_comma.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria2M_rod.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria2M_rod.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria2M_rodtococcus.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria2M_rodtococcus.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria2M_spiral.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria2M_spiral.svg"
+  },
+  "microbiology/SwissBioPics--Bacteria2M_trichormus.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Bacteria2M_trichormus.svg"
+  },
+  "microbiology/SwissBioPics--Chlamydomona_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Chlamydomona_cells.svg"
+  },
+  "microbiology/SwissBioPics--Cnidocyte_cell.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Cnidocyte_cell.svg"
+  },
+  "microbiology/SwissBioPics--Egg_cell.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Egg_cell.svg"
+  },
+  "microbiology/SwissBioPics--Epithelial_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Epithelial_cells.svg"
+  },
+  "microbiology/SwissBioPics--Eukaryota_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Eukaryota_cells.svg"
+  },
+  "microbiology/SwissBioPics--Fungal_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Fungal_cells.svg"
+  },
+  "microbiology/SwissBioPics--Mollicutes_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Mollicutes_cells.svg"
+  },
+  "microbiology/SwissBioPics--Muscle_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Muscle_cells.svg"
+  },
+  "microbiology/SwissBioPics--Neuron_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Neuron_cells.svg"
+  },
+  "microbiology/SwissBioPics--Photoreceptor_cell.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Photoreceptor_cell.svg"
+  },
+  "microbiology/SwissBioPics--Plant_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Plant_cells.svg"
+  },
+  "microbiology/SwissBioPics--Pombe_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Pombe_cells.svg"
+  },
+  "microbiology/SwissBioPics--Spermatozoa_cell.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Spermatozoa_cell.svg"
+  },
+  "microbiology/SwissBioPics--Trypanosoma.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Trypanosoma.svg"
+  },
+  "microbiology/SwissBioPics--Yeast_cells.svg": {
+    "license": "cc-by-4.0",
+    "category": "Microbiology",
+    "author": "SwissBioPics",
+    "original_path": "cc-by-4.0/Microbiology/SwissBioPics/Yeast_cells.svg"
+  },
+  "viruses/Alejandro-Matía--poxvirus.svg": {
+    "license": "cc-by-4.0",
+    "category": "Viruses",
+    "author": "Alejandro-Matía",
+    "original_path": "cc-by-4.0/Viruses/Alejandro-Matía/poxvirus.svg"
+  },
+  "viruses/DBCLS--Polyomaviridae.svg": {
+    "license": "cc-by-4.0",
+    "category": "Viruses",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Viruses/DBCLS/Polyomaviridae.svg"
+  },
+  "viruses/DBCLS--SARS-CoV-2.svg": {
+    "license": "cc-by-4.0",
+    "category": "Viruses",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Viruses/DBCLS/SARS-CoV-2.svg"
+  },
+  "viruses/DBCLS--phage.svg": {
+    "license": "cc-by-4.0",
+    "category": "Viruses",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Viruses/DBCLS/phage.svg"
+  },
+  "viruses/DBCLS--virus.svg": {
+    "license": "cc-by-4.0",
+    "category": "Viruses",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Viruses/DBCLS/virus.svg"
+  },
+  "plants-algae/Alexis_Maizel--Stages_of_lateral_root_development.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Alexis_Maizel",
+    "original_path": "cc-by-4.0/Plants_Algae/Alexis_Maizel/Stages_of_lateral_root_development.svg"
+  },
+  "plants-algae/Ciera_Martinez--tomato-auxin-developing.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Ciera_Martinez",
+    "original_path": "cc-by-4.0/Plants_Algae/Ciera_Martinez/tomato-auxin-developing.svg"
+  },
+  "plants-algae/Ciera_Martinez--tomato.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Ciera_Martinez",
+    "original_path": "cc-by-4.0/Plants_Algae/Ciera_Martinez/tomato.svg"
+  },
+  "plants-algae/Connor-Tansley--Nicotiana_benthamiana.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Connor-Tansley",
+    "original_path": "cc-by-4.0/Plants_Algae/Connor-Tansley/Nicotiana_benthamiana.svg"
+  },
+  "plants-algae/DBCLS--Arabidopsis_thaliana.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/Arabidopsis_thaliana.svg"
+  },
+  "plants-algae/DBCLS--Cyanobacteria.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/Cyanobacteria.svg"
+  },
+  "plants-algae/DBCLS--Fern_palm.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/Fern_palm.svg"
+  },
+  "plants-algae/DBCLS--Ginkgo.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/Ginkgo.svg"
+  },
+  "plants-algae/DBCLS--Rice.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/Rice.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_adult_gametophore.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_adult_gametophore.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_adult_gametophore_with_mature_sporophyte.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_adult_gametophore_with_mature_sporophyte.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_antheridium.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_antheridium.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_archegonium.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_archegonium.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_caulonemal.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_caulonemal.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_chloronema.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_chloronema.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_early_sporophyte.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_early_sporophyte.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_incubation_on_petri.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_incubation_on_petri.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_mature_sporophyte_brown.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_mature_sporophyte_brown.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_mature_sporophyte_green.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_mature_sporophyte_green.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_mature_sporophyte_yellow.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_mature_sporophyte_yellow.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_protoplast.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_protoplast.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_rhizoid.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_rhizoid.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_spore.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_spore.svg"
+  },
+  "plants-algae/DBCLS--earthmoss_young_gametophore.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/earthmoss_young_gametophore.svg"
+  },
+  "plants-algae/DBCLS--flower_of_Dioscorea_tokoro-mono.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/flower_of_Dioscorea_tokoro-mono.svg"
+  },
+  "plants-algae/DBCLS--flower_of_Dioscorea_tokoro.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/flower_of_Dioscorea_tokoro.svg"
+  },
+  "plants-algae/DBCLS--flower_of_Dioscorea_tokoro_monochrome.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/flower_of_Dioscorea_tokoro_monochrome.svg"
+  },
+  "plants-algae/DBCLS--fruit_of_Dioscorea_tokoro.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/fruit_of_Dioscorea_tokoro.svg"
+  },
+  "plants-algae/DBCLS--fruit_of_Dioscorea_tokoro_monochrome.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/fruit_of_Dioscorea_tokoro_monochrome.svg"
+  },
+  "plants-algae/DBCLS--tobacco.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/tobacco.svg"
+  },
+  "plants-algae/DBCLS--volvox.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/volvox.svg"
+  },
+  "plants-algae/DBCLS--wheat.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Plants_Algae/DBCLS/wheat.svg"
+  },
+  "plants-algae/Daniel_Carvalho--Brachypodium_distachyon.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Daniel_Carvalho",
+    "original_path": "cc-by-4.0/Plants_Algae/Daniel_Carvalho/Brachypodium_distachyon.svg"
+  },
+  "plants-algae/Daniel_Carvalho--Oat.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Daniel_Carvalho",
+    "original_path": "cc-by-4.0/Plants_Algae/Daniel_Carvalho/Oat.svg"
+  },
+  "plants-algae/Daniel_Carvalho--Oropetium_thomaeum.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Daniel_Carvalho",
+    "original_path": "cc-by-4.0/Plants_Algae/Daniel_Carvalho/Oropetium_thomaeum.svg"
+  },
+  "plants-algae/Daniel_Carvalho--Rice_cartoon.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Daniel_Carvalho",
+    "original_path": "cc-by-4.0/Plants_Algae/Daniel_Carvalho/Rice_cartoon.svg"
+  },
+  "plants-algae/Daniel_Carvalho--Rye.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Daniel_Carvalho",
+    "original_path": "cc-by-4.0/Plants_Algae/Daniel_Carvalho/Rye.svg"
+  },
+  "plants-algae/Daniel_Carvalho--Soybean_cartoon.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Daniel_Carvalho",
+    "original_path": "cc-by-4.0/Plants_Algae/Daniel_Carvalho/Soybean_cartoon.svg"
+  },
+  "plants-algae/Daniel_Carvalho--Soybean_cartoon_v2.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Daniel_Carvalho",
+    "original_path": "cc-by-4.0/Plants_Algae/Daniel_Carvalho/Soybean_cartoon_v2.svg"
+  },
+  "plants-algae/Daniel_Carvalho--Zea_mays_cartoon.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Daniel_Carvalho",
+    "original_path": "cc-by-4.0/Plants_Algae/Daniel_Carvalho/Zea_mays_cartoon.svg"
+  },
+  "plants-algae/Erin_Sparks--Arabidopsis_Embryonic_Development.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Erin_Sparks",
+    "original_path": "cc-by-4.0/Plants_Algae/Erin_Sparks/Arabidopsis_Embryonic_Development.svg"
+  },
+  "plants-algae/Erin_Sparks--Plant_Intercellular_Communication.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Erin_Sparks",
+    "original_path": "cc-by-4.0/Plants_Algae/Erin_Sparks/Plant_Intercellular_Communication.svg"
+  },
+  "plants-algae/Erin_Sparks--Rice_Diagram.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Erin_Sparks",
+    "original_path": "cc-by-4.0/Plants_Algae/Erin_Sparks/Rice_Diagram.svg"
+  },
+  "plants-algae/Erin_Sparks--Rice_Root_Anatomy.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Erin_Sparks",
+    "original_path": "cc-by-4.0/Plants_Algae/Erin_Sparks/Rice_Root_Anatomy.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Arabidopsis_ flowering.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Arabidopsis_ flowering.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Arabidopsis_Flower.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Arabidopsis_Flower.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Arabidopsis_Inflorescence.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Arabidopsis_Inflorescence.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Arabidopsis_flower_2.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Arabidopsis_flower_2.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Arabidopsis_one_plant_in_soil.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Arabidopsis_one_plant_in_soil.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Arabidopsis_plant.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Arabidopsis_plant.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Arabidopsis_root_cross_section.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Arabidopsis_root_cross_section.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Arabidopsis_root_longitudinal_section.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Arabidopsis_root_longitudinal_section.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Arabidopsis_whole_plant_hydroponics_versus_soil.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Arabidopsis_whole_plant_hydroponics_versus_soil.svg"
+  },
+  "plants-algae/Frédéric_Bouché--Brachypodium_Flowering_plant.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Frédéric_Bouché",
+    "original_path": "cc-by-4.0/Plants_Algae/Frédéric_Bouché/Brachypodium_Flowering_plant.svg"
+  },
+  "plants-algae/Guillaume_Lobet--Maize_Plant.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Guillaume_Lobet",
+    "original_path": "cc-by-4.0/Plants_Algae/Guillaume_Lobet/Maize_Plant.svg"
+  },
+  "plants-algae/Matthew_Dzievit--Maize_b73.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Matthew_Dzievit",
+    "original_path": "cc-by-4.0/Plants_Algae/Matthew_Dzievit/Maize_b73.svg"
+  },
+  "plants-algae/Matthew_Dzievit--PHW30_Orig.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Matthew_Dzievit",
+    "original_path": "cc-by-4.0/Plants_Algae/Matthew_Dzievit/PHW30_Orig.svg"
+  },
+  "plants-algae/Plant_illustrations--Physcomitrella_patens.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Plant_illustrations",
+    "original_path": "cc-by-4.0/Plants_Algae/Plant_illustrations/Physcomitrella_patens.svg"
+  },
+  "plants-algae/Plant_illustrations--plant-axes.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "Plant_illustrations",
+    "original_path": "cc-by-4.0/Plants_Algae/Plant_illustrations/plant-axes.svg"
+  },
+  "plants-algae/ggPlantmap--ggPm-Ms-root-crosssection.svg": {
+    "license": "cc-by-4.0",
+    "category": "Plants_Algae",
+    "author": "ggPlantmap",
+    "original_path": "cc-by-4.0/Plants_Algae/ggPlantmap/ggPm-Ms-root-crosssection.svg"
+  },
+  "cell-types/DBCLS--Lymphocyte.svg": {
+    "license": "cc-by-4.0",
+    "category": "Cell_types",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Cell_types/DBCLS/Lymphocyte.svg"
+  },
+  "cell-types/DBCLS--Myelocyte.svg": {
+    "license": "cc-by-4.0",
+    "category": "Cell_types",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Cell_types/DBCLS/Myelocyte.svg"
+  },
+  "cell-types/DBCLS--Promyelocyte.svg": {
+    "license": "cc-by-4.0",
+    "category": "Cell_types",
+    "author": "DBCLS",
+    "original_path": "cc-by-4.0/Cell_types/DBCLS/Promyelocyte.svg"
+  },
+  "cell-types/Durvesh-Burhade-&-Niliksha-Patel--Structure_of_Plant_Cell.svg": {
+    "license": "cc-by-4.0",
+    "category": "Cell_types",
+    "author": "Durvesh-Burhade-&-Niliksha-Patel",
+    "original_path": "cc-by-4.0/Cell_types/Durvesh-Burhade-&-Niliksha-Patel/Structure_of_Plant_Cell.svg"
+  },
+  "cell-types/Marnie-Maddock--sensory_neuron.svg": {
+    "license": "cc-by-4.0",
+    "category": "Cell_types",
+    "author": "Marnie-Maddock",
+    "original_path": "cc-by-4.0/Cell_types/Marnie-Maddock/sensory_neuron.svg"
+  },
+  "cell-types/almaCELL--Neural_precursors.svg": {
+    "license": "cc-by-4.0",
+    "category": "Cell_types",
+    "author": "almaCELL",
+    "original_path": "cc-by-4.0/Cell_types/almaCELL/Neural_precursors.svg"
+  },
+  "cell-types/almaCELL--Neurons.svg": {
+    "license": "cc-by-4.0",
+    "category": "Cell_types",
+    "author": "almaCELL",
+    "original_path": "cc-by-4.0/Cell_types/almaCELL/Neurons.svg"
+  },
+  "cell-types/almaCELL--iPSCs.svg": {
+    "license": "cc-by-4.0",
+    "category": "Cell_types",
+    "author": "almaCELL",
+    "original_path": "cc-by-4.0/Cell_types/almaCELL/iPSCs.svg"
+  },
+  "parasites/Abhinay-Ramaprasad--plasmodium-egress.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Abhinay-Ramaprasad",
+    "original_path": "cc-by-4.0/Parasites/Abhinay-Ramaprasad/plasmodium-egress.svg"
+  },
+  "parasites/Abhinay-Ramaprasad--plasmodium-invading-rbc.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Abhinay-Ramaprasad",
+    "original_path": "cc-by-4.0/Parasites/Abhinay-Ramaprasad/plasmodium-invading-rbc.svg"
+  },
+  "parasites/Abhinay-Ramaprasad--plasmodium-pvm-rupture-rounding.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Abhinay-Ramaprasad",
+    "original_path": "cc-by-4.0/Parasites/Abhinay-Ramaprasad/plasmodium-pvm-rupture-rounding.svg"
+  },
+  "parasites/Abhinay-Ramaprasad--plasmodium-ring.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Abhinay-Ramaprasad",
+    "original_path": "cc-by-4.0/Parasites/Abhinay-Ramaprasad/plasmodium-ring.svg"
+  },
+  "parasites/Abhinay-Ramaprasad--plasmodium-schizont-nucleardivision.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Abhinay-Ramaprasad",
+    "original_path": "cc-by-4.0/Parasites/Abhinay-Ramaprasad/plasmodium-schizont-nucleardivision.svg"
+  },
+  "parasites/Abhinay-Ramaprasad--plasmodium-schizont-segmentation.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Abhinay-Ramaprasad",
+    "original_path": "cc-by-4.0/Parasites/Abhinay-Ramaprasad/plasmodium-schizont-segmentation.svg"
+  },
+  "parasites/Abhinay-Ramaprasad--plasmodium-segmented-schizont.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Abhinay-Ramaprasad",
+    "original_path": "cc-by-4.0/Parasites/Abhinay-Ramaprasad/plasmodium-segmented-schizont.svg"
+  },
+  "parasites/Abhinay-Ramaprasad--plasmodium-trophozoite.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Abhinay-Ramaprasad",
+    "original_path": "cc-by-4.0/Parasites/Abhinay-Ramaprasad/plasmodium-trophozoite.svg"
+  },
+  "parasites/Stefan-Kusch--powdery_mildew_colony.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Stefan-Kusch",
+    "original_path": "cc-by-4.0/Parasites/Stefan-Kusch/powdery_mildew_colony.svg"
+  },
+  "parasites/Stefan-Kusch--powdery_mildew_spore_with_appressorium.svg": {
+    "license": "cc-by-4.0",
+    "category": "Parasites",
+    "author": "Stefan-Kusch",
+    "original_path": "cc-by-4.0/Parasites/Stefan-Kusch/powdery_mildew_spore_with_appressorium.svg"
+  },
+  "microbiology/Rahel-Khdhr--Gram_Negative_Bacteria_Cell_Wall.svg": {
+    "license": "cc-by-sa-4.0",
+    "category": "Microbiology",
+    "author": "Rahel-Khdhr",
+    "original_path": "cc-by-sa-4.0/Microbiology/Rahel-Khdhr/Gram_Negative_Bacteria_Cell_Wall.svg"
+  },
+  "microbiology/Rahel-Khdhr--Gram_Positive_Bacteria_Cell_Wall.svg": {
+    "license": "cc-by-sa-4.0",
+    "category": "Microbiology",
+    "author": "Rahel-Khdhr",
+    "original_path": "cc-by-sa-4.0/Microbiology/Rahel-Khdhr/Gram_Positive_Bacteria_Cell_Wall.svg"
+  },
+  "viruses/Hanna_Vega--SARS-CoV-2.svg": {
+    "license": "cc-by-sa-4.0",
+    "category": "Viruses",
+    "author": "Hanna_Vega",
+    "original_path": "cc-by-sa-4.0/Viruses/Hanna_Vega/SARS-CoV-2.svg"
+  },
+  "cell-types/Helicase_11--dendritic_cell.svg": {
+    "license": "cc-by-sa-4.0",
+    "category": "Cell_types",
+    "author": "Helicase_11",
+    "original_path": "cc-by-sa-4.0/Cell_types/Helicase_11/dendritic_cell.svg"
+  },
+  "cell-types/Helicase_11--epithelial_cell.svg": {
+    "license": "cc-by-sa-4.0",
+    "category": "Cell_types",
+    "author": "Helicase_11",
+    "original_path": "cc-by-sa-4.0/Cell_types/Helicase_11/epithelial_cell.svg"
+  }
+}

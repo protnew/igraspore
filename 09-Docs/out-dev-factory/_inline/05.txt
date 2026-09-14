@@ -1,0 +1,10 @@
+РОЛЬ 05-dba. АНАЛИЗ. Схему/БД не менять. Файлов не читать/не писать.
+Вектор: WAL/soft-delete только если есть продуктовая БД. Выход JSON role 05-dba.
+
+ФАКТЫ 2026-09-10:
+Продуктовой runtime-БД нет. 05-Database/* только README-заглушки.
+Игра: localStorage igraspore_save / igraspore_tut_v2 / igraspore_star (main.js, demo.js, stars.js). Не SQLite.
+Единственный sqlite: 08-Backlog/backlog_iGraSpore_V2.db 385024b mtime 2026-08-04 tasks=70 (DONE 68 ICEBOX 2) tasks_history=370 — это бэклог CPO, не игроки. WAL не применяли (анализ).
+Копии db: 06-DevOps-and-Release/deploy-repo/08-Backlog/... 2026-07-26; backups 2026-07-27.
+Docker/K8s/Prometheus не дыра Solo. Localhost auth не CRITICAL.
+Ответ ТОЛЬКО JSON.

@@ -1,0 +1,823 @@
+{
+  "table_id": "igraspore-mobile-stack-2026-08",
+  "title": "iGraSpore Mobile Stack — как выйти на телефон (08.2026)",
+  "description": "Не дублирует gfx-таблицы iGraSpore. Вопрос: как доставить текущий Canvas/JS sim на mobile без rewrite. Победитель: Responsive Web+Touch → PWA → Capacitor/TWA при store. Критики: keep-JS 16%, rewrite Godot/Unity/Native внизу; baseline CF без touch проигрывает; Electron=false mobile.",
+  "tags": "igraspore,mobile,pwa,capacitor,decision-matrix,2026-08",
+  "cols": [
+    {
+      "key": "param_01",
+      "title": "Скорость до mobile UX (18%)",
+      "weight": 18,
+      "type": "grade"
+    },
+    {
+      "key": "param_02",
+      "title": "Сохранить Canvas/JS (16%)",
+      "weight": 16,
+      "type": "grade"
+    },
+    {
+      "key": "param_03",
+      "title": "FPS mid-phone 4–6GB (14%)",
+      "weight": 14,
+      "type": "grade"
+    },
+    {
+      "key": "param_04",
+      "title": "Touch / one-hand (12%)",
+      "weight": 12,
+      "type": "grade"
+    },
+    {
+      "key": "param_05",
+      "title": "TCO / free host+build (10%)",
+      "weight": 10,
+      "type": "grade"
+    },
+    {
+      "key": "param_06",
+      "title": "Offline / install (8%)",
+      "weight": 8,
+      "type": "grade"
+    },
+    {
+      "key": "param_07",
+      "title": "Store (Play/App) (7%)",
+      "weight": 7,
+      "type": "grade"
+    },
+    {
+      "key": "param_08",
+      "title": "Батарея / thermal (6%)",
+      "weight": 6,
+      "type": "grade"
+    },
+    {
+      "key": "param_09",
+      "title": "Один codebase (5%)",
+      "weight": 5,
+      "type": "grade"
+    },
+    {
+      "key": "param_10",
+      "title": "Нативный UX/haptics (4%)",
+      "weight": 4,
+      "type": "grade"
+    }
+  ],
+  "rows": [
+    {
+      "name": "Responsive Web + Touch (CF Pages)",
+      "price": "$0",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/API/Touch_events",
+      "notes": "WINNER шаг 1 — тот же igraspore.pages.dev",
+      "param_01": {
+        "grade": 10,
+        "value": "1–2 нед CSS+joystick"
+      },
+      "param_02": {
+        "grade": 10,
+        "value": "0 rewrite JS"
+      },
+      "param_03": {
+        "grade": 7,
+        "value": "cap density/particles"
+      },
+      "param_04": {
+        "grade": 8,
+        "value": "virtual stick+кнопки"
+      },
+      "param_05": {
+        "grade": 10,
+        "value": "CF Pages $0"
+      },
+      "param_06": {
+        "grade": 3,
+        "value": "нет install"
+      },
+      "param_07": {
+        "grade": 2,
+        "value": "нет store"
+      },
+      "param_08": {
+        "grade": 7,
+        "value": "pause on blur"
+      },
+      "param_09": {
+        "grade": 10,
+        "value": "один URL"
+      },
+      "param_10": {
+        "grade": 4,
+        "value": "базовый touch"
+      }
+    },
+    {
+      "name": "PWA (manifest + SW)",
+      "price": "$0",
+      "link": "https://web.dev/progressive-web-apps/",
+      "notes": "Шаг 2 после responsive",
+      "param_01": {
+        "grade": 9,
+        "value": "+3–5д"
+      },
+      "param_02": {
+        "grade": 10,
+        "value": "0 rewrite"
+      },
+      "param_03": {
+        "grade": 7,
+        "value": "как web"
+      },
+      "param_04": {
+        "grade": 8,
+        "value": "как web"
+      },
+      "param_05": {
+        "grade": 10,
+        "value": "$0"
+      },
+      "param_06": {
+        "grade": 10,
+        "value": "Add to HS + offline shell"
+      },
+      "param_07": {
+        "grade": 3,
+        "value": "нет iOS push store"
+      },
+      "param_08": {
+        "grade": 7,
+        "value": "как web"
+      },
+      "param_09": {
+        "grade": 10,
+        "value": "один"
+      },
+      "param_10": {
+        "grade": 6,
+        "value": "install UX"
+      }
+    },
+    {
+      "name": "PWA + TWA (Bubblewrap → Play)",
+      "price": "$25",
+      "link": "https://developer.chrome.com/docs/android/trusted-web-activity/",
+      "notes": "Play без полного native shell",
+      "param_01": {
+        "grade": 7,
+        "value": "1–2 нед + signing"
+      },
+      "param_02": {
+        "grade": 9,
+        "value": "web core"
+      },
+      "param_03": {
+        "grade": 7,
+        "value": "Chrome WV"
+      },
+      "param_04": {
+        "grade": 8,
+        "value": "web touch"
+      },
+      "param_05": {
+        "grade": 8,
+        "value": "Play fee once"
+      },
+      "param_06": {
+        "grade": 9,
+        "value": "TWA packages PWA"
+      },
+      "param_07": {
+        "grade": 8,
+        "value": "Play only (не iOS)"
+      },
+      "param_08": {
+        "grade": 6,
+        "value": "WV"
+      },
+      "param_09": {
+        "grade": 9,
+        "value": "shared web"
+      },
+      "param_10": {
+        "grade": 5,
+        "value": "limited"
+      }
+    },
+    {
+      "name": "Capacitor 6 wrapper",
+      "price": "$99/y",
+      "link": "https://capacitorjs.com/",
+      "notes": "Store когда product-fit; Apple Developer $99/y",
+      "param_01": {
+        "grade": 7,
+        "value": "2–3 нед"
+      },
+      "param_02": {
+        "grade": 9,
+        "value": "WebView same JS"
+      },
+      "param_03": {
+        "grade": 6,
+        "value": "WV overhead"
+      },
+      "param_04": {
+        "grade": 9,
+        "value": "plugins"
+      },
+      "param_05": {
+        "grade": 7,
+        "value": "Apple $99/y + Play $25"
+      },
+      "param_06": {
+        "grade": 8,
+        "value": "local assets"
+      },
+      "param_07": {
+        "grade": 9,
+        "value": "Play+App Store"
+      },
+      "param_08": {
+        "grade": 6,
+        "value": "WV drain"
+      },
+      "param_09": {
+        "grade": 8,
+        "value": "shared web"
+      },
+      "param_10": {
+        "grade": 8,
+        "value": "haptics plugins"
+      }
+    },
+    {
+      "name": "Ionic + Capacitor UI kit",
+      "price": "$99/y",
+      "link": "https://ionicframework.com/",
+      "notes": "Лишний UI-слой для canvas-игры",
+      "param_01": {
+        "grade": 6,
+        "value": "UI kit overhead"
+      },
+      "param_02": {
+        "grade": 8,
+        "value": "JS ok, DOM noise"
+      },
+      "param_03": {
+        "grade": 5,
+        "value": "DOM+canvas"
+      },
+      "param_04": {
+        "grade": 8,
+        "value": "Ionic components"
+      },
+      "param_05": {
+        "grade": 7,
+        "value": "same store fees"
+      },
+      "param_06": {
+        "grade": 8,
+        "value": "ok"
+      },
+      "param_07": {
+        "grade": 9,
+        "value": "stores"
+      },
+      "param_08": {
+        "grade": 5,
+        "value": "heavier"
+      },
+      "param_09": {
+        "grade": 6,
+        "value": "framework lock"
+      },
+      "param_10": {
+        "grade": 7,
+        "value": "good widgets"
+      }
+    },
+    {
+      "name": "Tauri 2 mobile",
+      "price": "$0",
+      "link": "https://v2.tauri.app/",
+      "notes": "Mobile API ещё maturing 2026",
+      "param_01": {
+        "grade": 5,
+        "value": "young mobile"
+      },
+      "param_02": {
+        "grade": 8,
+        "value": "web frontend"
+      },
+      "param_03": {
+        "grade": 6,
+        "value": "ok"
+      },
+      "param_04": {
+        "grade": 7,
+        "value": "custom"
+      },
+      "param_05": {
+        "grade": 9,
+        "value": "$0"
+      },
+      "param_06": {
+        "grade": 6,
+        "value": "partial"
+      },
+      "param_07": {
+        "grade": 5,
+        "value": "maturing"
+      },
+      "param_08": {
+        "grade": 6,
+        "value": "ok"
+      },
+      "param_09": {
+        "grade": 7,
+        "value": "shared"
+      },
+      "param_10": {
+        "grade": 6,
+        "value": "limited"
+      }
+    },
+    {
+      "name": "Cordova / PhoneGap",
+      "price": "$0",
+      "link": "https://cordova.apache.org/",
+      "notes": "Legacy — не брать на greenfield",
+      "param_01": {
+        "grade": 6,
+        "value": "docs old"
+      },
+      "param_02": {
+        "grade": 8,
+        "value": "WebView"
+      },
+      "param_03": {
+        "grade": 4,
+        "value": "old WV"
+      },
+      "param_04": {
+        "grade": 7,
+        "value": "plugins aging"
+      },
+      "param_05": {
+        "grade": 9,
+        "value": "$0"
+      },
+      "param_06": {
+        "grade": 7,
+        "value": "ok"
+      },
+      "param_07": {
+        "grade": 7,
+        "value": "stores"
+      },
+      "param_08": {
+        "grade": 4,
+        "value": "worse"
+      },
+      "param_09": {
+        "grade": 7,
+        "value": "shared"
+      },
+      "param_10": {
+        "grade": 5,
+        "value": "legacy"
+      }
+    },
+    {
+      "name": "Flutter WebView shell",
+      "price": "$0",
+      "link": "https://docs.flutter.dev/platform-integration/web",
+      "notes": "Двойной runtime без выигрыша для sim",
+      "param_01": {
+        "grade": 5,
+        "value": "shell+bridge"
+      },
+      "param_02": {
+        "grade": 7,
+        "value": "JS in WV"
+      },
+      "param_03": {
+        "grade": 5,
+        "value": "double runtime"
+      },
+      "param_04": {
+        "grade": 7,
+        "value": "good touch"
+      },
+      "param_05": {
+        "grade": 8,
+        "value": "$0"
+      },
+      "param_06": {
+        "grade": 6,
+        "value": "partial"
+      },
+      "param_07": {
+        "grade": 8,
+        "value": "stores"
+      },
+      "param_08": {
+        "grade": 5,
+        "value": "heavier"
+      },
+      "param_09": {
+        "grade": 4,
+        "value": "2 stacks"
+      },
+      "param_10": {
+        "grade": 7,
+        "value": "good"
+      }
+    },
+    {
+      "name": "React Native WebView",
+      "price": "$0",
+      "link": "https://github.com/react-native-webview/react-native-webview",
+      "notes": "Лишний bridge",
+      "param_01": {
+        "grade": 5,
+        "value": "shell"
+      },
+      "param_02": {
+        "grade": 7,
+        "value": "JS in WV"
+      },
+      "param_03": {
+        "grade": 5,
+        "value": "bridge cost"
+      },
+      "param_04": {
+        "grade": 7,
+        "value": "ok"
+      },
+      "param_05": {
+        "grade": 8,
+        "value": "$0"
+      },
+      "param_06": {
+        "grade": 6,
+        "value": "partial"
+      },
+      "param_07": {
+        "grade": 8,
+        "value": "stores"
+      },
+      "param_08": {
+        "grade": 5,
+        "value": "ok"
+      },
+      "param_09": {
+        "grade": 4,
+        "value": "2 stacks"
+      },
+      "param_10": {
+        "grade": 7,
+        "value": "ok"
+      }
+    },
+    {
+      "name": "Expo + WebView",
+      "price": "$0",
+      "link": "https://docs.expo.dev/",
+      "notes": "Быстрый store path, но всё ещё оболочка",
+      "param_01": {
+        "grade": 6,
+        "value": "fast bootstrap"
+      },
+      "param_02": {
+        "grade": 7,
+        "value": "WV"
+      },
+      "param_03": {
+        "grade": 5,
+        "value": "bridge"
+      },
+      "param_04": {
+        "grade": 8,
+        "value": "Expo APIs"
+      },
+      "param_05": {
+        "grade": 8,
+        "value": "EAS free tier limits"
+      },
+      "param_06": {
+        "grade": 7,
+        "value": "ok"
+      },
+      "param_07": {
+        "grade": 8,
+        "value": "stores"
+      },
+      "param_08": {
+        "grade": 5,
+        "value": "ok"
+      },
+      "param_09": {
+        "grade": 4,
+        "value": "2 stacks"
+      },
+      "param_10": {
+        "grade": 7,
+        "value": "ok"
+      }
+    },
+    {
+      "name": "Godot 4 HTML5/mobile export",
+      "price": "$0",
+      "link": "https://godotengine.org/",
+      "notes": "Полный rewrite sim — нет",
+      "param_01": {
+        "grade": 2,
+        "value": "месяцы rewrite"
+      },
+      "param_02": {
+        "grade": 1,
+        "value": "lose JS biology"
+      },
+      "param_03": {
+        "grade": 8,
+        "value": "good 2D"
+      },
+      "param_04": {
+        "grade": 7,
+        "value": "ok"
+      },
+      "param_05": {
+        "grade": 7,
+        "value": "$0 engine"
+      },
+      "param_06": {
+        "grade": 5,
+        "value": "export"
+      },
+      "param_07": {
+        "grade": 7,
+        "value": "yes"
+      },
+      "param_08": {
+        "grade": 6,
+        "value": "ok"
+      },
+      "param_09": {
+        "grade": 2,
+        "value": "new codebase"
+      },
+      "param_10": {
+        "grade": 7,
+        "value": "ok"
+      }
+    },
+    {
+      "name": "Unity export",
+      "price": "$0+",
+      "link": "https://unity.com/",
+      "notes": "Overkill + rewrite + license risk",
+      "param_01": {
+        "grade": 1,
+        "value": "full rewrite"
+      },
+      "param_02": {
+        "grade": 0,
+        "value": "0 reuse"
+      },
+      "param_03": {
+        "grade": 8,
+        "value": "good"
+      },
+      "param_04": {
+        "grade": 8,
+        "value": "good"
+      },
+      "param_05": {
+        "grade": 3,
+        "value": "license/runtime"
+      },
+      "param_06": {
+        "grade": 5,
+        "value": "ok"
+      },
+      "param_07": {
+        "grade": 8,
+        "value": "excellent"
+      },
+      "param_08": {
+        "grade": 5,
+        "value": "heavier"
+      },
+      "param_09": {
+        "grade": 1,
+        "value": "new"
+      },
+      "param_10": {
+        "grade": 8,
+        "value": "excellent"
+      }
+    },
+    {
+      "name": "Native Kotlin + Swift",
+      "price": "$5000+",
+      "link": "https://developer.android.com/",
+      "notes": "Только если hit-продукт",
+      "param_01": {
+        "grade": 1,
+        "value": "6–12 мес×2"
+      },
+      "param_02": {
+        "grade": 0,
+        "value": "0"
+      },
+      "param_03": {
+        "grade": 9,
+        "value": "best"
+      },
+      "param_04": {
+        "grade": 9,
+        "value": "best"
+      },
+      "param_05": {
+        "grade": 2,
+        "value": "dev cost"
+      },
+      "param_06": {
+        "grade": 6,
+        "value": "ok"
+      },
+      "param_07": {
+        "grade": 10,
+        "value": "best"
+      },
+      "param_08": {
+        "grade": 8,
+        "value": "best"
+      },
+      "param_09": {
+        "grade": 0,
+        "value": "2 codebases"
+      },
+      "param_10": {
+        "grade": 10,
+        "value": "best"
+      }
+    },
+    {
+      "name": "CF Pages only (no mobile UI)",
+      "price": "$0",
+      "link": "https://igraspore.pages.dev/",
+      "notes": "BASELINE — сейчас; desktop-first",
+      "param_01": {
+        "grade": 10,
+        "value": "уже live"
+      },
+      "param_02": {
+        "grade": 10,
+        "value": "as-is"
+      },
+      "param_03": {
+        "grade": 4,
+        "value": "без cap density mobile thrash"
+      },
+      "param_04": {
+        "grade": 2,
+        "value": "мышь/клава"
+      },
+      "param_05": {
+        "grade": 10,
+        "value": "$0"
+      },
+      "param_06": {
+        "grade": 1,
+        "value": "нет"
+      },
+      "param_07": {
+        "grade": 0,
+        "value": "нет"
+      },
+      "param_08": {
+        "grade": 5,
+        "value": "no pause policy"
+      },
+      "param_09": {
+        "grade": 10,
+        "value": "один"
+      },
+      "param_10": {
+        "grade": 1,
+        "value": "нет"
+      }
+    },
+    {
+      "name": "Desktop Electron wrap",
+      "price": "$0",
+      "link": "https://www.electronjs.org/",
+      "notes": "Не mobile — контроль ложный кандидат",
+      "param_01": {
+        "grade": 4,
+        "value": "wrap easy"
+      },
+      "param_02": {
+        "grade": 9,
+        "value": "web"
+      },
+      "param_03": {
+        "grade": 0,
+        "value": "не phone"
+      },
+      "param_04": {
+        "grade": 0,
+        "value": "не phone"
+      },
+      "param_05": {
+        "grade": 8,
+        "value": "$0"
+      },
+      "param_06": {
+        "grade": 7,
+        "value": "ok"
+      },
+      "param_07": {
+        "grade": 0,
+        "value": "не mobile stores"
+      },
+      "param_08": {
+        "grade": 3,
+        "value": "heavy"
+      },
+      "param_09": {
+        "grade": 7,
+        "value": "shared"
+      },
+      "param_10": {
+        "grade": 3,
+        "value": "desktop"
+      }
+    }
+  ],
+  "scores": [
+    [
+      "PWA (manifest + SW)",
+      8.33
+    ],
+    [
+      "Responsive Web + Touch (CF Pages)",
+      7.8
+    ],
+    [
+      "PWA + TWA (Bubblewrap → Play)",
+      7.73
+    ],
+    [
+      "Capacitor 6 wrapper",
+      7.67
+    ],
+    [
+      "Ionic + Capacitor UI kit",
+      6.87
+    ],
+    [
+      "Expo + WebView",
+      6.56
+    ],
+    [
+      "Tauri 2 mobile",
+      6.54
+    ],
+    [
+      "Cordova / PhoneGap",
+      6.5
+    ],
+    [
+      "Flutter WebView shell",
+      6.18
+    ],
+    [
+      "React Native WebView",
+      6.18
+    ],
+    [
+      "CF Pages only (no mobile UI)",
+      6.12
+    ],
+    [
+      "Godot 4 HTML5/mobile export",
+      4.81
+    ],
+    [
+      "Native Kotlin + Swift",
+      4.78
+    ],
+    [
+      "Unity export",
+      4.19
+    ],
+    [
+      "Desktop Electron wrap",
+      4.17
+    ]
+  ],
+  "critic_errors": []
+}

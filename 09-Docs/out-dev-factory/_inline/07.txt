@@ -1,0 +1,11 @@
+РОЛЬ 07-secops. АНАЛИЗ. Коммиты не откатывать, секреты в чат не печатать. Файлов не читать/не писать.
+Выход JSON role 07-secops.
+
+ФАКТЫ 2026-09-10:
+git config remote.origin.url содержит user:token@github.com/protnew/igraspore.git (PAT в remote). Значение токена НЕ повторять.
+Скан js на sk-/AKIA/ghp_/BEGIN PRIVATE KEY в дереве без node_modules: 0 хитов в содержимом файлов (кроме git remote).
+innerHTML: ui_screens 11 ui_menus 9 ui 6 main 6 — html из своих строк/режима, не проверен user-input в этом ходе (не утверждать XSS без пруфа ввода).
+Live /igraspore.apk отдаёт HTML (не APK). sw.js 2294b full offline cache.
+localStorage без httpOnly (браузерный save). Нет cookie.
+Pages публичный, AUTH_ENABLED не применимо. LAN bind не проверяли — не ставить AUTH-LAN.
+Ответ ТОЛЬКО JSON. Не писать полный секрет.

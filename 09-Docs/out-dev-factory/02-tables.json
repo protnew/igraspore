@@ -1,0 +1,47 @@
+{
+  "role": "02-tables",
+  "writes_product": false,
+  "date": "2026-09-10",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "MAJOR",
+      "where": "01-Architecture/Tablitsy vybora 8 md iyun 2026 pipe-rows 5-10; DECISIONS.md 1080b D1 176/165/84 bez tablitsy 8-12 kriteriev",
+      "what": "REJECT masshtab: ni odna tablitsa ne 5-6 obyektov x 8-12 kriteriev. D1 chisla bez vesov/yaechek v fayle 1080b.",
+      "why": "Agent vozmet D1 176 kak zakon i poydet v WebGL vopreki live Canvas.",
+      "ac": "Ne chinit tablitsy v etom hode. Ne sidit v choser.db. Novaya matrica - v 01-forks etogo hoda, ne v produkt.",
+      "test_how": "8 faylov mtime 2026-06-18..20; pipe-rows 5-10; DECISIONS 1080b"
+    }
+  ],
+  "subagent": {
+    "status": "ok",
+    "note": "HIGH/MEDIUM mapped; T1 CRITICAL not duplicated into PRIORITY_LIST (same D1 as P3+P8)",
+    "findings_raw": [
+      {
+        "id": "T1",
+        "severity": "CRITICAL",
+        "mapped_to": "P3+P8"
+      },
+      {
+        "id": "T2",
+        "severity": "MAJOR",
+        "mapped_to": "P8"
+      },
+      {
+        "id": "T3",
+        "severity": "MAJOR",
+        "mapped_to": "P8"
+      },
+      {
+        "id": "T4",
+        "severity": "MINOR",
+        "mapped_to": "P8"
+      },
+      {
+        "id": "T5",
+        "severity": "MINOR",
+        "mapped_to": "not listed (README stubs)"
+      }
+    ]
+  }
+}

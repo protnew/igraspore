@@ -14,3 +14,11 @@ coverage/
 backups/
 
 06-DevOps-and-Release/deploy-repo/
+
+# Signing keys — never commit
+*.keystore
+*.jks
+.wrangler/
+06-DevOps-and-Release/cf-publish/igraspore.apk
+*.apk.idsig
+06-DevOps-and-Release/apk/igraspore-offline-v2.5.apk

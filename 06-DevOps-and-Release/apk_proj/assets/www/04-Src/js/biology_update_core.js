@@ -1,6 +1,11 @@
 // biology_update.js — per-frame organism update (extracted from biology.js)
 
 function updateOrg(o,dt){
+  if(window.demoMode && o && o.demoGroup){
+    o.invuln = 9999;
+    o.energy = Math.max(o.energy||80, 80);
+    o.dying = false;
+  }
   // 5) укрытие у кувшинок — каждый тик
   if(typeof updateLilyCover==='function') updateLilyCover(o);
   if (typeof cam !== 'undefined' && window.spatialGrid) {

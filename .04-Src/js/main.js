@@ -337,7 +337,8 @@ function startGame(isScreensaver){
   document.getElementById('weatherP').style.display='block';
   document.getElementById('actBar').style.display='flex';
   document.getElementById('renderModeBtn').style.display='block';
-  if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISSBIOPICS';rb4.title='Сейчас: схема SwissBioPics. Клик → мультяшный';}}
+  if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISSBIOPICS';rb4.title='Сейчас: SwissBioPics. Клик → WebGL';}}
+  else if(settings.renderMode==='webgl'){var rb5=document.getElementById('renderModeBtn');if(rb5){rb5.className='webgl';rb5.innerHTML='🌊 WEBGL';rb5.title='Сейчас: WebGL. Клик → мультяшный';}}
   else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';rb2.title='Сейчас: мультяшный. Клик → SwissBioPics';}}
   var kh=document.getElementById('keyHint');
   window._keyHintCollapsed=false; window._keyHintStart=Date.now();

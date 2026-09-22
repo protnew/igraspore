@@ -312,13 +312,18 @@ document.getElementById('bMicro').onclick=function(){
 document.getElementById('bRender').onclick=function(){ toggleRenderModeLarge(); };
 function toggleRenderModeLarge(){
   window._rmodeUserPicked = true;
-  // 2-mode cycle only. Leftover (bioicons/realistic/unknown) lands on cartoon, no extra flip.
-  if(settings.renderMode!=='cartoon' && settings.renderMode!=='swiss'){
-    settings.renderMode='cartoon';
-  } else if(settings.renderMode==='swiss'){
-    settings.renderMode='cartoon';
-  } else {
-    settings.renderMode='swiss';
+  // Cycle: cartoon → swiss → webgl → cartoon. Unknown → cartoon.
+  var m=settings.renderMode;
+  if(m==='cartoon') settings.renderMode='swiss';
+  else if(m==='swiss') settings.renderMode='webgl';
+  else if(m==='webgl') settings.renderMode='cartoon';
+  else settings.renderMode='cartoon';
+  if(settings.renderMode==='webgl'){
+    if(typeof window.enableWebGLRenderMode!=='function' || !window.enableWebGLRenderMode()){
+      settings.renderMode='cartoon';
+    }
+  } else if(typeof window.disableWebGLRenderMode==='function'){
+    window.disableWebGLRenderMode();
   }
   applyRenderMode();
   if(settings.renderMode==='swiss' && typeof window.loadSwissSprites==='function' && !window.swissReady()){
@@ -326,12 +331,14 @@ function toggleRenderModeLarge(){
   }
   var btn=document.getElementById('renderModeBtn');
   var smBtn=document.getElementById('bRender');
+  if(smBtn){smBtn.classList.remove('is-active-swiss');}
   if(settings.renderMode==='swiss'){
-    if(btn){btn.className='swiss';btn.innerHTML='📗 SWISSBIOPICS';btn.title='Сейчас: схема SwissBioPics. Клик → мультяшный';}
+    if(btn){btn.className='swiss';btn.innerHTML='📗 SWISSBIOPICS';btn.title='Сейчас: SwissBioPics. Клик → WebGL';}
     if(smBtn){smBtn.classList.add('is-active-swiss');}
+  } else if(settings.renderMode==='webgl'){
+    if(btn){btn.className='webgl';btn.innerHTML='🌊 WEBGL';btn.title='Сейчас: WebGL-вода. Клик → мультяшный';}
   } else {
     if(btn){btn.className='cartoon';btn.innerHTML='🎨 МУЛЬТЯШНЫЙ';btn.title='Сейчас: мультяшный. Клик → SwissBioPics';}
-    if(smBtn){smBtn.classList.remove('is-active-swiss');}
   }
 }
 document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;if(player&&player.alive){cam.x=player.x;cam.y=player.y-20;}if(window.showToast)window.showToast('Камера: СЛЕДИТ');};

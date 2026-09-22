@@ -115,22 +115,26 @@ function showDeadScreen(){
 
 function toggleRenderMode(el){
   window._rmodeUserPicked = true;
-  if(settings.renderMode!=='cartoon' && settings.renderMode!=='swiss'){
-    settings.renderMode='cartoon';
-  } else {
-    settings.renderMode = settings.renderMode==='swiss' ? 'cartoon' : 'swiss';
+  if(typeof toggleRenderModeLarge==='function'){ toggleRenderModeLarge(); }
+  else {
+    settings.renderMode = settings.renderMode==='swiss' ? 'webgl' : (settings.renderMode==='webgl' ? 'cartoon' : 'swiss');
+    applyRenderMode();
   }
-  el.className='tg'+(settings.renderMode==='swiss'?' on':'');
-  var lbl=document.getElementById('rmodeLbl');
-  if(lbl) lbl.innerHTML = settings.renderMode==='swiss' ? '📗 SwissBioPics' : '🎨 Cartoon';
-  applyRenderMode();
+  if(el) el.className='tg'+(settings.renderMode!=='cartoon'?' on':'');
 }
 
 function applyRenderMode(){
-  if(settings.renderMode!=='cartoon' && settings.renderMode!=='swiss'){
+  if(settings.renderMode!=='cartoon' && settings.renderMode!=='swiss' && settings.renderMode!=='webgl'){
     settings.renderMode='cartoon';
   }
   window._swissStrict = (settings.renderMode==='swiss');
+  if(settings.renderMode==='webgl'){
+    if(typeof window.enableWebGLRenderMode==='function'){
+      if(!window.enableWebGLRenderMode()){ settings.renderMode='cartoon'; }
+    }
+  } else if(typeof window.disableWebGLRenderMode==='function'){
+    window.disableWebGLRenderMode();
+  }
   if(settings.renderMode==='swiss'){
     settings.particles=true; settings.bubbles=true; settings.vignette=false;
     settings.lightMul=1.0;
@@ -144,13 +148,16 @@ function applyRenderMode(){
   var btn=document.getElementById('renderModeBtn');
   var smBtn=document.getElementById('bRender');
   var lbl=document.getElementById('rmodeLbl');
+  if(smBtn){smBtn.classList.remove('is-active-swiss');}
   if(settings.renderMode==='swiss'){
-    if(btn){btn.className='swiss';btn.innerHTML='\uD83D\uDCD7 SWISSBIOPICS';btn.title='SwissBioPics. Click -> cartoon';}
+    if(btn){btn.className='swiss';btn.innerHTML='\uD83D\uDCD7 SWISSBIOPICS';btn.title='SwissBioPics. Click -> WebGL';}
     if(smBtn){smBtn.classList.add('is-active-swiss');}
     if(lbl) lbl.innerHTML='\uD83D\uDCD7 SwissBioPics';
+  } else if(settings.renderMode==='webgl'){
+    if(btn){btn.className='webgl';btn.innerHTML='\uD83C\uDF0A WEBGL';btn.title='WebGL water. Click -> cartoon';}
+    if(lbl) lbl.innerHTML='\uD83C\uDF0A WebGL';
   } else {
     if(btn){btn.className='cartoon';btn.innerHTML='\uD83C\uDFA8 CARTOON';btn.title='Cartoon. Click -> SwissBioPics';}
-    if(smBtn){smBtn.classList.remove('is-active-swiss');}
     if(lbl) lbl.innerHTML='\uD83C\uDFA8 Cartoon';
   }
 }

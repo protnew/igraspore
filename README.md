@@ -3,19 +3,13 @@
 Microorganism life simulation in a puddle. 100 real species of bacteria, protozoa, fungi.
 Infinite 2D map. Canvas 2D, pure JS, single HTML file, works with file://.
 
-## Status: ✅ Live — https://protnew.github.io/igraspore/
+## Status: ✅ Live — https://igraspore.pages.dev
 
-Playable in any browser, including mobile.
+Официальный адрес игры: **https://igraspore.pages.dev**  
+GitHub Pages (https://igraspore.pages.dev/) больше не канон — репозиторий сохранён, Pages выключаем/заглушка.
 
-**Unique niches Thrive does NOT cover:**
+APK: https://igraspore.pages.dev/igraspore.apk
 
-| Niche | Thrive | iGraSpore could |
-|---|---|---|
-| Browser, no install | No (download Godot build) | Yes (single HTML file) |
-| 100 real species | ~15 fictional ones | Real taxonomies |
-| Educational simulation | Game (entertainment) | Scientific accuracy |
-| Mobile browser | No | Yes |
-| Embed in website | No | Yes |
 
 ## Stack
 

@@ -98,16 +98,21 @@ function startDemoMode() {
       o.state = 'idle';
       // gentle idle wobble only (no travel)
       o.demoBobPhase = Math.random() * Math.PI * 2;
+      o.x = x; o.y = yy;
       o.demoHomeX = x;
       o.demoHomeY = yy;
+      o.sessileHome = {x:x, y:yy};
+      o.invuln = 9999;
     }
   }
 
   // Camera overview
   cam.x = 0;
   cam.y = rowY0 + (DEMO_GROUPS.length - 1) * rowGap * 0.45;
-  zoom = 0.75;
-  tZoom = 0.75;
+  zoom = 1.05;
+  tZoom = 1.05;
+  window._demoFly = null;
+  freeCam = true;
   window.lastInteractionTime = Date.now();
   window.screensaverAutoCam = false;
   window.focusTarget = null;
@@ -137,10 +142,22 @@ function startDemoMode() {
         'padding:10px 12px;font:13px/1.35 system-ui,sans-serif;pointer-events:none';
       document.body.appendChild(tip);
     }
+    tip.style.pointerEvents = 'auto';
     tip.style.display = 'block';
-    tip.innerHTML = (curLang === 'en'
-      ? '<b>DEMO</b> · WASD/arrows camera · wheel zoom · <b>click</b> possess · click again / Esc release · F free cam'
-      : '<b>ДЕМО</b> · WASD/стрелки камера · колёсико зум · <b>клик</b> взять · ещё клик / Esc отпустить · F свободная камера');
+    var ru = (typeof curLang === 'undefined' || curLang !== 'en');
+    var nav = '';
+    for (var gi = 0; gi < DEMO_GROUPS.length; gi++) {
+      nav += '<button type="button" data-dg="'+(gi+1)+'" style="margin:2px 2px 0 0;padding:3px 7px;font:11px/1.2 system-ui;background:#123;color:#cfe;border:1px solid #4af;border-radius:5px;cursor:pointer">'+(gi+1)+'</button>';
+    }
+    tip.innerHTML = (ru
+      ? '<b>\u0414\u0415\u041c\u041e</b> \u00b7 WASD/mouse fly \u00b7 1-5 group \u00b7 click = take<br>'
+      : '<b>DEMO</b> \u00b7 WASD/mouse fly \u00b7 1-5 jump group \u00b7 click = possess<br>') + nav;
+    tip.onclick = function(ev){
+      var b = ev.target;
+      if(!b || !b.getAttribute) return;
+      var g = parseInt(b.getAttribute('data-dg'),10);
+      if(g) demoFlyToGroup(g);
+    };
   } catch (e) {}
 
   // Never start tutorial in demo
@@ -154,7 +171,7 @@ function exitDemoPossess() {
   if (player) {
     player.isPlayer = false;
     player.demoPinned = true;
-    player.invuln = 0; // remove demo invulnerability
+    player.invuln = 9999;
     player.vx = 0; player.vy = 0;
     if (player.demoHomeX != null) { player.x = player.demoHomeX; player.y = player.demoHomeY; }
   }
@@ -183,9 +200,11 @@ function demoPossessOrg(o) {
     return;
   }
   o.isPlayer = true;
-  o.demoPinned = false; // allow movement while possessed
+  o.demoPinned = false;
   o.energy = Math.max(o.energy, 85);
-  o.invuln = 9999; // Demo: can't be eaten while possessed
+  o.invuln = 9999;
+  if(o.demoHomeX != null) o.sessileHome = {x:o.demoHomeX, y:o.demoHomeY};
+  if(o.y > 800 && o.demoHomeY != null) { o.x = o.demoHomeX; o.y = o.demoHomeY; }
   o.cyst = false; o.cystT = 0; // clear any dormant state
   o.vx = 0; o.vy = 0;
   player = o;
@@ -232,7 +251,9 @@ function updateDemoPinned(dt) {
   }
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
-    if (!o || !o.alive || !o.demoPinned) continue;
+    if (!o || !o.alive) continue;
+    if (o.demoGroup) o.invuln = 9999;
+    if (!o.demoPinned) continue;
     // Stay home with tiny bob — no travel, no AI drift
     o.demoBobPhase = (o.demoBobPhase || 0) + dt * 1.2;
     o.x = o.demoHomeX;
@@ -324,17 +345,41 @@ function renderDemoLabels() {
 }
 
 // Free-cam movement in demo (even without player)
+function demoFlyToGroup(g) {
+  if (!window.demoMode) return;
+  g = parseInt(g, 10);
+  if (!(g >= 1 && g <= DEMO_GROUPS.length)) return;
+  var sx = 0, sy = 0, n = 0;
+  for (var i = 0; i < orgs.length; i++) {
+    var o = orgs[i];
+    if (o && o.alive && o.demoGroup === g) { sx += o.x; sy += o.y; n++; }
+  }
+  if (!n) return;
+  if (typeof exitDemoPossess === 'function' && window.demoPossessed) exitDemoPossess();
+  freeCam = true;
+  window._demoFly = { x: sx / n, y: sy / n, t: 0 };
+  if (window.showToast) window.showToast((DEMO_GROUPS[g-1] && (curLang==='en'?DEMO_GROUPS[g-1].en:DEMO_GROUPS[g-1].ru)) || ('#'+g), '#8cf');
+}
+
 function updateDemoCamera(dt) {
   if (!window.demoMode) return;
-  if (!freeCam && player && player.alive) return; // follow player while possessed
-  var spd = 220 / Math.max(0.35, zoom);
-  if (typeof keys !== 'undefined') {
-    if (keys['w'] || keys['arrowup']) cam.y -= spd * dt;
-    if (keys['s'] || keys['arrowdown']) cam.y += spd * dt;
-    if (keys['a'] || keys['arrowleft']) cam.x -= spd * dt;
-    if (keys['d'] || keys['arrowright']) cam.x += spd * dt;
+  var fly = window._demoFly;
+  if (fly) {
+    fly.t += dt || 0.016;
+    var k = Math.min(1, fly.t * 3.2);
+    cam.x += (fly.x - cam.x) * k;
+    cam.y += (fly.y - cam.y) * k;
+    if (k >= 1 || (Math.abs(cam.x - fly.x) < 3 && Math.abs(cam.y - fly.y) < 3)) window._demoFly = null;
+    return;
   }
-  // Soft bounds
+  if (!freeCam && player && player.alive) return;
+  var spd = 280 / Math.max(0.35, zoom);
+  var kk = (typeof keys !== 'undefined') ? keys : {};
+  var ck = (typeof camKeys !== 'undefined') ? camKeys : {};
+  if (kk['w'] || kk['arrowup'] || ck.w) cam.y -= spd * dt;
+  if (kk['s'] || kk['arrowdown'] || ck.s) cam.y += spd * dt;
+  if (kk['a'] || kk['arrowleft'] || ck.a) cam.x -= spd * dt;
+  if (kk['d'] || kk['arrowright'] || ck.d) cam.x += spd * dt;
   if (typeof clamp === 'function') {
     cam.y = clamp(cam.y, -80, (typeof PD === 'number' ? PD : 2000) * 0.85);
     cam.x = clamp(cam.x, -((typeof PW === 'number' ? PW : 5000) * 0.6), (typeof PW === 'number' ? PW : 5000) * 0.6);
@@ -348,6 +393,7 @@ window.demoPickAtScreen = demoPickAtScreen;
 window.updateDemoPinned = updateDemoPinned;
 window.renderDemoLabels = renderDemoLabels;
 window.updateDemoCamera = updateDemoCamera;
+window.demoFlyToGroup = demoFlyToGroup;
 
 
 function bindDemoButton(){

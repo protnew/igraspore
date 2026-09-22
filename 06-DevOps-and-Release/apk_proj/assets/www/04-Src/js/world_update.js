@@ -23,13 +23,15 @@ function updateWorld(dt){
      window.spatialGrid[k].push(o);
   }
 
-  // Sessile organisms: lock to spawn position (attached to substrate)
-  for(var _si=0;_si<orgs.length;_si++){
-    var _so=orgs[_si];
-    if(_so.alive && (_so.locomotion==='sessile' || (_so.sp && _so.sp.locomotion==='sessile'))){
-      if(!_so.sessileHome) _so.sessileHome={x:_so.x, y:_so.y};
-      _so.x=_so.sessileHome.x; _so.y=_so.sessileHome.y;
-      _so.vx=0; _so.vy=0;
+  // Sessile lock. Demo gallery must NOT use pond-floor home (spawnOrg used to set y=PD).
+  if(!window.demoMode){
+    for(var _si=0;_si<orgs.length;_si++){
+      var _so=orgs[_si];
+      if(_so.alive && (_so.locomotion==='sessile' || (_so.sp && _so.sp.locomotion==='sessile'))){
+        if(!_so.sessileHome) _so.sessileHome={x:_so.x, y:_so.y};
+        _so.x=_so.sessileHome.x; _so.y=_so.sessileHome.y;
+        _so.vx=0; _so.vy=0;
+      }
     }
   }
   for(var i=0;i<orgs.length;i++)updateOrg(orgs[i],dt);

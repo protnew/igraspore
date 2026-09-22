@@ -223,7 +223,7 @@ window.loadSwissSprites = function(basePath){
     loadedCount++;
     if (loadedCount >= total) {
       var ok = 0;
-      for (var k in sprites) if (sprites[k] && sprites[k].complete && sprites[k].naturalWidth>0) ok++;
+      for (var k in sprites) if (spriteReady(sprites[k])) ok++;
       loadState = ok > 0 ? 'ready' : 'error';
       console.log('[swiss] sprites ready', ok+'/'+total, loadState);
     }
@@ -242,6 +242,25 @@ window.swissReady = function(){
 };
 
 window.swissLoadState = function(){ return loadState; };
+window.swissSpriteStats = function(){
+  var ok=0, miss=[], keys=[];
+  for (var i=0;i<SHAPES.length;i++){
+    var k=SHAPES[i], img=sprites[k];
+    if(spriteReady(img)){ ok++; keys.push(k+':'+(img.naturalWidth||img.width)); }
+    else miss.push(k);
+  }
+  return {ok:ok, total:SHAPES.length, state:loadState, miss:miss};
+};
+function swissDrawSz(sz){
+  if (window.demoMode) return Math.max(22, Math.min(38, (sz||4)*6));
+  return Math.max(2.2, Math.min(22, (sz||4)*1.15));
+}
+function spriteReady(img){
+  if (!img) return false;
+  var w = img.naturalWidth || img.width || 0;
+  var h = img.naturalHeight || img.height || 0;
+  return w > 1 && h > 1;
+}
 
 // Auto-preload shortly after parse (idle)
 if (typeof requestIdleCallback === 'function') {
@@ -252,14 +271,14 @@ if (typeof requestIdleCallback === 'function') {
 
 function drawSprite(ctx, o, sz, shapeKey){
   var img = sprites[shapeKey];
-  if (!img || !img.complete || !img.naturalWidth) return false;
+  if (!spriteReady(img)) return false;
 
   // Match cartoon world proportions (was sz*12 / min28 → giant vs lily pads)
   // Cartoon body ~ o.size world units; keep slight bump so diagram still readable.
   var z = (typeof zoom === 'number' && isFinite(zoom) && zoom > 0) ? zoom : 1;
-  var drawSz = Math.max(2.2, Math.min(22, sz * 1.15));
+  var drawSz = swissDrawSz(sz);
   // far LOD: tiny on screen → simple disc (big FPS win when zoomed out)
-  if (drawSz * z < 3.5 && !(o && o.isPlayer)) {
+  if (drawSz * z < 3.5 && !(o && o.isPlayer) && !window.demoMode) {
     var r = Math.max(0.8, drawSz * 0.45);
     ctx.save();
     ctx.translate(o.x, o.y);
@@ -271,7 +290,9 @@ function drawSprite(ctx, o, sz, shapeKey){
     ctx.restore();
     return true;
   }
-  var aspect = img.naturalWidth / img.naturalHeight;
+  var iw = img.naturalWidth || img.width;
+  var ih = img.naturalHeight || img.height;
+  var aspect = iw / ih;
   var dw, dh;
   if (aspect >= 1) { dw = drawSz; dh = drawSz / aspect; }
   else { dh = drawSz; dw = drawSz * aspect; }
@@ -340,7 +361,7 @@ function fbCoccus(ctx, sz, col){
   if (col){ ctx.globalAlpha=0.15; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(0,0,r,0,Math.PI*2); ctx.fill(); ctx.globalAlpha=1; }
 }
 function drawFallback(ctx, o, sz, sh){
-  var drawSz = Math.max(2.2, Math.min(18, sz*1.15));
+  var drawSz = swissDrawSz(sz);
   var col = (o.sp && o.sp.color) || '#888';
   ctx.save(); ctx.translate(o.x, o.y);
   var ang = (typeof o.facing==='number' && isFinite(o.facing)) ? o.facing : 0;
@@ -352,7 +373,7 @@ function drawFallback(ctx, o, sz, sh){
 
 window.drawSwissCell = function(ctx, o, sz, sh){
   // SAFETY NET: skip approximate organisms in strict swiss mode
-  if (window._swissStrict && typeof isSwissApprox === 'function' && isSwissApprox(o)) {
+  if (window._swissStrict && !window.demoMode && typeof isSwissApprox === 'function' && isSwissApprox(o)) {
     return; // don't render — species has no accurate board sprite
   }
 

@@ -62,6 +62,7 @@ function playerAutoAI(o, dt, speed){
 
 /** Force a successful eat for player/AI when possible. */
 function forceEat(pred, prey){
+  if(window.demoMode) return false;
   if(!pred || !prey || !prey.alive) return false;
   if(prey === pred) return false;
   // Fresh divide children cannot be eaten (grace period)

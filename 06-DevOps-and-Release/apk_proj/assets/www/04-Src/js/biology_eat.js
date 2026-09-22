@@ -3,6 +3,7 @@
 
 
 function eatOrg(pred,prey){
+  if(window.demoMode) return;
   if(!prey||!prey.alive)return;
   // Predation rate slider (user setting)
   var _pr=(typeof settings!=='undefined'&&settings.predation)?settings.predation:1.0;
@@ -189,6 +190,7 @@ function eatOrg(pred,prey){
 }
 
 function killOrg(o,cause){
+  if(window.demoMode && o && o.demoGroup) return;
   if(!o.alive)return;
   o.alive=false;o.dying=true;o.deathT=0;o.deathCause=cause;
   

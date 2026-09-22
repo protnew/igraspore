@@ -96,6 +96,7 @@ window.updateOrgInteract = function(o, dt) {
     var ateThisFrame = false;
     for(var ai=0;ai<nearby.length;ai++){
       var ap=nearby[ai];
+      if(window.demoMode) break;
       if(!ap||!ap.alive||ap===o||ap.cyst||ap.dying) continue;
       if(!o.isPlayer){
         if(ap.divCD>0||ap.invuln>0) continue;

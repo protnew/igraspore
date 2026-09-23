@@ -4,9 +4,13 @@
 window.demoMode = false;
 window.demoPossessed = null;
 
-// Demo species labels (banners + per-organism index) — off by default (UI-RESTORE §5.4)
+// Demo species labels — on unless the player explicitly stored "0"
 window._demoLabels = (function(){
-  try { return localStorage.getItem('igraspore.demoLabels') === '1'; } catch(e){ return false; }
+  try {
+    var stored = localStorage.getItem('igraspore.demoLabels');
+    if(typeof demoLabelsDefault === 'function') return demoLabelsDefault(stored);
+    return stored !== '0';
+  } catch(e){ return true; }
 })();
 window.setDemoLabels = function(on){
   window._demoLabels = !!on;
@@ -18,7 +22,8 @@ var DEMO_GROUPS = [
   { key: 'consumer1',  ru: '2. Консументы I',  en: '2. Consumers I',  color: '#4af' },
   { key: 'consumer2',  ru: '3. Консументы II', en: '3. Consumers II', color: '#f80' },
   { key: 'consumer3',  ru: '4. Консументы III',en: '4. Consumers III',color: '#c4f' },
-  { key: 'decomposer', ru: '5. Редуценты',     en: '5. Decomposers',  color: '#a84' }
+  { key: 'decomposer', ru: '5. Редуценты',     en: '5. Decomposers',  color: '#a84' },
+  { key: 'virus',      ru: '6. Вирусы',        en: '6. Viruses',      color: '#f66' }
 ];
 
 function startDemoMode() {
@@ -69,6 +74,7 @@ function startDemoMode() {
     var displayPool = pool;
 
     var displayCount = pool.length;
+    if (!displayCount) continue; // viruses are pinned separately
     // If too many, use two sub-rows
     var perSubRow = Math.min(displayCount, maxPerRow);
     var subRows = Math.ceil(displayCount / perSubRow);
@@ -126,6 +132,7 @@ function startDemoMode() {
   window.screensaverAutoCam = false;
   window.focusTarget = null;
   gt = 0;
+  try { if(typeof placeDemoViruses === 'function') placeDemoViruses(); } catch(_dv){}
 
   state = 'playing';
   try {
@@ -385,6 +392,12 @@ function demoFlyToGroup(g) {
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
     if (o && o.alive && o.demoGroup === g) { sx += o.x; sy += o.y; n++; }
+  }
+  if (typeof viruses !== 'undefined') {
+    for (var vi = 0; vi < viruses.length; vi++) {
+      var vv = viruses[vi];
+      if (vv && vv.demoGroup === g) { sx += vv.x; sy += vv.y; n++; }
+    }
   }
   if (!n) return;
   if (typeof exitDemoPossess === 'function' && window.demoPossessed) exitDemoPossess();

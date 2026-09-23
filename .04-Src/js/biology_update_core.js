@@ -28,10 +28,13 @@ function updateOrg(o,dt){
   if(o._noCull>0){ o._noCull -= dt; if(o._noCull<=0) o._noCull=0; }
   if(o._fromDivide){
     o._divideAge = (o._divideAge||0) + dt;
-    if(o._divideAge > 15 && (o.invuln||0)<=0 && (o._noCull||0)<=0){
+    var _clearAt = (typeof lifeProfile === 'function') ? Math.max(15, lifeProfile(o.sp).grace || 15) : 15;
+    if(o._divideAge > _clearAt && (o.invuln||0)<=0 && (o._noCull||0)<=0){
       o._fromDivide = false; // now normal organism
     }
   }
+  if((o._postSplit||0) > 0) o._postSplit = Math.max(0, o._postSplit - dt);
+  if((o._spikeHold||0) > 0) o._spikeHold = Math.max(0, o._spikeHold - dt);
   if(o.speedMult < 1.0) o.speedMult = Math.min(1.0, (o.speedMult||1.0) + dt*0.05);
   if(o.stomach && o.stomach.length>0){
     for(var stIdx=o.stomach.length-1; stIdx>=0; stIdx--){
@@ -405,6 +408,10 @@ function updateOrg(o,dt){
     if(o.isPlayer && window.playerContactEat) window.playerContactEat(dt);
   }
 
+  // Post-split grace: parent and daughter keep a survivable reserve while they regrow
+  if((o._postSplit||0) > 0 || (o._fromDivide && (o._divideAge||0) < 12)){
+    o.energy = Math.max(34, o.energy);
+  }
   // Delegate division/cyst/eating to interaction module (refactored for <500 line limit)
   if(typeof window.updateOrgInteract==='function') window.updateOrgInteract(o, dt);
 }

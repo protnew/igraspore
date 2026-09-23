@@ -322,6 +322,16 @@ function startGame(isScreensaver){
   
   // Start zoomed in enough to see neighbors (Spore/Agar feel)
   state='playing';zoom=1.8;tZoom=1.8;gt=0;fc=0;lastT=0;
+  // Aquarium: modestly closer than play-start (was the same 1.8, organisms read far)
+  if(isScreensaver){
+    window._aquariumLock = true;
+    window.screensaverAutoCam = true;
+    window._aqFollow = null;
+    zoom = 2.25;
+    tZoom = 2.25;
+  } else {
+    window._aquariumLock = false;
+  }
   // Always start cartoon (user default). Realistic is opt-in via button only.
   try {
     if(settings.renderMode==='bioicons' || settings.renderMode==='realistic') settings.renderMode='cartoon';

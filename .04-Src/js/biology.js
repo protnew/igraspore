@@ -4,6 +4,8 @@
 
 function spawnOrg(sp,x,y,isPlayer,parentEnergy){
   // Task 11: Starvation mutations
+  // Division daughters keep the parent species object (no recolor / morph drift).
+  if(window._divSpawnParent) parentEnergy = undefined;
   if(parentEnergy !== undefined && parentEnergy < sp.repEnergy * 0.1 && Math.random()<0.1) {
       if(!sp.isCustom) {
           sp = Object.assign({}, sp);
@@ -49,7 +51,8 @@ function canDivide(o){
   if(!o || !o.alive || o.cyst || o.dying) return false;
   if(o.dividing) return false;
   if(o.divCD > 0) return false;
-  if(o.age < (o.sp.minAge || 3)) return false;
+  var _minA = (typeof lifecycleMinAge === 'function') ? lifecycleMinAge(o.sp, o.generation) : (o.sp.minAge || 3);
+  if(o.age < _minA) return false;
   var repE = o.sp.repEnergy || 80;
   if(o.energy < repE) return false;
   var adult = (o.sp.size || 4) * (o.sizeMult || 1.0);

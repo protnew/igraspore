@@ -356,23 +356,20 @@ function updateCamera(dt){
     
     if (moved) window.lastInteractionTime = Date.now();
     if (!window.lastInteractionTime) window.lastInteractionTime = Date.now();
-    
-    if (Date.now() - window.lastInteractionTime > 15000) {
+
+    // Explicit aquarium keeps its follow lock. Idle free-cam still arms after 15s.
+    var _aqLock = !!(window._aquariumLock && window.spectatorMode);
+    if(_aqLock){
+        window.screensaverAutoCam = true;
+    } else if (Date.now() - window.lastInteractionTime > 15000) {
         window.screensaverAutoCam = true;
     } else {
         window.screensaverAutoCam = false;
     }
 
     if(window.screensaverAutoCam && !moved && !window.demoMode){
-      var _scTarget=null,_scMaxSize=0;
-      for(var _i=0;_i<orgs.length;_i++){
-        var _o=orgs[_i];
-        if(_o.alive&&_o.size>_scMaxSize){_scMaxSize=_o.size;_scTarget=_o;}
-      }
-      if (_scTarget) {
-          // Smooth slow follow for screensaver
-          cam.x += (_scTarget.x - cam.x) * 0.3 * dtc;
-          cam.y += (_scTarget.y - cam.y) * 0.3 * dtc;
+      if(typeof stepAquariumCamera === 'function'){
+        stepAquariumCamera(dtc);
       }
     }
     

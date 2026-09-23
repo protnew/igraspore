@@ -223,6 +223,26 @@ window.playerContactEat = function(dt){
 
 
 var keys={};
+// UI-RESTORE §5.5 Tab-matrix: overlay open → Tab cycles INSIDE the overlay; playing/demo → Tab = autopilot
+function topmostOpenOverlay(){
+  var ovs = document.querySelectorAll('.ov.show');
+  return ovs.length ? ovs[ovs.length - 1] : null;
+}
+function trapTabInOverlay(e, ov){
+  var f = ov.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  var list = [];
+  for (var i = 0; i < f.length; i++){
+    if (!f[i].disabled && f[i].offsetParent !== null) list.push(f[i]);
+  }
+  if (!list.length) return;
+  e.preventDefault();
+  var idx = list.indexOf(document.activeElement);
+  if (e.shiftKey){
+    list[(idx <= 0) ? list.length - 1 : idx - 1].focus();
+  } else {
+    list[(idx === -1) ? 0 : (idx + 1) % list.length].focus();
+  }
+}
 document.addEventListener('keydown',function(e){
   var k=e.key.toLowerCase();
   var code=e.code||'';
@@ -236,7 +256,11 @@ document.addEventListener('keydown',function(e){
     if(autoAI)autoAI=false;
   }
   if(k===' '||k==='space'){ window.manualFeed&&window.manualFeed(); e.preventDefault(); }
-  if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
+  if(k==='tab'){
+    var _ov = topmostOpenOverlay();
+    if(_ov){ trapTabInOverlay(e, _ov); }              // overlay open → Tab stays inside
+    else { e.preventDefault(); if(player&&player.alive)autoAI=!autoAI; } // playing/demo → autopilot
+  }
   if(window.demoMode && (k==='1'||k==='2'||k==='3'||k==='4'||k==='5') && typeof demoFlyToGroup==='function'){
     demoFlyToGroup(parseInt(k,10)); e.preventDefault(); return;
   }
@@ -245,6 +269,12 @@ document.addEventListener('keydown',function(e){
     if(window.demoMode && window.demoPossessed){ exitDemoPossess(); e.preventDefault(); return; }
     // ESC → return to main menu from game or demo
     if(state==='playing' || window.demoMode){
+      if(window.demoMode){
+        // demo exit: drop demo HUD state + restore keyHint from LS (demo used a session override)
+        document.body.classList.remove('demo-on');
+        try{ var _dt=document.getElementById('demoTip'); if(_dt) _dt.style.display='none'; }catch(_e2){}
+        if(typeof window.restoreKeyHintFromLS==='function') window.restoreKeyHintFromLS();
+      }
       window.demoMode = false;
       window.demoPossessed = null;
       window.spectatorMode = false;
@@ -333,12 +363,12 @@ function toggleRenderModeLarge(){
   var smBtn=document.getElementById('bRender');
   if(smBtn){smBtn.classList.remove('is-active-swiss');}
   if(settings.renderMode==='swiss'){
-    if(btn){btn.className='swiss';btn.innerHTML='📗 SWISSBIOPICS';btn.title='Сейчас: SwissBioPics. Клик → WebGL';}
+    if(btn){btn.className='swiss';btn.innerHTML='📗 SWISS';btn.title='Сейчас: SwissBioPics. Клик → WebGL';}
     if(smBtn){smBtn.classList.add('is-active-swiss');}
   } else if(settings.renderMode==='webgl'){
     if(btn){btn.className='webgl';btn.innerHTML='🌊 WEBGL';btn.title='Сейчас: WebGL-вода. Клик → мультяшный';}
   } else {
-    if(btn){btn.className='cartoon';btn.innerHTML='🎨 МУЛЬТЯШНЫЙ';btn.title='Сейчас: мультяшный. Клик → SwissBioPics';}
+    if(btn){btn.className='cartoon';btn.innerHTML='🎨 МУЛЬТ';btn.title='Сейчас: мультяшный. Клик → SwissBioPics';}
   }
 }
 document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;if(player&&player.alive){cam.x=player.x;cam.y=player.y-20;}if(window.showToast)window.showToast('Камера: СЛЕДИТ');};

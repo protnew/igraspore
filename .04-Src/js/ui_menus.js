@@ -152,8 +152,8 @@ function updateMenuTexts(){
   document.getElementById('helpT').textContent=tt('help');document.getElementById('helpClose').textContent=tt('close');
   document.getElementById('setT').textContent=tt('settingsT');document.getElementById('setClose').textContent=tt('close');
   document.getElementById('wikiT').textContent=tt('wikiT');document.getElementById('wikiClose').textContent=tt('close');
-  var hk=curLang==='ru'?'<span><kbd>WASD</kbd> \u041f\u043b\u044b\u0432\u0430\u0442\u044c</span><span><kbd>\u041b\u041a\u041c</kbd> \u041a \u043a\u0443\u0440\u0441\u043e\u0440\u0443</span><span><kbd>\u041f\u043a\u041c</kbd> \u0426\u0435\u043b\u044c</span><span><kbd>F</kbd> \u0421\u0432\u043e\u0431. \u043a\u0430\u043c\u0435\u0440\u0430</span><span><kbd>V</kbd> \u041a \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043c\u0443</span><span><kbd>E</kbd> \u0421\u044a\u0435\u0441\u0442\u044c</span><span><kbd>Q</kbd> \u0414\u0435\u043b\u0435\u043d\u0438\u0435</span><span><kbd>Tab</kbd> \u0410\u0432\u0442\u043e</span><span><kbd>B</kbd> \u0412\u0438\u043a\u0438</span><span><kbd>P</kbd> \u041f\u0430\u0443\u0437\u0430</span>'
-    :'<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>F</kbd> Free cam</span><span><kbd>V</kbd> Follow</span><span><kbd>E</kbd> Eat</span><span><kbd>Q</kbd> Divide</span><span><kbd>Tab</kbd> Auto</span><span><kbd>B</kbd> Wiki</span><span><kbd>P</kbd> Pause</span>';
+  var hk=curLang==='ru'?'<span><kbd>WASD</kbd> \u041f\u043b\u044b\u0432\u0430\u0442\u044c</span><span><kbd>\u041b\u041a\u041c</kbd> \u041a \u043a\u0443\u0440\u0441\u043e\u0440\u0443</span><span><kbd>\u041f\u043a\u041c</kbd> \u0426\u0435\u043b\u044c</span><span><kbd>\u041a\u043e\u043b\u0435\u0441\u043e</kbd> \u0417\u0443\u043c</span><span class="kh-sum">\u041a\u043d\u043e\u043f\u043a\u0438: E Q R Space Tab F M N V B P</span>'
+    :'<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span>';
   if(typeof window.buildKeyHint==='function') window.buildKeyHint(hk);
   else { var _kh=document.getElementById('keyHint'); if(_kh) _kh.innerHTML=hk; }
   document.getElementById('helpBody').innerHTML=curLang==='ru'?
@@ -173,34 +173,123 @@ function updateMenuTexts(){
   buildDiff();buildCatSel();buildSpeciesGrid();
 }
 
-window._keyHintCollapsed = false;
+// === keyHint drawer (UI-RESTORE-2026-09-22): chip above actBar, LS persistence, 60s auto-collapse ===
+window._keyHintLSKey = 'igraspore.keyHintCollapsed';
+window._keyHintAutoMs = 60 * 1000; // auto-collapse 60s after last manual expand
+function _khReadLS(){
+  try {
+    var v = localStorage.getItem(window._keyHintLSKey);
+    return (v === '0' || v === '1') ? v : null;
+  } catch(e){ return null; }
+}
+function _khWriteLS(val){
+  try { localStorage.setItem(window._keyHintLSKey, val); } catch(e){}
+}
+function _khIsMobile(){
+  try {
+    return (typeof window.matchMedia === 'function') &&
+      (window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(max-width: 900px)').matches);
+  } catch(e){ return false; }
+}
+// init: LS wins; mobile gets collapsed as a session default (no LS write)
+window._keyHintCollapsed = (_khReadLS() === null) ? true : (_khReadLS() !== '0');
+if(_khIsMobile()) window._keyHintCollapsed = true;
 window._keyHintStart = 0;
+window._keyHintLastExpand = 0;
+window._keyHintHtml = '';
+
 window.buildKeyHint = function(hkHtml){
   var kh=document.getElementById('keyHint'); if(!kh) return;
   var ru = (typeof curLang==='undefined' || curLang==='ru');
-  if(!hkHtml){
-    hkHtml = ru
-      ? '<span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>E</kbd> Есть</span><span><kbd>Q</kbd> Деление</span><span><kbd>F</kbd> Полёт</span><span><kbd>V</kbd> Следить</span><span><kbd>Tab</kbd> Авто</span><span><kbd>P</kbd> Пауза</span>'
-      : '<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>E</kbd> Eat</span><span><kbd>Q</kbd> Divide</span><span><kbd>F</kbd> Fly</span><span><kbd>V</kbd> Follow</span><span><kbd>Tab</kbd> Auto</span><span><kbd>P</kbd> Pause</span>';
+  if(hkHtml) window._keyHintHtml = hkHtml;
+  if(!window._keyHintHtml){
+    // unique movement keys only; button hotkeys live on the buttons (.hk) — one compact summary line here
+    window._keyHintHtml = ru
+      ? '<span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span>'
+      : '<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span>';
   }
-  var btn = ru
-    ? (window._keyHintCollapsed ? 'Клавиши' : 'Свернуть клавиши')
-    : (window._keyHintCollapsed ? 'Keys' : 'Hide keys');
-  kh.innerHTML = '<button type="button" id="khToggle">'+btn+'</button><div class="kh-keys">'+hkHtml+'</div>';
-  kh.style.display='flex';
-  kh.className = (kh.className||'').replace(/\bcollapsed\b/g,'').trim() + (window._keyHintCollapsed ? ' collapsed' : '');
+  var collapsed = !!window._keyHintCollapsed;
+  var btn = ru ? (collapsed ? 'Клавиши' : 'Свернуть') : (collapsed ? 'Keys' : 'Hide keys');
+  kh.innerHTML = '<button type="button" id="khToggle" aria-expanded="'+(!collapsed)+'" aria-controls="khKeys">'+btn+'</button>' +
+    '<div class="kh-keys" id="khKeys"' + (collapsed ? ' hidden aria-hidden="true"' : '') + '>'+window._keyHintHtml+'</div>';
+  kh.className = 'p' + (collapsed ? ' collapsed' : '');
+  // visible only in an active game frame; menu keeps it hidden
+  var inGame = (typeof state !== 'undefined' && state === 'playing');
+  kh.style.display = inGame ? 'flex' : 'none';
   var b=document.getElementById('khToggle');
   if(b) b.onclick=function(ev){
     if(ev){ ev.preventDefault(); ev.stopPropagation(); }
-    window._keyHintCollapsed = !window._keyHintCollapsed;
-    window.buildKeyHint(hkHtml);
+    window.setKeyHintCollapsed(!window._keyHintCollapsed, { persist: true, manual: true });
   };
   if(!window._keyHintStart) window._keyHintStart = Date.now();
 };
+window.setKeyHintCollapsed = function(collapsed, opts){
+  opts = opts || {};
+  window._keyHintCollapsed = !!collapsed;
+  if(opts.persist) _khWriteLS(collapsed ? '1' : '0');
+  if(!collapsed && (opts.manual || opts.persist)) window._keyHintLastExpand = Date.now();
+  window.buildKeyHint();
+};
+// session start (startGame / return to game): LS state, restart auto-collapse timer
+window.startKeyHintSession = function(){
+  var v = _khReadLS();
+  window._keyHintCollapsed = (v === null) ? true : (v !== '0');
+  if(_khIsMobile()) window._keyHintCollapsed = true; // mobile: collapsed-only default (session)
+  window._keyHintLastExpand = Date.now();
+  window._keyHintStart = Date.now();
+  window.buildKeyHint();
+};
+// demo exit etc.: re-read LS without writing it
+window.restoreKeyHintFromLS = function(){
+  var v = _khReadLS();
+  window._keyHintCollapsed = (v === null) ? true : (v !== '0');
+  window.buildKeyHint();
+};
 window.tickKeyHint = function(){
-  if(!window._keyHintStart) window._keyHintStart = Date.now();
-  if(!window._keyHintCollapsed && (Date.now()-window._keyHintStart) > 5*60*1000){
-    window._keyHintCollapsed = true;
-    window.buildKeyHint();
+  // self-healing --actbar-h (every ~0.5s of play; rAF loop is not timer-throttled like setInterval)
+  window._khTickCount = (window._khTickCount || 0) + 1;
+  if(window._khTickCount % 30 === 0 && typeof window.measureActbarH === 'function'){
+    try { window.measureActbarH(); } catch(e){}
+  }
+  if(window._keyHintCollapsed) return;             // already collapsed — no LS writes
+  if(!window._keyHintLastExpand) window._keyHintLastExpand = window._keyHintStart || Date.now();
+  if((Date.now() - window._keyHintLastExpand) > window._keyHintAutoMs){
+    window.setKeyHintCollapsed(true, { persist: true }); // persist once, at the moment of collapsing
   }
 };
+
+// === --actbar-h measurement: ResizeObserver + orientation/viewport + polling fallback ===
+(function(){
+  function measureActbarH(){
+    var ab = document.getElementById('actBar');
+    if(!ab) return;
+    var h = ab.offsetHeight;
+    if(h > 0){
+      // guard against transient mid-transition snapshots (e.g. a full column during demo start)
+      var cap = Math.max(64, Math.round((window.innerHeight || 800) * 0.5));
+      if(h > cap) h = cap;
+      document.documentElement.style.setProperty('--actbar-h', Math.ceil(h) + 'px');
+    }
+  }
+  window.measureActbarH = measureActbarH; // call sites that show/hide/wrap #actBar
+  try {
+    if(typeof ResizeObserver !== 'undefined'){
+      var ab = document.getElementById('actBar');
+      if(ab){
+        var ro = new ResizeObserver(function(){ measureActbarH(); });
+        ro.observe(ab);
+      }
+    }
+  } catch(e){}
+  window.addEventListener('resize', measureActbarH);
+  window.addEventListener('orientationchange', function(){ setTimeout(measureActbarH, 250); });
+  try {
+    if(window.visualViewport) window.visualViewport.addEventListener('resize', measureActbarH);
+  } catch(e){}
+  // some embedded WebViews never deliver the initial RO notification — cheap poll keeps the var true
+  setInterval(measureActbarH, 700);
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', measureActbarH);
+  else measureActbarH();
+  setTimeout(measureActbarH, 500);
+  setTimeout(measureActbarH, 1500);
+})();

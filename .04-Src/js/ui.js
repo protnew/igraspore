@@ -38,7 +38,9 @@ var langNames = {
 function updateHUD(){
   if(!player||!player.alive){document.getElementById('hud').style.display='none';return;}
   var h=document.getElementById('hud');h.style.display='block';
-  var eRatio=clamp(player.energy/100,0,1);
+  // UI-RESTORE §3.7 — product decision (A) display-only clamp: player.energy logic (can exceed 100) untouched
+  var displayE = Math.min(100, Math.max(0, Math.round(player.energy)));
+  var eRatio=clamp(displayE/100,0,1);
   var eColor = eRatio>0.6?'#4f4':eRatio>0.3?'#ff4':'#f44';
   // 8) Запах еды — понятная полоска для новичка
   var scent = (typeof foodScentStrength==='function') ? foodScentStrength(player) : 0;
@@ -59,7 +61,7 @@ function updateHUD(){
       '<div style="width:'+(scent*100)+'%;background:'+sColor+';height:100%;transition:width .2s;"></div>'+
     '</div>'+
     '<div style="font-size:13px;line-height:1.6;">'+
-      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span style="color:#fff;font-weight:bold;">'+Math.max(0,Math.round(player.energy))+'/100</span><br>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span style="color:#fff;font-weight:bold;">'+displayE+'/100</span><br>'+
       '<span style="color:#8af;font-weight:bold;">'+tt('age')+':</span> <span style="color:#fff;">'+Math.round(player.age)+'s</span><br>'+
       '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span style="color:#fff;">'+player.offspring+'</span>'+
     '</div>'+
@@ -101,31 +103,86 @@ function updateWeather(){
 function updateEcoPanel(){
   // ECOSYSTEM PANEL REMOVED per user request — confusing numbers
   var ep=document.getElementById('ecoP');if(ep)ep.style.display='none';
-  var lg=document.getElementById('legendP')||document.getElementById('legP');
-  if(lg) lg.style.display='none';
+  // UI-RESTORE v1.1 contract: #legP is owned by the legend collapse API — never touched here
   var dc=document.getElementById('deathP')||document.getElementById('deathCauses');
   if(dc) dc.style.display='none';
 }
+
+// === Legend collapse (UI-RESTORE §5.3) ===
+window._legendLSKey = 'igraspore.legendCollapsed';
+(function(){
+  var v = null;
+  try { v = localStorage.getItem(window._legendLSKey); } catch(e){}
+  window._legendCollapsed = (v === '0') ? false : true; // default: collapsed
+})();
+window.setLegendCollapsed = function(collapsed, opts){
+  opts = opts || {};
+  window._legendCollapsed = !!collapsed;
+  if(opts.persist){ try { localStorage.setItem(window._legendLSKey, collapsed ? '1' : '0'); } catch(e){} }
+  if(typeof window.initLegendUI === 'function') window.initLegendUI();
+};
+// builds toggle text/aria/binding + collapse class; content itself lives in #legBody via updateLegend()
+window.initLegendUI = function(){
+  var lg = document.getElementById('legP');
+  var body = document.getElementById('legBody');
+  var toggle = document.getElementById('legToggle');
+  if(!lg || !body || !toggle) return;
+  var collapsed = !!window._legendCollapsed;
+  var ru = (typeof curLang === 'undefined' || curLang === 'ru');
+  toggle.textContent = (ru ? 'Легенда' : 'Legend') + (collapsed ? ' ▾' : ' ▴');
+  toggle.setAttribute('aria-expanded', String(!collapsed));
+  toggle.setAttribute('aria-controls', 'legBody');
+  if(collapsed) body.setAttribute('hidden', '');
+  else body.removeAttribute('hidden');
+  lg.className = 'p' + (collapsed ? ' collapsed' : '');
+  if(!toggle._igrBound){
+    toggle._igrBound = true;
+    toggle.onclick = function(ev){
+      if(ev){ ev.preventDefault(); ev.stopPropagation(); }
+      window.setLegendCollapsed(!window._legendCollapsed, { persist: true });
+    };
+  }
+};
 function updateLegend(){
   var lg=document.getElementById('legP');
   if(!lg)return;
-  // Compact legend — colors only, clear Russian names
-  var items=[
+  var body=document.getElementById('legBody');
+  var ru=(typeof curLang==='undefined'||curLang==='ru');
+  // Compact legend — colors + localized species/type names (RU intact; EN when lang=en)
+  var items= ru ? [
     ['#2c2','Водоросли'],
     ['#4af','Бактерии'],
     ['#dd44cc','Крупные охотники'],
     ['#c4f','Крупные'],
     ['#a86','Разлагатели'],
     ['#f44','Вирусы']
+  ] : [
+    ['#2c2','Algae'],
+    ['#4af','Bacteria'],
+    ['#dd44cc','Apex hunters'],
+    ['#c4f','Large'],
+    ['#a86','Decomposers'],
+    ['#f44','Viruses']
   ];
-  var html='<div style="color:#bcd;font-size:13px;font-weight:bold;margin-bottom:4px;">Легенда</div>';
-  for(var i=0;i<items.length;i++){
-    html+='<div style="display:flex;align-items:center;gap:8px;font-size:12px;margin:3px 0;color:#dde;">'+
-      '<span style="width:10px;height:10px;border-radius:50%;background:'+items[i][0]+';display:inline-block;"></span>'+
-      items[i][1]+'</div>';
+  if(body){
+    var head = ru ? 'Легенда' : 'Legend';
+    var sig = head + '|' + items.map(function(it){return it[1];}).join(',');
+    if(lg.getAttribute('data-sig') !== sig){
+      var html='<div style="color:#bcd;font-size:13px;font-weight:bold;margin-bottom:4px;">'+head+'</div>';
+      for(var i=0;i<items.length;i++){
+        html+='<div style="display:flex;align-items:center;gap:8px;font-size:12px;margin:3px 0;color:#dde;">'+
+          '<span style="width:10px;height:10px;border-radius:50%;background:'+items[i][0]+';display:inline-block;"></span>'+
+          items[i][1]+'</div>';
+      }
+      body.innerHTML=html;
+      lg.setAttribute('data-sig', sig);
+      if(typeof window.initLegendUI==='function') window.initLegendUI();
+    }
   }
-  lg.innerHTML=html;lg.style.display='block';
+  lg.style.display='block';
 }
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', function(){ if(typeof window.initLegendUI==='function') window.initLegendUI(); });
+else window.initLegendUI();
 
 
 

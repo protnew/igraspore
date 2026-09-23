@@ -17,20 +17,20 @@
   var css = document.createElement('style');
   css.id = 'mobileCSS';
   css.textContent = [
-    '.is-mobile #actBar{display:none!important}',
-    '.is-mobile #keyHint{display:none!important}',
+    /* UI-RESTORE §5.5: actBar stays visible (wrap into rows); visibility itself is JS-driven */
+    '.is-mobile #actBar{flex-wrap:wrap!important;gap:4px!important;max-width:96vw!important;bottom:max(var(--actbar-bottom),env(safe-area-inset-bottom))!important}',
+    '.is-mobile .ab{min-width:56px!important;min-height:44px!important;padding:8px 6px!important;font-size:12px!important}',
     '.is-mobile #spdBar{display:none!important}',
     '.is-mobile #sandboxTools{display:none!important}',
     '.is-mobile #leaderboardO{display:none!important}',
     '.is-mobile #leftContainer{display:none!important}',
-    '.is-mobile #renderModeBtn{font-size:10px!important;padding:3px 6px!important;top:2px!important;right:4px!important;max-width:90px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;z-index:60!important}',
-    '.is-mobile #mmWrap{width:64px!important;bottom:4px!important;right:4px!important;opacity:0.75!important}.is-mobile #mm{width:64px!important;height:44px!important}',
-    '.is-mobile #pcWrap{width:64px!important;bottom:52px!important;right:4px!important;opacity:0.75!important}.is-mobile #pc{width:64px!important;height:32px!important}',
+    '.is-mobile #topRightStack{width:104px!important;gap:4px!important}',
+    '.is-mobile #renderModeBtn{font-size:10px!important;padding:4px 6px!important;width:100%!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}',
+    '.is-mobile #mmWrap{width:64px!important;opacity:0.75!important}.is-mobile #mm{width:64px!important;height:44px!important}',
+    '.is-mobile #pcWrap{width:64px!important;opacity:0.75!important}.is-mobile #pc{width:64px!important;height:32px!important}',
     '.is-mobile #hud{font-size:9px!important;padding:2px 4px!important}',
     '.is-mobile #hud .p,.is-mobile #ecoP,.is-mobile #legP,.is-mobile #topR,.is-mobile #weatherP{font-size:9px!important;padding:2px 3px!important;max-width:140px!important}',
-    '.is-mobile #topR{top:2px!important;right:4px!important}',
     '.is-mobile #weatherP{top:30px!important;right:4px!important}',
-    '.is-mobile #scaleBar{font-size:9px!important;bottom:54px!important}',
     '.is-mobile #camM{font-size:9px!important;top:2px!important}',
     '.is-mobile #todWrap{font-size:9px!important;top:22px!important}',
     '.is-mobile #tip{font-size:11px!important;max-width:88vw!important;z-index:80!important;pointer-events:none!important}',
@@ -46,11 +46,11 @@
     '.is-mobile #foodChainBar{font-size:7px!important;padding:3px!important}',
     '.is-mobile .sb2{flex-direction:column!important;gap:4px!important}',
     '.is-mobile #startBtn{font-size:15px!important;padding:10px 20px!important}',
-    /* Joystick: ONLY small corner pad — does NOT block organism taps */
-    '#mJoy{position:fixed;left:8px;bottom:8px;width:130px;height:130px;z-index:50;touch-action:none;border-radius:50%;background:rgba(0,30,50,0.12);border:1px solid rgba(100,180,255,0.12)}',
+    /* Joystick: ONLY small corner pad — does NOT block organism taps; sits ABOVE the actBar band */
+    '#mJoy{position:fixed;left:8px;bottom:calc(var(--actbar-bottom) + var(--actbar-h) + var(--ui-gap));width:110px;height:110px;z-index:50;touch-action:none;border-radius:50%;background:rgba(0,30,50,0.12);border:1px solid rgba(100,180,255,0.12)}',
     '#mJoyB{position:fixed;width:80px;height:80px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.15);background:rgba(0,20,40,0.15);z-index:51;display:none;pointer-events:none;transform:translate(-50%,-50%)}',
     '#mJoyK{position:fixed;width:36px;height:36px;border-radius:50%;background:rgba(100,200,255,0.25);border:1.5px solid rgba(150,220,255,0.4);z-index:52;display:none;pointer-events:none;transform:translate(-50%,-50%)}',
-    '#mActs{position:fixed;right:4px;bottom:4px;z-index:50;display:flex;flex-direction:column;gap:4px}',
+    '#mActs{position:fixed;right:4px;bottom:calc(var(--actbar-bottom) + var(--actbar-h) + var(--ui-gap));z-index:50;display:flex;flex-direction:column;gap:4px}',
     '#mActs .ma{width:48px;height:48px;border-radius:12px;background:rgba(0,25,50,0.65);border:1px solid rgba(100,180,255,0.35);color:rgba(180,220,255,0.95);font-size:18px;font-weight:bold;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;backdrop-filter:blur(2px)}',
     '#mActs .ma:active{background:rgba(40,100,180,0.5);transform:scale(0.9)}',
     '#mTop{position:fixed;top:4px;left:4px;z-index:90;display:flex;gap:4px}',
@@ -127,6 +127,7 @@
           document.documentElement.classList.remove('menu-open');
           document.body.classList.remove('menu-open');
           try { var hud = document.getElementById('hud'); if (hud) hud.style.display = 'block'; } catch(e){}
+          try { var ab = document.getElementById('actBar'); if (ab) ab.style.display = 'flex'; if (window.measureActbarH) window.measureActbarH(); } catch(e){}
         }
       } else {
         window.openGameMenu();
@@ -377,9 +378,9 @@
     return true;
   };
 
-  // ---- 9. Force-hide desktop elements ----
+  // ---- 9. Force-hide desktop-only elements (actBar/keyHint NO LONGER purged — UI-RESTORE §5.5) ----
   function purgeDesktop() {
-    var ids = ['actBar','keyHint','spdBar'];
+    var ids = ['spdBar'];
     for (var i=0; i<ids.length; i++) {
       var el = document.getElementById(ids[i]);
       if (el && el.style.display !== 'none') {

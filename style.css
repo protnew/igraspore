@@ -1,5 +1,20 @@
 /* iGraSpore styles — extracted from inline */
 
+/* UI-RESTORE-2026-09-22 + UI-POLISH-CORNERS-2026-09-22: zone framework vars */
+:root{
+  --actbar-bottom: 12px;
+  --actbar-h: 64px;          /* kept in sync by JS (ResizeObserver on #actBar) */
+  --ui-gap: 8px;
+  /* true lower-corner band (beside centered actBar on desktop) */
+  --corner-bottom: max(var(--actbar-bottom), env(safe-area-inset-bottom, 0px));
+  --mm-h: 80px;
+  --pc-h: 55px;
+  --z-actbar: 20;
+  --z-keyhint: 25;           /* above actBar, but layout-split anyway */
+  --z-corner: 10;
+  --z-topstack: 30;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;overflow:hidden;background:#000814;font-family:system-ui,Arial,sans-serif;user-select:none}
 canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
@@ -10,14 +25,19 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 #ebar{width:100%;height:6px;background:#200;border-radius:3px;overflow:hidden;margin:1px 0}
 #efill{height:100%;background:linear-gradient(90deg,#e33,#ee3,#3e3);transition:width .3s}
 #hud .st{font-size:12px;color:#ffffff;margin-top:1px;line-height:1.4}
-#topR{position:absolute;top:6px;right:6px;z-index:10;pointer-events:none;padding:4px 8px;min-width:100px;text-align:right}
+#topR{pointer-events:none;padding:4px 8px;width:100%;text-align:right}
+/* topRightStack: single right-top column (topR → star → renderMode → APK) */
+#topRightStack{position:absolute;top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));display:flex;flex-direction:column;align-items:stretch;gap:8px;z-index:var(--z-topstack);width:148px;pointer-events:auto}
+#topRightStack #topR{pointer-events:none}
+#starSelectGame{width:100%;background:#0a1a2a;color:#8cf;border:1px solid #4c8;padding:6px 8px;border-radius:6px;font-size:12px;cursor:pointer}
+#apkBtn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;box-sizing:border-box;background:#0a4a52;color:#5ed4a0;padding:8px 14px;border-radius:20px;font-family:Arial;font-size:12px;font-weight:bold;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.5);outline-offset:2px}
 #topR .rw{font-size:12px;color:#ffffff;line-height:1.5}
 #weatherP{display:none!important};z-index:10;padding:3px 7px;pointer-events:none;font-size:12px;color:#ffffff;text-align:right;min-width:100px}
 #spdBar{position:absolute;top:6px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:2px;padding:5px 8px;background:rgba(0,12,28,.92);border:1px solid #1a3a55;border-radius:6px}
 .sb{padding:3px 7px;font-size:12px;color:#ffffff;background:#012;border:1px solid #234;border-radius:3px;cursor:pointer;min-width:30px;text-align:center;font-family:inherit;transition:all .1s}
 .sb:hover{background:#123;color:#ffffff}
 .sb.act{background:#1a4;color:#ffffff;border-color:#3c6}
-#todWrap{position:absolute;top:40px;left:50%;transform:translateX(-50%);z-index:10;display:flex;align-items:center;gap:5px;padding:3px 7px}
+#todWrap{position:absolute;top:40px;left:50%;transform:translateX(-50%);z-index:13;display:flex;align-items:center;gap:5px;padding:3px 7px}
 #todR{-webkit-appearance:none;appearance:none;width:130px;height:5px;background:#123;border-radius:3px;outline:none}
 #todR::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;background:#fc4;border-radius:50%;cursor:pointer}
 #todR::-moz-range-thumb{width:12px;height:12px;background:#fc4;border-radius:50%;cursor:pointer;border:none}
@@ -35,27 +55,44 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 .ecF{height:100%;transition:width .5s}
 .ecC{width:28px;text-align:right;font-weight:bold;color:#ffffff;font-size:12px}
 .ecSub{font-size:7px;color:#ffffff;margin-top:2px;border-top:1px solid #234;padding-top:2px;line-height:1.3}
-#camM{position:absolute;top:84px;left:50%;transform:translateX(-50%);z-index:10;padding:2px 8px;font-size:12px;color:#ffffff;display:none}
+#camM{position:absolute;z-index:12;padding:2px 8px;font-size:12px;color:#ffffff;display:none}
 #camM.free{color:#ffffff}
-#actBar{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);z-index:20;display:none;gap:8px;flex-wrap:wrap;justify-content:center;max-width:95%}
+#actBar{position:absolute;bottom:max(var(--actbar-bottom),env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:var(--z-actbar);display:none;gap:8px;flex-wrap:wrap;justify-content:center;max-width:min(96vw,920px)}
 .ab{padding:12px 16px;font-size:15px;color:#ffffff;background:#012;border:2px solid #456;border-radius:8px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all .1s;min-width:72px;min-height:48px;text-align:center;font-weight:800;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;user-select:none;-webkit-user-select:none}.ab .hk{font-size:11px;opacity:.75;font-weight:600}
 .ab:hover{background:#123;color:#ffffff;border-color:#4af;transform:translateY(-1px)}
-#renderModeBtn{position:absolute;top:90px;right:6px;z-index:15;padding:12px 24px;font-size:18px;font-weight:bold;border-radius:10px;cursor:pointer;transition:all .2s;display:none}
+#renderModeBtn{padding:8px 14px;font-size:14px;font-weight:bold;border-radius:10px;cursor:pointer;transition:all .2s;display:none;width:100%}
 #renderModeBtn.cartoon{background:linear-gradient(135deg,#1a3a6a,#2a5a8a);color:#fff;border:2px solid #4af}
 #renderModeBtn.realistic{background:linear-gradient(135deg,#2a1a0a,#4a3a1a);color:#fa4;border:2px solid #fa4}
-#renderModeBtn:hover{transform:scale(1.05)}
+#renderModeBtn:hover{transform:scale(1.02)}
 .ab:active{transform:translateY(0)}
 .ab.act{background:#246;color:#ffffff;border-color:#4af}
-.ab .hk{font-size:7px;color:#dddddd;display:block}
-#keyHint{position:absolute;bottom:78px;left:50%;transform:translateX(-50%);z-index:45;padding:6px 10px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;max-width:90%;pointer-events:auto;transition:opacity 1s;background:rgba(0,12,28,0.88);border:1px solid #345;border-radius:8px}
-#keyHint kbd{background:#123;border:1px solid #456;border-radius:4px;padding:2px 7px;font-size:15px;font-weight:800;color:#ffffff;font-family:inherit;min-width:22px;text-align:center}
-#keyHint span{font-size:14px;color:#ffffff;display:inline-flex;align-items:center;gap:4px}
+.ab .hk{font-size:11px;color:#dddddd;display:block}
+/* keyHint drawer: strictly ABOVE actBar; chip-only when collapsed */
+#keyHint{position:absolute;bottom:calc(var(--actbar-bottom) + var(--actbar-h) + var(--ui-gap));left:50%;transform:translateX(-50%);z-index:var(--z-keyhint);padding:6px 10px;display:none;flex-direction:column;gap:6px;align-items:center;max-width:min(96vw,920px);max-height:30vh;overflow-y:auto;pointer-events:auto;transition:opacity .15s;background:rgba(0,12,28,0.88);border:1px solid #345;border-radius:8px}
+#keyHint kbd{background:#123;border:1px solid #456;border-radius:4px;padding:2px 7px;font-size:14px;font-weight:800;color:#ffffff;font-family:inherit;min-width:22px;text-align:center}
+#keyHint span{font-size:13px;color:#ffffff;display:inline-flex;align-items:center;gap:4px}
+.kh-keys{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}
 #keyHint.collapsed .kh-keys{display:none}
-#khToggle{pointer-events:auto;cursor:pointer;border:1px solid #3a6a95;background:#012;color:#def;border-radius:6px;padding:6px 10px;font:700 13px/1 system-ui,sans-serif}
-#legP{position:relative;z-index:10;padding:4px 7px;pointer-events:none}
-.lgR{display:flex;align-items:center;gap:3px;font-size:7px;color:#ffffff;margin:1px 0}
-.lgD{width:8px;height:8px;border-radius:50%}
-#scaleW{position:absolute;bottom:6px;right:140px;z-index:10;pointer-events:none;color:#ffffff;font-size:8px;text-align:right}
+#keyHint.collapsed{padding:2px 4px;background:transparent;border-color:transparent;overflow:visible}
+.kh-sum{font-size:11px;opacity:.75;color:#cde}
+#khToggle{pointer-events:auto;cursor:pointer;border:1px solid #3a6a95;background:#012;color:#def;border-radius:6px;padding:10px 16px;min-height:44px;min-width:64px;font:700 13px/1 system-ui,sans-serif}
+#khToggle:focus-visible{outline:2px solid #5ed4a0;outline-offset:2px}
+@media (prefers-reduced-motion: reduce){#keyHint,.kh-keys,#khToggle{transition:none;animation:none}}
+#legP{position:relative;z-index:10;padding:4px 7px;max-height:40vh;overflow-y:auto}
+#legToggle{pointer-events:auto;cursor:pointer;border:1px solid #3a6a95;background:#012;color:#def;border-radius:6px;padding:6px 10px;min-height:32px;font:700 12px/1 system-ui,sans-serif;width:100%;text-align:left}
+#legBody{display:flex;flex-direction:column;gap:2px;margin-top:4px}
+#legP.collapsed #legBody{display:none}
+.lgR{display:flex;align-items:center;gap:8px;font-size:12px;color:#dde;margin:1px 0}
+.lgD{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+#scaleW{position:absolute;right:calc(130px + env(safe-area-inset-right));bottom:var(--corner-bottom);z-index:var(--z-corner);pointer-events:none;color:#ffffff;font-size:10px;text-align:right}
+/* UI-POLISH-CORNERS: desktop side stacks sit in true lower corners (beside centered actBar), grow upward */
+#mmWrap{position:absolute;right:max(6px,env(safe-area-inset-right));bottom:var(--corner-bottom);z-index:var(--z-corner);width:110px}
+#pcWrap{position:absolute;right:max(6px,env(safe-area-inset-right));bottom:calc(var(--corner-bottom) + var(--mm-h) + var(--ui-gap));z-index:var(--z-corner);width:110px}
+#hDivReady{position:absolute;left:max(12px,env(safe-area-inset-left));bottom:var(--corner-bottom);z-index:18;color:#8ef;font:12px/1.3 sans-serif;text-shadow:0 1px 2px #000;max-width:240px;pointer-events:none}
+body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(--demohud-h,54px))}
+#demoTip{position:absolute;left:max(8px,env(safe-area-inset-left));bottom:var(--corner-bottom);z-index:18;max-width:min(280px,36vw)}
+/* single scale canon: #scaleW; the old centered #scaleBar is retired in playing/demo */
+#scaleBar{display:none!important}
 #scaleL{height:2px;background:#567;border-radius:1px;margin-bottom:1px}
 #tip{position:absolute;z-index:14;padding:5px 8px;font-size:12px;display:none;pointer-events:none;max-width:280px}
 .ov{position:fixed;top:0;left:0;width:100%;height:100%;z-index:40;display:none;flex-direction:column;align-items:center;justify-content:center}
@@ -222,18 +259,33 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 
 
 @media (max-width: 900px), (pointer: coarse) {
-  #renderModeBtn { font-size: 11px !important; padding: 4px 8px !important; top: 2px !important; right: 4px !important; }
+  :root { --mm-h: 50px; --pc-h: 35px; }
+  #renderModeBtn { font-size: 11px !important; padding: 5px 8px !important; }
+  #topRightStack { width: 120px; }
   #mm { width: 70px !important; height: 50px !important; opacity: 0.7; }
-  #pc { width: 70px !important; height: 35px !important; bottom: 60px !important; opacity: 0.7; }
+  #pc { width: 70px !important; height: 35px !important; opacity: 0.7; }
+  /* narrow: lift corner stacks above actBar so they never cover .ab hit targets */
+  #mmWrap, #demoTip, #scaleW, #hDivReady {
+    bottom: calc(var(--actbar-bottom) + var(--actbar-h) + var(--ui-gap)) !important;
+  }
+  #pcWrap {
+    bottom: calc(var(--actbar-bottom) + var(--actbar-h) + var(--ui-gap) + var(--mm-h) + var(--ui-gap)) !important;
+  }
+  body.demo-on #hDivReady {
+    bottom: calc(var(--actbar-bottom) + var(--actbar-h) + var(--ui-gap) * 2 + var(--demohud-h, 54px)) !important;
+  }
+  #demoTip { max-width: min(240px, 70vw) !important; }
+  #mmWrap, #pcWrap { width: 70px; }
   #leftContainer { width: 130px !important; gap: 4px !important; }
   #langSelWrap { width: 90px !important; font-size: 11px !important; }
   .lang-curr { padding: 4px 6px !important; font-size: 11px !important; }
   #hud { font-size: 11px !important; }
   #hud .p, #ecoP, #legP, #topR, #weatherP { font-size: 10px !important; padding: 3px 5px !important; }
-  #scaleBar { font-size: 10px !important; bottom: 90px !important; }
   #todWrap { font-size: 10px !important; }
-  #actBar { display: none !important; }
-  #keyHint { display: none !important; }
+  /* mobile keeps actBar visible (inline display:flex from JS wins): wraps into N rows inside ONE panel (UI-RESTORE) */
+  #actBar { gap: 4px !important; max-width: 96vw !important; padding: 0 4px; }
+  .ab { min-width: 56px !important; min-height: 44px !important; padding: 8px 6px !important; font-size: 12px !important; }
+  .ab .hk { font-size: 9px !important; }
   #tip { font-size: 11px !important; max-width: 90vw !important; }
   #camM { font-size: 10px !important; }
   /* Menu overlay */
@@ -304,3 +356,11 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 #spGrid{max-height:42vh}
 .wiki-entry .ww{margin-top:5px;font-size:12px}
 .wiki-entry .ww a{color:#7cf;text-decoration:underline}
+
+/* === UI-RESTORE-2026-09-22 zone framework === */
+#leftContainer{position:absolute;top:max(6px,env(safe-area-inset-top));left:max(6px,env(safe-area-inset-left))}
+/* narrow screens: camM pill must never cross the right stack column */
+@media (max-width: 560px){
+  #camM{max-width:calc(50vw - var(--stack-w,120px)/2 - 12px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
+.ab:focus-visible,#legToggle:focus-visible,#starSelectGame:focus-visible{outline:2px solid #5ed4a0;outline-offset:2px}

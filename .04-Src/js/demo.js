@@ -4,6 +4,15 @@
 window.demoMode = false;
 window.demoPossessed = null;
 
+// Demo species labels (banners + per-organism index) — off by default (UI-RESTORE §5.4)
+window._demoLabels = (function(){
+  try { return localStorage.getItem('igraspore.demoLabels') === '1'; } catch(e){ return false; }
+})();
+window.setDemoLabels = function(on){
+  window._demoLabels = !!on;
+  try { localStorage.setItem('igraspore.demoLabels', on ? '1' : '0'); } catch(e){}
+};
+
 var DEMO_GROUPS = [
   { key: 'producer',   ru: '1. Продуценты',    en: '1. Producers',    color: '#4c4' },
   { key: 'consumer1',  ru: '2. Консументы I',  en: '2. Consumers I',  color: '#4af' },
@@ -124,21 +133,27 @@ function startDemoMode() {
     var p = document.getElementById('pauseO'); if (p) p.className = 'ov';
     // Show action bar + render mode controls (same as startGame)
     var ab = document.getElementById('actBar'); if(ab) ab.style.display='flex';
+    if (typeof window.measureActbarH === 'function') { window.measureActbarH(); setTimeout(window.measureActbarH, 120); }
     var rb = document.getElementById('renderModeBtn'); if(rb) rb.style.display='block';
     var tr = document.getElementById('topR'); if(tr) tr.style.display='block';
     var wp = document.getElementById('weatherP'); if(wp) wp.style.display='block';
     // Apply current render mode button label
     if (typeof applyRenderMode === 'function') applyRenderMode();
+    // keyHint: session-only collapsed override — LS untouched (restored on demo exit)
+    try {
+      window._keyHintCollapsed = true;
+      if (typeof window.buildKeyHint === 'function') window.buildKeyHint();
+    } catch (e2) {}
+    document.body.classList.add('demo-on');
   } catch (e) {}
 
-  // HUD: free-cam controls tip
+  // HUD: free-cam controls tip (positioned by CSS above the actBar band)
   try {
     var tip = document.getElementById('demoTip');
     if (!tip) {
       tip = document.createElement('div');
       tip.id = 'demoTip';
-      tip.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:50;max-width:340px;' +
-        'background:rgba(0,12,28,0.82);color:#cfe;border:1px solid #4af;border-radius:8px;' +
+      tip.style.cssText = 'background:rgba(0,12,28,0.82);color:#cfe;border:1px solid #4af;border-radius:8px;' +
         'padding:10px 12px;font:13px/1.35 system-ui,sans-serif;pointer-events:none';
       document.body.appendChild(tip);
     }
@@ -149,15 +164,29 @@ function startDemoMode() {
     for (var gi = 0; gi < DEMO_GROUPS.length; gi++) {
       nav += '<button type="button" data-dg="'+(gi+1)+'" style="margin:2px 2px 0 0;padding:3px 7px;font:11px/1.2 system-ui;background:#123;color:#cfe;border:1px solid #4af;border-radius:5px;cursor:pointer">'+(gi+1)+'</button>';
     }
+    var labelsBtn = '<button type="button" id="demoLabelsBtn" aria-pressed="'+(window._demoLabels?'true':'false')+'" style="margin:2px 0 0 2px;padding:3px 9px;font:700 11px/1.2 system-ui;background:'+(window._demoLabels?'#1a4':'#123')+';color:'+(window._demoLabels?'#fff':'#cfe')+';border:1px solid '+(window._demoLabels?'#4f8':'#4af')+';border-radius:5px;cursor:pointer">'+(ru?'Метки':'Labels')+'</button>';
     tip.innerHTML = (ru
       ? '<b>\u0414\u0415\u041c\u041e</b> \u00b7 WASD/mouse fly \u00b7 1-5 group \u00b7 click = take<br>'
-      : '<b>DEMO</b> \u00b7 WASD/mouse fly \u00b7 1-5 jump group \u00b7 click = possess<br>') + nav;
+      : '<b>DEMO</b> \u00b7 WASD/mouse fly \u00b7 1-5 jump group \u00b7 click = possess<br>') + nav + labelsBtn;
     tip.onclick = function(ev){
       var b = ev.target;
       if(!b || !b.getAttribute) return;
+      if (b.id === 'demoLabelsBtn') {
+        window.setDemoLabels(!window._demoLabels);
+        b.setAttribute('aria-pressed', window._demoLabels ? 'true' : 'false');
+        b.textContent = ru ? 'Метки' : 'Labels';
+        b.style.background = window._demoLabels ? '#1a4' : '#123';
+        b.style.color = window._demoLabels ? '#fff' : '#cfe';
+        b.style.borderColor = window._demoLabels ? '#4f8' : '#4af';
+        return;
+      }
       var g = parseInt(b.getAttribute('data-dg'),10);
       if(g) demoFlyToGroup(g);
     };
+    // measured height → --demohud-h, so #hDivReady sits strictly above the demo HUD
+    try {
+      document.documentElement.style.setProperty('--demohud-h', Math.ceil(tip.offsetHeight || 54) + 'px');
+    } catch (e2) {}
   } catch (e) {}
 
   // Never start tutorial in demo
@@ -273,7 +302,8 @@ function updateDemoPinned(dt) {
 function renderDemoLabels() {
   if (!window.demoMode) return;
   ctx.save();
-  // Group banners + per-organism index
+  var showLabels = !!window._demoLabels;
+  // Group banners + per-organism index — only when labels are toggled ON (UI-RESTORE §5.4)
   var drawnGroup = {};
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
@@ -282,57 +312,59 @@ function renderDemoLabels() {
     var scy = (o.y - cam.y) * zoom + cv.height / 2;
     if (scx < -40 || scx > cv.width + 40 || scy < -40 || scy > cv.height + 40) continue;
 
-    // Group header once per group near leftmost of group
-    var g = o.demoGroup || 0;
-    if (g && !drawnGroup[g]) {
-      drawnGroup[g] = true;
-      // find leftmost of this group for label anchor
-      var minX = o.x, anchorY = o.y;
-      for (var j = 0; j < orgs.length; j++) {
-        var o2 = orgs[j];
-        if (o2 && o2.alive && o2.demoGroup === g && o2.x < minX) {
-          minX = o2.x; anchorY = o2.y;
+    if (showLabels) {
+      // Group header once per group near leftmost of group
+      var g = o.demoGroup || 0;
+      if (g && !drawnGroup[g]) {
+        drawnGroup[g] = true;
+        // find leftmost of this group for label anchor
+        var minX = o.x, anchorY = o.y;
+        for (var j = 0; j < orgs.length; j++) {
+          var o2 = orgs[j];
+          if (o2 && o2.alive && o2.demoGroup === g && o2.x < minX) {
+            minX = o2.x; anchorY = o2.y;
+          }
+        }
+        var hx = (minX - cam.x) * zoom + cv.width / 2 - 20;
+        var hy = (anchorY - cam.y) * zoom + cv.height / 2 - Math.max(28, (o.size || 8) * zoom + 18);
+        var label = o.demoLabel || ('#' + g);
+        var col = (DEMO_GROUPS[g - 1] && DEMO_GROUPS[g - 1].color) || '#8ef';
+        ctx.font = 'bold ' + Math.max(12, Math.min(18, 14 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'bottom';
+        ctx.fillStyle = 'rgba(0,10,20,0.7)';
+        var tw = ctx.measureText(label).width + 12;
+        ctx.fillRect(hx - 4, hy - 18, tw, 22);
+        ctx.fillStyle = col;
+        ctx.fillText(label, hx, hy);
+      }
+
+      // Small index under each cell
+      if (o.demoIndex) {
+        // сквозной номер вида: #12
+        var num = '#' + String(o.demoSpNum || o.demoIndex);
+        ctx.font = 'bold ' + Math.max(10, Math.min(15, 12 * Math.sqrt(zoom))) + 'px monospace';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        var ty = scy + (o.size || 8) * zoom + 4;
+        ctx.fillStyle = 'rgba(0,0,0,0.65)';
+        ctx.fillText(num, scx + 1, ty + 1);
+        ctx.fillStyle = (o.isPlayer ? '#4ff' : '#e8fff0');
+        ctx.fillText(num, scx, ty);
+        // short name under number (+ КОЛОНИЯ tag)
+        if (zoom >= 0.7 && o.sp && o.sp.name) {
+          var short = o.sp.name.split(' ')[0];
+          if(o.demoColony || o.sp.shape==='colony') short = '⬡КОЛОНИЯ ' + short;
+          ctx.font = Math.max(8, Math.min(11, 9 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
+          ctx.fillStyle = 'rgba(0,0,0,0.55)';
+          ctx.fillText(short, scx + 1, ty + 14);
+          ctx.fillStyle = (o.demoColony||o.sp.shape==='colony') ? '#8f8' : 'rgba(200,230,255,0.85)';
+          ctx.fillText(short, scx, ty + 13);
         }
       }
-      var hx = (minX - cam.x) * zoom + cv.width / 2 - 20;
-      var hy = (anchorY - cam.y) * zoom + cv.height / 2 - Math.max(28, (o.size || 8) * zoom + 18);
-      var label = o.demoLabel || ('#' + g);
-      var col = (DEMO_GROUPS[g - 1] && DEMO_GROUPS[g - 1].color) || '#8ef';
-      ctx.font = 'bold ' + Math.max(12, Math.min(18, 14 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
-      ctx.textAlign = 'left';
-      ctx.textBaseline = 'bottom';
-      ctx.fillStyle = 'rgba(0,10,20,0.7)';
-      var tw = ctx.measureText(label).width + 12;
-      ctx.fillRect(hx - 4, hy - 18, tw, 22);
-      ctx.fillStyle = col;
-      ctx.fillText(label, hx, hy);
     }
 
-    // Small index under each cell
-    if (o.demoIndex) {
-      // сквозной номер вида: #12
-      var num = '#' + String(o.demoSpNum || o.demoIndex);
-      ctx.font = 'bold ' + Math.max(10, Math.min(15, 12 * Math.sqrt(zoom))) + 'px monospace';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      var ty = scy + (o.size || 8) * zoom + 4;
-      ctx.fillStyle = 'rgba(0,0,0,0.65)';
-      ctx.fillText(num, scx + 1, ty + 1);
-      ctx.fillStyle = (o.isPlayer ? '#4ff' : '#e8fff0');
-      ctx.fillText(num, scx, ty);
-      // short name under number (+ КОЛОНИЯ tag)
-      if (zoom >= 0.7 && o.sp && o.sp.name) {
-        var short = o.sp.name.split(' ')[0];
-        if(o.demoColony || o.sp.shape==='colony') short = '⬡КОЛОНИЯ ' + short;
-        ctx.font = Math.max(8, Math.min(11, 9 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
-        ctx.fillStyle = 'rgba(0,0,0,0.55)';
-        ctx.fillText(short, scx + 1, ty + 14);
-        ctx.fillStyle = (o.demoColony||o.sp.shape==='colony') ? '#8f8' : 'rgba(200,230,255,0.85)';
-        ctx.fillText(short, scx, ty + 13);
-      }
-    }
-
-    // Possessed: simple thin ring (not the "lens" spam)
+    // Possessed: simple thin ring (not the "lens" spam) — drawn even with labels off
     if (o.isPlayer) {
       ctx.beginPath();
       ctx.strokeStyle = 'rgba(80,255,255,0.85)';

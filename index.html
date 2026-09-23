@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build-stamp:1786825630 demo-no-pop-no-floor -->
+<!-- build-stamp:1790081013 ui-restore-2026-09-22 -->
 <html lang="ru">
 <head>
     <link rel="manifest" href="/manifest.json">
@@ -23,14 +23,37 @@
     <meta http-equiv="Expires" content="0">
 
 
-  <link rel="stylesheet" href="style.css?v=1790063718">
+  <link rel="stylesheet" href="style.css?v=1790087247">
 
 <style id="a11y-focus">:focus-visible{outline:2px solid #5ed4a0;outline-offset:2px;}a#apkBtn:focus-visible{outline:2px solid #5ed4a0;outline-offset:3px;}</style>
 </head>
 <body>
 <div style="position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:9999;color:rgba(255,255,255,0.4);font-size:12px;font-family:monospace;pointer-events:none;text-shadow:0 0 2px #000;">iGraSpore V2 - v2.0.0</div>
-<button id="renderModeBtn" aria-label="renderModeBtn" class="cartoon" onclick="toggleRenderModeLarge()">🎨 МУЛЬТЯШНЫЙ</button>
-<select id="starSelectGame" style="position:absolute;top:48px;right:6px;z-index:9998;background:#0a1a2a;color:#8cf;border:1px solid #4c8;padding:4px 8px;border-radius:6px;font-size:11px;cursor:pointer;" title="Выбор звезды/солнца" onchange="window.setStarSystem(this.value);">
+<canvas id="glCanvas" aria-hidden="true" style="position:absolute;top:0;left:0;z-index:0;pointer-events:none;display:none;"></canvas><canvas id="c"></canvas>
+<div id="mmWrap" style="width:110px">
+<canvas id="mm" width="110" height="80" style="width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;cursor:pointer;display:block;background:rgba(0,20,40,0.45)" title="Миникарта — где вы в пруду. Клик = прыжок камеры"></canvas>
+<div style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">КАРТА</div>
+</div>
+<div id="pcWrap" style="width:110px">
+<canvas id="pc" width="110" height="55" style="width:110px;height:55px;border:1px solid #1a3a55;border-radius:4px;display:block;background:rgba(0,20,40,0.45)" title="График популяции — сколько микробов во времени"></canvas>
+<div style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">ПОПУЛЯЦИЯ</div>
+</div>
+<div id="leftContainer" style="display:flex; flex-direction:column; gap:8px; pointer-events:auto; z-index:10; width:180px;">
+  <div id="langSelWrap" tabindex="0" style="position:relative; width:130px; outline:none; pointer-events:auto; z-index:50;">
+    <div class="lang-curr" style="cursor:pointer; display:flex; align-items:center; font-size:13px;font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.4); backdrop-filter:blur(5px); background:rgba(0,12,28,0.92); border:1px solid #1a3a55; border-radius:8px; color:#fff; padding:6px 12px;"><span style="font-size:14px;margin-right:6px">🌐</span> <span id="curLangTxt">Русский</span> <span style="font-size:12px;margin-left:6px;opacity:0.7">▼</span></div>
+    <div class="lang-drop" id="langSelDrop"></div>
+  </div>
+<div id="hud" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
+  <div id="ecoP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
+  <div id="legP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;">
+    <button type="button" id="legToggle" aria-expanded="false" aria-controls="legBody">Легенда ▾</button>
+    <div id="legBody" hidden></div>
+  </div>
+</div>
+<div id="hDivReady"></div>
+<div id="topRightStack" aria-label="Игровые переключатели">
+  <div id="topR" class="p" style="display:none"></div>
+  <select id="starSelectGame" title="Выбор звезды/солнца" onchange="window.setStarSystem(this.value);">
     <option value="sol">☀ Солнце</option>
     <option value="sirius">★ Сириус</option>
     <option value="betelgeuse">★ Бетельгейзе</option>
@@ -38,27 +61,10 @@
     <option value="vega">★ Вега</option>
     <option value="antares">★ Антарес</option>
     <option value="alphacentauri">★ α Центавра</option>
-</select>
-<canvas id="glCanvas" aria-hidden="true" style="position:absolute;top:0;left:0;z-index:0;pointer-events:none;display:none;"></canvas><canvas id="c"></canvas>
-<div id="mmWrap" style="position:absolute;bottom:6px;right:6px;z-index:10;width:110px">
-<canvas id="mm" width="110" height="80" style="width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;cursor:pointer;display:block;background:rgba(0,20,40,0.45)" title="Миникарта — где вы в пруду. Клик = прыжок камеры"></canvas>
-<div style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">КАРТА</div>
+  </select>
+  <button id="renderModeBtn" type="button" aria-label="Режим картинки" class="cartoon" onclick="toggleRenderModeLarge()">🎨 МУЛЬТ</button>
+  <a id="apkBtn" href="/igraspore.apk" download="igraspore.apk" aria-label="Скачать приложение Android APK">📱 APK</a>
 </div>
-<div id="pcWrap" style="position:absolute;bottom:92px;right:6px;z-index:10;width:110px">
-<canvas id="pc" width="110" height="55" style="width:110px;height:55px;border:1px solid #1a3a55;border-radius:4px;display:block;background:rgba(0,20,40,0.45)" title="График популяции — сколько микробов во времени"></canvas>
-<div style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">ПОПУЛЯЦИЯ</div>
-</div>
-<div id="leftContainer" style="position:absolute; top:6px; left:6px; display:flex; flex-direction:column; gap:8px; pointer-events:auto; z-index:10; width:180px;">
-  <div id="langSelWrap" tabindex="0" style="position:relative; width:130px; outline:none; pointer-events:auto; z-index:50;">
-    <div class="lang-curr" style="cursor:pointer; display:flex; align-items:center; font-size:13px; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.4); backdrop-filter:blur(5px); background:rgba(0,12,28,0.92); border:1px solid #1a3a55; border-radius:8px; color:#fff; padding:6px 12px;"><span style="font-size:14px;margin-right:6px">🌐</span> <span id="curLangTxt">Русский</span> <span style="font-size:12px;margin-left:6px;opacity:0.7">▼</span></div>
-    <div class="lang-drop" id="langSelDrop"></div>
-  </div>
-  <div id="hDivReady" style="position:fixed;left:12px;bottom:78px;z-index:40;color:#8ef;font:12px/1.3 sans-serif;text-shadow:0 1px 2px #000;max-width:240px;pointer-events:none"></div>
-<div id="hud" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
-  <div id="ecoP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
-  <div id="legP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
-</div>
-<div id="topR" class="p" style="display:none; top:6px; right:6px;"></div>
 <div id="weatherP" class="p" style="display:none; top:50px; right:6px;"></div>
 <div id="camM" style="top:5px; left:50%; transform:translateX(-50%);">FOLLOW</div>
 <div id="scaleBar" style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); color:#fff; border-bottom:2px solid #fff; padding-bottom:2px; font-size:12px; pointer-events:none; z-index:10; text-shadow:0 1px 2px #000;">100 μm</div>
@@ -77,20 +83,20 @@
 <div id="toast" style="display:none"></div>
 <div id="tip" class="p"></div>
 <div id="actBar">
-<div class="ab" id="bEat" title="Есть">ЕСТЬ<span class="hk">E</span></div>
-<div class="ab" id="bDiv" title="Делить">ДЕЛИТЬ<span class="hk">Q</span></div>
-<div class="ab" id="bCyst" title="Циста">ЦИСТА<span class="hk">R</span></div>
-<div class="ab" id="bFeed" title="Ручное питание" style="background:#1a3a0a;border-color:#8c4">🍽 КУСЬ<span class="hk">Space</span></div>
-<div class="ab" id="bAuto" title="Авто">АВТО<span class="hk">Tab</span></div>
-<div class="ab" id="bFree" title="Свободный полёт: F или WASD / мышь">ПОЛЁТ F<span class="hk">F</span></div>
-<div class="ab" id="bMicro" title="Microscope Mode">&#128300;<span class="hk">M</span></div>
-<div class="ab" id="bRender" aria-label="bRender" title="Картинка: мульт / Swiss">&#127912;<span class="hk">N</span></div>
-<div class="ab" id="bFol" title="Следить">СЛЕДИТЬ<span class="hk">V</span></div>
-<div class="ab" id="bWiki" aria-label="bWiki" title="Wiki/Bestiary">&#128218;<span class="hk">B</span></div>
-<div class="ab" id="bPause" aria-label="bPause" title="Pause">&#9208;<span class="hk">P</span></div>
-<div class="ab" id="bZI" title="Zoom+">&#128269;+</div>
-<div class="ab" id="bZO" title="Zoom-">&#128269;-</div>
-<div class="ab" id="bSandbox" title="Sandbox Tools">&#128736;</div>
+<div class="ab" id="bEat" role="button" aria-label="Есть (E)" title="Есть">ЕСТЬ<span class="hk">E</span></div>
+<div class="ab" id="bDiv" role="button" aria-label="Делить (Q)" title="Делить">ДЕЛИТЬ<span class="hk">Q</span></div>
+<div class="ab" id="bCyst" role="button" aria-label="Циста (R)" title="Циста">ЦИСТА<span class="hk">R</span></div>
+<div class="ab" id="bFeed" role="button" aria-label="Ручное питание (Space)" title="Ручное питание" style="background:#1a3a0a;border-color:#8c4">🍽 КУСЬ<span class="hk">Space</span></div>
+<div class="ab" id="bAuto" role="button" aria-label="Автопилот (Tab)" aria-keyshortcuts="Tab" title="Авто">АВТО<span class="hk">Tab</span></div>
+<div class="ab" id="bFree" role="button" aria-label="Свободный полёт (F)" title="Свободный полёт: F или WASD / мышь">ПОЛЁТ F<span class="hk">F</span></div>
+<div class="ab" id="bMicro" role="button" aria-label="Микроскоп (M)" title="Microscope Mode">&#128300;<span class="hk">M</span></div>
+<div class="ab" id="bRender" role="button" aria-label="Режим картинки (N)" title="Картинка: мульт / Swiss">&#127912;<span class="hk">N</span></div>
+<div class="ab" id="bFol" role="button" aria-label="Следить за клеткой (V)" title="Следить">СЛЕДИТЬ<span class="hk">V</span></div>
+<div class="ab" id="bWiki" role="button" aria-label="Вики (B)" title="Wiki/Bestiary">&#128218;<span class="hk">B</span></div>
+<div class="ab" id="bPause" role="button" aria-label="Пауза (P)" title="Pause">&#9208;<span class="hk">P</span></div>
+<div class="ab" id="bZI" role="button" aria-label="Приблизить" title="Zoom+">&#128269;+</div>
+<div class="ab" id="bZO" role="button" aria-label="Отдалить" title="Zoom-">&#128269;-</div>
+<div class="ab" id="bSandbox" role="button" aria-label="Инструменты песочницы" title="Sandbox Tools">&#128736;</div>
 </div>
 <div id="leaderboardO" class="ov">
   <div class="tt">🏆 Leaderboard</div>
@@ -164,45 +170,45 @@
     </div>
   </div>
 </div>
-<script src=".04-Src/js/config.js?v=1790063718"></script>
-<script src=".04-Src/js/wiki_articles.js?v=1790063718"></script>
-<script src=".04-Src/js/locomotion.js?v=1790063718"></script>
-<script src=".04-Src/js/organs.js?v=1790063718"></script>
-<script src=".04-Src/js/world.js?v=1790063718"></script>
-<script src=".04-Src/js/world_update.js?v=1790063718"></script>
-<script src=".04-Src/js/biology.js?v=1790063718"></script>
-<script src=".04-Src/js/biology_divide.js?v=1790063718"></script>
-<script src=".04-Src/js/biology_eat.js?v=1790063718"></script>
-<script src=".04-Src/js/biology_virus.js?v=1790063718"></script>
-<script src=".04-Src/js/biology_update.js?v=1790063718"></script>
-<script src=".04-Src/js/biology_update_core.js?v=1790063718"></script>
-<script src=".04-Src/js/biology_update_interact.js?v=1790063718"></script>
-<script src=".04-Src/js/ai_move.js?v=1790063718"></script>
-<script src=".04-Src/js/ai.js?v=1790063718"></script>
-<script src=".04-Src/js/render_effects.js?v=1790063718"></script>
-<script src=".04-Src/js/render_surface.js?v=1790063718"></script>
-<script src=".04-Src/js/render_fx.js?v=1790063718"></script>
-<script src=".04-Src/js/render_helpers.js?v=1790063718"></script>
-  <script src=".04-Src/js/render.js?v=1790063718"></script>
-<script src=".04-Src/js/render_entities.js?v=1790063718"></script>
-<script src=".04-Src/js/render_organs.js?v=1790063718"></script>
-<script src=".04-Src/js/render_edu.js?v=1790063718"></script>
-<script src=".04-Src/js/render_swiss.js?v=1790063718"></script>
-<script src=".04-Src/js/render_webgl.js?v=1790063718"></script>
-<script src=".04-Src/js/ui.js?v=1790063718"></script>
-<script src=".04-Src/js/ui_menus.js?v=1790063718"></script>
-<script src=".04-Src/js/ui_food_chain.js?v=1790063718"></script>
-<script src=".04-Src/js/ui_screens.js?v=1790063718"></script>
-<script src=".04-Src/js/main.js?v=1790063718"></script>
-<script src=".04-Src/js/main_events.js?v=1790063718"></script>
-<script src=".04-Src/js/demo.js?v=1790063718"></script>
-<script src=".04-Src/js/stars.js?v=1790063718"></script>
-<script src=".04-Src/js/night_sky.js?v=1790063718"></script>
+<script src=".04-Src/js/config.js?v=1790087247"></script>
+<script src=".04-Src/js/wiki_articles.js?v=1790087247"></script>
+<script src=".04-Src/js/locomotion.js?v=1790087247"></script>
+<script src=".04-Src/js/organs.js?v=1790087247"></script>
+<script src=".04-Src/js/world.js?v=1790087247"></script>
+<script src=".04-Src/js/world_update.js?v=1790087247"></script>
+<script src=".04-Src/js/biology.js?v=1790087247"></script>
+<script src=".04-Src/js/biology_divide.js?v=1790087247"></script>
+<script src=".04-Src/js/biology_eat.js?v=1790087247"></script>
+<script src=".04-Src/js/biology_virus.js?v=1790087247"></script>
+<script src=".04-Src/js/biology_update.js?v=1790087247"></script>
+<script src=".04-Src/js/biology_update_core.js?v=1790087247"></script>
+<script src=".04-Src/js/biology_update_interact.js?v=1790087247"></script>
+<script src=".04-Src/js/ai_move.js?v=1790087247"></script>
+<script src=".04-Src/js/ai.js?v=1790087247"></script>
+<script src=".04-Src/js/render_effects.js?v=1790087247"></script>
+<script src=".04-Src/js/render_surface.js?v=1790087247"></script>
+<script src=".04-Src/js/render_fx.js?v=1790087247"></script>
+<script src=".04-Src/js/render_helpers.js?v=1790087247"></script>
+  <script src=".04-Src/js/render.js?v=1790087247"></script>
+<script src=".04-Src/js/render_entities.js?v=1790087247"></script>
+<script src=".04-Src/js/render_organs.js?v=1790087247"></script>
+<script src=".04-Src/js/render_edu.js?v=1790087247"></script>
+<script src=".04-Src/js/render_swiss.js?v=1790087247"></script>
+<script src=".04-Src/js/render_webgl.js?v=1790087247"></script>
+<script src=".04-Src/js/ui.js?v=1790087247"></script>
+<script src=".04-Src/js/ui_menus.js?v=1790087247"></script>
+<script src=".04-Src/js/ui_food_chain.js?v=1790087247"></script>
+<script src=".04-Src/js/ui_screens.js?v=1790087247"></script>
+<script src=".04-Src/js/main.js?v=1790087247"></script>
+<script src=".04-Src/js/main_events.js?v=1790087247"></script>
+<script src=".04-Src/js/demo.js?v=1790087247"></script>
+<script src=".04-Src/js/stars.js?v=1790087247"></script>
+<script src=".04-Src/js/night_sky.js?v=1790087247"></script>
 <div id="globalTooltip" style="display:none; position:absolute; z-index:9999; background:rgba(10,20,35,0.95); border:1px solid #4af; color:#fff; padding:8px 12px; border-radius:6px; font-family:sans-serif; font-size:12px; pointer-events:none; box-shadow:0 4px 10px rgba(0,0,0,0.5); max-width:250px; text-shadow:0 1px 2px #000;"></div>
 
 
 
-<script src=".04-Src/js/mobile.js?v=1790063718"></script>
+<script src=".04-Src/js/mobile.js?v=1790087247"></script>
 
 <script>
 if ('serviceWorker' in navigator) {
@@ -211,8 +217,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
-
-<a id="apkBtn" href="/igraspore.apk" download="igraspore.apk" aria-label="Скачать приложение Android APK" style="position:fixed;top:10px;right:10px;z-index:9999;background:#0a4a52;color:#5ed4a0;padding:8px 14px;border-radius:20px;font-family:Arial;font-size:12px;font-weight:bold;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.5);display:flex;align-items:center;gap:6px;outline-offset:2px;">📱 APK</a>
 
 <script>
 // Sync game-time star selector with current value

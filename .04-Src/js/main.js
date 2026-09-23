@@ -336,13 +336,15 @@ function startGame(isScreensaver){
   document.getElementById('topR').style.display='block';
   document.getElementById('weatherP').style.display='block';
   document.getElementById('actBar').style.display='flex';
+  if(typeof window.measureActbarH==='function'){ window.measureActbarH(); setTimeout(window.measureActbarH,120); }
   document.getElementById('renderModeBtn').style.display='block';
-  if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISSBIOPICS';rb4.title='Сейчас: SwissBioPics. Клик → WebGL';}}
-  else if(settings.renderMode==='webgl'){var rb5=document.getElementById('renderModeBtn');if(rb5){rb5.className='webgl';rb5.innerHTML='🌊 WEBGL';rb5.title='Сейчас: WebGL. Клик → мультяшный';}}
-  else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';rb2.title='Сейчас: мультяшный. Клик → SwissBioPics';}}
+  if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISS';rb4.title='Сейчас: SwissBioPics. Клик → WebGL';}}
+  else if(settings.renderMode==='webgl'){var rb5=document.getElementById('renderModeBtn');if(rb5){rb5.className='webgl';rb5.innerHTML='🌊 WEBGL';rb5.title='Сейчас: WebGL-вода. Клик → мультяшный';}}
+  else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТ';rb2.title='Сейчас: мультяшный. Клик → SwissBioPics';}}
   var kh=document.getElementById('keyHint');
-  window._keyHintCollapsed=false; window._keyHintStart=Date.now();
-  if(typeof window.buildKeyHint==='function') window.buildKeyHint();
+  window._keyHintStart=Date.now();
+  // UI-RESTORE §5.1: default collapsed; LS decides (no forced open)
+  if(typeof window.startKeyHintSession==='function') window.startKeyHintSession();
   else if(kh){ kh.style.display='flex'; }
   // Large Russian labels on primary action buttons
   function labelBtn(id, text, hk){

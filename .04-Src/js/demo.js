@@ -122,8 +122,8 @@ function startDemoMode() {
   // Camera overview
   cam.x = 0;
   cam.y = rowY0 + (DEMO_GROUPS.length - 1) * rowGap * 0.45;
-  zoom = 1.05;
-  tZoom = 1.05;
+  zoom = 1.4;
+  tZoom = 1.4;
   window._demoFly = null;
   freeCam = true;
   window.lastInteractionTime = Date.now();
@@ -171,8 +171,8 @@ function startDemoMode() {
     }
     var labelsBtn = '<button type="button" id="demoLabelsBtn" aria-pressed="'+(window._demoLabels?'true':'false')+'" style="margin:2px 0 0 2px;padding:3px 9px;font:700 11px/1.2 system-ui;background:'+(window._demoLabels?'#1a4':'#123')+';color:'+(window._demoLabels?'#fff':'#cfe')+';border:1px solid '+(window._demoLabels?'#4f8':'#4af')+';border-radius:5px;cursor:pointer">'+(ru?'Метки':'Labels')+'</button>';
     tip.innerHTML = (ru
-      ? '<b>\u0414\u0415\u041c\u041e</b> \u00b7 WASD/mouse fly \u00b7 1-5 group \u00b7 click = take<br>'
-      : '<b>DEMO</b> \u00b7 WASD/mouse fly \u00b7 1-5 jump group \u00b7 click = possess<br>') + nav + labelsBtn;
+      ? '<b>\u0414\u0415\u041c\u041e</b> \u00b7 WASD/mouse fly \u00b7 1-6 group \u00b7 click = take<br>'
+      : '<b>DEMO</b> \u00b7 WASD/mouse fly \u00b7 1-6 jump group \u00b7 click = possess<br>') + nav + labelsBtn;
     tip.onclick = function(ev){
       var b = ev.target;
       if(!b || !b.getAttribute) return;

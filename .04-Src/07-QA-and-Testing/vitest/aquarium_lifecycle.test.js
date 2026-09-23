@@ -56,6 +56,27 @@ describe('entity caption visibility', () => {
 });
 
 describe('aquarium camera follow stability', () => {
+  it('size leadership swapping between distant organisms does not flip the target', () => {
+    const orgs = [
+      { id: 1, x: -5000, y: 0, alive: true, size: 8 },
+      { id: 2, x: 5000, y: 0, alive: true, size: 40 }
+    ];
+    let s = {
+      camX: 0, camY: 0, vx: 0, vy: 0, zoom: 1.8, viewW: 900, viewH: 600,
+      targetId: 1, wasInView: false, offSince: 0, lockUntil: 0, now: 0, dt: 0.05, orgs
+    };
+    const ids = [];
+    for(let i = 0; i < 50; i++){
+      orgs[0].size = (i % 2) ? 50 : 6;
+      orgs[1].size = (i % 2) ? 6 : 50;
+      s.now += 0.05;
+      const n = api.aquariumFollowStep(s);
+      ids.push(n.targetId);
+      s = Object.assign({}, s, n, { orgs, dt: 0.05, zoom: 1.8, viewW: 900, viewH: 600 });
+    }
+    expect(new Set(ids)).toEqual(new Set([1]));
+  });
+
   it('does not steal the lock for a larger organism outside the frame', () => {
     const r = runFollow({
       camX: 0, camY: 0, targetId: 1, wasInView: true,

@@ -84,28 +84,18 @@ function aquariumFollowStep(s){
     }
   }
 
+  // Prior screensaver ease: close a fraction of the gap each second.
+  // Cap speed so a pond-width retarget glides instead of rushing the frame.
   var desVx = 0, desVy = 0;
   if(target){
     var dx = target.x - camX, dy = target.y - camY;
-    var dist = Math.sqrt(dx * dx + dy * dy) || 1;
-    var on = inView(target, 0);
-    var nx = Math.abs(dx) / Math.max(1, hw);
-    var ny = Math.abs(dy) / Math.max(1, hh);
-    var maxSp = on ? 48 : 95;
-    if(on && nx < 0.38 && ny < 0.38) maxSp = 0;
-    else if(on){
-      var edge = Math.max(0, Math.max(nx, ny) - 0.38) / 0.62;
-      maxSp = 48 * Math.min(1, edge);
-    }
-    desVx = (dx / dist) * maxSp;
-    desVy = (dy / dist) * maxSp;
+    desVx = dx * 0.3;
+    desVy = dy * 0.3;
+    var sp0 = Math.sqrt(desVx * desVx + desVy * desVy);
+    if(sp0 > 110){ desVx = desVx / sp0 * 110; desVy = desVy / sp0 * 110; }
   }
-  var k = Math.min(0.22, dt * 3.2);
-  vx = vx + (desVx - vx) * k;
-  vy = vy + (desVy - vy) * k;
-  var sp = Math.sqrt(vx * vx + vy * vy);
-  var cap = 110;
-  if(sp > cap){ vx = vx / sp * cap; vy = vy / sp * cap; }
+  vx = desVx;
+  vy = desVy;
   camX += vx * dt;
   camY += vy * dt;
 

@@ -4,13 +4,11 @@
 window.demoMode = false;
 window.demoPossessed = null;
 
-// Demo species labels — on unless the player explicitly stored "0"
+// Species captions on by default. «Метки» still toggles and stores "1"/"0".
+// UI-RESTORE §5.4 used `=== '1'` (hidden until opt-in). Possessed ring draws either way.
 window._demoLabels = (function(){
-  try {
-    var stored = localStorage.getItem('igraspore.demoLabels');
-    if(typeof demoLabelsDefault === 'function') return demoLabelsDefault(stored);
-    return stored !== '0';
-  } catch(e){ return true; }
+  try { return localStorage.getItem('igraspore.demoLabels') !== '0'; }
+  catch(e){ return true; }
 })();
 window.setDemoLabels = function(on){
   window._demoLabels = !!on;
@@ -310,7 +308,7 @@ function renderDemoLabels() {
   if (!window.demoMode) return;
   ctx.save();
   var showLabels = !!window._demoLabels;
-  // Group banners + per-organism index — only when labels are toggled ON (UI-RESTORE §5.4)
+  // Group banners + per-organism index when «Метки» is on (default). Ring below is independent.
   var drawnGroup = {};
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];

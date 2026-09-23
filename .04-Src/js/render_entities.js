@@ -23,6 +23,7 @@ function drawBody(o,sz,fc2,fd, batched){
       var squish = Math.max(0.7, 1.0 - vmag * 0.04);
       // Membrane fluidity: subtle ripple on cell surface (lipid bilayer dynamics)
       var memRipple=(settings.renderMode==='realistic'?0.008:0.025)*Math.min(1, 4/Math.max(zoom,1));
+      if(o._preMitosis || (o._spikeHold||0)>0) memRipple *= 0.2;
       for(var i=0; i<=32; i++) {
           var a = (i/32) * Math.PI * 2;
           var r = sz + Math.sin(a*6-o.pulse*1.2)*(Math.min(vmag,4)*0.12) + Math.sin(a*12+o.pulse*1.5)*sz*memRipple;
@@ -175,8 +176,9 @@ function drawBody(o,sz,fc2,fd, batched){
     // Pellicle strips for ciliates
     if(o.sp.bio.pellicle&&zoom>5){ctx.strokeStyle='rgba(180,140,60,0.3)';ctx.lineWidth=1;
       for(var s=-sz*0.8;s<sz*0.8;s+=sz*0.15){ctx.beginPath();ctx.moveTo(s,-sz*0.5);ctx.lineTo(s,sz*0.5);ctx.stroke();}}
-    // Spikes/defense structures (visible on shelled/spiked organisms)
-    if(o.sp.flags&&o.sp.flags.spikes){
+    // Spikes/defense structures — hidden while rounding for mitosis and on fresh daughters
+    var _showSpikes = (typeof showDefenseSpikes==='function') ? showDefenseSpikes(o) : (o.sp.flags&&o.sp.flags.spikes);
+    if(_showSpikes){
       ctx.strokeStyle='rgba(150,120,50,0.6)';ctx.lineWidth=Math.max(1,sz*0.05);
       var spikeCount=8;
       for(var sp=0;sp<spikeCount;sp++){
@@ -277,8 +279,14 @@ function renderOrg(o, skipBody){
   }
   
   var sz=o.size;
-  // Size by age: grow from 30% (spore) to 100% (adult) over first 20% of lifespan
-  if(o.age<o.sp.minAge*0.5){var growthRatio=0.3+0.7*(o.age/(o.sp.minAge*0.5));sz*=growthRatio;}
+  // Fresh daughters keep the parent silhouette (no collapse to a 30% spore dot).
+  if(o._fromDivide){
+    var u = Math.min(1, (o._divideAge||0) / 8);
+    sz *= (0.96 + 0.04 * u);
+  } else if(o.sp && o.age<o.sp.minAge*0.5){
+    var growthRatio=0.72+0.28*(o.age/Math.max(0.01, o.sp.minAge*0.5));
+    sz*=growthRatio;
+  }
   var rgb=hex2rgb(o.sp.color);
   // Color by status + render mode
   var healthRatio=o.energy/100;

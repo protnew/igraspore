@@ -1,7 +1,15 @@
 // biology_update_interact.js — division, cyst, filter-feeding (extracted from biology_update_core.js)
 // Part of updateOrg — called AFTER metabolism/energy/movement in biology_update_core.js
 window.updateOrgInteract = function(o, dt) {
-  // division handled at top of updateOrg
+  // Round up before mitosis: hide defense rays so spikes don't pop in early.
+  o._preMitosis = false;
+  if(o && o.alive && !o.dividing && !o.cyst && o.sp){
+    var adultP = (o.sp.size || 4) * (o.sizeMult || 1);
+    var nearE = o.energy >= (o.sp.repEnergy || 80) * 0.82;
+    var nearM = (o.massFood || 0) >= Math.max(adultP * 0.35, 1);
+    var nearS = o.size >= adultP * 0.72;
+    if(nearE && nearM && nearS && (o.divCD || 0) < 4) o._preMitosis = true;
+  }
   // division handled at top of updateOrg
   if(!window.demoMode && !o.dividing&&!o.cyst&&canDivide(o)){
     if (o.sp.flags && o.sp.flags.gendered) {
@@ -39,6 +47,8 @@ window.updateOrgInteract = function(o, dt) {
         }
     } else {
         var divP = o.isPlayer ? 0.5 : 0.02;
+        // Lineage splits after the first are paced — don't chain the moment cooldown ends
+        if((o.generation || 0) >= 1 || (o.offspring || 0) >= 1) divP *= 0.35;
         if(!window.demoMode && Math.random()<divP*dt)doDivide(o);
     }
   }

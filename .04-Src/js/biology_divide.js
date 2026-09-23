@@ -16,20 +16,33 @@ function finishDivide(o){
   o.dividing = false;
   o.divT = 0;
   var _ad = (o.asymDiv !== undefined && isFinite(o.asymDiv)) ? o.asymDiv : 0.5;
-  o.energy = Math.max(40, parentEnergy * _ad);
-  var half = Math.max(2.0, base * 0.5);
+  o.energy = Math.max(55, parentEnergy * Math.max(0.58, _ad));
+  var morph = (typeof daughterMorph === 'function') ? daughterMorph(o) : null;
+  var half = morph ? morph.size : Math.max(2.0, base * 0.5);
   o.size = half;
   o.currentSize = half;
-  o.massFood = (o.massFood || 0) * 0.5;
+  o.massFood = Math.min((o.massFood || 0) * 0.35, ((sp && sp.size) || 4) * 0.25);
   o.eatsSinceDiv = 0;
   o.birthSize = half;
   o._divGrow = 0;
   if(typeof o.generation !== 'number' || !isFinite(o.generation)) o.generation = 0;
 
-  var cd = (typeof DIV_COOLDOWN === 'number' ? DIV_COOLDOWN : 6);
-  if(sp && sp.cat && sp.cat.indexOf('consumer') === 0) cd = Math.max(cd, 8);
-  if(sp && (sp.cat === 'consumer2' || sp.cat === 'consumer3')) cd = Math.max(cd, 12);
+  var _done = (o.offspring || 0) + 1;
+  var cd = (typeof mitosisCooldown === 'function')
+    ? mitosisCooldown(sp, _done)
+    : (typeof DIV_COOLDOWN === 'number' ? DIV_COOLDOWN : 6);
+  if(!(cd > 0)){
+    cd = (typeof DIV_COOLDOWN === 'number' ? DIV_COOLDOWN : 6);
+    if(sp && sp.cat && sp.cat.indexOf('consumer') === 0) cd = Math.max(cd, 8);
+    if(sp && (sp.cat === 'consumer2' || sp.cat === 'consumer3')) cd = Math.max(cd, 12);
+  }
   o.divCD = cd;
+  var _hold = (typeof lifeProfile === 'function') ? (lifeProfile(sp).spikeHold || 0) : 8;
+  var _grace = (typeof lifeProfile === 'function') ? (lifeProfile(sp).grace || 16) : 16;
+  o._spikeHold = _hold;
+  o._postSplit = _grace;
+  o._preMitosis = false;
+  if(typeof genOrgans === 'function'){ try { o.organs = genOrgans(o); } catch(_g){} }
   o.invuln = Math.max(o.invuln || 0, 8);
   o._noCull = Math.max(o._noCull||0, 12);
   o.flash = 0.9;
@@ -39,6 +52,7 @@ function finishDivide(o){
   var sep = Math.max(base * 0.9, 3.2);
   var cx = px + Math.cos(pushAng) * sep;
   var cy = py + Math.sin(pushAng) * sep;
+  window._divSpawnParent = o;
   try {
     var hw = (typeof halfW === 'function' ? halfW(cy) : 500) - 15;
     if(typeof clamp === 'function'){ cx = clamp(cx, -hw, hw); cy = clamp(cy, 5, (typeof PD==='number'?PD:1000)-10); }
@@ -53,6 +67,7 @@ function finishDivide(o){
     console.error('finishDivide spawnOrg failed', err);
     child = null;
   }
+  window._divSpawnParent = null;
 
   // HARD FALLBACK: if spawn failed, force-create minimal child
   if(!child){
@@ -86,7 +101,9 @@ function finishDivide(o){
     child.generation = parentGen + 1;
     child._fromDivide = true;
     child._parentRef = o;
-    child.energy = Math.max(35, parentEnergy * (1 - _ad));
+    child.sp = sp;
+    child.species = sp && sp.id;
+    child.energy = Math.max(62, parentEnergy * Math.max(0.42, 1 - _ad));
     child.size = half;
     child.currentSize = half;
     child.birthSize = half;
@@ -102,8 +119,13 @@ function finishDivide(o){
     child._noCull = 20; // seconds protected from density cull
     child._fromDivide = true;
     child._divideAge = 0;
+    child._spikeHold = _hold;
+    child._postSplit = _grace;
+    child._preMitosis = false;
+    child.massFood = 0;
+    if(typeof genOrgans === 'function'){ try { child.organs = genOrgans(child); } catch(_g2){} }
     // Give enough energy so child doesn't starve immediately
-    child.energy = Math.max(70, child.energy || 0);
+    child.energy = Math.max(62, child.energy || 0);
     child.speedMult = o.speedMult || 1;
     child.sizeMult = o.sizeMult || 1;
     child.tempOffset = o.tempOffset || 0;

@@ -4,9 +4,11 @@
 window.demoMode = false;
 window.demoPossessed = null;
 
-// Demo species labels (banners + per-organism index) — off by default (UI-RESTORE §5.4)
+// Species captions on by default. «Метки» still toggles and stores "1"/"0".
+// UI-RESTORE §5.4 used `=== '1'` (hidden until opt-in). Possessed ring draws either way.
 window._demoLabels = (function(){
-  try { return localStorage.getItem('igraspore.demoLabels') === '1'; } catch(e){ return false; }
+  try { return localStorage.getItem('igraspore.demoLabels') !== '0'; }
+  catch(e){ return true; }
 })();
 window.setDemoLabels = function(on){
   window._demoLabels = !!on;
@@ -18,7 +20,8 @@ var DEMO_GROUPS = [
   { key: 'consumer1',  ru: '2. Консументы I',  en: '2. Consumers I',  color: '#4af' },
   { key: 'consumer2',  ru: '3. Консументы II', en: '3. Consumers II', color: '#f80' },
   { key: 'consumer3',  ru: '4. Консументы III',en: '4. Consumers III',color: '#c4f' },
-  { key: 'decomposer', ru: '5. Редуценты',     en: '5. Decomposers',  color: '#a84' }
+  { key: 'decomposer', ru: '5. Редуценты',     en: '5. Decomposers',  color: '#a84' },
+  { key: 'virus',      ru: '6. Вирусы',        en: '6. Viruses',      color: '#f66' }
 ];
 
 function startDemoMode() {
@@ -69,6 +72,7 @@ function startDemoMode() {
     var displayPool = pool;
 
     var displayCount = pool.length;
+    if (!displayCount) continue; // viruses are pinned separately
     // If too many, use two sub-rows
     var perSubRow = Math.min(displayCount, maxPerRow);
     var subRows = Math.ceil(displayCount / perSubRow);
@@ -118,14 +122,15 @@ function startDemoMode() {
   // Camera overview
   cam.x = 0;
   cam.y = rowY0 + (DEMO_GROUPS.length - 1) * rowGap * 0.45;
-  zoom = 1.05;
-  tZoom = 1.05;
+  zoom = 1.4;
+  tZoom = 1.4;
   window._demoFly = null;
   freeCam = true;
   window.lastInteractionTime = Date.now();
   window.screensaverAutoCam = false;
   window.focusTarget = null;
   gt = 0;
+  try { if(typeof placeDemoViruses === 'function') placeDemoViruses(); } catch(_dv){}
 
   state = 'playing';
   try {
@@ -166,8 +171,8 @@ function startDemoMode() {
     }
     var labelsBtn = '<button type="button" id="demoLabelsBtn" aria-pressed="'+(window._demoLabels?'true':'false')+'" style="margin:2px 0 0 2px;padding:3px 9px;font:700 11px/1.2 system-ui;background:'+(window._demoLabels?'#1a4':'#123')+';color:'+(window._demoLabels?'#fff':'#cfe')+';border:1px solid '+(window._demoLabels?'#4f8':'#4af')+';border-radius:5px;cursor:pointer">'+(ru?'Метки':'Labels')+'</button>';
     tip.innerHTML = (ru
-      ? '<b>\u0414\u0415\u041c\u041e</b> \u00b7 WASD/mouse fly \u00b7 1-5 group \u00b7 click = take<br>'
-      : '<b>DEMO</b> \u00b7 WASD/mouse fly \u00b7 1-5 jump group \u00b7 click = possess<br>') + nav + labelsBtn;
+      ? '<b>\u0414\u0415\u041c\u041e</b> \u00b7 WASD/mouse fly \u00b7 1-6 group \u00b7 click = take<br>'
+      : '<b>DEMO</b> \u00b7 WASD/mouse fly \u00b7 1-6 jump group \u00b7 click = possess<br>') + nav + labelsBtn;
     tip.onclick = function(ev){
       var b = ev.target;
       if(!b || !b.getAttribute) return;
@@ -303,7 +308,7 @@ function renderDemoLabels() {
   if (!window.demoMode) return;
   ctx.save();
   var showLabels = !!window._demoLabels;
-  // Group banners + per-organism index — only when labels are toggled ON (UI-RESTORE §5.4)
+  // Group banners + per-organism index when «Метки» is on (default). Ring below is independent.
   var drawnGroup = {};
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
@@ -385,6 +390,12 @@ function demoFlyToGroup(g) {
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
     if (o && o.alive && o.demoGroup === g) { sx += o.x; sy += o.y; n++; }
+  }
+  if (typeof viruses !== 'undefined') {
+    for (var vi = 0; vi < viruses.length; vi++) {
+      var vv = viruses[vi];
+      if (vv && vv.demoGroup === g) { sx += vv.x; sy += vv.y; n++; }
+    }
   }
   if (!n) return;
   if (typeof exitDemoPossess === 'function' && window.demoPossessed) exitDemoPossess();

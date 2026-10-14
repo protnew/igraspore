@@ -131,12 +131,16 @@ if(state==='playing'||state==='menu')render();
 window.tutorialStep = 0;
 window.tutorialActive = false;
 window.TUTORIAL_STEPS = [
-  { title: 'Добро пожаловать', body: 'Вы — микроорганизм в луже. Цель: есть, расти, делиться. Нажмите «Далее».' },
-  { title: 'Движение', body: 'WASD — плыть. Мышь задаёт направление. Попробуйте сдвинуться, затем «Далее».' },
-  { title: 'Питание', body: 'Подойдите к меньшей клетке и нажмите ЕСТЬ (E). Должны появиться вспышка и «+энергия».' },
-  { title: 'Деление', body: 'При полной энергии нажмите ДЕЛИТЬ (Q). Клетка станет заметно меньше — это нормально.' },
-  { title: 'Готово', body: 'Камера: СЛЕДИТЬ / ПОЛЁТ. Картинка: МУЛЬТЯШНЫЙ или SWISS. Удачи в эволюции!' }
+  { title: { ru: 'Добро пожаловать', en: 'Welcome' }, body: { ru: 'Вы — микроорганизм в луже. Цель: есть, расти, делиться. Нажмите «Далее».', en: 'You are a microbe in a pond. Goal: eat, grow, divide. Tap Next.' } },
+  { title: { ru: 'Движение', en: 'Movement' }, body: { ru: 'WASD — плыть. Мышь задаёт направление. Попробуйте сдвинуться, затем «Далее».', en: 'WASD to swim. The mouse sets direction. Move, then tap Next.' } },
+  { title: { ru: 'Питание', en: 'Eating' }, body: { ru: 'Подойдите к меньшей клетке и нажмите ЕСТЬ (E). Должны появиться вспышка и «+энергия».', en: 'Swim to a smaller cell and press EAT (E). You should see a flash.' } },
+  { title: { ru: 'Деление', en: 'Division' }, body: { ru: 'При полной энергии нажмите ДЕЛИТЬ (Q). Клетка станет заметно меньше — это нормально.', en: 'When energy is full, press SPLIT (Q). The cell gets smaller. That is normal.' } },
+  { title: { ru: 'Готово', en: 'Done' }, body: { ru: 'Камера: СЛЕДИТЬ / ПОЛЁТ. Картинка: МУЛЬТЯШНЫЙ или SWISS. Удачи в эволюции!', en: 'Camera: follow or free flight. Good luck.' } }
 ];
+function tutText(field){
+  if(!field || typeof field==='string') return field||'';
+  return curLang==='ru' ? (field.ru||field.en||'') : (field.en||field.ru||'');
+}
 
 window.showTutorialStep = function(){
   var layer = document.getElementById('tutorialLayer');
@@ -152,10 +156,10 @@ window.showTutorialStep = function(){
     return;
   }
   var s = window.TUTORIAL_STEPS[window.tutorialStep];
-  title.textContent = s.title;
-  body.textContent = s.body;
+  title.textContent = tutText(s.title);
+  body.textContent = tutText(s.body);
   counter.textContent = (window.tutorialStep+1) + ' / ' + window.TUTORIAL_STEPS.length;
-  next.textContent = (window.tutorialStep === window.TUTORIAL_STEPS.length-1) ? 'Играть' : 'Далее';
+  next.textContent = (window.tutorialStep === window.TUTORIAL_STEPS.length-1) ? tt('play') : tt('next');
   layer.style.display = 'flex';
   layer.style.pointerEvents = 'none';
   next.style.pointerEvents = 'auto';
@@ -175,7 +179,7 @@ window.advanceTutorial = function(){
     window.tutorialActive = false;
     var layer = document.getElementById('tutorialLayer');
     if(layer) layer.style.display = 'none';
-    if(window.showToast) window.showToast('Туториал пройден', '#4f4');
+    if(window.showToast) window.showToast(tt('tutDone'), '#4f4');
     try { localStorage.setItem('igraspore_tut_v2','1'); } catch(e){}
     return;
   }

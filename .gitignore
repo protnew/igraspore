@@ -15,6 +15,10 @@ backups/
 
 06-DevOps-and-Release/deploy-repo/
 
+# release-ready lab build and button videos stay out of git
+.04-Src/dist-lab/
+*.webm
+
 # Signing keys — never commit
 *.keystore
 *.jks
@@ -22,3 +26,7 @@ backups/
 06-DevOps-and-Release/cf-publish/igraspore.apk
 *.apk.idsig
 06-DevOps-and-Release/apk/igraspore-offline-v2.5.apk
+
+# UI-RESTORE-AUDIT A1: local-run junction (undotted paths in root index)
+04-Src/js
+assets

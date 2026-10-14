@@ -12,7 +12,8 @@
     "test:e2e:r": "playwright test --config ../playwright.config.js --grep \"\\[R\"",
     "test:e2e:u": "playwright test --config ../playwright.config.js --grep \"\\[U0\"",
     "test:e2e:sl": "playwright test --config ../playwright.config.js --grep \"\\[SL\"",
-    "test:qa-unit": "node 07-QA-and-Testing/qa_unit.js"
+    "test:qa-unit": "node 07-QA-and-Testing/qa_unit.js",
+    "lab:build": "node tools/lab/build-lab.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.54.2",

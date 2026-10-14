@@ -176,6 +176,9 @@ function updateMenuTexts(){
   var dnaShell=document.getElementById('dnaShell'); if(dnaShell) dnaShell.textContent=tt('dnaShell');
   var tutNext=document.getElementById('tutNext'); if(tutNext) tutNext.textContent=tt('next');
   var popLabel=document.getElementById('popLabel'); if(popLabel) popLabel.textContent=tt('pop');
+  var mm=document.getElementById('mm'); if(mm) mm.title=tt('mapTip');
+  var pc=document.getElementById('pc'); if(pc) pc.title=tt('popTip');
+  var pauseBtn=document.getElementById('bPause'); if(pauseBtn) pauseBtn.title=tt('paused');
   document.querySelectorAll('#starSelect option, #starSelectGame option').forEach(function(o){
     var label = curLang==='ru' ? o.getAttribute('data-ru') : o.getAttribute('data-en');
     if(label) o.textContent = label;

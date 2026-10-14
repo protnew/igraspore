@@ -315,7 +315,7 @@ function startGame(isScreensaver){
      }
      if(sp.cat==='consumer2'){
        setTimeout(function(){
-         if(window.showToast) window.showToast('Средний едок: подплыви к зелёным/бактериям — реснички фильтруют сами', '#9cf');
+         if(window.showToast) window.showToast(tt('midEaterTip'), '#9cf');
        }, 900);
      }
      } // end !virusPlayer food seed
@@ -377,7 +377,7 @@ function startGame(isScreensaver){
   labelBtn('bCyst',tt('hud.btn.cyst.short'),'R','🛡',true);
   labelBtn('bAuto',tt('hud.btn.auto.short'),'Tab','🤖',true);
   labelBtn('bFree',tt('flight'),'F','🕊');
-  labelBtn('bFol','СЛЕДИТЬ','V','🎯');
+  labelBtn('bFol',tt('follow'),'V','🎯');
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');
   tw.innerHTML='<input type="range" id="todR" min="0" max="24" step="0.05" value="'+tod+'"><span id="todL">12:00</span><span id="seasL">'+tt('season1')+'</span>';
@@ -393,7 +393,7 @@ function startGame(isScreensaver){
     setTimeout(function(){
       if(window.showToast){
         var _vn=(window.virusPlayerSpec&&window.virusPlayerSpec.name)?window.virusPlayerSpec.name:'Phage';
-        window.showToast('\u2620 \u0420\u0435\u0436\u0438\u043c \u0432\u0438\u0440\u0443\u0441\u0430: '+_vn+'\n\u041a\u043b\u0438\u043a\u043d\u0438 \u043f\u043e \u0431\u0430\u043a\u0442\u0435\u0440\u0438\u0438 = \u0438\u043d\u0444\u0438\u0446\u0438\u0440\u043e\u0432\u0430\u0442\u044c · WASD = \u043a\u0430\u043c\u0435\u0440\u0430','#f66',6000);
+        window.showToast('\u2620 '+tt('virusMode',{name:_vn}),'#f66',6000);
       }
     }, 800);
   } else if(!isScreensaver){ setTimeout(function(){ window.startTutorial(false); }, 300); }

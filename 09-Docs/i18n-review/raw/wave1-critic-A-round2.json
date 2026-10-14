@@ -1,0 +1,85 @@
+{
+  "critic": "A",
+  "round": 2,
+  "date": "2026-10-14",
+  "model": "agent-run-A",
+  "languages": [
+    {
+      "code": "es",
+      "score": 8.4,
+      "axes": {
+        "meaning": 7,
+        "glossary": 7,
+        "natural": 9,
+        "length": 9,
+        "params": 10
+      },
+      "notes": [
+        "hud.goal is still the English source \"Divide: {cur}/{need}\". Fix: \"Dividir: {cur}/{need}\".",
+        "eaten \"Presas\" means prey, not Eaten. dEaten \"Comido\" is already the right death-cause word. Fix: \"Comidos\".",
+        "hud.divide.reason.cd \"recarga\" reads as ammo reload, not cooldown. Fix: \"espera {sec} s\".",
+        "resume \"SEGUIR\" means follow or go on, not resume. Fix: \"REANUDAR\" (8 chars; fine on a menu button).",
+        "toast.cyst.enter \"movimiento 0\" breaks the speed term (simSpeed is \"Velocidad\"). Fix: \"Espora: protegida, velocidad 0, la energía baja despacio\".",
+        "vignette \"Viñeta\" also means a comic panel. Fix: \"Viñeteado\".",
+        "Do not abbreviate DIVIDIR or REINICIAR, and do not merge espora with enquistaste. Those are already the shortest accurate forms and the right spore/cyst split."
+      ]
+    },
+    {
+      "code": "hi",
+      "score": 8.2,
+      "axes": {
+        "meaning": 7,
+        "glossary": 8,
+        "natural": 8,
+        "length": 8,
+        "params": 10
+      },
+      "notes": [
+        "restart \"फिर से\" means again, not restart. Fix: \"फिर शुरू\" (or \"रीस्टार्ट\" if the button must stay one token).",
+        "dStarve \"भूख\" is hunger and collides with toast.cyst.hunger. Starved is a death cause. Fix: \"भुखमरी\". Keep बीजाणु for spore and सिस्ट for encysted.",
+        "toast.cyst.enter \"सुरक्षा\" means security, not protected. Fix: \"बीजाणु: सुरक्षित, गति 0, ऊर्जा धीरे घटती है\".",
+        "toast.divide.go \"विभाजन\" is the noun, not Dividing. The busy reason already says the action is in progress. Fix: \"बाँट रहा है\".",
+        "selectSp \"जीव चुनें\" is polite while toasts and buttons use तुम (तुम पौधे हो, खाओ, तैरो). Fix: \"जीव चुनो\". Leave help \"कैसे खेलें\" — that is the usual title, not an आप address.",
+        "menuSub \"अनुप्रस्थ काट\" is textbook Hindi on the title line. Fix: \"सूक्ष्मजीव सिमुलेशन — 100 प्रजातियाँ + वायरस। तालाब का क्रॉस-सेक्शन।\".",
+        "Button length: close \"बंद करो\" and resume \"जारी रखो\" are two words. Fix: \"बंद\" and \"जारी\"."
+      ]
+    },
+    {
+      "code": "tr",
+      "score": 8.4,
+      "axes": {
+        "meaning": 8,
+        "glossary": 8,
+        "natural": 9,
+        "length": 7,
+        "params": 10
+      },
+      "notes": [
+        "wikiT \"göl\" means lake; menuSub already uses the pond word \"Gölet\". Fix: \"Viki: gölet yaşamı\".",
+        "toast.cyst.enter \"hareket 0\" breaks the speed term (simSpeed is \"Hız\"). Fix: \"Spor: korumalı, hız 0, enerji yavaş azalır\".",
+        "toast.eat.none drops swim; the plant toast keeps \"yüz\". Fix: \"Yakında av yok — daha yakına yüz\".",
+        "restart \"YENİDEN\" means again. Fix: \"BAŞTAN\".",
+        "Length: dead \"NESLİ TÜKENDİ\" (13) vs EXTINCT (7); paused \"DURAKLATILDI\" (12) vs PAUSED (6). Fix: \"YOK OLDU\" and \"DURAKLADI\". Do not lengthen the HUD verbs OTO, SPOR, BÖL, YE, IŞIK, and do not merge spor with kist.",
+        "maxPop \"Azami\" is stiffer than the rest of the file. Fix: \"Maks. nüfus\"."
+      ]
+    },
+    {
+      "code": "ja",
+      "score": 9.2,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8,
+        "natural": 9,
+        "length": 10,
+        "params": 10
+      },
+      "notes": [
+        "autoOn is \"オート\" but hud.btn.auto and hud.btn.auto.short are \"自動\". Same AUTO control. Fix: \"オート\" on all three.",
+        "diffE \"易しい\" is not the usual difficulty label. Fix: \"簡単\".",
+        "resume \"続ける\" means keep going; a pause-menu Resume is \"再開\". Fix: \"再開\".",
+        "toast.eat.none drops swim; the plant toast keeps \"泳げ\". Fix: \"近くに獲物がいない — もっと泳いで近づけ\".",
+        "Do not merge 胞子 with シスト, or 飢餓 with 空腹, and do not replace 速度. Those distinctions already match spore/cyst, starved/hunger, and speed."
+      ]
+    }
+  ]
+}

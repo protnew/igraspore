@@ -5,7 +5,7 @@ function buildLangBar() {
   if(!lb) return;
   lb.innerHTML = '';
   document.getElementById('curLangTxt').textContent = langNames[curLang] || curLang;
-  var enabled = window.IGS_ENABLED || {ru:1, en:1, 'pt-BR':1, id:1, de:1, fr:1};
+  var enabled = window.IGS_ENABLED || {ru:1, en:1, 'pt-BR':1, id:1, de:1, fr:1, hi:1, ja:1};
   for(var l in LANGS) {
     if(!enabled[l]) continue;
     var b = document.createElement('div');

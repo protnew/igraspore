@@ -37,7 +37,7 @@ function loadLangPack(code) {
 if (typeof window !== 'undefined') {
   window.loadLangPack = loadLangPack;
   window.detectLang = detectLang;
-  window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1, 'pt-BR': 1, id: 1, de: 1, fr: 1 };
+  window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1, 'pt-BR': 1, id: 1, de: 1, fr: 1, hi: 1, ja: 1 };
   try {
     var saved = localStorage.getItem('igs_lang');
     if (saved && window.IGS_ENABLED[saved]) curLang = saved;

@@ -1,0 +1,97 @@
+{
+  "critic": "B",
+  "round": 2,
+  "date": "2026-10-14",
+  "model": "agent-run-B",
+  "languages": [
+    {
+      "code": "es",
+      "score": 7.4,
+      "axes": {
+        "meaning": 7,
+        "glossary": 7,
+        "natural": 7,
+        "length": 8,
+        "params": 10
+      },
+      "notes": [
+        "verdict: FAIL 7.4 < 8. 91/91 keys. {sec}/{cur}/{need} match en; braces balanced; accents intact. glossary.csv absent — glossary scored on TZ terms plus internal consistency, not a script diff. Length estimated without 390×844 shots (.ab grows, #actBar and #catSel wrap).",
+        "eaten: Presas means prey, not the eaten-count (en Eaten; dEaten is already Comido). → Comido",
+        "toast.eat.none: nada más cerca reads as nothing closer, not swim closer (nada = nothing). → No hay presa cerca — acércate nadando",
+        "hud.goal: identical to en Divide: {cur}/{need}. Tú imperative happens to match, but the divide term is not localized and coverage will flag it. → Divídete: {cur}/{need}",
+        "resume: SEGUIR is follow/continue, weak for a pause-menu resume. → CONTINUAR",
+        "menuSub: microbios is narrower than microorganisms; Corte del estanque drops view/cross-section. → Simulación de microorganismos — 100 especies + virus. Corte del estanque.",
+        "toast.cyst.enter: movimiento 0 is movement, en is speed 0. → velocidad 0",
+        "glossary leftover: button ESPORA vs toast.cyst.hunger enquistaste (same spore/cyst split as en). Unify. Prefer espora in the hunger line if the button stays ESPORA: Hambre: en espora — busca comida y despierta",
+        "length leftover: dTemp Temperatura vs temp Temp. and vs en Temp; hud.btn.divide(.short) DIVIDIR and ESPORA are not shortened. Chips Comedores pequeños / Cazadores grandes wrap, they do not overflow a fixed button. → dTemp Temp."
+      ]
+    },
+    {
+      "code": "hi",
+      "score": 8.0,
+      "axes": {
+        "meaning": 8,
+        "glossary": 8,
+        "natural": 8,
+        "length": 8,
+        "params": 10
+      },
+      "notes": [
+        "verdict: PASS 8.0 on the line. Leftovers below. 91/91 keys. Params match en. glossary.csv absent — scored on TZ terms plus internal consistency. Length estimated without shots; action buttons grow and the bar wraps, so these are tight rather than clipped.",
+        "healthBars: HP बार leaves English HP in an educational UI. → जीवन बार",
+        "hud.btn.divide / .short: विभाजन is the noun division, while खाओ and बंद करो are imperatives; short is not short. → बाँटो",
+        "hud.btn.cyst बीजाणु vs toast.cyst.hunger सिस्ट. Player sees two mechanics. → hunger भोजन ढूँढो line: बीजाणु बन गया — भोजन ढूँढो और जागो",
+        "restart: फिर से is again, not restart. → दोबारा",
+        "toast.divide.go: bare noun विभाजन, not dividing (busy reason already says विभाजन हो रहा है). → विभाजन हो रहा है",
+        "hud.divide.reason.age: बहुत युवा sounds like a young adult, odd for a cell. → अभी छोटा",
+        "selectSp: जीव चुनें is aap, rest of address is tum (करो, ढूँढो, तैरो). → जीव चुनो",
+        "dStarve: भूख overlaps the hunger toast; en is Starved. Mild. → भुखमरी",
+        "length leftover: अधिकतम आबादी, आबादी, रोशनी, बीजाणु are wider than Max Pop / Pop / LIGHT / SPORE; shorts copy the long form. → maxPop अधि. आबादी; pop जनसं. or आबादी is acceptable if the top-right row is checked on device"
+      ]
+    },
+    {
+      "code": "tr",
+      "score": 7.5,
+      "axes": {
+        "meaning": 7,
+        "glossary": 7,
+        "natural": 7,
+        "length": 9,
+        "params": 10
+      },
+      "notes": [
+        "verdict: FAIL 7.5 < 8. 91/91 keys. Params match en. İ/ı audit PASS — do not 'fix' these: light Işık (I + ş + ı), hud.btn.light IŞIK (dotless I), season0 İlkbahar, dead NESLİ TÜKENDİ, restart YENİDEN, wiki VİKİ, toast.lang.fallback İngilizce, help NASIL (dotless I is correct uppercase of nasıl).",
+        "hud.btn.cyst / .short: SPOR is read as sport first; biology spor is correct on paper and wrong on a button. Hunger already says kist. → KİST and retarget toasts to kist",
+        "toast.cyst.enter / toast.cyst.exit: Spor / Spordan vs toast.cyst.hunger kiste girdin. Two terms for one mechanic. → Kist: korumalı, hız 0, enerji yavaş azalır / Kistten çıktın",
+        "wikiT: göl is lake; menuSub correctly says Gölet. → Viki: gölet yaşamı",
+        "help: NASIL OYNA is ungrammatical (oyna is the imperative). → NASIL OYNANIR",
+        "hud.goal: Bölün looks like the plural imperative of böl. Button is BÖL. → Böl: {cur}/{need}",
+        "bubbles: Kabarcık is singular (en Bubbles). → Kabarcıklar",
+        "decomposer: mantar is singular (en fungi). → Temizleyiciler (mantarlar)",
+        "toast.cyst.enter: hareket 0 is movement; en is speed 0. → hız 0",
+        "length: buttons BÖL / YE / IŞIK / OTO fit. NESLİ TÜKENDİ and DURAKLATILDI are long titles but fit a 24px overlay on 390px. No change required for length."
+      ]
+    },
+    {
+      "code": "ja",
+      "score": 8.6,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8,
+        "natural": 8,
+        "length": 9,
+        "params": 10
+      },
+      "notes": [
+        "verdict: PASS 8.6. Leftovers below. 91/91 keys. Params match en. glossary.csv absent — scored on TZ terms plus internal consistency. Length is the best of the four (buttons 分裂 / 胞子 / 光 / 食べる fit .ab). No 390×844 shots.",
+        "autoOn オート vs hud.btn.auto / .short 自動. Same control, two words. → 自動 on all three",
+        "hud.btn.cyst 胞子 vs toast.cyst.hunger シスト. Inherited spore/cyst split, but both nouns are visible. → 空腹：胞子になった — えさを見つけて目覚めよう",
+        "consumer1 / consumer2: 食者 is an unnatural calque of eaters. → 小さな食べ手 / 中くらいの食べ手",
+        "toast.eat.closer / toast.eat.none: 近づけ is a blunt imperative; hunger toast correctly uses 目覚めよう. → 獲物にもっと近づこう / 近くに獲物がいない — もっと近づこう",
+        "toast.eat.plant: あなたは is stiff. Meaning is right. → 植物だよ：光のほうへ泳ごう",
+        "hud.goal: ASCII colon; wikiT and cyst toasts use fullwidth ：. → 分裂：{cur}/{need}",
+        "consumer3 狩人 matches en hunters and is a bit human. Optional, do not block. predation 捕食者 is the right ecological term and should stay."
+      ]
+    }
+  ]
+}

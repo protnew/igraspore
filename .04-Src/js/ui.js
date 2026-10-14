@@ -217,7 +217,7 @@ window.initLegendUI = function(){
   if(!lg || !body || !toggle) return;
   var collapsed = !!window._legendCollapsed;
   var ru = (typeof curLang === 'undefined' || curLang === 'ru');
-  toggle.textContent = (ru ? 'Легенда' : 'Legend') + (collapsed ? ' ▾' : ' ▴');
+  toggle.textContent = tt('legend') + (collapsed ? ' ▾' : ' ▴');
   toggle.setAttribute('aria-expanded', String(!collapsed));
   toggle.setAttribute('aria-controls', 'legBody');
   if(collapsed) body.setAttribute('hidden', '');
@@ -253,7 +253,7 @@ function updateLegend(){
     ['#f44','Viruses']
   ];
   if(body){
-    var head = ru ? 'Легенда' : 'Legend';
+    var head = tt('legend');
     var sig = head + '|' + items.map(function(it){return it[1];}).join(',');
     if(lg.getAttribute('data-sig') !== sig){
       var html='<div style="color:#bcd;font-size:13px;font-weight:bold;margin-bottom:4px;">'+head+'</div>';

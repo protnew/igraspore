@@ -1,6 +1,7 @@
 {
   "age": "Age",
   "all": "All",
+  "aquarium": "AQUARIUM",
   "autoOn": "AUTO",
   "bubbles": "Bubbles",
   "camFly": "Camera flight",
@@ -19,6 +20,7 @@
   "days": "Days",
   "dead": "EXTINCT",
   "decomposer": "Cleaners (fungi)",
+  "demo": "DEMO / Gallery",
   "density": "Density",
   "diffE": "Easy",
   "diffH": "Hard",

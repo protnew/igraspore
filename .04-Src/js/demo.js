@@ -445,7 +445,7 @@ function bindDemoButton(){
   b.onclick = function(){ startDemoMode(); };
   // RU/EN label
   try {
-    b.textContent = (typeof curLang!=='undefined' && curLang==='en') ? 'DEMO / Gallery' : 'ДЕМО / Галерея';
+    b.textContent = tt('demo');
   } catch(e){}
 }
 if(document.readyState==='loading'){

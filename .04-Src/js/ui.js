@@ -85,30 +85,105 @@ function updateWeather(){
 // Energy + mass progress (food/sun grow both; no eat-count gate)
 // UI-IMPROVE-2026-09-28 F1: was a top-level block run once at load (player===null) -> widget dead.
 // Now a per-frame function called from gameLoop (playing) and demo possession.
+function divideProgress(n){
+  if(!n) return 0;
+  if(n.ok) return 100;
+  if(n.reason==='cd'||n.reason==='busy'||n.reason==='none') return n.reason==='cd'? Math.max(0, 100-Math.round((n.cd||0)*4)) : 0;
+  var parts=[];
+  if(n.energy[1]) parts.push(n.energy[0]/n.energy[1]);
+  if(n.mass[1]) parts.push(n.mass[0]/n.mass[1]);
+  if(n.size[1]) parts.push(n.size[0]/n.size[1]);
+  if(n.age[1]) parts.push(n.age[0]/n.age[1]);
+  var m=parts.length?Math.min.apply(null, parts):0;
+  return Math.max(0, Math.min(99, Math.round(m*100)));
+}
+function syncActButtons(){
+  var who=(typeof player!=='undefined' && player) ? player : (window.demoPossessed||null);
+  var eat=document.getElementById('bEat');
+  var div=document.getElementById('bDiv');
+  var cyst=document.getElementById('bCyst');
+  var plant=!!(who && who.sp && who.sp.cat==='producer');
+  if(eat){
+    var abt=eat.querySelector('.abt');
+    var label=plant ? (typeof igsText==='function'?igsText('hud.btn.light.short','СВЕТ'):'СВЕТ') : (typeof igsText==='function'?igsText('hud.btn.eat.short','ЕСТЬ'):'ЕСТЬ');
+    if(plant) label='☀ '+label;
+    if(abt && abt.textContent!==label) abt.textContent=label;
+    eat.setAttribute('aria-label', plant?'Свет':'Есть (E)');
+  }
+  if(cyst && who) cyst.classList.toggle('is-on', !!who.cyst);
+  var fol=document.getElementById('bFol');
+  if(fol) fol.classList.toggle('is-needed', typeof freeCam!=='undefined' && !!freeCam);
+  if(div && who && typeof divideNeeds==='function'){
+    var n=divideNeeds(who);
+    div.classList.toggle('is-ready', !!n.ok);
+    div.classList.toggle('is-blocked', !n.ok);
+    div.style.setProperty('--p', String(divideProgress(n)));
+    var reason=document.getElementById('divReason');
+    var why=n.ok?'':(typeof divideBlockReason==='function'?divideBlockReason(who):n.reason);
+    if(reason && reason.textContent!==why) reason.textContent=why;
+  }
+}
+window.syncActButtons=syncActButtons;
 function updateDivReady(){
   try{
     var hd=document.getElementById('hDivReady')||document.getElementById('hDiv')||document.getElementById('divInfo');
     if(!hd) return;
     var who=(typeof player!=='undefined' && player) ? player : (window.demoPossessed||null);
-    if(typeof state!=='undefined' && state!=='playing'){ hd.textContent=''; return; }
+    if(typeof state!=='undefined' && state!=='playing'){ hd.textContent=''; if(window.syncActButtons) window.syncActButtons(); return; }
     if(who && who.alive && who.sp){
-      var ad=(who.sp.size||4)*(who.sizeMult||1);
-      var needM=Math.max(ad*0.5, 2.2);
-      if(who.sp.cat && who.sp.cat.indexOf('consumer')===0) needM=Math.max(ad*0.75, 3.0);
-      if(who.sp.cat==='consumer2'||who.sp.cat==='consumer3'||who.sp.cat==='macrophage') needM=Math.max(ad*0.9, 4.0);
-      var m=who.massFood||0;
+      var n=(typeof divideNeeds==='function')?divideNeeds(who):null;
       var en=Math.max(0,Math.round(who.energy||0));
-      var rep=Math.round(who.sp.repEnergy||80);
+      var rep=n?Math.round(n.energy[1]):Math.round(who.sp.repEnergy||80);
+      var m=who.massFood||0;
+      var needM=n?n.mass[1]:0;
       var line='Эн '+en+'/'+rep+' · Масса '+m.toFixed(1)+'/'+needM.toFixed(1);
       var txt;
-      if(window.canDivide && window.canDivide(who)) txt=line+' · ГОТОВО (Q)';
+      var ready=(typeof window.canDivide==='function')?window.canDivide(who):(n&&n.ok);
+      if(ready) txt=line+' · ГОТОВО (Q)';
       else if(window.divideBlockReason) txt=line+' · '+window.divideBlockReason(who);
       else txt=line;
+      var goalN=(typeof window._divGoal==='number')?window._divGoal:0;
+      var goal=typeof igsText==='function'?igsText('hud.goal','Поделись: {cur}/{need}'):'Поделись: {cur}/{need}';
+      goal=goal.replace('{cur}', String(goalN)).replace('{need}', '3');
+      txt=goal+' · '+txt;
       if(hd.textContent!==txt) hd.textContent=txt;
     } else hd.textContent='';
+    if(window.syncActButtons) window.syncActButtons();
   }catch(e){}
 }
 window.updateDivReady = updateDivReady;
+function bindPauseExtras(){
+  function click(id){ var el=document.getElementById(id); if(el) el.click(); }
+  var map={pLegend:'legToggle',pCam:'bFree',pMicro:'bMicro',pPic:'bRender',pFollow:'bFol'};
+  Object.keys(map).forEach(function(id){
+    var b=document.getElementById(id);
+    if(!b||b._igs) return;
+    b._igs=1;
+    b.addEventListener('click', function(){ click(map[id]); });
+  });
+  var mapBtn=document.getElementById('pMap');
+  if(mapBtn&&!mapBtn._igs){
+    mapBtn._igs=1;
+    mapBtn.addEventListener('click', function(){ document.body.classList.toggle('show-map'); });
+  }
+  var exit=document.getElementById('menuBtnPause');
+  if(exit&&!exit._igs){
+    exit._igs=1;
+    exit.addEventListener('click', function(){
+      try{ state='menu'; player=null; }catch(e){}
+      var po=document.getElementById('pauseO'); if(po) po.className='ov';
+      var mo=document.getElementById('menuO'); if(mo) mo.className='ov show';
+      if(window.syncMenuChrome) window.syncMenuChrome();
+    });
+  }
+}
+if(typeof document!=='undefined'){
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', bindPauseExtras);
+  else bindPauseExtras();
+}
+if(typeof location!=='undefined' && location.search && location.search.indexOf('debug=1')>=0 && document.body){
+  document.body.classList.add('debug');
+}
 
 function updateEcoPanel(){
   // ECOSYSTEM PANEL REMOVED per user request — confusing numbers

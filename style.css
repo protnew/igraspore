@@ -381,3 +381,33 @@ body.in-menu #starSelectGame, body.in-menu #apkBtn{display:none!important}
 @keyframes khPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(68,170,255,0); } 50% { box-shadow: 0 0 0 6px rgba(68,170,255,.55); } }
 #khToggle.kh-pulse { animation: khPulse 1s ease-in-out 2; }
 @media (prefers-reduced-motion: reduce) { #khToggle.kh-pulse { animation: none; } }
+
+/* release-ready P0/P1: six HUD slots, parked controls, divide ring */
+#bPause,#hud,#bEat,#bDiv,#bCyst,#bAuto{ }
+.hud-parked{display:none!important}
+body.in-menu #actBar,body.in-menu #divReason,body.in-menu #hDivReady{display:none!important}
+body:not(.in-menu) #topRightStack,
+body:not(.in-menu) #mmWrap,
+body:not(.in-menu) #pcWrap,
+body:not(.in-menu) #keyHint,
+body:not(.in-menu) #spdBar,
+body:not(.in-menu) #weatherP,
+body:not(.in-menu) #todWrap,
+body:not(.in-menu) #langSelWrap,
+body:not(.in-menu) #legP,
+body:not(.in-menu) #scaleBar,
+body:not(.in-menu) #camM:not(.free){display:none!important}
+body:not(.in-menu) #bFol.is-needed{display:flex!important}
+body.show-map #mmWrap,body.show-map #pcWrap{display:block!important}
+body.debug #topRightStack{display:flex!important}
+#bDiv{position:relative}
+#bDiv.is-ready{background:#143a22;border-color:#5ed4a0;color:#eafff4}
+#bDiv.is-blocked{filter:grayscale(.35);opacity:.82}
+#bDiv::after{content:'';position:absolute;inset:-3px;border-radius:12px;padding:2px;background:conic-gradient(#5ed4a0 calc(var(--p,0)*1%), rgba(255,255,255,.15) 0);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+#bCyst.is-on{background:#1a3a55;border-color:#8cf;color:#dff}
+#divReason{position:absolute;left:50%;bottom:76px;transform:translateX(-50%);z-index:12;color:#cfe;font:700 12px/1.2 system-ui,sans-serif;text-shadow:0 1px 2px #000;pointer-events:none;max-width:92vw;text-align:center}
+#actBar{max-height:72px}
+@media (max-width:900px){
+  #actBar{max-height:72px!important;flex-wrap:nowrap!important}
+  #bPause{min-width:44px;min-height:44px}
+}

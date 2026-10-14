@@ -135,14 +135,8 @@
     } catch(e){ window.openGameMenu(); }
   };
 
-  var actBtns = [
-    {icon:'✎', title:'Eat', fn:function(){ fireClick('bEat'); }},
-    {icon:'⊚', title:'Divide', fn:function(){ fireClick('bDiv'); }},
-    {icon:'▶', title:'Auto', fn:function(){ fireClick('bAuto'); }},
-    {icon:'⊕', title:'Zoom', fn:function(){
-      try { tZoom = (tZoom < 0.5 ? 1.2 : (tZoom < 2 ? 3 : 0.15)); } catch(e){}
-    }}
-  ];
+  // P1: floating duplicates covered the minimap and doubled the action bar. Keep the joystick only.
+  var actBtns = [];
   actBtns.forEach(function(b){
     var el = document.createElement('div');
     el.className = 'ma'; el.textContent = b.icon; el.title = b.title;
@@ -151,12 +145,7 @@
     mActs.appendChild(el);
   });
 
-  var topBtns = [
-    {icon:'⏸', title:'Pause', cls:'', fn:function(){
-      try { paused = !paused; window.paused = paused; } catch(e){ try{ window.paused = !window.paused; }catch(e2){} }
-    }},
-    {icon:'☰ МЕНЮ', title:'Menu', cls:'menu', fn:function(){ window.toggleGameMenu(); }}
-  ];
+  var topBtns = [];
   topBtns.forEach(function(b){
     var el = document.createElement('div');
     el.className = 'ma' + (b.cls ? ' '+b.cls : '');
@@ -166,8 +155,8 @@
     mTop.appendChild(el);
   });
 
-  document.body.appendChild(mActs);
-  document.body.appendChild(mTop);
+  mActs.hidden = true;
+  mTop.hidden = true;
 
   // ---- 4. Virtual joystick (small pad only) ----
   var joyOn = false, joyId = null, jcx = 0, jcy = 0, jvx = 0, jvy = 0;

@@ -140,10 +140,11 @@ describe('UI-IMPROVE F6: mobile compact bottom bar', () => {
   });
   it('text stays only on ЕСТЬ / ДЕЛИТЬ / АВТО', () => {
     const m = read('main.js');
-    expect(m).toMatch(/labelBtn\('bEat','ЕСТЬ','авто','[^']+',true\)/);
+    // Reason: P0.3 hotkey label is E, not "авто"; P1 spore label is СПОРА and stays visible (ab-keep).
+    expect(m).toMatch(/labelBtn\('bEat','ЕСТЬ','E','[^']+',true\)/);
     expect(m).toMatch(/labelBtn\('bDiv','ДЕЛИТЬ','Q','[^']+',true\)/);
     expect(m).toMatch(/labelBtn\('bAuto','АВТО','Tab','[^']+',true\)/);
-    expect(m).toMatch(/labelBtn\('bCyst','ЦИСТА','R','[^']+'\)/);
+    expect(m).toMatch(/labelBtn\('bCyst','СПОРА','R','[^']+',true\)/);
     expect(m).toMatch(/labelBtn\('bFree','ПОЛЁТ','F','[^']+'\)/);
     expect(m).toMatch(/labelBtn\('bFol','СЛЕДИТЬ','V','[^']+'\)/);
   });

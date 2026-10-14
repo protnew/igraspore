@@ -348,7 +348,7 @@ function startGame(isScreensaver){
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';
   document.getElementById('weatherP').style.display='block';
-  document.getElementById('actBar').style.display='flex';
+  document.getElementById('actBar').style.display=(window.demoMode||isScreensaver)?'none':'flex';
   if(typeof window.measureActbarH==='function'){ window.measureActbarH(); setTimeout(window.measureActbarH,120); }
   document.getElementById('renderModeBtn').style.display='block';
   if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISS';rb4.title='Сейчас: SwissBioPics. Клик → WebGL';}}
@@ -368,9 +368,9 @@ function startGame(isScreensaver){
     if(keep) b.classList.add('ab-keep');
     b.style.minWidth='72px'; b.style.padding='12px 16px'; b.style.fontSize='15px';
   }
-  labelBtn('bEat','ЕСТЬ','авто','🍴',true);
+  labelBtn('bEat','ЕСТЬ','E','🍴',true);
   labelBtn('bDiv','ДЕЛИТЬ','Q','➗',true);
-  labelBtn('bCyst','ЦИСТА','R','🛡');
+  labelBtn('bCyst','СПОРА','R','🛡',true);
   labelBtn('bAuto','АВТО','Tab','🤖',true);
   labelBtn('bFree','ПОЛЁТ','F','🕊');
   labelBtn('bFol','СЛЕДИТЬ','V','🎯');

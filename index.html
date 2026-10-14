@@ -68,12 +68,7 @@
 <div id="scaleBar" style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); color:#fff; border-bottom:2px solid #fff; padding-bottom:2px; font-size:12px; pointer-events:none; z-index:10; text-shadow:0 1px 2px #000;">100 μm</div>
 <div id="spdBar" style="display:none; z-index:10; top:25px; left:50%; transform:translateX(-50%);"></div>
 <div id="todWrap" class="p" style="display:none; z-index:10; top:60px; left:50%; transform:translateX(-50%);"></div>
-<div id="sandboxTools" class="p" style="display:none; z-index:10; top:80px; right:6px; background:rgba(0,30,10,0.8); border:1px solid #0f0; color:#0f0;">
-  <div style="font-weight:bold;margin-bottom:5px;text-align:center;">🛠 Sandbox</div>
-  <button class="btn" style="width:100%;margin-bottom:3px;background:#030;color:#0f0;border:1px solid #0f0;cursor:pointer;" id="btnAcid">Acid Rain</button>
-  <button class="btn" style="width:100%;margin-bottom:3px;background:#030;color:#0f0;border:1px solid #0f0;cursor:pointer;" id="btnEclipse">Eclipse</button>
-  <button class="btn" style="width:100%;background:#030;color:#0f0;border:1px solid #0f0;cursor:pointer;" id="btnLeaderboard">Leaderboard</button>
-</div>
+<div id="divReason" class="div-reason" aria-live="polite"></div>
 
 
 <div id="keyHint" class="p" style="display:none"></div>
@@ -84,17 +79,16 @@
 <div class="ab" id="bEat" role="button" aria-label="Есть (E)" title="Есть">ЕСТЬ<span class="hk">E</span></div>
 <div class="ab" id="bDiv" role="button" aria-label="Делить (Q)" title="Делить">ДЕЛИТЬ<span class="hk">Q</span></div>
 <div class="ab" id="bCyst" role="button" aria-label="Циста (R)" title="Циста">ЦИСТА<span class="hk">R</span></div>
-<div class="ab" id="bFeed" role="button" aria-label="Ручное питание (Space)" title="Ручное питание" style="background:#1a3a0a;border-color:#8c4">🍽<span class="abt"> КУСЬ</span><span class="hk">Space</span></div>
+<div class="ab hud-parked" id="bFeed" role="button" aria-label="Ручное питание (Space)" title="Ручное питание" hidden>🍽<span class="abt"> КУСЬ</span><span class="hk">Space</span></div>
 <div class="ab" id="bAuto" role="button" aria-label="Автопилот (Tab)" aria-keyshortcuts="Tab" title="Авто">АВТО<span class="hk">Tab</span></div>
-<div class="ab" id="bFree" role="button" aria-label="Свободный полёт (F)" title="Свободный полёт: F или WASD / мышь">ПОЛЁТ F<span class="hk">F</span></div>
-<div class="ab" id="bMicro" role="button" aria-label="Микроскоп (M)" title="Microscope Mode">&#128300;<span class="hk">M</span></div>
-<div class="ab" id="bRender" role="button" aria-label="Режим картинки (N)" title="Картинка: мульт / Swiss">&#127912;<span class="hk">N</span></div>
-<div class="ab" id="bFol" role="button" aria-label="Следить за клеткой (V)" title="Следить">СЛЕДИТЬ<span class="hk">V</span></div>
-<div class="ab" id="bWiki" role="button" aria-label="Вики (B)" title="Wiki/Bestiary">&#128218;<span class="hk">B</span></div>
-<div class="ab" id="bPause" role="button" aria-label="Пауза (P)" title="Pause">&#9208;<span class="hk">P</span></div>
-<div class="ab" id="bZI" role="button" aria-label="Приблизить" title="Zoom+">&#128269;+</div>
-<div class="ab" id="bZO" role="button" aria-label="Отдалить" title="Zoom-">&#128269;-</div>
-<div class="ab" id="bSandbox" role="button" aria-label="Инструменты песочницы" title="Sandbox Tools">&#128736;</div>
+<div class="ab hud-parked" id="bFree" role="button" aria-label="Свободный полёт (F)" title="Свободный полёт: F или WASD / мышь">ПОЛЁТ F<span class="hk">F</span></div>
+<div class="ab hud-parked" id="bMicro" role="button" aria-label="Микроскоп (M)" title="Microscope Mode">&#128300;<span class="hk">M</span></div>
+<div class="ab hud-parked" id="bRender" role="button" aria-label="Режим картинки (N)" title="Картинка: мульт / Swiss">&#127912;<span class="hk">N</span></div>
+<div class="ab hud-parked" id="bFol" role="button" aria-label="Следить за клеткой (V)" title="Следить">СЛЕДИТЬ<span class="hk">V</span></div>
+<div class="ab hud-parked" id="bWiki" role="button" aria-label="Вики (B)" title="Wiki/Bestiary">&#128218;<span class="hk">B</span></div>
+<div class="ab" id="bPause" role="button" aria-label="Пауза и меню (P)" title="Пауза">☰</div>
+<div class="ab hud-parked" id="bZI" role="button" aria-label="Приблизить" title="Zoom+">&#128269;+</div>
+<div class="ab hud-parked" id="bZO" role="button" aria-label="Отдалить" title="Zoom-">&#128269;-</div>
 </div>
 <div id="leaderboardO" class="ov">
   <div class="tt">🏆 Leaderboard</div>
@@ -132,7 +126,7 @@
 <div class="scrollbox" id="spGrid"></div>
 <div style="margin-top:4px"><button class="btn sm" id="helpBtn" aria-label="helpBtn"></button> <button class="btn sm" id="setBtn2" aria-label="setBtn2"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
 </div>
-<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button></div>
+<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button><button class="btn sm" id="pLegend" type="button">Легенда</button><button class="btn sm" id="pCam" type="button">Полёт камеры</button><button class="btn sm" id="pMap" type="button">Карта и график</button><button class="btn sm" id="pMicro" type="button">Микроскоп</button><button class="btn sm" id="pPic" type="button">Режим картинки</button><button class="btn sm" id="menuBtnPause" type="button">Выход</button></div>
 <div id="helpO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="helpT"></div><div id="helpBody" style="color:#bcd;font-size:12px;line-height:1.6;max-width:560px"></div><button class="btn sm" id="helpClose" style="margin-top:12px"></button></div>
 <div id="setO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="setT"></div><div class="scrollbox" id="setBody" style="max-width:400px"></div><button class="btn sm" id="setClose" style="margin-top:12px"></button></div>
 <div id="wikiO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:6px" id="wikiT"></div><input type="text" class="wiki-search" id="wikiSearch" placeholder="Search..."><div id="wikiContent"></div><button class="btn sm" id="wikiClose" style="margin-top:10px"></button></div>
@@ -169,6 +163,8 @@
   </div>
 </div>
 <script src="04-Src/js/config.js?v=1790622000"></script>
+<script src="04-Src/js/i18n_hud.js?v=1790622000"></script>
+<script src="04-Src/js/i18n_detect.js?v=1790622000"></script>
 <script src="04-Src/js/lifecycle.js?v=1790622000"></script>
 <script src="04-Src/js/camera_follow.js?v=1790622000"></script>
 <script src="04-Src/js/wiki_articles.js?v=1790622000"></script>
@@ -202,6 +198,7 @@
 <script src="04-Src/js/ui_screens.js?v=1790622000"></script>
 <script src="04-Src/js/main.js?v=1790622000"></script>
 <script src="04-Src/js/main_events.js?v=1790622000"></script>
+<script src="04-Src/js/toast_queue.js?v=1790622000"></script>
 <script src="04-Src/js/demo.js?v=1790622000"></script>
 <script src="04-Src/js/stars.js?v=1790622000"></script>
 <script src="04-Src/js/night_sky.js?v=1790622000"></script>

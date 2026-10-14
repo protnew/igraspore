@@ -5,7 +5,7 @@ function buildLangBar() {
   if(!lb) return;
   lb.innerHTML = '';
   document.getElementById('curLangTxt').textContent = langNames[curLang] || curLang;
-  var enabled = window.IGS_ENABLED || {ru:1, en:1};
+  var enabled = window.IGS_ENABLED || {ru:1, en:1, 'pt-BR':1, id:1, de:1, fr:1};
   for(var l in LANGS) {
     if(!enabled[l]) continue;
     var b = document.createElement('div');
@@ -13,10 +13,15 @@ function buildLangBar() {
     b.textContent = langNames[l] || LANGS[l];
     b.setAttribute('data-lang', l);
     b.onclick = function(ev) {
-      curLang = ev.target.getAttribute('data-lang');
-      try { localStorage.setItem('igs_lang', curLang); localStorage.removeItem('igs_lang_auto'); } catch(e){}
-      buildLangBar();
-      updateMenuTexts();
+      var next = ev.target.getAttribute('data-lang');
+      function apply() {
+        curLang = next;
+        try { localStorage.setItem('igs_lang', curLang); localStorage.removeItem('igs_lang_auto'); } catch(e){}
+        buildLangBar();
+        if (typeof updateMenuTexts === 'function') updateMenuTexts();
+      }
+      if (window.loadLangPack) window.loadLangPack(next).then(apply).catch(apply);
+      else apply();
       document.getElementById('langSelWrap').blur();
     };
     lb.appendChild(b);

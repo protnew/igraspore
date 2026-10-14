@@ -1,0 +1,13 @@
+{
+  "name": "igraspore-android",
+  "private": true,
+  "version": "3.0.0",
+  "description": "iGraSpore Capacitor shell. Web assets come from cf-publish.",
+  "dependencies": {
+    "@capacitor/android": "8.5.3",
+    "@capacitor/core": "8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.3"
+  }
+}

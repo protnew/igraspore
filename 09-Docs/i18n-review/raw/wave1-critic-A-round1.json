@@ -1,0 +1,98 @@
+{
+  "critic": "A",
+  "date": "2026-10-14",
+  "model": "agent-run-A",
+  "languages": [
+    {
+      "code": "pt-BR",
+      "score": 9.0,
+      "axes": {"meaning": 7, "glossary": 10, "natural": 9, "length": 9, "params": 10},
+      "notes": [
+        {"key": "clear", "problem": "Weather chip next to the sun icon. Limpo means clean, not clear sky.", "fix": "Claro"},
+        {"key": "gameTime", "problem": "Stat is elapsed seconds (playSec + s). Hora means clock hour.", "fix": "Tempo"},
+        {"key": "menuSub", "problem": "Pond cross-section rendered as a lake. lago is lake, not pond.", "fix": "Simulação de micróbios — 100 espécies + vírus. Corte da lagoa."}
+      ]
+    },
+    {
+      "code": "es",
+      "score": 7.8,
+      "axes": {"meaning": 6, "glossary": 5, "natural": 9, "length": 9, "params": 10},
+      "notes": [
+        {"key": "hud.goal", "problem": "Always-on goal says Diviértete (have fun, divertirse). English Divide and the divide glossary are not there. Caps meaning and glossary.", "fix": "Divide: {cur}/{need}"},
+        {"key": "gameTime", "problem": "Elapsed seconds labeled as a clock hour.", "fix": "Tiempo"},
+        {"key": "dead", "problem": "Death title is the noun extinction, not the state extinct.", "fix": "EXTINTO"},
+        {"key": "restart", "problem": "OTRA VEZ is only again, vague on the death/pause button.", "fix": "REINICIAR"}
+      ]
+    },
+    {
+      "code": "hi",
+      "score": 7.4,
+      "axes": {"meaning": 6, "glossary": 6, "natural": 8, "length": 7, "params": 10},
+      "notes": [
+        {"key": "hud.btn.divide", "problem": "बाँटो is share/distribute. Cell division elsewhere in this file is विभाजन. Glossary divide is missing on the action button.", "fix": "विभाजन"},
+        {"key": "hud.btn.divide.short", "problem": "Same share-verb on the short HUD label. No shorter divide form was supplied.", "fix": "विभाजन"},
+        {"key": "hud.goal", "problem": "Goal line बाँटो reads as share: 1/3, not divide. Inconsistent with the विभाजन toasts.", "fix": "विभाजन: {cur}/{need}"},
+        {"key": "menuSub", "problem": "तालाब का कटाव means erosion of the pond, not a cross-section.", "fix": "सूक्ष्मजीव सिमुलेशन — 100 प्रजातियाँ + वायरस। तालाब का काट।"},
+        {"key": "hud.divide.reason.cd", "problem": "से is the postposition from, not seconds. ठहराव 3 से reads as a halt from 3, not a cooldown.", "fix": "इंतज़ार {sec} सेक"},
+        {"key": "healthBars", "problem": "पट्टियाँ means bandages/strips, not health bars.", "fix": "हेल्थ बार"},
+        {"key": "resume", "problem": "जारी is the state ongoing, not a resume command. Pause-screen button.", "fix": "जारी रखो"},
+        {"key": "close", "problem": "बंद is closed/off, not the close command. Informal तुम is used in the toasts.", "fix": "बंद करो"},
+        {"key": "dead", "problem": "विलुप्ति is the noun extinction, not the extinct state on the death title.", "fix": "विलुप्त"}
+      ]
+    },
+    {
+      "code": "id",
+      "score": 9.2,
+      "axes": {"meaning": 8, "glossary": 10, "natural": 9, "length": 9, "params": 10},
+      "notes": [
+        {"key": "hud.divide.reason.cd", "problem": "d is not a seconds unit. jeda 3 d can be read as 3 days. detik is dtk.", "fix": "jeda {sec} dtk"},
+        {"key": "toast.eat.ok", "problem": "Makan is the imperative/infinitive Eat, same as the button, not the past confirmation Ate.", "fix": "Sudah makan"},
+        {"key": "decomposer", "problem": "English label is Cleaners (fungi). Pengurai means decomposers, a different player-facing word.", "fix": "Pembersih (jamur)"}
+      ]
+    },
+    {
+      "code": "tr",
+      "score": 7.8,
+      "axes": {"meaning": 6, "glossary": 8, "natural": 7, "length": 8, "params": 10},
+      "notes": [
+        {"key": "resume", "problem": "SÜR is drive/smear. On the pause screen it does not read as resume. Informal sen is the right register.", "fix": "DEVAM"},
+        {"key": "paused", "problem": "DURAKLAT is the command pause it. The overlay title is the status PAUSED.", "fix": "DURAKLATILDI"},
+        {"key": "dead", "problem": "TÜKENDİ means depleted/used up, not extinct. Death title.", "fix": "YOK OLDUN"},
+        {"key": "dEaten", "problem": "Yenildi is read as was defeated, not was eaten. Eat glossary is YE/Yedin elsewhere; this death cause breaks it.", "fix": "Yem oldu"},
+        {"key": "help", "problem": "NASIL OYNANIR is 13 characters on a menu button (English HOW TO PLAY is 11). May wrap at 390px.", "fix": "NASIL OYNA"},
+        {"key": "menuSub", "problem": "Göl is a lake. English is a pond cross-section.", "fix": "Mikrop simülasyonu — 100 tür + virüs. Gölet kesiti."}
+      ]
+    },
+    {
+      "code": "de",
+      "score": 8.8,
+      "axes": {"meaning": 8, "glossary": 10, "natural": 8, "length": 8, "params": 10},
+      "notes": [
+        {"key": "close", "problem": "ZU means shut/to, not the close command. Too cryptic for a button.", "fix": "SCHLIESSEN"},
+        {"key": "set", "problem": "EINSTELLUNGEN is 13 characters. Settings button will overflow the 8-character HUD/menu budget the German pass was meant to test.", "fix": "OPTIONEN"},
+        {"key": "restart", "problem": "NEU means new, not restart.", "fix": "NOCHMAL"}
+      ]
+    },
+    {
+      "code": "fr",
+      "score": 9.2,
+      "axes": {"meaning": 8, "glossary": 10, "natural": 9, "length": 9, "params": 10},
+      "notes": [
+        {"key": "gameTime", "problem": "Heure is clock hour. The stat is elapsed seconds.", "fix": "Temps"},
+        {"key": "toast.eat.ok", "problem": "Mangé is the same participle as the death cause Eaten, not the active Ate. Reads as you were eaten.", "fix": "Tu as mangé"}
+      ]
+    },
+    {
+      "code": "ja",
+      "score": 7.8,
+      "axes": {"meaning": 7, "glossary": 8, "natural": 7, "length": 7, "params": 10},
+      "notes": [
+        {"key": "gameTime", "problem": "時刻 is clock time of day. The stat is elapsed seconds.", "fix": "時間"},
+        {"key": "toast.eat.closer", "problem": "近づいた is past (you already approached). English is an order to get closer.", "fix": "獲物にもっと近づけ"},
+        {"key": "consumer1", "problem": "食べる側 is an unnatural calque (eating side), not the eater noun. Glossary consumer/eater should be 食べ手, matching 食べる.", "fix": "小さな食べ手"},
+        {"key": "consumer2", "problem": "Same calque, and 中くらいの食べる側 is too long for a species-filter chip.", "fix": "中型の食べ手"},
+        {"key": "hud.divide.reason.energy", "problem": "エネルギー plus the ratio is wider than the reason chip (English energy is 6 letters). Do not swap in 元気.", "fix": "エネルギー {cur}/{need}"}
+      ]
+    }
+  ]
+}

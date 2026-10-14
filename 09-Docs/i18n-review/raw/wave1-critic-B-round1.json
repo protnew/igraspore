@@ -1,0 +1,105 @@
+{
+  "critic": "B",
+  "date": "2026-10-14",
+  "model": "agent-run-B",
+  "languages": [
+    {
+      "code": "pt-BR",
+      "score": 8.6,
+      "axes": {"meaning": 7, "glossary": 9, "natural": 8, "length": 9, "params": 10},
+      "notes": [
+        "gameTime: Hora means hour/clock time. The stat is elapsed play seconds. Fix: Tempo",
+        "clear: Limpo means clean, not clear weather (sun row). Fix: Claro",
+        "healthBars: Barras drops health, so the settings toggle is unnamed. Fix: Barras de vida",
+        "eaten: Comido is passive (was eaten). The live stat is prey the player ate. Fix: Presas",
+        "dead: EXTINÇÃO is the noun extinction, not the state extinct. Fix: EXTINTO"
+      ]
+    },
+    {
+      "code": "es",
+      "score": 7.8,
+      "axes": {"meaning": 6, "glossary": 7, "natural": 7, "length": 9, "params": 10},
+      "notes": [
+        "hud.goal: Diviédete is not dividir (wrong accent; reads as divertirse / nonsense) on the always-visible goal. Fix: Divide: {cur}/{need}",
+        "gameTime: Hora means hour. The stat is elapsed seconds. Fix: Tiempo",
+        "toast.cyst.hunger: te hiciste quiste is ungrammatical. Fix: Hambre: te enquistaste — busca comida y despierta",
+        "healthBars: Barras drops health. Fix: Barras de vida",
+        "eaten: Comido is passive (was eaten). The live stat is prey the player ate. Fix: Presas",
+        "dead: EXTINCIÓN is the noun, not the state. Fix: EXTINTO",
+        "dStarve: Hambre is hunger, not starved. Dictionary-only until death-cause rows leave hardcoded English. Fix: Inanición"
+      ]
+    },
+    {
+      "code": "hi",
+      "score": 8.0,
+      "axes": {"meaning": 6, "glossary": 9, "natural": 7, "length": 8, "params": 10},
+      "notes": [
+        "menuSub: कटाव means erosion, not a cross-section. Fix: सूक्ष्मजीव सिमुलेशन — 100 प्रजातियाँ + वायरस। तालाब की अनुप्रस्थ काट।",
+        "hud.divide.reason.cd: से is the postposition from, not seconds. Fix: ठहराव {sec} सेकंड",
+        "healthBars: पट्टियाँ means strips/bandages, not health bars. Fix: HP बार",
+        "resume: जारी is a state, not resume. Fix: जारी रखो",
+        "close: बंद is closed, not close. Fix: बंद करो",
+        "toast.cyst.hunger: बन गए (आप/plural) clashes with तुम imperatives ढूँढो/जागो. Fix: भूख: सिस्ट बन गया — भोजन ढूँढो और जागो",
+        "dead: विलुप्ति is the noun extinction. Fix: विलुप्त"
+      ]
+    },
+    {
+      "code": "id",
+      "score": 8.4,
+      "axes": {"meaning": 7, "glossary": 9, "natural": 7, "length": 9, "params": 10},
+      "notes": [
+        "hud.divide.reason.cd: d is not the abbreviation of detik. Fix: jeda {sec} dtk",
+        "dCauses: Penyebab mati is ungrammatical. Fix: Penyebab kematian",
+        "healthBars: Batang means rod/stem, not a health bar. Fix: Bar nyawa",
+        "eaten: Dimakan is passive (was eaten). The live stat is prey the player ate. Fix: Mangsa",
+        "toast.eat.ok: Makan is the bare verb, same as the button, not Ate. Fix: Sudah makan",
+        "dAge: Tua means old, not old age. Dictionary-only until death-cause rows leave hardcoded English. Fix: Usia tua"
+      ]
+    },
+    {
+      "code": "tr",
+      "score": 8.2,
+      "axes": {"meaning": 7, "glossary": 8, "natural": 7, "length": 9, "params": 10},
+      "notes": [
+        "dead: TÜKENDİ means depleted/ran out, not extinct. Fix: NESLİ TÜKENDİ",
+        "dEaten: Yenildi primarily means was defeated, not was eaten. Dictionary-only until death-cause rows leave hardcoded English. Fix: Yenmiş",
+        "resume: SÜR means drive/keep going and is not the resume button. Fix: DEVAM",
+        "paused: DURAKLAT is the command pause, not the state paused. Fix: DURAKLATILDI",
+        "healthBars: Çubuklar drops health. Fix: Can çubukları"
+      ]
+    },
+    {
+      "code": "de",
+      "score": 8.6,
+      "axes": {"meaning": 8, "glossary": 9, "natural": 8, "length": 8, "params": 10},
+      "notes": [
+        "close: ZU does not read as close. SCHLIESSEN fits the standalone close button. Fix: SCHLIESSEN",
+        "healthBars: Balken drops health. Fix: Lebensbalken",
+        "eaten: Gefressen is the passive participle and collides with the death-cause word. The live stat is prey eaten. Fix: Beute",
+        "dAge: Alter collides with the age stat. English splits Age and Old age. Dictionary-only until death-cause rows leave hardcoded English. Fix: Altersschwäche"
+      ]
+    },
+    {
+      "code": "fr",
+      "score": 8.8,
+      "axes": {"meaning": 8, "glossary": 9, "natural": 9, "length": 8, "params": 10},
+      "notes": [
+        "gameTime: Heure means clock hour. The stat is elapsed seconds. Fix: Temps",
+        "healthBars: Barres drops health. Fix: Barres de vie",
+        "eaten: Mangé is passive (was eaten). The live stat is prey the player ate. Fix: Proies"
+      ]
+    },
+    {
+      "code": "ja",
+      "score": 8.4,
+      "axes": {"meaning": 8, "glossary": 8, "natural": 7, "length": 9, "params": 10},
+      "notes": [
+        "gameTime: 時刻 is clock time, not elapsed time. Fix: 時間",
+        "consumer1: 小さな食べる側 is a calque, not eater. Fix: 小さな食者",
+        "consumer2: 中くらいの食べる側 is the same calque. Fix: 中くらいの食者",
+        "healthBars: バー drops health. Fix: 体力バー",
+        "toast.eat.closer: 獲物に近づいた is completed past, not the prompt Closer to prey. Fix: 獲物にもっと近づけ"
+      ]
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 [
   {"code":"en","name":"English","wave":1,"enabled":true,"font":"system","plural":"en","critics":[]},
   {"code":"ru","name":"Русский","wave":1,"enabled":true,"font":"system","plural":"ru","critics":[]},
-  {"code":"pt-BR","name":"Português (Brasil)","wave":1,"enabled":false,"font":"system","plural":"pt","critics":[]},
+  {"code":"pt-BR","name":"Português (Brasil)","wave":1,"enabled":true,"font":"system","plural":"pt","critics":[9.0,8.6]},
   {"code":"es","name":"Español","wave":1,"enabled":false,"font":"system","plural":"es","critics":[]},
   {"code":"hi","name":"हिन्दी","wave":1,"enabled":false,"font":"Noto Sans Devanagari","plural":"hi","critics":[]},
-  {"code":"id","name":"Bahasa Indonesia","wave":1,"enabled":false,"font":"system","plural":"id","critics":[]},
+  {"code":"id","name":"Bahasa Indonesia","wave":1,"enabled":true,"font":"system","plural":"id","critics":[9.2,8.4]},
   {"code":"tr","name":"Türkçe","wave":1,"enabled":false,"font":"system","plural":"tr","critics":[]},
-  {"code":"de","name":"Deutsch","wave":1,"enabled":false,"font":"system","plural":"de","critics":[]},
-  {"code":"fr","name":"Français","wave":1,"enabled":false,"font":"system","plural":"fr","critics":[]},
+  {"code":"de","name":"Deutsch","wave":1,"enabled":true,"font":"system","plural":"de","critics":[8.8,8.6]},
+  {"code":"fr","name":"Français","wave":1,"enabled":true,"font":"system","plural":"fr","critics":[9.2,8.8]},
   {"code":"ja","name":"日本語","wave":1,"enabled":false,"font":"system-cjk","plural":"ja","critics":[]}
 ]

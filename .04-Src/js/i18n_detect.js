@@ -21,9 +21,23 @@ function detectLang(navLangs, enabled) {
   }
   return ok('en') || 'en';
 }
+function loadLangPack(code) {
+  if (typeof fetch !== 'function') return Promise.resolve(code);
+  return fetch('i18n/' + code + '.json').then(function(r) {
+    if (!r.ok) throw new Error(code);
+    return r.json();
+  }).then(function(obj) {
+    if (typeof T !== 'undefined') {
+      if (!T[code]) T[code] = {};
+      Object.keys(obj).forEach(function(k) { T[code][k] = obj[k]; });
+    }
+    return code;
+  });
+}
 if (typeof window !== 'undefined') {
+  window.loadLangPack = loadLangPack;
   window.detectLang = detectLang;
-  window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1 };
+  window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1, 'pt-BR': 1, id: 1, de: 1, fr: 1 };
   try {
     var saved = localStorage.getItem('igs_lang');
     if (saved && window.IGS_ENABLED[saved]) curLang = saved;

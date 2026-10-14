@@ -182,7 +182,7 @@ window.tryPlayerEat = function(){
       // legacy
       best.divCD=0; best.invuln=0;
       eatOrg(player, best);
-      if(window.showToast) window.showToast('Съел! +энергия','#8f8');
+      if(window.showToast) window.showToast(tt('toast.eat.ok'),'#8f8');
       return true;
     }
     // Pull toward

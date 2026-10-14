@@ -119,7 +119,7 @@ function buildSpeciesGrid(){
   if(document.querySelectorAll('#spGrid .sc').length===0){
     var empty=document.createElement('div');
     empty.style.cssText='padding:12px;color:#f89;font-size:12px';
-    empty.textContent='Нет видов в категории «'+(typeof catName==='function'?catName(selCat):selCat)+'». Нажмите «Все».';
+    empty.textContent=tt('noSpecies',{cat:(typeof catName==='function'?catName(selCat):selCat)});
     sg.appendChild(empty);
   }
 }
@@ -157,6 +157,16 @@ function updateMenuTexts(){
   document.getElementById('pPic').textContent=tt('picMode');
   document.getElementById('menuBtnPause').textContent=tt('exit');
   var demoBtn=document.getElementById('demoBtn'); if(demoBtn) demoBtn.textContent=tt('demo');
+  function hudLabel(id, key, hk){
+    var b=document.getElementById(id); if(!b) return;
+    b.innerHTML='<span class="abt">'+tt(key)+'</span><span class="hk">'+hk+'</span>';
+  }
+  hudLabel('bEat','hud.btn.eat.short','E');
+  hudLabel('bDiv','hud.btn.divide.short','Q');
+  hudLabel('bCyst','hud.btn.cyst.short','R');
+  hudLabel('bAuto','hud.btn.auto.short','Tab');
+  var mapLabel=document.getElementById('mapLabel'); if(mapLabel) mapLabel.textContent=tt('map');
+  var popLabel=document.getElementById('popLabel'); if(popLabel) popLabel.textContent=tt('pop');
   document.querySelectorAll('#starSelect option, #starSelectGame option').forEach(function(o){
     var label = curLang==='ru' ? o.getAttribute('data-ru') : o.getAttribute('data-en');
     if(label) o.textContent = label;

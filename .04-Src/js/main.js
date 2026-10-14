@@ -368,10 +368,10 @@ function startGame(isScreensaver){
     if(keep) b.classList.add('ab-keep');
     b.style.minWidth='72px'; b.style.padding='12px 16px'; b.style.fontSize='15px';
   }
-  labelBtn('bEat','ЕСТЬ','E','🍴',true);
-  labelBtn('bDiv','ДЕЛИТЬ','Q','➗',true);
-  labelBtn('bCyst','СПОРА','R','🛡',true);
-  labelBtn('bAuto','АВТО','Tab','🤖',true);
+  labelBtn('bEat',tt('hud.btn.eat.short'),'E','🍴',true);
+  labelBtn('bDiv',tt('hud.btn.divide.short'),'Q','➗',true);
+  labelBtn('bCyst',tt('hud.btn.cyst.short'),'R','🛡',true);
+  labelBtn('bAuto',tt('hud.btn.auto.short'),'Tab','🤖',true);
   labelBtn('bFree','ПОЛЁТ','F','🕊');
   labelBtn('bFol','СЛЕДИТЬ','V','🎯');
   document.getElementById('scaleW').style.display='block';

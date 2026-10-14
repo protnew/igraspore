@@ -12,12 +12,12 @@ function showSpeedBar(){
     b.className='sb'+(Math.abs(timeScale-speeds[i].v)<0.001?' act':'');
     b.textContent=speeds[i].l;
     b.setAttribute('data-ts',speeds[i].v);
-    b.title=speeds[i].v===0?'Пауза':('Скорость '+speeds[i].l);
+    b.title=speeds[i].v===0?tt('paused'):(tt('simSpeed')+' '+speeds[i].l);
     b.style.cssText='padding:6px 12px;font-size:14px;min-width:44px;cursor:pointer;border-radius:5px;border:1px solid #345;background:'+(Math.abs(timeScale-speeds[i].v)<0.001?'#1a6a3a':'#012')+';color:#fff;font-family:inherit;';
     b.onclick=function(ev){
       var el=ev.currentTarget||ev.target;
       timeScale=parseFloat(el.getAttribute('data-ts'));
-      if(window.showToast) window.showToast('Время: '+(timeScale===0?'пауза':timeScale+'x'),'#8cf');
+      if(window.showToast) window.showToast(tt('simSpeed')+': '+(timeScale===0?tt('paused'):timeScale+'x'),'#8cf');
       showSpeedBar();
     };
     sb.appendChild(b);

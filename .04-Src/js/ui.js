@@ -82,23 +82,33 @@ function updateWeather(){
   w.style.display='block';
 }
 
-  // Energy + mass progress (food/sun grow both; no eat-count gate)
+// Energy + mass progress (food/sun grow both; no eat-count gate)
+// UI-IMPROVE-2026-09-28 F1: was a top-level block run once at load (player===null) -> widget dead.
+// Now a per-frame function called from gameLoop (playing) and demo possession.
+function updateDivReady(){
   try{
     var hd=document.getElementById('hDivReady')||document.getElementById('hDiv')||document.getElementById('divInfo');
-    if(hd && player && player.alive){
-      var ad=(player.sp.size||4)*(player.sizeMult||1);
+    if(!hd) return;
+    var who=(typeof player!=='undefined' && player) ? player : (window.demoPossessed||null);
+    if(typeof state!=='undefined' && state!=='playing'){ hd.textContent=''; return; }
+    if(who && who.alive && who.sp){
+      var ad=(who.sp.size||4)*(who.sizeMult||1);
       var needM=Math.max(ad*0.5, 2.2);
-      if(player.sp.cat && player.sp.cat.indexOf('consumer')===0) needM=Math.max(ad*0.75, 3.0);
-      if(player.sp.cat==='consumer2'||player.sp.cat==='consumer3'||player.sp.cat==='macrophage') needM=Math.max(ad*0.9, 4.0);
-      var m=player.massFood||0;
-      var en=Math.max(0,Math.round(player.energy||0));
-      var rep=Math.round(player.sp.repEnergy||80);
+      if(who.sp.cat && who.sp.cat.indexOf('consumer')===0) needM=Math.max(ad*0.75, 3.0);
+      if(who.sp.cat==='consumer2'||who.sp.cat==='consumer3'||who.sp.cat==='macrophage') needM=Math.max(ad*0.9, 4.0);
+      var m=who.massFood||0;
+      var en=Math.max(0,Math.round(who.energy||0));
+      var rep=Math.round(who.sp.repEnergy||80);
       var line='Эн '+en+'/'+rep+' · Масса '+m.toFixed(1)+'/'+needM.toFixed(1);
-      if(window.canDivide && window.canDivide(player)) hd.textContent=line+' · ГОТОВО (Q)';
-      else if(window.divideBlockReason) hd.textContent=line+' · '+window.divideBlockReason(player);
-      else hd.textContent=line;
-    } else if(hd) hd.textContent='';
+      var txt;
+      if(window.canDivide && window.canDivide(who)) txt=line+' · ГОТОВО (Q)';
+      else if(window.divideBlockReason) txt=line+' · '+window.divideBlockReason(who);
+      else txt=line;
+      if(hd.textContent!==txt) hd.textContent=txt;
+    } else hd.textContent='';
   }catch(e){}
+}
+window.updateDivReady = updateDivReady;
 
 function updateEcoPanel(){
   // ECOSYSTEM PANEL REMOVED per user request — confusing numbers
@@ -189,17 +199,36 @@ else window.initLegendUI();
 
 
 
+// UI-IMPROVE-2026-09-28 F2: #scaleW was empty (no #scaleL ever created) -> 0x0 widget.
+// Canon: #scaleW builds its own content on first call: label "100 µm" + line #scaleL (width = 100*zoom).
+function ensureScaleBarContent(sw){
+  var sl = document.getElementById('scaleL');
+  if(sl && sw.contains(sl)) return sl;
+  sw.innerHTML = '';
+  sw.setAttribute('aria-label','Масштаб: 100 мкм');
+  var lab = document.createElement('div');
+  lab.id = 'scaleT';
+  lab.textContent = '100 µm';
+  lab.style.cssText = 'font:700 10px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;text-align:center;margin-bottom:2px;pointer-events:none';
+  sl = document.createElement('div');
+  sl.id = 'scaleL';
+  sl.style.cssText = 'height:3px;background:rgba(200,230,255,0.9);border-left:2px solid #fff;border-right:2px solid #fff;box-shadow:0 1px 2px #000;width:100px;margin:0 auto;pointer-events:none';
+  sw.appendChild(lab); sw.appendChild(sl);
+  return sl;
+}
 function updateScaleBar() {
    var sw = document.getElementById('scaleW');
    if(!sw) return;
    if(state !== 'playing') { sw.style.display = 'none'; return; }
    sw.style.display = 'block';
+   var sl = ensureScaleBarContent(sw);
    // 100 micrometers
-   var pixels = 100 * zoom;
-   var sl = document.getElementById('scaleL');
-   if(sl) sl.style.width = Math.max(10, pixels) + 'px';
+   var z = (typeof zoom === 'number' && isFinite(zoom)) ? zoom : 1;
+   var pixels = Math.round(Math.max(10, Math.min(260, 100 * z)));
+   var w = pixels + 'px';
+   if(sl.style.width !== w) sl.style.width = w;
 }
-
+window.updateScaleBar = updateScaleBar;
 
 function initTooltips() {
   var tip = document.getElementById('globalTooltip');

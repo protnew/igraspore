@@ -364,3 +364,20 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
   #camM{max-width:calc(50vw - var(--stack-w,120px)/2 - 12px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
 .ab:focus-visible,#legToggle:focus-visible,#starSelectGame:focus-visible{outline:2px solid #5ed4a0;outline-offset:2px}
+
+/* UI-IMPROVE-2026-09-28 F4: game-only widgets hidden over the start menu */
+body.in-menu #starSelectGame, body.in-menu #apkBtn{display:none!important}
+
+/* UI-IMPROVE-2026-09-28 F6: mobile compact bottom bar (2-3 rows, icon+hk; text only on ЕСТЬ/ДЕЛИТЬ/АВТО), hit area >=44x44 */
+@media (max-width: 900px), (pointer: coarse) {
+  /* left:50% makes an abs box shrink-to-fit into half the viewport (3 per row); size to content, capped at 96vw */
+  #actBar { gap: 4px !important; row-gap: 4px !important; width: max-content !important; max-width: 96vw !important; }
+  .ab { min-width: 44px !important; min-height: 44px !important; padding: 4px 4px !important; font-size: 11px !important; line-height: 1.1; }
+  .ab:not(.ab-keep) .abt { display: none !important; }
+  .ab[data-ico]:not(.ab-keep)::before { content: attr(data-ico); font-size: 18px; line-height: 1; }
+  .ab .hk { font-size: 9px !important; }
+}
+/* UI-IMPROVE-2026-09-28 F7: first-run pulse of the «Клавиши» chip (one run, <=2s) */
+@keyframes khPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(68,170,255,0); } 50% { box-shadow: 0 0 0 6px rgba(68,170,255,.55); } }
+#khToggle.kh-pulse { animation: khPulse 1s ease-in-out 2; }
+@media (prefers-reduced-motion: reduce) { #khToggle.kh-pulse { animation: none; } }

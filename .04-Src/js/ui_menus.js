@@ -293,3 +293,51 @@ window.tickKeyHint = function(){
   setTimeout(measureActbarH, 500);
   setTimeout(measureActbarH, 1500);
 })();
+
+// === UI-IMPROVE-2026-09-28 F4: clean start menu + keyboard focus on «НАЧАТЬ» ===
+// Single observer on #menuO class: covers init, restart, menu button, back-from-demo.
+window.syncMenuChrome = function(){
+  try{
+    var mo=document.getElementById('menuO'); if(!mo||!document.body) return;
+    var shown=/\bshow\b/.test(mo.className||'');
+    var was=document.body.classList.contains('in-menu');
+    document.body.classList.toggle('in-menu', shown);
+    if(shown && !was){
+      var sb=document.getElementById('startBtn');
+      var ae=document.activeElement;
+      if(sb && (!ae || ae===document.body || !mo.contains(ae))){
+        try{ sb.focus({preventScroll:true}); }catch(e){ try{ sb.focus(); }catch(_e){} }
+      }
+    }
+  }catch(e){}
+};
+(function(){
+  try{
+    var init=function(){
+      var mo=document.getElementById('menuO'); if(!mo) return;
+      window.syncMenuChrome();
+      if(typeof MutationObserver==='function'){
+        new MutationObserver(function(){ window.syncMenuChrome(); }).observe(mo,{attributes:true,attributeFilter:['class']});
+      }
+    };
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+  }catch(e){}
+})();
+// UI-IMPROVE-2026-09-28 F7: first-run pulse of the «Клавиши» chip — once per browser (LS igraspore.firstTip), <=2s, respects reduced motion
+window.maybeFirstRunPulse = function(){
+  try { if (localStorage.getItem('igraspore.firstTip')) return false; localStorage.setItem('igraspore.firstTip', '1'); } catch(e) { return false; }
+  try { if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false; } catch(e) {}
+  var b = document.getElementById('khToggle'); if (!b) return false;
+  b.classList.add('kh-pulse');
+  setTimeout(function(){ var x = document.getElementById('khToggle'); if (x) x.classList.remove('kh-pulse'); }, 2000);
+  return true;
+};
+(function(){
+  var orig = window.startKeyHintSession;
+  if (typeof orig !== 'function') return;
+  window.startKeyHintSession = function(){
+    var r = orig.apply(this, arguments);
+    try { window.maybeFirstRunPulse(); } catch(e) {}
+    return r;
+  };
+})();

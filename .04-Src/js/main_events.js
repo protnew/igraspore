@@ -133,7 +133,7 @@ window.showToast = function(msg, color){
   if(!el){
     el = document.createElement('div');
     el.id = 'toast';
-    el.style.cssText = 'position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:50;padding:12px 24px;border-radius:var(--r-md);font-size:var(--fs-lg);font-weight:800;color:var(--text-primary);background:var(--bg-panel);border:2px solid var(--accent);pointer-events:none;opacity:0;transition:opacity var(--fast) var(--ease);text-shadow:0 2px 6px rgba(0,0,0,.5);backdrop-filter:blur(4px);';
+    el.style.cssText = 'position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:35;padding:12px 24px;border-radius:var(--r-md);font-size:var(--fs-lg);font-weight:800;color:var(--text-primary);background:var(--bg-panel);border:2px solid var(--accent);pointer-events:none;opacity:0;transition:opacity var(--fast) var(--ease);text-shadow:0 2px 6px rgba(0,0,0,.5);backdrop-filter:blur(4px);';
     document.body.appendChild(el);
   }
   el.textContent = msg;

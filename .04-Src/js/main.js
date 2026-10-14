@@ -95,6 +95,7 @@ function gameLoop(ts){
     if (state === 'playing') {
       updateHUD();updateTopRight();updateWeather();updateEcoPanel();updateLegend();
       if(typeof updateScaleBar === 'function') updateScaleBar();
+      if(typeof updateDivReady === 'function') updateDivReady();
       if(fc%5===0 && typeof window.renderMinimap==='function')window.renderMinimap();if(fc%10===0 && typeof window.renderPopGraph==='function')window.renderPopGraph();
       if(fc%300===0) { // Every ~5 seconds
           try {
@@ -322,6 +323,16 @@ function startGame(isScreensaver){
   
   // Start zoomed in enough to see neighbors (Spore/Agar feel)
   state='playing';zoom=1.8;tZoom=1.8;gt=0;fc=0;lastT=0;
+  // Aquarium: modestly closer than play-start (was the same 1.8, organisms read far)
+  if(isScreensaver){
+    window._aquariumLock = true;
+    window.screensaverAutoCam = true;
+    window._aqFollow = null;
+    zoom = 2.25;
+    tZoom = 2.25;
+  } else {
+    window._aquariumLock = false;
+  }
   // Always start cartoon (user default). Realistic is opt-in via button only.
   try {
     if(settings.renderMode==='bioicons' || settings.renderMode==='realistic') settings.renderMode='cartoon';
@@ -332,6 +343,8 @@ function startGame(isScreensaver){
   } catch(e){}
   
   document.getElementById('menuO').className='ov';
+  // UI-IMPROVE-2026-09-28 F5: close stale overlays from the previous page session
+  ['wikiO','helpO','setO','pauseO','leaderboardO'].forEach(function(id){ var o=document.getElementById(id); if(o) o.className='ov'; });
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
   document.getElementById('topR').style.display='block';
   document.getElementById('weatherP').style.display='block';
@@ -347,17 +360,20 @@ function startGame(isScreensaver){
   if(typeof window.startKeyHintSession==='function') window.startKeyHintSession();
   else if(kh){ kh.style.display='flex'; }
   // Large Russian labels on primary action buttons
-  function labelBtn(id, text, hk){
+  function labelBtn(id, text, hk, ico, keep){
     var b=document.getElementById(id); if(!b) return;
-    b.innerHTML = text + '<span class="hk">'+hk+'</span>';
+    // UI-IMPROVE F6: text in .abt so mobile can show icon+hk only (text kept on ЕСТЬ/ДЕЛИТЬ/АВТО)
+    b.innerHTML = '<span class="abt">' + text + '</span><span class="hk">'+hk+'</span>';
+    if(ico) b.setAttribute('data-ico', ico);
+    if(keep) b.classList.add('ab-keep');
     b.style.minWidth='72px'; b.style.padding='12px 16px'; b.style.fontSize='15px';
   }
-  labelBtn('bEat','ЕСТЬ','авто');
-  labelBtn('bDiv','ДЕЛИТЬ','Q');
-  labelBtn('bCyst','ЦИСТА','R');
-  labelBtn('bAuto','АВТО','Tab');
-  labelBtn('bFree','ПОЛЁТ','F');
-  labelBtn('bFol','СЛЕДИТЬ','V');
+  labelBtn('bEat','ЕСТЬ','авто','🍴',true);
+  labelBtn('bDiv','ДЕЛИТЬ','Q','➗',true);
+  labelBtn('bCyst','ЦИСТА','R','🛡');
+  labelBtn('bAuto','АВТО','Tab','🤖',true);
+  labelBtn('bFree','ПОЛЁТ','F','🕊');
+  labelBtn('bFol','СЛЕДИТЬ','V','🎯');
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');
   tw.innerHTML='<input type="range" id="todR" min="0" max="24" step="0.05" value="'+tod+'"><span id="todL">12:00</span><span id="seasL">'+tt('season1')+'</span>';

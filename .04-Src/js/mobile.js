@@ -19,7 +19,7 @@
   css.textContent = [
     /* UI-RESTORE §5.5: actBar stays visible (wrap into rows); visibility itself is JS-driven */
     '.is-mobile #actBar{flex-wrap:wrap!important;gap:4px!important;max-width:96vw!important;bottom:max(var(--actbar-bottom),env(safe-area-inset-bottom))!important}',
-    '.is-mobile .ab{min-width:56px!important;min-height:44px!important;padding:8px 6px!important;font-size:12px!important}',
+    '.is-mobile .ab{min-width:44px!important;min-height:44px!important;padding:4px 4px!important;font-size:11px!important}',
     '.is-mobile #spdBar{display:none!important}',
     '.is-mobile #sandboxTools{display:none!important}',
     '.is-mobile #leaderboardO{display:none!important}',

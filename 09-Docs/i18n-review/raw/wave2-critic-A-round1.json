@@ -1,0 +1,131 @@
+{
+  "critic": "A",
+  "round": 1,
+  "date": "2026-10-14",
+  "model": "agent-run-A",
+  "languages": [
+    {
+      "code": "vi",
+      "score": 8.4,
+      "axes": {"meaning": 8, "glossary": 8, "natural": 8, "length": 8, "params": 10},
+      "notes": [
+        {"key": "clear", "problem": "Weather chip next to the sun icon. Quang is not a weather word; clear sky is quang đãng.", "fix": "Nắng"},
+        {"key": "hud.btn.cyst.short", "problem": "BÀO is a membrane/cell fragment, not spore. The full button BÀO TỬ is the right word. Short is what a narrow HUD would show.", "fix": "BÀO TỬ"},
+        {"key": "decomposer", "problem": "Dọn dẹp is the verb to clean up, not the cleaner noun. Fungi nấm is right.", "fix": "Nhóm dọn (nấm)"},
+        {"key": "consumer1", "problem": "Kẻ often means a villain, not a neutral eater. Same kẻ on consumer2.", "fix": "Con ăn nhỏ"},
+        {"key": "consumer2", "problem": "Same kẻ tone on the mid eater chip.", "fix": "Con ăn vừa"},
+        {"key": "dead", "problem": "TUYỆT CHỦNG is the noun extinction. The death title is the extinct state.", "fix": "ĐÃ TUYỆT CHỦNG"},
+        {"key": "toast.eat.plant", "problem": "Bạn is polite-neutral. The other toasts have no pronoun. Informal game lines drop it.", "fix": "Là cây: bơi về phía sáng"}
+      ]
+    },
+    {
+      "code": "ko",
+      "score": 8.2,
+      "axes": {"meaning": 7, "glossary": 7, "natural": 8, "length": 9, "params": 10},
+      "notes": [
+        {"key": "hud.btn.eat.short", "problem": "먹 is a cut-off stem, not a word. The eat button text is taken from the short key, so players see 먹 instead of 먹기.", "fix": "먹기"},
+        {"key": "help", "problem": "하는 법 is how to do it, not how to play. Menu button.", "fix": "놀이법"}
+      ]
+    },
+    {
+      "code": "th",
+      "score": 9.2,
+      "axes": {"meaning": 8, "glossary": 10, "natural": 9, "length": 9, "params": 10},
+      "notes": [
+        {"key": "season1", "problem": "ร้อน is hot, not summer. Spring and autumn next to it are real season names.", "fix": "หน้าร้อน"},
+        {"key": "season3", "problem": "หนาว is cold, not winter.", "fix": "หน้าหนาว"},
+        {"key": "decomposer", "problem": "ตัวเก็บกวาด (เชื้อรา) is 17 graphemes and wraps the species chip. Cleaners and fungi are the right ideas.", "fix": "ตัวกวาด (เชื้อรา)"}
+      ]
+    },
+    {
+      "code": "fil",
+      "score": 7.4,
+      "axes": {"meaning": 6, "glossary": 7, "natural": 7, "length": 7, "params": 10},
+      "notes": [
+        {"key": "dead", "problem": "NAUBOS means used up or ran out, not extinct.", "fix": "NALIPOL"},
+        {"key": "restart", "problem": "ULIT is only again, vague on the death button.", "fix": "ULITIN"},
+        {"key": "paused", "problem": "PAHINTO is the command pause it. The overlay title is the status paused.", "fix": "NAKAHINTO"},
+        {"key": "decomposer", "problem": "singaw alone is steam or vapor, not fungi. Fungi is halamang-singaw. Do not shorten that to singaw.", "fix": "Tagalinis (kabute)"},
+        {"key": "menuSub", "problem": "lawa is a lake. English is a pond cross-section. Hiwa (a cut) is fine.", "fix": "Simulasyon ng mikrobyo — 100 uri + virus. Hiwa ng pond."},
+        {"key": "wikiT", "problem": "Same lake word on the wiki title.", "fix": "Wiki: buhay sa pond"},
+        {"key": "set", "problem": "SETTINGS is still English. Casual arrange/settings is ayos. Title settingsT is also still English Settings.", "fix": "AYOS"},
+        {"key": "settingsT", "problem": "Settings title left in English.", "fix": "PAG-AAYOS"},
+        {"key": "diffN", "problem": "Normal is untranslated.", "fix": "Karaniwan"},
+        {"key": "toast.cyst.hunger", "problem": "cyst is left in English, so spore SPORA and the encysted state are not a local pair. Do not use sista (reads as sister).", "fix": "Gutom: nakakulong — maghanap ng pagkain at gumising"},
+        {"key": "help", "problem": "PAANO MAGLARO is 13 characters on a small menu button. English HOW TO PLAY is 11. May wrap.", "fix": "GABAY"},
+        {"key": "consumer1", "problem": "Maliliit na kumakain is 20 characters and wraps the species chip. kumakain is the right eater idea.", "fix": "Maliit-kain"},
+        {"key": "consumer2", "problem": "Mga gitnang kumakain is 20 characters on the same chip.", "fix": "Gitna-kain"},
+        {"key": "consumer3", "problem": "Malalaking mangangaso is 21 characters. Do not shorten mangangaso to aso (that is dog).", "fix": "Malaking mangangaso"}
+      ]
+    },
+    {
+      "code": "it",
+      "score": 9.2,
+      "axes": {"meaning": 9, "glossary": 10, "natural": 9, "length": 8, "params": 10},
+      "notes": [
+        {"key": "help", "problem": "COME GIOCARE is 12 characters on the small menu button. English HOW TO PLAY is 11.", "fix": "COME GIOCHI"},
+        {"key": "dStarve", "problem": "Fame is hunger and collides with the hunger toast. Starved is a death cause.", "fix": "Inedia"},
+        {"key": "consumer1", "problem": "Mangiatori piccoli is 18 characters and wraps the 160px species chip. consumer2 is 15. Do not drop mangiatori; there is no shorter accurate eater noun.", "fix": "Mangiatori piccoli"}
+      ]
+    },
+    {
+      "code": "pl",
+      "score": 9.0,
+      "axes": {"meaning": 8, "glossary": 10, "natural": 9, "length": 8, "params": 10},
+      "notes": [
+        {"key": "toast.eat.ok", "problem": "Zjedzone is the same passive as the death cause Eaten, not the active Ate. Reads as you were eaten. Masculine player address, same as the Ukrainian toast.", "fix": "Zjadłeś"},
+        {"key": "set", "problem": "USTAWIENIA is 10 characters. Settings button budget that failed German was 8. Title settingsT can stay Ustawienia.", "fix": "OPCJE"},
+        {"key": "dStarve", "problem": "Głód is hunger and collides with the hunger toast. Starved is a death cause.", "fix": "Zagłodzenie"}
+      ]
+    },
+    {
+      "code": "uk",
+      "score": 8.8,
+      "axes": {"meaning": 9, "glossary": 9, "natural": 9, "length": 7, "params": 10},
+      "notes": [
+        {"key": "set", "problem": "НАЛАШТУВАННЯ is 12 Cyrillic capitals. It overflows the settings button. Title settingsT can stay Налаштування.", "fix": "ОПЦІЇ"},
+        {"key": "resume", "problem": "ПРОДОВЖИТИ is the infinitive and 10 letters. Pause button. Informal imperative is shorter and is the right register.", "fix": "ПРОДОВЖ"},
+        {"key": "hud.goal", "problem": "Поділись is the perfective share command. The divide button is ДІЛИ, and Поділ is already the division noun. Поділись: 1/3 reads as share.", "fix": "Поділ: {cur}/{need}"},
+        {"key": "dStarve", "problem": "Голод is hunger and collides with the hunger toast. Starved is a death cause.", "fix": "Від голоду"}
+      ]
+    },
+    {
+      "code": "zh-TW",
+      "score": 9.4,
+      "axes": {"meaning": 9, "glossary": 9, "natural": 9, "length": 10, "params": 10},
+      "notes": [
+        {"key": "toast.cyst.hunger", "problem": "囊胞 is Japanese-style. A Taiwan microbe cyst is 包囊. Spore 孢子 is already the right distinct word.", "fix": "餓了：變成包囊 — 找食物再醒來"},
+        {"key": "consumer1", "problem": "吃貨 is foodie slang, not the trophic eater. Same slang on consumer2. Informal, but the glossary noun is 食者.", "fix": "小型食者"},
+        {"key": "consumer2", "problem": "Same foodie slang on the mid eater chip.", "fix": "中型食者"}
+      ]
+    },
+    {
+      "code": "ms",
+      "score": 8.8,
+      "axes": {"meaning": 7, "glossary": 10, "natural": 9, "length": 8, "params": 10},
+      "notes": [
+        {"key": "toast.eat.ok", "problem": "Makan is the same imperative as the Eat button, not the past confirmation Ate.", "fix": "Dah makan"},
+        {"key": "season0", "problem": "Bunga means flower, not spring. The season chip will read as Flower.", "fix": "Musim bunga"},
+        {"key": "season1", "problem": "Panas is hot, not summer.", "fix": "Musim panas"},
+        {"key": "season3", "problem": "Sejuk is cold, not winter. Luruh for autumn can stay.", "fix": "Musim sejuk"},
+        {"key": "restart", "problem": "MULA SEMULA is 11 characters. Restart button. English RESTART is 7.", "fix": "ULANG"}
+      ]
+    },
+    {
+      "code": "bn",
+      "score": 7.6,
+      "axes": {"meaning": 6, "glossary": 6, "natural": 8, "length": 8, "params": 10},
+      "notes": [
+        {"key": "hud.btn.divide", "problem": "ভাগ is share or a portion. Cell division elsewhere in this file is বিভাজন (divs). ভাগ: 1/3 reads as share.", "fix": "বিভাজন"},
+        {"key": "hud.btn.divide.short", "problem": "Same share-word on the short HUD label. বিভাজন is 4 graphemes and fits the short budget.", "fix": "বিভাজন"},
+        {"key": "hud.goal", "problem": "Goal line ভাগ reads as share, not divide. Inconsistent with divs বিভাজন.", "fix": "বিভাজন: {cur}/{need}"},
+        {"key": "toast.divide.go", "problem": "ভাগ হচ্ছে is being shared. The dividing toast should use the division noun.", "fix": "বিভাজন চলছে"},
+        {"key": "toast.divide.blocked", "problem": "Same share-verb on the blocked toast.", "fix": "এখনো বিভাজন হবে না"},
+        {"key": "hud.divide.reason.busy", "problem": "Busy reason ভাগ হচ্ছে is being shared, not dividing.", "fix": "বিভাজন চলছে"},
+        {"key": "close", "problem": "বন্ধ is closed or off, not the close command. Informal তুমি is already used in the toasts.", "fix": "বন্ধ করো"},
+        {"key": "hud.divide.reason.cd", "problem": "সে is the pronoun he or she, not seconds. অপেক্ষা 3 সে reads as a wait and then he, not a cooldown.", "fix": "অপেক্ষা {sec} সেক"},
+        {"key": "resume", "problem": "চালিয়ে যাও is the right continue phrase but wide on the pause button. চালাও is the short run-it resume. Do not use a share-word.", "fix": "চালাও"}
+      ]
+    }
+  ]
+}

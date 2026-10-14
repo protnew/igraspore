@@ -1,0 +1,52 @@
+
+============================================================
+🧪 UNIT TESTS — iGraSpore V2 Data Integrity
+
+PN species: 25
+SWISS_SHAPES: 27
+NAME_OVERRIDE entries: 69
+PNG files: 27
+
+--- Species Array (PN) ---
+  [32m✅ U1: PN is array[0m
+  [32m✅ U2: PN has 25 species[0m
+  [32m✅ U3: All PN entries are strings[0m
+  [32m✅ U4: PN entries are unique[0m
+  [32m✅ U5: PN has Synechocystis sp.[0m
+  [32m✅ U6: PN has Chroococcidiopsis[0m
+  [32m✅ U7: All PN entries have genus+species[0m
+
+--- Default Shapes (SHAPES) ---
+  [32m✅ U8: SHAPES has producer category[0m
+  [32m✅ U9: SHAPES has consumer1 category[0m
+  [32m✅ U10: SHAPES has consumer2 category[0m
+  [32m✅ U11: Producer shapes match PN count[0m
+
+--- Swiss Shapes Registry ---
+  [32m✅ U12: SWISS_SHAPES has 27 entries[0m
+  [32m✅ U13: No duplicates[0m
+  [32m✅ U14: Includes all bacteria types[0m
+  [32m✅ U15: Includes all eukaryote types[0m
+  [32m✅ U16: Includes virus (phage)[0m
+  [32m✅ U17: Includes specialist shapes[0m
+
+--- Name Override Mapping ---
+  [32m✅ U18: NAME_OVERRIDE is non-empty array[0m
+  [32m✅ U19: Has >60 mappings[0m
+  [32m✅ U20: All entries are [regex, string][0m
+  [32m✅ U21: All mapped shapes exist in SWISS_SHAPES[0m
+
+--- PNG Sprite Files ---
+  [32m✅ U22: 27 PNG files exist[0m
+  [32m✅ U23: Every SWISS_SHAPE has PNG[0m
+  [32m✅ U24: No orphan PNGs[0m
+
+--- Approximate Safety Net ---
+  [32m✅ U25: All APPROX shapes set to false[0m
+
+--- Coverage: Species → Swiss Shape ---
+  [32m✅ U26: Every PN species maps to a Swiss shape[0m
+
+============================================================
+📊 UNIT TESTS: 26/26 PASS (100%) | FAIL: 0
+============================================================

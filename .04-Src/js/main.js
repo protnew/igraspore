@@ -232,7 +232,7 @@ function startGame(isScreensaver){
   }
   // Colony species (Volvox/Gloeocapsa/Microcystis) — playable as-is, no silent override
   if(sp&&sp.shape==='colony'){
-    if(window.showToast) window.showToast('Колониальный вид: '+sp.name,'#8cf');
+    if(window.showToast) window.showToast(tt('colonyKind')+': '+sp.name,'#8cf');
   }
   var d=rng(PD*0.2,PD*0.5),hw=halfW(d)-20;
   
@@ -355,9 +355,9 @@ function startGame(isScreensaver){
   document.getElementById('actBar').style.display=(window.demoMode||isScreensaver)?'none':'flex';
   if(typeof window.measureActbarH==='function'){ window.measureActbarH(); setTimeout(window.measureActbarH,120); }
   document.getElementById('renderModeBtn').style.display='block';
-  if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISS';rb4.title='Сейчас: SwissBioPics. Клик → WebGL';}}
-  else if(settings.renderMode==='webgl'){var rb5=document.getElementById('renderModeBtn');if(rb5){rb5.className='webgl';rb5.innerHTML='🌊 WEBGL';rb5.title='Сейчас: WebGL-вода. Клик → мультяшный';}}
-  else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТ';rb2.title='Сейчас: мультяшный. Клик → SwissBioPics';}}
+  if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISS';rb4.title=tt('swissNow');}}
+  else if(settings.renderMode==='webgl'){var rb5=document.getElementById('renderModeBtn');if(rb5){rb5.className='webgl';rb5.innerHTML='🌊 WEBGL';rb5.title=tt('webglNow');}}
+  else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 '+tt('cartoon');rb2.title=tt('cartoonNow');}}
   var kh=document.getElementById('keyHint');
   window._keyHintStart=Date.now();
   // UI-RESTORE §5.1: default collapsed; LS decides (no forced open)
@@ -376,7 +376,7 @@ function startGame(isScreensaver){
   labelBtn('bDiv',tt('hud.btn.divide.short'),'Q','➗',true);
   labelBtn('bCyst',tt('hud.btn.cyst.short'),'R','🛡',true);
   labelBtn('bAuto',tt('hud.btn.auto.short'),'Tab','🤖',true);
-  labelBtn('bFree','ПОЛЁТ','F','🕊');
+  labelBtn('bFree',tt('flight'),'F','🕊');
   labelBtn('bFol','СЛЕДИТЬ','V','🎯');
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');

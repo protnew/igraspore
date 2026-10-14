@@ -52,13 +52,13 @@
 <div id="topRightStack" aria-label="Игровые переключатели">
   <div id="topR" class="p" style="display:none"></div>
   <select id="starSelectGame" title="Выбор звезды/солнца" onchange="window.setStarSystem(this.value);">
-    <option value="sol">☀ Солнце</option>
-    <option value="sirius">★ Сириус</option>
-    <option value="betelgeuse">★ Бетельгейзе</option>
-    <option value="rigel">★ Ригель</option>
-    <option value="vega">★ Вега</option>
-    <option value="antares">★ Антарес</option>
-    <option value="alphacentauri">★ α Центавра</option>
+    <option value="sol" data-en="☀ Sun" data-ru="☀ Солнце">☀ Sun</option>
+    <option value="sirius" data-en="★ Sirius" data-ru="★ Сириус">★ Sirius</option>
+    <option value="betelgeuse" data-en="★ Betelgeuse" data-ru="★ Бетельгейзе">★ Betelgeuse</option>
+    <option value="rigel" data-en="★ Rigel" data-ru="★ Ригель">★ Rigel</option>
+    <option value="vega" data-en="★ Vega" data-ru="★ Вега">★ Vega</option>
+    <option value="antares" data-en="★ Antares" data-ru="★ Антарес">★ Antares</option>
+    <option value="alphacentauri" data-en="★ α Centauri" data-ru="★ α Центавра">★ α Centauri</option>
   </select>
   <button id="renderModeBtn" type="button" aria-label="Режим картинки" class="cartoon" onclick="toggleRenderModeLarge()">🎨 МУЛЬТ</button>
   <a id="apkBtn" href="/igraspore.apk" download="igraspore.apk" aria-label="Скачать приложение Android APK">📱 APK</a>
@@ -104,22 +104,22 @@
   <button class="btn" id="demoBtn" aria-label="demoBtn" style="background:#1a3a2a;border-color:#4c8"></button>
   <button class="btn" id="screensaverBtn" aria-label="screensaverBtn" style="background:#1a4a6a;border-color:#4df"></button>
   <select id="starSelect" style="background:#0a1a2a;color:#8cf;border:1px solid #4c8;padding:6px 12px;border-radius:6px;font-size:13px;cursor:pointer;">
-    <option value="sol">☀ Солнце</option>
-    <option value="sirius">★ Сириус A+B</option>
-    <option value="betelgeuse">★ Бетельгейзе</option>
-    <option value="rigel">★ Ригель</option>
-    <option value="vega">★ Вега</option>
-    <option value="antares">★ Антарес</option>
-    <option value="alphacentauri">★ Альфа Центавра A+B</option>
-    <option value="polaris">★ Полярная</option>
-    <option value="binary">★ Двойная (синяя+оранжевая)</option>
-    <option value="twin">★★ Близнецы</option>
-    <option value="trinary">★★★ Тройная</option>
-    <option value="quadruple">★★★★ Четверная</option>
-    <option value="dwarf">★ Красный карлик</option>
-    <option value="giant">★ Оранжевый гигант</option>
-    <option value="flare">★ Вспышечная (UV Ceti)</option>
-    <option value="pulsar">★ Нейтронная (пульсар)</option>
+    <option value="sol" data-en="☀ Sun" data-ru="☀ Солнце">☀ Sun</option>
+    <option value="sirius" data-en="★ Sirius A+B" data-ru="★ Сириус A+B">★ Sirius A+B</option>
+    <option value="betelgeuse" data-en="★ Betelgeuse" data-ru="★ Бетельгейзе">★ Betelgeuse</option>
+    <option value="rigel" data-en="★ Rigel" data-ru="★ Ригель">★ Rigel</option>
+    <option value="vega" data-en="★ Vega" data-ru="★ Вега">★ Vega</option>
+    <option value="antares" data-en="★ Antares" data-ru="★ Антарес">★ Antares</option>
+    <option value="alphacentauri" data-en="★ Alpha Centauri A+B" data-ru="★ Альфа Центавра A+B">★ Alpha Centauri A+B</option>
+    <option value="polaris" data-en="★ Polaris" data-ru="★ Полярная">★ Polaris</option>
+    <option value="binary" data-en="★ Binary (blue+orange)" data-ru="★ Двойная (синяя+оранжевая)">★ Binary (blue+orange)</option>
+    <option value="twin" data-en="★★ Twins" data-ru="★★ Близнецы">★★ Twins</option>
+    <option value="trinary" data-en="★★★ Triple" data-ru="★★★ Тройная">★★★ Triple</option>
+    <option value="quadruple" data-en="★★★★ Quadruple" data-ru="★★★★ Четверная">★★★★ Quadruple</option>
+    <option value="dwarf" data-en="★ Red dwarf" data-ru="★ Красный карлик">★ Red dwarf</option>
+    <option value="giant" data-en="★ Orange giant" data-ru="★ Оранжевый гигант">★ Orange giant</option>
+    <option value="flare" data-en="★ Flare star (UV Ceti)" data-ru="★ Вспышечная (UV Ceti)">★ Flare star (UV Ceti)</option>
+    <option value="pulsar" data-en="★ Neutron (pulsar)" data-ru="★ Нейтронная (пульсар)">★ Neutron (pulsar)</option>
   </select>
 </div>
 <div id="catSel"></div>

@@ -157,6 +157,10 @@ function updateMenuTexts(){
   document.getElementById('pPic').textContent=tt('picMode');
   document.getElementById('menuBtnPause').textContent=tt('exit');
   var demoBtn=document.getElementById('demoBtn'); if(demoBtn) demoBtn.textContent=tt('demo');
+  document.querySelectorAll('#starSelect option, #starSelectGame option').forEach(function(o){
+    var label = curLang==='ru' ? o.getAttribute('data-ru') : o.getAttribute('data-en');
+    if(label) o.textContent = label;
+  });
   var aquaBtn=document.getElementById('screensaverBtn'); if(aquaBtn) aquaBtn.textContent=tt('aquarium');
   document.getElementById('setT').textContent=tt('settingsT');document.getElementById('setClose').textContent=tt('close');
   document.getElementById('wikiT').textContent=tt('wikiT');document.getElementById('wikiClose').textContent=tt('close');

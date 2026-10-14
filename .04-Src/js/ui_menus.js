@@ -150,6 +150,12 @@ function updateMenuTexts(){
   document.getElementById('pauseT').textContent=tt('paused');
   document.getElementById('restartBtn').textContent=tt('restart');document.getElementById('menuBtn').textContent=tt('menu');
   document.getElementById('helpT').textContent=tt('help');document.getElementById('helpClose').textContent=tt('close');
+  document.getElementById('pLegend').textContent=tt('legend');
+  document.getElementById('pCam').textContent=tt('camFly');
+  document.getElementById('pMap').textContent=tt('mapChart');
+  document.getElementById('pMicro').textContent=tt('microscope');
+  document.getElementById('pPic').textContent=tt('picMode');
+  document.getElementById('menuBtnPause').textContent=tt('exit');
   document.getElementById('setT').textContent=tt('settingsT');document.getElementById('setClose').textContent=tt('close');
   document.getElementById('wikiT').textContent=tt('wikiT');document.getElementById('wikiClose').textContent=tt('close');
   var hk=curLang==='ru'?'<span><kbd>WASD</kbd> \u041f\u043b\u044b\u0432\u0430\u0442\u044c</span><span><kbd>\u041b\u041a\u041c</kbd> \u041a \u043a\u0443\u0440\u0441\u043e\u0440\u0443</span><span><kbd>\u041f\u043a\u041c</kbd> \u0426\u0435\u043b\u044c</span><span><kbd>\u041a\u043e\u043b\u0435\u0441\u043e</kbd> \u0417\u0443\u043c</span><span class="kh-sum">\u041a\u043d\u043e\u043f\u043a\u0438: E Q R Space Tab F M N V B P</span>'

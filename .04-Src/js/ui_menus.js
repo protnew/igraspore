@@ -166,6 +166,9 @@ function updateMenuTexts(){
   hudLabel('bCyst','hud.btn.cyst.short','R');
   hudLabel('bAuto','hud.btn.auto.short','Tab');
   var mapLabel=document.getElementById('mapLabel'); if(mapLabel) mapLabel.textContent=tt('map');
+  var dnaClose=document.getElementById('dnaClose'); if(dnaClose) dnaClose.textContent=tt('close');
+  var tutSkip=document.getElementById('tutSkip'); if(tutSkip) tutSkip.textContent=tt('skip');
+  var tutNext=document.getElementById('tutNext'); if(tutNext) tutNext.textContent=tt('next');
   var popLabel=document.getElementById('popLabel'); if(popLabel) popLabel.textContent=tt('pop');
   document.querySelectorAll('#starSelect option, #starSelectGame option').forEach(function(o){
     var label = curLang==='ru' ? o.getAttribute('data-ru') : o.getAttribute('data-en');

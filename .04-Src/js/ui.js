@@ -139,10 +139,10 @@ function updateDivReady(){
       var rep=n?Math.round(n.energy[1]):Math.round(who.sp.repEnergy||80);
       var m=who.massFood||0;
       var needM=n?n.mass[1]:0;
-      var line='Эн '+en+'/'+rep+' · Масса '+m.toFixed(1)+'/'+needM.toFixed(1);
+      var line=tt('energy')+' '+en+'/'+rep+' · '+tt('massWord')+' '+m.toFixed(1)+'/'+needM.toFixed(1);
       var txt;
       var ready=(typeof window.canDivide==='function')?window.canDivide(who):(n&&n.ok);
-      if(ready) txt=line+' · ГОТОВО (Q)';
+      if(ready) txt=line+' · '+tt('ready')+' (Q)';
       else if(window.divideBlockReason) txt=line+' · '+window.divideBlockReason(who);
       else txt=line;
       var goalN=(typeof window._divGoal==='number')?window._divGoal:0;

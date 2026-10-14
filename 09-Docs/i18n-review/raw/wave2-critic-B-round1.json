@@ -1,0 +1,127 @@
+{
+  "critic": "B",
+  "round": 1,
+  "date": "2026-10-14",
+  "model": "agent-run-B",
+  "languages": [
+    {
+      "code": "vi",
+      "score": 8.8,
+      "axes": {"meaning": 8, "glossary": 9, "natural": 8, "length": 9, "params": 10},
+      "notes": [
+        "clear: Quang is a clipped sky word, not a weather label. The sun row is always visible. Fix: Quang đãng",
+        "hud.btn.cyst.short: BÀO is a membrane, not a spore. The full button and the spore toasts are fine. Fix: BÀO TỬ",
+        "predation: Kẻ săn is a hunter, not predators. Fix: Kẻ săn mồi",
+        "dAge: Già means old, not old age. Dictionary-only until death-cause rows leave hardcoded English. Fix: Tuổi già"
+      ]
+    },
+    {
+      "code": "ko",
+      "score": 9.0,
+      "axes": {"meaning": 8, "glossary": 8, "natural": 9, "length": 10, "params": 10},
+      "notes": [
+        "consumer1: 작은 먹보 means small glutton, not a small eater. Live species chip. Fix: 작은 먹는이",
+        "consumer2: Same glutton word. Fix: 중간 먹는이"
+      ]
+    },
+    {
+      "code": "th",
+      "score": 8.6,
+      "axes": {"meaning": 7, "glossary": 9, "natural": 8, "length": 9, "params": 10},
+      "notes": [
+        "season1: ร้อน means hot, not summer. It sits next to the temperature row. Fix: ฤดูร้อน",
+        "season3: หนาว means cold, not winter. Fix: ฤดูหนาว",
+        "paused: หยุดพัก is a rest break, not the paused state. Live pause title. Fix: หยุดชั่วคราว"
+      ]
+    },
+    {
+      "code": "fil",
+      "score": 7.4,
+      "axes": {"meaning": 5, "glossary": 8, "natural": 6, "length": 8, "params": 10},
+      "notes": [
+        "dead: NAUBOS means used up, not extinct. Live death title. Fix: LIPOL",
+        "decomposer: singaw alone is steam or a mouth sore, not fungi. Live chip. Fix: Tagalinis (kabute)",
+        "set: SETTINGS and settingsT Settings are still English on the live menu. diffN Normal is the same leftover. Fix: AYOS / Ayos, and Karaniwan",
+        "eaten: Kinain is object-focus (was eaten). The live stat is prey the player ate. Fix: Biktima",
+        "gameTime: Oras means hour. The value is elapsed seconds. Fix: Tagal",
+        "divs: Hati also means half. Live HUD label. Fix: Paghahati",
+        "paused: PAHINTO is the command pause, not the state. Fix: NAKATIGIL",
+        "restart: ULIT means again, not restart. Fix: ULITIN",
+        "toast.cyst.hunger: cyst is left in English. Fix: Gutom: naging sista — maghanap ng pagkain at gumising",
+        "toast.eat.plant: lumangoy sa liwanag is swim in the light, not toward it. Fix: lumangoy patungo sa liwanag",
+        "dStarve: Pagkagutom is hunger, not starved. Dictionary-only until death-cause rows leave hardcoded English. Fix: Gutom hanggang mamatay"
+      ]
+    },
+    {
+      "code": "it",
+      "score": 9.0,
+      "axes": {"meaning": 8, "glossary": 9, "natural": 9, "length": 9, "params": 10},
+      "notes": [
+        "healthBars: Barre drops health. Fix: Barre vita",
+        "eaten: Mangiato is passive (was eaten). The live stat is prey the player ate. Fix: Prede",
+        "dStarve: Fame is hunger, not starved. Dictionary-only until death-cause rows leave hardcoded English. Fix: Inedia"
+      ]
+    },
+    {
+      "code": "pl",
+      "score": 8.8,
+      "axes": {"meaning": 8, "glossary": 9, "natural": 8, "length": 9, "params": 10},
+      "notes": [
+        "healthBars: Paski drops health. Fix: Paski życia",
+        "eaten: Zjedzone is passive (was eaten). The live stat is prey the player ate. Fix: Ofiary",
+        "toast.eat.ok: Zjedzone does not mean Ate, and it copies the stat. Dictionary-only until eat toasts leave hardcoded Russian. Fix: Zjadłeś",
+        "dStarve: Głód is hunger, not starved. Dictionary-only until death-cause rows leave hardcoded English. Fix: Zagłodzenie"
+      ]
+    },
+    {
+      "code": "uk",
+      "score": 8.4,
+      "axes": {"meaning": 7, "glossary": 9, "natural": 8, "length": 8, "params": 10},
+      "notes": [
+        "pop: Поп. is a priest, not population. Live HUD. Fix: К-сть",
+        "maxPop: Макс. поп. repeats that word. Fix: Макс. к-сть",
+        "temp: Темп means tempo, not temperature. °C saves the HUD; the word is still wrong. Fix: t°",
+        "healthBars: Смужки drops health. Fix: Смужки життя",
+        "eaten: З'їдено is passive (was eaten). The live stat is prey the player ate. Fix: Здобич",
+        "dStarve: Голод is hunger, not starved. Dictionary-only until death-cause rows leave hardcoded English. Fix: Голодування"
+      ]
+    },
+    {
+      "code": "zh-TW",
+      "score": 8.8,
+      "axes": {"meaning": 8, "glossary": 8, "natural": 8, "length": 10, "params": 10},
+      "notes": [
+        "consumer1: 小型吃貨 means small foodie, not a small eater. Live chip. Fix: 小型食者",
+        "consumer2: Same foodie word. Fix: 中型食者",
+        "toast.cyst.hunger: 囊胞 is the Japanese cyst word. A Taiwan resting cyst is 包囊, not 囊腫 (a medical cyst). Fix: 餓了：形成包囊 — 找食物再醒來"
+      ]
+    },
+    {
+      "code": "ms",
+      "score": 8.2,
+      "axes": {"meaning": 6, "glossary": 9, "natural": 7, "length": 9, "params": 10},
+      "notes": [
+        "season0: Bunga means flower, not spring. Panas and Sejuk are hot and cold, not summer and winter. Luruh is the bare verb. Live season row. Fix: Musim bunga / Musim panas / Musim luruh / Musim sejuk",
+        "dCauses: Punca mati is broken grammar. This header is live. Fix: Punca kematian",
+        "healthBars: Bar drops health. Fix: Bar nyawa",
+        "eaten: Dimakan means was eaten. The live stat is prey the player ate. Fix: Mangsa",
+        "hud.divide.reason.cd: s is not saat. Fix: tunggu {sec} saat",
+        "dAge: Tua means old, not old age. Dictionary-only until death-cause rows leave hardcoded English. Fix: Mati tua",
+        "toast.eat.ok: Makan is the bare verb, same as the button, not Ate. Dictionary-only until eat toasts leave hardcoded Russian. Fix: Sudah makan"
+      ]
+    },
+    {
+      "code": "bn",
+      "score": 8.0,
+      "axes": {"meaning": 6, "glossary": 7, "natural": 8, "length": 9, "params": 10},
+      "notes": [
+        "hud.goal: ভাগ means share or arithmetic division, not cell fission. The divisions stat already says বিভাজন. This goal stays on screen. Fix: বিভাজন: {cur}/{need}",
+        "hud.btn.divide: Same share word on the button and the short label. Fix: বিভাজন",
+        "hud.divide.reason.busy: ভাগ হচ্ছে means it is being shared. Fix: বিভাজন হচ্ছে",
+        "toast.divide.blocked: ভাগ হওয়া যাবে না is cannot be shared. Dictionary-only until divide toasts leave hardcoded Russian. Fix: এখনো বিভাজন হবে না",
+        "hud.divide.reason.cd: সে is the pronoun he/she, not seconds. Shows whenever divide is on cooldown. Fix: অপেক্ষা {sec} সেক",
+        "close: বন্ধ means closed, not close. Fix: বন্ধ করো"
+      ]
+    }
+  ]
+}

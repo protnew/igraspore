@@ -45,15 +45,27 @@ if (typeof window !== 'undefined') {
   window.detectLang = detectLang;
   window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1, 'pt-BR': 1, id: 1, de: 1, fr: 1, hi: 1, ja: 1, vi: 1, ko: 1, th: 1, it: 1, pl: 1, uk: 1, 'zh-TW': 1, ms: 1, bn: 1 };
   try {
-    var saved = localStorage.getItem('igs_lang');
-    if (saved && window.IGS_ENABLED[saved]) curLang = saved;
+    var fromQuery = '';
+    try { fromQuery = new URLSearchParams(location.search).get('lang') || ''; } catch (e1) {}
+    if (fromQuery && window.IGS_ENABLED[fromQuery]) curLang = fromQuery;
     else {
-      var code = detectLang((navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'], Object.keys(window.IGS_ENABLED));
-      curLang = code;
-      localStorage.setItem('igs_lang', code);
-      localStorage.setItem('igs_lang_auto', '1');
+      var saved = localStorage.getItem('igs_lang');
+      if (saved && window.IGS_ENABLED[saved]) curLang = saved;
+      else {
+        var code = detectLang((navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'], Object.keys(window.IGS_ENABLED));
+        curLang = code;
+        localStorage.setItem('igs_lang', code);
+        localStorage.setItem('igs_lang_auto', '1');
+      }
     }
     applyLangFont(curLang);
+    if (curLang !== 'ru' && curLang !== 'en') {
+      loadLangPack(curLang).then(function() {
+        applyLangFont(curLang);
+        if (typeof buildLangBar === 'function') buildLangBar();
+        if (typeof updateMenuTexts === 'function') updateMenuTexts();
+      }).catch(function(){});
+    }
   } catch (e) {}
 }
 if (typeof module !== 'undefined') module.exports = { detectLang: detectLang };

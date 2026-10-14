@@ -1,0 +1,38 @@
+{
+  "critic": "B",
+  "round": 2,
+  "date": "2026-10-14",
+  "model": "agent-run-B",
+  "languages": [
+    {
+      "code": "fil",
+      "score": 8.6,
+      "axes": {"meaning": 7, "glossary": 9, "natural": 8, "length": 9, "params": 10},
+      "notes": [
+        "verdict: PASS 8.6. Fix leftovers before enable. 91/91 keys. {sec}/{cur}/{need} match en; braces balanced; no empty strings. glossary.csv absent — glossary scored on TZ terms plus internal consistency, not a script diff. Length estimated without 390×844 shots (buttons grow, #catSel wraps, #actBar wraps). Menu/MENU/WIKI/AUTO/FPS left in English on purpose. Round-1 fixes hold: NALIPOL, Tagalinis (kabute), Karaniwan, Biktima, Tagal, Paghahati, NAKAHINTO, ULITIN, sista, patungo sa liwanag.",
+        "temp: Init means heat, not temperature. Live top-right row next to °C, including winter. dTemp repeats it; death-cause rows still use hardcoded English, so dTemp is dictionary-only. Fix: Temperatura",
+        "set / settingsT: AYOS reads as OK or arrange, not Settings. Live menu button and settings title, beside SIMULA. Fix: Mga setting",
+        "hud.goal: Hati also means half, and the line is a fraction (Hati: {cur}/{need}). Always on screen. Button HATI can stay as the short SPLIT label. Fix: Paghahati: {cur}/{need}",
+        "menuSub: mikrobyo is one microbe, not microorganisms. pond is acceptable Taglish (lawa is a lake — do not 'fix' it). Fix: Simulasyon ng mga mikroorganismo — 100 uri + virus. Hiwa ng pond.",
+        "consumer2: gitnang is the spatial middle, not mid-level eaters. Live chip. Fix: Mga katamtamang kumakain",
+        "healthBars: Bar ng buhay is one bar and does not say health. Live settings toggle. Fix: Mga bar ng buhay",
+        "maxPop: Dami max is English word order. Not wired to tt(). Fix: Pinakamataas na dami",
+        "toast.eat.closer: Lapit pa has no verb. Dictionary-only until eat toasts leave hardcoded Russian. Fix: Lumapit pa sa biktima"
+      ]
+    },
+    {
+      "code": "bn",
+      "score": 8.8,
+      "axes": {"meaning": 8, "glossary": 9, "natural": 8, "length": 9, "params": 10},
+      "notes": [
+        "verdict: PASS 8.8. Fix leftovers before enable. 91/91 keys. {sec}/{cur}/{need} match en; braces balanced; no empty strings. glossary.csv absent — glossary scored on TZ terms plus internal consistency. Length estimated without shots; Bengali glyphs are wider, but বিভাজন, বন্ধ করো, and চালিয়ে যাও stay on a wrapping bar. Round-1 fixes hold: বিভাজন on the goal, button, busy reason, and blocked toast; সেক not সে; বন্ধ করো. Tumi register is consistent.",
+        "temp: তাপ means heat, not temperature. Live top-right row next to °C. dTemp repeats it; death-cause rows are still hardcoded English, so dTemp is dictionary-only. Fix: তাপমাত্রা (if that row collides on 390px, তাপমা.)",
+        "healthBars: HP বার leaves English HP in an educational settings toggle. Fix: জীবন বার",
+        "toast.eat.plant: গাছ is a tree. Live toast. Fix: তুমি উদ্ভিদ: আলোর দিকে সাঁতার কাটো",
+        "freeCam: ক্যাম is a clipped English cam. Live badge. Fix: মুক্ত ক্যামেরা",
+        "vignette: ভিনয়েট is opaque. English is also opaque; still not Bengali. Live settings toggle. Fix: প্রান্তের আঁধার",
+        "toast.eat.closer: শিকারের আর কাছে has no verb. Dictionary-only until eat toasts leave hardcoded Russian. Fix: শিকারের আর কাছে যাও"
+      ]
+    }
+  ]
+}

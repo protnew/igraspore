@@ -1,10 +1,14 @@
 # DECISIONS.md — iGraSpore V2
 
+## D1b: Режим картинки (14.10.2026, AN.3)
+- Выбор Canvas/WebGL не висит на игровом экране. Кнопка режима картинки убрана в меню паузы. Отдельного переключателя на HUD нет.
+
 ## D1: Render Stack
 - **WebGL raw** (176 pts) > Three.js (165) > Canvas 2D (84)
 - V3 hybrid: WebGL water/sky + Canvas 2D organisms
 
 ## D2: File Structure
+- Замер 14.10.2026: `.04-Src/js/biology_update_core.js` — 417 строк, не 547. Порог 500 сейчас не пробит. Старое исключение оставлено как история, не как действующий долг.
 - **Monolith exception**: `biology_update_core.js` contains `updateOrg()` — one monolithic function (547 lines).
   - **Reason**: The function shares 30+ local variables across phases (metabolism → photosynthesis → behavior → eating). Splitting into sub-functions would require passing a shared context object, adding complexity and runtime overhead for a real-time simulation loop at 60fps with 2000+ organisms.
   - **Waiver**: Owner-approved library exception. The function is well-commented with section markers. All other files comply with <500 LOC.

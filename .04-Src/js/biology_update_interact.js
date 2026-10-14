@@ -1,9 +1,19 @@
 // biology_update_interact.js — division, cyst, filter-feeding (extracted from biology_update_core.js)
 // Part of updateOrg — called AFTER metabolism/energy/movement in biology_update_core.js
 window.updateOrgInteract = function(o, dt) {
-  // division handled at top of updateOrg
-  // division handled at top of updateOrg
-  if(!window.demoMode && !o.dividing&&!o.cyst&&canDivide(o)){
+  // Round up before mitosis: hide defense rays so spikes don't pop in early.
+  o._preMitosis = false;
+  if(o && o.alive && !o.dividing && !o.cyst && o.sp){
+    var adultP = (o.sp.size || 4) * (o.sizeMult || 1);
+    var nearE = o.energy >= (o.sp.repEnergy || 80) * 0.82;
+    var nearM = (o.massFood || 0) >= Math.max(adultP * 0.35, 1);
+    var nearS = o.size >= adultP * 0.72;
+    if(nearE && nearM && nearS && (o.divCD || 0) < 4) o._preMitosis = true;
+  }
+  if(o.cyst) o.cystT=(o.cystT||0)+dt;
+  // Player divides only on Q unless AUTO is on (release-ready P0.2 / prompt order).
+  var playerManual=o.isPlayer && window.autoAI!==true;
+  if(!playerManual && !window.demoMode && !o.dividing&&!o.cyst&&canDivide(o)){
     if (o.sp.flags && o.sp.flags.gendered) {
         o.seekingMate = true;
         for(let j=0; j<orgs.length; j++) {
@@ -39,6 +49,8 @@ window.updateOrgInteract = function(o, dt) {
         }
     } else {
         var divP = o.isPlayer ? 0.5 : 0.02;
+        // Lineage splits after the first are paced — don't chain the moment cooldown ends
+        if((o.generation || 0) >= 1 || (o.offspring || 0) >= 1) divP *= 0.35;
         if(!window.demoMode && Math.random()<divP*dt)doDivide(o);
     }
   }
@@ -48,14 +60,15 @@ window.updateOrgInteract = function(o, dt) {
     if(!o.cyst && (o._cystCount||0) < maxCyst){
       o._cystCount = (o._cystCount||0) + 1;
       o.cyst = true; o.energy = 10; o.vx=0; o.vy=0; o.aiTarget=null; o.state='rest';
-      if(o.isPlayer && window.showToast) window.showToast('Голод: впал в цисту — найди еду и проснись', '#fc8');
+      if(o.isPlayer){ o.manualCyst=false; o.cystMin=0; }
+      if(o.isPlayer && window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.cyst.hunger','Голод: впал в цисту — найди еду и проснись'):'Голод: впал в цисту — найди еду и проснись'), '#fc8');
       return;
     }
   }
-  // Циста игрока: можно «проснуться» если энергия подросла / рядом еда
-  if(o.isPlayer && o.cyst && o.energy>=18){
+  // Hunger cysts may wake once energy returns. Manual spore stays until R.
+  if(o.isPlayer && o.cyst && !o.manualCyst && o.energy>=18 && ((o.cystT||0)>=(o.cystMin||0))){
     o.cyst=false; o.cystT=0;
-    if(window.showToast) window.showToast('Проснулся из цисты', '#8f8');
+    if(window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.cyst.exit','Вышел из споры'):'Вышел из споры'), '#8f8');
   }
   if(o.energy<=-15){killOrg(o,DCODE.STARVE);return;}
   if(o.sp.isEuk&&o.sp.cat!=='decomposer'&&o.age>500){o.energy-=0.15*dt;if(o.energy<5&&Math.random()<0.004*dt){killOrg(o,DCODE.AGE);return;}}

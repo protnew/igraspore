@@ -237,13 +237,23 @@ function killOrg(o,cause){
 }
 
 function doCyst(o){
-  // Cyst: dormant resting stage with thick protective wall
-  o.cyst=!o.cyst;o.cystT=0;
-  if(o.cyst){
-    o.cystDur=rng(10,30); // Duration of dormancy
-    o.speedMult=0; // Frozen metabolism
+  if(!o) return;
+  var entering=!o.cyst;
+  o.cyst=entering;
+  o.cystT=0;
+  if(entering){
+    o.cystDur=rng(10,30);
+    o.speedMult=0;
     o.vx=0;o.vy=0;
+    if(o.isPlayer){
+      o.manualCyst=true;
+      o.cystMin=5;
+      if(window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.cyst.enter','Спора: защита, движение 0, энергия тратится медленно'):'Спора: защита, движение 0, энергия тратится медленно'), '#8cf');
+    }
   } else {
-    o.speedMult=1; // Reactivate
+    o.speedMult=1;
+    o.manualCyst=false;
+    if(o.isPlayer && window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.cyst.exit','Вышел из споры'):'Вышел из споры'), '#8f8');
   }
+  if(o.isPlayer && typeof window.syncActButtons==='function') window.syncActButtons();
 }

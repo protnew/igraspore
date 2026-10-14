@@ -146,11 +146,15 @@ window.showToast = function(msg, color){
 
 window.tryPlayerEat = function(){
   if(!player){ if(window.showToast) window.showToast('Нет игрока','#faa'); return false; }
-  if(player.cyst) player.cyst=false;
+  if(player.cyst && !player.manualCyst) player.cyst=false;
   if(player.dying){ player.dying=false; player.deathT=0; }
   if(!player.alive){ player.alive=true; }
   // Producers don't hunt — they photosynthesize
-  if(player.sp.cat === 'producer') return false;
+  if(player.sp && player.sp.cat === 'producer'){
+    if(window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.eat.plant','Ты растение: плыви к свету'):'Ты растение: плыви к свету'), '#cf8');
+    player._lightHint = true;
+    return false;
+  }
 
   if(player.energy<8) player.energy=20;
 
@@ -255,7 +259,7 @@ document.addEventListener('keydown',function(e){
     if(freeCam){camKeys[ck]=true;e.preventDefault();}
     if(autoAI)autoAI=false;
   }
-  if(k===' '||k==='space'){ window.manualFeed&&window.manualFeed(); e.preventDefault(); }
+  if(k===' '||k==='space'||e.code==='Space'){ e.preventDefault(); window.tryPlayerEat && window.tryPlayerEat(); }
   if(k==='tab'){
     var _ov = topmostOpenOverlay();
     if(_ov){ trapTabInOverlay(e, _ov); }              // overlay open → Tab stays inside
@@ -489,5 +493,5 @@ window.manualFeed = function(){
 // Manual feed button
 (function(){
   var b = document.getElementById('bFeed');
-  if(b) b.onclick = function(){ window.manualFeed&&window.manualFeed(); };
+  if(b) b.onclick = function(){ window.tryPlayerEat&&window.tryPlayerEat(); };
 })();

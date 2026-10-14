@@ -4,6 +4,8 @@
 
 function spawnOrg(sp,x,y,isPlayer,parentEnergy){
   // Task 11: Starvation mutations
+  // Division daughters keep the parent species object (no recolor / morph drift).
+  if(window._divSpawnParent) parentEnergy = undefined;
   if(parentEnergy !== undefined && parentEnergy < sp.repEnergy * 0.1 && Math.random()<0.1) {
       if(!sp.isCustom) {
           sp = Object.assign({}, sp);
@@ -43,52 +45,60 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
   return o;
 }
 
-/** Can this cell divide? Needs energy + mature size + mass from feeding. */
-
-function canDivide(o){
-  if(!o || !o.alive || o.cyst || o.dying) return false;
-  if(o.dividing) return false;
-  if(o.divCD > 0) return false;
-  if(o.age < (o.sp.minAge || 3)) return false;
-  var repE = o.sp.repEnergy || 80;
-  if(o.energy < repE) return false;
-  var adult = (o.sp.size || 4) * (o.sizeMult || 1.0);
-  var minSz = Math.max(adult * 0.80, 2.0); // Easier: 80% instead of 90%
-  if(o.size < minSz) return false;
-  // Producers divide via photosynthesis, not eating — lower mass threshold
-  var needMass = o.sp.cat === 'producer' ? 0.5 : Math.max(adult * 0.50, 2.2);
-  if(o.sp.cat && o.sp.cat.indexOf('consumer') === 0) needMass = Math.max(adult * 0.50, 1.5);
-  if(o.sp.cat === 'consumer2' || o.sp.cat === 'consumer3' || o.sp.cat === 'macrophage')
-    needMass = Math.max(adult * 0.60, 2.0);
-  if((o.massFood || 0) < needMass) return false;
-  return true;
+function divideThresholds(o){
+  var sp=o.sp||{};
+  var adult=(sp.size||4)*(o.sizeMult||1);
+  var minSz=Math.max(adult*0.80, 2.0);
+  var needMass=sp.cat==='producer' ? 0.5 : Math.max(adult*0.50, 2.2);
+  if(sp.cat && sp.cat.indexOf('consumer')===0) needMass=Math.max(adult*0.50, 1.5);
+  if(sp.cat==='consumer2'||sp.cat==='consumer3'||sp.cat==='macrophage') needMass=Math.max(adult*0.60, 2.0);
+  var minA=(typeof lifecycleMinAge==='function') ? lifecycleMinAge(sp, o.generation) : (sp.minAge||3);
+  return {repE: sp.repEnergy||80, minSz: minSz, needMass: needMass, minA: minA};
 }
-window.canDivide = canDivide;
-
+function divideNeeds(o){
+  if(!o||!o.sp) return {ok:false, energy:[0,0], mass:[0,0], size:[0,0], age:[0,0], cd:0, reason:'none'};
+  var th=divideThresholds(o);
+  var out={
+    ok:false,
+    energy:[o.energy||0, th.repE],
+    mass:[o.massFood||0, th.needMass],
+    size:[o.size||0, th.minSz],
+    age:[o.age||0, th.minA],
+    cd:o.divCD||0,
+    reason:''
+  };
+  if(!o.alive||o.cyst||o.dying){ out.reason='none'; return out; }
+  if(o.dividing){ out.reason='busy'; return out; }
+  if(o.divCD>0){ out.reason='cd'; return out; }
+  if(o.age<th.minA){ out.reason='age'; return out; }
+  if(o.energy<th.repE){ out.reason='energy'; return out; }
+  if(o.size<th.minSz){ out.reason='size'; return out; }
+  if((o.massFood||0)<th.needMass){ out.reason='mass'; return out; }
+  out.ok=true;
+  return out;
+}
+window.divideNeeds=divideNeeds;
+function canDivide(o){ return divideNeeds(o).ok; }
+window.canDivide=canDivide;
 function divideBlockReason(o){
-  if(!o) return 'нет клетки';
-  if(o.dividing) return 'идёт деление...';
-  if(o.divCD > 0) return 'перезарядка '+o.divCD.toFixed(1)+'с';
-  if(o.age < (o.sp.minAge||3)) return 'слишком молода';
-  var repE = o.sp.repEnergy || 80;
-  if(o.energy < repE) return 'энергия '+Math.round(o.energy)+'/'+Math.round(repE);
-  var adult = (o.sp.size||4)*(o.sizeMult||1);
-  var minSz = Math.max(adult*0.90, 2.2);
-  if(o.size < minSz) return 'размер '+o.size.toFixed(1)+'/'+minSz.toFixed(1)+' (расти!)';
-  var needMass = Math.max(adult*0.50, 2.2);
-  if(o.sp.cat && o.sp.cat.indexOf('consumer')===0) needMass = Math.max(adult*0.75, 3.0);
-  if(o.sp.cat === 'consumer2' || o.sp.cat === 'consumer3' || o.sp.cat === 'macrophage')
-    needMass = Math.max(adult*0.9, 4.0);
-  if((o.massFood||0) < needMass) return 'масса '+((o.massFood||0).toFixed(1))+'/'+needMass.toFixed(1)+' (ешь/солнце!)';
-  return '';
+  var n=divideNeeds(o);
+  if(n.ok) return '';
+  var num=(typeof igsNum==='function')?igsNum:function(v,d){ return d?Number(v).toFixed(d):String(Math.round(v)); };
+  var tx=(typeof igsText==='function')?igsText:function(k,fb){ return fb; };
+  if(n.reason==='energy') return tx('hud.divide.reason.energy','энергия {cur}/{need}').replace('{cur}', num(n.energy[0],0)).replace('{need}', num(n.energy[1],0));
+  if(n.reason==='mass') return tx('hud.divide.reason.mass','масса {cur}/{need}').replace('{cur}', num(n.mass[0],1)).replace('{need}', num(n.mass[1],1));
+  if(n.reason==='size') return tx('hud.divide.reason.size','размер {cur}/{need}').replace('{cur}', num(n.size[0],1)).replace('{need}', num(n.size[1],1));
+  if(n.reason==='cd') return tx('hud.divide.reason.cd','перезарядка {sec} с').replace('{sec}', num(n.cd,0));
+  if(n.reason==='age') return tx('hud.divide.reason.age','слишком молода');
+  if(n.reason==='busy') return tx('hud.divide.reason.busy','идёт деление');
+  return tx('hud.divide.reason.none','нет клетки');
 }
-window.divideBlockReason = divideBlockReason;
+window.divideBlockReason=divideBlockReason;
 
 function doDivide(o){
   if(!canDivide(o)) return false;
-  // Reproduction rate slider (user setting)
   var _dr=(typeof settings!=='undefined'&&settings.divRate)?settings.divRate:1.0;
-  if(_dr<1.0 && Math.random()>_dr) return false;
+  if(!o.isPlayer && _dr<1.0 && Math.random()>_dr) return false;
   o.dividing=true; o.divT=0; o.state='dividing';
   o.preDivSize=o.size;
   // Spend mass/eats immediately — cannot chain-divide mid-animation

@@ -5,7 +5,7 @@ function buildLangBar() {
   if(!lb) return;
   lb.innerHTML = '';
   document.getElementById('curLangTxt').textContent = langNames[curLang] || curLang;
-  var enabled = window.IGS_ENABLED || {ru:1, en:1, 'pt-BR':1, id:1, de:1, fr:1, hi:1, ja:1, vi:1, ko:1, th:1, it:1, pl:1, uk:1, 'zh-TW':1, ms:1};
+  var enabled = window.IGS_ENABLED || {ru:1, en:1, 'pt-BR':1, id:1, de:1, fr:1, hi:1, ja:1, vi:1, ko:1, th:1, it:1, pl:1, uk:1, 'zh-TW':1, ms:1, bn:1};
   for(var l in LANGS) {
     if(!enabled[l]) continue;
     var b = document.createElement('div');

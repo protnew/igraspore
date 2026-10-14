@@ -1,0 +1,57 @@
+{
+  "critic": "A",
+  "round": 2,
+  "date": "2026-10-14",
+  "model": "agent-run-A",
+  "languages": [
+    {
+      "code": "fil",
+      "score": 7.8,
+      "axes": {
+        "meaning": 7,
+        "glossary": 7,
+        "natural": 8,
+        "length": 7,
+        "params": 10
+      },
+      "notes": [
+        {"key": "toast.cyst.hunger", "problem": "naging sista reads as became a sister. Encysted is not sista. Spore is already SPORA; do not merge them, and do not leave cyst in English.", "fix": "Gutom: nakakulong — maghanap ng pagkain at gumising"},
+        {"key": "eaten", "problem": "Biktima is victim or prey, not Eaten. The prey toasts can keep biktima. dEaten Kinain is already the eaten word.", "fix": "Kinain"},
+        {"key": "temp", "problem": "Init is heat, not temperature. The top bar shows degrees, and cold stress is also a temp death.", "fix": "Temperatura"},
+        {"key": "dTemp", "problem": "Same heat word on the death cause. Starved already uses Pagkagutom, not Gutom, so this cause can use the full temperature word.", "fix": "Temperatura"},
+        {"key": "start", "problem": "SIMULA is the noun beginning, not the start command. The primary button can hold the verb.", "fix": "MAGSIMULA"},
+        {"key": "toast.eat.plant", "problem": "Ikaw ay is textbook ay-inversion. The other lines are informal.", "fix": "Halaman ka: lumangoy patungo sa liwanag"},
+        {"key": "maxPop", "problem": "Dami max leaves English max after the noun.", "fix": "Max dami"},
+        {"key": "settingsT", "problem": "Ayos as a screen title also means OK or fine. The button AYOS can stay.", "fix": "PAG-AAYOS"},
+        {"key": "help", "problem": "PAANO MAGLARO is 13 characters on the small menu button. English HOW TO PLAY is 11. The help title uses the same key.", "fix": "GABAY"},
+        {"key": "consumer1", "problem": "Maliliit na kumakain is 20 characters and wraps the category chip. kumakain is the right eater.", "fix": "Maliit-kain"},
+        {"key": "consumer2", "problem": "Mga gitnang kumakain is 20 characters on the same chip.", "fix": "Gitna-kain"},
+        {"key": "consumer3", "problem": "Malalaking mangangaso is 21 characters. Malaking mangangaso is 19 and may still wrap. Do not shorten mangangaso to aso (that is dog).", "fix": "Malaking mangangaso"},
+        {"key": "decomposer", "problem": "Tagalinis (kabute) is 18 characters and may wrap, but kabute is the fungi word. Do not shorten it to singaw (that is steam).", "fix": "Tagalinis (kabute)"},
+        {"key": "menuSub", "problem": "pond is English on purpose. lawa is a lake. Do not revert menuSub or wikiT to lawa.", "fix": "Simulasyon ng mikrobyo — 100 uri + virus. Hiwa ng pond."}
+      ]
+    },
+    {
+      "code": "bn",
+      "score": 9.0,
+      "axes": {
+        "meaning": 8,
+        "glossary": 10,
+        "natural": 9,
+        "length": 8,
+        "params": 10
+      },
+      "notes": [
+        {"key": "temp", "problem": "তাপ is heat, not temperature. The top bar is তাপ: 20°C. Cold stress is also a temp death.", "fix": "তাপমাত্রা"},
+        {"key": "dTemp", "problem": "Same heat word on the death cause.", "fix": "তাপমাত্রা"},
+        {"key": "dEaten", "problem": "খেয়ে ফেলা is the act of devouring, not Eaten. The eaten stat খাওয়া is the closer word. English uses Eaten for both.", "fix": "খাওয়া"},
+        {"key": "resume", "problem": "চালিয়ে যাও is the right continue, but it is wide next to কীভাবে খেলবে on the 390 pause row. চালাও is the short run-it resume. Do not use a share-word.", "fix": "চালাও"},
+        {"key": "vignette", "problem": "ভিনয়েট is an opaque loan. Players will not read it as the darkened-edge effect.", "fix": "প্রান্তের ছায়া"},
+        {"key": "hud.btn.divide", "problem": "বিভাজন is the division word and matches the short label, divs, the goal line, and the toasts. Do not revert to ভাগ (that is share).", "fix": "বিভাজন"},
+        {"key": "hud.btn.divide.short", "problem": "Same division word. 4 graphemes fits the short HUD budget. Do not shorten it to ভাগ.", "fix": "বিভাজন"},
+        {"key": "close", "problem": "বন্ধ করো is the close command. বন্ধ alone is closed or off. Do not shorten it back.", "fix": "বন্ধ করো"},
+        {"key": "toast.cyst.hunger", "problem": "সিস্ট is the cyst and স্পোর is the spore. Do not merge them, and do not use a sister-word.", "fix": "ক্ষুধা: সিস্ট হয়েছ — খাবার খুঁজে জেগে ওঠো"}
+      ]
+    }
+  ]
+}

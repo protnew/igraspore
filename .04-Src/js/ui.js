@@ -25,8 +25,11 @@ function showSpeedBar(){
 }
 
 var langNames = {
-  ru: 'Русский', en: 'English', zh: '中文', es: 'Español', hi: 'हिन्दी', 
-  ar: 'العربية', pt: 'Português', fr: 'Français', de: 'Deutsch', ja: '日本語', ko: '한국어'
+  ru: 'Русский', en: 'English', 'pt-BR': 'Português (Brasil)', id: 'Bahasa Indonesia',
+  de: 'Deutsch', fr: 'Français', hi: 'हिन्दी', ja: '日本語', vi: 'Tiếng Việt',
+  ko: '한국어', th: 'ไทย', it: 'Italiano', pl: 'Polski', uk: 'Українська',
+  'zh-TW': '繁體中文', ms: 'Bahasa Melayu', bn: 'বাংলা',
+  zh: '中文', es: 'Español', ar: 'العربية', pt: 'Português'
 };
 
 

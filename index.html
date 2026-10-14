@@ -134,13 +134,13 @@
 <div id="deadScreen"></div>
 
 <div id="dnaModal" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(10,25,45,0.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(100,200,255,0.3);border-radius:16px;padding:25px;z-index:100;color:#fff;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.6), inset 0 0 15px rgba(100,200,255,0.1); width:280px;transition:opacity 0.3s ease, transform 0.3s ease;">
-   <h2 style="margin:0 0 10px 0;color:#4df;text-shadow:0 0 8px rgba(77,221,255,0.5);font-size:18px;letter-spacing:1px;">🧬 МУТАЦИИ ДНК</h2>
-   <div style="font-size:13px;color:#bcd;margin-bottom:20px;background:rgba(0,0,0,0.3);padding:8px;border-radius:6px;">Очки мутации: <strong id="dnaPts" style="color:#ff0;font-size:18px;text-shadow:0 0 5px rgba(255,255,0,0.5);">0</strong></div>
+   <h2 id="dnaTitle" style="margin:0 0 10px 0;color:#4df;text-shadow:0 0 8px rgba(77,221,255,0.5);font-size:18px;letter-spacing:1px;"></h2>
+   <div style="font-size:13px;color:#bcd;margin-bottom:20px;background:rgba(0,0,0,0.3);padding:8px;border-radius:6px;"><span id="dnaPointsLabel"></span> <strong id="dnaPts" style="color:#ff0;font-size:18px;text-shadow:0 0 5px rgba(255,255,0,0.5);">0</strong></div>
    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:15px;font-size:13px;">
-       <button class="dna-btn" onclick="buyMutation('speed')">Ускорение жгутиков (5 ДНК)</button>
-       <button class="dna-btn" onclick="buyMutation('size')">Увеличение массы (8 ДНК)</button>
-       <button class="dna-btn" onclick="buyMutation('spikes')">Отрастить шипы (15 ДНК)</button>
-       <button class="dna-btn" onclick="buyMutation('shell')">Кремниевый панцирь (20 ДНК)</button>
+       <button class="dna-btn" id="dnaSpeed" onclick="buyMutation('speed')"></button>
+       <button class="dna-btn" id="dnaSize" onclick="buyMutation('size')"></button>
+       <button class="dna-btn" id="dnaSpikes" onclick="buyMutation('spikes')"></button>
+       <button class="dna-btn" id="dnaShell" onclick="buyMutation('shell')"></button>
        <hr style="border-color:#444; margin: 15px 0; width: 100%;">
        <h4 style="margin: 0 0 5px 0;">Import/Export DNA</h4>
        <input type="text" id="dnaString" placeholder="Paste DNA code here..." style="width:100%; padding: 5px; margin-bottom: 10px; background:#222; color:#0f0; border:1px solid #444; box-sizing: border-box;">

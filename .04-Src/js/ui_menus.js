@@ -168,6 +168,12 @@ function updateMenuTexts(){
   var mapLabel=document.getElementById('mapLabel'); if(mapLabel) mapLabel.textContent=tt('map');
   var dnaClose=document.getElementById('dnaClose'); if(dnaClose) dnaClose.textContent=tt('close');
   var tutSkip=document.getElementById('tutSkip'); if(tutSkip) tutSkip.textContent=tt('skip');
+  var dnaTitle=document.getElementById('dnaTitle'); if(dnaTitle) dnaTitle.textContent=tt('dnaTitle');
+  var dnaPointsLabel=document.getElementById('dnaPointsLabel'); if(dnaPointsLabel) dnaPointsLabel.textContent=tt('dnaPoints');
+  var dnaSpeed=document.getElementById('dnaSpeed'); if(dnaSpeed) dnaSpeed.textContent=tt('dnaSpeed');
+  var dnaSize=document.getElementById('dnaSize'); if(dnaSize) dnaSize.textContent=tt('dnaSize');
+  var dnaSpikes=document.getElementById('dnaSpikes'); if(dnaSpikes) dnaSpikes.textContent=tt('dnaSpikes');
+  var dnaShell=document.getElementById('dnaShell'); if(dnaShell) dnaShell.textContent=tt('dnaShell');
   var tutNext=document.getElementById('tutNext'); if(tutNext) tutNext.textContent=tt('next');
   var popLabel=document.getElementById('popLabel'); if(popLabel) popLabel.textContent=tt('pop');
   document.querySelectorAll('#starSelect option, #starSelectGame option').forEach(function(o){

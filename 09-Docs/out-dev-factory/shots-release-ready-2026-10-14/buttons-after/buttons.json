@@ -1,0 +1,3149 @@
+{
+  "phase": "after",
+  "count": 96,
+  "rows": [
+    {
+      "id": "M1",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#startBtn",
+      "label": "START",
+      "rect": {
+        "x": 321.1875,
+        "y": 236,
+        "width": 93.9375,
+        "height": 41
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1796,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "toast": "АВТО: съел"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M1-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M1-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M1-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M2",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#demoBtn",
+      "label": "DEMO / Gallery",
+      "rect": {
+        "x": 427.125,
+        "y": 236,
+        "width": 151.625,
+        "height": 41
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 101,
+          "autoAI": false,
+          "freeCam": true,
+          "tZoom": 1.4,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M2-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M2-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M2-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M3",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#screensaverBtn",
+      "label": "АКВАРИУМ",
+      "rect": {
+        "x": 590.75,
+        "y": 236,
+        "width": 129.0625,
+        "height": 41
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1797,
+          "autoAI": false,
+          "freeCam": true,
+          "tZoom": 2.25,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M4",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#starSelect",
+      "label": "☀ Солнце\n★ Сириус A+B\n★ Бетельгейзе\n★ Ригель\n★ Вега\n★ Антарес\n★ Альфа Центавра A",
+      "rect": {
+        "x": 728.8125,
+        "y": 241,
+        "width": 233,
+        "height": 31
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1782,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1805,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M4-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M4-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M4-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M5",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#helpBtn",
+      "label": "HOW TO PLAY",
+      "rect": {
+        "x": 511.609375,
+        "y": 728,
+        "width": 101.765625,
+        "height": 29
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1796,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M6",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#setBtn2",
+      "label": "SETTINGS",
+      "rect": {
+        "x": 623.765625,
+        "y": 728,
+        "width": 79.703125,
+        "height": 29
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1796,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M7",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#wikiBtnMenu",
+      "label": "WIKI",
+      "rect": {
+        "x": 713.859375,
+        "y": 728,
+        "width": 54.515625,
+        "height": 29
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1799,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M8",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#langSelWrap",
+      "label": "🌐\nEnglish\n▼",
+      "rect": {
+        "x": 18,
+        "y": 24,
+        "width": 130,
+        "height": 33
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1754,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M9",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#spGrid",
+      "label": "Фильтр: All · показано 101 видов · колоний: 6 (вверху списка) · нажми другую кно",
+      "rect": {
+        "x": 190,
+        "y": 388.546875,
+        "width": 900,
+        "height": 332.453125
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1797,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M9-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M9-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M9-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M10",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#diffWrap",
+      "label": "Easy\nNormal\nHard",
+      "rect": {
+        "x": 604.875,
+        "y": 128,
+        "width": 70.234375,
+        "height": 89
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M10-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M10-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M10-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O1",
+      "screen": "help",
+      "viewport": "1280",
+      "selector": "#helpClose",
+      "label": "CLOSE",
+      "rect": {
+        "x": 608.328125,
+        "y": 465.0625,
+        "width": 63.328125,
+        "height": 29
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1787,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1808,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O2",
+      "screen": "settings",
+      "viewport": "1280",
+      "selector": "#setClose",
+      "label": "CLOSE",
+      "rect": {
+        "x": 608.328125,
+        "y": 556.5,
+        "width": 63.328125,
+        "height": 29
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1801,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O3",
+      "screen": "settings",
+      "viewport": "1280",
+      "selector": "#setBody input[type=range]",
+      "label": "",
+      "rect": {
+        "x": 569.6875,
+        "y": 408.5,
+        "width": 140,
+        "height": 4
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1796,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O4",
+      "screen": "wiki",
+      "viewport": "1280",
+      "selector": "#wikiSearch",
+      "label": "",
+      "rect": {
+        "x": 490,
+        "y": 56.5,
+        "width": 300,
+        "height": 30
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1796,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O4-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O4-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O4-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O5",
+      "screen": "wiki",
+      "viewport": "1280",
+      "selector": "#wikiClose",
+      "label": "CLOSE",
+      "rect": {
+        "x": 608.328125,
+        "y": 744.5,
+        "width": 63.328125,
+        "height": 29
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1794,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O6",
+      "screen": "pause",
+      "viewport": "1280",
+      "selector": "#resBtn",
+      "label": "RESUME",
+      "rect": {
+        "x": 585.90625,
+        "y": 239.5,
+        "width": 108.171875,
+        "height": 41
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "paused",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1796,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1786,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "toast": "АВТО: съел"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O7",
+      "screen": "pause",
+      "viewport": "1280",
+      "selector": "#pHelp",
+      "label": "HOW TO PLAY",
+      "rect": {
+        "x": 589.109375,
+        "y": 286.5,
+        "width": 101.765625,
+        "height": 29
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "paused",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1793,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "+17 эн / +2.4 масса"
+        },
+        "globalsAfter": {
+          "state": "paused",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1793,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "+17 эн / +2.4 масса"
+        },
+        "toast": "+17 эн / +2.4 масса"
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O8",
+      "screen": "tutorial",
+      "viewport": "1280",
+      "selector": "#tutSkip",
+      "label": "Пропустить",
+      "rect": {
+        "x": 637.84375,
+        "y": 640,
+        "width": 136.828125,
+        "height": 50
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1796,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1811,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O9",
+      "screen": "tutorial",
+      "viewport": "1280",
+      "selector": "#roleCardOk",
+      "label": "Понятно — плыву",
+      "rect": {
+        "x": 397,
+        "y": 329.265625,
+        "width": 486,
+        "height": 35
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1805,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1805,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "toast": "АВТО: съел"
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G1",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bEat",
+      "label": "☀ LIGHT\nE",
+      "rect": {
+        "x": 404.5859375,
+        "y": 723,
+        "width": 98.640625,
+        "height": 65
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1775,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1786,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "You are a plant: swim toward the light"
+        },
+        "toast": "You are a plant: swim toward the light"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G1-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G1-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G1-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G2",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bDiv",
+      "label": "ДЕЛИТЬ\nQ",
+      "rect": {
+        "x": 511.2265625,
+        "y": 723,
+        "width": 99.5,
+        "height": 65
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1799,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": true,
+          "orgs": 1820,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "Деление!"
+        },
+        "toast": "Деление!"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G3",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bCyst",
+      "label": "СПОРА\nR",
+      "rect": {
+        "x": 618.7265625,
+        "y": 723,
+        "width": 90.046875,
+        "height": 65
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1808,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": true,
+          "dividing": false,
+          "orgs": 1843,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "Spore: protected, speed 0, energy drains slowly"
+        },
+        "toast": "Spore: protected, speed 0, energy drains slowly"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G3-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G3-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G3-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G4",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bFeed",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G4-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G4-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G4-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G5",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bAuto",
+      "label": "АВТО\nTab",
+      "rect": {
+        "x": 716.7734375,
+        "y": 723,
+        "width": 78.640625,
+        "height": 65
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1808,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": true,
+          "orgs": 1818,
+          "autoAI": true,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: вкл"
+        },
+        "toast": "АВТО: вкл"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G5-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G5-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G5-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G6",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bFree",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G6-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G6-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G6-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G7",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bMicro",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G7-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G7-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G7-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G8",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bRender",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G8-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G8-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G8-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G9",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#renderModeBtn",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G9-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G9-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G9-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G10",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bFol",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G10-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G10-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G10-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G11",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bWiki",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G11-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G11-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G11-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G12",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bPause",
+      "label": "☰",
+      "rect": {
+        "x": 803.4140625,
+        "y": 723,
+        "width": 72,
+        "height": 65
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1811,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "paused",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1817,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "toast": "АВТО: съел"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G12-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G12-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G12-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G13",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bZI",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G13-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G13-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G13-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G14",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bZO",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G14-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G14-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G14-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G15",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#bSandbox",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G15-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G15-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G15-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G16",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#btnAcid",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G16-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G16-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G16-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G17",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#spdBar",
+      "label": "⏸\n0.25x\n0.5x\n1x\n2x\n5x\n10x",
+      "rect": {
+        "x": 450.8984375,
+        "y": 8,
+        "width": 378.203125,
+        "height": 47
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1823,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1891,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "Время: 1x"
+        },
+        "toast": "Время: 1x"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G18",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#legToggle",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G18-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G18-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G18-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G19",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#khToggle",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G19-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G19-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G19-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G20",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#starSelectGame",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G20-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G20-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G20-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G21",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#apkBtn",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G21-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G21-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G21-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G22",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#mm",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G22-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G22-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G22-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G23",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#mActs .ma",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G23-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G23-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G23-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G24",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#mTop .ma",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G24-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G24-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G24-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G25",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#mJoy",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G25-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G25-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G25-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G26",
+      "screen": "demo",
+      "viewport": "1280",
+      "selector": "#demoGroups button, #demoBar button, .demo-btn",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G26-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G26-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G26-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G27",
+      "screen": "demo",
+      "viewport": "1280",
+      "selector": "#demoLabelsBtn",
+      "label": "Labels",
+      "rect": {
+        "x": 166.625,
+        "y": 755.8125,
+        "width": 52.28125,
+        "height": 21.1875
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 101,
+          "autoAI": false,
+          "freeCam": true,
+          "tZoom": 1.4,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 101,
+          "autoAI": false,
+          "freeCam": true,
+          "tZoom": 1.4,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G27-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G27-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G27-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G28",
+      "screen": "demo",
+      "viewport": "1280",
+      "selector": "#actBar",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G28-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G28-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G28-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G29",
+      "screen": "game",
+      "viewport": "1280",
+      "selector": "#dnaModal",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G29-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G29-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G29-1280.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M1",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#startBtn",
+      "label": "START",
+      "rect": {
+        "x": 22.65625,
+        "y": 194,
+        "width": 84.640625,
+        "height": 44
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1781,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1019,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "toast": "АВТО: съел"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M1-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M1-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M1-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M2",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#demoBtn",
+      "label": "DEMO / Gallery",
+      "rect": {
+        "x": 119.296875,
+        "y": 197.5,
+        "width": 116.796875,
+        "height": 37
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 101,
+          "autoAI": false,
+          "freeCam": true,
+          "tZoom": 1.4,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M2-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M2-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M2-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M3",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#screensaverBtn",
+      "label": "АКВАРИУМ",
+      "rect": {
+        "x": 248.09375,
+        "y": 197.5,
+        "width": 95.84375,
+        "height": 37
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 998,
+          "autoAI": false,
+          "freeCam": true,
+          "tZoom": 2.25,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M4",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#starSelect",
+      "label": "☀ Солнце\n★ Сириус A+B\n★ Бетельгейзе\n★ Ригель\n★ Вега\n★ Антарес\n★ Альфа Центавра A",
+      "rect": {
+        "x": 66.796875,
+        "y": 247,
+        "width": 233,
+        "height": 31
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1782,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M4-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M4-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M4-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M5",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#helpBtn",
+      "label": "HOW TO PLAY",
+      "rect": {
+        "x": 11,
+        "y": 744.9375,
+        "width": 110.453125,
+        "height": 37
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1783,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1789,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M6",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#setBtn2",
+      "label": "SETTINGS",
+      "rect": {
+        "x": 131.84375,
+        "y": 744.9375,
+        "width": 84.375,
+        "height": 37
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M7",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#wikiBtnMenu",
+      "label": "WIKI",
+      "rect": {
+        "x": 226.609375,
+        "y": 744.9375,
+        "width": 54.609375,
+        "height": 37
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M8",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#langSelWrap",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M9",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#spGrid",
+      "label": "Фильтр: All · показано 101 видов · колоний: 6 (вверху списка) · нажми другую кно",
+      "rect": {
+        "x": 8,
+        "y": 442.546875,
+        "width": 350.59375,
+        "height": 295.390625
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1781,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1781,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M9-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M9-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M9-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "M10",
+      "screen": "menu",
+      "viewport": "390",
+      "selector": "#diffWrap",
+      "label": "Easy\nNormal\nHard",
+      "rect": {
+        "x": 8,
+        "y": 90,
+        "width": 350.59375,
+        "height": 85
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M10-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M10-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M10-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O1",
+      "screen": "help",
+      "viewport": "390",
+      "selector": "#helpClose",
+      "label": "CLOSE",
+      "rect": {
+        "x": 150.78125,
+        "y": 455.890625,
+        "width": 65.015625,
+        "height": 37
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1737,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O2",
+      "screen": "settings",
+      "viewport": "390",
+      "selector": "#setClose",
+      "label": "CLOSE",
+      "rect": {
+        "x": 150.78125,
+        "y": 536.421875,
+        "width": 65.015625,
+        "height": 37
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1758,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O3",
+      "screen": "settings",
+      "viewport": "390",
+      "selector": "#setBody input[type=range]",
+      "label": "",
+      "rect": {
+        "x": 117.6875,
+        "y": 391.03125,
+        "width": 140,
+        "height": 4
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1737,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O4",
+      "screen": "wiki",
+      "viewport": "390",
+      "selector": "#wikiSearch",
+      "label": "",
+      "rect": {
+        "x": 33.296875,
+        "y": 35,
+        "width": 300,
+        "height": 30
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1782,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1772,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O4-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O4-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O4-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O5",
+      "screen": "wiki",
+      "viewport": "390",
+      "selector": "#wikiClose",
+      "label": "CLOSE",
+      "rect": {
+        "x": 150.78125,
+        "y": 728.46875,
+        "width": 65.015625,
+        "height": 37
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1779,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1760,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O6",
+      "screen": "pause",
+      "viewport": "390",
+      "selector": "#resBtn",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O7",
+      "screen": "pause",
+      "viewport": "390",
+      "selector": "#pHelp",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O8",
+      "screen": "tutorial",
+      "viewport": "390",
+      "selector": "#tutSkip",
+      "label": "Пропустить",
+      "rect": {
+        "x": 115.84375,
+        "y": 684,
+        "width": 136.828125,
+        "height": 50
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1015,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1008,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "toast": "АВТО: съел"
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "O9",
+      "screen": "tutorial",
+      "viewport": "390",
+      "selector": "#roleCardOk",
+      "label": "Понятно — плыву",
+      "rect": {
+        "x": 32.6015625,
+        "y": 354.671875,
+        "width": 324.796875,
+        "height": 35
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1014,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1008,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "toast": "АВТО: съел"
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G1",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bEat",
+      "label": "☀ LIGHT\nE",
+      "rect": {
+        "x": 58.9296875,
+        "y": 788,
+        "width": 57.9375,
+        "height": 44
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1071,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1110,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "You are a plant: swim toward the light"
+        },
+        "toast": "You are a plant: swim toward the light"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G1-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G1-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G1-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G2",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bDiv",
+      "label": "ДЕЛИТЬ\nQ",
+      "rect": {
+        "x": 120.8671875,
+        "y": 788,
+        "width": 58.5625,
+        "height": 44
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1047,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1082,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "✌️ Разделился! Вторая клетка рядом"
+        },
+        "toast": "✌️ Разделился! Вторая клетка рядом"
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G3",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bCyst",
+      "label": "СПОРА\nR",
+      "rect": {
+        "x": 183.4296875,
+        "y": 788,
+        "width": 51.640625,
+        "height": 44
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1065,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": true,
+          "dividing": false,
+          "orgs": 1091,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "Spore: protected, speed 0, energy drains slowly"
+        },
+        "toast": "Spore: protected, speed 0, energy drains slowly"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G3-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G3-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G3-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G4",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bFeed",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G4-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G4-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G4-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G5",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bAuto",
+      "label": "АВТО\nTab",
+      "rect": {
+        "x": 239.0703125,
+        "y": 788,
+        "width": 44,
+        "height": 44
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1064,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1083,
+          "autoAI": true,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "+22 эн / +3.1 масса"
+        },
+        "toast": "+22 эн / +3.1 масса"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G5-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G5-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G5-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G6",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bFree",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G6-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G6-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G6-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G7",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bMicro",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G7-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G7-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G7-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G8",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bRender",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G8-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G8-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G8-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G9",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#renderModeBtn",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G9-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G9-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G9-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G10",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bFol",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G10-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G10-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G10-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G11",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bWiki",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G11-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G11-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G11-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G12",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bPause",
+      "label": "☰",
+      "rect": {
+        "x": 287.0703125,
+        "y": 788,
+        "width": 44,
+        "height": 44
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1069,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "paused",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1081,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "toast": "АВТО: съел"
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G12-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G12-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G12-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G13",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bZI",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G13-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G13-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G13-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G14",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bZO",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G14-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G14-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G14-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G15",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#bSandbox",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G15-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G15-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G15-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G16",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#btnAcid",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G16-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G16-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G16-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G17",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#spdBar",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G18",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#legToggle",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G18-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G18-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G18-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G19",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#khToggle",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G19-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G19-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G19-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G20",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#starSelectGame",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G20-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G20-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G20-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G21",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#apkBtn",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G21-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G21-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G21-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G22",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#mm",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G22-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G22-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G22-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G23",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#mActs .ma",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G23-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G23-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G23-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G24",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#mTop .ma",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G24-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G24-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G24-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G25",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#mJoy",
+      "label": "",
+      "rect": {
+        "x": 8,
+        "y": 670,
+        "width": 110,
+        "height": 110
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1062,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1090,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "toast": "АВТО: съел"
+        },
+        "toast": "АВТО: съел"
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G25-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G25-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G25-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G26",
+      "screen": "demo",
+      "viewport": "390",
+      "selector": "#demoGroups button, #demoBar button, .demo-btn",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G26-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G26-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G26-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G27",
+      "screen": "demo",
+      "viewport": "390",
+      "selector": "#demoLabelsBtn",
+      "label": "Labels",
+      "rect": {
+        "x": 166.625,
+        "y": 727.8125,
+        "width": 52.28125,
+        "height": 21.1875
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 101,
+          "autoAI": false,
+          "freeCam": true,
+          "tZoom": 1.4,
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 101,
+          "autoAI": false,
+          "freeCam": true,
+          "tZoom": 1.4,
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "partial",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G27-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G27-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G27-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G28",
+      "screen": "demo",
+      "viewport": "390",
+      "selector": "#actBar",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G28-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G28-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G28-390.webm",
+      "consoleErrors": 0
+    },
+    {
+      "id": "G29",
+      "screen": "game",
+      "viewport": "390",
+      "selector": "#dnaModal",
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
+      "effect": {
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
+      },
+      "verdict": "hidden",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G29-390-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G29-390-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G29-390.webm",
+      "consoleErrors": 0
+    }
+  ]
+}

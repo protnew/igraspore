@@ -54,9 +54,9 @@ function buildSpeciesGrid(){
       var sx=SPECIES_DB[ci]; if(sx&&(sx.shape==='colony'||(sx.bio&&sx.bio.colony))&&(selCat==='all'||sx.cat===selCat)) colN++;
     }
   }
-  st.innerHTML = 'Фильтр: <span style="color:#8f8">'+catLabel+'</span> · показано <span style="color:#ff8">'+shownN+'</span> видов'
-    +(colN?(' · <span style="color:#9f6">колоний: '+colN+'</span> (вверху списка)'):'')
-    +' <span style="opacity:.6;font-weight:400;font-size:11px">· нажми другую кнопку чтобы сменить</span>';
+  st.innerHTML = tt('filter')+': <span style="color:#8f8">'+catLabel+'</span> · '+tt('shown')+' <span style="color:#ff8">'+shownN+'</span> '+tt('speciesWord')
+    +(colN?(' · <span style="color:#9f6">'+tt('colonies')+': '+colN+'</span> ('+tt('topOfList')+')'):'')
+    +' <span style="opacity:.6;font-weight:400;font-size:11px">· '+tt('filterHint')+'</span>';
   sg.appendChild(st);
   if(selCat==='virus'){
     for(var vi=0;vi<VIRUS_SPECS.length;vi++){
@@ -87,8 +87,8 @@ function buildSpeciesGrid(){
     var c=document.createElement('div');c.className='sc'+(selSpecies===i?' sel':'');c.setAttribute('data-si',i);
     var pop=speciesPop[i]?speciesPop[i].alive:0;
     var eatInfo='';
-    if(sp.cat==='producer'){ eatInfo='<span style="color:#8f8">\u{1F31E} ест свет</span>'; }
-    else if(sp.cat==='decomposer'){ eatInfo='<span style="color:#b96">\u{1F9F9} ест мёртвое</span>'; }
+    if(sp.cat==='producer'){ eatInfo='<span style="color:#8f8">\u{1F31E} '+tt('eatsLight')+'</span>'; }
+    else if(sp.cat==='decomposer'){ eatInfo='<span style="color:#b96">\u{1F9F9} '+tt('eatsDead')+'</span>'; }
     else {
       var eatsCats = FOOD[sp.cat]||[];
       var parts=[];
@@ -96,14 +96,14 @@ function buildSpeciesGrid(){
         var cn = (typeof catName==='function')?catName(eatsCats[ec]):eatsCats[ec];
         parts.push((typeof roleColor==='function'?'<span style="color:'+roleColor(eatsCats[ec])+'">':'<span>')+cn+'</span>');
       }
-      eatInfo='<span style="font-size:8.5px">\u{1F5D1} ест: '+parts.join(', ')+'</span>';
+      eatInfo='<span style="font-size:8.5px">\u{1F5D1} '+tt('eats')+': '+parts.join(', ')+'</span>';
     }
     var roleShort='';
     if(typeof catName==='function'){ roleShort=catName(sp.cat); }
     var spNum=(typeof sp.num==='number')?sp.num:(i+1);
     var isCol=(sp.shape==='colony'||(sp.bio&&sp.bio.colony));
     var colonyTag=isCol?'':'';
-    var colonyBadge=isCol?'<div style="background:#2a6;color:#efc;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;margin:2px auto;display:inline-block;letter-spacing:0.5px">⬡ КОЛОНИЯ · куча клеток</div>':'';
+    var colonyBadge=isCol?'<div style="background:#2a6;color:#efc;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;margin:2px auto;display:inline-block;letter-spacing:0.5px">⬡ '+tt('colonyBadge')+'</div>':'';
     if(isCol){c.style.boxShadow='inset 0 0 0 3px var(--success),0 0 14px var(--success-glow)';c.style.background='var(--success-bg)';c.style.order='-1';}
     c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+colonyBadge+
       '<div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+

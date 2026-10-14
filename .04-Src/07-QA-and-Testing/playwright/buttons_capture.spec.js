@@ -9,15 +9,33 @@ const AUDIT = [
   ['M1','menu','#startBtn'],['M2','menu','#demoBtn'],['M3','menu','#screensaverBtn'],['M4','menu','#starSelect'],
   ['M5','menu','#helpBtn'],['M6','menu','#setBtn2'],['M7','menu','#wikiBtnMenu'],['M8','menu','#langSelWrap'],
   ['M9','menu','#spGrid'],['M10','menu','#diffWrap'],
-  ['O1','help','#helpClose'],['O2','settings','#setClose'],['O4','wiki','#wikiSearch'],['O5','wiki','#wikiClose'],
-  ['O6','pause','#resBtn'],['O7','pause','#pHelp'],
+  ['O1','help','#helpClose'],['O2','settings','#setClose'],['O3','settings','#setBody input[type=range]'],
+  ['O4','wiki','#wikiSearch'],['O5','wiki','#wikiClose'],['O6','pause','#resBtn'],['O7','pause','#pHelp'],
+  ['O8','tutorial','#tutSkip'],['O9','tutorial','#roleCardOk'],
   ['G1','game','#bEat'],['G2','game','#bDiv'],['G3','game','#bCyst'],['G4','game','#bFeed'],
   ['G5','game','#bAuto'],['G6','game','#bFree'],['G7','game','#bMicro'],['G8','game','#bRender'],
   ['G9','game','#renderModeBtn'],['G10','game','#bFol'],['G11','game','#bWiki'],['G12','game','#bPause'],
   ['G13','game','#bZI'],['G14','game','#bZO'],['G15','game','#bSandbox'],
-  ['G18','game','#legToggle'],['G20','game','#starSelectGame'],['G21','game','#apkBtn'],['G22','game','#mm']
+  ['G16','game','#btnAcid'],['G17','game','#spdBar'],['G18','game','#legToggle'],['G19','game','#khToggle'],
+  ['G20','game','#starSelectGame'],['G21','game','#apkBtn'],['G22','game','#mm'],
+  ['G23','game','#mActs .ma'],['G24','game','#mTop .ma'],['G25','game','#mJoy'],
+  ['G26','demo','#demoGroups button, #demoBar button, .demo-btn'],['G27','demo','#demoLabelsBtn'],
+  ['G28','demo','#actBar'],['G29','game','#dnaModal']
 ];
 const VIEWS = [{ name: '1280', width: 1280, height: 800, touch: false }, { name: '390', width: 390, height: 844, touch: true }];
+
+function judge(selector, before, after) {
+  const toast = (after.toast || '') !== (before.toast || '') ? (after.toast || '') : '';
+  const woke = /проснул/i.test(toast) && !after.cyst;
+  const dead = ['#bSandbox', '#btnAcid', '#btnEclipse', '#btnLeaderboard'];
+  const meaningful = toast || after.cyst !== before.cyst || after.dividing !== before.dividing || after.autoAI !== before.autoAI || after.freeCam !== before.freeCam || after.state !== before.state || after.tZoom !== before.tZoom;
+  if (selector === '#bCyst' && (woke || !after.cyst)) return 'broken';
+  if (selector === '#bEat' && !toast && !after.dividing) return 'broken';
+  if (dead.some((s) => selector.indexOf(s) >= 0) && !toast && after.cyst === before.cyst && after.state === before.state) return 'no-code';
+  if (selector === '#bDiv' && !after.dividing) return toast ? 'partial' : 'partial';
+  if (meaningful) return 'work';
+  return 'partial';
+}
 
 async function snapGlobals(page) {
   return page.evaluate(() => ({
@@ -40,6 +58,7 @@ async function openScreen(page, screen) {
   if (screen === 'settings') { await page.click('#setBtn2').catch(() => {}); return; }
   if (screen === 'wiki') { await page.click('#wikiBtnMenu').catch(() => {}); return; }
   if (screen === 'demo') { await page.click('#demoBtn').catch(() => {}); await page.waitForTimeout(1200); return; }
+  if (screen === 'tutorial') { await page.click('#startBtn').catch(() => {}); await page.waitForTimeout(1200); return; }
   if (screen === 'aquarium') { await page.click('#screensaverBtn').catch(() => {}); await page.waitForTimeout(1200); return; }
   await page.click('#startBtn').catch(() => {});
   await page.waitForTimeout(900);
@@ -90,11 +109,10 @@ test('capture visible controls', async ({ browser }) => {
           await page.waitForTimeout(1500);
           after = await snapGlobals(page);
           await page.screenshot({ path: pngAfter });
-          const changed = JSON.stringify(before) !== JSON.stringify(after);
-          const toast = after.toast && after.toast !== before.toast;
-          verdict = changed || toast ? 'work' : 'partial';
-          if (['#bSandbox','#btnAcid','#btnEclipse','#btnLeaderboard'].includes(selector) && !changed && !toast) verdict = 'no-code';
+          verdict = judge(selector, before, after);
         }
+        if (!fs.existsSync(pngBefore)) await page.screenshot({ path: pngBefore }).catch(() => {});
+        if (!fs.existsSync(pngAfter)) await page.screenshot({ path: pngAfter }).catch(() => {});
       } catch (err) {
         verdict = 'broken';
         label = String(err.message || err).slice(0, 180);

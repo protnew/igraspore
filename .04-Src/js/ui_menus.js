@@ -139,7 +139,7 @@ function updateMenuTexts(){
     if(!poolN) poolN = 1600;
     var el = document.getElementById('menuSub');
     if(el) el.innerHTML = tt('menuSub') +
-      '<br><span style="color:#8cf;font-size:11px">\u{1F30A} В бассейне будет: <b style="color:#fff">~'+poolN+'</b> организмов · '+SPECIES_DB.length+' видов</span>';
+      '<br><span style="color:#8cf;font-size:11px">\u{1F30A} '+tt('poolWill',{n:poolN,kinds:SPECIES_DB.length})+'</span>';
   })();
   document.getElementById('startBtn').textContent=tt('start');
   document.getElementById('helpBtn').textContent=tt('help');

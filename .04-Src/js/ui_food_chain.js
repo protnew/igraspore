@@ -63,10 +63,7 @@ function renderPoolBanner(){
   }
   var n = getPoolCount();
   var kinds = (typeof SPECIES_DB!=='undefined') ? SPECIES_DB.length : 100;
-  var ru = (typeof curLang==='undefined' || curLang==='ru');
-  el.innerHTML = ru
-    ? ('\u{1F30A} <b>В бассейне будет ~'+n+' организмов</b> · '+kinds+' видов')
-    : ('\u{1F30A} <b>Pool will have ~'+n+' organisms</b> · '+kinds+' species');
+  el.innerHTML = '\u{1F30A} '+tt('poolWill',{n:n,kinds:kinds});
 }
 
 

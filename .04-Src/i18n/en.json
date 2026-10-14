@@ -64,6 +64,7 @@
   "particles": "Particles",
   "paused": "PAUSED",
   "picMode": "Picture mode",
+  "poolWill": "Pool will have: ~{n} organisms · {kinds} species",
   "pop": "Pop",
   "predation": "Predators",
   "producer": "Greens (food)",

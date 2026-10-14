@@ -17,6 +17,20 @@ function write(rel, html) {
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html);
 }
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+function langTable() {
+  const file = path.join(root, '.04-Src/i18n/languages.json');
+  if (!fs.existsSync(file)) return '<p>languages.json нет.</p>';
+  const list = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const on = list.filter((r) => r.enabled).map((r) => r.code);
+  const body = list.map((r) => {
+    const scores = (r.critics && r.critics.length) ? r.critics.join(' / ') : '—';
+    return '<tr><td>' + esc(r.code) + '</td><td>' + esc(r.name) + '</td><td>' + esc(r.wave) + '</td><td>' + (r.enabled ? 'да' : 'нет') + '</td><td>' + esc(scores) + '</td></tr>';
+  }).join('');
+  return '<p>Включены (' + on.length + '): ' + esc(on.join(', ')) + '. Язык включён только если оба критика не ниже 8. Оценки не выдуманы.</p><table><tr><th>Код</th><th>Имя</th><th>Волна</th><th>Включён</th><th>Критики</th></tr>' + body + '</table>';
+}
 function rowsFrom(file) {
   if (!fs.existsSync(file)) return [];
   const data = JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -47,10 +61,10 @@ rows.forEach(takeMedia);
 write('index.html', page('iGraSpore lab', '<p>Сборка ' + built + '. sha ' + sha + '.</p><p>Стенд игры <a href="http://127.0.0.1:8792/">127.0.0.1:8792</a>. Прод не деплоили.</p><ul>' + ['buttons','competitors','languages','tests','ui-audit','store-readiness','tz-index','media'].map((n) => '<li><a href="' + n + '.html">' + n + '</a></li>').join('') + '</ul>', sha));
 write('buttons.html', page('Кнопки', buttonsPage(rows, beforeMap), sha));
 write('competitors.html', page('Конкуренты', fromMd(read(path.join(docs, 'COMPETITORS-PLAY-2026-10-14.md'))), sha));
-write('languages.html', page('Языки', fromMd(read(path.join(docs, 'LANGUAGES-20-NO-RTL-2026-10-14.md'))) + '<p>Включены только en и ru: у остальных нет двух критиков ≥ 8. Оценки не выдуманы.</p>', sha));
-write('tests.html', page('Тесты', '<p>vitest после P0: 231/231. Съёмка кнопок: ' + rows.length + ' записей.</p>', sha));
+write('languages.html', page('Языки', fromMd(read(path.join(docs, 'LANGUAGES-20-NO-RTL-2026-10-14.md'))) + langTable(), sha));
+write('tests.html', page('Тесты', '<p>vitest B1, 14.10 22:45 UTC+3: 232/232. Съёмка кнопок: ' + rows.length + ' записей. Playwright e2e в этом прогоне не повторялся.</p>', sha));
 write('ui-audit.html', page('Аудит UI', fromMd(read(path.join(docs, 'AUDIT-UI-STORE-2026-10-14.md'))), sha));
-write('store-readiness.html', page('Стор', '<ul><li>AAB: не собран в этом прогоне</li><li>targetSdk 36: не проверен bundletool</li><li>Деплой и публикация: не делались</li></ul>', sha));
+write('store-readiness.html', page('Стор', '<ul><li>AAB собран, не подписан. jarsigner: jar is unsigned</li><li>targetSdk 36 записан в gradle. bundletool в этом ответе не гонял</li><li>Деплой и публикация: не делались</li></ul>', sha));
 write('tz-index.html', page('Индекс ТЗ', '<ul><li><a href="../../09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v2.md">TZ v2</a></li></ul>' + fromMd(read(path.join(docs, 'TZ-RELEASE-READY-2026-10-14-v2.md')).slice(0, 4000)), sha));
 write('media.html', page('Медиа', '<p>Снимки лежат в shots-release-ready-2026-10-14. На сайт копируются только если есть.</p>', sha));
 const ids = [...new Set(rows.map((r) => r.id))];

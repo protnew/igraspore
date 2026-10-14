@@ -5,13 +5,16 @@ function buildLangBar() {
   if(!lb) return;
   lb.innerHTML = '';
   document.getElementById('curLangTxt').textContent = langNames[curLang] || curLang;
+  var enabled = window.IGS_ENABLED || {ru:1, en:1};
   for(var l in LANGS) {
+    if(!enabled[l]) continue;
     var b = document.createElement('div');
     b.className = 'lang-item' + (curLang === l ? ' act' : '');
     b.textContent = langNames[l] || LANGS[l];
     b.setAttribute('data-lang', l);
     b.onclick = function(ev) {
       curLang = ev.target.getAttribute('data-lang');
+      try { localStorage.setItem('igs_lang', curLang); localStorage.removeItem('igs_lang_auto'); } catch(e){}
       buildLangBar();
       updateMenuTexts();
       document.getElementById('langSelWrap').blur();

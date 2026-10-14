@@ -16,6 +16,7 @@ function buildLangBar() {
       var next = ev.target.getAttribute('data-lang');
       function apply() {
         curLang = next;
+        if (typeof applyLangFont === 'function') applyLangFont(curLang);
         try { localStorage.setItem('igs_lang', curLang); localStorage.removeItem('igs_lang_auto'); } catch(e){}
         buildLangBar();
         if (typeof updateMenuTexts === 'function') updateMenuTexts();

@@ -21,6 +21,12 @@ function detectLang(navLangs, enabled) {
   }
   return ok('en') || 'en';
 }
+function applyLangFont(code) {
+  if (typeof document === 'undefined') return;
+  document.documentElement.lang = code || 'en';
+  var face = code === 'bn' ? 'Noto Sans Bengali' : code === 'hi' ? 'Noto Sans Devanagari' : code === 'th' ? 'Noto Sans Thai' : '';
+  if (face && document.fonts && document.fonts.load) document.fonts.load('16px "' + face + '"').catch(function(){});
+}
 function loadLangPack(code) {
   if (typeof fetch !== 'function') return Promise.resolve(code);
   return fetch('i18n/' + code + '.json').then(function(r) {
@@ -47,6 +53,7 @@ if (typeof window !== 'undefined') {
       localStorage.setItem('igs_lang', code);
       localStorage.setItem('igs_lang_auto', '1');
     }
+    applyLangFont(curLang);
   } catch (e) {}
 }
 if (typeof module !== 'undefined') module.exports = { detectLang: detectLang };

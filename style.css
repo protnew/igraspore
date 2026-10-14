@@ -16,7 +16,10 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;height:100%;overflow:hidden;background:#000814;font-family:system-ui,Arial,sans-serif;user-select:none}
+@font-face{font-family:"Noto Sans Bengali";src:url("04-Src/fonts/NotoSansBengali-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0951-0952,U+0964-0965,U+0980-09FE,U+200C-200D}
+@font-face{font-family:"Noto Sans Devanagari";src:url("04-Src/fonts/NotoSansDevanagari-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20B9}
+@font-face{font-family:"Noto Sans Thai";src:url("04-Src/fonts/NotoSansThai-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0E01-0E5B,U+200C-200D}
+html,body{width:100%;height:100%;overflow:hidden;background:#000814;font-family:"Noto Sans Bengali","Noto Sans Devanagari","Noto Sans Thai",system-ui,Arial,sans-serif;user-select:none}
 canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 .p{background:rgba(0,12,28,.92);border:1px solid #1a3a55;border-radius:8px;color:#ffffff;font-size:11px;backdrop-filter:blur(4px)}
 #hud{position:relative;z-index:10;pointer-events:none;padding:8px 12px;min-width:160px;max-width:200px;font-size:13px}
@@ -163,7 +166,7 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 
 #langSelWrap {
   position: absolute; top: 18px; left: 12px; z-index: 15;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Noto Sans Bengali", "Noto Sans Devanagari", "Noto Sans Thai", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   outline: none; user-select: none;
 }
 .lang-curr {

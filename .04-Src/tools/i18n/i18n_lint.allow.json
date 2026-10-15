@@ -1,19 +1,97 @@
 [
-  {"file":"../index.html","exact":"iGraSpore","reason":"brand: название продукта не переводится"},
-  {"file":"../index.html","exact":"v2.0.0","reason":"brand: номер версии"},
-  {"file":"../index.html","exact":"iGraSpore V2 - v2.0.0","reason":"brand: название+версия в debug-полосе"},
-  {"file":"../index.html","exact":"📱 APK","reason":"brand: APK — техническая аббревиатура формата"},
-  {"file":"../index.html","exact":"100 μm","reason":"unit: масштабная линейка, единица µm не переводится"},
-  {"file":"js/config.js","line":3,"exact":"Ру","reason":"langlabel: короткая подпись локали в LANGS"},
-  {"file":"js/config.js","line":32,"contains":"ru","reason":"code: fallback код языка в igsNum (curLang||'ru')"},
-  {"file":"js/config.js","exact":"cilia+stalk","reason":"data: ключ локомоции вида, не UI-строка"},
-  {"file":"js/ui.js","line":145,"exact":" (Q)","reason":"keyhint: суффикс горячей клавиши"},
-  {"file":"js/render_helpers.js","exact":"s ","reason":"unit: суффикс секунд"},
-  {"file":"js/render_edu.js","exact":"Cell wall","reason":"latin: научное имя органеллы (поле latin)"},
-  {"file":"js/render_edu.js","exact":"Oral groove","reason":"latin: научное имя органеллы (поле latin)"},
-  {"file":"js/mobile.js","contains":"[Mobile v3]","reason":"diag: console.log диагностика, не виден игроку"},
-  {"file":"js/ui_screens.js","exact":"virus ","reason":"fallback: debug-имя вируса при отсутствии данных"},
-  {"file":"js/ui_screens.js","exact":"sp ","reason":"fallback: debug-имя вида при отсутствии данных"},
-  {"file":"js/ui_screens.js","line":12,"reason":"css: тернарий возвращает класс ' act', не текст"},
-  {"file":"js/ui.js","line":275,"exact":"100 µm","reason":"unit: масштабная линейка"}
+  {
+    "file": "../index.html",
+    "exact": "iGraSpore",
+    "reason": "brand: название продукта не переводится"
+  },
+  {
+    "file": "../index.html",
+    "exact": "v2.0.0",
+    "reason": "brand: номер версии"
+  },
+  {
+    "file": "../index.html",
+    "exact": "iGraSpore V2 - v2.0.0",
+    "reason": "brand: название+версия в debug-полосе"
+  },
+  {
+    "file": "../index.html",
+    "exact": "📱 APK",
+    "reason": "brand: APK — техническая аббревиатура формата"
+  },
+  {
+    "file": "../index.html",
+    "exact": "100 μm",
+    "reason": "unit: масштабная линейка, единица µm не переводится"
+  },
+  {
+    "file": "js/config.js",
+    "line": 3,
+    "exact": "Ру",
+    "reason": "langlabel: короткая подпись локали в LANGS"
+  },
+  {
+    "file": "js/config.js",
+    "line": 32,
+    "contains": "ru",
+    "reason": "code: fallback код языка в igsNum (curLang||'ru')"
+  },
+  {
+    "file": "js/config.js",
+    "exact": "cilia+stalk",
+    "reason": "data: ключ локомоции вида, не UI-строка"
+  },
+  {
+    "file": "js/ui.js",
+    "line": 136,
+    "exact": " (Q)",
+    "reason": "keyhint: суффикс горячей клавиши"
+  },
+  {
+    "file": "js/render_helpers.js",
+    "exact": "s ",
+    "reason": "unit: суффикс секунд"
+  },
+  {
+    "file": "js/render_edu.js",
+    "exact": "Cell wall",
+    "reason": "latin: научное имя органеллы (поле latin)"
+  },
+  {
+    "file": "js/render_edu.js",
+    "exact": "Oral groove",
+    "reason": "latin: научное имя органеллы (поле latin)"
+  },
+  {
+    "file": "js/mobile.js",
+    "contains": "[Mobile v3]",
+    "reason": "diag: console.log диагностика, не виден игроку"
+  },
+  {
+    "file": "js/ui_screens.js",
+    "exact": "virus ",
+    "reason": "fallback: debug-имя вируса при отсутствии данных"
+  },
+  {
+    "file": "js/ui_screens.js",
+    "exact": "sp ",
+    "reason": "fallback: debug-имя вида при отсутствии данных"
+  },
+  {
+    "file": "js/ui_screens.js",
+    "line": 12,
+    "reason": "css: тернарий возвращает класс ' act', не текст"
+  },
+  {
+    "file": "js/ui.js",
+    "line": 266,
+    "exact": "100 µm",
+    "reason": "unit: масштабная линейка"
+  },
+  {
+    "file": "js/ui_screens.js",
+    "line": 187,
+    "exact": "en",
+    "reason": "code: выбор кода локали для вики-пакета, не UI-текст"
+  }
 ]

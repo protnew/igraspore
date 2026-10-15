@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Synechocystis ist ein Cyanobakterium ohne Zellkern. Es lebt vom Licht: oxygene Photosynthese auf Membranen, ohne Chloroplasten. Labormodell für den Wasserstoffstoffwechsel."
+  },
+  "1": {
+    "body": "Anabaena variabilis ist ein Zellfaden. Einige Zellen werden zu Heterozysten und fixieren Stickstoff, während die Nachbarn Zucker bilden. Im Teich liefert sie gebundenen Stickstoff."
+  },
+  "2": {
+    "body": "Spirulina (Arthrospira) ist eine Spirale aus Zellen mit Gasvesikeln. Sie schwebt nahe der Oberfläche, betreibt Photosynthese und ist essbar. Im Spiel eine große grüne Schraube am Wasserfilm."
+  },
+  "3": {
+    "body": "Nostoc punctiforme ist eine Perlenkette in einer Schleimkapsel. Sie lebt frei oder in Symbiose mit Pflanzen. Die Kolonie sieht aus wie ein Klumpen grüner Perlen."
+  },
+  "4": {
+    "body": "Oscillatoria limnetica ist ein gleitender Faden. Er schwingt hin und her und kann Photosynthese ohne Sauerstoffabgabe betreiben. Typisch für Schlamm und Oberflächenfilm."
+  },
+  "5": {
+    "body": "Microcystis aeruginosa ist eine Schleimkolonie, oft giftig (Microcystin). Sie verursacht Algenblüte. Im Spiel ein grüner Kolonieball, riskante Beute."
+  },
+  "6": {
+    "body": "Gloeocapsa sind paarige Zellen in gefärbten Hüllen. Sie lebt auf Felsen und im Boden und verträgt UV. Im Teich kleine paarige Kokken im Mantel."
+  },
+  "7": {
+    "body": "Lyngbya majuscula ist ein dicker Cyanobakterienfaden. Sie kann reizende Toxine freisetzen. Sie bildet Matten an warmen Ufern."
+  },
+  "8": {
+    "body": "Chlamydomonas reinhardtii ist eine grüne Zelle mit zwei Geißeln und einem Augenfleck. Sie schwimmt zum Licht. Klassisches Modell der Algengenetik."
+  },
+  "9": {
+    "body": "Chlorella vulgaris ist eine unbewegliche grüne Kugel. Sie teilt sich schnell und ist proteinreich. Nahrung für kleine Fresser und ein Weltraumnahrungs-Objekt."
+  },
+  "10": {
+    "body": "Volvox globator ist eine hohle Kugel aus Tausenden Zellen. Tochterkolonien reifen im Inneren und treten aus. Im Spiel eine große grüne Kolonie."
+  },
+  "11": {
+    "body": "Euglena gracilis ist ein Mixotroph: Chloroplasten plus die Fähigkeit zu fressen. Ein roter Augenfleck verfolgt das Licht. Tagsüber grün; im Dunkeln wechselt sie zu Nahrung."
+  },
+  "12": {
+    "body": "Scenedesmus quadricauda besteht meist aus vier Zellen in einer Reihe mit Endstacheln. Die Stacheln erschweren das Verschlucken. Sie schwimmt nicht — sie driftet."
+  },
+  "13": {
+    "body": "Haematococcus pluvialis ist eine grüne bewegliche Zelle; unter Stress wird sie rot (Astaxanthin) und bildet eine dicke Wand. Rote Zysten überstehen Trockenheit."
+  },
+  "14": {
+    "body": "Dunaliella salina hat keine starre Wand und lebt in sehr salzigem Wasser. Sie speichert Beta-Carotin und sieht orange aus. Zwei Geißeln."
+  },
+  "15": {
+    "body": "Micrasterias rotata ist eine flache sternförmige Desmidiacee. Zwei gespiegelte Hälften mit tiefen Einschnitten. Unbeweglich; photosynthetisiert in saurem Moorwasser."
+  },
+  "16": {
+    "body": "Navicula ist eine bootsförmige Diatomee mit Kieselschale. Sie gleitet auf dem Substrat entlang einer Raphe-Spalte. Die Schale bleibt nach dem Tod erhalten."
+  },
+  "17": {
+    "body": "Pinnularia viridis ist eine große pennate Diatomee. Kieselschale mit symmetrischem Muster. Sie gleitet langsam über den Boden."
+  },
+  "18": {
+    "body": "Cyclotella meneghiniana ist eine runde zentrische Diatomee. Sie schwimmt als Scheibe; die Schale besteht aus zwei Deckeln. Typisches Plankton."
+  },
+  "19": {
+    "body": "Diatoma vulgare ist eine Diatomee, die sich zu Zickzackketten verklebt. Die Kolonie erhöht den Wasserwiderstand in der Wassersäule."
+  },
+  "20": {
+    "body": "Rhodospirillum rubrum ist eine purpurne Spirale. Anoxygene Photosynthese plus Organik. Die rote Farbe stammt von Bakteriochlorophyll."
+  },
+  "21": {
+    "body": "Chromatium vinosum ist ein Purpurschwefelbakterium. Es oxidiert Schwefelwasserstoff und speichert Schwefelgranula. Lebt an der Grenze Sauerstoff/Schwefel."
+  },
+  "22": {
+    "body": "Porphyridium cruentum ist eine einzellige Rotalge. Phycoerythrin verleiht die blutrote Farbe. Schleimhülle, keine Geißeln."
+  },
+  "23": {
+    "body": "Prochlorococcus marinus ist die kleinste und häufigste photosynthetische Zelle der Erde. In den 1980ern entdeckt. Sie ernährt den Ozean."
+  },
+  "24": {
+    "body": "Chroococcidiopsis thermalis ist ein Extremophiler: Wüste, Fels, Strahlung. Kandidat für Leben außerhalb der Erde. Im Teich eine langsame Kokkenkolonie."
+  },
+  "25": {
+    "body": "Bdellovibrio bacteriovorus ist ein winziges bakterielles Raubtier. Es schraubt sich in eine fremde Zelle und vermehrt sich, bis der Wirt platzt."
+  },
+  "26": {
+    "body": "Vampirococcus sitzt von außen auf der Beute und saugt den Inhalt aus, ohne einzudringen. Ein Bakterienvampir."
+  },
+  "27": {
+    "body": "Daptobacter dringt in eine Beutebakterie ein und frisst sie von innen. Ein seltener intrazellulärer Jäger."
+  },
+  "28": {
+    "body": "Myxococcus xanthus ist eine soziale Bakterie. Im Rudel umringt sie Beute und setzt Enzyme frei. Bei Hunger bildet sie einen Fruchtkörper."
+  },
+  "29": {
+    "body": "Bacteriovorax stolpii ist ein mariner Verwandter von Bdellovibrio. Er greift Gramnegative an und lebt im Periplasma der Beute."
+  },
+  "30": {
+    "body": "Halobacteriovorax ist ein salztoleranter Bakterienjäger. Gleicher Trick: Wand durchstechen und innen wachsen."
+  },
+  "31": {
+    "body": "Peredibacter starrii ist ein weiterer BALO-Räuber. Ein schneller kommaförmiger Geißler, der große Stäbchen jagt."
+  },
+  "32": {
+    "body": "Monas guttula ist ein kleiner heterotropher Geißler. Er schnappt Bakterien an der Detritusoberfläche."
+  },
+  "33": {
+    "body": "Oikomonas termo ist ein tropfenförmiger Geißler. Eine Geißel; er jagt im Bakterienfilm."
+  },
+  "34": {
+    "body": "Anthophysa vegetans ist eine Kolonie auf einem Eisen-Mangan-Stiel. Die Zellen sitzen in einem Büschel und fangen Bakterien."
+  },
+  "35": {
+    "body": "Chilomonas paramecium ist ein farbloser Kryptophyt. Zwei Geißeln; frisst gelöste Organik und winzige Bakterien, keine Chloroplasten."
+  },
+  "36": {
+    "body": "Cercomonas longicauda ist ein Amöboflagellat mit langem Schwanz. Er kriecht und verschlingt Bakterien mit Pseudopodien."
+  },
+  "37": {
+    "body": "Heteromita globosa ist ein Bodengeißler. Zwei Geißeln unterschiedlicher Länge; ein Haupt-Bakterienfresser im Boden."
+  },
+  "38": {
+    "body": "Bodo saltans ist ein Kinetoplastide. Er „tanzt“ auf der Stelle, durch die hintere Geißel verankert, und schnappt Bakterien."
+  },
+  "39": {
+    "body": "Procryptobia sorokini ist ein Bodo-Verwandter. Er schwimmt frei und schlägt die Beute mit der vorderen Geißel."
+  },
+  "40": {
+    "body": "Trypanosoma brucei ist ein Blutparasit und Erreger der Schlafkrankheit. Undulierende Membran und eine Geißel. Im Teich ein Modell für schlanke Jäger."
+  },
+  "41": {
+    "body": "Leishmania donovani ist ein intrazellulärer Parasit des Menschen. Begeißelt im Insekt, unbegeißelt im Makrophagen."
+  },
+  "42": {
+    "body": "Monosiga brevicollis ist ein Choanoflagellat, ein Verwandter der Tiere. Ein Kragen aus Mikrovilli filtert Bakterien."
+  },
+  "43": {
+    "body": "Salpingoeca rosetta ist ein sessiles Choanoflagellat in einer Lorica. Es kann eine Rosette bilden. Es filtert eine Wasserströmung."
+  },
+  "44": {
+    "body": "Codonosiga botrytis ist eine Choanoflagellatenkolonie auf einem gemeinsamen Stiel. Mehrere Filter an einem Stamm."
+  },
+  "45": {
+    "body": "Paramecium caudatum ist das klassische Pantoffeltierchen. Tausende Zilien, eine Mundrinne, kontraktile Vakuolen. Es filtert Bakterien."
+  },
+  "46": {
+    "body": "Paramecium bursaria ist ein Pantoffeltierchen mit Zoochlorellen-Symbionten. Innen grün: tagsüber Zucker von den Algen, nachts Filtrieren."
+  },
+  "47": {
+    "body": "Stentor coeruleus ist eine blaue Trompete bis zu einem Millimeter. Sie öffnet sich zum Trichter und treibt mit Zilien eine Strömung. Sie kann schwimmen oder sitzen."
+  },
+  "48": {
+    "body": "Stentor polymorphus ist ein Verwandter des blauen Stentors, oft mit Zoochlorellen. Die Form wechselt von Trompete zu Kugel."
+  },
+  "49": {
+    "body": "Vorticella campanula ist ein Glöckchen auf einem kontraktilen Stiel. Der Stiel schraubt sich blitzschnell zu einer Spirale. Die Zelle selbst schwimmt nicht weg."
+  },
+  "50": {
+    "body": "Vorticella microstoma ist ein kleines Glöckchen. Gleicher Federstiel, engeres Mundfeld. Oft auf Detritus."
+  },
+  "51": {
+    "body": "Didinium nasutum ist ein fassförmiger Jäger von Pantoffeltierchen. Es feuert Toxicysten ab und verschlingt Beute ganz, selbst wenn diese größer ist."
+  },
+  "52": {
+    "body": "Spirostomum ambiguum ist eine sehr lange Zigarre. Sie kontrahiert in einem Sekundenbruchteil um ein Mehrfaches. Die Zilien laufen spiralförmig."
+  },
+  "53": {
+    "body": "Blepharisma americanum ist ein rosa Ciliat. Das Pigment Blepharismin ist lichtempfindlich. Es filtert und kann kleinere Zellen angreifen."
+  },
+  "54": {
+    "body": "Euplotes patella läuft auf Cirren wie auf Beinen. Flach, schnelle Wendungen. Es schabt Bakterien von Oberflächen."
+  },
+  "55": {
+    "body": "Stylonychia pustulata ist ein Hypotrich, der über den Boden „läuft“. Große Cirren, ein deutlicher Mund. Räuber kleiner Ciliaten."
+  },
+  "56": {
+    "body": "Oxytricha trifallax ist ein Genommodell: zwei Kerne und komplexes DNA-Umschreiben. Es läuft auf Cirren und frisst Bakterien und kleine Protisten."
+  },
+  "57": {
+    "body": "Tetrahymena thermophila ist ein Laborciliat. Vier orale Membranellen, schnelle Teilung. Modell für Telomere und Zilien."
+  },
+  "58": {
+    "body": "Coleps hirtus ist ein Fass in Kalkplättchen mit Stacheln. Aasfresser und Räuber: beißt sich in Verwundete."
+  },
+  "59": {
+    "body": "Litonotus lamella ist ein flacher Räuber mit Toxicysten in einem „Rüssel“. Er lähmt die Beute und saugt sie aus."
+  },
+  "60": {
+    "body": "Dileptus anser hat einen langen Hals mit giftigen Extrusomen. Er schlägt mit dem Hals zu und verschlingt dann. Ein großer Jäger der mittleren Ebene."
+  },
+  "61": {
+    "body": "Urocentrum turbo ist ein Kreisel: Ein äquatorialer Ziliengürtel dreht die Zelle auf der Stelle. Er filtert Bakterien."
+  },
+  "62": {
+    "body": "Zoothamnium arbuscula ist eine verzweigte Kolonie von Glöckchen. Ein gemeinsamer kontraktiler Stiel ruckt den ganzen Baum auf einmal."
+  },
+  "63": {
+    "body": "Opercularia coarctata ist ein sessiler Peritrich ohne Federstiel. Ein Deckel bedeckt den Mund. Er filtert und schwimmt nicht weg."
+  },
+  "64": {
+    "body": "Amoeba proteus ist die klassische Amöbe. Pseudopodien fließen um die Beute. Keine feste Form, keine Zilien."
+  },
+  "65": {
+    "body": "Arcella vulgaris ist eine Schalenamöbe mit starrem Dom. Pseudopodien treten aus der Öffnung. Sie kriecht auf Pflanzen."
+  },
+  "66": {
+    "body": "Difflugia oblonga hat ein Gehäuse aus Sandkörnern, die die Amöbe selbst anklebt. Sie lebt im Schlamm."
+  },
+  "67": {
+    "body": "Euglypha alveolata hat ein Gehäuse aus Kieselschuppen. Dünne filose Pseudopodien. Ein kleiner Bakterienräuber."
+  },
+  "68": {
+    "body": "Nebela collaris ist ein flaschenförmiges Gehäuse aus gestohlenen Schuppen. Wald- und Moorwässer."
+  },
+  "69": {
+    "body": "Centropyxis aculeata ist ein scheibenförmiges Gehäuse mit Stacheln. Die Öffnung ist versetzt. Sie kriecht auf Detritus."
+  },
+  "70": {
+    "body": "Actinophrys sol ist ein Sonnentierchen: Dünne Axopodien strahlen in alle Richtungen. Beute klebt an den Strahlen und wird eingezogen."
+  },
+  "71": {
+    "body": "Actinosphaerium eichhorni ist ein großes vielkerniges Sonnentierchen. Gleiche Strahlen, viel größere Zelle. Es frisst Ciliaten und Rädertierchen."
+  },
+  "72": {
+    "body": "Raphidiophrys pallida ist ein Sonnentierchen in Schuppen. Die Strahlen tragen Kieselnadeln. Ein Planktonjäger aus dem Hinterhalt."
+  },
+  "73": {
+    "body": "Rotaria rotatoria ist ein Rädertierchen, das Austrocknen überstehen kann. Ein Kranz (Corona) wirbelt Nahrung ins Maul. Ein echtes Vielzeller."
+  },
+  "74": {
+    "body": "Philodina roseola ist ein rosa bdelloides Rädertierchen. Es kriecht wie ein Blutegel und schwimmt auch. Nur Weibchen; keine Männchen."
+  },
+  "75": {
+    "body": "Brachionus plicatilis ist ein planktonisches Rädertierchen mit Lorica. Futter für Fischbrut in der Aquakultur. Es filtert Algen und Bakterien."
+  },
+  "76": {
+    "body": "Keratella cochlearis ist ein Rädertierchen mit langem Lorica-Dorn. Der Dorn schreckt Räuber ab. Häufiges Teichplankton."
+  },
+  "77": {
+    "body": "Asplanchna priodonta ist ein Sack ohne Lorica, ein räuberisches Rädertierchen. Es verschlingt andere Rädertierchen und Ciliaten ganz."
+  },
+  "78": {
+    "body": "Chaetonotus maximus ist ein Gastrotrich. Schuppenbedeckt, kriecht über den Boden. Er frisst Bakterien und Detritus."
+  },
+  "79": {
+    "body": "Lepidodermella squamata ist ein kleines Gastrotrich in überlappenden Schuppen. Sehr schnelle Wendungen auf der Stelle."
+  },
+  "80": {
+    "body": "Macrostomum lignano ist ein mikroskopischer Plattwurm. Echte Muskeln und Augen. Ein Regenerationsmodell. Er jagt kleine Protisten."
+  },
+  "81": {
+    "body": "Stenostomum leucops ist ein dünner Wimpernwurm. Er teilt sich quer zu einer Kette von Zooiden. Räuber von Detritus und Kleintieren."
+  },
+  "82": {
+    "body": "Microstomum lineare ist ein Plattwurm, der Hydren frisst und ihre Nesselzellen in die eigene Haut einbaut. Eine Kette von Zooiden."
+  },
+  "83": {
+    "body": "Prostoma graecense ist ein Süßwasser-Schnurwurm (Nemertine). Ein langer Rüssel schießt auf die Beute. Ein seltener großer Bodenjäger."
+  },
+  "84": {
+    "body": "Trichoplax adhaerens ist ein Placozoon, eines der einfachsten Tiere. Er kriecht als Platte und verdaut Nahrung außerhalb. Kein Mund."
+  },
+  "85": {
+    "body": "Saccharomyces cerevisiae ist Backhefe. Sie sprosst, frisst Zucker, setzt CO2 und Alkohol frei. Im Teich reinigt sie gelöste Organik."
+  },
+  "86": {
+    "body": "Candida albicans ist eine Hefe, die als Fäden wachsen kann. Ein opportunistischer Erreger des Menschen. Im Spiel ein Detrituspilz."
+  },
+  "87": {
+    "body": "Mucor mucedo ist Brotschimmel. Sporangien auf Stielen, schnelles Wachstum über dem Toten. Er jagt keine Lebenden."
+  },
+  "88": {
+    "body": "Rhizopus stolonifer ist schwarzer Brotschimmel. Stolonen und Rhizoide breiten sich über das Substrat. Er baut Stärke ab."
+  },
+  "89": {
+    "body": "Penicillium chrysogenum ist ein Pinselschimmel, die Quelle des Penicillins. Konidienpinsel. Er zersetzt Organik und unterdrückt Bakterien in der Nähe."
+  },
+  "90": {
+    "body": "Aspergillus niger ist schwarzer Aspergillus. Kugelförmige Sporenköpfe. Industrieller Zitronensäureproduzent. Ein Saprotroph."
+  },
+  "91": {
+    "body": "Batrachochytrium dendrobatidis ist ein Chytridpilz der Frösche. Zoosporen mit einer Geißel. Im Teich ein Wasserpilzmodell."
+  },
+  "92": {
+    "body": "Chytriomyces aureus ist ein Wasserchytrid auf Pollen und Algen. Goldene Sporangien; Zoosporen schwimmen zum Substrat."
+  },
+  "93": {
+    "body": "Allomyces macrogynus ist ein Wasserpilz mit echtem Myzel. Er wechselt zwischen diploid und haploid. Zoosporen haben eine hintere Geißel."
+  },
+  "94": {
+    "body": "Bacillus subtilis ist ein Bodenstäbchen. Sporen überstehen Kochen. Er baut Eiweiß ab; ein Grampositives-Modell."
+  },
+  "95": {
+    "body": "Pseudomonas putida ist ein Aufräumstäbchen. Es frisst sogar Erdölprodukte. Bewegliche Geißel, schnelles Wachstum auf Detritus."
+  },
+  "96": {
+    "body": "Streptomyces coelicolor ist ein fadenförmiges Bodenbakterium. Erzeugt den Erdgeruch (Geosmin) und viele Antibiotika. Sporen auf Hyphen."
+  },
+  "97": {
+    "body": "Cellulomonas fimi baut Zellulose ab. Ein gelbes Stäbchen auf Pflanzendetritus. Ohne sie würden tote Algen länger liegen."
+  },
+  "98": {
+    "body": "Thermus aquaticus ist ein Thermophiler aus heißen Quellen. Taq-Polymerase ist die Basis der PCR. Im kalten Teich fast ruhend."
+  },
+  "99": {
+    "body": "Deinococcus radiodurans ist der Strahlungsmeister. Er setzt ein zertrümmertes Genom in Stunden wieder zusammen. Dicke Wand, Zelltetraden."
+  },
+  "1001": {
+    "body": "Sexual Eukaryote ist ein Lehrmodell der sexuellen Fortpflanzung. Zwei Geschlechter, Gametenverschmelzung, kein einfaches Zweiteilen."
+  },
+  "T4 Bacteriophage": {
+    "body": "T4 ist ein großer Myovirus von E. coli. Der Schwanz kontrahiert und injiziert DNA. Nach einer halben Stunde platzt die Zelle und Dutzende Phagen treten aus."
+  },
+  "Lambda Phage": {
+    "body": "Lambda ist ein temperenter Phage. Er kann sich in das Chromosom einfügen und schlafen (Lysogenie) oder die Zelle sofort zerschneiden (Lyse)."
+  },
+  "T7 Bacteriophage": {
+    "body": "T7 hat einen kurzen Schwanz und sehr schnelle Replikation. Ein Lieblingssystem der synthetischen Biologie."
+  },
+  "Phi-6 Phage": {
+    "body": "Phi-6 ist ein RNA-Phage mit Lipidhülle. Er infiziert Pseudomonas. Eine seltene Membran für einen Phagen."
+  },
+  "MS2 Phage": {
+    "body": "MS2 ist ein winziger schwanzloser RNA-Phage. Er bindet an männliche Pili von E. coli. Sein Genom war eines der ersten entschlüsselten RNA-Genome."
+  },
+  "Neuro-Parasite": {
+    "body": "Ein fiktiver Teich-Neuroparasit. Er heftet sich an Eukaryoten und bricht das Wirtsverhalten, bis der Wirt zum Überträger wird."
+  },
+  "Sexual Eukaryote": {
+    "body": "Sexual Eukaryote ist ein Lehrmodell der sexuellen Fortpflanzung. Zwei Geschlechter, Gametenverschmelzung, kein einfaches Zweiteilen."
+  }
+}

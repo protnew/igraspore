@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Synechocystis 是沒有細胞核的藍細菌（藍藻）。靠光為生：在膜上進行產氧光合作用，沒有葉綠體。氫代謝研究的實驗模式生物。"
+  },
+  "1": {
+    "body": "Anabaena variabilis 是一條絲狀體。部分細胞會變成異形胞並固氮，鄰近細胞則製造糖。在池塘中是結合氮的供應者。"
+  },
+  "2": {
+    "body": "Spirulina（Arthrospira）是具有氣泡囊的細胞螺旋體。浮在水面附近行光合作用，可食用。在遊戲中它是水膜上的一枚大型綠色螺絲。"
+  },
+  "3": {
+    "body": "Nostoc punctiforme 是黏液囊中的念珠狀細胞鏈。可自由行生活或與植物共生。群體看起來像一團綠珠子。"
+  },
+  "4": {
+    "body": "Oscillatoria limnetica 是滑行絲狀體。左右擺動，可以進行不釋放氧氣的光合作用。淤泥與水面薄膜的典型居民。"
+  },
+  "5": {
+    "body": "Microcystis aeruginosa 是黏液群體，常具毒性（微囊藻素）。造成水華。在遊戲中是一顆綠色群體球，是危險的獵物。"
+  },
+  "6": {
+    "body": "Gloeocapsa 是包在有色鞘中的成對細胞。生活在岩石和土壤上，耐紫外線。在池塘中是套著外套的小型成對球菌。"
+  },
+  "7": {
+    "body": "Lyngbya majuscula 是粗大的藍細菌絲狀體。可釋放刺激性毒素。在溫暖岸邊形成藻蓆。"
+  },
+  "8": {
+    "body": "Chlamydomonas reinhardtii 是具兩根鞭毛和一個眼點的綠色細胞。朝光游去。藻類遺傳學的經典模式生物。"
+  },
+  "9": {
+    "body": "Chlorella vulgaris 是不動的綠色小球。分裂快速、富含蛋白質。小型食者的食物，也是太空食物的實驗對象。"
+  },
+  "10": {
+    "body": "Volvox globator 是由數千個細胞組成的空心球體。子群體在內部成熟後鑽出。在遊戲中是大型綠色群體。"
+  },
+  "11": {
+    "body": "Euglena gracilis 是混營生物：有葉綠體也能吃東西。紅色眼點追蹤光線。白天是綠色的，黑暗中切換為攝食。"
+  },
+  "12": {
+    "body": "Scenedesmus quadricauda 通常是四個細胞排成一列，末端有刺。刺讓吞食變難。不游泳——只漂浮。"
+  },
+  "13": {
+    "body": "Haematococcus pluvialis 是綠色的游動細胞；受壓時轉紅（蝦紅素）並長出厚壁。紅色孢囊可熬過乾旱。"
+  },
+  "14": {
+    "body": "Dunaliella salina 沒有堅硬細胞壁，生活在極鹹的水中。儲存β-胡蘿蔔素，看起來呈橘色。有兩根鞭毛。"
+  },
+  "15": {
+    "body": "Micrasterias rotata 是扁平的星形鼓藻。兩個鏡像半細胞帶深凹缺。不具運動性，在酸性沼澤水中行光合作用。"
+  },
+  "16": {
+    "body": "Navicula 是帶矽質殼瓣的舟形矽藻。沿著殼縫在基質上滑行。死後殼體仍留存。"
+  },
+  "17": {
+    "body": "Pinnularia viridis 是大型羽紋矽藻。具對稱花紋的矽質殼。在底部緩慢滑行。"
+  },
+  "18": {
+    "body": "Cyclotella meneghiniana 是圓形中心矽藻。以圓盤狀漂浮，殼由兩片蓋組成。典型浮游生物。"
+  },
+  "19": {
+    "body": "Diatoma vulgare 是能黏成鋸齒狀的矽藻。群體會增加在水層中的阻力。"
+  },
+  "20": {
+    "body": "Rhodospirillum rubrum 是紫色螺旋菌。行不產氧光合作用並利用有機物。紅色來自細菌葉綠素。"
+  },
+  "21": {
+    "body": "Chromatium vinosum 是紫色硫細菌。氧化硫化氫並儲存硫顆粒。生活在氧氣與硫的交界處。"
+  },
+  "22": {
+    "body": "Porphyridium cruentum 是單細胞紅藻。藻紅素賦予血紅色。有黏液外鞘，無鞭毛。"
+  },
+  "23": {
+    "body": "Prochlorococcus marinus 是地球上最小、數量最多的光合細胞。1980年代被發現。養活了整個海洋。"
+  },
+  "24": {
+    "body": "Chroococcidiopsis thermalis 是極端環境生物：沙漠、岩石、輻射都不怕。地球外生命的候選者。在池塘中是緩慢的球菌群體。"
+  },
+  "25": {
+    "body": "Bdellovibrio bacteriovorus 是微小的細菌掠食者。鑽進另一個細胞並在其中繁殖，直到宿主爆裂。"
+  },
+  "26": {
+    "body": "Vampirococcus 從外部吸附在獵物上，不進入就吸乾內容物。細菌界的吸血鬼。"
+  },
+  "27": {
+    "body": "Daptobacter 進入獵物細菌體內並從內部吃掉牠。罕見的胞內獵手。"
+  },
+  "28": {
+    "body": "Myxococcus xanthus 是社會性細菌。成群包圍獵物並釋放酵素。飢餓時形成子實體。"
+  },
+  "29": {
+    "body": "Bacteriovorax stolpii 是海洋性的 Bdellovibrio 近親。攻擊革蘭氏陰性菌，住在獵物的周質中。"
+  },
+  "30": {
+    "body": "Halobacteriovorax 是耐鹽的細菌獵手。同樣的手法：刺穿細胞壁並在內部生長。"
+  },
+  "31": {
+    "body": "Peredibacter starrii 是另一種 BALO 型掠食者。快速的逗號狀鞭毛蟲，專攻大型桿菌。"
+  },
+  "32": {
+    "body": "Monas guttula 是小型異營鞭毛蟲。在碎屑表面抓取細菌。"
+  },
+  "33": {
+    "body": "Oikomonas termo 是水滴狀的鞭毛蟲。只有一根鞭毛，在細菌膜中狩獵。"
+  },
+  "34": {
+    "body": "Anthophysa vegetans 是鐵錳柄上的群體。細胞成叢坐著捕捉細菌。"
+  },
+  "35": {
+    "body": "Chilomonas paramecium 是無色隱藻。兩根鞭毛，吃溶解有機物和小細菌，沒有葉綠體。"
+  },
+  "36": {
+    "body": "Cercomonas longicauda 是有長尾巴的變形鞭毛蟲。爬行並用偽足吞下細菌。"
+  },
+  "37": {
+    "body": "Heteromita globosa 是土壤鞭毛蟲。兩根長短不一的鞭毛，是土壤中主要的細菌食客。"
+  },
+  "38": {
+    "body": "Bodo saltans 是動基體蟲。以後鞭毛固定，在原地『跳舞』並攫取細菌。"
+  },
+  "39": {
+    "body": "Procryptobia sorokini 是 Bodo 的近親。自由游動，用前鞭毛打擊獵物。"
+  },
+  "40": {
+    "body": "Trypanosoma brucei 是引起昏睡病的血液寄生蟲。有波動膜和一根鞭毛。在池塘中是纖細獵手的模型。"
+  },
+  "41": {
+    "body": "Leishmania donovani 是人體胞內寄生蟲。在昆蟲體內有鞭毛，在巨噬細胞內無鞭毛。"
+  },
+  "42": {
+    "body": "Monosiga brevicollis 是領鞭毛蟲，動物的近親。微絨毛領過濾細菌。"
+  },
+  "43": {
+    "body": "Salpingoeca rosetta 是住在鞘殼中的固著領鞭毛蟲。可形成玫瑰花形群體。過濾水流。"
+  },
+  "44": {
+    "body": "Codonosiga botrytis 是共同柄上的領鞭毛蟲群體。一根莖上好幾個過濾器。"
+  },
+  "45": {
+    "body": "Paramecium caudatum 是經典的草履蟲。數千根纖毛、口溝、伸縮泡。過濾細菌。"
+  },
+  "46": {
+    "body": "Paramecium bursaria 是帶有共生小球藻的草履蟲。體內是綠色的：白天從藻類獲得糖，夜間過濾攝食。"
+  },
+  "47": {
+    "body": "Stentor coeruleus 是長達一毫米的藍色喇叭蟲。能張開成漏斗形，用纖毛推動水流。可游動或固著。"
+  },
+  "48": {
+    "body": "Stentor polymorphus 是藍色喇叭蟲的親戚，常帶共生藻。形態可從喇叭變到球。"
+  },
+  "49": {
+    "body": "Vorticella campanula 是可收縮柄上的鐘形蟲。柄瞬間捲成螺旋。細胞本身不會游走。"
+  },
+  "50": {
+    "body": "Vorticella microstoma 是小型鐘形蟲。同樣的彈簧柄，口部區域較窄。常在碎屑上。"
+  },
+  "51": {
+    "body": "Didinium nasutum 是獵捕草履蟲的桶形獵手。射出毒絲胞，整個吞下比自己還大的獵物。"
+  },
+  "52": {
+    "body": "Spirostomum ambiguum 是非常長的雪茄形。一瞬間能縮短數倍。纖毛成螺旋排列。"
+  },
+  "53": {
+    "body": "Blepharisma americanum 是粉紅色纖毛蟲。色素 Blepharismin 具感光性。過濾攝食，也可攻擊更小的細胞。"
+  },
+  "54": {
+    "body": "Euplotes patella 用棘毛像腳一樣行走。扁平、轉向快。從表面刮食細菌。"
+  },
+  "55": {
+    "body": "Stylonychia pustulata 是在底部『奔跑』的下毛纖毛蟲。大棘毛、清楚的口。小型纖毛蟲的掠食者。"
+  },
+  "56": {
+    "body": "Oxytricha trifallax 是基因組模式生物：兩個細胞核和複雜的DNA重寫。以棘毛行走，吃細菌和小型原生生物。"
+  },
+  "57": {
+    "body": "Tetrahymena thermophila 是實驗室纖毛蟲。口部四片小膜，分裂快速。端粒與纖毛研究的模式生物。"
+  },
+  "58": {
+    "body": "Coleps hirtus 是裹著鈣質板甲帶刺的桶形蟲。食腐兼掠食：啃咬受傷者。"
+  },
+  "59": {
+    "body": "Litonotus lamella 是扁平掠食者，『吻』中有毒絲胞。麻痺獵物後吸乾。"
+  },
+  "60": {
+    "body": "Dileptus anser 有帶毒性擠出體的長頸。用頸部打擊，再吞下。中層級的大型獵手。"
+  },
+  "61": {
+    "body": "Urocentrum turbo 是旋轉陀螺：赤道的纖毛帶讓細胞原地旋轉。過濾細菌。"
+  },
+  "62": {
+    "body": "Zoothamnium arbuscula 是分枝的鐘形蟲群體。共同的可收縮柄會同時抽動整棵『樹』。"
+  },
+  "63": {
+    "body": "Opercularia coarctata 是無彈簧柄的固著緣毛蟲。有蓋子蓋住口部。過濾，不游走。"
+  },
+  "64": {
+    "body": "Amoeba proteus 是經典變形蟲。偽足包圍獵物。沒有固定形狀，沒有纖毛。"
+  },
+  "65": {
+    "body": "Arcella vulgaris 是有硬質圓頂殼的有殼變形蟲。偽足從殼口伸出。在植物上爬行。"
+  },
+  "66": {
+    "body": "Difflugia oblonga 的殼由變形蟲自己黏的沙粒構成。生活在淤泥中。"
+  },
+  "67": {
+    "body": "Euglypha alveolata 的殼由矽質鱗片構成。有細的絲狀偽足。小型細菌掠食者。"
+  },
+  "68": {
+    "body": "Nebela collaris 的瓶形殼是用偷來的鱗片建成的。森林與沼澤水域。"
+  },
+  "69": {
+    "body": "Centropyxis aculeata 是帶刺的盤形殼。殼口偏斜。在碎屑上爬行。"
+  },
+  "70": {
+    "body": "Actinophrys sol 是太陽蟲：細軸偽足向四周放射。獵物黏在輻射足上被拉入。"
+  },
+  "71": {
+    "body": "Actinosphaerium eichhorni 是大型多核太陽蟲。同樣的輻射足，但細胞大得多。吃纖毛蟲和輪蟲。"
+  },
+  "72": {
+    "body": "Raphidiophrys pallida 是披鱗片的太陽蟲。輻射足上帶矽質針。伏擊型浮游獵手。"
+  },
+  "73": {
+    "body": "Rotaria rotatoria 是能耐乾燥的輪蟲。頭冠纖毛環把食物旋進口中。真正的多細胞動物。"
+  },
+  "74": {
+    "body": "Philodina roseola 是粉紅色的蛭態輪蟲。像水蛭一樣爬行，也會游泳。只有雌性，沒有雄性。"
+  },
+  "75": {
+    "body": "Brachionus plicatilis 是帶甲殼的浮游輪蟲。水產養殖中的魚苗飼料。過濾藻類和細菌。"
+  },
+  "76": {
+    "body": "Keratella cochlearis 是有長甲殼棘的輪蟲。棘能阻止掠食者。常見的池塘浮游生物。"
+  },
+  "77": {
+    "body": "Asplanchna priodonta 是沒有甲殼的囊狀掠食性輪蟲。整個吞下其他輪蟲和纖毛蟲。"
+  },
+  "78": {
+    "body": "Chaetonotus maximus 是腹毛動物。覆滿鱗片，在底部爬行。吃細菌和碎屑。"
+  },
+  "79": {
+    "body": "Lepidodermella squamata 是披覆瓦狀鱗片的小型腹毛動物。原地轉身極快。"
+  },
+  "80": {
+    "body": "Macrostomum lignano 是顯微大小的扁蟲。有真正的肌肉和眼睛。再生研究的模式生物。獵食小型原生生物。"
+  },
+  "81": {
+    "body": "Stenostomum leucops 是細長的有纖毛蠕蟲。橫向分裂成個體鏈。碎屑與小型動物的掠食者。"
+  },
+  "82": {
+    "body": "Microstomum lineare 是吃水螅並把牠們的刺細胞嵌進自己皮膚的扁蟲。形成個體鏈。"
+  },
+  "83": {
+    "body": "Prostoma graecense 是淡水紐蟲。長吻射向獵物。罕見的大型底棲獵手。"
+  },
+  "84": {
+    "body": "Trichoplax adhaerens 是扁盤動物，最簡單的動物之一。像薄片一樣爬行，在體外消化食物。沒有口。"
+  },
+  "85": {
+    "body": "Saccharomyces cerevisiae 是麵包酵母。出芽、吃糖、釋放CO2和酒精。在池塘中清理溶解有機物。"
+  },
+  "86": {
+    "body": "Candida albicans 是能長成菌絲的酵母。人類的機會性病原體。在遊戲中是碎屑真菌。"
+  },
+  "87": {
+    "body": "Mucor mucedo 是麵包黴。柄上長孢子囊，在死物上快速生長。不獵殺活物。"
+  },
+  "88": {
+    "body": "Rhizopus stolonifer 是黑麵包黴。匍匐枝與假根在基質上蔓延。分解澱粉。"
+  },
+  "89": {
+    "body": "Penicillium chrysogenum 是帚狀黴菌，青黴素的來源。分生孢子帚。分解有機物並抑制附近細菌。"
+  },
+  "90": {
+    "body": "Aspergillus niger 是黑麴黴。球形孢子頭。工業檸檬酸生產者。腐生菌。"
+  },
+  "91": {
+    "body": "Batrachochytrium dendrobatidis 是蛙類的壺菌。單鞭毛游動孢子。在池塘中是水生真菌模型。"
+  },
+  "92": {
+    "body": "Chytriomyces aureus 是長在花粉和藻類上的水生壺菌。金色孢子囊；游動孢子游向基質。"
+  },
+  "93": {
+    "body": "Allomyces macrogynus 是有真正菌絲體的水生真菌。二倍體與單倍體世代交替。游動孢子有後生鞭毛。"
+  },
+  "94": {
+    "body": "Bacillus subtilis 是土壤桿菌。芽孢能耐煮沸。分解蛋白質，革蘭氏陽性菌的模式種。"
+  },
+  "95": {
+    "body": "Pseudomonas putida 是清道夫桿菌。連石油產物都吃。具運動鞭毛，在碎屑上快速生長。"
+  },
+  "96": {
+    "body": "Streptomyces coelicolor 是絲狀土壤細菌。產生土味（土臭素）和許多抗生素。菌絲上長孢子。"
+  },
+  "97": {
+    "body": "Cellulomonas fimi 分解纖維素。植物碎屑上的黃色桿菌。沒有牠，死藻會留得更久。"
+  },
+  "98": {
+    "body": "Thermus aquaticus 是來自溫泉的嗜熱菌。Taq聚合酶是PCR的基礎。在冷池塘中幾乎休眠。"
+  },
+  "99": {
+    "body": "Deinococcus radiodurans 是輻射冠軍。能在數小時內重組支離破碎的基因組。厚細胞壁，四聯細胞。"
+  },
+  "1001": {
+    "body": "Sexual Eukaryote 是有性生殖的教學模型。兩個性別、配子融合，而非簡單的二分裂。"
+  },
+  "T4 Bacteriophage": {
+    "body": "T4 是大腸桿菌的大型肌病毒。尾部收縮並注入DNA。半小時後細胞破裂，數十個噬菌體湧出。"
+  },
+  "Lambda Phage": {
+    "body": "Lambda 是溫和噬菌體。可以嵌入染色體休眠（溶原化），或立刻裂解細胞（溶菌）。"
+  },
+  "T7 Bacteriophage": {
+    "body": "T7 尾部很短，複製極快。合成生物學最愛的系統。"
+  },
+  "Phi-6 Phage": {
+    "body": "Phi-6 是有脂質包膜的RNA噬菌體。感染 Pseudomonas。噬菌體中罕見的膜結構。"
+  },
+  "MS2 Phage": {
+    "body": "MS2 是微小的無尾RNA噬菌體。結合雄性 E. coli 的菌毛。其基因組是最早被解讀的RNA基因組之一。"
+  },
+  "Neuro-Parasite": {
+    "body": "虛構的池塘神經寄生蟲。附著在真核生物上，破壞宿主的行為，直到宿主變成傳播者。"
+  },
+  "Sexual Eukaryote": {
+    "body": "Sexual Eukaryote 是有性生殖的教學模型。兩個性別、配子融合，而非簡單的二分裂。"
+  }
+}

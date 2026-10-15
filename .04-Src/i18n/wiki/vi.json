@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Synechocystis là một vi khuẩn lam không có nhân. Nó sống nhờ ánh sáng: quang hợp thải oxy trên màng, không có lục lạp. Mô hình phòng thí nghiệm cho chuyển hóa hydro."
+  },
+  "1": {
+    "body": "Anabaena variabilis là một sợi tế bào. Một số tế bào trở thành tế bào dị hình (heterocyst) và cố định nitơ trong khi các tế bào lân cận tạo đường. Trong ao nó cung cấp nitơ đã liên kết."
+  },
+  "2": {
+    "body": "Spirulina (Arthrospira) là một chuỗi tế bào xoắn có túi khí. Nó lơ lửng gần mặt nước, quang hợp và ăn được. Trong game nó là một trục vít xanh lớn ở màng nước."
+  },
+  "3": {
+    "body": "Nostoc punctiforme là chuỗi hạt trong vỏ nhầy. Nó sống tự do hoặc cộng sinh với thực vật. Quần thể trông như cụm hạt xanh."
+  },
+  "4": {
+    "body": "Oscillatoria limnetica là sợi trượt. Nó dao động qua lại và có thể quang hợp mà không thải oxy. Điển hình ở bùn và màng mặt nước."
+  },
+  "5": {
+    "body": "Microcystis aeruginosa là quần thể trong chất nhầy, thường độc (microcystin). Nó gây nở hoa nước. Trong game nó là quả cầu quần thể xanh, con mồi rủi ro."
+  },
+  "6": {
+    "body": "Gloeocapsa là các cặp tế bào trong vỏ có màu. Nó sống trên đá và đất, chịu được tia UV. Trong ao nó là các cầu khuẩn đôi nhỏ trong lớp bọc."
+  },
+  "7": {
+    "body": "Lyngbya majuscula là sợi vi khuẩn lam dày. Nó có thể thải độc tố gây kích ứng. Nó tạo thành thảm gần bờ ấm."
+  },
+  "8": {
+    "body": "Chlamydomonas reinhardtii là tế bào xanh có hai roi và một điểm mắt. Nó bơi về phía ánh sáng. Mô hình di truyền học tảo kinh điển."
+  },
+  "9": {
+    "body": "Chlorella vulgaris là quả cầu xanh không di động. Nó phân chia nhanh và giàu protein. Thức ăn cho các loài ăn nhỏ và đối tượng thực phẩm vũ trụ."
+  },
+  "10": {
+    "body": "Volvox globator là quả cầu rỗng gồm hàng nghìn tế bào. Quần thể con chín bên trong rồi thoát ra. Trong game nó là quần thể xanh lớn."
+  },
+  "11": {
+    "body": "Euglena gracilis là sinh vật dưỡng hỗn hợp: có lục lạp cộng khả năng ăn. Điểm mắt đỏ bắt ánh sáng. Ban ngày xanh; trong bóng tối nó chuyển sang ăn."
+  },
+  "12": {
+    "body": "Scenedesmus quadricauda thường gồm bốn tế bào xếp hàng với gai ở hai đầu. Gai khiến khó nuốt. Nó không bơi — nó trôi."
+  },
+  "13": {
+    "body": "Haematococcus pluvialis là tế bào xanh di động; khi bị stress nó chuyển đỏ (astaxanthin) và mọc thành dày. Nang đỏ sống sót qua hạn hán."
+  },
+  "14": {
+    "body": "Dunaliella salina không có thành cứng và sống trong nước rất mặn. Nó tích trữ beta-caroten và trông màu cam. Hai roi."
+  },
+  "15": {
+    "body": "Micrasterias rotata là tảo song tinh hình sao dẹt. Hai nửa đối xứng gương với khía sâu. Không di động; quang hợp trong nước đầm lầy axit."
+  },
+  "16": {
+    "body": "Navicula là tảo cát hình thuyền với van silic. Nó trượt trên nền dọc theo khe raphe. Vỏ còn lại sau khi chết."
+  },
+  "17": {
+    "body": "Pinnularia viridis là tảo cát lông chim lớn. Vỏ silic với hoa văn đối xứng. Nó trượt chậm trên đáy."
+  },
+  "18": {
+    "body": "Cyclotella meneghiniana là tảo cát trung tâm hình tròn. Nó trôi như đĩa; vỏ gồm hai nắp. Sinh vật phù du điển hình."
+  },
+  "19": {
+    "body": "Diatoma vulgare là tảo cát dính thành hình zíc-zắc. Quần thể làm tăng lực cản trong cột nước."
+  },
+  "20": {
+    "body": "Rhodospirillum rubrum là vi khuẩn xoắn tím. Quang hợp không thải oxy cộng chất hữu cơ. Màu đỏ đến từ bacteriochlorophyll."
+  },
+  "21": {
+    "body": "Chromatium vinosum là vi khuẩn lưu huỳnh tím. Nó oxy hóa hydro sulfua và tích trữ hạt lưu huỳnh. Sống ở ranh giới oxy/lưu huỳnh."
+  },
+  "22": {
+    "body": "Porphyridium cruentum là tảo đỏ đơn bào. Phycoerythrin cho màu đỏ máu. Vỏ nhầy, không roi."
+  },
+  "23": {
+    "body": "Prochlorococcus marinus là tế bào quang hợp nhỏ nhất và phong phú nhất trên Trái Đất. Được phát hiện những năm 1980. Nó nuôi đại dương."
+  },
+  "24": {
+    "body": "Chroococcidiopsis thermalis là sinh vật cực đoan: sa mạc, đá, bức xạ. Ứng viên cho sự sống ngoài Trái Đất. Trong ao nó là quần thể cầu khuẩn chậm."
+  },
+  "25": {
+    "body": "Bdellovibrio bacteriovorus là kẻ săn mồi vi khuẩn tí hon. Nó vặn vào tế bào khác và nhân lên cho đến khi vật chủ vỡ."
+  },
+  "26": {
+    "body": "Vampirococcus bám lên con mồi từ bên ngoài và hút chất bên trong mà không chui vào. Ma cà rồng của giới vi khuẩn."
+  },
+  "27": {
+    "body": "Daptobacter chui vào vi khuẩn con mồi và ăn nó từ bên trong. Thợ săn nội bào hiếm gặp."
+  },
+  "28": {
+    "body": "Myxococcus xanthus là vi khuẩn sống tập thể. Theo bầy nó bao vây con mồi và thải enzyme. Khi đói nó tạo thể quả."
+  },
+  "29": {
+    "body": "Bacteriovorax stolpii là họ hàng biển của Bdellovibrio. Nó tấn công vi khuẩn Gram-âm và sống trong periplasm của con mồi."
+  },
+  "30": {
+    "body": "Halobacteriovorax là thợ săn vi khuẩn chịu mặn. Cùng trò: đâm thủng thành và lớn bên trong."
+  },
+  "31": {
+    "body": "Peredibacter starrii là một thợ săn BALO khác. Trùng roi hình dấu phẩy rất nhanh, nhắm vào các trực khuẩn lớn."
+  },
+  "32": {
+    "body": "Monas guttula là trùng roi dị dưỡng nhỏ. Nó bắt vi khuẩn ở bề mặt mùn bã."
+  },
+  "33": {
+    "body": "Oikomonas termo là trùng roi hình giọt. Một roi; nó săn trong màng vi khuẩn."
+  },
+  "34": {
+    "body": "Anthophysa vegetans là quần thể trên cuống sắt-mangan. Các tế bào ngồi thành chùm và bắt vi khuẩn."
+  },
+  "35": {
+    "body": "Chilomonas paramecium là trùng cryptophyte không màu. Hai roi; nó ăn chất hữu cơ hòa tan và vi khuẩn nhỏ, không có lục lạp."
+  },
+  "36": {
+    "body": "Cercomonas longicauda là trùng vừa amip vừa roi có đuôi dài. Nó bò và nuốt vi khuẩn bằng chân giả."
+  },
+  "37": {
+    "body": "Heteromita globosa là trùng roi đất. Hai roi dài khác nhau; kẻ ăn vi khuẩn chính trong đất."
+  },
+  "38": {
+    "body": "Bodo saltans là trùng kinetoplastid. Nó 'nhảy' tại chỗ, bám bằng roi sau, và vồ vi khuẩn."
+  },
+  "39": {
+    "body": "Procryptobia sorokini là họ hàng của Bodo. Nó bơi tự do và đánh con mồi bằng roi trước."
+  },
+  "40": {
+    "body": "Trypanosoma brucei là ký sinh trùng máu gây bệnh ngủ. Màng sóng và một roi. Trong ao nó là mô hình thợ săn thon dài."
+  },
+  "41": {
+    "body": "Leishmania donovani là ký sinh trùng nội bào của người. Có roi trong côn trùng, không roi trong đại thực bào."
+  },
+  "42": {
+    "body": "Monosiga brevicollis là trùng roi cổ (choanoflagellate), họ hàng của động vật. Vòng cổ lông mao lọc vi khuẩn."
+  },
+  "43": {
+    "body": "Salpingoeca rosetta là trùng roi cổ bám dính trong vỏ lorica. Nó có thể tạo hình hoa hồng. Nó lọc dòng nước."
+  },
+  "44": {
+    "body": "Codonosiga botrytis là quần thể trùng roi cổ trên cuống chung. Nhiều bộ lọc trên một thân."
+  },
+  "45": {
+    "body": "Paramecium caudatum là trùng dép kinh điển. Hàng nghìn lông chuyển, rãnh miệng, không bào co. Nó lọc vi khuẩn."
+  },
+  "46": {
+    "body": "Paramecium bursaria là trùng dép có cộng sinh zoochlorella. Xanh bên trong: đường từ tảo ban ngày, lọc ban đêm."
+  },
+  "47": {
+    "body": "Stentor coeruleus là cái loa xanh dài tới một milimet. Nó mở thành phễu và đẩy dòng nước bằng lông chuyển. Nó có thể bơi hoặc ngồi."
+  },
+  "48": {
+    "body": "Stentor polymorphus là họ hàng của stentor xanh, thường có zoochlorella. Hình dạng đổi từ loa sang cầu."
+  },
+  "49": {
+    "body": "Vorticella campanula là cái chuông trên cuống co. Cuống xoắn thành lò xo tức thì. Bản thân tế bào không bơi đi."
+  },
+  "50": {
+    "body": "Vorticella microstoma là chuông nhỏ. Cùng cuống lò xo, vùng miệng hẹp hơn. Thường trên mùn bã."
+  },
+  "51": {
+    "body": "Didinium nasutum là thợ săn hình thùng chuyên săn trùng dép. Nó bắn toxicyst và nuốt con mồi nguyên con, kể cả khi con mồi lớn hơn."
+  },
+  "52": {
+    "body": "Spirostomum ambiguum là điếu xì gà rất dài. Nó co lại vài lần trong phần nhỏ giây. Lông chuyển chạy xoắn."
+  },
+  "53": {
+    "body": "Blepharisma americanum là trùng lông hồng. Sắc tố blepharismin nhạy sáng. Nó lọc và có thể tấn công tế bào nhỏ hơn."
+  },
+  "54": {
+    "body": "Euplotes patella đi trên cirri như trên chân. Dẹt, rẽ nhanh. Nó cạo vi khuẩn khỏi bề mặt."
+  },
+  "55": {
+    "body": "Stylonychia pustulata là trùng lông bụng 'chạy' trên đáy. Cirri lớn, miệng rõ. Thợ săn trùng lông nhỏ."
+  },
+  "56": {
+    "body": "Oxytricha trifallax là mô hình bộ gen: hai nhân và tái viết DNA phức tạp. Nó đi trên cirri và ăn vi khuẩn cùng động vật nguyên sinh nhỏ."
+  },
+  "57": {
+    "body": "Tetrahymena thermophila là trùng lông phòng thí nghiệm. Bốn màng miệng, phân chia nhanh. Mô hình cho telomere và lông chuyển."
+  },
+  "58": {
+    "body": "Coleps hirtus là thùng trong tấm vôi có gai. Ăn xác chết và săn mồi: nó cắn vào kẻ bị thương."
+  },
+  "59": {
+    "body": "Litonotus lamella là thợ săn dẹt với toxicyst trong 'vòi'. Nó làm tê liệt con mồi rồi hút cạn."
+  },
+  "60": {
+    "body": "Dileptus anser có cổ dài với extrusome độc. Nó đánh bằng cổ rồi nuốt. Thợ săn lớn tầng giữa."
+  },
+  "61": {
+    "body": "Urocentrum turbo là cái con quay: vành đai lông chuyển xích đạo quay tế bào tại chỗ. Nó lọc vi khuẩn."
+  },
+  "62": {
+    "body": "Zoothamnium arbuscula là quần thể chuông phân nhánh. Cuống co chung giật cả cây cùng lúc."
+  },
+  "63": {
+    "body": "Opercularia coarctata là trùng lông quanh miệng bám dính không có cuống lò xo. Nắp che miệng. Nó lọc và không bơi đi."
+  },
+  "64": {
+    "body": "Amoeba proteus là amip kinh điển. Chân giả bao quanh con mồi. Không hình dạng cố định, không lông."
+  },
+  "65": {
+    "body": "Arcella vulgaris là amip có vỏ với mái vòm cứng. Chân giả thò ra từ lỗ. Nó bò trên thực vật."
+  },
+  "66": {
+    "body": "Difflugia oblonga có vỏ từ hạt cát mà amip tự dán. Nó sống trong bùn."
+  },
+  "67": {
+    "body": "Euglypha alveolata có vỏ từ vảy silic. Chân giả hình sợi mảnh. Thợ săn vi khuẩn nhỏ."
+  },
+  "68": {
+    "body": "Nebela collaris là vỏ hình chai xây từ vảy ăn cắp. Vùng nước rừng và đầm lầy."
+  },
+  "69": {
+    "body": "Centropyxis aculeata là vỏ hình đĩa có gai. Lỗ lệch sang một bên. Nó bò trên mùn bã."
+  },
+  "70": {
+    "body": "Actinophrys sol là trùng mặt trời: axopodia mảnh tỏa ra mọi hướng. Con mồi dính vào tia và bị kéo vào."
+  },
+  "71": {
+    "body": "Actinosphaerium eichhorni là trùng mặt trời đa nhân lớn. Cùng tia, tế bào lớn hơn nhiều. Nó ăn trùng lông và luân trùng."
+  },
+  "72": {
+    "body": "Raphidiophrys pallida là trùng mặt trời có vảy. Tia mang kim silic. Thợ săn phục kích của phù du."
+  },
+  "73": {
+    "body": "Rotaria rotatoria là luân trùng có thể sống sót khi khô. Vành đai xe đẩy thức ăn vào miệng. Động vật đa bào thật sự."
+  },
+  "74": {
+    "body": "Philodina roseola là luân trùng bdelloid hồng. Nó bò như đỉa và cũng bơi được. Chỉ có con cái; không con đực."
+  },
+  "75": {
+    "body": "Brachionus plicatilis là luân trùng phù du có vỏ. Thức ăn cá con trong nuôi thủy sản. Nó lọc tảo và vi khuẩn."
+  },
+  "76": {
+    "body": "Keratella cochlearis là luân trùng có gai vỏ dài. Gai ngăn thợ săn. Phù du ao phổ biến."
+  },
+  "77": {
+    "body": "Asplanchna priodonta là cái túi không vỏ, luân trùng săn mồi. Nó nuốt luân trùng và trùng lông khác nguyên con."
+  },
+  "78": {
+    "body": "Chaetonotus maximus là gastrotrich. Phủ vảy, bò đáy. Nó ăn vi khuẩn và mùn bã."
+  },
+  "79": {
+    "body": "Lepidodermella squamata là gastrotrich nhỏ trong vảy chồng nhau. Xoay tại chỗ rất nhanh."
+  },
+  "80": {
+    "body": "Macrostomum lignano là giun dẹt hiển vi. Cơ và mắt thật. Mô hình tái sinh. Nó săn động vật nguyên sinh nhỏ."
+  },
+  "81": {
+    "body": "Stenostomum leucops là giun lông chuyển mảnh. Nó phân đôi ngang thành chuỗi zooid. Thợ săn mùn bã và động vật nhỏ."
+  },
+  "82": {
+    "body": "Microstomum lineare là giun dẹt ăn thủy tức và nhét tế bào chích của chúng vào da mình. Chuỗi zooid."
+  },
+  "83": {
+    "body": "Prostoma graecense là giun nemertine nước ngọt. Vòi dài bắn vào con mồi. Thợ săn đáy lớn hiếm gặp."
+  },
+  "84": {
+    "body": "Trichoplax adhaerens là placozoa, thuộc nhóm động vật đơn giản nhất. Nó bò như tấm và tiêu hóa thức ăn bên ngoài. Không miệng."
+  },
+  "85": {
+    "body": "Saccharomyces cerevisiae là men bánh mì. Nó nảy chồi, ăn đường, thải CO2 và cồn. Trong ao nó dọn chất hữu cơ hòa tan."
+  },
+  "86": {
+    "body": "Candida albicans là nấm men có thể mọc thành sợi. Mầm bệnh cơ hội ở người. Trong game nó là nấm mùn bã."
+  },
+  "87": {
+    "body": "Mucor mucedo là mốc bánh mì. Túi bào tử trên cuống, mọc nhanh trên vật chết. Nó không săn sinh vật sống."
+  },
+  "88": {
+    "body": "Rhizopus stolonifer là mốc bánh mì đen. Stolon và rễ giả lan trên nền. Nó phân hủy tinh bột."
+  },
+  "89": {
+    "body": "Penicillium chrysogenum là nấm mốc chổi, nguồn penicillin. Chổi conidia. Nó phân hủy chất hữu cơ và dập vi khuẩn xung quanh."
+  },
+  "90": {
+    "body": "Aspergillus niger là aspergillus đen. Đầu bào tử hình cầu. Sản xuất axit citric công nghiệp. Sinh vật ăn mục."
+  },
+  "91": {
+    "body": "Batrachochytrium dendrobatidis là nấm chytrid của ếch. Zoospore một roi. Trong ao nó là mô hình nấm nước."
+  },
+  "92": {
+    "body": "Chytriomyces aureus là chytrid nước trên phấn hoa và tảo. Túi bào tử vàng; zoospore bơi tới nền."
+  },
+  "93": {
+    "body": "Allomyces macrogynus là nấm nước có hệ sợi thật. Nó luân phiên lưỡng bội và đơn bội. Zoospore có roi sau."
+  },
+  "94": {
+    "body": "Bacillus subtilis là trực khuẩn đất. Bào tử sống sót khi đun sôi. Nó phân hủy protein; mô hình Gram-dương."
+  },
+  "95": {
+    "body": "Pseudomonas putida là trực khuẩn dọn dẹp. Nó ăn cả sản phẩm dầu mỏ. Roi di động, mọc nhanh trên mùn bã."
+  },
+  "96": {
+    "body": "Streptomyces coelicolor là vi khuẩn đất hình sợi. Nó tạo mùi đất (geosmin) và nhiều kháng sinh. Bào tử trên sợi."
+  },
+  "97": {
+    "body": "Cellulomonas fimi phân hủy cellulose. Trực khuẩn vàng trên mùn bã thực vật. Không có nó tảo chết sẽ nằm lâu hơn."
+  },
+  "98": {
+    "body": "Thermus aquaticus là sinh vật ưa nhiệt từ suối nước nóng. Enzyme Taq polymerase là nền của PCR. Trong ao lạnh nó gần như ngủ."
+  },
+  "99": {
+    "body": "Deinococcus radiodurans là nhà vô địch bức xạ. Nó lắp lại bộ gen vỡ vụn trong vài giờ. Thành dày, tế bào theo cụm bốn."
+  },
+  "1001": {
+    "body": "Sexual Eukaryote là mô hình dạy sinh sản hữu tính. Hai giới, hợp nhất giao tử, không phải phân đôi đơn giản."
+  },
+  "T4 Bacteriophage": {
+    "body": "T4 là myovirus lớn của E. coli. Đuôi co lại và tiêm DNA. Sau nửa giờ tế bào vỡ và hàng chục phage thoát ra."
+  },
+  "Lambda Phage": {
+    "body": "Lambda là phage ôn hòa. Nó có thể chèn vào nhiễm sắc thể và ngủ (lysogeny) hoặc cắt tế bào ngay (lysis)."
+  },
+  "T7 Bacteriophage": {
+    "body": "T7 có đuôi ngắn và sao chép rất nhanh. Hệ thống yêu thích trong sinh học tổng hợp."
+  },
+  "Phi-6 Phage": {
+    "body": "Phi-6 là phage RNA có vỏ lipid. Nó nhiễm Pseudomonas. Màng hiếm gặp ở phage."
+  },
+  "MS2 Phage": {
+    "body": "MS2 là phage RNA tí hon không đuôi. Nó bám pili của E. coli đực. Bộ gen của nó là một trong những bộ gen RNA đầu tiên được đọc."
+  },
+  "Neuro-Parasite": {
+    "body": "Ký sinh thần kinh ao hư cấu. Nó bám vào sinh vật nhân thật và phá hành vi vật chủ cho đến khi vật chủ thành vật trung chuyển."
+  },
+  "Sexual Eukaryote": {
+    "body": "Sexual Eukaryote là mô hình dạy sinh sản hữu tính. Hai giới, hợp nhất giao tử, không phải phân đôi đơn giản."
+  }
+}

@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 import { page, buttonsPage, buttonDetail, fromMd } from './lab-pages.mjs';
+import { testsPage } from './lab-tests.mjs';
 
 const root = path.resolve(import.meta.dirname, '../../..');
 const out = path.join(root, '.04-Src/dist-lab');
@@ -62,7 +63,7 @@ write('index.html', page('iGraSpore lab', '<p>Сборка ' + built + '. sha ' 
 write('buttons.html', page('Кнопки', buttonsPage(rows, beforeMap), sha));
 write('competitors.html', page('Конкуренты', fromMd(read(path.join(docs, 'COMPETITORS-PLAY-2026-10-14.md'))), sha));
 write('languages.html', page('Языки', fromMd(read(path.join(docs, 'LANGUAGES-20-NO-RTL-2026-10-14.md'))) + langTable(), sha));
-write('tests.html', page('Тесты', '<p>vitest B1, 14.10 22:45 UTC+3: 232/232. Съёмка кнопок: ' + rows.length + ' записей. Playwright e2e в этом прогоне не повторялся.</p>', sha));
+write('tests.html', page('Тесты', testsPage(path.join(root, '09-Docs/test-runs')), sha));
 write('ui-audit.html', page('Аудит UI', fromMd(read(path.join(docs, 'AUDIT-UI-STORE-2026-10-14.md'))), sha));
 write('store-readiness.html', page('Стор', '<ul><li>AAB собран, не подписан. jarsigner: jar is unsigned</li><li>targetSdk 36 записан в gradle. bundletool в этом ответе не гонял</li><li>Деплой и публикация: не делались</li></ul>', sha));
 write('tz-index.html', page('Индекс ТЗ', '<ul><li><a href="../../09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v2.md">TZ v2</a></li></ul>' + fromMd(read(path.join(docs, 'TZ-RELEASE-READY-2026-10-14-v2.md')).slice(0, 4000)), sha));

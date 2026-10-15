@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Synechocystis to cyjanobakteria bez jądra. Żyje ze światła: fotosynteza tlenowa na błonach, bez chloroplastów. Model laboratoryjny metabolizmu wodoru."
+  },
+  "1": {
+    "body": "Anabaena variabilis to nitka komórek. Część komórek staje się heterocystami i wiąże azot z powietrza, podczas gdy sąsiednie produkują cukier. W stawie dostarcza związany azot."
+  },
+  "2": {
+    "body": "Spirulina (Arthrospira) to spirala komórek z pęcherzykami gazowymi. Zawisa blisko powierzchni, fotosyntetyzuje i jest jadalna. W grze to duża zielona śruba przy filmie wody."
+  },
+  "3": {
+    "body": "Nostoc punctiforme to sznur pereł w śluzowej kapsule. Żyje swobodnie lub w symbiozie z roślinami. Kolonia wygląda jak kłębek zielonych koralików."
+  },
+  "4": {
+    "body": "Oscillatoria limnetica to ślizgająca się nitka. Kołysze się na boki i umie fotosyntetyzować bez wydzielania tlenu. Typowa dla mułu i filmu powierzchniowego."
+  },
+  "5": {
+    "body": "Microcystis aeruginosa to kolonia w śluzie, często toksyczna (mikrocystyna). Powoduje zakwit wody. W grze to zielona kula-kolonia, ryzykowna zdobycz."
+  },
+  "6": {
+    "body": "Gloeocapsa to pary komórek w barwnych pochwach. Żyje na skałach i w glebie, dobrze znosi UV. W stawie to drobne parne kokki w płaszczu."
+  },
+  "7": {
+    "body": "Lyngbya majuscula to gruba nitka cyjanobakterii. Może wydzielać drażniące toksyny. Tworzy maty u ciepłych brzegów."
+  },
+  "8": {
+    "body": "Chlamydomonas reinhardtii to zielona komórka z dwiema wiciami i oczkiem. Płynie w stronę światła. Klasyczny model genetyki glonów."
+  },
+  "9": {
+    "body": "Chlorella vulgaris to nieruchoma zielona kulka. Szybko się dzieli i jest bogata w białko. Pokarm dla drobnych konsumentów i obiekt badań żywności kosmicznej."
+  },
+  "10": {
+    "body": "Volvox globator to pusta sfera z tysięcy komórek. Kolonie potomne dojrzewają w środku i wychodzą na zewnątrz. W grze to duża zielona kolonia."
+  },
+  "11": {
+    "body": "Euglena gracilis to miksotrof: chloroplasty plus zdolność jedzenia. Czerwone oczko śledzi światło. Za dnia zielona; w ciemności przechodzi na pokarm."
+  },
+  "12": {
+    "body": "Scenedesmus quadricauda to zwykle cztery komórki w rzędzie z kolcami na końcach. Kolce utrudniają połknięcie. Nie pływa — dryfuje."
+  },
+  "13": {
+    "body": "Haematococcus pluvialis to zielona ruchoma komórka; pod stresem czerwienieje (astaksantyna) i wyrasta jej gruba ściana. Czerwone cysty przetrwują suszę."
+  },
+  "14": {
+    "body": "Dunaliella salina nie ma sztywnej ściany i żyje w bardzo słonej wodzie. Magazynuje beta-karoten i wygląda pomarańczowo. Dwie wici."
+  },
+  "15": {
+    "body": "Micrasterias rotata to płaska gwiazda desmidii. Dwie lustrzane połowy z głębokimi wcięciami. Nieruchoma; fotosyntetyzuje w kwaśnej wodzie bagiennej."
+  },
+  "16": {
+    "body": "Navicula to łódkowata okrzemka z krzemionkową stworką. Ślizga się po podłożu wzdłuż szczeliny (raphe). Pancerz zostaje po śmierci."
+  },
+  "17": {
+    "body": "Pinnularia viridis to duża pierzasta okrzemka. Krzemionkowy pancerz z symetrycznym wzorem. Powoli ślizga się po dnie."
+  },
+  "18": {
+    "body": "Cyclotella meneghiniana to okrągła okrzemka centryczna. Płynie jak dysk; pancerz to dwie pokrywki. Typowy plankton."
+  },
+  "19": {
+    "body": "Diatoma vulgare to okrzemka, która skleja się w zygzak. Kolonia zwiększa opór w toni wody."
+  },
+  "20": {
+    "body": "Rhodospirillum rubrum to purpurowa spirala. Fotosynteza beztlenowa plus organika. Czerwony kolor pochodzi od bakteriochlorofilu."
+  },
+  "21": {
+    "body": "Chromatium vinosum to purpurowa bakteria siarkowa. Utlenia siarkowodór i magazynuje granulki siarki. Żyje na granicy tlen/siarka."
+  },
+  "22": {
+    "body": "Porphyridium cruentum to jednokomórkowa czerwona glona. Fikoerytryna daje krwisty kolor. Śluzowy płaszcz, brak wici."
+  },
+  "23": {
+    "body": "Prochlorococcus marinus to najmniejsza i najliczniejsza komórka fotosyntetyzująca na Ziemi. Odkryta w latach 1980. Karmi ocean."
+  },
+  "24": {
+    "body": "Chroococcidiopsis thermalis to ekstremofil: pustynia, skała, promieniowanie. Kandydat na życie poza Ziemią. W stawie to wolna kolonia kokka."
+  },
+  "25": {
+    "body": "Bdellovibrio bacteriovorus to drobny drapieżnik bakteryjny. Wkręca się w cudzą komórkę i mnoży, aż gospodarz pęknie."
+  },
+  "26": {
+    "body": "Vampirococcus siada na ofiarę z zewnątrz i wysysa zawartość, nie wchodząc do środka. Bakteryjny wampir."
+  },
+  "27": {
+    "body": "Daptobacter wchodzi do bakterii-ofiary i zjada ją od środka. Rzadki wewnątrzkomórkowy łowca."
+  },
+  "28": {
+    "body": "Myxococcus xanthus to bakteria społeczna. W sforze otacza zdobycz i wydziela enzymy. W głodzie tworzy owocnik."
+  },
+  "29": {
+    "body": "Bacteriovorax stolpii to morski krewniak Bdellovibrio. Atakuje gram-ujemne i żyje w peryplazmie ofiary."
+  },
+  "30": {
+    "body": "Halobacteriovorax to tolerujący sól łowca bakterii. Ta sama sztuczka: przekłucie ściany i wzrost w środku."
+  },
+  "31": {
+    "body": "Peredibacter starrii to kolejny drapieżnik BALO. Szybki przecinkowaty wiciowiec celujący w duże pałeczki."
+  },
+  "32": {
+    "body": "Monas guttula to mały heterotroficzny wiciowiec. Łapie bakterie przy powierzchni detrytusu."
+  },
+  "33": {
+    "body": "Oikomonas termo to kroplowaty wiciowiec. Jedna wicia; poluje w filmie bakteryjnym."
+  },
+  "34": {
+    "body": "Anthophysa vegetans to kolonia na szypułce żelazo-manganowej. Komórki siedzą kępką i łapią bakterie."
+  },
+  "35": {
+    "body": "Chilomonas paramecium to bezbarwny kryptofit. Dwie wici; je rozpuszczoną organiczną i drobne bakterie, bez chloroplastów."
+  },
+  "36": {
+    "body": "Cercomonas longicauda to amebowaty wiciowiec z długim ogonem. Pełza i połyka bakterie pseudopodiami."
+  },
+  "37": {
+    "body": "Heteromita globosa to glebowy wiciowiec. Dwie wici różnej długości; główny konsument bakterii w glebie."
+  },
+  "38": {
+    "body": "Bodo saltans to kinetoplastida. „Tańczy” w miejscu, przytwierdzona tylną wicią, i łapie bakterie."
+  },
+  "39": {
+    "body": "Procryptobia sorokini to krewniak Bodo. Pływa swobodnie i uderza zdobycz przednią wicią."
+  },
+  "40": {
+    "body": "Trypanosoma brucei to pasożyt krwi wywołujący śpiączkę. Falująca membrana i jedna wicia. W stawie — model szczupłego łowcy."
+  },
+  "41": {
+    "body": "Leishmania donovani to wewnątrzkomórkowy pasożyt człowieka. Z wicią u owada, bez wici w makrofagu."
+  },
+  "42": {
+    "body": "Monosiga brevicollis to komierzkowiec, krewniak zwierząt. Kołnierz z mikrokosmków filtruje bakterie."
+  },
+  "43": {
+    "body": "Salpingoeca rosetta to siedzący komierzkowiec w loryce. Może tworzyć rozetę. Filtruje prąd wody."
+  },
+  "44": {
+    "body": "Codonosiga botrytis to kolonia komierzkowców na wspólnej szypułce. Kilka filtrów na jednym łodygu."
+  },
+  "45": {
+    "body": "Paramecium caudatum to klasyczny pantofelek. Tysiące rzęsek, rynienka ustna, wakuole skurczowe. Filtruje bakterie."
+  },
+  "46": {
+    "body": "Paramecium bursaria to pantofelek z symbiontami-zoochlorellami. Zielony w środku: cukier z glonów za dnia, filtracja nocą."
+  },
+  "47": {
+    "body": "Stentor coeruleus to niebieska trąba do milimetra. Rozwija się w lej i napędza prąd rzęskami. Umie pływać lub siedzieć."
+  },
+  "48": {
+    "body": "Stentor polymorphus to krewniak niebieskiego stentora, często z zoochlorellami. Forma zmienia się od trąby do kuli."
+  },
+  "49": {
+    "body": "Vorticella campanula to dzwonek na skurczowej szypułce. Szypułka natychmiast zwija się w spiralę. Sama komórka nie odpływa."
+  },
+  "50": {
+    "body": "Vorticella microstoma to mały dzwonek. Ta sama szypułka-sprężyna, węższe pole ustne. Często na detrytusie."
+  },
+  "51": {
+    "body": "Didinium nasutum to beczkowaty łowca pantofelków. Wystrzeliwuje toksycysty i połyka zdobycz w całości, nawet większą od siebie."
+  },
+  "52": {
+    "body": "Spirostomum ambiguum to bardzo długie cygaro. Kurczy się wielokrotnie w ułamku sekundy. Rzęski biegną spiralą."
+  },
+  "53": {
+    "body": "Blepharisma americanum to różowa orzęska. Barwnik blepharismin jest wrażliwy na światło. Filtruje i może atakować mniejsze komórki."
+  },
+  "54": {
+    "body": "Euplotes patella chodzi na cyrach jak na nóżkach. Płaska, szybkie zwroty. Skrobie bakterie z powierzchni."
+  },
+  "55": {
+    "body": "Stylonychia pustulata to hypotrycha, która „biega” po dnie. Duże cirry, wyraźne usta. Drapieżnik drobnych orzęsków."
+  },
+  "56": {
+    "body": "Oxytricha trifallax to model genomu: dwa jądra i złożona przebudowa DNA. Chodzi na cyrach, je bakterie i drobne protisty."
+  },
+  "57": {
+    "body": "Tetrahymena thermophila to laboratoryjna orzęska. Cztery membraneli ustne, szybki podział. Model telomer i rzęsek."
+  },
+  "58": {
+    "body": "Coleps hirtus to beczka w wapiennych płytkach z kolcami. Padlinożerca i drapieżnik: wgryza się w rannych."
+  },
+  "59": {
+    "body": "Litonotus lamella to płaski drapieżnik z toksycystami w „trąbce”. Paraliżuje zdobycz i wysysa ją."
+  },
+  "60": {
+    "body": "Dileptus anser ma długą szyję z jadowitymi ekstruzomami. Uderza szyją, potem połyka. Duży łowca środkowego szczebla."
+  },
+  "61": {
+    "body": "Urocentrum turbo to bączek: równikowy pas rzęsek obraca komórkę w miejscu. Filtruje bakterie."
+  },
+  "62": {
+    "body": "Zoothamnium arbuscula to rozgałęziona kolonia dzwonków. Wspólna skurczowa szypułka szarpie całe drzewo naraz."
+  },
+  "63": {
+    "body": "Opercularia coarctata to siedzący peritrich bez sprężyny w szypułce. Pokrywka zamyka usta. Filtruje i nie odpływa."
+  },
+  "64": {
+    "body": "Amoeba proteus to klasyczna ameba. Pseudopodia opływają zdobycz. Brak stałego kształtu, brak rzęsek."
+  },
+  "65": {
+    "body": "Arcella vulgaris to skorupkowa ameba z twardą kopułą. Pseudopodia wychodzą z otworu. Pełza po roślinach."
+  },
+  "66": {
+    "body": "Difflugia oblonga ma skorupkę z ziarenek piasku, które ameba sama klei. Żyje w mułe."
+  },
+  "67": {
+    "body": "Euglypha alveolata ma skorupkę z krzemionkowych łusek. Cienkie nitkowate pseudopodia. Drobny drapieżnik bakterii."
+  },
+  "68": {
+    "body": "Nebela collaris to butelkowata skorupka zbudowana z cudzych łusek. Lasy i wody bagienne."
+  },
+  "69": {
+    "body": "Centropyxis aculeata to dyskowa skorupka z kolcami. Otwór przesunięty. Pełza po detrytusie."
+  },
+  "70": {
+    "body": "Actinophrys sol to słonecznik: cienkie axopodia promieniują dookoła. Zdobycz przykleja się do promieni i jest wciągana."
+  },
+  "71": {
+    "body": "Actinosphaerium eichhorni to duży wielojądrowy słonecznik. Te same promienie, komórka znacznie większa. Je orzęski i wrotki."
+  },
+  "72": {
+    "body": "Raphidiophrys pallida to słonecznik w łuskach. Promienie niosą krzemionkowe igły. Zasadzkowy łowca planktonu."
+  },
+  "73": {
+    "body": "Rotaria rotatoria to wrotka, która znosi wysychanie. Korona wiruje jedzenie do ust. Prawdziwe wielokomórkowe zwierzę."
+  },
+  "74": {
+    "body": "Philodina roseola to różowa bdeloidalna wrotka. Pełza jak pijawka i też pływa. Tylko samice; bez samców."
+  },
+  "75": {
+    "body": "Brachionus plicatilis to planktonowa wrotka z loryką. Pokarm dla narybku w akwakulturze. Filtruje glony i bakterie."
+  },
+  "76": {
+    "body": "Keratella cochlearis to wrotka z długim kolcem loryki. Kolec odstrasza drapieżniki. Pospolity plankton stawowy."
+  },
+  "77": {
+    "body": "Asplanchna priodonta to worek bez loryki, drapieżna wrotka. Połyka inne wrotki i orzęski w całości."
+  },
+  "78": {
+    "body": "Chaetonotus maximus to gastrotricha. Pokryta łuskami, pełza po dnie. Je bakterie i detrytus."
+  },
+  "79": {
+    "body": "Lepidodermella squamata to mała gastrotricha w nakładających się łuskach. Bardzo szybkie zwroty w miejscu."
+  },
+  "80": {
+    "body": "Macrostomum lignano to mikroskopijny płaziennik. Prawdziwe mięśnie i oczy. Model regeneracji. Poluje na drobne protisty."
+  },
+  "81": {
+    "body": "Stenostomum leucops to cienki rzęskowy robaczek. Dzieli się poprzecznie w łańcuch zooidów. Drapieżnik detrytusu i drobnych zwierząt."
+  },
+  "82": {
+    "body": "Microstomum lineare to płaziennik, który je hydry i wbudowuje ich żądłowe komórki we własną skórę. Łańcuch zooidów."
+  },
+  "83": {
+    "body": "Prostoma graecense to słodkowodna nemertyna. Długi ryjek wystrzeliwuje w zdobycz. Rzadki duży łowca denny."
+  },
+  "84": {
+    "body": "Trichoplax adhaerens to płytnik, jedno z najprostszych zwierząt. Pełza jak płachta i trawi pokarm na zewnątrz. Bez ust."
+  },
+  "85": {
+    "body": "Saccharomyces cerevisiae to drożdże piekarskie. Pączkują, jedzą cukier, wydzielają CO2 i alkohol. W stawie sprzątają rozpuszczoną organiczną."
+  },
+  "86": {
+    "body": "Candida albicans to drożdże, które mogą rosnąć jako nitki. Oportunistyczny patogen człowieka. W grze — grzyb detrytowy."
+  },
+  "87": {
+    "body": "Mucor mucedo to pleśń chlebowa. Sporangia na szypułkach, szybki wzrost po martwym. Nie poluje na żywe."
+  },
+  "88": {
+    "body": "Rhizopus stolonifer to czarna pleśń chlebowa. Stolony i chwytniki rozpościerają się po podłożu. Rozkłada skrobię."
+  },
+  "89": {
+    "body": "Penicillium chrysogenum to pędzlak, źródło penicyliny. Pędzle konidiów. Rozkłada organiczną i tłumi pobliskie bakterie."
+  },
+  "90": {
+    "body": "Aspergillus niger to czarny aspergillus. Kuliste główki zarodników. Przemysłowy producent kwasu cytrynowego. Saprotrof."
+  },
+  "91": {
+    "body": "Batrachochytrium dendrobatidis to chytryda żab. Zoosporie z jedną wicią. W stawie — model grzyba wodnego."
+  },
+  "92": {
+    "body": "Chytriomyces aureus to wodna chytrida na pyłku i glonach. Złociste sporangia; zoosporie płyną do podłoża."
+  },
+  "93": {
+    "body": "Allomyces macrogynus to grzyb wodny z prawdziwym micelium. Naprzemian diploidalny i haploidalny. Zoosporie mają tylną wicię."
+  },
+  "94": {
+    "body": "Bacillus subtilis to glebowa pałeczka. Zarodniki przeżywają wrzątek. Rozkłada białko; model gram-dodatnich."
+  },
+  "95": {
+    "body": "Pseudomonas putida to pałeczka sprzątająca. Je nawet produkty ropopochodne. Ruchoma wicia, szybki wzrost na detrytusie."
+  },
+  "96": {
+    "body": "Streptomyces coelicolor to nitkowata glebowa bakteria. Daje zapach ziemi (geosmin) i wiele antybiotyków. Zarodniki na strzępkach."
+  },
+  "97": {
+    "body": "Cellulomonas fimi rozkłada celulozę. Żółta pałeczka na roślinnym detrytusie. Bez niej martwe glony leżałyby dłużej."
+  },
+  "98": {
+    "body": "Thermus aquaticus to termofil z gorących źródeł. Polimeraza Taq to podstawa PCR. W zimnym stawie prawie śpi."
+  },
+  "99": {
+    "body": "Deinococcus radiodurans to mistrz promieniowania. Składa rozbity genom w godziny. Gruba ściana, czworaczki komórek."
+  },
+  "1001": {
+    "body": "Sexual Eukaryote to model dydaktyczny rozmnażania płciowego. Dwie płcie, fuzja gamet, nie zwykły podział na dwoje."
+  },
+  "T4 Bacteriophage": {
+    "body": "T4 to duży miowirus E. coli. Ogon kurczy się i wstrzykuje DNA. Po pół godziny komórka pęka i wychodzą dziesiątki fagów."
+  },
+  "Lambda Phage": {
+    "body": "Lambda to fag umiarkowany. Może wstawić się w chromosom i spać (lizogenia) albo od razu ciąć komórkę (liza)."
+  },
+  "T7 Bacteriophage": {
+    "body": "T7 ma krótki ogon i bardzo szybką replikację. Ulubiony system biologii syntetycznej."
+  },
+  "Phi-6 Phage": {
+    "body": "Phi-6 to fag RNA z lipidową otoczką. Zaraża Pseudomonas. Rzadka membrana u faga."
+  },
+  "MS2 Phage": {
+    "body": "MS2 to drobny bezaogonowy fag RNA. Łączy się z pilikami samców E. coli. Jego genom był jednym z pierwszych odczytanych genomów RNA."
+  },
+  "Neuro-Parasite": {
+    "body": "Fikcyjny stawowy neuroparasit. Zaczepia się na eukariotach i psuje zachowanie gospodarza, aż ten stanie się nosicielem."
+  },
+  "Sexual Eukaryote": {
+    "body": "Sexual Eukaryote to model dydaktyczny rozmnażania płciowego. Dwie płcie, fuzja gamet, nie zwykły podział na dwoje."
+  }
+}

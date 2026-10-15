@@ -1,0 +1,17 @@
+{
+    "schema":  "igs-test-run/1",
+    "run_id":  "20261015-2227",
+    "started_at":  "2026-10-15 22:27 UTC+3",
+    "finished_at":  "2026-10-15 22:27 UTC+3",
+    "commit":  "db71c00",
+    "branch":  "release-ready-2026-10-14",
+    "dirty_count":  600,
+    "machine":  "I1",
+    "totals":  {
+                   "pass":  0,
+                   "fail":  0,
+                   "skipped":  0,
+                   "total":  1
+               },
+    "suites":  null
+}

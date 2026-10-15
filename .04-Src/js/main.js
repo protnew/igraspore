@@ -53,14 +53,14 @@ window.startSpectator = function() {
   cam.x = 0; cam.y = 20; state = 'playing'; gt = 0; fc = 0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display='block';
-  document.getElementById('spdBar').style.display='flex';
+  var _sb0=document.getElementById('spdBar'); if(_sb0) _sb0.style.display='none'; // P1: скорость живёт в настройках паузы
   document.getElementById('todWrap').style.display='flex';
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');
   tw.innerHTML='<input type="range" id="todR" min="0" max="24" step="0.05" value="'+tod+'"><span id="todL">12:00</span><span id="seasL">'+tt('season1')+'</span>';
   var sl=document.getElementById('todR');
   sl.addEventListener('input',function(){tod=parseFloat(sl.value);updateTodUI();});
-  showSpeedBar(); /*SPEED_BAR_FORCE*/ try{var _sb=document.getElementById('spdBar');if(_sb){_sb.style.display='flex';_sb.style.zIndex='9999';}}catch(_e){} updateLegend(); updateEcoPanel();
+  updateLegend(); updateEcoPanel();
 };
 
 window.focusTarget = null; window.focusTimer = 0; window.cinematicTime = 1;
@@ -386,7 +386,7 @@ function startGame(isScreensaver){
   sl.addEventListener('input',function(){tod=parseFloat(sl.value);updateTodUI();});
   sl.addEventListener('touchstart',function(){sliderDragging=true;});
   sl.addEventListener('touchend',function(){sliderDragging=false;tod=parseFloat(sl.value);});
-  showSpeedBar();updateLegend();updateEcoPanel();
+  updateLegend();updateEcoPanel(); // P1: spdBar убран из HUD (скорость — в настройках паузы)
   if(window.virusPlayer){
     // Virus spectator banner
     setTimeout(function(){

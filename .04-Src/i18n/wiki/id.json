@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Synechocystis adalah sianobakteri tanpa nukleus. Ia hidup dari cahaya: fotosintesis oksigenik pada membran, tanpa kloroplas. Model laboratorium untuk metabolisme hidrogen."
+  },
+  "1": {
+    "body": "Anabaena variabilis adalah filamen. Sebagian sel menjadi heterosis dan mengikat nitrogen sementara tetangganya membuat gula. Di kolam ia memasok nitrogen terikat."
+  },
+  "2": {
+    "body": "Spirulina (Arthrospira) adalah kumparan sel dengan vesikel gas. Ia mengambang dekat permukaan, berfotosintesis, dan dapat dimakan. Dalam permainan ia sekrup hijau besar di lapisan air."
+  },
+  "3": {
+    "body": "Nostoc punctiforme adalah untaian manik dalam kapsul lendir. Ia hidup bebas atau bersimbiosis dengan tumbuhan. Koloninya tampak seperti gumpalan manik hijau."
+  },
+  "4": {
+    "body": "Oscillatoria limnetica adalah filamen yang meluncur. Ia berayun ke samping dan dapat berfotosintesis tanpa melepas oksigen. Khas lumpur dan lapisan permukaan."
+  },
+  "5": {
+    "body": "Microcystis aeruginosa adalah koloni musilase, sering beracun (mikrosistin). Ia menyebabkan blooming air. Dalam permainan ia bola koloni hijau, mangsa berisiko."
+  },
+  "6": {
+    "body": "Gloeocapsa adalah sel berpasangan dalam selubung berwarna. Ia hidup di batu dan tanah serta tahan UV. Di kolam ia kokus berpasangan kecil berlapis."
+  },
+  "7": {
+    "body": "Lyngbya majuscula adalah filamen sianobakteri tebal. Ia bisa melepaskan toksin yang mengiritasi. Membentuk matras di dekat pantai hangat."
+  },
+  "8": {
+    "body": "Chlamydomonas reinhardtii adalah sel hijau dengan dua flagela dan bintik mata. Ia berenang menuju cahaya. Model genetika alga klasik."
+  },
+  "9": {
+    "body": "Chlorella vulgaris adalah bola hijau tak bergerak. Ia membelah cepat dan kaya protein. Makanan bagi pemakan kecil dan subjek makanan luar angkasa."
+  },
+  "10": {
+    "body": "Volvox globator adalah bola berongga berisi ribuan sel. Koloni anak matang di dalam dan keluar. Dalam permainan ia koloni hijau besar."
+  },
+  "11": {
+    "body": "Euglena gracilis adalah miksotrof: kloroplas plus kemampuan makan. Bintik mata merah melacak cahaya. Hijau di siang hari; dalam gelap beralih ke makanan."
+  },
+  "12": {
+    "body": "Scenedesmus quadricauda biasanya empat sel sebaris dengan duri di ujung. Duri menyulitkan untuk ditelan. Ia tidak berenang — melayang."
+  },
+  "13": {
+    "body": "Haematococcus pluvialis adalah sel hijau bergerak; saat stres memerah (astaxantin) dan menumbuhkan dinding tebal. Kista merah bertahan dari kekeringan."
+  },
+  "14": {
+    "body": "Dunaliella salina tidak punya dinding kaku dan hidup di air sangat asin. Ia menyimpan beta-karoten dan tampak oranye. Dua flagela."
+  },
+  "15": {
+    "body": "Micrasterias rotata adalah desmid bintang pipih. Dua belahan cermin dengan sayatan dalam. Tak bergerak; berfotosintesis di air rawa asam."
+  },
+  "16": {
+    "body": "Navicula adalah diatom berbentuk perahu dengan katup silika. Ia meluncur di substrat sepanjang celah raphe. Cangkang tersisa setelah mati."
+  },
+  "17": {
+    "body": "Pinnularia viridis adalah diatom penat besar. Cangkang silika dengan pola simetris. Ia meluncur perlahan di dasar."
+  },
+  "18": {
+    "body": "Cyclotella meneghiniana adalah diatom sentrik bundar. Ia mengambang sebagai cakram; cangkangnya dua tutup. Plankton khas."
+  },
+  "19": {
+    "body": "Diatoma vulgare adalah diatom yang menempel membentuk zigzag. Koloni menambah hambatan di kolom air."
+  },
+  "20": {
+    "body": "Rhodospirillum rubrum adalah spiral ungu. Fotosintesis anoksigenik plus organik. Warna merah berasal dari bakterioklorofil."
+  },
+  "21": {
+    "body": "Chromatium vinosum adalah bakteri sulfur ungu. Ia mengoksidasi hidrogen sulfida dan menyimpan granula sulfur. Hidup di batas oksigen/sulfur."
+  },
+  "22": {
+    "body": "Porphyridium cruentum adalah alga merah uniseluler. Fikoeritrin memberi warna merah darah. Selubung musilase, tanpa flagela."
+  },
+  "23": {
+    "body": "Prochlorococcus marinus adalah sel fotosintetik terkecil dan terbanyak di Bumi. Ditemukan pada 1980-an. Ia memberi makan lautan."
+  },
+  "24": {
+    "body": "Chroococcidiopsis thermalis adalah ekstremofil: gurun, batu, radiasi. Kandidat untuk kehidupan di luar Bumi. Di kolam ia koloni kokus yang lambat."
+  },
+  "25": {
+    "body": "Bdellovibrio bacteriovorus adalah predator bakteri mungil. Ia membor masuk sel lain dan berkembang biak hingga inang pecah."
+  },
+  "26": {
+    "body": "Vampirococcus duduk di luar mangsa dan menyedot isinya tanpa masuk. Vampir bakteri."
+  },
+  "27": {
+    "body": "Daptobacter masuk ke bakteri mangsa dan memakannya dari dalam. Pemburu intraseluler langka."
+  },
+  "28": {
+    "body": "Myxococcus xanthus adalah bakteri sosial. Bergerombol mengepung mangsa dan melepaskan enzim. Saat lapar ia membentuk tubuh buah."
+  },
+  "29": {
+    "body": "Bacteriovorax stolpii adalah kerabat laut Bdellovibrio. Ia menyerang Gram-negatif dan hidup di periplasma mangsa."
+  },
+  "30": {
+    "body": "Halobacteriovorax adalah pemburu bakteri tahan garam. Trik sama: melubangi dinding dan tumbuh di dalam."
+  },
+  "31": {
+    "body": "Peredibacter starrii adalah predator BALO lainnya. Flagelata berbentuk koma yang cepat, membidik batang besar."
+  },
+  "32": {
+    "body": "Monas guttula adalah flagelata heterotrof kecil. Ia menangkap bakteri di permukaan detritus."
+  },
+  "33": {
+    "body": "Oikomonas termo adalah flagelata berbentuk tetes. Satu flagela; ia berburu dalam lapisan bakteri."
+  },
+  "34": {
+    "body": "Anthophysa vegetans adalah koloni pada tangkai besi-mangan. Sel duduk bergerombol dan menangkap bakteri."
+  },
+  "35": {
+    "body": "Chilomonas paramecium adalah kriptofit tak berwarna. Dua flagela; ia memakan organik terlarut dan bakteri kecil, tanpa kloroplas."
+  },
+  "36": {
+    "body": "Cercomonas longicauda adalah ameboflagelata berekor panjang. Ia merayap dan menelan bakteri dengan pseudopodia."
+  },
+  "37": {
+    "body": "Heteromita globosa adalah flagelata tanah. Dua flagela berbeda panjang; pemakan bakteri utama di tanah."
+  },
+  "38": {
+    "body": "Bodo saltans adalah kinetoplastida. Ia 'menari' di tempat, tertambat oleh flagela belakang, dan menyambar bakteri."
+  },
+  "39": {
+    "body": "Procryptobia sorokini adalah kerabat Bodo. Ia berenang bebas dan memukul mangsa dengan flagela depan."
+  },
+  "40": {
+    "body": "Trypanosoma brucei adalah parasit darah penyebab penyakit tidur. Membran bergelombang dan satu flagela. Di kolam ia model pemburu ramping."
+  },
+  "41": {
+    "body": "Leishmania donovani adalah parasit intraseluler manusia. Berflagela di serangga, tanpa flagela dalam makrofag."
+  },
+  "42": {
+    "body": "Monosiga brevicollis adalah koanoflagelata, kerabat hewan. Kerah mikrovili menyaring bakteri."
+  },
+  "43": {
+    "body": "Salpingoeca rosetta adalah koanoflagelata sesil dalam lorika. Ia bisa membentuk roset. Ia menyaring arus air."
+  },
+  "44": {
+    "body": "Codonosiga botrytis adalah koloni koanoflagelata pada tangkai bersama. Beberapa filter pada satu batang."
+  },
+  "45": {
+    "body": "Paramecium caudatum adalah sandal klasik. Ribuan silia, alur mulut, vakuola kontraktil. Ia menyaring bakteri."
+  },
+  "46": {
+    "body": "Paramecium bursaria adalah sandal dengan simbion zooklorela. Hijau di dalam: gula dari alga di siang, menyaring di malam."
+  },
+  "47": {
+    "body": "Stentor coeruleus adalah terompet biru hingga satu milimeter. Ia mengembang menjadi corong dan menggerakkan arus dengan silia. Bisa berenang atau duduk."
+  },
+  "48": {
+    "body": "Stentor polymorphus adalah kerabat stentor biru, sering dengan zooklorela. Bentuk berubah dari terompet ke bola."
+  },
+  "49": {
+    "body": "Vorticella campanula adalah lonceng pada tangkai kontraktil. Tangkai melilit menjadi spiral seketika. Selnya sendiri tidak berenang pergi."
+  },
+  "50": {
+    "body": "Vorticella microstoma adalah lonceng kecil. Tangkai-pegas yang sama, medan mulut lebih sempit. Sering di detritus."
+  },
+  "51": {
+    "body": "Didinium nasutum adalah pemburu sandal berbentuk tong. Ia menembakkan toksisista dan menelan mangsa utuh, meski mangsa lebih besar."
+  },
+  "52": {
+    "body": "Spirostomum ambiguum adalah cerutu sangat panjang. Ia berkontraksi beberapa kali lipat dalam sepersekian detik. Silia berjalan spiral."
+  },
+  "53": {
+    "body": "Blepharisma americanum adalah siliata merah muda. Pigmen blepharismin peka cahaya. Ia menyaring dan bisa menyerang sel lebih kecil."
+  },
+  "54": {
+    "body": "Euplotes patella berjalan di atas sirri seperti kaki. Pipih, belokan cepat. Ia mengerik bakteri dari permukaan."
+  },
+  "55": {
+    "body": "Stylonychia pustulata adalah hypotrik yang 'berlari' di dasar. Sirri besar, mulut jelas. Predator siliata kecil."
+  },
+  "56": {
+    "body": "Oxytricha trifallax adalah model genom: dua nukleus dan penulisan ulang DNA yang rumit. Ia berjalan di sirri dan memakan bakteri serta protista kecil."
+  },
+  "57": {
+    "body": "Tetrahymena thermophila adalah siliata laboratorium. Empat membranel mulut, pembelahan cepat. Model telomer dan silia."
+  },
+  "58": {
+    "body": "Coleps hirtus adalah tong dalam pelat kapur berduri. Pemakan bangkai dan predator: ia menggigit yang terluka."
+  },
+  "59": {
+    "body": "Litonotus lamella adalah predator pipih dengan toksisista di 'belalai'. Ia melumpuhkan mangsa lalu menyedotnya."
+  },
+  "60": {
+    "body": "Dileptus anser punya leher panjang dengan ekstrusom beracun. Ia menyerang dengan leher, lalu menelan. Pemburu besar tingkat menengah."
+  },
+  "61": {
+    "body": "Urocentrum turbo adalah gasing: sabuk silia khatulistiwa memutar sel di tempat. Ia menyaring bakteri."
+  },
+  "62": {
+    "body": "Zoothamnium arbuscula adalah koloni lonceng bercabang. Tangkai kontraktil bersama menyentak seluruh pohon sekaligus."
+  },
+  "63": {
+    "body": "Opercularia coarctata adalah peritrik sesil tanpa tangkai pegas. Tutup menaungi mulut. Ia menyaring dan tidak berenang pergi."
+  },
+  "64": {
+    "body": "Amoeba proteus adalah ameba klasik. Pseudopodia mengalir mengelilingi mangsa. Tak ada bentuk tetap, tak ada silia."
+  },
+  "65": {
+    "body": "Arcella vulgaris adalah ameba bercangkang dengan kubah kaku. Pseudopodia muncul dari bukaan. Ia merayap di tumbuhan."
+  },
+  "66": {
+    "body": "Difflugia oblonga punya cangkang dari butir pasir yang direkatkan ameba sendiri. Ia hidup di lumpur."
+  },
+  "67": {
+    "body": "Euglypha alveolata punya cangkang sisik silika. Pseudopodia filosa tipis. Predator bakteri kecil."
+  },
+  "68": {
+    "body": "Nebela collaris adalah cangkang berbentuk botol yang dibangun dari sisik curian. Perairan hutan dan rawa."
+  },
+  "69": {
+    "body": "Centropyxis aculeata adalah cangkang cakram berduri. Bukaannya menjorok ke samping. Ia merayap di detritus."
+  },
+  "70": {
+    "body": "Actinophrys sol adalah heliozoa: aksopodia tipis memancar ke segala arah. Mangsa menempel pada sinar dan ditarik masuk."
+  },
+  "71": {
+    "body": "Actinosphaerium eichhorni adalah heliozoa multinukleat besar. Sinar yang sama, sel jauh lebih besar. Ia memakan siliata dan rotifera."
+  },
+  "72": {
+    "body": "Raphidiophrys pallida adalah heliozoa bersisik. Sinar membawa jarum silika. Pemburu plankton yang mengintai."
+  },
+  "73": {
+    "body": "Rotaria rotatoria adalah rotifera yang tahan kekeringan. Korona memutar makanan ke mulut. Hewan multisel sejati."
+  },
+  "74": {
+    "body": "Philodina roseola adalah rotifera bdelloid merah muda. Ia merayap seperti lintah dan juga berenang. Hanya betina; tanpa jantan."
+  },
+  "75": {
+    "body": "Brachionus plicatilis adalah rotifera berlorika planktonik. Pakan benih ikan dalam akuakultur. Ia menyaring alga dan bakteri."
+  },
+  "76": {
+    "body": "Keratella cochlearis adalah rotifera dengan duri lorika panjang. Duri menghalangi predator. Plankton kolam umum."
+  },
+  "77": {
+    "body": "Asplanchna priodonta adalah kantung tanpa lorika, rotifera predator. Ia menelan rotifera dan siliata lain utuh."
+  },
+  "78": {
+    "body": "Chaetonotus maximus adalah gastrotrik. Bersisik, ia merayap di dasar. Memakan bakteri dan detritus."
+  },
+  "79": {
+    "body": "Lepidodermella squamata adalah gastrotrik kecil bersisik bertumpuk. Belokan di tempat yang sangat cepat."
+  },
+  "80": {
+    "body": "Macrostomum lignano adalah cacing pipih mikroskopis. Otot dan mata sungguhan. Model regenerasi. Ia berburu protista kecil."
+  },
+  "81": {
+    "body": "Stenostomum leucops adalah cacing bersilia tipis. Ia membelah melintang menjadi rantai zooid. Predator detritus dan hewan kecil."
+  },
+  "82": {
+    "body": "Microstomum lineare adalah cacing pipih yang memakan hydra dan menanam sel penyengat mereka di kulitnya sendiri. Rantai zooid."
+  },
+  "83": {
+    "body": "Prostoma graecense adalah nemertin air tawar. Probosis panjang menembak mangsa. Pemburu dasar besar yang langka."
+  },
+  "84": {
+    "body": "Trichoplax adhaerens adalah plakozoa, di antara hewan paling sederhana. Ia merayap sebagai lembaran dan mencerna makanan di luar. Tak ada mulut."
+  },
+  "85": {
+    "body": "Saccharomyces cerevisiae adalah ragi roti. Ia bertunas, memakan gula, melepas CO2 dan alkohol. Di kolam ia membersihkan organik terlarut."
+  },
+  "86": {
+    "body": "Candida albicans adalah ragi yang bisa tumbuh sebagai filamen. Patogen oportunis manusia. Dalam permainan ia jamur detritus."
+  },
+  "87": {
+    "body": "Mucor mucedo adalah kapang roti. Sporangia bertangkai, tumbuh cepat di atas benda mati. Ia tidak berburu yang hidup."
+  },
+  "88": {
+    "body": "Rhizopus stolonifer adalah kapang roti hitam. Stolon dan rizoid menyebar di substrat. Ia mengurai pati."
+  },
+  "89": {
+    "body": "Penicillium chrysogenum adalah kapang sikat, sumber penisilin. Sikat konidia. Ia mengurai organik dan menekan bakteri sekitar."
+  },
+  "90": {
+    "body": "Aspergillus niger adalah aspergilus hitam. Kepala spora bola. Produsen asam sitrat industri. Saprotrof."
+  },
+  "91": {
+    "body": "Batrachochytrium dendrobatidis adalah kitrid katak. Zoospora uniflagela. Di kolam ia model jamur air."
+  },
+  "92": {
+    "body": "Chytriomyces aureus adalah kitrid air pada serbuk sari dan alga. Sporangia keemasan; zoospora berenang ke substrat."
+  },
+  "93": {
+    "body": "Allomyces macrogynus adalah jamur air dengan miselium sejati. Ia bergantian diploid dan haploid. Zoospora berflagela belakang."
+  },
+  "94": {
+    "body": "Bacillus subtilis adalah batang tanah. Spora bertahan dari didihan. Ia mengurai protein; model Gram-positif."
+  },
+  "95": {
+    "body": "Pseudomonas putida adalah batang pembersih. Ia memakan bahkan produk minyak bumi. Flagela motil, tumbuh cepat di detritus."
+  },
+  "96": {
+    "body": "Streptomyces coelicolor adalah bakteri tanah berfilamen. Ia membuat aroma tanah (geosmin) dan banyak antibiotik. Spora di hifa."
+  },
+  "97": {
+    "body": "Cellulomonas fimi mengurai selulosa. Batang kuning di detritus tumbuhan. Tanpanya alga mati bertahan lebih lama."
+  },
+  "98": {
+    "body": "Thermus aquaticus adalah termofil dari mata air panas. Taq polimerase adalah dasar PCR. Di kolam dingin hampir dorman."
+  },
+  "99": {
+    "body": "Deinococcus radiodurans adalah juara radiasi. Ia merakit ulang genom hancur dalam hitungan jam. Dinding tebal, tetrad sel."
+  },
+  "1001": {
+    "body": "Sexual Eukaryote adalah model pengajaran reproduksi seksual. Dua jenis kelamin, fusi gamet, bukan pembelahan biner biasa."
+  },
+  "T4 Bacteriophage": {
+    "body": "T4 adalah myovirus besar E. coli. Ekor berkontraksi dan menyuntik DNA. Dalam setengah jam sel pecah dan puluhan fag keluar."
+  },
+  "Lambda Phage": {
+    "body": "Lambda adalah fag temperan. Ia bisa menyisip ke kromosom dan tidur (lisogeni) atau langsung memotong sel (lisis)."
+  },
+  "T7 Bacteriophage": {
+    "body": "T7 punya ekor pendek dan replikasi sangat cepat. Sistem favorit dalam biologi sintetik."
+  },
+  "Phi-6 Phage": {
+    "body": "Phi-6 adalah fag RNA bersampul lipid. Ia menginfeksi Pseudomonas. Membran langka bagi fag."
+  },
+  "MS2 Phage": {
+    "body": "MS2 adalah fag RNA mungil tanpa ekor. Ia terikat pada pili jantan E. coli. Genomnya salah satu genom RNA pertama yang dibaca."
+  },
+  "Neuro-Parasite": {
+    "body": "Neuro-parasit kolam fiktif. Ia melekat pada eukariot dan merusak perilaku inang hingga inang menjadi pembawa."
+  },
+  "Sexual Eukaryote": {
+    "body": "Sexual Eukaryote adalah model pengajaran reproduksi seksual. Dua jenis kelamin, fusi gamet, bukan pembelahan biner biasa."
+  }
+}

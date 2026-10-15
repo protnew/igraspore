@@ -21,7 +21,7 @@ const STRICT = process.argv.includes('--strict');
 const TAG = (process.argv.find(a => a.startsWith('--tag=')) || '--tag=before').slice(6);
 
 // файлы-исключения: механизм i18n (сами словари L.2 переносятся в json) и wiki-данные (U08 отдельно)
-const SKIP_FILES = new Set(['js/i18n_hud.js', 'js/i18n_detect.js', 'js/wiki_articles.js']);
+const SKIP_FILES = new Set(['js/i18n_hud.js', 'js/i18n_hud_ru.js', 'js/i18n_hud_en.js', 'js/i18n_detect.js', 'js/wiki_articles.js']);
 // имена переменных-данных: латинские названия видов, формы, цвета, словарь имён языков, подписи локалей — не UI-строки
 const DATA_VARS = new Set(['PN', 'CN1', 'CN2', 'CN3', 'DN', 'VN', 'SHAPES', 'CC', 'langNames', 'LANGS', 'WATER_VERT', 'WATER_FRAG', 'VERT', 'FRAG', 'VSRC', 'FSRC']);
 // GLSL-шейдеры: технический код, не переводится (L.1: code/data suppression)

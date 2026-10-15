@@ -28,5 +28,6 @@ backups/
 06-DevOps-and-Release/apk/igraspore-offline-v2.5.apk
 
 # UI-RESTORE-AUDIT A1: local-run junction (undotted paths in root index)
-04-Src/js
-assets
+/04-Src/js
+/assets
+/i18n/

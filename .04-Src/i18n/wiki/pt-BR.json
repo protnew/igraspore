@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Synechocystis é uma cianobactéria sem núcleo. Vive de luz: fotossíntese oxigênica em membranas, sem cloroplastos. Modelo de laboratório do metabolismo do hidrogênio."
+  },
+  "1": {
+    "body": "Anabaena variabilis é um filamento. Algumas células viram heterocistos e fixam nitrogênio enquanto as vizinhas produzem açúcar. No lago, fornece nitrogênio fixado."
+  },
+  "2": {
+    "body": "Spirulina (Arthrospira) é uma espiral de células com vesículas de gás. Fica perto da superfície, fotossintetiza e é comestível. No jogo é um grande parafuso verde na película d'água."
+  },
+  "3": {
+    "body": "Nostoc punctiforme é um colar de contas numa cápsula de muco. Vive livre ou em simbiose com plantas. A colônia parece um torrão de contas verdes."
+  },
+  "4": {
+    "body": "Oscillatoria limnetica é um filamento deslizante. Oscila de um lado para outro e pode fotossintetizar sem liberar oxigênio. Típica de lodo e película de superfície."
+  },
+  "5": {
+    "body": "Microcystis aeruginosa é uma colônia de mucilagem, muitas vezes tóxica (microcistina). Causa a floração da água. No jogo é uma bola-colônia verde, presa arriscada."
+  },
+  "6": {
+    "body": "Gloeocapsa: células em pares dentro de envoltórios coloridos. Vive em rochas e solo e tolera UV. No lago são pequenos cocos emparelhados num invólucro."
+  },
+  "7": {
+    "body": "Lyngbya majuscula é um filamento cianobacteriano grosso. Pode liberar toxinas irritantes. Forma tapetes junto a margens quentes."
+  },
+  "8": {
+    "body": "Chlamydomonas reinhardtii é uma célula verde com dois flagelos e um estigma. Nada em direção à luz. Modelo clássico da genética de algas."
+  },
+  "9": {
+    "body": "Chlorella vulgaris é uma esfera verde imóvel. Divide-se rápido e é rica em proteínas. Alimento para pequenos predadores e tema de comida espacial."
+  },
+  "10": {
+    "body": "Volvox globator é uma esfera oca de milhares de células. Colônias-filhas amadurecem dentro e saem. No jogo é uma grande colônia verde."
+  },
+  "11": {
+    "body": "Euglena gracilis é um mixótrofo: cloroplastos mais a capacidade de comer. Um estigma vermelho acompanha a luz. Verde de dia; no escuro muda para comida."
+  },
+  "12": {
+    "body": "Scenedesmus quadricauda costuma ser quatro células em fila com espinhos nas pontas. Os espinhos dificultam a ingestão. Não nada — flutua à deriva."
+  },
+  "13": {
+    "body": "Haematococcus pluvialis é uma célula verde móvel; sob estresse fica vermelha (astaxantina) e forma parede grossa. Cistos vermelhos sobrevivem à seca."
+  },
+  "14": {
+    "body": "Dunaliella salina não tem parede rígida e vive em água muito salgada. Estoca betacaroteno e parece laranja. Dois flagelos."
+  },
+  "15": {
+    "body": "Micrasterias rotata é uma desmídia achatada em forma de estrela. Duas metades espelhadas com cortes profundos. Imóvel; fotossintetiza em água ácida de turfeira."
+  },
+  "16": {
+    "body": "Navicula é uma diatomácea em forma de barco com valva de sílica. Desliza pelo substrato ao longo de uma fenda (rafe). A carapaça permanece após a morte."
+  },
+  "17": {
+    "body": "Pinnularia viridis é uma grande diatomácea pennada. Carapaça de sílica com padrão simétrico. Desliza lentamente no fundo."
+  },
+  "18": {
+    "body": "Cyclotella meneghiniana é uma diatomácea cêntrica circular. Flutua como um disco; a carapaça é feita de duas tampas. Plâncton típico."
+  },
+  "19": {
+    "body": "Diatoma vulgare é uma diatomácea que se cola em zigue-zague. A colônia aumenta o arrasto na coluna d'água."
+  },
+  "20": {
+    "body": "Rhodospirillum rubrum é uma espiral púrpura. Fotossíntese anoxigênica mais matéria orgânica. A cor vermelha vem da bacterioclorofila."
+  },
+  "21": {
+    "body": "Chromatium vinosum é uma bactéria púrpura do enxofre. Oxida o sulfeto de hidrogênio e estoca grânulos de enxofre. Vive na fronteira oxigênio/enxofre."
+  },
+  "22": {
+    "body": "Porphyridium cruentum é uma alga vermelha unicelular. A ficoeritrina dá a cor vermelho-sangue. Envoltório de mucilagem, sem flagelos."
+  },
+  "23": {
+    "body": "Prochlorococcus marinus é a menor e mais abundante célula fotossintética da Terra. Descoberta nos anos 1980. Alimenta o oceano."
+  },
+  "24": {
+    "body": "Chroococcidiopsis thermalis é um extremófilo: deserto, rocha, radiação. Candidato à vida fora da Terra. No lago é uma colônia lenta de cocos."
+  },
+  "25": {
+    "body": "Bdellovibrio bacteriovorus é um minúsculo predador bacteriano. Rosqueia-se dentro de outra célula e se multiplica até o hospedeiro estourar."
+  },
+  "26": {
+    "body": "Vampirococcus senta sobre a presa por fora e suga o conteúdo sem entrar. Um vampiro bacteriano."
+  },
+  "27": {
+    "body": "Daptobacter entra numa bactéria-presa e a come por dentro. Um raro caçador intracelular."
+  },
+  "28": {
+    "body": "Myxococcus xanthus é uma bactéria social. Em matilha, cerca a presa e libera enzimas. Na fome, forma um corpo de frutificação."
+  },
+  "29": {
+    "body": "Bacteriovorax stolpii é um parente marinho do Bdellovibrio. Ataca Gram-negativas e vive no periplasma da presa."
+  },
+  "30": {
+    "body": "Halobacteriovorax é um caçador de bactérias tolerante a sal. Mesmo truque: perfurar a parede e crescer dentro."
+  },
+  "31": {
+    "body": "Peredibacter starrii é outro predador BALO. Um flagelado veloz em forma de vírgula que mira grandes bastonetes."
+  },
+  "32": {
+    "body": "Monas guttula é um pequeno flagelado heterotrófico. Agarra bactérias na superfície do detrito."
+  },
+  "33": {
+    "body": "Oikomonas termo é um flagelado em forma de gota. Um flagelo; caça na película bacteriana."
+  },
+  "34": {
+    "body": "Anthophysa vegetans é uma colônia num pedúnculo de ferro-manganês. As células ficam em tufo e capturam bactérias."
+  },
+  "35": {
+    "body": "Chilomonas paramecium é um criptofito incolor. Dois flagelos; come matéria orgânica dissolvida e bactérias minúsculas, sem cloroplastos."
+  },
+  "36": {
+    "body": "Cercomonas longicauda é um ameboflagelado de cauda longa. Rasteja e engole bactérias com pseudópodes."
+  },
+  "37": {
+    "body": "Heteromita globosa é um flagelado do solo. Dois flagelos de comprimentos diferentes; um grande devorador de bactérias no solo."
+  },
+  "38": {
+    "body": "Bodo saltans é um cinetoplastídeo. «Dança» no lugar, preso pelo flagelo posterior, e fisga bactérias."
+  },
+  "39": {
+    "body": "Procryptobia sorokini é um parente do Bodo. Nada livremente e golpeia a presa com o flagelo anterior."
+  },
+  "40": {
+    "body": "Trypanosoma brucei é um parasita do sangue causador da doença do sono. Membrana ondulante e um flagelo. No lago é um modelo de caçador esguio."
+  },
+  "41": {
+    "body": "Leishmania donovani é um parasita intracelular humano. Flagelado no inseto, aflagelado no macrófago."
+  },
+  "42": {
+    "body": "Monosiga brevicollis é um coanoflagelado, parente dos animais. Um colar de microvilosidades filtra bactérias."
+  },
+  "43": {
+    "body": "Salpingoeca rosetta é um coanoflagelado séssil numa lorica. Pode formar uma roseta. Filtra uma corrente d'água."
+  },
+  "44": {
+    "body": "Codonosiga botrytis é uma colônia de coanoflagelados num pedúnculo comum. Vários filtros num mesmo caule."
+  },
+  "45": {
+    "body": "Paramecium caudatum é o clássico «chinelo». Milhares de cílios, um sulco oral, vacúolos contráteis. Filtra bactérias."
+  },
+  "46": {
+    "body": "Paramecium bursaria é um chinelo com simbiontes zooclorelas. Verde por dentro: açúcar das algas de dia, filtração à noite."
+  },
+  "47": {
+    "body": "Stentor coeruleus é uma trombeta azul de até um milímetro. Abre-se em funil e impulsiona corrente com cílios. Pode nadar ou ficar parada."
+  },
+  "48": {
+    "body": "Stentor polymorphus é um parente do stentor azul, muitas vezes com zooclorelas. A forma muda de trombeta para bola."
+  },
+  "49": {
+    "body": "Vorticella campanula é um sino num pedúnculo contrátil. O pedúnculo enrola-se em espiral instantaneamente. A célula em si não nada para longe."
+  },
+  "50": {
+    "body": "Vorticella microstoma é um pequeno sino. Mesmo pedúnculo-mola, campo oral mais estreito. Frequente no detrito."
+  },
+  "51": {
+    "body": "Didinium nasutum é um caçador-tonel de chinelos. Dispara toxicistos e engole a presa inteira, mesmo maior que ele."
+  },
+  "52": {
+    "body": "Spirostomum ambiguum é um charuto longuíssimo. Contrai-se várias vezes numa fração de segundo. Os cílios correm em espiral."
+  },
+  "53": {
+    "body": "Blepharisma americanum é um ciliado rosa. O pigmento blefarismina é sensível à luz. Filtra e pode atacar células menores."
+  },
+  "54": {
+    "body": "Euplotes patella anda sobre cirros como sobre pernas. Chato, curvas rápidas. Raspa bactérias das superfícies."
+  },
+  "55": {
+    "body": "Stylonychia pustulata é um hipotrico que «corre» pelo fundo. Cirros grandes, boca bem visível. Predador de pequenos ciliados."
+  },
+  "56": {
+    "body": "Oxytricha trifallax é um modelo de genoma: dois núcleos e reescrita complexa do DNA. Anda sobre cirros e come bactérias e pequenos protistas."
+  },
+  "57": {
+    "body": "Tetrahymena thermophila é um ciliado de laboratório. Quatro membranelas orais, divisão rápida. Modelo de telômeros e cílios."
+  },
+  "58": {
+    "body": "Coleps hirtus é um barril em placas calcárias com espinhos. Necrófago e predador: morde os feridos."
+  },
+  "59": {
+    "body": "Litonotus lamella é um predador achatado com toxicistos numa «probóscide». Paralisa a presa e a suga."
+  },
+  "60": {
+    "body": "Dileptus anser tem um pescoço longo com extrusossomos venenosos. Golpeia com o pescoço, depois engole. Um grande caçador de nível médio."
+  },
+  "61": {
+    "body": "Urocentrum turbo é um pião: uma faixa ciliar equatorial gira a célula no lugar. Filtra bactérias."
+  },
+  "62": {
+    "body": "Zoothamnium arbuscula é uma colônia ramificada de sinos. Um pedúnculo contrátil comum sacode a árvore inteira de uma vez."
+  },
+  "63": {
+    "body": "Opercularia coarctata é um peritrico séssil sem pedúnculo-mola. Um opérculo cobre a boca. Filtra e não foge nadando."
+  },
+  "64": {
+    "body": "Amoeba proteus é a ameba clássica. Pseudópodes fluem ao redor da presa. Sem forma fixa, sem cílios."
+  },
+  "65": {
+    "body": "Arcella vulgaris é uma ameba tecada com domo rígido. Pseudópodes saem pela abertura. Rasteja sobre plantas."
+  },
+  "66": {
+    "body": "Difflugia oblonga tem uma carapaça de grãos de areia que a própria ameba cola. Vive no lodo."
+  },
+  "67": {
+    "body": "Euglypha alveolata tem uma carapaça de escamas de sílica. Pseudópodes filosos finos. Um pequeno predador de bactérias."
+  },
+  "68": {
+    "body": "Nebela collaris é uma carapaça em forma de garrafa feita de escamas roubadas. Águas de florestas e turfeiras."
+  },
+  "69": {
+    "body": "Centropyxis aculeata é uma carapaça em disco com espinhos. A abertura é deslocada. Rasteja sobre detrito."
+  },
+  "70": {
+    "body": "Actinophrys sol é um heliozoário: axópodes finos irradiam em todas as direções. A presa gruda nos raios e é puxada para dentro."
+  },
+  "71": {
+    "body": "Actinosphaerium eichhorni é um grande heliozoário multinucleado. Mesmos raios, célula muito maior. Come ciliados e rotíferos."
+  },
+  "72": {
+    "body": "Raphidiophrys pallida é um heliozoário em escamas. Os raios levam agulhas de sílica. Um caçador de plâncton de emboscada."
+  },
+  "73": {
+    "body": "Rotaria rotatoria é um rotífero que sobrevive à secagem. Uma coroa impulsiona o alimento para a boca. Um verdadeiro animal multicelular."
+  },
+  "74": {
+    "body": "Philodina roseola é um rotífero bdeloide rosa. Rasteja como uma sanguessuga e também nada. Só fêmeas; sem machos."
+  },
+  "75": {
+    "body": "Brachionus plicatilis é um rotífero planctônico de lorica. Ração de alevinos na aquicultura. Filtra algas e bactérias."
+  },
+  "76": {
+    "body": "Keratella cochlearis é um rotífero com longa espinha de lorica. A espinha afasta predadores. Plâncton comum de lago."
+  },
+  "77": {
+    "body": "Asplanchna priodonta é um saco sem lorica, um rotífero predador. Engole outros rotíferos e ciliados inteiros."
+  },
+  "78": {
+    "body": "Chaetonotus maximus é um gastrotrico. Coberto de escamas, rasteja pelo fundo. Come bactérias e detrito."
+  },
+  "79": {
+    "body": "Lepidodermella squamata é um pequeno gastrotrico em escamas sobrepostas. Curvas no lugar muito rápidas."
+  },
+  "80": {
+    "body": "Macrostomum lignano é um platelminto microscópico. Músculos e olhos de verdade. Modelo de regeneração. Caça pequenos protistas."
+  },
+  "81": {
+    "body": "Stenostomum leucops é um verme ciliado fino. Divide-se transversalmente numa cadeia de zooides. Predador de detrito e pequenos animais."
+  },
+  "82": {
+    "body": "Microstomum lineare é um platelminto que come hidras e encaixa as células urticantes delas na própria pele. Uma cadeia de zooides."
+  },
+  "83": {
+    "body": "Prostoma graecense é um nemertino de água doce. Uma probóscide longa dispara sobre a presa. Um raro grande caçador de fundo."
+  },
+  "84": {
+    "body": "Trichoplax adhaerens é um placozoário, um dos animais mais simples. Rasteja como uma placa e digere a comida do lado de fora. Sem boca."
+  },
+  "85": {
+    "body": "Saccharomyces cerevisiae é a levedura de padeiro. Brotam, come açúcar, libera CO2 e álcool. No lago limpa a matéria orgânica dissolvida."
+  },
+  "86": {
+    "body": "Candida albicans é uma levedura que pode crescer em filamentos. Patógeno oportunista humano. No jogo é um fungo de detrito."
+  },
+  "87": {
+    "body": "Mucor mucedo é o mofo do pão. Esporângios em pedúnculos, crescimento rápido sobre a matéria morta. Não caça os vivos."
+  },
+  "88": {
+    "body": "Rhizopus stolonifer é o mofo preto do pão. Estolões e rizoides espalham-se pelo substrato. Degrada amido."
+  },
+  "89": {
+    "body": "Penicillium chrysogenum é um mofo em pincéis, a fonte da penicilina. Pincéis de conídios. Decompõe matéria orgânica e suprime bactérias ao redor."
+  },
+  "90": {
+    "body": "Aspergillus niger é o aspergilo preto. Cabeças de esporos esféricas. Produtor industrial de ácido cítrico. Um saprótrofo."
+  },
+  "91": {
+    "body": "Batrachochytrium dendrobatidis é um quitrídio de rãs. Zoósporos uniflagelados. No lago é um modelo de fungo aquático."
+  },
+  "92": {
+    "body": "Chytriomyces aureus é um quitrídio aquático sobre pólen e algas. Esporângios dourados; zoósporos nadam ao substrato."
+  },
+  "93": {
+    "body": "Allomyces macrogynus é um fungo aquático com micélio verdadeiro. Alterna diploide e haploide. Os zoósporos têm flagelo posterior."
+  },
+  "94": {
+    "body": "Bacillus subtilis é um bastonete do solo. Esporos sobrevivem à fervura. Degrada proteína; modelo Gram-positivo."
+  },
+  "95": {
+    "body": "Pseudomonas putida é um bastonete faxineiro. Come até derivados de petróleo. Flagelo móvel, crescimento rápido no detrito."
+  },
+  "96": {
+    "body": "Streptomyces coelicolor é uma bactéria filamentosa do solo. Produz o cheiro de terra (geosmina) e muitos antibióticos. Esporos nas hifas."
+  },
+  "97": {
+    "body": "Cellulomonas fimi degrada celulose. Um bastonete amarelo no detrito vegetal. Sem ela, algas mortas ficariam mais tempo."
+  },
+  "98": {
+    "body": "Thermus aquaticus é um termófilo de fontes quentes. A Taq polimerase é a base da PCR. Num lago frio fica quase dormente."
+  },
+  "99": {
+    "body": "Deinococcus radiodurans é o campeão de radiação. Remonta um genoma despedaçado em horas. Parede grossa, tétrades de células."
+  },
+  "1001": {
+    "body": "Sexual Eukaryote é um modelo didático de reprodução sexuada. Dois sexos, fusão de gametas, não uma simples fissão binária."
+  },
+  "T4 Bacteriophage": {
+    "body": "T4 é um grande miovírus de E. coli. A cauda contrai e injeta DNA. Em meia hora a célula estoura e dezenas de fagos saem."
+  },
+  "Lambda Phage": {
+    "body": "Lambda é um fago temperado. Pode se inserir no cromossomo e dormir (lisogenia) ou cortar a célula de uma vez (lise)."
+  },
+  "T7 Bacteriophage": {
+    "body": "T7 tem cauda curta e replicação muito rápida. Um sistema favorito da biologia sintética."
+  },
+  "Phi-6 Phage": {
+    "body": "Phi-6 é um fago de RNA com envelope lipídico. Infecta Pseudomonas. Uma membrana rara para um fago."
+  },
+  "MS2 Phage": {
+    "body": "MS2 é um minúsculo fago de RNA sem cauda. Liga-se aos pili machos de E. coli. Seu genoma foi um dos primeiros genomas de RNA lidos."
+  },
+  "Neuro-Parasite": {
+    "body": "Um neuro-parasita de lago fictício. Gruda em eucariotos e quebra o comportamento do hospedeiro até ele virar transmissor."
+  },
+  "Sexual Eukaryote": {
+    "body": "Sexual Eukaryote é um modelo didático de reprodução sexuada. Dois sexos, fusão de gametas, não uma simples fissão binária."
+  }
+}

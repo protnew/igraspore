@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "igs-test-run/1",
+  "title": "iGraSpore test run result",
+  "type": "object",
+  "required": ["schema", "run_id", "started_at", "finished_at", "commit", "branch", "dirty_count", "machine", "totals", "suites"],
+  "properties": {
+    "schema": { "const": "igs-test-run/1" },
+    "run_id": { "type": "string", "pattern": "^\\d{8}-\\d{4}$" },
+    "started_at": { "type": "string" },
+    "finished_at": { "type": "string" },
+    "commit": { "type": "string" },
+    "branch": { "type": "string" },
+    "dirty_count": { "type": "integer", "minimum": 0 },
+    "machine": { "type": "string" },
+    "totals": {
+      "type": "object",
+      "required": ["pass", "fail", "skipped", "total"],
+      "properties": {
+        "pass": { "type": "integer", "minimum": 0 },
+        "fail": { "type": "integer", "minimum": 0 },
+        "skipped": { "type": "integer", "minimum": 0 },
+        "total": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "suites": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "command", "exit_code", "ms", "log", "totals", "tests"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "command": { "type": "string" },
+          "exit_code": { "type": ["integer", "null"] },
+          "ms": { "type": "integer", "minimum": 0 },
+          "log": { "type": "string" },
+          "totals": {
+            "type": "object",
+            "required": ["pass", "fail", "skipped", "total"],
+            "properties": {
+              "pass": { "type": "integer", "minimum": 0 },
+              "fail": { "type": "integer", "minimum": 0 },
+              "skipped": { "type": "integer", "minimum": 0 },
+              "total": { "type": "integer", "minimum": 0 }
+            }
+          },
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "file", "title", "status", "ms"],
+              "properties": {
+                "id": { "type": "string" },
+                "file": { "type": "string" },
+                "title": { "type": "string" },
+                "status": { "enum": ["pass", "fail", "skipped"] },
+                "ms": { "type": "number", "minimum": 0 },
+                "error_first_line": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

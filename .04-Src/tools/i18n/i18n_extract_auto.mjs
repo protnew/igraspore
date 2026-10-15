@@ -17,7 +17,7 @@ const SRC = path.resolve(HERE, '..', '..');
 const JS_DIR = path.join(SRC, 'js');
 const LOG_DIR = path.join(SRC, '..', '09-Docs', 'out-dev-factory', 'logs-release-ready-2026-10-14');
 const MAP_FILE = path.join(LOG_DIR, 'i18n-extract-map.json');
-const SKIP = new Set(['i18n_hud.js', 'i18n_detect.js', 'wiki_articles.js']);
+const SKIP = new Set(['i18n_hud.js', 'i18n_hud_ru.js', 'i18n_hud_en.js', 'i18n_detect.js', 'wiki_articles.js']);
 
 const Q = `'(?:[^'\\\\]|\\\\.)*'`;                       // '...' с эскейпами
 const RE_RU_EN = new RegExp(`(?:typeof\\s+curLang\\s*!==\\s*'undefined'\\s*&&\\s*)?curLang\\s*===\\s*'ru'\\s*\\?\\s*(${Q})\\s*:\\s*(${Q})`, 'g');

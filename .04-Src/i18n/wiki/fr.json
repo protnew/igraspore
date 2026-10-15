@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Synechocystis est une cyanobactérie sans noyau. Elle vit de la lumière : photosynthèse oxygénée sur membranes, sans chloroplastes. Modèle de laboratoire du métabolisme de l'hydrogène."
+  },
+  "1": {
+    "body": "Anabaena variabilis est un filament. Certaines cellules deviennent des hétérocystes et fixent l'azote pendant que les voisines font du sucre. Dans l'étang, elle fournit de l'azote lié."
+  },
+  "2": {
+    "body": "Spirulina (Arthrospira) est une spirale de cellules à vésicules gazeuses. Elle flotte près de la surface, photosynthétise et est comestible. Dans le jeu, c'est une grande vis verte au film d'eau."
+  },
+  "3": {
+    "body": "Nostoc punctiforme est un chapelet de perles dans une capsule de mucus. Il vit libre ou en symbiose avec des plantes. La colonie ressemble à un amas de perles vertes."
+  },
+  "4": {
+    "body": "Oscillatoria limnetica est un filament glissant. Il oscille d'un côté à l'autre et peut photosynthétiser sans dégager d'oxygène. Typique des vases et du film de surface."
+  },
+  "5": {
+    "body": "Microcystis aeruginosa est une colonie muqueuse, souvent toxique (microcystine). Elle provoque la floraison de l'eau. Dans le jeu, c'est une boule coloniale verte, une proie risquée."
+  },
+  "6": {
+    "body": "Gloeocapsa : cellules par paires dans des enveloppes colorées. Elle vit sur les roches et le sol et tolère les UV. Dans l'étang, de petits cocci appariés dans une enveloppe."
+  },
+  "7": {
+    "body": "Lyngbya majuscula est un épais filament cyanobactérien. Il peut libérer des toxines irritantes. Il forme des tapis près des rives chaudes."
+  },
+  "8": {
+    "body": "Chlamydomonas reinhardtii est une cellule verte à deux flagelles et un stigma. Elle nage vers la lumière. Modèle classique de génétique des algues."
+  },
+  "9": {
+    "body": "Chlorella vulgaris est une boule verte non mobile. Elle se divise vite et est riche en protéines. Nourriture des petits mangeurs et sujet de l'alimentation spatiale."
+  },
+  "10": {
+    "body": "Volvox globator est une sphère creuse de milliers de cellules. Les colonies filles mûrissent à l'intérieur puis sortent. Dans le jeu, une grande colonie verte."
+  },
+  "11": {
+    "body": "Euglena gracilis est un mixotrophe : chloroplastes plus la capacité de manger. Un stigma rouge suit la lumière. Verte le jour ; dans le noir, elle passe à la nourriture."
+  },
+  "12": {
+    "body": "Scenedesmus quadricauda : généralement quatre cellules en rang avec des épines terminales. Les épines rendent l'ingestion difficile. Elle ne nage pas — elle dérive."
+  },
+  "13": {
+    "body": "Haematococcus pluvialis est une cellule verte mobile ; sous stress elle devient rouge (astaxanthine) et forme une paroi épaisse. Les cystes rouges survivent à la sécheresse."
+  },
+  "14": {
+    "body": "Dunaliella salina n'a pas de paroi rigide et vit dans une eau très salée. Elle stocke du bêta-carotène et paraît orange. Deux flagelles."
+  },
+  "15": {
+    "body": "Micrasterias rotata est une desmidie étoilée et plate. Deux moitiés en miroir aux entailles profondes. Immobile ; elle photosynthétise dans l'eau acide des tourbières."
+  },
+  "16": {
+    "body": "Navicula est une diatomée en forme de bateau à valve de silice. Elle glisse sur le substrat le long d'une fente (raphé). La coquille reste après la mort."
+  },
+  "17": {
+    "body": "Pinnularia viridis est une grande diatomée pennée. Coquille de silice à motif symétrique. Elle glisse lentement sur le fond."
+  },
+  "18": {
+    "body": "Cyclotella meneghiniana est une diatomée centrique circulaire. Elle flotte comme un disque ; la coquille est faite de deux couvercles. Plancton typique."
+  },
+  "19": {
+    "body": "Diatoma vulgare est une diatomée qui se colle en zigzag. La colonie augmente la traînée dans la colonne d'eau."
+  },
+  "20": {
+    "body": "Rhodospirillum rubrum est une spirale pourpre. Photosynthèse anoxygénée plus matière organique. La couleur rouge vient de la bactériochlorophylle."
+  },
+  "21": {
+    "body": "Chromatium vinosum est une bactérie pourpre du soufre. Elle oxyde le sulfure d'hydrogène et stocke des granules de soufre. Elle vit à la frontière oxygène/soufre."
+  },
+  "22": {
+    "body": "Porphyridium cruentum est une algue rouge unicellulaire. La phycoérythrine donne une couleur rouge sang. Enveloppe muqueuse, pas de flagelles."
+  },
+  "23": {
+    "body": "Prochlorococcus marinus est la plus petite et la plus abondante cellule photosynthétique de la Terre. Découverte dans les années 1980. Elle nourrit l'océan."
+  },
+  "24": {
+    "body": "Chroococcidiopsis thermalis est un extrémophile : désert, roche, radiation. Candidat à la vie hors de la Terre. Dans l'étang, une lente colonie de coccus."
+  },
+  "25": {
+    "body": "Bdellovibrio bacteriovorus est un minuscule prédateur bactérien. Il se visse dans une autre cellule et se multiplie jusqu'à ce que l'hôte éclate."
+  },
+  "26": {
+    "body": "Vampirococcus se pose sur la proie par l'extérieur et en aspire le contenu sans y entrer. Un vampire bactérien."
+  },
+  "27": {
+    "body": "Daptobacter entre dans une bactérie proie et la mange de l'intérieur. Un chasseur intracellulaire rare."
+  },
+  "28": {
+    "body": "Myxococcus xanthus est une bactérie sociale. En meute, elle entoure la proie et libère des enzymes. À jeun, elle forme un corps fructifère."
+  },
+  "29": {
+    "body": "Bacteriovorax stolpii est un parent marin de Bdellovibrio. Il attaque les Gram-négatives et vit dans le périplasme de la proie."
+  },
+  "30": {
+    "body": "Halobacteriovorax est un chasseur de bactéries halotolérant. Même astuce : percer la paroi et croître à l'intérieur."
+  },
+  "31": {
+    "body": "Peredibacter starrii est un autre prédateur BALO. Un flagellé rapide en forme de virgule visant les grands bâtonnets."
+  },
+  "32": {
+    "body": "Monas guttula est un petit flagellé hétérotrophe. Il attrape les bactéries à la surface du détritus."
+  },
+  "33": {
+    "body": "Oikomonas termo est un flagellé en forme de goutte. Un flagelle ; il chasse dans le film bactérien."
+  },
+  "34": {
+    "body": "Anthophysa vegetans est une colonie sur un pédoncule ferro-manganèse. Les cellules siègent en touffe et attrapent les bactéries."
+  },
+  "35": {
+    "body": "Chilomonas paramecium est un cryptophyte incolore. Deux flagelles ; il mange les matières organiques dissoutes et les bactéries minuscules, pas de chloroplastes."
+  },
+  "36": {
+    "body": "Cercomonas longicauda est un amiboflagellé à longue queue. Il rampe et engloutit les bactéries avec des pseudopodes."
+  },
+  "37": {
+    "body": "Heteromita globosa est un flagellé du sol. Deux flagelles de longueur inégale ; un mangeur de bactéries majeur du sol."
+  },
+  "38": {
+    "body": "Bodo saltans est un kinétoplastidé. Il « danse » sur place, ancré par le flagelle postérieur, et attrape les bactéries."
+  },
+  "39": {
+    "body": "Procryptobia sorokini est un parent de Bodo. Il nage librement et frappe la proie avec le flagelle antérieur."
+  },
+  "40": {
+    "body": "Trypanosoma brucei est un parasite du sang causant la maladie du sommeil. Membrane ondulante et un flagelle. Dans l'étang, un modèle de chasseur élancé."
+  },
+  "41": {
+    "body": "Leishmania donovani est un parasite intracellulaire humain. Flagellée dans l'insecte, aflagellée dans le macrophage."
+  },
+  "42": {
+    "body": "Monosiga brevicollis est un choanoflagellé, un parent des animaux. Un col de microvillosités filtre les bactéries."
+  },
+  "43": {
+    "body": "Salpingoeca rosetta est un choanoflagellé sessile dans une lorica. Il peut former une rosette. Il filtre un courant d'eau."
+  },
+  "44": {
+    "body": "Codonosiga botrytis est une colonie de choanoflagellés sur un pédoncule commun. Plusieurs filtres sur une même tige."
+  },
+  "45": {
+    "body": "Paramecium caudatum est la classique paramécie « pantoufle ». Des milliers de cils, un sillon oral, des vacuoles contractiles. Elle filtre les bactéries."
+  },
+  "46": {
+    "body": "Paramecium bursaria est une paramécie avec des symbiotes zoochlorelles. Verte à l'intérieur : du sucre des algues le jour, filtration la nuit."
+  },
+  "47": {
+    "body": "Stentor coeruleus est une trompette bleue jusqu'à un millimètre. Elle s'évase en entonnoir et chasse un courant avec ses cils. Elle peut nager ou se poser."
+  },
+  "48": {
+    "body": "Stentor polymorphus est un parent du stentor bleu, souvent avec des zoochlorelles. Sa forme passe de la trompette à la boule."
+  },
+  "49": {
+    "body": "Vorticella campanula est une clochette sur pédoncule contractile. Le pédoncule s'enroule en spirale instantanément. La cellule elle-même ne s'enfuit pas."
+  },
+  "50": {
+    "body": "Vorticella microstoma est une petite clochette. Même pédoncule-ressort, champ oral plus étroit. Souvent sur le détritus."
+  },
+  "51": {
+    "body": "Didinium nasutum est un chasseur en tonneau de paramécies. Il tire des toxicystes et avale la proie entière, même plus grande que lui."
+  },
+  "52": {
+    "body": "Spirostomum ambiguum est un très long cigare. Il se contracte de plusieurs fois en une fraction de seconde. Les cils courent en spirale."
+  },
+  "53": {
+    "body": "Blepharisma americanum est un cilié rose. Le pigment blepharismine est photosensible. Il filtre et peut attaquer des cellules plus petites."
+  },
+  "54": {
+    "body": "Euplotes patella marche sur des cirres comme sur des pattes. Plat, virages rapides. Il racle les bactéries des surfaces."
+  },
+  "55": {
+    "body": "Stylonychia pustulata est un hypotriche qui « court » sur le fond. Grands cirres, bouche bien visible. Prédateur des petits ciliés."
+  },
+  "56": {
+    "body": "Oxytricha trifallax est un modèle de génome : deux noyaux et une réécriture complexe de l'ADN. Il marche sur des cirres et mange bactéries et petits protistes."
+  },
+  "57": {
+    "body": "Tetrahymena thermophila est un cilié de laboratoire. Quatre membranelles orales, division rapide. Modèle des télomères et des cils."
+  },
+  "58": {
+    "body": "Coleps hirtus est un tonneau en plaques calcaires avec des épines. Nécrophage et prédateur : il mord dans les blessés."
+  },
+  "59": {
+    "body": "Litonotus lamella est un prédateur plat avec des toxicystes dans une « trompe ». Il paralyse la proie et l'aspire."
+  },
+  "60": {
+    "body": "Dileptus anser a un long cou avec des extrusomes venimeux. Il frappe avec le cou, puis avale. Un grand chasseur de niveau intermédiaire."
+  },
+  "61": {
+    "body": "Urocentrum turbo est une toupie : une ceinture ciliaire équatoriale fait tourner la cellule sur place. Il filtre les bactéries."
+  },
+  "62": {
+    "body": "Zoothamnium arbuscula est une colonie branchue de clochettes. Un pédoncule contractile commun secoue tout l'arbre d'un coup."
+  },
+  "63": {
+    "body": "Opercularia coarctata est un péritriche sessile sans pédoncule-ressort. Un opercule couvre la bouche. Il filtre et ne s'enfuit pas."
+  },
+  "64": {
+    "body": "Amoeba proteus est l'amibe classique. Les pseudopodes coulent autour de la proie. Pas de forme fixe, pas de cils."
+  },
+  "65": {
+    "body": "Arcella vulgaris est une amibe à thèque à dôme rigide. Les pseudopodes sortent de l'ouverture. Elle rampe sur les plantes."
+  },
+  "66": {
+    "body": "Difflugia oblonga a une coquille de grains de sable que l'amibe colle elle-même. Elle vit dans la vase."
+  },
+  "67": {
+    "body": "Euglypha alveolata a une coquille d'écailles de silice. Pseudopodes filiformes fins. Un petit prédateur de bactéries."
+  },
+  "68": {
+    "body": "Nebela collaris est une coquille en bouteille faite d'écailles volées. Eaux de forêts et de tourbières."
+  },
+  "69": {
+    "body": "Centropyxis aculeata est une coquille discoïdale à épines. L'ouverture est excentrée. Elle rampe sur le détritus."
+  },
+  "70": {
+    "body": "Actinophrys sol est un héliozoaire : de fins axopodes rayonnent tout autour. La proie colle aux rayons et est aspirée."
+  },
+  "71": {
+    "body": "Actinosphaerium eichhorni est un grand héliozoaire multinucléé. Mêmes rayons, cellule bien plus grande. Il mange des ciliés et des rotifères."
+  },
+  "72": {
+    "body": "Raphidiophrys pallida est un héliozoaire en écailles. Les rayons portent des aiguilles de silice. Un chasseur de plancton à l'affût."
+  },
+  "73": {
+    "body": "Rotaria rotatoria est un rotifère capable de survivre au dessèchement. Une couronne propulse la nourriture vers la bouche. Un vrai animal multicellulaire."
+  },
+  "74": {
+    "body": "Philodina roseola est un rotifère bdelloïde rose. Il rampe comme une sangsue et nage aussi. Que des femelles ; pas de mâles."
+  },
+  "75": {
+    "body": "Brachionus plicatilis est un rotifère planctonique à lorica. Nourriture des alevins en aquaculture. Il filtre algues et bactéries."
+  },
+  "76": {
+    "body": "Keratella cochlearis est un rotifère à longue épine de lorica. L'épine dissuade les prédateurs. Plancton d'étang courant."
+  },
+  "77": {
+    "body": "Asplanchna priodonta est un sac sans lorica, un rotifère prédateur. Il avale les autres rotifères et ciliés tout entiers."
+  },
+  "78": {
+    "body": "Chaetonotus maximus est un gastrotriche. Couvert d'écailles, il rampe sur le fond. Il mange bactéries et détritus."
+  },
+  "79": {
+    "body": "Lepidodermella squamata est un petit gastrotriche en écailles imbriquées. Virages sur place très rapides."
+  },
+  "80": {
+    "body": "Macrostomum lignano est un ver plat microscopique. De vrais muscles et des yeux. Modèle de régénération. Il chasse les petits protistes."
+  },
+  "81": {
+    "body": "Stenostomum leucops est un ver cilié mince. Il se divise transversalement en chaîne de zoïdes. Prédateur du détritus et des petits animaux."
+  },
+  "82": {
+    "body": "Microstomum lineare est un ver plat qui mange des hydres et greffe leurs cellules urticantes dans sa propre peau. Une chaîne de zoïdes."
+  },
+  "83": {
+    "body": "Prostoma graecense est un nemertien d'eau douce. Une longue trompe jaillit sur la proie. Un rare grand chasseur du fond."
+  },
+  "84": {
+    "body": "Trichoplax adhaerens est un placozoaire, parmi les animaux les plus simples. Il rampe en nappe et digère la nourriture à l'extérieur. Pas de bouche."
+  },
+  "85": {
+    "body": "Saccharomyces cerevisiae est la levure de boulanger. Elle bourgeonne, mange du sucre, dégage du CO2 et de l'alcool. Dans l'étang elle nettoie les matières organiques dissoutes."
+  },
+  "86": {
+    "body": "Candida albicans est une levure capable de croître en filaments. Pathogène opportuniste humain. Dans le jeu, un champignon détritique."
+  },
+  "87": {
+    "body": "Mucor mucedo est la moisissure du pain. Sporanges sur pédoncules, croissance rapide sur la matière morte. Ne chasse pas le vivant."
+  },
+  "88": {
+    "body": "Rhizopus stolonifer est la moisissure noire du pain. Stolons et rhizoïdes se répandent sur le substrat. Il dégrade l'amidon."
+  },
+  "89": {
+    "body": "Penicillium chrysogenum est une moisissure en pinceaux, source de la pénicilline. Brosses de conidies. Il décompose les matières organiques et supprime les bactéries voisines."
+  },
+  "90": {
+    "body": "Aspergillus niger est l'aspergille noir. Têtes de spores sphériques. Producteur industriel d'acide citrique. Un saprotrophe."
+  },
+  "91": {
+    "body": "Batrachochytrium dendrobatidis est un chytride des grenouilles. Zoospores uniflagellées. Dans l'étang, un modèle de champignon aquatique."
+  },
+  "92": {
+    "body": "Chytriomyces aureus est un chytride aquatique sur le pollen et les algues. Sporanges dorés ; les zoospores nagent vers le substrat."
+  },
+  "93": {
+    "body": "Allomyces macrogynus est un champignon aquatique à vrai mycélium. Il alterne diploïde et haploïde. Les zoospores ont un flagelle postérieur."
+  },
+  "94": {
+    "body": "Bacillus subtilis est un bâtonnet du sol. Les spores survivent à l'ébullition. Il dégrade les protéines ; modèle Gram-positif."
+  },
+  "95": {
+    "body": "Pseudomonas putida est un bâtonnet nettoyeur. Il mange même les produits pétroliers. Flagelle mobile, croissance rapide sur le détritus."
+  },
+  "96": {
+    "body": "Streptomyces coelicolor est une bactérie filamenteuse du sol. Elle produit l'odeur de terre (géosmine) et de nombreux antibiotiques. Spores sur les hyphes."
+  },
+  "97": {
+    "body": "Cellulomonas fimi dégrade la cellulose. Un bâtonnet jaune sur le détritus végétal. Sans elle, les algues mortes resteraient plus longtemps."
+  },
+  "98": {
+    "body": "Thermus aquaticus est un thermophile des sources chaudes. La Taq polymérase est la base de la PCR. Dans un étang froid, il est presque dormant."
+  },
+  "99": {
+    "body": "Deinococcus radiodurans est le champion de la radiation. Il reconstitue un génome brisé en quelques heures. Paroi épaisse, tétrades de cellules."
+  },
+  "1001": {
+    "body": "Sexual Eukaryote est un modèle didactique de reproduction sexuée. Deux sexes, fusion de gamètes, pas une simple division binaire."
+  },
+  "T4 Bacteriophage": {
+    "body": "T4 est un grand myovirus d'E. coli. La queue se contracte et injecte l'ADN. En une demi-heure la cellule éclate et des dizaines de phages en sortent."
+  },
+  "Lambda Phage": {
+    "body": "Lambda est un phage tempéré. Il peut s'insérer dans le chromosome et dormir (lysogénie) ou couper la cellule d'emblée (lyse)."
+  },
+  "T7 Bacteriophage": {
+    "body": "T7 a une queue courte et une réplication très rapide. Un système favori de la biologie synthétique."
+  },
+  "Phi-6 Phage": {
+    "body": "Phi-6 est un phage à ARN à enveloppe lipidique. Il infecte Pseudomonas. Une membrane rare pour un phage."
+  },
+  "MS2 Phage": {
+    "body": "MS2 est un minuscule phage à ARN sans queue. Il se lie aux pili mâles d'E. coli. Son génome fut l'un des premiers génomes d'ARN séquencés."
+  },
+  "Neuro-Parasite": {
+    "body": "Un neuro-parasite d'étang fictif. Il s'accroche aux eucaryotes et brise le comportement de l'hôte jusqu'à en faire un vecteur."
+  },
+  "Sexual Eukaryote": {
+    "body": "Sexual Eukaryote est un modèle didactique de reproduction sexuée. Deux sexes, fusion de gamètes, pas une simple division binaire."
+  }
+}

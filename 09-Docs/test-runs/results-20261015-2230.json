@@ -1,0 +1,497 @@
+{
+    "schema":  "igs-test-run/1",
+    "run_id":  "20261015-2230",
+    "started_at":  "2026-10-15 22:30 UTC+3",
+    "finished_at":  "2026-10-15 22:30 UTC+3",
+    "commit":  "db71c00",
+    "branch":  "release-ready-2026-10-14",
+    "dirty_count":  602,
+    "machine":  "I1",
+    "totals":  {
+                   "pass":  54,
+                   "fail":  5,
+                   "skipped":  0,
+                   "total":  59
+               },
+    "suites":  [
+                   {
+                       "id":  "qa_unit",
+                       "name":  "QA unit (data)",
+                       "command":  "node .04-Src\\07-QA-and-Testing\\qa_unit.js",
+                       "exit_code":  0,
+                       "ms":  145,
+                       "log":  "09-Docs/test-runs/logs/20261015-2230/qa_unit.log",
+                       "totals":  {
+                                      "pass":  26,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  26
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "qa_unit.U1",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN is array\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U2",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN has 25 species\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U3",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All PN entries are strings\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U4",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN entries are unique\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U5",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN has Synechocystis sp.\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U6",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN has Chroococcidiopsis\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U7",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All PN entries have genus+species\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U8",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SHAPES has producer category\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U9",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SHAPES has consumer1 category\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U10",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SHAPES has consumer2 category\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U11",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Producer shapes match PN count\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U12",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SWISS_SHAPES has 27 entries\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U13",
+                                         "file":  "qa_unit.js",
+                                         "title":  "No duplicates\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U14",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes all bacteria types\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U15",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes all eukaryote types\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U16",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes virus (phage)\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U17",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes specialist shapes\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U18",
+                                         "file":  "qa_unit.js",
+                                         "title":  "NAME_OVERRIDE is non-empty array\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U19",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Has \u003e60 mappings\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U20",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All entries are [regex, string]\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U21",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All mapped shapes exist in SWISS_SHAPES\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U22",
+                                         "file":  "qa_unit.js",
+                                         "title":  "27 PNG files exist\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U23",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Every SWISS_SHAPE has PNG\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U24",
+                                         "file":  "qa_unit.js",
+                                         "title":  "No orphan PNGs\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U25",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All APPROX shapes set to false\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U26",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Every PN species maps to a Swiss shape\u001b[0m",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "i18n",
+                       "name":  "i18n checks",
+                       "command":  "identity+coverage+lint+langs_consistency+critic_check",
+                       "exit_code":  2,
+                       "ms":  3038,
+                       "log":  "09-Docs/test-runs/logs/20261015-2230/i18n.log",
+                       "totals":  {
+                                      "pass":  18,
+                                      "fail":  2,
+                                      "skipped":  0,
+                                      "total":  20
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "i18n.coverage.en",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage en",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ru",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ru",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.pt-BR",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage pt-BR",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.hi",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage hi",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.id",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage id",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.de",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage de",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.fr",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage fr",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ja",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ja",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.vi",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage vi",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ko",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ko",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.th",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage th",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.it",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage it",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.pl",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage pl",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.uk",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage uk",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.zh-TW",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage zh-TW",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ms",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ms",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.bn",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage bn",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.lint.open",
+                                         "file":  "i18n_lint.mjs",
+                                         "title":  "open findings = 3",
+                                         "status":  "fail",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.langs_consistency",
+                                         "file":  "langs_consistency.test.js",
+                                         "title":  "langs consistency (5 sets)",
+                                         "status":  "fail",
+                                         "ms":  0,
+                                         "error_first_line":  "\u001b[2m   Duration \u001b[22m 1.19s\u001b[2m (transform 40ms, setup 21ms, collect 37ms, tests 29ms, environment 680ms, prepare 144ms)\u001b[22m |"
+                                     },
+                                     {
+                                         "id":  "i18n.critic_check",
+                                         "file":  "critic_check.mjs",
+                                         "title":  "critic artifacts valid",
+                                         "status":  "pass",
+                                         "ms":  0,
+                                         "error_first_line":  "OK files=0 models=0"
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "report",
+                       "name":  "Report verify",
+                       "command":  "powershell -File tools\\verify_report.ps1",
+                       "exit_code":  1,
+                       "ms":  1207,
+                       "log":  "09-Docs/test-runs/logs/20261015-2230/report.log",
+                       "totals":  {
+                                      "pass":  9,
+                                      "fail":  3,
+                                      "skipped":  0,
+                                      "total":  12
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "report.V1",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "время имени расходится с LastWriteTime на 52 мин",
+                                         "status":  "fail",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V2",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "финальная строка: inter",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V3",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "code block содержит путь к отчёту",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V4",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "sha=01e5bac head=db71c00 parent=f065815 ab=[3\t0]",
+                                         "status":  "fail",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V5",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "dirty=573 файл=573 мои=393 wip=180",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V6",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "ref=True; heartbeat.log нет",
+                                         "status":  "fail",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V7",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не ОСТАНОВЛЕН — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V8",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не финал — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V9",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "cited=0 missing=0 critic_check exit=0",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V10",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "нет diff-чисел",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V11",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "sha проверено=2 bad=",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V12",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не Strict — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "aab",
+                       "name":  "AAB signature",
+                       "command":  "jarsigner -verify 06-DevOps-and-Release\\android\\android\\app\\build\\outputs\\bundle\\release\\app-release.aab",
+                       "exit_code":  0,
+                       "ms":  4653,
+                       "log":  "09-Docs/test-runs/logs/20261015-2230/aab.log",
+                       "totals":  {
+                                      "pass":  1,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  1
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "aab.sign",
+                                         "file":  "app-release.aab",
+                                         "title":  "jarsigner -verify",
+                                         "status":  "pass",
+                                         "ms":  4653
+                                     }
+                                 ]
+                   }
+               ]
+}

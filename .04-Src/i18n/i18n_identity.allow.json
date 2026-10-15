@@ -16,5 +16,10 @@
   { "key": "divRate", "value": "Reproduction", "langs": ["fr"], "category": "cognate", "reason": "Reproduction — французское слово, совпадает с en" },
   { "key": "divs", "value": "Divisions", "langs": ["fr"], "category": "cognate", "reason": "Divisions — французское слово, совпадает с en" },
   { "key": "cartoon", "value": "CARTOON", "langs": ["fil"], "category": "brand", "reason": "режим назван CARTOON по прямому решению владельца (CHECK-DEV-1114 §2)" },
-  { "key": "set", "value": "SETTINGS", "langs": ["fil"], "category": "brand", "reason": "SETTINGS по прямому решению владельца (CHECK-DEV-1114 §2)" }
+  { "key": "set", "value": "SETTINGS", "langs": ["fil"], "category": "brand", "reason": "SETTINGS по прямому решению владельца (CHECK-DEV-1114 §2)" },
+  { "key": "aquarium", "value": "AQUARIUM", "langs": ["de", "fr"], "category": "cognate", "reason": "Aquarium — родное слово de/fr, совпадает с en" },
+  { "key": "cartoon", "value": "CARTOON", "langs": ["de", "fr"], "category": "cognate", "reason": "Cartoon — родное слово de/fr, совпадает с en" },
+  { "key": "filter", "value": "Filter", "langs": ["de", "id"], "category": "cognate", "reason": "Filter — родное слово de/id, совпадает с en" },
+  { "key": "colonies", "value": "colonies", "langs": ["fr"], "category": "cognate", "reason": "colonies — французское слово, совпадает с en" },
+  { "key": "microscope", "value": "Microscope", "langs": ["fr"], "category": "cognate", "reason": "Microscope — французское слово, совпадает с en" }
 ]

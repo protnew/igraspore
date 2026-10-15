@@ -1,0 +1,89 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "qfmodel",
+  "model_provider": "UNATTESTED",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261015-es-tr-fil-r2-d47f2a",
+  "command": "critic-A review es/tr/fil round2",
+  "started_at": "2026-10-15T11:08:00+03:00",
+  "finished_at": "2026-10-15T11:34:00+03:00",
+  "input_sha256": {
+    "en.json": "991dcdb4c400ed8f2dab4a31c2abd27d1594d74f3f6d1b01c563a4be0819367a",
+    "tr.json": "9b671d5d3f6e1f83761d53156e6f6b85ee78c0d6305a97b27fe207f844359673",
+    "ru.json": "50a8ffc0378c0942e1a67ac1b6556a7b688afc2bb1a82f8002752b35b7a09d5e"
+  },
+  "round": 2,
+  "langs": [
+    {
+      "code": "tr",
+      "score": 8.6,
+      "axes": {
+        "meaning": 8,
+        "glossary": 9,
+        "register": 9,
+        "length": 8,
+        "errors": 9
+      },
+      "issues": [
+        {
+          "key": "(coverage)",
+          "problem": "RESOLVED, verified mechanically: tr.json now has 140 of the 140 keys in en.json (was 91), 0 missing, 0 extra, and all {cur}/{need}/{sec}/{cat}/{n}/{kinds}/{name} placeholders match en exactly (0 param violations, 0 unbalanced braces, 0 whitespace anomalies). Every one of the 49 newly added keys is a real Turkish translation, not an English copy: the only values byte-identical to en are diffN ('Normal', the correct Turkish word) and fps ('FPS', universal). The round-1 mixed English/Turkish UI caused by the tt() fallback (config.js:8) is gone, including the two HUD buttons bFree/bFol that used to print English Flight/Follow.",
+          "fix": "none - coverage gate met. Recorded for context: the other 15 non-en/ru locale files are still at 91 keys and still hit the English fallback for the same 49 keys (out of scope here)."
+        },
+        {
+          "key": "config.js LANGS + i18n_detect.js IGS_ENABLED",
+          "problem": "Enable gate still closed, recorded read-only: config.js:3 LANGS has no tr entry, window.IGS_ENABLED (i18n_detect.js:44) has no tr key, languages.json has tr enabled:false, so loadLangPack (i18n_detect.js:32) never fetches i18n/tr.json. The score below is therefore a dictionary score, not an observed UI score.",
+          "fix": "Owner/dev action only after both critics are >= 8: add tr to LANGS and to window.IGS_ENABLED and flip enabled:true in the same commit. No critic-A action."
+        },
+        {
+          "key": "dead",
+          "problem": "Round-1 fix NOT applied (third time on record; wave1-critic-A round 1 said the same): 'NESLİ TÜKENDİ' is 13 characters in two words and is the wrong aspect - nesli tükendi describes an event/lineage running out, while the key is the static extinction state printed as the overlay title (js/ui_screens.js:122 deadT, styled .tt at font-size var(--fs-lg)/16px with .ov capped to 94-95vw). en EXTINCT 7, ru ВЫМИРАНИЕ 9, es EXTINTO 7, fil NALIPOL 7 - tr is the outlier on both counts.",
+          "fix": "YOK OLDUN"
+        },
+        {
+          "key": "decomposer",
+          "problem": "Round-1 fix NOT applied: 'Temizleyiciler (mantar)' at 23 characters is the longest decomposer string of all 18 locale files (en 17, ru 18, es 20, fil 18, it 15, pl 17, pt-BR 18) and it lives in the #spGrid filter chips, which are minmax(80px,1fr) at <=900px (src/style.css:112) and minmax(70px,1fr) at font-size 8px under .is-mobile (js/mobile.js:39). It always wraps to two lines and makes the chip column ragged.",
+          "fix": "Çöpçüler (mantar)   (16, friendlier register, mirrors the ru diminutive Уборщики (грибки); non-colloquial alternative: Temizleyici (mantar))"
+        },
+        {
+          "key": "maxPop",
+          "problem": "Round-1 fix NOT applied: 'Azami nüfus' (11) is the only unabbreviated maxPop among the 12 locale files that have the key (ru Макс. поп, es Pob. máx., it Pop. max, fr Pop. max., de Max. Pop., id/ms Pop. maks., pl Maks. pop.). It renders inside the #hud box, which is min-width/max-width 200px (src/style.css:6) with stat rows on one line, label and value competing for space (src/style.css:83).",
+          "fix": "Maks. nüfus"
+        },
+        {
+          "key": "follow",
+          "problem": "NEW (one of the 49 keys) and the only genuine HUD overflow in this file: bFol is labelled from the full key tt('follow'), not from a .short key (js/main.js:380). 'Takip et' is 8 glyphs in two words: at font-size 15px/weight 800 with padding 12px 16px + 2px border and white-space:nowrap on a min-width:72px button (v3-webgl/index.html:46, re-set inline by labelBtn main.js:372) it needs roughly 98px, above the shipped ru baseline СЛЕДИТЬ (7 glyphs, ~96px), and inside the mobile button (min-width 44px, font-size 11px, padding 4px - js/mobile.js:22) it breaks into two lines. Every other tr HUD label is <=4 glyphs (YE, BÖL, SPOR, OTO, IŞIK, Uçuş).",
+          "fix": "Takip   (5 glyphs, single word; keeps the bFree/bFol pair as Uçuş / Takip, matching the en Flight / Follow shape)"
+        },
+        {
+          "key": "legend",
+          "problem": "NEW: 'Gösterim' is the Turkish word for a screening/broadcast/display, not for a chart key. The string is printed on the pause button pLegend (js/ui_menus.js:153) and as the legend panel head/toggle (js/ui.js:220 and js/ui.js:256), where the user expects the map/chart legend. Every other locale that has the concept uses the legend word: en Legend, ru Легенда, es Leyenda.",
+          "fix": "Lejant   (6, the standard Turkish cartography term; if the owner avoids the French loan, use Gösterge - not Gösterim)"
+        },
+        {
+          "key": "webglNow",
+          "problem": "NEW: 'Şimdi: WebGL su.' - 'WebGL su' is two bare nouns with no possession suffix, so it does not read as 'the WebGL water' the way en 'WebGL water' / ru 'WebGL-вода' do (Turkish needs the -su/-suyu possessed form in this compounds position). The sibling chips cartoonNow ('Şimdi: çizgi.') and swissNow ('Şimdi: Swiss.') are fine, so only this one is ungrammatical.",
+          "fix": "Şimdi: WebGL suyu. Çizgi için tıkla."
+        },
+        {
+          "key": "dnaShell",
+          "problem": "NEW, low severity: 'Silis kabuk (20 DNA)' - same bare-noun compound pattern; the natural Turkish label for the purchasable mutation is the possessed form, as used elsewhere in this file (colonyKind 'Koloni türü', divRate 'Üreme', dnaTitle 'DNA mutasyonları', massWord 'Kütle'). Meaning is otherwise correct and the DNA panel (ui_menus.js:176) has room: es 28, fil 27, tr 24 characters.",
+          "fix": "Silis kabuğu (20 DNA)"
+        },
+        {
+          "key": "(recorded, do not change)",
+          "problem": "Verification of the round-1 fixes that WERE applied, recorded so a later round does not undo them: eaten 'Yenmiş' now matches dEaten (both are the completed-state label, as in en Eaten/Eaten and ru Съедено/Съедено); wikiT 'Viki: gölet yaşamı' closes the lake/pond split - gölet is now used in all four pond sites (menuSub 'Gölet kesiti', mapTip 'gölette', poolWill 'Gölette olacak', wikiT), zero leakage of göl/göl; hud.goal 'Böl: {cur}/{need}' matches the singular BÖL button and the -sın address of the toasts; toast.divide.blocked 'Henüz bölünemezsin' is now 2nd-person singular like the rest of the file; bubbles 'Kabarcıklar' is plural like Akıntılar/Gölgeler/Parçacıklar. The tr HUD set (YE/BÖL/SPOR/OTO/IŞIK, all <=4 glyphs) is the best fit of the three languages, and the dotless/dotted I orthography (IŞIK, not İŞİK) is correct - re-verified, no regression. Also verified: 'listenin en üstü' (topOfList) is correctly formed (liste + -nin genitive), it is not a typo.",
+          "fix": "keep as is"
+        },
+        {
+          "key": "(code, read-only note)",
+          "problem": "Not a dictionary defect: the HUD button titles and the eat aria-label are hard-coded Russian in the shipped UI (v3-webgl/index.html:254-260 title='Есть'/'Циста'/'Камера'/'Следить' and the Russian text nodes; js/ui.js:112 eat.setAttribute('aria-label', plant?'Свет':'Есть (E)')). Visible labels localize, tooltips and screen-reader output do not.",
+          "fix": "Dev action (game code is read-only for critic-A): drive title/aria-label from tt('hud.btn.eat') / tt('hud.btn.cyst') / tt('flight') / tt('follow')."
+        }
+      ],
+      "lost_words": []
+    }
+  ],
+  "log": "logs-release-ready-2026-10-14/critic-A-es-tr-fil-round2.log"
+}

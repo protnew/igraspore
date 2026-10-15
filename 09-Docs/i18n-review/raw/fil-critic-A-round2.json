@@ -1,0 +1,126 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "qfmodel",
+  "model_provider": "UNATTESTED",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261015-es-tr-fil-r2-d47f2a",
+  "command": "critic-A review es/tr/fil round2",
+  "started_at": "2026-10-15T11:08:00+03:00",
+  "finished_at": "2026-10-15T11:36:00+03:00",
+  "input_sha256": {
+    "en.json": "991dcdb4c400ed8f2dab4a31c2abd27d1594d74f3f6d1b01c563a4be0819367a",
+    "fil.json": "4e7f426aa9afff8b969162cea81e4dd3ba7fafdf75d39fd3cfef76c12ff14dd6",
+    "ru.json": "50a8ffc0378c0942e1a67ac1b6556a7b688afc2bb1a82f8002752b35b7a09d5e"
+  },
+  "round": 2,
+  "langs": [
+    {
+      "code": "fil",
+      "score": 7.8,
+      "axes": {
+        "meaning": 8,
+        "glossary": 6,
+        "register": 9,
+        "length": 8,
+        "errors": 8
+      },
+      "issues": [
+        {
+          "key": "(coverage)",
+          "problem": "Key coverage RESOLVED, verified mechanically: fil.json now has 140 of the 140 keys in en.json (was 91), 0 missing, 0 extra, all {cur}/{need}/{sec}/{cat}/{n}/{kinds}/{name} placeholders match en exactly (0 param violations, 0 unbalanced braces, 0 whitespace anomalies). 48 of the 49 new keys are genuine Filipino. ONE is not: legend is byte-identical English (see the next issue). The other values identical to en - autoOn/hud.btn.auto/hud.btn.auto.short (AUTO), hud.btn.menu and menu (Menu/MENU), fps (FPS), wiki (WIKI) - are accepted Filipino loan forms, not copies.",
+          "fix": "Translate legend, then coverage is clean. Recorded for context: the other 15 non-en/ru locale files are still at 91 keys and still fall back to English for the same 49 (out of scope here)."
+        },
+        {
+          "key": "legend",
+          "problem": "STILL AN ENGLISH COPY - the only one in the three files reviewed. fil legend = 'Legend' is the verbatim en value. It is not a loan-word case: Filipino uses the Spanish loan 'Leyenda' for a map/chart legend (es ships 'Leyenda', ru 'Легенда', tr uses the equivalent key). It renders twice: on the pause button pLegend (js/ui_menus.js:153) and as the legend panel head/toggle text (js/ui.js:220 'Legend ▾' and js/ui.js:256), so a Filipino player sees an English word on a control and on a panel title. Under the round-2 rule (an English value in a non-English language is a meaning/glossary error) this is the reason fil stays under 8.",
+          "fix": "Leyenda"
+        },
+        {
+          "key": "dnaShell",
+          "problem": "NEW (one of the 49): 'Shell ng silica (20 DNA)' keeps the English head noun 'Shell' in the X slot of the correct Filipino frame X ng Y, and keeps the English/Latin spelling 'silica'. Compare es 'Caparazón de sílice', tr 'Silis kabuk', ru Кремниевый панцирь. The DNA panel is rendered by js/ui_menus.js:176, so this is a visible label, not a comment.",
+          "fix": "Takip ng silika (20 DNA)"
+        },
+        {
+          "key": "filterHint",
+          "problem": "NEW: 'pindutin ang ibang button para lumipat' - 'button' is the English word inside a Filipino sentence, while the same file already uses the native verb pindutin. It is printed inside the composed filter status bar #spFilterStatus at 11px opacity .6 (js/ui_menus.js:59), next to Pansala (filter), so the English noun is conspicuous.",
+          "fix": "pindutin ang ibang pindutan para lumipat"
+        },
+        {
+          "key": "camera",
+          "problem": "NEW glossary split across four keys, all English spelling: camFly 'Lipad ng camera', mapTip 'Ang click ay nagpapalipat ng camera', virusMode 'WASD ang gumagalaw ng camera', and freeCam 'Malayang cam' (three full English words plus one bare English abbreviation). The Filipino loan is 'kamera' (cf. tr kamera, es cámara); freeCam renders in #camM (js/main.js:112) and camFly on the pCam pause button (js/ui_menus.js:154), so both forms are visible.",
+          "fix": "camFly: 'Lipad ng kamera' | mapTip: '...nagpapalipat ng kamera.' | virusMode: '...WASD ang gumagalaw ng kamera.' | freeCam: 'Malayang kamera'"
+        },
+        {
+          "key": "bacteria",
+          "problem": "NEW: the English/Latin plural 'bacteria' is kept in midEaterTip ('...sa mga berde o bacteria') and virusMode ('Mag-click sa isang bacteria para mahawaan'); Filipino spelling is 'bakterya' (es bacterias, tr bakteri). dnaSpeed has the same pattern with the Latin plural 'flagella' instead of 'flagelo'. Note 'cilia' in midEaterTip should NOT be Tagalized to 'silya' (that is chair), so keep cilia there - this issue is only about bacteria/flagella.",
+          "fix": "midEaterTip: '...sa mga berde o bakterya...' | virusMode: '...sa isang bakterya...' | dnaSpeed: 'Mas mabilis na flagelo (5 DNA)'"
+        },
+        {
+          "key": "help",
+          "problem": "Round-1 fix NOT applied (also asked by wave2-critic-A round 2): 'PAANO MAGLARO' is 13 characters, the longest help label of all 18 locale files (en HOW TO PLAY 11, es CÓMO JUGAR 10, tr NASIL OYNA 10, id/ms CARA MAIN 9, pl JAK GRAĆ 8, vi CÁCH CHƠI 9). It is printed on three .btn elements (js/ui_menus.js:145 helpBtn, :149 pHelp, :152 helpT), and .is-mobile shrinks .btn to 13px with 8px/12px padding (js/mobile.js:43), where it sits next to SIMULA, ULITIN and AYOS.",
+          "fix": "GABAY"
+        },
+        {
+          "key": "consumer1",
+          "problem": "Round-1 fix NOT applied: 'Maliliit na kumakain' (20) and 'Mga gitnang kumakain' (20) are the longest chip pair of the 18 locale files (es 18/16, tr 15/14) inside #spGrid, which is minmax(80px,1fr) at <=900px (src/style.css:112) and minmax(70px,1fr) at font-size 8px under .is-mobile (js/mobile.js:39), so both wrap to two lines. The eater noun kumakain is the right choice and must be kept (round-1 note).",
+          "fix": "consumer1: Maliit-kain | consumer2: Gitna-kain"
+        },
+        {
+          "key": "consumer3",
+          "problem": "Round-1 fix NOT applied: 'Malalaking mangangaso' is 21 characters, the longest string in the chip set; the -ing reduplication is the only removable part. mangangaso must stay whole (aso is dog, so Malaki-aso is forbidden).",
+          "fix": "Malaking mangangaso"
+        },
+        {
+          "key": "maxPop",
+          "problem": "Round-1 fix NOT applied: 'Dami max' leaves the bare English abbreviation 'max' after a Filipino noun; the other 11 locale files that have the key abbreviate in their own language (ru Макс. поп, es Pob. máx., tr Azami/Maks. nüfus, pl Maks. pop., id/ms Pop. maks.). Length is fine (8), the loan is the defect, and the label lives in the 200px-capped #hud box (src/style.css:6) as a stat row (src/style.css:83).",
+          "fix": "Pinakadami"
+        },
+        {
+          "key": "gameTime",
+          "problem": "Round-1 fix NOT applied: 'Tagal' means duration/elapsed stretch, while the key labels the running clock row in the stats table (js/ui_screens.js:88 lbl) - ru Время, es Tiempo, tr Zaman. The same panel already uses Araw (days) and Edad (age), so Tagal also crowds the time vocabulary.",
+          "fix": "Oras"
+        },
+        {
+          "key": "toast.eat.ok",
+          "problem": "Round-1 fix NOT applied: bare 'Kumain' is aspect-ambiguous - the -um- perfective reads as 'ate' only with the actor present, while 'Kumain ka!' is the command 'eat!'. It is the eat feedback toast (js/main_events.js:185) fired right after the KAIN button (hud.btn.eat/.short), so button and confirmation look identical. ru Съел, es Comiste, tr Yedin are all explicitly 2nd-person completed.",
+          "fix": "Kumain ka"
+        },
+        {
+          "key": "temp",
+          "problem": "Carried from wave2-critic-A round 2, not applied: 'Init' is heat, but the key labels the water temperature in the top bar (js/ui.js:78 prints temp + '°C') and dTemp labels the death cause that also covers cold stress. fil is currently internally consistent (temp = dTemp = 'Init'), which is why this is low severity, but the pair is semantically wrong for cold deaths. Note id/ms use Suhu (temperature), so the neutral word exists in the house style.",
+          "fix": "temp: Temp. | dTemp: Temp.   (keeps the pair identical and fits the 200px #hud box; full-word variant Temperatura/11 chars if the owner prefers it)"
+        },
+        {
+          "key": "dnaSize",
+          "problem": "NEW, low severity: 'Mas maraming masa (8 DNA)' - marami counts discrete items, masa is uncountable, so the phrase reads as 'more masses'. en 'More mass' / ru 'Увеличение массы' / es 'Más masa' / tr 'Daha fazla kütle' all mean added mass. Length is fine (25 vs es 28).",
+          "fix": "Dagdag na masa (8 DNA)"
+        },
+        {
+          "key": "settingsT",
+          "problem": "Carried from wave2-critic-A round 2, low severity: 'Ayos' as the settings screen title also reads as 'OK / fine / fixed'. The pair with the button key set ('AYOS') is internally consistent, so this is a clarity note, not an inconsistency.",
+          "fix": "Pag-aayos   (title only; keep set = 'AYOS' on the button)"
+        },
+        {
+          "key": "(recorded, do not change)",
+          "problem": "Verification of the round-1 fixes that WERE applied: close 'ISARA' is now the command; eaten 'Kinain' matches dEaten (and Biktima is kept only where en really says prey, toast.eat.closer/none); toast.cyst.hunger 'nakakulong' replaces the rejected 'sista' (sister) and does not collide with SPORA; particles 'Mga partikula' replaces tipik; the pond glossary is now closed - 'tambakan' in all four sites (menuSub 'Hiwa ng tambakan', mapTip, poolWill, wikiT) with zero 'pond' and zero 'lawa' (lake) leakage; toast.eat.plant 'Halaman ka: lumangoy sa liwanag' drops the textbook copula. This also supersedes the wave2-critic-A round-2 note that preferred keeping the English loan 'pond': the native word is now used consistently, which is what both critics asked for. fil is additionally the only one of the three languages that shortens the light pair (hud.btn.light LIWANAG 7 vs hud.btn.light.short ILAW 4), which is exactly what the min-width:72px action button needs since only the .short key prints (js/main.js:375-378, js/ui.js:111 adds the sun glyph); after the legend fix, fil has no over-budget HUD label (SPORA 5 = ru СПОРА 5 baseline, KAIN/HATI/AUTO/ILAW 4, Lipad 5, Sundan 6).",
+          "fix": "keep as is"
+        },
+        {
+          "key": "config.js LANGS + i18n_detect.js IGS_ENABLED",
+          "problem": "Enable gate still closed, recorded read-only: config.js:3 LANGS has no fil entry, window.IGS_ENABLED (i18n_detect.js:44) has no fil key, languages.json has fil enabled:false, so loadLangPack (i18n_detect.js:32) never fetches i18n/fil.json. The score below is a dictionary score, not an observed UI score.",
+          "fix": "Owner/dev action only after both critics are >= 8: add fil to LANGS and to window.IGS_ENABLED and flip enabled:true in the same commit. No critic-A action."
+        },
+        {
+          "key": "(code, read-only note)",
+          "problem": "Not a dictionary defect: HUD button titles and the eat aria-label are hard-coded Russian (v3-webgl/index.html:254-260 title='Есть'/'Циста'/'Камера'/'Следить'; js/ui.js:112 aria-label plant?'Свет':'Есть (E)'), so a Filipino player's tooltips and screen-reader output stay Russian even when the visible label is Filipino.",
+          "fix": "Dev action (game code is read-only for critic-A): drive title/aria-label from tt()."
+        }
+      ],
+      "lost_words": [
+        "legend"
+      ]
+    }
+  ],
+  "log": "logs-release-ready-2026-10-14/critic-A-es-tr-fil-round2.log"
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "qfmodel",
+  "model_provider": "UNATTESTED",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261015-es-tr-fil-r2-d47f2a",
+  "command": "critic-A review es/tr/fil round2",
+  "started_at": "2026-10-15T11:08:00+03:00",
+  "finished_at": "2026-10-15T11:32:00+03:00",
+  "input_sha256": {
+    "en.json": "991dcdb4c400ed8f2dab4a31c2abd27d1594d74f3f6d1b01c563a4be0819367a",
+    "es.json": "a20b7bb0c02f1c0b2954cd09594735ee932c11b84c87ad86de4ab82139cc2801",
+    "ru.json": "50a8ffc0378c0942e1a67ac1b6556a7b688afc2bb1a82f8002752b35b7a09d5e"
+  },
+  "round": 2,
+  "langs": [
+    {
+      "code": "es",
+      "score": 8.6,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8,
+        "register": 9,
+        "length": 8,
+        "errors": 9
+      },
+      "issues": [
+        {
+          "key": "(coverage)",
+          "problem": "RESOLVED, verified mechanically: es.json now has 140 of the 140 keys in en.json (was 91), 0 missing, 0 extra, and every {cur}/{need}/{sec}/{cat}/{n}/{kinds}/{name} placeholder matches en exactly (0 param violations, 0 unbalanced braces, 0 whitespace anomalies). All 49 keys added this round are genuine Spanish, not English copies. The only values byte-identical to en are autoOn / hud.btn.auto / hud.btn.auto.short (AUTO), diffN (Normal), fps (FPS), wiki (WIKI) - each of those is also the correct Spanish word or universal acronym, so none of them is an untranslated copy. The round-1 English fallback (tt() -> T.en, config.js:8) no longer applies to any es key.",
+          "fix": "none - coverage gate met. Keep parity when en grows: the other 15 non-en/ru locale files are still at 91 keys and miss the same 49, so they still render English there (out of scope for this review, recorded for the owner)."
+        },
+        {
+          "key": "config.js LANGS + i18n_detect.js IGS_ENABLED",
+          "problem": "Enable gate is still three-fold and still closed, recorded read-only: config.js:3 LANGS has no es entry, window.IGS_ENABLED (i18n_detect.js:44) has no es key, and languages.json marks es enabled:false. loadLangPack (i18n_detect.js:32) only fetches i18n/<code>.json for codes the gate accepts, so es.json is never loaded in the shipped build even though it is now complete. This is not a dictionary defect and does not lower the score, but it means the 8.6 below is a dictionary score, not an observed UI score.",
+          "fix": "Owner/dev action only after both critics are >= 8: add es to LANGS and to window.IGS_ENABLED and flip enabled:true in languages.json in the same commit. No action for critic-A."
+        },
+        {
+          "key": "dTemp",
+          "problem": "Round-1 fix NOT applied (second time on record): temp = 'Temp.' but dTemp = 'Temperatura' for one concept in one file. Cross-checked all 18 locale files: every other locale keeps the pair identical (ru Темп/Темп, tr Sıcaklık/Sıcaklık, fil Init/Init, it Temp./Temp., fr Temp./Temp., pl Temp./Temp., id Suhu/Suhu, ms Suhu/Suhu, pt-BR Temp./Temperatur is the only other break and pt-BR is shipped). es is the widest outlier at 11 characters inside the death-cause table (ui_screens.js:110 dCauses block, en 'Temp' = 4).",
+          "fix": "Temp."
+        },
+        {
+          "key": "consumer1",
+          "problem": "Round-1 fix NOT applied: 'Comedores pequeños' / 'Comedores medios'. Noun-final order lets comedor resolve to its primary Peninsular sense (dining room), so the trophic chip can first read as small dining rooms; adjective-first removes that reading and pairs cleanly with consumer3 'Cazadores grandes' and midEaterTip 'Comedor medio'.",
+          "fix": "consumer1: Pequeños comedores | consumer2: Medianos comedores"
+        },
+        {
+          "key": "decomposer",
+          "problem": "Round-1 fix NOT applied: 'Limpiadores (hongos)' is 20 characters, the widest of the six filter chips (producer 15, consumer1 18, consumer2 16, consumer3 17, all 5, virus 5). The chips are #spGrid cells that collapse to minmax(80px,1fr) at <=900px (src/style.css:112) and to minmax(70px,1fr) with font-size 8px under .is-mobile (js/mobile.js:39), so this chip wraps to two lines and makes the column uneven while tr/en stay on one.",
+          "fix": "Limpiadores (hongo)   (18, keeps the fungi parenthetical the ru source uses: Уборщики (грибки))"
+        },
+        {
+          "key": "dnaSpikes",
+          "problem": "NEW (one of the 49 keys). Two problems in one label. (a) Grammar: 'Crecer púas' is a calque of the English command 'Grow spikes'; crecer is intransitive, so Spanish needs a causative ('hacer crecer') or a noun phrase. ru uses the transitive infinitive Отрастить шипы. (b) Pattern break inside the DNA panel: the three sibling mutation labels rendered by ui_menus.js:173-176 are noun phrases ('Caparazón de sílice', 'Más masa', 'Flagelos más rápidos') while this one is a bare infinitive.",
+          "fix": "Crecimiento de púas (15 ADN)   (noun phrase, matches the siblings; short variant if the row must stay narrow: Más púas (15 ADN))"
+        },
+        {
+          "key": "menuSub",
+          "problem": "NEW: 'Corte del estanque.' The pond glossary is correct and consistent (estanque in menuSub, mapTip, poolWill, wikiT - 4 of 4 sites, no lago/laguna leakage), but 'corte' alone reads as a cut or an edition; the cross-section sense the en/ru sources carry ('Pond cross-section view' / 'Разрез водоёма сбоку') needs the qualifier.",
+          "fix": "Simulación de microbios — 100 especies + virus. Corte transversal del estanque."
+        },
+        {
+          "key": "hud.btn.cyst.short",
+          "problem": "Length measurement, recorded as ACCEPTABLE so a later round does not 'fix' it. The bottom action bar prints only the .short keys (js/main.js:375-378) plus the full flight/follow labels (main.js:379-380), with ui.js:111 swapping hud.btn.light.short behind a sun glyph for producers. .ab is min-width:72px with padding:12px 16px and a 2px border at font-size:15px/weight 800 nowrap (v3-webgl/index.html:46, re-set inline by labelBtn main.js:372), so the text budget inside 72px is about 36px, i.e. ~4 uppercase glyphs. es ships COME(4) DIV.(4) ESPORA(6) AUTO(4) Vuelo(5) Seguir(6): ESPORA ~92px and Seguir ~83px exceed 72px, but they sit at the shipped ru baseline (ДЕЛИТЬ 6 ~92px, СЛЕДИТЬ 7 ~96px), and #actBar is flex-wrap:wrap with max-width:95% (index.html:45) so the row cannot break the tank view. After round-1, es no longer overflows the bar.",
+          "fix": "keep as is   (only change it if the owner wants the four text buttons equal width: ESPORA -> ESP., mirroring the DIV. abbreviation already accepted in this file)"
+        },
+        {
+          "key": "cartoon",
+          "problem": "NEW: 'CARICATURA' (10 glyphs) is rendered inside the floating render-mode chip as innerHTML '🎨 ' + tt('cartoon') (js/main.js:360; #renderModeBtn at index.html:48, font-size 18px bold). tr ships ÇİZGİ (5), fil KARTON (6), en CARTOON (7). Desktop width is fine, but under .is-mobile the chip is forced to width:100% of the 104px #topRightStack with white-space:nowrap + text-overflow:ellipsis (js/mobile.js:26-27), so the icon plus 10 glyphs truncates to 'CARICATU…'.",
+          "fix": "DIBUJO   (6 glyphs, survives the mobile ellipsis) - if adopted, also change cartoonNow 'Ahora: dibujo...' and webglNow '...Clic para dibujo.' so the chip and its tooltip keep one word. Alternative: keep CARICATURA and accept truncation on phones, stated in the glossary."
+        },
+        {
+          "key": "(code, read-only note)",
+          "problem": "Not a dictionary defect, but it caps what a Spanish player can perceive: the HUD button titles are hard-coded Russian in the markup (v3-webgl/index.html:254-260 title='Есть', 'Циста', 'Камера', 'Следить', plus the Russian text nodes) and ui.js:112 sets eat.setAttribute('aria-label', plant?'Свет':'Есть (E)') in Russian at runtime. Visible labels localize; tooltips and screen-reader announcements do not, so es (and tr/fil) inherit Russian accessibility strings.",
+          "fix": "Dev action (out of critic-A scope, game code is read-only here): drive title/aria-label from tt('hud.btn.eat') / tt('hud.btn.cyst') / tt('flight') / tt('follow')."
+        }
+      ],
+      "lost_words": []
+    }
+  ],
+  "log": "logs-release-ready-2026-10-14/critic-A-es-tr-fil-round2.log"
+}

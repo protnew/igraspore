@@ -1,0 +1,72 @@
+critic-A round 2 — es / tr / fil (decision №20, independent session)
+date: 2026-10-15T11:36+03:00
+role: critic-A (read-only on game code; wrote only the 3 raw JSONs + this log)
+model: qfmodel (model_provider UNATTESTED — provider is not reported to the run)
+session_id: critic-A-20261015-es-tr-fil-r2-d47f2a
+round: 2 (re-review after the 91 -> 140 key update + critic-A round-1 fixes)
+
+inputs (sha256 of actual bytes, .04-Src/i18n/):
+  en.json   991dcdb4c400ed8f2dab4a31c2abd27d1594d74f3f6d1b01c563a4be0819367a  (140 keys, unchanged since round 1)
+  ru.json   50a8ffc0378c0942e1a67ac1b6556a7b688afc2bb1a82f8002752b35b7a09d5e  (140 keys, unchanged since round 1)
+  es.json   a20b7bb0c02f1c0b2954cd09594735ee932c11b84c87ad86de4ab82139cc2801  (140)
+  tr.json   9b671d5d3f6e1f83761d53156e6f6b85ee78c0d6305a97b27fe207f844359673  (140)
+  fil.json  4e7f426aa9afff8b969162cea81e4dd3ba7fafdf75d39fd3cfef76c12ff14dd6 (140)
+
+scores (mean of 5 axes; round-1 -> round-2):
+  es   6.0 -> 8.6   meaning9 glossary8 register9 length8 errors9    issues 10
+  tr   6.8 -> 8.6   meaning8 glossary9 register9 length8 errors9    issues 11
+  fil  5.2 -> 7.8   meaning8 glossary6 register9 length8 errors8    issues 18
+
+COVERAGE: the round-1 blocker is cleared for these three files. es/tr/fil each carry 140/140
+keys, 0 missing, 0 extra. Placeholder check is clean in all three: {cur}/{need}/{sec}/{cat}/
+{n}/{kinds}/{name} match en exactly, 0 broken/extra braces, 0 whitespace anomalies.
+
+ENGLISH-COPY CHECK over the 49 newly added keys — one residual:
+  fil "legend" = "Legend"  -> verbatim English, renders on the pLegend pause button
+     (js/ui_menus.js:153) and as the legend panel head/toggle (js/ui.js:220, js/ui.js:256).
+     Fix: "Leyenda". This single key is why fil stays below 8.
+  Values byte-identical to en that are NOT copies (verified legitimate in each language):
+     es AUTO/AUTO/AUTO, Normal, FPS, WIKI; tr Normal, FPS; fil AUTO, Menu/MENU, FPS, WIKI.
+  Partial English words inside translated sentences (glossary, fil): dnaShell "Shell",
+     filterHint "button", camFly/mapTip/virusMode "camera" + freeCam "cam",
+     midEaterTip/virusMode "bacteria", dnaSpeed "flagella", maxPop "max".
+  es/tr: no English leftovers in the 49 keys.
+
+ROUND-1 FIXES: es applied 7/10 (eaten, hud.goal, hud.btn.divide.short, hud.btn.eat.short,
+  hud.divide.reason.age, lightInt, resume); NOT applied: consumer1/consumer2 word order,
+  dTemp abbreviation, decomposer length.
+  tr applied 5/8 (eaten, wikiT, toast.divide.blocked, hud.goal, bubbles); NOT applied: dead,
+  decomposer, maxPop.
+  fil applied 6/13 (close, eaten, toast.cyst.hunger, particles, menuSub+wikiT pond=tambakan,
+  toast.eat.plant); NOT applied: help, consumer1/2/3, maxPop, gameTime, toast.eat.ok.
+  Also still open from wave2-critic-A round 2 (fil): temp/dTemp "Init" (heat, not temperature),
+  settingsT "Ayos".
+
+NEW FINDINGS THIS ROUND (in the 49 keys): es dnaSpikes "Crecer púas" (calque + pattern break),
+  es menuSub "Corte del estanque" (needs transversal), es cartoon CARICATURA (widest render chip,
+  ellipsis-truncated on mobile); tr legend "Gösterim" (= screening, not a chart key -> Lejant),
+  tr webglNow "WebGL su" (ungrammatical), tr dnaShell "Silis kabuk" (bare compound), tr follow
+  "Takip et"; fil dnaShell/filterHint/camera/bacteria/flagella loans, fil dnaSize "Mas maraming
+  masa" (countability). Verified NOT errors: tr topOfList "listenin en üstü" (correct genitive).
+
+LENGTH (bottom action bar): the bar prints hud.btn.{eat,divide,cyst,auto}.short plus the FULL
+  flight/follow labels (js/main.js:375-380); ui.js:111 swaps hud.btn.light.short behind a sun
+  glyph for producers. .ab is min-width:72px, padding:12px 16px, 2px border, font-size:15px,
+  weight 800, nowrap (v3-webgl/index.html:46, re-set inline by labelBtn), mobile 44px/11px
+  (js/mobile.js:22), #actBar flex-wrap + max-width 95%. Over-budget vs the shipped ru baseline
+  (ДЕЛИТЬ 6 / СЛЕДИТЬ 7): ONLY tr follow "Takip et" (8 glyphs, 2 words) -> "Takip".
+  es ESPORA (6) and Seguir (6), fil SPORA (5) / Sundan (6) sit at or below that baseline; fil is
+  the only language that shortens LIWANAG -> ILAW (keep). Non-button length outliers:
+  tr decomposer 23, fil help 13 + consumers 20/20/21, es dTemp 11 + decomposer 20.
+
+ENABLE GATE (read-only note, unchanged): even complete, es/tr/fil cannot load — config.js:3 LANGS
+  has no es/tr/fil, window.IGS_ENABLED (i18n_detect.js:44) has no es/tr/fil, languages.json keeps
+  them enabled:false, so loadLangPack (i18n_detect.js:32) never fetches the JSON. No language was
+  enabled or disabled by this review; languages.json and all dictionaries were left untouched.
+  Context for the owner: the other 15 non-en/ru locale files are still at 91 keys and still render
+  English for the same 49 keys (de/fr/it/pl/pt-BR/id/ms/vi/th/ja/ko/zh-TW/hi/bn/uk).
+
+VERDICT per №22: es 8.6 and tr 8.6 clear the >= 8 bar for critic-A; fil 7.8 does not (single key:
+  legend). Do NOT enable any language on this pass. Remaining work is small and specific:
+  fil legend + the loan-word set; tr dead/decomposer/maxPop/follow/legend; es dTemp/consumer
+  order/decomposer/dnaSpikes. Re-score with critic-B on the same inputs.

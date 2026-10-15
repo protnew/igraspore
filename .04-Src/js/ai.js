@@ -79,7 +79,7 @@ function forceEat(pred, prey){
   if(typeof eatOrg === 'function') eatOrg(pred, prey);
   if((pred.eaten||0) > before){
     if(pred.isPlayer && window.showToast){
-      var msg = (pred.sp&&pred.sp.cat==='consumer2') ? 'Фильтр: затянул добычу' : 'АВТО: съел';
+      var msg = (pred.sp&&pred.sp.cat==='consumer2') ? tt('toast.filter.catch') : tt('toast.auto.eat');
       window.showToast(msg, '#8f8');
     }
     return true;
@@ -98,7 +98,7 @@ function forceEat(pred, prey){
     pred.size = Math.min((pred.sp.size||4)*(pred.sizeMult||1)*1.40, pred.size + mg*0.22);
     pred.flash = 1; pred.flashColor = '#8f8';
     if(pred.isPlayer && window.showToast)
-      window.showToast('+'+Math.round(energyGain)+' эн / +'+mg.toFixed(1)+' масса', '#8f8');
+      window.showToast(tt('toast.gain',{e:Math.round(energyGain),m:mg.toFixed(1)}), '#8f8');
     if(typeof killOrg === 'function'){
       try { killOrg(prey, (typeof DCODE!=='undefined' && DCODE.EATEN) || 1); }
       catch(e){ prey.alive=false; prey._remove=true; }
@@ -108,7 +108,7 @@ function forceEat(pred, prey){
     if(settings.particles){
       parts.push({x:pred.x,y:pred.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.5,maxL:0.5,size:0.8,color:pred.sp.color});
     }
-    if(pred.isPlayer && window.showToast) window.showToast('АВТО: +'+Math.round(energyGain)+' энергия', '#8f8');
+    if(pred.isPlayer && window.showToast) window.showToast(tt('toast.auto.gain',{e:Math.round(energyGain)}), '#8f8');
     return true;
   }
   return false;

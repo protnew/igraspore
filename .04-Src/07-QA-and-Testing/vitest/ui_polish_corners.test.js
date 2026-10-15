@@ -40,17 +40,18 @@ describe('updateLegend EN/RU body lines', () => {
   it('ui.js localizes the 6 legend body strings', () => {
     expect(uiPath, 'ui.js path').toBeTruthy();
     const src = fs.readFileSync(uiPath, 'utf8');
-    expect(src).toMatch(/\['#2c2','Algae'\]/);
-    expect(src).toMatch(/\['#4af','Bacteria'\]/);
-    expect(src).toMatch(/\['#dd44cc','Apex hunters'\]/);
-    expect(src).toMatch(/\['#c4f','Large'\]/);
-    expect(src).toMatch(/\['#a86','Decomposers'\]/);
-    expect(src).toMatch(/\['#f44','Viruses'\]/);
-    // RU intact
-    expect(src).toMatch(/Водоросли/);
-    expect(src).toMatch(/Бактерии/);
-    expect(src).toMatch(/Крупные охотники/);
-    expect(src).toMatch(/Разлагатели/);
-    expect(src).toMatch(/Вирусы/);
+    expect(src).toMatch(/\['#2c2','leg\.producer'\]/);
+    expect(src).toMatch(/\['#4af','leg\.bacteria'\]/);
+    expect(src).toMatch(/\['#dd44cc','leg\.apex'\]/);
+    expect(src).toMatch(/\['#c4f','leg\.large'\]/);
+    expect(src).toMatch(/\['#a86','leg\.decomp'\]/);
+    expect(src).toMatch(/\['#f44','leg\.virus'\]/);
+    // RU/EN values live in i18n dicts (leg.* keys)
+    const i18nDir = path.join(ROOT, '.04-Src', 'i18n');
+    const ruD = JSON.parse(fs.readFileSync(path.join(i18nDir,'ru.json'),'utf8'));
+    const enD = JSON.parse(fs.readFileSync(path.join(i18nDir,'en.json'),'utf8'));
+    expect(ruD['leg.producer']).toBe('Водоросли');
+    expect(enD['leg.producer']).toBe('Algae');
+    expect(enD['leg.virus']).toBe('Viruses');
   });
 });

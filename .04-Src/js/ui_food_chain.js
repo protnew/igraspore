@@ -3,13 +3,12 @@
 function renderFoodChain(){
   var el = document.getElementById('foodChainDiagram');
   if(!el) return;
-  var ru = (curLang === 'ru');
   var rows = [
-    {emoji:'\u{1F33F}', cat:'producer', eats:null, desc:ru?'делают еду из света':'make food from light'},
-    {emoji:'\u{1F535}', cat:'consumer1', eats:['producer'], desc:ru?'грызут зелёных':'nibble greens'},
-    {emoji:'\u{1F7E0}', cat:'consumer2', eats:['producer','consumer1'], desc:ru?'фильтруют мелочь':'filter small ones'},
-    {emoji:'\u{1F7E3}', cat:'consumer3', eats:['producer','consumer1','consumer2','consumer3'], desc:ru?'едят всех':'eat everyone'},
-    {emoji:'\u{1F9F9}', cat:'decomposer', eats:null, desc:ru?'убирают мёртвое':'clean up dead'},
+    {emoji:'\u{1F33F}', cat:'producer', eats:null, desc:tt('fc.producer')},
+    {emoji:'\u{1F535}', cat:'consumer1', eats:['producer'], desc:tt('fc.consumer1')},
+    {emoji:'\u{1F7E0}', cat:'consumer2', eats:['producer','consumer1'], desc:tt('fc.consumer2')},
+    {emoji:'\u{1F7E3}', cat:'consumer3', eats:['producer','consumer1','consumer2','consumer3'], desc:tt('fc.consumer3')},
+    {emoji:'\u{1F9F9}', cat:'decomposer', eats:null, desc:tt('fc.decomposer')},
   ];
   var html = '';
   for(var i=0;i<rows.length;i++){
@@ -19,7 +18,7 @@ function renderFoodChain(){
     html += '<div class="fc-row" data-c="'+r.cat+'" style="margin:2px 0;padding:3px 4px;border-radius:4px;border:1px solid transparent">';
     html += r.emoji+' <b style="color:'+col+'">'+nm+'</b>';
     html += ' <span style="opacity:.65">— '+r.desc+'</span>';
-    html += ' <span style="opacity:.4;font-size:10px">(\u0441\u0445\u0435\u043c\u0430)</span>';
+    html += ' <span style="opacity:.4;font-size:10px">'+tt('fc.schema')+'</span>';
     if(r.eats){
       html += ' <span style="opacity:.5">→</span> ';
       for(var e=0;e<r.eats.length;e++){

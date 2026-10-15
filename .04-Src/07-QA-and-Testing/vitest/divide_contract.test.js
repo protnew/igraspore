@@ -12,6 +12,8 @@ function load() {
     genOrgans: () => [],
     rng: (a, b) => a,
     settings: { divRate: 0.1 },
+    tt: (k) => k,
+
     igsText: (k, fb) => fb,
     igsNum: (n, d) => (d ? Number(n).toFixed(d) : String(Math.round(n))),
   };

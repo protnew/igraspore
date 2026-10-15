@@ -7,6 +7,7 @@ function load() {
   const interact = fs.readFileSync(path.resolve(__dirname, '../../js/biology_update_interact.js'), 'utf-8');
   const eat = fs.readFileSync(path.resolve(__dirname, '../../js/biology_eat.js'), 'utf-8');
   const sandbox = {
+    tt: (k) => k,
     window: {}, console, Math, Date,
     orgs: [], demoMode: false, gt: 10,
     DCODE: { STARVE: 3 },

@@ -323,7 +323,7 @@ function updateOrg(o,dt){
       if(!o.cyst && !o._starvedOnce){
         o._starvedOnce = true;
         o.cyst = true; o.energy = 10; o.vx=0; o.vy=0; o.aiTarget=null; o.state='rest';
-        if(window.showToast) window.showToast('Голод: впал в цисту — найди еду и проснись', '#fc8');
+        if(window.showToast) window.showToast(tt('toast.cyst.hunger'), '#fc8');
       } else if(o.cyst){
         o.energy = Math.max(o.energy, 0);
       } else {
@@ -332,7 +332,7 @@ function updateOrg(o,dt){
       }
     }
     if(o.energy > 120) o.energy = 120;
-    if(o.parasite && o.energy < 15){ o.parasite=null; if(window.showToast) window.showToast('Паразит сброшен','#fd8'); }
+    if(o.parasite && o.energy < 15){ o.parasite=null; if(window.showToast) window.showToast(tt('toast.parasite.gone'),'#fd8'); }
   }
 
   // Fluid Dynamics (Vortices/Trails) — removed for realism

@@ -84,14 +84,13 @@ function divideBlockReason(o){
   var n=divideNeeds(o);
   if(n.ok) return '';
   var num=(typeof igsNum==='function')?igsNum:function(v,d){ return d?Number(v).toFixed(d):String(Math.round(v)); };
-  var tx=(typeof igsText==='function')?igsText:function(k,fb){ return fb; };
-  if(n.reason==='energy') return tx('hud.divide.reason.energy','энергия {cur}/{need}').replace('{cur}', num(n.energy[0],0)).replace('{need}', num(n.energy[1],0));
-  if(n.reason==='mass') return tx('hud.divide.reason.mass','масса {cur}/{need}').replace('{cur}', num(n.mass[0],1)).replace('{need}', num(n.mass[1],1));
-  if(n.reason==='size') return tx('hud.divide.reason.size','размер {cur}/{need}').replace('{cur}', num(n.size[0],1)).replace('{need}', num(n.size[1],1));
-  if(n.reason==='cd') return tx('hud.divide.reason.cd','перезарядка {sec} с').replace('{sec}', num(n.cd,0));
-  if(n.reason==='age') return tx('hud.divide.reason.age','слишком молода');
-  if(n.reason==='busy') return tx('hud.divide.reason.busy','идёт деление');
-  return tx('hud.divide.reason.none','нет клетки');
+  if(n.reason==='energy') return tt('hud.divide.reason.energy',{cur:num(n.energy[0],0),need:num(n.energy[1],0)});
+  if(n.reason==='mass') return tt('hud.divide.reason.mass',{cur:num(n.mass[0],1),need:num(n.mass[1],1)});
+  if(n.reason==='size') return tt('hud.divide.reason.size',{cur:num(n.size[0],1),need:num(n.size[1],1)});
+  if(n.reason==='cd') return tt('hud.divide.reason.cd',{sec:num(n.cd,0)});
+  if(n.reason==='age') return tt('hud.divide.reason.age');
+  if(n.reason==='busy') return tt('hud.divide.reason.busy');
+  return tt('hud.divide.reason.none');
 }
 window.divideBlockReason=divideBlockReason;
 

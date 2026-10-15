@@ -37,7 +37,7 @@ cv.addEventListener('mousedown',function(e){e.preventDefault();var r=cv.getBound
         _bestO.virusType=window.virusPlayerSpec;
         _bestO.flashColor='#f44'; _bestO.flashT=1.0;
         if(window.virusPlayerSpec.type==='parasite') _bestO.parasiticInfection=true;
-        if(window.showToast) window.showToast('Клетка инфицирована! Лизис через 10-20\u0441','#f66');
+        if(window.showToast) window.showToast(tt('toast.infected'),'#f66');
         return;
       }
     }
@@ -145,13 +145,13 @@ window.showToast = function(msg, color){
 };
 
 window.tryPlayerEat = function(){
-  if(!player){ if(window.showToast) window.showToast('Нет игрока','#faa'); return false; }
+  if(!player){ if(window.showToast) window.showToast(tt('toast.noPlayer'),'#faa'); return false; }
   if(player.cyst && !player.manualCyst) player.cyst=false;
   if(player.dying){ player.dying=false; player.deathT=0; }
   if(!player.alive){ player.alive=true; }
   // Producers don't hunt — they photosynthesize
   if(player.sp && player.sp.cat === 'producer'){
-    if(window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.eat.plant','Ты растение: плыви к свету'):'Ты растение: плыви к свету'), '#cf8');
+    if(window.showToast) window.showToast((tt('toast.eat.plant')), '#cf8');
     player._lightHint = true;
     return false;
   }
@@ -188,10 +188,10 @@ window.tryPlayerEat = function(){
     // Pull toward
     var dx=best.x-player.x, dy=best.y-player.y, dd=Math.sqrt(dx*dx+dy*dy)||1;
     player.vx += dx/dd*10; player.vy += dy/dd*10;
-    if(window.showToast) window.showToast('Ближе к добыче…','#fd8');
+    if(window.showToast) window.showToast(tt('toast.eat.closer'),'#fd8');
     return false;
   }
-  if(window.showToast) window.showToast('Рядом нет добычи — включи АВТО или подплыви','#faa');
+  if(window.showToast) window.showToast(tt('toast.eat.noneAuto'),'#faa');
   return false;
 };
 
@@ -268,7 +268,7 @@ document.addEventListener('keydown',function(e){
   if(window.demoMode && (k==='1'||k==='2'||k==='3'||k==='4'||k==='5') && typeof demoFlyToGroup==='function'){
     demoFlyToGroup(parseInt(k,10)); e.preventDefault(); return;
   }
-  if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Полёт: WASD / мышь / колёсико':'Камера: следит за клеткой');var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?'✈ ПОЛЁТ WASD':'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}}
+  if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?tt('cam.fly'):tt('cam.follow'));var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?tt('cam.flyBtn'):'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}}
   if(k==='escape'){
     if(window.demoMode && window.demoPossessed){ exitDemoPossess(); e.preventDefault(); return; }
     // ESC → return to main menu from game or demo
@@ -306,7 +306,7 @@ document.addEventListener('keydown',function(e){
   if(k==='n'){document.getElementById('bRender').click();}
   if(k==='b'){var wo=document.getElementById('wikiO');if(wo.className==='ov show')wo.className='ov';else{buildWiki();wo.className='ov show';}}
   if(k==='e'||e.code==='KeyE'){ e.preventDefault(); window.tryPlayerEat && window.tryPlayerEat(); }
-  if(k==='q'){ if(player&&player.alive){ var okDiv=doDivide(player); if(window.showToast){ if(okDiv||player.dividing) window.showToast('Деление...','#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa'); } } }
+  if(k==='q'){ if(player&&player.alive){ var okDiv=doDivide(player); if(window.showToast){ if(okDiv||player.dividing) window.showToast(tt('toast.divide.go'),'#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||tt('toast.divide.blocked'),'#faa'); } } }
   if(k==='r'){if(player&&player.alive)doCyst(player);}
   if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
 });
@@ -317,13 +317,13 @@ document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();
   if(k==='arrowup')camKeys.w=false; if(k==='arrowdown')camKeys.s=false;
   if(k==='arrowleft')camKeys.a=false; if(k==='arrowright')camKeys.d=false;});
 
-mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;try{var cm=document.getElementById('camM');if(cm){cm.style.display='block';cm.textContent='✈ ПОЛЁТ WASD';cm.className='free';}var bf=document.getElementById('bFree');if(bf){bf.classList.add('is-active-cam');}if(window.showToast)window.showToast('✈ Полёт камеры. СЛЕДИТЬ (V) — вернуться к клетке');}catch(_e){}});
+mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;try{var cm=document.getElementById('camM');if(cm){cm.style.display='block';cm.textContent=tt('cam.flyBtn');cm.className='free';}var bf=document.getElementById('bFree');if(bf){bf.classList.add('is-active-cam');}if(window.showToast)window.showToast(tt('cam.tip'));}catch(_e){}});
 
 document.getElementById('bEat').onclick=function(){ window.tryPlayerEat && window.tryPlayerEat(); };
-document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast('Деление...','#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa');}}};
+document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast(tt('toast.divide.go'),'#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||tt('toast.divide.blocked'),'#faa');}}};
 document.getElementById('bCyst').onclick=function(){if(player&&player.alive)doCyst(player);};
 document.getElementById('bAuto').onclick=function(){if(player&&player.alive)autoAI=!autoAI;};
-document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'✈ Полёт: WASD / стрелки / мышь / колёсико':'Камера: следит за клеткой');var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?'✈ ПОЛЁТ WASD':'';cm.className=freeCam?'free':'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}};
+document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?tt('cam.fly2'):tt('cam.follow'));var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?tt('cam.flyBtn'):'';cm.className=freeCam?'free':'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}};
 
 document.getElementById('bMicro').onclick=function(){
   settings.microscopeMode=!settings.microscopeMode;
@@ -336,11 +336,11 @@ document.getElementById('bMicro').onclick=function(){
     }
     document.getElementById('bMicro').classList.add('is-active-micro');
     
-    if(window.showToast) window.showToast('🔬 Микроскоп: вода остаётся, зум+сетка (не режим N)','#8cf');
+    if(window.showToast) window.showToast(tt('toast.microOn'),'#8cf');
   } else {
     document.getElementById('bMicro').classList.remove('is-active-micro');
     ;
-    if(window.showToast) window.showToast('Микроскоп выкл','#aaa');
+    if(window.showToast) window.showToast(tt('toast.microOff'),'#aaa');
   }
 };
 document.getElementById('bRender').onclick=function(){ toggleRenderModeLarge(); };
@@ -367,15 +367,15 @@ function toggleRenderModeLarge(){
   var smBtn=document.getElementById('bRender');
   if(smBtn){smBtn.classList.remove('is-active-swiss');}
   if(settings.renderMode==='swiss'){
-    if(btn){btn.className='swiss';btn.innerHTML='📗 SWISS';btn.title='Сейчас: SwissBioPics. Клик → WebGL';}
+    if(btn){btn.className='swiss';btn.innerHTML=tt('mode.swissLbl');btn.title=tt('swissNow');}
     if(smBtn){smBtn.classList.add('is-active-swiss');}
   } else if(settings.renderMode==='webgl'){
-    if(btn){btn.className='webgl';btn.innerHTML='🌊 WEBGL';btn.title='Сейчас: WebGL-вода. Клик → мультяшный';}
+    if(btn){btn.className='webgl';btn.innerHTML=tt('mode.webglLbl');btn.title=tt('webglNow');}
   } else {
-    if(btn){btn.className='cartoon';btn.innerHTML='🎨 МУЛЬТ';btn.title='Сейчас: мультяшный. Клик → SwissBioPics';}
+    if(btn){btn.className='cartoon';btn.innerHTML='🎨 '+tt('cartoon');btn.title=tt('cartoonNow');}
   }
 }
-document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;if(player&&player.alive){cam.x=player.x;cam.y=player.y-20;}if(window.showToast)window.showToast('Камера: СЛЕДИТ');};
+document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;if(player&&player.alive){cam.x=player.x;cam.y=player.y-20;}if(window.showToast)window.showToast(tt('cam.followToast'));};
 document.getElementById('bWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
 document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};
 document.getElementById('bZI').onclick=function(){tZoom=clamp(tZoom*1.3,0.01,100);};
@@ -429,9 +429,9 @@ document.addEventListener('click', function(e){
     var be=document.getElementById('bEat');
     if(be){ be.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} window.tryPlayerEat&&window.tryPlayerEat(); }; }
     var bd=document.getElementById('bDiv');
-    if(bd){ bd.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} if(player&&player.alive){ var ok=doDivide(player); if(window.showToast){ if(ok||player.dividing) window.showToast('Деление!','#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя','#faa'); } } }; }
+    if(bd){ bd.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} if(player&&player.alive){ var ok=doDivide(player); if(window.showToast){ if(ok||player.dividing) window.showToast(tt('toast.divided'),'#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||tt('toast.divide.blocked'),'#faa'); } } }; }
     var ba=document.getElementById('bAuto');
-    if(ba){ ba.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} autoAI=!autoAI; ba.classList.toggle('on', !!autoAI); if(window.showToast) window.showToast(autoAI?'АВТО: вкл':'АВТО: выкл', autoAI?'#8f8':'#aaa'); }; }
+    if(ba){ ba.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} autoAI=!autoAI; ba.classList.toggle('on', !!autoAI); if(window.showToast) window.showToast(autoAI?tt('auto.on'):tt('auto.off'), autoAI?'#8f8':'#aaa'); }; }
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', rebindActions);
   else rebindActions();
@@ -462,7 +462,7 @@ window._manualFeedCD = 0;
 window.manualFeed = function(){
   if(!player||!player.alive||player.cyst) return false;
   if(window._manualFeedCD > 0) {
-    if(window.showToast) window.showToast('Пищеварение... ('+Math.ceil(window._manualFeedCD)+'с)', '#fa0');
+    if(window.showToast) window.showToast(tt('toast.digest',{s:Math.ceil(window._manualFeedCD)}), '#fa0');
     return false;
   }
   var range = player.size + 30; // larger range for manual
@@ -482,10 +482,10 @@ window.manualFeed = function(){
     else eatOrg(player, best);
     window._manualFeedCD = 0.5; // short CD for manual
     player.flash = 1; player.flashColor = '#ff0';
-    if(window.showToast) window.showToast('КУСЬ! '+best.sp.name, '#8f8');
+    if(window.showToast) window.showToast(tt('toast.bite',{name:best.sp.name}), '#8f8');
     return true;
   } else {
-    if(window.showToast) window.showToast('Нет добычи рядом', '#faa');
+    if(window.showToast) window.showToast(tt('toast.eat.none'), '#faa');
     return false;
   }
 };

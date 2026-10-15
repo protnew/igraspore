@@ -386,20 +386,20 @@ function renderTooltip(){
   var tip=document.getElementById('tip');
   if(inspOrg){
     var o=inspOrg,st='';
-    if(o.energy<25)st+=' \u26a0 '+(curLang==='ru'?'\u0413\u043e\u043b\u043e\u0434':'Starving');
-    else if(o.energy>85)st+=' \u2714 '+(curLang==='ru'?'\u0417\u0434\u043e\u0440\u043e\u0432':'Healthy');
-    if(o.dividing)st+=' \u21bb '+(curLang==='ru'?'\u0414\u0435\u043b\u0438\u0442\u0441\u044f':'Dividing');
-    if(o.cyst)st+=' \u2a1d '+(curLang==='ru'?'\u0426\u0438\u0441\u0442\u0430':'Cyst');
-    if(o.infected)st+=' \u2620 '+(curLang==='ru'?'\u0417\u0430\u0440\u0430\u0436\u0435\u043d':'Infected');
+    if(o.energy<25)st+=' \u26a0 '+(tt('x.starving'));
+    else if(o.energy>85)st+=' \u2714 '+(tt('x.healthy'));
+    if(o.dividing)st+=' \u21bb '+(tt('x.dividing'));
+    if(o.cyst)st+=' \u2a1d '+(tt('x.cyst'));
+    if(o.infected)st+=' \u2620 '+(tt('x.infected'));
     var locTxt=o.sp.locomotion||'';
     tip.innerHTML='<b style="color:'+o.sp.color+'">'+o.sp.name+'</b>'+
       '<div style="color:#abc;font-size:9px;margin-top:2px">'+
-      (curLang==='ru'?'\u042d\u043d':'E')+': '+Math.round(o.energy)+' '+
-      (curLang==='ru'?'\u0412\u0437\u0440':'A')+': '+Math.round(o.age)+'s '+
-      (curLang==='ru'?'\u0420\u0437\u043c':'S')+': '+o.size.toFixed(1)+'\u03bcm</div>'+
-      '<div style="color:#678;font-size:8px">'+(curLang==='ru'?'\u0414\u0432\u0438\u0436\u0435\u043d\u0438\u0435':'Move')+': '+locTxt+'</div>'+
+      (tt('x.e'))+': '+Math.round(o.energy)+' '+
+      (tt('x.a'))+': '+Math.round(o.age)+'s '+
+      (tt('x.s'))+': '+o.size.toFixed(1)+'\u03bcm</div>'+
+      '<div style="color:#678;font-size:8px">'+(tt('x.move'))+': '+locTxt+'</div>'+
       (st?'<div style="color:#fc4;font-size:9px">'+st+'</div>':'')+
-      (o.isPlayer?'<div style="color:#4ff;font-size:8px">\u2605 '+(curLang==='ru'?'\u042d\u0442\u043e \u0412\u044b':'You')+'</div>':'');
+      (o.isPlayer?'<div style="color:#4ff;font-size:8px">\u2605 '+(tt('x.you'))+'</div>':'');
     tip.style.display='block';tip.style.left=clamp(mx+12,0,cv.width-260)+'px';tip.style.top=clamp(my+12,0,cv.height-80)+'px';
   }else tip.style.display='none';
 }

@@ -16,12 +16,12 @@ window.setDemoLabels = function(on){
 };
 
 var DEMO_GROUPS = [
-  { key: 'producer',   ru: '1. Продуценты',    en: '1. Producers',    color: '#4c4' },
-  { key: 'consumer1',  ru: '2. Консументы I',  en: '2. Consumers I',  color: '#4af' },
-  { key: 'consumer2',  ru: '3. Консументы II', en: '3. Consumers II', color: '#f80' },
-  { key: 'consumer3',  ru: '4. Консументы III',en: '4. Consumers III',color: '#c4f' },
-  { key: 'decomposer', ru: '5. Редуценты',     en: '5. Decomposers',  color: '#a84' },
-  { key: 'virus',      ru: '6. Вирусы',        en: '6. Viruses',      color: '#f66' }
+  { key: 'producer',   color: '#4c4' },
+  { key: 'consumer1',  color: '#4af' },
+  { key: 'consumer2',  color: '#f80' },
+  { key: 'consumer3',  color: '#c4f' },
+  { key: 'decomposer', color: '#a84' },
+  { key: 'virus',      color: '#f66' }
 ];
 
 function startDemoMode() {
@@ -92,7 +92,7 @@ function startDemoMode() {
       o.demoPinned = true;
       o.demoGroup = g + 1;
       o.demoGroupKey = grp.key;
-      o.demoLabel = (curLang === 'en' ? grp.en : grp.ru);
+      o.demoLabel = tt('demo.grp.' + grp.key);
       // Continuous species number (same as menu #N), not per-row index
       o.demoIndex = (pool[i] && typeof pool[i].num === 'number') ? pool[i].num : (i + 1);
       o.demoSpNum = o.demoIndex;
@@ -164,22 +164,19 @@ function startDemoMode() {
     }
     tip.style.pointerEvents = 'auto';
     tip.style.display = 'block';
-    var ru = (typeof curLang === 'undefined' || curLang !== 'en');
     var nav = '';
     for (var gi = 0; gi < DEMO_GROUPS.length; gi++) {
       nav += '<button type="button" data-dg="'+(gi+1)+'" style="margin:2px 2px 0 0;padding:3px 7px;font:11px/1.2 system-ui;background:#123;color:#cfe;border:1px solid #4af;border-radius:5px;cursor:pointer">'+(gi+1)+'</button>';
     }
-    var labelsBtn = '<button type="button" id="demoLabelsBtn" aria-pressed="'+(window._demoLabels?'true':'false')+'" style="margin:2px 0 0 2px;padding:3px 9px;font:700 11px/1.2 system-ui;background:'+(window._demoLabels?'#1a4':'#123')+';color:'+(window._demoLabels?'#fff':'#cfe')+';border:1px solid '+(window._demoLabels?'#4f8':'#4af')+';border-radius:5px;cursor:pointer">'+(ru?'Метки':'Labels')+'</button>';
-    tip.innerHTML = (ru
-      ? '<b>\u0414\u0415\u041c\u041e</b> \u00b7 WASD/mouse fly \u00b7 1-6 group \u00b7 click = take<br>'
-      : '<b>DEMO</b> \u00b7 WASD/mouse fly \u00b7 1-6 jump group \u00b7 click = possess<br>') + nav + labelsBtn;
+    var labelsBtn = '<button type="button" id="demoLabelsBtn" aria-pressed="'+(window._demoLabels?'true':'false')+'" style="margin:2px 0 0 2px;padding:3px 9px;font:700 11px/1.2 system-ui;background:'+(window._demoLabels?'#1a4':'#123')+';color:'+(window._demoLabels?'#fff':'#cfe')+';border:1px solid '+(window._demoLabels?'#4f8':'#4af')+';border-radius:5px;cursor:pointer">'+tt('demo.labels')+'</button>';
+    tip.innerHTML = tt('demo.tip') + nav + labelsBtn;
     tip.onclick = function(ev){
       var b = ev.target;
       if(!b || !b.getAttribute) return;
       if (b.id === 'demoLabelsBtn') {
         window.setDemoLabels(!window._demoLabels);
         b.setAttribute('aria-pressed', window._demoLabels ? 'true' : 'false');
-        b.textContent = ru ? 'Метки' : 'Labels';
+        b.textContent = tt('demo.labels');
         b.style.background = window._demoLabels ? '#1a4' : '#123';
         b.style.color = window._demoLabels ? '#fff' : '#cfe';
         b.style.borderColor = window._demoLabels ? '#4f8' : '#4af';
@@ -251,7 +248,7 @@ function demoPossessOrg(o) {
   cam.x = o.x;
   cam.y = o.y - 10;
   tZoom = Math.max(zoom, 1.2);
-  if(window.showToast) window.showToast('Управление: WASD / мышь · ЕСТЬ (E) · ДЕЛИТЬ (Q)','#4cf');
+  if(window.showToast) window.showToast(tt('toast.controls'),'#4cf');
 }
 
 function demoPickAtScreen(sx, sy) {
@@ -359,7 +356,7 @@ function renderDemoLabels() {
         // short name under number (+ КОЛОНИЯ tag)
         if (zoom >= 0.7 && o.sp && o.sp.name) {
           var short = o.sp.name.split(' ')[0];
-          if(o.demoColony || o.sp.shape==='colony') short = '⬡КОЛОНИЯ ' + short;
+          if(o.demoColony || o.sp.shape==='colony') short = tt('demo.colony') + short;
           ctx.font = Math.max(8, Math.min(11, 9 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
           ctx.fillStyle = 'rgba(0,0,0,0.55)';
           ctx.fillText(short, scx + 1, ty + 14);
@@ -401,7 +398,7 @@ function demoFlyToGroup(g) {
   if (typeof exitDemoPossess === 'function' && window.demoPossessed) exitDemoPossess();
   freeCam = true;
   window._demoFly = { x: sx / n, y: sy / n, t: 0 };
-  if (window.showToast) window.showToast((DEMO_GROUPS[g-1] && (curLang==='en'?DEMO_GROUPS[g-1].en:DEMO_GROUPS[g-1].ru)) || ('#'+g), '#8cf');
+  if (window.showToast) window.showToast((DEMO_GROUPS[g-1] && tt('demo.grp.' + DEMO_GROUPS[g-1].key)) || ('#'+g), '#8cf');
 }
 
 function updateDemoCamera(dt) {

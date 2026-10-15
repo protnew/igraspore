@@ -45,11 +45,11 @@ function showDeadScreen(){
       if(orgs[_vi3].infected) _inf++;
       if(orgs[_vi3].virusLysed) _lysed++;
     }
-    var _vh='<div style="color:#f66;font-size:14px;text-align:center;margin-bottom:8px;font-weight:bold;">'+(curLang==='ru'?'РЕЖИМ ВИРУСА':'VIRUS MODE')+'</div>';
+    var _vh='<div style="color:#f66;font-size:14px;text-align:center;margin-bottom:8px;font-weight:bold;">'+(tt('x.virusMode'))+'</div>';
     _vh+='<table class="stbl">';
-    _vh+='<tr><td class="lbl">'+(curLang==='ru'?'Инфицировано':'Infected')+'</td><td class="val">'+_inf+'</td></tr>';
-    _vh+='<tr><td class="lbl">'+(curLang==='ru'?'Лизировано':'Lysed')+'</td><td class="val">'+_lysed+'</td></tr>';
-    _vh+='<tr><td class="lbl">'+(curLang==='ru'?'Фагов':'Phages')+'</td><td class="val">'+viruses.length+'</td></tr>';
+    _vh+='<tr><td class="lbl">'+(tt('x.infected3'))+'</td><td class="val">'+_inf+'</td></tr>';
+    _vh+='<tr><td class="lbl">'+(tt('x.lysed'))+'</td><td class="val">'+_lysed+'</td></tr>';
+    _vh+='<tr><td class="lbl">'+(tt('x.phages'))+'</td><td class="val">'+viruses.length+'</td></tr>';
     _vh+='<tr><td class="lbl">'+tt('days')+'</td><td class="val">'+totalDays+'</td></tr>';
     _vh+='</table>';
     _ds2.innerHTML=_vh;
@@ -64,26 +64,26 @@ function showDeadScreen(){
   var globalBorn = 0; var globalAlive = orgs.length;
   for(var i=0;i<SPECIES_DB.length;i++) globalBorn += (speciesPop[i] ? speciesPop[i].born : 0);
   var globalDead = globalBorn - globalAlive;
-  html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(curLang==='ru'?'Статистика Водоёма':'Pond Statistics')+'</div>';
+  html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.pondStatistics'))+'</div>';
   html+='<table class="stbl" style="margin-bottom:10px">';
   html+='<tr><td class="lbl">'+tt('days')+'</td><td class="val">'+totalDays+'</td></tr>';
-  html+='<tr><td class="lbl">'+(curLang==='ru'?'Живых':'Alive')+'</td><td class="val">'+globalAlive+'</td></tr>';
-  html+='<tr><td class="lbl">'+(curLang==='ru'?'Родилось':'Born')+'</td><td class="val">'+globalBorn+'</td></tr>';
-  html+='<tr><td class="lbl">'+(curLang==='ru'?'Погибло':'Dead')+'</td><td class="val">'+globalDead+'</td></tr>';
+  html+='<tr><td class="lbl">'+(tt('x.alive'))+'</td><td class="val">'+globalAlive+'</td></tr>';
+  html+='<tr><td class="lbl">'+(tt('x.born'))+'</td><td class="val">'+globalBorn+'</td></tr>';
+  html+='<tr><td class="lbl">'+(tt('x.dead'))+'</td><td class="val">'+globalDead+'</td></tr>';
   html+='</table>';
 
   // Species Stats
   if(player && player.sp) {
     var spData = speciesPop[player.sp.id];
-    html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(curLang==='ru'?'Ваш вид: ':'Your species: ')+player.sp.name+'</div>';
+    html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.yourSpecies'))+player.sp.name+'</div>';
     html+='<table class="stbl" style="margin-bottom:10px">';
-    html+='<tr><td class="lbl">'+(curLang==='ru'?'Сейчас живы':'Currently alive')+'</td><td class="val">'+spData.alive+'</td></tr>';
-    html+='<tr><td class="lbl">'+(curLang==='ru'?'Всего родилось':'Total born')+'</td><td class="val">'+spData.born+'</td></tr>';
+    html+='<tr><td class="lbl">'+(tt('x.currentlyAlive'))+'</td><td class="val">'+spData.alive+'</td></tr>';
+    html+='<tr><td class="lbl">'+(tt('x.totalBorn'))+'</td><td class="val">'+spData.born+'</td></tr>';
     html+='</table>';
   }
 
   // Personal Stats
-  html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(curLang==='ru'?'Ваша клетка':'Your cell')+'</div>';
+  html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.yourCell'))+'</div>';
   html+='<table class="stbl">';
   html+='<tr><td class="lbl">'+tt('gameTime')+'</td><td class="val">'+playSec+'s</td></tr>';
   html+='<tr><td class="lbl">'+tt('offspring')+'</td><td class="val">'+(player?player.offspring:0)+'</td></tr>';
@@ -91,26 +91,12 @@ function showDeadScreen(){
   html+='</table>';
   
   // Causes with Tips
-  var TIPS_RU = [
-    "Совет: Чаще питайтесь, держитесь ближе к скоплениям еды или ускорьте свой вид.",
-    "Совет: Избегайте хищников, используйте Режим везения для бегства.",
-    "Совет: Следите за термометром. Мутируйте температурный диапазон.",
-    "Совет: Старость неизбежна. Важно успеть разделиться до гибели.",
-    "Совет: Лизис (разрыв мембраны) вызывает вирус. Держитесь от них подальше."
-  ];
-  var TIPS_EN = [
-    "Tip: Eat more often, stay near food clusters, or mutate speed.",
-    "Tip: Avoid predators, use Grace Period to run away.",
-    "Tip: Watch the thermometer. Mutate your temp range.",
-    "Tip: Old age is inevitable. Divide before you die.",
-    "Tip: Lysis is caused by viruses. Stay away from them."
-  ];
-  var tips = curLang==='ru' ? TIPS_RU : TIPS_EN;
+  var tips = [tt('dTip.starve'),tt('dTip.eaten'),tt('dTip.temp'),tt('dTip.age'),tt('dTip.lysis')];
 
   html+='<div style="margin-top:12px;color:#4af;font-size:12px;text-align:center;font-weight:bold;">'+tt('dCauses')+' (Global)</div>';
   html+='<table class="stbl" style="margin-bottom:10px">';
   for(var d=0;d<5;d++){
-    var dl=(curLang==='ru'?DLAB_RU:DLAB_EN)[d];
+    var dl=tt(DLAB_KEYS[d]);
     if(stats.deathCauses[d] > 0 || d===0) {
       html+='<tr><td class="lbl" style="color:#faa">'+dl+'</td><td class="val" style="color:#fff">'+stats.deathCauses[d]+'</td></tr>';
       html+='<tr><td colspan="2" style="font-size:10px; color:#aaa; padding-bottom:6px; font-style:italic;">'+tips[d]+'</td></tr>';
@@ -159,15 +145,15 @@ function applyRenderMode(){
   var lbl=document.getElementById('rmodeLbl');
   if(smBtn){smBtn.classList.remove('is-active-swiss');}
   if(settings.renderMode==='swiss'){
-    if(btn){btn.className='swiss';btn.innerHTML='\uD83D\uDCD7 SWISSBIOPICS';btn.title='SwissBioPics. Click -> WebGL';}
+    if(btn){btn.className='swiss';btn.innerHTML=tt('modeBig.swiss');btn.title=tt('tip.swiss');}
     if(smBtn){smBtn.classList.add('is-active-swiss');}
-    if(lbl) lbl.innerHTML='\uD83D\uDCD7 SwissBioPics';
+    if(lbl) lbl.innerHTML=tt('modeLbl.swiss');
   } else if(settings.renderMode==='webgl'){
-    if(btn){btn.className='webgl';btn.innerHTML='\uD83C\uDF0A WEBGL';btn.title='WebGL water. Click -> cartoon';}
-    if(lbl) lbl.innerHTML='\uD83C\uDF0A WebGL';
+    if(btn){btn.className='webgl';btn.innerHTML=tt('modeBig.webgl');btn.title=tt('tip.webgl');}
+    if(lbl) lbl.innerHTML=tt('modeLbl.webgl');
   } else {
-    if(btn){btn.className='cartoon';btn.innerHTML='\uD83C\uDFA8 CARTOON';btn.title='Cartoon. Click -> SwissBioPics';}
-    if(lbl) lbl.innerHTML='\uD83C\uDFA8 Cartoon';
+    if(btn){btn.className='cartoon';btn.innerHTML=tt('modeBig.cartoon');btn.title=tt('tip.cartoon');}
+    if(lbl) lbl.innerHTML=tt('modeLbl.cartoon');
   }
 }
 
@@ -177,7 +163,7 @@ function buildSettings(){
   var html='';
   for(var i=0;i<opts.length;i++)html+='<div class="sr"><span>'+opts[i][1]+'</span><div class="tg'+(settings[opts[i][0]]?' on':'')+'" data-s="'+opts[i][0]+'" onclick="toggleSet(this)"></div></div>';
   // Render mode toggle: cartoon ↔ swiss (same 2-mode cycle as N / big button)
-  html+='<div class="sr"><span>'+(window._t_renderMode||'Render Mode')+': <b id="rmodeLbl">'+(settings.renderMode==='swiss'?'📗 SwissBioPics':'🎨 Cartoon')+'</b></span><div class="tg'+(settings.renderMode==='swiss'?' on':'')+'" id="rmodeTg" onclick="toggleRenderMode(this)"></div></div>';
+  html+='<div class="sr"><span>'+tt('picMode')+': <b id="rmodeLbl">'+tt(settings.renderMode==='swiss'?'modeLbl.swiss':'modeLbl.cartoon')+'</b></span><div class="tg'+(settings.renderMode==='swiss'?' on':'')+'" id="rmodeTg" onclick="toggleRenderMode(this)"></div></div>';
   // Sliders
   html+='<div class="slider-row"><span>'+tt('density')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.density+'" oninput="settings.density=parseFloat(this.value)" /><span class="slider-val">'+settings.density.toFixed(1)+'</span></div>';
   html+='<div class="slider-row"><span>'+tt('lightInt')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.lightMul+'" oninput="settings.lightMul=parseFloat(this.value)" /><span class="slider-val">'+settings.lightMul.toFixed(1)+'</span></div>';
@@ -203,16 +189,16 @@ function buildWiki(filter){
   function organList(sp){
     var bio=sp&&sp.bio?sp.bio:{};
     var organs=[];
-    if(bio.chloro)organs.push(ru?'\u0445\u043b\u043e\u0440\u043e\u043f\u043b\u0430\u0441\u0442\u044b':'chloroplasts');
-    if(bio.nucleus)organs.push(ru?'\u044f\u0434\u0440\u043e':'nucleus');
-    if(bio.macro)organs.push(ru?'\u043c\u0430\u043a\u0440\u043e/\u043c\u0438\u043a\u0440\u043e\u043d\u0443\u043a\u043b\u0435\u0443\u0441':'macro/micronucleus');
-    if(bio.cilia)organs.push(ru?'\u0440\u0435\u0441\u043d\u0438\u0447\u043a\u0438':'cilia');
-    if(bio.flag)organs.push(ru?'\u0436\u0433\u0443\u0442\u0438\u043a':'flagella');
-    if(bio.pseudo)organs.push(ru?'\u043f\u0441\u0435\u0432\u0434\u043e\u043f\u043e\u0434\u0438\u0438':'pseudopodia');
-    if(bio.mito)organs.push(ru?'\u043c\u0438\u0442\u043e\u0445\u043e\u043d\u0434\u0440\u0438\u0438':'mitochondria');
-    if(bio.golgi)organs.push(ru?'\u0433\u043e\u043b\u044c\u0434\u0436\u0438':'Golgi');
-    if(bio.trich)organs.push(ru?'\u0442\u0440\u0438\u0445\u043e\u0446\u0438\u0441\u0442\u044b':'trichocysts');
-    if(bio.contractile)organs.push(ru?'\u0441\u043e\u043a\u0440. \u0432\u0430\u043a\u0443\u043e\u043b\u044c':'contractile vacuole');
+    if(bio.chloro)organs.push(tt('x.chloroplasts'));
+    if(bio.nucleus)organs.push(tt('x.nucleus'));
+    if(bio.macro)organs.push(tt('x.macroMicronucleus'));
+    if(bio.cilia)organs.push(tt('x.cilia'));
+    if(bio.flag)organs.push(tt('x.flagella'));
+    if(bio.pseudo)organs.push(tt('x.pseudopodia'));
+    if(bio.mito)organs.push(tt('x.mitochondria'));
+    if(bio.golgi)organs.push(tt('x.golgi'));
+    if(bio.trich)organs.push(tt('x.trichocysts'));
+    if(bio.contractile)organs.push(tt('x.contractileVacuole'));
     return organs;
   }
   function artBlock(sp, fallback){
@@ -228,10 +214,10 @@ function buildWiki(filter){
   }
   function factsRow(w){
     if(!w) w={loc:'-',div:'-',food:'-',pred:'-'};
-    return '<div class="wf"><b>'+(ru?'\u0414\u0432\u0438\u0436\u0435\u043d\u0438\u0435':'Locomotion')+':</b> '+(w.loc||'-')+
-      ' \u00b7 <b>'+(ru?'\u0414\u0435\u043b\u0435\u043d\u0438\u0435':'Division')+':</b> '+(w.div||'-')+
-      ' \u00b7 <b>'+(ru?'\u041f\u0438\u0449\u0430':'Food')+':</b> '+(w.food||'-')+
-      ' \u00b7 <b>'+(ru?'\u0412\u0440\u0430\u0433\u0438':'Predators')+':</b> '+(w.pred||'-')+'</div>';
+    return '<div class="wf"><b>'+(tt('x.locomotion'))+':</b> '+(w.loc||'-')+
+      ' \u00b7 <b>'+(tt('x.division'))+':</b> '+(w.div||'-')+
+      ' \u00b7 <b>'+(tt('x.food'))+':</b> '+(w.food||'-')+
+      ' \u00b7 <b>'+(tt('x.predators'))+':</b> '+(w.pred||'-')+'</div>';
   }
   try{
     for(var ci=0;ci<cats.length;ci++){
@@ -246,9 +232,9 @@ function buildWiki(filter){
             html+='<div class="wiki-cat" style="color:'+(CC&&CC.virus?CC.virus:'#f44')+'">'+catLabel+'</div>';
             hasVirus=true;
           }
-          var vfb=ru?'\u0411\u0430\u043a\u0442\u0435\u0440\u0438\u043e\u0444\u0430\u0433. \u0417\u0430\u0440\u0430\u0436\u0430\u0435\u0442 \u0431\u0430\u043a\u0442\u0435\u0440\u0438\u0438, \u0432\u044b\u0437\u044b\u0432\u0430\u0435\u0442 \u043b\u0438\u0437\u0438\u0441.':'Bacteriophage. Infects bacteria, causes lysis.';
+          var vfb=tt('x.bacteriophageInfectsBacteriaCauses');
           html+='<div class="wiki-entry"><b style="color:'+(vs.color||'#f44')+'">'+(vs.name||('virus '+vi))+'</b>'+
-            '<div class="wl">'+(ru?'\u0420\u0430\u0437\u043c\u0435\u0440':'Size')+': '+(vs.size||'?')+'\u03bcm</div>'+
+            '<div class="wl">'+(tt('x.size'))+': '+(vs.size||'?')+'\u03bcm</div>'+
             artBlock(vs, vfb)+'</div>';
         }
         continue;
@@ -273,11 +259,11 @@ function buildWiki(filter){
           '<div class="wl">'+(sp.size||'?')+'\u03bcm \u00b7 '+(sp.speed||'?')+'\u03bcm/s \u00b7 '+(sp.locomotion||'-')+'</div>'+
           artBlock(sp,'')+
           factsRow(w)+
-          (organs.length?'<div class="wo"><b>'+(ru?'\u041e\u0440\u0433\u0430\u043d\u0435\u043b\u043b\u044b':'Organelles')+':</b> '+organs.join(', ')+'</div>':'')+
+          (organs.length?'<div class="wo"><b>'+(tt('x.organelles'))+':</b> '+organs.join(', ')+'</div>':'')+
           '</div>';
       }
     }
-    if(!html) html='<div class="wiki-entry">'+(ru?'\u041d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e.':'Nothing found.')+'</div>';
+    if(!html) html='<div class="wiki-entry">'+(tt('x.nothingFound'))+'</div>';
   }catch(eBuild){
     html='<div class="wiki-entry">Wiki error: '+(eBuild&&eBuild.message?eBuild.message:'unknown')+'</div>';
   }

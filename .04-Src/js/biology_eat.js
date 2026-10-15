@@ -82,7 +82,7 @@ function eatOrg(pred,prey){
     prey.vx = (prey.vx||0) + (prey.x - pred.x) * 0.08;
     prey.vy = (prey.vy||0) + (prey.y - pred.y) * 0.08;
     if(pred.isPlayer && window.showToast && Math.random()<0.35){
-      window.showToast('Откусил кусок — крупная добыча!', '#fa4');
+      window.showToast(tt('toast.biteBig'), '#fa4');
     }
     // охотник тоже чуть устаёт от риска
     if(ratio > 1.2) pred.energy = Math.max(1, (pred.energy||0) - 1.5);
@@ -128,7 +128,7 @@ function eatOrg(pred,prey){
       if(typeof window.gameStats.dna === 'undefined') window.gameStats.dna = 0;
       window.gameStats.dna += 1;
       if(window.showToast){
-        window.showToast('+'+Math.round(energyGain)+' эн / +'+massGain.toFixed(1)+' масса', '#8f8');
+        window.showToast(tt('toast.gain',{e:Math.round(energyGain),m:massGain.toFixed(1)}), '#8f8');
       }
   }
 
@@ -180,12 +180,12 @@ function eatOrg(pred,prey){
       killOrg(prey,DCODE.EATEN);
       // Big burst
       for(var i=0;i<3;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.3,1.0);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:1.0,maxL:1.0,size:rng(0.8,1.5),color:prey.sp.color||'#ccc'});}
-      if(pred===player && window.showToast) window.showToast('+'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' масса', '#4f4');
+      if(pred===player && window.showToast) window.showToast(tt('toast.gain',{e:Math.round(pred._lastEnGain||0),m:(pred._lastMassGain||0).toFixed(1)}), '#4f4');
       if (typeof window !== 'undefined' && state === 'menu' && (window.focusTimer||0) <= 0 && Math.random() < 0.15) { /* cinematic disabled */ }
   } else {
       // partial nutrition already applied above via biteFrac — no second energy add
       for(var i=0;i<2;i++){var pAng=rng(0,Math.PI*2);var spd=rng(0.3,0.8);parts.push({x:prey.x,y:prey.y,vx:Math.cos(pAng)*spd,vy:Math.sin(pAng)*spd,life:0.8,maxL:0.8,size:rng(0.6,1.2),color:prey.sp.color||'#ccc'});}
-      if(pred===player && window.showToast) window.showToast('Укус +'+Math.round(pred._lastEnGain||0)+' эн / +'+((pred._lastMassGain||0).toFixed(1))+' м', '#fa4');
+      if(pred===player && window.showToast) window.showToast(tt('toast.biteGain',{e:Math.round(pred._lastEnGain||0),m:(pred._lastMassGain||0).toFixed(1)}), '#fa4');
   }
 }
 
@@ -230,7 +230,7 @@ function killOrg(o,cause){
       speciesPop[o.sp.id].alive--;
       speciesPop[o.sp.id].deaths[cause]++;
       if (speciesPop[o.sp.id].alive === 0 && speciesPop[o.sp.id].born > 20) {
-          if (window.logEvent) window.logEvent("Вид " + o.sp.name + " вымер!", "#f66");
+          if (window.logEvent) window.logEvent(tt('toast.extinct',{name:o.sp.name}), "#f66");
       }
   }
   stats.deaths++;stats.deathCauses[cause]++;
@@ -248,12 +248,12 @@ function doCyst(o){
     if(o.isPlayer){
       o.manualCyst=true;
       o.cystMin=5;
-      if(window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.cyst.enter','Спора: защита, движение 0, энергия тратится медленно'):'Спора: защита, движение 0, энергия тратится медленно'), '#8cf');
+      if(window.showToast) window.showToast(tt('toast.cyst.enter'), '#8cf');
     }
   } else {
     o.speedMult=1;
     o.manualCyst=false;
-    if(o.isPlayer && window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.cyst.exit','Вышел из споры'):'Вышел из споры'), '#8f8');
+    if(o.isPlayer && window.showToast) window.showToast(tt('toast.cyst.exit'), '#8f8');
   }
   if(o.isPlayer && typeof window.syncActButtons==='function') window.syncActButtons();
 }

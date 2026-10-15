@@ -8,8 +8,8 @@ class EventManager {
         this.eventDuration = 0;
         
         this.events = [
-            { id: 'acid_rain', name: 'Кислотный дождь', duration: 15, onStart: () => { window.basePH = window.gamePH || 7.0; window.gamePH = 2.0; }, onEnd: () => { window.gamePH = window.basePH; } },
-            { id: 'eclipse', name: 'Солнечное затмение', duration: 20, onStart: () => { window.eclipseMod = 0.1; }, onEnd: () => { window.eclipseMod = 1.0; } }
+            { id: 'acid_rain', nameKey: 'ev.acid_rain', duration: 15, onStart: () => { window.basePH = window.gamePH || 7.0; window.gamePH = 2.0; }, onEnd: () => { window.gamePH = window.basePH; } },
+            { id: 'eclipse', nameKey: 'ev.eclipse', duration: 20, onStart: () => { window.eclipseMod = 0.1; }, onEnd: () => { window.eclipseMod = 1.0; } }
         ];
         window.eclipseMod = 1.0;
     }
@@ -19,7 +19,7 @@ class EventManager {
             this.eventDuration -= dt;
             if (this.eventDuration <= 0) {
                 if(this.currentEvent.onEnd) this.currentEvent.onEnd();
-                if(window.addMessage) window.addMessage(this.currentEvent.name + " закончился", '#aaffaa');
+                if(window.addMessage) window.addMessage(tt('ev.ended', {name: tt(this.currentEvent.nameKey)}), '#aaffaa');
                 this.currentEvent = null;
                 this.timer = Math.random() * 60 + 60; // next event in 1-2 mins
             }
@@ -35,7 +35,7 @@ class EventManager {
         this.currentEvent = this.events[Math.floor(Math.random() * this.events.length)];
         this.eventDuration = this.currentEvent.duration;
         if(this.currentEvent.onStart) this.currentEvent.onStart();
-        if(window.addMessage) window.addMessage("ВНИМАНИЕ: " + this.currentEvent.name + "!", '#ffaaaa');
+        if(window.addMessage) window.addMessage(tt('ev.warn', {name: tt(this.currentEvent.nameKey)}), '#ffaaaa');
     }
     
     draw(ctx, w, h) {

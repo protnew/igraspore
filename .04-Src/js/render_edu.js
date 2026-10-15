@@ -7,50 +7,17 @@ function renderEventLogs(){}
 // EDUCATIONAL ORGANELLE LABELS — anatomy learning mode
 // ============================================================
 var ORGANELLE_INFO = {
-  nucleus: {
-    ru: 'Ядро', en: 'Nucleus',
-    desc: 'Хранит ДНК. Управляет ростом, делением и синтезом белков. У бактерий настоящего ядра нет — ДНК в нуклеоиде.'
-  },
-  nucleoid: {
-    ru: 'Нуклеоид', en: 'Nucleoid',
-    desc: 'Зона с кольцевой ДНК у прокариот. Нет ядерной оболочки — геном свободно в цитоплазме.'
-  },
-  mito: {
-    ru: 'Митохондрия', en: 'Mitochondrion',
-    desc: '«Электростанция» клетки. Дыхание: сахар + O₂ → ATP (энергия). Своя ДНК — остаток древней бактерии.'
-  },
-  chloro: {
-    ru: 'Хлоропласт', en: 'Chloroplast',
-    desc: 'Фотосинтез: свет + CO₂ + H₂O → сахар + O₂. Зелёный из‑за хлорофилла. Есть у водорослей и растений.'
-  },
-  vacuole: {
-    ru: 'Вакуоль', en: 'Vacuole',
-    desc: 'Пузырёк с водой, запасными веществами или пищеварительными ферментами. У инфузорий — пищеварительные и сократительные вакуоли.'
-  },
-  cilia: {
-    ru: 'Реснички', en: 'Cilia',
-    desc: 'Короткие подвижные выросты. Создают ток воды: движение + фильтр-питание (затягивают бактерий и водоросли ко рту).'
-  },
-  flagella: {
-    ru: 'Жгутик', en: 'Flagellum',
-    desc: 'Длинный «мотор» для плавания. Вращается или изгибается — клетка плывёт к пище или от опасности (хемотаксис).'
-  },
-  membrane: {
-    ru: 'Мембрана', en: 'Membrane',
-    desc: 'Тонкая оболочка из липидов. Контролирует, что входит и выходит. У всех клеток есть мембрана.'
-  },
-  wall: {
-    ru: 'Клеточная стенка', en: 'Cell wall',
-    desc: 'Жёсткий каркас снаружи мембраны (пептидогликан у бактерий, целлюлоза у растений). Защита и форма.'
-  },
-  oral: {
-    ru: 'Ротовая воронка', en: 'Oral groove',
-    desc: 'У инфузорий — желобок, куда реснички сгоняют добычу. Отсюда пища попадает в пищеварительную вакуоль.'
-  },
-  cyto: {
-    ru: 'Цитоплазма', en: 'Cytoplasm',
-    desc: 'Внутренняя среда клетки: вода, белки, органеллы. Здесь идут тысячи биохимических реакций.'
-  }
+  nucleus:   { latin: 'Nucleus' },
+  nucleoid:  { latin: 'Nucleoid' },
+  mito:      { latin: 'Mitochondrion' },
+  chloro:    { latin: 'Chloroplast' },
+  vacuole:   { latin: 'Vacuole' },
+  cilia:     { latin: 'Cilia' },
+  flagella:  { latin: 'Flagellum' },
+  membrane:  { latin: 'Membrane' },
+  wall:      { latin: 'Cell wall' },
+  oral:      { latin: 'Oral groove' },
+  cyto:      { latin: 'Cytoplasm' }
 };
 
 function organelleSetFor(o){
@@ -164,7 +131,7 @@ function renderOrganelleEdu(vL,vR,vT,vB){
 
   // Hover label chip next to pin ONLY
   if(hovered){
-    var lab = hovered.info.ru;
+    var lab = tt('edu.' + hovered.id + '.name');
     ctx.font = 'bold 13px system-ui,sans-serif';
     var tw = ctx.measureText(lab).width;
     var lx = hovered.sx + 12, ly = hovered.sy - 16;
@@ -183,18 +150,18 @@ function renderOrganelleEdu(vL,vR,vT,vB){
   var pan = document.getElementById('orgEduPanel');
   if(!pan) return;
   pan.style.display = 'block';
-  var spn = (o.sp && o.sp.name) ? o.sp.name : 'клетка';
+  var spn = (o.sp && o.sp.name) ? o.sp.name : tt('edu.cell');
   var cat = (o.sp && o.sp.cat) ? o.sp.cat : '';
-  var catRu = (typeof catName==='function'?catName(cat):null) || {producer:'зелёные',consumer1:'мелкий едок',consumer2:'средний едок',consumer3:'крупный охотник',decomposer:'уборщик'}[cat]||cat;
-  var focus = hovered ? hovered.info : null;
+  var catRu = (typeof catName==='function'?catName(cat):null) || {producer:tt('catShort.producer'),consumer1:tt('catShort.consumer1'),consumer2:tt('catShort.consumer2'),consumer3:tt('catShort.consumer3'),decomposer:tt('catShort.decomposer')}[cat]||cat;
+  var focus = hovered;
   if(focus){
-    pan.innerHTML = '<div style="font-size:11px;opacity:.7;margin-bottom:2px">🔬 Анатомия · '+spn+' <span style="opacity:.55">('+catRu+')</span></div>'+
-      '<div style="font-size:15px;font-weight:700;color:#d4f5c8;margin:2px 0">'+focus.ru+
-      (focus.en?' <span style="opacity:.5;font-weight:500;font-size:12px">'+focus.en+'</span>':'')+'</div>'+
-      '<div style="font-size:12.5px;line-height:1.35;opacity:.92">'+focus.desc+'</div>';
+    pan.innerHTML = '<div style="font-size:11px;opacity:.7;margin-bottom:2px">🔬 '+tt('edu.anatomy')+' · '+spn+' <span style="opacity:.55">('+catRu+')</span></div>'+
+      '<div style="font-size:15px;font-weight:700;color:#d4f5c8;margin:2px 0">'+tt('edu.'+focus.id+'.name')+
+      (focus.info.latin?' <span style="opacity:.5;font-weight:500;font-size:12px">'+focus.info.latin+'</span>':'')+'</div>'+
+      '<div style="font-size:12.5px;line-height:1.35;opacity:.92">'+tt('edu.'+focus.id+'.desc')+'</div>';
   } else {
-    pan.innerHTML = '<div style="font-size:11px;opacity:.7">🔬 Анатомия · '+spn+'</div>'+
-      '<div style="font-size:13px;opacity:.85;margin-top:4px">Наведи на точку внутри клетки — название и роль органа</div>';
+    pan.innerHTML = '<div style="font-size:11px;opacity:.7">🔬 '+tt('edu.anatomy')+' · '+spn+'</div>'+
+      '<div style="font-size:13px;opacity:.85;margin-top:4px">'+tt('edu.hoverHint')+'</div>';
   }
 }
 

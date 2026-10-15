@@ -180,7 +180,7 @@ function render(){
     ctx.fillRect(mcx-barW/2, mcy+mradius*0.62, barW, 3);
     ctx.font='bold 13px monospace'; ctx.textAlign='center';
     ctx.fillText(um+' µm', mcx, mcy+mradius*0.62+18);
-    ctx.fillText('MICROSCOPE ×'+Math.round(zoom*10)/10, mcx, mcy-mradius*0.78);
+    ctx.fillText(tt('mic.scope')+Math.round(zoom*10)/10, mcx, mcy-mradius*0.78);
     ctx.restore();
   }
 

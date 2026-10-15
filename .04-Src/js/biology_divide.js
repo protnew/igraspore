@@ -141,12 +141,12 @@ function finishDivide(o){
           cam.x = (px + cx) * 0.5;
           cam.y = (py + cy) * 0.5;
         }
-        if(window.showToast) window.showToast('✌️ Разделился! Вторая клетка рядом', '#8f8');
+        if(window.showToast) window.showToast(tt('toast.divided'), '#8f8');
         if(window.playSound) window.playSound('divide');
       } catch(_e){}
     }
   } else {
-    if((o.isPlayer || o === player) && window.showToast) window.showToast('Деление: вторая клетка не создалась', '#f88');
+    if((o.isPlayer || o === player) && window.showToast) window.showToast(tt('toast.divfail'), '#f88');
   }
 
   try {

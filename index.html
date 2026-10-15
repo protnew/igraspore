@@ -29,16 +29,16 @@
 <div style="position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:9999;color:rgba(255,255,255,0.4);font-size:12px;font-family:monospace;pointer-events:none;text-shadow:0 0 2px #000;">iGraSpore V2 - v2.0.0</div>
 <canvas id="glCanvas" aria-hidden="true" style="position:absolute;top:0;left:0;z-index:0;pointer-events:none;display:none;"></canvas><canvas id="c"></canvas>
 <div id="mmWrap" style="width:110px">
-<canvas id="mm" width="110" height="80" style="width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;cursor:pointer;display:block;background:rgba(0,20,40,0.45)" title="Minimap"></canvas>
-<div id="mapLabel" style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">MAP</div>
+<canvas id="mm" width="110" height="80" style="width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;cursor:pointer;display:block;background:rgba(0,20,40,0.45)"></canvas>
+<div id="mapLabel" style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none"></div>
 </div>
 <div id="pcWrap" style="width:110px">
-<canvas id="pc" width="110" height="55" style="width:110px;height:55px;border:1px solid #1a3a55;border-radius:4px;display:block;background:rgba(0,20,40,0.45)" title="Population"></canvas>
-<div id="popLabel" style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none">POP</div>
+<canvas id="pc" width="110" height="55" style="width:110px;height:55px;border:1px solid #1a3a55;border-radius:4px;display:block;background:rgba(0,20,40,0.45)"></canvas>
+<div id="popLabel" style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none"></div>
 </div>
 <div id="leftContainer" style="display:flex; flex-direction:column; gap:8px; pointer-events:auto; z-index:10; width:180px;">
   <div id="langSelWrap" tabindex="0" style="position:relative; width:130px; outline:none; pointer-events:auto; z-index:50;">
-    <div class="lang-curr" style="cursor:pointer; display:flex; align-items:center; font-size:13px;font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.4); backdrop-filter:blur(5px); background:rgba(0,12,28,0.92); border:1px solid #1a3a55; border-radius:8px; color:#fff; padding:6px 12px;"><span style="font-size:14px;margin-right:6px">🌐</span> <span id="curLangTxt">Русский</span> <span style="font-size:12px;margin-left:6px;opacity:0.7">▼</span></div>
+    <div class="lang-curr" style="cursor:pointer; display:flex; align-items:center; font-size:13px;font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.4); backdrop-filter:blur(5px); background:rgba(0,12,28,0.92); border:1px solid #1a3a55; border-radius:8px; color:#fff; padding:6px 12px;"><span style="font-size:14px;margin-right:6px">🌐</span> <span id="curLangTxt"></span> <span style="font-size:12px;margin-left:6px;opacity:0.7">▼</span></div>
     <div class="lang-drop" id="langSelDrop"></div>
   </div>
 <div id="hud" class="p" data-hud-slot="energy" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
@@ -49,22 +49,22 @@
   </div>
 </div>
 <div id="hDivReady" data-hud-slot="energy"></div>
-<div id="topRightStack" aria-label="Игровые переключатели">
+<div id="topRightStack" aria-label="" data-k-aria="aria.switches">
   <div id="topR" class="p" style="display:none"></div>
-  <select id="starSelectGame" title="Выбор звезды/солнца" onchange="window.setStarSystem(this.value);">
-    <option value="sol" data-en="☀ Sun" data-ru="☀ Солнце">☀ Sun</option>
-    <option value="sirius" data-en="★ Sirius" data-ru="★ Сириус">★ Sirius</option>
-    <option value="betelgeuse" data-en="★ Betelgeuse" data-ru="★ Бетельгейзе">★ Betelgeuse</option>
-    <option value="rigel" data-en="★ Rigel" data-ru="★ Ригель">★ Rigel</option>
-    <option value="vega" data-en="★ Vega" data-ru="★ Вега">★ Vega</option>
-    <option value="antares" data-en="★ Antares" data-ru="★ Антарес">★ Antares</option>
-    <option value="alphacentauri" data-en="★ α Centauri" data-ru="★ α Центавра">★ α Centauri</option>
+  <select id="starSelectGame" data-k-title="tip.starSel" onchange="window.setStarSystem(this.value);">
+    <option value="sol" data-k="star.sol"></option>
+    <option value="sirius" data-k="starg.sirius"></option>
+    <option value="betelgeuse" data-k="star.betelgeuse"></option>
+    <option value="rigel" data-k="star.rigel"></option>
+    <option value="vega" data-k="star.vega"></option>
+    <option value="antares" data-k="star.antares"></option>
+    <option value="alphacentauri" data-k="starg.alphacentauri"></option>
   </select>
-  <button id="renderModeBtn" type="button" aria-label="Picture mode" class="cartoon" onclick="toggleRenderModeLarge()"></button>
-  <a id="apkBtn" href="/igraspore.apk" download="igraspore.apk" aria-label="Скачать приложение Android APK">📱 APK</a>
+  <button id="renderModeBtn" type="button" aria-label="" data-k-aria="picMode" class="cartoon" onclick="toggleRenderModeLarge()"></button>
+  <a id="apkBtn" href="/igraspore.apk" download="igraspore.apk" aria-label="" data-k-aria="aria.apk">📱 APK</a>
 </div>
 <div id="weatherP" class="p" style="display:none; top:50px; right:6px;"></div>
-<div id="camM" style="top:5px; left:50%; transform:translateX(-50%);">FOLLOW</div>
+<div id="camM" style="top:5px; left:50%; transform:translateX(-50%);" data-k="cam.followBig"></div>
 <div id="scaleBar" style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); color:#fff; border-bottom:2px solid #fff; padding-bottom:2px; font-size:12px; pointer-events:none; z-index:10; text-shadow:0 1px 2px #000;">100 μm</div>
 <div id="spdBar" style="display:none; z-index:10; top:25px; left:50%; transform:translateX(-50%);"></div>
 <div id="todWrap" class="p" style="display:none; z-index:10; top:60px; left:50%; transform:translateX(-50%);"></div>
@@ -76,60 +76,60 @@
 <div id="toast" style="display:none"></div>
 <div id="tip" class="p"></div>
 <div id="actBar">
-<div class="ab" id="bEat" data-hud-slot="eat" role="button" aria-label="Eat (E)" title="Eat"><span class="hk">E</span></div>
-<div class="ab" id="bDiv" data-hud-slot="divide" role="button" aria-label="Split (Q)" title="Split"><span class="hk">Q</span></div>
-<div class="ab" id="bCyst" data-hud-slot="spore" role="button" aria-label="Spore (R)" title="Spore"><span class="hk">R</span></div>
-<div class="ab hud-parked" id="bFeed" role="button" aria-label="Ручное питание (Space)" title="Ручное питание" hidden>🍽<span class="abt"> КУСЬ</span><span class="hk">Space</span></div>
-<div class="ab" id="bAuto" data-hud-slot="auto" role="button" aria-label="Auto (Tab)" aria-keyshortcuts="Tab" title="Auto"><span class="hk">Tab</span></div>
-<div class="ab hud-parked" id="bFree" role="button" aria-label="Свободный полёт (F)" title="Свободный полёт: F или WASD / мышь">ПОЛЁТ F<span class="hk">F</span></div>
-<div class="ab hud-parked" id="bMicro" role="button" aria-label="Микроскоп (M)" title="Microscope Mode">&#128300;<span class="hk">M</span></div>
-<div class="ab hud-parked" id="bRender" role="button" aria-label="Режим картинки (N)" title="Картинка: мульт / Swiss">&#127912;<span class="hk">N</span></div>
-<div class="ab hud-parked" id="bFol" role="button" aria-label="Следить за клеткой (V)" title="Следить">СЛЕДИТЬ<span class="hk">V</span></div>
-<div class="ab hud-parked" id="bWiki" role="button" aria-label="Вики (B)" title="Wiki/Bestiary">&#128218;<span class="hk">B</span></div>
-<div class="ab" id="bPause" data-hud-slot="menu" role="button" aria-label="Pause (P)" title="Pause">☰</div>
-<div class="ab hud-parked" id="bZI" role="button" aria-label="Приблизить" title="Zoom+">&#128269;+</div>
-<div class="ab hud-parked" id="bZO" role="button" aria-label="Отдалить" title="Zoom-">&#128269;-</div>
+<div class="ab" id="bEat" data-hud-slot="eat" role="button" aria-label="" data-k-aria="aria.eat" title="" data-k-title="tip.eat"><span class="hk">E</span></div>
+<div class="ab" id="bDiv" data-hud-slot="divide" role="button" aria-label="" data-k-aria="aria.divide" title="" data-k-title="tip.divide"><span class="hk">Q</span></div>
+<div class="ab" id="bCyst" data-hud-slot="spore" role="button" aria-label="" data-k-aria="aria.cyst" title="" data-k-title="tip.cyst"><span class="hk">R</span></div>
+<div class="ab hud-parked" id="bFeed" role="button" aria-label="" data-k-aria="aria.feed" title="" data-k-title="tip.feed" hidden>🍽<span class="abt" data-k="abt.feed"></span><span class="hk">Space</span></div>
+<div class="ab" id="bAuto" data-hud-slot="auto" role="button" aria-label="" data-k-aria="aria.auto" aria-keyshortcuts="Tab" title="" data-k-title="tip.auto"><span class="hk">Tab</span></div>
+<div class="ab hud-parked" id="bFree" role="button" aria-label="" data-k-aria="aria.fly" title="" data-k-title="tip.fly"><span class="abt" data-k="abt.fly"></span><span class="hk">F</span></div>
+<div class="ab hud-parked" id="bMicro" role="button" aria-label="" data-k-aria="aria.micro" title="" data-k-title="tip.microMode">&#128300;<span class="hk">M</span></div>
+<div class="ab hud-parked" id="bRender" role="button" aria-label="" data-k-aria="aria.render" title="" data-k-title="tip.render">&#127912;<span class="hk">N</span></div>
+<div class="ab hud-parked" id="bFol" role="button" aria-label="" data-k-aria="aria.follow2" title="" data-k-title="tip.follow"><span class="abt" data-k="abt.follow"></span><span class="hk">V</span></div>
+<div class="ab hud-parked" id="bWiki" role="button" aria-label="" data-k-aria="aria.wiki2" title="" data-k-title="tip.wikiB">&#128218;<span class="hk">B</span></div>
+<div class="ab" id="bPause" data-hud-slot="menu" role="button" aria-label="" data-k-aria="aria.pause" title="" data-k-title="tip.pause">☰</div>
+<div class="ab hud-parked" id="bZI" role="button" aria-label="" data-k-aria="aria.zi" title="" data-k-title="tip.zi">&#128269;+</div>
+<div class="ab hud-parked" id="bZO" role="button" aria-label="" data-k-aria="aria.zo" title="" data-k-title="tip.zo">&#128269;-</div>
 </div>
 <div id="leaderboardO" class="ov">
-  <div class="tt">🏆 Leaderboard</div>
+  <div class="tt" data-k="lb.title"></div>
   <div id="lbList" style="margin:10px 0; max-height:200px; overflow-y:auto; text-align:left; font-family:monospace; background:rgba(0,0,0,0.5); padding:10px;"></div>
-  <button class="btn" id="lbClose">CLOSE</button>
+  <button class="btn" id="lbClose" data-k="close"></button>
 </div>
 <div id="menuO" class="ov show">
 <div class="tt">iGraSpore <span style="font-size:12px;color:#789">v2.0.0</span></div>
 <div class="sb2" id="menuSub"></div>
 <div style="margin-bottom:8px" id="diffWrap"></div>
 <div id="menuActions" class="menu-actions">
-  <button class="btn" id="startBtn" aria-label="startBtn"></button>
-  <button class="btn" id="demoBtn" aria-label="demoBtn" style="background:#1a3a2a;border-color:#4c8"></button>
-  <button class="btn" id="screensaverBtn" aria-label="screensaverBtn" style="background:#1a4a6a;border-color:#4df"></button>
+  <button class="btn" id="startBtn" aria-label="" data-k-aria="aria.start"></button>
+  <button class="btn" id="demoBtn" aria-label="" data-k-aria="aria.demo" style="background:#1a3a2a;border-color:#4c8"></button>
+  <button class="btn" id="screensaverBtn" aria-label="" data-k-aria="aria.aqua" style="background:#1a4a6a;border-color:#4df"></button>
   <select id="starSelect" style="background:#0a1a2a;color:#8cf;border:1px solid #4c8;padding:6px 12px;border-radius:6px;font-size:13px;cursor:pointer;">
-    <option value="sol" data-en="☀ Sun" data-ru="☀ Солнце">☀ Sun</option>
-    <option value="sirius" data-en="★ Sirius A+B" data-ru="★ Сириус A+B">★ Sirius A+B</option>
-    <option value="betelgeuse" data-en="★ Betelgeuse" data-ru="★ Бетельгейзе">★ Betelgeuse</option>
-    <option value="rigel" data-en="★ Rigel" data-ru="★ Ригель">★ Rigel</option>
-    <option value="vega" data-en="★ Vega" data-ru="★ Вега">★ Vega</option>
-    <option value="antares" data-en="★ Antares" data-ru="★ Антарес">★ Antares</option>
-    <option value="alphacentauri" data-en="★ Alpha Centauri A+B" data-ru="★ Альфа Центавра A+B">★ Alpha Centauri A+B</option>
-    <option value="polaris" data-en="★ Polaris" data-ru="★ Полярная">★ Polaris</option>
-    <option value="binary" data-en="★ Binary (blue+orange)" data-ru="★ Двойная (синяя+оранжевая)">★ Binary (blue+orange)</option>
-    <option value="twin" data-en="★★ Twins" data-ru="★★ Близнецы">★★ Twins</option>
-    <option value="trinary" data-en="★★★ Triple" data-ru="★★★ Тройная">★★★ Triple</option>
-    <option value="quadruple" data-en="★★★★ Quadruple" data-ru="★★★★ Четверная">★★★★ Quadruple</option>
-    <option value="dwarf" data-en="★ Red dwarf" data-ru="★ Красный карлик">★ Red dwarf</option>
-    <option value="giant" data-en="★ Orange giant" data-ru="★ Оранжевый гигант">★ Orange giant</option>
-    <option value="flare" data-en="★ Flare star (UV Ceti)" data-ru="★ Вспышечная (UV Ceti)">★ Flare star (UV Ceti)</option>
-    <option value="pulsar" data-en="★ Neutron (pulsar)" data-ru="★ Нейтронная (пульсар)">★ Neutron (pulsar)</option>
+    <option value="sol" data-k="star.sol"></option>
+    <option value="sirius" data-k="star.sirius"></option>
+    <option value="betelgeuse" data-k="star.betelgeuse"></option>
+    <option value="rigel" data-k="star.rigel"></option>
+    <option value="vega" data-k="star.vega"></option>
+    <option value="antares" data-k="star.antares"></option>
+    <option value="alphacentauri" data-k="star.alphacentauri"></option>
+    <option value="polaris" data-k="star.polaris"></option>
+    <option value="binary" data-k="star.binary"></option>
+    <option value="twin" data-k="star.twin"></option>
+    <option value="trinary" data-k="star.trinary"></option>
+    <option value="quadruple" data-k="star.quadruple"></option>
+    <option value="dwarf" data-k="star.dwarf"></option>
+    <option value="giant" data-k="star.giant"></option>
+    <option value="flare" data-k="star.flare"></option>
+    <option value="pulsar" data-k="star.pulsar"></option>
   </select>
 </div>
 <div id="catSel"></div>
 <div class="scrollbox" id="spGrid"></div>
-<div style="margin-top:4px"><button class="btn sm" id="helpBtn" aria-label="helpBtn"></button> <button class="btn sm" id="setBtn2" aria-label="setBtn2"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
+<div style="margin-top:4px"><button class="btn sm" id="helpBtn" aria-label="" data-k-aria="aria.help"></button> <button class="btn sm" id="setBtn2" aria-label="" data-k-aria="aria.set"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
 </div>
 <div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button><button class="btn sm" id="pLegend" type="button"></button><button class="btn sm" id="pCam" type="button"></button><button class="btn sm" id="pMap" type="button"></button><button class="btn sm" id="pMicro" type="button"></button><button class="btn sm" id="pPic" type="button"></button><button class="btn sm" id="menuBtnPause" type="button"></button></div>
 <div id="helpO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="helpT"></div><div id="helpBody" style="color:#bcd;font-size:12px;line-height:1.6;max-width:560px"></div><button class="btn sm" id="helpClose" style="margin-top:12px"></button></div>
 <div id="setO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="setT"></div><div class="scrollbox" id="setBody" style="max-width:400px"></div><button class="btn sm" id="setClose" style="margin-top:12px"></button></div>
-<div id="wikiO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:6px" id="wikiT"></div><input type="text" class="wiki-search" id="wikiSearch" placeholder="Search..."><div id="wikiContent"></div><button class="btn sm" id="wikiClose" style="margin-top:10px"></button></div>
+<div id="wikiO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:6px" id="wikiT"></div><input type="text" class="wiki-search" id="wikiSearch" placeholder="" data-k-ph="wiki.searchPh"><div id="wikiContent"></div><button class="btn sm" id="wikiClose" style="margin-top:10px"></button></div>
 <div id="deadO" class="ov"><div class="tt" style="color:#f44;font-size:24px" id="deadT"></div><div id="deadStats" style="margin-bottom:12px"></div><button class="btn" id="restartBtn"></button><button class="btn sm" id="menuBtn"></button></div>
 <div id="deadScreen"></div>
 
@@ -142,10 +142,10 @@
        <button class="dna-btn" id="dnaSpikes" onclick="buyMutation('spikes')"></button>
        <button class="dna-btn" id="dnaShell" onclick="buyMutation('shell')"></button>
        <hr style="border-color:#444; margin: 15px 0; width: 100%;">
-       <h4 style="margin: 0 0 5px 0;">Import/Export DNA</h4>
-       <input type="text" id="dnaString" placeholder="Paste DNA code here..." style="width:100%; padding: 5px; margin-bottom: 10px; background:#222; color:#0f0; border:1px solid #444; box-sizing: border-box;">
-       <button class="dna-btn" onclick="exportDNA()">Export My DNA</button>
-       <button class="dna-btn" onclick="importDNA()">Import DNA</button>
+       <h4 style="margin: 0 0 5px 0;" data-k="dna.io"></h4>
+       <input type="text" id="dnaString" placeholder="" data-k-ph="dna.pastePh" style="width:100%; padding: 5px; margin-bottom: 10px; background:#222; color:#0f0; border:1px solid #444; box-sizing: border-box;">
+       <button class="dna-btn" onclick="exportDNA()" data-k="dna.export"></button>
+       <button class="dna-btn" onclick="importDNA()" data-k="dna.import"></button>
        <br>
        <button id="dnaClose" onclick="closeDNAEditor()" style="background:rgba(255,60,60,0.4);border:1px solid rgba(255,100,100,0.4);padding:10px 15px;color:#fff;cursor:pointer;border-radius:8px;font-weight:bold;transition:all 0.2s;backdrop-filter:blur(4px);box-shadow:0 4px 6px rgba(0,0,0,0.2);" onmouseover="this.style.background='rgba(255,60,60,0.7)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,60,60,0.4)';this.style.transform='translateY(0)'"></button>
    </div>

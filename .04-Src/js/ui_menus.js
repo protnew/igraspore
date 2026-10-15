@@ -62,7 +62,7 @@ function buildSpeciesGrid(){
     for(var vi=0;vi<VIRUS_SPECS.length;vi++){
       var vs=VIRUS_SPECS[vi];
       var c=document.createElement('div');c.className='sc'+(selSpecies===VIRUS_ID_START+vi?' sel':'');c.setAttribute('data-si',VIRUS_ID_START+vi);
-      var vnum=(typeof vs.num==='number')?vs.num:(SPECIES_DB.length+1+vi);c.innerHTML='<div class="scN" style="color:'+vs.color+'"><span style="opacity:.7;font-size:10px;margin-right:4px">#'+vnum+'</span>'+vs.name+'</div><div class="scL">'+vs.size+'\u03bcm</div><div class="scC">\u2620 \u0412\u0438\u0440\u0443\u0441</div><div class="scP">-</div>';
+      var vnum=(typeof vs.num==='number')?vs.num:(SPECIES_DB.length+1+vi);c.innerHTML='<div class="scN" style="color:'+vs.color+'"><span style="opacity:.7;font-size:10px;margin-right:4px">#'+vnum+'</span>'+vs.name+'</div><div class="scL">'+vs.size+'\u03bcm</div><div class="scC">\u2620 '+tt('spcard.virus')+'</div><div class="scP">-</div>';
       c.onclick=function(ev){selSpecies=parseInt(ev.currentTarget.getAttribute('data-si'));buildSpeciesGrid();};
       sg.appendChild(c);
     }
@@ -180,30 +180,19 @@ function updateMenuTexts(){
   var pc=document.getElementById('pc'); if(pc) pc.title=tt('popTip');
   var pauseBtn=document.getElementById('bPause'); if(pauseBtn) pauseBtn.title=tt('paused');
   document.querySelectorAll('#starSelect option, #starSelectGame option').forEach(function(o){
-    var label = curLang==='ru' ? o.getAttribute('data-ru') : o.getAttribute('data-en');
-    if(label) o.textContent = label;
+    var k = o.getAttribute('data-k');
+    if(k) o.textContent = tt(k);
   });
+  document.querySelectorAll('[data-k-title]').forEach(function(o){o.title=tt(o.getAttribute('data-k-title'));});
+  document.querySelectorAll('[data-k-aria]').forEach(function(o){o.setAttribute('aria-label',tt(o.getAttribute('data-k-aria')));});
+  document.querySelectorAll('[data-k-ph]').forEach(function(o){o.setAttribute('placeholder',tt(o.getAttribute('data-k-ph')));});
   var aquaBtn=document.getElementById('screensaverBtn'); if(aquaBtn) aquaBtn.textContent=tt('aquarium');
   document.getElementById('setT').textContent=tt('settingsT');document.getElementById('setClose').textContent=tt('close');
   document.getElementById('wikiT').textContent=tt('wikiT');document.getElementById('wikiClose').textContent=tt('close');
-  var hk=curLang==='ru'?'<span><kbd>WASD</kbd> \u041f\u043b\u044b\u0432\u0430\u0442\u044c</span><span><kbd>\u041b\u041a\u041c</kbd> \u041a \u043a\u0443\u0440\u0441\u043e\u0440\u0443</span><span><kbd>\u041f\u043a\u041c</kbd> \u0426\u0435\u043b\u044c</span><span><kbd>\u041a\u043e\u043b\u0435\u0441\u043e</kbd> \u0417\u0443\u043c</span><span class="kh-sum">\u041a\u043d\u043e\u043f\u043a\u0438: E Q R Space Tab F M N V B P</span>'
-    :'<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span>';
+  var hk=tt('x.wasdSwimLmbCursorRmbTargetWheel');
   if(typeof window.buildKeyHint==='function') window.buildKeyHint(hk);
   else { var _kh=document.getElementById('keyHint'); if(_kh) _kh.innerHTML=hk; }
-  document.getElementById('helpBody').innerHTML=curLang==='ru'?
-    '<p><b style="color:#4df">Управление:</b> WASD — плавание. Вверх = поверхность, вниз = дно. ЛКМ — плыть к курсору. Пробел — укус.</p>'+
-    '<p><b style="color:#8f8">Кто кого ест (просто):</b></p>'+
-    '<p style="line-height:1.45">🌱 <b>Зелёные</b> — не охотятся. Кормятся светом (как растения). Это основной корм пруда.<br>'+
-    '🔵 <b>Мелкие едоки</b> — бактерии. Грызут зелёных.<br>'+
-    '🟠 <b>Средние едоки</b> — инфузории. Фильтруют воду: затягивают бактерий и зелёных. Не прыгают на гигантов.<br>'+
-    '🟣 <b>Крупные охотники</b> — едят зелёных, бактерий и средних. Можно кусать и чуть более крупных (опасно). Без еды живут долго.</p>'+
-    '<p><b style="color:#4df">Камера:</b> F — свободный полёт. V — вернуться к клетке. Колесо — зум.</p>'+
-    '<p><b style="color:#4df">Деление:</b> Наелся и вырос — делишься на двоих. Q — вручную.</p>'
-    :'<p><b style="color:#4df">Controls:</b> WASD swim. Space = bite. LMB = swim to cursor.</p>'+
-    '<p><b style="color:#8f8">Who eats whom:</b></p>'+
-    '<p>🌱 Greens eat light. 🔵 Small eaters eat greens. 🟠 Mid eaters filter bacteria+greens. 🟣 Big hunters eat greens, bacteria and mid-eaters — and can bite slightly larger prey.</p>'+
-    '<p><b style="color:#4df">Camera:</b> F free cam, V back to cell. Wheel = zoom.</p>'+
-    '<p><b style="color:#4df">Division:</b> Eat, grow, split. Q = manual.</p>';
+  document.getElementById('helpBody').innerHTML=tt('help.body');
   buildDiff();buildCatSel();buildSpeciesGrid();
 }
 
@@ -238,12 +227,10 @@ window.buildKeyHint = function(hkHtml){
   if(hkHtml) window._keyHintHtml = hkHtml;
   if(!window._keyHintHtml){
     // unique movement keys only; button hotkeys live on the buttons (.hk) — one compact summary line here
-    window._keyHintHtml = ru
-      ? '<span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span>'
-      : '<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span>';
+    window._keyHintHtml = tt('x.wasdSwimLmbCursorRmbTargetWheel2');
   }
   var collapsed = !!window._keyHintCollapsed;
-  var btn = ru ? (collapsed ? 'Клавиши' : 'Свернуть') : (collapsed ? 'Keys' : 'Hide keys');
+  var btn = collapsed ? tt('kh.keys') : tt('kh.hide');
   kh.innerHTML = '<button type="button" id="khToggle" aria-expanded="'+(!collapsed)+'" aria-controls="khKeys">'+btn+'</button>' +
     '<div class="kh-keys" id="khKeys"' + (collapsed ? ' hidden aria-hidden="true"' : '') + '>'+window._keyHintHtml+'</div>';
   kh.className = 'p' + (collapsed ? ' collapsed' : '');

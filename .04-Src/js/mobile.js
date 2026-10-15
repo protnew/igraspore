@@ -255,9 +255,9 @@
       var cat = (o.sp && o.sp.cat) ? o.sp.cat : '';
       var en = Math.round(o.energy||0);
       tip.style.display = 'block';
-      tip.innerHTML = '<b>'+name+'</b> · '+cat+' · E='+en +
-        (o.infected||o.infectionT>0 ? ' · 🦠 заражён' : '') +
-        (o.isPlayer ? ' · ВЫ' : '');
+      tip.innerHTML = '<b>'+name+'</b> · '+cat+tt('mob.eSep')+en +
+        (o.infected||o.infectionT>0 ? tt('mob.infected') : '') +
+        (o.isPlayer ? tt('mob.you') : '');
       // auto-hide
       clearTimeout(window._tipHideT);
       window._tipHideT = setTimeout(function(){ try{ tip.style.display='none'; }catch(e){} }, 3500);

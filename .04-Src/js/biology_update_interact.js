@@ -61,14 +61,14 @@ window.updateOrgInteract = function(o, dt) {
       o._cystCount = (o._cystCount||0) + 1;
       o.cyst = true; o.energy = 10; o.vx=0; o.vy=0; o.aiTarget=null; o.state='rest';
       if(o.isPlayer){ o.manualCyst=false; o.cystMin=0; }
-      if(o.isPlayer && window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.cyst.hunger','Голод: впал в цисту — найди еду и проснись'):'Голод: впал в цисту — найди еду и проснись'), '#fc8');
+      if(o.isPlayer && window.showToast) window.showToast(tt('toast.cyst.hunger'), '#fc8');
       return;
     }
   }
   // Hunger cysts may wake once energy returns. Manual spore stays until R.
   if(o.isPlayer && o.cyst && !o.manualCyst && o.energy>=18 && ((o.cystT||0)>=(o.cystMin||0))){
     o.cyst=false; o.cystT=0;
-    if(window.showToast) window.showToast((typeof igsText==='function'?igsText('toast.cyst.exit','Вышел из споры'):'Вышел из споры'), '#8f8');
+    if(window.showToast) window.showToast(tt('toast.cyst.exit'), '#8f8');
   }
   if(o.energy<=-15){killOrg(o,DCODE.STARVE);return;}
   if(o.sp.isEuk&&o.sp.cat!=='decomposer'&&o.age>500){o.energy-=0.15*dt;if(o.energy<5&&Math.random()<0.004*dt){killOrg(o,DCODE.AGE);return;}}
@@ -141,7 +141,7 @@ window.updateOrgInteract = function(o, dt) {
           if(typeof forceEat==='function') forceEat(o, ap);
           else { ap.divCD=0; ap.invuln=0; eatOrg(o,ap); }
           if(isCiliate && window.showToast && Math.random()<0.35)
-            window.showToast('Фильтр: захватил добычу', '#9cf');
+            window.showToast(tt('toast.filter.catch2'), '#9cf');
         } else {
           eatOrg(o, ap);
         }
@@ -180,7 +180,7 @@ window.updateOrgInteract = function(o, dt) {
             if(o.isPlayer && typeof forceEat==='function') forceEat(o, best);
             else eatOrg(o, best);
             if(o.isPlayer && window.showToast && Math.random()<0.4)
-              window.showToast('Реснички: фильтр-питание', '#9cf');
+              window.showToast(tt('toast.cilia.filter'), '#9cf');
           } else {
             // Ambient organic soup if prey fled — tiny trickle only near food density
             var drip = Math.min(2.5, 0.4 + micro*0.35);

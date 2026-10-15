@@ -22,8 +22,14 @@ const TAG = (process.argv.find(a => a.startsWith('--tag=')) || '--tag=before').s
 
 // файлы-исключения: механизм i18n (сами словари L.2 переносятся в json) и wiki-данные (U08 отдельно)
 const SKIP_FILES = new Set(['js/i18n_hud.js', 'js/i18n_detect.js', 'js/wiki_articles.js']);
-// имена переменных-данных: латинские названия видов, формы, цвета — не UI-строки
-const DATA_VARS = new Set(['PN', 'CN1', 'CN2', 'CN3', 'DN', 'VN', 'SHAPES', 'CC']);
+// имена переменных-данных: латинские названия видов, формы, цвета, словарь имён языков, подписи локалей — не UI-строки
+const DATA_VARS = new Set(['PN', 'CN1', 'CN2', 'CN3', 'DN', 'VN', 'SHAPES', 'CC', 'langNames', 'LANGS', 'WATER_VERT', 'WATER_FRAG', 'VERT', 'FRAG', 'VSRC', 'FSRC']);
+// GLSL-шейдеры: технический код, не переводится (L.1: code/data suppression)
+const GLSL = /\b(vec[234]|gl_FragColor|gl_Position|attribute|uniform|varying|precision\s+\w+\s+float|void\s+main|mix|fbm|uTime|uResolution|uDayLight|vWaveHeight|vTexCoord)\b/;
+// единицы/масштабные суффиксы — не переводятся
+const UNITS = /[µμ]m|°C|\bpx\b|\bµm\b/;
+// CSS-класс-тоглы: ' act', 'ov show', ' sel' и т.п. — токены разметки, не текст
+const CSS_TOKENS = new Set(['ov','show','act','on','sel','collapsed','free','p','sb','sb2','cb','sc','scN','scC','scP','scL','sr','tg','diff','lang-item','swiss','webgl','cartoon','tt','btn','hk','abt','demo-on','is-active-cam','is-active-swiss','is-active-micro','stbl','lbl','val','wiki-entry','wl','rw','kh-keys','kh-sum','div-reason','menu-actions','scrollbox','wiki-search','lang-drop','lang-curr','hidden','inGame','mapLabel','popLabel','free','p']);
 // свойства-данные словарей T.ru/T.en пропускаем (L.2 переносит их целиком)
 
 const CYR = /[А-Яа-яЁё]/;
@@ -37,6 +43,7 @@ function isAllowed(rel, text, line) {
     if (a.exact != null) { if (a.exact === text) return a; continue; }
     if (a.regex) { try { if (new RegExp(a.regex).test(text)) return a; } catch {} continue; }
     if (a.contains != null && String(text).includes(a.contains)) return a;
+    if (a.exact == null && !a.regex && a.contains == null) return a; // file+line-only entry
   }
   return null;
 }
@@ -50,14 +57,21 @@ function push(file, node, type, text, ctx, cat) {
 }
 
 const hasLetters = v => typeof v === 'string' && LET.test(v);
-const isCodeToken = v => /^[a-zA-Z0-9_.\-#\/:{}()]*$/.test(v) && v.length <= 40 && !/\s/.test(v);
+const isCodeToken = v => /^[a-zA-Z0-9_.\-#\/:{}()=?&%]*$/.test(v) && v.length <= 40 && !/\s/.test(v);
 // разметка/CSS/шаблон-плейсхолдеры — не переводимый текст
 const isMarkup = v => /<\/?[a-zA-Z]/.test(v) || /style\s*=|[a-z-]+\s*:\s*[^;]+;/.test(v) || /^\{[a-zA-Z]+\}$/.test(v)
-  || /\b(rgba?|#[0-9a-fA-F]{3,8}|system-ui|monospace|sans-serif)\b/.test(v) || /^;/.test(v) || /^(bold|italic)\b/.test(v);
+  || /\b(rgba?|#[0-9a-fA-F]{3,8}|system-ui|monospace|sans-serif)\b/.test(v) || /^;/.test(v) || /^(bold|italic)\b/.test(v)
+  || /^\(.*:\s*[^)]+\)$/.test(v) || /^\.[\w-]/.test(v) || /\{[^}]*\}/.test(v)
+  || /&[a-z]+;/.test(v) || /var\(--/.test(v) || /[a-zA-Z-]+\s*=\s*"/.test(v) || /^\s*[\d.]+(px|em|rem|vh|vw|%|fr|s|ms)\b/.test(v)
+  || /^[%\w\s]*;[a-z-]+:$/.test(v);
+const isCssClassTokens = v => { const t=v.trim().split(/\s+/).filter(Boolean); return t.length>0 && t.every(tok=>CSS_TOKENS.has(tok)); };
 // латинский одиночный токен в коде (класс, id, код клавиши, режим, тег, цвет) — cat=code
 function latinCat(v, ctx) {
   if (CYR.test(v)) return 'ui';
+  if (GLSL.test(v)) return 'code';
   if (isMarkup(v)) return 'code';
+  if (isCssClassTokens(v)) return 'code';
+  if (UNITS.test(v) && v.length <= 30) return 'code';
   if (isCodeToken(v)) return 'code';
   return 'ui';
 }
@@ -84,9 +98,14 @@ function scanJS(fileAbs) {
       if (parent && parent.type === 'CallExpression') {
         const cal = parent.callee;
         const nm = cal.type === 'Identifier' ? cal.name : (cal.property && cal.property.name) || '';
-        if (['tt', 'igsText'].includes(nm)) return; // ключ словаря — не литерал UI
-        // console.* — логи разработчика, не UI игрока
-        if (cal.type === 'MemberExpression' && cal.object.name === 'console') return;
+        if (['tt', 'igsText', 'matchMedia', 'getElementById', 'createElement', 'setAttribute', 'getAttribute', 'addEventListener', 'removeEventListener', 'postMessage', 'open', 'send'].includes(nm)) return; // ключ словаря / API-аргумент — не UI-текст
+        // console.* и DOM-API (querySelector, classList.*, localStorage.*, canvas ctx) — не UI игрока
+        if (cal.type === 'MemberExpression') {
+          const on = cal.object.name || (cal.object.object && cal.object.object.name) || '';
+          if (['console', 'classList', 'localStorage', 'sessionStorage', 'document', 'navigator', 'location', 'ctx', 'g', 'gl'].includes(on)) return;
+          const prop = (cal.property && cal.property.name) || '';
+          if (['querySelector', 'querySelectorAll', 'getElementById', 'getContext', 'setAttribute', 'getAttribute', 'addEventListener', 'removeEventListener', 'setProperty', 'appendChild'].includes(prop)) return;
+        }
       }
       if (parent && parent.type === 'ExpressionStatement' && node.value === 'use strict') return;
       if (parent && (parent.type === 'ImportDeclaration' || parent.type === 'ExportNamedDeclaration' || parent.type === 'ExportAllDeclaration')) return;
@@ -138,7 +157,7 @@ function scanJS(fileAbs) {
 function scanHTML(fileAbs) {
   const rel = path.relative(SRC, fileAbs).split(path.sep).join('/');
   const lines = fs.readFileSync(fileAbs, 'utf8').split(/\r?\n/);
-  const attrRe = /(title|placeholder|aria-label)\s*=\s*"([^"]+)"/g;
+  const attrRe = /(?<![\w-])(title|placeholder|aria-label|alt|data-en|data-ru|data-i18n)\s*=\s*"([^"]+)"/g;
   let inScript = false, inStyle = false;
   lines.forEach((ln, i) => {
     if (/<script[\s>]/.test(ln)) inScript = true;
@@ -151,7 +170,11 @@ function scanHTML(fileAbs) {
       const txtRe = />([^<]+)</g;
       while ((m = txtRe.exec(ln))) {
         const t = m[1].trim();
-        if (t && hasLetters(t)) push(rel, { loc: { start: { line: i + 1 } } }, 'html-text', t.slice(0, 120), 'node', 'ui');
+        if (!t || !hasLetters(t)) continue;
+        // буквы-горячие клавиши в <span class="hk">…</span> — не переводятся (код клавиши)
+        const before = ln.slice(Math.max(0, m.index - 80), m.index);
+        if (/class\s*=\s*"hk"/.test(before)) { push(rel, { loc: { start: { line: i + 1 } } }, 'html-text', t.slice(0, 120), 'node', 'code'); continue; }
+        push(rel, { loc: { start: { line: i + 1 } } }, 'html-text', t.slice(0, 120), 'node', 'ui');
       }
     }
     if (/<\/script>/.test(ln)) inScript = false;
@@ -162,7 +185,7 @@ function scanHTML(fileAbs) {
 const jsFiles = fs.readdirSync(JS_DIR).filter(f => f.endsWith('.js')).map(f => path.join(JS_DIR, f))
   .filter(f => !SKIP_FILES.has(path.relative(SRC, f).split(path.sep).join('/')));
 for (const f of jsFiles) scanJS(f);
-const idx = path.join(SRC, 'index.html');
+const idx = path.join(ROOT, 'index.html');
 if (fs.existsSync(idx)) scanHTML(idx);
 
 let open = 0, allowed = 0, code = 0;

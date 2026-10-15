@@ -161,7 +161,7 @@
   window.enableWebGLRenderMode=function(){
     if(!webglReady){
       if(!initWaterShader()){
-        if(window.showToast) window.showToast('WebGL недоступен — возврат в мультяшный');
+        if(window.showToast) window.showToast(tt('toast.webglFail'));
         return false;
       }
     }
@@ -182,8 +182,8 @@
   // Compare report helper
   window.webglCompareNotes=function(){
     return {
-      same: ['Мир и организмы на Canvas 2D', 'Управление/еда/движение без смены симуляции'],
-      different: ['Фон воды рисует WebGL-шейдер (рябь, каустика, блик)', 'Основной canvas прозрачный поверх GL'],
+      same: [tt('wgl.same1'), tt('wgl.same2')],
+      different: [tt('wgl.diff1'), tt('wgl.diff2')],
       source: '.04-Src/v3-webgl (shaders + inline water loop)'
     };
   };

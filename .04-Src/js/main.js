@@ -131,15 +131,14 @@ if(state==='playing'||state==='menu')render();
 window.tutorialStep = 0;
 window.tutorialActive = false;
 window.TUTORIAL_STEPS = [
-  { title: { ru: 'Добро пожаловать', en: 'Welcome' }, body: { ru: 'Вы — микроорганизм в луже. Цель: есть, расти, делиться. Нажмите «Далее».', en: 'You are a microbe in a pond. Goal: eat, grow, divide. Tap Next.' } },
-  { title: { ru: 'Движение', en: 'Movement' }, body: { ru: 'WASD — плыть. Мышь задаёт направление. Попробуйте сдвинуться, затем «Далее».', en: 'WASD to swim. The mouse sets direction. Move, then tap Next.' } },
-  { title: { ru: 'Питание', en: 'Eating' }, body: { ru: 'Подойдите к меньшей клетке и нажмите ЕСТЬ (E). Должны появиться вспышка и «+энергия».', en: 'Swim to a smaller cell and press EAT (E). You should see a flash.' } },
-  { title: { ru: 'Деление', en: 'Division' }, body: { ru: 'При полной энергии нажмите ДЕЛИТЬ (Q). Клетка станет заметно меньше — это нормально.', en: 'When energy is full, press SPLIT (Q). The cell gets smaller. That is normal.' } },
-  { title: { ru: 'Готово', en: 'Done' }, body: { ru: 'Камера: СЛЕДИТЬ / ПОЛЁТ. Картинка: МУЛЬТЯШНЫЙ или SWISS. Удачи в эволюции!', en: 'Camera: follow or free flight. Good luck.' } }
+  { title: 'tut.s1.title', body: 'tut.s1.body' },
+  { title: 'tut.s2.title', body: 'tut.s2.body' },
+  { title: 'tut.s3.title', body: 'tut.s3.body' },
+  { title: 'tut.s4.title', body: 'tut.s4.body' },
+  { title: 'tut.s5.title', body: 'tut.s5.body' }
 ];
 function tutText(field){
-  if(!field || typeof field==='string') return field||'';
-  return curLang==='ru' ? (field.ru||field.en||'') : (field.en||field.ru||'');
+  return (typeof field === 'string' && field) ? tt(field) : '';
 }
 
 window.showTutorialStep = function(){
@@ -355,8 +354,8 @@ function startGame(isScreensaver){
   document.getElementById('actBar').style.display=(window.demoMode||isScreensaver)?'none':'flex';
   if(typeof window.measureActbarH==='function'){ window.measureActbarH(); setTimeout(window.measureActbarH,120); }
   document.getElementById('renderModeBtn').style.display='block';
-  if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML='📗 SWISS';rb4.title=tt('swissNow');}}
-  else if(settings.renderMode==='webgl'){var rb5=document.getElementById('renderModeBtn');if(rb5){rb5.className='webgl';rb5.innerHTML='🌊 WEBGL';rb5.title=tt('webglNow');}}
+  if(settings.renderMode==='swiss'){var rb4=document.getElementById('renderModeBtn');if(rb4){rb4.className='swiss';rb4.innerHTML=tt('mode.swissLbl');rb4.title=tt('swissNow');}}
+  else if(settings.renderMode==='webgl'){var rb5=document.getElementById('renderModeBtn');if(rb5){rb5.className='webgl';rb5.innerHTML=tt('mode.webglLbl');rb5.title=tt('webglNow');}}
   else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 '+tt('cartoon');rb2.title=tt('cartoonNow');}}
   var kh=document.getElementById('keyHint');
   window._keyHintStart=Date.now();

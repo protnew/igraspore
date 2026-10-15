@@ -1,0 +1,25 @@
+critic-A round 1 — es / tr / fil
+date: 2026-10-15T10:45+03:00
+role: critic-A (separate review session, decision №20)
+model: qoder-hvless (provider UNATTESTED — not reported to the run)
+session_id: critic-A-20261015-es-tr-fil-r1-8efb33
+inputs: en.json (140 keys), ru.json (140), es.json/tr.json/fil.json (91 keys each)
+
+scores (mean of 5 axes):
+  es  6.0  meaning6 glossary5 register7 length5 errors7   issues 12
+  tr  6.8  meaning7 glossary6 register6 length7 errors8   issues 11
+  fil 5.2  meaning6 glossary5 register5 length5 errors5   issues 15
+
+headline finding (regression, not just quality):
+  en/ru now carry 140 keys; es/tr/fil (and all 15 other non-en/ru languages) carry 91.
+  The same 49 keys added this session (DNA panel, tutorial, filter, map/legend, colony,
+  poolWill, virusMode, render chips, camera flight/follow, flow play/next/skip/ready/exit,
+  massWord, midEaterTip, tutDone, autoPilotOn, ...) are MISSING in every other language.
+  tt() falls back to T.en, so those 49 render English inside the localized build.
+  This must be fixed by translating the 49 keys per language (L.5), then re-scored.
+
+glossary.csv absent — glossary axis scored on internal term consistency only.
+params: 0 violations across the 91 present keys ({cur}/{need}/{sec} match en).
+
+verdict per №22: none reach >=8; do NOT disable. Fix (translate 49 keys + apply listed
+issues) -> round 2 (critic A again + new package for critic B).

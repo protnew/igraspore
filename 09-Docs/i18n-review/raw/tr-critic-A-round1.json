@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "qoder-hvless",
+  "model_provider": "UNATTESTED",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261015-es-tr-fil-r1-8efb33",
+  "command": "critic-A review es/tr/fil round1",
+  "started_at": "2026-10-15T00:30:00+03:00",
+  "finished_at": "2026-10-15T10:47:00+03:00",
+  "input_sha256": {
+    "en.json": "991dcdb4c400ed8f2dab4a31c2abd27d1594d74f3f6d1b01c563a4be0819367a",
+    "tr.json": "845973e94fd7ccbd1563799e8eff79168bf1ec9a8ec4827c95453afb891c7ad2",
+    "ru.json": "50a8ffc0378c0942e1a67ac1b6556a7b688afc2bb1a82f8002752b35b7a09d5e"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "tr",
+      "score": 6.8,
+      "axes": {
+        "meaning": 7,
+        "glossary": 6,
+        "register": 6,
+        "length": 7,
+        "errors": 8
+      },
+      "issues": [
+        {
+          "key": "(coverage)",
+          "problem": "tr.json has 91 of the 140 keys in en.json (65%). 49 keys are absent. tt() in .04-Src/js/config.js:8 falls back to T.en, so the Turkish build renders mixed English/Turkish: the DNA mutation panel (dnaTitle, dnaPoints, dnaSpeed, dnaSize, dnaSpikes, dnaShell), the role/tutorial panel (roleWho, roleFood, roleHint, roleOk), the species filter (filter, filterHint, noSpecies with {cat}, shown, speciesWord), map/legend panels (map, mapChart, mapTip, popTip, legend, microscope, picMode), colony UI (colonies, colonyBadge, colonyKind), pool preview (poolWill with {n} and {kinds}), virusMode with {name}, render-mode chips (cartoon, cartoonNow, swissNow, webglNow, aquarium, demo, autoPilotOn), the camera row (camFly, flight, follow) and flow buttons (play, next, skip, ready, exit, eats, eatsDead, eatsLight, massWord, topOfList, tutDone, midEaterTip). Visible consequence on the HUD: bFree and bFol are labeled from tt('flight') and tt('follow') (.04-Src/js/main.js:379-380), so two of the six action buttons show English Flight / Follow.",
+          "fix": "Translate all 49 missing keys against en.json and ru.json before tr is enabled. Do not copy T.en values into tr.json (TZ 29 forbids the dummy-language pattern)."
+        },
+        {
+          "key": "config.js LANGS",
+          "problem": "Blocker outside the dictionary, recorded so the enable step is not attempted early: .04-Src/js/config.js:3 LANGS has no tr entry, so tr.json is never loaded even when complete. Not an instruction to change code in this review.",
+          "fix": "Owner/dev action only after the 49 keys are filled and both critics score >= 8: add tr to LANGS and flip enabled in languages.json together."
+        },
+        {
+          "key": "dead",
+          "problem": "NESLI TÜKENDİ is 13 characters in two words for the extinction badge (en EXTINCT 7, ru ВЫМИРАНИЕ 9). It is both the wrong aspect (nesli tükendi = its lineage has run out / depleted, which wave1-critic-A round 1 already flagged as not the extinct state, fix YOK OLDUN) and too wide for the badge. That round-1 fix was not applied. Re-flagged as a regression-of-record, not a new opinion.",
+          "fix": "YOK OLDUN"
+        },
+        {
+          "key": "wikiT",
+          "problem": "Glossary inconsistency in one file: Viki: göl yaşamı uses göl (= lake) while menuSub now correctly uses Gölet kesiti (= pond cross-section, the round-1 fix that was applied). en and ru both say pond (Pond Life / жители лужи). Two different water bodies for one game world.",
+          "fix": "Viki: gölet yaşamı"
+        },
+        {
+          "key": "eaten",
+          "problem": "eaten = Yenilen while dEaten = Yenmiş, but both keys carry the single English word Eaten and the single ru word Съедено. Yenilen is a participial modifier (the one that gets eaten) and reads wrong as a HUD stat label in the 200px-capped #hud box; Yenmiş is the completed-state label used on the death-cause row.",
+          "fix": "Yenmiş"
+        },
+        {
+          "key": "toast.divide.blocked",
+          "problem": "Register: Henüz bölünemez is impersonal / 3rd person, while every other string in this file addresses one player informally (Spordan çıktın, kiste girdin, Yedin, daha yaklaş, Canlıyı seç, ışığa yüz). ru uses the impersonal Пока нельзя делиться, so the slip is invisible from ru but wrong against the rest of tr.",
+          "fix": "Henüz bölünemezsin"
+        },
+        {
+          "key": "hud.goal",
+          "problem": "Register plus glossary: Bölün is the -ın (plural or formal you) imperative, clashing with the singular BÖL printed on the divide button (hud.btn.divide / .short) and with the singular -sın/-in address used in the toasts. Bölün: 1/3 reads as a formal request. Also note Turkish böl has the second reading share out, so the button/goal pair must be identical, not one singular and one plural.",
+          "fix": "Böl: {cur}/{need}"
+        },
+        {
+          "key": "bubbles",
+          "problem": "Kabarcık is singular while every sibling toggle in the same settings block is plural: Akıntılar (currents), Gölgeler (shadows), Parçacıklar (particles), Can çubukları (health bars). The toggle switches many bubbles on.",
+          "fix": "Kabarcıklar"
+        },
+        {
+          "key": "decomposer",
+          "problem": "Temizleyiciler (mantar) is 23 characters, the longest string in the species chip set (en 17, ru 18), and #spGrid cells are minmax(80px,1fr) on phones (.04-Src/src/style.css:112), so it wraps to two lines and makes the chip column uneven. Meaning is right.",
+          "fix": "Çöpçüler (mantar)  - friendlier register, 16 characters, matches the ru diminutive Уборщики (грибки); alternative without the colloquial tone: Temizleyici (mantar)"
+        },
+        {
+          "key": "maxPop",
+          "problem": "Azami nüfus is 11 characters inside the #hud box (max-width 200px, font-size 12px, stat rows are flex justify-content:space-between), so label and value compete for one line; ru and pt-BR both abbreviate here (Макс. поп / Pob. máx.).",
+          "fix": "Maks. nüfus"
+        },
+        {
+          "key": "hud.btn.light",
+          "problem": "Not an error to fix, recorded so a later round does not undo it: IŞIK / Işık keep the correct dotless-I orthography (wave1-critic-A noted this). Do not let a round-2 pass rewrite IŞIK as İŞİK. hud.btn.* for tr are all <= 5 glyphs (OTO, SPOR, BÖL, YE, IŞIK), the best HUD fit of the three languages reviewed.",
+          "fix": "keep as is"
+        }
+      ],
+      "lost_words": [
+        "aquarium",
+        "autoPilotOn",
+        "camFly",
+        "cartoon",
+        "cartoonNow",
+        "colonies",
+        "colonyBadge",
+        "colonyKind",
+        "demo",
+        "dnaPoints",
+        "dnaShell",
+        "dnaSize",
+        "dnaSpeed",
+        "dnaSpikes",
+        "dnaTitle",
+        "eats",
+        "eatsDead",
+        "eatsLight",
+        "exit",
+        "filter",
+        "filterHint",
+        "flight",
+        "follow",
+        "legend",
+        "map",
+        "mapChart",
+        "mapTip",
+        "massWord",
+        "microscope",
+        "midEaterTip",
+        "next",
+        "noSpecies",
+        "picMode",
+        "play",
+        "poolWill",
+        "popTip",
+        "ready",
+        "roleFood",
+        "roleHint",
+        "roleOk",
+        "roleWho",
+        "shown",
+        "skip",
+        "speciesWord",
+        "swissNow",
+        "topOfList",
+        "tutDone",
+        "virusMode",
+        "webglNow"
+      ]
+    }
+  ],
+  "log": "logs-release-ready-2026-10-14/critic-A-es-tr-fil-round1.log"
+}

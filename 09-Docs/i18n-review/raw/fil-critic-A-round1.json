@@ -1,0 +1,159 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "qoder-hvless",
+  "model_provider": "UNATTESTED",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261015-es-tr-fil-r1-8efb33",
+  "command": "critic-A review es/tr/fil round1",
+  "started_at": "2026-10-15T00:30:00+03:00",
+  "finished_at": "2026-10-15T10:49:00+03:00",
+  "input_sha256": {
+    "en.json": "991dcdb4c400ed8f2dab4a31c2abd27d1594d74f3f6d1b01c563a4be0819367a",
+    "fil.json": "4fdf3b2881921778a53cdad9358759f6c21b255002566f1d8c7cffc1155c9ca5",
+    "ru.json": "50a8ffc0378c0942e1a67ac1b6556a7b688afc2bb1a82f8002752b35b7a09d5e"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "fil",
+      "score": 5.2,
+      "axes": {
+        "meaning": 6,
+        "glossary": 5,
+        "register": 5,
+        "length": 5,
+        "errors": 5
+      },
+      "issues": [
+        {
+          "key": "(coverage)",
+          "problem": "fil.json has 91 of the 140 keys in en.json (65%). 49 keys are absent. tt() in .04-Src/js/config.js:8 falls back to T.en, so the Filipino build renders mixed English/Filipino: the DNA mutation panel (dnaTitle, dnaPoints, dnaSpeed, dnaSize, dnaSpikes, dnaShell), the role/tutorial panel (roleWho, roleFood, roleHint, roleOk), the species filter (filter, filterHint, noSpecies with {cat}, shown, speciesWord), map/legend panels (map, mapChart, mapTip, popTip, legend, microscope, picMode), colony UI (colonies, colonyBadge, colonyKind), pool preview (poolWill with {n} and {kinds}), virusMode with {name}, render-mode chips (cartoon, cartoonNow, swissNow, webglNow, aquarium, demo, autoPilotOn), the camera row (camFly, flight, follow) and flow buttons (play, next, skip, ready, exit, eats, eatsDead, eatsLight, massWord, topOfList, tutDone, midEaterTip). On the HUD this is directly visible: bFree and bFol take tt('flight') / tt('follow') (.04-Src/js/main.js:379-380), so two of the six action buttons print English Flight / Follow and push #actBar past its 95% width so the row wraps.",
+          "fix": "Translate all 49 missing keys against en.json and ru.json before fil is enabled. Do not copy T.en values into fil.json (TZ 29 forbids the dummy-language pattern)."
+        },
+        {
+          "key": "config.js LANGS",
+          "problem": "Blocker outside the dictionary, recorded so the enable step is not attempted early: .04-Src/js/config.js:3 LANGS has no fil entry, so fil.json is never loaded even when complete. Not an instruction to change code in this review.",
+          "fix": "Owner/dev action only after the 49 keys are filled and both critics score >= 8: add fil to LANGS and flip enabled in languages.json together."
+        },
+        {
+          "key": "close",
+          "problem": "SARA is not the Tagalog command. The imperative of sarado is ISARA; bare sara is Hiligaynon/Bisaya and reads as closed (state), not CLOSE (action). The ru and en sources are both commands (ЗАКРЫТЬ / CLOSE).",
+          "fix": "ISARA"
+        },
+        {
+          "key": "eaten",
+          "problem": "Biktima means victim or prey, not Eaten. dEaten already uses the correct Kinain, and en plus ru give one identical word to both keys (Eaten / Съедено). As a stat label inside #hud (max-width 200px) Biktima reads as a prey counter, which is a different stat from the predation chip (Mga maninila).",
+          "fix": "Kinain"
+        },
+        {
+          "key": "toast.cyst.hunger",
+          "problem": "Regression of record: naging sista was explicitly rejected in wave2-critic-A round 1 (09-Docs\\i18n-review\\raw\\wave2-critic-A-round1.json, fil, toast.cyst.hunger: Do not use sista, it reads as sister) and the fix was not applied. It also breaks the spore/cyst pair the round-1 note asks for: the button is SPORA, so encysted must not become a third, foreign-looking word.",
+          "fix": "Gutom: nakakulong — maghanap ng pagkain at gumising"
+        },
+        {
+          "key": "particles",
+          "problem": "Mga tipik: tipik is a mite, a flake or a splinter, not a particle in the graphics sense; the effect toggles in this block are all plain loans or plain nouns (Anino, Ulan, Agos) and Filipino gamers say partikula. Meaning, not typography.",
+          "fix": "Mga partikula"
+        },
+        {
+          "key": "menuSub",
+          "problem": "Untranslated head noun inside a translated sentence: Hiwa ng pond. Round 1 correctly rejected lawa (lake) and kept hiwa (a cut, fine for cross-section), but left pond in English. wikiT repeats it (buhay sa pond). en and ru both name a pond (Pond cross-section / Разрез водоёма).",
+          "fix": "Simulasyon ng mikrobyo — 100 uri + virus. Hiwa ng tambakan.   (tambakan = a pond; if the owner prefers to keep the loan, then apply it in both menuSub and wikiT consistently and say so in the glossary)"
+        },
+        {
+          "key": "maxPop",
+          "problem": "Dami max leaves the English abbreviation max bare in a Tagalog label and reads as two unrelated words; ru and es abbreviate with a local form (Макс. поп, Pob. máx.). Length is fine (8) - the problem is the loan, not the width.",
+          "fix": "Pinakadami"
+        },
+        {
+          "key": "help",
+          "problem": "Length, and a round-1 fix that was not applied (wave2-critic-A round 1: PAANO MAGLARO is 13 characters, fix GABAY). Menu buttons are .btn with padding var(--sp-2) var(--sp-5) = 8px/24px and 14px text, shrunk to 12px on phones (.04-Src/src/style.css:112); 13 uppercase glyphs with a space is the widest button label in this file and it sits next to SIMULA, ULITIN, AYOS.",
+          "fix": "GABAY"
+        },
+        {
+          "key": "consumer1",
+          "problem": "Length on the species chip, and the same round-1 fix that was not applied: Maliliit na kumakain is 20 characters in #spGrid cells that are minmax(80px,1fr) on phones, so it wraps to two lines. consumer2 (Mga gitnang kumakain, 20) has the identical problem. Do not shorten kumakain to the eat command, the eater noun is the right idea.",
+          "fix": "consumer1: Maliit-kain | consumer2: Gitna-kain"
+        },
+        {
+          "key": "consumer3",
+          "problem": "Malalaking mangangaso is 21 characters on the same 80px chip - the longest string in the file after the toasts. Round 1 flagged it and proposed Malaking mangangaso (19), which still wraps; mangangaso must not be cut to aso (dog).",
+          "fix": "Malaking mangangaso   (drop the -ing reduplication; if it still wraps, use the compound pattern of consumer1/2, e.g. Malaki-aso is forbidden because aso is dog, so keep mangangaso whole and shorten only the adjective)"
+        },
+        {
+          "key": "toast.eat.plant",
+          "problem": "Register: Ikaw ay halaman is the textbook/formal copula order, and patungo sa is bureaucratic for toward; casual Filipino inverts and drops the pronoun. The axis this file is weakest on is the friendly tu-style the ru source uses (Ты растение: плыви к свету). The rest of the toasts lean the same way (Lapit pa sa biktima, lumangoy papalapit).",
+          "fix": "Halaman ka: lumangoy sa liwanag"
+        },
+        {
+          "key": "toast.eat.ok",
+          "problem": "Kumain is the infinitive/actor-focus form and reads as to eat, not as the completed confirmation Ate (ru Съел, es Comiste, tr Yedin). It also sits in the same tap-loop as the KAIN button, so button and feedback look identical.",
+          "fix": "Kumain ka"
+        },
+        {
+          "key": "gameTime",
+          "problem": "Glossary, low severity: Tagal means duration/length of time while the HUD row it labels is the neutral Time (ru Время, es Tiempo, tr Zaman), and the same panel already has days = Araw and age = Edad. Tagal is defensible but it is the only locale that paraphrases here, and it is inconsistent with the season/ clock vocabulary the missing next/skip/ready keys will need.",
+          "fix": "Oras"
+        },
+        {
+          "key": "hud.btn.light.short",
+          "problem": "Not an error to fix, recorded so a later round does not undo it: fil is the only one of the three languages that actually shortens the pair (hud.btn.light LIWANAG 7 vs .short ILAW 4), which is exactly what the ~86px action button needs, since the HUD prints only the .short key (.04-Src/js/ui.js:111 adds a sun glyph in front of it).",
+          "fix": "keep as is"
+        }
+      ],
+      "lost_words": [
+        "aquarium",
+        "autoPilotOn",
+        "camFly",
+        "cartoon",
+        "cartoonNow",
+        "colonies",
+        "colonyBadge",
+        "colonyKind",
+        "demo",
+        "dnaPoints",
+        "dnaShell",
+        "dnaSize",
+        "dnaSpeed",
+        "dnaSpikes",
+        "dnaTitle",
+        "eats",
+        "eatsDead",
+        "eatsLight",
+        "exit",
+        "filter",
+        "filterHint",
+        "flight",
+        "follow",
+        "legend",
+        "map",
+        "mapChart",
+        "mapTip",
+        "massWord",
+        "microscope",
+        "midEaterTip",
+        "next",
+        "noSpecies",
+        "picMode",
+        "play",
+        "poolWill",
+        "popTip",
+        "ready",
+        "roleFood",
+        "roleHint",
+        "roleOk",
+        "roleWho",
+        "shown",
+        "skip",
+        "speciesWord",
+        "swissNow",
+        "topOfList",
+        "tutDone",
+        "virusMode",
+        "webglNow"
+      ]
+    }
+  ],
+  "log": "logs-release-ready-2026-10-14/critic-A-es-tr-fil-round1.log"
+}

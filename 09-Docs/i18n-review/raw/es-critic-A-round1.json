@@ -1,0 +1,144 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "qoder-hvless",
+  "model_provider": "UNATTESTED",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261015-es-tr-fil-r1-8efb33",
+  "command": "critic-A review es/tr/fil round1",
+  "started_at": "2026-10-15T00:30:00+03:00",
+  "finished_at": "2026-10-15T10:45:00+03:00",
+  "input_sha256": {
+    "en.json": "991dcdb4c400ed8f2dab4a31c2abd27d1594d74f3f6d1b01c563a4be0819367a",
+    "es.json": "74db674547a06755c4f1b06c5e746f3fd047237d9d2ec38e9cf862f5b9874d6b",
+    "ru.json": "50a8ffc0378c0942e1a67ac1b6556a7b688afc2bb1a82f8002752b35b7a09d5e"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "es",
+      "score": 6.0,
+      "axes": {
+        "meaning": 6,
+        "glossary": 5,
+        "register": 7,
+        "length": 5,
+        "errors": 7
+      },
+      "issues": [
+        {
+          "key": "(coverage)",
+          "problem": "es.json has 91 of the 140 keys in en.json (65%). 49 keys are absent. tt() in .04-Src/js/config.js:8 falls back to T.en, so the Spanish build renders a mixed English/Espanol UI, not Spanish: the whole DNA mutation panel (dnaTitle, dnaPoints, dnaSpeed, dnaSize, dnaSpikes, dnaShell), the whole role/tutorial panel (roleWho, roleFood, roleHint, roleOk), the species filter (filter, filterHint, noSpecies with {cat}, shown, speciesWord), map/legend panels (map, mapChart, mapTip, popTip, legend, microscope, picMode), colony UI (colonies, colonyBadge, colonyKind), pool preview (poolWill with {n} and {kinds}), virusMode with {name}, render-mode chips (cartoon, cartoonNow, swissNow, webglNow, aquarium, demo, autoPilotOn), camera row (camFly, flight, follow), and flow buttons (play, next, skip, ready, exit, eats, eatsDead, eatsLight, massWord, topOfList, tutDone, midEaterTip). TZ 29 and langs_consistency.test.js require 100% key parity before a language is enabled.",
+          "fix": "Translate all 49 missing keys against en.json and ru.json before es is enabled. Do not copy T.en values into es.json (that is the e609236 dummy-language pattern TZ 29 forbids)."
+        },
+        {
+          "key": "config.js LANGS",
+          "problem": "Blocker outside the dictionary, recorded so the enable step is not attempted early: .04-Src/js/config.js:3 LANGS has no es entry, so es.json is never loaded even if it were complete. Not an instruction to change code in this review.",
+          "fix": "Owner/dev action only after the 49 keys are filled and both critics score >= 8: add es to LANGS and flip enabled in languages.json together."
+        },
+        {
+          "key": "eaten",
+          "problem": "Value is Presas (= prey, plunder), not Eaten. ru uses the same word for eaten and dEaten (Съедено/Съедено); es splits them into Comido (correct, dEaten) and Presas (wrong). This string is a HUD stat label inside #hud, which is capped at min-width/max-width 200px in .04-Src/src/style.css:112, so a wrong noun there is not recoverable from context.",
+          "fix": "Comido"
+        },
+        {
+          "key": "hud.goal",
+          "problem": "Value is byte-identical to English: Divide: {cur}/{need}. The Spanish player sees an English verb on the goal line (rendered through igsText in .04-Src/js/ui.js:149) while the button itself says DIVIDIR. This is the core divide glossary term and it is not localized; it also breaks the ru pattern (Поделись: {cur}/{need}).",
+          "fix": "Divídete: {cur}/{need}   (informal tu imperative, pairs with hud.btn.divide DIVIDIR and with the tu register of the toasts)"
+        },
+        {
+          "key": "hud.btn.divide.short",
+          "problem": "Length on the HUD action row. The shipped row is #actBar (gap 8px, flex-wrap wrap, max-width 95%, label nowrap) with .ab at min-width 72px, padding 12px 16px, font-size 15px, font-weight 800 uppercase (.04-Src/v3-webgl/index.html:16-17, applied inline by labelBtn in .04-Src/js/main.js:373). At a 390px phone viewport the four labeled buttons get about 86px each, of which only about 50px is text, i.e. about 5 uppercase glyphs. es ships DIVIDIR (7) + ESPORA (6) + COMER (5) + AUTO (4) = about 430px needed against 370px available, so the row wraps to a second line over the tank. Note the HUD only ever shows the .short keys (main.js:375-378, ui.js:111), so short is where the budget must be met.",
+          "fix": "hud.btn.divide.short: DIV.  (keep full DIVIDIR on hud.btn.divide for the tooltip/aria use)"
+        },
+        {
+          "key": "hud.btn.eat.short",
+          "problem": "COMER is 5 glyphs and is an infinitive, not the friendly command the ru source uses (ЕСТЬ). With the ☀ prefix that ui.js:111 adds for producers on the light label, the row is already at its limit; eat is the one button that can be shortened without losing meaning.",
+          "fix": "COME   (informal tu imperative, 4 glyphs, matches the tu register of the toasts)"
+        },
+        {
+          "key": "hud.divide.reason.age",
+          "problem": "demasiado joven is 15 characters in the divide-block reason line (biology.js:92), which sits under the ~86px divide button. en too young is 9, ru demasiado equivalent слишком молода is 13. This wraps inside the button column.",
+          "fix": "muy joven"
+        },
+        {
+          "key": "lightInt",
+          "problem": "Intensidad de luz is 17 characters on a settings slider row where ru deliberately abbreviates (Инт. света = 10) and en abbreviates (Light Intensity is a wide panel, but es adds 6 characters over en). Same pattern needed as temp already uses (Temp.).",
+          "fix": "Int. de luz"
+        },
+        {
+          "key": "consumer1",
+          "problem": "Comedores pequeños: in European Spanish comedor first reads as dining room, so the trophic chip reads as small dining rooms. Adjective-first removes that reading and matches consumer3 Cazadores grandes (adjective last there, but the noun is unambiguous). consumer2 has the same problem (Comedores medios).",
+          "fix": "consumer1: Pequeños comedores | consumer2: Medianos comedores"
+        },
+        {
+          "key": "dTemp",
+          "problem": "Glossary inconsistency inside one file: temp = Temp. (abbreviated) while dTemp = Temperatura (full, 11) for the same concept, exactly as en and ru both use Temp/Temp. The death-cause chip is a narrow row.",
+          "fix": "Temp."
+        },
+        {
+          "key": "resume",
+          "problem": "SEGUIR is a literal follow and collides with the follow key (flight/follow are among the 49 missing ones, so the collision is latent, not yet visible). Spanish pause overlays use CONTINUAR. Length is fine here (8 vs EN RESUME 6) because it is a menu .btn, not a HUD .ab.",
+          "fix": "CONTINÚA  (informal tu, 8 glyphs) - and when follow is finally translated, use SEGUIR A / SEGUIR for it, not for resume"
+        },
+        {
+          "key": "decomposer",
+          "problem": "Limpiadores (hongos) is 20 characters on the species filter chip, which is minmax(80px,1fr) on phones (style.css:112 #spGrid) - it wraps to two lines. en 17, ru 18. The meaning and the fungi parenthetical are correct.",
+          "fix": "Limpiadores (hongo)  or  Basureros (hongo) if the friendlier register is wanted"
+        }
+      ],
+      "lost_words": [
+        "aquarium",
+        "autoPilotOn",
+        "camFly",
+        "cartoon",
+        "cartoonNow",
+        "colonies",
+        "colonyBadge",
+        "colonyKind",
+        "demo",
+        "dnaPoints",
+        "dnaShell",
+        "dnaSize",
+        "dnaSpeed",
+        "dnaSpikes",
+        "dnaTitle",
+        "eats",
+        "eatsDead",
+        "eatsLight",
+        "exit",
+        "filter",
+        "filterHint",
+        "flight",
+        "follow",
+        "legend",
+        "map",
+        "mapChart",
+        "mapTip",
+        "massWord",
+        "microscope",
+        "midEaterTip",
+        "next",
+        "noSpecies",
+        "picMode",
+        "play",
+        "poolWill",
+        "popTip",
+        "ready",
+        "roleFood",
+        "roleHint",
+        "roleOk",
+        "roleWho",
+        "shown",
+        "skip",
+        "speciesWord",
+        "swissNow",
+        "topOfList",
+        "tutDone",
+        "virusMode",
+        "webglNow"
+      ]
+    }
+  ],
+  "log": "logs-release-ready-2026-10-14/critic-A-es-tr-fil-round1.log"
+}

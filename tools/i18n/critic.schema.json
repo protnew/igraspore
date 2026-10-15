@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "igs-critic/1",
+  "type": "object",
+  "required": ["schema","role","model","session_id","round","langs","started_at","finished_at"],
+  "properties": {
+    "schema": {"const": "igs-critic/1"},
+    "role": {"enum": ["critic-A","critic-B","reviewer"]},
+    "model": {"type": "string", "minLength": 1},
+    "model_provider": {"type": "string"},
+    "same_model_role_split": {"type": "boolean"},
+    "session_id": {"type": "string", "minLength": 1},
+    "command": {"type": "string"},
+    "pid": {"type": ["integer","string","null"]},
+    "started_at": {"type": "string"},
+    "finished_at": {"type": "string"},
+    "prompt_sha256": {"type": "string"},
+    "input_sha256": {"type": "object"},
+    "round": {"type": "integer", "minimum": 1},
+    "langs": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["code","score","axes"],
+        "properties": {
+          "code": {"type": "string"},
+          "score": {"type": "number", "minimum": 0, "maximum": 10},
+          "axes": {
+            "type": "object",
+            "required": ["meaning","glossary","register","length","errors"],
+            "properties": {
+              "meaning": {"type":"number"},"glossary": {"type":"number"},
+              "register": {"type":"number"},"length": {"type":"number"},"errors": {"type":"number"}
+            }
+          },
+          "issues": {"type": "array"},
+          "lost_words": {"type": "array"}
+        }
+      }
+    },
+    "log": {"type": "string"}
+  }
+}

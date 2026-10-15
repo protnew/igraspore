@@ -1,0 +1,129 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "qfmodel",
+  "model_provider": "UNATTESTED",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261015-fil-r3-b71e93",
+  "command": "critic-A re-review of fil dictionary round 3 after the round-2 blocker fixes (legend/temp/dTemp/settingsT/help/consumer1-3/maxPop); read-only on game code and dictionaries",
+  "started_at": "2026-10-15T13:06:00+03:00",
+  "finished_at": "2026-10-15T13:22:00+03:00",
+  "input_sha256": {
+    "en.json": "991dcdb4c400ed8f2dab4a31c2abd27d1594d74f3f6d1b01c563a4be0819367a",
+    "fil.json": "f5b51e21e05e5c3f60345080b97ddf39d1ac7e6f73a1271e4a0673398d92a369",
+    "ru.json": "50a8ffc0378c0942e1a67ac1b6556a7b688afc2bb1a82f8002752b35b7a09d5e"
+  },
+  "round": 3,
+  "langs": [
+    {
+      "code": "fil",
+      "score": 8.6,
+      "axes": {
+        "meaning": 8.5,
+        "glossary": 7.5,
+        "register": 9,
+        "length": 9,
+        "errors": 9
+      },
+      "issues": [
+        {
+          "key": "(coverage and params, re-verified on the exact bytes hashed above)",
+          "problem": "Mechanical layer is clean and unchanged from round 2. fil.json has 140 of the 140 keys in en.json, 0 missing, 0 extra, 0 empty values. All seven placeholder tokens present in en ({cur} {need} {sec} {cat} {n} {kinds} {name}) occur in fil identically key by key: 0 param mismatches, 0 unbalanced braces, 0 leading/trailing whitespace, 0 double spaces. noSpecies correctly switches en's straight quotes to typographic curly quotes, which is right for Filipino printing and matches ru's guillemets. The byte-identical-to-en set is now exactly 7 keys - autoOn, fps, hud.btn.auto, hud.btn.auto.short, hud.btn.menu, menu, wiki - i.e. AUTO, FPS, AUTO, AUTO, Menu, MENU, WIKI, all legitimate abbr/loan forms (ru ships the sameloan pattern Меню/ВИКИ). No natural-language English value remains anywhere in the file.",
+          "fix": "keep as is"
+        },
+        {
+          "key": "legend",
+          "problem": "RESOLVED - this was the round-2 blocker and it is gone. fil legend = 'Leyenda' (7 chars), no longer the verbatim en value 'Legend'; it now matches the es form exactly ('Leyenda') and ru Легенда. Verified it is the same string in all three render sites, so no half-translated panel is left: js/ui.js:220 (legend toggle, with the trailing glyph), js/ui.js:256 (legend panel head), js/ui_menus.js:153 (pLegend pause button). With this fixed there is NO remaining English-copy key in fil.json.",
+          "fix": "keep as is - nothing left to do"
+        },
+        {
+          "key": "(round-2 fixes applied, verified one by one)",
+          "problem": "Six of the seven shipped changes are exactly what round 2 prescribed. legend 'Legend' -> 'Leyenda' (blocker). help 'PAANO MAGLARO'(13) -> 'GABAY'(5), now the shortest non-CJK help label of the 19 locales (es CÓMO JUGAR 10, tr NASIL OYNA 10, ru КАК ИГРАТЬ 10), which clears all three .btn sites (js/ui_menus.js:145 helpBtn, :149 pHelp, :152 helpT) including the .is-mobile 13px/8px-12px variant (js/mobile.js:43). consumer1 20 -> 'Maliit-kain'(11), consumer2 20 -> 'Gitna-kain'(12), consumer3 21 -> 'Malaking mangangaso'(19): c1/c2 are now under ru (12/13) and far under es (18/16) inside the minmax(80px,1fr) #spGrid chips, so the two-line wrap on the tier pair is gone. settingsT 'Ayos' -> 'PAG-AAYOS', removing the 'OK / fine / fixed' reading while keeping the button pair set='AYOS'. temp and dTemp 'Init'(heat) -> 'Temperatura', which fixes the real semantic error (the key labels water temperature and dTemp also covers cold deaths, where 'Init'=heat is wrong); fil is internally consistent (temp = dTemp). maxPop 'Dami max' -> 'Max dami' is a partial application, tracked in its own issue, and temp needs a follow-up, tracked in its own issue.",
+          "fix": "keep as is"
+        },
+        {
+          "key": "camera",
+          "problem": "Round-2 finding NOT applied - the largest remaining English-in-Filipino set: camFly 'Lipad ng camera', mapTip 'Ang click ay nagpapalipat ng camera.', virusMode 'WASD ang gumagalaw ng camera.', freeCam 'Malayang cam'. Counted in the file: 'kamera' 0 occurrences, 'camera' 3, 'cam' 1. These are not whole-value English copies (the sentences around them are Filipino), so they do not trip the copy rule, but the noun is in an un-tagalized English spelling and freeCam is a two-word English-styled label. Visible sites: camFly on the pCam pause button (js/ui_menus.js:154), freeCam in #camM (js/main.js:112), mapTip and virusMode as tooltip/toast text.",
+          "fix": "camFly: 'Lipad ng kamera' | mapTip: '...nagpapalipat ng kamera.' | virusMode: '...WASD ang gumagalaw ng kamera.' | freeCam: 'Malayang kamera'"
+        },
+        {
+          "key": "bacteria",
+          "problem": "Round-2 finding NOT applied: the Latin/English plural 'bacteria' is kept in midEaterTip ('...lumangoy sa mga berde o bacteria') and virusMode ('Mag-click sa isang bacteria para mahawaan'), and 'flagella' in dnaSpeed ('Mas mabilis na flagella (5 DNA)'). Filipino spelling is bakterya / flagelo (cf. es bacterias, tr bakteri). Note the same file already tagalizes the neighbouring scientific loans correctly (kabute for fungi, Lisis, Densidad, Mikroskopyo, Enerhiya), so this trio is the inconsistency. 'cilia' in midEaterTip must NOT be changed - silya is chair - it stays as round 2 ruled.",
+          "fix": "midEaterTip: '...sa mga berde o bakterya...' | virusMode: '...sa isang bakterya...' | dnaSpeed: 'Mas mabilis na flagelo (5 DNA)'"
+        },
+        {
+          "key": "dnaShell",
+          "problem": "Round-2 finding NOT applied: 'Shell ng silica (20 DNA)' keeps the English head noun in the X slot of the otherwise correct Filipino frame X ng Y, plus the English/Latin spelling 'silica'. Peers: es 'Caparazón de sílice', tr 'Silis kabuk', ru 'Кремниевый панцирь'. It is a visible DNA-panel label (js/ui_menus.js:176), not a comment.",
+          "fix": "Takip ng silika (20 DNA)"
+        },
+        {
+          "key": "filterHint",
+          "problem": "Round-2 finding NOT applied: 'pindutin ang ibang button para lumipat' carries the English noun 'button' inside a sentence whose verb is already the native pindutin, which makes the English noun conspicuous. Printed in the composed filter status line #spFilterStatus at 11px opacity .6 (js/ui_menus.js:59) next to Pansala.",
+          "fix": "pindutin ang ibang pindutan para lumipat"
+        },
+        {
+          "key": "clear",
+          "problem": "NEW this round, meaning defect: 'Malinaw'. In Filipino malinaw means clear in the sense of transparent, sharp or legible (clear water, a clear answer, a clear image); it is not a weather word. The key renders in the weather pill as the direct antonym of rain - js/ui.js:83 writes (isRaining ? Ulan : clear) with a sun glyph - so a Filipino player reads 'Rain / Transparent'. All 19 peer locales use a fair-weather word here: es Despejado, pt-BR Limpo, it Sereno, tr Açık, de Klar, fr Clair, id/ms Cerah, ru/uk Ясно, pl Pogodnie, vi Quang. The correct terms are maaraw (cloudless, sunny) or maliwanag (bright, clear skies). Same file, same contrast pair: rainy 'Ulan' is correct, so only this half of the pair is wrong.",
+          "fix": "Maaraw   (6 chars; 'Maliwanag' if the owner prefers the more general word)"
+        },
+        {
+          "key": "temp",
+          "problem": "Follow-up on the applied fix, length/house-pattern only. Choosing the full word for the live HUD key makes fil's temp the longest of all 19 locales at 11 chars, against es/de/fr/it/pl/pt-BR 'Temp.'(5), ru/uk 'Темп'(4), id/ms 'Suhu'(4), tr 'Sıcaklık'(8); median is 5. temp is also the only one of the pair that renders - js/ui.js:78 composes 'temp: <value> degC . days: <n>' into #topR .rw. Measured for that composed row: fil ~183px at the desktop fs-xs 12px where en/ru are ~140px and es ~145px; on mobile the same row is ~137px against the hard cap js/mobile.js:32 puts on #topR (max-width:140px at font-size 9px), i.e. ~3px of headroom, so once totalDays reaches 3 digits the row is ~142px and the top-right pill wraps to two lines. dTemp has no render site at all (see the code note), so keeping 'Temperatura' there costs nothing in pixels and the split loses no internal consistency.",
+          "fix": "temp: 'Temp.' (keep dTemp: 'Temperatura') - this is exactly the es split (temp 'Temp.' / dTemp 'Temperatura') and restores ~30px of mobile headroom. Acceptable to leave as is if the owner accepts the wrap at 3-digit day counts."
+        },
+        {
+          "key": "maxPop",
+          "problem": "Partially applied. Round 2 asked for 'Pinakadami'; shipped is 'Max dami'. Explicitly NOT an English copy: en is 'Max Pop', and 'max' is a legitimate international abbreviation of the same class the task allows (de ships 'Max. Pop.', fr 'Pop. max.'), so the flag rule is not tripped. The reorder is also a real improvement: it now reads as a Taglish modifier+noun pair and forms a visible set with pop 'Dami' in the same stat block, which 'Dami max' did not. Residual is style only - the fully native form exists and is a comparable length (Pinakadami, 10, vs tr 'Azami nüfus' 11). Recorded as low severity, not blocking. Also note maxPop has no tt() call site today, so it does not currently render.",
+          "fix": "Optional: 'Pinakadami'. Accepting 'Max dami' is fine."
+        },
+        {
+          "key": "gameTime",
+          "problem": "Carried unapplied from round 1 and round 2: 'Tagal' means duration / an elapsed stretch of time, while the key labels the running clock row in the stats table (js/ui_screens.js:88, printed as a .stbl .lbl cell). fil is now the only locale of 19 that uses a duration word here - en Time, ru Время, es Tiempo, tr Zaman, de Zeit, id Waktu, pl Czas, ms Masa. The panel it sits in also uses Araw (days) and Edad (age), so 'Tagal' adds a third time-ish noun where a neutral one is needed.",
+          "fix": "Oras"
+        },
+        {
+          "key": "toast.eat.ok",
+          "problem": "Carried unapplied from round 1 and round 2: bare 'Kumain' is aspect-ambiguous. The -um- perfective reads as 'ate' only when an actor is recoverable from context, while the identical surface form in 'Kumain ka!' is the command 'eat!'. It is the eat feedback toast fired right after the KAIN button (hud.btn.eat / hud.btn.eat.short), so button label and confirmation look the same to the player. ru Съел, es Comiste, tr Yedin are all explicitly second-person completed.",
+          "fix": "Kumain ka"
+        },
+        {
+          "key": "dnaSize",
+          "problem": "Round-2 finding NOT applied: 'Mas maraming masa (8 DNA)'. marami counts discrete items and masa is uncountable, so the phrase reads as 'more masses' where en 'More mass', ru 'Увеличение массы', es 'Más masa', tr 'Daha fazla kulle' all mean added mass. Length is not the problem (25 vs es 28); it is a visible DNA-panel label (js/ui_menus.js:176 group).",
+          "fix": "Dagdag na masa (8 DNA)"
+        },
+        {
+          "key": "(length, the ~72px check, flagged as required)",
+          "problem": "Verified against the real layout, and there is no fil-specific overflow defect. Only the .short keys print on the bottom action bar (js/main.js:375-378 labelBtn sets min-width 72px, padding 12px 16px, font-size 15px, and .ab is white-space:nowrap, weight 800 per v3-webgl/index.html:46), plus flight and follow on the same bar. Measured text width at 15px bold, plus the 32px of horizontal padding: HATI 68px, KAIN 69px, Lipad 70px, ILAW 70px, AUTO 75px, SPORA 85px, Sundan 85px. So two values do exceed the 72px floor - hud.btn.cyst.short 'SPORA' and follow 'Sundan' - with hud.btn.auto.short 'AUTO' at 74.5px. All three are baseline-equivalent or better: AUTO is byte-identical to the en value it shares (74.5 vs 74.5), SPORA is 5 letters against en SPORE's 5 (85.4 vs 83.7, within the glyph-estimate error, and ru СПОРА is 45px of text), Sundan 6 letters is the same length as es Seguir and shorter than ru Следить (95px). fil is also the locale that shortens the light pair, LIWANAG(7) -> ILAW(4), which puts it UNDER en LIGHT (76.8px) instead of over it. min-width is a floor, not a cap, and nowrap means the button widens rather than clipping; on mobile .is-mobile .ab drops to min-width 44px / font-size 11px (js/mobile.js:22), where SPORA measures ~52px and fits. The 7-letter LIWANAG and the non-short hud.btn.cyst/divide/eat/menu values never compete for that budget because they have zero render sites.",
+          "fix": "keep as is"
+        },
+        {
+          "key": "(glossary, the terms that ARE clean now)",
+          "problem": "Verified closed, recorded so a later round does not undo it. spore/cyst = 'Spora' in all four live sites (hud.btn.cyst, hud.btn.cyst.short, toast.cyst.enter, toast.cyst.exit) with 0 'cyst' and 0 'kisto' leakage, and toast.cyst.hunger keeps nakakulong instead of the rejected sista (sister), so no spore/cyst collision. divide = Hati (hud.btn.divide, .short, hud.goal) + Paghahati / Naghahati / maghati, one root throughout. eat = Kain (hud.btn.eat, .short, Maliit-kain, Gitna-kain) + Kinain for eaten and dEaten (identical, the ru/es pattern) + kumakain ng for eats. producer = 'Berde (pagkain)', matching 'mga berde' in midEaterTip. pond = 'Tambakan' in all four sites (mapTip, menuSub, poolWill, wikiT) with 0 'pond' and 0 'lawa' (lake) leakage - the round-2 rule holds. temperature = Temperatura in both temp and dTemp, replacing the semantically wrong Init pair. Also consistent: enerhiya (energy, hud.divide.reason.energy, toast.cyst.enter), masa (massWord, dnaSize, reason.mass), uri (speciesWord, colonyKind, noSpecies, menuSub, poolWill), and the loan 'bar' used the same way in healthBars and roleHint. Legitimate loans/abbr kept on purpose: DNA, FPS, AUTO, MENU, Menu, WIKI, Swiss, WebGL, DEMO, WASD, Mode, click / I-click, Naka-off, tutorial, English, virus, cilia, Lisis, Densidad, Leyenda, Galeria, AKWARIUM, KARTON.",
+          "fix": "keep as is"
+        },
+        {
+          "key": "consumer",
+          "problem": "NEW, created by the otherwise-correct chip shortening: the eater-tier noun is now split three ways. The chips use a clipped -kain compound (Maliit-kain, Gitna-kain), midEaterTip explains the same tier as 'Gitnang kumakain', and eats uses 'kumakain ng'. consumer3 'Malaking mangangaso' correctly keeps mangangaso (aso alone is dog, so Malaki-aso is forbidden) and so does not join the pattern either. This is a naming drift, not an error: the chip lengths are exactly what round 2 asked for, and -kain is understandable Taglish compounding. It matters because midEaterTip is the text shown for the Gitna-kain chip (chip set built at js/ui_menus.js:15 and js/ui_screens.js:202), so the tip should name the chip it describes.",
+          "fix": "Optional, low severity: midEaterTip opener 'Gitna-kain:' so the tip repeats the chip verbatim; keep the rest of the sentence and keep all chip values unchanged."
+        },
+        {
+          "key": "settingsT",
+          "problem": "Cosmetic casing note only. 'PAG-AAYOS' fixes the Ayos='OK/fine' ambiguity and pairs correctly with the button set='AYOS', but it is now the only ALL-CAPS settings screen title of all 19 locales (en Settings, es Ajustes, tr Ayarlar, ru Настройки, id Pengaturan are sentence/title case), rendered into #setT with class .tt at font-size 32px (js/ui_menus.js:187, src/style.css:26). No length risk - it measures ~200px inside a 900px-capped modal (src/style.css:39). The game does use caps elsewhere (.btn labels), so this is a style call for the owner, not a defect.",
+          "fix": "Optional: 'Pag-aayos' (title only; keep set = 'AYOS' on the button)"
+        },
+        {
+          "key": "(code note, read-only: 22 fil keys have no render site)",
+          "problem": "Not a dictionary defect, recorded because it changes how the temp/dTemp and maxPop findings should be read. Scanning every tt()/igsText() call in .04-Src/js and the HTML, 22 of the 140 keys are unused by the current UI: autoOn, dAge, dEaten, dLysis, dStarve, dTemp, maxPop, selectSp, season0, season2, season3, toast.divide.blocked, toast.divide.go, toast.eat.closer, toast.eat.none, toast.lang.fallback, and the five non-short hud.btn.* values (only .short prints). The reason several are dead is hard-coded UI text in game code: the death-cause panel builds its labels and tips from DLAB_RU/DLAB_EN and TIPS_RU/TIPS_EN with the switch 'curLang === \"ru\" ? RU : EN' (js/ui_screens.js:108-116), so a Filipino player sees English death causes and English tips while dAge/dEaten/dLysis/dStarve/dTemp sit unused in fil.json; js/ui_screens.js:50 hard-codes 'Infected', :110 hard-codes '(Global)', js/ui.js:71 hard-codes 'Infected!', js/ui.js:84 hard-codes 'Wind'; and v3-webgl/index.html:254-260 button titles plus js/ui.js:112's aria-label are still hard-coded Russian (carried from round 2). So the dictionary can score well while part of the screen stays English or Russian.",
+          "fix": "Dev action (game code is read-only for critic-A): drive DLAB/tips, the Infected/Wind/(Global) strings and the title/aria-label values from tt(); critic-A changed no code and no dictionary."
+        },
+        {
+          "key": "config.js LANGS + i18n_detect.js IGS_ENABLED + languages.json",
+          "problem": "Enable gate still closed, recorded read-only and NOT touched. js/config.js:3 LANGS has 17 entries and no fil key, window.IGS_ENABLED (js/i18n_detect.js:46) has no fil entry, and i18n/languages.json:15 still has fil enabled:false with critics [7.8, 8.6] (the round-2 critic-A and critic-B scores). loadLangPack therefore still never fetches i18n/fil.json, and the T[l] fill loop in config.js would still clone T.en if fil were added without a pack. The score below is a dictionary score, not an observed UI score. Score gate status: critic-B round 2 already gave fil 8.6 and this round gives critic-A 8.6, so the both-critics >= 8 condition is now met on scores - enabling remains an owner/dev action, and languages.json and config.js were deliberately left untouched by critic-A.",
+          "fix": "Owner/dev action: add fil to LANGS and to window.IGS_ENABLED and flip enabled:true in the same commit. No critic-A action."
+        }
+      ],
+      "lost_words": []
+    }
+  ],
+  "log": "logs-release-ready-2026-10-14/critic-A-fil-round3.log"
+}

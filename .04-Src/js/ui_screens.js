@@ -254,8 +254,8 @@ function buildWiki(filter){
         if(pool.length===0) continue;
       }
       html+='<div class="wiki-cat" style="color:'+((CC&&CC[cat])||'#8cf')+'">'+catLabel+' ('+pool.length+')</div>';
-      if(typeof CAT_ROLE==='object' && CAT_ROLE[cat]){
-        var role=ru?CAT_ROLE[cat].ru:CAT_ROLE[cat].en;
+      if(typeof catRole==='function'){
+        var role=catRole(cat);
         if(role) html+='<div class="wiki-role">'+role+'</div>';
       }
       for(var si=0;si<pool.length;si++){

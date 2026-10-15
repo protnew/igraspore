@@ -269,6 +269,21 @@ window.IGS_HUD_EN={
       'wiki.def.venom':'Venom',
       'wiki.defs':'Features:',
       'wiki.div.binary':'Binary fission',
-      'wiki.div.budding':'Budding'
-    }
-  ;
+      'wiki.div.budding':'Budding',
+      "tut.s1.title":"Welcome",
+      "tut.s1.body":"You are a microbe in a pond. Goal: eat, grow, divide. Tap Next.",
+      "tut.s2.title":"Movement",
+      "tut.s2.body":"WASD to swim. The mouse sets direction. Move, then tap Next.",
+      "tut.s3.title":"Eating",
+      "tut.s3.body":"Swim to a smaller cell and press EAT (E). You should see a flash.",
+      "tut.s4.title":"Division",
+      "tut.s4.body":"When energy is full, press SPLIT (Q). The cell gets smaller. That is normal.",
+      "tut.s5.title":"Done",
+      "tut.s5.body":"Camera: follow or free flight. Good luck evolving!",
+      "role.producer":"Greens. No hunting. They eat light and water — tiny plants. Feed everyone else.",
+      "role.consumer1":"Small eaters (bacteria). Nibble greens. Food for mid and big eaters.",
+      "role.consumer2":"Mid eaters (ciliates). Filter water: pull in bacteria and greens. Do not tackle giants.",
+      "role.consumer3":"Big hunters. Eat greens, bacteria and mid-eaters. Can bite slightly larger prey — risky. Live long without food, but hunger still kills.",
+      "role.decomposer":"Cleaners. Break down the dead — do not hunt the living.",
+      "role.macrophage":"Guards. Attack sick/dangerous cells — the pond immune system."
+    };

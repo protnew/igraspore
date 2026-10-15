@@ -45,7 +45,8 @@ describe('UI-IMPROVE F1: #hDivReady is live during play', () => {
     for (let i = 0; i < 60; i++) window.wapi.updateDivReady();
     const txt = document.getElementById('hDivReady').textContent;
     expect(txt.length).toBeGreaterThan(0);
-    expect(txt).toContain('Эн 42/80');
+    // Reason: energy label now comes from tt('energy') = "Энергия" (TZ v6 L.2 dictionary extraction), not the old hardcoded "Эн".
+    expect(txt).toContain('Энергия 42/80');
     expect(txt).toMatch(/Масса|ГОТОВО/);
   });
 
@@ -58,7 +59,7 @@ describe('UI-IMPROVE F1: #hDivReady is live during play', () => {
     window.wapi.player = mkPlayer({ energy: 7 });
     window.wapi.updateDivReady();
     const txt = document.getElementById('hDivReady').textContent;
-    expect(txt).toContain('Эн 7/80');
+    expect(txt).toContain('Энергия 7/80');
     expect(txt).not.toContain('ГОТОВО');
     delete window.canDivide;
   });
@@ -67,7 +68,7 @@ describe('UI-IMPROVE F1: #hDivReady is live during play', () => {
     window.wapi.player = null;
     window.demoPossessed = mkPlayer({ energy: 55 });
     window.wapi.updateDivReady();
-    expect(document.getElementById('hDivReady').textContent).toContain('Эн 55/80');
+    expect(document.getElementById('hDivReady').textContent).toContain('Энергия 55/80');
   });
 
   it('is empty outside play or without a live organism', () => {
@@ -138,15 +139,17 @@ describe('UI-IMPROVE F6: mobile compact bottom bar', () => {
     expect(c).toMatch(/min-width: 44px !important; min-height: 44px !important/);
     expect(read('mobile.js')).toMatch(/\.is-mobile \.ab\{min-width:44px!important;min-height:44px!important/);
   });
-  it('text stays only on ЕСТЬ / ДЕЛИТЬ / АВТО', () => {
+  it('text stays only on eat / divide / auto / spore (labels from the dictionary)', () => {
     const m = read('main.js');
-    // Reason: P0.3 hotkey label is E, not "авто"; P1 spore label is СПОРА and stays visible (ab-keep).
-    expect(m).toMatch(/labelBtn\('bEat','ЕСТЬ','E','[^']+',true\)/);
-    expect(m).toMatch(/labelBtn\('bDiv','ДЕЛИТЬ','Q','[^']+',true\)/);
-    expect(m).toMatch(/labelBtn\('bAuto','АВТО','Tab','[^']+',true\)/);
-    expect(m).toMatch(/labelBtn\('bCyst','СПОРА','R','[^']+',true\)/);
-    expect(m).toMatch(/labelBtn\('bFree','ПОЛЁТ','F','[^']+'\)/);
-    expect(m).toMatch(/labelBtn\('bFol','СЛЕДИТЬ','V','[^']+'\)/);
+    // Reason: TZ v6 L.2/L.7 require moving UI strings into the dictionary (no hardcoded Russian).
+    // The old assertion pinned labelBtn('bEat','ЕСТЬ',...) — i.e. the very hardcoded string L.2 removes.
+    // Kept invariants: correct hotkey per button (E/Q/Tab/R/F/V) and the ab-keep flag on the 4 main buttons.
+    expect(m).toMatch(/labelBtn\('bEat',tt\('hud\.btn\.eat\.short'\),'E',.*?,true\)/);
+    expect(m).toMatch(/labelBtn\('bDiv',tt\('hud\.btn\.divide\.short'\),'Q',.*?,true\)/);
+    expect(m).toMatch(/labelBtn\('bAuto',tt\('hud\.btn\.auto\.short'\),'Tab',.*?,true\)/);
+    expect(m).toMatch(/labelBtn\('bCyst',tt\('hud\.btn\.cyst\.short'\),'R',.*?,true\)/);
+    expect(m).toMatch(/labelBtn\('bFree',tt\('flight'\),'F',.*?\)/);
+    expect(m).toMatch(/labelBtn\('bFol',tt\('follow'\),'V',.*?\)/);
   });
 });
 

@@ -384,5 +384,6 @@
   "wiki.def.venom": "Venom",
   "wiki.defs": "Features:",
   "wiki.div.binary": "Binary fission",
-  "wiki.div.budding": "Budding"
+  "wiki.div.budding": "Budding",
+  "x.scaleBar": "Scale: 100 µm"
 }

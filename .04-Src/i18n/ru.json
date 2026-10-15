@@ -384,5 +384,6 @@
   "wiki.def.venom": "Яд",
   "wiki.defs": "Особенности:",
   "wiki.div.binary": "Деление надвое",
-  "wiki.div.budding": "Почкование"
+  "wiki.div.budding": "Почкование",
+  "x.scaleBar": "Масштаб: 100 мкм"
 }

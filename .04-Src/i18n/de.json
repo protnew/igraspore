@@ -384,5 +384,6 @@
   "dna.io": "DNA importieren/exportieren",
   "dna.pastePh": "DNA-Code hier einfügen...",
   "dna.export": "Meine DNA exportieren",
-  "dna.import": "DNA importieren"
+  "dna.import": "DNA importieren",
+  "x.scaleBar": "Maßstab: 100 µm"
 }

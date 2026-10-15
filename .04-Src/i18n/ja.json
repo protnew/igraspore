@@ -384,5 +384,6 @@
   "dna.io": "DNA インポート/エクスポート",
   "dna.pastePh": "DNAコードをここに貼る...",
   "dna.export": "自分のDNAをエクスポート",
-  "dna.import": "DNAをインポート"
+  "dna.import": "DNAをインポート",
+  "x.scaleBar": "スケール: 100 µm"
 }

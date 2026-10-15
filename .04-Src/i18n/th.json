@@ -384,5 +384,6 @@
   "dna.io": "นำเข้า/ส่งออก DNA",
   "dna.pastePh": "วางรหัส DNA ที่นี่...",
   "dna.export": "ส่งออก DNA ของฉัน",
-  "dna.import": "นำเข้า DNA"
+  "dna.import": "นำเข้า DNA",
+  "x.scaleBar": "มาตราส่วน: 100 µm"
 }

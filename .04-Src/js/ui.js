@@ -24,15 +24,6 @@ function showSpeedBar(){
   }
 }
 
-var langNames = {
-  ru: 'Русский', en: 'English', 'pt-BR': 'Português (Brasil)', id: 'Bahasa Indonesia',
-  de: 'Deutsch', fr: 'Français', hi: 'हिन्दी', ja: '日本語', vi: 'Tiếng Việt',
-  ko: '한국어', th: 'ไทย', it: 'Italiano', pl: 'Polski', uk: 'Українська',
-  'zh-TW': '繁體中文', ms: 'Bahasa Melayu', bn: 'বাংলা',
-  zh: '中文', es: 'Español', ar: 'العربية', pt: 'Português'
-};
-
-
 
 
 
@@ -269,7 +260,7 @@ function ensureScaleBarContent(sw){
   var sl = document.getElementById('scaleL');
   if(sl && sw.contains(sl)) return sl;
   sw.innerHTML = '';
-  sw.setAttribute('aria-label','Масштаб: 100 мкм');
+  sw.setAttribute('aria-label', tt('x.scaleBar'));
   var lab = document.createElement('div');
   lab.id = 'scaleT';
   lab.textContent = '100 µm';

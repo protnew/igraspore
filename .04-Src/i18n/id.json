@@ -384,5 +384,6 @@
   "dna.io": "Impor/Ekspor DNA",
   "dna.pastePh": "Tempel kode DNA di sini...",
   "dna.export": "Ekspor DNA-ku",
-  "dna.import": "Impor DNA"
+  "dna.import": "Impor DNA",
+  "x.scaleBar": "Skala: 100 µm"
 }

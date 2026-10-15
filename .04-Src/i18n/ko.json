@@ -384,5 +384,6 @@
   "dna.io": "DNA 가져오기/보내기",
   "dna.pastePh": "DNA 코드를 여기에 붙여넣기...",
   "dna.export": "내 DNA보내기",
-  "dna.import": "DNA 가져오기"
+  "dna.import": "DNA 가져오기",
+  "x.scaleBar": "배율: 100 µm"
 }

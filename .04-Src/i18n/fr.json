@@ -384,5 +384,6 @@
   "dna.io": "Importer/Exporter l'ADN",
   "dna.pastePh": "Collez le code ADN ici...",
   "dna.export": "Exporter mon ADN",
-  "dna.import": "Importer l'ADN"
+  "dna.import": "Importer l'ADN",
+  "x.scaleBar": "Échelle : 100 µm"
 }

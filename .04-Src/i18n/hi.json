@@ -384,5 +384,6 @@
   "dna.io": "DNA आयात/निर्यात",
   "dna.pastePh": "DNA कोड यहाँ पेस्ट करें...",
   "dna.export": "मेरा DNA निर्यात",
-  "dna.import": "DNA आयात"
+  "dna.import": "DNA आयात",
+  "x.scaleBar": "स्केल: 100 µm"
 }

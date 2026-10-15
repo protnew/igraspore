@@ -384,5 +384,6 @@
   "dna.io": "Nhập/Xuất DNA",
   "dna.pastePh": "Dán mã DNA vào đây...",
   "dna.export": "Xuất DNA của tôi",
-  "dna.import": "Nhập DNA"
+  "dna.import": "Nhập DNA",
+  "x.scaleBar": "Tỉ lệ: 100 µm"
 }

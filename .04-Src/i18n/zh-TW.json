@@ -384,5 +384,6 @@
   "dna.io": "匯入/匯出 DNA",
   "dna.pastePh": "在此貼上 DNA 代碼...",
   "dna.export": "匯出我的 DNA",
-  "dna.import": "匯入 DNA"
+  "dna.import": "匯入 DNA",
+  "x.scaleBar": "比例尺：100 µm"
 }

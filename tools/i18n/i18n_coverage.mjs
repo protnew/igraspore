@@ -13,7 +13,7 @@ const en = JSON.parse(fs.readFileSync(path.join(I18N, 'en.json'), 'utf8'));
 const enKeys = Object.keys(en);
 let langs;
 if (args.includes('--enabled')) {
-  const langsJson = JSON.parse(fs.readFileSync(path.join(I18N, 'languages.json'), 'utf8'));
+  const langsJson = JSON.parse(fs.readFileSync(path.join(ROOT, '.04-Src', 'i18n', 'languages.json'), 'utf8'));
   langs = langsJson.filter((l) => l.enabled).map((l) => l.code);
 } else if (args.includes('--all')) {
   langs = fs.readdirSync(I18N).filter((f) => f.endsWith('.json') && !skip.has(f)).map((f) => f.replace(/\.json$/, ''));

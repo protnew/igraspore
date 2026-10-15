@@ -182,6 +182,14 @@ function toggleSet(el){var k=el.getAttribute('data-s');settings[k]=!settings[k];
 function buildWiki(filter){
   var wc=document.getElementById('wikiContent');
   if(!wc) return;
+  try{
+    if(typeof window.ensureWikiPack==='function'){
+      var _wl=(typeof curLang!=='undefined'&&curLang)?curLang:'en';
+      if(!window.WIKI_PACKS||!window.WIKI_PACKS[_wl]){
+        window.ensureWikiPack(_wl,function(ok){ if(ok) buildWiki(filter); });
+      }
+    }
+  }catch(eW2){}
   var html='';
   var search=(filter||'').toLowerCase();
   var ru=(typeof curLang==='undefined' || curLang!=='en');

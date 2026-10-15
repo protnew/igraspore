@@ -384,5 +384,6 @@
   "dna.io": "Import/Eksport DNA",
   "dna.pastePh": "Tampal kod DNA di sini...",
   "dna.export": "Eksport DNA Saya",
-  "dna.import": "Import DNA"
+  "dna.import": "Import DNA",
+  "x.scaleBar": "Skala: 100 µm"
 }

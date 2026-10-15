@@ -1,6 +1,6 @@
 # sign-local.ps1 — локальная подпись AAB по решению №23 (принято 14.10.2026 23:43).
 # Пароли читаются из keystore-credentials.txt только в память процесса.
-# НИКОГДА не печатает, не логирует и не копирует пароли. В git этот файл НЕ попадает.
+# НИКОГДА не печатает, не логирует и не копирует пароли.
 # Использование OLD-compromised ключа запрещено — скрипт отказывается.
 #
 # Запуск (из корня проекта, PowerShell):
@@ -45,16 +45,21 @@ if ([string]::IsNullOrWhiteSpace($ksPath) -or [string]::IsNullOrWhiteSpace($alia
 }
 if (-not (Test-Path $ksPath)) { Write-Output 'FAIL: keystore-файл не найден по пути из credentials'; exit 2 }
 
-# --- проверка 1: это НЕ OLD-compromised ключ ---
+# --- проверка 1: это НЕ OLD-compromised ключ и путь оканчивается на igraspore-release.keystore ---
 if ($ksPath -match 'OLD-compromised') { Write-Output 'FAIL: указан OLD-compromised ключ — использование запрещено'; exit 3 }
-Write-Output 'CHECK не-OLD-compromised: пройдено'
+if (-not $ksPath.EndsWith('igraspore-release.keystore')) { Write-Output 'FAIL: путь ключа не оканчивается на igraspore-release.keystore'; exit 3 }
+Write-Output 'CHECK ключ: не-OLD-compromised, имя файла igraspore-release.keystore — пройдено'
 
-# --- проверка 2: текущий storePassword не встречается в истории git (печатаем только вердикт) ---
+# --- проверка 2: оба пароля (storePassword и keyPassword) не встречаются в истории git ---
 Push-Location $repoRoot
 try {
   $hist = (& git log --all -p 2>$null) -join "`n"
-  if ($hist.Contains($storePass)) { Write-Output 'CHECK пароль в истории git: НАЙДЕНО — остановлено'; exit 4 }
-  Write-Output 'CHECK пароль в истории git: не найдено'
+  foreach ($pair in @(@('storePassword', $storePass), @('keyPassword', $keyPass))) {
+    if (-not [string]::IsNullOrWhiteSpace($pair[1]) -and $hist.Contains($pair[1])) {
+      Write-Output ('CHECK ' + $pair[0] + ' в истории git: НАЙДЕНО — остановлено'); exit 4
+    }
+    Write-Output ('CHECK ' + $pair[0] + ' в истории git: не найдено')
+  }
 } finally { Pop-Location }
 
 # --- цель подписи ---
@@ -85,8 +90,9 @@ try {
 if ($signExit -ne 0) { Write-Output "FAIL: jarsigner вернул $signExit"; exit 5 }
 Write-Output 'SIGNED: jarsigner exit 0'
 
-# --- проверка подписи ---
-& $jarsigner -verify -verbose:summary "$Aab"
+# --- проверка подписи: вердикт только по строке "jar verified." в выводе jarsigner ---
+$verOut = (& $jarsigner -verify -verbose:summary "$Aab" 2>&1) -join "`n"
 $verExit = $LASTEXITCODE
-if ($verExit -eq 0) { Write-Output 'VERIFY: jar verified.' } else { Write-Output "VERIFY: jarsigner -verify вернул $verExit" }
-exit $verExit
+if ($verOut -match 'jar verified\.') { Write-Output 'VERIFY: jar verified.'; exit 0 }
+Write-Output "VERIFY: строка 'jar verified.' не найдена (jarsigner exit $verExit)"
+exit 1

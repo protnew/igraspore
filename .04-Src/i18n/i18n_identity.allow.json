@@ -1,0 +1,20 @@
+[
+  { "key": "fps", "value": "FPS", "langs": ["*"], "category": "abbr", "reason": "fps — общепринятая аббревиатура кадров/с, не переводится" },
+  { "key": "autoOn", "value": "AUTO", "langs": ["*"], "category": "abbr", "reason": "AUTO — короткая метка автопилота, международная аббревиатура" },
+  { "key": "autoPilotOn", "value": "AUTO ON", "langs": ["*"], "category": "abbr", "reason": "AUTO — международная аббревиатура автопилота" },
+  { "key": "hud.btn.auto", "value": "AUTO", "langs": ["*"], "category": "abbr", "reason": "кнопка 72px; AUTO — международная аббревиатура" },
+  { "key": "hud.btn.auto.short", "value": "AUTO", "langs": ["*"], "category": "abbr", "reason": "кнопка 72px; AUTO — международная аббревиатура" },
+  { "key": "wiki", "value": "WIKI", "langs": ["*"], "category": "brand", "reason": "Wiki — заимствованный термин названия раздела, корректен во всех языках" },
+  { "key": "menu", "value": "MENU", "langs": ["fr", "id", "it", "ms", "pl", "pt-BR", "vi", "fil"], "category": "cognate", "reason": "Menu — родное слово языка, совпадает с en; не недоперевод" },
+  { "key": "hud.btn.menu", "value": "Menu", "langs": ["fr", "id", "it", "ms", "pl", "pt-BR", "vi", "fil"], "category": "cognate", "reason": "Menu — родное слово языка, совпадает с en; не недоперевод" },
+  { "key": "diffN", "value": "Normal", "langs": ["de", "fr", "es", "pt-BR", "tr"], "category": "cognate", "reason": "Normal — родное слово языка, совпадает с en" },
+  { "key": "vignette", "value": "Vignette", "langs": ["de", "fr"], "category": "cognate", "reason": "Vignette — родное/заимствованное слово языка, совпадает с en" },
+  { "key": "season3", "value": "Winter", "langs": ["de"], "category": "cognate", "reason": "Winter — немецкое слово, написание совпадает с en" },
+  { "key": "start", "value": "START", "langs": ["de"], "category": "cognate", "reason": "Start — немецкое слово, написание совпадает с en" },
+  { "key": "hud.btn.cyst", "value": "SPORE", "langs": ["de", "fr"], "category": "cognate", "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en" },
+  { "key": "hud.btn.cyst.short", "value": "SPORE", "langs": ["de", "fr"], "category": "cognate", "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en" },
+  { "key": "divRate", "value": "Reproduction", "langs": ["fr"], "category": "cognate", "reason": "Reproduction — французское слово, совпадает с en" },
+  { "key": "divs", "value": "Divisions", "langs": ["fr"], "category": "cognate", "reason": "Divisions — французское слово, совпадает с en" },
+  { "key": "cartoon", "value": "CARTOON", "langs": ["fil"], "category": "brand", "reason": "режим назван CARTOON по прямому решению владельца (CHECK-DEV-1114 §2)" },
+  { "key": "set", "value": "SETTINGS", "langs": ["fil"], "category": "brand", "reason": "SETTINGS по прямому решению владельца (CHECK-DEV-1114 §2)" }
+]

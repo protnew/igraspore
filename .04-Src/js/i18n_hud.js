@@ -46,7 +46,7 @@
       'hud.divide.reason.none':'no cell',
       'hud.btn.eat':'EAT','hud.btn.eat.short':'EAT',
       'hud.btn.light':'LIGHT','hud.btn.light.short':'LIGHT',
-      'hud.btn.divide':'SPLIT','hud.btn.divide.short':'SPLIT',
+      'hud.btn.divide':'DIVIDE','hud.btn.divide.short':'DIVIDE',
       'hud.btn.cyst':'SPORE','hud.btn.cyst.short':'SPORE',
       'hud.btn.auto':'AUTO','hud.btn.auto.short':'AUTO',
       'hud.btn.menu':'Menu',

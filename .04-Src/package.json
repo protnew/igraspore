@@ -3,8 +3,8 @@
   "private": true,
   "description": "iGraSpore V2 SoT — unit + e2e toolchain lives here (node_modules isolated from Obsidian vault)",
   "scripts": {
-    "test": "vitest run --config ../vitest.config.js",
-    "test:unit": "vitest run --config ../vitest.config.js",
+    "test": "vitest run --root ..",
+    "test:unit": "vitest run --root ..",
     "test:coverage": "vitest run --coverage --config ../vitest.config.js",
     "test:e2e": "playwright test --config ../playwright.config.js",
     "test:e2e:c": "playwright test --config ../playwright.config.js --grep \"\\[C0\"",

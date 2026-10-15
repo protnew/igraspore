@@ -11,9 +11,15 @@ const I18N = path.join(ROOT, '.04-Src', 'i18n', dirArg);
 const skip = new Set(['languages.json', 'wave2-status.json', 'i18n_identity.allow.json']);
 const en = JSON.parse(fs.readFileSync(path.join(I18N, 'en.json'), 'utf8'));
 const enKeys = Object.keys(en);
-let langs = args.includes('--all')
-  ? fs.readdirSync(I18N).filter((f) => f.endsWith('.json') && !skip.has(f)).map((f) => f.replace(/\.json$/, ''))
-  : args.filter((a) => !a.startsWith('--') && a !== dirArg);
+let langs;
+if (args.includes('--enabled')) {
+  const langsJson = JSON.parse(fs.readFileSync(path.join(I18N, 'languages.json'), 'utf8'));
+  langs = langsJson.filter((l) => l.enabled).map((l) => l.code);
+} else if (args.includes('--all')) {
+  langs = fs.readdirSync(I18N).filter((f) => f.endsWith('.json') && !skip.has(f)).map((f) => f.replace(/\.json$/, ''));
+} else {
+  langs = args.filter((a) => !a.startsWith('--') && a !== dirArg);
+}
 if (!langs.length) { console.error('usage: node tools/i18n/i18n_coverage.mjs --all | <lang>...'); process.exit(2); }
 
 let bad = 0;

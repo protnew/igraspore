@@ -1,0 +1,45 @@
+{
+ "schema": "critic/1",
+ "role": "analyst",
+ "model": "Grok Bot",
+ "session_id": "analyst-08-20261016-1839",
+ "round": 5,
+ "started_at": "2026-10-16T18:39:00+03:00",
+ "finished_at": "2026-10-16T18:40:51+03:00",
+ "input_sha256": {
+  "ko.json": "9a61ff725e4bfb44b333e2ecc5493e79f70a9bc060ba8ce789d874a5bc7cbaab",
+  "en.json": "d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938"
+ },
+ "langs": [
+  {
+   "code": "ko",
+   "score": 8.4,
+   "axes": {
+    "meaning": 8.5,
+    "glossary": 7,
+    "register": 8.5,
+    "length": 9,
+    "errors": 9
+   },
+   "issues": [
+    {
+     "key": "tip.cyst",
+     "problem": "глоссарий: подсказка «낭포» (циста), а кнопка HUD — «포자» (спора)",
+     "fix": "포자"
+    },
+    {
+     "key": "aria.cyst",
+     "problem": "то же в подписи для экранного диктора",
+     "fix": "포자 (R)"
+    },
+    {
+     "key": "x.wasdSwimLmbCursorRmbTargetWheel",
+     "problem": "LMB/RMB — английские сокращения кнопок мыши",
+     "fix": "<kbd>좌클릭</kbd> … <kbd>우클릭</kbd>"
+    }
+   ]
+  }
+ ],
+ "log": "ANALYST-ROUND5-2026-10-16.md",
+ "method": "автопроверка 272 новых ключей + ручная выборка 20 ключей; см. log"
+}

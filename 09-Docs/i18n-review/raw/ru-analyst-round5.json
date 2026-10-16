@@ -1,0 +1,60 @@
+{
+ "schema": "critic/1",
+ "role": "analyst",
+ "model": "Grok Bot",
+ "session_id": "analyst-08-20261016-1839",
+ "round": 5,
+ "started_at": "2026-10-16T18:39:00+03:00",
+ "finished_at": "2026-10-16T18:40:51+03:00",
+ "input_sha256": {
+  "ru.json": "b0d7750efcee45dc350b2ecb9d1e01e19439799c121fe595394c25ba9d11e8c1",
+  "en.json": "d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938"
+ },
+ "langs": [
+  {
+   "code": "ru",
+   "score": 8.5,
+   "axes": {
+    "meaning": 8.5,
+    "glossary": 9,
+    "register": 8.5,
+    "length": 9,
+    "errors": 7.5
+   },
+   "issues": [
+    {
+     "key": "x.wasdSwimLmbCursorRmbTargetWheel",
+     "problem": "«Плывать» — ошибка; «ПкМ» — регистр; «К курсору»",
+     "fix": "«Плыть», «ПКМ», «Курсор»"
+    },
+    {
+     "key": "modeBig.cartoon",
+     "problem": "«CARTOON» не переведено, а в обучении «МУЛЬТЯШНЫЙ»",
+     "fix": "🎨 МУЛЬТЯШНЫЙ"
+    },
+    {
+     "key": "modeLbl.cartoon",
+     "problem": "«Cartoon» не переведено",
+     "fix": "🎨 Мультяшный"
+    },
+    {
+     "key": "tip.lang",
+     "problem": "хвост «(Language Selector)»",
+     "fix": "Выбор языка"
+    },
+    {
+     "key": "loc.glide",
+     "problem": "прилагательное среди существительных",
+     "fix": "скольжение"
+    },
+    {
+     "key": "help.body",
+     "problem": "разметка отличается от en (лишние <b>/<br>, нет одного <p>) — проверить на снимке",
+     "fix": "привести теги к en"
+    }
+   ]
+  }
+ ],
+ "log": "ANALYST-ROUND5-2026-10-16.md",
+ "method": "автопроверка 272 новых ключей + ручная выборка 20 ключей; см. log"
+}

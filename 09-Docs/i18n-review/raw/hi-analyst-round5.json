@@ -1,0 +1,55 @@
+{
+ "schema": "critic/1",
+ "role": "analyst",
+ "model": "Grok Bot",
+ "session_id": "analyst-08-20261016-1839",
+ "round": 5,
+ "started_at": "2026-10-16T18:39:00+03:00",
+ "finished_at": "2026-10-16T18:40:51+03:00",
+ "input_sha256": {
+  "hi.json": "35cc2b89ce389eafe4cd1d6349499f226aeadab47be70bff42b1e7d00b577f49",
+  "en.json": "d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938"
+ },
+ "langs": [
+  {
+   "code": "hi",
+   "score": 7.8,
+   "axes": {
+    "meaning": 7.5,
+    "glossary": 7,
+    "register": 8,
+    "length": 9,
+    "errors": 7.5
+   },
+   "issues": [
+    {
+     "key": "tip.cyst",
+     "problem": "глоссарий: подсказка «सिस्ट» (циста), а кнопка HUD — «बीजाणु» (спора)",
+     "fix": "बीजाणु"
+    },
+    {
+     "key": "aria.cyst",
+     "problem": "то же в подписи для экранного диктора",
+     "fix": "बीजाणु (R)"
+    },
+    {
+     "key": "tut.s1.body",
+     "problem": "«जीवाणु» = бактерия, а не микроб",
+     "fix": "आप तालाब में एक सूक्ष्मजीव हैं।…"
+    },
+    {
+     "key": "cam.followToast / cam.tip",
+     "problem": "«FOLLOW» не переведено",
+     "fix": "कैमरा: पीछा करें"
+    },
+    {
+     "key": "x.wasdSwimLmbCursorRmbTargetWheel",
+     "problem": "LMB/RMB — английские сокращения кнопок мыши",
+     "fix": "<kbd>बायाँ क्लिक</kbd> … <kbd>दायाँ क्लिक</kbd>"
+    }
+   ]
+  }
+ ],
+ "log": "ANALYST-ROUND5-2026-10-16.md",
+ "method": "автопроверка 272 новых ключей + ручная выборка 20 ключей; см. log"
+}

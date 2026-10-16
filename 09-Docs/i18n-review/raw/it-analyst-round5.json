@@ -1,0 +1,45 @@
+{
+ "schema": "critic/1",
+ "role": "analyst",
+ "model": "Grok Bot",
+ "session_id": "analyst-08-20261016-1839",
+ "round": 5,
+ "started_at": "2026-10-16T18:39:00+03:00",
+ "finished_at": "2026-10-16T18:40:51+03:00",
+ "input_sha256": {
+  "it.json": "b5b78f1c35275ee33670b2b27b0c06f2925039b747107a91700ad12880c61dfe",
+  "en.json": "d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938"
+ },
+ "langs": [
+  {
+   "code": "it",
+   "score": 8.3,
+   "axes": {
+    "meaning": 8.5,
+    "glossary": 7,
+    "register": 8.5,
+    "length": 9,
+    "errors": 8.5
+   },
+   "issues": [
+    {
+     "key": "tip.cyst",
+     "problem": "глоссарий: подсказка «Ciste» (циста), а кнопка HUD — «SPORA» (спора)",
+     "fix": "Spora"
+    },
+    {
+     "key": "aria.cyst",
+     "problem": "то же в подписи для экранного диктора",
+     "fix": "Spora (R)"
+    },
+    {
+     "key": "x.wasdSwimLmbCursorRmbTargetWheel",
+     "problem": "LMB/RMB — английские сокращения кнопок мыши",
+     "fix": "<kbd>Clic sx</kbd> … <kbd>Clic dx</kbd>"
+    }
+   ]
+  }
+ ],
+ "log": "ANALYST-ROUND5-2026-10-16.md",
+ "method": "автопроверка 272 новых ключей + ручная выборка 20 ключей; см. log"
+}

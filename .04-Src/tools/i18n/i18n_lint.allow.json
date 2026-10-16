@@ -32,9 +32,9 @@
   },
   {
     "file": "js/config.js",
-    "line": 32,
+    "line": 42,
     "contains": "ru",
-    "reason": "code: fallback код языка в igsNum (curLang||'ru')"
+    "reason": "code: fallback код языка в igsNum (curLang||'ru'), не UI-текст"
   },
   {
     "file": "js/config.js",

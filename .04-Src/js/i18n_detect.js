@@ -27,6 +27,15 @@ function applyLangFont(code) {
   var face = code === 'bn' ? 'Noto Sans Bengali' : code === 'hi' ? 'Noto Sans Devanagari' : code === 'th' ? 'Noto Sans Thai' : '';
   if (face && document.fonts && document.fonts.load) document.fonts.load('16px "' + face + '"').catch(function(){});
 }
+// QA-only gate (U39): forcing a disabled language is allowed on the local QA stand or
+// when ?qa=1 is present. Off-QA the stored igs_force_lang is ignored, so production
+// users can never switch to a disabled language. Pure for unit testing.
+function forceLangAllowed(hostname, search) {
+  var host = String(hostname || '');
+  var qa = '';
+  try { qa = new URLSearchParams(String(search || '')).get('qa') || ''; } catch (e) {}
+  return host === 'localhost' || host === '127.0.0.1' || host === '[::1]' || host === '::1' || qa === '1';
+}
 function loadLangPack(code) {
   if (typeof fetch !== 'function') return Promise.resolve(code);
   return fetch('i18n/' + code + '.json').then(function(r) {
@@ -45,16 +54,19 @@ if (typeof window !== 'undefined') {
   window.detectLang = detectLang;
   window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1, 'pt-BR': 1, id: 1, de: 1, fr: 1, hi: 1, ja: 1, vi: 1, ko: 1, th: 1, it: 1, pl: 1, uk: 1, 'zh-TW': 1, ms: 1, bn: 1 };
   // Dev/QA hook (L.9 screenshots): force a language that is NOT in the enabled set
-  // without editing languages.json / LANGS / localeConfig. Only active when the
-  // proof harness explicitly stores igs_force_lang; real users never have it set.
+  // without editing languages.json / LANGS / localeConfig. QA-only (U39): honoured
+  // solely on the localhost QA stand or with ?qa=1; elsewhere igs_force_lang is ignored.
   try {
-    var forced = localStorage.getItem('igs_force_lang');
+    var _allowForce = forceLangAllowed(location.hostname, location.search);
+    var forced = _allowForce ? localStorage.getItem('igs_force_lang') : '';
     if (forced) { try { window.IGS_ENABLED[forced] = 1; } catch (e2) {} }
-    window.__igsForceLang = function (code) {
-      try { localStorage.setItem('igs_force_lang', code); localStorage.setItem('igs_lang', code); } catch (e3) {}
-      try { window.IGS_ENABLED[code] = 1; } catch (e4) {}
-      location.reload();
-    };
+    window.__igsForceLang = _allowForce
+      ? function (code) {
+          try { localStorage.setItem('igs_force_lang', code); localStorage.setItem('igs_lang', code); } catch (e3) {}
+          try { window.IGS_ENABLED[code] = 1; } catch (e4) {}
+          location.reload();
+        }
+      : function () { /* no-op off the QA stand */ };
     window.__igsClearForce = function () { try { localStorage.removeItem('igs_force_lang'); } catch (e5) {} };
   } catch (e6) {}
   try {
@@ -81,4 +93,4 @@ if (typeof window !== 'undefined') {
     }
   } catch (e) {}
 }
-if (typeof module !== 'undefined') module.exports = { detectLang: detectLang };
+if (typeof module !== 'undefined') module.exports = { detectLang: detectLang, forceLangAllowed: forceLangAllowed };

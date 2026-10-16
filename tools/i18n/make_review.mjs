@@ -12,11 +12,13 @@ import { execSync } from 'child_process';
 const ROOT = process.cwd();
 const args = process.argv.slice(2);
 const ROUND = args.includes('--round') ? args[args.indexOf('--round') + 1] : '5';
+const ONLY = args.includes('--langs') ? args[args.indexOf('--langs') + 1].split(',').map((s) => s.trim()).filter(Boolean) : null;
 const I18N = path.join(ROOT, '.04-Src', 'i18n');
 const WIKI = path.join(I18N, 'wiki');
 const OUT = path.join(ROOT, '09-Docs', 'i18n-review');
 const now = new Date().toLocaleString('sv-SE', { timeZone: 'Europe/Moscow' }) + ' UTC+3';
-const LANGS = ['ru','en','pt-BR','id','de','fr','hi','ja','vi','ko','th','it','pl','uk','zh-TW','ms','bn','es','tr','fil'];
+let LANGS = ['ru','en','pt-BR','id','de','fr','hi','ja','vi','ko','th','it','pl','uk','zh-TW','ms','bn','es','tr','fil'];
+if (ONLY) LANGS = ONLY;
 
 const sha = (p) => fs.existsSync(p) ? crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex') : '—';
 const shaShort = (p) => sha(p).slice(0, 16);
@@ -46,7 +48,8 @@ const PLACE = [
 const place = (k) => { for (const [re, v] of PLACE) if (re.test(k)) return v; return 'общий UI / ≤60'; };
 
 fs.mkdirSync(OUT, { recursive: true });
-const shaOut = {};
+const shaFile = path.join(OUT, 'round' + ROUND + '-input-sha.json');
+const shaOut = fs.existsSync(shaFile) ? { ...(JSON.parse(fs.readFileSync(shaFile, 'utf8')).dicts || {}) } : {};
 for (const lang of LANGS) {
   const lf = path.join(I18N, lang + '.json');
   if (!fs.existsSync(lf)) { console.log(lang, 'нет словаря'); continue; }

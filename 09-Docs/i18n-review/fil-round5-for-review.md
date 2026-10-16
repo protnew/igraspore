@@ -1,10 +1,10 @@
 # Пакет на проверку аналитику: fil (круг 5)
 
-- Дата: 2026-10-16 17:46:37 UTC+3  |  Круг: 5
+- Дата: 2026-10-16 20:29:48 UTC+3  |  Круг: 5
 - input_sha256 словарей (полные — для raw<fil-analyst-round5.json):
   - `en.json` = d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938
   - `ru.json` = b0d7750efcee45dc350b2ecb9d1e01e19439799c121fe595394c25ba9d11e8c1
-  - `fil.json` = 0a97166525992a230eadffb1d4f32f8f7c5d09c3bd67b4c1796216ef1a843c08
+  - `fil.json` = 78f97c537e53938298d09638294a52e44abae308007c58dfa60a15251e397a27
   - `wiki/fil.json` = 4bab5052ea22a0a754efcaace1a0d3c0366ab5b699816ddafb2121c80647c0ce
 - Ключей UI: 412 (из них 🆕 новых после круга 4: 272 — U13 263 + U42 loc.* 9); вики-тел: 108
 - Rubric 0–10 по 5 осям: смысл, глоссарий, регистр, длина, ошибки. Порог включения ≥ 8.
@@ -294,7 +294,7 @@
 |  | `temp` | Т° | Temp | Temperatura | общий UI / ≤60 |
 | 🆕 | `tip.ageBar` | Возраст существа. Старые клетки теряют энергию быстрее. | Creature age. Old cells lose energy faster. | Edad ng nilikha. Mabilis mawalan ng enerhiya ang matatandang selula. | общий UI / ≤60 |
 | 🆕 | `tip.auto` | Авто | Auto | Awtomatik | общий UI / ≤60 |
-| 🆕 | `tip.cartoon` | Мультяшный. Клик → SwissBioPics | Cartoon. Click -> SwissBioPics | Kartun. Klik -> SwissBioPics | общий UI / ≤60 |
+| 🆕 | `tip.cartoon` | Мультяшный. Клик → SwissBioPics | Cartoon. Click -> SwissBioPics | Kartun. I-click -> SwissBioPics | общий UI / ≤60 |
 | 🆕 | `tip.cbFilter` | Фильтр организмов. Нажмите, чтобы показать только этот вид в меню. | Organism filter. Click to show only this species in the menu. | Filter ng organismo. Pindutin para ipakita lang ang espesying ito sa menu. | общий UI / ≤60 |
 | 🆕 | `tip.cyst` | Спора | Spore | Spora | общий UI / ≤60 |
 | 🆕 | `tip.daysL` | Игровые дни. Смена сезонов влияет на температуру. | Game days. Season changes affect temperature. | Mga araw ng laro. Nakakaapekto ang pagbabago ng panahon sa temperatura. | общий UI / ≤60 |
@@ -312,9 +312,9 @@
 | 🆕 | `tip.popC` | График популяции. Показывает историю рождений и смертей. | Population chart. Shows birth and death history. | Tsart ng populasyon. Ipinapakita ang kasaysayan ng panganak at kamatayan. | общий UI / ≤60 |
 | 🆕 | `tip.render` | Картинка: мульт / Swiss | Picture: cartoon / Swiss | Larawan: kartun / Swiss | общий UI / ≤60 |
 | 🆕 | `tip.starSel` | Выбор звезды/солнца | Select star/sun | Pumili ng bituin/araw | общий UI / ≤60 |
-| 🆕 | `tip.swiss` | SwissBioPics. Клик → WebGL | SwissBioPics. Click -> WebGL | SwissBioPics. Klik -> WebGL | общий UI / ≤60 |
+| 🆕 | `tip.swiss` | SwissBioPics. Клик → WebGL | SwissBioPics. Click -> WebGL | SwissBioPics. I-click -> WebGL | общий UI / ≤60 |
 | 🆕 | `tip.tempL` | Температура воды. Влияет на метаболизм и выживание. | Water temperature. Affects metabolism and survival. | Temperatura ng tubig. Nakakaapekto sa metabolism at pagkaligtas. | общий UI / ≤60 |
-| 🆕 | `tip.webgl` | WebGL-вода. Клик → мультяшный | WebGL water. Click -> cartoon | WebGL na tubig. Klik -> kartun | общий UI / ≤60 |
+| 🆕 | `tip.webgl` | WebGL-вода. Клик → мультяшный | WebGL water. Click -> cartoon | WebGL na tubig. I-click -> kartun | общий UI / ≤60 |
 | 🆕 | `tip.wikiB` | Вики/Бестиарий | Wiki/Bestiary | Wiki/Bestiaryo | общий UI / ≤60 |
 | 🆕 | `tip.zi` | Zoom+ | Zoom+ | Zoom+ | общий UI / ≤60 |
 | 🆕 | `tip.zo` | Zoom- | Zoom- | Zoom- | общий UI / ≤60 |

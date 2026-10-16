@@ -1,6 +1,6 @@
 {
  "schema": "shots-manifest/1",
- "generated": "2026-10-16T13:47:48.239Z",
+ "generated": "2026-10-16T14:30:48.722Z",
  "root": "09-Docs/out-dev-factory/shots-release-ready-2026-10-14",
  "count": 680,
  "files": [
@@ -2166,83 +2166,83 @@
   },
   {
    "path": "i18n/es/390-game.png",
-   "bytes": 127923,
-   "sha256": "f21aaba28a2658fe566739af29f00234fb54ac29dc500f9cb5a23ef3967eac31"
+   "bytes": 130331,
+   "sha256": "c68069c946f761ee4160971cee8ee78c1dcfd7447da8307d223316278fd1b5dc"
   },
   {
    "path": "i18n/es/390-gameover.png",
-   "bytes": 68683,
-   "sha256": "32cd3f5ea09383ba569c7f6e5e926ffb6fed25f2a64655969c421e4b1bf7c774"
+   "bytes": 70890,
+   "sha256": "62b4e542a58602d357df1e20bf81dd39f6419a9d59428d2c807ec6772ea0eda6"
   },
   {
    "path": "i18n/es/390-menu.png",
-   "bytes": 79913,
-   "sha256": "2eeec43f54f8a609e8fbd61d8d92b6bedb735bfa1002018a98b9a6a3aa70ebf8"
+   "bytes": 79063,
+   "sha256": "ae41a80c50b77a2c3fbc18b4c4778bcdc3b2367fd5a5be2bb498696c8157ee4c"
   },
   {
    "path": "i18n/es/390-pause.png",
-   "bytes": 90279,
-   "sha256": "7c93d60b10cdde6b48fc74ae5211dc7928fd197840398a6b767d7dbc11e4b0c2"
+   "bytes": 91161,
+   "sha256": "a51fcc84641658fe89a645e8c5faf5fc2edcf8dd3b54d6642eaf3a1e8db3643f"
   },
   {
    "path": "i18n/es/390-settings.png",
-   "bytes": 57111,
-   "sha256": "8994f0b248916fa41e838a08878d62e6c58b9f0f7291ca48db587be74c3ec74f"
+   "bytes": 58150,
+   "sha256": "a1536795480cf56224d0d75e793d340a321d1e0cc530535a999b15e0f1704783"
   },
   {
    "path": "i18n/es/390-tutorial.png",
-   "bytes": 126381,
-   "sha256": "9febc7895df5c7464a3de5ad4a4340335cf468c90d26cd4d8ed54b784533700a"
+   "bytes": 129606,
+   "sha256": "ab065fc88f99675bcd09d94fbb2e4e37e8913c4e6d86fa5a6b30122766ceabec"
   },
   {
    "path": "i18n/es/390-wiki-article.png",
-   "bytes": 63338,
-   "sha256": "900a3410b29c413d8467bb47b77539b00a20c274a70565ff4f9c505bb5c7d049"
+   "bytes": 65491,
+   "sha256": "a9bedf1b25cb6fb97769c2760b31874d056cfded394a360b8c97a6a49a858bb0"
   },
   {
    "path": "i18n/es/390-wiki-list.png",
-   "bytes": 81664,
-   "sha256": "709463d21cbca3586cf8fe41535e280ed3a30eecfe8c9874e7a180849855d449"
+   "bytes": 82702,
+   "sha256": "7844e3b0cfa652ecdc7f380465a1ae410eb4d854797c7c296a44d8d62dbfb654"
   },
   {
    "path": "i18n/fil/390-game.png",
-   "bytes": 138566,
-   "sha256": "2b002d3d73a1a379bf42d8deabb89650729d0f5b02d9a3c8feb14ccb714d2b12"
+   "bytes": 154059,
+   "sha256": "d0cc152fa0882b3d873cbac6a11e8afa5a78710ee3a15f8915761741e6c8cc20"
   },
   {
    "path": "i18n/fil/390-gameover.png",
-   "bytes": 72701,
-   "sha256": "046f96e814a94d502538e8555241cb88be7d15f467bee92c86093a1e358443df"
+   "bytes": 75436,
+   "sha256": "bce8b756f2a1ba7ea1eba7461342a7d8547ff51e9f659b945e6f4d5681b9e2f8"
   },
   {
    "path": "i18n/fil/390-menu.png",
-   "bytes": 80735,
-   "sha256": "99799d43e24625beb82b449597a99c3ba950e5fdf3e2dc16e0223eb0e2ef9f5b"
+   "bytes": 81988,
+   "sha256": "efbe3950c9b7500bcad61e0a87d62a1bc7bfadd78f0c19ffc4a094a3f415352d"
   },
   {
    "path": "i18n/fil/390-pause.png",
-   "bytes": 97901,
-   "sha256": "b594778a75c5275ac09e8d8b8bd736cc3d4c75812e41b7b0bc6b7daff2b953e8"
+   "bytes": 106437,
+   "sha256": "ee48360b9a33339089c6f51419e00562f50c1f1ecc5ca4d1c2cd2431f6bc218b"
   },
   {
    "path": "i18n/fil/390-settings.png",
-   "bytes": 61272,
-   "sha256": "4c34d0eab8bc6669568e97c3a2d77fea0e3b7400139a12f737194330a1d2f90c"
+   "bytes": 62561,
+   "sha256": "7879578347a55676c946a74efae39ffc331c8ffd4c64d0ce8c9e7988a636a675"
   },
   {
    "path": "i18n/fil/390-tutorial.png",
-   "bytes": 130863,
-   "sha256": "a7f690f309a3ec2e6031a75b773f1c44d7b6d251dd17d5223eaa63bba2628d63"
+   "bytes": 140892,
+   "sha256": "8ae5f4f04fbba5fb67c951cac453b456ae68159ae3125c78ecd69677d7545020"
   },
   {
    "path": "i18n/fil/390-wiki-article.png",
-   "bytes": 67094,
-   "sha256": "efb4640ce1ee73a18b92dc75990787111d6052c36d818bf9f2364e82063e953a"
+   "bytes": 67895,
+   "sha256": "e872df129d89c943bc7e861cf668afd21fe104879f749f58a7e81ded45759518"
   },
   {
    "path": "i18n/fil/390-wiki-list.png",
-   "bytes": 83583,
-   "sha256": "2e2ce89e3ed9863b6a9a69a7575926531c7b443c71fa197ee5b55a4ac7303c60"
+   "bytes": 85169,
+   "sha256": "6ad4b5bb8c579affcaf0bc27df1a51757c914b4ec099d4f1c26476f1ec9feb8b"
   },
   {
    "path": "i18n/fr/1280-game.png",
@@ -3126,43 +3126,43 @@
   },
   {
    "path": "i18n/tr/390-game.png",
-   "bytes": 119978,
-   "sha256": "ec4ae20472c48e779350d7bf63c57aa3d98063bf0eac18af88b8dac6f24829b5"
+   "bytes": 132790,
+   "sha256": "fc8663d904eca7ae5faa911cb5d230a224bab7ecf10f3ce2accaf3e7ee13e63c"
   },
   {
    "path": "i18n/tr/390-gameover.png",
-   "bytes": 66408,
-   "sha256": "55fa170e5b7a2a814391b5468115ea8def399f859f92878bc04667f424f3b31f"
+   "bytes": 70179,
+   "sha256": "230c80c99244674ec23ae3507f0633565af305d1165ee544e428bcdc74d49f65"
   },
   {
    "path": "i18n/tr/390-menu.png",
-   "bytes": 82978,
-   "sha256": "cfbd92324d1baabdcf6c0d65350d56fa04b6ec692796b27f0dbeaa4ba89b36bf"
+   "bytes": 83510,
+   "sha256": "f2d9415f05f16489cacce601cde7654eb58243b9c1dd6ff0ce2ccea91c34cac7"
   },
   {
    "path": "i18n/tr/390-pause.png",
-   "bytes": 90994,
-   "sha256": "7ca28eeb22166c03e6b40744f67b6c812daf5f8212d1dee3a7b889744c324ad4"
+   "bytes": 94382,
+   "sha256": "1614e2ace51077952a8279765e7b0c3a69f6627cfc18a72e37c809b7bead8222"
   },
   {
    "path": "i18n/tr/390-settings.png",
-   "bytes": 55563,
-   "sha256": "1df4140abf4d5cc0142c62f11d828afcac7b5806c28cf6da8ec6465e1250a2f9"
+   "bytes": 55020,
+   "sha256": "0245e13b233b3bc591a2089ece949a90478afeb07e2f71b0eb5d25ce69c513c0"
   },
   {
    "path": "i18n/tr/390-tutorial.png",
-   "bytes": 123691,
-   "sha256": "a0a269f488f4ffa0f63188d3049aa420feca3111bb90f74dda1e29b781f22c00"
+   "bytes": 128541,
+   "sha256": "c9339393d05b480820a8e6a2a4a2578b846861e4c449686640a38ab56dc7131b"
   },
   {
    "path": "i18n/tr/390-wiki-article.png",
-   "bytes": 61130,
-   "sha256": "532ad7451681eb367137d1e059d5e98eba3779a9269d8683928927be082f6e5c"
+   "bytes": 61646,
+   "sha256": "c2c7c9a6ba16fd66ab62e543c59a571ff87948d464a2a4c2a31730d85eb33bc4"
   },
   {
    "path": "i18n/tr/390-wiki-list.png",
-   "bytes": 81107,
-   "sha256": "86278370e5950dc5f09ad1c977371e27e72b0be29284d0a1dd763da086d0b5c8"
+   "bytes": 79984,
+   "sha256": "67c0a9d6de32a298ecc31c36f4251b1bf76b07bb403d0852bae63511fffd3cab"
   },
   {
    "path": "i18n/uk/1280-game.png",

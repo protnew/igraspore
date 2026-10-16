@@ -247,7 +247,7 @@
   "leg.virus": "Virüsler",
   "mic.scope": "MİKROSKOP ×",
   "mob.eSep": " · E=",
-  "mob.infected": " · 🦠 enfekteli",
+  "mob.infected": " · 🦠 enfekte",
   "mob.you": " · SEN",
   "mode.swissLbl": "📗 SWISS",
   "mode.webglLbl": "🌊 WEBGL",
@@ -401,5 +401,14 @@
   "x.wind": "Rüzgâr",
   "x.you": "Sen",
   "x.yourCell": "Hücren",
-  "x.yourSpecies": "Türün: "
+  "x.yourSpecies": "Türün: ",
+  "loc.drift": "sürüklenme",
+  "loc.glide": "kayma",
+  "loc.flagella": "kamçı",
+  "loc.cilia": "kirpik",
+  "loc.ciliaStalk": "sapta kirpik",
+  "loc.pseudopodia": "psödopod",
+  "loc.sessile": "sabit",
+  "loc.budding": "tomurcuklanma",
+  "loc.growth": "büyüme"
 }

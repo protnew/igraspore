@@ -264,7 +264,7 @@ function buildWiki(filter){
         try{ if(typeof getWikiEntry==='function') w=getWikiEntry(sp.id)||w; }catch(eW){}
         var organs=organList(sp);
         html+='<div class="wiki-entry"><b style="color:'+(sp.color||'#8cf')+'">'+(sp.name||('sp '+si))+'</b>'+
-          '<div class="wl">'+(sp.size||'?')+'\u03bcm \u00b7 '+(sp.speed||'?')+'\u03bcm/s \u00b7 '+(sp.locomotion||'-')+'</div>'+
+          '<div class="wl">'+(sp.size||'?')+'μm · '+(sp.speed||'?')+'μm/s · '+locLabel(sp.locomotion||'-')+'</div>'+
           artBlock(sp,'')+
           factsRow(w)+
           (organs.length?'<div class="wo"><b>'+(tt('x.organelles'))+':</b> '+organs.join(', ')+'</div>':'')+

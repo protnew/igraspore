@@ -782,5 +782,43 @@
     ],
     "category": "cognate",
     "reason": "fr «division» — родное слово, идентично en написанию"
+  },
+  {
+    "key": "loc.pseudopodia",
+    "value": "pseudopodia",
+    "langs": [
+      "id",
+      "ms"
+    ],
+    "category": "latin_species",
+    "reason": "scientific/Latin term, same form across languages"
+  },
+  {
+    "key": "loc.drift",
+    "value": "Drift",
+    "langs": [
+      "de"
+    ],
+    "category": "cognate",
+    "reason": "scientific/Latin term, same form across languages"
+  },
+  {
+    "key": "loc.sessile",
+    "value": "sessile",
+    "langs": [
+      "fr",
+      "it"
+    ],
+    "category": "latin_species",
+    "reason": "scientific/Latin term, same form across languages"
+  },
+  {
+    "key": "tip.cyst",
+    "value": "Spore",
+    "langs": [
+      "de"
+    ],
+    "category": "latin_species",
+    "reason": "German biological term for spore is identical to the international Latin form"
   }
 ]

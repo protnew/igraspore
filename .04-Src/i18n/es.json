@@ -355,7 +355,7 @@
   "wiki.div.budding": "Gemación",
   "wiki.searchPh": "Buscar...",
   "x.a": "Edad",
-  "x.alive": "Vivos",
+  "x.alive": "Vivo",
   "x.bacteriophageInfectsBacteriaCauses": "Bacteriófago. Infecta bacterias y causa lisis.",
   "x.born": "Nacidos",
   "x.chloroplasts": "cloroplastos",
@@ -401,5 +401,14 @@
   "x.wind": "Viento",
   "x.you": "Tú",
   "x.yourCell": "Tu célula",
-  "x.yourSpecies": "Tu especie: "
+  "x.yourSpecies": "Tu especie: ",
+  "loc.drift": "deriva",
+  "loc.glide": "deslizamiento",
+  "loc.flagella": "flagelos",
+  "loc.cilia": "cilios",
+  "loc.ciliaStalk": "cilios sobre tallo",
+  "loc.pseudopodia": "pseudópodos",
+  "loc.sessile": "séctil",
+  "loc.budding": "gemación",
+  "loc.growth": "crecimiento"
 }

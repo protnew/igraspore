@@ -5,7 +5,7 @@ const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
   testDir: './.04-Src/07-QA-and-Testing/playwright',
-  testMatch: ['hud_contract.spec.js', 'lab_tests_page.spec.js'],
+  testMatch: ['hud_contract.spec.js', 'lab_tests_page.spec.js', 'i18n_overflow.spec.js'],
   timeout: 120000,
   expect: { timeout: 15000 },
   fullyParallel: false,

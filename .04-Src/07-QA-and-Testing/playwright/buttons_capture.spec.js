@@ -28,7 +28,7 @@ function judge(selector, before, after) {
   const toast = (after.toast || '') !== (before.toast || '') ? (after.toast || '') : '';
   const woke = /проснул/i.test(toast) && !after.cyst;
   const dead = ['#bSandbox', '#btnAcid', '#btnEclipse', '#btnLeaderboard'];
-  const meaningful = toast || after.cyst !== before.cyst || after.dividing !== before.dividing || after.autoAI !== before.autoAI || after.freeCam !== before.freeCam || after.state !== before.state || after.tZoom !== before.tZoom;
+  const meaningful = toast || after.cyst !== before.cyst || after.dividing !== before.dividing || after.autoAI !== before.autoAI || after.freeCam !== before.freeCam || after.state !== before.state || after.tZoom !== before.tZoom || after.ov !== before.ov || after.curLang !== before.curLang || after.tutStep !== before.tutStep || after.roleCard !== before.roleCard || after.settings !== before.settings;
   if (selector === '#bCyst' && (woke || !after.cyst)) return 'broken';
   if (selector === '#bEat' && !toast && !after.dividing) return 'broken';
   if (dead.some((s) => selector.indexOf(s) >= 0) && !toast && after.cyst === before.cyst && after.state === before.state) return 'no-code';
@@ -46,6 +46,11 @@ async function snapGlobals(page) {
     autoAI: typeof autoAI === 'undefined' ? null : !!autoAI,
     freeCam: typeof freeCam === 'undefined' ? null : !!freeCam,
     tZoom: typeof tZoom === 'undefined' ? null : tZoom,
+    ov: Array.from(document.querySelectorAll('.ov.show')).map(function(e){return e.id;}).join(','),
+    curLang: typeof curLang === 'undefined' ? null : curLang,
+    tutStep: typeof tutorialStep === 'undefined' ? null : tutorialStep,
+    roleCard: !!document.getElementById('roleCard'),
+    settings: typeof settings === 'undefined' ? '' : JSON.stringify(settings),
     toast: (document.getElementById('toast') || {}).textContent || ''
   })).catch(() => ({}));
 }

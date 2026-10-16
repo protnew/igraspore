@@ -1,0 +1,3288 @@
+{
+ "schema": "shots-manifest/1",
+ "generated": "2026-10-16T07:00:59.979Z",
+ "root": "09-Docs/out-dev-factory/shots-release-ready-2026-10-14",
+ "count": 656,
+ "files": [
+  {
+   "path": "buttons-after/G1-1280-after.png",
+   "bytes": 272886,
+   "sha256": "58a953ebf895d480745520921f260ace5ffe9b9cf107ea00a9702b38191ced5d"
+  },
+  {
+   "path": "buttons-after/G1-1280-before.png",
+   "bytes": 268889,
+   "sha256": "2dd507ca6e7c608d1f01c5a7d7a95a513228ca8a8ddf0582802da76b57579adf"
+  },
+  {
+   "path": "buttons-after/G1-390-after.png",
+   "bytes": 141786,
+   "sha256": "12316307b681fd0f38ed3db387116d3269e9b3c94be58b7b0673d370e384b046"
+  },
+  {
+   "path": "buttons-after/G1-390-before.png",
+   "bytes": 145077,
+   "sha256": "95db7920097dbb60d25a7332b87e9423586cab9ad14a869e411ce46437765d02"
+  },
+  {
+   "path": "buttons-after/G10-1280-after.png",
+   "bytes": 205049,
+   "sha256": "7e2e429fb86ff51d38073579352c9b1024aa60f8aa0df6bbcf0fe9c0e9759781"
+  },
+  {
+   "path": "buttons-after/G10-1280-before.png",
+   "bytes": 208679,
+   "sha256": "860e31152417829bbc5eacfb99d7af0126765adf02c6d536f9d53778b7936287"
+  },
+  {
+   "path": "buttons-after/G10-390-after.png",
+   "bytes": 136520,
+   "sha256": "4dd4396f03bc240b7096cc4f689cdebb0bdaf3d7af5c782d32995249c8770a60"
+  },
+  {
+   "path": "buttons-after/G10-390-before.png",
+   "bytes": 136780,
+   "sha256": "187473e5a8b1bd9fee6223e7cc421360ed50d8d5d00056d11e3c5f0228938cd4"
+  },
+  {
+   "path": "buttons-after/G11-1280-after.png",
+   "bytes": 218427,
+   "sha256": "8dca18f38351f0d6041acbafdba5085051e4a1d6e2647486bbdf07e246fd9984"
+  },
+  {
+   "path": "buttons-after/G11-1280-before.png",
+   "bytes": 217064,
+   "sha256": "9ee22d41c0a8787c8a90e5de480e14c20914c0b0da5f1d60ed87cb7326a9d234"
+  },
+  {
+   "path": "buttons-after/G11-390-after.png",
+   "bytes": 159122,
+   "sha256": "13343df17c5c88c136e7be13eed1292050a74605462a3dfd38ddbe5695ff866b"
+  },
+  {
+   "path": "buttons-after/G11-390-before.png",
+   "bytes": 159420,
+   "sha256": "ddfe132d7de9d3ebb96d31a52b8936551ef6e83f75055dfc85c68e69c2c68a24"
+  },
+  {
+   "path": "buttons-after/G12-1280-after.png",
+   "bytes": 133566,
+   "sha256": "dd24a0e181a64306e3e5fb5317809ff1b0ab8dac65b29e26b9fa0f7ac8a2ce7e"
+  },
+  {
+   "path": "buttons-after/G12-1280-before.png",
+   "bytes": 214734,
+   "sha256": "cd12369034aecdc7b8822c87c199d08999ee1dc8f86e66a3c3ed5e4c2f6db97c"
+  },
+  {
+   "path": "buttons-after/G12-390-after.png",
+   "bytes": 101628,
+   "sha256": "afcd9587670fbef7533252e264586b0d51dd4761bb8f88e92190ed2de73094b3"
+  },
+  {
+   "path": "buttons-after/G12-390-before.png",
+   "bytes": 153787,
+   "sha256": "d122955e7c8c5da851f5afea8f0f9e942f51b5fb6c9c780ef73bcccdb2b63ea0"
+  },
+  {
+   "path": "buttons-after/G13-1280-after.png",
+   "bytes": 164565,
+   "sha256": "335d31d2339511025a19dd5fd7f3e240f0306d78443f653dc408299cc26de75c"
+  },
+  {
+   "path": "buttons-after/G13-1280-before.png",
+   "bytes": 165023,
+   "sha256": "58111a66733725e1dcba1441b32b727fa29900116cb2cfc39fa3f2a9b80c9f04"
+  },
+  {
+   "path": "buttons-after/G13-390-after.png",
+   "bytes": 127990,
+   "sha256": "ed0addbe842c363568fbd00d7925821e51a6a45db32dc9b8179d7ad7d141da79"
+  },
+  {
+   "path": "buttons-after/G13-390-before.png",
+   "bytes": 128459,
+   "sha256": "99238ad3210e8c6d6865a93e9caf0be14b2022ed35f7870243cf1c486705f51a"
+  },
+  {
+   "path": "buttons-after/G14-1280-after.png",
+   "bytes": 178544,
+   "sha256": "2a5fd7bb8b16898281018cc727e00fc0368587e46c4f797ba7b2cadf6da66e9f"
+  },
+  {
+   "path": "buttons-after/G14-1280-before.png",
+   "bytes": 179166,
+   "sha256": "88b52ce79cdafa9fd5afa6fb7d605f0b2b15f0c48abe725419a991660ed6de20"
+  },
+  {
+   "path": "buttons-after/G14-390-after.png",
+   "bytes": 127553,
+   "sha256": "37f476756cbdf914bece617ced3f698e2d64d2e39389c69f377784e65067d856"
+  },
+  {
+   "path": "buttons-after/G14-390-before.png",
+   "bytes": 125070,
+   "sha256": "4752db670f3b9d085fff2b3815a75c3dbf5dc3b9b589bfa7249f24d1e284a017"
+  },
+  {
+   "path": "buttons-after/G15-1280-after.png",
+   "bytes": 240168,
+   "sha256": "6a0350b3415bb0a566d9e231d96c1c4e7bfc2ccc6599c04e8e0353bb05d7b602"
+  },
+  {
+   "path": "buttons-after/G15-1280-before.png",
+   "bytes": 241087,
+   "sha256": "4883f3c9eb02099d151ee5426c0e2da2a727de1fbb0c6a9af13a7863f6e40c68"
+  },
+  {
+   "path": "buttons-after/G15-390-after.png",
+   "bytes": 131015,
+   "sha256": "0653a4f09e5645338dabed0ed9f025f3a7fd114ea3f05ffa9d4d8eb06a24274a"
+  },
+  {
+   "path": "buttons-after/G15-390-before.png",
+   "bytes": 130849,
+   "sha256": "1e56f48bed70f40d8d0ddd1d52210a71404dad86ffc4a38f8722e4a15a981a30"
+  },
+  {
+   "path": "buttons-after/G16-1280-after.png",
+   "bytes": 258290,
+   "sha256": "6664024ec5a72b2d4dbbee1d6e66f15997e43227df4c20036f464ff64667563e"
+  },
+  {
+   "path": "buttons-after/G16-1280-before.png",
+   "bytes": 259938,
+   "sha256": "ffaddcdf3a9a80ce5d10503b512ac49073c3112b6affddc751132c28a77e1fa9"
+  },
+  {
+   "path": "buttons-after/G16-390-after.png",
+   "bytes": 134145,
+   "sha256": "ff5ce5a26bf2a458cc8f2cc0b7dfa1d79b504066bbf083daaf56b09c554e4d00"
+  },
+  {
+   "path": "buttons-after/G16-390-before.png",
+   "bytes": 133561,
+   "sha256": "d0fea25ea80735e8fb409fb537f73418648dc251f20eef9ccfaa4ff1f4323b3c"
+  },
+  {
+   "path": "buttons-after/G17-1280-after.png",
+   "bytes": 201198,
+   "sha256": "14ba0d20a962173ffdb5b1e5a17107b857f33c92e7e9873035edb519f5ead44a"
+  },
+  {
+   "path": "buttons-after/G17-1280-before.png",
+   "bytes": 202137,
+   "sha256": "ffd7740655ec5dc9d07a57d5bab60963d2469707619ef7e0e79f16e59d75783c"
+  },
+  {
+   "path": "buttons-after/G17-390-after.png",
+   "bytes": 126105,
+   "sha256": "f1810a275115cb9f11657ccfef7ad544fd0e3785e8906e6d6330c549e6443f7f"
+  },
+  {
+   "path": "buttons-after/G17-390-before.png",
+   "bytes": 125620,
+   "sha256": "114a341f64a0bb78dabefe7bc8fc358ce30f52b782cd36165acef2bc1513f054"
+  },
+  {
+   "path": "buttons-after/G18-1280-after.png",
+   "bytes": 301274,
+   "sha256": "e8d30755233d5de6ea51838a510e2fb8fa0fd929a5d7dff9757d72cc460ebed5"
+  },
+  {
+   "path": "buttons-after/G18-1280-before.png",
+   "bytes": 304270,
+   "sha256": "59b3e27abff32ce6066e857fead60273e13abe3b1252610464e7a8d31c28a5d5"
+  },
+  {
+   "path": "buttons-after/G18-390-after.png",
+   "bytes": 143441,
+   "sha256": "1499d270f643f0cd0be0f06c7e58565d4d7c3008fd183fc833c0fbba8c6caeb3"
+  },
+  {
+   "path": "buttons-after/G18-390-before.png",
+   "bytes": 142223,
+   "sha256": "dddef689cd4be08cadea7bd854e0535195c8613808a9d481d32ec349e8d9f881"
+  },
+  {
+   "path": "buttons-after/G19-1280-after.png",
+   "bytes": 306373,
+   "sha256": "21993724f391dd6db9adff20a1b93f66380286b87a58057365c4e847fdac23a9"
+  },
+  {
+   "path": "buttons-after/G19-1280-before.png",
+   "bytes": 305865,
+   "sha256": "19006435436b4e69a24248f76ecc5e44b8b0ff5b392bfddee98fcf3edd791d99"
+  },
+  {
+   "path": "buttons-after/G19-390-after.png",
+   "bytes": 142500,
+   "sha256": "21e9700191a36c183f48a06435620ae21adbb9d78107187dedf8f20bcd3da374"
+  },
+  {
+   "path": "buttons-after/G19-390-before.png",
+   "bytes": 141956,
+   "sha256": "69416d862ed2dcd527a82869fbafabaead8ae4f6cebaeed32aa45b9d8b79be22"
+  },
+  {
+   "path": "buttons-after/G2-1280-after.png",
+   "bytes": 212388,
+   "sha256": "a966908e04d7f4ddb0fd29e0a034f3205ba2e08b2707b177a50eac0b6323f0f1"
+  },
+  {
+   "path": "buttons-after/G2-1280-before.png",
+   "bytes": 211849,
+   "sha256": "b02b2b6d3db451222ef11f1cad560227a976249998aa21cca4ba5af38d592bae"
+  },
+  {
+   "path": "buttons-after/G2-390-after.png",
+   "bytes": 151664,
+   "sha256": "5305c3edef31616cc656159115fdb7dd5aef4097029b78d56bf790512e0f1e03"
+  },
+  {
+   "path": "buttons-after/G2-390-before.png",
+   "bytes": 151039,
+   "sha256": "b3705b4599cd7884f7564f0b909e0904716be3477f7f03a4e4cf01bdc12bcee4"
+  },
+  {
+   "path": "buttons-after/G20-1280-after.png",
+   "bytes": 253712,
+   "sha256": "8ee2128b6d4dee4e230165b4b2aee5e3ecbfdaef3530bef4e003e4daa3de9a5f"
+  },
+  {
+   "path": "buttons-after/G20-1280-before.png",
+   "bytes": 253970,
+   "sha256": "782ffc73873c8ba4bac00c08914dd9f9f8d11f799c84525cac261057c563e823"
+  },
+  {
+   "path": "buttons-after/G20-390-after.png",
+   "bytes": 131285,
+   "sha256": "7f4506a831f42512ff9ee9d9e184e400a64c467d41c145a798fbbdb413eb3176"
+  },
+  {
+   "path": "buttons-after/G20-390-before.png",
+   "bytes": 132399,
+   "sha256": "02aebb82d88758598bc9d12b914f74ac52666bde918bcb4398d8cd8a8bd15d5d"
+  },
+  {
+   "path": "buttons-after/G21-1280-after.png",
+   "bytes": 229610,
+   "sha256": "4f5a00eddba18f92ef9f2c371f34728fa59194445575cede36c45474288848e6"
+  },
+  {
+   "path": "buttons-after/G21-1280-before.png",
+   "bytes": 226707,
+   "sha256": "fbcd1d5b9b6dd99beebc1352a0494d37dab41cd34d523a977b862f35841e17e1"
+  },
+  {
+   "path": "buttons-after/G21-390-after.png",
+   "bytes": 141887,
+   "sha256": "c157c21348fd8e31aac35ac162e6c0505f24429ff7c07b803ed3f11c17017fca"
+  },
+  {
+   "path": "buttons-after/G21-390-before.png",
+   "bytes": 141230,
+   "sha256": "72a767d2d69c90f7d8eba0bc8fac0e16f3892d1e3a1cb5ebcdc716ec0ce02c3a"
+  },
+  {
+   "path": "buttons-after/G22-1280-after.png",
+   "bytes": 260907,
+   "sha256": "4cf0c5e9f9ab316fabbc50ebcabb5e54fb82ec8de43e89a6f8478aeb3afa416b"
+  },
+  {
+   "path": "buttons-after/G22-1280-before.png",
+   "bytes": 262145,
+   "sha256": "fcd3f535a8c262c6c532a009bf864bda8dc67e4d193ef0d859f0bc5304419ab9"
+  },
+  {
+   "path": "buttons-after/G22-390-after.png",
+   "bytes": 123872,
+   "sha256": "98e05606fafe9e50958c4f2b5da42f7e8341e96a2f53a7f14528d79439e646b0"
+  },
+  {
+   "path": "buttons-after/G22-390-before.png",
+   "bytes": 123733,
+   "sha256": "fdd821cc7ee6d7c5dddd0d9e76d02a55979661a9b5066eb3a30f388264ae0384"
+  },
+  {
+   "path": "buttons-after/G23-1280-after.png",
+   "bytes": 255937,
+   "sha256": "40e6a86983427fa3e3ef6d83e46fb37f917b26917c109829df9170a869d46511"
+  },
+  {
+   "path": "buttons-after/G23-1280-before.png",
+   "bytes": 257330,
+   "sha256": "5089dba749a3bf65561fdb22bceaa54023541f20dba5653b48679c3fa0a1e613"
+  },
+  {
+   "path": "buttons-after/G23-390-after.png",
+   "bytes": 147352,
+   "sha256": "21bee808e2de6015904308f692fd89f81ba56fdbd662f9d7929ee2ab3ad84f5a"
+  },
+  {
+   "path": "buttons-after/G23-390-before.png",
+   "bytes": 148055,
+   "sha256": "43ebef99df8f865f65ab3814d03631d4aaeaac2e65a521388502e6084afb6012"
+  },
+  {
+   "path": "buttons-after/G24-1280-after.png",
+   "bytes": 202659,
+   "sha256": "67863cc84c53fb3c0e039d5cf173f9f876eefd5eadb587584cb99dc21f2d94c7"
+  },
+  {
+   "path": "buttons-after/G24-1280-before.png",
+   "bytes": 202999,
+   "sha256": "04316dd2d87a06326e6da484d5288c8529d1d94d34f4689ca3e2b12bcd90b664"
+  },
+  {
+   "path": "buttons-after/G24-390-after.png",
+   "bytes": 128328,
+   "sha256": "16608b861e9c70a54f182db55ca7278a1e2586546a0fc887f14f06a56d4d07c5"
+  },
+  {
+   "path": "buttons-after/G24-390-before.png",
+   "bytes": 127668,
+   "sha256": "77127f5842d0c19600a0ff1a4b366971f154aefe3dc3f8ea86dfe0af7fb5f7cf"
+  },
+  {
+   "path": "buttons-after/G25-1280-after.png",
+   "bytes": 190114,
+   "sha256": "ca991fee82bef8f918861404454e16ce5392e13ac29803d102645ef310070c80"
+  },
+  {
+   "path": "buttons-after/G25-1280-before.png",
+   "bytes": 195506,
+   "sha256": "af0e31404f3caf3a328e467896fb409518f8a1d4a9440804a46cdae912d77d6b"
+  },
+  {
+   "path": "buttons-after/G25-390-after.png",
+   "bytes": 127509,
+   "sha256": "769f096451cca295250562d61473dc57088202f58b44cb5e903a6b968cb9f07e"
+  },
+  {
+   "path": "buttons-after/G25-390-before.png",
+   "bytes": 132549,
+   "sha256": "eb97fb086d3c941ffd89ef59427cff7d468749eafca0e91e68effdfbb1360d5a"
+  },
+  {
+   "path": "buttons-after/G26-1280-after.png",
+   "bytes": 335942,
+   "sha256": "97c8aff329abe6313254587c9cccbabfd7cd75fa185d89da7b6488ac2be640b1"
+  },
+  {
+   "path": "buttons-after/G26-1280-before.png",
+   "bytes": 335591,
+   "sha256": "14d90a76f094bf20188bfe53c2f036bd0b4a7b28a697ae0d8a76a1aca79b3ebc"
+  },
+  {
+   "path": "buttons-after/G26-390-after.png",
+   "bytes": 178316,
+   "sha256": "f76f0aa503a9e4e40edba538a581c3e14e66a5f81109c914bbbed51c8dc848da"
+  },
+  {
+   "path": "buttons-after/G26-390-before.png",
+   "bytes": 177404,
+   "sha256": "02d7d32d7cf53305258fe37405031be0db647a9a702afa9a5b6726c9ad7ebe99"
+  },
+  {
+   "path": "buttons-after/G27-1280-after.png",
+   "bytes": 125527,
+   "sha256": "7840a20f2aefe006b1092ecea6bc26c0b5ab755be28f2f81204643bd8f7343b5"
+  },
+  {
+   "path": "buttons-after/G27-1280-before.png",
+   "bytes": 306230,
+   "sha256": "67669967ed5c0afc45f3e3ba1f36a039b0d1f4362d4882aeac23b8a64ccc11c5"
+  },
+  {
+   "path": "buttons-after/G27-390-after.png",
+   "bytes": 94965,
+   "sha256": "f3c39cf06cb5fea547df7ff5ba180d37a94a220262d49439323f87763f0b2945"
+  },
+  {
+   "path": "buttons-after/G27-390-before.png",
+   "bytes": 167133,
+   "sha256": "f9c65f3b662e4f820a5968a08448c18bb27f741cf067f03b08e3d169bf3d3c46"
+  },
+  {
+   "path": "buttons-after/G28-1280-after.png",
+   "bytes": 315425,
+   "sha256": "44be81a51492a0e3348b822c54fd96ca6676193ae362740cf4d1bc292c18afb9"
+  },
+  {
+   "path": "buttons-after/G28-1280-before.png",
+   "bytes": 314562,
+   "sha256": "94ab7cef7ff253909ecc02218ef5f6d4d9bbf0a46794583196f23d6a25cb2786"
+  },
+  {
+   "path": "buttons-after/G28-390-after.png",
+   "bytes": 168057,
+   "sha256": "02e10163759ac6eb3faf7461e0618fe1776476f38f67452e51548693f5a3e91f"
+  },
+  {
+   "path": "buttons-after/G28-390-before.png",
+   "bytes": 167533,
+   "sha256": "7dcb5cca5ff776dae78e7f0fae32c8fde846cc37152d12861c3212b514ab410a"
+  },
+  {
+   "path": "buttons-after/G29-1280-after.png",
+   "bytes": 220484,
+   "sha256": "317f54eafff575534ca54c79d9326982293ea3f9ea6102b429c2bca6af5e8557"
+  },
+  {
+   "path": "buttons-after/G29-1280-before.png",
+   "bytes": 220415,
+   "sha256": "ed6e3073e531a38ce8e70359b18fceb797c9cad861905afeccbc0594e5fe2cf8"
+  },
+  {
+   "path": "buttons-after/G29-390-after.png",
+   "bytes": 176273,
+   "sha256": "938089046485d0aee6782694ec6fdafe41995fe447ee76f0889abfb5a1e3ff13"
+  },
+  {
+   "path": "buttons-after/G29-390-before.png",
+   "bytes": 175999,
+   "sha256": "745a02f61223bcbe9da8418a63f79e219afbffd418598812d9aa23b7f8a752ae"
+  },
+  {
+   "path": "buttons-after/G3-1280-after.png",
+   "bytes": 211501,
+   "sha256": "bbb56929d371f577e77fbef8906a58c35f8383f51faeecf3b96905bd672a8495"
+  },
+  {
+   "path": "buttons-after/G3-1280-before.png",
+   "bytes": 213507,
+   "sha256": "00e29a1419e8193e497b1a8da73105cc1f01781c9bebcb467d304dc72f3a13e0"
+  },
+  {
+   "path": "buttons-after/G3-390-after.png",
+   "bytes": 130305,
+   "sha256": "cd6688458cdab79df41221d18942d9ba7e6b96bce42712eddec4f5ec9b606b27"
+  },
+  {
+   "path": "buttons-after/G3-390-before.png",
+   "bytes": 131690,
+   "sha256": "afaf658492f85a08142efe5b33a5fe5d68fb5f42ebd094e2e1af3c55611af112"
+  },
+  {
+   "path": "buttons-after/G4-1280-after.png",
+   "bytes": 236319,
+   "sha256": "fcfe1c09ccf12fe3df011defe7f1d1941655935a248a3e6492d510f3a53e626d"
+  },
+  {
+   "path": "buttons-after/G4-1280-before.png",
+   "bytes": 233062,
+   "sha256": "4b8fa2651a13cd198df7ee488994049c4fbfb80f693c332e733f42df388757d0"
+  },
+  {
+   "path": "buttons-after/G4-390-after.png",
+   "bytes": 171381,
+   "sha256": "aec4cf2d20acbe57e08c6e1d3fab5303d1ed3f969d1b369cb70b5e5d4c203332"
+  },
+  {
+   "path": "buttons-after/G4-390-before.png",
+   "bytes": 172073,
+   "sha256": "fed9f9b7484c7c02f552bc0aaf98ef44bf75b322d3adebdf763ef8571ca94661"
+  },
+  {
+   "path": "buttons-after/G5-1280-after.png",
+   "bytes": 222497,
+   "sha256": "217deca65c2db12607f16be6ae54966918b0c224c75dec3fad7245a7d1cd291a"
+  },
+  {
+   "path": "buttons-after/G5-1280-before.png",
+   "bytes": 222922,
+   "sha256": "f326d405cc698b11ef624484555a608ffeaf386d9980f09f334a05e1f2816853"
+  },
+  {
+   "path": "buttons-after/G5-390-after.png",
+   "bytes": 149893,
+   "sha256": "5d9c7e59f1c81d9806ca2c7f5b4793a2b88bf80b1cf08c0fc4714f10bf5047bd"
+  },
+  {
+   "path": "buttons-after/G5-390-before.png",
+   "bytes": 158467,
+   "sha256": "f430a686e354e1389a4b473a170a91dcc38e0ab6460b102c18b0bb8cf8da6518"
+  },
+  {
+   "path": "buttons-after/G6-1280-after.png",
+   "bytes": 187285,
+   "sha256": "8c6ae000e443cf444e468256a1dc5a00b3921f51c2a849135bd4e8b2d75814cc"
+  },
+  {
+   "path": "buttons-after/G6-1280-before.png",
+   "bytes": 188496,
+   "sha256": "2c62c6f7ff32afa23d6babade87ff2fe729f795bb46d28af57bfdbd93ed17249"
+  },
+  {
+   "path": "buttons-after/G6-390-after.png",
+   "bytes": 126907,
+   "sha256": "56a4ea2554dd870a05524805ae8249accfd6f24586807c266bc341b5b4af2213"
+  },
+  {
+   "path": "buttons-after/G6-390-before.png",
+   "bytes": 125880,
+   "sha256": "e9efa16d0c27cde561e8cab3d26d9cb61e08a4a5d8127ab34a43cef94958840b"
+  },
+  {
+   "path": "buttons-after/G7-1280-after.png",
+   "bytes": 218515,
+   "sha256": "2b5f1e65eb8635e4f91a5e55d2f58e43032bd57b1449804d1251c9b60854efa4"
+  },
+  {
+   "path": "buttons-after/G7-1280-before.png",
+   "bytes": 220960,
+   "sha256": "a50c1db53329ffea333353866161a741fd8a8f939b2364835deeaf4161ceb440"
+  },
+  {
+   "path": "buttons-after/G7-390-after.png",
+   "bytes": 137412,
+   "sha256": "32d5ad3e4a65a8e8616d425101023ae5ef632bfabe47004589cb71c1e34e7d57"
+  },
+  {
+   "path": "buttons-after/G7-390-before.png",
+   "bytes": 135854,
+   "sha256": "7fd2b3d18399360384b879e3100b9dd919f9d2e51ed56d7f522f13392ac53d4b"
+  },
+  {
+   "path": "buttons-after/G8-1280-after.png",
+   "bytes": 204250,
+   "sha256": "ed32893552db5141b8c513904365351b4e0d4d4155d4701cc9a54d63ae0fe675"
+  },
+  {
+   "path": "buttons-after/G8-1280-before.png",
+   "bytes": 204900,
+   "sha256": "f28022240980753cef8310fff68855e5afb0287024c5462cf2ee051551bbc8d6"
+  },
+  {
+   "path": "buttons-after/G8-390-after.png",
+   "bytes": 140145,
+   "sha256": "aa313cdc531900ea504138b3842196afe948261d38616b44c63301ec5bfe6e4f"
+  },
+  {
+   "path": "buttons-after/G8-390-before.png",
+   "bytes": 141764,
+   "sha256": "1934b710179d80c3aae2e0a8ddaf495e1ea2cceec8ddb1a2f0a2473e7b12b9e4"
+  },
+  {
+   "path": "buttons-after/G9-1280-after.png",
+   "bytes": 213674,
+   "sha256": "c2056f55e669030b9ded978b113420e17aec44df8a4561f168cf57b7d21b952d"
+  },
+  {
+   "path": "buttons-after/G9-1280-before.png",
+   "bytes": 212827,
+   "sha256": "be555c2821c3a359eaa928dafcbff84ac405bb989a77deb2d8fd3eb02918a238"
+  },
+  {
+   "path": "buttons-after/G9-390-after.png",
+   "bytes": 133270,
+   "sha256": "bf595689b18041ce78ad1e3420d6777b07e54d205e1a989b04e1bfc7eb24fb0a"
+  },
+  {
+   "path": "buttons-after/G9-390-before.png",
+   "bytes": 134782,
+   "sha256": "471d0dd50eace76ae3e8dc98f111a8e668c73cb4fb0c0a657fde1c4a6e579c94"
+  },
+  {
+   "path": "buttons-after/M1-1280-after.png",
+   "bytes": 209614,
+   "sha256": "62114ef354777b5c123a7697ba699b6cd798dfb063b8eb872758a7671aea8583"
+  },
+  {
+   "path": "buttons-after/M1-1280-before.png",
+   "bytes": 121315,
+   "sha256": "d847f63aad7008d691bb74876eeb1cf74e73c07464d9fe6a36d2bb5668d6e8c8"
+  },
+  {
+   "path": "buttons-after/M1-390-after.png",
+   "bytes": 149406,
+   "sha256": "e029ef534fac60ca30531d88043064dac8c2b2d9dbdec22e161ba16b9e0e1881"
+  },
+  {
+   "path": "buttons-after/M1-390-before.png",
+   "bytes": 82238,
+   "sha256": "3b9c951183ba8ba8d3f27fc03da3067f6f0aecd12819212bca717ab50604f63f"
+  },
+  {
+   "path": "buttons-after/M10-1280-after.png",
+   "bytes": 120298,
+   "sha256": "27caf31ac30de8d952b672f85632bc6b3c048f3d743f489eecd69b042006c10f"
+  },
+  {
+   "path": "buttons-after/M10-1280-before.png",
+   "bytes": 121796,
+   "sha256": "3a71e2e0a649572ecdfbf26257d4925cf0bdbf037a8b5ef975f7ab2275f11b27"
+  },
+  {
+   "path": "buttons-after/M10-390-after.png",
+   "bytes": 81073,
+   "sha256": "111ff511a9d9b035a210b951d556496fbfba8ef42683f290d6d7f2b68d0114bd"
+  },
+  {
+   "path": "buttons-after/M10-390-before.png",
+   "bytes": 84218,
+   "sha256": "19175a5635ea2fec66bf278b793172f2bb270c2c1be7f8ddc717067faeab1e6a"
+  },
+  {
+   "path": "buttons-after/M2-1280-after.png",
+   "bytes": 312185,
+   "sha256": "384b5892fea4c87d6ccba4ecd9f7945a96539082112d38f5112b4550a8f19538"
+  },
+  {
+   "path": "buttons-after/M2-1280-before.png",
+   "bytes": 120121,
+   "sha256": "408d4e3c5b49ffb5ee1a77c8ff00b44049248274e3e0ec5c13946ae2922c58cb"
+  },
+  {
+   "path": "buttons-after/M2-390-after.png",
+   "bytes": 168215,
+   "sha256": "b26f10dcc638bd77cba28294058ad58644d67b3e7bb254f82427b52cf77f3670"
+  },
+  {
+   "path": "buttons-after/M2-390-before.png",
+   "bytes": 81518,
+   "sha256": "59aba23c8bb44253e5deea246db139563f24ad03620a6361a00d2968d16a6bd5"
+  },
+  {
+   "path": "buttons-after/M3-1280-after.png",
+   "bytes": 38101,
+   "sha256": "e091d606c056ceda7636da9f57ffd582a07df80859ea30ca99f03d7e8aae84df"
+  },
+  {
+   "path": "buttons-after/M3-1280-before.png",
+   "bytes": 121111,
+   "sha256": "e9ad594603fd6aa82ae756b9239b8dca0e1a1ab82b16cf9da7fb13c5eeb733c0"
+  },
+  {
+   "path": "buttons-after/M3-390-after.png",
+   "bytes": 46248,
+   "sha256": "989fe2bfeb6c33c86307d715f19ffab34457ff18927f21790cf09cf8006a9e01"
+  },
+  {
+   "path": "buttons-after/M3-390-before.png",
+   "bytes": 86284,
+   "sha256": "33076bc8912baad44ba680238c02827c04e507d48b61e6d85aff029a6ddd557f"
+  },
+  {
+   "path": "buttons-after/M4-1280-after.png",
+   "bytes": 134410,
+   "sha256": "718024969f1175ab584b7637812a2ee18f1e5208b8d0d5a411e109bc2954cea3"
+  },
+  {
+   "path": "buttons-after/M4-1280-before.png",
+   "bytes": 131476,
+   "sha256": "e0644c44d96b08a0323f675b816376ff9a86af42b56ca9f5c468426ef53f28d9"
+  },
+  {
+   "path": "buttons-after/M4-390-after.png",
+   "bytes": 87601,
+   "sha256": "892f8a91126352d0933714d35ba035633a84c0e5bfe9a08cd4d973ddc3ca7a71"
+  },
+  {
+   "path": "buttons-after/M4-390-before.png",
+   "bytes": 86538,
+   "sha256": "2b7f1c2e155bd995ea636c1b9ebc61d6ceab2ede3c030faf462c5a052fa89a11"
+  },
+  {
+   "path": "buttons-after/M5-1280-after.png",
+   "bytes": 75555,
+   "sha256": "5508453e13e4bfe16b53838a3de1f876d940486df47ab80da6dd6bab6d74c36b"
+  },
+  {
+   "path": "buttons-after/M5-1280-before.png",
+   "bytes": 117256,
+   "sha256": "4f67b8594675a1e03713f8efd0d254fe7a99d834347d8c31e4ce88a721418052"
+  },
+  {
+   "path": "buttons-after/M5-390-after.png",
+   "bytes": 86904,
+   "sha256": "e80d8a8510843da638ef2f94fa67438ac09a2ffd66d3df641e5d74f757ff1ac6"
+  },
+  {
+   "path": "buttons-after/M5-390-before.png",
+   "bytes": 83468,
+   "sha256": "7438a482584345101c9bb48769dd98abf4c4b6d91041169578c32bae6f99e149"
+  },
+  {
+   "path": "buttons-after/M6-1280-after.png",
+   "bytes": 73596,
+   "sha256": "ebb87a14f72414e8e1f8abe0b253f2d1afce3dd1038f9ae0df4a618a741c7744"
+  },
+  {
+   "path": "buttons-after/M6-1280-before.png",
+   "bytes": 124713,
+   "sha256": "6689b49005337d6e1a91ca3fd58b15f07df9081a191723c41c0fe2a1c8d86bd0"
+  },
+  {
+   "path": "buttons-after/M6-390-after.png",
+   "bytes": 84798,
+   "sha256": "0f9ad589cdaa9d651eb8487c86bc7d32afda95f5ed54d914f72257451fd19548"
+  },
+  {
+   "path": "buttons-after/M6-390-before.png",
+   "bytes": 82503,
+   "sha256": "4e3e53cec515c911a8e2bfc83ccc8ab558bead41ecd51be2590f8c22dcc70de4"
+  },
+  {
+   "path": "buttons-after/M7-1280-after.png",
+   "bytes": 106180,
+   "sha256": "aa8df169d36c7ec8f2ed47e89671ed5c482736596a2d9990ccab5fc2c0a20909"
+  },
+  {
+   "path": "buttons-after/M7-1280-before.png",
+   "bytes": 124135,
+   "sha256": "ebecc4a493543a3396c4bd2d2ca494c37caabdd98b96ce278c417383837b10d1"
+  },
+  {
+   "path": "buttons-after/M7-390-after.png",
+   "bytes": 96405,
+   "sha256": "427d7ea923573c9d1d9706151e3373039317618fb9c106f49d1650a0e30b17f2"
+  },
+  {
+   "path": "buttons-after/M7-390-before.png",
+   "bytes": 81683,
+   "sha256": "6123109bc35b2b4f676b5b8158ad4231368a51bf3dcc6ffe7d8e57e593ab4388"
+  },
+  {
+   "path": "buttons-after/M8-1280-after.png",
+   "bytes": 125477,
+   "sha256": "6f9f25086c1100bb17e6d3d52668206b98d667d069783a72d7b7d63f4c08012e"
+  },
+  {
+   "path": "buttons-after/M8-1280-before.png",
+   "bytes": 128695,
+   "sha256": "1562edf506ddc67d0198809d8cfc57ed7eaee0b73fed33499e28776313e04f12"
+  },
+  {
+   "path": "buttons-after/M8-390-after.png",
+   "bytes": 83028,
+   "sha256": "aa66c05ff453c5421317af33ef651ddeb9f3973b538e2f4b7c3bcb3575687539"
+  },
+  {
+   "path": "buttons-after/M8-390-before.png",
+   "bytes": 82795,
+   "sha256": "a5b569c3caf1bfc048897e7029ce243cea0c7446d55c95a537eefc0df673a2b9"
+  },
+  {
+   "path": "buttons-after/M9-1280-after.png",
+   "bytes": 139010,
+   "sha256": "e9e9c4ace30dd489acce3b16a857a45a626fea413e57c2faef7a4aba3cb88063"
+  },
+  {
+   "path": "buttons-after/M9-1280-before.png",
+   "bytes": 125900,
+   "sha256": "91d3569e957249c219dde6d12741c231520716d4c728192e38aeb9513b88c350"
+  },
+  {
+   "path": "buttons-after/M9-390-after.png",
+   "bytes": 81006,
+   "sha256": "a9a18f5183f5d5e53c5d90e21dffc3270539bf18ae7ca71bedbb2dea3c579eb6"
+  },
+  {
+   "path": "buttons-after/M9-390-before.png",
+   "bytes": 85046,
+   "sha256": "1fadc8e90f53282bf902dda3ad4c4a91b10b1c5abc70c5e543fe77d562472269"
+  },
+  {
+   "path": "buttons-after/O1-1280-after.png",
+   "bytes": 137772,
+   "sha256": "2c1ec173b05ea9eef6d4f50895c50ed488efcfe086215b738d43ff02adf82bc7"
+  },
+  {
+   "path": "buttons-after/O1-1280-before.png",
+   "bytes": 75593,
+   "sha256": "18a5ebc302d213d4c8171606355e4455a89b37e485a08158e42d18d775ec735b"
+  },
+  {
+   "path": "buttons-after/O1-390-after.png",
+   "bytes": 86783,
+   "sha256": "9d2c3c8a7e677637c5d13a8d047aacbe3fa211b75a02d239b2c9cde781f93116"
+  },
+  {
+   "path": "buttons-after/O1-390-before.png",
+   "bytes": 86600,
+   "sha256": "a208bd6f5d97f743108d5f7d6187cdae85497c2110e5e7b6e75964d78ad3528f"
+  },
+  {
+   "path": "buttons-after/O2-1280-after.png",
+   "bytes": 139036,
+   "sha256": "91223724120325e62d45c9a45af09f1825221b192ddb4d500644904e03932f5d"
+  },
+  {
+   "path": "buttons-after/O2-1280-before.png",
+   "bytes": 73830,
+   "sha256": "cb9cb072ab3733df5eb592c7169b6d05b2ca663bdaf5379e4e75cfee11c83229"
+  },
+  {
+   "path": "buttons-after/O2-390-after.png",
+   "bytes": 84252,
+   "sha256": "31c71560144a4eba87c9895d243798a0f6e55d45e971847d2048e21b0fe4787f"
+  },
+  {
+   "path": "buttons-after/O2-390-before.png",
+   "bytes": 84641,
+   "sha256": "91f7511fef4fc5931c63542c245c4b869a14568c0e5f149e4b1605ca08bfc5b0"
+  },
+  {
+   "path": "buttons-after/O3-1280-after.png",
+   "bytes": 73653,
+   "sha256": "1f722bf063ff0f80d0a5ca44cc6f04b42e7a6bf7c1abdf7bb784fff114b93e4a"
+  },
+  {
+   "path": "buttons-after/O3-1280-before.png",
+   "bytes": 73452,
+   "sha256": "4363be85979706becf330c7b056c466638f196d96c967a54891af3c5bbd0e98a"
+  },
+  {
+   "path": "buttons-after/O3-390-after.png",
+   "bytes": 84292,
+   "sha256": "a5b1404663209ff78e1884141400e434ce9d69e6eae87369ac359e7eba950cc1"
+  },
+  {
+   "path": "buttons-after/O3-390-before.png",
+   "bytes": 84040,
+   "sha256": "f3f8a0e106fc1818abfa038b8daafe5a03241e084e547577af3631a9a536d066"
+  },
+  {
+   "path": "buttons-after/O4-1280-after.png",
+   "bytes": 106173,
+   "sha256": "f618277fe99aeb9da257e84e1e863015655b4b132d79696627d0b2fef84d6df4"
+  },
+  {
+   "path": "buttons-after/O4-1280-before.png",
+   "bytes": 106343,
+   "sha256": "204854f2fce9a76e4b86b613ed9fda4cbe04de57a0d28102710de9e9f459bf87"
+  },
+  {
+   "path": "buttons-after/O4-390-after.png",
+   "bytes": 96025,
+   "sha256": "65c3ba737cc5d1a1b7437ef70599f796aec89a77560b36a6dda7a771d18e81ca"
+  },
+  {
+   "path": "buttons-after/O4-390-before.png",
+   "bytes": 95819,
+   "sha256": "2b6a0113ae393be790430636c4cb938d028c724b61d41904f23777885466b88d"
+  },
+  {
+   "path": "buttons-after/O5-1280-after.png",
+   "bytes": 120511,
+   "sha256": "0338aeb3b04bd8e83c432f5aec6d78ebc3f1e162d64d44de554ad853f16836d0"
+  },
+  {
+   "path": "buttons-after/O5-1280-before.png",
+   "bytes": 106322,
+   "sha256": "2d4f0ccfd57c94e2fc9363de42dbf0fc79ec22f6f5414f0cf942c1598f3c6f38"
+  },
+  {
+   "path": "buttons-after/O5-390-after.png",
+   "bytes": 97856,
+   "sha256": "952ddeeee052dea16c9a21fa53934203a0fa71f05e16c845c32323364a68fd4d"
+  },
+  {
+   "path": "buttons-after/O5-390-before.png",
+   "bytes": 96426,
+   "sha256": "70fd494a6964a0425c7f3b84e33ba77e8101eeddb0e4ec6a28aef17e667a0e7d"
+  },
+  {
+   "path": "buttons-after/O6-1280-after.png",
+   "bytes": 219090,
+   "sha256": "fe38543b2be7b0e020b5dfdd2e61ed480936d934bf61c0791f3824d82a462573"
+  },
+  {
+   "path": "buttons-after/O6-1280-before.png",
+   "bytes": 133430,
+   "sha256": "f040e6937f3eb4fca1889723262a260a448ef7046c404c49561fd3198a4ee28f"
+  },
+  {
+   "path": "buttons-after/O6-390-after.png",
+   "bytes": 138877,
+   "sha256": "4b6734c619514f306e041a2eeb5329679258a773b46ee0f56f84542542c2b185"
+  },
+  {
+   "path": "buttons-after/O6-390-before.png",
+   "bytes": 139123,
+   "sha256": "5cb3e4ccf4cd9d3a0a24c17f07edc067bcdb6c4d704175949aef2e4dccfd5463"
+  },
+  {
+   "path": "buttons-after/O7-1280-after.png",
+   "bytes": 69914,
+   "sha256": "a453d26786bd6686fe8f4517dc3a9a2bc23608766a2edec7f6b3e74d3d7ca4f7"
+  },
+  {
+   "path": "buttons-after/O7-1280-before.png",
+   "bytes": 164764,
+   "sha256": "44d56a696d6759cd4d81b54bc886ffa5d28a74129abaed5d1069ef8004282435"
+  },
+  {
+   "path": "buttons-after/O7-390-after.png",
+   "bytes": 140912,
+   "sha256": "a2c218520eccc159988c0a916b1780c95200290e444f568dc41d325dfbb673c6"
+  },
+  {
+   "path": "buttons-after/O7-390-before.png",
+   "bytes": 138351,
+   "sha256": "f0ef6c9823183a772b9023a6c48c8142d9b7594ba23f174394fb34ce1b6eee90"
+  },
+  {
+   "path": "buttons-after/O8-1280-after.png",
+   "bytes": 300629,
+   "sha256": "d945ca262a8fdbc37e0df6e0810ce44e124f698b33ddb08bd6bf9de4d130c860"
+  },
+  {
+   "path": "buttons-after/O8-1280-before.png",
+   "bytes": 275412,
+   "sha256": "5bbe3e501fa09579e2c5edeecba464dafab634db9077d478483f82cf8f92f0c4"
+  },
+  {
+   "path": "buttons-after/O8-390-after.png",
+   "bytes": 170289,
+   "sha256": "8eeceffa6cb1bfeab7f777f4d3264aa0340d1089ab000a3c496c194a82863bce"
+  },
+  {
+   "path": "buttons-after/O8-390-before.png",
+   "bytes": 147850,
+   "sha256": "f5ea7ba4780477d45122a455cfc077eafa437a8b7cf4633d1c01ad40e5b616ed"
+  },
+  {
+   "path": "buttons-after/O9-1280-after.png",
+   "bytes": 222467,
+   "sha256": "1ee08932c04cb6bfa6bb416dccef5841f11379e5bea3d11e24f2c26a9fea5262"
+  },
+  {
+   "path": "buttons-after/O9-1280-before.png",
+   "bytes": 237773,
+   "sha256": "7ac23d294ed02ad6c57ea55c525aca4c70938bbb97d8af51ea38c16f0c981b1a"
+  },
+  {
+   "path": "buttons-after/O9-390-after.png",
+   "bytes": 123808,
+   "sha256": "9ef2d4a63e6b2675540fac33a9fc3c7b54ee3dac9c9d9e173fa24ebc25c3b16b"
+  },
+  {
+   "path": "buttons-after/O9-390-before.png",
+   "bytes": 125412,
+   "sha256": "cbd48b124035efdcf20f15667cb9acb415fb152e8bd28c47343f6662594ba6ba"
+  },
+  {
+   "path": "buttons-before/G1-1280-after.png",
+   "bytes": 263465,
+   "sha256": "788e20006506c20223ae5ae6f12563aeae6236d58b993e8e8a12bcefd67faeec"
+  },
+  {
+   "path": "buttons-before/G1-1280-before.png",
+   "bytes": 265817,
+   "sha256": "5da9ec2b8442ccb9007e5e7b761f2ae71b0da9a079d1c0f6d580da04dd8a70cf"
+  },
+  {
+   "path": "buttons-before/G1-390-after.png",
+   "bytes": 159565,
+   "sha256": "85b8a659cd0e0353ce6d45d69cd27f0fac92166a16881e0e2b4dcaa17c95da7f"
+  },
+  {
+   "path": "buttons-before/G1-390-before.png",
+   "bytes": 156991,
+   "sha256": "7003569f5f17432684ee9c17d47d3353542b90bcdc7b4299077a18d24b1c6b73"
+  },
+  {
+   "path": "buttons-before/G10-1280-after.png",
+   "bytes": 266866,
+   "sha256": "705b08538bab9c7295953894a6133471911b04ac6602a33afe420837640fbab1"
+  },
+  {
+   "path": "buttons-before/G10-1280-before.png",
+   "bytes": 264936,
+   "sha256": "4a83a8fecda46767cbfe1edde7c830c770279b32acc9c57b5001224436daaaea"
+  },
+  {
+   "path": "buttons-before/G10-390-after.png",
+   "bytes": 145684,
+   "sha256": "8c68bb4d370f0d507986d7a8913c4414cd1e0d417c4b1d6354007e482ecb1f5a"
+  },
+  {
+   "path": "buttons-before/G10-390-before.png",
+   "bytes": 147491,
+   "sha256": "7d96ce7307a094b0b229197aac5ac46bcf410f57a45faf0c563dec8216d40af6"
+  },
+  {
+   "path": "buttons-before/G11-1280-after.png",
+   "bytes": 123732,
+   "sha256": "506fa564c17d93be720a7b3ebe8f43d3f1a9c0b4261691c9cde121e09af3bbb3"
+  },
+  {
+   "path": "buttons-before/G11-1280-before.png",
+   "bytes": 250380,
+   "sha256": "d4060d8241aa157374408234904acb361d358f1306f872bf0720a30243b7a3fe"
+  },
+  {
+   "path": "buttons-before/G11-390-after.png",
+   "bytes": 101344,
+   "sha256": "bdc2904510cf34b6971229e0dea6129f190e2ca2bd599635ea9ed4b25f3b3934"
+  },
+  {
+   "path": "buttons-before/G11-390-before.png",
+   "bytes": 155156,
+   "sha256": "767d3a2e06f5376a3287c0c4675c52983ae07615f12ff4917e7ffa38593bac78"
+  },
+  {
+   "path": "buttons-before/G12-1280-after.png",
+   "bytes": 189666,
+   "sha256": "20596590ef7714fc4d578971d2fe8e9664e7f327a453d202487e515d512f65e3"
+  },
+  {
+   "path": "buttons-before/G12-1280-before.png",
+   "bytes": 320261,
+   "sha256": "85de56d3a9facba9a3b7c4707063fae7e836dc4cf19d478dfeee4e87395d7dc0"
+  },
+  {
+   "path": "buttons-before/G12-390-after.png",
+   "bytes": 108201,
+   "sha256": "b4316d5c0cfc317c5a2c78ae79f540cb325302795c6e412b613d14eb2a5756f0"
+  },
+  {
+   "path": "buttons-before/G12-390-before.png",
+   "bytes": 158948,
+   "sha256": "65de7c3c0551ca8f487ad36c02d3a68bf49583462c6abe6efd183546e32acf28"
+  },
+  {
+   "path": "buttons-before/G13-1280-after.png",
+   "bytes": 186065,
+   "sha256": "ffecf87fda33204be49efabe7dee02824eb883ec60a9e7af79927885b5b4344c"
+  },
+  {
+   "path": "buttons-before/G13-1280-before.png",
+   "bytes": 238944,
+   "sha256": "1713e48eedbe97f990a176c2597f772f588d3772cf68228f4f7c247f8a65a119"
+  },
+  {
+   "path": "buttons-before/G13-390-after.png",
+   "bytes": 96475,
+   "sha256": "684fa3889c48672c76c5c6ad5f967bf36d0eca28dfc9171764c1cb11e5ea9a54"
+  },
+  {
+   "path": "buttons-before/G13-390-before.png",
+   "bytes": 158017,
+   "sha256": "a22397e6ae4c154b08730b3c5fa0877704d69aff84cde26fcbccbfd0e5fd7661"
+  },
+  {
+   "path": "buttons-before/G14-1280-after.png",
+   "bytes": 238865,
+   "sha256": "c47eb8522cdb420c22ecaba0eb169c74ca1b8b47250a1c70e55b8f8a59262c07"
+  },
+  {
+   "path": "buttons-before/G14-1280-before.png",
+   "bytes": 252359,
+   "sha256": "e97cb44b5a08cdfa56b02eb1a1810de091fef0d1631113937f69e224a957924b"
+  },
+  {
+   "path": "buttons-before/G14-390-after.png",
+   "bytes": 137390,
+   "sha256": "8bb94dea47404b554c556037029aa820f3b16f9f1ce1bb9e4c3d8fa544b064ba"
+  },
+  {
+   "path": "buttons-before/G14-390-before.png",
+   "bytes": 138018,
+   "sha256": "a8439ae3f5e2f48b2d3dbb098294e8a0656c66d994f1c5b31b8348629a244095"
+  },
+  {
+   "path": "buttons-before/G15-1280-after.png",
+   "bytes": 233704,
+   "sha256": "8853445aa62a8237b9511aba02c919962a2edb26dc14fa6eaef734fe91e4cc41"
+  },
+  {
+   "path": "buttons-before/G15-1280-before.png",
+   "bytes": 233566,
+   "sha256": "f0eb6335d4c305ed97aca1abf56358c4a2681431dbd205c8ac41541e707492f8"
+  },
+  {
+   "path": "buttons-before/G15-390-after.png",
+   "bytes": 142610,
+   "sha256": "17d260d36c82301fe24e70a596382d32c6308a7c7fd8da6170ade63f6287a997"
+  },
+  {
+   "path": "buttons-before/G15-390-before.png",
+   "bytes": 146555,
+   "sha256": "fab950c555de9a3cc43707ba755117c15a436162c06dbea139a5a57aa0a5c0eb"
+  },
+  {
+   "path": "buttons-before/G16-1280-after.png",
+   "bytes": 226966,
+   "sha256": "3c1d923361575fea3f83be25da5409c133cf7eb54c7accd041de78b5dddea4ef"
+  },
+  {
+   "path": "buttons-before/G16-1280-before.png",
+   "bytes": 229187,
+   "sha256": "913d42faff221d5f063ed6d3b8d1449288945e71f73357b573bcf17548407af7"
+  },
+  {
+   "path": "buttons-before/G16-390-after.png",
+   "bytes": 142529,
+   "sha256": "04acbec97d6901f0e914ba31409ee05e4cbdc4ebb077240466154cc0a43ac7da"
+  },
+  {
+   "path": "buttons-before/G16-390-before.png",
+   "bytes": 143716,
+   "sha256": "fbdb32bc8289f5c17457e82500ed2ea7662154a685b3a650241a34a13714cf15"
+  },
+  {
+   "path": "buttons-before/G17-1280-after.png",
+   "bytes": 300146,
+   "sha256": "fb53c49bf895b2e306aa8c31f0e7b135a755dbcf66cf8a0277776af174fa2813"
+  },
+  {
+   "path": "buttons-before/G17-1280-before.png",
+   "bytes": 303729,
+   "sha256": "88e5f321a59a25e7b9fccd0bd9bd86f2b2ad50cf2be76c15caf835739dc50c81"
+  },
+  {
+   "path": "buttons-before/G17-390-after.png",
+   "bytes": 160689,
+   "sha256": "3a9e66d9233c86eb1cd31b62f4d492ad65e3b81b87d6b11a337b4a485c5efb7f"
+  },
+  {
+   "path": "buttons-before/G17-390-before.png",
+   "bytes": 160633,
+   "sha256": "447f0d744e353ac2c6cac6e5b0c7c2c70483a2725b961c713509f67ed44cc9bf"
+  },
+  {
+   "path": "buttons-before/G18-1280-after.png",
+   "bytes": 258371,
+   "sha256": "cae873d1b9b52e7aeccf6b76512afab9189b7e64161228f80ee4f141fdab7d35"
+  },
+  {
+   "path": "buttons-before/G18-1280-before.png",
+   "bytes": 256306,
+   "sha256": "c88fb443bed65c04e97cdf3b2d85a0f7321da71751f83f6f8648470befd7aed0"
+  },
+  {
+   "path": "buttons-before/G18-390-after.png",
+   "bytes": 166582,
+   "sha256": "864c540495716ba896911d3bf9aa38acd34fba86b6fd7103eaf2d42aa9cb0e58"
+  },
+  {
+   "path": "buttons-before/G18-390-before.png",
+   "bytes": 166164,
+   "sha256": "bc17e5d94fe41306bfdeb71b58b0e57b0a76e910131e47b38257746daab41eb1"
+  },
+  {
+   "path": "buttons-before/G19-1280-after.png",
+   "bytes": 216237,
+   "sha256": "1700e33f0eecc443b837dec5da755eff3e240dfbfe6dd46a39023a503f015199"
+  },
+  {
+   "path": "buttons-before/G19-1280-before.png",
+   "bytes": 223384,
+   "sha256": "f8914dde32d430d0249e716e463307e7dfdc4f1ccf3d09507ef47a6aeb60d394"
+  },
+  {
+   "path": "buttons-before/G19-390-after.png",
+   "bytes": 149579,
+   "sha256": "7ca4f85761dfb9c88daf39716dcc307217202ccbda3083f0051c3b5c61d40445"
+  },
+  {
+   "path": "buttons-before/G19-390-before.png",
+   "bytes": 147802,
+   "sha256": "a1fbf3f9f3f555e8f32424039ca79c544f03f59e188920f9ee9fdc0cebcd8dbc"
+  },
+  {
+   "path": "buttons-before/G2-1280-after.png",
+   "bytes": 249665,
+   "sha256": "b139fb7cc6ba72d1107cf6b8b31e87ba32d0c525bb9a62132e11918d65e79bd0"
+  },
+  {
+   "path": "buttons-before/G2-1280-before.png",
+   "bytes": 250699,
+   "sha256": "979cea7b86bb2c3816de6ac72fba352735c517d8a8b85e175fee79636ffd25ea"
+  },
+  {
+   "path": "buttons-before/G2-390-after.png",
+   "bytes": 139728,
+   "sha256": "3eb171ec744e4b176e843a86542b97c414ed2d74d9be1d6d1bc3249d4bebd540"
+  },
+  {
+   "path": "buttons-before/G2-390-before.png",
+   "bytes": 142356,
+   "sha256": "62a2a6469d4416a91ae8fb17cfca324ff38f52f3ab9421bf574af85e2ab2cad3"
+  },
+  {
+   "path": "buttons-before/G20-1280-after.png",
+   "bytes": 263217,
+   "sha256": "9035ac94a0891d8cdc9b4ec58500bd59c6e812ea4d37ee5f4112c0e37e01408f"
+  },
+  {
+   "path": "buttons-before/G20-1280-before.png",
+   "bytes": 261461,
+   "sha256": "ccd66f7a62d9aa27e728fb9f0b853726bec2f40ca93d4fe96604ca571451ab9b"
+  },
+  {
+   "path": "buttons-before/G20-390-after.png",
+   "bytes": 143775,
+   "sha256": "10ef4eac6b5f6f4d791fc9e35a840955f793205b1613c0ccf0d51ffd3bf2fb39"
+  },
+  {
+   "path": "buttons-before/G20-390-before.png",
+   "bytes": 146717,
+   "sha256": "7d6c377bc366819e3f5f97a2d2cee14e905eeadb434c2752003f6534e43c8fc4"
+  },
+  {
+   "path": "buttons-before/G21-1280-after.png",
+   "bytes": 255194,
+   "sha256": "da8a9fd20ef9cbe39276f687dde9e8a1bf864167b346e0cb17a8a130a53e10d0"
+  },
+  {
+   "path": "buttons-before/G21-1280-before.png",
+   "bytes": 258995,
+   "sha256": "f985ed1badc2eab4a034d7d69ec444f695d336d3ba9b0512e397650ddf0dcfd1"
+  },
+  {
+   "path": "buttons-before/G21-390-after.png",
+   "bytes": 154042,
+   "sha256": "37743cbd904257486fec360e8196e7992ed9aec72e3682833633c73f6e07e18a"
+  },
+  {
+   "path": "buttons-before/G21-390-before.png",
+   "bytes": 156681,
+   "sha256": "dd9036d6e3f62d05c577aac6f9496409ae347cd371d8660f031b8df96e2cfc26"
+  },
+  {
+   "path": "buttons-before/G22-1280-after.png",
+   "bytes": 96075,
+   "sha256": "448a44f9e10b085d6e4ab30ffb21ad6cda3d6f427a2a3559d70d65ca9e09d9f6"
+  },
+  {
+   "path": "buttons-before/G22-1280-before.png",
+   "bytes": 259651,
+   "sha256": "bbef13e3e79331dc8ba9c05dad989e61e25f40444972424f7bb3040be725039d"
+  },
+  {
+   "path": "buttons-before/G22-390-after.png",
+   "bytes": 146066,
+   "sha256": "9a3617ad6ef2281a42f6f5db739b3a23a97708745612adcab91d76b452e4a665"
+  },
+  {
+   "path": "buttons-before/G22-390-before.png",
+   "bytes": 151424,
+   "sha256": "404e2cf2b9a7f64db9137a684ea823a69aa80e16766ee6c4f63d06062aa4e0f2"
+  },
+  {
+   "path": "buttons-before/G23-1280-after.png",
+   "bytes": 250036,
+   "sha256": "af8e587d430a814425d7ce0615d22ec4d413af3eb0707658238181458c296c98"
+  },
+  {
+   "path": "buttons-before/G23-1280-before.png",
+   "bytes": 252498,
+   "sha256": "bfec4bec18dd97396703c555517b6c242cc3dabefbc48db66b88b5dcbc9e3e6c"
+  },
+  {
+   "path": "buttons-before/G23-390-after.png",
+   "bytes": 137101,
+   "sha256": "06742abc9e3f9248cf7982187ce6cce7c8381a0a38d984e6bb1972684b449671"
+  },
+  {
+   "path": "buttons-before/G23-390-before.png",
+   "bytes": 142305,
+   "sha256": "1ef30d935491fbc7949b8dae0ee3f4577bc5e4f24a98d615703c777946d988b0"
+  },
+  {
+   "path": "buttons-before/G24-1280-after.png",
+   "bytes": 273464,
+   "sha256": "3686b3821634bf9c009211d3623d773a73a68088d1553646ba06b104888ef85a"
+  },
+  {
+   "path": "buttons-before/G24-1280-before.png",
+   "bytes": 275081,
+   "sha256": "b3f534c23000faef01db30f0cc8ab7700500135e5bb25aed86eff1683bbe2e99"
+  },
+  {
+   "path": "buttons-before/G24-390-after.png",
+   "bytes": 151140,
+   "sha256": "9b0d90e3eb0ea4bf22e9d3444da5331964e0f4632f0a1faa8fd5543889700013"
+  },
+  {
+   "path": "buttons-before/G24-390-before.png",
+   "bytes": 155418,
+   "sha256": "62dfc09b1b4060308a8c35b5573522e980d4c669924a605883cbfd1768b8a625"
+  },
+  {
+   "path": "buttons-before/G25-1280-after.png",
+   "bytes": 246019,
+   "sha256": "b02d7d42536142ce6e0ad32487bbf72123ba94149c0e15993322698ad6d6abc1"
+  },
+  {
+   "path": "buttons-before/G25-1280-before.png",
+   "bytes": 245279,
+   "sha256": "5be3f3754a8398e9439e7e2b3707ef49d7953476e430dab6ce52f075bdb31c9f"
+  },
+  {
+   "path": "buttons-before/G25-390-after.png",
+   "bytes": 168245,
+   "sha256": "0383ca33005326c9fb2d3cf6c8fe60fd85a5a7041c64d9775c6ad18f3d25dd04"
+  },
+  {
+   "path": "buttons-before/G25-390-before.png",
+   "bytes": 170027,
+   "sha256": "2c238e6bea96e8effc672ccfb3e63f1efd32164c33f59ae68ea270eb60f4ddda"
+  },
+  {
+   "path": "buttons-before/G26-1280-after.png",
+   "bytes": 317446,
+   "sha256": "5e738d4dcbcbd51e3d9b1e7fae239d052ebf07501d0de1553ba32c860f511285"
+  },
+  {
+   "path": "buttons-before/G26-1280-before.png",
+   "bytes": 314841,
+   "sha256": "9cf98a3200ab70bc3342ad83f5fc9ee062d22e9d2f3707f7a1fb823fbdef7fd8"
+  },
+  {
+   "path": "buttons-before/G26-390-after.png",
+   "bytes": 175809,
+   "sha256": "81384445dd5f540a70fca558dd7718d749a5180973e1de8ae14d34afba0d1d70"
+  },
+  {
+   "path": "buttons-before/G26-390-before.png",
+   "bytes": 175767,
+   "sha256": "6b7d5a89ce1fd5e73cd967587ccd9b09bbc290840731f56b539530b62f440542"
+  },
+  {
+   "path": "buttons-before/G27-1280-after.png",
+   "bytes": 152124,
+   "sha256": "69e2c5b0982ee7e1fc811743501f4a08a0358a771986ef27fd48a039b541851f"
+  },
+  {
+   "path": "buttons-before/G27-1280-before.png",
+   "bytes": 315490,
+   "sha256": "deecb965604ac078537236732e1603b7087f8a138a372a23c2f690457e087ee1"
+  },
+  {
+   "path": "buttons-before/G27-390-after.png",
+   "bytes": 179220,
+   "sha256": "6ec60e23e2e9514cf8148ad48c39923bd6042aa8863046cf5f4b51407d3672f9"
+  },
+  {
+   "path": "buttons-before/G27-390-before.png",
+   "bytes": 172450,
+   "sha256": "1f8bf27c10e6499c0cf6e2930fb4528bd6d32e817e1606dc7633456656c6cb17"
+  },
+  {
+   "path": "buttons-before/G28-1280-after.png",
+   "bytes": 317054,
+   "sha256": "3ae36618bf3b6596007669155e2971635a20a644d47c4fae5461815af4a30fec"
+  },
+  {
+   "path": "buttons-before/G28-1280-before.png",
+   "bytes": 316825,
+   "sha256": "775286f7c8f6a234450863db6e58315101469b66eed01809c853c412339ff65b"
+  },
+  {
+   "path": "buttons-before/G28-390-after.png",
+   "bytes": 130420,
+   "sha256": "22ac2f19bebec7dc4ca3a6bf3148a7031ba13d2d21438d6232db83f0d857b815"
+  },
+  {
+   "path": "buttons-before/G28-390-before.png",
+   "bytes": 172445,
+   "sha256": "d324644d0d98d486d4cca1dab66adcb9784715bbf25c6ba968ffd7da5bf9618d"
+  },
+  {
+   "path": "buttons-before/G29-1280-after.png",
+   "bytes": 263185,
+   "sha256": "c5b1db3d691b0c55e1bd9647af0bca8b2d2ae7e247273f69fd0ec58a7a781f97"
+  },
+  {
+   "path": "buttons-before/G29-1280-before.png",
+   "bytes": 261866,
+   "sha256": "ce458f9f837983f5ba42db0fd26ee30b6754bfef4c1033fa2e393c1aa343ac2b"
+  },
+  {
+   "path": "buttons-before/G29-390-after.png",
+   "bytes": 156967,
+   "sha256": "1067e7b8b1bb52c34efe3fc61a52a74ccb57e8f97a9c6bf18dd92f034fc040b4"
+  },
+  {
+   "path": "buttons-before/G29-390-before.png",
+   "bytes": 157865,
+   "sha256": "6030c48af340e3bc8beaa9490ccd8b72bf552c978346c17d43f1ba3eeb39001e"
+  },
+  {
+   "path": "buttons-before/G3-1280-after.png",
+   "bytes": 287188,
+   "sha256": "f6190c8c8f5daf6cd87752c7d3f05c22214db2280a808ff298715e76f91de46b"
+  },
+  {
+   "path": "buttons-before/G3-1280-before.png",
+   "bytes": 290858,
+   "sha256": "6d68dc93730d295a4db19d8d7243596568c6cfbb7bdc558fdd5b3b603b331b96"
+  },
+  {
+   "path": "buttons-before/G3-390-after.png",
+   "bytes": 139218,
+   "sha256": "650ec9cd7e14b931c380f5422f301ba479bb39addeeaa0470ba3c325513de614"
+  },
+  {
+   "path": "buttons-before/G3-390-before.png",
+   "bytes": 141666,
+   "sha256": "83c072bff052574f320adc079bbe4057cad6bf552010fd9ecd0a8e20beaf8740"
+  },
+  {
+   "path": "buttons-before/G4-1280-after.png",
+   "bytes": 213329,
+   "sha256": "849384053f03eb955864cf53711be8e04dd39783b8caf3f77a98e0d72cafd8e7"
+  },
+  {
+   "path": "buttons-before/G4-1280-before.png",
+   "bytes": 215996,
+   "sha256": "3ffb4607cdba5fc12a5b4d0c688e2a9056efef6daead2236a0926f07a541f234"
+  },
+  {
+   "path": "buttons-before/G4-390-after.png",
+   "bytes": 156060,
+   "sha256": "65d5096a6ba2a41ea93d7996805a2b383191ed4bfdd2401bd70adae3f8921385"
+  },
+  {
+   "path": "buttons-before/G4-390-before.png",
+   "bytes": 159988,
+   "sha256": "3cf32c2cea7da1464163f08f98fd5bb777815784f9c279020b52625461198063"
+  },
+  {
+   "path": "buttons-before/G5-1280-after.png",
+   "bytes": 273190,
+   "sha256": "5c11025b5aafe57b53c32ddf9f6ea743e7147c2d018f3b739fcee96f2a6e1ed0"
+  },
+  {
+   "path": "buttons-before/G5-1280-before.png",
+   "bytes": 264451,
+   "sha256": "5e346d0814c9d440ca86fb0315ee124fe3173301aca3c37e9a5e4e6713713f6a"
+  },
+  {
+   "path": "buttons-before/G5-390-after.png",
+   "bytes": 139835,
+   "sha256": "b67e7ed6e158a129859b0c500cd23bbebcf9b0d9123fa4401dcce966ed90b258"
+  },
+  {
+   "path": "buttons-before/G5-390-before.png",
+   "bytes": 139877,
+   "sha256": "b1e9a2fd0e7b71befbf3a00d69516bec24f37570a552cf8583d05a1ca3664180"
+  },
+  {
+   "path": "buttons-before/G6-1280-after.png",
+   "bytes": 240688,
+   "sha256": "3fd966b657bbda2b336ed2a950b4368b9dc8aa709c9e6a2768128e1bc59eefdc"
+  },
+  {
+   "path": "buttons-before/G6-1280-before.png",
+   "bytes": 236858,
+   "sha256": "da10ba1addee00212bb657d7e312685fdc309ae56f362516437e8285f52bedff"
+  },
+  {
+   "path": "buttons-before/G6-390-after.png",
+   "bytes": 140448,
+   "sha256": "30a55e77f23b2c8597ffbbcedbcfd32a5f58971a5e375d7a925de5b71f4e32bd"
+  },
+  {
+   "path": "buttons-before/G6-390-before.png",
+   "bytes": 145253,
+   "sha256": "a7fc82520352e534df37adcbb02c7886bc1b20c0f3025d9cb96b887692b23d3f"
+  },
+  {
+   "path": "buttons-before/G7-1280-after.png",
+   "bytes": 211208,
+   "sha256": "a7009cbc4739b91e2a5a2559ba10906c400a277f1af9cb7a9d98f57d343f5192"
+  },
+  {
+   "path": "buttons-before/G7-1280-before.png",
+   "bytes": 264278,
+   "sha256": "8b548c61f19a79c946d8ffb8cc6d9c029178c570994ac4b1d65a527dc3cb9d73"
+  },
+  {
+   "path": "buttons-before/G7-390-after.png",
+   "bytes": 111903,
+   "sha256": "f2de045f76a8f7cef2a12831fec5328bc5dcbe322e34809d60348f0063ebbfb1"
+  },
+  {
+   "path": "buttons-before/G7-390-before.png",
+   "bytes": 146485,
+   "sha256": "00f76d653d49295304c3807e86c0ec7aba119e7294db14e9ebeaaa35efd93a91"
+  },
+  {
+   "path": "buttons-before/G8-1280-after.png",
+   "bytes": 231732,
+   "sha256": "5ec8e1ab5156b82ec603e88e291b1381f95cc8a42beeb8a3a542a504bd904a65"
+  },
+  {
+   "path": "buttons-before/G8-1280-before.png",
+   "bytes": 243906,
+   "sha256": "8aced16e008107ce5130dae5e2bdb337dddd013d6be9c06d0a35f51c33019ac9"
+  },
+  {
+   "path": "buttons-before/G8-390-after.png",
+   "bytes": 134906,
+   "sha256": "f1b5cbe08204afbf65f5b5b31430148b88fd7f2251ac5bab0c1137beb7384fd9"
+  },
+  {
+   "path": "buttons-before/G8-390-before.png",
+   "bytes": 151862,
+   "sha256": "4c1bedd98bab7a2e966e5d277c5951ed38bb7688946376c4ccdd8ee8f3e9c34e"
+  },
+  {
+   "path": "buttons-before/G9-1280-after.png",
+   "bytes": 220693,
+   "sha256": "c88fe362e344d420095da68c8fdeeced7141d88f3d31dea534ee98400e9d0c44"
+  },
+  {
+   "path": "buttons-before/G9-1280-before.png",
+   "bytes": 248552,
+   "sha256": "09106f922ca035729f5afa2608d0d6566747981e823b373b0907ddef423f27cc"
+  },
+  {
+   "path": "buttons-before/G9-390-after.png",
+   "bytes": 132178,
+   "sha256": "2a0903c8865aed3095fe2bcbfc05c4dd369bda8d1242e398e48f90e646f11b12"
+  },
+  {
+   "path": "buttons-before/G9-390-before.png",
+   "bytes": 158498,
+   "sha256": "2471dd5484fd8ed938d1f1deb04bcb3a71b313179727ef8ed83cee3d8dec5cfd"
+  },
+  {
+   "path": "buttons-before/M1-1280-after.png",
+   "bytes": 271022,
+   "sha256": "eed19ca5e4b1871fb61ab4fd894ef1543c1edbb999ac271241ad9f46f5186846"
+  },
+  {
+   "path": "buttons-before/M1-1280-before.png",
+   "bytes": 126999,
+   "sha256": "1b0949bb54e2f0f209043bd3e2b2e0abfbc7d2238901667181f14b21a19bef27"
+  },
+  {
+   "path": "buttons-before/M1-390-after.png",
+   "bytes": 132715,
+   "sha256": "ceb5c2a82a7e94ca52e1978a5343a58b26d87fbe07c11ead915f9fe42aba6d75"
+  },
+  {
+   "path": "buttons-before/M1-390-before.png",
+   "bytes": 86183,
+   "sha256": "f6a22e7a632d2d1047388e21ddd15131076794bf0273fc98c228969f65e25f58"
+  },
+  {
+   "path": "buttons-before/M10-1280-after.png",
+   "bytes": 121883,
+   "sha256": "a4d6a82abb638e72def8b96ad39bb1e0b5f834de97769b2898017dee0584cf11"
+  },
+  {
+   "path": "buttons-before/M10-1280-before.png",
+   "bytes": 124325,
+   "sha256": "fcf28d3a10a99366ce7e2c23f06cb3b3bb9815bb68a71742ca775d2fceadd3cd"
+  },
+  {
+   "path": "buttons-before/M10-390-after.png",
+   "bytes": 82205,
+   "sha256": "af8a3ee8eeca1f8829e7e4b84f9b43fe155a309adf605c4b4333f48ca1562776"
+  },
+  {
+   "path": "buttons-before/M10-390-before.png",
+   "bytes": 83731,
+   "sha256": "871cf9fa4a00d4441c3f9157b19abf9a9983a56b502bde65a2162e001ae86689"
+  },
+  {
+   "path": "buttons-before/M2-1280-after.png",
+   "bytes": 315520,
+   "sha256": "da366bd0f58f715b54931f5ead0fa87c01767f6525b7a0ac93832dbfbf09ba0e"
+  },
+  {
+   "path": "buttons-before/M2-1280-before.png",
+   "bytes": 124190,
+   "sha256": "c290355f22358391c2acf31c170c500bb04dafe015005f2b6f09bed1380a5d5b"
+  },
+  {
+   "path": "buttons-before/M2-390-after.png",
+   "bytes": 184455,
+   "sha256": "f33e41f3ae9f3e372dee08c893ef7e827060d08739efd2605e5fe816ad339634"
+  },
+  {
+   "path": "buttons-before/M2-390-before.png",
+   "bytes": 84781,
+   "sha256": "1d40efd6ce254a2a9c6b50f03825bde156cdbdff4a836495a48cca1cd2f078d8"
+  },
+  {
+   "path": "buttons-before/M3-1280-after.png",
+   "bytes": 89508,
+   "sha256": "d3cb8f3300171bdf4781d6bdf899ff7aadda00adc101d438a316bc73d051647e"
+  },
+  {
+   "path": "buttons-before/M3-1280-before.png",
+   "bytes": 128267,
+   "sha256": "1042f2b31a77a16155ac4c51dc34a1d761633c5f18a4b5c9c9540ba73f4f609b"
+  },
+  {
+   "path": "buttons-before/M3-390-after.png",
+   "bytes": 48497,
+   "sha256": "fc15a18ad097353648bc909f14168742b9eb8be805fd7ebaeb7e581bcc956708"
+  },
+  {
+   "path": "buttons-before/M3-390-before.png",
+   "bytes": 85760,
+   "sha256": "363b8a15b89a19274f0aafe14ea5a8081b767ba0979720dc254a4704afc66dd9"
+  },
+  {
+   "path": "buttons-before/M4-1280-after.png",
+   "bytes": 134995,
+   "sha256": "450cd086d53a28bb525bad859bc245792653f14f0589699f9f1e54e5f1294764"
+  },
+  {
+   "path": "buttons-before/M4-1280-before.png",
+   "bytes": 122260,
+   "sha256": "10a5b5b916913d1d10050b935db8f0b857950db962356390f3f765dd0a97a926"
+  },
+  {
+   "path": "buttons-before/M4-390-after.png",
+   "bytes": 84795,
+   "sha256": "438b96d7fe6197508716365cd7bd4f14e8b4fde0b16754e22943b126368bb386"
+  },
+  {
+   "path": "buttons-before/M4-390-before.png",
+   "bytes": 86393,
+   "sha256": "02bc50ecb4e2713c3775c8855007be8ba1e3e1f0d460affacbfa3a6633306fa5"
+  },
+  {
+   "path": "buttons-before/M5-1280-after.png",
+   "bytes": 93053,
+   "sha256": "32d6432520dadfd869f59a5715aa66d8ee7aeab360de27c0f8f5c1fc1807eb23"
+  },
+  {
+   "path": "buttons-before/M5-1280-before.png",
+   "bytes": 123545,
+   "sha256": "d4bfffb754f3a792cbff08108a11b5856f14387d080a0ded0be392e04c4c8c38"
+  },
+  {
+   "path": "buttons-before/M5-390-after.png",
+   "bytes": 87231,
+   "sha256": "adb279069c4d5951508312fc99f3cbb1623c184947f760a3187cf2365ee5b9df"
+  },
+  {
+   "path": "buttons-before/M5-390-before.png",
+   "bytes": 83463,
+   "sha256": "a80c0f72ec6ec3f306a60091e3629ac7d13c55a9b68e57057a2b1195dbec59a4"
+  },
+  {
+   "path": "buttons-before/M6-1280-after.png",
+   "bytes": 76802,
+   "sha256": "851b354469c96a545180406ebce65a4d58a9a88acd75f6faa3818c9df89fbe08"
+  },
+  {
+   "path": "buttons-before/M6-1280-before.png",
+   "bytes": 122795,
+   "sha256": "a5a80ca2525de62386199378338ea92075bd6bbb513447016d626da653269192"
+  },
+  {
+   "path": "buttons-before/M6-390-after.png",
+   "bytes": 81570,
+   "sha256": "593463406a7ddae9ffdf792b6bbf3319edae17277e5aa26cefca448affdb5cb9"
+  },
+  {
+   "path": "buttons-before/M6-390-before.png",
+   "bytes": 85753,
+   "sha256": "c17ab8571142f0b09a97ffa419b42f539b8b4d43dfc7adc28629cb28b998f4ca"
+  },
+  {
+   "path": "buttons-before/M7-1280-after.png",
+   "bytes": 113327,
+   "sha256": "8559a72fd91fa1ab55f2a890783f18eaeb6807dde05a2bb45a1c2be08b08a51f"
+  },
+  {
+   "path": "buttons-before/M7-1280-before.png",
+   "bytes": 125927,
+   "sha256": "246fd10e597cebd69be82809859a3efca6b636eb8fb4fbc27fb004663a3cbddb"
+  },
+  {
+   "path": "buttons-before/M7-390-after.png",
+   "bytes": 97882,
+   "sha256": "d2fa9533b42de674512a61b211a2a14e0c28619fef98e8cb151d887b67dafc45"
+  },
+  {
+   "path": "buttons-before/M7-390-before.png",
+   "bytes": 86882,
+   "sha256": "33b6df083d36688c43a258326462dbe1f97396896dc3a37e96ad65d1bddb3510"
+  },
+  {
+   "path": "buttons-before/M8-1280-after.png",
+   "bytes": 121378,
+   "sha256": "520bc73b08b9d8fda6a13bd7da7c198a41b093413dd7040dccc82fa2a603fcd4"
+  },
+  {
+   "path": "buttons-before/M8-1280-before.png",
+   "bytes": 125272,
+   "sha256": "c107ec9238787eeacd4b7430b9571281ed01b70935a100b11c5df8f12d7b299c"
+  },
+  {
+   "path": "buttons-before/M8-390-after.png",
+   "bytes": 86743,
+   "sha256": "3c94c0504a65ae5ae8cec9a5fb8830ac7c9fa3165679c201ba1858b501ad4127"
+  },
+  {
+   "path": "buttons-before/M8-390-before.png",
+   "bytes": 87362,
+   "sha256": "7f8afb9e78f3a9109e45057cdddf10443e6992cc2d1f2105741e973301e06e5b"
+  },
+  {
+   "path": "buttons-before/M9-1280-after.png",
+   "bytes": 141266,
+   "sha256": "23e401c9ea4d1592fdc79f943745f8d1946d38e9c942f009bb67d6b1c76ee82f"
+  },
+  {
+   "path": "buttons-before/M9-1280-before.png",
+   "bytes": 125988,
+   "sha256": "61a262ed4fab8d7f6f6d2dd30a43773d4b723d5f5cb23a6029ad79f5e053395e"
+  },
+  {
+   "path": "buttons-before/M9-390-after.png",
+   "bytes": 87030,
+   "sha256": "339b49a4daf64bdc76d7c7f77781fd6e1080553df404c5b6e8bbd163a29796fa"
+  },
+  {
+   "path": "buttons-before/M9-390-before.png",
+   "bytes": 87902,
+   "sha256": "7efdd50f8624f1b739f13ec2eb271bc6740f903f5979ab3abbde8ba07c9b3397"
+  },
+  {
+   "path": "buttons-before/O1-1280-after.png",
+   "bytes": 138579,
+   "sha256": "da2cc4521977d8a3af074effd44d08259eb5dfd59cc9658829008cbb3aaf3c4b"
+  },
+  {
+   "path": "buttons-before/O1-1280-before.png",
+   "bytes": 93362,
+   "sha256": "178db7f2088cf9e212387bce9fb5be7bd43177191ac5e56a0e877ba66b335bdc"
+  },
+  {
+   "path": "buttons-before/O1-390-after.png",
+   "bytes": 87020,
+   "sha256": "8411c32d9a4e23098448e555ca37b8cbeba32f9c24e5f8e573e466837d6b9ec3"
+  },
+  {
+   "path": "buttons-before/O1-390-before.png",
+   "bytes": 86968,
+   "sha256": "ea34d4e7df2e9b9004547c89a18f7bcee293eec114249f6dd3ab0bbb70eb70a7"
+  },
+  {
+   "path": "buttons-before/O2-1280-after.png",
+   "bytes": 136792,
+   "sha256": "e611120b673de78f7465676c54f8bc69f145c842338b0b37cc47679635b0e7a3"
+  },
+  {
+   "path": "buttons-before/O2-1280-before.png",
+   "bytes": 76791,
+   "sha256": "001495979beeabbf4ac0608f776c24182dd18d2ea57bc453e84a18c816e6ee9d"
+  },
+  {
+   "path": "buttons-before/O2-390-after.png",
+   "bytes": 81428,
+   "sha256": "114b091fd4f602b2def754b20cf5592dac21b003ac4ef78a3688c41deeee4a1e"
+  },
+  {
+   "path": "buttons-before/O2-390-before.png",
+   "bytes": 81953,
+   "sha256": "9c1c5a57786aaa6efa401bc28cfa6bb7dc9d7868bcb16017ecb148846751a0b7"
+  },
+  {
+   "path": "buttons-before/O3-1280-after.png",
+   "bytes": 76817,
+   "sha256": "badf65df9002c2b1bcf5471983729e0a8744b9fc19370442fd6a1388313e3680"
+  },
+  {
+   "path": "buttons-before/O3-1280-before.png",
+   "bytes": 76795,
+   "sha256": "9a9bc345df68c7fd900cd90d7dbe404efc37b863e1065f3ba86cb81fc521d80f"
+  },
+  {
+   "path": "buttons-before/O3-390-after.png",
+   "bytes": 80931,
+   "sha256": "98e5231a726503be5e3bec200b5fee4c7c65326e21d521b62924fae05079edac"
+  },
+  {
+   "path": "buttons-before/O3-390-before.png",
+   "bytes": 81230,
+   "sha256": "2fe469ef6932b5df81ef77415b9596b8dfb5e3f529ca088c16a80d312d2ea368"
+  },
+  {
+   "path": "buttons-before/O4-1280-after.png",
+   "bytes": 112737,
+   "sha256": "b8c5cab8ad6c92086cc31396ea40188fe17a5ac89f91694e46013df7dcb9939d"
+  },
+  {
+   "path": "buttons-before/O4-1280-before.png",
+   "bytes": 113107,
+   "sha256": "d1551092e3508df1ca7cd61db347b2df6c7779ca7ba2c5100246b0b1bceec6a7"
+  },
+  {
+   "path": "buttons-before/O4-390-after.png",
+   "bytes": 96233,
+   "sha256": "8c4b83a47b13db52594f279a689c9cfd6b69218e303b19d160411abc0a9cea3f"
+  },
+  {
+   "path": "buttons-before/O4-390-before.png",
+   "bytes": 96187,
+   "sha256": "ddea419de80a132f9b90cad21a0637cf97179321e3316519d90eafb373259db5"
+  },
+  {
+   "path": "buttons-before/O5-1280-after.png",
+   "bytes": 126772,
+   "sha256": "27d81f27337001327313e545fe3acab482495802afcf320ef75fb552b52135cc"
+  },
+  {
+   "path": "buttons-before/O5-1280-before.png",
+   "bytes": 112923,
+   "sha256": "8c90c437a63fb8c98d27f06b029bbdc1172250e643def9fcdf9615a64c1e225c"
+  },
+  {
+   "path": "buttons-before/O5-390-after.png",
+   "bytes": 96470,
+   "sha256": "3654d45643da945492e99cef6f2d30e0f81dfbe28ec130ad788871e0611fd9a1"
+  },
+  {
+   "path": "buttons-before/O5-390-before.png",
+   "bytes": 97803,
+   "sha256": "ce9189b771ec99d24713a2b56d81dbf1d937cbb359acbcf81946c50ea8b30182"
+  },
+  {
+   "path": "buttons-before/O6-1280-after.png",
+   "bytes": 238902,
+   "sha256": "a8f6d503a6dd93ff1aacc8edacb5abdc7262a85a5b8b65ce80ac71607fec0145"
+  },
+  {
+   "path": "buttons-before/O6-1280-before.png",
+   "bytes": 146449,
+   "sha256": "fa0839d789e9baa7f55b238d6cff5b58447b4f80063c3688f5f44af3182181f5"
+  },
+  {
+   "path": "buttons-before/O6-390-after.png",
+   "bytes": 156232,
+   "sha256": "fa8c0817b1cd6f5652c5d751b8c574daf19e813d0022609edf7b48d11c97f9b8"
+  },
+  {
+   "path": "buttons-before/O6-390-before.png",
+   "bytes": 155420,
+   "sha256": "9cd52be812479a2d91fe0c05d11f87884669323d133c36d1a756d716c587c96c"
+  },
+  {
+   "path": "buttons-before/O7-1280-after.png",
+   "bytes": 95867,
+   "sha256": "6619ff2c312d1d750c3b4f227d1410983b8765c24145c260b77b276d534d597b"
+  },
+  {
+   "path": "buttons-before/O7-1280-before.png",
+   "bytes": 193328,
+   "sha256": "8cfe25934c6ad3b8f8d2cfbc52e72f0e6919cafb1e78bed188974509ce287593"
+  },
+  {
+   "path": "buttons-before/O7-390-after.png",
+   "bytes": 148132,
+   "sha256": "e6c28ae4f96478baa739ee829bb96f79e0fad4859fdd07981f0f9a88f73ef626"
+  },
+  {
+   "path": "buttons-before/O7-390-before.png",
+   "bytes": 147860,
+   "sha256": "323797485fdca1bb29648c500f231aaba15bd68dcad5c8989468ddec60efe0a3"
+  },
+  {
+   "path": "buttons-before/O8-1280-after.png",
+   "bytes": 341980,
+   "sha256": "2184e2dd9a2a96660e6fc7796032591c47f6d5c2f721cab717ddc3cf810015b9"
+  },
+  {
+   "path": "buttons-before/O8-1280-before.png",
+   "bytes": 279186,
+   "sha256": "5f73ecce6499d1b0ce37d9045f3acd1306102312b2efabfaba4fbf34eaebd5ad"
+  },
+  {
+   "path": "buttons-before/O8-390-after.png",
+   "bytes": 140120,
+   "sha256": "555b50bf0131b5b6b4a513a8734d211c8a67b04b5e067d46495dff73b0019f77"
+  },
+  {
+   "path": "buttons-before/O8-390-before.png",
+   "bytes": 129205,
+   "sha256": "65feb32f7f5c7c84ba4c6f1438b63d863ec8350201557d1408aff4a51617d2c9"
+  },
+  {
+   "path": "buttons-before/O9-1280-after.png",
+   "bytes": 202701,
+   "sha256": "b9e108b11c3c8c587523a42fb4e912ae90b90ad719024544d0480b242cf098fc"
+  },
+  {
+   "path": "buttons-before/O9-1280-before.png",
+   "bytes": 211607,
+   "sha256": "e2669425bb08839545540fffc24b87d1500ccdc6d01b690e5b285d25a0fbd0b0"
+  },
+  {
+   "path": "buttons-before/O9-390-after.png",
+   "bytes": 124802,
+   "sha256": "e8a13c8238bcc6ca0529cb0da08092508d55b9a628996305ad460097030d818d"
+  },
+  {
+   "path": "buttons-before/O9-390-before.png",
+   "bytes": 130378,
+   "sha256": "2d8fc684d7e46bdc5ef2957e0e2d58ae91f519b32caf8346b899fa58b0c67a78"
+  },
+  {
+   "path": "i18n/bn/1280-game.png",
+   "bytes": 240432,
+   "sha256": "c6032504bbdcf59a1177e56a447153a5c6c59037e63c6c9858b8959b7cfaa246"
+  },
+  {
+   "path": "i18n/bn/1280-gameover.png",
+   "bytes": 101108,
+   "sha256": "c83753b0b773de845d49104a89747e97bb50f870fa431c6b49cff81bced72eb1"
+  },
+  {
+   "path": "i18n/bn/1280-menu.png",
+   "bytes": 131709,
+   "sha256": "b776a7331d01884840823f05f843ad35e55ec945b811c850153e1aa7cf364647"
+  },
+  {
+   "path": "i18n/bn/1280-pause.png",
+   "bytes": 155470,
+   "sha256": "4a5eeb4861bccd318cbb1bce933fce8065849d59bc3493db852c2abb421a32d5"
+  },
+  {
+   "path": "i18n/bn/1280-settings.png",
+   "bytes": 77455,
+   "sha256": "e996f2ee5277d43f8e7c8cc38e30356254914bdb60e896a6b985f2a8f55b2147"
+  },
+  {
+   "path": "i18n/bn/1280-tutorial.png",
+   "bytes": 251665,
+   "sha256": "552315a7b0c7cd41935c671cdfbf1856b79067f9b0425d10ed0275334ffc746d"
+  },
+  {
+   "path": "i18n/bn/1280-wiki-article.png",
+   "bytes": 123137,
+   "sha256": "d06af8388b9827b070ec23c1291bcf063e90be9e33a853ae79d492829a8041c3"
+  },
+  {
+   "path": "i18n/bn/1280-wiki-list.png",
+   "bytes": 123137,
+   "sha256": "d06af8388b9827b070ec23c1291bcf063e90be9e33a853ae79d492829a8041c3"
+  },
+  {
+   "path": "i18n/bn/390-game.png",
+   "bytes": 181321,
+   "sha256": "dc767cf1f741c2a318c277e4ceccf1291f680bfae68082ed6ea10d3d3d774c95"
+  },
+  {
+   "path": "i18n/bn/390-gameover.png",
+   "bytes": 85653,
+   "sha256": "52db5b765ff480c14a80bf6447adb1f9f1ee32fda7f7d96efee3e87560fdf112"
+  },
+  {
+   "path": "i18n/bn/390-menu.png",
+   "bytes": 89682,
+   "sha256": "0cef79102fb51c912c486cab08a00ea24a7b67011d1901096aedd5a857117b58"
+  },
+  {
+   "path": "i18n/bn/390-pause.png",
+   "bytes": 119902,
+   "sha256": "0175509dafde49368629268d175da9d9d790591efce691bc62325ec43920a23b"
+  },
+  {
+   "path": "i18n/bn/390-settings.png",
+   "bytes": 64112,
+   "sha256": "6bba3e29ff3795ec550fcb9515be096dfd78586c4d78bff159b7831f567bb194"
+  },
+  {
+   "path": "i18n/bn/390-tutorial.png",
+   "bytes": 160437,
+   "sha256": "e4c85d34de2c9cbab8ac593bdc9d2d5e5e1796cf3db3113fd9fc3ef34da96f4f"
+  },
+  {
+   "path": "i18n/bn/390-wiki-article.png",
+   "bytes": 97124,
+   "sha256": "936d4eeec8902236bc8e910fe0d7513bbaa55e8a7eaff084e711ad912bd87da3"
+  },
+  {
+   "path": "i18n/bn/390-wiki-list.png",
+   "bytes": 97124,
+   "sha256": "936d4eeec8902236bc8e910fe0d7513bbaa55e8a7eaff084e711ad912bd87da3"
+  },
+  {
+   "path": "i18n/de/1280-game.png",
+   "bytes": 184282,
+   "sha256": "29062a0ffd197752bba146472dad3b440bf84874549c7c6eb5c11665321d0d80"
+  },
+  {
+   "path": "i18n/de/1280-gameover.png",
+   "bytes": 82594,
+   "sha256": "d05dd9989803527732ff2513f36488bbe54c3cf6fd09f2df8ee19aa4873e7dbe"
+  },
+  {
+   "path": "i18n/de/1280-menu.png",
+   "bytes": 121323,
+   "sha256": "86d08b6fc78d53e86325a8a6717527201755b0b06139ecbd6430a67f35143d07"
+  },
+  {
+   "path": "i18n/de/1280-pause.png",
+   "bytes": 121545,
+   "sha256": "16d7e5ef5ba4b4392e892a10fb910c8fbf12ecc6bd0d88aee1255174e9e4203a"
+  },
+  {
+   "path": "i18n/de/1280-settings.png",
+   "bytes": 63942,
+   "sha256": "d35d345ec6d415e4e5a32f01de8d45794320ce71dd0c56458f254dc4fcf2ed6d"
+  },
+  {
+   "path": "i18n/de/1280-tutorial.png",
+   "bytes": 201278,
+   "sha256": "fc6f7a33434df5faac90e06ae25710876869d72ba5d96762b1b3abfc59e78d81"
+  },
+  {
+   "path": "i18n/de/1280-wiki-article.png",
+   "bytes": 96139,
+   "sha256": "c9bcadbd57bdca1b0aa7e001bb16e2c01fe8faa3650ef9b3789fa1c61072d84d"
+  },
+  {
+   "path": "i18n/de/1280-wiki-list.png",
+   "bytes": 96139,
+   "sha256": "c9bcadbd57bdca1b0aa7e001bb16e2c01fe8faa3650ef9b3789fa1c61072d84d"
+  },
+  {
+   "path": "i18n/de/390-game.png",
+   "bytes": 128647,
+   "sha256": "4e067162716ee44323a4c32022c30b8dbc253a905e6e2f467507c2bb065c7717"
+  },
+  {
+   "path": "i18n/de/390-gameover.png",
+   "bytes": 69217,
+   "sha256": "dfe2b8f20ec415550636b98b175f3d0defcf40755072a17f8a905943775ca785"
+  },
+  {
+   "path": "i18n/de/390-menu.png",
+   "bytes": 85406,
+   "sha256": "aa46290d2f67dc94ca28fba173883a25a18f238a095559697a2de145d0da455c"
+  },
+  {
+   "path": "i18n/de/390-pause.png",
+   "bytes": 88784,
+   "sha256": "76dfee5aabbc61571e8b6eba96bbba0af5a0f181f2cdc17c25927a3d62e03e3b"
+  },
+  {
+   "path": "i18n/de/390-settings.png",
+   "bytes": 56570,
+   "sha256": "f512eb45af669fcb650eaa010da262ab7335dea7046c1d86293c96dc3076c6a0"
+  },
+  {
+   "path": "i18n/de/390-tutorial.png",
+   "bytes": 126991,
+   "sha256": "4aa28abd5fe2aa8cd9de00ce242fd00be78e59eaf21aa1e89a948654a450822b"
+  },
+  {
+   "path": "i18n/de/390-wiki-article.png",
+   "bytes": 81097,
+   "sha256": "6e56761c40b838e1a59c1b3b3b38fab14f19def2e1c0dfe51561022254ed03bb"
+  },
+  {
+   "path": "i18n/de/390-wiki-list.png",
+   "bytes": 81097,
+   "sha256": "6e56761c40b838e1a59c1b3b3b38fab14f19def2e1c0dfe51561022254ed03bb"
+  },
+  {
+   "path": "i18n/en/1280-game.png",
+   "bytes": 223248,
+   "sha256": "b90ce93a8a5f9da4a1d029808c0ebefa23459f3a8ac30cb9a8e4736183387db4"
+  },
+  {
+   "path": "i18n/en/1280-gameover.png",
+   "bytes": 96391,
+   "sha256": "44b7d082a16211ecec316418a1a8cc336eecbe1d4c33e964e792594c3acd1163"
+  },
+  {
+   "path": "i18n/en/1280-menu.png",
+   "bytes": 121074,
+   "sha256": "41cbca6a1a720a4275af9d64201167a41afca2efe4ac3fcead97d1dacdb98d95"
+  },
+  {
+   "path": "i18n/en/1280-pause.png",
+   "bytes": 150600,
+   "sha256": "dfa038fcc7b1fd3a92cf20d95c339a1672658ab12b658ae6ec6d023b86234afb"
+  },
+  {
+   "path": "i18n/en/1280-settings.png",
+   "bytes": 80581,
+   "sha256": "5e180b969ed4ab9acc9856cbed1e0b01271d3bf68d4ce17da291e18d9c01f528"
+  },
+  {
+   "path": "i18n/en/1280-tutorial.png",
+   "bytes": 235922,
+   "sha256": "d905cfd37a434feb2b7db6bb97760fb6fe2aab0b8f28d6052ff7b120dd55023f"
+  },
+  {
+   "path": "i18n/en/1280-wiki-article.png",
+   "bytes": 104873,
+   "sha256": "6b93a0df16326585dbb1fcb878c2792bf5e9de36fe5d24259d583abbc677ee73"
+  },
+  {
+   "path": "i18n/en/1280-wiki-list.png",
+   "bytes": 104873,
+   "sha256": "6b93a0df16326585dbb1fcb878c2792bf5e9de36fe5d24259d583abbc677ee73"
+  },
+  {
+   "path": "i18n/en/390-game.png",
+   "bytes": 125656,
+   "sha256": "a351da2114074731dc0f035a25856e617ef606e45bb508aa2a1ac327062670ba"
+  },
+  {
+   "path": "i18n/en/390-gameover.png",
+   "bytes": 65552,
+   "sha256": "235ca5bf97b687d8c8985de19ca83f3d0e59764988904ef8d8f88a57b30591d7"
+  },
+  {
+   "path": "i18n/en/390-menu.png",
+   "bytes": 84005,
+   "sha256": "11318f99ea28c5dab52102bfc276a63b2041c9f57efb1fd0180fef70dca8b700"
+  },
+  {
+   "path": "i18n/en/390-pause.png",
+   "bytes": 92333,
+   "sha256": "d97d33a29eabbac9f2357a28606adfca6006dbde3b1eb9652e645736bebcf37e"
+  },
+  {
+   "path": "i18n/en/390-settings.png",
+   "bytes": 56507,
+   "sha256": "ff5c2643b773d30311e291c60a7d461ac7a15eec210b3e8d7fb284ea711a916f"
+  },
+  {
+   "path": "i18n/en/390-tutorial.png",
+   "bytes": 123839,
+   "sha256": "a821ffa27197b02199f79d9b63b672520f0ac2f41d11fda57a4948a18fec6f07"
+  },
+  {
+   "path": "i18n/en/390-wiki-article.png",
+   "bytes": 78965,
+   "sha256": "c1dc328891873f73f5149b84d3a60c941d91ed09a22920e0e41e1bdda1594a87"
+  },
+  {
+   "path": "i18n/en/390-wiki-list.png",
+   "bytes": 78965,
+   "sha256": "c1dc328891873f73f5149b84d3a60c941d91ed09a22920e0e41e1bdda1594a87"
+  },
+  {
+   "path": "i18n/fr/1280-game.png",
+   "bytes": 296569,
+   "sha256": "a62f52a0e99c85f60506e0c55e8abd7b2fbc9a3198f985db448ab3be6893b611"
+  },
+  {
+   "path": "i18n/fr/1280-gameover.png",
+   "bytes": 109870,
+   "sha256": "28fdeb555159412a6d928dc5757da2cd5f264be4b599ad16c117be7d63e5dea3"
+  },
+  {
+   "path": "i18n/fr/1280-menu.png",
+   "bytes": 124750,
+   "sha256": "a1ee95f5adadbd6fa28e65db9197b638a0219474f939a259380cc6d073e5e3e8"
+  },
+  {
+   "path": "i18n/fr/1280-pause.png",
+   "bytes": 179193,
+   "sha256": "e27dc5fd399816b7d8bdbb1adca9909e2c7bf13b2c35e7ea5eea57790c68da43"
+  },
+  {
+   "path": "i18n/fr/1280-settings.png",
+   "bytes": 84018,
+   "sha256": "41f881e4216504d4a499743162fbc5d68cd63e1d13d5c6c022687b09a58569ea"
+  },
+  {
+   "path": "i18n/fr/1280-tutorial.png",
+   "bytes": 231058,
+   "sha256": "f55b83712d6114b4afda41ec1f67f6357eca4d8f0ab2a42d9cb5c2cc5ba978d5"
+  },
+  {
+   "path": "i18n/fr/1280-wiki-article.png",
+   "bytes": 110763,
+   "sha256": "caa2a13917ec547faee825587e81972ed86077d55c8bf69a340a6cc5dab2bcf0"
+  },
+  {
+   "path": "i18n/fr/1280-wiki-list.png",
+   "bytes": 110763,
+   "sha256": "caa2a13917ec547faee825587e81972ed86077d55c8bf69a340a6cc5dab2bcf0"
+  },
+  {
+   "path": "i18n/fr/390-game.png",
+   "bytes": 136429,
+   "sha256": "694619ced950d862ec60ca7c3fda46c8ba940bc0d39da76c3fe1e53000e1906f"
+  },
+  {
+   "path": "i18n/fr/390-gameover.png",
+   "bytes": 73028,
+   "sha256": "5f66958693ffb02ec283a3d1349964cab5fa6b3d18025f53346657022e2f6015"
+  },
+  {
+   "path": "i18n/fr/390-menu.png",
+   "bytes": 85296,
+   "sha256": "4464513dab7e240a62f03f5391def844b865ce173da437a80655897d3c1115aa"
+  },
+  {
+   "path": "i18n/fr/390-pause.png",
+   "bytes": 98721,
+   "sha256": "9eaaed9c6795125e5f325e318da71dec424cc6302ba70857c2f415fd11cca9d2"
+  },
+  {
+   "path": "i18n/fr/390-settings.png",
+   "bytes": 60077,
+   "sha256": "9a23fa6bb4932123c21ce76a6f4c6a26bc63553892f9f0810758a43a17455cc8"
+  },
+  {
+   "path": "i18n/fr/390-tutorial.png",
+   "bytes": 130260,
+   "sha256": "d4e0441e4306442b08105064c31280ca1e532903bab6a9e92348aebd526e28ba"
+  },
+  {
+   "path": "i18n/fr/390-wiki-article.png",
+   "bytes": 85033,
+   "sha256": "25f257ac7da1b3d7ed12f1e13df8da0c18c81ec0a6f6d3628206c8e80fef5945"
+  },
+  {
+   "path": "i18n/fr/390-wiki-list.png",
+   "bytes": 85033,
+   "sha256": "25f257ac7da1b3d7ed12f1e13df8da0c18c81ec0a6f6d3628206c8e80fef5945"
+  },
+  {
+   "path": "i18n/hi/1280-game.png",
+   "bytes": 208987,
+   "sha256": "02ecb932e2d5be2c46b4a2e9bd5f36e011ff1bd5f6bfab9338960ac1195073fc"
+  },
+  {
+   "path": "i18n/hi/1280-gameover.png",
+   "bytes": 92042,
+   "sha256": "b0291f8e3054c99882c51ce88c803451a128cbe4dc8679e987fc644ea8f7e01f"
+  },
+  {
+   "path": "i18n/hi/1280-menu.png",
+   "bytes": 127039,
+   "sha256": "7f4bed34807cb0f71cef0bfd670637dd3f03744b8bd4d6b3b85aaba048c2b399"
+  },
+  {
+   "path": "i18n/hi/1280-pause.png",
+   "bytes": 138339,
+   "sha256": "7a1947668e890b23dba4643da69e52db56f746405f69ebb2fce705ae03a2a7b3"
+  },
+  {
+   "path": "i18n/hi/1280-settings.png",
+   "bytes": 71271,
+   "sha256": "89a259b6b3f9444a27c5da9139782d7611052bb645afcfaac394ae382a8be4a4"
+  },
+  {
+   "path": "i18n/hi/1280-tutorial.png",
+   "bytes": 224478,
+   "sha256": "1d2654360ae4dee283c12b08f432c1a6f2e6289fa5c9860f3cf2ec707237120d"
+  },
+  {
+   "path": "i18n/hi/1280-wiki-article.png",
+   "bytes": 108996,
+   "sha256": "9aad041043aaa654fd0d55acc4cf42487f1acce1d4b2a6e6d37d385a699a0c67"
+  },
+  {
+   "path": "i18n/hi/1280-wiki-list.png",
+   "bytes": 108996,
+   "sha256": "9aad041043aaa654fd0d55acc4cf42487f1acce1d4b2a6e6d37d385a699a0c67"
+  },
+  {
+   "path": "i18n/hi/390-game.png",
+   "bytes": 129601,
+   "sha256": "4c9fce21af3c2a90ee8f0653e86a52190cbeae24887d7357137f8ad51da54e30"
+  },
+  {
+   "path": "i18n/hi/390-gameover.png",
+   "bytes": 69779,
+   "sha256": "da8f25e09b15e6a839a3637e4b8f78a8b9b57b4a359aff364d76833a14f99d71"
+  },
+  {
+   "path": "i18n/hi/390-menu.png",
+   "bytes": 88050,
+   "sha256": "13b2a3ac2c7ba3572367884f7734bac89685cd0019ba7e32885786a5f3f19269"
+  },
+  {
+   "path": "i18n/hi/390-pause.png",
+   "bytes": 91862,
+   "sha256": "0654909c24abf1997673ea6bd27751cf7d353a1f30327619a7681f9c7ca7d301"
+  },
+  {
+   "path": "i18n/hi/390-settings.png",
+   "bytes": 55598,
+   "sha256": "cd7c65e407f8c68fc5e45e1c0bedc01c8db7d7a4aa0bad0fa2b2e3f66e6d4ffb"
+  },
+  {
+   "path": "i18n/hi/390-tutorial.png",
+   "bytes": 129866,
+   "sha256": "b74d219f60530f8835e17c17acf543aa3ce3411466f3dc847e5960a7112e4015"
+  },
+  {
+   "path": "i18n/hi/390-wiki-article.png",
+   "bytes": 88060,
+   "sha256": "2ac0ec6e8d196bc05f211e202946bdb19e29824fdc9150e18ecee74dde1bc369"
+  },
+  {
+   "path": "i18n/hi/390-wiki-list.png",
+   "bytes": 88060,
+   "sha256": "2ac0ec6e8d196bc05f211e202946bdb19e29824fdc9150e18ecee74dde1bc369"
+  },
+  {
+   "path": "i18n/id/1280-game.png",
+   "bytes": 196850,
+   "sha256": "d506c8071c1f48927f6f37075c6c59a8232e1d742f028e6dd1238ca36ddc73c2"
+  },
+  {
+   "path": "i18n/id/1280-gameover.png",
+   "bytes": 86672,
+   "sha256": "a0a8921c7bab9ebfa44f52b52b22934d5abbaa9fa194da8ffa5db66ac15a79ef"
+  },
+  {
+   "path": "i18n/id/1280-menu.png",
+   "bytes": 126976,
+   "sha256": "b1fe49b08784f253ebe5bd224a91125ac899fb5944c46a0f96b0b7b3392375d4"
+  },
+  {
+   "path": "i18n/id/1280-pause.png",
+   "bytes": 129562,
+   "sha256": "c7014c098a685b62aa9c297a6b7c7312a0e662a3016eb8824f99bde94d607722"
+  },
+  {
+   "path": "i18n/id/1280-settings.png",
+   "bytes": 73395,
+   "sha256": "66cc80affcba2ab3e963a4178a8875502277415aaa7d06731719219b597d07e1"
+  },
+  {
+   "path": "i18n/id/1280-tutorial.png",
+   "bytes": 205796,
+   "sha256": "e9b9d8998c118b297126850144196e6960229e7d8e616c3d42f8b52936fafca8"
+  },
+  {
+   "path": "i18n/id/1280-wiki-article.png",
+   "bytes": 103766,
+   "sha256": "b8137809bde860f387fbb8840ac72dc2422174860c9684bdb6c4aaae0cabf5c0"
+  },
+  {
+   "path": "i18n/id/1280-wiki-list.png",
+   "bytes": 103766,
+   "sha256": "b8137809bde860f387fbb8840ac72dc2422174860c9684bdb6c4aaae0cabf5c0"
+  },
+  {
+   "path": "i18n/id/390-game.png",
+   "bytes": 138105,
+   "sha256": "98f9475b285b6f63c70e6beab9ba0fc1038d74384ed33234800d15345b050052"
+  },
+  {
+   "path": "i18n/id/390-gameover.png",
+   "bytes": 67711,
+   "sha256": "5cada9eedfe126dd450c28d10d353ed7ed87c6b78b25095148fac308532d0612"
+  },
+  {
+   "path": "i18n/id/390-menu.png",
+   "bytes": 82730,
+   "sha256": "2338936658c709905a2d970cb3dafc2b7b2e0f7bccb88a81eae7859e5863ec9e"
+  },
+  {
+   "path": "i18n/id/390-pause.png",
+   "bytes": 96163,
+   "sha256": "54d62037dedeabfbcec458bca2c1d15e8ca809a84a372c671ee22996a3b3a30c"
+  },
+  {
+   "path": "i18n/id/390-settings.png",
+   "bytes": 59239,
+   "sha256": "80c572fb114702a3143a2c62089b8d12b88c76ddb55ec63ff6f30ddc116494e6"
+  },
+  {
+   "path": "i18n/id/390-tutorial.png",
+   "bytes": 133318,
+   "sha256": "9d6a8274dd5c7e4c78006bac30a90ad462b4336da6adaae951cf43959e50f9b3"
+  },
+  {
+   "path": "i18n/id/390-wiki-article.png",
+   "bytes": 79750,
+   "sha256": "3072be0c06f36cf83d780861cd47e91682d33cb58604b31971e78348ad0e245f"
+  },
+  {
+   "path": "i18n/id/390-wiki-list.png",
+   "bytes": 79750,
+   "sha256": "3072be0c06f36cf83d780861cd47e91682d33cb58604b31971e78348ad0e245f"
+  },
+  {
+   "path": "i18n/it/1280-game.png",
+   "bytes": 269873,
+   "sha256": "e0ef248112ddcd73da66aabeb41201beb909c803e46366d7b7be9c167ebfc1e9"
+  },
+  {
+   "path": "i18n/it/1280-gameover.png",
+   "bytes": 108330,
+   "sha256": "f425db07ba1713bede80738bd23da068a1dc3b36aad45f535e4c03ce8606fa1f"
+  },
+  {
+   "path": "i18n/it/1280-menu.png",
+   "bytes": 121416,
+   "sha256": "e3f23d0e8538a998ec26e4a9a39c798c6d8e835ebd30475c17d776abcabe228d"
+  },
+  {
+   "path": "i18n/it/1280-pause.png",
+   "bytes": 171079,
+   "sha256": "91d179306915e469633fc67a60d808fcecc27169faddb0eacb25f79fd533567c"
+  },
+  {
+   "path": "i18n/it/1280-settings.png",
+   "bytes": 79871,
+   "sha256": "7191c91040c14184b8a35918a37446570d1a8e99de8cab9728934ead35586229"
+  },
+  {
+   "path": "i18n/it/1280-tutorial.png",
+   "bytes": 252542,
+   "sha256": "267e173fd734160f2c5f7e3877a3657f038724bfe72684610d1660a857168f5b"
+  },
+  {
+   "path": "i18n/it/1280-wiki-article.png",
+   "bytes": 104792,
+   "sha256": "65006ed9ccc2545f63840d5bab8be295f8fe391d068b1c4353b9b1011a7fae03"
+  },
+  {
+   "path": "i18n/it/1280-wiki-list.png",
+   "bytes": 104792,
+   "sha256": "65006ed9ccc2545f63840d5bab8be295f8fe391d068b1c4353b9b1011a7fae03"
+  },
+  {
+   "path": "i18n/it/390-game.png",
+   "bytes": 131939,
+   "sha256": "dc1fb2d6d68d5637a86ed780c867ed6837cffc1e0b3b42dd7f8189ced4056893"
+  },
+  {
+   "path": "i18n/it/390-gameover.png",
+   "bytes": 69401,
+   "sha256": "6ac08930d767b2ca0e800e5d56da8f0de130123a79839aa34f8bb1004be673cf"
+  },
+  {
+   "path": "i18n/it/390-menu.png",
+   "bytes": 81499,
+   "sha256": "57a23675f86334809a2f7fbe83aae5f4696fa9decc80d48ee60fb63963f0b8a9"
+  },
+  {
+   "path": "i18n/it/390-pause.png",
+   "bytes": 92435,
+   "sha256": "7792aaec40fd307b12ddea6a820c8215a2f691a9dd2ab729bf795317e9bb9d4a"
+  },
+  {
+   "path": "i18n/it/390-settings.png",
+   "bytes": 56818,
+   "sha256": "b108c604030054213af9c41d95848fba8cb3451bd933b027c8112cde1836acff"
+  },
+  {
+   "path": "i18n/it/390-tutorial.png",
+   "bytes": 130762,
+   "sha256": "1c14f0a5816e92e24e2eccf5d7e3dc24ac079cbccf931c597adf9ddd6c754909"
+  },
+  {
+   "path": "i18n/it/390-wiki-article.png",
+   "bytes": 81033,
+   "sha256": "72b66cb6a22da1d43269502bb045cde6d9ea40ad858cdafb38f8b6d4fd37c66b"
+  },
+  {
+   "path": "i18n/it/390-wiki-list.png",
+   "bytes": 81033,
+   "sha256": "72b66cb6a22da1d43269502bb045cde6d9ea40ad858cdafb38f8b6d4fd37c66b"
+  },
+  {
+   "path": "i18n/ja/1280-game.png",
+   "bytes": 202865,
+   "sha256": "23a8f1805cebf3796b83ed21fba954e4ece183cff800effa83d6c5307edb899d"
+  },
+  {
+   "path": "i18n/ja/1280-gameover.png",
+   "bytes": 92216,
+   "sha256": "e9263aa5d8a9c5dfda833418fc21872cf097b2527a4551f2b4c67e899985c8c9"
+  },
+  {
+   "path": "i18n/ja/1280-menu.png",
+   "bytes": 127376,
+   "sha256": "b67a423af37dfbedc7b721ae487a99caeff1ef7498477240a9b3c53cf70e7098"
+  },
+  {
+   "path": "i18n/ja/1280-pause.png",
+   "bytes": 135835,
+   "sha256": "ac703b425a0aa563dd1b8f5fd530bae80e19e47f473c00a96742ff59f43e3990"
+  },
+  {
+   "path": "i18n/ja/1280-settings.png",
+   "bytes": 68880,
+   "sha256": "4f32a4281afb4272c1d1d3ff87ac59688ce20ab3ad99497f9aae969a8619102f"
+  },
+  {
+   "path": "i18n/ja/1280-tutorial.png",
+   "bytes": 225901,
+   "sha256": "33b7951a5b8fed97b9be356552549a421767d65e2a037d86f0e96ef618697c36"
+  },
+  {
+   "path": "i18n/ja/1280-wiki-article.png",
+   "bytes": 132177,
+   "sha256": "6c2bdbf6a1a27cf315388daf0f6919bff91a83aa40604099890bd29155d26e8c"
+  },
+  {
+   "path": "i18n/ja/1280-wiki-list.png",
+   "bytes": 132177,
+   "sha256": "6c2bdbf6a1a27cf315388daf0f6919bff91a83aa40604099890bd29155d26e8c"
+  },
+  {
+   "path": "i18n/ja/390-game.png",
+   "bytes": 124966,
+   "sha256": "1eae1ac126edd77c7f5bf8dfdb573ebb16d2f6494ed905539038600b5a36b529"
+  },
+  {
+   "path": "i18n/ja/390-gameover.png",
+   "bytes": 70121,
+   "sha256": "5e83aee5fec350f0f6c225e7042b2837fc64172a29fe2335cd8a5f2810f2494e"
+  },
+  {
+   "path": "i18n/ja/390-menu.png",
+   "bytes": 83322,
+   "sha256": "3e6527d6e1e524a9701d70f3fe9daa9a21b656f925534f243b4ac41938819867"
+  },
+  {
+   "path": "i18n/ja/390-pause.png",
+   "bytes": 90147,
+   "sha256": "d65c61f22a72db5da55d92a51bf3f697348c9174c3702e53f7aa514b8b779e34"
+  },
+  {
+   "path": "i18n/ja/390-settings.png",
+   "bytes": 53102,
+   "sha256": "59ba5076b02fc0c9422a3f6589a2c3b3ec18e359d7f3e40768b2c9f3d0936839"
+  },
+  {
+   "path": "i18n/ja/390-tutorial.png",
+   "bytes": 140009,
+   "sha256": "7ee25a7fb3e802f59b6c8dd805e01f7f06e48b2785592526470e0f49809f370f"
+  },
+  {
+   "path": "i18n/ja/390-wiki-article.png",
+   "bytes": 108422,
+   "sha256": "6eb04850574d0a82f4ec0ca6e58fec89fddffb9ae9a2cafd8da2766a4779e60e"
+  },
+  {
+   "path": "i18n/ja/390-wiki-list.png",
+   "bytes": 108422,
+   "sha256": "6eb04850574d0a82f4ec0ca6e58fec89fddffb9ae9a2cafd8da2766a4779e60e"
+  },
+  {
+   "path": "i18n/ko/1280-game.png",
+   "bytes": 275412,
+   "sha256": "3161fd10b1ef2f15b2f95d1f1e48f0b4b906df5e3c04a5aa749979d217988fb4"
+  },
+  {
+   "path": "i18n/ko/1280-gameover.png",
+   "bytes": 93296,
+   "sha256": "5658d374b0b90081484e03cf258bd1a6ce5369f466450c9b5ebea025e70d77cd"
+  },
+  {
+   "path": "i18n/ko/1280-menu.png",
+   "bytes": 123670,
+   "sha256": "a9a65a8ed5fc11f2fd957d005b5cf821aed33361c69472c7611b38194194dc29"
+  },
+  {
+   "path": "i18n/ko/1280-pause.png",
+   "bytes": 165256,
+   "sha256": "b13134a9448188e39110926940ee667491d71d77a98b928d42266e2a43aca37e"
+  },
+  {
+   "path": "i18n/ko/1280-settings.png",
+   "bytes": 66530,
+   "sha256": "4f51e77f373aad28cafe6a4a772e3e592bcf902c4db1c4f9e481522b9ac647f1"
+  },
+  {
+   "path": "i18n/ko/1280-tutorial.png",
+   "bytes": 263134,
+   "sha256": "88083c3221365a3d534a72fdf34274d9e25522ed758fdf001df5437bfe09fd0e"
+  },
+  {
+   "path": "i18n/ko/1280-wiki-article.png",
+   "bytes": 90409,
+   "sha256": "32b4516f3d231881cd7e4dfbf82abbe8492c1cedeb89b7b305db9531cac11cff"
+  },
+  {
+   "path": "i18n/ko/1280-wiki-list.png",
+   "bytes": 90409,
+   "sha256": "32b4516f3d231881cd7e4dfbf82abbe8492c1cedeb89b7b305db9531cac11cff"
+  },
+  {
+   "path": "i18n/ko/390-game.png",
+   "bytes": 137697,
+   "sha256": "d93f361bd16719fb65c3e887a0b9c5601c3f4a180a7084c68e2a6f19c1c3d38f"
+  },
+  {
+   "path": "i18n/ko/390-gameover.png",
+   "bytes": 65084,
+   "sha256": "f8c045f21a7095fce6322571a3c5cfb9224d682208dfe8f84d647bbc5a56fd81"
+  },
+  {
+   "path": "i18n/ko/390-menu.png",
+   "bytes": 82838,
+   "sha256": "5ed00e7110cf2cebcb38239ce54ef55a5add78b0a02ac10e293a4524d5d46e0e"
+  },
+  {
+   "path": "i18n/ko/390-pause.png",
+   "bytes": 93386,
+   "sha256": "03a6d30803285e9ca93000133cdf3b9f35ac5588bef9dd28b950cc975970f9df"
+  },
+  {
+   "path": "i18n/ko/390-settings.png",
+   "bytes": 49946,
+   "sha256": "1bfd055e7ed65efe244117c6ec7c7d0419aa2a215270eb7ca7d79d4bc026752c"
+  },
+  {
+   "path": "i18n/ko/390-tutorial.png",
+   "bytes": 127472,
+   "sha256": "fbe517d7c82c53a006fb561c652c7d5dbe1022b983f983a09befc772927bce7c"
+  },
+  {
+   "path": "i18n/ko/390-wiki-article.png",
+   "bytes": 74322,
+   "sha256": "d174ceae530daa54f0080dabde35093be57b66b730125c3afa0abaddca0172ad"
+  },
+  {
+   "path": "i18n/ko/390-wiki-list.png",
+   "bytes": 74322,
+   "sha256": "d174ceae530daa54f0080dabde35093be57b66b730125c3afa0abaddca0172ad"
+  },
+  {
+   "path": "i18n/ms/1280-game.png",
+   "bytes": 209627,
+   "sha256": "76b02a1681fa04524786e96033182205c50a1209cc6f5684fc6a325e1594ee72"
+  },
+  {
+   "path": "i18n/ms/1280-gameover.png",
+   "bytes": 78991,
+   "sha256": "ff413f5872fd0f03ada4633e1f397056b1944802717ec49d78f1032d01f96784"
+  },
+  {
+   "path": "i18n/ms/1280-menu.png",
+   "bytes": 125550,
+   "sha256": "e5bf9db88401114b45c0464d62cddf7e439ea02e33074f56895d107ae650090d"
+  },
+  {
+   "path": "i18n/ms/1280-pause.png",
+   "bytes": 128434,
+   "sha256": "818c6978bf40938de0ecfe2322486cc1d2485f9e1c3ae0d8f25694e58781703d"
+  },
+  {
+   "path": "i18n/ms/1280-settings.png",
+   "bytes": 64767,
+   "sha256": "ef20b01bc660e2628c6de250322f510c06320c584f08d1c354e1036e5279c24a"
+  },
+  {
+   "path": "i18n/ms/1280-tutorial.png",
+   "bytes": 221351,
+   "sha256": "7f8cce4d3e51ce06b826fa20d05a4380b41b5435fc08df9c4f6f65fbb26434ae"
+  },
+  {
+   "path": "i18n/ms/1280-wiki-article.png",
+   "bytes": 94894,
+   "sha256": "2dba0cfb01a32fbdf0cf8117f023ad0fab5284cff6258b9df8d1004d2cc4aa1f"
+  },
+  {
+   "path": "i18n/ms/1280-wiki-list.png",
+   "bytes": 94894,
+   "sha256": "2dba0cfb01a32fbdf0cf8117f023ad0fab5284cff6258b9df8d1004d2cc4aa1f"
+  },
+  {
+   "path": "i18n/ms/390-game.png",
+   "bytes": 158470,
+   "sha256": "e0fa476299afbd2985d60ff1b4da192bdb88818615c54d849f4d45b0d65f3d3c"
+  },
+  {
+   "path": "i18n/ms/390-gameover.png",
+   "bytes": 72908,
+   "sha256": "3a1407ee4d0ed38e26d0a0ec3fa04721bdfe0692a61160fc47ea2b149c22da3d"
+  },
+  {
+   "path": "i18n/ms/390-menu.png",
+   "bytes": 83811,
+   "sha256": "21351a4b229bcf319d7b1fc0d73f28cf4a4147e0962ca6a6418d742752d2e7e3"
+  },
+  {
+   "path": "i18n/ms/390-pause.png",
+   "bytes": 100500,
+   "sha256": "99c22fb3afd59493f3b1375b0b36e6c4853ee2b723dd9d8545e6b84789af1f60"
+  },
+  {
+   "path": "i18n/ms/390-settings.png",
+   "bytes": 58178,
+   "sha256": "41fa57d633127da2bc3e3e017b91d7d0a74c41befdcc2cf54e9914fca94c4b38"
+  },
+  {
+   "path": "i18n/ms/390-tutorial.png",
+   "bytes": 140761,
+   "sha256": "c925c0ddce5874868c1c76d54818fa9e8503996126945a26b34ec822e7d95974"
+  },
+  {
+   "path": "i18n/ms/390-wiki-article.png",
+   "bytes": 79819,
+   "sha256": "2c7a5e3799ec36d0054d646ccd64e829f0f9e8141efd8ec9a8a3c711228c3975"
+  },
+  {
+   "path": "i18n/ms/390-wiki-list.png",
+   "bytes": 79819,
+   "sha256": "2c7a5e3799ec36d0054d646ccd64e829f0f9e8141efd8ec9a8a3c711228c3975"
+  },
+  {
+   "path": "i18n/pl/1280-game.png",
+   "bytes": 192887,
+   "sha256": "5146f09cbdcbd9b61aa502fc880ab972e70f3a97d0daf1994924284114e3ddbd"
+  },
+  {
+   "path": "i18n/pl/1280-gameover.png",
+   "bytes": 86312,
+   "sha256": "dc5606e4ac6392084de09f5de8d45dc21ea08cedee528ad0bf2e72d434ab6758"
+  },
+  {
+   "path": "i18n/pl/1280-menu.png",
+   "bytes": 128597,
+   "sha256": "37dca35e45b9594ef9da52ea642bec430617241c5e878663c28a21226f1a16b1"
+  },
+  {
+   "path": "i18n/pl/1280-pause.png",
+   "bytes": 128945,
+   "sha256": "6e15829f0a1c7ef3cc64d633ce0d68eb37b8fe7f23c3b5ac3da6a2807120eb78"
+  },
+  {
+   "path": "i18n/pl/1280-settings.png",
+   "bytes": 66024,
+   "sha256": "09b93ed9188f991c7f4eeadb478490493b574e88f85dcfc3159695fc09e95d95"
+  },
+  {
+   "path": "i18n/pl/1280-tutorial.png",
+   "bytes": 207764,
+   "sha256": "7585aa165bf8a6c55e8ceec0096d0776bcea9730e0db5a0602db97ff16d7e50e"
+  },
+  {
+   "path": "i18n/pl/1280-wiki-article.png",
+   "bytes": 99562,
+   "sha256": "1d04cbec64c40d3d0c008e79cc70701fdd21bc44c7cffcd7d7de349f740f142e"
+  },
+  {
+   "path": "i18n/pl/1280-wiki-list.png",
+   "bytes": 99562,
+   "sha256": "1d04cbec64c40d3d0c008e79cc70701fdd21bc44c7cffcd7d7de349f740f142e"
+  },
+  {
+   "path": "i18n/pl/390-game.png",
+   "bytes": 136386,
+   "sha256": "4fa08b3999dbd4d97938d4b37216d784d5094728c09d61aa09dfc6238e4cf29d"
+  },
+  {
+   "path": "i18n/pl/390-gameover.png",
+   "bytes": 71759,
+   "sha256": "658c37328aa0008855383798e855c7e999b860e8a510cfee3ddb1d565c0148aa"
+  },
+  {
+   "path": "i18n/pl/390-menu.png",
+   "bytes": 80831,
+   "sha256": "1711f34b2e535082cdc36bdfb661c0c752b9415133b2d870f58dec6a2bcb7d85"
+  },
+  {
+   "path": "i18n/pl/390-pause.png",
+   "bytes": 95668,
+   "sha256": "b374cb5894d41ee131e5b3e006fb3916901161d4fbdf4e41818244695636a891"
+  },
+  {
+   "path": "i18n/pl/390-settings.png",
+   "bytes": 58168,
+   "sha256": "00a41f1fb4053a2f151516144a23ac8c3eef7fc5c773dd12c0b12a31d3c91984"
+  },
+  {
+   "path": "i18n/pl/390-tutorial.png",
+   "bytes": 130794,
+   "sha256": "bd82b2a6ea50f4e3cfd67c0cb4da8e4f3e36456505a5c95002cc04514a46730e"
+  },
+  {
+   "path": "i18n/pl/390-wiki-article.png",
+   "bytes": 82245,
+   "sha256": "8ac8a986eff5a2b418af9d425ade18cd5601786741233ca3a5ca00fa8ed9dea8"
+  },
+  {
+   "path": "i18n/pl/390-wiki-list.png",
+   "bytes": 82245,
+   "sha256": "8ac8a986eff5a2b418af9d425ade18cd5601786741233ca3a5ca00fa8ed9dea8"
+  },
+  {
+   "path": "i18n/pt-BR/1280-game.png",
+   "bytes": 173955,
+   "sha256": "ca480e1ff0be3470b109aa12c43949c864ec4220431266daebe469c6528ba2f9"
+  },
+  {
+   "path": "i18n/pt-BR/1280-gameover.png",
+   "bytes": 80843,
+   "sha256": "1effd8a39012cdc170c878e64827bdecd12ca6c8bedd01c322589f6806faf21a"
+  },
+  {
+   "path": "i18n/pt-BR/1280-menu.png",
+   "bytes": 125277,
+   "sha256": "3aeb0c7eff19aaddd5c192bd2429bbd1a5255aab0331b2e0acc17f2e6e9e85e9"
+  },
+  {
+   "path": "i18n/pt-BR/1280-pause.png",
+   "bytes": 118897,
+   "sha256": "c124d724376bc3410c0f7ab4db7b7443bf2799148523cd3face34b9d79eea472"
+  },
+  {
+   "path": "i18n/pt-BR/1280-settings.png",
+   "bytes": 63927,
+   "sha256": "e169731573543bb626b3f9bfba111414bf487750b3093851660bd0c8eae87e59"
+  },
+  {
+   "path": "i18n/pt-BR/1280-tutorial.png",
+   "bytes": 197153,
+   "sha256": "f6c254c9342cf5672b7128149223531afc5ce00ca1aa7e2294f4054a3788809a"
+  },
+  {
+   "path": "i18n/pt-BR/1280-wiki-article.png",
+   "bytes": 98737,
+   "sha256": "463c6ab14163077df44c04214bc8aaa18bbace5043d07c6b050daccb0f5b8b30"
+  },
+  {
+   "path": "i18n/pt-BR/1280-wiki-list.png",
+   "bytes": 98737,
+   "sha256": "463c6ab14163077df44c04214bc8aaa18bbace5043d07c6b050daccb0f5b8b30"
+  },
+  {
+   "path": "i18n/pt-BR/390-game.png",
+   "bytes": 132620,
+   "sha256": "d0b68e380b5516496240d6b02a28691678e2e67eec19c0d8f4768fcca58ef0b3"
+  },
+  {
+   "path": "i18n/pt-BR/390-gameover.png",
+   "bytes": 72190,
+   "sha256": "8473a8fe09455a3d8ceef8b4c5e7477614d6c7c43776a0ea2af4da534bfa7082"
+  },
+  {
+   "path": "i18n/pt-BR/390-menu.png",
+   "bytes": 82785,
+   "sha256": "e66601d2ef5c02db7e42afff8f9411358391e83b5c7899b789c7eeb7addeb979"
+  },
+  {
+   "path": "i18n/pt-BR/390-pause.png",
+   "bytes": 94919,
+   "sha256": "484d080d893b556d5d12d64e1e76d5b77f64d3b087d08dd496ae9f7fa23e982d"
+  },
+  {
+   "path": "i18n/pt-BR/390-settings.png",
+   "bytes": 59254,
+   "sha256": "66565dc21a530ecccdf72f8a986eac707ef25420af344e947b0dae69fd32b3b1"
+  },
+  {
+   "path": "i18n/pt-BR/390-tutorial.png",
+   "bytes": 130956,
+   "sha256": "8b7d12a4876edb53f171e6964d11e260a527abb7017f33494ef047e86f3a6aa8"
+  },
+  {
+   "path": "i18n/pt-BR/390-wiki-article.png",
+   "bytes": 83772,
+   "sha256": "06f15410b01a224715f82018b6fd715a2fe09ba9c27178aee4223a3e236a5045"
+  },
+  {
+   "path": "i18n/pt-BR/390-wiki-list.png",
+   "bytes": 83772,
+   "sha256": "06f15410b01a224715f82018b6fd715a2fe09ba9c27178aee4223a3e236a5045"
+  },
+  {
+   "path": "i18n/ru/1280-game.png",
+   "bytes": 267836,
+   "sha256": "05c5cd5b32b6eb12d68d56a54676a6dbb622c5b9d11dc0f62600be6ab1c9bbe0"
+  },
+  {
+   "path": "i18n/ru/1280-gameover.png",
+   "bytes": 110429,
+   "sha256": "7b389f7504939dfa7fcdcd3d7fec7e6aa8a750391dca5a09b1336208983b9ea7"
+  },
+  {
+   "path": "i18n/ru/1280-menu.png",
+   "bytes": 131764,
+   "sha256": "5f794e38b84ae593bc4a88ea9f24bef34926aa885600e5b89a7486a658b0c756"
+  },
+  {
+   "path": "i18n/ru/1280-pause.png",
+   "bytes": 175682,
+   "sha256": "aebc007201eaa8b3724ba640c29ca683ca9c26463a4585f300ab9de823d556f9"
+  },
+  {
+   "path": "i18n/ru/1280-settings.png",
+   "bytes": 88136,
+   "sha256": "891e5a2aff44b6a02f895cbb5fcb8be4e9467a0568c5d6f5acd677230a01e86a"
+  },
+  {
+   "path": "i18n/ru/1280-tutorial.png",
+   "bytes": 268381,
+   "sha256": "8abc8b13cb67fdbe13c1877c8d80ab6dfb73ece1d22936791833fc9a415b9657"
+  },
+  {
+   "path": "i18n/ru/1280-wiki-article.png",
+   "bytes": 119695,
+   "sha256": "b06cf813383eec15efd396b73de6c5043d32e10afc687194026184b21327417b"
+  },
+  {
+   "path": "i18n/ru/1280-wiki-list.png",
+   "bytes": 119695,
+   "sha256": "b06cf813383eec15efd396b73de6c5043d32e10afc687194026184b21327417b"
+  },
+  {
+   "path": "i18n/ru/390-game.png",
+   "bytes": 139889,
+   "sha256": "a15dda71b03ef72ccf6958744aca09d57b70352816576cd773e9d4434004ad12"
+  },
+  {
+   "path": "i18n/ru/390-gameover.png",
+   "bytes": 74226,
+   "sha256": "36f28bb3cd84fde0ac6d65689127bcf35d3d5d624965244f8efaf11a280915e7"
+  },
+  {
+   "path": "i18n/ru/390-menu.png",
+   "bytes": 79773,
+   "sha256": "6ed769f0f5740ebcaf3fc7cda9545b45ba60bbb5ab2c252ec06f00428ddeebd9"
+  },
+  {
+   "path": "i18n/ru/390-pause.png",
+   "bytes": 96106,
+   "sha256": "659cdd19616e5e9988a76851e6d8d96bd3622be8d5be487dbf727b55689ed5ef"
+  },
+  {
+   "path": "i18n/ru/390-settings.png",
+   "bytes": 58873,
+   "sha256": "16b72c517c3af90d7d56104fcc58e8340566acdcbcfa755fb2f45ee4b20adda6"
+  },
+  {
+   "path": "i18n/ru/390-tutorial.png",
+   "bytes": 132051,
+   "sha256": "d27bb487685439f282b64473b595469a82999033eb674bd63b4019cd6d7c6d96"
+  },
+  {
+   "path": "i18n/ru/390-wiki-article.png",
+   "bytes": 82802,
+   "sha256": "8f6aa29253ae50fa8a1fcc2a8cdf930a3380661cea1dba0aafd2bb2cd6693878"
+  },
+  {
+   "path": "i18n/ru/390-wiki-list.png",
+   "bytes": 82802,
+   "sha256": "8f6aa29253ae50fa8a1fcc2a8cdf930a3380661cea1dba0aafd2bb2cd6693878"
+  },
+  {
+   "path": "i18n/th/1280-game.png",
+   "bytes": 246913,
+   "sha256": "3ad0fb1c63b0eb24f61cab5c09d663af59d2ef170302151663cf889e52560b4f"
+  },
+  {
+   "path": "i18n/th/1280-gameover.png",
+   "bytes": 94254,
+   "sha256": "c8ceb247fac2519337fa26d84623f2121da480aad2b744d974b2dbf10fdb5b29"
+  },
+  {
+   "path": "i18n/th/1280-menu.png",
+   "bytes": 128701,
+   "sha256": "a18c5ac2b0447f7071bf6447479a0dc3d05116cb667e7d7fdbc0ae44362616d1"
+  },
+  {
+   "path": "i18n/th/1280-pause.png",
+   "bytes": 150166,
+   "sha256": "87701b4c7850be463b5e9d1da32342660a81d8f27f7439174e636d91ed20289c"
+  },
+  {
+   "path": "i18n/th/1280-settings.png",
+   "bytes": 70869,
+   "sha256": "d14e8643845b35d343b3d163421d313bb576f963e985d49a5c00b900dc34225b"
+  },
+  {
+   "path": "i18n/th/1280-tutorial.png",
+   "bytes": 242778,
+   "sha256": "f7b219202b64088facdf409a69eb714f60ab8679f2d5c8fdcc8f94777cdd3e73"
+  },
+  {
+   "path": "i18n/th/1280-wiki-article.png",
+   "bytes": 100497,
+   "sha256": "b997ee08e891c476ae7781c7451daf5599b0e1c90e401806ba4eef09a7c7ff27"
+  },
+  {
+   "path": "i18n/th/1280-wiki-list.png",
+   "bytes": 100497,
+   "sha256": "b997ee08e891c476ae7781c7451daf5599b0e1c90e401806ba4eef09a7c7ff27"
+  },
+  {
+   "path": "i18n/th/390-game.png",
+   "bytes": 137001,
+   "sha256": "8859b6242d6bcc55c144e86c093d53b769cc9d8e1efe8816f135f3d184985efb"
+  },
+  {
+   "path": "i18n/th/390-gameover.png",
+   "bytes": 68887,
+   "sha256": "9ed8a3b146d26559611663d6b2461f20f19ba2b6863bc0fdd062c6334ee5f2c0"
+  },
+  {
+   "path": "i18n/th/390-menu.png",
+   "bytes": 81551,
+   "sha256": "ee311dfb566426b94ccd3762b3844ce5c222edce22379d84d7f4c554991454d7"
+  },
+  {
+   "path": "i18n/th/390-pause.png",
+   "bytes": 93459,
+   "sha256": "cad67c34a88fa23649df4497035e8b8f470e58cd82414e7efc0ce924ce040404"
+  },
+  {
+   "path": "i18n/th/390-settings.png",
+   "bytes": 53573,
+   "sha256": "38b6592153d49cce494a41a818feb077461e0c2d1f54122386b4832604dc5243"
+  },
+  {
+   "path": "i18n/th/390-tutorial.png",
+   "bytes": 134707,
+   "sha256": "df77b2d09cd85d768ff816d01ea2633121c476ca4c33747e47a6dabb910b99bb"
+  },
+  {
+   "path": "i18n/th/390-wiki-article.png",
+   "bytes": 80513,
+   "sha256": "71e7714e48afea7365566a82a5536c3fdfc4038b2a046b852327303c7ef87b2e"
+  },
+  {
+   "path": "i18n/th/390-wiki-list.png",
+   "bytes": 80513,
+   "sha256": "71e7714e48afea7365566a82a5536c3fdfc4038b2a046b852327303c7ef87b2e"
+  },
+  {
+   "path": "i18n/uk/1280-game.png",
+   "bytes": 253569,
+   "sha256": "a8fc4edf8a3614ea5dc5cea6f2554be9d37fb29f29bd87cd24c9c3b44d51f2d7"
+  },
+  {
+   "path": "i18n/uk/1280-gameover.png",
+   "bytes": 103723,
+   "sha256": "614e9cb196d055bc2a8ae70ce9c2ff8a2cad6ba4b1b8a549b9ca12c67ba76a2b"
+  },
+  {
+   "path": "i18n/uk/1280-menu.png",
+   "bytes": 124225,
+   "sha256": "7d86efe3cebd6d0c33acd929286bd6cdfbc15b9d90dafac20ad4e1af17671a4c"
+  },
+  {
+   "path": "i18n/uk/1280-pause.png",
+   "bytes": 159797,
+   "sha256": "3b586caf429cbfaff7ee1a5e6676ff51242bc9618a93fa3130e3e0c6ef46ecce"
+  },
+  {
+   "path": "i18n/uk/1280-settings.png",
+   "bytes": 82706,
+   "sha256": "b6b36f7b17e3664e5ef34d130cc284bd1045d4156e24b367c415eba571896832"
+  },
+  {
+   "path": "i18n/uk/1280-tutorial.png",
+   "bytes": 255088,
+   "sha256": "817134b33791baca1c0190b7999dfc5c88fd2a101d07486a510d7955d5bc78b0"
+  },
+  {
+   "path": "i18n/uk/1280-wiki-article.png",
+   "bytes": 111374,
+   "sha256": "0ae0544c5b496c72cf74375eaa0e7c67f0f34a83b9373e1385d2322b7c4506cc"
+  },
+  {
+   "path": "i18n/uk/1280-wiki-list.png",
+   "bytes": 111374,
+   "sha256": "0ae0544c5b496c72cf74375eaa0e7c67f0f34a83b9373e1385d2322b7c4506cc"
+  },
+  {
+   "path": "i18n/uk/390-game.png",
+   "bytes": 151909,
+   "sha256": "c34c08a2c0e266200a81e0fa66372b6a049f7a9a306fdfdeaf8441dd05df2777"
+  },
+  {
+   "path": "i18n/uk/390-gameover.png",
+   "bytes": 76621,
+   "sha256": "161a818a7252d21894038d6f6d95ea7992d247191547d483b847e2d16ab694dc"
+  },
+  {
+   "path": "i18n/uk/390-menu.png",
+   "bytes": 84614,
+   "sha256": "d9b1db67f67942cace041f99e376917f7e9a9a210ba970d630e9db4666983432"
+  },
+  {
+   "path": "i18n/uk/390-pause.png",
+   "bytes": 106019,
+   "sha256": "868d0a72c09bd6f6f169341e6ce3f8c94b245a3c794ddc53f9271b94c9b72eac"
+  },
+  {
+   "path": "i18n/uk/390-settings.png",
+   "bytes": 61853,
+   "sha256": "7026f06a10dd832a15641865e4898571bc43581b1f4a7022a2683a97e0e82e0e"
+  },
+  {
+   "path": "i18n/uk/390-tutorial.png",
+   "bytes": 142233,
+   "sha256": "4763f3f8743d63f505ca57de876f48992fabd29970348d3d9af78dbaae87c65a"
+  },
+  {
+   "path": "i18n/uk/390-wiki-article.png",
+   "bytes": 84411,
+   "sha256": "5d17f3f831c1ce99ba9a8ace84cab2276038d6c35fb9e63e2adea3e366e9aa36"
+  },
+  {
+   "path": "i18n/uk/390-wiki-list.png",
+   "bytes": 84411,
+   "sha256": "5d17f3f831c1ce99ba9a8ace84cab2276038d6c35fb9e63e2adea3e366e9aa36"
+  },
+  {
+   "path": "i18n/vi/1280-game.png",
+   "bytes": 199511,
+   "sha256": "1452077ea29511807d2f88399cf2055c62f54ccf54bff67beeac82c84ab3b1cb"
+  },
+  {
+   "path": "i18n/vi/1280-gameover.png",
+   "bytes": 93183,
+   "sha256": "1d82ad03d91d8ddc259ad575fb5ac4e42cb3f16626628d3b17a7106b3d0e0dae"
+  },
+  {
+   "path": "i18n/vi/1280-menu.png",
+   "bytes": 127293,
+   "sha256": "314794ca6d3e83defd0c0975a226df9bf4521e7150f77adccd3343e15fa76890"
+  },
+  {
+   "path": "i18n/vi/1280-pause.png",
+   "bytes": 136722,
+   "sha256": "631ebdb238cedb57e20c3811e4b451527b5d656776bfef28cb5f7edeb2151c09"
+  },
+  {
+   "path": "i18n/vi/1280-settings.png",
+   "bytes": 75082,
+   "sha256": "9b3f1c36b6089694d604f12242accc40a35988fb62ec4fe9f2331264cb617293"
+  },
+  {
+   "path": "i18n/vi/1280-tutorial.png",
+   "bytes": 215849,
+   "sha256": "11d75d0e729a07e9c0df84961bfb39d5082cb50351a9285d6089f602c67fb921"
+  },
+  {
+   "path": "i18n/vi/1280-wiki-article.png",
+   "bytes": 106523,
+   "sha256": "cb6190afe8935800ce63414eeec620af4f510f060fb26225fe8b79151c9976f5"
+  },
+  {
+   "path": "i18n/vi/1280-wiki-list.png",
+   "bytes": 106523,
+   "sha256": "cb6190afe8935800ce63414eeec620af4f510f060fb26225fe8b79151c9976f5"
+  },
+  {
+   "path": "i18n/vi/390-game.png",
+   "bytes": 131116,
+   "sha256": "bcbdbebcdc09f337a2e690cba314fa52f195bcd536ff4a3c173487140b5dd49d"
+  },
+  {
+   "path": "i18n/vi/390-gameover.png",
+   "bytes": 69400,
+   "sha256": "010725520ad1cba536a8c4eb4756b0b20106a3a379b1ab4ad0ae2612a30e71f8"
+  },
+  {
+   "path": "i18n/vi/390-menu.png",
+   "bytes": 80705,
+   "sha256": "987a52cc4c6a4fd7783f8c615771b114334c4c63330439f116329244e4e6f8ef"
+  },
+  {
+   "path": "i18n/vi/390-pause.png",
+   "bytes": 95401,
+   "sha256": "4601e50bce0b8b9335df5a965b5949024098f2894e3a4493c85c527853e878f7"
+  },
+  {
+   "path": "i18n/vi/390-settings.png",
+   "bytes": 56775,
+   "sha256": "b1f62eab39bc25019fcaeefce3da06b7d89b66d83944a546d66801ebd662b4e5"
+  },
+  {
+   "path": "i18n/vi/390-tutorial.png",
+   "bytes": 124666,
+   "sha256": "096b0d652e1695b75351f585d0b6876693d3ab63f0ade47d72a2bd134340fe06"
+  },
+  {
+   "path": "i18n/vi/390-wiki-article.png",
+   "bytes": 82428,
+   "sha256": "19d33792a6a2a419f108d86042d6eb4dd2be34bd1f4fbb72bd5baeb2d7fb0785"
+  },
+  {
+   "path": "i18n/vi/390-wiki-list.png",
+   "bytes": 82428,
+   "sha256": "19d33792a6a2a419f108d86042d6eb4dd2be34bd1f4fbb72bd5baeb2d7fb0785"
+  },
+  {
+   "path": "i18n/zh-TW/1280-game.png",
+   "bytes": 220130,
+   "sha256": "7eeae981e89904e1e0a4df570aca439584ddc2dfa7f42076eac13b5ec403294a"
+  },
+  {
+   "path": "i18n/zh-TW/1280-gameover.png",
+   "bytes": 95444,
+   "sha256": "3f61fe5abce7577b62c23752522dc2bef238d34ed9ea8b0e9933389bbc6b53bb"
+  },
+  {
+   "path": "i18n/zh-TW/1280-menu.png",
+   "bytes": 133549,
+   "sha256": "c8ae68a6b557e81eed35e2cf48292ea2e73fcdf1da334aa9a7746ecb59f58fb3"
+  },
+  {
+   "path": "i18n/zh-TW/1280-pause.png",
+   "bytes": 144026,
+   "sha256": "d3f63c1c6f3eeab9569c5a593bae138931af9fd7722c161c1867beb14a15f666"
+  },
+  {
+   "path": "i18n/zh-TW/1280-settings.png",
+   "bytes": 73246,
+   "sha256": "fd26be0613fb9a038f5f126de35702b3bf7af9c3158fdeeb56346fbd1be2b89a"
+  },
+  {
+   "path": "i18n/zh-TW/1280-tutorial.png",
+   "bytes": 225488,
+   "sha256": "623c738cd3f1110941e586e3f325369f3429a00276564aa4ab76eab8f1bb85ff"
+  },
+  {
+   "path": "i18n/zh-TW/1280-wiki-article.png",
+   "bytes": 113695,
+   "sha256": "3e053ec1a757d0b75d3b1f7b876c9d9a650a082ad42a127a7ae964895cb3a125"
+  },
+  {
+   "path": "i18n/zh-TW/1280-wiki-list.png",
+   "bytes": 113695,
+   "sha256": "3e053ec1a757d0b75d3b1f7b876c9d9a650a082ad42a127a7ae964895cb3a125"
+  },
+  {
+   "path": "i18n/zh-TW/390-game.png",
+   "bytes": 132155,
+   "sha256": "366916d70d49a1d9ae26443bc155222fa1d907815ee6c635f87c479e59285590"
+  },
+  {
+   "path": "i18n/zh-TW/390-gameover.png",
+   "bytes": 70958,
+   "sha256": "668c0ac230caad8e97be603aaf4aa8637f325db48f048c687d4dad85ed899043"
+  },
+  {
+   "path": "i18n/zh-TW/390-menu.png",
+   "bytes": 86892,
+   "sha256": "c2708e0ef252a9199f5ab70ce5a9fc12e57c549bc77c820c3aef20a8e7ee31d1"
+  },
+  {
+   "path": "i18n/zh-TW/390-pause.png",
+   "bytes": 95623,
+   "sha256": "d14c82633454e9521a0c7f5ceb894a22f52a76812022b11a27bbc5f20a3a2e9d"
+  },
+  {
+   "path": "i18n/zh-TW/390-settings.png",
+   "bytes": 56230,
+   "sha256": "167e4805d3049761b909783b73a096f1be680772b25b758818bd0e87f36467ac"
+  },
+  {
+   "path": "i18n/zh-TW/390-tutorial.png",
+   "bytes": 133040,
+   "sha256": "473b51e3927ab7757a94f75510bc8f47b520a572044bb45cfc176fcd4f3a8b08"
+  },
+  {
+   "path": "i18n/zh-TW/390-wiki-article.png",
+   "bytes": 89750,
+   "sha256": "6dd421223bb080b60537d5ce86bdd96c523605c54ad580ffd947cf4f84b0b74e"
+  },
+  {
+   "path": "i18n/zh-TW/390-wiki-list.png",
+   "bytes": 89750,
+   "sha256": "6dd421223bb080b60537d5ce86bdd96c523605c54ad580ffd947cf4f84b0b74e"
+  }
+ ]
+}

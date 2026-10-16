@@ -9,7 +9,7 @@
       "selector": "#startBtn",
       "label": "START",
       "rect": {
-        "x": 321.1875,
+        "x": 346.625,
         "y": 236,
         "width": 93.9375,
         "height": 41
@@ -24,19 +24,29 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1814,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": true,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -44,7 +54,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M1-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M1-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "M2",
@@ -53,7 +63,7 @@
       "selector": "#demoBtn",
       "label": "DEMO / Gallery",
       "rect": {
-        "x": 427.125,
+        "x": 452.5625,
         "y": 236,
         "width": 151.625,
         "height": 41
@@ -68,6 +78,11 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
@@ -78,6 +93,11 @@
           "autoAI": false,
           "freeCam": true,
           "tZoom": 1.4,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -88,19 +108,73 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M2-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M2-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "M3",
       "screen": "menu",
       "viewport": "1280",
       "selector": "#screensaverBtn",
-      "label": "АКВАРИУМ",
+      "label": "AQUARIUM",
       "rect": {
-        "x": 590.75,
+        "x": 616.1875,
         "y": 236,
-        "width": 129.0625,
+        "width": 128.1875,
         "height": 41
+      },
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1781,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 1795,
+          "autoAI": false,
+          "freeCam": true,
+          "tZoom": 2.25,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": ""
+        },
+        "toast": ""
+      },
+      "verdict": "work",
+      "png": [
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-1280-before.png",
+        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-1280-after.png"
+      ],
+      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-1280.webm",
+      "consoleErrors": 3
+    },
+    {
+      "id": "M4",
+      "screen": "menu",
+      "viewport": "1280",
+      "selector": "#starSelect",
+      "label": "☀ Sun\n★ Sirius A+B\n★ Betelgeuse\n★ Rigel\n★ Vega\n★ Antares\n★ Alpha Centauri A+B\n★ ",
+      "rect": {
+        "x": 753.375,
+        "y": 241,
+        "width": 183,
+        "height": 31
       },
       "handlerFound": true,
       "effect": {
@@ -112,60 +186,26 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
-          "toast": ""
-        },
-        "globalsAfter": {
-          "state": "playing",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 1797,
-          "autoAI": false,
-          "freeCam": true,
-          "tZoom": 2.25,
-          "toast": ""
-        },
-        "toast": ""
-      },
-      "verdict": "work",
-      "png": [
-        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-1280-before.png",
-        "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-1280-after.png"
-      ],
-      "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M3-1280.webm",
-      "consoleErrors": 0
-    },
-    {
-      "id": "M4",
-      "screen": "menu",
-      "viewport": "1280",
-      "selector": "#starSelect",
-      "label": "☀ Солнце\n★ Сириус A+B\n★ Бетельгейзе\n★ Ригель\n★ Вега\n★ Антарес\n★ Альфа Центавра A",
-      "rect": {
-        "x": 728.8125,
-        "y": 241,
-        "width": 233,
-        "height": 31
-      },
-      "handlerFound": true,
-      "effect": {
-        "globalsBefore": {
-          "state": "menu",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 1782,
-          "autoAI": false,
-          "freeCam": false,
-          "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1805,
+          "orgs": 1795,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -176,7 +216,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M4-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M4-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "M5",
@@ -200,27 +240,37 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1798,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,helpO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "M6",
@@ -244,27 +294,37 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1797,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,setO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "M7",
@@ -288,27 +348,37 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1799,
+          "orgs": 1797,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,wikiO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "M8",
@@ -332,16 +402,26 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1754,
+          "orgs": 1797,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -352,14 +432,14 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "M9",
       "screen": "menu",
       "viewport": "1280",
       "selector": "#spGrid",
-      "label": "Фильтр: All · показано 101 видов · колоний: 6 (вверху списка) · нажми другую кно",
+      "label": "Filter: All · shown 101 species · colonies: 6 (top of the list) · tap another bu",
       "rect": {
         "x": 190,
         "y": 388.546875,
@@ -376,16 +456,26 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1797,
+          "orgs": 1795,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -396,7 +486,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M9-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M9-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "M10",
@@ -420,6 +510,11 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
@@ -430,6 +525,11 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -440,7 +540,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M10-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M10-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "O1",
@@ -460,10 +560,15 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1787,
+          "orgs": 1789,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,helpO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
@@ -474,17 +579,22 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "O2",
@@ -508,27 +618,37 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,setO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1801,
+          "orgs": 1797,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "O3",
@@ -548,31 +668,41 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1786,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,setO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1802,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,setO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1.1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "O4",
@@ -596,16 +726,26 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,wikiO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1795,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,wikiO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -616,7 +756,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O4-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O4-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "O5",
@@ -640,27 +780,37 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,wikiO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1794,
+          "orgs": 1797,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "O6",
@@ -680,23 +830,33 @@
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1798,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "pauseO",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1786,
+          "orgs": 1810,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -704,7 +864,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "O7",
@@ -724,42 +884,52 @@
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1793,
+          "orgs": 1827,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "+17 эн / +2.4 масса"
+          "ov": "pauseO",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1793,
+          "orgs": 1827,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "+17 эн / +2.4 масса"
+          "ov": "pauseO,helpO",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "+17 эн / +2.4 масса"
+        "toast": "AUTO: ate"
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "O8",
       "screen": "tutorial",
       "viewport": "1280",
       "selector": "#tutSkip",
-      "label": "Пропустить",
+      "label": "Skip",
       "rect": {
-        "x": 637.84375,
+        "x": 713.375,
         "y": 640,
-        "width": 136.828125,
+        "width": 75.84375,
         "height": 50
       },
       "handlerFound": true,
@@ -772,34 +942,44 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": ""
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": true,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1811,
+          "orgs": 1807,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": ""
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": true,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": ""
+        "toast": "AUTO: ate"
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "O9",
       "screen": "tutorial",
       "viewport": "1280",
       "selector": "#roleCardOk",
-      "label": "Понятно — плыву",
+      "label": "Got it — I'll swim",
       "rect": {
         "x": 397,
         "y": 329.265625,
@@ -812,31 +992,41 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1805,
+          "orgs": 1796,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": true,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1805,
+          "orgs": 1812,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G1",
@@ -845,7 +1035,7 @@
       "selector": "#bEat",
       "label": "☀ LIGHT\nE",
       "rect": {
-        "x": 404.5859375,
+        "x": 412.7734375,
         "y": 723,
         "width": 98.640625,
         "height": 65
@@ -856,20 +1046,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1775,
+          "orgs": 1795,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1786,
+          "orgs": 1811,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": "You are a plant: swim toward the light"
         },
         "toast": "You are a plant: swim toward the light"
@@ -880,18 +1080,18 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G1-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G1-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G2",
       "screen": "game",
       "viewport": "1280",
       "selector": "#bDiv",
-      "label": "ДЕЛИТЬ\nQ",
+      "label": "DIVIDE\nQ",
       "rect": {
-        "x": 511.2265625,
+        "x": 519.4140625,
         "y": 723,
-        "width": 99.5,
+        "width": 88.03125,
         "height": 65
       },
       "handlerFound": true,
@@ -900,42 +1100,52 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1799,
+          "orgs": 1782,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": ""
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": true,
-          "orgs": 1820,
+          "dividing": false,
+          "orgs": 1801,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "Деление!"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "too young"
         },
-        "toast": "Деление!"
+        "toast": "too young"
       },
-      "verdict": "work",
+      "verdict": "partial",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G3",
       "screen": "game",
       "viewport": "1280",
       "selector": "#bCyst",
-      "label": "СПОРА\nR",
+      "label": "SPORE\nR",
       "rect": {
-        "x": 618.7265625,
+        "x": 615.4453125,
         "y": 723,
-        "width": 90.046875,
+        "width": 84.40625,
         "height": 65
       },
       "handlerFound": true,
@@ -944,20 +1154,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1808,
+          "orgs": 1823,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": true,
           "dividing": false,
-          "orgs": 1843,
+          "orgs": 1836,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": "Spore: protected, speed 0, energy drains slowly"
         },
         "toast": "Spore: protected, speed 0, energy drains slowly"
@@ -968,7 +1188,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G3-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G3-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G4",
@@ -989,18 +1209,18 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G4-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G4-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G5",
       "screen": "game",
       "viewport": "1280",
       "selector": "#bAuto",
-      "label": "АВТО\nTab",
+      "label": "AUTO\nTab",
       "rect": {
-        "x": 716.7734375,
+        "x": 707.8515625,
         "y": 723,
-        "width": 78.640625,
+        "width": 79.375,
         "height": 65
       },
       "handlerFound": true,
@@ -1009,23 +1229,33 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1808,
+          "orgs": 1783,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": true,
-          "orgs": 1818,
+          "dividing": false,
+          "orgs": 1794,
           "autoAI": true,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: вкл"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "+31 en / +4.3 mass"
         },
-        "toast": "АВТО: вкл"
+        "toast": "+31 en / +4.3 mass"
       },
       "verdict": "work",
       "png": [
@@ -1033,7 +1263,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G5-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G5-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G6",
@@ -1054,7 +1284,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G6-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G6-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G7",
@@ -1075,7 +1305,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G7-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G7-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G8",
@@ -1096,7 +1326,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G8-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G8-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G9",
@@ -1117,7 +1347,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G9-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G9-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G10",
@@ -1138,7 +1368,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G10-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G10-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G11",
@@ -1159,7 +1389,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G11-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G11-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G12",
@@ -1168,7 +1398,7 @@
       "selector": "#bPause",
       "label": "☰",
       "rect": {
-        "x": 803.4140625,
+        "x": 795.2265625,
         "y": 723,
         "width": 72,
         "height": 65
@@ -1179,23 +1409,33 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1811,
+          "orgs": 1789,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1817,
+          "orgs": 1801,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "pauseO",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -1203,7 +1443,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G12-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G12-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G13",
@@ -1224,7 +1464,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G13-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G13-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G14",
@@ -1245,7 +1485,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G14-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G14-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G15",
@@ -1266,7 +1506,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G15-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G15-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G16",
@@ -1287,51 +1527,28 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G16-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G16-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G17",
       "screen": "game",
       "viewport": "1280",
       "selector": "#spdBar",
-      "label": "⏸\n0.25x\n0.5x\n1x\n2x\n5x\n10x",
-      "rect": {
-        "x": 450.8984375,
-        "y": 8,
-        "width": 378.203125,
-        "height": 47
-      },
-      "handlerFound": true,
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
       "effect": {
-        "globalsBefore": {
-          "state": "playing",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 1823,
-          "autoAI": false,
-          "freeCam": false,
-          "tZoom": 1.8,
-          "toast": "АВТО: съел"
-        },
-        "globalsAfter": {
-          "state": "playing",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 1891,
-          "autoAI": false,
-          "freeCam": false,
-          "tZoom": 1.8,
-          "toast": "Время: 1x"
-        },
-        "toast": "Время: 1x"
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
       },
-      "verdict": "work",
+      "verdict": "hidden",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G18",
@@ -1352,7 +1569,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G18-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G18-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G19",
@@ -1373,7 +1590,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G19-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G19-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G20",
@@ -1394,7 +1611,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G20-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G20-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G21",
@@ -1415,7 +1632,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G21-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G21-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G22",
@@ -1436,7 +1653,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G22-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G22-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G23",
@@ -1457,7 +1674,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G23-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G23-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G24",
@@ -1478,7 +1695,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G24-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G24-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G25",
@@ -1499,7 +1716,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G25-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G25-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G26",
@@ -1520,7 +1737,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G26-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G26-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G27",
@@ -1544,6 +1761,11 @@
           "autoAI": false,
           "freeCam": true,
           "tZoom": 1.4,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
@@ -1554,6 +1776,11 @@
           "autoAI": false,
           "freeCam": true,
           "tZoom": 1.4,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -1564,7 +1791,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G27-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G27-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G28",
@@ -1585,7 +1812,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G28-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G28-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "G29",
@@ -1606,7 +1833,7 @@
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G29-1280-after.png"
       ],
       "webm": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G29-1280.webm",
-      "consoleErrors": 0
+      "consoleErrors": 3
     },
     {
       "id": "M1",
@@ -1615,7 +1842,7 @@
       "selector": "#startBtn",
       "label": "START",
       "rect": {
-        "x": 22.65625,
+        "x": 23.0625,
         "y": 194,
         "width": 84.640625,
         "height": 44
@@ -1626,23 +1853,33 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1781,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1019,
+          "orgs": 1013,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": true,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -1659,7 +1896,7 @@
       "selector": "#demoBtn",
       "label": "DEMO / Gallery",
       "rect": {
-        "x": 119.296875,
+        "x": 119.703125,
         "y": 197.5,
         "width": 116.796875,
         "height": 37
@@ -1674,6 +1911,11 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
@@ -1684,6 +1926,11 @@
           "autoAI": false,
           "freeCam": true,
           "tZoom": 1.4,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -1701,11 +1948,11 @@
       "screen": "menu",
       "viewport": "390",
       "selector": "#screensaverBtn",
-      "label": "АКВАРИУМ",
+      "label": "AQUARIUM",
       "rect": {
-        "x": 248.09375,
+        "x": 248.5,
         "y": 197.5,
-        "width": 95.84375,
+        "width": 95.03125,
         "height": 37
       },
       "handlerFound": true,
@@ -1718,16 +1965,26 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 998,
+          "orgs": 1001,
           "autoAI": false,
           "freeCam": true,
           "tZoom": 2.25,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -1745,11 +2002,11 @@
       "screen": "menu",
       "viewport": "390",
       "selector": "#starSelect",
-      "label": "☀ Солнце\n★ Сириус A+B\n★ Бетельгейзе\n★ Ригель\n★ Вега\n★ Антарес\n★ Альфа Центавра A",
+      "label": "☀ Sun\n★ Sirius A+B\n★ Betelgeuse\n★ Rigel\n★ Vega\n★ Antares\n★ Alpha Centauri A+B\n★ ",
       "rect": {
-        "x": 66.796875,
+        "x": 91.796875,
         "y": 247,
-        "width": 233,
+        "width": 183,
         "height": 31
       },
       "handlerFound": true,
@@ -1762,16 +2019,26 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1782,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -1802,25 +2069,35 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1783,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1789,
+          "orgs": 1782,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,helpO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M5-390-after.png"
@@ -1850,6 +2127,11 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
@@ -1860,11 +2142,16 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,setO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M6-390-after.png"
@@ -1894,21 +2181,31 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1781,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,wikiO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M7-390-after.png"
@@ -1942,7 +2239,7 @@
       "screen": "menu",
       "viewport": "390",
       "selector": "#spGrid",
-      "label": "Фильтр: All · показано 101 видов · колоний: 6 (вверху списка) · нажми другую кно",
+      "label": "Filter: All · shown 101 species · colonies: 6 (top of the list) · tap another bu",
       "rect": {
         "x": 8,
         "y": 442.546875,
@@ -1955,20 +2252,30 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1781,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1781,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -2003,6 +2310,11 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
@@ -2013,6 +2325,11 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -2047,16 +2364,26 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,helpO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1737,
+          "orgs": 1709,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,helpO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -2087,20 +2414,30 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1782,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,setO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1758,
+          "orgs": 1783,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,setO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -2135,16 +2472,26 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,setO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1737,
+          "orgs": 1710,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,setO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -2175,20 +2522,30 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1782,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,wikiO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1772,
+          "orgs": 1753,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,wikiO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -2223,16 +2580,26 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,wikiO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1760,
+          "orgs": 1751,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
+          "ov": "menuO,wikiO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""
@@ -2292,11 +2659,11 @@
       "screen": "tutorial",
       "viewport": "390",
       "selector": "#tutSkip",
-      "label": "Пропустить",
+      "label": "Skip",
       "rect": {
-        "x": 115.84375,
+        "x": 191.375,
         "y": 684,
-        "width": 136.828125,
+        "width": 75.84375,
         "height": 50
       },
       "handlerFound": true,
@@ -2305,25 +2672,35 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1015,
+          "orgs": 1016,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": true,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1008,
+          "orgs": 1009,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": true,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-390-after.png"
@@ -2336,7 +2713,7 @@
       "screen": "tutorial",
       "viewport": "390",
       "selector": "#roleCardOk",
-      "label": "Понятно — плыву",
+      "label": "Got it — I'll swim",
       "rect": {
         "x": 32.6015625,
         "y": 354.671875,
@@ -2349,25 +2726,35 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1014,
+          "orgs": 1011,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": true,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1008,
+          "orgs": 1009,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O9-390-after.png"
@@ -2382,7 +2769,7 @@
       "selector": "#bEat",
       "label": "☀ LIGHT\nE",
       "rect": {
-        "x": 58.9296875,
+        "x": 65.203125,
         "y": 788,
         "width": 57.9375,
         "height": 44
@@ -2393,20 +2780,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1071,
+          "orgs": 1051,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1110,
+          "orgs": 1068,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": "You are a plant: swim toward the light"
         },
         "toast": "You are a plant: swim toward the light"
@@ -2424,11 +2821,11 @@
       "screen": "game",
       "viewport": "390",
       "selector": "#bDiv",
-      "label": "ДЕЛИТЬ\nQ",
+      "label": "DIVIDE\nQ",
       "rect": {
-        "x": 120.8671875,
+        "x": 127.140625,
         "y": 788,
-        "width": 58.5625,
+        "width": 50.15625,
         "height": 44
       },
       "handlerFound": true,
@@ -2437,25 +2834,35 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1047,
+          "orgs": 1075,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": false,
-          "orgs": 1082,
+          "dividing": true,
+          "orgs": 1119,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "✌️ Разделился! Вторая клетка рядом"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "Divided!"
         },
-        "toast": "✌️ Разделился! Вторая клетка рядом"
+        "toast": "Divided!"
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-390-after.png"
@@ -2468,11 +2875,11 @@
       "screen": "game",
       "viewport": "390",
       "selector": "#bCyst",
-      "label": "СПОРА\nR",
+      "label": "SPORE\nR",
       "rect": {
-        "x": 183.4296875,
+        "x": 181.296875,
         "y": 788,
-        "width": 51.640625,
+        "width": 47.5,
         "height": 44
       },
       "handlerFound": true,
@@ -2481,20 +2888,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1065,
+          "orgs": 1063,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": ""
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": true,
           "dividing": false,
-          "orgs": 1091,
+          "orgs": 1103,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": "Spore: protected, speed 0, energy drains slowly"
         },
         "toast": "Spore: protected, speed 0, energy drains slowly"
@@ -2533,9 +2950,9 @@
       "screen": "game",
       "viewport": "390",
       "selector": "#bAuto",
-      "label": "АВТО\nTab",
+      "label": "AUTO\nTab",
       "rect": {
-        "x": 239.0703125,
+        "x": 232.796875,
         "y": 788,
         "width": 44,
         "height": 44
@@ -2546,23 +2963,33 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1064,
+          "orgs": 1105,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": ""
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": false,
-          "orgs": 1083,
+          "dividing": true,
+          "orgs": 1141,
           "autoAI": true,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "+22 эн / +3.1 масса"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: on"
         },
-        "toast": "+22 эн / +3.1 масса"
+        "toast": "AUTO: on"
       },
       "verdict": "work",
       "png": [
@@ -2705,7 +3132,7 @@
       "selector": "#bPause",
       "label": "☰",
       "rect": {
-        "x": 287.0703125,
+        "x": 280.796875,
         "y": 788,
         "width": 44,
         "height": 44
@@ -2716,23 +3143,33 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1069,
+          "orgs": 1054,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1081,
+          "orgs": 1056,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "pauseO",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -3016,19 +3453,29 @@
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1090,
+          "orgs": 1100,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "toast": "АВТО: съел"
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 999,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "partial",
       "png": [
@@ -3081,6 +3528,11 @@
           "autoAI": false,
           "freeCam": true,
           "tZoom": 1.4,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "globalsAfter": {
@@ -3091,6 +3543,11 @@
           "autoAI": false,
           "freeCam": true,
           "tZoom": 1.4,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
           "toast": ""
         },
         "toast": ""

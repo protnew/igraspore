@@ -816,9 +816,20 @@
     "key": "tip.cyst",
     "value": "Spore",
     "langs": [
-      "de"
+      "de",
+      "fr"
     ],
     "category": "latin_species",
     "reason": "German biological term for spore is identical to the international Latin form"
+  },
+  {
+    "key": "aria.cyst",
+    "value": "Spore (R)",
+    "langs": [
+      "de",
+      "fr"
+    ],
+    "category": "latin_species",
+    "reason": "German/French spore = international Latin form"
   }
 ]

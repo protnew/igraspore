@@ -85,5 +85,5 @@ for (const lang of LANGS) {
   fs.writeFileSync(path.join(OUT, lang + '-round' + ROUND + '-for-review.md'), md);
   console.log(lang, '-> round' + ROUND + '-for-review.md', Math.round(md.length / 1024) + 'KB', 'wiki=' + (wikiL ? 'да' : 'нет'));
 }
-fs.writeFileSync(path.join(OUT, 'round5-input-sha.json'), JSON.stringify({ schema: 'review-input-sha/1', round: Number(ROUND), generated: now, dicts: shaOut }, null, 1) + '\n');
-console.log('wrote round5-input-sha.json for ' + Object.keys(shaOut).length + ' langs');
+fs.writeFileSync(path.join(OUT, 'round' + ROUND + '-input-sha.json'), JSON.stringify({ schema: 'review-input-sha/1', round: Number(ROUND), generated: now, dicts: shaOut }, null, 1) + '\n');
+console.log('wrote round' + ROUND + '-input-sha.json for ' + Object.keys(shaOut).length + ' langs');

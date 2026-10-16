@@ -168,8 +168,8 @@ if (Wants 'i18n') {
       $tests += New-Test "i18n.identity.$($Matches[1])" 'i18n_identity.mjs' "identity $($Matches[1])" ($(if ([int]$Matches[2] -eq 0) {'pass'} else {'fail'})) 0 ''
     }
   }
-  # coverage per lang (enabled)
-  $o = & node "$root\tools\i18n\i18n_coverage.mjs" --enabled 2>&1; $allEc = [Math]::Max($allEc, $LASTEXITCODE)
+  # coverage per lang (ALL 20 langs, incl. disabled es/tr/fil — U35 closes the --enabled blind spot)
+  $o = & node "$root\tools\i18n\i18n_coverage.mjs" --all 2>&1; $allEc = [Math]::Max($allEc, $LASTEXITCODE)
   $suiteOut += $o
   foreach ($ln in ($o -split "`n")) {
     if ($ln -match '^\s*([a-zA-Z\-]+)\s+(\d+)%') {

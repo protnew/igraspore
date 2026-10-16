@@ -1,754 +1,786 @@
 [
- {
-  "key": "fps",
-  "value": "FPS",
-  "langs": [
-   "*"
-  ],
-  "category": "abbr",
-  "reason": "fps — общепринятая аббревиатура кадров/с, не переводится"
- },
- {
-  "key": "autoOn",
-  "value": "AUTO",
-  "langs": [
-   "*"
-  ],
-  "category": "abbr",
-  "reason": "AUTO — короткая метка автопилота, международная аббревиатура"
- },
- {
-  "key": "autoPilotOn",
-  "value": "AUTO ON",
-  "langs": [
-   "*"
-  ],
-  "category": "abbr",
-  "reason": "AUTO — международная аббревиатура автопилота"
- },
- {
-  "key": "hud.btn.auto",
-  "value": "AUTO",
-  "langs": [
-   "*"
-  ],
-  "category": "abbr",
-  "reason": "кнопка 72px; AUTO — международная аббревиатура"
- },
- {
-  "key": "hud.btn.auto.short",
-  "value": "AUTO",
-  "langs": [
-   "*"
-  ],
-  "category": "abbr",
-  "reason": "кнопка 72px; AUTO — международная аббревиатура"
- },
- {
-  "key": "wiki",
-  "value": "WIKI",
-  "langs": [
-   "*"
-  ],
-  "category": "brand",
-  "reason": "Wiki — заимствованный термин названия раздела, корректен во всех языках"
- },
- {
-  "key": "menu",
-  "value": "MENU",
-  "langs": [
-   "fr",
-   "id",
-   "it",
-   "ms",
-   "pl",
-   "pt-BR",
-   "vi",
-   "fil"
-  ],
-  "category": "cognate",
-  "reason": "Menu — родное слово языка, совпадает с en; не недоперевод"
- },
- {
-  "key": "hud.btn.menu",
-  "value": "Menu",
-  "langs": [
-   "fr",
-   "id",
-   "it",
-   "ms",
-   "pl",
-   "pt-BR",
-   "vi",
-   "fil"
-  ],
-  "category": "cognate",
-  "reason": "Menu — родное слово языка, совпадает с en; не недоперевод"
- },
- {
-  "key": "diffN",
-  "value": "Normal",
-  "langs": [
-   "de",
-   "fr",
-   "es",
-   "pt-BR",
-   "tr"
-  ],
-  "category": "cognate",
-  "reason": "Normal — родное слово языка, совпадает с en"
- },
- {
-  "key": "vignette",
-  "value": "Vignette",
-  "langs": [
-   "de",
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Vignette — родное/заимствованное слово языка, совпадает с en"
- },
- {
-  "key": "season3",
-  "value": "Winter",
-  "langs": [
-   "de"
-  ],
-  "category": "cognate",
-  "reason": "Winter — немецкое слово, написание совпадает с en"
- },
- {
-  "key": "start",
-  "value": "START",
-  "langs": [
-   "de"
-  ],
-  "category": "cognate",
-  "reason": "Start — немецкое слово, написание совпадает с en"
- },
- {
-  "key": "hud.btn.cyst",
-  "value": "SPORE",
-  "langs": [
-   "de",
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en"
- },
- {
-  "key": "hud.btn.cyst.short",
-  "value": "SPORE",
-  "langs": [
-   "de",
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en"
- },
- {
-  "key": "divRate",
-  "value": "Reproduction",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Reproduction — французское слово, совпадает с en"
- },
- {
-  "key": "divs",
-  "value": "Divisions",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Divisions — французское слово, совпадает с en"
- },
- {
-  "key": "cartoon",
-  "value": "CARTOON",
-  "langs": [
-   "fil"
-  ],
-  "category": "brand",
-  "reason": "режим назван CARTOON по прямому решению владельца (CHECK-DEV-1114 §2)"
- },
- {
-  "key": "set",
-  "value": "SETTINGS",
-  "langs": [
-   "fil"
-  ],
-  "category": "brand",
-  "reason": "SETTINGS по прямому решению владельца (CHECK-DEV-1114 §2)"
- },
- {
-  "key": "aquarium",
-  "value": "AQUARIUM",
-  "langs": [
-   "de",
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Aquarium — родное слово de/fr, совпадает с en"
- },
- {
-  "key": "cartoon",
-  "value": "CARTOON",
-  "langs": [
-   "de",
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Cartoon — родное слово de/fr, совпадает с en"
- },
- {
-  "key": "filter",
-  "value": "Filter",
-  "langs": [
-   "de",
-   "id"
-  ],
-  "category": "cognate",
-  "reason": "Filter — родное слово de/id, совпадает с en"
- },
- {
-  "key": "colonies",
-  "value": "colonies",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "colonies — французское слово, совпадает с en"
- },
- {
-  "key": "microscope",
-  "value": "Microscope",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Microscope — французское слово, совпадает с en"
- },
- {
-  "key": "mode.swissLbl",
-  "value": "📗 SWISS",
-  "langs": [
-   "*"
-  ],
-  "category": "brand",
-  "reason": "SwissBioPics — название режима/бренда, не переводится"
- },
- {
-  "key": "mode.webglLbl",
-  "value": "🌊 WEBGL",
-  "langs": [
-   "*"
-  ],
-  "category": "brand",
-  "reason": "WebGL — имя технологии, не переводится"
- },
- {
-  "key": "modeBig.swiss",
-  "value": "📗 SWISSBIOPICS",
-  "langs": [
-   "*"
-  ],
-  "category": "brand",
-  "reason": "SwissBioPics — бренд набора иконок, не переводится"
- },
- {
-  "key": "modeBig.webgl",
-  "value": "🌊 WEBGL",
-  "langs": [
-   "*"
-  ],
-  "category": "brand",
-  "reason": "WebGL — имя технологии"
- },
- {
-  "key": "modeLbl.swiss",
-  "value": "📗 SwissBioPics",
-  "langs": [
-   "*"
-  ],
-  "category": "brand",
-  "reason": "SwissBioPics — бренд"
- },
- {
-  "key": "modeLbl.webgl",
-  "value": "🌊 WebGL",
-  "langs": [
-   "*"
-  ],
-  "category": "brand",
-  "reason": "WebGL — имя технологии"
- },
- {
-  "key": "modeBig.cartoon",
-  "value": "🎨 CARTOON",
-  "langs": [
-   "de",
-   "fr",
-   "it",
-   "pt-BR",
-   "ru"
-  ],
-  "category": "cognate",
-  "reason": "Cartoon — заимствованное слово этих языков"
- },
- {
-  "key": "modeLbl.cartoon",
-  "value": "🎨 Cartoon",
-  "langs": [
-   "de",
-   "fr",
-   "it",
-   "pt-BR",
-   "ru"
-  ],
-  "category": "cognate",
-  "reason": "Cartoon — заимствованное слово этих языков"
- },
- {
-  "key": "mob.eSep",
-  "value": " · E=",
-  "langs": [
-   "*"
-  ],
-  "category": "abbr",
-  "reason": "разделитель + буква-параметр, не текст"
- },
- {
-  "key": "hud.genSep",
-  "value": " · Gen ",
-  "langs": [
-   "de",
-   "id",
-   "it",
-   "ms",
-   "pl",
-   "ru"
-  ],
-  "category": "abbr",
-  "reason": "Gen — латинская аббревиатура поколения (generatio)"
- },
- {
-  "key": "tip.zi",
-  "value": "Zoom+",
-  "langs": [
-   "*"
-  ],
-  "category": "abbr",
-  "reason": "Zoom+ — псевдо-аббревиатура зума с плюсом"
- },
- {
-  "key": "tip.zo",
-  "value": "Zoom-",
-  "langs": [
-   "*"
-  ],
-  "category": "abbr",
-  "reason": "Zoom- — псевдо-аббревиатура зума с минусом"
- },
- {
-  "key": "tip.swiss",
-  "value": "SwissBioPics. Click -> WebGL",
-  "langs": [
-   "vi"
-  ],
-  "category": "brand",
-  "reason": "строка из брендов SwissBioPics/WebGL + Click; vi-допустимо"
- },
- {
-  "key": "star.sirius",
-  "value": "★ Sirius A+B",
-  "langs": [
-   "de",
-   "fr",
-   "id",
-   "ms",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "latin_species",
-  "reason": "Sirius — имя звезды"
- },
- {
-  "key": "starg.sirius",
-  "value": "★ Sirius",
-  "langs": [
-   "de",
-   "fr",
-   "id",
-   "ms",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "latin_species",
-  "reason": "Sirius — имя звезды"
- },
- {
-  "key": "star.betelgeuse",
-  "value": "★ Betelgeuse",
-  "langs": [
-   "de",
-   "id",
-   "it",
-   "ms",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "latin_species",
-  "reason": "Betelgeuse — имя звезды"
- },
- {
-  "key": "star.rigel",
-  "value": "★ Rigel",
-  "langs": [
-   "de",
-   "fr",
-   "id",
-   "it",
-   "ms",
-   "pl",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "latin_species",
-  "reason": "Rigel — имя звезды"
- },
- {
-  "key": "star.vega",
-  "value": "★ Vega",
-  "langs": [
-   "id",
-   "it",
-   "ms",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "latin_species",
-  "reason": "Vega — имя звезды"
- },
- {
-  "key": "star.antares",
-  "value": "★ Antares",
-  "langs": [
-   "de",
-   "id",
-   "it",
-   "ms",
-   "pl",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "latin_species",
-  "reason": "Antares — имя звезды"
- },
- {
-  "key": "star.polaris",
-  "value": "★ Polaris",
-  "langs": [
-   "fr",
-   "id",
-   "it",
-   "ms",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "latin_species",
-  "reason": "Polaris — имя звезды"
- },
- {
-  "key": "star.alphacentauri",
-  "value": "★ Alpha Centauri A+B",
-  "langs": [
-   "de",
-   "fr",
-   "id",
-   "it",
-   "ms",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "latin_species",
-  "reason": "Alpha Centauri — имя звезды"
- },
- {
-  "key": "starg.alphacentauri",
-  "value": "★ α Centauri",
-  "langs": [
-   "de",
-   "fr",
-   "id",
-   "it",
-   "ms",
-   "pl",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "latin_species",
-  "reason": "Alpha Centauri — имя звезды"
- },
- {
-  "key": "star.trinary",
-  "value": "★★★ Triple",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Triple — французское слово"
- },
- {
-  "key": "star.quadruple",
-  "value": "★★★★ Quadruple",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Quadruple — французское слово"
- },
- {
-  "key": "aria.aqua",
-  "value": "Aquarium",
-  "langs": [
-   "de",
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Aquarium — родное слово de/fr"
- },
- {
-  "key": "aria.auto",
-  "value": "Auto (Tab)",
-  "langs": [
-   "de",
-   "fr",
-   "it",
-   "ms",
-   "pl",
-   "pt-BR"
-  ],
-  "category": "cognate",
-  "reason": "Auto — родное/заимствованное слово языка"
- },
- {
-  "key": "tip.auto",
-  "value": "Auto",
-  "langs": [
-   "de",
-   "fr",
-   "it",
-   "ms",
-   "pl",
-   "pt-BR"
-  ],
-  "category": "cognate",
-  "reason": "Auto — родное/заимствованное слово языка"
- },
- {
-  "key": "aria.demo",
-  "value": "Demo",
-  "langs": [
-   "de",
-   "id",
-   "it",
-   "ms",
-   "pl",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "cognate",
-  "reason": "Demo — заимствованный термин языка"
- },
- {
-  "key": "aria.micro",
-  "value": "Microscope (M)",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Microscope — французское слово"
- },
- {
-  "key": "mic.scope",
-  "value": "MICROSCOPE ×",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Microscope — французское слово в верхнем регистре"
- },
- {
-  "key": "aria.pause",
-  "value": "Pause (P)",
-  "langs": [
-   "de",
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Pause — родное слово de/fr"
- },
- {
-  "key": "tip.pause",
-  "value": "Pause",
-  "langs": [
-   "de",
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Pause — родное слово de/fr"
- },
- {
-  "key": "aria.start",
-  "value": "Start",
-  "langs": [
-   "de",
-   "pl"
-  ],
-  "category": "cognate",
-  "reason": "Start — родное слово de, заимствованное в pl"
- },
- {
-  "key": "aria.wiki2",
-  "value": "Wiki (B)",
-  "langs": [
-   "de",
-   "fr",
-   "id",
-   "it",
-   "ms",
-   "pl",
-   "pt-BR",
-   "vi"
-  ],
-  "category": "brand",
-  "reason": "Wiki — заимствованный термин"
- },
- {
-  "key": "dna.import",
-  "value": "Import DNA",
-  "langs": [
-   "ms"
-  ],
-  "category": "cognate",
-  "reason": "import/DNA — заимствованные термины ms"
- },
- {
-  "key": "edu.chloro.name",
-  "value": "Chloroplast",
-  "langs": [
-   "de",
-   "pl"
-  ],
-  "category": "cognate",
-  "reason": "Chloroplast — научный термин de/pl"
- },
- {
-  "key": "edu.membrane.name",
-  "value": "Membrane",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Membrane — французское слово"
- },
- {
-  "key": "edu.vacuole.name",
-  "value": "Vacuole",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Vacuole — французский научный термин"
- },
- {
-  "key": "x.golgi",
-  "value": "Golgi",
-  "langs": [
-   "*"
-  ],
-  "category": "latin_species",
-  "reason": "Golgi — аппарат Гольджи, фамилия учёного"
- },
- {
-  "key": "x.mitochondria",
-  "value": "mitochondria",
-  "langs": [
-   "pl"
-  ],
-  "category": "cognate",
-  "reason": "mitochondria — латинский научный термин pl"
- },
- {
-  "key": "x.pseudopodia",
-  "value": "pseudopodia",
-  "langs": [
-   "id",
-   "ms",
-   "pl"
-  ],
-  "category": "cognate",
-  "reason": "pseudopodia — латинский научный термин"
- },
- {
-  "key": "x.phages",
-  "value": "Phages",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Phages — французское слово"
- },
- {
-  "key": "x.division",
-  "value": "Division",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Division — французское слово"
- },
- {
-  "key": "x.locomotion",
-  "value": "Locomotion",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "Locomotion — французское слово"
- },
- {
-  "key": "x.wind",
-  "value": "Wind",
-  "langs": [
-   "de"
-  ],
-  "category": "cognate",
-  "reason": "Wind — немецкое слово"
- },
- {
-  "key": "spcard.virus",
-  "value": "Virus",
-  "langs": [
-   "de",
-   "fr",
-   "id",
-   "it",
-   "ms",
-   "vi"
-  ],
-  "category": "cognate",
-  "reason": "Virus — латинский/родной термин языков"
- },
- {
-  "key": "tut.s4.title",
-  "value": "Division",
-  "langs": [
-   "fr"
-  ],
-  "category": "cognate",
-  "reason": "fr «division» — родное слово, идентично en написанию"
- }
+  {
+    "key": "fps",
+    "value": "FPS",
+    "langs": [
+      "*"
+    ],
+    "category": "abbr",
+    "reason": "fps — общепринятая аббревиатура кадров/с, не переводится"
+  },
+  {
+    "key": "autoOn",
+    "value": "AUTO",
+    "langs": [
+      "*"
+    ],
+    "category": "abbr",
+    "reason": "AUTO — короткая метка автопилота, международная аббревиатура"
+  },
+  {
+    "key": "autoPilotOn",
+    "value": "AUTO ON",
+    "langs": [
+      "*"
+    ],
+    "category": "abbr",
+    "reason": "AUTO — международная аббревиатура автопилота"
+  },
+  {
+    "key": "hud.btn.auto",
+    "value": "AUTO",
+    "langs": [
+      "*"
+    ],
+    "category": "abbr",
+    "reason": "кнопка 72px; AUTO — международная аббревиатура"
+  },
+  {
+    "key": "hud.btn.auto.short",
+    "value": "AUTO",
+    "langs": [
+      "*"
+    ],
+    "category": "abbr",
+    "reason": "кнопка 72px; AUTO — международная аббревиатура"
+  },
+  {
+    "key": "wiki",
+    "value": "WIKI",
+    "langs": [
+      "*"
+    ],
+    "category": "brand",
+    "reason": "Wiki — заимствованный термин названия раздела, корректен во всех языках"
+  },
+  {
+    "key": "menu",
+    "value": "MENU",
+    "langs": [
+      "fr",
+      "id",
+      "it",
+      "ms",
+      "pl",
+      "pt-BR",
+      "vi",
+      "fil"
+    ],
+    "category": "cognate",
+    "reason": "Menu — родное слово языка, совпадает с en; не недоперевод"
+  },
+  {
+    "key": "hud.btn.menu",
+    "value": "Menu",
+    "langs": [
+      "fr",
+      "id",
+      "it",
+      "ms",
+      "pl",
+      "pt-BR",
+      "vi",
+      "fil"
+    ],
+    "category": "cognate",
+    "reason": "Menu — родное слово языка, совпадает с en; не недоперевод"
+  },
+  {
+    "key": "diffN",
+    "value": "Normal",
+    "langs": [
+      "de",
+      "fr",
+      "es",
+      "pt-BR",
+      "tr"
+    ],
+    "category": "cognate",
+    "reason": "Normal — родное слово языка, совпадает с en"
+  },
+  {
+    "key": "vignette",
+    "value": "Vignette",
+    "langs": [
+      "de",
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Vignette — родное/заимствованное слово языка, совпадает с en"
+  },
+  {
+    "key": "season3",
+    "value": "Winter",
+    "langs": [
+      "de"
+    ],
+    "category": "cognate",
+    "reason": "Winter — немецкое слово, написание совпадает с en"
+  },
+  {
+    "key": "start",
+    "value": "START",
+    "langs": [
+      "de"
+    ],
+    "category": "cognate",
+    "reason": "Start — немецкое слово, написание совпадает с en"
+  },
+  {
+    "key": "hud.btn.cyst",
+    "value": "SPORE",
+    "langs": [
+      "de",
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en"
+  },
+  {
+    "key": "hud.btn.cyst.short",
+    "value": "SPORE",
+    "langs": [
+      "de",
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en"
+  },
+  {
+    "key": "divRate",
+    "value": "Reproduction",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Reproduction — французское слово, совпадает с en"
+  },
+  {
+    "key": "divs",
+    "value": "Divisions",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Divisions — французское слово, совпадает с en"
+  },
+  {
+    "key": "cartoon",
+    "value": "CARTOON",
+    "langs": [
+      "fil"
+    ],
+    "category": "brand",
+    "reason": "режим назван CARTOON по прямому решению владельца (CHECK-DEV-1114 §2)"
+  },
+  {
+    "key": "set",
+    "value": "SETTINGS",
+    "langs": [
+      "fil"
+    ],
+    "category": "brand",
+    "reason": "SETTINGS по прямому решению владельца (CHECK-DEV-1114 §2)"
+  },
+  {
+    "key": "aquarium",
+    "value": "AQUARIUM",
+    "langs": [
+      "de",
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Aquarium — родное слово de/fr, совпадает с en"
+  },
+  {
+    "key": "cartoon",
+    "value": "CARTOON",
+    "langs": [
+      "de",
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Cartoon — родное слово de/fr, совпадает с en"
+  },
+  {
+    "key": "filter",
+    "value": "Filter",
+    "langs": [
+      "de",
+      "id"
+    ],
+    "category": "cognate",
+    "reason": "Filter — родное слово de/id, совпадает с en"
+  },
+  {
+    "key": "colonies",
+    "value": "colonies",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "colonies — французское слово, совпадает с en"
+  },
+  {
+    "key": "microscope",
+    "value": "Microscope",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Microscope — французское слово, совпадает с en"
+  },
+  {
+    "key": "mode.swissLbl",
+    "value": "📗 SWISS",
+    "langs": [
+      "*"
+    ],
+    "category": "brand",
+    "reason": "SwissBioPics — название режима/бренда, не переводится"
+  },
+  {
+    "key": "mode.webglLbl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "*"
+    ],
+    "category": "brand",
+    "reason": "WebGL — имя технологии, не переводится"
+  },
+  {
+    "key": "modeBig.swiss",
+    "value": "📗 SWISSBIOPICS",
+    "langs": [
+      "*"
+    ],
+    "category": "brand",
+    "reason": "SwissBioPics — бренд набора иконок, не переводится"
+  },
+  {
+    "key": "modeBig.webgl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "*"
+    ],
+    "category": "brand",
+    "reason": "WebGL — имя технологии"
+  },
+  {
+    "key": "modeLbl.swiss",
+    "value": "📗 SwissBioPics",
+    "langs": [
+      "*"
+    ],
+    "category": "brand",
+    "reason": "SwissBioPics — бренд"
+  },
+  {
+    "key": "modeLbl.webgl",
+    "value": "🌊 WebGL",
+    "langs": [
+      "*"
+    ],
+    "category": "brand",
+    "reason": "WebGL — имя технологии"
+  },
+  {
+    "key": "modeBig.cartoon",
+    "value": "🎨 CARTOON",
+    "langs": [
+      "de",
+      "fr",
+      "it",
+      "pt-BR",
+      "ru"
+    ],
+    "category": "cognate",
+    "reason": "Cartoon — заимствованное слово этих языков"
+  },
+  {
+    "key": "modeLbl.cartoon",
+    "value": "🎨 Cartoon",
+    "langs": [
+      "de",
+      "fr",
+      "it",
+      "pt-BR",
+      "ru"
+    ],
+    "category": "cognate",
+    "reason": "Cartoon — заимствованное слово этих языков"
+  },
+  {
+    "key": "mob.eSep",
+    "value": " · E=",
+    "langs": [
+      "*"
+    ],
+    "category": "abbr",
+    "reason": "разделитель + буква-параметр, не текст"
+  },
+  {
+    "key": "hud.genSep",
+    "value": " · Gen ",
+    "langs": [
+      "de",
+      "es",
+      "id",
+      "it",
+      "ms",
+      "pl",
+      "ru"
+    ],
+    "category": "abbr",
+    "reason": "Gen — латинская аббревиатура поколения (generatio)"
+  },
+  {
+    "key": "tip.zi",
+    "value": "Zoom+",
+    "langs": [
+      "*"
+    ],
+    "category": "abbr",
+    "reason": "Zoom+ — псевдо-аббревиатура зума с плюсом"
+  },
+  {
+    "key": "tip.zo",
+    "value": "Zoom-",
+    "langs": [
+      "*"
+    ],
+    "category": "abbr",
+    "reason": "Zoom- — псевдо-аббревиатура зума с минусом"
+  },
+  {
+    "key": "tip.swiss",
+    "value": "SwissBioPics. Click -> WebGL",
+    "langs": [
+      "vi"
+    ],
+    "category": "brand",
+    "reason": "строка из брендов SwissBioPics/WebGL + Click; vi-допустимо"
+  },
+  {
+    "key": "star.sirius",
+    "value": "★ Sirius A+B",
+    "langs": [
+      "de",
+      "fil",
+      "fr",
+      "id",
+      "ms",
+      "pt-BR",
+      "tr",
+      "vi"
+    ],
+    "category": "latin_species",
+    "reason": "Sirius — имя звезды"
+  },
+  {
+    "key": "starg.sirius",
+    "value": "★ Sirius",
+    "langs": [
+      "de",
+      "fil",
+      "fr",
+      "id",
+      "ms",
+      "pt-BR",
+      "tr",
+      "vi"
+    ],
+    "category": "latin_species",
+    "reason": "Sirius — имя звезды"
+  },
+  {
+    "key": "star.betelgeuse",
+    "value": "★ Betelgeuse",
+    "langs": [
+      "de",
+      "es",
+      "fil",
+      "id",
+      "it",
+      "ms",
+      "pt-BR",
+      "tr",
+      "vi"
+    ],
+    "category": "latin_species",
+    "reason": "Betelgeuse — имя звезды"
+  },
+  {
+    "key": "star.rigel",
+    "value": "★ Rigel",
+    "langs": [
+      "de",
+      "es",
+      "fil",
+      "fr",
+      "id",
+      "it",
+      "ms",
+      "pl",
+      "pt-BR",
+      "tr",
+      "vi"
+    ],
+    "category": "latin_species",
+    "reason": "Rigel — имя звезды"
+  },
+  {
+    "key": "star.vega",
+    "value": "★ Vega",
+    "langs": [
+      "es",
+      "fil",
+      "id",
+      "it",
+      "ms",
+      "pt-BR",
+      "tr",
+      "vi"
+    ],
+    "category": "latin_species",
+    "reason": "Vega — имя звезды"
+  },
+  {
+    "key": "star.antares",
+    "value": "★ Antares",
+    "langs": [
+      "de",
+      "es",
+      "fil",
+      "id",
+      "it",
+      "ms",
+      "pl",
+      "pt-BR",
+      "tr",
+      "vi"
+    ],
+    "category": "latin_species",
+    "reason": "Antares — имя звезды"
+  },
+  {
+    "key": "star.polaris",
+    "value": "★ Polaris",
+    "langs": [
+      "fr",
+      "id",
+      "it",
+      "ms",
+      "pt-BR",
+      "vi"
+    ],
+    "category": "latin_species",
+    "reason": "Polaris — имя звезды"
+  },
+  {
+    "key": "star.alphacentauri",
+    "value": "★ Alpha Centauri A+B",
+    "langs": [
+      "de",
+      "fil",
+      "fr",
+      "id",
+      "it",
+      "ms",
+      "pt-BR",
+      "tr",
+      "vi"
+    ],
+    "category": "latin_species",
+    "reason": "Alpha Centauri — имя звезды"
+  },
+  {
+    "key": "starg.alphacentauri",
+    "value": "★ α Centauri",
+    "langs": [
+      "de",
+      "es",
+      "fil",
+      "fr",
+      "id",
+      "it",
+      "ms",
+      "pl",
+      "pt-BR",
+      "tr",
+      "vi"
+    ],
+    "category": "latin_species",
+    "reason": "Alpha Centauri — имя звезды"
+  },
+  {
+    "key": "star.trinary",
+    "value": "★★★ Triple",
+    "langs": [
+      "es",
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Triple — французское слово"
+  },
+  {
+    "key": "star.quadruple",
+    "value": "★★★★ Quadruple",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Quadruple — французское слово"
+  },
+  {
+    "key": "aria.aqua",
+    "value": "Aquarium",
+    "langs": [
+      "de",
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Aquarium — родное слово de/fr"
+  },
+  {
+    "key": "aria.auto",
+    "value": "Auto (Tab)",
+    "langs": [
+      "de",
+      "es",
+      "fr",
+      "it",
+      "ms",
+      "pl",
+      "pt-BR"
+    ],
+    "category": "cognate",
+    "reason": "Auto — родное/заимствованное слово языка"
+  },
+  {
+    "key": "tip.auto",
+    "value": "Auto",
+    "langs": [
+      "de",
+      "es",
+      "fr",
+      "it",
+      "ms",
+      "pl",
+      "pt-BR"
+    ],
+    "category": "cognate",
+    "reason": "Auto — родное/заимствованное слово языка"
+  },
+  {
+    "key": "aria.demo",
+    "value": "Demo",
+    "langs": [
+      "de",
+      "es",
+      "fil",
+      "id",
+      "it",
+      "ms",
+      "pl",
+      "pt-BR",
+      "tr",
+      "vi"
+    ],
+    "category": "cognate",
+    "reason": "Demo — заимствованный термин языка"
+  },
+  {
+    "key": "aria.micro",
+    "value": "Microscope (M)",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Microscope — французское слово"
+  },
+  {
+    "key": "mic.scope",
+    "value": "MICROSCOPE ×",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Microscope — французское слово в верхнем регистре"
+  },
+  {
+    "key": "aria.pause",
+    "value": "Pause (P)",
+    "langs": [
+      "de",
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Pause — родное слово de/fr"
+  },
+  {
+    "key": "tip.pause",
+    "value": "Pause",
+    "langs": [
+      "de",
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Pause — родное слово de/fr"
+  },
+  {
+    "key": "aria.start",
+    "value": "Start",
+    "langs": [
+      "de",
+      "pl"
+    ],
+    "category": "cognate",
+    "reason": "Start — родное слово de, заимствованное в pl"
+  },
+  {
+    "key": "aria.wiki2",
+    "value": "Wiki (B)",
+    "langs": [
+      "de",
+      "es",
+      "fil",
+      "fr",
+      "id",
+      "it",
+      "ms",
+      "pl",
+      "pt-BR",
+      "vi"
+    ],
+    "category": "brand",
+    "reason": "Wiki — заимствованный термин"
+  },
+  {
+    "key": "dna.import",
+    "value": "Import DNA",
+    "langs": [
+      "ms"
+    ],
+    "category": "cognate",
+    "reason": "import/DNA — заимствованные термины ms"
+  },
+  {
+    "key": "edu.chloro.name",
+    "value": "Chloroplast",
+    "langs": [
+      "de",
+      "pl"
+    ],
+    "category": "cognate",
+    "reason": "Chloroplast — научный термин de/pl"
+  },
+  {
+    "key": "edu.membrane.name",
+    "value": "Membrane",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Membrane — французское слово"
+  },
+  {
+    "key": "edu.vacuole.name",
+    "value": "Vacuole",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Vacuole — французский научный термин"
+  },
+  {
+    "key": "x.golgi",
+    "value": "Golgi",
+    "langs": [
+      "*"
+    ],
+    "category": "latin_species",
+    "reason": "Golgi — аппарат Гольджи, фамилия учёного"
+  },
+  {
+    "key": "x.mitochondria",
+    "value": "mitochondria",
+    "langs": [
+      "pl"
+    ],
+    "category": "cognate",
+    "reason": "mitochondria — латинский научный термин pl"
+  },
+  {
+    "key": "x.pseudopodia",
+    "value": "pseudopodia",
+    "langs": [
+      "id",
+      "ms",
+      "pl"
+    ],
+    "category": "cognate",
+    "reason": "pseudopodia — латинский научный термин"
+  },
+  {
+    "key": "x.phages",
+    "value": "Phages",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Phages — французское слово"
+  },
+  {
+    "key": "x.division",
+    "value": "Division",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Division — французское слово"
+  },
+  {
+    "key": "x.locomotion",
+    "value": "Locomotion",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "Locomotion — французское слово"
+  },
+  {
+    "key": "x.wind",
+    "value": "Wind",
+    "langs": [
+      "de"
+    ],
+    "category": "cognate",
+    "reason": "Wind — немецкое слово"
+  },
+  {
+    "key": "spcard.virus",
+    "value": "Virus",
+    "langs": [
+      "de",
+      "es",
+      "fil",
+      "fr",
+      "id",
+      "it",
+      "ms",
+      "vi"
+    ],
+    "category": "cognate",
+    "reason": "Virus — латинский/родной термин языков"
+  },
+  {
+    "key": "tut.s4.title",
+    "value": "Division",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate",
+    "reason": "fr «division» — родное слово, идентично en написанию"
+  }
 ]

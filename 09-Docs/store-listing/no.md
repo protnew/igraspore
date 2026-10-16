@@ -1,9 +1,9 @@
 # Listing no
 
 title: iGraSpore: Mikrober
-short: Dam i tverrsnitt: spis, del deg, gjom deg i ein spore.
+short: Dam i tverrsnitt: spis, del deg, gjøm deg i en spore.
 critic: not scored
 
 ## Full
 
-iGraSpore er eit gratis læresimulering. Du er ei celle i ein dam: du et, deler deg og dannar ein spore når det blir farleg. Rundt deg lever om lag hundre artar: grøne, bakteriar, toffeldyr og nedbrytarar (sopp). Virus dukkar òg opp. Du vel organismen før start. Den nedste linja er enkel: ete, dele, spore og auto. Resten er i pausemenyen. Viss du ikkje kan dele deg enno, seier knappen kvifor: energi, masse eller ei kort pause. Ingen reklame. Ingen konto. Spelardata blir ikkje samla inn. Dette er ein modell av næringskjeda, ikkje ei lærebok. Latinske artsnamn blir verande latinske.
+iGraSpore er en gratis læringssimulering. Du er en celle i en dam: du spiser, deler deg og danner en spore når det blir farlig. Rundt deg lever rundt hundre arter: grønne, bakterier, ciliater og nedbrytere (sopp). Virus dukker også opp. Du velger organismen før start. Den nederste linjen er enkel: spise, dele, spore og auto. Resten er i pausemenyen. Hvis du ikke kan dele deg ennå, sier knappen hvorfor: energi, masse eller en kort pause. Ingen reklame. Ingen konto. Spillerdata samles ikke inn. Dette er en modell av næringskjeden, ikke en lærebok. Latinske artsnavn forblir latinsk.

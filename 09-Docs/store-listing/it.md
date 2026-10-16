@@ -1,7 +1,7 @@
 # Listing it
 
-title: iGraSpore: Micobi
-short: Uno staglio in sezione: mangia, dividiti, nasconditi in una spora.
+title: iGraSpore: Microbi
+short: Uno stagno in sezione: mangia, dividiti, nasconditi in una spora.
 critic: not scored
 
 ## Full

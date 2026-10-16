@@ -1,7 +1,7 @@
 # Listing ro
 
 title: iGraSpore: Microbi
-short: Iaz în secțiune: mănâncă, divide, ascunde-te în spor.
+short: Iaz în secțiune: mănâncă, divide-te, ascunde-te în spor.
 critic: not scored
 
 ## Full

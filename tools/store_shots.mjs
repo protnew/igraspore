@@ -8,10 +8,11 @@ const { chromium } = require(path.resolve('.04-Src/node_modules/playwright-core/
 
 const BASE = process.env.GATE_BASE_URL || 'http://127.0.0.1:8792/';
 const OUT = '09-Docs/store-listing/shots';
-const WAVE1 = ['en', 'ru', 'pt-BR', 'es', 'hi', 'id', 'tr', 'de', 'fr', 'ja'];
+const ALL_WAVE1 = ['en', 'ru', 'pt-BR', 'es', 'hi', 'id', 'tr', 'de', 'fr', 'ja'];
+const WAVE1 = process.env.ONLY_LANGS ? process.env.ONLY_LANGS.split(',') : ALL_WAVE1;
 const DISABLED = new Set(['es', 'tr', 'fil']);
 const SCREENS_COMMON = ['menu', 'game', 'settings', 'wiki-list'];
-const SCREENS_EXTRA = ['tutorial', 'gameover', 'help', 'stars'];
+const SCREENS_EXTRA = ['tutorial', 'gameover', 'help', 'pause'];
 
 async function closeOverlays(page) {
   for (const id of ['#wikiClose', '#setClose', '#helpClose', '#resBtn']) await page.click(id).catch(() => {});
@@ -47,7 +48,7 @@ for (const lang of WAVE1) {
         if (s === 'settings') { await page.click('#bPause').catch(() => {}); await page.waitForTimeout(500); await page.click('#pSet').catch(() => {}); await page.waitForSelector('#setO.ov.show', { timeout: 6000 }).catch(() => {}); await page.waitForTimeout(500); }
         if (s === 'wiki-list') { await page.click('#setClose').catch(() => {}); await page.waitForTimeout(300); await page.click('#pWiki').catch(() => {}); await page.waitForSelector('#wikiO.ov.show', { timeout: 6000 }).catch(() => {}); await page.waitForSelector('#wikiContent .wiki-entry', { timeout: 15000 }).catch(() => {}); await page.waitForTimeout(600); }
         if (s === 'help') { await closeOverlays(page); await page.click('#bPause').catch(() => {}); await page.waitForTimeout(600); await page.click('#pHelp').catch(() => {}); await page.waitForSelector('#helpO.ov.show', { timeout: 6000 }).catch(() => {}); await page.waitForTimeout(900); }
-        if (s === 'stars') { await page.click('#helpClose').catch(() => {}); await page.click('#setClose').catch(() => {}); await page.click('#wikiClose').catch(() => {}); await page.waitForTimeout(400); await page.click('#starSelect').catch(() => {}); await page.waitForTimeout(1100); }
+        if (s === 'pause') { await closeOverlays(page); await page.click('#bPause').catch(() => {}); await page.waitForTimeout(800); }
         if (s === 'gameover') { await closeOverlays(page); await page.evaluate(() => { if (window.player) { window.player.alive = false; window.player.energy = 0; } if (typeof window.state !== 'undefined') window.state = 'gameover'; }); await page.waitForTimeout(1600); }
         const f = `${OUT}/${lang}/1080-${s}.png`;
         await page.screenshot({ path: f });

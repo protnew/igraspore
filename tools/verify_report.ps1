@@ -32,8 +32,8 @@ $base = Split-Path $Report -Leaf
 # V1: файл есть, UTF-8, имя REPORT-...-v(3..9)-YYYYMMDD-HHMM.md, время имени ±5 мин от LastWriteTime
 if (-not $Report -or -not (Test-Path $Report)) { Out-Check $false 'V1' "md не найден: $Report"; }
 else {
-  $m = [regex]::Match($base, '^REPORT-TZ-RELEASE-READY-2026-10-14-v([3-9])-(\d{8})-(\d{4})\.md$')
-  if (-not $m.Success) { Out-Check $false 'V1' "имя не по шаблону: $base" }
+  $m = [regex]::Match($base, '^REPORT-TZ-RELEASE-READY-2026-10-14-v(\d{1,2})-(\d{8})-(\d{4})\.md$')
+  if (-not $m.Success -or [int]$m.Groups[1].Value -lt 3) { Out-Check $false 'V1' "имя не по шаблону (v3+): $base" }
   else {
     $ts = [datetime]::ParseExact($m.Groups[2].Value + $m.Groups[3].Value, 'yyyyMMddHHmm', $null)
     $lw = (Get-Item $Report).LastWriteTime

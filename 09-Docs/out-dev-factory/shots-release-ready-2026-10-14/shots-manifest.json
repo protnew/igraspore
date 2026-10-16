@@ -1,8 +1,8 @@
 {
  "schema": "shots-manifest/1",
- "generated": "2026-10-16T14:30:48.722Z",
+ "generated": "2026-10-16T14:58:32.956Z",
  "root": "09-Docs/out-dev-factory/shots-release-ready-2026-10-14",
- "count": 680,
+ "count": 689,
  "files": [
   {
    "path": "buttons-after/G1-1280-after.png",
@@ -3403,6 +3403,51 @@
    "path": "i18n/zh-TW/390-wiki-list.png",
    "bytes": 89750,
    "sha256": "6dd421223bb080b60537d5ce86bdd96c523605c54ad580ffd947cf4f84b0b74e"
+  },
+  {
+   "path": "lab/390-buttons.png",
+   "bytes": 82681,
+   "sha256": "126936d1e7caab01d86b40a64dbed936c7d4d71077b753d3d969972b2d7fe364"
+  },
+  {
+   "path": "lab/390-competitors.png",
+   "bytes": 50290,
+   "sha256": "7760f5d2b6ae294befc38d4a6c2434f8b2e0514c41ea2ede31b67a372fff0ebf"
+  },
+  {
+   "path": "lab/390-index.png",
+   "bytes": 21248,
+   "sha256": "c0c9ea6be133363b4e5b0e0f79e8ce8154d1467c22ad05cf5b0ff30aa1d613b4"
+  },
+  {
+   "path": "lab/390-languages.png",
+   "bytes": 50722,
+   "sha256": "eec63c67bc7110a6d599127e9958f9fd010bb1f196eeafdb2d8bab4718b44dfa"
+  },
+  {
+   "path": "lab/390-media.png",
+   "bytes": 13650,
+   "sha256": "081c0823535ab8afb3ac433556b0fd472b8805727a5af0b902906b0ceac40153"
+  },
+  {
+   "path": "lab/390-store-readiness.png",
+   "bytes": 16042,
+   "sha256": "5fb4642ee215eb5f55d9ab84ae74162c4409b39bbb9cd92cdbad420b6f0a69df"
+  },
+  {
+   "path": "lab/390-tests.png",
+   "bytes": 42217,
+   "sha256": "a16641e4d956e7c7fec628e40849d7d36f5bae32ae6b062f23a53d647e6521e9"
+  },
+  {
+   "path": "lab/390-tz-index.png",
+   "bytes": 50676,
+   "sha256": "4a32d86b73102eb9987c580fe3520c306c2e54169dd23e34569787d6046c9f74"
+  },
+  {
+   "path": "lab/390-ui-audit.png",
+   "bytes": 45637,
+   "sha256": "0290c18d1f8fddf4005546028a8399e5e7113ba05fb591ed17017541ab255afe"
   }
  ]
 }

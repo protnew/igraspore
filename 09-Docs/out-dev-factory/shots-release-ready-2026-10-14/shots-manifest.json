@@ -1,28 +1,28 @@
 {
  "schema": "shots-manifest/1",
- "generated": "2026-10-16T17:45:41.430Z",
+ "generated": "2026-10-16T19:05:53.532Z",
  "root": "09-Docs/out-dev-factory/shots-release-ready-2026-10-14",
  "count": 737,
  "files": [
   {
    "path": "buttons-after/G1-1280-after.png",
-   "bytes": 272886,
-   "sha256": "58a953ebf895d480745520921f260ace5ffe9b9cf107ea00a9702b38191ced5d"
+   "bytes": 193278,
+   "sha256": "51cfce330236f879dae1b185c5928d97d55c9ee1a97d7ace6a77aecc80dbf244"
   },
   {
    "path": "buttons-after/G1-1280-before.png",
-   "bytes": 268889,
-   "sha256": "2dd507ca6e7c608d1f01c5a7d7a95a513228ca8a8ddf0582802da76b57579adf"
+   "bytes": 194784,
+   "sha256": "7a93a3062f20897e8b68faa3341e53a3d05c1efdcaaca6429e455d22a592051e"
   },
   {
    "path": "buttons-after/G1-390-after.png",
-   "bytes": 141786,
-   "sha256": "12316307b681fd0f38ed3db387116d3269e9b3c94be58b7b0673d370e384b046"
+   "bytes": 124128,
+   "sha256": "a34d1be073ba1bf29c3ac4b4a835b079bd9bd702eb098cc3606e3cbf8958950d"
   },
   {
    "path": "buttons-after/G1-390-before.png",
-   "bytes": 145077,
-   "sha256": "95db7920097dbb60d25a7332b87e9423586cab9ad14a869e411ce46437765d02"
+   "bytes": 126195,
+   "sha256": "b2abac89c7a50115a88637fa2d1215ff02fc039cf8c59dd48c551004faae3f13"
   },
   {
    "path": "buttons-after/G10-1280-after.png",
@@ -66,23 +66,23 @@
   },
   {
    "path": "buttons-after/G12-1280-after.png",
-   "bytes": 133566,
-   "sha256": "dd24a0e181a64306e3e5fb5317809ff1b0ab8dac65b29e26b9fa0f7ac8a2ce7e"
+   "bytes": 109106,
+   "sha256": "dc1ea2856d3b8ccc2d406d3f4136269992f7a153573013f01458fd68243514fc"
   },
   {
    "path": "buttons-after/G12-1280-before.png",
-   "bytes": 214734,
-   "sha256": "cd12369034aecdc7b8822c87c199d08999ee1dc8f86e66a3c3ed5e4c2f6db97c"
+   "bytes": 169960,
+   "sha256": "b8809a0d821b733a6fcd14266c17a4613a3ccd5579bf53dbf1043964ef744686"
   },
   {
    "path": "buttons-after/G12-390-after.png",
-   "bytes": 101628,
-   "sha256": "afcd9587670fbef7533252e264586b0d51dd4761bb8f88e92190ed2de73094b3"
+   "bytes": 94607,
+   "sha256": "6495e5f1bf9537bbb6340cbf83e66d78b0462f51e1c68b693c41f1d374a277aa"
   },
   {
    "path": "buttons-after/G12-390-before.png",
-   "bytes": 153787,
-   "sha256": "d122955e7c8c5da851f5afea8f0f9e942f51b5fb6c9c780ef73bcccdb2b63ea0"
+   "bytes": 140201,
+   "sha256": "5b814702aa11924e7cc1d02d85971ac8dc400743aaa91fc891e8d85f5ab27c1b"
   },
   {
    "path": "buttons-after/G13-1280-after.png",
@@ -166,13 +166,13 @@
   },
   {
    "path": "buttons-after/G17-1280-after.png",
-   "bytes": 201198,
-   "sha256": "14ba0d20a962173ffdb5b1e5a17107b857f33c92e7e9873035edb519f5ead44a"
+   "bytes": 255244,
+   "sha256": "7af0141b45c0478886cec61eb987d9ae4e5ec58c573324a28384498b974f3e0d"
   },
   {
    "path": "buttons-after/G17-1280-before.png",
-   "bytes": 202137,
-   "sha256": "ffd7740655ec5dc9d07a57d5bab60963d2469707619ef7e0e79f16e59d75783c"
+   "bytes": 258668,
+   "sha256": "916c5b12a3f5c8971d2cc008c6bb5d8570bd479142020b6672a939f3f1491991"
   },
   {
    "path": "buttons-after/G17-390-after.png",
@@ -226,23 +226,23 @@
   },
   {
    "path": "buttons-after/G2-1280-after.png",
-   "bytes": 212388,
-   "sha256": "a966908e04d7f4ddb0fd29e0a034f3205ba2e08b2707b177a50eac0b6323f0f1"
+   "bytes": 186645,
+   "sha256": "d2a02d0a35dc21f77b4882675e6b25c20a7506d93707b326655a0beb6d575e43"
   },
   {
    "path": "buttons-after/G2-1280-before.png",
-   "bytes": 211849,
-   "sha256": "b02b2b6d3db451222ef11f1cad560227a976249998aa21cca4ba5af38d592bae"
+   "bytes": 187470,
+   "sha256": "e4c225abf986e3088c39e12b317552f8e5a16ffd6c5b554e8c30e5d7bf049167"
   },
   {
    "path": "buttons-after/G2-390-after.png",
-   "bytes": 151664,
-   "sha256": "5305c3edef31616cc656159115fdb7dd5aef4097029b78d56bf790512e0f1e03"
+   "bytes": 146530,
+   "sha256": "32d4c20d9518e50a967dc2c950bc5e401629cc5f4b27c8edc1383e653c273bec"
   },
   {
    "path": "buttons-after/G2-390-before.png",
-   "bytes": 151039,
-   "sha256": "b3705b4599cd7884f7564f0b909e0904716be3477f7f03a4e4cf01bdc12bcee4"
+   "bytes": 147293,
+   "sha256": "22dec25372bd7752dde5a22a0c5ab53d89a0aab25d13acaa94e030d628b4ff4a"
   },
   {
    "path": "buttons-after/G20-1280-after.png",
@@ -356,13 +356,13 @@
   },
   {
    "path": "buttons-after/G25-390-after.png",
-   "bytes": 127509,
-   "sha256": "769f096451cca295250562d61473dc57088202f58b44cb5e903a6b968cb9f07e"
+   "bytes": 130454,
+   "sha256": "daa7057e0765487e1249406bdbbfb3a0fd601d3be24f99f4376d755fa9c48a73"
   },
   {
    "path": "buttons-after/G25-390-before.png",
-   "bytes": 132549,
-   "sha256": "eb97fb086d3c941ffd89ef59427cff7d468749eafca0e91e68effdfbb1360d5a"
+   "bytes": 129341,
+   "sha256": "79d234d4bc7ea51dc7df4d5d3283cccc44304f07b716e137d5bd3c55cce53d4d"
   },
   {
    "path": "buttons-after/G26-1280-after.png",
@@ -386,23 +386,23 @@
   },
   {
    "path": "buttons-after/G27-1280-after.png",
-   "bytes": 125527,
-   "sha256": "7840a20f2aefe006b1092ecea6bc26c0b5ab755be28f2f81204643bd8f7343b5"
+   "bytes": 125212,
+   "sha256": "621cc83cbc98c837f7fd81ce5e36c4e2f103a427cf30d4015b53ecf43991350d"
   },
   {
    "path": "buttons-after/G27-1280-before.png",
-   "bytes": 306230,
-   "sha256": "67669967ed5c0afc45f3e3ba1f36a039b0d1f4362d4882aeac23b8a64ccc11c5"
+   "bytes": 303043,
+   "sha256": "9ae7f1c4cf5314ab5fda9ccfdecbe7309105354a1617ef64bf801698767597b5"
   },
   {
    "path": "buttons-after/G27-390-after.png",
-   "bytes": 94965,
-   "sha256": "f3c39cf06cb5fea547df7ff5ba180d37a94a220262d49439323f87763f0b2945"
+   "bytes": 98639,
+   "sha256": "aee07a1206dc8d9104b267d34195bb4142440b868e599ca0806f16cea8824acc"
   },
   {
    "path": "buttons-after/G27-390-before.png",
-   "bytes": 167133,
-   "sha256": "f9c65f3b662e4f820a5968a08448c18bb27f741cf067f03b08e3d169bf3d3c46"
+   "bytes": 177576,
+   "sha256": "953397c609b951201f6a8f231c9ea162fd199533c9dd69d231bf88e57156cbc5"
   },
   {
    "path": "buttons-after/G28-1280-after.png",
@@ -446,23 +446,23 @@
   },
   {
    "path": "buttons-after/G3-1280-after.png",
-   "bytes": 211501,
-   "sha256": "bbb56929d371f577e77fbef8906a58c35f8383f51faeecf3b96905bd672a8495"
+   "bytes": 219558,
+   "sha256": "d9cf72ae94952fa0c3d9385668b790801a6175e165fa79aa35d8bc8ce6616832"
   },
   {
    "path": "buttons-after/G3-1280-before.png",
-   "bytes": 213507,
-   "sha256": "00e29a1419e8193e497b1a8da73105cc1f01781c9bebcb467d304dc72f3a13e0"
+   "bytes": 217906,
+   "sha256": "784e5d54ea96f317851194e2df8140cf135a3b5112f1b31ca2ecc2c02404758d"
   },
   {
    "path": "buttons-after/G3-390-after.png",
-   "bytes": 130305,
-   "sha256": "cd6688458cdab79df41221d18942d9ba7e6b96bce42712eddec4f5ec9b606b27"
+   "bytes": 130375,
+   "sha256": "4b062b6729b322c3c3e9bf96b03e17998f43694ff9c55068932ccfa616a895bc"
   },
   {
    "path": "buttons-after/G3-390-before.png",
-   "bytes": 131690,
-   "sha256": "afaf658492f85a08142efe5b33a5fe5d68fb5f42ebd094e2e1af3c55611af112"
+   "bytes": 129644,
+   "sha256": "724b30c183b1c2077290ae352994179e53fba29e278c1d349fc4f5cf6d8ec5a5"
   },
   {
    "path": "buttons-after/G4-1280-after.png",
@@ -486,23 +486,23 @@
   },
   {
    "path": "buttons-after/G5-1280-after.png",
-   "bytes": 222497,
-   "sha256": "217deca65c2db12607f16be6ae54966918b0c224c75dec3fad7245a7d1cd291a"
+   "bytes": 283109,
+   "sha256": "47b9d1518150f253cfdb6b656d9667a33744b42a860c28cc6a013858eab8328c"
   },
   {
    "path": "buttons-after/G5-1280-before.png",
-   "bytes": 222922,
-   "sha256": "f326d405cc698b11ef624484555a608ffeaf386d9980f09f334a05e1f2816853"
+   "bytes": 283918,
+   "sha256": "6cbbaffaf49b6f604a4c45be6888ac814720667a2556f380ca164b78cb14f131"
   },
   {
    "path": "buttons-after/G5-390-after.png",
-   "bytes": 149893,
-   "sha256": "5d9c7e59f1c81d9806ca2c7f5b4793a2b88bf80b1cf08c0fc4714f10bf5047bd"
+   "bytes": 122978,
+   "sha256": "448410d1852ee7663ca6eecf9008f6bdf2f5cd5c7ac9d094464598f8a41cc7d9"
   },
   {
    "path": "buttons-after/G5-390-before.png",
-   "bytes": 158467,
-   "sha256": "f430a686e354e1389a4b473a170a91dcc38e0ab6460b102c18b0bb8cf8da6518"
+   "bytes": 121811,
+   "sha256": "31125489d101897c70711e40225e3ab78da631b09c50773fafa190617a7b4408"
   },
   {
    "path": "buttons-after/G6-1280-after.png",
@@ -586,173 +586,173 @@
   },
   {
    "path": "buttons-after/M1-1280-after.png",
-   "bytes": 209614,
-   "sha256": "62114ef354777b5c123a7697ba699b6cd798dfb063b8eb872758a7671aea8583"
+   "bytes": 211858,
+   "sha256": "f99d3d5ec414fcf65a261d136864db52b343ca2d465ed0526b4efcf4dc8e2fcf"
   },
   {
    "path": "buttons-after/M1-1280-before.png",
-   "bytes": 121315,
-   "sha256": "d847f63aad7008d691bb74876eeb1cf74e73c07464d9fe6a36d2bb5668d6e8c8"
+   "bytes": 121189,
+   "sha256": "c5dbcfbd3100a7356810739f00ec6af44b62c6da1059faf76d738ad2234f7d76"
   },
   {
    "path": "buttons-after/M1-390-after.png",
-   "bytes": 149406,
-   "sha256": "e029ef534fac60ca30531d88043064dac8c2b2d9dbdec22e161ba16b9e0e1881"
+   "bytes": 120688,
+   "sha256": "e04f8743d4edbc3c689c79a1dc178014d3de71eae5d0fffce61a464168551e43"
   },
   {
    "path": "buttons-after/M1-390-before.png",
-   "bytes": 82238,
-   "sha256": "3b9c951183ba8ba8d3f27fc03da3067f6f0aecd12819212bca717ab50604f63f"
+   "bytes": 83958,
+   "sha256": "6932787363fbd3a115ca00e3bfb50eef2ec0a2409e70053028d32b16e4febbe8"
   },
   {
    "path": "buttons-after/M10-1280-after.png",
-   "bytes": 120298,
-   "sha256": "27caf31ac30de8d952b672f85632bc6b3c048f3d743f489eecd69b042006c10f"
+   "bytes": 120423,
+   "sha256": "e01f0b1e25a4956479117e88989e95684eeb278472db4cff76fcc93742c9c5da"
   },
   {
    "path": "buttons-after/M10-1280-before.png",
-   "bytes": 121796,
-   "sha256": "3a71e2e0a649572ecdfbf26257d4925cf0bdbf037a8b5ef975f7ab2275f11b27"
+   "bytes": 120499,
+   "sha256": "1ed3255a165720b407dc12bdd062174efe1c11ddc22fe6ea10178e6c49a891ca"
   },
   {
    "path": "buttons-after/M10-390-after.png",
-   "bytes": 81073,
-   "sha256": "111ff511a9d9b035a210b951d556496fbfba8ef42683f290d6d7f2b68d0114bd"
+   "bytes": 79282,
+   "sha256": "346939654cc680deea5fbbddae3e05a9c0ed42bbc607a2b3ae055dda4dcd5d38"
   },
   {
    "path": "buttons-after/M10-390-before.png",
-   "bytes": 84218,
-   "sha256": "19175a5635ea2fec66bf278b793172f2bb270c2c1be7f8ddc717067faeab1e6a"
+   "bytes": 81600,
+   "sha256": "8eda6d9c89774428b6e43eeb830e7529d664247635b0c0ede42009704166ab35"
   },
   {
    "path": "buttons-after/M2-1280-after.png",
-   "bytes": 312185,
-   "sha256": "384b5892fea4c87d6ccba4ecd9f7945a96539082112d38f5112b4550a8f19538"
+   "bytes": 319027,
+   "sha256": "34d644d24a43e05538cb4e1300e6a6b5102745f289d87381aef4be7a45fb2b5e"
   },
   {
    "path": "buttons-after/M2-1280-before.png",
-   "bytes": 120121,
-   "sha256": "408d4e3c5b49ffb5ee1a77c8ff00b44049248274e3e0ec5c13946ae2922c58cb"
+   "bytes": 120368,
+   "sha256": "acef3d556b71d64f8971e49c60fc4cdc3c13461f781b96146634155d6c844efe"
   },
   {
    "path": "buttons-after/M2-390-after.png",
-   "bytes": 168215,
-   "sha256": "b26f10dcc638bd77cba28294058ad58644d67b3e7bb254f82427b52cf77f3670"
+   "bytes": 170611,
+   "sha256": "e7e248e16facfcf6c7dd242a1c1f7b36572d476959b2d65731f2c412ef56de40"
   },
   {
    "path": "buttons-after/M2-390-before.png",
-   "bytes": 81518,
-   "sha256": "59aba23c8bb44253e5deea246db139563f24ad03620a6361a00d2968d16a6bd5"
+   "bytes": 82959,
+   "sha256": "245a35299b94ecf61f04cc19388d213ff022d3f4d37e1d5484306bed4ebe975b"
   },
   {
    "path": "buttons-after/M3-1280-after.png",
-   "bytes": 38101,
-   "sha256": "e091d606c056ceda7636da9f57ffd582a07df80859ea30ca99f03d7e8aae84df"
+   "bytes": 159376,
+   "sha256": "170de6dc394603c142a8c24b3e9d6923d18a7f6991604c93ba9b34221140c5ac"
   },
   {
    "path": "buttons-after/M3-1280-before.png",
-   "bytes": 121111,
-   "sha256": "e9ad594603fd6aa82ae756b9239b8dca0e1a1ab82b16cf9da7fb13c5eeb733c0"
+   "bytes": 122758,
+   "sha256": "d1662a4d96715afad501c0dc97574aaac99b96b7b93cbb846aec620781b8c2eb"
   },
   {
    "path": "buttons-after/M3-390-after.png",
-   "bytes": 46248,
-   "sha256": "989fe2bfeb6c33c86307d715f19ffab34457ff18927f21790cf09cf8006a9e01"
+   "bytes": 20119,
+   "sha256": "35343f263ac0bf1ff99dce0810e120de1bc3565e7d7e7aee621d60b3fe9927a1"
   },
   {
    "path": "buttons-after/M3-390-before.png",
-   "bytes": 86284,
-   "sha256": "33076bc8912baad44ba680238c02827c04e507d48b61e6d85aff029a6ddd557f"
+   "bytes": 82846,
+   "sha256": "bf9a82efccde2b16865d3fbae70703f7db0909d9d8d806461dfd8da7f81034ec"
   },
   {
    "path": "buttons-after/M4-1280-after.png",
-   "bytes": 134410,
-   "sha256": "718024969f1175ab584b7637812a2ee18f1e5208b8d0d5a411e109bc2954cea3"
+   "bytes": 125887,
+   "sha256": "45e80db521b6c3e292197beec9b9996a0889d2c33f1090cbfe018f033fb96a04"
   },
   {
    "path": "buttons-after/M4-1280-before.png",
-   "bytes": 131476,
-   "sha256": "e0644c44d96b08a0323f675b816376ff9a86af42b56ca9f5c468426ef53f28d9"
+   "bytes": 121847,
+   "sha256": "db8f4253fce211bbd4a74f3031ffb69a06a4a7fc60adb39d47d80065f307ac84"
   },
   {
    "path": "buttons-after/M4-390-after.png",
-   "bytes": 87601,
-   "sha256": "892f8a91126352d0933714d35ba035633a84c0e5bfe9a08cd4d973ddc3ca7a71"
+   "bytes": 80298,
+   "sha256": "a6d098e717ec868c6387e8ef5e1a72be90394b5aeabb3bb5b3d58528a4c766b4"
   },
   {
    "path": "buttons-after/M4-390-before.png",
-   "bytes": 86538,
-   "sha256": "2b7f1c2e155bd995ea636c1b9ebc61d6ceab2ede3c030faf462c5a052fa89a11"
+   "bytes": 84115,
+   "sha256": "fad01a0a103216b350d7cb0f248d382d7a87694ef62e7fada5b8c8ce3ba1fe38"
   },
   {
    "path": "buttons-after/M5-1280-after.png",
-   "bytes": 75555,
-   "sha256": "5508453e13e4bfe16b53838a3de1f876d940486df47ab80da6dd6bab6d74c36b"
+   "bytes": 75718,
+   "sha256": "5a1bc3a376fd1ff64451736dcea79c05a6e4ad8513871f92c26312b519f116a2"
   },
   {
    "path": "buttons-after/M5-1280-before.png",
-   "bytes": 117256,
-   "sha256": "4f67b8594675a1e03713f8efd0d254fe7a99d834347d8c31e4ce88a721418052"
+   "bytes": 119878,
+   "sha256": "58447ebf9c064a56e076eac94053dd4e40f37e7cb6a3e0d3ec941e5c5a968ec0"
   },
   {
    "path": "buttons-after/M5-390-after.png",
-   "bytes": 86904,
-   "sha256": "e80d8a8510843da638ef2f94fa67438ac09a2ffd66d3df641e5d74f757ff1ac6"
+   "bytes": 86675,
+   "sha256": "3a83ff561fe9dc76dde2aab5deea79d68f28d81d7912a8991228163e495b530b"
   },
   {
    "path": "buttons-after/M5-390-before.png",
-   "bytes": 83468,
-   "sha256": "7438a482584345101c9bb48769dd98abf4c4b6d91041169578c32bae6f99e149"
+   "bytes": 83508,
+   "sha256": "21988df6a6747363cb846f3e1cf66e57184a8c2d8ffa613aa0cb40105f792aa6"
   },
   {
    "path": "buttons-after/M6-1280-after.png",
-   "bytes": 73596,
-   "sha256": "ebb87a14f72414e8e1f8abe0b253f2d1afce3dd1038f9ae0df4a618a741c7744"
+   "bytes": 73047,
+   "sha256": "95727e614e5079f8fc58fc6dd9533e452ca9513455fb15ca2fdfb7bb8c57a55b"
   },
   {
    "path": "buttons-after/M6-1280-before.png",
-   "bytes": 124713,
-   "sha256": "6689b49005337d6e1a91ca3fd58b15f07df9081a191723c41c0fe2a1c8d86bd0"
+   "bytes": 119079,
+   "sha256": "630e16b81e9d5dcc8c41a1d2dc51b827ed50a060c999167e8083c5ad3420fb5d"
   },
   {
    "path": "buttons-after/M6-390-after.png",
-   "bytes": 84798,
-   "sha256": "0f9ad589cdaa9d651eb8487c86bc7d32afda95f5ed54d914f72257451fd19548"
+   "bytes": 84739,
+   "sha256": "3620fc42c0d33a0ae22071138b5012d4c2ed309284716884cb5da45e85dc836d"
   },
   {
    "path": "buttons-after/M6-390-before.png",
-   "bytes": 82503,
-   "sha256": "4e3e53cec515c911a8e2bfc83ccc8ab558bead41ecd51be2590f8c22dcc70de4"
+   "bytes": 82444,
+   "sha256": "cbc61277c5b5b3a97f5ed7a17b15ab0351d32dfc67bcd221b32d54fb732950e0"
   },
   {
    "path": "buttons-after/M7-1280-after.png",
-   "bytes": 106180,
-   "sha256": "aa8df169d36c7ec8f2ed47e89671ed5c482736596a2d9990ccab5fc2c0a20909"
+   "bytes": 105511,
+   "sha256": "fe9242a503c00478fd18f7012b3a43f82b57e927a4986fbb2c7d7c9e2eb62499"
   },
   {
    "path": "buttons-after/M7-1280-before.png",
-   "bytes": 124135,
-   "sha256": "ebecc4a493543a3396c4bd2d2ca494c37caabdd98b96ce278c417383837b10d1"
+   "bytes": 122464,
+   "sha256": "c28b468e5943293d72182a7c4ba55b7c8b80ba1a61735f8f4b732305efe73de8"
   },
   {
    "path": "buttons-after/M7-390-after.png",
-   "bytes": 96405,
-   "sha256": "427d7ea923573c9d1d9706151e3373039317618fb9c106f49d1650a0e30b17f2"
+   "bytes": 95923,
+   "sha256": "b117eaed713a43c49c981cd5b2c4ccd21175b10c5557d8b4e79d4cdb76bdc80a"
   },
   {
    "path": "buttons-after/M7-390-before.png",
-   "bytes": 81683,
-   "sha256": "6123109bc35b2b4f676b5b8158ad4231368a51bf3dcc6ffe7d8e57e593ab4388"
+   "bytes": 85342,
+   "sha256": "971818f7e11236309f07b436bea4efbe672880d0752aeb73844faf99afdd9c7f"
   },
   {
    "path": "buttons-after/M8-1280-after.png",
-   "bytes": 125477,
-   "sha256": "6f9f25086c1100bb17e6d3d52668206b98d667d069783a72d7b7d63f4c08012e"
+   "bytes": 119270,
+   "sha256": "2efb7b8d7a003691adf1fa65d7e1442a11db31567689bf12e238a7f5cf1fb938"
   },
   {
    "path": "buttons-after/M8-1280-before.png",
-   "bytes": 128695,
-   "sha256": "1562edf506ddc67d0198809d8cfc57ed7eaee0b73fed33499e28776313e04f12"
+   "bytes": 119417,
+   "sha256": "78682ec7a09ce780ff146b452ca4a580f234ed3ecfaca9b2ede6207c9623b660"
   },
   {
    "path": "buttons-after/M8-390-after.png",
@@ -766,133 +766,133 @@
   },
   {
    "path": "buttons-after/M9-1280-after.png",
-   "bytes": 139010,
-   "sha256": "e9e9c4ace30dd489acce3b16a857a45a626fea413e57c2faef7a4aba3cb88063"
+   "bytes": 143273,
+   "sha256": "63e790adcf21862d3eb0f534d8736545c073925d05889c5a6d7541a5c9cc8852"
   },
   {
    "path": "buttons-after/M9-1280-before.png",
-   "bytes": 125900,
-   "sha256": "91d3569e957249c219dde6d12741c231520716d4c728192e38aeb9513b88c350"
+   "bytes": 130554,
+   "sha256": "6e7015d21f0d51c347456f8f04abff5a88f9293f5422dd87d3b02312223786ff"
   },
   {
    "path": "buttons-after/M9-390-after.png",
-   "bytes": 81006,
-   "sha256": "a9a18f5183f5d5e53c5d90e21dffc3270539bf18ae7ca71bedbb2dea3c579eb6"
+   "bytes": 82522,
+   "sha256": "c6d9a819655811d3960b6e2adbad125bf21484a3bbe1291f6921befd5b1785f4"
   },
   {
    "path": "buttons-after/M9-390-before.png",
-   "bytes": 85046,
-   "sha256": "1fadc8e90f53282bf902dda3ad4c4a91b10b1c5abc70c5e543fe77d562472269"
+   "bytes": 84739,
+   "sha256": "dfb9604c849a7aa7320ab3f65646dc6f7b5a4fe3150f36c73add2461f30a02ed"
   },
   {
    "path": "buttons-after/O1-1280-after.png",
-   "bytes": 137772,
-   "sha256": "2c1ec173b05ea9eef6d4f50895c50ed488efcfe086215b738d43ff02adf82bc7"
+   "bytes": 138486,
+   "sha256": "34a4e3c3cf7dfbb324ba36e3b10aeb1b098b51b6e34f1f9c72bce4b3add81dd5"
   },
   {
    "path": "buttons-after/O1-1280-before.png",
-   "bytes": 75593,
-   "sha256": "18a5ebc302d213d4c8171606355e4455a89b37e485a08158e42d18d775ec735b"
+   "bytes": 75676,
+   "sha256": "6d857bc9f02f6b590ea510a08d024093c9f8a025dd0d816122c97a72ce515297"
   },
   {
    "path": "buttons-after/O1-390-after.png",
-   "bytes": 86783,
-   "sha256": "9d2c3c8a7e677637c5d13a8d047aacbe3fa211b75a02d239b2c9cde781f93116"
+   "bytes": 86612,
+   "sha256": "c5e9f86bb89286acebe36d45d951de4c5e7ae1711d817b9d2109300d88860da8"
   },
   {
    "path": "buttons-after/O1-390-before.png",
-   "bytes": 86600,
-   "sha256": "a208bd6f5d97f743108d5f7d6187cdae85497c2110e5e7b6e75964d78ad3528f"
+   "bytes": 87913,
+   "sha256": "8d6fbb10fa851d2d34afe87c12450d15c2ea94abb682dda0debc876e9cd9c74a"
   },
   {
    "path": "buttons-after/O2-1280-after.png",
-   "bytes": 139036,
-   "sha256": "91223724120325e62d45c9a45af09f1825221b192ddb4d500644904e03932f5d"
+   "bytes": 133186,
+   "sha256": "7b55d30626f579fc51be68e2ae93b3ba526e7aefe3eb66335ed30561b525a4e3"
   },
   {
    "path": "buttons-after/O2-1280-before.png",
-   "bytes": 73830,
-   "sha256": "cb9cb072ab3733df5eb592c7169b6d05b2ca663bdaf5379e4e75cfee11c83229"
+   "bytes": 73250,
+   "sha256": "8a14debc1b2b0e9dba88df2e8cd64bac5404851cba27cbbaa3049e1204df26ae"
   },
   {
    "path": "buttons-after/O2-390-after.png",
-   "bytes": 84252,
-   "sha256": "31c71560144a4eba87c9895d243798a0f6e55d45e971847d2048e21b0fe4787f"
+   "bytes": 85233,
+   "sha256": "3542c6ed7d76aca5128258b19b5cc23304f0ebe6ced2ee2ebbeae6565828d0f9"
   },
   {
    "path": "buttons-after/O2-390-before.png",
-   "bytes": 84641,
-   "sha256": "91f7511fef4fc5931c63542c245c4b869a14568c0e5f149e4b1605ca08bfc5b0"
+   "bytes": 84643,
+   "sha256": "b32494766d7cf5a57b20b492c125b54dce418bdef2797edc8fe8f3aa644941f9"
   },
   {
    "path": "buttons-after/O3-1280-after.png",
-   "bytes": 73653,
-   "sha256": "1f722bf063ff0f80d0a5ca44cc6f04b42e7a6bf7c1abdf7bb784fff114b93e4a"
+   "bytes": 73438,
+   "sha256": "5ad6a942ecd99efe3cb5b798e6fd6f7af987c4f4ddc659d40796886610956481"
   },
   {
    "path": "buttons-after/O3-1280-before.png",
-   "bytes": 73452,
-   "sha256": "4363be85979706becf330c7b056c466638f196d96c967a54891af3c5bbd0e98a"
+   "bytes": 73591,
+   "sha256": "671861b690bdb7ef1d3fc5ceaf3b41744bf1cc416d9bbf1e6fb67ac831edf662"
   },
   {
    "path": "buttons-after/O3-390-after.png",
-   "bytes": 84292,
-   "sha256": "a5b1404663209ff78e1884141400e434ce9d69e6eae87369ac359e7eba950cc1"
+   "bytes": 85297,
+   "sha256": "44583ad029437b5907d33cf6c3aac5fe3e7b3f158bdca7df16b878cbc3409e51"
   },
   {
    "path": "buttons-after/O3-390-before.png",
-   "bytes": 84040,
-   "sha256": "f3f8a0e106fc1818abfa038b8daafe5a03241e084e547577af3631a9a536d066"
+   "bytes": 84773,
+   "sha256": "5abd885d1d9cf6690c7146672f7b73aa5ce5f9334c8d897a227d6094d9f84f8e"
   },
   {
    "path": "buttons-after/O4-1280-after.png",
-   "bytes": 106173,
-   "sha256": "f618277fe99aeb9da257e84e1e863015655b4b132d79696627d0b2fef84d6df4"
+   "bytes": 104861,
+   "sha256": "206685d31e3784804885363201f98923f43a2eea8aa959ac99e8556ca568f96e"
   },
   {
    "path": "buttons-after/O4-1280-before.png",
-   "bytes": 106343,
-   "sha256": "204854f2fce9a76e4b86b613ed9fda4cbe04de57a0d28102710de9e9f459bf87"
+   "bytes": 104834,
+   "sha256": "65719e4a1e628db600b3469706d116588355fc04dbe56732b3f3fbf99bda4363"
   },
   {
    "path": "buttons-after/O4-390-after.png",
-   "bytes": 96025,
-   "sha256": "65c3ba737cc5d1a1b7437ef70599f796aec89a77560b36a6dda7a771d18e81ca"
+   "bytes": 97298,
+   "sha256": "c56ff37f5f977b2f466521366cb297be362270b3c5d8443694b6708253f59bde"
   },
   {
    "path": "buttons-after/O4-390-before.png",
-   "bytes": 95819,
-   "sha256": "2b6a0113ae393be790430636c4cb938d028c724b61d41904f23777885466b88d"
+   "bytes": 96084,
+   "sha256": "f4544c5a441efc4270ca549e6d836b537360ae165ad0b93fd4db16fd3db91d8b"
   },
   {
    "path": "buttons-after/O5-1280-after.png",
-   "bytes": 120511,
-   "sha256": "0338aeb3b04bd8e83c432f5aec6d78ebc3f1e162d64d44de554ad853f16836d0"
+   "bytes": 125612,
+   "sha256": "45088d53934bae13ae4d58d3872a82fccee626ef084930aa4435162637988780"
   },
   {
    "path": "buttons-after/O5-1280-before.png",
-   "bytes": 106322,
-   "sha256": "2d4f0ccfd57c94e2fc9363de42dbf0fc79ec22f6f5414f0cf942c1598f3c6f38"
+   "bytes": 105040,
+   "sha256": "af87adba5cdca8913ed68297efd0768db92820dee1730af9808a099e7e976430"
   },
   {
    "path": "buttons-after/O5-390-after.png",
-   "bytes": 97856,
-   "sha256": "952ddeeee052dea16c9a21fa53934203a0fa71f05e16c845c32323364a68fd4d"
+   "bytes": 96156,
+   "sha256": "ceb69cea2ae081951454abfba6f7f55effae49a4bb2cb798645b19c48f338b95"
   },
   {
    "path": "buttons-after/O5-390-before.png",
-   "bytes": 96426,
-   "sha256": "70fd494a6964a0425c7f3b84e33ba77e8101eeddb0e4ec6a28aef17e667a0e7d"
+   "bytes": 96309,
+   "sha256": "958097263115cd08be0e8c7edaca68f686e5e7f63330948c77a460171b53fcc4"
   },
   {
    "path": "buttons-after/O6-1280-after.png",
-   "bytes": 219090,
-   "sha256": "fe38543b2be7b0e020b5dfdd2e61ed480936d934bf61c0791f3824d82a462573"
+   "bytes": 230864,
+   "sha256": "37aee48ef36324441e1f5e4c132572bc7755bc2d0c73a29efc39056b696a9ac1"
   },
   {
    "path": "buttons-after/O6-1280-before.png",
-   "bytes": 133430,
-   "sha256": "f040e6937f3eb4fca1889723262a260a448ef7046c404c49561fd3198a4ee28f"
+   "bytes": 139800,
+   "sha256": "7057e9edd64f2ffe2c6ff88b1628ed60c0a6e6072b8a96929d3ea92d064b284a"
   },
   {
    "path": "buttons-after/O6-390-after.png",
@@ -906,13 +906,13 @@
   },
   {
    "path": "buttons-after/O7-1280-after.png",
-   "bytes": 69914,
-   "sha256": "a453d26786bd6686fe8f4517dc3a9a2bc23608766a2edec7f6b3e74d3d7ca4f7"
+   "bytes": 68780,
+   "sha256": "1c0e5591fc7ac6712a0999f5da9bfd58f764e70bf33ab7463363dd6f9751744a"
   },
   {
    "path": "buttons-after/O7-1280-before.png",
-   "bytes": 164764,
-   "sha256": "44d56a696d6759cd4d81b54bc886ffa5d28a74129abaed5d1069ef8004282435"
+   "bytes": 149130,
+   "sha256": "2530f5cee6d889af388b50df2d84834b3526434c8ff3999a8cbdfd505331de45"
   },
   {
    "path": "buttons-after/O7-390-after.png",
@@ -926,43 +926,43 @@
   },
   {
    "path": "buttons-after/O8-1280-after.png",
-   "bytes": 300629,
-   "sha256": "d945ca262a8fdbc37e0df6e0810ce44e124f698b33ddb08bd6bf9de4d130c860"
+   "bytes": 267204,
+   "sha256": "2c9b4ee97c324126e78668ab3d3db97d418d10d8a455b61847e061c7590310b2"
   },
   {
    "path": "buttons-after/O8-1280-before.png",
-   "bytes": 275412,
-   "sha256": "5bbe3e501fa09579e2c5edeecba464dafab634db9077d478483f82cf8f92f0c4"
+   "bytes": 252325,
+   "sha256": "2eb36a98e697e751352a8b92638fae61bdc86fb1a0591ea641f61eca6318ca94"
   },
   {
    "path": "buttons-after/O8-390-after.png",
-   "bytes": 170289,
-   "sha256": "8eeceffa6cb1bfeab7f777f4d3264aa0340d1089ab000a3c496c194a82863bce"
+   "bytes": 143361,
+   "sha256": "f0e03fd91886c817b58d01275f05956151973d05598598a55974f2807d2ced4f"
   },
   {
    "path": "buttons-after/O8-390-before.png",
-   "bytes": 147850,
-   "sha256": "f5ea7ba4780477d45122a455cfc077eafa437a8b7cf4633d1c01ad40e5b616ed"
+   "bytes": 133667,
+   "sha256": "2342e5208d19464095335a4863119bee74b0a00e67afbef19f7176eccb8e3417"
   },
   {
    "path": "buttons-after/O9-1280-after.png",
-   "bytes": 222467,
-   "sha256": "1ee08932c04cb6bfa6bb416dccef5841f11379e5bea3d11e24f2c26a9fea5262"
+   "bytes": 195722,
+   "sha256": "297035a0bc4687c96f3a95b97269234c011c38eee8ad9ff499d6dd8fb7941062"
   },
   {
    "path": "buttons-after/O9-1280-before.png",
-   "bytes": 237773,
-   "sha256": "7ac23d294ed02ad6c57ea55c525aca4c70938bbb97d8af51ea38c16f0c981b1a"
+   "bytes": 208856,
+   "sha256": "8dd8676753213c1b094a8adbf4adcb1f747e85a3aa90a657b9237de2fc72befd"
   },
   {
    "path": "buttons-after/O9-390-after.png",
-   "bytes": 123808,
-   "sha256": "9ef2d4a63e6b2675540fac33a9fc3c7b54ee3dac9c9d9e173fa24ebc25c3b16b"
+   "bytes": 117193,
+   "sha256": "316ed1dadd0c2fe16dc5372f6af36c81fe926190aae0fe9b274de97c62eecbc5"
   },
   {
    "path": "buttons-after/O9-390-before.png",
-   "bytes": 125412,
-   "sha256": "cbd48b124035efdcf20f15667cb9acb415fb152e8bd28c47343f6662594ba6ba"
+   "bytes": 121613,
+   "sha256": "5dbb8820f9412321e00c277c7efbc01119519a8c927b6395c633d0c2a5105672"
   },
   {
    "path": "buttons-before/G1-1280-after.png",

@@ -1,0 +1,9 @@
+{
+ "schema": "review-input-sha/1",
+ "round": 7,
+ "generated": "2026-10-16 21:24:51 UTC+3",
+ "dicts": {
+  "fil": "afcded6b14e9d88811d2a2200efed035f63d7a885b289b064f5eaf306e7e28f0",
+  "tr": "eca22fa173fc638e4434a37b0d89fba177100674352ddbb2af4f025fe41ac206"
+ }
+}

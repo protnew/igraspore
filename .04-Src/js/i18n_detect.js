@@ -44,6 +44,19 @@ if (typeof window !== 'undefined') {
   window.loadLangPack = loadLangPack;
   window.detectLang = detectLang;
   window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1, 'pt-BR': 1, id: 1, de: 1, fr: 1, hi: 1, ja: 1, vi: 1, ko: 1, th: 1, it: 1, pl: 1, uk: 1, 'zh-TW': 1, ms: 1, bn: 1 };
+  // Dev/QA hook (L.9 screenshots): force a language that is NOT in the enabled set
+  // without editing languages.json / LANGS / localeConfig. Only active when the
+  // proof harness explicitly stores igs_force_lang; real users never have it set.
+  try {
+    var forced = localStorage.getItem('igs_force_lang');
+    if (forced) { try { window.IGS_ENABLED[forced] = 1; } catch (e2) {} }
+    window.__igsForceLang = function (code) {
+      try { localStorage.setItem('igs_force_lang', code); localStorage.setItem('igs_lang', code); } catch (e3) {}
+      try { window.IGS_ENABLED[code] = 1; } catch (e4) {}
+      location.reload();
+    };
+    window.__igsClearForce = function () { try { localStorage.removeItem('igs_force_lang'); } catch (e5) {} };
+  } catch (e6) {}
   try {
     var fromQuery = '';
     try { fromQuery = new URLSearchParams(location.search).get('lang') || ''; } catch (e1) {}

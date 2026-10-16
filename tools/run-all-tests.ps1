@@ -109,15 +109,24 @@ if (Wants 'qa_unit') {
 # ===================== playwright =====================
 if (Wants 'playwright') {
   $pw = Join-Path $root '.04-Src\node_modules\.bin\playwright.cmd'
-  $cmd = "$pw test --config playwright.config.js"
+  $cmd = "$pw test --config playwright.contract.config.js"
   if ($NoE2E) {
     $tests = @(New-Test 'playwright.skip' 'e2e' 'skipped by -NoE2E' 'skipped' 0 '')
     Add-Suite 'playwright' 'Playwright e2e' $cmd $tests $null 0
   } else {
-    $pj = Join-Path $root '.04-Src\07-QA-and-Testing\playwright-results.json'
+    $pj = Join-Path $root '.04-Src\07-QA-and-Testing\contract-results.json'
     if (Test-Path $pj) { Remove-Item $pj -Force }
+    # стенд :8795 — поднять serve-static.mjs, если не отвечает (скрыто, без окна)
+    try {
+      $null = Invoke-WebRequest -Uri 'http://127.0.0.1:8795/index.html' -TimeoutSec 3 -UseBasicParsing
+    } catch {
+      $vbs = Join-Path $env:TEMP 'igs-serve-8795.vbs'
+      Set-Content -Encoding ASCII $vbs ('CreateObject("Wscript.Shell").Run "node ""' + $root + '\tools\serve-static.mjs"" 8795", 0, False')
+      & wscript $vbs
+      Start-Sleep -Seconds 2
+    }
     $sw = [Diagnostics.Stopwatch]::StartNew()
-    $out = & $pw test --config playwright.config.js 2>&1
+    $out = & $pw test --config playwright.contract.config.js 2>&1
     $sw.Stop(); $ec = $LASTEXITCODE
     $out | Out-File -Encoding utf8 (Join-Path $logDir 'playwright.log')
     $tests = @(); $i = 0
@@ -236,7 +245,27 @@ $result = [ordered]@{
 }
 $jf = Join-Path $runsDir "results-$ts.json"
 [System.IO.File]::WriteAllText($jf, ($result | ConvertTo-Json -Depth 8), (New-Object System.Text.UTF8Encoding($false)))
+# -Only: merged results-latest — заменяем только прогнанные наборы, остальные из прошлого latest
+if ($Only) {
+  $latestPath = Join-Path $runsDir 'results-latest.json'
+  if (Test-Path $latestPath) {
+    try {
+      $prev = Get-Content $latestPath -Raw -Encoding UTF8 | ConvertFrom-Json
+      if ($prev -and $prev.suites) {
+        $ranIds = @($suites | ForEach-Object { $_.id })
+        $kept = @($prev.suites | Where-Object { $ranIds -notcontains $_.id })
+        $result.suites = @($kept) + @($suites)
+        $allTests2 = @($result.suites | ForEach-Object { $_.tests } | ForEach-Object { $_ })
+        $result.totals = (Totals $allTests2)
+        $result.merged_from = $prev.run_id
+      }
+    } catch {}
+  }
+}
 Copy-Item $jf (Join-Path $runsDir 'results-latest.json') -Force
+if ($Only -and $result.merged_from) {
+  [System.IO.File]::WriteAllText((Join-Path $runsDir 'results-latest.json'), ($result | ConvertTo-Json -Depth 8), (New-Object System.Text.UTF8Encoding($false)))
+}
 
 $t = $result.totals
 Write-Output "run $ts commit=$commit branch=$branch dirty=$dirty"

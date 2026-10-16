@@ -1,0 +1,121 @@
+iGraSpore V2 - v2.0.0
+КАРТА
+ПОПУЛЯЦИЯ
+iGraSpore v2.0.0
+অণুজীবের সিমুলেশন — ১০০ প্রজাতি + ভাইরাস। পুকুরের কাটা দৃশ্য।
+🌊 В бассейне будет: ~1350 организмов · 101 видов
+সহজ
+সাধারণ
+কঠিন
+শুরু
+ДЕМО / Галерея
+АКВАРИУМ
+☀ Солнце
+★ Сириус A+B
+★ Бетельгейзе
+★ Ригель
+★ Вега
+★ Антарес
+★ Альфа Центавра A+B
+★ Полярная
+★ Двойная (синяя+оранжевая)
+★★ Близнецы
+★★★ Тройная
+★★★★ Четверная
+★ Красный карлик
+★ Оранжевый гигант
+★ Вспышечная (UV Ceti)
+★ Нейтронная (пульсар)
+🌊 Pool will have ~1350 organisms · 101 species
+সব (101)
+সবুজ (খাবার) (25)
+ছোট খাদক (20)
+মাঝারি খাদক (25)
+বড় শিকারি (16)
+পরিষ্কারক (ছত্রাক) (15)
+ভাইরাস (6)
+Фильтр: সব · показано 101 видов · колоний: 6 (вверху списка) · нажми другую кнопку чтобы сменить
+⬡ КОЛОНИЯ · куча клеток
+#4Nostoc punctiforme
+9.8μm · trichormus
+glide
+Greens
+🌞 ест свет
+0 alive
+⬡ КОЛОНИЯ · куча клеток
+#6Microcystis aeruginosa
+10.1μm · colony
+drift
+Greens
+🌞 ест свет
+0 alive
+⬡ КОЛОНИЯ · куча клеток
+#7Gloeocapsa sp.
+10.3μm · diplococci
+glide
+Greens
+🌞 ест свет
+0 alive
+⬡ КОЛОНИЯ · куча клеток
+#11Volvox globator
+10.7μm · volvox
+drift
+Greens
+🌞 ест свет
+0 alive
+⬡ КОЛОНИЯ · куча клеток
+#13Scenedesmus quadricauda
+11μm · rodtococcus
+drift
+Greens
+🌞 ест свет
+0 alive
+⬡ КОЛОНИЯ · куча клеток
+#25Chroococcidiopsis thermalis
+12.4μm · archaea
+drift
+Greens
+🌞 ест свет
+0 alive
+#1Synechocystis sp.
+3μm · circle
+glide
+Greens
+🌞 ест свет
+410 alive
+#2Anabaena variabilis
+3.1μm · filament
+drift
+Greens
+🌞 ест свет
+0 alive
+#3Spirulina platensis
+3.2μm · spiral
+flagella
+Greens
+🌞 ест свет
+0 alive
+#5Oscillatoria limnetica
+3.3μm · filament
+drift
+Greens
+🌞 ест свет
+0 alive
+#8Lyngbya majuscula
+3.6μm · filament
+drift
+Greens
+🌞 ест свет
+410 alive
+#9Chlamydomonas reinhardtii
+3.6μm · bell
+flagella
+Greens
+🌞 ест свет
+0 alive
+#10Chlorella vulgaris
+3.7μm · circle
+drift
+Greens
+🌞 ест свет
+0 a

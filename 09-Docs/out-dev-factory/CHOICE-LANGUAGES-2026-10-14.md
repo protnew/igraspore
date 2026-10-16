@@ -72,3 +72,9 @@
 - [Google Play Console Help — перевод и локализация (store listing, машинный перевод листинга)](https://support.google.com/googleplay/android-developer/answer/9844778)
 - [Ethnologue — число носителей языков (L1+L2)](https://www.ethnologue.com/insights/ethnologue200/)
 - [StatCounter — доля Android по странам](https://gs.statcounter.com/os-market-share/mobile/all)
+
+---
+
+## Примечание 16.10.2026 21:40 (UTC+3) — AN.8 (add-only)
+
+Строка «~45 inline-развилок в 38 JS-файлах» (выше) — плановая оценка до L.1. Фактические числа: замер 14.10 из ТЗ v12 §266 (L.1) — **~41+** развилок `curLang==='ru' ? … : …`; после выноса строк в словари, замер 16.10 — **2 литерала в 2 файлах** (`js/ui.js`, `js/ui_menus.js`; grep `curLang==='ru'`). Число из L.1 (**~41 → 2**) теперь в обоих документах.

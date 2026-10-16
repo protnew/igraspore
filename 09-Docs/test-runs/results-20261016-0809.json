@@ -1,0 +1,118 @@
+{
+    "schema":  "igs-test-run/1",
+    "run_id":  "20261016-0809",
+    "started_at":  "2026-10-16 08:09 UTC+3",
+    "finished_at":  "2026-10-16 08:09 UTC+3",
+    "commit":  "d57072f",
+    "branch":  "release-ready-2026-10-14",
+    "dirty_count":  603,
+    "machine":  "I1",
+    "totals":  {
+                   "pass":  12,
+                   "fail":  0,
+                   "skipped":  0,
+                   "total":  12
+               },
+    "suites":  [
+                   {
+                       "id":  "report",
+                       "name":  "Report verify",
+                       "command":  "powershell -File tools\\verify_report.ps1",
+                       "exit_code":  0,
+                       "ms":  1482,
+                       "log":  "09-Docs/test-runs/logs/20261016-0809/report.log",
+                       "totals":  {
+                                      "pass":  12,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  12
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "report.V1",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "имя и время ок (REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261016-0808.md)",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V2",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "финальная строка: inter",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V3",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "code block содержит путь к отчёту",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V4",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "sha=d57072f head=d57072f parent=30cc86b ab=[0\t0]",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V5",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "dirty=600 файл=600 мои=417 wip=183",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V6",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "ref=True; heartbeat gap=2 мин",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V7",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не ОСТАНОВЛЕН — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V8",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не финал — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V9",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "cited=0 missing=0 critic_check exit=0",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V10",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "нет diff-чисел",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V11",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "sha проверено=2 bad=",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V12",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не Strict — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     }
+                                 ]
+                   }
+               ]
+}

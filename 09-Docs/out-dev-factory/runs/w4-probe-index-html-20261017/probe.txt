@@ -1,0 +1,31 @@
+== 1. хеши и длины кандидатов ==
+.04-Src/src/index.html                                           lines=1248   bytes=43867    sha=b998612152bec1f7 = ЦЕЛЕВОЙ (.04-Src/src/index.html)
+index.html                                                       lines=245    bytes=18408    sha=3062b0357f03f968 
+06-DevOps-and-Release/cf-publish/index.html                      lines=243    bytes=19183    sha=5f5eb8c78aae69f7 
+06-DevOps-and-Release/apk_proj/assets/www/index.html             lines=239    bytes=18125    sha=753510193b14b8d0 
+06-DevOps-and-Release/android/app/src/main/assets/public/index.html НЕТ ФАЙЛА
+06-DevOps-and-Release/deploy-repo/.04-Src/src/index.html         lines=1251   bytes=43863    sha=e0b3a298668ad375 
+.04-Src/dist-lab/lab/index.html                                  lines=1      bytes=1826     sha=539e2fe72c64cade 
+.04-Src/v3-webgl/index.html                                      lines=480    bytes=32837    sha=43610d7c165a41fa 
+
+== 2. кто ссылается на src/index.html или на папку src в сборке ==
+package.json                                             —
+.04-Src/package.json                                     —
+06-DevOps-and-Release/android/capacitor.config.json      1 совпад.
+    4: "webDir": "../cf-publish"
+06-DevOps-and-Release/android/package.json               —
+capacitor.config.json                                    нет файла
+.04-Src/capacitor.config.json                            нет файла
+wrangler.toml                                            нет файла
+06-DevOps-and-Release/deploy.ps1                         4 совпад.
+    16: Write-Host "Copying index.html..."
+    17: Copy-Item $SourceIndex -Destination $DestIndex -Force
+    19: Write-Host "Copying 04-Src..."
+    20: Copy-Item "$ProjectRoot\04-Src" -Destination "$DeployRepo\" -Recurse -Force
+tools/run-all-tests.ps1                                  1 совпад.
+    265: Copy-Item $jf (Join-Path $runsDir 'results-latest.json') -Force
+06-DevOps-and-Release/android/sign-local.ps1             —
+
+== 3. есть ли src/index.html в зеркале сборки (cf-publish) и в APK-www ==
+06-DevOps-and-Release/cf-publish               cf/.04-Src/src/index.html=false cf/src/index.html=false
+06-DevOps-and-Release/apk_proj/assets/www      cf/.04-Src/src/index.html=false cf/src/index.html=false

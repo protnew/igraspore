@@ -1,95 +1,20 @@
-SELFTEST PASS bad-lastline      ждали 'FAIL V2' — есть; итог: VERIFY FAIL 2/14
-SELFTEST PASS bad-nopath        ждали 'FAIL V3' — есть; итог: VERIFY FAIL 2/14
-SELFTEST PASS bad-stop          ждали 'FAIL V7' — есть; итог: VERIFY FAIL 2/14
-SELFTEST PASS bad-criticfile    ждали 'FAIL V9' — есть; итог: VERIFY FAIL 2/14
+SELFTEST PASS bad-lastline      ждали 'FAIL V2' — есть; итог: VERIFY FAIL 1/14
+SELFTEST PASS bad-nopath        ждали 'FAIL V3' — есть; итог: VERIFY FAIL 1/14
+SELFTEST PASS bad-stop          ждали 'FAIL V7' — есть; итог: VERIFY FAIL 1/14
+SELFTEST PASS bad-criticfile    ждали 'FAIL V9' — есть; итог: VERIFY FAIL 1/14
 SELFTEST PASS bad-sha           ждали 'FAIL V11' — есть; итог: VERIFY FAIL 1/14
-SELFTEST PASS bad-heartbeat     ждали 'FAIL V6' — есть; итог: VERIFY FAIL 2/14
-SELFTEST FAIL good              ждали 'VERIFY OK', получено:
-PASS V1 имя и время ок, легаси v9 (REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1538.md)
-PASS V2 финальная строка: stop
-PASS V3 code block содержит путь к отчёту
-PASS V4 sha=d5fe31a head=d5fe31a parent=4ed0f53 ab=[2	0]
-PASS V5 dirty=793 файл=793 мои=793 wip=0
-PASS V6 не промежуточный — пропуск
-PASS V7 Осталось=True; от=Алексей
-PASS V8 не финал — пропуск
-PASS V9 cited=0 missing=0 critic_check exit=0
-PASS V10 нет diff-чисел
-FAIL V11 sha проверено=1 bad=d5fe31a(not-in-origin)
-PASS V12 не Strict — пропуск
-PASS V13 маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v14 (файл на диске есть)
-PASS V14 блок со строки 10, строк таблицы с путями=1
-VERIFY FAIL 1/14
-SELFTEST FAIL good-v14name      ждали 'VERIFY OK', получено:
-PASS V1 имя и время ок, новый шаблон v14 (REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1538.md)
-PASS V2 финальная строка: stop
-PASS V3 code block содержит путь к отчёту
-PASS V4 sha=d5fe31a head=d5fe31a parent=4ed0f53 ab=[2	0]
-PASS V5 dirty=793 файл=793 мои=793 wip=0
-PASS V6 не промежуточный — пропуск
-PASS V7 Осталось=True; от=Алексей
-PASS V8 не финал — пропуск
-PASS V9 критики не упомянуты — пропуск
-PASS V10 нет diff-чисел
-FAIL V11 sha проверено=1 bad=d5fe31a(not-in-origin)
-PASS V12 не Strict — пропуск
-PASS V13 маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v14 (файл на диске есть)
-PASS V14 блок со строки 10, строк таблицы с путями=2
-VERIFY FAIL 1/14
-SELFTEST FAIL inter-v14         ждали 'VERIFY OK', получено:
-PASS V1 имя и время ок, новый шаблон v14 (REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1538.md)
-PASS V2 финальная строка: inter
-PASS V3 code block содержит путь к отчёту
-PASS V4 sha=d5fe31a head=d5fe31a parent=4ed0f53 ab=[2	0]
-PASS V5 dirty=793 файл=793 мои=793 wip=0
-PASS V6 ref=True; heartbeat gap=0 мин
-PASS V7 не ОСТАНОВЛЕН — пропуск
-PASS V8 не финал — пропуск
-PASS V9 критики не упомянуты — пропуск
-PASS V10 нет diff-чисел
-FAIL V11 sha проверено=1 bad=d5fe31a(not-in-origin)
-PASS V12 не Strict — пропуск
-PASS V13 маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v14 (файл на диске есть)
-PASS V14 блок со строки 10, строк таблицы с путями=2
-VERIFY FAIL 1/14
-SELFTEST FAIL full-v14          ждали 'VERIFY OK', получено:
-PASS V1 имя и время ок, новый шаблон v14 (REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1538.md)
-PASS V2 финальная строка: full
-PASS V3 code block содержит путь к отчёту
-PASS V4 sha=d5fe31a head=d5fe31a parent=4ed0f53 ab=[2	0]
-PASS V5 dirty=793 файл=793 мои=793 wip=0
-PASS V6 не промежуточный — пропуск
-PASS V7 не ОСТАНОВЛЕН — пропуск
-PASS V8 origin=True не_сделано=False
-PASS V9 критики не упомянуты — пропуск
-PASS V10 нет diff-чисел
-FAIL V11 sha проверено=1 bad=d5fe31a(not-in-origin)
-PASS V12 не Strict — пропуск
-PASS V13 маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v14 (файл на диске есть)
-PASS V14 явный ноль, строка 10: Файлы >500 строк: 0 (после U47 и исключения по №25)
-VERIFY FAIL 1/14
-SELFTEST FAIL cikl-v14          ждали 'VERIFY OK', получено:
-PASS V1 имя и время ок, новый шаблон v14 (REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1538.md)
-PASS V2 финальная строка: stop
-PASS V3 code block содержит путь к отчёту
-PASS V4 sha=d5fe31a head=d5fe31a parent=4ed0f53 ab=[2	0]
-PASS V5 dirty=793 файл=793 мои=793 wip=0
-PASS V6 не промежуточный — пропуск
-PASS V7 Осталось=True; от=Алексей
-PASS V8 не финал — пропуск
-PASS V9 критики не упомянуты — пропуск
-PASS V10 нет diff-чисел
-FAIL V11 sha проверено=1 bad=d5fe31a(not-in-origin)
-PASS V12 не Strict — пропуск
-PASS V13 маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v14 (файл на диске есть)
-PASS V14 блок со строки 9, строк таблицы с путями=1
-VERIFY FAIL 1/14
-SELFTEST PASS bad-firstline     ждали 'FAIL V13' — есть; итог: VERIFY FAIL 2/14
-SELFTEST PASS bad-tzpath        ждали 'FAIL V13' — есть; итог: VERIFY FAIL 2/14
-SELFTEST PASS bad-500block      ждали 'FAIL V14' — есть; итог: VERIFY FAIL 2/14
-SELFTEST PASS bad-500empty      ждали 'FAIL V14' — есть; итог: VERIFY FAIL 2/14
-SELFTEST PASS bad-v14name-ver   ждали 'FAIL V1' — есть; итог: VERIFY FAIL 2/14
-SELFTEST PASS bad-v14name-date  ждали 'FAIL V1' — есть; итог: VERIFY FAIL 2/14
+SELFTEST PASS bad-heartbeat     ждали 'FAIL V6' — есть; итог: VERIFY FAIL 1/14
+SELFTEST PASS good              ждали 'VERIFY OK' — есть; итог: VERIFY OK 14 checks
+SELFTEST PASS good-v14name      ждали 'VERIFY OK' — есть; итог: VERIFY OK 14 checks
+SELFTEST PASS inter-v14         ждали 'VERIFY OK' — есть; итог: VERIFY OK 14 checks
+SELFTEST PASS full-v14          ждали 'VERIFY OK' — есть; итог: VERIFY OK 14 checks
+SELFTEST PASS cikl-v14          ждали 'VERIFY OK' — есть; итог: VERIFY OK 14 checks
+SELFTEST PASS bad-firstline     ждали 'FAIL V13' — есть; итог: VERIFY FAIL 1/14
+SELFTEST PASS bad-tzpath        ждали 'FAIL V13' — есть; итог: VERIFY FAIL 1/14
+SELFTEST PASS bad-500block      ждали 'FAIL V14' — есть; итог: VERIFY FAIL 1/14
+SELFTEST PASS bad-500empty      ждали 'FAIL V14' — есть; итог: VERIFY FAIL 1/14
+SELFTEST PASS bad-v14name-ver   ждали 'FAIL V1' — есть; итог: VERIFY FAIL 1/14
+SELFTEST PASS bad-v14name-date  ждали 'FAIL V1' — есть; итог: VERIFY FAIL 1/14
 SELFTEST PASS bad-name         ждали 'FAIL V1' — есть
 SELFTEST PASS bad-missing      ждали 'FAIL V1' — есть
-SELFTEST done: 5 fails из 19 случаев
+SELFTEST done: 0 fails из 19 случаев

@@ -22,7 +22,10 @@ for (const l of langs) {
   const title = g(t, /^\s*-?\s*(?:title|название)\s*[:=]\s*(.+)$/im);
   const short = g(t, /^\s*-?\s*(?:short|краткое)\s*[:=]\s*(.+)$/im);
   const full = (t.split(/^##\s*(?:Full|Полное)\s*$/im)[1] || '').trim();
-  const clip = [...full].slice(0, 300).join('').replace(/\|/g, '/') + '…';
+  // FR-W2.2: круг 3+ отдаёт ПОЛНЫЙ текст (не обрезку 300); переносы сворачиваются в « / » для таблицы
+  const clip = args.includes('--full')
+    ? full.replace(/\s*\n\s*/g, ' / ').replace(/\|/g, '/')
+    : [...full].slice(0, 300).join('').replace(/\|/g, '/') + '…';
   md += `| ${l} | ${game.includes(l) ? 'игра' : 'лист.'} | ${title} (${[...title].length}) | ${short} (${[...short].length}) | ${clip} |\n`;
 }
 const out = `09-Docs/i18n-review/store-listing-round${ROUND}-for-review.md`;

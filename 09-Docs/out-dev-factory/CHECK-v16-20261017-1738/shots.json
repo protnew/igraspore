@@ -1,0 +1,75 @@
+[
+ {
+  "name": "01-start-menu-tr",
+  "lang": "tr",
+  "url": "http://127.0.0.1:8795/?lang=tr",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\CHECK-v16-20261017-1738\\01-start-menu-tr.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "startBtn=BAŞLA"
+ },
+ {
+  "name": "02-language-list",
+  "lang": "en",
+  "url": "http://127.0.0.1:8795/?lang=en",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\CHECK-v16-20261017-1738\\02-language-list.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "items=17 es/tr/fil=false/false/false"
+ },
+ {
+  "name": "03-th-menu-fonts",
+  "lang": "th",
+  "url": "http://127.0.0.1:8795/?lang=th",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\CHECK-v16-20261017-1738\\03-th-menu-fonts.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "fontThai=true"
+ },
+ {
+  "name": "04-fil-game-hud",
+  "lang": "fil",
+  "url": "http://127.0.0.1:8795/?lang=fil",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\CHECK-v16-20261017-1738\\04-fil-game-hud.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "game"
+ },
+ {
+  "name": "05-mobile-390x844-game-es",
+  "lang": "es",
+  "url": "http://127.0.0.1:8795/?lang=es",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\CHECK-v16-20261017-1738\\05-mobile-390x844-game-es.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "mobile es"
+ }
+]

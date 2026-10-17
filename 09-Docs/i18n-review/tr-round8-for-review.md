@@ -1,11 +1,11 @@
 # Пакет на проверку аналитику: tr (круг 8)
 
-- Дата: 2026-10-17 10:21:46 UTC+3  |  Круг: 8
+- Дата: 2026-10-17 13:01:07 UTC+3  |  Круг: 8
 - input_sha256 словарей (полные — для raw<tr-analyst-round8.json):
   - `en.json` = d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938
   - `ru.json` = 2610400d06deba97bac15862cfbed319f395ea0bb72759f8ab937960ef6e6c2e
   - `tr.json` = 2298d279ae97ee4f1c0ffd0452ac0827e2ce7dd8f8bc98580157dd4f211bef29
-  - `wiki/tr.json` = 00dba564ab596759f4ec72c641e03d7d951c5cd5a22ff9e94a0960902fc2706f
+  - `wiki/tr.json` = 63873b2494d5c985a3ce6d203ee926ef1f0c1e5d7d8c68139d06bac4a3b23d4b
 - Ключей UI: 412 (из них 🆕 новых после круга 4: 272 — U13 263 + U42 loc.* 9); вики-тел: 108
 - Rubric 0–10 по 5 осям: смысл, глоссарий, регистр, длина, ошибки. Порог включения ≥ 8.
 - Ответ аналитика: `09-Docs/i18n-review/raw/tr-analyst-round8.json` + строка в ANALYST-LEDGER.md (пишет ТОЛЬКО аналитик).
@@ -493,15 +493,15 @@
 | `48` | Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball. | Stentor polymorphus, mavi stentorun akrabası, sıklıkla zooklorellalı. Biçim borazandan küreye değişir. |
 | `49` | Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away. | Vorticella campanula, kasılan bir sap üstünde zildir. Sap anında sarmala büzülür. Hücre kendisi yüzüp kaçmaz. |
 | `50` | Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus. | Vorticella microstoma, küçük bir zildir. Aynı yay sap, daha dar ağız alanı. Sıklıkla detritus üzerinde. |
-| `51` | Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger. | Didinium nasutum, terlikleri avlayan fıçıdır. Toksisitler fırlatır, avı kendinden büyük olsa bile bütün yutar. |
+| `51` | Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger. | Didinium nasutum, terlikleri avlayan fıçıdır. Toksisistler fırlatır, avı kendinden büyük olsa bile bütün yutar. |
 | `52` | Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral. | Spirostomum ambiguum, çok uzun bir purodur. Saniyenin kesrinde birkaç kat büzülür. Siller sarmal dizilir. |
 | `53` | Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells. | Blepharisma americanum, pembe bir siliattır. Blefarizmin pigmenti ışığa duyarlıdır. Süzer ve daha küçük hücrelere saldırabilir. |
-| `54` | Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces. | Euplotes patella, sirleri bacak gibi kullanarak yürür. Yassı, hızlı dönüşler. Yüzeylerden bakterileri sıyırır. |
-| `55` | Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates. | Stylonychia pustulata, dipte 'koşan' bir hypotriktir. Büyük sirler, belirgin ağız. Küçük siliatların avcısı. |
-| `56` | Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists. | Oxytricha trifallax, bir genom modelidir: iki çekirdek ve karmaşık DNA yeniden yazımı. Sirlerle yürür, bakteri ve küçük protistlerle beslenir. |
+| `54` | Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces. | Euplotes patella, sirruslarını bacak gibi kullanarak yürür. Yassı, hızlı dönüşler. Yüzeylerden bakterileri sıyırır. |
+| `55` | Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates. | Stylonychia pustulata, dipte 'koşan' bir hypotriktir. Büyük sirruslar, belirgin ağız. Küçük siliatların avcısı. |
+| `56` | Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists. | Oxytricha trifallax, bir genom modelidir: iki çekirdek ve karmaşık DNA yeniden yazımı. Sirruslarla yürür, bakteri ve küçük protistlerle beslenir. |
 | `57` | Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia. | Tetrahymena thermophila, laboratuvar siliatıdır. Ağızda dört membranella, hızlı bölünme. Telomer ve sil modeli. |
 | `58` | Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded. | Coleps hirtus, dikenli kireçli plakalar içinde bir fıçıdır. Leşçi ve avcı: yaralılara diş geçirir. |
-| `59` | Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out. | Litonotus lamella, 'hortumunda' toksisitler olan yassı bir avcıdır. Avı felç edip emer. |
+| `59` | Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out. | Litonotus lamella, 'hortumunda' toksisistler olan yassı bir avcıdır. Avı felç edip emer. |
 | `60` | Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter. | Dileptus anser'in zehirli ekstruzomları olan uzun bir boynu vardır. Boyunla vurur, sonra yutar. Orta kademe büyük avcı. |
 | `61` | Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria. | Urocentrum turbo, bir topaçtır: ekvatoral sil kuşağı hücreyi yerinde döndürür. Bakteri süzer. |
 | `62` | Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once. | Zoothamnium arbuscula, dallanan zil kolonisidir. Ortak kasılan sap tüm ağacı birden çeker. |
@@ -542,11 +542,11 @@
 | `97` | Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer. | Cellulomonas fimi, selülozu parçalar. Bitki detritusunda sarı basili. O olmadan ölü algler daha uzun kalırdı. |
 | `98` | Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant. | Thermus aquaticus, sıcak kaynakların termofilidir. Taq polimeraz PCR'ın temelidir. Soğuk gölette neredeyse uykuda. |
 | `99` | Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads. | Deinococcus radiodurans, radyasyon şampiyonudur. Paramparça genomu saatler içinde yeniden kurar. Kalın duvar, hücre tetradları. |
-| `1001` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Sexual Eukaryote, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil. |
+| `1001` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Eşeyli Ökaryot, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil. |
 | `T4 Bacteriophage` | T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit. | T4, E. coli'nin büyük bir myovirüsüdür. Kuyruk kasılır ve DNA enjekte eder. Yarım saatte hücre patlar ve düzinelerce faj çıkar. |
 | `Lambda Phage` | Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis). | Lambda, ılımlı bir fajdır. Kromozoma yerleşip uyuyabilir (lizojeni) ya da hücreyi hemen parçalayabilir (lizis). |
 | `T7 Bacteriophage` | T7 has a short tail and very fast replication. A favourite system in synthetic biology. | T7'nin kısa kuyruğu ve çok hızlı replikasyonu vardır. Sentetik biyolojinin gözde sistemi. |
 | `Phi-6 Phage` | Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage. | Phi-6, lipit zarfı olan bir RNA fajıdır. Pseudomonas'ı enfekte eder. Faj için nadir bir zar. |
 | `MS2 Phage` | MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read. | MS2, kuyruksuz minicik bir RNA fajıdır. Erkek E. coli pililerine bağlanır. Genomu okunan ilk RNA genomlarından biriydi. |
 | `Neuro-Parasite` | A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier. | Kurgusal bir göl nöro-parazitidir. Ökaryotlara tutunur ve konak taşıyıcı olana dek davranışını bozar. |
-| `Sexual Eukaryote` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Sexual Eukaryote, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil. |
+| `Sexual Eukaryote` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Eşeyli Ökaryot, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil. |

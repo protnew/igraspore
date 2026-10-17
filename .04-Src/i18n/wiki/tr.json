@@ -153,7 +153,7 @@
     "body": "Vorticella microstoma, küçük bir zildir. Aynı yay sap, daha dar ağız alanı. Sıklıkla detritus üzerinde."
   },
   "51": {
-    "body": "Didinium nasutum, terlikleri avlayan fıçıdır. Toksisitler fırlatır, avı kendinden büyük olsa bile bütün yutar."
+    "body": "Didinium nasutum, terlikleri avlayan fıçıdır. Toksisistler fırlatır, avı kendinden büyük olsa bile bütün yutar."
   },
   "52": {
     "body": "Spirostomum ambiguum, çok uzun bir purodur. Saniyenin kesrinde birkaç kat büzülür. Siller sarmal dizilir."
@@ -162,13 +162,13 @@
     "body": "Blepharisma americanum, pembe bir siliattır. Blefarizmin pigmenti ışığa duyarlıdır. Süzer ve daha küçük hücrelere saldırabilir."
   },
   "54": {
-    "body": "Euplotes patella, sirleri bacak gibi kullanarak yürür. Yassı, hızlı dönüşler. Yüzeylerden bakterileri sıyırır."
+    "body": "Euplotes patella, sirruslarını bacak gibi kullanarak yürür. Yassı, hızlı dönüşler. Yüzeylerden bakterileri sıyırır."
   },
   "55": {
-    "body": "Stylonychia pustulata, dipte 'koşan' bir hypotriktir. Büyük sirler, belirgin ağız. Küçük siliatların avcısı."
+    "body": "Stylonychia pustulata, dipte 'koşan' bir hypotriktir. Büyük sirruslar, belirgin ağız. Küçük siliatların avcısı."
   },
   "56": {
-    "body": "Oxytricha trifallax, bir genom modelidir: iki çekirdek ve karmaşık DNA yeniden yazımı. Sirlerle yürür, bakteri ve küçük protistlerle beslenir."
+    "body": "Oxytricha trifallax, bir genom modelidir: iki çekirdek ve karmaşık DNA yeniden yazımı. Sirruslarla yürür, bakteri ve küçük protistlerle beslenir."
   },
   "57": {
     "body": "Tetrahymena thermophila, laboratuvar siliatıdır. Ağızda dört membranella, hızlı bölünme. Telomer ve sil modeli."
@@ -177,7 +177,7 @@
     "body": "Coleps hirtus, dikenli kireçli plakalar içinde bir fıçıdır. Leşçi ve avcı: yaralılara diş geçirir."
   },
   "59": {
-    "body": "Litonotus lamella, 'hortumunda' toksisitler olan yassı bir avcıdır. Avı felç edip emer."
+    "body": "Litonotus lamella, 'hortumunda' toksisistler olan yassı bir avcıdır. Avı felç edip emer."
   },
   "60": {
     "body": "Dileptus anser'in zehirli ekstruzomları olan uzun bir boynu vardır. Boyunla vurur, sonra yutar. Orta kademe büyük avcı."
@@ -300,7 +300,7 @@
     "body": "Deinococcus radiodurans, radyasyon şampiyonudur. Paramparça genomu saatler içinde yeniden kurar. Kalın duvar, hücre tetradları."
   },
   "1001": {
-    "body": "Sexual Eukaryote, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil."
+    "body": "Eşeyli Ökaryot, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil."
   },
   "T4 Bacteriophage": {
     "body": "T4, E. coli'nin büyük bir myovirüsüdür. Kuyruk kasılır ve DNA enjekte eder. Yarım saatte hücre patlar ve düzinelerce faj çıkar."
@@ -321,6 +321,6 @@
     "body": "Kurgusal bir göl nöro-parazitidir. Ökaryotlara tutunur ve konak taşıyıcı olana dek davranışını bozar."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil."
+    "body": "Eşeyli Ökaryot, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil."
   }
 }

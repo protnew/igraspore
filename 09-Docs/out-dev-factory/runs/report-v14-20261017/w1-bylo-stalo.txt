@@ -1,0 +1,72 @@
+
+### UI fil — изменено ключей: 28 (всего ключей 412)
+| `autoOn` | AUTO | AWTO |
+| `autoPilotOn` | NAKA-AUTO | NAKA-AWTO |
+| `hud.btn.auto` | AUTO | AWTO |
+| `hud.btn.auto.short` | AUTO | AWTO |
+| `hud.btn.light.short` | ILAW | LIWANAG |
+| `aria.aqua` | Akvaryum | Akwaryum |
+| `aria.zo` | Paypayin | Paliitin |
+| `edu.flagella.desc` | Mahabang motor ng paglalangoy. Umiikot o yumuyuko — lumilangoy ang selula papunta sa pagkain o palayo sa panganib (chemotaxis). | Mahabang motor sa paglangoy. Umiikot o kumukurba — lumalangoy ang selula papunta sa pagkain o palayo sa panganib (chemotaxis). |
+| `edu.membrane.desc` | Manipis na lipid na balatan. Kontrolado ang pumasok at labas. May membrane ang bawat selula. | Manipis na lipid na balot. Kinokontrol kung ano ang pumapasok at lumalabas. May membrane ang bawat selula. |
+| `edu.oral.desc` | Sa ciliate — hukay na dinudulot ng cilia ang huli. Dito pumapasok ang pagkain sa digestive vacuole. | Sa ciliate — uka kung saan itinutulak ng cilia ang huli. Dito pumapasok ang pagkain sa digestive vacuole. |
+| `ev.eclipse` | Lubak ng araw | Eklipse ng araw |
+| `fc.schema` | (esquema) | (eskema) |
+| `role.consumer2` | Katamtamang kumakain (ciliate). Sinasala ang tubig: hinihila ang bakteriya at berde. Hindi humaharang sa higante. | Katamtamang kumakain (ciliate). Sinasala ang tubig: hinihila ang bakteriya at berde. Hindi umaatake sa mga higante. |
+| `role.macrophage` | Mga bantay. Umatake sa masasakit/mapanganib na selula — immuno sistema ng lawa. | Mga bantay. Umaatake sa may-sakit/mapanganib na selula — sistemang imyuno ng lawa. |
+| `sp.1000` | Pulat (Nagsasala ng pagkain) | Espongha (Nagsasala ng pagkain) |
+| `star.binary` | ★ Binary (asul+dalandanan) | ★ Binary (asul+kahel) |
+| `star.dwarf` | ★ Pula na dwarf | ★ Pulang dwarf |
+| `star.flare` | ★ Bituing patsik (UV Ceti) | ★ Sumisiklab na bituin (UV Ceti) |
+| `star.giant` | ★ Dalandang higante | ★ Kahel na higante |
+| `tip.energyBar` | Enerhiya ng nilikha. Nabababa sa pagpasang ng oras. Sa zero — mamamatay sa gutom. | Enerhiya ng nilikha. Bumababa habang lumilipas ang oras. Sa zero — mamamatay sa gutom. |
+| `tip.popC` | Tsart ng populasyon. Ipinapakita ang kasaysayan ng panganak at kamatayan. | Tsart ng populasyon. Ipinapakita ang kasaysayan ng pagsilang at kamatayan. |
+| `toast.digest` | Nagtunaw... ({s}s) | Tinutunaw... ({s}s) |
+| `toast.filter.catch2` | Filter: nakuhang ang huli | Filter: nahuli ang biktima |
+| `wgl.diff1` | Ginagawa ng WebGL shader ang background ng tubig (ripgel, caustics, kislap) | Ginagawa ng WebGL shader ang background ng tubig (alon, caustics, kislap) |
+| `wiki.div.budding` | Pagkabuton | Pag-usbong |
+| `x.born` | Isinilangang | Isinilang |
+| `x.locomotion` | Paglalakbay | Paggalaw |
+| `x.totalBorn` | Kabuuang isinilangang | Kabuuang isinilang |
+
+### WIKI fil — изменено ключей: 31 (всего ключей 108)
+| `0` | [object Object] | [object Object] |
+| `2` | [object Object] | [object Object] |
+| `4` | [object Object] | [object Object] |
+| `7` | [object Object] | [object Object] |
+| `13` | [object Object] | [object Object] |
+| `16` | [object Object] | [object Object] |
+| `19` | [object Object] | [object Object] |
+| `22` | [object Object] | [object Object] |
+| `25` | [object Object] | [object Object] |
+| `28` | [object Object] | [object Object] |
+| `35` | [object Object] | [object Object] |
+| `40` | [object Object] | [object Object] |
+| `44` | [object Object] | [object Object] |
+| `45` | [object Object] | [object Object] |
+| `47` | [object Object] | [object Object] |
+| `48` | [object Object] | [object Object] |
+| `52` | [object Object] | [object Object] |
+| `59` | [object Object] | [object Object] |
+| `61` | [object Object] | [object Object] |
+| `63` | [object Object] | [object Object] |
+| `65` | [object Object] | [object Object] |
+| `79` | [object Object] | [object Object] |
+| `81` | [object Object] | [object Object] |
+| `85` | [object Object] | [object Object] |
+| `89` | [object Object] | [object Object] |
+| `91` | [object Object] | [object Object] |
+| `93` | [object Object] | [object Object] |
+| `94` | [object Object] | [object Object] |
+| `1001` | [object Object] | [object Object] |
+| `Lambda Phage` | [object Object] | [object Object] |
+| `Sexual Eukaryote` | [object Object] | [object Object] |
+
+### UI tr — изменено ключей: 5 (всего ключей 412)
+| `midEaterTip` | Orta yiyici: yeşillere veya bakterilere yüz. Siller kendiliğinden süzer. | Orta yiyici: yeşillere veya bakterilere yüz. Kirpikler kendiliğinden süzer. |
+| `edu.flagella.desc` | Uzun yüzme motoru. Döner ya da kıvrılır — hücre yiyeğe ya da tehlikeden uzağa yüzer (kemotaksi). | Uzun yüzme motoru. Döner ya da kıvrılır — hücre yiyeceğe ya da tehlikeden uzağa yüzer (kemotaksi). |
+| `tip.popC` | Popülasyon grafiği. Doğum ve ölüm geçmişini gösterir. | Nüfus grafiği. Doğum ve ölüm geçmişini gösterir. |
+| `wgl.diff1` | Su arka planını WebGL shader’ı çizer (dalga, kauistik, parıltı) | Su arka planını WebGL shader’ı çizer (dalga, kostik, parıltı) |
+| `wiki.div.binary` | İkilii bölünme | İkili bölünme |
+
+### WIKI tr — изменено ключей: 0 (всего ключей 108)

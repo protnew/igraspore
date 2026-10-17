@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Synechocystis, çekirdeği olmayan bir siyanobakteridir. Işıkla yaşar: zarlar üzerinde oksijenli fotosentez yapar, kloroplastı yoktur. Hidrojen metabolizmasının laboratuvar modeli."
+  },
+  "1": {
+    "body": "Anabaena variabilis bir filamenttir. Bazı hücreler heterosiste dönüşüp azot bağlarken komşuları şeker üretir. Gölette bağlı azot sağlayıcısıdır."
+  },
+  "2": {
+    "body": "Spirulina (Arthrospira), gaz veziküllü hücrelerden oluşan bir sarmaldır. Yüzeyin yakınında asılı durur, fotosentez yapar ve yenilebilir. Oyunda su filminde büyük yeşil bir vidadır."
+  },
+  "3": {
+    "body": "Nostoc punctiforme, sümüksü bir kapsül içinde boncuk dizisidir. Serbest ya da bitkilerle simbiyoz içinde yaşar. Koloni yeşil boncuklar yığını gibi görünür."
+  },
+  "4": {
+    "body": "Oscillatoria limnetica, kayan bir filamenttir. Yana doğru salınır ve oksijen salmadan fotosentez yapabilir. Silt ve yüzey filminin tipik sakini."
+  },
+  "5": {
+    "body": "Microcystis aeruginosa, genellikle zehirli (mikrosistin) bir müsilaj kolonisidir. Su çiçeklenmesine yol açar. Oyunda yeşil koloni topudur, riskli av."
+  },
+  "6": {
+    "body": "Gloeocapsa, renkli kılıflar içinde ikili hücrelerdir. Kayalarda ve toprakta yaşar, UV'ye dayanıklıdır. Gölette kılıflı küçük ikili koklar."
+  },
+  "7": {
+    "body": "Lyngbya majuscula, kalın bir siyanobakteri filamentidir. Tahriş edici toksinler salgılayabilir. Ilık kıyılar yakınında halı oluşturur."
+  },
+  "8": {
+    "body": "Chlamydomonas reinhardtii, iki kamçısı ve bir göz lekesi olan yeşil bir hücredir. Işığa doğru yüzer. Alg genetiğinin klasik modeli."
+  },
+  "9": {
+    "body": "Chlorella vulgaris, hareketsiz yeşil bir toptur. Hızlı bölünür, protein bakımından zengindir. Küçük yiyiciler için yem ve uzay gıdası konusu."
+  },
+  "10": {
+    "body": "Volvox globator, binlerce hücreden oluşan içi boş bir küredir. Yavru koloniler içinde olgunlaşıp dışarı çıkar. Oyunda büyük yeşil bir koloni."
+  },
+  "11": {
+    "body": "Euglena gracilis bir miksotroftur: kloroplastı vardır ama yemek de yiyebilir. Kırmızı göz lekesi ışığı izler. Gündüz yeşil; karanlıkta beslenmeye geçer."
+  },
+  "12": {
+    "body": "Scenedesmus quadricauda, genelde uçlarında diken olan dörderli bir sıradır. Dikenler yutmayı zorlaştırır. Yüzmez — sürüklenir."
+  },
+  "13": {
+    "body": "Haematococcus pluvialis, yeşil hareketli bir hücredir; stres altında kızarır (astaksantin) ve kalın bir duvar örer. Kırmızı kistler kuraklığı atlatır."
+  },
+  "14": {
+    "body": "Dunaliella salina'nın sert bir duvarı yoktur, çok tuzlu suda yaşar. Beta-karoten depolar ve turuncu görünür. İki kamçı."
+  },
+  "15": {
+    "body": "Micrasterias rotata, düz yıldız biçimli bir desmiddir. Derin kesikli iki ayna görüntülü yarı. Hareketsiz; asitli bataklık suyunda fotosentez yapar."
+  },
+  "16": {
+    "body": "Navicula, silisli kapaklı tekne biçimli bir diyatomdur. Raphe yarığı boyunca zemin üzerinde kayar. Öldükten sonra kabuğu kalır."
+  },
+  "17": {
+    "body": "Pinnularia viridis, büyük tüylü bir diyatomdur. Simetrik desenli silis kabuğu. Dipte yavaşça kayar."
+  },
+  "18": {
+    "body": "Cyclotella meneghiniana, dairesel merkezi bir diyatomdur. Disk gibi yüzer; kabuk iki kapaktır. Tipik plankton."
+  },
+  "19": {
+    "body": "Diatoma vulgare, zikzak halinde yapışan bir diyatomdur. Koloni su sütunundaki sürtünmeyi artırır."
+  },
+  "20": {
+    "body": "Rhodospirillum rubrum, mor bir sarmaldır. Anoksijenik fotosentez artı organikler. Kırmızı renk bakterioklorofilden gelir."
+  },
+  "21": {
+    "body": "Chromatium vinosum, mor kükürt bakterisidir. Hidrojen sülfürü oksitler ve kükürt granülleri depolar. Oksijen/kükürt sınırında yaşar."
+  },
+  "22": {
+    "body": "Porphyridium cruentum, tek hücreli bir kırmızı algdir. Fikoeritrin kan kırmızısı renk verir. Müsilaj kılıfı, kamçı yok."
+  },
+  "23": {
+    "body": "Prochlorococcus marinus, Dünya'daki en küçük ve en bol fotosentetik hücredir. 1980'lerde keşfedildi. Okyanusu besler."
+  },
+  "24": {
+    "body": "Chroococcidiopsis thermalis bir ekstremofildir: çöl, kaya, radyasyon. Dünya dışı yaşam adayı. Gölette yavaş bir kok kolonisi."
+  },
+  "25": {
+    "body": "Bdellovibrio bacteriovorus, minik bir bakteri avcısıdır. Başka bir hücreye vidalı gibi girer ve konak patlayana dek çoğalır."
+  },
+  "26": {
+    "body": "Vampirococcus, ava dışarıdan tutunur ve içeri girmeden içini emer. Bakterilerin vampiri."
+  },
+  "27": {
+    "body": "Daptobacter, av bakterinin içine girer ve onu içerden yer. Nadir bir hücre içi avcı."
+  },
+  "28": {
+    "body": "Myxococcus xanthus, sosyal bir bakteridir. Sürü halinde avı sarar ve enzim salgılar. Açlıkta meyve gövdesi oluşturur."
+  },
+  "29": {
+    "body": "Bacteriovorax stolpii, denizsel bir Bdellovibrio akrabasıdır. Gram-negatiflere saldırır ve avın periplazmasında yaşar."
+  },
+  "30": {
+    "body": "Halobacteriovorax, tuza dayanıklı bakteri avcısıdır. Aynı numara: duvarı deler ve içinde büyür."
+  },
+  "31": {
+    "body": "Peredibacter starrii, başka bir BALO avcısıdır. Büyük basilleri hedefleyen hızlı, virgül biçimli bir kamçılı."
+  },
+  "32": {
+    "body": "Monas guttula, küçük heterotrofik bir kamçılıdır. Detritus yüzeyinde bakterileri kapar."
+  },
+  "33": {
+    "body": "Oikomonas termo, damla biçimli bir kamçılıdır. Tek kamçı; bakteri filminde avlanır."
+  },
+  "34": {
+    "body": "Anthophysa vegetans, demir-manganez sap üzerinde bir kolonidir. Hücreler püskül halinde oturur ve bakteri yakalar."
+  },
+  "35": {
+    "body": "Chilomonas paramecium, renksiz bir kriptofittir. İki kamçı; çözünmüş organikler ve minik bakterilerle beslenir, kloroplast yok."
+  },
+  "36": {
+    "body": "Cercomonas longicauda, uzun kuyruklu bir amipsi kamçılıdır. Sürünür ve psödopodlarıyla bakterileri yutar."
+  },
+  "37": {
+    "body": "Heteromita globosa, bir toprak kamçılısıdır. Farklı uzunlukta iki kamçı; topraktaki başlıca bakteri yiyici."
+  },
+  "38": {
+    "body": "Bodo saltans, bir kinetoplastiddir. Arka kamçıyla tutunmuş halde yerinde 'dans eder' ve bakterileri kapar."
+  },
+  "39": {
+    "body": "Procryptobia sorokini, Bodo'nun akrabasıdır. Serbest yüzer ve ön kamçısıyla ava vurur."
+  },
+  "40": {
+    "body": "Trypanosoma brucei, uyku hastalığına yol açan bir kan parazitidir. Dalgalanan zar ve tek kamçı. Gölette ince avcı modeli."
+  },
+  "41": {
+    "body": "Leishmania donovani, insanın hücre içi parazitidir. Böcekte kamçılı, makrofaj içinde kamçısız."
+  },
+  "42": {
+    "body": "Monosiga brevicollis, bir koanoflagellat — hayvanların akrabası. Mikrovilüs yakası bakterileri süzer."
+  },
+  "43": {
+    "body": "Salpingoeca rosetta, lorika içinde oturan bir koanoflagellat. Rozet oluşturabilir. Su akımını süzer."
+  },
+  "44": {
+    "body": "Codonosiga botrytis, ortak sap üzerinde koanoflagellat kolonisi. Tek gövdede birkaç filtre."
+  },
+  "45": {
+    "body": "Paramecium caudatum, klasik terlik hayvancığıdır. Binlerce sil, ağız oluğu, kasılgan vakuoller. Bakteri süzer."
+  },
+  "46": {
+    "body": "Paramecium bursaria, zooklorella simbiyontları olan terlik. İçi yeşil: gündüz alglerden şeker, gece filtrasyon."
+  },
+  "47": {
+    "body": "Stentor coeruleus, bir milimetreye kadar mavi bir borazandır. Huniye açılır ve sillerle akım sürer. Yüzebilir ya da oturabilir."
+  },
+  "48": {
+    "body": "Stentor polymorphus, mavi stentorun akrabası, sıklıkla zooklorellalı. Biçim borazandan küreye değişir."
+  },
+  "49": {
+    "body": "Vorticella campanula, kasılan bir sap üstünde zildir. Sap anında sarmala büzülür. Hücre kendisi yüzüp kaçmaz."
+  },
+  "50": {
+    "body": "Vorticella microstoma, küçük bir zildir. Aynı yay sap, daha dar ağız alanı. Sıklıkla detritus üzerinde."
+  },
+  "51": {
+    "body": "Didinium nasutum, terlikleri avlayan fıçıdır. Toksisitler fırlatır, avı kendinden büyük olsa bile bütün yutar."
+  },
+  "52": {
+    "body": "Spirostomum ambiguum, çok uzun bir purodur. Saniyenin kesrinde birkaç kat büzülür. Siller sarmal dizilir."
+  },
+  "53": {
+    "body": "Blepharisma americanum, pembe bir siliattır. Blefarizmin pigmenti ışığa duyarlıdır. Süzer ve daha küçük hücrelere saldırabilir."
+  },
+  "54": {
+    "body": "Euplotes patella, sirleri bacak gibi kullanarak yürür. Yassı, hızlı dönüşler. Yüzeylerden bakterileri sıyırır."
+  },
+  "55": {
+    "body": "Stylonychia pustulata, dipte 'koşan' bir hypotriktir. Büyük sirler, belirgin ağız. Küçük siliatların avcısı."
+  },
+  "56": {
+    "body": "Oxytricha trifallax, bir genom modelidir: iki çekirdek ve karmaşık DNA yeniden yazımı. Sirlerle yürür, bakteri ve küçük protistlerle beslenir."
+  },
+  "57": {
+    "body": "Tetrahymena thermophila, laboratuvar siliatıdır. Ağızda dört membranella, hızlı bölünme. Telomer ve sil modeli."
+  },
+  "58": {
+    "body": "Coleps hirtus, dikenli kireçli plakalar içinde bir fıçıdır. Leşçi ve avcı: yaralılara diş geçirir."
+  },
+  "59": {
+    "body": "Litonotus lamella, 'hortumunda' toksisitler olan yassı bir avcıdır. Avı felç edip emer."
+  },
+  "60": {
+    "body": "Dileptus anser'in zehirli ekstruzomları olan uzun bir boynu vardır. Boyunla vurur, sonra yutar. Orta kademe büyük avcı."
+  },
+  "61": {
+    "body": "Urocentrum turbo, bir topaçtır: ekvatoral sil kuşağı hücreyi yerinde döndürür. Bakteri süzer."
+  },
+  "62": {
+    "body": "Zoothamnium arbuscula, dallanan zil kolonisidir. Ortak kasılan sap tüm ağacı birden çeker."
+  },
+  "63": {
+    "body": "Opercularia coarctata, yay sapı olmayan oturan bir peritrihtir. Kapak ağzı örter. Süzer, kaçmaz."
+  },
+  "64": {
+    "body": "Amoeba proteus, klasik amiptir. Psödopodlar avı sarar. Sabit şekil yok, sil yok."
+  },
+  "65": {
+    "body": "Arcella vulgaris, sert kubbeli kabuklu bir amiptir. Psödopodlar açıklıktan çıkar. Bitkiler üzerinde sürünür."
+  },
+  "66": {
+    "body": "Difflugia oblonga'nın kabuğu, amibin kendisinin yapıştırdığı kum taneciklerindendir. Silt içinde yaşar."
+  },
+  "67": {
+    "body": "Euglypha alveolata'nın kabuğu silis pullarındandır. İnce ipliksi psödopodlar. Küçük bakteri avcısı."
+  },
+  "68": {
+    "body": "Nebela collaris, çalınmış pullardan yapılmış şişe biçimli kabukludur. Orman ve bataklık suları."
+  },
+  "69": {
+    "body": "Centropyxis aculeata, dikenli disk biçimli kabukludur. Açıklık kayıktır. Detritus üzerinde sürünür."
+  },
+  "70": {
+    "body": "Actinophrys sol, bir güneş hayvancığıdır (heliozoa): ince aksopodlar her yöne ışınlanır. Av ışınlara yapışır ve içeri çekilir."
+  },
+  "71": {
+    "body": "Actinosphaerium eichhorni, büyük çok çekirdekli heliozoadır. Aynı ışınlar, çok daha büyük hücre. Siliat ve rotifer yer."
+  },
+  "72": {
+    "body": "Raphidiophrys pallida, pullu bir heliozoadır. Işınlarda silis iğneleri. Pusuda bekleyen plankton avcısı."
+  },
+  "73": {
+    "body": "Rotaria rotatoria, kurumaya dayanabilen bir rotiferdir. Korona çarkı besini ağza döndürür. Gerçek çok hücreli hayvan."
+  },
+  "74": {
+    "body": "Philodina roseola, pembe bir bdelloid rotiferdir. Sülük gibi sürünür, yüzer de. Sadece dişiler; erkek yok."
+  },
+  "75": {
+    "body": "Brachionus plicatilis, lorikalı planktonik rotiferdir. Su ürünlerinde yavru yemi. Alg ve bakteri süzer."
+  },
+  "76": {
+    "body": "Keratella cochlearis, uzun lorika dikeni olan rotiferdir. Diken avcıları caydırır. Yaygın göl planktonu."
+  },
+  "77": {
+    "body": "Asplanchna priodonta, lorikasız kesedir, avcı rotifer. Diğer rotifer ve siliatları bütün yutar."
+  },
+  "78": {
+    "body": "Chaetonotus maximus, bir gastrotrichtir. Pullu, dipte sürünür. Bakteri ve detritus yer."
+  },
+  "79": {
+    "body": "Lepidodermella squamata, üst üste binen pulları olan küçük gastrotrich. Çok hızlı yerinde dönüşler."
+  },
+  "80": {
+    "body": "Macrostomum lignano, mikroskobik bir yassı solucandır. Gerçek kaslar ve gözler. Rejenerasyon modeli. Küçük protistleri avlar."
+  },
+  "81": {
+    "body": "Stenostomum leucops, ince sillü bir solucandır. Enlemesine bölünüp zooid zinciri oluşturur. Detritus ve küçük hayvanların avcısı."
+  },
+  "82": {
+    "body": "Microstomum lineare, hidra yiyip onların yakıcı hücrelerini kendi derisine gömen yassı solucandır. Zooid zinciri."
+  },
+  "83": {
+    "body": "Prostoma graecense, tatlı su nemertinidir. Uzun hortum ava fırlatılır. Nadir büyük dipte avcı."
+  },
+  "84": {
+    "body": "Trichoplax adhaerens, plakozoadır — en basit hayvanlardan. Levha gibi sürünür, besini dışarıda sindirir. Ağız yok."
+  },
+  "85": {
+    "body": "Saccharomyces cerevisiae, ekmek mayasıdır. Tomurcuklanır, şeker yer, CO2 ve alkol salar. Gölette çözünmüş organikleri temizler."
+  },
+  "86": {
+    "body": "Candida albicans, filament halinde büyüyebilen mayadır. Fırsatçı insan patojeni. Oyunda detrital mantar."
+  },
+  "87": {
+    "body": "Mucor mucedo, ekmek küfüdür. Saplı sporangiumlar, ölüler üzerinde hızlı büyüme. Canlıları avlamaz."
+  },
+  "88": {
+    "body": "Rhizopus stolonifer, kara ekmek küfüdür. Stolonlar ve rizoidler zemin üzerinde yayılır. Nişastayı parçalar."
+  },
+  "89": {
+    "body": "Penicillium chrysogenum, fırça küfü — penisilinin kaynağı. Konidial fırçalar. Organikleri parçalar ve çevredeki bakterileri bastırır."
+  },
+  "90": {
+    "body": "Aspergillus niger, kara aspergillustur. Küresel spor başları. Endüstriyel sitrik asit üreticisi. Saprotrof."
+  },
+  "91": {
+    "body": "Batrachochytrium dendrobatidis, kurbağaların kitrid mantarıdır. Tek kamçılı zoosporlar. Gölette su mantarı modeli."
+  },
+  "92": {
+    "body": "Chytriomyces aureus, polen ve alglerde su kitrididir. Altın sporangiumlar; zoosporlar zemine yüzer."
+  },
+  "93": {
+    "body": "Allomyces macrogynus, gerçek miselyumlu su mantarıdır. Diploid ve haploit arasında döner. Zoosporların arka kamçısı vardır."
+  },
+  "94": {
+    "body": "Bacillus subtilis, toprak basilidir. Sporlar kaynamaya dayanır. Proteini parçalar; Gram-pozitif modeli."
+  },
+  "95": {
+    "body": "Pseudomonas putida, temizlik basilidir. Petrol ürünlerini bile yer. Hareketli kamçı, detritus üzerinde hızlı büyüme."
+  },
+  "96": {
+    "body": "Streptomyces coelicolor, filamentli toprak bakterisidir. Toprak kokusunu (geosmin) ve birçok antibiyotiği üretir. Hiflerde sporlar."
+  },
+  "97": {
+    "body": "Cellulomonas fimi, selülozu parçalar. Bitki detritusunda sarı basili. O olmadan ölü algler daha uzun kalırdı."
+  },
+  "98": {
+    "body": "Thermus aquaticus, sıcak kaynakların termofilidir. Taq polimeraz PCR'ın temelidir. Soğuk gölette neredeyse uykuda."
+  },
+  "99": {
+    "body": "Deinococcus radiodurans, radyasyon şampiyonudur. Paramparça genomu saatler içinde yeniden kurar. Kalın duvar, hücre tetradları."
+  },
+  "1001": {
+    "body": "Sexual Eukaryote, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil."
+  },
+  "T4 Bacteriophage": {
+    "body": "T4, E. coli'nin büyük bir myovirüsüdür. Kuyruk kasılır ve DNA enjekte eder. Yarım saatte hücre patlar ve düzinelerce faj çıkar."
+  },
+  "Lambda Phage": {
+    "body": "Lambda, ılımlı bir fajdır. Kromozoma yerleşip uyuyabilir (lizojeni) ya da hücreyi hemen parçalayabilir (lizis)."
+  },
+  "T7 Bacteriophage": {
+    "body": "T7'nin kısa kuyruğu ve çok hızlı replikasyonu vardır. Sentetik biyolojinin gözde sistemi."
+  },
+  "Phi-6 Phage": {
+    "body": "Phi-6, lipit zarfı olan bir RNA fajıdır. Pseudomonas'ı enfekte eder. Faj için nadir bir zar."
+  },
+  "MS2 Phage": {
+    "body": "MS2, kuyruksuz minicik bir RNA fajıdır. Erkek E. coli pililerine bağlanır. Genomu okunan ilk RNA genomlarından biriydi."
+  },
+  "Neuro-Parasite": {
+    "body": "Kurgusal bir göl nöro-parazitidir. Ökaryotlara tutunur ve konak taşıyıcı olana dek davranışını bozar."
+  },
+  "Sexual Eukaryote": {
+    "body": "Sexual Eukaryote, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil."
+  }
+}

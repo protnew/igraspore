@@ -1,7 +1,7 @@
 # Listing pt-BR
 
 title: iGraSpore: Micróbios
-short: Corte do lago: coma, divida e esconda-se num esporo.
+short: Corte do lago: coma, divida e esconda-se em um esporo.
 critic: not scored
 characters: title 20, short 52, full 643
 

@@ -1,7 +1,7 @@
 # Listing fil
 
 title: iGraSpore: Mikrobyo
-short: Lawang hiwa: kumain, humati, magtago sa spora.
+short: Hiwa ng lawa: kumain, humati, magtago sa spora.
 critic: not scored
 
 ## Full

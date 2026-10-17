@@ -1,7 +1,7 @@
 # Listing da
 
 title: iGraSpore: Mikrober
-short: Dam i snit: spis, del dig, skjul i en spore.
+short: Dam i snit: spis, del dig, skjul dig i en spore.
 critic: not scored
 
 ## Full

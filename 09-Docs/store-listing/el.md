@@ -1,7 +1,7 @@
 # Listing el
 
 title: iGraSpore: Μικρόβια
-short: Λίμνη σε τομή: φάε, χωρίσου, κρύψου σε σπόριο.
+short: Λίμνη σε τομή: φάε, διαιρέσου, κρύψου σε σπόριο.
 critic: not scored
 
 ## Full

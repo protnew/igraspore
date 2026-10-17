@@ -1,11 +1,13 @@
-| cs | iGraSpore je bezplatná učební simulace. Jsi buňka v rybníce: jíš, dělíš se a tvoříš spóru, když je nebezpečno. Kolem tebe žije asi… | iGraSpore je bezplatná učební simulace. Jsi buňka v rybníce: jíš, dělíš se a tvoříš spóru, když je nebezpečno. Kolem tebe žije asi… |
-| fi | iGraSpore on ilmainen oppimissimulaatio. Olet solu lammessa: syöt, jaat itsesi ja muodostat itiön kun tilanne muuttuu vaaralliseks… | iGraSpore on ilmainen oppimissimulaatio. Olet solu lammessa: syöt, jakaudut ja muodostat itiön kun tilanne muuttuu vaaralliseksi. … |
-| fil | title: iGraSpore: Microbyo | title: iGraSpore: Mikrobyo |
-| fil | title: iGraSpore: Microbyo Ang iGraSpore ay isang libreng simulasyon para matuto. Ikaw ay isang selula sa lawa: kumakain, humahati… | Ang iGraSpore ay isang libreng simulasyon para matuto. Ikaw ay isang selula sa lawa: kumakain, humahati, at gumagawa ng spora kapa… |
-| hu | Az iGraSpore egy ingyenes oktatási szimuláció. Egy sejt vagy a tóban: eszel, osztódsz, és spórát képezel, ha veszélyes lesz. Körül… | Az iGraSpore egy ingyenes oktatási szimuláció. Egy sejt vagy a tóban: eszel, osztódsz, és spórát képezel, ha veszélyes lesz. Körül… |
-| ms | iGraSpore ialah simulasi pembelajaran percuma. Anda ialah satu sel dalam kolam: makan, membelah dan membentuk spora apabila bahaya… | iGraSpore ialah simulasi pembelajaran percuma. Anda ialah satu sel dalam kolam: makan, membelah dan membentuk spora apabila berbah… |
-| no | iGraSpore er en gratis læringssimulering. Du er en celle i en dam: du spiser, deler deg og danner en spore når det blir farlig. Ru… | iGraSpore er en gratis læringssimulering. Du er en celle i en dam: du spiser, deler deg og danner en spore når det blir farlig. Ru… |
-| ro | iGraSpore este o simulare educațională gratuită. Ești o celulă într-un iaz: mănânci, te divizi și formezi un spor când devine peri… | iGraSpore este o simulare educațională gratuită. Ești o celulă într-un iaz: mănânci, te divizi și formezi un spor când devine peri… |
-| sv | iGraSpore är en gratis lärosimulering. Du är en cell i en damm: du äter, delar dig och bildar en spor när det blir farligt. Runt d… | iGraSpore är en gratis lärosimulering. Du är en cell i en damm: du äter, delar dig och bildar en spor när det blir farligt. Runt d… |
-| sw | iGraSpore ni mchezo wa kujifunza bila malipo. Wewe ni seli katika dimbwi: unakula, unagawanyika na kuunda mbegu (spore) inapokuwa … | iGraSpore ni mchezo wa kujifunza bila malipo. Wewe ni seli katika dimbwi: unakula, unagawanyika na kuunda mbegu (spore) inapokuwa … |
-строк в таблице: 10
+| язык | было (изменённый фрагмент в []) | стало |
+|---|---|---|
+| cs | …ie, nálevníci a rozkladač[e]… (houby). Objevují se i v | …ie, nálevníci a rozkladač[i]… (houby). Objevují se i v |
+| fi | …t solu lammessa: syöt, ja[at itsesi ja muodostat itiön kun tilanne muuttuu vaaralliseksi. Ympärilläsi elää noin sata…]… jakaa, painike kertoo mi | …t solu lammessa: syöt, ja[kaudut ja muodostat itiön kun tilanne muuttuu vaaralliseksi. Ympärilläsi elää noin sata la…]… jakaa, painike kertoo mi |
+| fil | title: iGraSpore: Mi[c]robyo | title: iGraSpore: Mi[k]robyo |
+| fil | …lang account. Walang kino[lektang data ng manlalaro. Ito ay modelo ng food chain, hindi libro]…. Nananatiling Latin ang  | …lang account. Walang kino[kolektang data ng manlalaro. Ito ay modelo ng food chain, hindi aklat-aralin]…. Nananatiling Latin ang  |
+| hu | …t kiválasztod a szervezet[. Az alsó sáv egyszerű: eszik, osztás, spóra és automatikus. A többi a szünet ]…menüben van. Ha még nem t | …t kiválasztod a szervezet[et. Az alsó sáv egyszerű: evés, osztódás, spóra és automatikus. A többi a szünet]…menüben van. Ha még nem t |
+| ms | …membentuk spora apabila b[]…ahaya. Kira-kira seratus  | …membentuk spora apabila b[erb]…ahaya. Kira-kira seratus  |
+| no | … farlig. Rundt deg lever [rundt hundre arter: grønne, bakterier, ciliater og nedbrytere (sopp). Virus dukker også op…]. | … farlig. Rundt deg lever [omkring hundre arter: grønne, bakterier, ciliater og nedbrytere (sopp). Virus dukker også …]. |
+| ro | …l al lanțului trofic, nu [o carte]…. Numele latine ale speci | …l al lanțului trofic, nu [un manual]…. Numele latine ale speci |
+| sv | …arter: gröna, bakterier, [toffeldjur och nedbrytare (svampar). Virus förekommer också. Du väljer organism före start…] latin. | …arter: gröna, bakterier, [ciliater (fransdjur) och nedbrytare (svampar). Virus förekommer också. Du väljer organism …] latin. |
+| sw | …jidudu wenye nywele na vi[chunguzi (fangasi). Virusi pia huonekana. Unachagua kiumbe kabla ya kuanza. Upau wa chini …]… ni mfano wa mnyororo wa  | …jidudu wenye nywele na vi[ozeshaji (fangasi). Virusi pia huonekana. Unachagua kiumbe kabla ya kuanza. Upau wa chini …]… ni mfano wa mnyororo wa  |
+строк: 10 | языков: cs, fi, fil, hu, ms, no, ro, sv, sw | одинаковых пар отброшено: 0

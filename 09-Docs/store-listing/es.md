@@ -1,7 +1,7 @@
 # Listing es
 
 title: iGraSpore: Microbios
-short: Un estanque en sección: come, divide, escóndete en una espora.
+short: Un estanque en sección: come, divídete, escóndete en una espora.
 critic: not scored
 
 ## Full

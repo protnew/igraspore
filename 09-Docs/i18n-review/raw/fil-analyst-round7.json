@@ -1,0 +1,231 @@
+{
+ "schema": "critic/1",
+ "role": "analyst",
+ "model": "Grok Bot",
+ "session_id": "analyst-08-20261017-0847",
+ "round": 7,
+ "started_at": "2026-10-17T08:47:00+03:00",
+ "finished_at": "2026-10-17T09:01:13+03:00",
+ "input_sha256": {
+  "fil.json": "afcded6b14e9d88811d2a2200efed035f63d7a885b289b064f5eaf306e7e28f0",
+  "wiki/fil.json": "4bab5052ea22a0a754efcaace1a0d3c0366ab5b699816ddafb2121c80647c0ce",
+  "en.json": "d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938"
+ },
+ "langs": [
+  {
+   "code": "fil",
+   "score": 7.0,
+   "axes": {
+    "meaning": 7,
+    "glossary": 6.5,
+    "register": 7.5,
+    "length": 9,
+    "errors": 5
+   },
+   "issues": [
+    {
+     "key": "aria.aqua",
+     "problem": "«Akvaryum» — это турецкое слово (в fil-словаре), рядом aquarium = «AKWARIUM»",
+     "fix": "Akwaryum"
+    },
+    {
+     "key": "aria.zo",
+     "problem": "«Paypayin» — не слово; пара к aria.zi «Palakihin»",
+     "fix": "Paliitin"
+    },
+    {
+     "key": "ev.eclipse",
+     "problem": "«Lubak ng araw» — lubak = яма/выбоина на дороге, не затмение",
+     "fix": "Eklipse ng araw"
+    },
+    {
+     "key": "sp.1000",
+     "problem": "«Pulat» — не слово (губка)",
+     "fix": "Espongha (Nagsasala ng pagkain)"
+    },
+    {
+     "key": "fc.schema",
+     "problem": "«(esquema)» — испанское слово",
+     "fix": "(eskema)"
+    },
+    {
+     "key": "wiki.div.budding",
+     "problem": "«Pagkabuton» — не слово и расходится с loc.budding «pag-usbong»",
+     "fix": "Pag-usbong"
+    },
+    {
+     "key": "wgl.diff1",
+     "problem": "«ripgel» — не слово",
+     "fix": "…background ng tubig (alon, caustics, kislap)"
+    },
+    {
+     "key": "x.born / x.totalBorn",
+     "problem": "«Isinilangang» — висячая связка -ng, ошибка",
+     "fix": "Isinilang / Kabuuang isinilang"
+    },
+    {
+     "key": "x.locomotion",
+     "problem": "«Paglalakbay» = путешествие, а не способ движения",
+     "fix": "Paggalaw"
+    },
+    {
+     "key": "edu.membrane.desc",
+     "problem": "«Kontrolado ang pumasok at labas» — неграмматично; «balatan» не слово",
+     "fix": "Manipis na lipid na balot. Kinokontrol kung ano ang pumapasok at lumalabas. May membrane ang bawat selula."
+    },
+    {
+     "key": "edu.flagella.desc",
+     "problem": "«paglalangoy», «lumilangoy» — неверные формы",
+     "fix": "Mahabang motor sa paglangoy. Umiikot o kumukurba — lumalangoy ang selula papunta sa pagkain o palayo sa panganib (chemotaxis)."
+    },
+    {
+     "key": "edu.oral.desc",
+     "problem": "«hukay na dinudulot ng cilia ang huli» — бессмысленно (dulot = причинять)",
+     "fix": "Sa ciliate — uka kung saan itinutulak ng cilia ang huli. Dito pumapasok ang pagkain sa digestive vacuole."
+    },
+    {
+     "key": "tip.energyBar",
+     "problem": "«Nabababa sa pagpasang ng oras» — ошибка формы и слова",
+     "fix": "Enerhiya ng nilikha. Bumababa habang lumilipas ang oras. Sa zero — mamamatay sa gutom."
+    },
+    {
+     "key": "role.consumer2",
+     "problem": "«Hindi humaharang sa higante» — harang = загораживать; смысл «не нападают на гигантов»",
+     "fix": "…Hindi umaatake sa mga higante."
+    },
+    {
+     "key": "role.macrophage",
+     "problem": "«Umatake» (повелит.) и «immuno sistema» — смесь",
+     "fix": "Mga bantay. Umaatake sa may-sakit/mapanganib na selula — sistemang imyuno ng lawa."
+    },
+    {
+     "key": "toast.filter.catch2",
+     "problem": "«nakuhang ang huli» — ошибка формы",
+     "fix": "Filter: nahuli ang biktima"
+    },
+    {
+     "key": "toast.digest",
+     "problem": "«Nagtunaw...» — прошедшее/непереходное; нужно «переваривает»",
+     "fix": "Tinutunaw... ({s}s)"
+    },
+    {
+     "key": "star.dwarf / star.giant / star.binary / star.flare",
+     "problem": "«Pula na dwarf», «Dalandang higante», «dalandanan», «patsik» — ошибки/не слова",
+     "fix": "★ Pulang dwarf / ★ Kahel na higante / ★ Binary (asul+kahel) / ★ Sumisiklab na bituin (UV Ceti)"
+    },
+    {
+     "key": "tip.popC",
+     "problem": "«panganak» — не то слово (роды у человека)",
+     "fix": "…kasaysayan ng pagsilang at kamatayan."
+    },
+    {
+     "key": "hud.btn.light / hud.btn.light.short",
+     "problem": "LIWANAG и ILAW для одной кнопки",
+     "fix": "LIWANAG в обоих"
+    },
+    {
+     "key": "autoOn / hud.btn.auto / auto.on",
+     "problem": "AUTO и AWTO вперемешку",
+     "fix": "везде AWTO"
+    },
+    {
+     "key": "wiki 2",
+     "problem": "«tornillo» — испанское слово",
+     "fix": "turnilyo"
+    },
+    {
+     "key": "wiki 4",
+     "problem": "«Umuuga ito pahilis» — pahilis = наискось; нужно «из стороны в сторону»",
+     "fix": "Umuuga ito pagilid-gilid"
+    },
+    {
+     "key": "wiki 7",
+     "problem": "«matsa» — не слово",
+     "fix": "banig"
+    },
+    {
+     "key": "wiki 13",
+     "problem": "«nagpapalagyan», «nakalulutas sa tagtuyot» (lutas = решать задачу)",
+     "fix": "nagpapatubo ng makapal na dingding; nakaliligtas sa tagtuyot"
+    },
+    {
+     "key": "wiki 16",
+     "problem": "«pintoan» — не слово",
+     "fix": "balbula"
+    },
+    {
+     "key": "wiki 19",
+     "problem": "«salagat» — не слово",
+     "fix": "hila (drag) sa haligi ng tubig"
+    },
+    {
+     "key": "wiki 22",
+     "problem": "«isang-uniselula» — тавтология",
+     "fix": "isang uniselular na pulang alga"
+    },
+    {
+     "key": "wiki 25 / Neuro-Parasite",
+     "problem": "«punong» — обрубок слова (хозяин = host)",
+     "fix": "punong-abala (host)"
+    },
+    {
+     "key": "wiki 44",
+     "problem": "«salsala» — не слово",
+     "fix": "pansala"
+    },
+    {
+     "key": "wiki 45",
+     "problem": "«bulate ng bibig» — bulate = червь; нужно «ротовая бороздка»",
+     "fix": "uka ng bibig"
+    },
+    {
+     "key": "wiki 47 / 48",
+     "problem": "«trumpo» = юла; Stentor — «труба»",
+     "fix": "trumpeta"
+    },
+    {
+     "key": "wiki 52",
+     "problem": "«Kumikilos ito nang ilang beses» — смысл «сжимается в несколько раз» потерян",
+     "fix": "Umiikli ito nang ilang ulit sa loob ng bahagi ng segundo."
+    },
+    {
+     "key": "wiki 59",
+     "problem": "«hinihihipan» = дует; нужно «высасывает»",
+     "fix": "sinisipsip"
+    },
+    {
+     "key": "wiki 63",
+     "problem": "«Takip ang sumasagwan sa bibig» (sagwan = весло)",
+     "fix": "May takip na tumatakip sa bibig."
+    },
+    {
+     "key": "wiki 65",
+     "problem": "«kubo» = хижина; нужен «купол»",
+     "fix": "simboryo"
+    },
+    {
+     "key": "wiki 79",
+     "problem": "«nag-uumpugan» = сталкиваются",
+     "fix": "nagpapatong-patong na kaliskis"
+    },
+    {
+     "key": "wiki 85 / 94",
+     "problem": "«pampasaka», «nalutunaw», «nakalulutas» — ошибки",
+     "fix": "lebadura ng tinapay; natunaw na organiko; nakaliligtas sa kumukulong tubig"
+    },
+    {
+     "key": "wiki Lambda Phage",
+     "problem": "«sumakap», «gutirin» — не слова",
+     "fix": "sumanib sa chromosome …; agad na wasakin ang selula (lysis)"
+    },
+    {
+     "key": "wiki (общее)",
+     "problem": "~30 тел с длинными английскими вставками (social bacterium, fruiting body, sleeping sickness, teaching model, water-fungus, brush mold)",
+     "fix": "перевести общеупотребительные слова (bakteryang panlipunan, sakit sa pagtulog, modelong panturo, amag na parang brotsa); латинские названия видов оставить"
+    }
+   ]
+  }
+ ],
+ "log": "ANALYST-ROUND7-2026-10-17.md",
+ "note": "все 9 замечаний круга 5 исправлены (проверено по ключам); полное чтение 412 ключей и 108 тел вики выявило 40 новых групп ошибок — ниже порога, нужен круг 8"
+}

@@ -1,0 +1,71 @@
+{
+ "schema": "critic/1",
+ "role": "analyst",
+ "model": "Grok Bot",
+ "session_id": "analyst-08-20261017-0847",
+ "round": 7,
+ "started_at": "2026-10-17T08:47:00+03:00",
+ "finished_at": "2026-10-17T09:01:13+03:00",
+ "input_sha256": {
+  "tr.json": "eca22fa173fc638e4434a37b0d89fba177100674352ddbb2af4f025fe41ac206",
+  "wiki/tr.json": "00dba564ab596759f4ec72c641e03d7d951c5cd5a22ff9e94a0960902fc2706f",
+  "en.json": "d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938"
+ },
+ "langs": [
+  {
+   "code": "tr",
+   "score": 8.3,
+   "axes": {
+    "meaning": 8.5,
+    "glossary": 8,
+    "register": 8.5,
+    "length": 9,
+    "errors": 7.5
+   },
+   "issues": [
+    {
+     "key": "wiki.div.binary",
+     "problem": "«İkilii bölünme» — опечатка",
+     "fix": "İkili bölünme"
+    },
+    {
+     "key": "edu.flagella.desc",
+     "problem": "«yiyeğe» — опечатка",
+     "fix": "…hücre yiyeceğe ya da tehlikeden uzağa yüzer (kemotaksi)."
+    },
+    {
+     "key": "wgl.diff1",
+     "problem": "«kauistik» — опечатка",
+     "fix": "kostik"
+    },
+    {
+     "key": "midEaterTip",
+     "problem": "«Siller» — везде в словаре «Kirpikler»",
+     "fix": "…Kirpikler kendiliğinden süzer."
+    },
+    {
+     "key": "tip.popC",
+     "problem": "«Popülasyon» — в остальных ключах «Nüfus»",
+     "fix": "Nüfus grafiği. Doğum ve ölüm geçmişini gösterir."
+    },
+    {
+     "key": "wiki 51 / 59",
+     "problem": "«Toksisitler» — неверный термин (toxicyst)",
+     "fix": "toksisistler"
+    },
+    {
+     "key": "wiki 54 / 55 / 56",
+     "problem": "«sirler/sirlerle» — cirri по-турецки «sirruslar»",
+     "fix": "sirruslar / sirruslarla"
+    },
+    {
+     "key": "wiki 1001 / Sexual Eukaryote",
+     "problem": "имя вида оставлено по-английски, а sp.1001 = «Cinsel Ökaryot»",
+     "fix": "Eşeyli Ökaryot, eşeyli üremenin öğretim modelidir. …"
+    }
+   ]
+  }
+ ],
+ "log": "ANALYST-ROUND7-2026-10-17.md",
+ "note": "замечание круга 6 (dTip.temp) исправлено; 8 мелких замечаний — не блокируют (score ≥ 8); если их править, sha изменится и нужен круг 8 вместе с fil"
+}

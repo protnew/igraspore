@@ -1,13 +1,17 @@
 | язык | было (изменённый фрагмент в []) | стало |
 |---|---|---|
 | cs | …ie, nálevníci a rozkladač[e]… (houby). Objevují se i v | …ie, nálevníci a rozkladač[i]… (houby). Objevují se i v |
+| da | …it: spis, del dig, skjul []i en spore. | …it: spis, del dig, skjul [dig ]i en spore. |
+| el | …ort: Λίμνη σε τομή: φάε, [χωρί]σου, κρύψου σε σπόριο. | …ort: Λίμνη σε τομή: φάε, [διαιρέ]σου, κρύψου σε σπόριο. |
+| es | …que en sección: come, div[id]…e, escóndete en una espor | …que en sección: come, div[ídet]…e, escóndete en una espor |
 | fi | …t solu lammessa: syöt, ja[at itsesi ja muodostat itiön kun tilanne muuttuu vaaralliseksi. Ympärilläsi elää noin sata…]… jakaa, painike kertoo mi | …t solu lammessa: syöt, ja[kaudut ja muodostat itiön kun tilanne muuttuu vaaralliseksi. Ympärilläsi elää noin sata la…]… jakaa, painike kertoo mi |
 | fil | title: iGraSpore: Mi[c]robyo | title: iGraSpore: Mi[k]robyo |
+| fil | short: [Lawang hi]…wa: kumain, humati, magta | short: [Hiwa ng la]…wa: kumain, humati, magta |
 | fil | …lang account. Walang kino[lektang data ng manlalaro. Ito ay modelo ng food chain, hindi libro]…. Nananatiling Latin ang  | …lang account. Walang kino[kolektang data ng manlalaro. Ito ay modelo ng food chain, hindi aklat-aralin]…. Nananatiling Latin ang  |
 | hu | …t kiválasztod a szervezet[. Az alsó sáv egyszerű: eszik, osztás, spóra és automatikus. A többi a szünet ]…menüben van. Ha még nem t | …t kiválasztod a szervezet[et. Az alsó sáv egyszerű: evés, osztódás, spóra és automatikus. A többi a szünet]…menüben van. Ha még nem t |
 | ms | …membentuk spora apabila b[]…ahaya. Kira-kira seratus  | …membentuk spora apabila b[erb]…ahaya. Kira-kira seratus  |
 | no | … farlig. Rundt deg lever [rundt hundre arter: grønne, bakterier, ciliater og nedbrytere (sopp). Virus dukker også op…]. | … farlig. Rundt deg lever [omkring hundre arter: grønne, bakterier, ciliater og nedbrytere (sopp). Virus dukker også …]. |
+| pt-BR | …oma, divida e esconda-se [n]um esporo. | …oma, divida e esconda-se [em ]um esporo. |
 | ro | …l al lanțului trofic, nu [o carte]…. Numele latine ale speci | …l al lanțului trofic, nu [un manual]…. Numele latine ale speci |
 | sv | …arter: gröna, bakterier, [toffeldjur och nedbrytare (svampar). Virus förekommer också. Du väljer organism före start…] latin. | …arter: gröna, bakterier, [ciliater (fransdjur) och nedbrytare (svampar). Virus förekommer också. Du väljer organism …] latin. |
 | sw | …jidudu wenye nywele na vi[chunguzi (fangasi). Virusi pia huonekana. Unachagua kiumbe kabla ya kuanza. Upau wa chini …]… ni mfano wa mnyororo wa  | …jidudu wenye nywele na vi[ozeshaji (fangasi). Virusi pia huonekana. Unachagua kiumbe kabla ya kuanza. Upau wa chini …]… ni mfano wa mnyororo wa  |
-строк: 10 | языков: cs, fi, fil, hu, ms, no, ro, sv, sw | одинаковых пар отброшено: 0

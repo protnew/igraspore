@@ -352,28 +352,39 @@ function updateCamera(dt){
     var rt = camKeys.d || keys['d'] || keys['arrowright'];
     if(up){cam.y-=cs;moved=true;}if(dn){cam.y+=cs;moved=true;}
     if(lf){cam.x-=cs;moved=true;}if(rt){cam.x+=cs;moved=true;}
-    if(moved) window.screensaverAutoCam=false;
+    if(moved){
+      window.screensaverAutoCam=false;
+      // Drop the sticky target so the next idle pick starts from this view,
+      // instead of whipping back to a creature on the other side of the pond.
+      if(window._aqFollow){
+        window._aqFollow.targetId = null;
+        window._aqFollow.wasInView = false;
+        window._aqFollow.offSince = 0;
+        window._aqFollow.vx = 0;
+        window._aqFollow.vy = 0;
+      }
+    }
     
     if (moved) window.lastInteractionTime = Date.now();
     if (!window.lastInteractionTime) window.lastInteractionTime = Date.now();
-    
-    if (Date.now() - window.lastInteractionTime > 15000) {
+
+    // Demo keeps a free overview (no chase). Aquarium stays locked on.
+    // Other free-cam (play / virus spectator) arms the screensaver after 15s idle.
+    var _aqLock = !!(window._aquariumLock && window.spectatorMode && !window.demoMode);
+    if(window.demoMode){
+        window.screensaverAutoCam = false;
+    } else if(_aqLock){
+        window.screensaverAutoCam = true;
+    } else if (Date.now() - window.lastInteractionTime > 15000) {
         window.screensaverAutoCam = true;
     } else {
         window.screensaverAutoCam = false;
     }
 
+    // Sticky follow + hysteresis. Do not pick the largest organism each frame:
+    // two distant cells of similar size swap the lead and the camera rushes.
     if(window.screensaverAutoCam && !moved && !window.demoMode){
-      var _scTarget=null,_scMaxSize=0;
-      for(var _i=0;_i<orgs.length;_i++){
-        var _o=orgs[_i];
-        if(_o.alive&&_o.size>_scMaxSize){_scMaxSize=_o.size;_scTarget=_o;}
-      }
-      if (_scTarget) {
-          // Smooth slow follow for screensaver
-          cam.x += (_scTarget.x - cam.x) * 0.3 * dtc;
-          cam.y += (_scTarget.y - cam.y) * 0.3 * dtc;
-      }
+      if(typeof stepAquariumCamera === 'function') stepAquariumCamera(dtc);
     }
     
     cam.x=clamp(cam.x,-PW-200,PW+200);cam.y=clamp(cam.y,-280,PD+100); // sky + surface

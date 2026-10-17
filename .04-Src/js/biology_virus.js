@@ -40,11 +40,24 @@ function updateInfections(dt){
 }
 
 function updateViruses(dt){
+  if(window.demoMode){
+    for(var di=0; di<viruses.length; di++){
+      var dv=viruses[di];
+      if(!dv || !dv.demoPinned) continue;
+      dv.demoBobPhase = (dv.demoBobPhase || 0) + dt * 1.2;
+      dv.x = dv.demoHomeX;
+      dv.y = dv.demoHomeY + Math.sin(dv.demoBobPhase) * 2.2;
+      dv.vx = 0; dv.vy = 0; dv.target = null;
+    }
+    return;
+  }
   var vr=settings.virusRate*DIFF[difficulty].virus;
   virusT+=dt;
   if(virusT>1/vr){virusT=0;spawnVirus();}
   for(var i=viruses.length-1;i>=0;i--){
-    var v=viruses[i];v.age+=dt;
+    var v=viruses[i];
+    if(v.demoPinned) continue;
+    v.age+=dt;
     v.wobble+=dt*3;
     // Find target bacteria
     if(!v.target||!v.target.alive){

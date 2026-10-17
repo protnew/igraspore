@@ -98,6 +98,7 @@ function render(){
     if(settings.healthBars)renderHealthBars();
   }
   if(window.demoMode&&typeof renderDemoLabels==="function")renderDemoLabels();
+  if(typeof renderSpectatorCaptions==="function") renderSpectatorCaptions();
     renderTooltip();
   // Re-draw sun ON TOP of particles (prevents green halo from phytoplankton)
   if(typeof renderSunOverlay==='function') if(typeof window.renderNightSky==='function') window.renderNightSky(ctx, cv, (typeof dayLight==='number'?dayLight:0.5), fc);

@@ -1,0 +1,173 @@
+[
+ {
+  "name": "01-start-menu-fil",
+  "lang": "fil",
+  "url": "http://127.0.0.1:8795/?lang=fil",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\01-start-menu-fil.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "startBtn=SIMULA"
+ },
+ {
+  "name": "01-start-menu-tr",
+  "lang": "tr",
+  "url": "http://127.0.0.1:8795/?lang=tr",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\01-start-menu-tr.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "startBtn=BAŞLA"
+ },
+ {
+  "name": "01-start-menu-es",
+  "lang": "es",
+  "url": "http://127.0.0.1:8795/?lang=es",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\01-start-menu-es.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "startBtn=EMPEZAR"
+ },
+ {
+  "name": "02-fil-tip-divide-Hati",
+  "lang": "fil",
+  "url": "http://127.0.0.1:8795/?lang=fil",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\02-fil-tip-divide-Hati.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "title=\"Hati\""
+ },
+ {
+  "name": "03-tr-gameover-dTip-temp",
+  "lang": "tr",
+  "url": "http://127.0.0.1:8795/?lang=tr",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\03-tr-gameover-dTip-temp.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "dTip.temp shown: İpucu: Termometreyi izle. Sıcaklık aralığını mutasyona uğrat."
+ },
+ {
+  "name": "04-tr-hover-tempL",
+  "lang": "tr",
+  "url": "http://127.0.0.1:8795/?lang=tr",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\04-tr-hover-tempL.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "#tempL in DOM=false; tt(tip.tempL)=Su sıcaklığı. Metabolizmayı ve hayatta kalmayı etkiler."
+ },
+ {
+  "name": "05-fil-wiki-article",
+  "lang": "fil",
+  "url": "http://127.0.0.1:8795/?lang=fil",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\05-fil-wiki-article.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "Berde (pagkain) (25)Mga berde. Hindi naghahuli. Kumakain ng liwanag at tubig — maliliit na halaman. Pinapakain ang lahat"
+ },
+ {
+  "name": "06-tr-pause-menu",
+  "lang": "tr",
+  "url": "http://127.0.0.1:8795/?lang=tr",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\06-tr-pause-menu.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "DURAKLATILDIDEVAMNASIL OYNANIRAYARLARVİKİAçıklamaKamera uçuşuHarita ve grafikMikroskopResim moduÇıkış"
+ },
+ {
+  "name": "07-mobile-390x844-menu-fil",
+  "lang": "fil",
+  "url": "http://127.0.0.1:8795/?lang=fil",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\07-mobile-390x844-menu-fil.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "mobile menu"
+ },
+ {
+  "name": "08-mobile-390x844-game-tr",
+  "lang": "tr",
+  "url": "http://127.0.0.1:8795/?lang=tr",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\08-mobile-390x844-game-tr.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "mobile game"
+ },
+ {
+  "name": "09-mobile-390x844-menu-es",
+  "lang": "es",
+  "url": "http://127.0.0.1:8795/?lang=es",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\09-mobile-390x844-menu-es.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "mobile menu es"
+ },
+ {
+  "name": "10-language-list",
+  "lang": "en",
+  "url": "http://127.0.0.1:8795/?lang=en",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v15-20261017-1628\\10-language-list.png",
+  "consoleErrors": 6,
+  "errs": [
+   "404 /04-Src/fonts/NotoSansBengali-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "404 /04-Src/fonts/NotoSansThai-Regular.woff2",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "note": "items=17 es/tr/fil present=false/false/false :: Русский,English,Português (Brasil),Bahasa Indonesia,Deutsch,Français,हिन्दी,日本語,Tiếng Việt,한국어,ไทย,Italiano,Polski,Українська,繁體中文,Bahasa Melayu,বাংলা"
+ }
+]

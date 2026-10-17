@@ -1,0 +1,62 @@
+Listing tests:
+  ..\..\qa-playwright\functional_tests\part01.js:16:3 › iGraSpore V2 — Functional Test Suite › 01 Game loads without JS errors
+  ..\..\qa-playwright\functional_tests\part01.js:24:3 › iGraSpore V2 — Functional Test Suite › 02 Canvas visible and sized
+  ..\..\qa-playwright\functional_tests\part01.js:33:3 › iGraSpore V2 — Functional Test Suite › 03 Start screen visible
+  ..\..\qa-playwright\functional_tests\part01.js:37:3 › iGraSpore V2 — Functional Test Suite › 04 Skip tutorial and play
+  ..\..\qa-playwright\functional_tests\part01.js:44:3 › iGraSpore V2 — Functional Test Suite › 05 Player organism exists
+  ..\..\qa-playwright\functional_tests\part01.js:51:3 › iGraSpore V2 — Functional Test Suite › 06 WASD movement
+  ..\..\qa-playwright\functional_tests\part01.js:61:3 › iGraSpore V2 — Functional Test Suite › 07 Zoom in
+  ..\..\qa-playwright\functional_tests\part01.js:69:3 › iGraSpore V2 — Functional Test Suite › 08 Zoom out
+  ..\..\qa-playwright\functional_tests\part01.js:77:3 › iGraSpore V2 — Functional Test Suite › 09 Right-click target
+  ..\..\qa-playwright\functional_tests\part01.js:84:3 › iGraSpore V2 — Functional Test Suite › 10 Space dash
+  ..\..\qa-playwright\functional_tests\part01.js:91:3 › iGraSpore V2 — Functional Test Suite › 11 Q division
+  ..\..\qa-playwright\functional_tests\part01.js:98:3 › iGraSpore V2 — Functional Test Suite › 12 R cyst
+  ..\..\qa-playwright\functional_tests\part01.js:105:3 › iGraSpore V2 — Functional Test Suite › 13 E phagocytosis
+  ..\..\qa-playwright\functional_tests\part01.js:112:3 › iGraSpore V2 — Functional Test Suite › 14 Tab auto-mode
+  ..\..\qa-playwright\functional_tests\part01.js:120:3 › iGraSpore V2 — Functional Test Suite › 15 HUD left panel
+  ..\..\qa-playwright\functional_tests\part01.js:125:3 › iGraSpore V2 — Functional Test Suite › 16 Speed controls
+  ..\..\qa-playwright\functional_tests\part01.js:132:3 › iGraSpore V2 — Functional Test Suite › 17 Pause button
+  ..\..\qa-playwright\functional_tests\part01.js:139:3 › iGraSpore V2 — Functional Test Suite › 18 Language selector
+  ..\..\qa-playwright\functional_tests\part01.js:143:3 › iGraSpore V2 — Functional Test Suite › 19 Minimap
+  ..\..\qa-playwright\functional_tests\part01.js:151:3 › iGraSpore V2 — Functional Test Suite › 20 Population graph
+  ..\..\qa-playwright\functional_tests\part01.js:157:3 › iGraSpore V2 — Functional Test Suite › 21 Ecosystem panel
+  ..\..\qa-playwright\functional_tests\part01.js:163:3 › iGraSpore V2 — Functional Test Suite › 22 Key hints
+  ..\..\qa-playwright\functional_tests\part01.js:168:3 › iGraSpore V2 — Functional Test Suite › 23 Day state
+  ..\..\qa-playwright\functional_tests\part01.js:196:3 › iGraSpore V2 — Functional Test Suite › 24 Night state
+  ..\..\qa-playwright\functional_tests\part01.js:203:3 › iGraSpore V2 — Functional Test Suite › 25 Sun position check
+  ..\..\qa-playwright\functional_tests\part01.js:216:3 › iGraSpore V2 — Functional Test Suite › 26 Shadows check
+  ..\..\qa-playwright\functional_tests\part01.js:226:3 › iGraSpore V2 — Functional Test Suite › 27 Winter
+  ..\..\qa-playwright\functional_tests\part01.js:233:3 › iGraSpore V2 — Functional Test Suite › 28 Summer
+  ..\..\qa-playwright\functional_tests\part01.js:240:3 › iGraSpore V2 — Functional Test Suite › 29 Rain
+  ..\..\qa-playwright\functional_tests\part01.js:247:3 › iGraSpore V2 — Functional Test Suite › 30 Acid rain button
+  ..\..\qa-playwright\functional_tests\part02.js:16:3 › iGraSpore V2 — Functional Test Suite › 31 Eclipse button
+  ..\..\qa-playwright\functional_tests\part02.js:24:3 › iGraSpore V2 — Functional Test Suite › 32 Ecosystem population
+  ..\..\qa-playwright\functional_tests\part02.js:40:3 › iGraSpore V2 — Functional Test Suite › 33 Producer species
+  ..\..\qa-playwright\functional_tests\part02.js:47:3 › iGraSpore V2 — Functional Test Suite › 34 Consumer1 species
+  ..\..\qa-playwright\functional_tests\part02.js:54:3 › iGraSpore V2 — Functional Test Suite › 35 Consumer2 species
+  ..\..\qa-playwright\functional_tests\part02.js:61:3 › iGraSpore V2 — Functional Test Suite › 36 Consumer3 predator
+  ..\..\qa-playwright\functional_tests\part02.js:68:3 › iGraSpore V2 — Functional Test Suite › 37 Decomposer
+  ..\..\qa-playwright\functional_tests\part02.js:75:3 › iGraSpore V2 — Functional Test Suite › 38 Organism shapes
+  ..\..\qa-playwright\functional_tests\part02.js:108:3 › iGraSpore V2 — Functional Test Suite › 39 Bioluminescence night
+  ..\..\qa-playwright\functional_tests\part02.js:116:3 › iGraSpore V2 — Functional Test Suite › 40 Wiki panel
+  ..\..\qa-playwright\functional_tests\part02.js:123:3 › iGraSpore V2 — Functional Test Suite › 41 Settings panel
+  ..\..\qa-playwright\functional_tests\part02.js:130:3 › iGraSpore V2 — Functional Test Suite › 42 Menu overlay
+  ..\..\qa-playwright\functional_tests\part02.js:137:3 › iGraSpore V2 — Functional Test Suite › 43 DNA panel
+  ..\..\qa-playwright\functional_tests\part02.js:144:3 › iGraSpore V2 — Functional Test Suite › 44 Leaderboard
+  ..\..\qa-playwright\functional_tests\part02.js:151:3 › iGraSpore V2 — Functional Test Suite › 45 Sandbox mode
+  ..\..\qa-playwright\functional_tests\part02.js:158:3 › iGraSpore V2 — Functional Test Suite › 46 Screensaver
+  ..\..\qa-playwright\functional_tests\part02.js:166:3 › iGraSpore V2 — Functional Test Suite › 47 FPS measurement
+  ..\..\qa-playwright\functional_tests\part02.js:179:3 › iGraSpore V2 — Functional Test Suite › 48 500-frame stability
+  ..\..\qa-playwright\functional_tests\part02.js:195:3 › iGraSpore V2 — Functional Test Suite › 49 Mobile viewport
+  ..\..\qa-playwright\functional_tests\part02.js:201:3 › iGraSpore V2 — Functional Test Suite › 50 Touch joystick
+  ..\..\qa-playwright\functional_tests\part02.js:217:3 › iGraSpore V2 — Functional Test Suite › 51 Sun at sunset
+  ..\..\qa-playwright\functional_tests\part02.js:229:3 › iGraSpore V2 — Functional Test Suite › 52 Sun at sunrise
+  ..\..\qa-playwright\functional_tests\part02.js:236:3 › iGraSpore V2 — Functional Test Suite › 53 Shadows ON
+  ..\..\qa-playwright\functional_tests\part02.js:243:3 › iGraSpore V2 — Functional Test Suite › 54 Shadows OFF
+  ..\..\qa-playwright\functional_tests\part02.js:250:3 › iGraSpore V2 — Functional Test Suite › 55 High zoom detail
+  ..\..\qa-playwright\functional_tests\part02.js:257:3 › iGraSpore V2 — Functional Test Suite › 56 Death screen
+  ..\..\qa-playwright\functional_tests\part02.js:276:3 › iGraSpore V2 — Functional Test Suite › 57 Help overlay
+  ..\..\qa-playwright\functional_tests\part02.js:282:3 › iGraSpore V2 — Functional Test Suite › 58 Full desktop screenshot
+  ..\..\qa-playwright\functional_tests\part02.js:288:3 › iGraSpore V2 — Functional Test Suite › 59 100x speed stress
+  ..\..\qa-playwright\functional_tests\part02.js:297:3 › iGraSpore V2 — Functional Test Suite › 60 Console errors after 10s
+Total: 60 tests in 2 files

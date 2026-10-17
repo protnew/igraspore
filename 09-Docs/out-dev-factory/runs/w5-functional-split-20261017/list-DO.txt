@@ -1,0 +1,62 @@
+Listing tests:
+  functional_test.js:84:3 › iGraSpore V2 — Functional Test Suite › 01 Game loads without JS errors
+  functional_test.js:92:3 › iGraSpore V2 — Functional Test Suite › 02 Canvas visible and sized
+  functional_test.js:101:3 › iGraSpore V2 — Functional Test Suite › 03 Start screen visible
+  functional_test.js:105:3 › iGraSpore V2 — Functional Test Suite › 04 Skip tutorial and play
+  functional_test.js:112:3 › iGraSpore V2 — Functional Test Suite › 05 Player organism exists
+  functional_test.js:119:3 › iGraSpore V2 — Functional Test Suite › 06 WASD movement
+  functional_test.js:129:3 › iGraSpore V2 — Functional Test Suite › 07 Zoom in
+  functional_test.js:137:3 › iGraSpore V2 — Functional Test Suite › 08 Zoom out
+  functional_test.js:145:3 › iGraSpore V2 — Functional Test Suite › 09 Right-click target
+  functional_test.js:152:3 › iGraSpore V2 — Functional Test Suite › 10 Space dash
+  functional_test.js:159:3 › iGraSpore V2 — Functional Test Suite › 11 Q division
+  functional_test.js:166:3 › iGraSpore V2 — Functional Test Suite › 12 R cyst
+  functional_test.js:173:3 › iGraSpore V2 — Functional Test Suite › 13 E phagocytosis
+  functional_test.js:180:3 › iGraSpore V2 — Functional Test Suite › 14 Tab auto-mode
+  functional_test.js:188:3 › iGraSpore V2 — Functional Test Suite › 15 HUD left panel
+  functional_test.js:193:3 › iGraSpore V2 — Functional Test Suite › 16 Speed controls
+  functional_test.js:200:3 › iGraSpore V2 — Functional Test Suite › 17 Pause button
+  functional_test.js:207:3 › iGraSpore V2 — Functional Test Suite › 18 Language selector
+  functional_test.js:211:3 › iGraSpore V2 — Functional Test Suite › 19 Minimap
+  functional_test.js:219:3 › iGraSpore V2 — Functional Test Suite › 20 Population graph
+  functional_test.js:225:3 › iGraSpore V2 — Functional Test Suite › 21 Ecosystem panel
+  functional_test.js:231:3 › iGraSpore V2 — Functional Test Suite › 22 Key hints
+  functional_test.js:236:3 › iGraSpore V2 — Functional Test Suite › 23 Day state
+  functional_test.js:264:3 › iGraSpore V2 — Functional Test Suite › 24 Night state
+  functional_test.js:271:3 › iGraSpore V2 — Functional Test Suite › 25 Sun position check
+  functional_test.js:284:3 › iGraSpore V2 — Functional Test Suite › 26 Shadows check
+  functional_test.js:294:3 › iGraSpore V2 — Functional Test Suite › 27 Winter
+  functional_test.js:301:3 › iGraSpore V2 — Functional Test Suite › 28 Summer
+  functional_test.js:308:3 › iGraSpore V2 — Functional Test Suite › 29 Rain
+  functional_test.js:315:3 › iGraSpore V2 — Functional Test Suite › 30 Acid rain button
+  functional_test.js:322:3 › iGraSpore V2 — Functional Test Suite › 31 Eclipse button
+  functional_test.js:330:3 › iGraSpore V2 — Functional Test Suite › 32 Ecosystem population
+  functional_test.js:346:3 › iGraSpore V2 — Functional Test Suite › 33 Producer species
+  functional_test.js:353:3 › iGraSpore V2 — Functional Test Suite › 34 Consumer1 species
+  functional_test.js:360:3 › iGraSpore V2 — Functional Test Suite › 35 Consumer2 species
+  functional_test.js:367:3 › iGraSpore V2 — Functional Test Suite › 36 Consumer3 predator
+  functional_test.js:374:3 › iGraSpore V2 — Functional Test Suite › 37 Decomposer
+  functional_test.js:381:3 › iGraSpore V2 — Functional Test Suite › 38 Organism shapes
+  functional_test.js:414:3 › iGraSpore V2 — Functional Test Suite › 39 Bioluminescence night
+  functional_test.js:422:3 › iGraSpore V2 — Functional Test Suite › 40 Wiki panel
+  functional_test.js:429:3 › iGraSpore V2 — Functional Test Suite › 41 Settings panel
+  functional_test.js:436:3 › iGraSpore V2 — Functional Test Suite › 42 Menu overlay
+  functional_test.js:443:3 › iGraSpore V2 — Functional Test Suite › 43 DNA panel
+  functional_test.js:450:3 › iGraSpore V2 — Functional Test Suite › 44 Leaderboard
+  functional_test.js:457:3 › iGraSpore V2 — Functional Test Suite › 45 Sandbox mode
+  functional_test.js:464:3 › iGraSpore V2 — Functional Test Suite › 46 Screensaver
+  functional_test.js:472:3 › iGraSpore V2 — Functional Test Suite › 47 FPS measurement
+  functional_test.js:485:3 › iGraSpore V2 — Functional Test Suite › 48 500-frame stability
+  functional_test.js:501:3 › iGraSpore V2 — Functional Test Suite › 49 Mobile viewport
+  functional_test.js:507:3 › iGraSpore V2 — Functional Test Suite › 50 Touch joystick
+  functional_test.js:523:3 › iGraSpore V2 — Functional Test Suite › 51 Sun at sunset
+  functional_test.js:535:3 › iGraSpore V2 — Functional Test Suite › 52 Sun at sunrise
+  functional_test.js:542:3 › iGraSpore V2 — Functional Test Suite › 53 Shadows ON
+  functional_test.js:549:3 › iGraSpore V2 — Functional Test Suite › 54 Shadows OFF
+  functional_test.js:556:3 › iGraSpore V2 — Functional Test Suite › 55 High zoom detail
+  functional_test.js:563:3 › iGraSpore V2 — Functional Test Suite › 56 Death screen
+  functional_test.js:582:3 › iGraSpore V2 — Functional Test Suite › 57 Help overlay
+  functional_test.js:588:3 › iGraSpore V2 — Functional Test Suite › 58 Full desktop screenshot
+  functional_test.js:594:3 › iGraSpore V2 — Functional Test Suite › 59 100x speed stress
+  functional_test.js:603:3 › iGraSpore V2 — Functional Test Suite › 60 Console errors after 10s
+Total: 60 tests in 1 file

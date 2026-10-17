@@ -69,4 +69,11 @@
 | `wgl.diff1` | Su arka planını WebGL shader’ı çizer (dalga, kauistik, parıltı) | Su arka planını WebGL shader’ı çizer (dalga, kostik, parıltı) |
 | `wiki.div.binary` | İkilii bölünme | İkili bölünme |
 
-### WIKI tr — изменено ключей: 0 (всего ключей 108)
+### WIKI tr — изменено ключей: 7 (всего ключей 108)
+| `51` | [object Object] | [object Object] |
+| `54` | [object Object] | [object Object] |
+| `55` | [object Object] | [object Object] |
+| `56` | [object Object] | [object Object] |
+| `59` | [object Object] | [object Object] |
+| `1001` | [object Object] | [object Object] |
+| `Sexual Eukaryote` | [object Object] | [object Object] |

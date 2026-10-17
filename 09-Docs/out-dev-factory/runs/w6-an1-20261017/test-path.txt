@@ -1,0 +1,17 @@
+Test-Path True   09-Docs/test-runs/results-20261017-0910.json
+Test-Path True   09-Docs/out-dev-factory/logs-release-ready-2026-10-14/qa_unit.txt
+Test-Path True   09-Docs/out-dev-factory/logs-release-ready-2026-10-14/buttons-before-pass1.json
+Test-Path True   09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G3-1280-before.png
+Test-Path True   09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-after/buttons.json
+Test-Path True   09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-after/G3-1280-after.png
+Test-Path True   09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-after/G3-390-after.png
+Test-Path True   09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-after/G1-1280-after.png
+Test-Path True   09-Docs/out-dev-factory/shots-release-ready-2026-10-14/shots-manifest.json
+Test-Path True   09-Docs/i18n-review/raw/pt-BR-analyst-round6.json
+Test-Path True   09-Docs/i18n-review/raw/id-analyst-round6.json
+Test-Path True   09-Docs/i18n-review/raw/de-analyst-round6.json
+Test-Path True   09-Docs/i18n-review/raw/fr-analyst-round6.json
+Test-Path True   09-Docs/i18n-review/ANALYST-LEDGER.md
+Test-Path True   06-DevOps-and-Release/android/sign-local.ps1
+Test-Path True   tools/i18n/critic_check.mjs
+ИТОГО exists=16/16  (замер 17.10.2026, блок W6 / AN.1)

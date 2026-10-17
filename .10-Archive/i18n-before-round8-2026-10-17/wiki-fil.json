@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Ang Synechocystis ay cyanobacterium na walang nucleus. Nabubuhay ito sa liwanag: oxygenic photosynthesis sa mga membrane, walang chloroplast. Lab model ng hydrogen metabolism."
+  },
+  "1": {
+    "body": "Ang Anabaena variabilis ay isang filament. Ang ilang selula ay nagiging heterocyst at nagbubuklod ng nitrogen habang ang mga katabi ay gumagawa ng asukal. Sa lawa ito ang tagapagsuplay ng nakabuklod na nitrogen."
+  },
+  "2": {
+    "body": "Ang Spirulina (Arthrospira) ay spiral ng mga selula na may gas vesicle. Nakalutang ito malapit sa ibabaw, nag-photosynthesize, at makakain. Sa laro ito ay malaking berdeng tornillo sa balat ng tubig."
+  },
+  "3": {
+    "body": "Ang Nostoc punctiforme ay kuwintas ng mga selula sa malagkit na kapsula. Nabubuhay ito nang malaya o sa simbiosis ng halaman. Ang kolonya ay parang kumpol ng berdeng perlas."
+  },
+  "4": {
+    "body": "Ang Oscillatoria limnetica ay kumikisay na filament. Umuuga ito pahilis at kayang mag-photosynthesize nang hindi naglalabas ng oxygen. Karaniwan sa putik at balat ng tubig."
+  },
+  "5": {
+    "body": "Ang Microcystis aeruginosa ay kolonya sa malagkit na materya, madalas nakalalason (microcystin). Nagdudulot ito ng pamumukadkad ng tubig. Sa laro ito ay berdeng bola-kolonya, mapanganib na huli."
+  },
+  "6": {
+    "body": "Ang Gloeocapsa ay magkatuwang na selula sa makukulay na balut. Nabubuhay ito sa bato at lupa at matiis sa UV. Sa lawa ito ay maliliit na magkapares na cocci na may balot."
+  },
+  "7": {
+    "body": "Ang Lyngbya majuscula ay makapal na filament ng cyanobacteria. Maaaring maglabas ng nakakairitang toxin. Bumubuo ng matsa sa maiinit na pampang."
+  },
+  "8": {
+    "body": "Ang Chlamydomonas reinhardtii ay berdeng selula na may dalawang flagellum at isang eyespot. Lumalangoy ito palapit sa liwanag. Klasikong model ng genetika ng algae."
+  },
+  "9": {
+    "body": "Ang Chlorella vulgaris ay di-kumikilos na berdeng bola. Mabilis itong humahati at mayaman sa protina. Pagkain ng maliliit na kumakain at paksa ng space-food."
+  },
+  "10": {
+    "body": "Ang Volvox globator ay guwang na globo ng libu-libong selula. Ang mga anak na kolonya ay hinog sa loob at lumalabas. Sa laro ito ay malaking berdeng kolonya."
+  },
+  "11": {
+    "body": "Ang Euglena gracilis ay mixotroph: may chloroplast at kayang kumain. Ang pulang eyespot ay sumusubay sa liwanag. Berde sa araw; sa dilim lumilipat sa pagkain."
+  },
+  "12": {
+    "body": "Ang Scenedesmus quadricauda ay karaniwang apat na selula sa hilera na may tinik sa dulo. Ang tinik ay nagpapahirap ng paglunok. Hindi ito lumalangoy — lumulutang."
+  },
+  "13": {
+    "body": "Ang Haematococcus pluvialis ay berdeng kumikilos na selula; sa stress ay namumula (astaxanthin) at nagpapalagyan ng makapal na dingding. Ang pulang cyst ay nakalulutas sa tagtuyot."
+  },
+  "14": {
+    "body": "Ang Dunaliella salina ay walang matigas na dingding at nabubuhay sa napaka-alat na tubig. Nag-iipon ito ng beta-carotene at mukhang kahel. Dalawang flagellum."
+  },
+  "15": {
+    "body": "Ang Micrasterias rotata ay patag na bituing desmid. Dalawang salamin na kalahati na may malalalim na hiwa. Di-kumikilos; nag-photosynthesize sa maasim na tubig ng latian."
+  },
+  "16": {
+    "body": "Ang Navicula ay bangka-hugis na diatom na may silica na pintoan. Kumikisay ito sa substrate sa tabi ng biak na raphe. Ang balut ay nananatili pagkatapos ng kamatayan."
+  },
+  "17": {
+    "body": "Ang Pinnularia viridis ay malaking pennate diatom. Silica na baluti na may simetrikong disenyo. Mabagal itong kumikisay sa ilalim."
+  },
+  "18": {
+    "body": "Ang Cyclotella meneghiniana ay bilog na centric diatom. Lumulutang ito bilang plato; ang baluti ay dalawang takip. Karaniwang plankton."
+  },
+  "19": {
+    "body": "Ang Diatoma vulgare ay diatom na dumidikit sa zigzag. Ang kolonya ay nagdaragdag ng salagat sa haligi ng tubig."
+  },
+  "20": {
+    "body": "Ang Rhodospirillum rubrum ay lilang spiral. Anoxygenic photosynthesis at organiko. Ang pulang kulay ay mula sa bacteriochlorophyll."
+  },
+  "21": {
+    "body": "Ang Chromatium vinosum ay lilang sulfur bacterium. Ini-oxidize nito ang hydrogen sulfide at nag-iipon ng granula ng sulfur. Nabubuhay sa hangganan ng oxygen/sulfur."
+  },
+  "22": {
+    "body": "Ang Porphyridium cruentum ay isang-uniselula na pulang algae. Ang phycoerythrin ang nagbibigay ng pulang-dugo na kulay. Balut ng malagkit na materya, walang flagellum."
+  },
+  "23": {
+    "body": "Ang Prochlorococcus marinus ang pinakamaliit at pinakamaraming photosynthetic na selula sa Mundo. Natuklasan noong dekada 1980. Pinapakain nito ang karagatan."
+  },
+  "24": {
+    "body": "Ang Chroococcidiopsis thermalis ay extremophile: disyerto, bato, radiation. Kandidato para sa buhay sa labas ng Mundo. Sa lawa ito ay mabagal na kolonya ng coccus."
+  },
+  "25": {
+    "body": "Ang Bdellovibrio bacteriovorus ay maliit na predator ng bacteria. Pumapasok ito sa ibang selula at namumunga hanggang sumabog ang punong."
+  },
+  "26": {
+    "body": "Ang Vampirococcus ay nakaupo sa labas ng biktima at sumisipsip ng laman nang hindi pumapasok. Isang bacterial vampire."
+  },
+  "27": {
+    "body": "Ang Daptobacter ay pumapasok sa bacteria na biktima at kinakain ito mula sa loob. Bihirang intracellular na mangangaso."
+  },
+  "28": {
+    "body": "Ang Myxococcus xanthus ay social bacterium. Sa pangkat ay pinalilibutan ang biktima at naglalabas ng enzyme. Kapag gutom ay bumubuo ng fruiting body."
+  },
+  "29": {
+    "body": "Ang Bacteriovorax stolpii ay kamag-anak ng Bdellovibrio sa dagat. Umaatake ito sa Gram-negative at nabubuhay sa periplasm ng biktima."
+  },
+  "30": {
+    "body": "Ang Halobacteriovorax ay salt-tolerant na mangangaso ng bacteria. Ganoon din: tusukin ang dingding at tumubo sa loob."
+  },
+  "31": {
+    "body": "Ang Peredibacter starrii ay isa pang predator na BALO. Mabilis na flagellate na hugis-kuwit na nagtatarget ng malalaking tungkod."
+  },
+  "32": {
+    "body": "Ang Monas guttula ay maliit na heterotrophic flagellate. Humuhuli ito ng bacteria sa ibabaw ng detritus."
+  },
+  "33": {
+    "body": "Ang Oikomonas termo ay hugis-patak na flagellate. Isang flagellum; nangangaso sa balat ng bacteria."
+  },
+  "34": {
+    "body": "Ang Anthophysa vegetans ay kolonya sa tangkay na iron-manganese. Ang mga selula ay nakaupo sa tangkay at humuhuli ng bacteria."
+  },
+  "35": {
+    "body": "Ang Chilomonas paramecium ay walang-kulay na cryptophyte. Dalawang flagellum; kumakain ng nalutunaw na organiko at maliliit na bacteria, walang chloroplast."
+  },
+  "36": {
+    "body": "Ang Cercomonas longicauda ay amoeboflagellate na may mahabang buntot. Gumagapang ito at lumululon ng bacteria sa pamamagitan ng pseudopodia."
+  },
+  "37": {
+    "body": "Ang Heteromita globosa ay flagellate ng lupa. Dalawang flagellum na magkaibang haba; pangunahing kumakain ng bacteria sa lupa."
+  },
+  "38": {
+    "body": "Ang Bodo saltans ay kinetoplastid. 'Nagsasayaw' ito sa lugar, nakadikit sa likod na flagellum, at sumasaklot ng bacteria."
+  },
+  "39": {
+    "body": "Ang Procryptobia sorokini ay kamag-anak ng Bodo. Malayang lumalangoy at hinahampas ang biktima sa harap na flagellum."
+  },
+  "40": {
+    "body": "Ang Trypanosoma brucei ay parasit ng dugo na nagdudulot ng sleeping sickness. Kumukurba na membrane at isang flagellum. Sa lawa ito ay modelo ng payat na mangangaso."
+  },
+  "41": {
+    "body": "Ang Leishmania donovani ay intracellular na parasit ng tao. May flagellum sa insekto, walang flagellum sa loob ng macrophage."
+  },
+  "42": {
+    "body": "Ang Monosiga brevicollis ay choanoflagellate, kamag-anak ng hayop. Ang kwelyo ng microvilli ay sumasala ng bacteria."
+  },
+  "43": {
+    "body": "Ang Salpingoeca rosetta ay sessile choanoflagellate sa lorica. Maaari itong bumuo ng rosette. Sumasala ng agos ng tubig."
+  },
+  "44": {
+    "body": "Ang Codonosiga botrytis ay kolonya ng choanoflagellate sa iisang tangkay. Ilang salsala sa isang puno."
+  },
+  "45": {
+    "body": "Ang Paramecium caudatum ay klasikong tsinelas. Libu-libong cilia, bulate ng bibig, contractile na vacuole. Sumasala ng bacteria."
+  },
+  "46": {
+    "body": "Ang Paramecium bursaria ay tsinelas na may symbiont na zoochlorella. Berde sa loob: asukal mula sa algae sa araw, pagsasala sa gabi."
+  },
+  "47": {
+    "body": "Ang Stentor coeruleus ay asul na trumpo hanggang isang milimetro. Namumukadkad ito bilang funnel at nagpapaandar ng agos sa cilia. Maaaring lumangoy o tumigil."
+  },
+  "48": {
+    "body": "Ang Stentor polymorphus ay kamag-anak ng asul na stentor, madalas may zoochlorella. Ang hugis ay nagbabago mula trumpo hanggang bola."
+  },
+  "49": {
+    "body": "Ang Vorticella campanula ay kampanilya sa contractile na tangkay. Ang tangkay ay biglang pumipino sa spiral. Ang selula mismo ay hindi lumalangoy palayo."
+  },
+  "50": {
+    "body": "Ang Vorticella microstoma ay maliit na kampanilya. Parehong tangkay-spring, mas makitid na oral na larangan. Madalas sa detritus."
+  },
+  "51": {
+    "body": "Ang Didinium nasutum ay bariles na mangangaso ng tsinelas. Bumabaril ito ng toxicyst at lumululon ng biktima nang buo, kahit mas malaki pa."
+  },
+  "52": {
+    "body": "Ang Spirostomum ambiguum ay napakahabang tabako. Kumikilos ito nang ilang beses sa bahagi ng segundo. Ang cilia ay tumatakbo sa spiral."
+  },
+  "53": {
+    "body": "Ang Blepharisma americanum ay rosas na ciliate. Ang pigment na blepharismin ay sensitibo sa liwanag. Sumasala at maaaring umatake sa mas maliliit na selula."
+  },
+  "54": {
+    "body": "Ang Euplotes patella ay naglalakad sa cirri na parang mga paa. Patag, mabilis na liko. Kinakayod nito ang bacteria sa mga ibabaw."
+  },
+  "55": {
+    "body": "Ang Stylonychia pustulata ay hypotrich na 'tumatakbo' sa ilalim. Malalaking cirri, kitang bibig. Predator ng maliliit na ciliate."
+  },
+  "56": {
+    "body": "Ang Oxytricha trifallax ay modelo ng genome: dalawang nucleus at kumplikadong pagsasaulit ng DNA. Naglalakad sa cirri at kumakain ng bacteria at maliliit na protist."
+  },
+  "57": {
+    "body": "Ang Tetrahymena thermophila ay lab ciliate. Apat na oral na membranelle, mabilis na paghahati. Modelo ng telomere at cilia."
+  },
+  "58": {
+    "body": "Ang Coleps hirtus ay bariles sa kaltsio na mga plaka na may tinik. Scavenger at predator: kumakagat sa sugat."
+  },
+  "59": {
+    "body": "Ang Litonotus lamella ay patag na predator na may toxicyst sa 'proboscis'. Pinaparalisa nito ang biktima at hinihihipan."
+  },
+  "60": {
+    "body": "Ang Dileptus anser ay may mahabang leeg na may lason na extrusome. Hinahampas nito ang biktima sa leeg, saka lumululon. Malaking mangangaso ng gitnang antas."
+  },
+  "61": {
+    "body": "Ang Urocentrum turbo ay umiikot na trumpo: ang equatorial na ciliary belt ay nagpapaikot ng selula sa lugar. Sumasala ng bacteria."
+  },
+  "62": {
+    "body": "Ang Zoothamnium arbuscula ay sanga-sangang kolonya ng kampanilya. Ang pinagsamang contractile na tangkay ay biglang yumanig sa buong puno."
+  },
+  "63": {
+    "body": "Ang Opercularia coarctata ay sessile peritrich na walang spring na tangkay. Takip ang sumasagwan sa bibig. Sumasala at hindi lumalangoy palayo."
+  },
+  "64": {
+    "body": "Ang Amoeba proteus ay klasikong amoeba. Ang pseudopodia ay umaagos sa paligid ng biktima. Walang tiyak na hugis, walang cilia."
+  },
+  "65": {
+    "body": "Ang Arcella vulgaris ay testate amoeba na may matigas na kubo ng baluti. Ang pseudopodia ay lumalabas mula sa bukana. Gumagapang sa mga halaman."
+  },
+  "66": {
+    "body": "Ang Difflugia oblonga ay may baluti ng mga butil ng buhangin na dinidikit ng amoeba mismo. Nabubuhay ito sa putik."
+  },
+  "67": {
+    "body": "Ang Euglypha alveolata ay may baluti ng mga kaliskis ng silica. Manipis na filose pseudopodia. Maliit na predator ng bacteria."
+  },
+  "68": {
+    "body": "Ang Nebela collaris ay hugis-botelya na baluti na gawa sa nanakaw na kaliskis. Tubig ng gubat at latian."
+  },
+  "69": {
+    "body": "Ang Centropyxis aculeata ay disk na baluti na may tinik. Ang bukana ay nakalusog. Gumagapang sa detritus."
+  },
+  "70": {
+    "body": "Ang Actinophrys sol ay heliozoan: manipis na axopodia na kumakalat sa lahat ng direksyon. Ang biktima ay didikit sa mga sinag at hihilahin papasok."
+  },
+  "71": {
+    "body": "Ang Actinosphaerium eichhorni ay malaking multinucleate heliozoan. Parehong sinag, mas malaking selula. Kumakain ng ciliate at rotifer."
+  },
+  "72": {
+    "body": "Ang Raphidiophrys pallida ay heliozoan na may kaliskis. Ang mga sinag ay may dalang karayom ng silica. Mangangaso ng plankton na nag-aabang."
+  },
+  "73": {
+    "body": "Ang Rotaria rotatoria ay rotifer na kayang mabuhay sa pagkatuyo. Ang corona ay nag-ikot ng pagkain papuntang bibig. Tunay na multicellular na hayop."
+  },
+  "74": {
+    "body": "Ang Philodina roseola ay rosas na bdelloid rotifer. Gumagapang na parang linta at lumalangoy din. Babae lang; walang lalaki."
+  },
+  "75": {
+    "body": "Ang Brachionus plicatilis ay planktonic loricate rotifer. Pagkain ng fry sa aquaculture. Sumasala ng algae at bacteria."
+  },
+  "76": {
+    "body": "Ang Keratella cochlearis ay rotifer na may mahabang tinik ng lorica. Ang tinik ay nagpapalayo sa predator. Karaniwang plankton ng lawa."
+  },
+  "77": {
+    "body": "Ang Asplanchna priodonta ay supot na walang lorica, predatory rotifer. Lumululon ito ng ibang rotifer at ciliate nang buo."
+  },
+  "78": {
+    "body": "Ang Chaetonotus maximus ay gastrotrich. May kaliskis, gumagapang sa ilalim. Kumakain ng bacteria at detritus."
+  },
+  "79": {
+    "body": "Ang Lepidodermella squamata ay maliit na gastrotrich sa nag-uumpugan na kaliskis. Napakabilis na liko sa lugar."
+  },
+  "80": {
+    "body": "Ang Macrostomum lignano ay mikroskopikong flatworm. Tunay na kalamnan at mata. Modelo ng regenerasyon. Nangangaso ng maliliit na protist."
+  },
+  "81": {
+    "body": "Ang Stenostomum leucops ay manipis na ciliated worm. Humahati ito pahilis sa kadena ng zooid. Predator ng detritus at maliliit na hayop."
+  },
+  "82": {
+    "body": "Ang Microstomum lineare ay flatworm na kumakain ng hydra at naglalagay ng kanilang stinging na selula sa sarili nitong balat. Kadena ng zooid."
+  },
+  "83": {
+    "body": "Ang Prostoma graecense ay freshwater nemertean. Mahabang proboscis na bumabaril sa biktima. Bihirang malaking mangangaso sa ilalim."
+  },
+  "84": {
+    "body": "Ang Trichoplax adhaerens ay placozoan, isa sa pinakasimpleng hayop. Gumagapang bilang sheet at tinutunaw ang pagkain sa labas. Walang bibig."
+  },
+  "85": {
+    "body": "Ang Saccharomyces cerevisiae ay pampasaka ng tinapay. Nagsusupling, kumakain ng asukal, naglalabas ng CO2 at alkohol. Sa lawa ito ay tagalinis ng nalutunaw na organiko."
+  },
+  "86": {
+    "body": "Ang Candida albicans ay yeast na kayang tumubo bilang filament. Opportunistic na pathogen ng tao. Sa laro ito ay detrital na fungus."
+  },
+  "87": {
+    "body": "Ang Mucor mucedo ay amag ng tinapay. Sporangia sa tangkay, mabilis na paglago sa patay. Hindi ito nangangaso ng buhay."
+  },
+  "88": {
+    "body": "Ang Rhizopus stolonifer ay itim na amag ng tinapay. Stolon at rhizoid na kumakalat sa substrate. Tinutunaw nito ang arina."
+  },
+  "89": {
+    "body": "Ang Penicillium chrysogenum ay brush mold, pinagmulan ng penicillin. Mga brush ng conidia. Tinutunaw ang organiko at pinipigilan ang bacteria sa paligid."
+  },
+  "90": {
+    "body": "Ang Aspergillus niger ay itim na aspergillus. Globo na mga ulo ng spore. Pang-industriya na tagapagawa ng citric acid. Saprotroph."
+  },
+  "91": {
+    "body": "Ang Batrachochytrium dendrobatidis ay chytrid ng palaka. Uniflagellate zoospore. Sa lawa ito ay modelo ng water-fungus."
+  },
+  "92": {
+    "body": "Ang Chytriomyces aureus ay water chytrid sa pollen at algae. Ginintuang sporangia; ang zoospore ay lumalangoy papuntang substrate."
+  },
+  "93": {
+    "body": "Ang Allomyces macrogynus ay water fungus na may tunay na mycelium. Nagpapalitan ng diploid at haploid. Ang zoospore ay may likod na flagellum."
+  },
+  "94": {
+    "body": "Ang Bacillus subtilis ay rod ng lupa. Ang spore ay nakalulutas sa kumukulong tubig. Tinutunaw ang protina; modelo ng Gram-positive."
+  },
+  "95": {
+    "body": "Ang Pseudomonas putida ay rod na tagalinis. Kumakain kahit ng produkto ng petrolyo. Motile na flagellum, mabilis na paglago sa detritus."
+  },
+  "96": {
+    "body": "Ang Streptomyces coelicolor ay filamentous na bacteria ng lupa. Gumagawa ng amoy ng lupa (geosmin) at maraming antibiotic. Spore sa hypha."
+  },
+  "97": {
+    "body": "Ang Cellulomonas fimi ay nagtutunaw ng cellulose. Dilaw na rod sa detritus ng halaman. Kung wala ito, mas matagal tatagal ang patay na algae."
+  },
+  "98": {
+    "body": "Ang Thermus aquaticus ay thermophile mula sa maiinit na bukal. Ang Taq polymerase ang saligan ng PCR. Sa malamig na lawa ito ay halos tulog."
+  },
+  "99": {
+    "body": "Ang Deinococcus radiodurans ay kampeon ng radiation. Pinagsasama-sama nito ang sirang genome sa loob ng mga oras. Makapal na dingding, tetrad ng selula."
+  },
+  "1001": {
+    "body": "Ang Sexual Eukaryote ay teaching model ng sexual reproduction. Dalawang kasarian, pagsasanib ng gamete, hindi simpleng binary fission."
+  },
+  "T4 Bacteriophage": {
+    "body": "Ang T4 ay malaking myovirus ng E. coli. Ang buntot ay kumikilos at nag-i-iniksyon ng DNA. Sa loob ng kalahating oras ang selula ay sumasabog at dose-dosenang phage ang lumalabas."
+  },
+  "Lambda Phage": {
+    "body": "Ang Lambda ay temperate phage. Maaari itong sumakap sa chromosome at matulog (lysogeny) o agad na gutirin ang selula (lysis)."
+  },
+  "T7 Bacteriophage": {
+    "body": "Ang T7 ay may maikling buntot at napakabilis na replication. Paboritong sistema ng synthetic biology."
+  },
+  "Phi-6 Phage": {
+    "body": "Ang Phi-6 ay RNA phage na may lipid envelope. Inaatake nito ang Pseudomonas. Bihirang membrane para sa phage."
+  },
+  "MS2 Phage": {
+    "body": "Ang MS2 ay maliit na RNA phage na walang buntot. Dumidikit ito sa male na pilus ng E. coli. Ang genome nito ay isa sa unang nabasang RNA genome."
+  },
+  "Neuro-Parasite": {
+    "body": "Isang kathang-isip na neuro-parasite ng lawa. Dumidikit ito sa eukaryote at sinisira ang kilos ng punong hanggang maging carrier ito."
+  },
+  "Sexual Eukaryote": {
+    "body": "Ang Sexual Eukaryote ay teaching model ng sexual reproduction. Dalawang kasarian, pagsasanib ng gamete, hindi simpleng binary fission."
+  }
+}

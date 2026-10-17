@@ -54,8 +54,10 @@ for (const lang of LANGS) {
   const lf = path.join(I18N, lang + '.json');
   if (!fs.existsSync(lf)) { console.log(lang, 'нет словаря'); continue; }
   const d = JSON.parse(fs.readFileSync(lf, 'utf8'));
+  const wikiFile = path.join(WIKI, lang + '.json');
   shaOut[lang] = sha(lf);
-  const wikiL = wikiEn && fs.existsSync(path.join(WIKI, lang + '.json')) ? JSON.parse(fs.readFileSync(path.join(WIKI, lang + '.json'), 'utf8')) : null;
+  if (fs.existsSync(wikiFile)) shaOut['wiki/' + lang + '.json'] = sha(wikiFile); // FR-W1.4: sha словаря И вики
+  const wikiL = wikiEn && fs.existsSync(wikiFile) ? JSON.parse(fs.readFileSync(wikiFile, 'utf8')) : null;
 
   let md = '';
   md += '# Пакет на проверку аналитику: ' + lang + ' (круг ' + ROUND + ')\n\n';

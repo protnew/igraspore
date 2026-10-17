@@ -1,0 +1,11 @@
+{
+ "schema": "review-input-sha/1",
+ "round": 8,
+ "generated": "2026-10-17 10:21:46 UTC+3",
+ "dicts": {
+  "fil": "b4218fc9da28ac2f32bae67db867a9d7685eb523b8d17730dd843fede842ff83",
+  "wiki/fil.json": "abd437dfce29bff53dc4e0cbf4e04cf3efd9c495b3252d0e32cef8f9fa1f7dac",
+  "tr": "2298d279ae97ee4f1c0ffd0452ac0827e2ce7dd8f8bc98580157dd4f211bef29",
+  "wiki/tr.json": "00dba564ab596759f4ec72c641e03d7d951c5cd5a22ff9e94a0960902fc2706f"
+ }
+}

@@ -1,0 +1,10 @@
+SELFTEST PASS bad-lastline     ждали 'FAIL V2' — есть; итог: VERIFY FAIL 1/12
+SELFTEST PASS bad-nopath       ждали 'FAIL V3' — есть; итог: VERIFY FAIL 2/12
+SELFTEST PASS bad-stop         ждали 'FAIL V7' — есть; итог: VERIFY FAIL 1/12
+SELFTEST PASS bad-criticfile   ждали 'FAIL V9' — есть; итог: VERIFY FAIL 2/12
+SELFTEST PASS bad-sha          ждали 'FAIL V11' — есть; итог: VERIFY FAIL 2/12
+SELFTEST PASS bad-heartbeat    ждали 'FAIL V6' — есть; итог: VERIFY FAIL 1/12
+SELFTEST PASS good             ждали 'VERIFY OK' — есть; итог: VERIFY OK 12 checks
+SELFTEST PASS bad-name         ждали 'FAIL V1' — есть
+SELFTEST PASS bad-missing      ждали 'FAIL V1' — есть
+SELFTEST done: 0 fails

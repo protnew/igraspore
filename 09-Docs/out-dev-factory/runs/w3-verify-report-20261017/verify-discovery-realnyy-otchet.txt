@@ -1,0 +1,15 @@
+PASS V1 имя и время ок, легаси v9 (REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261016-0808.md)
+PASS V2 финальная строка: inter
+PASS V3 code block содержит путь к отчёту
+FAIL V4 sha=d57072f head=4d9e5b2 parent=1a3cbd8 ab=[0	0]
+PASS V5 dirty=600 файл=600 мои=417 wip=183
+FAIL V6 ref=True; heartbeat gap=1611 мин
+PASS V7 не ОСТАНОВЛЕН — пропуск
+PASS V8 не финал — пропуск
+PASS V9 cited=0 missing=0 critic_check exit=0
+PASS V10 нет diff-чисел
+PASS V11 sha проверено=2 bad=
+PASS V12 не Strict — пропуск
+FAIL V13 первая строка не маркер: # Отчёт v9 — 16.10, 08:08 (UTC+3)
+FAIL V14 фраза «Файлы >500 строк» не найдена
+VERIFY FAIL 4/14

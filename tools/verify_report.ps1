@@ -1,4 +1,6 @@
-# verify_report.ps1 — TZ v9 §31: проверка отчёта исполнителя (только чтение, без сети).
+# verify_report.ps1 — 09A rev 14.10 (U45): проверка отчёта исполнителя (только чтение, без сети).
+# V1-V12 — как в v13 §31 (не ослаблены); V13 — первая строка «## ПРИСТУПАЮ К ОТРАБОТКЕ»; V14 — блок «Файлы >500 строк».
+# «ЦИКЛ k/3» не проверяется (протокол трёх циклов отменён 09A А1/В1).
 # Usage: powershell -File tools\verify_report.ps1 [-Report <md>] [-Strict]
 # Каждая проверка печатает "PASS|FAIL V<n> <деталь>"; итог "VERIFY OK <n> checks" | "VERIFY FAIL <k>/<n>".
 [CmdletBinding()]
@@ -21,26 +23,42 @@ function Out-Check($ok, $code, $detail) {
 
 # --- выбор отчёта ---
 if (-not $Report) {
-  $cand = Get-ChildItem '09-Docs\out-dev-factory\REPORT-TZ-RELEASE-READY-2026-10-14-v9-*.md' -ErrorAction SilentlyContinue |
+  $cand = Get-ChildItem '01-Architecture\03-Analysis\REPORT-TZ-08-SPOR-release-ready-*-v*-*.md' -ErrorAction SilentlyContinue |
           Sort-Object LastWriteTime -Descending | Select-Object -First 1
+  if (-not $cand) { $cand = Get-ChildItem '09-Docs\out-dev-factory\REPORT-TZ-RELEASE-READY-2026-10-14-v9-*.md' -ErrorAction SilentlyContinue |
+                    Sort-Object LastWriteTime -Descending | Select-Object -First 1 }
   if (-not $cand) { $cand = Get-ChildItem '09-Docs\out-dev-factory\REPORT-TZ-RELEASE-READY-2026-10-14-v*.md' -ErrorAction SilentlyContinue |
                     Sort-Object LastWriteTime -Descending | Select-Object -First 1 }
   if ($cand) { $Report = $cand.FullName }
 }
 $base = Split-Path $Report -Leaf
 
-# V1: файл есть, UTF-8, имя REPORT-...-v(3..9)-YYYYMMDD-HHMM.md, время имени ±5 мин от LastWriteTime
+# V1: файл есть, UTF-8, имя по одному из двух шаблонов (новый TZ-08-SPOR-release-ready v14+ или легаси v3+),
+#     время имени ±5 мин от LastWriteTime
 if (-not $Report -or -not (Test-Path $Report)) { Out-Check $false 'V1' "md не найден: $Report"; }
 else {
-  $m = [regex]::Match($base, '^REPORT-TZ-RELEASE-READY-2026-10-14-v(\d{1,2})-(\d{8})-(\d{4})\.md$')
-  if (-not $m.Success -or [int]$m.Groups[1].Value -lt 3) { Out-Check $false 'V1' "имя не по шаблону (v3+): $base" }
-  else {
-    $ts = [datetime]::ParseExact($m.Groups[2].Value + $m.Groups[3].Value, 'yyyyMMddHHmm', $null)
-    $lw = (Get-Item $Report).LastWriteTime
-    $diff = [math]::Abs(($lw - $ts).TotalMinutes)
-    if ($diff -gt 5) { Out-Check $false 'V1' "время имени расходится с LastWriteTime на $([math]::Round($diff)) мин" }
-    else { Out-Check $true 'V1' "имя и время ок ($base)" }
-  }
+  $rxNew  = '^REPORT-TZ-08-SPOR-release-ready-(\d{8})-(\d{4})-v(\d{1,2})-(\d{8})-(\d{4})\.md$'
+  $rxOld  = '^REPORT-TZ-RELEASE-READY-2026-10-14-v(\d{1,2})-(\d{8})-(\d{4})\.md$'
+  $mn = [regex]::Match($base, $rxNew); $mo = [regex]::Match($base, $rxOld)
+  $reportTs = $null
+  if ($mn.Success) {
+    if ([int]$mn.Groups[3].Value -lt 14) { Out-Check $false 'V1' "новый шаблон, но версия v$($mn.Groups[3].Value) < v14: $base" }
+    elseif ($mn.Groups[1].Value + '-' + $mn.Groups[2].Value -ne '20261017-0905') { Out-Check $false 'V1' "имя не этого ТЗ (ТЗ-дата-время != 20261017-0905): $base" }
+    else {
+      $reportTs = [datetime]::ParseExact($mn.Groups[4].Value + $mn.Groups[5].Value, 'yyyyMMddHHmm', $null)
+      $diff = [math]::Abs(((Get-Item $Report).LastWriteTime - $reportTs).TotalMinutes)
+      if ($diff -gt 5) { Out-Check $false 'V1' "время имени расходится с LastWriteTime на $([math]::Round($diff)) мин" }
+      else { Out-Check $true 'V1' "имя и время ок, новый шаблон v$($mn.Groups[3].Value) ($base)" }
+    }
+  } elseif ($mo.Success) {
+    if ([int]$mo.Groups[1].Value -lt 3) { Out-Check $false 'V1' "имя не по шаблону (легаси v3+): $base" }
+    else {
+      $reportTs = [datetime]::ParseExact($mo.Groups[2].Value + $mo.Groups[3].Value, 'yyyyMMddHHmm', $null)
+      $diff = [math]::Abs(((Get-Item $Report).LastWriteTime - $reportTs).TotalMinutes)
+      if ($diff -gt 5) { Out-Check $false 'V1' "время имени расходится с LastWriteTime на $([math]::Round($diff)) мин" }
+      else { Out-Check $true 'V1' "имя и время ок, легаси v$($mo.Groups[1].Value) ($base)" }
+    }
+  } else { Out-Check $false 'V1' "имя не по шаблону (ни новый TZ-08-SPOR v14+, ни легаси RELEASE-READY v3+): $base" }
 }
 
 $lines = @(); if (Test-Path $Report) { $lines = Get-Content -Encoding UTF8 $Report }
@@ -108,13 +126,11 @@ if ($kind -eq 'inter') {
   if (Test-Path $hb) {
     $hbLast = (Get-Content -Encoding UTF8 $hb | Where-Object { $_.Trim() -ne '' } | Select-Object -Last 1)
     $hbTs = [regex]::Match($hbLast, '(\d{4}-\d{2}-\d{2}T\d{2}:\d{2})').Groups[1].Value
-    $repTsM = [regex]::Match($base, '(\d{8})-(\d{4})')
-    if ($hbTs -and $repTsM.Success) {
+    if ($hbTs -and $reportTs) {
       $h = [datetime]::ParseExact($hbTs, 'yyyy-MM-ddTHH:mm', $null)
-      $r = [datetime]::ParseExact($repTsM.Groups[1].Value + $repTsM.Groups[2].Value, 'yyyyMMddHHmm', $null)
-      $gap = [math]::Abs(($r - $h).TotalMinutes)
+      $gap = [math]::Abs(($reportTs - $h).TotalMinutes)
       $hbmsg = "heartbeat gap=$([math]::Round($gap)) мин"; $hbok = $gap -le 10
-    }
+    } elseif ($hbTs) { $hbmsg = 'время отчёта из имени не распознано' }
   }
   Out-Check ($hasRef -and $hbok) 'V6' "ref=$hasRef; $hbmsg"
 } else { Out-Check $true 'V6' 'не промежуточный — пропуск' }
@@ -167,6 +183,39 @@ if ($Strict -and (($lines -join "`n") -match 'langs_consistency')) {
   & node .04-Src\node_modules\vitest\vitest.mjs run --config vitest.config.js --root . langs_consistency *> $null
   Out-Check ($LASTEXITCODE -eq 0) 'V12' "vitest langs_consistency exit=$LASTEXITCODE"
 } else { Out-Check $true 'V12' $(if ($Strict) { 'не упомянут — пропуск' } else { 'не Strict — пропуск' }) }
+
+# V13 (09A rev 14.10, U45): первая непустая строка — «## ПРИСТУПАЮ К ОТРАБОТКЕ: <ТЗ> — <путь к ТЗ.md>», файл ТЗ существует
+$rxStart = '^## ПРИСТУПАЮ К ОТРАБОТКЕ:\s+(\S+)\s+—\s+(\S.*)$'
+$v13ok = $false; $v13msg = 'пустой файл'
+if ($nonEmpty.Count -gt 0) {
+  $sm = [regex]::Match($nonEmpty[0].Trim(), $rxStart)
+  if (-not $sm.Success) { $v13msg = "первая строка не маркер: $($nonEmpty[0].Trim())" }
+  else {
+    $tzId = $sm.Groups[1].Value; $tzPath = $sm.Groups[2].Value.Trim()
+    if ($tzId -notmatch '^TZ-\S+') { $v13msg = "ид ТЗ не начинается с TZ-: $tzId" }
+    elseif ($tzPath -notmatch '^[A-Za-z]:\\.+\.md$') { $v13msg = "путь к ТЗ не абсолютный .md: $tzPath" }
+    elseif (-not (Test-Path -LiteralPath $tzPath)) { $v13msg = "ТЗ по пути не найден: $tzPath" }
+    else { $v13ok = $true; $v13msg = "маркер + ТЗ $tzId (файл на диске есть)" }
+  }
+}
+Out-Check $v13ok 'V13' $v13msg
+
+# V14 (09A rev 14.10, U45): блок «Файлы >500 строк» — заголовок/строка с этой фразой и таблица с путями,
+# либо явное «Файлы >500 строк: 0»
+$v14ok = $false; $v14msg = 'фраза «Файлы >500 строк» не найдена'
+$anchor = -1
+for ($i = 0; $i -lt $lines.Count; $i++) { if ($lines[$i] -match 'Файлы\s*>500\s*строк') { $anchor = $i; break } }
+if ($anchor -ge 0) {
+  if ($lines[$anchor] -match 'Файлы\s*>500\s*строк[:\s]*(0|нет)\b') {
+    $v14ok = $true; $v14msg = "явный ноль: $($($lines[$anchor]).Trim())"
+  } else {
+    $from = $anchor + 1; $to = [Math]::Min($anchor + 9, $lines.Count - 1); $rows = @()
+    if ($from -le $to) { $rows = @($lines[$from..$to] | Where-Object { $_ -match '^\|' -and $_ -notmatch '^\|[\s:\-\|]+$' -and $_ -match '[\\/]' }) }
+    if ($rows.Count -ge 1) { $v14ok = $true; $v14msg = "блок найден, строк таблицы с путями=$($rows.Count)" }
+    else { $v14msg = 'фраза есть, но таблицы с путями (или явного нуля) нет' }
+  }
+}
+Out-Check $v14ok 'V14' $v14msg
 
 $total = $pass + $fail
 $verdict = if ($fail -eq 0) { "VERIFY OK $total checks" } else { "VERIFY FAIL $fail/$total" }

@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › .04-Src\07-QA-and-Testing\playwright\i18n_overflow.spec.js:199:9 › id › [id] 1280x800: 8 экранов без переполнений (57.3s)
+
+  1 passed (2.9m)

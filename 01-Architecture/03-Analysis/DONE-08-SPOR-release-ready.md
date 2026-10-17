@@ -31,3 +31,7 @@
 | U47 (W5, 17.10) | functional_test.js 612 → 6 строк-указатель + модули 76/255/307; тестов 60 до и 60 после, имена и порядок совпадают, expect-набор 11 = 11 | `3ed4507`, `f757d70`; `09-Docs/out-dev-factory/runs/w5-functional-split-20261017/diff-titles.txt` |
 | U22 AN.1 (W6, 17.10) | PROOFS-G: колонка «Пруф (путь)»; 6 PASS с путём, 1 PASS снят в «не подтверждено» (лога 14.10 нет) | `2deb98a`; `09-Docs/out-dev-factory/runs/w6-an1-20261017/test-path.txt` (16/16 Test-Path True) |
 | Вне ТЗ (найдено в baseline W0) | vitest exit=1 при 285/285 зелёных: утёкшие `setTimeout` из eval ui.js в ui_restore.test.js; починен харнес, ожидания и число тестов не менялись | `863c5b0`; `09-Docs/out-dev-factory/FOUND_BUGS.md` BAG-IG-261017-1 |
+
+## v14 → DONE (17.10.2026, CHECK-DEV-2026-10-17-1556.md)
+- W1 fil 39/40 + tr 8/8 (1a3cbd8, c512062) · W2 листинг круг 3 (4d9e5b2, 5b2b8c6) · W3 U45 verify_report V13/V14 (0be0bc5, 7446950) · W4 U46 PROBE (9a19f4e) · W5 U47 разрез functional_test (3ed4507, f757d70) · W6 AN.1 16/16 (2deb98a) · харнес ui_restore (863c5b0)
+- Круг 8: fil 8.2, tr 8.6; гейты es/tr/fil exit 0; листинг 32/32

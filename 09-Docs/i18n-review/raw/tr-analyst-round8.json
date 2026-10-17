@@ -1,0 +1,30 @@
+{
+ "schema": "critic/1",
+ "role": "analyst",
+ "model": "Grok Bot",
+ "session_id": "analyst-08-20261017-1553",
+ "round": 8,
+ "started_at": "2026-10-17T15:53:00+03:00",
+ "finished_at": "2026-10-17T15:55:37+03:00",
+ "input_sha256": {
+  "tr.json": "2298d279ae97ee4f1c0ffd0452ac0827e2ce7dd8f8bc98580157dd4f211bef29",
+  "wiki/tr.json": "63873b2494d5c985a3ce6d203ee926ef1f0c1e5d7d8c68139d06bac4a3b23d4b",
+  "en.json": "d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938"
+ },
+ "langs": [
+  {
+   "code": "tr",
+   "score": 8.6,
+   "axes": {
+    "meaning": 8.5,
+    "glossary": 8.5,
+    "register": 8.5,
+    "length": 9,
+    "errors": 8.5
+   },
+   "issues": []
+  }
+ ],
+ "log": "ANALYST-ROUND8-2026-10-17.md",
+ "note": "все 8 замечаний круга 7 исправлены (проверено по ключам и вики 51/54/55/56/59/1001)"
+}

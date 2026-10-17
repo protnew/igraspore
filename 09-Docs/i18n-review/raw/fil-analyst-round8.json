@@ -1,0 +1,46 @@
+{
+ "schema": "critic/1",
+ "role": "analyst",
+ "model": "Grok Bot",
+ "session_id": "analyst-08-20261017-1553",
+ "round": 8,
+ "started_at": "2026-10-17T15:53:00+03:00",
+ "finished_at": "2026-10-17T15:55:37+03:00",
+ "input_sha256": {
+  "fil.json": "b4218fc9da28ac2f32bae67db867a9d7685eb523b8d17730dd843fede842ff83",
+  "wiki/fil.json": "abd437dfce29bff53dc4e0cbf4e04cf3efd9c495b3252d0e32cef8f9fa1f7dac",
+  "en.json": "d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938"
+ },
+ "langs": [
+  {
+   "code": "fil",
+   "score": 8.2,
+   "axes": {
+    "meaning": 8.5,
+    "glossary": 8,
+    "register": 8,
+    "length": 9,
+    "errors": 7.5
+   },
+   "issues": [
+    {
+     "key": "wiki Neuro-Parasite",
+     "problem": "осталось «punong» (обрубок; в 25 уже «punong-abala (host)»)",
+     "fix": "…sinisira ang kilos ng punong-abala hanggang maging carrier ito."
+    },
+    {
+     "key": "wiki 1001 / Sexual Eukaryote",
+     "problem": "«paramihan» — не то слово",
+     "fix": "modelong panturo ng sekswal na pagpaparami"
+    },
+    {
+     "key": "wiki (общее)",
+     "problem": "остаются англ. термины rod, predator, Uniflagellate, carrier — допустимо как научные, но не везде",
+     "fix": "по желанию: rod → baras, predator → maninila"
+    }
+   ]
+  }
+ ],
+ "log": "ANALYST-ROUND8-2026-10-17.md",
+ "note": "39 из 40 групп круга 7 исправлены по ключам (1 остаток — Neuro-Parasite «punong»); порог пройден; 3 мелких замечания не блокируют"
+}

@@ -2,7 +2,7 @@
 //   1) keyHint LS roundtrip + default collapsed
 //   2) energy display policy (A): display-only clamp, HUD never shows >100/100
 //   3) after updateEcoPanel()+updateLegend() the legend stays under collapse-API control
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 
@@ -44,6 +44,18 @@ const makeCtx = () => eval(`(function(){ ${PROLOGUE}\n${read('ui.js')}\n${read('
 beforeEach(() => {
   localStorage.clear();
   fixture();
+});
+
+// ui.js при eval ставит реальные браузерные таймеры (setTimeout(initTooltips, 500) и др.).
+// После teardown окружения с document они срабатывают в Node и дают Unhandled Errors (exit 1
+// при 285/285 зелёных). Собираем id и гасим их после каждого теста — ожидания не меняются.
+const _timers = new Set();
+const _setTimeout = globalThis.setTimeout, _setInterval = globalThis.setInterval;
+globalThis.setTimeout = (fn, ms, ...rest) => { const id = _setTimeout(fn, ms, ...rest); _timers.add(['t', id]); return id; };
+globalThis.setInterval = (fn, ms, ...rest) => { const id = _setInterval(fn, ms, ...rest); _timers.add(['i', id]); return id; };
+afterEach(() => {
+  for (const [kind, id] of _timers) { if (kind === 't') clearTimeout(id); else clearInterval(id); }
+  _timers.clear();
 });
 
 describe('UI-RESTORE §5.1 — keyHint collapse (LS roundtrip, default collapsed)', () => {

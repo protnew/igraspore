@@ -1,0 +1,7 @@
+область: git ls-files под .04-Src/{js,i18n,src,v3-webgl,07-QA-and-Testing,qa-playwright} + корневые index.html/style.css/sw.js;
+текстовые расширения .js/.mjs/.cjs/.json/.css/.html; исключены _archive, coverage, node_modules, snapshots, *-before-*.
+файлов проверено: 205 | > 500 строк: 2
+| путь | строк |
+|---|---|
+| `.04-Src/src/index.html` | 1248 |
+| `.04-Src/i18n/i18n_identity.allow.json` | 836 |

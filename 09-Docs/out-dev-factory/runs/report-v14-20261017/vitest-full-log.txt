@@ -1,0 +1,426 @@
+
+[1m[46m RUN [49m[22m [36mv3.2.4 [39m[90mC:/Obsidian/New/Projects/08-iGraSpore_V2[39m
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mai.js logic[2m > [22m[2mforceEat should kill prey and reward predator
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mai.js logic[2m > [22m[2mforceEat should kill prey and reward predator
+[22m[39m[i18n] miss ru toast.gain
+[i18n] miss ru toast.auto.gain
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mai.js logic[2m > [22m[2mfindBestPrey should return nearest edible organism
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mai.js logic[2m > [22m[2mturnToward should rotate organism toward target angle
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mai.js logic[2m > [22m[2mthrustAlongFacing should apply velocity in facing direction
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mai.js logic[2m > [22m[2msteerToward should move organism toward a point
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mai.js logic[2m > [22m[2mplayerAutoAI should not crash and may set player state
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mai.js logic[2m > [22m[2mfilterFeedPull should process without crash
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mai.js logic[2m > [22m[2mnaturalAI should not crash for a producer
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mbiology.js logic[2m > [22m[2mcanDivide should return true when requirements met
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mbiology.js logic[2m > [22m[2mdivideBlockReason should return string or null
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mbiology.js logic[2m > [22m[2mdivideBlockReason should return string or null
+[22m[39m[i18n] miss ru hud.divide.reason.none
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mbiology.js logic[2m > [22m[2mspawnVirus should add a virus to the world
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mconfig.js logic[2m > [22m[2mtt should return a translated string
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mconfig.js logic[2m > [22m[2mtt should return a translated string
+[22m[39m[i18n] miss ru speed
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mconfig.js logic[2m > [22m[2mmkSp should create a species object
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mconfig.js logic[2m > [22m[2mlightAt should return light level for depth
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mconfig.js logic[2m > [22m[2mhalfW should return half canvas width
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mconfig.js logic[2m > [22m[2mbioFlags should return flags object
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mconfig.js logic[2m > [22m[2mgetLocomotion should return a locomotion type
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mrender functions no-crash[2m > [22m[2mrender() function exists and is callable
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js[2m > [22m[2mLogic functions — comprehensive[2m > [22m[2mrender functions no-crash[2m > [22m[2mdrawOneLilypad should render a lilypad
+[22m[39m[i18n] miss ru fc.producer
+[i18n] miss ru fc.consumer1
+[i18n] miss ru fc.consumer2
+[i18n] miss ru fc.consumer3
+[i18n] miss ru fc.decomposer
+[i18n] miss ru fc.schema
+[i18n] miss ru hud.btn.eat.short
+[i18n] miss ru hud.btn.divide.short
+[i18n] miss ru hud.btn.cyst.short
+[i18n] miss ru hud.btn.auto.short
+[i18n] miss ru x.wasdSwimLmbCursorRmbTargetWheel
+[i18n] miss ru kh.keys
+[i18n] miss ru help.body
+
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/comprehensive.test.js [2m([22m[2m19 tests[22m[2m)[22m[33m 16967[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mai.js logic[2m > [22mforceEat should kill prey and reward predator [33m 964[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mai.js logic[2m > [22mfindBestPrey should return nearest edible organism [33m 883[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mai.js logic[2m > [22mturnToward should rotate organism toward target angle [33m 647[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mai.js logic[2m > [22mthrustAlongFacing should apply velocity in facing direction [33m 681[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mai.js logic[2m > [22msteerToward should move organism toward a point [33m 638[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mai.js logic[2m > [22mplayerAutoAI should not crash and may set player state [33m 918[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mai.js logic[2m > [22mfilterFeedPull should process without crash [33m 875[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mai.js logic[2m > [22mnaturalAI should not crash for a producer [33m 722[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mbiology.js logic[2m > [22mcanDivide should return true when requirements met [33m 890[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mbiology.js logic[2m > [22mdivideBlockReason should return string or null [33m 901[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mbiology.js logic[2m > [22mspawnVirus should add a virus to the world [33m 727[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mconfig.js logic[2m > [22mtt should return a translated string [33m 632[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mconfig.js logic[2m > [22mmkSp should create a species object [33m 1312[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mconfig.js logic[2m > [22mlightAt should return light level for depth [33m 838[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mconfig.js logic[2m > [22mhalfW should return half canvas width [33m 1706[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mconfig.js logic[2m > [22mbioFlags should return flags object [33m 1271[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mconfig.js logic[2m > [22mgetLocomotion should return a locomotion type [33m 1048[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mrender functions no-crash[2m > [22mrender() function exists and is callable [33m 587[2mms[22m[39m
+   [33m[2m✓[22m[39m Logic functions — comprehensive[2m > [22mrender functions no-crash[2m > [22mdrawOneLilypad should render a lilypad [33m 721[2mms[22m[39m
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/langs_consistency.test.js[2m > [22m[2mlangs_consistency (TZ v9 §29)[2m > [22m[2mкаждый включённый язык имеет доказательство критиков (v3 raw A+B>=8 или наследие v2 >=2x8)
+[22m[39mпо наследию v2 (перепроверка v3 ждёт): pt-BR,hi,id,de,fr,ja,vi,ko,th,it,pl,uk,zh-TW,ms,bn
+
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/langs_consistency.test.js [2m([22m[2m5 tests[22m[2m)[22m[33m 1121[2mms[22m[39m
+   [33m[2m✓[22m[39m langs_consistency (TZ v9 §29)[2m > [22mкаждый включённый язык имеет доказательство критиков (v3 raw A+B>=8 или наследие v2 >=2x8) [33m 705[2mms[22m[39m
+   [33m[2m✓[22m[39m langs_consistency (TZ v9 §29)[2m > [22mкаждый включённый язык имеет полные файлы i18n (+wiki) [33m 411[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/import_all_src.test.js [2m([22m[2m33 tests[22m[2m)[22m[33m 1787[2mms[22m[39m
+   [33m[2m✓[22m[39m import all SoT modules (V8 coverage bootstrap)[2m > [22mloads config.js [33m 351[2mms[22m[39m
+   [33m[2m✓[22m[39m import all SoT modules (V8 coverage bootstrap)[2m > [22mloads render_surface.js [33m 509[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/i18n_hardcoded.test.js [2m([22m[2m40 tests[22m[2m)[22m[33m 2061[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/critic_check_analyst.test.js [2m([22m[2m5 tests[22m[2m)[22m[33m 408[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/ui_restore.test.js [2m([22m[2m10 tests[22m[2m)[22m[33m 1763[2mms[22m[39m
+   [33m[2m✓[22m[39m UI-RESTORE §5.1 — keyHint collapse (LS roundtrip, default collapsed)[2m > [22minvalid LS value falls back to collapsed default [33m 555[2mms[22m[39m
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/ui_widgets.test.js[2m > [22m[2mUI-IMPROVE F1: #hDivReady is live during play[2m > [22m[2mafter 60 frames with a live player the indicator shows energy and mass
+[22m[39m[i18n] miss ru hud.goal
+
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/ui_widgets.test.js[2m > [22m[2mUI-IMPROVE F2: #scaleW shows a real µm scale in play[2m > [22m[2min playing: non-empty µm label and a line with width > 0 tied to zoom
+[22m[39m[i18n] miss ru x.scaleBar
+
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/ui_widgets.test.js [2m([22m[2m14 tests[22m[2m)[22m[33m 341[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/biology.test.js [2m([22m[2m9 tests[22m[2m)[22m[32m 34[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/call_core_fns.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 214[2mms[22m[39m
+[90mstdout[2m | .04-Src/07-QA-and-Testing/vitest/ui.test.js[2m > [22m[2mui and ui_menus logic[2m > [22m[2mshows Dead Screen with statistics and modifies UI state
+[22m[39m[i18n] miss en x.pondStatistics
+[i18n] miss en x.alive
+[i18n] miss en x.born
+[i18n] miss en x.dead
+[i18n] miss en x.yourSpecies
+[i18n] miss en x.currentlyAlive
+[i18n] miss en x.totalBorn
+[i18n] miss en x.yourCell
+[i18n] miss en dTip.starve
+[i18n] miss en dTip.eaten
+[i18n] miss en dTip.temp
+[i18n] miss en dTip.age
+[i18n] miss en dTip.lysis
+
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/ui.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 237[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/divide_contract.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 23[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/biology_update_core.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/biology_update_interact.test.js [2m([22m[2m12 tests[22m[2m)[22m[32m 54[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/ai.test.js [2m([22m[2m8 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/aquarium_lifecycle.test.js [2m([22m[2m8 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/ui_systems.test.js [2m([22m[2m22 tests[22m[2m)[22m[32m 23[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/cyst_manual.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/visuals.test.js [2m([22m[2m12 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/world.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/toast_queue.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/ui_polish_corners.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/world_update.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/render_modes.test.js [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/render.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/render_pipeline.test.js [2m([22m[2m18 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/organs.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/lang_detect.test.js [2m([22m[2m1 test[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/math.test.js [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/ai_move.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/demo.test.js [2m([22m[2m7 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/biology_virus.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/force_lang_gate.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/locomotion.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Unhandled Errors [49m[22m[31m⎯⎯⎯⎯⎯⎯[39m
+[31m[1m
+Vitest caught 2 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.[22m[39m
+
+[31m⎯⎯⎯⎯⎯[39m[1m[41m Uncaught Exception [49m[22m[31m⎯⎯⎯⎯⎯[39m
+[31m[1mReferenceError[22m: document is not defined[39m
+[36m [2m❯[22m Timeout.initTooltips [as _onTimeout] .04-Src/07-QA-and-Testing/vitest/ui_restore.test.js:[2m39:23[22m[39m
+    [90m 37| [39m  var season = 0, dayLight = 1, totalDays = 0, fps = 60, orgs = [];
+    [90m 38| [39m`[39m[33m;[39m
+    [90m 39| [39mconst makeCtx = () => eval(`(function(){ ${PROLOGUE}\n${read('ui.js')}…
+    [90m   | [39m                      [31m^[39m
+    [90m 40| [39m  updateHUD, updateEcoPanel, updateLegend,
+    [90m 41| [39m  api: window
+[90m [2m❯[22m listOnTimeout node:internal/timers:[2m685:17[22m[39m
+[90m [2m❯[22m processTimers node:internal/timers:[2m618:7[22m[39m
+
+[31mThis error originated in "[1m.04-Src/07-QA-and-Testing/vitest/ui_restore.test.js[22m" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.[39m
+[31mThis error was caught after test environment was torn down. Make sure to cancel any running tasks before test finishes:
+- cancel timeouts using clearTimeout and clearInterval
+- wait for promises to resolve using the await keyword[39m
+
+[31m⎯⎯⎯⎯⎯[39m[1m[41m Uncaught Exception [49m[22m[31m⎯⎯⎯⎯⎯[39m
+[31m[1mReferenceError[22m: document is not defined[39m
+[36m [2m❯[22m Timeout.measureActbarH [as _onTimeout] .04-Src/07-QA-and-Testing/vitest/ui_restore.test.js:[2m39:23[22m[39m
+    [90m 37| [39m  var season = 0, dayLight = 1, totalDays = 0, fps = 60, orgs = [];
+    [90m 38| [39m`[39m[33m;[39m
+    [90m 39| [39mconst makeCtx = () => eval(`(function(){ ${PROLOGUE}\n${read('ui.js')}…
+    [90m   | [39m                      [31m^[39m
+    [90m 40| [39m  updateHUD, updateEcoPanel, updateLegend,
+    [90m 41| [39m  api: window
+[90m [2m❯[22m listOnTimeout node:internal/timers:[2m685:17[22m[39m
+[90m [2m❯[22m processTimers node:internal/timers:[2m618:7[22m[39m
+
+[31mThis error originated in "[1m.04-Src/07-QA-and-Testing/vitest/ui_restore.test.js[22m" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.[39m
+[31mThis error was caught after test environment was torn down. Make sure to cancel any running tasks before test finishes:
+- cancel timeouts using clearTimeout and clearInterval
+- wait for promises to resolve using the await keyword[39m
+[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+
+
+[2m Test Files [22m [1m[32m33 passed[39m[22m[90m (33)[39m
+[2m      Tests [22m [1m[32m285 passed[39m[22m[90m (285)[39m
+[2m     Errors [22m [1m[31m2 errors[39m[22m
+[2m   Start at [22m 13:41:03
+[2m   Duration [22m 350.13s[2m (transform 1.35s, setup 2.40s, collect 34.99s, tests 25.24s, environment 201.13s, prepare 21.55s)[22m
+

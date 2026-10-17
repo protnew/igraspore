@@ -201,19 +201,18 @@ if ($nonEmpty.Count -gt 0) {
 Out-Check $v13ok 'V13' $v13msg
 
 # V14 (09A rev 14.10, U45): блок «Файлы >500 строк» — заголовок/строка с этой фразой и таблица с путями,
-# либо явное «Файлы >500 строк: 0»
+# либо явное «Файлы >500 строк: 0». Проверяются ВСЕ вхождения фразы, чтобы упоминание в тексте
+# («проверяется блок „Файлы >500 строк"») не считалось блоком.
 $v14ok = $false; $v14msg = 'фраза «Файлы >500 строк» не найдена'
-$anchor = -1
-for ($i = 0; $i -lt $lines.Count; $i++) { if ($lines[$i] -match 'Файлы\s*>500\s*строк') { $anchor = $i; break } }
-if ($anchor -ge 0) {
-  if ($lines[$anchor] -match 'Файлы\s*>500\s*строк[:\s]*(0|нет)\b') {
-    $v14ok = $true; $v14msg = "явный ноль: $($($lines[$anchor]).Trim())"
-  } else {
-    $from = $anchor + 1; $to = [Math]::Min($anchor + 9, $lines.Count - 1); $rows = @()
-    if ($from -le $to) { $rows = @($lines[$from..$to] | Where-Object { $_ -match '^\|' -and $_ -notmatch '^\|[\s:\-\|]+$' -and $_ -match '[\\/]' }) }
-    if ($rows.Count -ge 1) { $v14ok = $true; $v14msg = "блок найден, строк таблицы с путями=$($rows.Count)" }
-    else { $v14msg = 'фраза есть, но таблицы с путями (или явного нуля) нет' }
+$anchors = @(); for ($i = 0; $i -lt $lines.Count; $i++) { if ($lines[$i] -match 'Файлы\s*>500\s*строк') { $anchors += $i } }
+foreach ($anchor in $anchors) {
+  if ($lines[$anchor] -match 'Файлы\s*>500\s*строк[:\s]*0\b') {
+    $v14ok = $true; $v14msg = "явный ноль, строка $($anchor+1): $($($lines[$anchor]).Trim())"; break
   }
+  $from = $anchor + 1; $to = [Math]::Min($anchor + 9, $lines.Count - 1); $rows = @()
+  if ($from -le $to) { $rows = @($lines[$from..$to] | Where-Object { $_ -match '^\|' -and $_ -notmatch '^\|[\s:\-\|]+$' -and $_ -match '[\\/]' }) }
+  if ($rows.Count -ge 1) { $v14ok = $true; $v14msg = "блок со строки $($anchor+1), строк таблицы с путями=$($rows.Count)"; break }
+  $v14msg = "фраза есть ($($anchors.Count) вхождений), но ни при одном нет таблицы с путями или явного нуля"
 }
 Out-Check $v14ok 'V14' $v14msg
 

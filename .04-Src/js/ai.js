@@ -60,14 +60,20 @@ function playerAutoAI(o, dt, speed){
   o.state = 'wander';
 }
 
+function playerEatMiss(pred){
+  if(pred && pred.isPlayer && window.showToast && typeof tt==='function')
+    window.showToast(tt('toast.eat.noneAuto'), '#faa');
+}
+
 /** Force a successful eat for player/AI when possible. */
 function forceEat(pred, prey){
   if(window.demoMode) return false;
-  if(!pred || !prey || !prey.alive) return false;
-  if(prey === pred) return false;
+  if(!pred || !prey || !prey.alive){ playerEatMiss(pred); return false; }
+  if(prey === pred){ playerEatMiss(pred); return false; }
   // Fresh divide children cannot be eaten (grace period)
   if((prey.invuln||0) > 0 || prey._fromDivide || prey._noCull){
     if(!(pred && pred.isPlayer && (prey.invuln||0) < 0.3 && !prey._fromDivide)){
+      playerEatMiss(pred);
       return false;
     }
   }
@@ -111,6 +117,7 @@ function forceEat(pred, prey){
     if(pred.isPlayer && window.showToast) window.showToast(tt('toast.auto.gain',{e:Math.round(energyGain)}), '#8f8');
     return true;
   }
+  playerEatMiss(pred);
   return false;
 }
 
@@ -130,6 +137,8 @@ function findBestPrey(o, radius, forPlayer){
     var p = near[i];
     if(!p || !p.alive || p===o || p.cyst) continue;
     if(p.dying) continue;
+    // Только что родившиеся и клетки с защитой укус всё равно отвергнет — не выбирать их.
+    if(p._fromDivide || p._noCull || (p.invuln||0) > 0.5) continue;
 
     var ok=false;
     var inChain = foodCats.indexOf(p.sp.cat) >= 0;

@@ -345,7 +345,10 @@ function startGame(isScreensaver){
     }
   } catch(e){}
   
-  document.getElementById('menuO').className='ov';
+  // Прячем меню на следующем кадре. Если спрятать кнопку «Начать» внутри её же клика,
+  // проверка клика не видит кнопку и ждёт до таймаута — за это время клетка успевает погибнуть.
+  var _menuEl = document.getElementById('menuO');
+  setTimeout(function(){ if(_menuEl) _menuEl.className = 'ov'; }, 0);
   // UI-IMPROVE-2026-09-28 F5: close stale overlays from the previous page session
   ['wikiO','helpO','setO','pauseO','leaderboardO'].forEach(function(id){ var o=document.getElementById(id); if(o) o.className='ov'; });
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';

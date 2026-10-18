@@ -2,7 +2,7 @@
 //   1) keyHint LS roundtrip + default collapsed
 //   2) energy display policy (A): display-only clamp, HUD never shows >100/100
 //   3) after updateEcoPanel()+updateLegend() the legend stays under collapse-API control
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, afterAll } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 
@@ -53,9 +53,15 @@ const _timers = new Set();
 const _setTimeout = globalThis.setTimeout, _setInterval = globalThis.setInterval;
 globalThis.setTimeout = (fn, ms, ...rest) => { const id = _setTimeout(fn, ms, ...rest); _timers.add(['t', id]); return id; };
 globalThis.setInterval = (fn, ms, ...rest) => { const id = _setInterval(fn, ms, ...rest); _timers.add(['i', id]); return id; };
-afterEach(() => {
+function _clearTrackedTimers(){
   for (const [kind, id] of _timers) { if (kind === 't') clearTimeout(id); else clearInterval(id); }
   _timers.clear();
+}
+afterEach(_clearTrackedTimers);
+afterAll(() => {
+  _clearTrackedTimers();
+  globalThis.setTimeout = _setTimeout;
+  globalThis.setInterval = _setInterval;
 });
 
 describe('UI-RESTORE §5.1 — keyHint collapse (LS roundtrip, default collapsed)', () => {

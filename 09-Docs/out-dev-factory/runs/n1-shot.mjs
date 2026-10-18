@@ -24,9 +24,9 @@ for (const [lang, spec, sample] of jobs) {
   await page.waitForSelector('#startBtn', { state: 'attached', timeout: 15000 });
   await page.waitForTimeout(800);
   const loaded = await page.evaluate(async (q) => {
-    const faces = await document.fonts.load(q);
+    const faces = await document.fonts.load(q.spec, q.sample);
     return faces.map((f) => f.family + ' status=' + f.status + ' ' + (f.unicodeRange || ''));
-  }, spec);
+  }, { spec, sample });
   await page.screenshot({ path: path.join(outDir, lang + '-menu.png'), timeout: 10000 });
   const row = { lang, sample, loaded, fontReqs, errs };
   report.push(row);

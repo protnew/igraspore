@@ -1,0 +1,41 @@
+[
+  {
+    "lang": "bn",
+    "sample": "বাংলা",
+    "loaded": [
+      "Noto Sans Bengali status=loaded U+951-952, U+964-965, U+980-9FE, U+200C-200D"
+    ],
+    "fontReqs": [
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansBengali-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansThai-Regular.woff2"
+    ],
+    "errs": []
+  },
+  {
+    "lang": "hi",
+    "sample": "हिन्दी",
+    "loaded": [
+      "Noto Sans Devanagari status=loaded U+900-97F, U+1CD0-1CF9, U+200C-200D, U+20B9"
+    ],
+    "fontReqs": [
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansBengali-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansThai-Regular.woff2"
+    ],
+    "errs": []
+  },
+  {
+    "lang": "th",
+    "sample": "ไทย",
+    "loaded": [
+      "Noto Sans Thai status=loaded U+E01-E5B, U+200C-200D"
+    ],
+    "fontReqs": [
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansThai-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansBengali-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansDevanagari-Regular.woff2"
+    ],
+    "errs": []
+  }
+]

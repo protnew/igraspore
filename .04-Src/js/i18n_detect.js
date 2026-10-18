@@ -25,7 +25,8 @@ function applyLangFont(code) {
   if (typeof document === 'undefined') return;
   document.documentElement.lang = code || 'en';
   var face = code === 'bn' ? 'Noto Sans Bengali' : code === 'hi' ? 'Noto Sans Devanagari' : code === 'th' ? 'Noto Sans Thai' : '';
-  if (face && document.fonts && document.fonts.load) document.fonts.load('16px "' + face + '"').catch(function(){});
+  var sample = code === 'bn' ? '\u0995' : code === 'hi' ? '\u0915' : code === 'th' ? '\u0E01' : '';
+  if (face && sample && document.fonts && document.fonts.load) document.fonts.load('16px "' + face + '"', sample).catch(function(){});
 }
 // QA-only gate (U39): forcing a disabled language is allowed on the local QA stand or
 // when ?qa=1 is present. Off-QA the stored igs_force_lang is ignored, so production

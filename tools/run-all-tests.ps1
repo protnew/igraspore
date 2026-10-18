@@ -27,6 +27,10 @@ $machine = $env:COMPUTERNAME
 $startedAt = $nowIso
 $suites = @()
 
+# Шрифты источника должны лежать и в раздаваемой 04-Src\fonts, иначе консоль ловит 404.
+& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'sync_fonts.ps1')
+if ($LASTEXITCODE -ne 0) { Write-Output 'FONT SHA FAIL'; Pop-Location; exit 1 }
+
 if ($ValidateOnly) {
   $files = Get-ChildItem (Join-Path $runsDir 'results-*.json') -ErrorAction SilentlyContinue
   if (-not $files) { Write-Output 'нет results-*.json'; Pop-Location; exit 2 }

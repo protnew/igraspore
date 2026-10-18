@@ -1,0 +1,35 @@
+[
+  {
+    "lang": "bn",
+    "sample": "বাংলা",
+    "loaded": [],
+    "fontReqs": [
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansThai-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansBengali-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansDevanagari-Regular.woff2"
+    ],
+    "errs": []
+  },
+  {
+    "lang": "hi",
+    "sample": "हिन्दी",
+    "loaded": [],
+    "fontReqs": [
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansBengali-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansDevanagari-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansThai-Regular.woff2"
+    ],
+    "errs": []
+  },
+  {
+    "lang": "th",
+    "sample": "ไทย",
+    "loaded": [],
+    "fontReqs": [
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansBengali-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansThai-Regular.woff2",
+      "200 http://127.0.0.1:8795/04-Src/fonts/NotoSansDevanagari-Regular.woff2"
+    ],
+    "errs": []
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "http": {
+    "NotoSansBengali-Regular.woff2": 200,
+    "NotoSansDevanagari-Regular.woff2": 200,
+    "NotoSansThai-Regular.woff2": 200
+  },
+  "load": [
+    {"spec": "16px \"Noto Sans Thai\"", "text": "ก", "n": 1, "status": "loaded:Noto Sans Thai"},
+    {"spec": "16px \"Noto Sans Bengali\"", "text": "ক", "n": 1, "status": "loaded:Noto Sans Bengali"},
+    {"spec": "16px \"Noto Sans Devanagari\"", "text": "क", "n": 1, "status": "loaded:Noto Sans Devanagari"}
+  ],
+  "console_errors_on_bn_hi_th": 0,
+  "ofl": "SIL OFL 1.1, Copyright 2022 The Noto Project Authors"
+}

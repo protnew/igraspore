@@ -1,0 +1,12 @@
+tr tempL display=block text=Su sıcaklığı. Metabolizmayı ve hayatta kalmayı etkiler.
+tr lightL display=block text=Işık düzeyi. Yosun fotosentezi için önemli.
+tr energyBar display=block text=Canlının enerjisi. Zamanla düşer. Sıfıra inerse — açlıktan ölüm.
+tr errors=0
+fil tempL display=block text=Temperatura ng tubig. Nakakaapekto sa metabolism at pagkaligtas.
+fil lightL display=block text=Antas ng liwanag. Mahalaga sa photosynthesis ng algae.
+fil energyBar display=block text=Enerhiya ng nilikha. Bumababa habang lumilipas ang oras. Sa zero — mamamatay sa gutom.
+fil errors=0
+es tempL display=block text=Temperatura del agua. Afecta el metabolismo y la supervivencia.
+es lightL display=block text=Nivel de luz. Importante para la fotosíntesis de las algas.
+es energyBar display=block text=Energía de la criatura. Baja con el tiempo. A cero, muerte por hambre.
+es errors=0

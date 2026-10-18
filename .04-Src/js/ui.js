@@ -43,21 +43,43 @@ function updateHUD(){
   var cover = player._lilyCover ? (tt('x.cover')) : '';
   var cyst = player.cyst ? (tt('x.cyst2')) : '';
   var role = (typeof catName==='function') ? catName(player.sp.cat) : '';
+  var held = document.getElementById('tempL');
+  if(held && held.closest && held.closest('#hud')){
+    var fill = document.querySelector('#energyBar > div');
+    if(fill){ fill.style.width=(eRatio*100)+'%'; fill.style.background=eColor; }
+    var et = document.getElementById('hudEnergyText');
+    if(et) et.textContent = displayE+'/100';
+    var ab = document.getElementById('ageBar');
+    if(ab) ab.textContent = Math.round(player.age)+'s';
+    var scentFill = document.querySelector('#scentBar > div');
+    if(scentFill){ scentFill.style.width=(scent*100)+'%'; scentFill.style.background=sColor; }
+    var title = document.getElementById('hudTitle');
+    if(title) title.textContent = player.sp.name;
+    document.getElementById('fpsL').textContent = tt('fps')+': '+(typeof fps!=='undefined'?fps:'');
+    document.getElementById('lightL').textContent = tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%';
+    held.textContent = tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C';
+    document.getElementById('daysL').textContent = tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0);
+    return;
+  }
   // SIMPLE CLEAN HUD: only essential stats
   h.innerHTML = 
-    '<div style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:2px;">'+player.sp.name+'</div>'+
+    '<div id="hudTitle" style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:2px;">'+player.sp.name+'</div>'+
     '<div style="font-size:12px;color:#89f;margin-bottom:6px;">'+role+tt('hud.genSep')+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst+'</div>'+
-    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:18px;overflow:hidden;margin-bottom:4px;">'+
+    '<div id="energyBar" style="background:#012;border:1px solid #234;border-radius:4px;height:18px;overflow:hidden;margin-bottom:4px;">'+
       '<div style="width:'+(eRatio*100)+'%;background:'+eColor+';height:100%;transition:width .3s;"></div>'+
     '</div>'+
     '<div style="font-size:11px;color:#9ab;margin:0 0 2px 0">'+sLabel+'</div>'+
-    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:12px;overflow:hidden;margin-bottom:6px;">'+
+    '<div id="scentBar" style="background:#012;border:1px solid #234;border-radius:4px;height:12px;overflow:hidden;margin-bottom:6px;">'+
       '<div style="width:'+(scent*100)+'%;background:'+sColor+';height:100%;transition:width .2s;"></div>'+
     '</div>'+
     '<div style="font-size:13px;line-height:1.6;">'+
-      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span style="color:#fff;font-weight:bold;">'+displayE+'/100</span><br>'+
-      '<span style="color:#8af;font-weight:bold;">'+tt('age')+':</span> <span style="color:#fff;">'+Math.round(player.age)+'s</span><br>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span id="hudEnergyText" style="color:#fff;font-weight:bold;">'+displayE+'/100</span><br>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('age')+':</span> <span id="ageBar" style="color:#fff;">'+Math.round(player.age)+'s</span><br>'+
       '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span style="color:#fff;">'+player.offspring+'</span>'+
+    '</div>'+
+    '<div style="font-size:11px;color:#cde;line-height:1.45">'+
+      '<span id="fpsL">'+tt('fps')+': '+(typeof fps!=='undefined'?fps:'')+'</span> \u00b7 <span id="lightL">'+tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%</span><br>'+
+      '<span id="tempL">'+tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C</span> \u00b7 <span id="daysL">'+tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0)+'</span> \u00b7 <span id="popC">'+tt('pop')+'</span>'+
     '</div>'+
     (player.infected?'<div style="color:#f44;font-size:12px;margin-top:4px;">\u2620 '+(tt('x.infected2'))+'</div>':'');
 }
@@ -289,20 +311,20 @@ function initTooltips() {
   var tip = document.getElementById('globalTooltip');
   if(!tip) return;
   var tooltips = {
-    'popC': tt('tip.popC'),
-    'fpsL': tt('tip.fpsL'),
-    'lightL': tt('tip.lightL'),
-    'tempL': tt('tip.tempL'),
-    'daysL': tt('tip.daysL'),
-    'energyBar': tt('tip.energyBar'),
-    'ageBar': tt('tip.ageBar')
+    'popC': 'tip.popC',
+    'fpsL': 'tip.fpsL',
+    'lightL': 'tip.lightL',
+    'tempL': 'tip.tempL',
+    'daysL': 'tip.daysL',
+    'energyBar': 'tip.energyBar',
+    'ageBar': 'tip.ageBar'
   };
 
   document.addEventListener('mousemove', function(e) {
     var tgt = e.target;
     var tipText = '';
     while(tgt && tgt !== document.body) {
-      if(tgt.id && tooltips[tgt.id]) { tipText = tooltips[tgt.id]; break; }
+      if(tgt.id && tooltips[tgt.id]) { tipText = tt(tooltips[tgt.id]); break; }
       if(tgt.className && typeof tgt.className === 'string' && tgt.className.includes('cb')) { tipText = tt('tip.cbFilter'); break; }
       if(tgt.id === 'langSelWrap') { tipText = tt('tip.lang'); break; }
       tgt = tgt.parentElement;

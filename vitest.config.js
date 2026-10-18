@@ -30,6 +30,7 @@ export default defineConfig({
     setupFiles: ['./vitest.setup.js'],
     include: [
       '.04-Src/07-QA-and-Testing/vitest/**/*.{test,spec}.{js,mjs,cjs}',
+      'tools/tooltip_keys.test.js',
     ],
     fileParallelism: false,
     testTimeout: 20000,

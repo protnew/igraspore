@@ -126,22 +126,22 @@ function initTooltips() {
   var tip = document.getElementById('globalTooltip');
   if(!tip) return;
   var tooltips = {
-    'popC': 'График популяции. Показывает историю рождений и смертей.',
-    'fpsL': 'Кадры в секунду (FPS). Показывает производительность игры.',
-    'lightL': 'Уровень освещенности. Важен для фотосинтеза водорослей.',
-    'tempL': 'Температура воды. Влияет на метаболизм и выживание.',
-    'daysL': 'Игровые дни. Смена сезонов влияет на температуру.',
-    'energyBar': 'Энергия существа. Падает со временем. Если дойдет до нуля — смерть от голода.',
-    'ageBar': 'Возраст существа. Старые клетки теряют энергию быстрее.'
+    'popC': 'tip.popC',
+    'fpsL': 'tip.fpsL',
+    'lightL': 'tip.lightL',
+    'tempL': 'tip.tempL',
+    'daysL': 'tip.daysL',
+    'energyBar': 'tip.energyBar',
+    'ageBar': 'tip.ageBar'
   };
 
   document.addEventListener('mousemove', function(e) {
     var tgt = e.target;
     var tipText = '';
     while(tgt && tgt !== document.body) {
-      if(tgt.id && tooltips[tgt.id]) { tipText = tooltips[tgt.id]; break; }
-      if(tgt.className && typeof tgt.className === 'string' && tgt.className.includes('cb')) { tipText = 'Фильтр организмов. Нажмите, чтобы показать только этот вид в меню.'; break; }
-      if(tgt.id === 'langSelWrap') { tipText = 'Выбор языка (Language Selector)'; break; }
+      if(tgt.id && tooltips[tgt.id]) { tipText = tt(tooltips[tgt.id]); break; }
+      if(tgt.className && typeof tgt.className === 'string' && tgt.className.includes('cb')) { tipText = tt('tip.cbFilter'); break; }
+      if(tgt.id === 'langSelWrap') { tipText = tt('tip.lang'); break; }
       tgt = tgt.parentElement;
     }
     

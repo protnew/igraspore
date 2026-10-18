@@ -23,6 +23,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000814;font-family:
 canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 .p{background:rgba(0,12,28,.92);border:1px solid #1a3a55;border-radius:8px;color:#ffffff;font-size:11px;backdrop-filter:blur(4px)}
 #hud{position:relative;z-index:10;pointer-events:none;padding:8px 12px;min-width:160px;max-width:200px;font-size:13px}
+#hud #tempL,#hud #lightL,#hud #energyBar,#hud #fpsL,#hud #daysL,#hud #popC,#hud #ageBar{pointer-events:auto}
 #hud .nm{color:#ffffff;font-size:12px;font-weight:bold}
 #hud .la{color:#dddddd;font-size:12px;font-style:italic;margin-bottom:2px}
 #ebar{width:100%;height:6px;background:#200;border-radius:3px;overflow:hidden;margin:1px 0}

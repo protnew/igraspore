@@ -271,6 +271,9 @@ if ($Only -and $result.merged_from) {
   [System.IO.File]::WriteAllText((Join-Path $runsDir 'results-latest.json'), ($result | ConvertTo-Json -Depth 8), (New-Object System.Text.UTF8Encoding($false)))
 }
 
+& node (Join-Path $root 'tools\build_tests_page.mjs')
+if ($LASTEXITCODE -ne 0) { Write-Output 'tests page FAIL' }
+
 $t = $result.totals
 Write-Output "run $ts commit=$commit branch=$branch dirty=$dirty"
 foreach ($s in $suites) { Write-Output ("  {0,-10} pass={1} fail={2} skip={3} exit={4} ms={5}" -f $s.id, $s.totals.pass, $s.totals.fail, $s.totals.skipped, $s.exit_code, $s.ms) }

@@ -14,7 +14,7 @@ window.langNames = {
   de: 'Deutsch', fr: 'Français', hi: 'हिन्दी', ja: '日本語', vi: 'Tiếng Việt',
   ko: '한국어', th: 'ไทย', it: 'Italiano', pl: 'Polski', uk: 'Українська',
   'zh-TW': '繁體中文', ms: 'Bahasa Melayu', bn: 'বাংলা',
-  zh: '中文', es: 'Español', ar: 'العربية', pt: 'Português'
+  zh: '中文', es: 'Español', tr: 'Türkçe', fil: 'Filipino', ar: 'العربية', pt: 'Português'
 };
 
 if(typeof T!=='undefined'){ if(T.ru)T.ru['x.scaleBar']='Масштаб: 100 мкм'; if(T.en)T.en['x.scaleBar']='Scale: 100 µm'; }

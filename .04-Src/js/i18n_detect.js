@@ -52,7 +52,7 @@ function loadLangPack(code) {
 if (typeof window !== 'undefined') {
   window.loadLangPack = loadLangPack;
   window.detectLang = detectLang;
-  window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1, 'pt-BR': 1, id: 1, de: 1, fr: 1, hi: 1, ja: 1, vi: 1, ko: 1, th: 1, it: 1, pl: 1, uk: 1, 'zh-TW': 1, ms: 1, bn: 1 };
+  window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1, 'pt-BR': 1, id: 1, de: 1, fr: 1, hi: 1, ja: 1, vi: 1, ko: 1, th: 1, it: 1, pl: 1, uk: 1, 'zh-TW': 1, ms: 1, bn: 1, es: 1, tr: 1, fil: 1 };
   // Dev/QA hook (L.9 screenshots): force a language that is NOT in the enabled set
   // without editing languages.json / LANGS / localeConfig. QA-only (U39): honoured
   // solely on the localhost QA stand or with ?qa=1; elsewhere igs_force_lang is ignored.

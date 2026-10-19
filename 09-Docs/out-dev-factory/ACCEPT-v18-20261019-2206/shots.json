@@ -1,0 +1,117 @@
+[
+ {
+  "name": "01-language-list",
+  "lang": "en",
+  "url": "http://127.0.0.1:8795/?lang=en",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\01-language-list.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "items=20 es/tr/fil=true/true/true :: Русский,English,Português (Brasil),Bahasa Indonesia,Deutsch,Français,हिन्दी,日本語,Tiếng Việt,한국어,ไทย,Italiano,Polski,Українська,繁體中文,Bahasa Melayu,বাংলা,Español,Türkçe,Filipino"
+ },
+ {
+  "name": "02-start-menu-es",
+  "lang": "es",
+  "url": "http://127.0.0.1:8795/?lang=es",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\02-start-menu-es.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "startBtn=EMPEZAR"
+ },
+ {
+  "name": "02-start-menu-tr",
+  "lang": "tr",
+  "url": "http://127.0.0.1:8795/?lang=tr",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\02-start-menu-tr.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "startBtn=BAŞLA"
+ },
+ {
+  "name": "02-start-menu-fil",
+  "lang": "fil",
+  "url": "http://127.0.0.1:8795/?lang=fil",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\02-start-menu-fil.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "startBtn=SIMULA"
+ },
+ {
+  "name": "03-hud-cell-card-D1",
+  "lang": "tr",
+  "url": "http://127.0.0.1:8795/?lang=tr",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\03-hud-cell-card-D1.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "before={\"divs\":\"0\",\"off\":0,\"inf\":\"none\"} after={\"divs\":\"3\",\"off\":3,\"inf\":\"block\"} updated=true"
+ },
+ {
+  "name": "04-miss-toast-only-eat-D2",
+  "lang": "en",
+  "url": "http://127.0.0.1:8795/?lang=en",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\04-miss-toast-only-eat-D2.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "idleToasts= ; afterSpace= ; afterEatClick="
+ },
+ {
+  "name": "05-tr-tooltip-tempL-N2",
+  "lang": "tr",
+  "url": "http://127.0.0.1:8795/?lang=tr",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\05-tr-tooltip-tempL-N2.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "tooltip=[\"block\",\"Su sıcaklığı. Metabolizmayı ve hayatta kalmayı etkiler.\"] cyrillic=false"
+ },
+ {
+  "name": "06-fonts-th",
+  "lang": "th",
+  "url": "http://127.0.0.1:8795/?lang=th",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\06-fonts-th.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "fonts.load(Noto Sans Thai)=1 start=เริ่ม"
+ },
+ {
+  "name": "06-fonts-hi",
+  "lang": "hi",
+  "url": "http://127.0.0.1:8795/?lang=hi",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\06-fonts-hi.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "fonts.load(Noto Sans Devanagari)=1 start=शुरू"
+ },
+ {
+  "name": "06-fonts-bn",
+  "lang": "bn",
+  "url": "http://127.0.0.1:8795/?lang=bn",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\06-fonts-bn.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "fonts.load(Noto Sans Bengali)=1 start=শুরু"
+ },
+ {
+  "name": "07-lab-tests-page",
+  "url": "http://127.0.0.1:8793/lab/tests",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\07-lab-tests-page.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "ОглавлениеТестыЯзыкиТестыРучная проверка игры: http://127.0.0.1:8795/?lang=enСнимкиshots-ui-improve-2026-09-28shots-ui-audit-2026-10-14shots-release-ready-2026-10-14ACCEPT-v17-2148ACCEPT-v17-2052ACCEPT-v17-1811ACCEPT-v17"
+ },
+ {
+  "name": "08-lab-root-redirect",
+  "url": "http://127.0.0.1:8793/",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\08-lab-root-redirect.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "final url=http://127.0.0.1:8793/lab/ chain=http://127.0.0.1:8793/"
+ },
+ {
+  "name": "09-mobile-390x844-game-fil",
+  "lang": "fil",
+  "url": "http://127.0.0.1:8795/?lang=fil",
+  "file": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\ACCEPT-v18-20261019-2206\\09-mobile-390x844-game-fil.png",
+  "consoleErrors": 0,
+  "errs": [],
+  "note": "mobile fil"
+ }
+]

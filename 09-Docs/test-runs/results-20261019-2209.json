@@ -1,0 +1,1034 @@
+{
+    "schema":  "igs-test-run/1",
+    "run_id":  "20261019-2209",
+    "started_at":  "2026-10-19 22:09 UTC+3",
+    "finished_at":  "2026-10-19 22:34 UTC+3",
+    "commit":  "7479dc1",
+    "branch":  "release-ready-2026-10-14",
+    "dirty_count":  1009,
+    "machine":  "I1",
+    "totals":  {
+                   "pass":  129,
+                   "fail":  1,
+                   "skipped":  1,
+                   "total":  131
+               },
+    "suites":  [
+                   {
+                       "id":  "vitest",
+                       "name":  "Vitest unit",
+                       "command":  "node .04-Src\\node_modules\\vitest\\vitest.mjs run --config vitest.config.js --root . --reporter=json --outputFile=\u003ctmp\u003e\\vitest.json",
+                       "exit_code":  1,
+                       "ms":  41361,
+                       "log":  "09-Docs/test-runs/logs/20261019-2209/vitest.log",
+                       "totals":  {
+                                      "pass":  0,
+                                      "fail":  1,
+                                      "skipped":  0,
+                                      "total":  1
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "vitest.run",
+                                         "file":  "vitest",
+                                         "title":  "suite did not produce results",
+                                         "status":  "fail",
+                                         "ms":  41361,
+                                         "error_first_line":  "System.Management.Automation.RemoteException | ⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯ | Error: Channel closed"
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "qa_unit",
+                       "name":  "QA unit (data)",
+                       "command":  "node .04-Src\\07-QA-and-Testing\\qa_unit.js",
+                       "exit_code":  0,
+                       "ms":  1727,
+                       "log":  "09-Docs/test-runs/logs/20261019-2209/qa_unit.log",
+                       "totals":  {
+                                      "pass":  26,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  26
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "qa_unit.U1",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN is array",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U2",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN has 25 species",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U3",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All PN entries are strings",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U4",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN entries are unique",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U5",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN has Synechocystis sp.",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U6",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN has Chroococcidiopsis",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U7",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All PN entries have genus+species",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U8",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SHAPES has producer category",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U9",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SHAPES has consumer1 category",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U10",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SHAPES has consumer2 category",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U11",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Producer shapes match PN count",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U12",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SWISS_SHAPES has 27 entries",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U13",
+                                         "file":  "qa_unit.js",
+                                         "title":  "No duplicates",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U14",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes all bacteria types",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U15",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes all eukaryote types",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U16",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes virus (phage)",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U17",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes specialist shapes",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U18",
+                                         "file":  "qa_unit.js",
+                                         "title":  "NAME_OVERRIDE is non-empty array",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U19",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Has \u003e60 mappings",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U20",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All entries are [regex, string]",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U21",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All mapped shapes exist in SWISS_SHAPES",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U22",
+                                         "file":  "qa_unit.js",
+                                         "title":  "27 PNG files exist",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U23",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Every SWISS_SHAPE has PNG",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U24",
+                                         "file":  "qa_unit.js",
+                                         "title":  "No orphan PNGs",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U25",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All APPROX shapes set to false",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U26",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Every PN species maps to a Swiss shape",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "playwright",
+                       "name":  "Playwright e2e",
+                       "command":  "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\node_modules\\.bin\\playwright.cmd test --config playwright.contract.config.js",
+                       "exit_code":  0,
+                       "ms":  1432173,
+                       "log":  "09-Docs/test-runs/logs/20261019-2209/playwright.log",
+                       "totals":  {
+                                      "pass":  64,
+                                      "fail":  0,
+                                      "skipped":  1,
+                                      "total":  65
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "playwright.1",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] постоянных видимых элементов HUD \u003c= 6, \u003e=44px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  23737
+                                     },
+                                     {
+                                         "id":  "playwright.2",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] Q: деление — ready даёт dividing, blocked даёт причину",
+                                         "status":  "pass",
+                                         "ms":  26032
+                                     },
+                                     {
+                                         "id":  "playwright.3",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] R: ручная циста держится \u003e=1с, повторное R будит",
+                                         "status":  "pass",
+                                         "ms":  17074
+                                     },
+                                     {
+                                         "id":  "playwright.4",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] E x4 вида: каждый даёт тост или изменение энергии/массы",
+                                         "status":  "pass",
+                                         "ms":  42582
+                                     },
+                                     {
+                                         "id":  "playwright.5",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] Tab (bAuto) переключает autoAI",
+                                         "status":  "pass",
+                                         "ms":  23731
+                                     },
+                                     {
+                                         "id":  "playwright.6",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] меню паузы: каждая кнопка даёт эффект",
+                                         "status":  "pass",
+                                         "ms":  35973
+                                     },
+                                     {
+                                         "id":  "playwright.7",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] ни одной мёртвой кнопки: все видимые дают эффект или тост",
+                                         "status":  "pass",
+                                         "ms":  26962
+                                     },
+                                     {
+                                         "id":  "playwright.8",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] постоянных видимых элементов HUD \u003c= 6, \u003e=44px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  20760
+                                     },
+                                     {
+                                         "id":  "playwright.9",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] Q: деление — ready даёт dividing, blocked даёт причину",
+                                         "status":  "pass",
+                                         "ms":  20096
+                                     },
+                                     {
+                                         "id":  "playwright.10",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] R: ручная циста держится \u003e=1с, повторное R будит",
+                                         "status":  "pass",
+                                         "ms":  41079
+                                     },
+                                     {
+                                         "id":  "playwright.11",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] E x4 вида: каждый даёт тост или изменение энергии/массы",
+                                         "status":  "pass",
+                                         "ms":  26609
+                                     },
+                                     {
+                                         "id":  "playwright.12",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] Tab (bAuto) переключает autoAI",
+                                         "status":  "pass",
+                                         "ms":  14990
+                                     },
+                                     {
+                                         "id":  "playwright.13",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] меню паузы: каждая кнопка даёт эффект",
+                                         "status":  "pass",
+                                         "ms":  22489
+                                     },
+                                     {
+                                         "id":  "playwright.14",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] ни одной мёртвой кнопки: все видимые дают эффект или тост",
+                                         "status":  "pass",
+                                         "ms":  14074
+                                     },
+                                     {
+                                         "id":  "playwright.15",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] постоянных видимых элементов HUD \u003c= 6, \u003e=44px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  12687
+                                     },
+                                     {
+                                         "id":  "playwright.16",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] Q: деление — ready даёт dividing, blocked даёт причину",
+                                         "status":  "pass",
+                                         "ms":  13047
+                                     },
+                                     {
+                                         "id":  "playwright.17",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] R: ручная циста держится \u003e=1с, повторное R будит",
+                                         "status":  "pass",
+                                         "ms":  10431
+                                     },
+                                     {
+                                         "id":  "playwright.18",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] E x4 вида: каждый даёт тост или изменение энергии/массы",
+                                         "status":  "pass",
+                                         "ms":  22849
+                                     },
+                                     {
+                                         "id":  "playwright.19",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] Tab (bAuto) переключает autoAI",
+                                         "status":  "pass",
+                                         "ms":  11445
+                                     },
+                                     {
+                                         "id":  "playwright.20",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] меню паузы: каждая кнопка даёт эффект",
+                                         "status":  "pass",
+                                         "ms":  20446
+                                     },
+                                     {
+                                         "id":  "playwright.21",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] ни одной мёртвой кнопки: все видимые дают эффект или тост",
+                                         "status":  "pass",
+                                         "ms":  13110
+                                     },
+                                     {
+                                         "id":  "playwright.22",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] \u003c=6 элементов, \u003e=44px, actBar \u003c=72px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  6359
+                                     },
+                                     {
+                                         "id":  "playwright.23",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] тап по #bCyst включает цисту",
+                                         "status":  "pass",
+                                         "ms":  7388
+                                     },
+                                     {
+                                         "id":  "playwright.24",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] \u003c=6 элементов, \u003e=44px, actBar \u003c=72px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  6824
+                                     },
+                                     {
+                                         "id":  "playwright.25",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] тап по #bCyst включает цисту",
+                                         "status":  "pass",
+                                         "ms":  7584
+                                     },
+                                     {
+                                         "id":  "playwright.26",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] \u003c=6 элементов, \u003e=44px, actBar \u003c=72px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  13203
+                                     },
+                                     {
+                                         "id":  "playwright.27",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] тап по #bCyst включает цисту",
+                                         "status":  "pass",
+                                         "ms":  10410
+                                     },
+                                     {
+                                         "id":  "playwright.28",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ru] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  18909
+                                     },
+                                     {
+                                         "id":  "playwright.29",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ru] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19216
+                                     },
+                                     {
+                                         "id":  "playwright.30",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[en] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  28766
+                                     },
+                                     {
+                                         "id":  "playwright.31",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[en] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  40823
+                                     },
+                                     {
+                                         "id":  "playwright.32",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[pt-BR] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  36901
+                                     },
+                                     {
+                                         "id":  "playwright.33",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[pt-BR] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  37530
+                                     },
+                                     {
+                                         "id":  "playwright.34",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[id] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  38243
+                                     },
+                                     {
+                                         "id":  "playwright.35",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[id] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  22398
+                                     },
+                                     {
+                                         "id":  "playwright.36",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[de] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19216
+                                     },
+                                     {
+                                         "id":  "playwright.37",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[de] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  20669
+                                     },
+                                     {
+                                         "id":  "playwright.38",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[fr] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  36411
+                                     },
+                                     {
+                                         "id":  "playwright.39",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[fr] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  26973
+                                     },
+                                     {
+                                         "id":  "playwright.40",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[hi] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19601
+                                     },
+                                     {
+                                         "id":  "playwright.41",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[hi] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19469
+                                     },
+                                     {
+                                         "id":  "playwright.42",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ja] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  20045
+                                     },
+                                     {
+                                         "id":  "playwright.43",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ja] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  21836
+                                     },
+                                     {
+                                         "id":  "playwright.44",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[vi] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  20753
+                                     },
+                                     {
+                                         "id":  "playwright.45",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[vi] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19189
+                                     },
+                                     {
+                                         "id":  "playwright.46",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ko] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  20868
+                                     },
+                                     {
+                                         "id":  "playwright.47",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ko] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  18933
+                                     },
+                                     {
+                                         "id":  "playwright.48",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[th] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  18715
+                                     },
+                                     {
+                                         "id":  "playwright.49",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[th] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19014
+                                     },
+                                     {
+                                         "id":  "playwright.50",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[it] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  18834
+                                     },
+                                     {
+                                         "id":  "playwright.51",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[it] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19200
+                                     },
+                                     {
+                                         "id":  "playwright.52",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[pl] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  18798
+                                     },
+                                     {
+                                         "id":  "playwright.53",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[pl] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19530
+                                     },
+                                     {
+                                         "id":  "playwright.54",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[uk] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  20243
+                                     },
+                                     {
+                                         "id":  "playwright.55",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[uk] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19197
+                                     },
+                                     {
+                                         "id":  "playwright.56",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[zh-TW] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  33678
+                                     },
+                                     {
+                                         "id":  "playwright.57",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[zh-TW] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  23753
+                                     },
+                                     {
+                                         "id":  "playwright.58",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ms] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  18931
+                                     },
+                                     {
+                                         "id":  "playwright.59",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ms] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  32712
+                                     },
+                                     {
+                                         "id":  "playwright.60",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[bn] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  28571
+                                     },
+                                     {
+                                         "id":  "playwright.61",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[bn] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  19425
+                                     },
+                                     {
+                                         "id":  "playwright.62",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[es] forced 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  18622
+                                     },
+                                     {
+                                         "id":  "playwright.63",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[tr] forced 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  18054
+                                     },
+                                     {
+                                         "id":  "playwright.64",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[fil] forced 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  17947
+                                     },
+                                     {
+                                         "id":  "playwright.65",
+                                         "file":  "lab_tests_page.spec.js",
+                                         "title":  "lab tests page: фильтр «упавшие» и поиск",
+                                         "status":  "skipped",
+                                         "ms":  1426
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "i18n",
+                       "name":  "i18n checks",
+                       "command":  "identity+coverage+lint+langs_consistency+critic_check",
+                       "exit_code":  0,
+                       "ms":  9844,
+                       "log":  "09-Docs/test-runs/logs/20261019-2209/i18n.log",
+                       "totals":  {
+                                      "pass":  24,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  24
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "i18n.identity.OK",
+                                         "file":  "i18n_identity.mjs",
+                                         "title":  "identity OK",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.bn",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage bn",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.de",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage de",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.en",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage en",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.es",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage es",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.fil",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage fil",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.fr",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage fr",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.hi",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage hi",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.id",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage id",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.it",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage it",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ja",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ja",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ko",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ko",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ms",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ms",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.pl",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage pl",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.pt-BR",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage pt-BR",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ru",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ru",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.th",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage th",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.tr",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage tr",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.uk",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage uk",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.vi",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage vi",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.zh-TW",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage zh-TW",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.lint.open",
+                                         "file":  "i18n_lint.mjs",
+                                         "title":  "open findings = 0",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.langs_consistency",
+                                         "file":  "langs_consistency.test.js",
+                                         "title":  "langs consistency (5 sets)",
+                                         "status":  "pass",
+                                         "ms":  0,
+                                         "error_first_line":  "Duration  5.34s (transform 130ms, setup 45ms, collect 133ms, tests 321ms, environment 3.71s, prepare 457ms) |"
+                                     },
+                                     {
+                                         "id":  "i18n.critic_check",
+                                         "file":  "critic_check.mjs",
+                                         "title":  "critic artifacts valid",
+                                         "status":  "pass",
+                                         "ms":  0,
+                                         "error_first_line":  "OK files=42 models=1"
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "report",
+                       "name":  "Report verify",
+                       "command":  "powershell -File tools\\verify_report.ps1",
+                       "exit_code":  0,
+                       "ms":  2472,
+                       "log":  "09-Docs/test-runs/logs/20261019-2209/report.log",
+                       "totals":  {
+                                      "pass":  14,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  14
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "report.V1",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "имя и время ок, новый шаблон v17 (REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261019-2010.md)",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V2",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "финальная строка: full",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V3",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "code block содержит путь к отчёту",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V4",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "sha=b001b2e head=7479dc1 parent=b001b2e ab=[0\t0]",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V5",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "dirty=1009 файл=1009 мои=0 wip=1009",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V6",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не промежуточный — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V7",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не ОСТАНОВЛЕН — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V8",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "origin=True не_сделано=False",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V9",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "критики не упомянуты — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V10",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "нет diff-чисел",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V11",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "sha проверено=1 bad=",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V12",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не Strict — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V13",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v17 (файл на диске есть)",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V14",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "блок со строки 7, строк таблицы с путями=1",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "aab",
+                       "name":  "AAB signature",
+                       "command":  "jarsigner -verify 06-DevOps-and-Release\\android\\android\\app\\build\\outputs\\bundle\\release\\app-release.aab",
+                       "exit_code":  0,
+                       "ms":  9074,
+                       "log":  "09-Docs/test-runs/logs/20261019-2209/aab.log",
+                       "totals":  {
+                                      "pass":  1,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  1
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "aab.sign",
+                                         "file":  "app-release.aab",
+                                         "title":  "jarsigner -verify",
+                                         "status":  "pass",
+                                         "ms":  9074
+                                     }
+                                 ]
+                   }
+               ]
+}

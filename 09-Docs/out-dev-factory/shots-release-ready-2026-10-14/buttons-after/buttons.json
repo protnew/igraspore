@@ -35,7 +35,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1812,
+          "orgs": 1813,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -44,9 +44,9 @@
           "tutStep": 0,
           "roleCard": true,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": ""
         },
-        "toast": "АВТО: съел"
+        "toast": ""
       },
       "verdict": "work",
       "png": [
@@ -251,7 +251,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1795,
+          "orgs": 1796,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -305,7 +305,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1797,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -398,7 +398,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1793,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -413,7 +413,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1825,
+          "orgs": 1797,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -452,7 +452,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1783,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -467,7 +467,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1808,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -560,7 +560,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1783,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -575,7 +575,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1799,
+          "orgs": 1796,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -629,7 +629,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1797,
+          "orgs": 1795,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -683,7 +683,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1795,
+          "orgs": 1804,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -791,7 +791,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1795,
+          "orgs": 1796,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -830,7 +830,7 @@
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1801,
+          "orgs": 1824,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -839,13 +839,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1815,
+          "orgs": 1820,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -854,9 +854,9 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -884,7 +884,7 @@
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1799,
+          "orgs": 1825,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -893,13 +893,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1799,
+          "orgs": 1825,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -908,9 +908,9 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -938,7 +938,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1791,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -947,13 +947,13 @@
           "tutStep": 0,
           "roleCard": true,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": ""
+          "toast": "+16 en / +2.2 mass"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1810,
+          "orgs": 1805,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -962,9 +962,9 @@
           "tutStep": 999,
           "roleCard": true,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": ""
+          "toast": "AUTO: ate"
         },
-        "toast": ""
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -982,7 +982,7 @@
       "label": "Got it — I'll swim",
       "rect": {
         "x": 397,
-        "y": 284.078125,
+        "y": 329.265625,
         "width": 486,
         "height": 35
       },
@@ -992,7 +992,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 1790,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1001,13 +1001,13 @@
           "tutStep": 0,
           "roleCard": true,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1808,
+          "orgs": 1807,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1016,9 +1016,9 @@
           "tutStep": 0,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -1035,7 +1035,7 @@
       "selector": "#bEat",
       "label": "☀ LIGHT\nE",
       "rect": {
-        "x": 418.1328125,
+        "x": 412.7734375,
         "y": 723,
         "width": 98.640625,
         "height": 65
@@ -1046,7 +1046,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1806,
+          "orgs": 1872,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1055,13 +1055,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1826,
+          "orgs": 1902,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1087,11 +1087,11 @@
       "screen": "game",
       "viewport": "1280",
       "selector": "#bDiv",
-      "label": "SPLIT\nQ",
+      "label": "DIVIDE\nQ",
       "rect": {
-        "x": 524.7734375,
+        "x": 519.4140625,
         "y": 723,
-        "width": 77.3125,
+        "width": 88.03125,
         "height": 65
       },
       "handlerFound": true,
@@ -1100,7 +1100,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1797,
+          "orgs": 1851,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1109,13 +1109,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": true,
-          "orgs": 1805,
+          "orgs": 1869,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1124,9 +1124,9 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "Деление!"
+          "toast": "Divided!"
         },
-        "toast": "Деление!"
+        "toast": "Divided!"
       },
       "verdict": "work",
       "png": [
@@ -1143,7 +1143,7 @@
       "selector": "#bCyst",
       "label": "SPORE\nR",
       "rect": {
-        "x": 610.0859375,
+        "x": 615.4453125,
         "y": 723,
         "width": 84.40625,
         "height": 65
@@ -1154,7 +1154,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1789,
+          "orgs": 1807,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1163,13 +1163,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": true,
           "dividing": false,
-          "orgs": 1813,
+          "orgs": 1850,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1218,7 +1218,7 @@
       "selector": "#bAuto",
       "label": "AUTO\nTab",
       "rect": {
-        "x": 702.4921875,
+        "x": 707.8515625,
         "y": 723,
         "width": 79.375,
         "height": 65
@@ -1229,7 +1229,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1830,
+          "orgs": 1861,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1238,13 +1238,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": false,
-          "orgs": 1848,
+          "dividing": true,
+          "orgs": 1887,
           "autoAI": true,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1253,9 +1253,9 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "+24 эн / +3.4 масса"
+          "toast": "AUTO: on"
         },
-        "toast": "+24 эн / +3.4 масса"
+        "toast": "AUTO: on"
       },
       "verdict": "work",
       "png": [
@@ -1398,7 +1398,7 @@
       "selector": "#bPause",
       "label": "☰",
       "rect": {
-        "x": 789.8671875,
+        "x": 795.2265625,
         "y": 723,
         "width": 72,
         "height": 65
@@ -1409,7 +1409,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1803,
+          "orgs": 1832,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1418,13 +1418,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1816,
+          "orgs": 1856,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1433,9 +1433,9 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -1534,48 +1534,15 @@
       "screen": "game",
       "viewport": "1280",
       "selector": "#spdBar",
-      "label": "⏸\n0.25x\n0.5x\n1x\n2x\n5x\n10x",
-      "rect": {
-        "x": 450.8984375,
-        "y": 8,
-        "width": 378.203125,
-        "height": 47
-      },
-      "handlerFound": true,
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
       "effect": {
-        "globalsBefore": {
-          "state": "playing",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 1787,
-          "autoAI": false,
-          "freeCam": false,
-          "tZoom": 1.8,
-          "ov": "",
-          "curLang": "en",
-          "tutStep": 999,
-          "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": ""
-        },
-        "globalsAfter": {
-          "state": "playing",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 1794,
-          "autoAI": false,
-          "freeCam": false,
-          "tZoom": 1.8,
-          "ov": "",
-          "curLang": "en",
-          "tutStep": 999,
-          "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "Speed: 1x"
-        },
-        "toast": "Speed: 1x"
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
       },
-      "verdict": "work",
+      "verdict": "hidden",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G17-1280-after.png"
@@ -1901,7 +1868,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1010,
+          "orgs": 1015,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1910,9 +1877,9 @@
           "tutStep": 0,
           "roleCard": true,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -1994,7 +1961,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1784,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2009,7 +1976,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 998,
+          "orgs": 997,
           "autoAI": false,
           "freeCam": true,
           "tZoom": 2.25,
@@ -2063,7 +2030,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1794,
+          "orgs": 1781,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2171,7 +2138,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1784,
+          "orgs": 1783,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2210,7 +2177,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1783,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2225,7 +2192,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1787,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2339,7 +2306,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1782,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2354,7 +2321,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1790,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2393,7 +2360,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1781,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2408,7 +2375,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1780,
+          "orgs": 1769,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2462,7 +2429,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1756,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2516,7 +2483,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1785,
+          "orgs": 1760,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2555,7 +2522,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1783,
+          "orgs": 1779,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2570,7 +2537,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1794,
+          "orgs": 1767,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2624,7 +2591,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 1748,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2705,7 +2672,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1011,
+          "orgs": 998,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2714,13 +2681,13 @@
           "tutStep": 0,
           "roleCard": true,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1025,
+          "orgs": 1010,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2729,9 +2696,9 @@
           "tutStep": 999,
           "roleCard": true,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
-        "toast": "АВТО: съел"
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -2749,7 +2716,7 @@
       "label": "Got it — I'll swim",
       "rect": {
         "x": 32.6015625,
-        "y": 309.484375,
+        "y": 354.671875,
         "width": 324.796875,
         "height": 35
       },
@@ -2759,7 +2726,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1010,
+          "orgs": 1012,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2768,13 +2735,13 @@
           "tutStep": 0,
           "roleCard": true,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": ""
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1016,
+          "orgs": 1027,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2783,9 +2750,9 @@
           "tutStep": 0,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": ""
         },
-        "toast": "АВТО: съел"
+        "toast": ""
       },
       "verdict": "work",
       "png": [
@@ -2802,7 +2769,7 @@
       "selector": "#bEat",
       "label": "☀ LIGHT\nE",
       "rect": {
-        "x": 68.28125,
+        "x": 65.203125,
         "y": 788,
         "width": 57.9375,
         "height": 44
@@ -2813,7 +2780,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1077,
+          "orgs": 1149,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2822,13 +2789,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1088,
+          "orgs": 1174,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2854,11 +2821,11 @@
       "screen": "game",
       "viewport": "390",
       "selector": "#bDiv",
-      "label": "SPLIT\nQ",
+      "label": "DIVIDE\nQ",
       "rect": {
-        "x": 130.21875,
+        "x": 127.140625,
         "y": 788,
-        "width": 44,
+        "width": 50.15625,
         "height": 44
       },
       "handlerFound": true,
@@ -2867,7 +2834,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1030,
+          "orgs": 1155,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2876,13 +2843,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": true,
-          "orgs": 1062,
+          "orgs": 1176,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2891,9 +2858,9 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "Деление!"
+          "toast": "Divided!"
         },
-        "toast": "Деление!"
+        "toast": "Divided!"
       },
       "verdict": "work",
       "png": [
@@ -2910,7 +2877,7 @@
       "selector": "#bCyst",
       "label": "SPORE\nR",
       "rect": {
-        "x": 178.21875,
+        "x": 181.296875,
         "y": 788,
         "width": 47.5,
         "height": 44
@@ -2921,7 +2888,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1048,
+          "orgs": 1133,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2930,13 +2897,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": ""
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": true,
           "dividing": false,
-          "orgs": 1105,
+          "orgs": 1179,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2985,7 +2952,7 @@
       "selector": "#bAuto",
       "label": "AUTO\nTab",
       "rect": {
-        "x": 229.71875,
+        "x": 232.796875,
         "y": 788,
         "width": 44,
         "height": 44
@@ -2996,7 +2963,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1022,
+          "orgs": 1156,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -3005,13 +2972,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "АВТО: съел"
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": false,
-          "orgs": 1048,
+          "dividing": true,
+          "orgs": 1191,
           "autoAI": true,
           "freeCam": false,
           "tZoom": 1.8,
@@ -3020,9 +2987,9 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "+28 эн / +4.0 масса"
+          "toast": "AUTO: on"
         },
-        "toast": "+28 эн / +4.0 масса"
+        "toast": "AUTO: on"
       },
       "verdict": "work",
       "png": [
@@ -3165,7 +3132,7 @@
       "selector": "#bPause",
       "label": "☰",
       "rect": {
-        "x": 277.71875,
+        "x": 280.796875,
         "y": 788,
         "width": 44,
         "height": 44
@@ -3176,7 +3143,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1058,
+          "orgs": 1148,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -3185,13 +3152,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": ""
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1064,
+          "orgs": 1153,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -3200,9 +3167,9 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": ""
+          "toast": "AUTO: ate"
         },
-        "toast": ""
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -3482,7 +3449,7 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1021,
+          "orgs": 1100,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -3491,13 +3458,13 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": ""
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1056,
+          "orgs": 1119,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -3506,9 +3473,9 @@
           "tutStep": 999,
           "roleCard": false,
           "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": ""
+          "toast": "AUTO: ate"
         },
-        "toast": ""
+        "toast": "AUTO: ate"
       },
       "verdict": "partial",
       "png": [

@@ -20,7 +20,9 @@ const MIME = {
 
 http.createServer((req, res) => {
   try {
-    let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    let raw = req.url || '/';
+    raw = raw.replace(/\/{2,}/g, '/');
+    let p = decodeURIComponent(new URL(raw, 'http://x').pathname);
     if (p.endsWith('/')) p += 'index.html';
     const file = path.join(ROOT, p);
     if (!file.startsWith(ROOT)) { res.writeHead(403); res.end(); return; }

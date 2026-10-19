@@ -1,0 +1,3049 @@
+{
+    "schema":  "igs-test-run/1",
+    "run_id":  "20261019-1924",
+    "started_at":  "2026-10-19 19:24 UTC+3",
+    "finished_at":  "2026-10-19 19:39 UTC+3",
+    "commit":  "7d5f46a",
+    "branch":  "release-ready-2026-10-14",
+    "dirty_count":  1008,
+    "machine":  "I1",
+    "totals":  {
+                   "pass":  418,
+                   "fail":  0,
+                   "skipped":  1,
+                   "total":  419
+               },
+    "suites":  [
+                   {
+                       "id":  "vitest",
+                       "name":  "Vitest unit",
+                       "command":  "node .04-Src\\node_modules\\vitest\\vitest.mjs run --config vitest.config.js --root . --reporter=json --outputFile=\u003ctmp\u003e\\vitest.json",
+                       "exit_code":  0,
+                       "ms":  44754,
+                       "log":  "09-Docs/test-runs/logs/20261019-1924/vitest.log",
+                       "totals":  {
+                                      "pass":  289,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  289
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "vitest.1",
+                                         "file":  "tooltip_keys.test.js",
+                                         "title":  "HUD tooltips initTooltips без кириллицы во всех копиях",
+                                         "status":  "pass",
+                                         "ms":  2.817400000000021
+                                     },
+                                     {
+                                         "id":  "vitest.2",
+                                         "file":  "tooltip_keys.test.js",
+                                         "title":  "HUD tooltips девять ключей подсказок есть в 20 словарях",
+                                         "status":  "pass",
+                                         "ms":  6.8285999999999376
+                                     },
+                                     {
+                                         "id":  "vitest.3",
+                                         "file":  "ai.test.js",
+                                         "title":  "ai.js core logic window.getNearby should return all orgs if spatialGrid is not defined",
+                                         "status":  "pass",
+                                         "ms":  3.5348000000000184
+                                     },
+                                     {
+                                         "id":  "vitest.4",
+                                         "file":  "ai.test.js",
+                                         "title":  "ai.js core logic moveOrg should handle cyst movement (gravity)",
+                                         "status":  "pass",
+                                         "ms":  2.9789999999999281
+                                     },
+                                     {
+                                         "id":  "vitest.5",
+                                         "file":  "ai.test.js",
+                                         "title":  "ai.js core logic moveOrg should process non-player entities without crash",
+                                         "status":  "pass",
+                                         "ms":  1.7897000000000389
+                                     },
+                                     {
+                                         "id":  "vitest.6",
+                                         "file":  "ai.test.js",
+                                         "title":  "ai.js core logic aiOrg should hunt prey if hungry and food is nearby",
+                                         "status":  "pass",
+                                         "ms":  1.2824000000000524
+                                     },
+                                     {
+                                         "id":  "vitest.7",
+                                         "file":  "ai.test.js",
+                                         "title":  "ai.js core logic aiOrg should flee from predators",
+                                         "status":  "pass",
+                                         "ms":  1.0816999999999553
+                                     },
+                                     {
+                                         "id":  "vitest.8",
+                                         "file":  "ai.test.js",
+                                         "title":  "ai.js core logic aiOrg handles danger pheromones without crash",
+                                         "status":  "pass",
+                                         "ms":  2.1114000000000033
+                                     },
+                                     {
+                                         "id":  "vitest.9",
+                                         "file":  "ai.test.js",
+                                         "title":  "ai.js core logic runAndTumble produces movement over time",
+                                         "status":  "pass",
+                                         "ms":  1.5612999999999602
+                                     },
+                                     {
+                                         "id":  "vitest.10",
+                                         "file":  "ai.test.js",
+                                         "title":  "ai.js core logic ensureFacing updates facing angle",
+                                         "status":  "pass",
+                                         "ms":  1.0506000000000313
+                                     },
+                                     {
+                                         "id":  "vitest.11",
+                                         "file":  "ai_move.test.js",
+                                         "title":  "ai_move.js moveOrg function exists",
+                                         "status":  "pass",
+                                         "ms":  1.2631999999999834
+                                     },
+                                     {
+                                         "id":  "vitest.12",
+                                         "file":  "ai_move.test.js",
+                                         "title":  "ai_move.js turnToward rotates facing toward target angle",
+                                         "status":  "pass",
+                                         "ms":  0.80540000000007694
+                                     },
+                                     {
+                                         "id":  "vitest.13",
+                                         "file":  "ai_move.test.js",
+                                         "title":  "ai_move.js thrustAlongFacing adds velocity",
+                                         "status":  "pass",
+                                         "ms":  0.38540000000000418
+                                     },
+                                     {
+                                         "id":  "vitest.14",
+                                         "file":  "ai_move.test.js",
+                                         "title":  "ai_move.js ensureFacing does not crash",
+                                         "status":  "pass",
+                                         "ms":  0.18569999999999709
+                                     },
+                                     {
+                                         "id":  "vitest.15",
+                                         "file":  "aquarium_lifecycle.test.js",
+                                         "title":  "entity caption visibility demo labels default on unless storage is explicitly 0",
+                                         "status":  "pass",
+                                         "ms":  2.1719000000000506
+                                     },
+                                     {
+                                         "id":  "vitest.16",
+                                         "file":  "aquarium_lifecycle.test.js",
+                                         "title":  "entity caption visibility aquarium and demo show captions; normal play does not",
+                                         "status":  "pass",
+                                         "ms":  0.39380000000005566
+                                     },
+                                     {
+                                         "id":  "vitest.17",
+                                         "file":  "aquarium_lifecycle.test.js",
+                                         "title":  "aquarium camera follow stability size leadership swapping between distant organisms does not flip the target",
+                                         "status":  "pass",
+                                         "ms":  1.5866999999999507
+                                     },
+                                     {
+                                         "id":  "vitest.18",
+                                         "file":  "aquarium_lifecycle.test.js",
+                                         "title":  "aquarium camera follow stability does not steal the lock for a larger organism outside the frame",
+                                         "status":  "pass",
+                                         "ms":  0.66679999999996653
+                                     },
+                                     {
+                                         "id":  "vitest.19",
+                                         "file":  "aquarium_lifecycle.test.js",
+                                         "title":  "aquarium camera follow stability empty frame picks one off-screen creature and does not oscillate",
+                                         "status":  "pass",
+                                         "ms":  0.92909999999994841
+                                     },
+                                     {
+                                         "id":  "vitest.20",
+                                         "file":  "aquarium_lifecycle.test.js",
+                                         "title":  "aquarium camera follow stability after the followed organism leaves, it switches once to a stable alternate",
+                                         "status":  "pass",
+                                         "ms":  0.79240000000004329
+                                     },
+                                     {
+                                         "id":  "vitest.21",
+                                         "file":  "aquarium_lifecycle.test.js",
+                                         "title":  "mitosis lifecycle per creature type simulates each trophic type: morph, spike gate, cooldown, no fast second split",
+                                         "status":  "pass",
+                                         "ms":  2.9089000000000169
+                                     },
+                                     {
+                                         "id":  "vitest.22",
+                                         "file":  "aquarium_lifecycle.test.js",
+                                         "title":  "mitosis lifecycle per creature type grace window keeps a fresh daughter above the starve floor conceptually",
+                                         "status":  "pass",
+                                         "ms":  0.49450000000001643
+                                     },
+                                     {
+                                         "id":  "vitest.23",
+                                         "file":  "biology.test.js",
+                                         "title":  "biology.js core logic spawnOrg should create an organism and add it to orgs",
+                                         "status":  "pass",
+                                         "ms":  4.1947999999999865
+                                     },
+                                     {
+                                         "id":  "vitest.24",
+                                         "file":  "biology.test.js",
+                                         "title":  "biology.js core logic doDivide should set dividing state if requirements met",
+                                         "status":  "pass",
+                                         "ms":  1.5238000000000511
+                                     },
+                                     {
+                                         "id":  "vitest.25",
+                                         "file":  "biology.test.js",
+                                         "title":  "biology.js core logic finishDivide should create child and split energy",
+                                         "status":  "pass",
+                                         "ms":  2.0275000000000318
+                                     },
+                                     {
+                                         "id":  "vitest.26",
+                                         "file":  "biology.test.js",
+                                         "title":  "biology.js core logic eatOrg should transfer energy from prey to predator",
+                                         "status":  "pass",
+                                         "ms":  1.9206000000000361
+                                     },
+                                     {
+                                         "id":  "vitest.27",
+                                         "file":  "biology.test.js",
+                                         "title":  "biology.js core logic eatOrg should apply toxic defense",
+                                         "status":  "pass",
+                                         "ms":  1.5185999999999922
+                                     },
+                                     {
+                                         "id":  "vitest.28",
+                                         "file":  "biology.test.js",
+                                         "title":  "biology.js core logic killOrg should set dying state and log death",
+                                         "status":  "pass",
+                                         "ms":  1.1834999999999809
+                                     },
+                                     {
+                                         "id":  "vitest.29",
+                                         "file":  "biology.test.js",
+                                         "title":  "biology.js core logic doCyst should toggle cyst state",
+                                         "status":  "pass",
+                                         "ms":  0.99469999999996617
+                                     },
+                                     {
+                                         "id":  "vitest.30",
+                                         "file":  "biology.test.js",
+                                         "title":  "biology.js core logic updateInfections should cause lysis after duration",
+                                         "status":  "pass",
+                                         "ms":  1.143799999999942
+                                     },
+                                     {
+                                         "id":  "vitest.31",
+                                         "file":  "biology.test.js",
+                                         "title":  "biology.js core logic updateViruses should infect targets",
+                                         "status":  "pass",
+                                         "ms":  1.7012999999999463
+                                     },
+                                     {
+                                         "id":  "vitest.32",
+                                         "file":  "biology_update_core.test.js",
+                                         "title":  "biology_update_core.js updateOrg function exists",
+                                         "status":  "pass",
+                                         "ms":  1.1070999999999458
+                                     },
+                                     {
+                                         "id":  "vitest.33",
+                                         "file":  "biology_update_core.test.js",
+                                         "title":  "biology_update_core.js updateOrg does not crash with null",
+                                         "status":  "pass",
+                                         "ms":  1.9681000000000497
+                                     },
+                                     {
+                                         "id":  "vitest.34",
+                                         "file":  "biology_update_core.test.js",
+                                         "title":  "biology_update_core.js updateOrg processes a basic organism",
+                                         "status":  "pass",
+                                         "ms":  0.27359999999998763
+                                     },
+                                     {
+                                         "id":  "vitest.35",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js exposes updateOrgInteract on window",
+                                         "status":  "pass",
+                                         "ms":  2.77170000000001
+                                     },
+                                     {
+                                         "id":  "vitest.36",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js starving NPC enters cyst and restores energy to 10",
+                                         "status":  "pass",
+                                         "ms":  2.0878000000000156
+                                     },
+                                     {
+                                         "id":  "vitest.37",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js energy \u003c= -15 kills via STARVE",
+                                         "status":  "pass",
+                                         "ms":  1.8052999999999884
+                                     },
+                                     {
+                                         "id":  "vitest.38",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js player wakes from cyst when energy \u003e= 18",
+                                         "status":  "pass",
+                                         "ms":  1.621599999999944
+                                     },
+                                     {
+                                         "id":  "vitest.39",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js player cyst toast on first starve",
+                                         "status":  "pass",
+                                         "ms":  1.2776000000000067
+                                     },
+                                     {
+                                         "id":  "vitest.40",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js lerps size toward adult target when not dividing",
+                                         "status":  "pass",
+                                         "ms":  1.459699999999998
+                                     },
+                                     {
+                                         "id":  "vitest.41",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js auto-eat: consumer eats smaller producer in range",
+                                         "status":  "pass",
+                                         "ms":  1.7305999999999813
+                                     },
+                                     {
+                                         "id":  "vitest.42",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js does not eat prey \u003e= 1.25x attacker size",
+                                         "status":  "pass",
+                                         "ms":  1.5312999999999874
+                                     },
+                                     {
+                                         "id":  "vitest.43",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js skips invulnerable NPC prey",
+                                         "status":  "pass",
+                                         "ms":  1.574799999999982
+                                     },
+                                     {
+                                         "id":  "vitest.44",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js gendered pair in range calls doDivide on both",
+                                         "status":  "pass",
+                                         "ms":  1.3834000000000517
+                                     },
+                                     {
+                                         "id":  "vitest.45",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js ciliate filter-feed eats in-chain small prey",
+                                         "status":  "pass",
+                                         "ms":  1.1372000000000071
+                                     },
+                                     {
+                                         "id":  "vitest.46",
+                                         "file":  "biology_update_interact.test.js",
+                                         "title":  "biology_update_interact.js demoMode blocks random divide",
+                                         "status":  "pass",
+                                         "ms":  1.278699999999958
+                                     },
+                                     {
+                                         "id":  "vitest.47",
+                                         "file":  "biology_virus.test.js",
+                                         "title":  "biology_virus.js spawnVirus function exists",
+                                         "status":  "pass",
+                                         "ms":  1.0715000000000146
+                                     },
+                                     {
+                                         "id":  "vitest.48",
+                                         "file":  "biology_virus.test.js",
+                                         "title":  "biology_virus.js updateInfections function exists",
+                                         "status":  "pass",
+                                         "ms":  0.15509999999994761
+                                     },
+                                     {
+                                         "id":  "vitest.49",
+                                         "file":  "biology_virus.test.js",
+                                         "title":  "biology_virus.js updateViruses function exists",
+                                         "status":  "pass",
+                                         "ms":  0.11720000000002528
+                                     },
+                                     {
+                                         "id":  "vitest.50",
+                                         "file":  "biology_virus.test.js",
+                                         "title":  "biology_virus.js spawnVirus does not crash",
+                                         "status":  "pass",
+                                         "ms":  0.24040000000002237
+                                     },
+                                     {
+                                         "id":  "vitest.51",
+                                         "file":  "call_core_fns.test.js",
+                                         "title":  "call hoisted SoT functions (V8 line/fn coverage) updateOrgInteract cyst + starve + eat branches",
+                                         "status":  "pass",
+                                         "ms":  3.1809000000000651
+                                     },
+                                     {
+                                         "id":  "vitest.52",
+                                         "file":  "call_core_fns.test.js",
+                                         "title":  "call hoisted SoT functions (V8 line/fn coverage) eatOrg / doDivide / spawnVirus if hoisted",
+                                         "status":  "pass",
+                                         "ms":  1.9628999999999903
+                                     },
+                                     {
+                                         "id":  "vitest.53",
+                                         "file":  "call_core_fns.test.js",
+                                         "title":  "call hoisted SoT functions (V8 line/fn coverage) locomotion / organs / math helpers",
+                                         "status":  "pass",
+                                         "ms":  1.5475999999999883
+                                     },
+                                     {
+                                         "id":  "vitest.54",
+                                         "file":  "call_core_fns.test.js",
+                                         "title":  "call hoisted SoT functions (V8 line/fn coverage) world / ai / swiss mapping if present",
+                                         "status":  "pass",
+                                         "ms":  1.6611000000000331
+                                     },
+                                     {
+                                         "id":  "vitest.55",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive ai.js logic forceEat should kill prey and reward predator",
+                                         "status":  "pass",
+                                         "ms":  327.67520000000013
+                                     },
+                                     {
+                                         "id":  "vitest.56",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive ai.js logic findBestPrey should return nearest edible organism",
+                                         "status":  "pass",
+                                         "ms":  288.2170000000001
+                                     },
+                                     {
+                                         "id":  "vitest.57",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive ai.js logic turnToward should rotate organism toward target angle",
+                                         "status":  "pass",
+                                         "ms":  288.83950000000004
+                                     },
+                                     {
+                                         "id":  "vitest.58",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive ai.js logic thrustAlongFacing should apply velocity in facing direction",
+                                         "status":  "pass",
+                                         "ms":  318.72880000000032
+                                     },
+                                     {
+                                         "id":  "vitest.59",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive ai.js logic steerToward should move organism toward a point",
+                                         "status":  "pass",
+                                         "ms":  350.1965
+                                     },
+                                     {
+                                         "id":  "vitest.60",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive ai.js logic playerAutoAI should not crash and may set player state",
+                                         "status":  "pass",
+                                         "ms":  303.03110000000015
+                                     },
+                                     {
+                                         "id":  "vitest.61",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive ai.js logic filterFeedPull should process without crash",
+                                         "status":  "pass",
+                                         "ms":  382.17190000000028
+                                     },
+                                     {
+                                         "id":  "vitest.62",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive ai.js logic naturalAI should not crash for a producer",
+                                         "status":  "pass",
+                                         "ms":  321.40099999999984
+                                     },
+                                     {
+                                         "id":  "vitest.63",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive biology.js logic canDivide should return true when requirements met",
+                                         "status":  "pass",
+                                         "ms":  272.16440000000057
+                                     },
+                                     {
+                                         "id":  "vitest.64",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive biology.js logic divideBlockReason should return string or null",
+                                         "status":  "pass",
+                                         "ms":  301.7530999999999
+                                     },
+                                     {
+                                         "id":  "vitest.65",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive biology.js logic spawnVirus should add a virus to the world",
+                                         "status":  "pass",
+                                         "ms":  232.52469999999991
+                                     },
+                                     {
+                                         "id":  "vitest.66",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive config.js logic tt should return a translated string",
+                                         "status":  "pass",
+                                         "ms":  307.3678
+                                     },
+                                     {
+                                         "id":  "vitest.67",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive config.js logic mkSp should create a species object",
+                                         "status":  "pass",
+                                         "ms":  299.35360000000037
+                                     },
+                                     {
+                                         "id":  "vitest.68",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive config.js logic lightAt should return light level for depth",
+                                         "status":  "pass",
+                                         "ms":  324.53639999999996
+                                     },
+                                     {
+                                         "id":  "vitest.69",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive config.js logic halfW should return half canvas width",
+                                         "status":  "pass",
+                                         "ms":  281.38549999999941
+                                     },
+                                     {
+                                         "id":  "vitest.70",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive config.js logic bioFlags should return flags object",
+                                         "status":  "pass",
+                                         "ms":  288.51220000000012
+                                     },
+                                     {
+                                         "id":  "vitest.71",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive config.js logic getLocomotion should return a locomotion type",
+                                         "status":  "pass",
+                                         "ms":  236.15000000000057
+                                     },
+                                     {
+                                         "id":  "vitest.72",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive render functions no-crash render() function exists and is callable",
+                                         "status":  "pass",
+                                         "ms":  310.21680000000015
+                                     },
+                                     {
+                                         "id":  "vitest.73",
+                                         "file":  "comprehensive.test.js",
+                                         "title":  "Logic functions — comprehensive render functions no-crash drawOneLilypad should render a lilypad",
+                                         "status":  "pass",
+                                         "ms":  309.0597000000007
+                                     },
+                                     {
+                                         "id":  "vitest.74",
+                                         "file":  "critic_check_analyst.test.js",
+                                         "title":  "critic_check U44 — analyst integrity, round\u003e=5, gate 1) analyst file edited after write (sha not in ledger) -\u003e FAIL",
+                                         "status":  "pass",
+                                         "ms":  14.971400000000015
+                                     },
+                                     {
+                                         "id":  "vitest.75",
+                                         "file":  "critic_check_analyst.test.js",
+                                         "title":  "critic_check U44 — analyst integrity, round\u003e=5, gate 2) critic-A round \u003e= 5 -\u003e FAIL",
+                                         "status":  "pass",
+                                         "ms":  5.457300000000032
+                                     },
+                                     {
+                                         "id":  "vitest.76",
+                                         "file":  "critic_check_analyst.test.js",
+                                         "title":  "critic_check U44 — analyst integrity, round\u003e=5, gate 3) gate: outdated input_sha (dict changed after review) -\u003e FAIL",
+                                         "status":  "pass",
+                                         "ms":  13.261999999999944
+                                     },
+                                     {
+                                         "id":  "vitest.77",
+                                         "file":  "critic_check_analyst.test.js",
+                                         "title":  "critic_check U44 — analyst integrity, round\u003e=5, gate 4) gate: score 7.5 (below threshold) -\u003e FAIL",
+                                         "status":  "pass",
+                                         "ms":  13.376700000000028
+                                     },
+                                     {
+                                         "id":  "vitest.78",
+                                         "file":  "critic_check_analyst.test.js",
+                                         "title":  "critic_check U44 — analyst integrity, round\u003e=5, gate 5) gate: score 8 + fresh sha -\u003e PASS",
+                                         "status":  "pass",
+                                         "ms":  13.840000000000032
+                                     },
+                                     {
+                                         "id":  "vitest.79",
+                                         "file":  "cyst_manual.test.js",
+                                         "title":  "manual cyst holds does not wake a manual spore in the same frame when energy is high",
+                                         "status":  "pass",
+                                         "ms":  3.3428000000000111
+                                     },
+                                     {
+                                         "id":  "vitest.80",
+                                         "file":  "cyst_manual.test.js",
+                                         "title":  "manual cyst holds stays encysted for at least 5 seconds of updates",
+                                         "status":  "pass",
+                                         "ms":  2.1115999999999531
+                                     },
+                                     {
+                                         "id":  "vitest.81",
+                                         "file":  "cyst_manual.test.js",
+                                         "title":  "manual cyst holds leaves the spore when doCyst toggles after the hold",
+                                         "status":  "pass",
+                                         "ms":  1.4828999999999724
+                                     },
+                                     {
+                                         "id":  "vitest.82",
+                                         "file":  "cyst_manual.test.js",
+                                         "title":  "manual cyst holds still wakes a hunger cyst once energy returns",
+                                         "status":  "pass",
+                                         "ms":  1.2357000000000653
+                                     },
+                                     {
+                                         "id":  "vitest.83",
+                                         "file":  "demo.test.js",
+                                         "title":  "demo.js startDemoMode function exists",
+                                         "status":  "pass",
+                                         "ms":  1.0367999999999711
+                                     },
+                                     {
+                                         "id":  "vitest.84",
+                                         "file":  "demo.test.js",
+                                         "title":  "demo.js demoPickAtScreen function exists",
+                                         "status":  "pass",
+                                         "ms":  0.14819999999997435
+                                     },
+                                     {
+                                         "id":  "vitest.85",
+                                         "file":  "demo.test.js",
+                                         "title":  "demo.js demoPossessOrg function exists",
+                                         "status":  "pass",
+                                         "ms":  0.15170000000000528
+                                     },
+                                     {
+                                         "id":  "vitest.86",
+                                         "file":  "demo.test.js",
+                                         "title":  "demo.js exitDemoPossess function exists",
+                                         "status":  "pass",
+                                         "ms":  0.0926000000000613
+                                     },
+                                     {
+                                         "id":  "vitest.87",
+                                         "file":  "demo.test.js",
+                                         "title":  "demo.js updateDemoPinned function exists",
+                                         "status":  "pass",
+                                         "ms":  0.095500000000015461
+                                     },
+                                     {
+                                         "id":  "vitest.88",
+                                         "file":  "demo.test.js",
+                                         "title":  "demo.js renderDemoLabels function exists",
+                                         "status":  "pass",
+                                         "ms":  0.088399999999978718
+                                     },
+                                     {
+                                         "id":  "vitest.89",
+                                         "file":  "demo.test.js",
+                                         "title":  "demo.js demoPickAtScreen returns null when no orgs",
+                                         "status":  "pass",
+                                         "ms":  0.18650000000002365
+                                     },
+                                     {
+                                         "id":  "vitest.90",
+                                         "file":  "divide_contract.test.js",
+                                         "title":  "divideNeeds contract canDivide matches divideNeeds().ok on 200 random states",
+                                         "status":  "pass",
+                                         "ms":  9.1639999999999873
+                                     },
+                                     {
+                                         "id":  "vitest.91",
+                                         "file":  "divide_contract.test.js",
+                                         "title":  "divideNeeds contract divRate does not block the player",
+                                         "status":  "pass",
+                                         "ms":  1.5573000000000548
+                                     },
+                                     {
+                                         "id":  "vitest.92",
+                                         "file":  "force_lang_gate.test.js",
+                                         "title":  "forceLangAllowed (U39 — QA hook only on localhost or ?qa=1) allows the local QA stand hosts",
+                                         "status":  "pass",
+                                         "ms":  2.0616999999999734
+                                     },
+                                     {
+                                         "id":  "vitest.93",
+                                         "file":  "force_lang_gate.test.js",
+                                         "title":  "forceLangAllowed (U39 — QA hook only on localhost or ?qa=1) allows a remote/QA host only with ?qa=1",
+                                         "status":  "pass",
+                                         "ms":  0.51189999999996871
+                                     },
+                                     {
+                                         "id":  "vitest.94",
+                                         "file":  "force_lang_gate.test.js",
+                                         "title":  "forceLangAllowed (U39 — QA hook only on localhost or ?qa=1) ignores force off-QA (production users cannot enable a disabled language)",
+                                         "status":  "pass",
+                                         "ms":  0.7159999999998945
+                                     },
+                                     {
+                                         "id":  "vitest.95",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) сканирует ненулевое число файлов",
+                                         "status":  "pass",
+                                         "ms":  1.1133000000000948
+                                     },
+                                     {
+                                         "id":  "vitest.96",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) ai.js",
+                                         "status":  "pass",
+                                         "ms":  17.911999999999921
+                                     },
+                                     {
+                                         "id":  "vitest.97",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) ai_move.js",
+                                         "status":  "pass",
+                                         "ms":  3.3011000000000195
+                                     },
+                                     {
+                                         "id":  "vitest.98",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) biology.js",
+                                         "status":  "pass",
+                                         "ms":  2.3044999999999618
+                                     },
+                                     {
+                                         "id":  "vitest.99",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) biology_divide.js",
+                                         "status":  "pass",
+                                         "ms":  3.143100000000004
+                                     },
+                                     {
+                                         "id":  "vitest.100",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) biology_eat.js",
+                                         "status":  "pass",
+                                         "ms":  3.4772000000000389
+                                     },
+                                     {
+                                         "id":  "vitest.101",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) biology_update.js",
+                                         "status":  "pass",
+                                         "ms":  0.64969999999993888
+                                     },
+                                     {
+                                         "id":  "vitest.102",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) biology_update_core.js",
+                                         "status":  "pass",
+                                         "ms":  4.3085000000000946
+                                     },
+                                     {
+                                         "id":  "vitest.103",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) biology_update_interact.js",
+                                         "status":  "pass",
+                                         "ms":  2.2143999999999551
+                                     },
+                                     {
+                                         "id":  "vitest.104",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) biology_virus.js",
+                                         "status":  "pass",
+                                         "ms":  1.7265999999999622
+                                     },
+                                     {
+                                         "id":  "vitest.105",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) camera_follow.js",
+                                         "status":  "pass",
+                                         "ms":  2.9307999999999765
+                                     },
+                                     {
+                                         "id":  "vitest.106",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) demo.js",
+                                         "status":  "pass",
+                                         "ms":  4.74330000000009
+                                     },
+                                     {
+                                         "id":  "vitest.107",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) entity_labels.js",
+                                         "status":  "pass",
+                                         "ms":  2.5529999999999973
+                                     },
+                                     {
+                                         "id":  "vitest.108",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) i18n_detect.js",
+                                         "status":  "pass",
+                                         "ms":  2.5144999999999982
+                                     },
+                                     {
+                                         "id":  "vitest.109",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) lifecycle.js",
+                                         "status":  "pass",
+                                         "ms":  2.4412999999999556
+                                     },
+                                     {
+                                         "id":  "vitest.110",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) locomotion.js",
+                                         "status":  "pass",
+                                         "ms":  1.6136999999999944
+                                     },
+                                     {
+                                         "id":  "vitest.111",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) main.js",
+                                         "status":  "pass",
+                                         "ms":  3.6199000000000296
+                                     },
+                                     {
+                                         "id":  "vitest.112",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) main_events.js",
+                                         "status":  "pass",
+                                         "ms":  6.6081000000000358
+                                     },
+                                     {
+                                         "id":  "vitest.113",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) mobile.js",
+                                         "status":  "pass",
+                                         "ms":  3.1643000000000256
+                                     },
+                                     {
+                                         "id":  "vitest.114",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) night_sky.js",
+                                         "status":  "pass",
+                                         "ms":  1.7187999999999874
+                                     },
+                                     {
+                                         "id":  "vitest.115",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) organs.js",
+                                         "status":  "pass",
+                                         "ms":  1.4695000000000391
+                                     },
+                                     {
+                                         "id":  "vitest.116",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render.js",
+                                         "status":  "pass",
+                                         "ms":  1.9882000000000064
+                                     },
+                                     {
+                                         "id":  "vitest.117",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render_edu.js",
+                                         "status":  "pass",
+                                         "ms":  1.888300000000072
+                                     },
+                                     {
+                                         "id":  "vitest.118",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render_effects.js",
+                                         "status":  "pass",
+                                         "ms":  3.8396999999999935
+                                     },
+                                     {
+                                         "id":  "vitest.119",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render_entities.js",
+                                         "status":  "pass",
+                                         "ms":  3.5468000000000757
+                                     },
+                                     {
+                                         "id":  "vitest.120",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render_fx.js",
+                                         "status":  "pass",
+                                         "ms":  1.1199000000000296
+                                     },
+                                     {
+                                         "id":  "vitest.121",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render_helpers.js",
+                                         "status":  "pass",
+                                         "ms":  3.3158000000000811
+                                     },
+                                     {
+                                         "id":  "vitest.122",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render_organs.js",
+                                         "status":  "pass",
+                                         "ms":  4.4308999999999514
+                                     },
+                                     {
+                                         "id":  "vitest.123",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render_surface.js",
+                                         "status":  "pass",
+                                         "ms":  3.1179000000000769
+                                     },
+                                     {
+                                         "id":  "vitest.124",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render_swiss.js",
+                                         "status":  "pass",
+                                         "ms":  6.8521999999999252
+                                     },
+                                     {
+                                         "id":  "vitest.125",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) render_webgl.js",
+                                         "status":  "pass",
+                                         "ms":  2.7776000000000067
+                                     },
+                                     {
+                                         "id":  "vitest.126",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) stars.js",
+                                         "status":  "pass",
+                                         "ms":  1.3640000000000327
+                                     },
+                                     {
+                                         "id":  "vitest.127",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) toast_queue.js",
+                                         "status":  "pass",
+                                         "ms":  1.9272000000000844
+                                     },
+                                     {
+                                         "id":  "vitest.128",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) ui.js",
+                                         "status":  "pass",
+                                         "ms":  3.1445999999999685
+                                     },
+                                     {
+                                         "id":  "vitest.129",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) ui_food_chain.js",
+                                         "status":  "pass",
+                                         "ms":  4.3062999999999647
+                                     },
+                                     {
+                                         "id":  "vitest.130",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) ui_menus.js",
+                                         "status":  "pass",
+                                         "ms":  3.3706999999999425
+                                     },
+                                     {
+                                         "id":  "vitest.131",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) ui_screens.js",
+                                         "status":  "pass",
+                                         "ms":  2.8994999999999891
+                                     },
+                                     {
+                                         "id":  "vitest.132",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) wiki_articles.js",
+                                         "status":  "pass",
+                                         "ms":  3.4415000000000191
+                                     },
+                                     {
+                                         "id":  "vitest.133",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) world.js",
+                                         "status":  "pass",
+                                         "ms":  1.9550000000000409
+                                     },
+                                     {
+                                         "id":  "vitest.134",
+                                         "file":  "i18n_hardcoded.test.js",
+                                         "title":  "U07: нет кириллических литералов в коде (вне i18n/data) world_update.js",
+                                         "status":  "pass",
+                                         "ms":  2.998299999999972
+                                     },
+                                     {
+                                         "id":  "vitest.135",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads ai.js",
+                                         "status":  "pass",
+                                         "ms":  26.52819999999997
+                                     },
+                                     {
+                                         "id":  "vitest.136",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads ai_move.js",
+                                         "status":  "pass",
+                                         "ms":  14.759900000000016
+                                     },
+                                     {
+                                         "id":  "vitest.137",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads biology.js",
+                                         "status":  "pass",
+                                         "ms":  11.144900000000009
+                                     },
+                                     {
+                                         "id":  "vitest.138",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads biology_divide.js",
+                                         "status":  "pass",
+                                         "ms":  14.516200000000026
+                                     },
+                                     {
+                                         "id":  "vitest.139",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads biology_eat.js",
+                                         "status":  "pass",
+                                         "ms":  13.15179999999998
+                                     },
+                                     {
+                                         "id":  "vitest.140",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads biology_update.js",
+                                         "status":  "pass",
+                                         "ms":  5.4945999999999913
+                                     },
+                                     {
+                                         "id":  "vitest.141",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads biology_update_core.js",
+                                         "status":  "pass",
+                                         "ms":  12.072000000000005
+                                     },
+                                     {
+                                         "id":  "vitest.142",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads biology_update_interact.js",
+                                         "status":  "pass",
+                                         "ms":  8.5948000000000775
+                                     },
+                                     {
+                                         "id":  "vitest.143",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads biology_virus.js",
+                                         "status":  "pass",
+                                         "ms":  11.829299999999989
+                                     },
+                                     {
+                                         "id":  "vitest.144",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads config.js",
+                                         "status":  "pass",
+                                         "ms":  29.389400000000023
+                                     },
+                                     {
+                                         "id":  "vitest.145",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads demo.js",
+                                         "status":  "pass",
+                                         "ms":  18.778800000000047
+                                     },
+                                     {
+                                         "id":  "vitest.146",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads locomotion.js",
+                                         "status":  "pass",
+                                         "ms":  7.6459999999999582
+                                     },
+                                     {
+                                         "id":  "vitest.147",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads main.js",
+                                         "status":  "pass",
+                                         "ms":  13.545600000000036
+                                     },
+                                     {
+                                         "id":  "vitest.148",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads main_events.js",
+                                         "status":  "pass",
+                                         "ms":  22.273400000000041
+                                     },
+                                     {
+                                         "id":  "vitest.149",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads mobile.js",
+                                         "status":  "pass",
+                                         "ms":  13.776499999999942
+                                     },
+                                     {
+                                         "id":  "vitest.150",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads night_sky.js",
+                                         "status":  "pass",
+                                         "ms":  12.129500000000007
+                                     },
+                                     {
+                                         "id":  "vitest.151",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads organs.js",
+                                         "status":  "pass",
+                                         "ms":  7.1043000000001939
+                                     },
+                                     {
+                                         "id":  "vitest.152",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads render.js",
+                                         "status":  "pass",
+                                         "ms":  9.9855999999999767
+                                     },
+                                     {
+                                         "id":  "vitest.153",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads render_edu.js",
+                                         "status":  "pass",
+                                         "ms":  9.9808000000000447
+                                     },
+                                     {
+                                         "id":  "vitest.154",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads render_effects.js",
+                                         "status":  "pass",
+                                         "ms":  13.69829999999979
+                                     },
+                                     {
+                                         "id":  "vitest.155",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads render_entities.js",
+                                         "status":  "pass",
+                                         "ms":  16.020999999999958
+                                     },
+                                     {
+                                         "id":  "vitest.156",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads render_fx.js",
+                                         "status":  "pass",
+                                         "ms":  9.10759999999982
+                                     },
+                                     {
+                                         "id":  "vitest.157",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads render_helpers.js",
+                                         "status":  "pass",
+                                         "ms":  17.4529
+                                     },
+                                     {
+                                         "id":  "vitest.158",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads render_organs.js",
+                                         "status":  "pass",
+                                         "ms":  12.861699999999928
+                                     },
+                                     {
+                                         "id":  "vitest.159",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads render_surface.js",
+                                         "status":  "pass",
+                                         "ms":  13.803300000000036
+                                     },
+                                     {
+                                         "id":  "vitest.160",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads render_swiss.js",
+                                         "status":  "pass",
+                                         "ms":  16.999900000000025
+                                     },
+                                     {
+                                         "id":  "vitest.161",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads stars.js",
+                                         "status":  "pass",
+                                         "ms":  10.424600000000057
+                                     },
+                                     {
+                                         "id":  "vitest.162",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads ui.js",
+                                         "status":  "pass",
+                                         "ms":  17.77130000000011
+                                     },
+                                     {
+                                         "id":  "vitest.163",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads ui_food_chain.js",
+                                         "status":  "pass",
+                                         "ms":  19.906800000000203
+                                     },
+                                     {
+                                         "id":  "vitest.164",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads ui_menus.js",
+                                         "status":  "pass",
+                                         "ms":  15.929200000000035
+                                     },
+                                     {
+                                         "id":  "vitest.165",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads ui_screens.js",
+                                         "status":  "pass",
+                                         "ms":  14.85979999999995
+                                     },
+                                     {
+                                         "id":  "vitest.166",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads world.js",
+                                         "status":  "pass",
+                                         "ms":  18.190399999999951
+                                     },
+                                     {
+                                         "id":  "vitest.167",
+                                         "file":  "import_all_src.test.js",
+                                         "title":  "import all SoT modules (V8 coverage bootstrap) loads world_update.js",
+                                         "status":  "pass",
+                                         "ms":  17.535200000000032
+                                     },
+                                     {
+                                         "id":  "vitest.168",
+                                         "file":  "langs_consistency.test.js",
+                                         "title":  "langs_consistency (TZ v9 §29) LANGS (config.js) == enabled (languages.json)",
+                                         "status":  "pass",
+                                         "ms":  1.1925999999999704
+                                     },
+                                     {
+                                         "id":  "vitest.169",
+                                         "file":  "langs_consistency.test.js",
+                                         "title":  "langs_consistency (TZ v9 §29) IGS_ENABLED (переключатель) == enabled",
+                                         "status":  "pass",
+                                         "ms":  0.17390000000000327
+                                     },
+                                     {
+                                         "id":  "vitest.170",
+                                         "file":  "langs_consistency.test.js",
+                                         "title":  "langs_consistency (TZ v9 §29) locales_config.xml == enabled (P2.12)",
+                                         "status":  "pass",
+                                         "ms":  0.13360000000000127
+                                     },
+                                     {
+                                         "id":  "vitest.171",
+                                         "file":  "langs_consistency.test.js",
+                                         "title":  "langs_consistency (TZ v9 §29) каждый включённый язык имеет доказательство критиков (v3 raw A+B\u003e=8 или наследие v2 \u003e=2x8)",
+                                         "status":  "pass",
+                                         "ms":  92.871100000000084
+                                     },
+                                     {
+                                         "id":  "vitest.172",
+                                         "file":  "langs_consistency.test.js",
+                                         "title":  "langs_consistency (TZ v9 §29) каждый включённый язык имеет полные файлы i18n (+wiki)",
+                                         "status":  "pass",
+                                         "ms":  60.286399999999958
+                                     },
+                                     {
+                                         "id":  "vitest.173",
+                                         "file":  "lang_detect.test.js",
+                                         "title":  "detectLang maps 25 navigator.languages lists",
+                                         "status":  "pass",
+                                         "ms":  4.2823000000000775
+                                     },
+                                     {
+                                         "id":  "vitest.174",
+                                         "file":  "locomotion.test.js",
+                                         "title":  "Locomotion System should initialize correctly",
+                                         "status":  "pass",
+                                         "ms":  1.4550000000000409
+                                     },
+                                     {
+                                         "id":  "vitest.175",
+                                         "file":  "locomotion.test.js",
+                                         "title":  "Locomotion System should start and stop",
+                                         "status":  "pass",
+                                         "ms":  0.23619999999993979
+                                     },
+                                     {
+                                         "id":  "vitest.176",
+                                         "file":  "locomotion.test.js",
+                                         "title":  "Locomotion System getVelocity reflects active state",
+                                         "status":  "pass",
+                                         "ms":  0.17889999999999873
+                                     },
+                                     {
+                                         "id":  "vitest.177",
+                                         "file":  "math.test.js",
+                                         "title":  "Math and Vector Logic clamp should restrict value to min and max",
+                                         "status":  "pass",
+                                         "ms":  1.7910000000000537
+                                     },
+                                     {
+                                         "id":  "vitest.178",
+                                         "file":  "math.test.js",
+                                         "title":  "Math and Vector Logic rng should generate a number between a and b",
+                                         "status":  "pass",
+                                         "ms":  0.31849999999997181
+                                     },
+                                     {
+                                         "id":  "vitest.179",
+                                         "file":  "math.test.js",
+                                         "title":  "Math and Vector Logic lerp should correctly interpolate",
+                                         "status":  "pass",
+                                         "ms":  0.20160000000009859
+                                     },
+                                     {
+                                         "id":  "vitest.180",
+                                         "file":  "math.test.js",
+                                         "title":  "Math and Vector Logic dist2 should calculate squared distance between two points",
+                                         "status":  "pass",
+                                         "ms":  0.16020000000003165
+                                     },
+                                     {
+                                         "id":  "vitest.181",
+                                         "file":  "math.test.js",
+                                         "title":  "Math and Vector Logic hex2rgb should convert hex to rgb array",
+                                         "status":  "pass",
+                                         "ms":  1.0425999999999931
+                                     },
+                                     {
+                                         "id":  "vitest.182",
+                                         "file":  "math.test.js",
+                                         "title":  "Math and Vector Logic shadeRgb should calculate shaded color",
+                                         "status":  "pass",
+                                         "ms":  0.30489999999997508
+                                     },
+                                     {
+                                         "id":  "vitest.183",
+                                         "file":  "math.test.js",
+                                         "title":  "Math and Vector Logic hslToHex should correctly convert",
+                                         "status":  "pass",
+                                         "ms":  0.34320000000002437
+                                     },
+                                     {
+                                         "id":  "vitest.184",
+                                         "file":  "organs.test.js",
+                                         "title":  "organs.js genOrgans function exists",
+                                         "status":  "pass",
+                                         "ms":  1.2660999999999376
+                                     },
+                                     {
+                                         "id":  "vitest.185",
+                                         "file":  "organs.test.js",
+                                         "title":  "organs.js genOrgans returns array for valid organism",
+                                         "status":  "pass",
+                                         "ms":  0.48260000000004766
+                                     },
+                                     {
+                                         "id":  "vitest.186",
+                                         "file":  "render.test.js",
+                                         "title":  "render_entities logic skips rendering viruses that are outside the camera viewport",
+                                         "status":  "pass",
+                                         "ms":  1.7547000000000708
+                                     },
+                                     {
+                                         "id":  "vitest.187",
+                                         "file":  "render.test.js",
+                                         "title":  "render_entities logic renders bioluminescent glow for producers at night",
+                                         "status":  "pass",
+                                         "ms":  2.0682000000000471
+                                     },
+                                     {
+                                         "id":  "vitest.188",
+                                         "file":  "render_modes.test.js",
+                                         "title":  "render_swiss.js drawSwissCell exists",
+                                         "status":  "pass",
+                                         "ms":  1.2877999999999474
+                                     },
+                                     {
+                                         "id":  "vitest.189",
+                                         "file":  "render_modes.test.js",
+                                         "title":  "render_swiss.js drawSwissVirus exists",
+                                         "status":  "pass",
+                                         "ms":  0.16560000000004038
+                                     },
+                                     {
+                                         "id":  "vitest.190",
+                                         "file":  "render_modes.test.js",
+                                         "title":  "render_swiss.js loadSwissSprites exists",
+                                         "status":  "pass",
+                                         "ms":  0.11199999999996636
+                                     },
+                                     {
+                                         "id":  "vitest.191",
+                                         "file":  "render_modes.test.js",
+                                         "title":  "render_swiss.js swissReady exists",
+                                         "status":  "pass",
+                                         "ms":  0.15229999999996835
+                                     },
+                                     {
+                                         "id":  "vitest.192",
+                                         "file":  "render_modes.test.js",
+                                         "title":  "render_swiss.js pickShape exists",
+                                         "status":  "pass",
+                                         "ms":  0.6107000000000653
+                                     },
+                                     {
+                                         "id":  "vitest.193",
+                                         "file":  "render_modes.test.js",
+                                         "title":  "render_swiss.js drawSprite exists",
+                                         "status":  "pass",
+                                         "ms":  0.4495000000000573
+                                     },
+                                     {
+                                         "id":  "vitest.194",
+                                         "file":  "render_modes.test.js",
+                                         "title":  "render_swiss.js fbCoccus exists",
+                                         "status":  "pass",
+                                         "ms":  0.31359999999995125
+                                     },
+                                     {
+                                         "id":  "vitest.195",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_helpers.js renderOrganisms exists",
+                                         "status":  "pass",
+                                         "ms":  1.72420000000011
+                                     },
+                                     {
+                                         "id":  "vitest.196",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_helpers.js renderHealthBars exists",
+                                         "status":  "pass",
+                                         "ms":  0.22879999999986467
+                                     },
+                                     {
+                                         "id":  "vitest.197",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_helpers.js renderMinimap exists",
+                                         "status":  "pass",
+                                         "ms":  0.15380000000004657
+                                     },
+                                     {
+                                         "id":  "vitest.198",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_helpers.js renderShore exists",
+                                         "status":  "pass",
+                                         "ms":  0.12319999999999708
+                                     },
+                                     {
+                                         "id":  "vitest.199",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_helpers.js renderParticles exists",
+                                         "status":  "pass",
+                                         "ms":  0.12730000000010477
+                                     },
+                                     {
+                                         "id":  "vitest.200",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_helpers.js initShoreCache exists",
+                                         "status":  "pass",
+                                         "ms":  0.13859999999999673
+                                     },
+                                     {
+                                         "id":  "vitest.201",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_entities.js renderOrg exists",
+                                         "status":  "pass",
+                                         "ms":  0.13670000000001892
+                                     },
+                                     {
+                                         "id":  "vitest.202",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_entities.js drawBody exists",
+                                         "status":  "pass",
+                                         "ms":  0.10130000000003749
+                                     },
+                                     {
+                                         "id":  "vitest.203",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_organs.js drawOrgans exists",
+                                         "status":  "pass",
+                                         "ms":  0.13090000000011059
+                                     },
+                                     {
+                                         "id":  "vitest.204",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_organs.js drawAppendages exists",
+                                         "status":  "pass",
+                                         "ms":  0.14470000000005712
+                                     },
+                                     {
+                                         "id":  "vitest.205",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_organs.js renderViruses exists",
+                                         "status":  "pass",
+                                         "ms":  0.093100000000049477
+                                     },
+                                     {
+                                         "id":  "vitest.206",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_fx.js renderSunOverlay exists",
+                                         "status":  "pass",
+                                         "ms":  0.077199999999947977
+                                     },
+                                     {
+                                         "id":  "vitest.207",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_fx.js renderBubbles exists",
+                                         "status":  "pass",
+                                         "ms":  0.077400000000125146
+                                     },
+                                     {
+                                         "id":  "vitest.208",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_fx.js renderNutrients exists",
+                                         "status":  "pass",
+                                         "ms":  0.0604000000000724
+                                     },
+                                     {
+                                         "id":  "vitest.209",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_fx.js renderRain exists",
+                                         "status":  "pass",
+                                         "ms":  0.063000000000101863
+                                     },
+                                     {
+                                         "id":  "vitest.210",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_fx.js renderShadows exists",
+                                         "status":  "pass",
+                                         "ms":  0.061900000000150612
+                                     },
+                                     {
+                                         "id":  "vitest.211",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_effects.js renderWater exists",
+                                         "status":  "pass",
+                                         "ms":  0.082200000000057116
+                                     },
+                                     {
+                                         "id":  "vitest.212",
+                                         "file":  "render_pipeline.test.js",
+                                         "title":  "render_effects.js renderSky exists",
+                                         "status":  "pass",
+                                         "ms":  0.16740000000004329
+                                     },
+                                     {
+                                         "id":  "vitest.213",
+                                         "file":  "toast_queue.test.js",
+                                         "title":  "toast queue shows one toast and collapses a duplicate",
+                                         "status":  "pass",
+                                         "ms":  5.2162999999998192
+                                     },
+                                     {
+                                         "id":  "vitest.214",
+                                         "file":  "toast_queue.test.js",
+                                         "title":  "toast queue does not show a third distinct toast in the same second",
+                                         "status":  "pass",
+                                         "ms":  1.536200000000008
+                                     },
+                                     {
+                                         "id":  "vitest.215",
+                                         "file":  "tooltip_keys.test.js",
+                                         "title":  "HUD tooltips initTooltips без кириллицы во всех копиях",
+                                         "status":  "pass",
+                                         "ms":  2.5275000000000318
+                                     },
+                                     {
+                                         "id":  "vitest.216",
+                                         "file":  "tooltip_keys.test.js",
+                                         "title":  "HUD tooltips девять ключей подсказок есть в 20 словарях",
+                                         "status":  "pass",
+                                         "ms":  6.8040999999999485
+                                     },
+                                     {
+                                         "id":  "vitest.217",
+                                         "file":  "ui.test.js",
+                                         "title":  "ui and ui_menus logic toggles DNA Editor visibility and pauses the game",
+                                         "status":  "pass",
+                                         "ms":  1.8854999999999791
+                                     },
+                                     {
+                                         "id":  "vitest.218",
+                                         "file":  "ui.test.js",
+                                         "title":  "ui and ui_menus logic shows Dead Screen with statistics and modifies UI state",
+                                         "status":  "pass",
+                                         "ms":  23.6105
+                                     },
+                                     {
+                                         "id":  "vitest.219",
+                                         "file":  "ui.test.js",
+                                         "title":  "ui and ui_menus logic toggles settings configuration",
+                                         "status":  "pass",
+                                         "ms":  0.87870000000009441
+                                     },
+                                     {
+                                         "id":  "vitest.220",
+                                         "file":  "ui_polish_corners.test.js",
+                                         "title":  "UI-POLISH corners CSS contract defines --corner-bottom and stack heights",
+                                         "status":  "pass",
+                                         "ms":  1.6065000000000964
+                                     },
+                                     {
+                                         "id":  "vitest.221",
+                                         "file":  "ui_polish_corners.test.js",
+                                         "title":  "UI-POLISH corners CSS contract anchors #mmWrap/#demoTip to --corner-bottom (not full actbar-h)",
+                                         "status":  "pass",
+                                         "ms":  0.397899999999936
+                                     },
+                                     {
+                                         "id":  "vitest.222",
+                                         "file":  "ui_polish_corners.test.js",
+                                         "title":  "UI-POLISH corners CSS contract narrow ≤900 lifts corners above actBar band",
+                                         "status":  "pass",
+                                         "ms":  0.24120000000016265
+                                     },
+                                     {
+                                         "id":  "vitest.223",
+                                         "file":  "ui_polish_corners.test.js",
+                                         "title":  "updateLegend EN/RU body lines ui.js localizes the 6 legend body strings",
+                                         "status":  "pass",
+                                         "ms":  1.8148000000001048
+                                     },
+                                     {
+                                         "id":  "vitest.224",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §5.1 — keyHint collapse (LS roundtrip, default collapsed) defaults to collapsed when LS is empty",
+                                         "status":  "pass",
+                                         "ms":  19.298
+                                     },
+                                     {
+                                         "id":  "vitest.225",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §5.1 — keyHint collapse (LS roundtrip, default collapsed) invalid LS value falls back to collapsed default",
+                                         "status":  "pass",
+                                         "ms":  5.7805000000000746
+                                     },
+                                     {
+                                         "id":  "vitest.226",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §5.1 — keyHint collapse (LS roundtrip, default collapsed) manual toggle persists \"0\"/\"1\" and survives a reload (roundtrip)",
+                                         "status":  "pass",
+                                         "ms":  8.3552999999999429
+                                     },
+                                     {
+                                         "id":  "vitest.227",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §5.1 — keyHint collapse (LS roundtrip, default collapsed) auto-collapse ticks only after 60s from last expand and persists once",
+                                         "status":  "pass",
+                                         "ms":  8.05460000000005
+                                     },
+                                     {
+                                         "id":  "vitest.228",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §3.7/§5.5 — energy display policy (A) energy \u003e 100 renders clamped text 100/100 and bar \u003c= 100%",
+                                         "status":  "pass",
+                                         "ms":  29.783900000000017
+                                     },
+                                     {
+                                         "id":  "vitest.229",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §3.7/§5.5 — energy display policy (A) negative energy renders 0/100",
+                                         "status":  "pass",
+                                         "ms":  9.1664000000000687
+                                     },
+                                     {
+                                         "id":  "vitest.230",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §3.7/§5.5 — energy display policy (A) raw energy stays untouched (display-only clamp)",
+                                         "status":  "pass",
+                                         "ms":  6.5691000000000486
+                                     },
+                                     {
+                                         "id":  "vitest.231",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §5.3 — legend collapse contract (eco never stomps legend) updateEcoPanel does not touch #legP at all",
+                                         "status":  "pass",
+                                         "ms":  3.1200000000000045
+                                     },
+                                     {
+                                         "id":  "vitest.232",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §5.3 — legend collapse contract (eco never stomps legend) after eco+legend cycle, collapsed legend stays collapsed (API-owned)",
+                                         "status":  "pass",
+                                         "ms":  8.1105999999999767
+                                     },
+                                     {
+                                         "id":  "vitest.233",
+                                         "file":  "ui_restore.test.js",
+                                         "title":  "UI-RESTORE §5.3 — legend collapse contract (eco never stomps legend) legend collapse persists across reload (LS roundtrip)",
+                                         "status":  "pass",
+                                         "ms":  5.3395000000000437
+                                     },
+                                     {
+                                         "id":  "vitest.234",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_screens.js buildDiff exists",
+                                         "status":  "pass",
+                                         "ms":  1.4825000000000728
+                                     },
+                                     {
+                                         "id":  "vitest.235",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_screens.js showDeadScreen exists",
+                                         "status":  "pass",
+                                         "ms":  0.4093000000000302
+                                     },
+                                     {
+                                         "id":  "vitest.236",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_screens.js toggleRenderMode exists",
+                                         "status":  "pass",
+                                         "ms":  0.324100000000044
+                                     },
+                                     {
+                                         "id":  "vitest.237",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_food_chain.js applyRenderMode exists",
+                                         "status":  "pass",
+                                         "ms":  0.32720000000006166
+                                     },
+                                     {
+                                         "id":  "vitest.238",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_food_chain.js buildWiki exists",
+                                         "status":  "pass",
+                                         "ms":  0.338799999999992
+                                     },
+                                     {
+                                         "id":  "vitest.239",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_food_chain.js buildSettings exists",
+                                         "status":  "pass",
+                                         "ms":  0.30920000000003256
+                                     },
+                                     {
+                                         "id":  "vitest.240",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_food_chain.js getPoolCount exists",
+                                         "status":  "pass",
+                                         "ms":  0.306699999999978
+                                     },
+                                     {
+                                         "id":  "vitest.241",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_food_chain.js buildDiff exists",
+                                         "status":  "pass",
+                                         "ms":  0.28330000000005384
+                                     },
+                                     {
+                                         "id":  "vitest.242",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_menus.js buildSpeciesGrid exists",
+                                         "status":  "pass",
+                                         "ms":  0.42300000000000182
+                                     },
+                                     {
+                                         "id":  "vitest.243",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_menus.js buildCatSel exists",
+                                         "status":  "pass",
+                                         "ms":  0.42920000000003711
+                                     },
+                                     {
+                                         "id":  "vitest.244",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "ui_menus.js updateMenuTexts exists",
+                                         "status":  "pass",
+                                         "ms":  0.30010000000004311
+                                     },
+                                     {
+                                         "id":  "vitest.245",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "main.js startGame exists",
+                                         "status":  "pass",
+                                         "ms":  0.094499999999925421
+                                     },
+                                     {
+                                         "id":  "vitest.246",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "main.js gameLoop exists",
+                                         "status":  "pass",
+                                         "ms":  0.061500000000023647
+                                     },
+                                     {
+                                         "id":  "vitest.247",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "main.js TUTORIAL_STEPS is array",
+                                         "status":  "pass",
+                                         "ms":  0.066199999999980719
+                                     },
+                                     {
+                                         "id":  "vitest.248",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "main.js advanceTutorial exists",
+                                         "status":  "pass",
+                                         "ms":  0.049300000000016553
+                                     },
+                                     {
+                                         "id":  "vitest.249",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "main_events.js toggleRenderModeLarge exists",
+                                         "status":  "pass",
+                                         "ms":  0.3166999999999689
+                                     },
+                                     {
+                                         "id":  "vitest.250",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "main_events.js manualFeed exists",
+                                         "status":  "pass",
+                                         "ms":  0.29729999999995016
+                                     },
+                                     {
+                                         "id":  "vitest.251",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "mobile.js MAX_PARTICLES defined on window",
+                                         "status":  "pass",
+                                         "ms":  0.29969999999991614
+                                     },
+                                     {
+                                         "id":  "vitest.252",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "mobile.js closeGameMenu exists",
+                                         "status":  "pass",
+                                         "ms":  0.26660000000003947
+                                     },
+                                     {
+                                         "id":  "vitest.253",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "mobile.js openGameMenu exists",
+                                         "status":  "pass",
+                                         "ms":  0.25710000000003674
+                                     },
+                                     {
+                                         "id":  "vitest.254",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "mobile.js toggleGameMenu exists",
+                                         "status":  "pass",
+                                         "ms":  0.24839999999994689
+                                     },
+                                     {
+                                         "id":  "vitest.255",
+                                         "file":  "ui_systems.test.js",
+                                         "title":  "mobile.js bindCanvasTaps exists",
+                                         "status":  "pass",
+                                         "ms":  0.278699999999958
+                                     },
+                                     {
+                                         "id":  "vitest.256",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F1: #hDivReady is live during play after 60 frames with a live player the indicator shows energy and mass",
+                                         "status":  "pass",
+                                         "ms":  4.8904999999999745
+                                     },
+                                     {
+                                         "id":  "vitest.257",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F1: #hDivReady is live during play shows ГОТОВО (Q) when canDivide is true and updates live values",
+                                         "status":  "pass",
+                                         "ms":  0.65629999999998745
+                                     },
+                                     {
+                                         "id":  "vitest.258",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F1: #hDivReady is live during play follows the possessed organism in demo (no player)",
+                                         "status":  "pass",
+                                         "ms":  0.225400000000036
+                                     },
+                                     {
+                                         "id":  "vitest.259",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F1: #hDivReady is live during play is empty outside play or without a live organism",
+                                         "status":  "pass",
+                                         "ms":  0.29870000000005348
+                                     },
+                                     {
+                                         "id":  "vitest.260",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F2: #scaleW shows a real µm scale in play in playing: non-empty µm label and a line with width \u003e 0 tied to zoom",
+                                         "status":  "pass",
+                                         "ms":  27.398900000000022
+                                     },
+                                     {
+                                         "id":  "vitest.261",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F2: #scaleW shows a real µm scale in play outside play the scale is hidden",
+                                         "status":  "pass",
+                                         "ms":  0.33719999999993888
+                                     },
+                                     {
+                                         "id":  "vitest.262",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F4/F5: clean start menu, focus on НАЧАТЬ, stale overlays closed menu shown: body.in-menu and focus lands on #startBtn; menu hidden: class removed",
+                                         "status":  "pass",
+                                         "ms":  1.4922000000000253
+                                     },
+                                     {
+                                         "id":  "vitest.263",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F4/F5: clean start menu, focus on НАЧАТЬ, stale overlays closed style.css hides star picker and APK over the menu",
+                                         "status":  "pass",
+                                         "ms":  0.56719999999995707
+                                     },
+                                     {
+                                         "id":  "vitest.264",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F4/F5: clean start menu, focus on НАЧАТЬ, stale overlays closed startGame closes wiki/help/settings/pause/leaderboard overlays",
+                                         "status":  "pass",
+                                         "ms":  0.45489999999995234
+                                     },
+                                     {
+                                         "id":  "vitest.265",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F6: mobile compact bottom bar hides text on non-key buttons, shows icon, keeps 44x44 hit area",
+                                         "status":  "pass",
+                                         "ms":  0.6572999999999638
+                                     },
+                                     {
+                                         "id":  "vitest.266",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F6: mobile compact bottom bar text stays only on eat / divide / auto / spore (labels from the dictionary)",
+                                         "status":  "pass",
+                                         "ms":  0.63879999999994652
+                                     },
+                                     {
+                                         "id":  "vitest.267",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F7: P2 polish toast z-index is 35 (under modal overlays)",
+                                         "status":  "pass",
+                                         "ms":  0.33490000000006148
+                                     },
+                                     {
+                                         "id":  "vitest.268",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F7: P2 polish no dead apple-touch-icon link in index.html",
+                                         "status":  "pass",
+                                         "ms":  0.36099999999999
+                                     },
+                                     {
+                                         "id":  "vitest.269",
+                                         "file":  "ui_widgets.test.js",
+                                         "title":  "UI-IMPROVE F7: P2 polish first-run pulse of «Клавиши» chip runs once (LS igraspore.firstTip)",
+                                         "status":  "pass",
+                                         "ms":  1.2540000000000191
+                                     },
+                                     {
+                                         "id":  "vitest.270",
+                                         "file":  "visuals.test.js",
+                                         "title":  "render_surface.js renderParallax exists",
+                                         "status":  "pass",
+                                         "ms":  1.9130000000000109
+                                     },
+                                     {
+                                         "id":  "vitest.271",
+                                         "file":  "visuals.test.js",
+                                         "title":  "render_surface.js drawNaturalLilypads exists",
+                                         "status":  "pass",
+                                         "ms":  0.58439999999995962
+                                     },
+                                     {
+                                         "id":  "vitest.272",
+                                         "file":  "visuals.test.js",
+                                         "title":  "render_surface.js drawOneLilypad exists",
+                                         "status":  "pass",
+                                         "ms":  0.44820000000004256
+                                     },
+                                     {
+                                         "id":  "vitest.273",
+                                         "file":  "visuals.test.js",
+                                         "title":  "render_surface.js leafPath exists",
+                                         "status":  "pass",
+                                         "ms":  0.41399999999998727
+                                     },
+                                     {
+                                         "id":  "vitest.274",
+                                         "file":  "visuals.test.js",
+                                         "title":  "render_surface.js drawDuckweed exists",
+                                         "status":  "pass",
+                                         "ms":  0.42840000000001055
+                                     },
+                                     {
+                                         "id":  "vitest.275",
+                                         "file":  "visuals.test.js",
+                                         "title":  "stars.js getStarPreset exists",
+                                         "status":  "pass",
+                                         "ms":  0.20830000000000837
+                                     },
+                                     {
+                                         "id":  "vitest.276",
+                                         "file":  "visuals.test.js",
+                                         "title":  "stars.js setStarSystem exists",
+                                         "status":  "pass",
+                                         "ms":  0.15370000000007167
+                                     },
+                                     {
+                                         "id":  "vitest.277",
+                                         "file":  "visuals.test.js",
+                                         "title":  "stars.js STAR_PRESETS defined",
+                                         "status":  "pass",
+                                         "ms":  0.12659999999993943
+                                     },
+                                     {
+                                         "id":  "vitest.278",
+                                         "file":  "visuals.test.js",
+                                         "title":  "night_sky.js renderNightSky exists",
+                                         "status":  "pass",
+                                         "ms":  0.47750000000007731
+                                     },
+                                     {
+                                         "id":  "vitest.279",
+                                         "file":  "visuals.test.js",
+                                         "title":  "night_sky.js genStars exists",
+                                         "status":  "pass",
+                                         "ms":  0.43690000000003693
+                                     },
+                                     {
+                                         "id":  "vitest.280",
+                                         "file":  "visuals.test.js",
+                                         "title":  "night_sky.js genMilkyWay exists",
+                                         "status":  "pass",
+                                         "ms":  0.34399999999993724
+                                     },
+                                     {
+                                         "id":  "vitest.281",
+                                         "file":  "visuals.test.js",
+                                         "title":  "biology_update.js module loads without crash",
+                                         "status":  "pass",
+                                         "ms":  0.18250000000000455
+                                     },
+                                     {
+                                         "id":  "vitest.282",
+                                         "file":  "world.test.js",
+                                         "title":  "world.js logic generates spatial chunks correctly based on coordinates",
+                                         "status":  "pass",
+                                         "ms":  4.6282999999999674
+                                     },
+                                     {
+                                         "id":  "vitest.283",
+                                         "file":  "world.test.js",
+                                         "title":  "world.js logic calculates sun trajectory correctly based on time of day and season",
+                                         "status":  "pass",
+                                         "ms":  1.2774000000000569
+                                     },
+                                     {
+                                         "id":  "vitest.284",
+                                         "file":  "world.test.js",
+                                         "title":  "world.js logic applies time scaling accurately to tod and dt",
+                                         "status":  "pass",
+                                         "ms":  0.37819999999999254
+                                     },
+                                     {
+                                         "id":  "vitest.285",
+                                         "file":  "world.test.js",
+                                         "title":  "world.js logic clamps organism to puddle bounds (environmental limits)",
+                                         "status":  "pass",
+                                         "ms":  0.56049999999993361
+                                     },
+                                     {
+                                         "id":  "vitest.286",
+                                         "file":  "world_update.test.js",
+                                         "title":  "world_update.js updateWorld function exists",
+                                         "status":  "pass",
+                                         "ms":  1.6471000000000231
+                                     },
+                                     {
+                                         "id":  "vitest.287",
+                                         "file":  "world_update.test.js",
+                                         "title":  "world_update.js generateTempGrid function exists",
+                                         "status":  "pass",
+                                         "ms":  0.48509999999998854
+                                     },
+                                     {
+                                         "id":  "vitest.288",
+                                         "file":  "world_update.test.js",
+                                         "title":  "world_update.js spatialGrid referenced in code",
+                                         "status":  "pass",
+                                         "ms":  0.46129999999993743
+                                     },
+                                     {
+                                         "id":  "vitest.289",
+                                         "file":  "world_update.test.js",
+                                         "title":  "world_update.js updateWorld does not crash with null",
+                                         "status":  "pass",
+                                         "ms":  1.6630000000000109
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "qa_unit",
+                       "name":  "QA unit (data)",
+                       "command":  "node .04-Src\\07-QA-and-Testing\\qa_unit.js",
+                       "exit_code":  0,
+                       "ms":  108,
+                       "log":  "09-Docs/test-runs/logs/20261019-1924/qa_unit.log",
+                       "totals":  {
+                                      "pass":  26,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  26
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "qa_unit.U1",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN is array",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U2",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN has 25 species",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U3",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All PN entries are strings",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U4",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN entries are unique",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U5",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN has Synechocystis sp.",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U6",
+                                         "file":  "qa_unit.js",
+                                         "title":  "PN has Chroococcidiopsis",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U7",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All PN entries have genus+species",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U8",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SHAPES has producer category",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U9",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SHAPES has consumer1 category",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U10",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SHAPES has consumer2 category",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U11",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Producer shapes match PN count",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U12",
+                                         "file":  "qa_unit.js",
+                                         "title":  "SWISS_SHAPES has 27 entries",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U13",
+                                         "file":  "qa_unit.js",
+                                         "title":  "No duplicates",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U14",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes all bacteria types",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U15",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes all eukaryote types",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U16",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes virus (phage)",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U17",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Includes specialist shapes",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U18",
+                                         "file":  "qa_unit.js",
+                                         "title":  "NAME_OVERRIDE is non-empty array",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U19",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Has \u003e60 mappings",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U20",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All entries are [regex, string]",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U21",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All mapped shapes exist in SWISS_SHAPES",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U22",
+                                         "file":  "qa_unit.js",
+                                         "title":  "27 PNG files exist",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U23",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Every SWISS_SHAPE has PNG",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U24",
+                                         "file":  "qa_unit.js",
+                                         "title":  "No orphan PNGs",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U25",
+                                         "file":  "qa_unit.js",
+                                         "title":  "All APPROX shapes set to false",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "qa_unit.U26",
+                                         "file":  "qa_unit.js",
+                                         "title":  "Every PN species maps to a Swiss shape",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "playwright",
+                       "name":  "Playwright e2e",
+                       "command":  "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\.04-Src\\node_modules\\.bin\\playwright.cmd test --config playwright.contract.config.js",
+                       "exit_code":  0,
+                       "ms":  815270,
+                       "log":  "09-Docs/test-runs/logs/20261019-1924/playwright.log",
+                       "totals":  {
+                                      "pass":  64,
+                                      "fail":  0,
+                                      "skipped":  1,
+                                      "total":  65
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "playwright.1",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] постоянных видимых элементов HUD \u003c= 6, \u003e=44px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  7476
+                                     },
+                                     {
+                                         "id":  "playwright.2",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] Q: деление — ready даёт dividing, blocked даёт причину",
+                                         "status":  "pass",
+                                         "ms":  8266
+                                     },
+                                     {
+                                         "id":  "playwright.3",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] R: ручная циста держится \u003e=1с, повторное R будит",
+                                         "status":  "pass",
+                                         "ms":  7798
+                                     },
+                                     {
+                                         "id":  "playwright.4",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] E x4 вида: каждый даёт тост или изменение энергии/массы",
+                                         "status":  "pass",
+                                         "ms":  13620
+                                     },
+                                     {
+                                         "id":  "playwright.5",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] Tab (bAuto) переключает autoAI",
+                                         "status":  "pass",
+                                         "ms":  8059
+                                     },
+                                     {
+                                         "id":  "playwright.6",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] меню паузы: каждая кнопка даёт эффект",
+                                         "status":  "pass",
+                                         "ms":  13558
+                                     },
+                                     {
+                                         "id":  "playwright.7",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] ни одной мёртвой кнопки: все видимые дают эффект или тост",
+                                         "status":  "pass",
+                                         "ms":  8503
+                                     },
+                                     {
+                                         "id":  "playwright.8",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] постоянных видимых элементов HUD \u003c= 6, \u003e=44px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  6003
+                                     },
+                                     {
+                                         "id":  "playwright.9",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] Q: деление — ready даёт dividing, blocked даёт причину",
+                                         "status":  "pass",
+                                         "ms":  8652
+                                     },
+                                     {
+                                         "id":  "playwright.10",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] R: ручная циста держится \u003e=1с, повторное R будит",
+                                         "status":  "pass",
+                                         "ms":  8101
+                                     },
+                                     {
+                                         "id":  "playwright.11",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] E x4 вида: каждый даёт тост или изменение энергии/массы",
+                                         "status":  "pass",
+                                         "ms":  14196
+                                     },
+                                     {
+                                         "id":  "playwright.12",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] Tab (bAuto) переключает autoAI",
+                                         "status":  "pass",
+                                         "ms":  8569
+                                     },
+                                     {
+                                         "id":  "playwright.13",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] меню паузы: каждая кнопка даёт эффект",
+                                         "status":  "pass",
+                                         "ms":  13700
+                                     },
+                                     {
+                                         "id":  "playwright.14",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] ни одной мёртвой кнопки: все видимые дают эффект или тост",
+                                         "status":  "pass",
+                                         "ms":  8375
+                                     },
+                                     {
+                                         "id":  "playwright.15",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] постоянных видимых элементов HUD \u003c= 6, \u003e=44px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  5976
+                                     },
+                                     {
+                                         "id":  "playwright.16",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] Q: деление — ready даёт dividing, blocked даёт причину",
+                                         "status":  "pass",
+                                         "ms":  8387
+                                     },
+                                     {
+                                         "id":  "playwright.17",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] R: ручная циста держится \u003e=1с, повторное R будит",
+                                         "status":  "pass",
+                                         "ms":  7543
+                                     },
+                                     {
+                                         "id":  "playwright.18",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] E x4 вида: каждый даёт тост или изменение энергии/массы",
+                                         "status":  "pass",
+                                         "ms":  13813
+                                     },
+                                     {
+                                         "id":  "playwright.19",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] Tab (bAuto) переключает autoAI",
+                                         "status":  "pass",
+                                         "ms":  7344
+                                     },
+                                     {
+                                         "id":  "playwright.20",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] меню паузы: каждая кнопка даёт эффект",
+                                         "status":  "pass",
+                                         "ms":  13951
+                                     },
+                                     {
+                                         "id":  "playwright.21",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] ни одной мёртвой кнопки: все видимые дают эффект или тост",
+                                         "status":  "pass",
+                                         "ms":  8116
+                                     },
+                                     {
+                                         "id":  "playwright.22",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] \u003c=6 элементов, \u003e=44px, actBar \u003c=72px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  4510
+                                     },
+                                     {
+                                         "id":  "playwright.23",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[ru] тап по #bCyst включает цисту",
+                                         "status":  "pass",
+                                         "ms":  5258
+                                     },
+                                     {
+                                         "id":  "playwright.24",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] \u003c=6 элементов, \u003e=44px, actBar \u003c=72px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  4755
+                                     },
+                                     {
+                                         "id":  "playwright.25",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[en] тап по #bCyst включает цисту",
+                                         "status":  "pass",
+                                         "ms":  5537
+                                     },
+                                     {
+                                         "id":  "playwright.26",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] \u003c=6 элементов, \u003e=44px, actBar \u003c=72px, без перекрытий",
+                                         "status":  "pass",
+                                         "ms":  5358
+                                     },
+                                     {
+                                         "id":  "playwright.27",
+                                         "file":  "hud_contract.spec.js",
+                                         "title":  "[hi] тап по #bCyst включает цисту",
+                                         "status":  "pass",
+                                         "ms":  5829
+                                     },
+                                     {
+                                         "id":  "playwright.28",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ru] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14797
+                                     },
+                                     {
+                                         "id":  "playwright.29",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ru] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14726
+                                     },
+                                     {
+                                         "id":  "playwright.30",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[en] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14503
+                                     },
+                                     {
+                                         "id":  "playwright.31",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[en] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15107
+                                     },
+                                     {
+                                         "id":  "playwright.32",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[pt-BR] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14871
+                                     },
+                                     {
+                                         "id":  "playwright.33",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[pt-BR] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14752
+                                     },
+                                     {
+                                         "id":  "playwright.34",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[id] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14549
+                                     },
+                                     {
+                                         "id":  "playwright.35",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[id] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15496
+                                     },
+                                     {
+                                         "id":  "playwright.36",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[de] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14296
+                                     },
+                                     {
+                                         "id":  "playwright.37",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[de] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15016
+                                     },
+                                     {
+                                         "id":  "playwright.38",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[fr] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14862
+                                     },
+                                     {
+                                         "id":  "playwright.39",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[fr] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14285
+                                     },
+                                     {
+                                         "id":  "playwright.40",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[hi] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15121
+                                     },
+                                     {
+                                         "id":  "playwright.41",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[hi] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15672
+                                     },
+                                     {
+                                         "id":  "playwright.42",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ja] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16011
+                                     },
+                                     {
+                                         "id":  "playwright.43",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ja] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16700
+                                     },
+                                     {
+                                         "id":  "playwright.44",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[vi] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15191
+                                     },
+                                     {
+                                         "id":  "playwright.45",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[vi] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15336
+                                     },
+                                     {
+                                         "id":  "playwright.46",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ko] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16169
+                                     },
+                                     {
+                                         "id":  "playwright.47",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ko] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16490
+                                     },
+                                     {
+                                         "id":  "playwright.48",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[th] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15260
+                                     },
+                                     {
+                                         "id":  "playwright.49",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[th] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15516
+                                     },
+                                     {
+                                         "id":  "playwright.50",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[it] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16104
+                                     },
+                                     {
+                                         "id":  "playwright.51",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[it] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16880
+                                     },
+                                     {
+                                         "id":  "playwright.52",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[pl] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15199
+                                     },
+                                     {
+                                         "id":  "playwright.53",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[pl] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15592
+                                     },
+                                     {
+                                         "id":  "playwright.54",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[uk] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15456
+                                     },
+                                     {
+                                         "id":  "playwright.55",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[uk] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15748
+                                     },
+                                     {
+                                         "id":  "playwright.56",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[zh-TW] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  14829
+                                     },
+                                     {
+                                         "id":  "playwright.57",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[zh-TW] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15907
+                                     },
+                                     {
+                                         "id":  "playwright.58",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ms] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  18289
+                                     },
+                                     {
+                                         "id":  "playwright.59",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[ms] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  17879
+                                     },
+                                     {
+                                         "id":  "playwright.60",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[bn] 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16805
+                                     },
+                                     {
+                                         "id":  "playwright.61",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[bn] 1280x800: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16570
+                                     },
+                                     {
+                                         "id":  "playwright.62",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[es] forced 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16266
+                                     },
+                                     {
+                                         "id":  "playwright.63",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[tr] forced 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  15664
+                                     },
+                                     {
+                                         "id":  "playwright.64",
+                                         "file":  "i18n_overflow.spec.js",
+                                         "title":  "[fil] forced 390x844: 8 экранов без переполнений",
+                                         "status":  "pass",
+                                         "ms":  16718
+                                     },
+                                     {
+                                         "id":  "playwright.65",
+                                         "file":  "lab_tests_page.spec.js",
+                                         "title":  "lab tests page: фильтр «упавшие» и поиск",
+                                         "status":  "skipped",
+                                         "ms":  1479
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "i18n",
+                       "name":  "i18n checks",
+                       "command":  "identity+coverage+lint+langs_consistency+critic_check",
+                       "exit_code":  0,
+                       "ms":  4998,
+                       "log":  "09-Docs/test-runs/logs/20261019-1924/i18n.log",
+                       "totals":  {
+                                      "pass":  24,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  24
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "i18n.identity.OK",
+                                         "file":  "i18n_identity.mjs",
+                                         "title":  "identity OK",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.bn",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage bn",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.de",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage de",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.en",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage en",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.es",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage es",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.fil",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage fil",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.fr",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage fr",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.hi",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage hi",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.id",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage id",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.it",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage it",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ja",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ja",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ko",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ko",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ms",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ms",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.pl",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage pl",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.pt-BR",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage pt-BR",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.ru",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage ru",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.th",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage th",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.tr",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage tr",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.uk",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage uk",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.vi",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage vi",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.coverage.zh-TW",
+                                         "file":  "i18n_coverage.mjs",
+                                         "title":  "coverage zh-TW",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.lint.open",
+                                         "file":  "i18n_lint.mjs",
+                                         "title":  "open findings = 0",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "i18n.langs_consistency",
+                                         "file":  "langs_consistency.test.js",
+                                         "title":  "langs consistency (5 sets)",
+                                         "status":  "pass",
+                                         "ms":  0,
+                                         "error_first_line":  "Duration  2.68s (transform 60ms, setup 23ms, collect 51ms, tests 226ms, environment 1.86s, prepare 222ms) |"
+                                     },
+                                     {
+                                         "id":  "i18n.critic_check",
+                                         "file":  "critic_check.mjs",
+                                         "title":  "critic artifacts valid",
+                                         "status":  "pass",
+                                         "ms":  0,
+                                         "error_first_line":  "OK files=42 models=1"
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "report",
+                       "name":  "Report verify",
+                       "command":  "powershell -File tools\\verify_report.ps1",
+                       "exit_code":  0,
+                       "ms":  3114,
+                       "log":  "09-Docs/test-runs/logs/20261019-1924/report.log",
+                       "totals":  {
+                                      "pass":  14,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  14
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "report.V1",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "имя и время ок, новый шаблон v17 (REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261019-1437.md)",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V2",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "финальная строка: inter",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V3",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "code block содержит путь к отчёту",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V4",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "sha=7d5f46a head=7d5f46a parent=ea109e1 ab=[0\t0]",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V5",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "dirty=997 файл=997 мои=0 wip=997",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V6",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "ref=True; heartbeat gap=0 мин",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V7",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не ОСТАНОВЛЕН — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V8",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не финал — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V9",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "критики не упомянуты — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V10",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "нет diff-чисел",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V11",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "sha проверено=1 bad=",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V12",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "не Strict — пропуск",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V13",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v17 (файл на диске есть)",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     },
+                                     {
+                                         "id":  "report.V14",
+                                         "file":  "verify_report.ps1",
+                                         "title":  "блок со строки 7, строк таблицы с путями=1",
+                                         "status":  "pass",
+                                         "ms":  0
+                                     }
+                                 ]
+                   },
+                   {
+                       "id":  "aab",
+                       "name":  "AAB signature",
+                       "command":  "jarsigner -verify 06-DevOps-and-Release\\android\\android\\app\\build\\outputs\\bundle\\release\\app-release.aab",
+                       "exit_code":  0,
+                       "ms":  9989,
+                       "log":  "09-Docs/test-runs/logs/20261019-1924/aab.log",
+                       "totals":  {
+                                      "pass":  1,
+                                      "fail":  0,
+                                      "skipped":  0,
+                                      "total":  1
+                                  },
+                       "tests":  [
+                                     {
+                                         "id":  "aab.sign",
+                                         "file":  "app-release.aab",
+                                         "title":  "jarsigner -verify",
+                                         "status":  "pass",
+                                         "ms":  9989
+                                     }
+                                 ]
+                   }
+               ]
+}

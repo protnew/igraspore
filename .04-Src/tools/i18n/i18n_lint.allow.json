@@ -43,7 +43,7 @@
   },
   {
     "file": "js/ui.js",
-    "line": 136,
+    "line": 164,
     "exact": " (Q)",
     "reason": "keyhint: суффикс горячей клавиши"
   },
@@ -84,7 +84,7 @@
   },
   {
     "file": "js/ui.js",
-    "line": 266,
+    "line": 294,
     "exact": "100 µm",
     "reason": "unit: масштабная линейка"
   },

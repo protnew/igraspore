@@ -68,12 +68,11 @@ function playerEatMiss(pred){
 /** Force a successful eat for player/AI when possible. */
 function forceEat(pred, prey){
   if(window.demoMode) return false;
-  if(!pred || !prey || !prey.alive){ playerEatMiss(pred); return false; }
-  if(prey === pred){ playerEatMiss(pred); return false; }
-  // Fresh divide children cannot be eaten (grace period)
+  if(!pred || !prey || !prey.alive) return false;
+  if(prey === pred) return false;
+  // Fresh divide children cannot be eaten (grace period). Порог тот же, что у выбора добычи.
   if((prey.invuln||0) > 0 || prey._fromDivide || prey._noCull){
-    if(!(pred && pred.isPlayer && (prey.invuln||0) < 0.3 && !prey._fromDivide)){
-      playerEatMiss(pred);
+    if(!(pred && pred.isPlayer && (prey.invuln||0) < 0.5 && !prey._fromDivide)){
       return false;
     }
   }
@@ -117,7 +116,6 @@ function forceEat(pred, prey){
     if(pred.isPlayer && window.showToast) window.showToast(tt('toast.auto.gain',{e:Math.round(energyGain)}), '#8f8');
     return true;
   }
-  playerEatMiss(pred);
   return false;
 }
 

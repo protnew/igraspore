@@ -55,6 +55,12 @@ function updateHUD(){
     if(scentFill){ scentFill.style.width=(scent*100)+'%'; scentFill.style.background=sColor; }
     var title = document.getElementById('hudTitle');
     if(title) title.textContent = player.sp.name;
+    var sub = document.getElementById('hudSub');
+    if(sub) sub.textContent = role+tt('hud.genSep')+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst;
+    var dv = document.getElementById('hudDivs');
+    if(dv) dv.textContent = String(player.offspring||0);
+    var inf = document.getElementById('hudInfect');
+    if(inf) inf.style.display = player.infected ? 'block' : 'none';
     document.getElementById('fpsL').textContent = tt('fps')+': '+(typeof fps!=='undefined'?fps:'');
     document.getElementById('lightL').textContent = tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%';
     held.textContent = tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C';
@@ -64,7 +70,7 @@ function updateHUD(){
   // SIMPLE CLEAN HUD: only essential stats
   h.innerHTML = 
     '<div id="hudTitle" style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:2px;">'+player.sp.name+'</div>'+
-    '<div style="font-size:12px;color:#89f;margin-bottom:6px;">'+role+tt('hud.genSep')+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst+'</div>'+
+    '<div id="hudSub" style="font-size:12px;color:#89f;margin-bottom:6px;">'+role+tt('hud.genSep')+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst+'</div>'+
     '<div id="energyBar" style="background:#012;border:1px solid #234;border-radius:4px;height:18px;overflow:hidden;margin-bottom:4px;">'+
       '<div style="width:'+(eRatio*100)+'%;background:'+eColor+';height:100%;transition:width .3s;"></div>'+
     '</div>'+
@@ -75,13 +81,13 @@ function updateHUD(){
     '<div style="font-size:13px;line-height:1.6;">'+
       '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span id="hudEnergyText" style="color:#fff;font-weight:bold;">'+displayE+'/100</span><br>'+
       '<span style="color:#8af;font-weight:bold;">'+tt('age')+':</span> <span id="ageBar" style="color:#fff;">'+Math.round(player.age)+'s</span><br>'+
-      '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span style="color:#fff;">'+player.offspring+'</span>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span id="hudDivs" style="color:#fff;">'+player.offspring+'</span>'+
     '</div>'+
     '<div style="font-size:11px;color:#cde;line-height:1.45">'+
       '<span id="fpsL">'+tt('fps')+': '+(typeof fps!=='undefined'?fps:'')+'</span> \u00b7 <span id="lightL">'+tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%</span><br>'+
       '<span id="tempL">'+tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C</span> \u00b7 <span id="daysL">'+tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0)+'</span> \u00b7 <span id="popC">'+tt('pop')+'</span>'+
     '</div>'+
-    (player.infected?'<div style="color:#f44;font-size:12px;margin-top:4px;">\u2620 '+(tt('x.infected2'))+'</div>':'');
+    '<div id="hudInfect" style="color:#f44;font-size:12px;margin-top:4px;'+(player.infected?'':'display:none')+'">\u2620 '+(tt('x.infected2'))+'</div>';
 }
 function updateTopRight(){
   var t=document.getElementById('topR');var pop=0;for(var i=0;i<orgs.length;i++)if(orgs[i].alive)pop++;

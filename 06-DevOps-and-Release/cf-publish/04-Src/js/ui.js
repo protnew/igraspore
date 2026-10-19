@@ -24,15 +24,6 @@ function showSpeedBar(){
   }
 }
 
-var langNames = {
-  ru: 'Русский', en: 'English', 'pt-BR': 'Português (Brasil)', id: 'Bahasa Indonesia',
-  de: 'Deutsch', fr: 'Français', hi: 'हिन्दी', ja: '日本語', vi: 'Tiếng Việt',
-  ko: '한국어', th: 'ไทย', it: 'Italiano', pl: 'Polski', uk: 'Українська',
-  'zh-TW': '繁體中文', ms: 'Bahasa Melayu', bn: 'বাংলা',
-  zh: '中文', es: 'Español', ar: 'العربية', pt: 'Português'
-};
-
-
 
 
 
@@ -48,31 +39,55 @@ function updateHUD(){
   // 8) Запах еды — понятная полоска для новичка
   var scent = (typeof foodScentStrength==='function') ? foodScentStrength(player) : 0;
   var sColor = scent>0.55?'#4f4':scent>0.25?'#fc4':'#678';
-  var sLabel = curLang==='ru' ? 'Запах еды' : 'Food scent';
-  var cover = player._lilyCover ? (curLang==='ru'?' · укрытие':' · cover') : '';
-  var cyst = player.cyst ? (curLang==='ru'?' · ЦИСТА':' · CYST') : '';
+  var sLabel = tt('x.foodScent');
+  var cover = player._lilyCover ? (tt('x.cover')) : '';
+  var cyst = player.cyst ? (tt('x.cyst2')) : '';
   var role = (typeof catName==='function') ? catName(player.sp.cat) : '';
+  var held = document.getElementById('tempL');
+  if(held && held.closest && held.closest('#hud')){
+    var fill = document.querySelector('#energyBar > div');
+    if(fill){ fill.style.width=(eRatio*100)+'%'; fill.style.background=eColor; }
+    var et = document.getElementById('hudEnergyText');
+    if(et) et.textContent = displayE+'/100';
+    var ab = document.getElementById('ageBar');
+    if(ab) ab.textContent = Math.round(player.age)+'s';
+    var scentFill = document.querySelector('#scentBar > div');
+    if(scentFill){ scentFill.style.width=(scent*100)+'%'; scentFill.style.background=sColor; }
+    var title = document.getElementById('hudTitle');
+    if(title) title.textContent = player.sp.name;
+    var sub = document.getElementById('hudSub');
+    if(sub) sub.textContent = role+tt('hud.genSep')+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst;
+    var dv = document.getElementById('hudDivs');
+    if(dv) dv.textContent = String(player.offspring||0);
+    var inf = document.getElementById('hudInfect');
+    if(inf) inf.style.display = player.infected ? 'block' : 'none';
+    document.getElementById('fpsL').textContent = tt('fps')+': '+(typeof fps!=='undefined'?fps:'');
+    document.getElementById('lightL').textContent = tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%';
+    held.textContent = tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C';
+    document.getElementById('daysL').textContent = tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0);
+    return;
+  }
   // SIMPLE CLEAN HUD: only essential stats
   h.innerHTML = 
-    '<div style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:2px;">'+player.sp.name+'</div>'+
-    '<div style="font-size:12px;color:#89f;margin-bottom:6px;">'+role+' · Gen '+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst+'</div>'+
+    '<div id="hudTitle" style="font-size:15px;font-weight:bold;color:#fff;margin-bottom:2px;">'+player.sp.name+'</div>'+
+    '<div id="hudSub" style="font-size:12px;color:#89f;margin-bottom:6px;">'+role+tt('hud.genSep')+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst+'</div>'+
     '<div id="energyBar" style="background:#012;border:1px solid #234;border-radius:4px;height:18px;overflow:hidden;margin-bottom:4px;">'+
       '<div style="width:'+(eRatio*100)+'%;background:'+eColor+';height:100%;transition:width .3s;"></div>'+
     '</div>'+
     '<div style="font-size:11px;color:#9ab;margin:0 0 2px 0">'+sLabel+'</div>'+
-    '<div style="background:#012;border:1px solid #234;border-radius:4px;height:12px;overflow:hidden;margin-bottom:6px;">'+
+    '<div id="scentBar" style="background:#012;border:1px solid #234;border-radius:4px;height:12px;overflow:hidden;margin-bottom:6px;">'+
       '<div style="width:'+(scent*100)+'%;background:'+sColor+';height:100%;transition:width .2s;"></div>'+
     '</div>'+
     '<div style="font-size:13px;line-height:1.6;">'+
-      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span style="color:#fff;font-weight:bold;">'+displayE+'/100</span><br>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span id="hudEnergyText" style="color:#fff;font-weight:bold;">'+displayE+'/100</span><br>'+
       '<span style="color:#8af;font-weight:bold;">'+tt('age')+':</span> <span id="ageBar" style="color:#fff;">'+Math.round(player.age)+'s</span><br>'+
-      '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span style="color:#fff;">'+player.offspring+'</span>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span id="hudDivs" style="color:#fff;">'+player.offspring+'</span>'+
     '</div>'+
     '<div style="font-size:11px;color:#cde;line-height:1.45">'+
       '<span id="fpsL">'+tt('fps')+': '+(typeof fps!=='undefined'?fps:'')+'</span> \u00b7 <span id="lightL">'+tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%</span><br>'+
       '<span id="tempL">'+tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C</span> \u00b7 <span id="daysL">'+tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0)+'</span> \u00b7 <span id="popC">'+tt('pop')+'</span>'+
     '</div>'+
-    (player.infected?'<div style="color:#f44;font-size:12px;margin-top:4px;">\u2620 '+(curLang==='ru'?'\u0417\u0430\u0440\u0430\u0436\u0435\u043d!':'Infected!')+'</div>':'');
+    '<div id="hudInfect" style="color:#f44;font-size:12px;margin-top:4px;'+(player.infected?'':'display:none')+'">\u2620 '+(tt('x.infected2'))+'</div>';
 }
 function updateTopRight(){
   var t=document.getElementById('topR');var pop=0;for(var i=0;i<orgs.length;i++)if(orgs[i].alive)pop++;
@@ -85,7 +100,7 @@ function updateTopRight(){
 function updateWeather(){
   var w=document.getElementById('weatherP');
   w.innerHTML='<div>'+(isRaining?'\u2614 '+tt('rainy')+'\u00a0\u00a0':'\u2600 '+tt('clear'))+'</div>'+
-    '<div style="color:#678;font-size:8px;margin-top:1px">'+(curLang==='ru'?'\u0412\u0435\u0442\u0435\u0440':'Wind')+': '+Math.round(wind.strength*10)/10+'</div>';
+    '<div style="color:#678;font-size:8px;margin-top:1px">'+(tt('x.wind'))+': '+Math.round(wind.strength*10)/10+'</div>';
   w.style.display='block';
 }
 
@@ -112,10 +127,10 @@ function syncActButtons(){
   var plant=!!(who && who.sp && who.sp.cat==='producer');
   if(eat){
     var abt=eat.querySelector('.abt');
-    var label=plant ? (typeof igsText==='function'?igsText('hud.btn.light.short','СВЕТ'):'СВЕТ') : (typeof igsText==='function'?igsText('hud.btn.eat.short','ЕСТЬ'):'ЕСТЬ');
+    var label=plant ? (tt('hud.btn.light.short')) : (tt('hud.btn.eat.short'));
     if(plant) label='☀ '+label;
     if(abt && abt.textContent!==label) abt.textContent=label;
-    eat.setAttribute('aria-label', plant?'Свет':'Есть (E)');
+    eat.setAttribute('aria-label', plant?tt('aria.light'):tt('aria.eat'));
   }
   if(cyst && who) cyst.classList.toggle('is-on', !!who.cyst);
   var fol=document.getElementById('bFol');
@@ -150,7 +165,7 @@ function updateDivReady(){
       else if(window.divideBlockReason) txt=line+' · '+window.divideBlockReason(who);
       else txt=line;
       var goalN=(typeof window._divGoal==='number')?window._divGoal:0;
-      var goal=typeof igsText==='function'?igsText('hud.goal','Поделись: {cur}/{need}'):'Поделись: {cur}/{need}';
+      var goal=tt('hud.goal');
       goal=goal.replace('{cur}', String(goalN)).replace('{need}', '3');
       txt=goal+' · '+txt;
       if(hd.textContent!==txt) hd.textContent=txt;
@@ -239,23 +254,9 @@ function updateLegend(){
   var lg=document.getElementById('legP');
   if(!lg)return;
   var body=document.getElementById('legBody');
-  var ru=(typeof curLang==='undefined'||curLang==='ru');
-  // Compact legend — colors + localized species/type names (RU intact; EN when lang=en)
-  var items= ru ? [
-    ['#2c2','Водоросли'],
-    ['#4af','Бактерии'],
-    ['#dd44cc','Крупные охотники'],
-    ['#c4f','Крупные'],
-    ['#a86','Разлагатели'],
-    ['#f44','Вирусы']
-  ] : [
-    ['#2c2','Algae'],
-    ['#4af','Bacteria'],
-    ['#dd44cc','Apex hunters'],
-    ['#c4f','Large'],
-    ['#a86','Decomposers'],
-    ['#f44','Viruses']
-  ];
+  // Compact legend — colors + localized species/type names via tt()
+  var items=[['#2c2','leg.producer'],['#4af','leg.bacteria'],['#dd44cc','leg.apex'],['#c4f','leg.large'],['#a86','leg.decomp'],['#f44','leg.virus']]
+    .map(function(p){return [p[0],tt(p[1])];});
   if(body){
     var head = tt('legend');
     var sig = head + '|' + items.map(function(it){return it[1];}).join(',');
@@ -287,7 +288,7 @@ function ensureScaleBarContent(sw){
   var sl = document.getElementById('scaleL');
   if(sl && sw.contains(sl)) return sl;
   sw.innerHTML = '';
-  sw.setAttribute('aria-label','Масштаб: 100 мкм');
+  sw.setAttribute('aria-label', tt('x.scaleBar'));
   var lab = document.createElement('div');
   lab.id = 'scaleT';
   lab.textContent = '100 µm';
@@ -396,9 +397,9 @@ window.importDNA = function() {
         player.color = sp.color;
         player.size = sp.size;
         if(settings.particles) for(var k=0;k<3;k++) parts.push({x:player.x,y:player.y,vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),life:0.6,maxL:0.6,size:1,color:'#f0f'});
-        document.getElementById('dnaString').value = 'DNA Imported Successfully!';
+        document.getElementById('dnaString').value = tt('dna.ok');
     } catch(e) {
-        document.getElementById('dnaString').value = 'Invalid DNA String!';
+        document.getElementById('dnaString').value = tt('dna.bad');
     }
 };
 

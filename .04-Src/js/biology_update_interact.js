@@ -138,9 +138,10 @@ window.updateOrgInteract = function(o, dt) {
       if(isCiliate && ap.size < o.size*0.7) need = range;
       if(dd < need*need){
         if(o.isPlayer){
-          if(typeof forceEat==='function') forceEat(o, ap);
-          else { ap.divCD=0; ap.invuln=0; eatOrg(o,ap); }
-          if(isCiliate && window.showToast && Math.random()<0.35)
+          var _ate = false;
+          if(typeof forceEat==='function') _ate = !!forceEat(o, ap);
+          else { ap.divCD=0; ap.invuln=0; eatOrg(o,ap); _ate = true; }
+          if(_ate && isCiliate && window.showToast && Math.random()<0.35)
             window.showToast(tt('toast.filter.catch2'), '#9cf');
         } else {
           eatOrg(o, ap);

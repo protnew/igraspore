@@ -30,6 +30,8 @@ $suites = @()
 # Шрифты источника должны лежать и в раздаваемой 04-Src\fonts, иначе консоль ловит 404.
 & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'sync_fonts.ps1')
 if ($LASTEXITCODE -ne 0) { Write-Output 'FONT SHA FAIL'; Pop-Location; exit 1 }
+& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'write_lab_root.ps1')
+if ($LASTEXITCODE -ne 0) { Write-Output 'LAB ROOT FAIL'; Pop-Location; exit 1 }
 
 if ($ValidateOnly) {
   $files = Get-ChildItem (Join-Path $runsDir 'results-*.json') -ErrorAction SilentlyContinue

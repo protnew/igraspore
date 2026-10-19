@@ -169,6 +169,7 @@ window.tryPlayerEat = function(){
     for(var i=0;i<orgs.length;i++){
       var p=orgs[i];
       if(!p||!p.alive||p===player||p.cyst) continue;
+      if(p._fromDivide || p._noCull || (p.invuln||0) > 0.5) continue;
       var d=dist2(player,p);
       if(d<bd && d<range2 && p.size < player.size*1.3){ bd=d; best=p; }
     }
@@ -178,7 +179,11 @@ window.tryPlayerEat = function(){
     var d = Math.sqrt(dist2(player,best));
     var range = Math.max(90, player.size*4 + 70);
     if(d <= range){
-      if(typeof forceEat==='function') return forceEat(player, best);
+      if(typeof forceEat==='function'){
+        var ate = forceEat(player, best);
+        if(!ate && typeof playerEatMiss==='function') playerEatMiss(player);
+        return ate;
+      }
       // legacy
       best.divCD=0; best.invuln=0;
       eatOrg(player, best);
@@ -208,6 +213,7 @@ window.playerContactEat = function(dt){
   for(var i=0;i<orgs.length;i++){
     var p=orgs[i];
     if(!p||!p.alive||p===player||p.cyst) continue;
+    if(p._fromDivide || p._noCull || (p.invuln||0) > 0.5) continue;
     // Player can eat anything up to 1.3x its size (chip away if bigger)
     if(p.size > player.size*1.5) continue;
     if(dist2(player,p) <= range2){
@@ -478,8 +484,10 @@ window.manualFeed = function(){
   }
   if(best){
     best.divCD = 0; best.invuln = 0;
-    if(typeof forceEat==='function') forceEat(player, best);
+    var ate = true;
+    if(typeof forceEat==='function') ate = !!forceEat(player, best);
     else eatOrg(player, best);
+    if(!ate) return false;
     window._manualFeedCD = 0.5; // short CD for manual
     player.flash = 1; player.flashColor = '#ff0';
     if(window.showToast) window.showToast(tt('toast.bite',{name:best.sp.name}), '#8f8');

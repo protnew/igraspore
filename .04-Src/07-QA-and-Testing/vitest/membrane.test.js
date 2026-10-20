@@ -66,7 +66,7 @@ describe('M1 (TZ v20): мягкая мембрана', () => {
   it('выкл → старый путь: drawBody не зовёт membranePath (source contract)', () => {
     const code = src('render_entities.js');
     expect(code).toContain("membraneEnabled() && zoom>3");
-    expect(code).toMatch(/if\(!batched && membraneEnabled/);
+    expect(code).toMatch(/if\(membraneEnabled\(\) && zoom>3/); // batched-guard снят: cartoon рисует тела через batch-путь
     // переключатель читается из localStorage
     expect(src('config.js')).toContain("igs.softMembrane");
   });

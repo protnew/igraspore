@@ -1,0 +1,48 @@
+2026-10-15T10:10:08+03:00 | подпись AAB (шаг 2) | sign-local.ps1 выполнил подпись, jarsigner -verify = jar verified | PID n/a (шаг завершён синхронно) | лог 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/heartbeat.log
+2026-10-15T14:09:27+03:00 | U02 инструменты | строю critic_check.mjs+schema; U06/U09-U12 закоммичены (fb334b0) | PID n/a (синхронно) | лог 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/heartbeat.log
+2026-10-15T14:42:21+03:00 | U02/U03 | critic_check.mjs+schema готовы, dirty разобран (mine 393/wip 180/не разобрано 0), vitest 232/232 | PID n/a | лог 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/heartbeat.log
+2026-10-15T15:44:24+03:00 | продолжение после обрыва | qoder-переводчик умер (billing limit 13:13 UTC), 49 ключей х 15 языков на мне; U02/U04/U05 дальше | PID n/a | лог heartbeat.log
+2026-10-15 19:37 U07 in progress: i18n_lint built (565 ui findings), extraction started
+2026-10-15T22:32 | U08/U14 | wiki extraction done, 18-lang translation in flight (4 subagents), run-all-tests.ps1 built | PID n/a | log heartbeat.log
+2026-10-16T00:14+03:00 | U13/L.9/P1 | tut+role ключи в 17 словарях, i18n_miss=0, hud_contract 27/27, overflow 34/34; serve-static заменил python; полный suite в прогоне | PID node serve-static:8795 | лог heartbeat.log
+2026-10-16T08:06+03:00 | U16-U22 статус | suite зелёный (vitest 277, qa 26, contract 62, i18n 21, aab 1); buttons-after пересъёмка идёт; пишу отчёт | PID node serve-static:8795 | лог heartbeat.log
+2026-10-16T08:27+03:00 | U17 | VERIFY OK 12/12, suite merged 399/399, push 8996bd5; buttons-after пересъёмка #2 (rubric .ov.show) идёт | PID node serve-static:8795 | лог heartbeat.log
+2026-10-16T10:01+03:00 | финал сессии | suite 399/399, VERIFY OK 12/12, push a4652d0; buttons-after: 48id work31/partial17/hidden48/broken0; U16 gated критиками | PID n/a | лог heartbeat.log
+2026-10-16T12:45:00+03:00 | U09-U35,U13,U27,U19 done | committed 4014982 pushed | PID none | log N/A
+2026-10-16T15:49+03:00 | U09/U35/U13/U27/U19 done+pushed (4014982) | готовлю v11 отчёт + пакет критика A | PID n/a | лог heartbeat.log
+2026-10-16T20:27+03:00 | U26 круг5 старт | шаг0 коммит файлов аналитика | PID n/a | heartbeat.log
+2026-10-16T20:37+03:00 | U26 круг5 правки + круг6 пакеты (18 яз) | коммит abd4c96 | PID n/a | heartbeat.log
+2026-10-16T20:49+03:00 | U21 lab переснят с HEAD (9+48 shots) коммит 5849851 pushed | U20 старт | PID n/a | heartbeat.log
+2026-10-16T20:58+03:00 | U20 store 32/32 + U21 done; run-all-tests i18n | PID n/a | heartbeat.log
+2026-10-16T21:08+03:00 | ОТДАН v12 (шаг0-5,U26,U21,U20,U29,U37,U34) | отчёт a07a183 VERIFY OK 12/12 pushed | ОСТАНОВЛЕН жду аналитика круг6 | PID n/a | heartbeat.log
+2026-10-16T21:25+03:00 | шаг0 аналитик круг6 (5b0845c) + fil/tr круг6 (2321566), пакеты круга 7 | U22 не начат | PID n/a | heartbeat.log
+2026-10-16T21:29+03:00 | шаг3 листинг 16 яз (33252b8) | U22 начинаю | PID n/a | heartbeat.log
+2026-10-16T21:34+03:00 | U22: P2.5 иконки 192/512/maskable + feature-graphic 1024x500, P2.12 MATCH, B1 съёмка идёт | PID b1utx6i5x | heartbeat.log
+2026-10-16T21:42+03:00 | U22: P2.5/P2.6/P2.12, AN.1-AN.8 (5394879, 8d39336) | B1 и store-съёмка идут PID b1utx6i5x/b6cjgmnvx | heartbeat.log
+2026-10-16T21:51+03:00 | U22: B1 съёмка 92/192 (PID b1utx6i5x), store 18 png; чиню nav help/stars | heartbeat.log
+2026-10-16T22:07+03:00 | U22: B1 (96, broken 0) + A.7 sha=HEAD (829f372); store съёмка идёт | heartbeat.log
+2026-10-16T22:18+03:00 | store_shots перезапуск (fixed) PID b7d3192jj; готовлю отчёт v12 | heartbeat.log
+2026-10-16T22:49+03:00 | P2.6 store 1080x1920: 46/48 (en/ru добираются PID b7b9trjsu) | heartbeat.log
+2026-10-16T23:01+03:00 | ОТДАН v12: шаг0-3 + U22 (B1/A.7/P2.5/P2.6/P2.12/AN) + отчёт f415d36 VERIFY OK 12/12 pushed | ОСТАНОВЛЕН жду круг7 аналитика | heartbeat.log
+2026-10-17T10:01+03:00 | W0 старт baseline-v14 (20261017-1001), HEAD 7a43a5f pushed | heartbeat.log
+2026-10-17T10:39+03:00 | W2 листинг круг 3 (13 яз) закоммичен; W0 baseline всё ещё идёт | heartbeat.log
+2026-10-17T10:48+03:00 W3 (U45) начат: verify_report под 09A rev 14.10, selftest-до пишется
+2026-10-17T10:59+03:00 W3: verify_report V13/V14 + 17 fixtures, прогон selftest-после
+2026-10-17T11:13+03:00 W3 закоммичен 0be0bc5 (push OK); W4 PROBE index.html: НЕ В СБОРКЕ; контрольный полный прогон идёт (b7rar0v8x)
+2026-10-17T11:26+03:00 W4 PROBE закоммичен 9a19f4e (push OK); W6 AN.1: инвентаризация пруфов (buttons-before-pass1.json есть, after-лога нет — пересниму фазу after после полного прогона)
+2026-10-17T11:36+03:00 W6 AN.1: PROOFS-G переписан с колонкой путей, 16/16 Test-Path True; строка vitest 14.10 — «не подтверждено» честно
+2026-10-17T11:58+03:00 W5 разрез готов (60 тестов до/после, порядок и expect-набор совпадают); контрольный прогон 11:08: 409/415, 2 фейла playwright + 4 report — разбираюсь
+2026-10-17T13:10+03:00 W5/W6 закоммичены (3ed4507, f757d70, 2deb98a); докручен FR-W1.3 (tr wiki 3 правки) + пересобран пакет tr-round8; идёт полный прогон «после» (b737nk007)
+2026-10-17T14:08+03:00 найден и починен QA-харнес (vitest exit 1 → 0, коммит 863c5b0); запускаю финальный прогон «после»
+2026-10-17T14:30+03:00 W2 добивка: проверка по диску нашла 5 пропущенных правок (da/es/pt-BR/el/fil) — внесены, 24/24 форм, store_len OK, пакет round3 пересобран (коммиты 5b2b8c6, 614defb). Полный прогон «после» идёт
+2026-10-17T14:42+03:00 скелет отчёта и сборщик готовы; жду конец полного прогона (старт 14:08)
+2026-10-17T14:57+03:00 DONE-реестр обновлён (4ed0f53); Playwright-набор в прогоне «после» идёт
+2026-10-17T15:13+03:00 прогон «после» (14:08): 409/415, vitest exit=0 после фикса; 2 фейла i18n_overflow [id]/[fr] — перепроверяю их на свободной машине (b4p12k9wv)
+2026-10-17T15:34+03:00 разобран кейс id (неустойчив к загрузке, панель PUNAH), коммит скелета; собираю отчёт v14
+2026-10-17T15:38+03:00 V14 усилена (перебирает все вхождения фразы — упоминание в тексте больше не считается блоком), перепрогоняю selftest
+2026-10-18T17:59+03:00 | N3 | отчёт под HEAD 8ee8fc1 | PID 210964 | лог 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/heartbeat.log
+2026-10-18T23:36+03:00 | X6 | полный прогон | PID 45920 | лог 09-Docs/out-dev-factory/runs/x6-run.log
+2026-10-19T14:37+03:00 | D7 | полный прогон | PID x6 | лог 09-Docs/out-dev-factory/runs/x6-run.log
+2026-10-19T20:10+03:00 | D8 | снимок отчёта | PID n/a | лог 09-Docs/out-dev-factory/runs/x6b-run.log
+2026-10-20T23:28 heartbeat v17-снапшот под HEAD 878120e (v20 Y5)
+2026-10-20T23:56 heartbeat v17-снапшот под HEAD 7fdedfa (v20 Y5 post-Y4)

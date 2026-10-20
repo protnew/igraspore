@@ -42,3 +42,5 @@ backups/
 !.04-Src/07-QA-and-Testing/vitest/membrane.test.js
 *.aab
 !.10-Archive/**/*.md
+# TZ v20 Y5: heartbeat журнала в git
+!09-Docs/out-dev-factory/logs-release-ready-2026-10-14/heartbeat.log

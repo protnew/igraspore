@@ -1,5 +1,22 @@
 "use strict";
 function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight;}
+// B3 (TZ v20): единая точка скрытия игрового HUD в menu/dead
+var HUD_IDS=['hud','topR','ecoP','legP','actBar','scaleW','spdBar','todWrap','camM'];
+function hideGameHud(){
+  for(var i=0;i<HUD_IDS.length;i++){
+    var el=document.getElementById(HUD_IDS[i]);
+    if(el) el.style.display='none';
+  }
+}
+function showGameHud(){
+  for(var i=0;i<HUD_IDS.length;i++){
+    var el=document.getElementById(HUD_IDS[i]);
+    if(!el) continue;
+    if(HUD_IDS[i]==='actBar'||HUD_IDS[i]==='spdBar'||HUD_IDS[i]==='todWrap') el.style.display='flex';
+    else el.style.display='block';
+  }
+}
+window.hideGameHud=hideGameHud; window.showGameHud=showGameHud;
 function showSpeedBar(){
   var sb=document.getElementById('spdBar');
   var speeds=[{v:0,l:'\u23f8'},{v:0.5,l:'0.5x'},{v:1,l:'1x'},{v:5,l:'5x'},{v:25,l:'25x'}];

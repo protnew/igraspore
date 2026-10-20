@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<link rel="icon" href="data:,">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 <title>iGraSpore</title>
@@ -65,6 +66,10 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 .ov.show{display:flex}
 #menuO{background:rgba(0,5,15,.97);overflow-y:auto;padding:40px 0;justify-content:flex-start;}
 #pauseO{background:rgba(0,5,15,.75)}
+#pauseO .btn,#exitConfirm .btn,#introO .btn{min-height:48px;min-width:120px}
+#pauseO .btn.sm,#menuO .btn.sm{min-height:48px;min-width:88px}
+#exitConfirm .tt{font-size:20px}
+#introO{background:rgba(0,5,15,.9)}
 #helpO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
 #deadO{background:rgba(0,5,15,.96)}
 #setO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
@@ -282,7 +287,11 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 </div>
 <div style="margin-top:4px"><button class="btn sm" id="helpBtn"></button> <button class="btn sm" id="setBtn2"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
 </div>
-<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button></div>
+<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button><button class="btn" id="pExit"></button></div>
+<div id="exitConfirm" class="ov"><div class="tt" style="font-size:20px" id="ecT"></div><div style="color:#bcd;font-size:13px;margin-bottom:12px" id="ecBody"></div><button class="btn" id="ecYes"></button> <button class="btn" id="ecNo"></button></div>
+<div id="introO" class="ov"><div class="tt" style="font-size:20px" id="introTitle"></div><div id="introBody" style="color:#bcd;font-size:14px;line-height:1.6;max-width:420px;margin-bottom:12px"></div><button class="btn" id="introOk"></button></div>
+<div id="demoExit" title="" role="button" aria-label="Exit demo" style="display:none;position:absolute;top:8px;right:8px;width:48px;height:48px;z-index:60;align-items:center;justify-content:center;font:800 22px/1 system-ui,sans-serif;color:#fff;background:rgba(0,25,50,0.75);border:1px solid #4af;border-radius:10px;cursor:pointer;user-select:none">×</div>
+<div id="demoBadge" style="display:none;position:absolute;top:10px;left:10px;z-index:59;padding:6px 12px;background:rgba(0,25,50,0.8);color:#cfe;border:1px solid #4af;border-radius:8px;font:700 12px/1.3 system-ui,sans-serif;pointer-events:none"></div>
 <div id="helpO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="helpT"></div><div id="helpBody" style="color:#bcd;font-size:12px;line-height:1.6;max-width:560px"></div><button class="btn sm" id="helpClose" style="margin-top:12px"></button></div>
 <div id="setO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="setT"></div><div class="scrollbox" id="setBody" style="max-width:400px"></div><button class="btn sm" id="setClose" style="margin-top:12px"></button></div>
 <div id="wikiO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:6px" id="wikiT"></div><input type="text" class="wiki-search" id="wikiSearch" placeholder="Search..."><div id="wikiContent"></div><button class="btn sm" id="wikiClose" style="margin-top:10px"></button></div>
@@ -446,27 +455,31 @@ waterLoop();
 </script>
 
 <script>window.HYBRID_GL = true;</script>
-<script src="04-Src/js/config.js?v=1785823128"></script>
-<script src="04-Src/js/locomotion.js?v=1785823128"></script>
-<script src="04-Src/js/organs.js?v=1785823128"></script>
-<script src="04-Src/js/world.js?v=1785823128"></script>
-<script src="04-Src/js/world_update.js?v=1785823128"></script>
-<script src="04-Src/js/biology.js?v=1785823128"></script>
-<script src="04-Src/js/biology_update.js?v=1785823128"></script>
-<script src="04-Src/js/ai_move.js?v=1785823128"></script>
-<script src="04-Src/js/ai.js?v=1785823128"></script>
-<script src="04-Src/js/render_effects.js?v=1785823128"></script>
-<script src="04-Src/js/render_surface.js?v=1785823128"></script>
-<script src="04-Src/js/render_fx.js?v=1785823128"></script>
-<script src="04-Src/js/render_helpers.js?v=1785823128"></script>
-<script src="04-Src/js/render.js?v=1785823128"></script>
-<script src="04-Src/js/render_entities.js?v=1785823128"></script>
-<script src="04-Src/js/render_organs.js?v=1785823128"></script>
-<script src="04-Src/js/render_edu.js?v=1785823128"></script>
-<script src="04-Src/js/ui.js?v=1785823128"></script>
-<script src="04-Src/js/ui_menus.js?v=1785823128"></script>
-<script src="04-Src/js/main.js?v=1785823128"></script>
-<script src="04-Src/js/main_events.js?v=1785823128"></script>
+<script src="js/config.js?v=1790087247"></script>
+<script src="js/locomotion.js?v=1790087247"></script>
+<script src="js/organs.js?v=1790087247"></script>
+<script src="js/world.js?v=1790087247"></script>
+<script src="js/world_update.js?v=1790087247"></script>
+<script src="js/biology.js?v=1790087247"></script>
+<script src="js/biology_divide.js?v=1790087247"></script>
+<script src="js/biology_eat.js?v=1790087247"></script>
+<script src="js/biology_virus.js?v=1790087247"></script>
+<script src="js/biology_update.js?v=1790087247"></script>
+<script src="js/biology_update_core.js?v=1790087247"></script>
+<script src="js/ai_move.js?v=1790087247"></script>
+<script src="js/ai.js?v=1790087247"></script>
+<script src="js/render_effects.js?v=1790087247"></script>
+<script src="js/render_surface.js?v=1790087247"></script>
+<script src="js/render_fx.js?v=1790087247"></script>
+<script src="js/render_helpers.js?v=1790087247"></script>
+<script src="js/render.js?v=1790087247"></script>
+<script src="js/render_entities.js?v=1790087247"></script>
+<script src="js/render_organs.js?v=1790087247"></script>
+<script src="js/render_edu.js?v=1790087247"></script>
+<script src="js/ui.js?v=1790087247"></script>
+<script src="js/ui_menus.js?v=1790087247"></script>
+<script src="js/main.js?v=1790087247"></script>
+<script src="js/main_events.js?v=1790087247"></script>
 <div id="globalTooltip" style="display:none; position:absolute; z-index:9999; background:rgba(10,20,35,0.95); border:1px solid #4af; color:#fff; padding:8px 12px; border-radius:6px; font-family:sans-serif; font-size:12px; pointer-events:none; box-shadow:0 4px 10px rgba(0,0,0,0.5); max-width:250px; text-shadow:0 1px 2px #000;"></div>
 
 

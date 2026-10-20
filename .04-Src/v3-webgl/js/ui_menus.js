@@ -227,6 +227,10 @@ function updateMenuTexts(){
   document.getElementById('resBtn').textContent=tt('resume');
   document.getElementById('pHelp').textContent=tt('help');document.getElementById('pSet').textContent=tt('set');document.getElementById('pWiki').textContent=tt('wiki');
   document.getElementById('pauseT').textContent=tt('paused');
+  document.getElementById('pExit').textContent='⏏ '+tt('pauseExit');
+  document.getElementById('ecT').textContent=tt('exitConfirm');
+  document.getElementById('ecYes').textContent=tt('yes');
+  document.getElementById('ecNo').textContent=tt('no');
   document.getElementById('restartBtn').textContent=tt('restart');document.getElementById('menuBtn').textContent=tt('menu');
   document.getElementById('helpT').textContent=tt('help');document.getElementById('helpClose').textContent=tt('close');
   document.getElementById('setT').textContent=tt('settingsT');document.getElementById('setClose').textContent=tt('close');

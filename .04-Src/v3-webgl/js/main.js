@@ -65,7 +65,7 @@ window.focusTarget = null; window.focusTimer = 0; window.cinematicTime = 1;
 function gameLoop(ts){
   try{
   if(!lastT)lastT=ts;
-  if(state==='playing'&&!player){state='gameover';}
+  if(state==='playing'&&!player){ if(window.__igsDemo&&window.demoRespawn){window.demoRespawn();} else state='gameover'; }
   var dt=Math.min(0.05,(ts-lastT)/1000);lastT=ts;fc++;
   
   if (focusTimer > 0) {
@@ -104,8 +104,11 @@ function gameLoop(ts){
       }
       var cm=document.getElementById('camM');
       if(freeCam){cm.textContent=tt('freeCam');cm.className='free';cm.style.display='block';}
-      else if(autoAI){cm.innerHTML='<span style="color:#0f0;text-shadow:0 0 5px #0f0;font-weight:bold;font-size:12px;">АВТО-ПИЛОТ ВКЛ</span>';cm.className='';cm.style.display='block';}
+      else if(autoAI){cm.innerHTML='<span style="color:#0f0;text-shadow:0 0 5px #0f0;font-weight:bold;font-size:12px;">'+tt('autoPilotOn')+'</span>';cm.className='';cm.style.display='block';}
       else cm.style.display='none';
+      // FR-B4.4: в демо погибшую клетку замещает другая ≤2 с
+      if(window.__igsDemo&&(!player||!player.alive)&&window.demoRespawn)window.demoRespawn();
+      if(window.__igsDemo&&(fc%60===0)&&window.demoMaintain)window.demoMaintain();
       if(gt>15)document.getElementById('keyHint').style.opacity='0.3';
     } else {
       // Menu Aquarium Logic
@@ -125,11 +128,11 @@ function gameLoop(ts){
 window.tutorialStep = 0;
 window.tutorialActive = false;
 window.TUTORIAL_STEPS = [
-  { title: 'Добро пожаловать', body: 'Вы — микроорганизм в луже. Цель: есть, расти, делиться. Нажмите «Далее».' },
-  { title: 'Движение', body: 'WASD — плыть. Мышь задаёт направление. Попробуйте сдвинуться, затем «Далее».' },
-  { title: 'Питание', body: 'Подойдите к меньшей клетке и нажмите ЕСТЬ (E). Должны появиться вспышка и «+энергия».' },
-  { title: 'Деление', body: 'При полной энергии нажмите ДЕЛИТЬ (Q). Клетка станет заметно меньше — это нормально.' },
-  { title: 'Готово', body: 'Камера: СЛЕДИТЬ / КАМЕРА. Режим: кнопка РЕАЛИСТИЧНЫЙ. Удачи в эволюции!' }
+  { title: function(){return tt('tut1t')}, body: function(){return tt('tut1b')} },
+  { title: function(){return tt('tut2t')}, body: function(){return tt('tut2b')} },
+  { title: function(){return tt('tut3t')}, body: function(){return tt('tut3b')} },
+  { title: function(){return tt('tut4t')}, body: function(){return tt('tut4b')} },
+  { title: function(){return tt('tut5t')}, body: function(){return tt('tut5b')} }
 ];
 
 window.showTutorialStep = function(){
@@ -146,10 +149,10 @@ window.showTutorialStep = function(){
     return;
   }
   var s = window.TUTORIAL_STEPS[window.tutorialStep];
-  title.textContent = s.title;
-  body.textContent = s.body;
+  title.textContent = (typeof s.title==='function')?s.title():s.title;
+  body.textContent = (typeof s.body==='function')?s.body():s.body;
   counter.textContent = (window.tutorialStep+1) + ' / ' + window.TUTORIAL_STEPS.length;
-  next.textContent = (window.tutorialStep === window.TUTORIAL_STEPS.length-1) ? 'Играть' : 'Далее';
+  next.textContent = (window.tutorialStep === window.TUTORIAL_STEPS.length-1) ? tt('tutPlay') : tt('tutNext');
   layer.style.display = 'flex';
   layer.style.pointerEvents = 'auto';
   next.style.pointerEvents = 'auto';
@@ -169,7 +172,7 @@ window.advanceTutorial = function(){
     window.tutorialActive = false;
     var layer = document.getElementById('tutorialLayer');
     if(layer) layer.style.display = 'none';
-    if(window.showToast) window.showToast('Туториал пройден', '#4f4');
+    if(window.showToast) window.showToast(tt('tutPassed'), '#4f4');
     try { localStorage.setItem('igraspore_tut_v2','1'); } catch(e){}
     return;
   }
@@ -216,11 +219,31 @@ function startGame(isScreensaver){
   var d=rng(PD*0.2,PD*0.5),hw=halfW(d)-20;
   
   if (isScreensaver) {
-     window.spectatorMode = true;
-     freeCam = true;
-     window.screensaverAutoCam = true;
-     player = null;
-     cam.x = 0; cam.y = PD * 0.3;
+     // B4 (TZ v20): живое демо — клетка-игрок на автопилоте, камера следит с 1-го кадра
+     window.__igsDemo = true;
+     window.spectatorMode = false;
+     freeCam = false;
+     window.screensaverAutoCam = false;
+     window.lastInteractionTime = 0;
+     var demoPool = [];
+     for(var dpi=0; dpi<SPECIES_DB.length; dpi++){
+       if(SPECIES_DB[dpi].cat==='consumer1' && SPECIES_DB[dpi].shape!=='colony') demoPool.push(SPECIES_DB[dpi]);
+     }
+     if(!demoPool.length) demoPool=[SPECIES_DB[0]];
+     var dsp = demoPool[Math.floor(rng(0, demoPool.length)) % demoPool.length];
+     var dD = rng(PD*0.25, PD*0.5), dHw = halfW(dD)-30;
+     player = spawnOrg(dsp, rng(-dHw*0.4, dHw*0.4), dD, true);
+     if(player){
+       player.energy=100; player.aiTarget=null; player.facing=0;
+       cam.x=player.x; cam.y=player.y-10;
+     }
+     autoAI = true;
+     // FR-B4.2: гарантируем ≥30 живых организмов рядом с камерой
+     var _need=40, _have=0;
+     for(var _hi=0;_hi<orgs.length;_hi++){ var _ho=orgs[_hi]; if(_ho&&_ho.alive&&Math.abs(_ho.x-cam.x)<380&&Math.abs(_ho.y-cam.y)<240)_have++; }
+     window.demoBring(_need-_have);
+     // B5: плашка DEMO + кнопка ×
+     window.showDemoChrome && window.showDemoChrome(dsp);
   } else {
      window.spectatorMode = false;
      freeCam = false;
@@ -263,7 +286,7 @@ function startGame(isScreensaver){
      }
      if(sp.cat==='consumer2'){
        setTimeout(function(){
-         if(window.showToast) window.showToast('Инфузория: подплыви к бактериям/водорослям — реснички фильтруют сами', '#9cf');
+         if(window.showToast) window.showToast(tt('ciliateTip'), '#9cf');
        }, 900);
      }
   }
@@ -272,15 +295,18 @@ function startGame(isScreensaver){
   state='playing';zoom=1.2;tZoom=1.2;gt=0;fc=0;lastT=0;
   document.getElementById('menuO').className='ov';
   document.getElementById('hud').style.display= isScreensaver ? 'none' : 'block';
+  if(isScreensaver){ // FR-B4.3: в демо левый HUD статов скрыт (кроме плашки DEMO)
+    document.getElementById('topR').style.display='none';
+    document.getElementById('weatherP').style.display='none';
+  }
   document.getElementById('topR').style.display='block';
   document.getElementById('weatherP').style.display='block';
   document.getElementById('actBar').style.display='flex';
   document.getElementById('renderModeBtn').style.display='block';
-  if(settings.renderMode==='realistic'){var rb=document.getElementById('renderModeBtn');if(rb){rb.className='realistic';rb.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';}}
-  else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML='🎨 МУЛЬТЯШНЫЙ';}}
+  if(settings.renderMode==='realistic'){var rb=document.getElementById('renderModeBtn');if(rb){rb.className='realistic';rb.innerHTML=tt('modeReal');}}
+  else{var rb2=document.getElementById('renderModeBtn');if(rb2){rb2.className='cartoon';rb2.innerHTML=tt('modeCartoon');}}
   var kh=document.getElementById('keyHint');
-  kh.innerHTML='<div style="font-size:15px;font-weight:700;line-height:1.7;text-align:center">'+
-    '<b>WASD</b> движение · <b>E</b> ЕСТЬ · <b>Q</b> ДЕЛИТЬ · <b>Tab</b> АВТО · <b>V</b> камера</div>';
+  kh.innerHTML='<div style="font-size:15px;font-weight:700;line-height:1.7;text-align:center">'+tt('khLine')+'</div>';
   kh.style.display='flex';
   // Large Russian labels on primary action buttons
   function labelBtn(id, text, hk){
@@ -288,12 +314,12 @@ function startGame(isScreensaver){
     b.innerHTML = text + '<span class="hk">'+hk+'</span>';
     b.style.minWidth='72px'; b.style.padding='12px 16px'; b.style.fontSize='15px';
   }
-  labelBtn('bEat','ЕСТЬ','авто');
-  labelBtn('bDiv','ДЕЛИТЬ','Q');
-  labelBtn('bCyst','ЦИСТА','R');
-  labelBtn('bAuto','АВТО','Tab');
-  labelBtn('bFree','КАМЕРА','F');
-  labelBtn('bFol','СЛЕДИТЬ','V');
+  labelBtn('bEat',tt('eatBtn'),'auto');
+  labelBtn('bDiv',tt('divBtn'),'Q');
+  labelBtn('bCyst',tt('cystBtn'),'R');
+  labelBtn('bAuto',tt('autoBtn'),'Tab');
+  labelBtn('bFree',tt('camBtn'),'F');
+  labelBtn('bFol',tt('folBtn'),'V');
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');
   tw.innerHTML='<input type="range" id="todR" min="0" max="24" step="0.05" value="'+tod+'"><span id="todL">12:00</span><span id="seasL">'+tt('season1')+'</span>';
@@ -304,284 +330,81 @@ function startGame(isScreensaver){
   sl.addEventListener('touchstart',function(){sliderDragging=true;});
   sl.addEventListener('touchend',function(){sliderDragging=false;tod=parseFloat(sl.value);});
   showSpeedBar();updateLegend();updateEcoPanel();
-  if(!isScreensaver){ setTimeout(function(){ window.startTutorial(false); }, 300); }
-}
-
-// === EVENT LISTENERS ===
-cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
-cv.addEventListener('mousedown',function(e){e.preventDefault();var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;
-  if(e.button===0)mouseDown=true;
-  if(e.button===2){var wx=cam.x+(mx-cv.width/2)/zoom,wy=cam.y+(my-cv.height/2)/zoom;moveTarget={x:wx,y:wy};}});
-cv.addEventListener('mouseup',function(e){if(e.button===0)mouseDown=false;});
-cv.addEventListener('contextmenu',function(e){e.preventDefault();});
-cv.addEventListener('wheel',function(e){e.preventDefault();tZoom=clamp(tZoom*(e.deltaY>0?0.85:1.15),0.05,50);},{passive:false});
-
-var touchId=null;
-cv.addEventListener('touchstart',function(e){e.preventDefault();var t=e.touches[0];var r=cv.getBoundingClientRect();mx=t.clientX-r.left;my=t.clientY-r.top;mouseDown=true;touchId=t.identifier;},{passive:false});
-cv.addEventListener('touchmove',function(e){e.preventDefault();for(var i=0;i<e.touches.length;i++){var t=e.touches[i];if(t.identifier===touchId){var r=cv.getBoundingClientRect();mx=t.clientX-r.left;my=t.clientY-r.top;break;}}},{passive:false});
-cv.addEventListener('touchend',function(e){mouseDown=false;if(e.touches.length===0)touchId=null;},{passive:false});
-
-// Web Audio API MVP (Task 40)
-var audioCtx = null;
-window.playSound = function(type, x, y) {
-    if(!settings.sound) return;
-    if(!audioCtx) {
-        var AudioContext = window.AudioContext || window.webkitAudioContext;
-        if(AudioContext) audioCtx = new AudioContext();
-    }
-    if(!audioCtx) return;
-    
-    // Pan based on x position relative to cam
-    var pan = 0;
-    if (x !== undefined && cam) {
-        pan = (x - cam.x) / (window.innerWidth / 2);
-        pan = Math.max(-1, Math.min(1, pan));
-    }
-    
-    var osc = audioCtx.createOscillator();
-    var gain = audioCtx.createGain();
-    
-    // Stereo panner if available
-    var panner = null;
-    if(audioCtx.createStereoPanner) {
-        panner = audioCtx.createStereoPanner();
-        panner.pan.value = pan;
-        osc.connect(panner);
-        panner.connect(gain);
-    } else {
-        osc.connect(gain);
-    }
-    gain.connect(audioCtx.destination);
-    
-    var now = audioCtx.currentTime;
-    if (type === 'eat') {
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(400, now);
-        osc.frequency.exponentialRampToValueAtTime(800, now + 0.1);
-        gain.gain.setValueAtTime(0.1, now);
-        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
-        osc.start(now);
-        osc.stop(now + 0.1);
-    } else if (type === 'hurt') {
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(200, now);
-        osc.frequency.exponentialRampToValueAtTime(50, now + 0.2);
-        gain.gain.setValueAtTime(0.15, now);
-        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
-        osc.start(now);
-        osc.stop(now + 0.2);
-    }
-};
-
-
-// UI toast — short feedback for actions
-window.showToast = function(msg, color){
-  var el = document.getElementById('toast');
-  if(!el){
-    el = document.createElement('div');
-    el.id = 'toast';
-    el.style.cssText = 'position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:50;padding:12px 22px;border-radius:10px;font-size:20px;font-weight:800;color:#fff;background:rgba(0,20,40,.88);border:2px solid #4af;pointer-events:none;opacity:0;transition:opacity .15s;text-shadow:0 2px 6px #000;';
-    document.body.appendChild(el);
-  }
-  el.textContent = msg;
-  el.style.borderColor = color || '#4af';
-  el.style.color = color || '#fff';
-  el.style.opacity = '1';
-  clearTimeout(window._toastT);
-  window._toastT = setTimeout(function(){ el.style.opacity = '0'; }, 900);
-};
-
-window.tryPlayerEat = function(){
-  if(!player){ if(window.showToast) window.showToast('Нет игрока','#faa'); return false; }
-  if(player.cyst) player.cyst=false;
-  if(player.dying){ player.dying=false; player.deathT=0; }
-  if(!player.alive){ player.alive=true; }
-  if(player.energy<8) player.energy=20;
-
-  // Prefer shared finder
-  var best = null;
-  if(typeof findBestPrey==='function') best = findBestPrey(player, 160, true);
-  if(!best && typeof findBestPrey==='function') best = findBestPrey(player, 420, true);
-
-  // Manual scan fallback
-  if(!best){
-    var bd=1e15, range2=Math.pow(Math.max(100, player.size*5+80),2);
-    for(var i=0;i<orgs.length;i++){
-      var p=orgs[i];
-      if(!p||!p.alive||p===player||p.cyst) continue;
-      var d=dist2(player,p);
-      if(d<bd && d<range2 && p.size < player.size*1.3){ bd=d; best=p; }
-    }
-  }
-
-  if(best){
-    var d = Math.sqrt(dist2(player,best));
-    var range = Math.max(90, player.size*4 + 70);
-    if(d <= range){
-      if(typeof forceEat==='function') return forceEat(player, best);
-      // legacy
-      best.divCD=0; best.invuln=0;
-      eatOrg(player, best);
-      if(window.showToast) window.showToast('Съел! +энергия','#8f8');
-      return true;
-    }
-    // Pull toward
-    var dx=best.x-player.x, dy=best.y-player.y, dd=Math.sqrt(dx*dx+dy*dy)||1;
-    player.vx += dx/dd*10; player.vy += dy/dd*10;
-    if(window.showToast) window.showToast('Ближе к добыче…','#fd8');
-    return false;
-  }
-  if(window.showToast) window.showToast('Рядом нет добычи — включи АВТО или подплыви','#faa');
-  return false;
-};
-
-window._playerContactEatT = 0;
-window.playerContactEat = function(dt){
-  if(!player||!player.alive||player.cyst) return;
-  window._playerContactEatT -= (dt||0.016);
-  if(window._playerContactEatT>0) return;
-  window._playerContactEatT = 0.10;
-  var range = player.size + 18;
-  var range2 = range*range;
-  for(var i=0;i<orgs.length;i++){
-    var p=orgs[i];
-    if(!p||!p.alive||p===player||p.cyst) continue;
-    if(p.size >= player.size*1.15) continue;
-    if(dist2(player,p) <= range2){
-      if(typeof forceEat==='function') forceEat(player, p);
-      else { p.divCD=0;p.invuln=0; eatOrg(player,p); }
-      return;
-    }
-  }
-};
-
-
-var keys={};
-document.addEventListener('keydown',function(e){
-  var k=e.key.toLowerCase();keys[k]=true;
-  if(k==='w'||k==='a'||k==='s'||k==='d'){if(freeCam)camKeys[k]=true;e.preventDefault();if(autoAI)autoAI=false;}
-  if(k==='tab'){e.preventDefault();if(player&&player.alive)autoAI=!autoAI;}
-  if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};}
-  if(k==='v'){
-    // V: Toggle camera follow player
-    if(freeCam){
-      // Detached -> reattach to player
-      freeCam=false;
-      if(player&&player.alive){cam.x=player.x;cam.y=player.y-20;}
-    } else {
-      // Attached -> detach (free camera)
-      freeCam=true;
-    }
-    camKeys={w:false,a:false,s:false,d:false};
-  }
-  if(k==='m'){document.getElementById('bMicro').click();}
-  if(k==='n'){document.getElementById('bRender').click();}
-  if(k==='b'){var wo=document.getElementById('wikiO');if(wo.className==='ov show')wo.className='ov';else{buildWiki();wo.className='ov show';}}
-  if(k==='e'||e.code==='KeyE'){ e.preventDefault(); window.tryPlayerEat && window.tryPlayerEat(); }
-  if(k==='q'){ if(player&&player.alive){ var okDiv=doDivide(player); if(window.showToast){ if(okDiv||player.dividing) window.showToast('Деление...','#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa'); } } }
-  if(k==='r'){if(player&&player.alive)doCyst(player);}
-  if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
-});
-document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=false;if(k==='w'||k==='a'||k==='s'||k==='d')camKeys[k]=false;});
-
-mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;});
-
-document.getElementById('bEat').onclick=function(){ window.tryPlayerEat && window.tryPlayerEat(); };
-document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast('Деление...','#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa');}}};
-document.getElementById('bCyst').onclick=function(){if(player&&player.alive)doCyst(player);};
-document.getElementById('bAuto').onclick=function(){if(player&&player.alive)autoAI=!autoAI;};
-document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Камера: СВОБОДНО':'Камера: СЛЕДИТ','#4af');};
-
-document.getElementById('bMicro').onclick=function(){
-  settings.microscopeMode=!settings.microscopeMode;
-  // M = optics only. NEVER switch renderMode / black water (that is N / realistic).
-  if(settings.microscopeMode){
-    // Keep current cartoon/realistic palette; just magnify
-    tZoom=Math.max(tZoom, 6);
-    if(settings.renderMode==='realistic'){
-      // if user was in phase-contrast, still OK — but do not force it ON
-    }
-    document.getElementById('bMicro').style.background='#1a4a6a';
-    document.getElementById('bMicro').style.borderColor='#4af';
-    if(window.showToast) window.showToast('🔬 Микроскоп: вода остаётся, зум+сетка (не режим N)','#8cf');
-  } else {
-    document.getElementById('bMicro').style.background='#012';
-    document.getElementById('bMicro').style.borderColor='#345';
-    if(window.showToast) window.showToast('Микроскоп выкл','#aaa');
-  }
-};
-document.getElementById('bRender').onclick=function(){ toggleRenderModeLarge(); };
-function toggleRenderModeLarge(){
-  settings.renderMode = settings.renderMode==='realistic' ? 'cartoon' : 'realistic';
-  applyRenderMode();
-  var btn=document.getElementById('renderModeBtn');
-  var smBtn=document.getElementById('bRender');
-  if(settings.renderMode==='realistic'){
-    if(btn){btn.className='realistic';btn.innerHTML='🔬 РЕАЛИСТИЧНЫЙ';}
-    if(smBtn){smBtn.style.background='#4a3a1a';smBtn.style.borderColor='#fa4';}
-  } else {
-    if(btn){btn.className='cartoon';btn.innerHTML='🎨 МУЛЬТЯШНЫЙ';}
-    if(smBtn){smBtn.style.background='#012';smBtn.style.borderColor='#345';}
+  if(!isScreensaver){
+    var shown=window.showIntroCard(sp);
+    setTimeout(function(){ if(!shown||document.getElementById('introO').className!=='ov show') window.startTutorial(false); }, 300);
   }
 }
-document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;if(player&&player.alive){cam.x=player.x;cam.y=player.y-20;}if(window.showToast)window.showToast('Камера: СЛЕДИТ','#4af');};
-document.getElementById('bWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
-document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};
-document.getElementById('bZI').onclick=function(){tZoom=clamp(tZoom*1.3,0.01,100);};
-document.getElementById('bZO').onclick=function(){tZoom=clamp(tZoom/1.3,0.01,100);};
 
-document.getElementById('startBtn').onclick=()=>startGame(false);
-document.getElementById('screensaverBtn').onclick=()=>startGame(true);
-document.getElementById('resBtn').onclick=function(){document.getElementById('pauseO').className='ov';state='playing';zoom=1;tZoom=1;};
-document.getElementById('helpBtn').onclick=function(){document.getElementById('helpO').className='ov show';};
-document.getElementById('helpClose').onclick=function(){document.getElementById('helpO').className='ov';};
-document.getElementById('setBtn2').onclick=function(){buildSettings();document.getElementById('setO').className='ov show';};
-document.getElementById('setClose').onclick=function(){document.getElementById('setO').className='ov';};
-document.getElementById('wikiBtnMenu').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
-document.getElementById('wikiClose').onclick=function(){document.getElementById('wikiO').className='ov';};
-document.getElementById('wikiSearch').addEventListener('input',function(e){buildWiki(e.target.value);});
-document.getElementById('resBtn').onclick=function(){state='playing';document.getElementById('pauseO').className='ov';};
-document.getElementById('pHelp').onclick=function(){document.getElementById('helpO').className='ov show';};
-document.getElementById('pSet').onclick=function(){buildSettings();document.getElementById('setO').className='ov show';};
-document.getElementById('pWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
-document.getElementById('restartBtn').onclick=function(){document.getElementById('deadO').className='ov';document.getElementById('menuO').className='ov show';state='menu';};
-document.getElementById('menuBtn').onclick=function(){document.getElementById('deadO').className='ov';document.getElementById('menuO').className='ov show';state='menu';};
-
-window.addEventListener('resize',resize);
-window.addEventListener('mousemove', function(e){window.mouseX=e.clientX;window.mouseY=e.clientY;});
-
-// === INIT ===
-resize();buildLangBar();buildDiff();buildCatSel();
-for(var i=0;i<SPECIES_DB.length;i++)speciesPop[i]={alive:0,born:0,deaths:[0,0,0,0,0]};
-buildSpeciesGrid();updateMenuTexts();initWorld();
-requestAnimationFrame(gameLoop);
-
-// Event delegation backup for tutorial buttons (capture phase)
-document.addEventListener('click', function(e){
-  var t = e.target;
-  if(!t || !window.tutorialActive) return;
-  var next = t.id==='tutNext' || (t.closest && t.closest('#tutNext'));
-  var skip = t.id==='tutSkip' || (t.closest && t.closest('#tutSkip'));
-  if(!next && !skip) return;
-  e.preventDefault(); e.stopPropagation();
-  if(window._tutClickLock) return;
-  window._tutClickLock = true;
-  setTimeout(function(){ window._tutClickLock=false; }, 120);
-  if(next) window.advanceTutorial && window.advanceTutorial();
-  else window.skipTutorial && window.skipTutorial();
-}, true);
-
-// Hard rebind action buttons (eat must always work)
-(function(){
-  function rebindActions(){
-    var be=document.getElementById('bEat');
-    if(be){ be.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} window.tryPlayerEat&&window.tryPlayerEat(); }; }
-    var bd=document.getElementById('bDiv');
-    if(bd){ bd.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} if(player&&player.alive){ var ok=doDivide(player); if(window.showToast){ if(ok||player.dividing) window.showToast('Деление!','#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя','#faa'); } } }; }
-    var ba=document.getElementById('bAuto');
-    if(ba){ ba.onclick=function(ev){ if(ev){ev.preventDefault();ev.stopPropagation();} autoAI=!autoAI; ba.classList.toggle('on', !!autoAI); if(window.showToast) window.showToast(autoAI?'АВТО: вкл':'АВТО: выкл', autoAI?'#8f8':'#aaa'); }; }
+// === B4/B5 (TZ v20): демо-хром и выход из демо ===
+window.showDemoChrome = function(sp){
+  var b=document.getElementById('demoBadge'), x=document.getElementById('demoExit');
+  if(b){ b.textContent=tt('demoBadge')+' · '+(sp?sp.name:''); b.style.display='block'; }
+  if(x){ x.title=tt('demoExitTip'); x.setAttribute('aria-label',tt('demoExitTip')); x.style.display='flex'; }
+};
+window.exitDemoCleanup = function(){
+  var b=document.getElementById('demoBadge'), x=document.getElementById('demoExit');
+  if(b) b.style.display='none';
+  if(x) x.style.display='none';
+};
+window.exitDemo = function(){
+  if(!window.__igsDemo) return;
+  window.__igsDemo=false;
+  window.spectatorMode=false; freeCam=false; autoAI=false;
+  window.exitDemoCleanup();
+  player=null; state='menu';
+  document.getElementById('menuO').className='ov show';
+  hideGameHud();
+};
+// FR-B4.2: досев переносом дальних организмов в зону камеры (spawnOrg упирается в MAX_ORG)
+window.demoBring = function(n){
+  if(!(n>0)) return;
+  var far=[];
+  for(var k=0;k<orgs.length;k++){var o=orgs[k];
+    if(o&&o.alive&&!o.isPlayer&&o.sp.cat!=='virus'&&(Math.abs(o.x-cam.x)>700||Math.abs(o.y-cam.y)>500))far.push(o);}
+  for(var q=0;q<n&&q<far.length;q++){
+    var mv=far[Math.floor(Math.random()*far.length)];
+    if(!mv||!mv.alive)continue;
+    mv.x=cam.x+rng(-380,380); mv.y=clamp(cam.y+rng(-240,240),6,PD-6);
+    mv.aiTarget=null;
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', rebindActions);
-  else rebindActions();
-  window.rebindActions = rebindActions;
-})();
+};
+window.demoMaintain = function(){
+  if(!window.__igsDemo || state!=='playing') return;
+  var vL=cam.x-cv.width/2/zoom, vR=cam.x+cv.width/2/zoom, vT=cam.y-cv.height/2/zoom, vB=cam.y+cv.height/2/zoom;
+  var vis=0; for(var k=0;k<orgs.length;k++){var o=orgs[k]; if(o&&o.alive&&o.x>vL&&o.x<vR&&o.y>vT&&o.y<vB)vis++;}
+  if(vis<40) window.demoBring(Math.min(20, 44-vis));
+};
+window.demoRespawn = function(){
+  if(!window.__igsDemo) return;
+  var pool=[];
+  for(var i=0;i<orgs.length;i++){ var o=orgs[i]; if(o&&o.alive&&o.sp.cat==='consumer1'&&o.sp.shape!=='colony') pool.push(o); }
+  if(!pool.length) return;
+  var pick=pool[Math.floor(Math.random()*pool.length)];
+  if(player&&player.alive) return;
+  pick.isPlayer=true; pick.energy=100; pick.invuln=3;
+  player=pick; autoAI=true; freeCam=false;
+  var b=document.getElementById('demoBadge');
+  if(b) b.textContent=tt('demoBadge')+' · '+pick.sp.name;
+};
+
+// === B6 (TZ v20): карточка «Кто ты» — один раз на вид, игра на паузе ===
+window.showIntroCard = function(sp){
+  var el=document.getElementById('introO'); if(!el) return false;
+  var seen=false; try{ seen=localStorage.getItem('igs.intro.'+sp.id)==='1'; }catch(e){}
+  if(seen) return false;
+  var eats=(FOOD&&FOOD[sp.cat])||[];
+  var eatsTxt=eats.length?eats.map(function(c){return tt(c)}).join(', '):(sp.cat==='producer'?tt('producer'):tt('consumer1'));
+  document.getElementById('introTitle').textContent=tt('whoYouAre')+': '+sp.name;
+  document.getElementById('introBody').innerHTML='<b>'+tt('youEat')+':</b> '+eatsTxt+' · <b>'+tt('energy')+':</b> 100';
+  document.getElementById('introOk').textContent=tt('gotIt');
+  el.className='ov show';
+  state='paused';
+  return true;
+};
+window.closeIntroCard = function(){
+  var el=document.getElementById('introO'); if(!el) return;
+  el.className='ov';
+  if(player&&player.sp){ try{ localStorage.setItem('igs.intro.'+player.sp.id,'1'); }catch(e){} }
+  if(state==='paused') state='playing';
+};

@@ -31,3 +31,11 @@ backups/
 /04-Src/js
 /assets
 /i18n/
+
+# TZ v20: приёмочные тесты v20 в git (цепочка unignore — родитель не исключён)
+!.04-Src/07-QA-and-Testing/
+.04-Src/07-QA-and-Testing/*
+!.04-Src/07-QA-and-Testing/vitest/
+!.04-Src/07-QA-and-Testing/playwright-v20/
+.04-Src/07-QA-and-Testing/vitest/*
+!.04-Src/07-QA-and-Testing/vitest/virus_scale.test.js

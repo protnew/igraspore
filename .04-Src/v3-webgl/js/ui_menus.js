@@ -11,10 +11,9 @@ function buildLangBar() {
     b.textContent = langNames[l] || LANGS[l];
     b.setAttribute('data-lang', l);
     b.onclick = function(ev) {
-      curLang = ev.target.getAttribute('data-lang');
-      buildLangBar();
-      updateMenuTexts();
+      var _l = ev.target.getAttribute('data-lang');
       document.getElementById('langSelWrap').blur();
+      window.setLang(_l);
     };
     lb.appendChild(b);
   }
@@ -228,6 +227,16 @@ function updateMenuTexts(){
   document.getElementById('pHelp').textContent=tt('help');document.getElementById('pSet').textContent=tt('set');document.getElementById('pWiki').textContent=tt('wiki');
   document.getElementById('pauseT').textContent=tt('paused');
   document.getElementById('pExit').textContent='⏏ '+tt('pauseExit');
+  document.getElementById('apTitle').textContent=tt('actionsT');
+  document.getElementById('apFree').textContent='🎥 '+tt('camBtn');
+  document.getElementById('apMicro').textContent='🔬 '+tt('camBtn')+' M';
+  document.getElementById('apRender').textContent='🎨 '+tt('modeCartoon').replace('🎨 ','');
+  document.getElementById('apFol').textContent='👁 '+tt('folBtn');
+  document.getElementById('apZI').textContent='🔍 +';
+  document.getElementById('apZO').textContent='🔍 −';
+  document.getElementById('apSandbox').textContent='🛠 Sandbox';
+  document.getElementById('apLeader').textContent='🏆 Leaderboard';
+  document.getElementById('apClose').textContent=tt('close');
   document.getElementById('ecT').textContent=tt('exitConfirm');
   document.getElementById('ecYes').textContent=tt('yes');
   document.getElementById('ecNo').textContent=tt('no');
@@ -332,6 +341,13 @@ function applyRenderMode(){
 
 function buildSettings(){
   var sb=document.getElementById('setBody');
+  // B12: язык без перезапуска; D7: живая мембрана; B6.3: подсказки снова
+  var langOpts='';
+  for(var lk in LANGS){ langOpts+='<option value="'+lk+'"'+(curLang===lk?' selected':'')+'>'+(langNames[lk]||LANGS[lk])+'</option>'; }
+  var html0='<div class="sr"><span>'+tt('languageT')+'</span><select id="setLang" style="background:#012;color:#cef;border:1px solid #345;border-radius:5px;padding:6px 8px;font-size:12px;min-height:36px">'+langOpts+'</select></div>';
+  html0+='<div class="sr"><span>'+tt('membraneT')+'</span><div class="tg'+(settings.softMembrane!==false?' on':'')+'" id="membTg" onclick="toggleMembrane(this)"></div></div>';
+  html0+='<div class="sr"><span>'+tt('showTipsAgain')+'</span><button class="btn sm" id="tipsReset" style="min-height:48px" onclick="resetIntroTips()"></button></div>';
+  var _old=sb.innerHTML;
   var opts=[['particles',tt('particles')],['bubbles',tt('bubbles')],['currents',tt('currents')],['vignette',tt('vignette')],['healthBars',tt('healthBars')],['shadows',tt('shadows')]];
   var html='';
   for(var i=0;i<opts.length;i++)html+='<div class="sr"><span>'+opts[i][1]+'</span><div class="tg'+(settings[opts[i][0]]?' on':'')+'" data-s="'+opts[i][0]+'" onclick="toggleSet(this)"></div></div>';
@@ -341,7 +357,9 @@ function buildSettings(){
   html+='<div class="slider-row"><span>'+tt('density')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.density+'" oninput="settings.density=parseFloat(this.value)" /><span class="slider-val">'+settings.density.toFixed(1)+'</span></div>';
   html+='<div class="slider-row"><span>'+tt('lightInt')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.lightMul+'" oninput="settings.lightMul=parseFloat(this.value)" /><span class="slider-val">'+settings.lightMul.toFixed(1)+'</span></div>';
   html+='<div class="slider-row"><span>'+tt('virusRate')+'</span><input type="range" min="0" max="2" step="0.1" value="'+settings.virusRate+'" oninput="settings.virusRate=parseFloat(this.value)" /><span class="slider-val">'+settings.virusRate.toFixed(1)+'</span></div>';
-  sb.innerHTML=html;
+  sb.innerHTML=html0+html;
+  var sl=document.getElementById('setLang'); if(sl) sl.onchange=function(){ window.setLang(sl.value); };
+  var tr=document.getElementById('tipsReset'); if(tr) tr.textContent=tt('showTipsAgain');
 }
 
 function toggleSet(el){var k=el.getAttribute('data-s');settings[k]=!settings[k];el.className='tg'+(settings[k]?' on':'');}
@@ -357,7 +375,7 @@ function buildWiki(filter){
       for(var vi=0;vi<VIRUS_SPECS.length;vi++){var vs=VIRUS_SPECS[vi];
         if(search&&vs.name.toLowerCase().indexOf(search)<0)continue;
         if(!hasVirus){html+='<div class="wiki-cat" style="color:'+CC.virus+'">'+catName+'</div>';hasVirus=true;}
-        html+='<div class="wiki-entry"><b style="color:'+vs.color+'">'+vs.name+'</b><div class="wl">\u0420\u0430\u0437\u043c\u0435\u0440: '+vs.size+'\u03bcm</div>'+
+        html+='<div class="wiki-entry"><b style="color:'+vs.color+'">'+vs.name+'</b><div class="wl">'+(curLang==='ru'?'Размер: ':'Size: ')+vs.size+'\u03bcm</div>'+
           '<div class="wf">'+(curLang==='ru'?'\u0411\u0430\u043a\u0442\u0435\u0440\u0438\u043e\u0444\u0430\u0433. \u0417\u0430\u0440\u0430\u0436\u0430\u0435\u0442 \u0431\u0430\u043a\u0442\u0435\u0440\u0438\u0438, \u0432\u044b\u0437\u044b\u0432\u0430\u0435\u0442 \u043b\u0438\u0437\u0438\u0441 \u0438 \u0432\u044b\u043f\u0443\u0441\u043a\u0430\u0435\u0442 \u0434\u043e 8 \u043d\u043e\u0432\u044b\u0445 \u0447\u0430\u0441\u0442\u0438\u0446.':'Bacteriophage. Infects bacteria, causes lysis, releases up to 8 new virions.')+'</div></div>';
       }
       continue;
@@ -395,3 +413,8 @@ function buildWiki(filter){
   wc.innerHTML=html;
 }
 
+// D7/B6.3/B12 (TZ v20)
+function toggleMembrane(el){ settings.softMembrane=!settings.softMembrane; el.className='tg'+(settings.softMembrane?' on':''); try{localStorage.setItem('igs.softMembrane',settings.softMembrane?'1':'0');}catch(e){} }
+window.toggleMembrane=toggleMembrane;
+function resetIntroTips(){ try{ var ks=[]; for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i); if(k&&k.indexOf('igs.intro.')===0)ks.push(k);} for(var j=0;j<ks.length;j++)localStorage.removeItem(ks[j]); localStorage.removeItem('igraspore_tut_v2'); }catch(e){} if(window.showToast)window.showToast(tt('tipsReset'),'#8f8'); }
+window.resetIntroTips=resetIntroTips;

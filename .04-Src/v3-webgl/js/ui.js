@@ -31,9 +31,28 @@ function showSpeedBar(){
 }
 
 var langNames = {
-  ru: 'Русский', en: 'English', zh: '中文', es: 'Español', hi: 'हिन्दी', 
-  ar: 'العربية', pt: 'Português', fr: 'Français', de: 'Deutsch', ja: '日本語', ko: '한국어'
+  ru: 'Русский', en: 'English', zh: '中文', es: 'Español', hi: 'हिन्दी',
+  ar: 'العربية', pt: 'Português', fr: 'Français', de: 'Deutsch', ja: '日本語', ko: '한국어',
+  tr: 'Türkçe', fil: 'Filipino', th: 'ไทย', uk: 'Українська', vi: 'Tiếng Việt', id: 'Bahasa Indonesia', it: 'Italiano', ms: 'Bahasa Melayu', pl: 'Polski'
 };
+// B12 (TZ v20): единая смена языка без перезапуска
+function setLang(code){
+  if(!LANGS[code]) return;
+  curLang = code;
+  try{ localStorage.setItem('igs.lang', code); }catch(e){}
+  try{ var u = new URL(location.href); u.searchParams.set('lang', code); history.replaceState(null,'',u); }catch(e){}
+  buildLangBar();
+  if(typeof updateMenuTexts==='function') updateMenuTexts();
+  if(typeof buildSettings==='function' && document.getElementById('setO').className==='ov show') buildSettings();
+  if(typeof window.relabelActions==='function') window.relabelActions();
+  var ic=document.getElementById('introO');
+  if(ic && ic.className==='ov show' && player && player.sp && typeof window.showIntroCard==='function'){
+    // перерисовать открытую карточку на новом языке (пауза сохраняется)
+    try{ localStorage.removeItem('igs.intro.'+player.sp.id); }catch(e){}
+    window.showIntroCard(player.sp);
+  }
+}
+window.setLang = setLang;
 
 
 

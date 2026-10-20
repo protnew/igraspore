@@ -1,0 +1,114 @@
+// render_membrane.js — мягкая мембрана клетки (TZ v20, M1 / баг №7)
+// Контур: 28 точек, r(θ)=sz·(1 + A·sin(kθ − ωt·(0.5+v̂) + φ) + S·v̂·cos(θ − θv))
+// Squash-stretch 1.15/0.90 по сглаженной скорости (аналитически эквивалентно
+// ctx.rotate(θv); ctx.scale(1+0.15·v̂s, 1−0.10·v̂s), но не ломает save/restore
+// вызывающего drawBody: путь строится в его текущей трансформации).
+// Пружинная инерция: k=40, c=6, полунеявный Эйлер. LOD: только zoom>3.
+"use strict";
+
+var MEMB_N = 28;
+var MEMB_A = 0.05;      // амплитуда волны
+var MEMB_K = 4;         // волновое число
+var MEMB_OMEGA = 3;     // рад/с
+var MEMB_NOSE = 0.10;   // «нос» по скорости
+var MEMB_SPRING_K = 40; // жёсткость пружины смещений
+var MEMB_DAMP = 6;      // затухание
+var MEMB_SQ_STRETCH = 0.15, MEMB_SQ_SQUASH = 0.10;
+var MEMB_FLOW = 14;   // FR-M1.3: доп. фазовая скорость волны ∝ |v|/sz (перистальтика)
+
+// состояние на организме (лениво): _memb — смещения точек, _membV — скорости
+function membInit(o){
+  if(!o._memb || o._memb.length !== MEMB_N){
+    o._memb = new Float32Array(MEMB_N);
+    o._membV = new Float32Array(MEMB_N);
+    o._membVS = 0;   // сглаженная |v|/vmax (0..1)
+    o._membAng = 0;  // сглаженное направление
+  }
+}
+
+function membraneEnabled(){
+  return (typeof settings === 'undefined') || (settings.softMembrane !== false);
+}
+
+// Основная точка входа: строит замкнутый путь (квадратичные через середины).
+// Вызывающий (drawBody) уже сделал ctx.translate(o.x,o.y); fill/stroke — его.
+function membranePath(o, sz, dtF){
+  membInit(o);
+  var vx = o.vx || 0, vy = o.vy || 0;
+  var spd = Math.sqrt(vx * vx + vy * vy);
+  var vmax = Math.max(0.8, (o.sp && o.sp.speed ? o.sp.speed : 3) * 1.6);
+  var vhat = Math.min(1, spd / vmax);
+  // FR-M1.2: сглаживание lerp 0.15 за кадр
+  o._membVS += (vhat - o._membVS) * 0.15;
+  var ang = spd > 1e-4 ? Math.atan2(vy, vx) : (isFinite(o.facing) ? o.facing : 0);
+  if(!isFinite(ang)) ang = 0;
+  var dA = ang - o._membAng;
+  while(dA > Math.PI) dA -= 2 * Math.PI;
+  while(dA < -Math.PI) dA += 2 * Math.PI;
+  o._membAng += dA * 0.15;
+
+  var t = (typeof gt === 'number') ? gt : 0;
+  var phi = o.wobble || 0;
+  var ca = Math.cos(o._membAng), sa = Math.sin(o._membAng);
+  var dt = (typeof dtF === 'number' && dtF > 0) ? Math.min(0.05, dtF) : 1 / 60;
+  var kT = MEMB_SPRING_K * dt, cD = MEMB_DAMP * dt;
+
+  // FR-M1.1/1.3/1.4: цель + пружина
+  for(var i = 0; i < MEMB_N; i++){
+    var th = i / MEMB_N * Math.PI * 2;
+    var flow = MEMB_OMEGA + MEMB_FLOW * (spd / Math.max(1, sz));
+    var wave = MEMB_A * Math.sin(MEMB_K * (th - o._membAng * o._membVS * 0.5) - flow * t + phi);
+    var nose = MEMB_NOSE * o._membVS * Math.cos(th - o._membAng);
+    var target = sz * (1 + wave + nose) - sz;
+    // полунеявный Эйлер к равновесию target (смещение относительно sz)
+    o._membV[i] += (MEMB_SPRING_K * (target - o._memb[i])) * dt;
+    o._membV[i] -= o._membV[i] * Math.min(0.9, cD);
+    o._memb[i] += o._membV[i] * dt;
+    if(o._memb[i] > sz * 0.6) o._memb[i] = sz * 0.6;
+    if(o._memb[i] < -sz * 0.4) o._memb[i] = -sz * 0.4;
+  }
+
+  var st = 1 + MEMB_SQ_STRETCH * o._membVS;   // вдоль движения
+  var sq = 1 - MEMB_SQ_SQUASH * o._membVS;    // поперёк
+  ctx.beginPath();
+  var px = [], py = [];
+  for(var j = 0; j < MEMB_N; j++){
+    var th2 = j / MEMB_N * Math.PI * 2;
+    var r = sz + o._memb[j];
+    var x0 = Math.cos(th2) * r, y0 = Math.sin(th2) * r;
+    // p' = R(θv) · diag(st,sq) · R(−θv) · p — эквивалент ctx.rotate+scale
+    var ux = x0 * ca + y0 * sa;   // вдоль θv
+    var uy = -x0 * sa + y0 * ca;  // поперёк
+    var fx = ux * st, fy = uy * sq;
+    px[j] = fx * ca - fy * sa;
+    py[j] = fx * sa + fy * ca;
+  }
+  // замкнутая квадратичная через середины дуг
+  var mx0 = (px[0] + px[MEMB_N - 1]) / 2, my0 = (py[0] + py[MEMB_N - 1]) / 2;
+  ctx.moveTo(mx0, my0);
+  for(var q = 0; q < MEMB_N; q++){
+    var n = (q + 1) % MEMB_N;
+    var mxx = (px[q] + px[n]) / 2, myy = (py[q] + py[n]) / 2;
+    ctx.quadraticCurveTo(px[q], py[q], mxx, myy);
+  }
+  ctx.closePath();
+}
+
+// FR-M1.8 (SHOULD): лёгкий синус-изгиб для filament/rod вдоль оси
+function membraneBend(o, sz, len){
+  membInit(o);
+  var t = (typeof gt === 'number') ? gt : 0;
+  var amp = sz * 0.18 * (0.3 + (o._membVS || 0));
+  ctx.beginPath();
+  for(var s = 0; s <= 12; s++){
+    var u = s / 12;
+    var x = (u - 0.5) * 2 * len;
+    var y = Math.sin(u * Math.PI * 2 - t * 4) * amp * Math.sin(u * Math.PI);
+    if(s === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+}
+
+window.membranePath = membranePath;
+window.membraneBend = membraneBend;
+window.membraneEnabled = membraneEnabled;
+window.MEMB_N = MEMB_N;

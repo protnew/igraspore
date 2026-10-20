@@ -179,7 +179,7 @@ document.addEventListener('keydown',function(e){
   if(k==='n'){document.getElementById('bRender').click();}
   if(k==='b'){var wo=document.getElementById('wikiO');if(wo.className==='ov show')wo.className='ov';else{buildWiki();wo.className='ov show';}}
   if(k==='e'||e.code==='KeyE'){ e.preventDefault(); window.tryPlayerEat && window.tryPlayerEat(); }
-  if(k==='q'){ if(player&&player.alive){ var okDiv=doDivide(player); if(window.showToast){ if(okDiv||player.dividing) window.showToast('Деление...','#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa'); } } }
+  if(k==='q'){ if(player&&player.alive){ var okDiv=doDivide(player); if(window.showToast){ if(okDiv||player.dividing) window.showToast(tt('dividing'),'#8ff'); else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||tt('cannotDivide'),'#faa'); } } }
   if(k==='r'){if(player&&player.alive)doCyst(player);}
   if(k==='p'){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}}
 });
@@ -188,7 +188,7 @@ document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();keys[k]=
 mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;});
 
 document.getElementById('bEat').onclick=function(){ window.tryPlayerEat && window.tryPlayerEat(); };
-document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast('Деление...','#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||'Пока нельзя делиться','#faa');}}};
+document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast(tt('dividing'),'#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||tt('cannotDivide'),'#faa');}}};
 document.getElementById('bCyst').onclick=function(){if(player&&player.alive)doCyst(player);};
 document.getElementById('bAuto').onclick=function(){if(player&&player.alive)autoAI=!autoAI;};
 document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?'Камера: СВОБОДНО':'Камера: СЛЕДИТ','#4af');};
@@ -255,6 +255,19 @@ document.getElementById('pExit').onclick=function(){
 };
 document.getElementById('ecNo').onclick=function(){ document.getElementById('exitConfirm').className='ov'; };
 document.getElementById('introOk').onclick=function(){ window.closeIntroCard&&window.closeIntroCard(); };
+// B21 (TZ v20): ☰ открывает все скрытые действия (8 шт, ≥48px)
+(function(){
+  function apOpen(){ document.getElementById('actionsPanel').className='ov show'; }
+  function apClose(){ document.getElementById('actionsPanel').className='ov'; }
+  var bk=document.getElementById('burgerBtn'); if(bk) bk.onclick=function(e){ if(e){e.preventDefault();e.stopPropagation();} apOpen(); };
+  var bg=document.getElementById('burgerGame'); if(bg) bg.onclick=function(e){ if(e){e.preventDefault();e.stopPropagation();} apOpen(); };
+  var ac=document.getElementById('apClose'); if(ac) ac.onclick=apClose;
+  var map=[['apFree','bFree'],['apMicro','bMicro'],['apRender','bRender'],['apFol','bFol'],['apZI','bZI'],['apZO','bZO'],['apSandbox','bSandbox'],['apLeader','btnLeaderboard']];
+  for(var i=0;i<map.length;i++){
+    var src=document.getElementById(map[i][1]), dst=document.getElementById(map[i][0]);
+    if(src&&dst){ (function(srcc){ dst.onclick=function(ev){ ev.preventDefault(); apClose(); srcc.click(); }; })(src); }
+  }
+})();
 (function(){ var _dx=document.getElementById('demoExit'); if(_dx) _dx.onclick=function(ev){ if(ev){ev.stopPropagation();ev.preventDefault();} window.exitDemo&&window.exitDemo(); }; })();
 cv.addEventListener('pointerdown',function(){ if(window.__igsDemo&&window.exitDemo) window.exitDemo(); });
 document.getElementById('ecYes').onclick=function(){

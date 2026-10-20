@@ -152,6 +152,7 @@ window.showTutorialStep = function(){
   title.textContent = (typeof s.title==='function')?s.title():s.title;
   body.textContent = (typeof s.body==='function')?s.body():s.body;
   counter.textContent = (window.tutorialStep+1) + ' / ' + window.TUTORIAL_STEPS.length;
+  if(skip) skip.textContent = tt('tutSkip');
   next.textContent = (window.tutorialStep === window.TUTORIAL_STEPS.length-1) ? tt('tutPlay') : tt('tutNext');
   layer.style.display = 'flex';
   layer.style.pointerEvents = 'auto';
@@ -314,12 +315,7 @@ function startGame(isScreensaver){
     b.innerHTML = text + '<span class="hk">'+hk+'</span>';
     b.style.minWidth='72px'; b.style.padding='12px 16px'; b.style.fontSize='15px';
   }
-  labelBtn('bEat',tt('eatBtn'),'auto');
-  labelBtn('bDiv',tt('divBtn'),'Q');
-  labelBtn('bCyst',tt('cystBtn'),'R');
-  labelBtn('bAuto',tt('autoBtn'),'Tab');
-  labelBtn('bFree',tt('camBtn'),'F');
-  labelBtn('bFol',tt('folBtn'),'V');
+  window.relabelActions();
   document.getElementById('scaleW').style.display='block';
   var tw=document.getElementById('todWrap');
   tw.innerHTML='<input type="range" id="todR" min="0" max="24" step="0.05" value="'+tod+'"><span id="todL">12:00</span><span id="seasL">'+tt('season1')+'</span>';
@@ -407,4 +403,19 @@ window.closeIntroCard = function(){
   el.className='ov';
   if(player&&player.sp){ try{ localStorage.setItem('igs.intro.'+player.sp.id,'1'); }catch(e){} }
   if(state==='paused') state='playing';
+};
+
+// B12 (TZ v20): подписи кнопок на текущем языке (перерисовываются при смене)
+window.relabelActions = function(){
+  function labelBtn(id, text, hk){
+    var b=document.getElementById(id); if(!b) return;
+    b.innerHTML = text + '<span class="hk">'+hk+'</span>';
+    b.style.minWidth='72px'; b.style.padding='12px 16px'; b.style.fontSize='15px';
+  }
+  labelBtn('bEat',tt('eatBtn'),'auto');
+  labelBtn('bDiv',tt('divBtn'),'Q');
+  labelBtn('bCyst',tt('cystBtn'),'R');
+  labelBtn('bAuto',tt('autoBtn'),'Tab');
+  labelBtn('bFree',tt('camBtn'),'F');
+  labelBtn('bFol',tt('folBtn'),'V');
 };

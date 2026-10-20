@@ -323,6 +323,6 @@ if(location.search.indexOf('test=1')>=0){
       var d=rng(20,Math.max(30,PD*0.3)); var hw=halfW(d)-10;
       viruses.push({x:clamp(x,-hw,hw),y:clamp(y,4,PD-4),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),
         angle:0,wobble:0,sp:VIRUS_SPECS[0],target:null}); return viruses.length; },
-    getSizes:function(){ var b=[]; for(var i=0;i<orgs.length;i++){var o=orgs[i]; if(o&&o.alive&&o.sp.cat!=='virus') b.push(o.size);} return {bacteria:b, virusHead:(typeof virusHeadR==='function')?virusHeadR():null}; }
+    getSizes:function(){ var b=[]; for(var i=0;i<orgs.length;i++){var o=orgs[i]; if(o&&o.alive&&(o.sp.cat==='producer'||o.sp.cat==='consumer1'||o.sp.cat==='decomposer')) b.push(o.size);} if(window.__igsVirusHeadReset)window.__igsVirusHeadReset(); return {bacteria:b, virusHead:(typeof virusHeadR==='function')?virusHeadR():null}; }
   };
 }

@@ -108,7 +108,7 @@ function gameLoop(ts){
       else cm.style.display='none';
       // FR-B4.4: в демо погибшую клетку замещает другая ≤2 с
       if(window.__igsDemo&&(!player||!player.alive)&&window.demoRespawn)window.demoRespawn();
-      if(window.__igsDemo&&(fc%60===0)&&window.demoMaintain)window.demoMaintain();
+      if(window.__igsDemo&&(fc%30===0)&&window.demoMaintain)window.demoMaintain();
       if(gt>15)document.getElementById('keyHint').style.opacity='0.3';
     } else {
       // Menu Aquarium Logic
@@ -361,19 +361,19 @@ window.demoBring = function(n){
   if(!(n>0)) return;
   var far=[];
   for(var k=0;k<orgs.length;k++){var o=orgs[k];
-    if(o&&o.alive&&!o.isPlayer&&o.sp.cat!=='virus'&&(Math.abs(o.x-cam.x)>700||Math.abs(o.y-cam.y)>500))far.push(o);}
+    if(o&&o.alive&&!o.isPlayer&&o.sp.cat!=='virus'&&(Math.abs(o.x-cam.x)>560||Math.abs(o.y-cam.y)>360))far.push(o);}
   for(var q=0;q<n&&q<far.length;q++){
     var mv=far[Math.floor(Math.random()*far.length)];
     if(!mv||!mv.alive)continue;
     mv.x=cam.x+rng(-380,380); mv.y=clamp(cam.y+rng(-240,240),6,PD-6);
-    mv.aiTarget=null;
+    mv.aiTarget=null; mv.vx*=0.2; mv.vy*=0.2;
   }
 };
 window.demoMaintain = function(){
   if(!window.__igsDemo || state!=='playing') return;
   var vL=cam.x-cv.width/2/zoom, vR=cam.x+cv.width/2/zoom, vT=cam.y-cv.height/2/zoom, vB=cam.y+cv.height/2/zoom;
   var vis=0; for(var k=0;k<orgs.length;k++){var o=orgs[k]; if(o&&o.alive&&o.x>vL&&o.x<vR&&o.y>vT&&o.y<vB)vis++;}
-  if(vis<40) window.demoBring(Math.min(20, 44-vis));
+  if(vis<44) window.demoBring(Math.min(24, 50-vis));
 };
 window.demoRespawn = function(){
   if(!window.__igsDemo) return;

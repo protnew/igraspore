@@ -291,21 +291,23 @@ function drawAppendages(o,sz){
 // пропорциональных бактериям (медиана ~3.7) — спрайт выходил ~2.2x клетки.
 var __vHeadR=0.32,__vHeadRAt=0;
 function virusHeadR(){
-  if(typeof fc==='number'&&Math.abs(fc-__vHeadRAt)<120)return __vHeadR;
+  if(typeof fc==='number'&&Math.abs(fc-__vHeadRAt)<30)return __vHeadR;
   var sizes=[];
-  for(var i=0;i<orgs.length&&sizes.length<400;i++){
+  var step=Math.max(1,Math.floor(orgs.length/400));
+  for(var i=0;i<orgs.length;i+=step){
     var o=orgs[i];
     if(o&&o.alive&&(o.sp.cat==='producer'||o.sp.cat==='consumer1'||o.sp.cat==='decomposer'))sizes.push(o.size);
   }
   if(sizes.length){
     sizes.sort(function(a,b){return a-b});
     var med=sizes[Math.floor(sizes.length/2)];
-    __vHeadR=Math.min(0.6,Math.max(0.22,med*(typeof VIRUS_SCALE==='number'?VIRUS_SCALE:0.08)));
+    __vHeadR=Math.min(0.6,Math.max(0.05,med*(typeof VIRUS_SCALE==='number'?VIRUS_SCALE:0.08)));
   }
   __vHeadRAt=(typeof fc==='number')?fc:__vHeadRAt;
   return __vHeadR;
 }
 window.virusHeadR=virusHeadR;
+window.__igsVirusHeadReset=function(){__vHeadRAt=-1e9;};
 function renderViruses(vL,vR,vT,vB){
   ctx.save();
   var r=virusHeadR();

@@ -132,18 +132,21 @@ describe('UI-RESTORE §3.7/§5.5 — energy display policy (A)', () => {
     return document.getElementById('hud').innerHTML;
   }
 
-  it('energy > 100 renders clamped text 100/100 and bar <= 100%', () => {
+  it('energy > 100 renders the live value, bar <= 100%', () => {
     const html = hudWith(109);
-    expect(html).toContain('100/100');
+    expect(html).toContain('>109<');
+    expect(html).not.toContain('100/100');
     expect(html).not.toContain('109/100');
     const bar = /width:(\d+(?:\.\d+)?)%/.exec(html);
     expect(bar).not.toBeNull();
     expect(parseFloat(bar[1])).toBeLessThanOrEqual(100);
   });
 
-  it('negative energy renders 0/100', () => {
+  it('negative energy renders 0', () => {
     const html = hudWith(-7);
-    expect(html).toContain('0/100');
+    expect(html).toContain('>0<');
+    expect(html).not.toContain('>-7<');
+    expect(html).not.toContain('-7');
   });
 
   it('raw energy stays untouched (display-only clamp)', () => {

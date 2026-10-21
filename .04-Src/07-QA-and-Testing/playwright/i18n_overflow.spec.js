@@ -99,11 +99,17 @@ async function screenTutorial(page) {
 }
 
 async function screenGame(page) {
-  const skip = page.locator('#tutSkip');
-  if (await skip.isVisible().catch(() => false)) await skip.click();
-  await waitPlaying(page);
   const rc = page.locator('#roleCardOk');
-  if (await rc.isVisible().catch(() => false)) await rc.click();
+  try {
+    await rc.waitFor({ state: 'visible', timeout: 8000 });
+    await rc.click();
+  } catch (e) { /* карточка уже закрыта таймером */ }
+  const skip = page.locator('#tutSkip');
+  try {
+    await skip.waitFor({ state: 'visible', timeout: 5000 });
+    await skip.click();
+  } catch (e) { /* туториал не показан */ }
+  await waitPlaying(page);
   await page.waitForTimeout(800);
 }
 

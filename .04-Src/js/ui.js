@@ -47,7 +47,7 @@ function updateHUD(){
   if(!player||!player.alive){document.getElementById('hud').style.display='none';return;}
   var h=document.getElementById('hud');h.style.display='block';
   // UI-RESTORE §3.7 — product decision (A) display-only clamp: player.energy logic (can exceed 100) untouched
-  var displayE = Math.round(player.energy);
+  var displayE = Math.max(0, Math.round(player.energy));
   var eRatio=clamp(Math.max(0, player.energy)/100,0,1);
   var eColor = eRatio>0.6?'#4f4':eRatio>0.3?'#ff4':'#f44';
   // 8) Запах еды — понятная полоска для новичка

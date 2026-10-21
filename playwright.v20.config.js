@@ -1,12 +1,7 @@
-import { defineConfig } from '@playwright/test';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)));
-const qa = path.join(root, '.04-Src', '07-QA-and-Testing');
-
-// TZ v20 — приёмочные спеки БЛОКОВ A–D. Корень стенда задаёт GATE_BASE_URL (по умолчанию :8796).
-export default defineConfig({
+const { defineConfig } = require('@playwright/test');
+const path = require('path');
+const qa = path.join(__dirname, '.04-Src', '07-QA-and-Testing');
+module.exports = defineConfig({
   testDir: path.join(qa, 'playwright-v20'),
   testMatch: '**/*.spec.js',
   timeout: 120000,

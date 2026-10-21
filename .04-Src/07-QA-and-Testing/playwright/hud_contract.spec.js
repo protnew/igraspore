@@ -9,19 +9,26 @@ const LANGS = ['ru', 'en', 'hi'];
 
 // ---------- helpers ----------
 
+async function passStartCardAndTutorial(page) {
+  const card = page.locator('#roleCardOk');
+  try {
+    await card.waitFor({ state: 'visible', timeout: 8000 });
+    await card.click();
+  } catch (e) { /* карточки нет — вирус/демо, не ослабляем ожидание playing ниже */ }
+  const skip = page.locator('#tutSkip');
+  try {
+    await skip.waitFor({ state: 'visible', timeout: 5000 });
+    await skip.click();
+  } catch (e) { /* туториал уже пройден в localStorage */ }
+}
+
 async function boot(page, lang) {
   const errs = [];
   page.on('pageerror', e => errs.push(e.message.slice(0, 200)));
   await page.goto(BASE + '/?lang=' + lang + '&t=' + Date.now(), { waitUntil: 'domcontentloaded', timeout: 45000 });
   await page.waitForSelector('#startBtn', { timeout: 20000 });
   await page.click('#startBtn');
-  await page.waitForTimeout(1500);
-  // туториал может подняться с задержкой — закрываем, если виден
-  const skip = page.locator('#tutSkip');
-  if (await skip.isVisible().catch(() => false)) await skip.click();
-  // карточка роли — событийный элемент, закрываем как «прочитано»
-  const rc = page.locator('#roleCardOk');
-  if (await rc.isVisible().catch(() => false)) await rc.click();
+  await passStartCardAndTutorial(page);
   await page.waitForFunction(
     () => window.state === 'playing' && window.player && player.alive,
     undefined,

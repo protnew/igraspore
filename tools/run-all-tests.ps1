@@ -33,6 +33,42 @@ if ($LASTEXITCODE -ne 0) { Write-Output 'FONT SHA FAIL'; Pop-Location; exit 1 }
 & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'write_lab_root.ps1')
 if ($LASTEXITCODE -ne 0) { Write-Output 'LAB ROOT FAIL'; Pop-Location; exit 1 }
 
+$script:standProc = $null
+$script:standOwned = $false
+function Ensure-ReleaseStand {
+  if ($env:GATE_BASE_URL) { return $env:GATE_BASE_URL }
+  $port = 8798
+  while ($port -lt 8820) {
+    $busy = $false
+    try {
+      $c = New-Object System.Net.Sockets.TcpClient
+      $iar = $c.BeginConnect('127.0.0.1', $port, $null, $null)
+      $ok = $iar.AsyncWaitHandle.WaitOne(200, $false)
+      if ($ok -and $c.Connected) { $busy = $true }
+      $c.Close()
+    } catch { $busy = $false }
+    if (-not $busy) { break }
+    $port++
+  }
+  $node = 'C:\Program Files\nodejs\node.exe'
+  $psi = New-Object System.Diagnostics.ProcessStartInfo
+  $psi.FileName = $node
+  $psi.Arguments = ('"{0}" {1}' -f (Join-Path $root 'tools\serve-static.mjs'), $port)
+  $psi.WorkingDirectory = $root
+  $psi.UseShellExecute = $false
+  $psi.CreateNoWindow = $true
+  $script:standProc = [System.Diagnostics.Process]::Start($psi)
+  $script:standOwned = $true
+  $env:GATE_BASE_URL = ('http://127.0.0.1:' + $port)
+  Start-Sleep -Seconds 1
+  return $env:GATE_BASE_URL
+}
+function Stop-ReleaseStand {
+  if ($script:standOwned -and $script:standProc -and -not $script:standProc.HasExited) {
+    try { $script:standProc.Kill() } catch {}
+  }
+}
+
 if ($ValidateOnly) {
   $files = Get-ChildItem (Join-Path $runsDir 'results-*.json') -ErrorAction SilentlyContinue
   if (-not $files) { Write-Output 'нет results-*.json'; Pop-Location; exit 2 }
@@ -130,15 +166,7 @@ if (Wants 'playwright') {
   } else {
     $pj = Join-Path $root '.04-Src\07-QA-and-Testing\contract-results.json'
     if (Test-Path $pj) { Remove-Item $pj -Force }
-    # стенд :8795 — поднять serve-static.mjs, если не отвечает (скрыто, без окна)
-    try {
-      $null = Invoke-WebRequest -Uri 'http://127.0.0.1:8795/index.html' -TimeoutSec 3 -UseBasicParsing
-    } catch {
-      $vbs = Join-Path $env:TEMP 'igs-serve-8795.vbs'
-      Set-Content -Encoding ASCII $vbs ('CreateObject("Wscript.Shell").Run "node ""' + $root + '\tools\serve-static.mjs"" 8795", 0, False')
-      & wscript $vbs
-      Start-Sleep -Seconds 2
-    }
+    Ensure-ReleaseStand | Out-Null
     $sw = [Diagnostics.Stopwatch]::StartNew()
     $out = & $pw test --config playwright.contract.config.js 2>&1
     $sw.Stop(); $ec = $LASTEXITCODE
@@ -173,20 +201,11 @@ if (Wants 'playwright_v20') {
   $pw = Join-Path $root '.04-Src\node_modules\.bin\playwright.cmd'
   $cfg = Join-Path $root 'playwright.v20.config.js'
   $cmd = "$pw test --config playwright.v20.config.js"
-  $game = Join-Path $root '.04-Src\v3-webgl'
-  $env:GATE_BASE_URL = 'http://127.0.0.1:8796'
+  if (-not $env:GATE_BASE_URL) { Ensure-ReleaseStand | Out-Null }
   if ($NoE2E) {
     $tests = @(New-Test 'playwright_v20.skip' 'playwright-v20' 'skipped by -NoE2E' 'skipped' 0 '')
     Add-Suite 'playwright_v20' 'Playwright v20 acceptance' $cmd $tests $null 0
   } else {
-    try {
-      $null = Invoke-WebRequest -Uri 'http://127.0.0.1:8796/index.html' -TimeoutSec 3 -UseBasicParsing
-    } catch {
-      $vbs = Join-Path $env:TEMP 'igs-serve-8796.vbs'
-      Set-Content -Encoding ASCII $vbs ('CreateObject("Wscript.Shell").Run "node ""' + $root + '\tools\serve-static.mjs"" 8796 ""' + $game + '""", 0, False')
-      & wscript $vbs
-      Start-Sleep -Seconds 2
-    }
     $vj = Join-Path $root '.04-Src\07-QA-and-Testing\v20-results.json'
     if (Test-Path $vj) { Remove-Item $vj -Force }
     $sw = [Diagnostics.Stopwatch]::StartNew()
@@ -339,5 +358,6 @@ Write-Output "run $ts commit=$commit branch=$branch dirty=$dirty"
 foreach ($s in $suites) { Write-Output ("  {0,-10} pass={1} fail={2} skip={3} exit={4} ms={5}" -f $s.id, $s.totals.pass, $s.totals.fail, $s.totals.skipped, $s.exit_code, $s.ms) }
 Write-Output "TOTAL pass=$($t.pass) fail=$($t.fail) skipped=$($t.skipped) total=$($t.total)"
 Write-Output "results: $jf"
+Stop-ReleaseStand
 Pop-Location
 if ($t.fail -gt 0) { exit 1 } else { exit 0 }

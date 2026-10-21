@@ -47,8 +47,8 @@ function updateHUD(){
   if(!player||!player.alive){document.getElementById('hud').style.display='none';return;}
   var h=document.getElementById('hud');h.style.display='block';
   // UI-RESTORE §3.7 — product decision (A) display-only clamp: player.energy logic (can exceed 100) untouched
-  var displayE = Math.min(100, Math.max(0, Math.round(player.energy)));
-  var eRatio=clamp(displayE/100,0,1);
+  var displayE = Math.round(player.energy);
+  var eRatio=clamp(Math.max(0, player.energy)/100,0,1);
   var eColor = eRatio>0.6?'#4f4':eRatio>0.3?'#ff4':'#f44';
   // 8) Запах еды — понятная полоска для новичка
   var scent = (typeof foodScentStrength==='function') ? foodScentStrength(player) : 0;
@@ -62,7 +62,7 @@ function updateHUD(){
     var fill = document.querySelector('#energyBar > div');
     if(fill){ fill.style.width=(eRatio*100)+'%'; fill.style.background=eColor; }
     var et = document.getElementById('hudEnergyText');
-    if(et) et.textContent = displayE+'/100';
+    if(et) et.textContent = displayE+'';
     var ab = document.getElementById('ageBar');
     if(ab) ab.textContent = Math.round(player.age)+'s';
     var scentFill = document.querySelector('#scentBar > div');
@@ -93,7 +93,7 @@ function updateHUD(){
       '<div style="width:'+(scent*100)+'%;background:'+sColor+';height:100%;transition:width .2s;"></div>'+
     '</div>'+
     '<div style="font-size:13px;line-height:1.6;">'+
-      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span id="hudEnergyText" style="color:#fff;font-weight:bold;">'+displayE+'/100</span><br>'+
+      '<span style="color:#8af;font-weight:bold;">'+tt('energy')+':</span> <span id="hudEnergyText" style="color:#fff;font-weight:bold;">'+displayE+'</span><br>'+
       '<span style="color:#8af;font-weight:bold;">'+tt('age')+':</span> <span id="ageBar" style="color:#fff;">'+Math.round(player.age)+'s</span><br>'+
       '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span id="hudDivs" style="color:#fff;">'+player.offspring+'</span>'+
     '</div>'+

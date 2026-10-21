@@ -360,7 +360,8 @@ function renderViruses(vL,vR,vT,vB){
     return __vHeadR;
   }
   window.virusHeadR=virusHeadR;
-  var PHAGE_R=virusHeadR();
+  var z=(typeof zoom==='number'&&zoom>0)?zoom:1;
+  var PHAGE_R=Math.max(virusHeadR(), 3/z);
   for(var i=0;i<viruses.length;i++){
     var v=viruses[i];if(v.x<vL-30||v.x>vR+30||v.y<vT-30||v.y>vB+30)continue;
     ctx.save();ctx.translate(v.x,v.y);ctx.rotate(v.angle+Math.sin(v.wobble)*0.03);
@@ -369,7 +370,7 @@ function renderViruses(vL,vR,vT,vB){
     // Head (icosahedron)
     var hg=ctx.createRadialGradient(-3,-3,0,0,0,PHAGE_R);
     hg.addColorStop(0,'#ffaaa0');hg.addColorStop(0.5,'#f44');hg.addColorStop(1,'#a00');
-    ctx.fillStyle=hg;ctx.strokeStyle='#600';ctx.lineWidth=1;
+    ctx.fillStyle=hg;ctx.strokeStyle='#200';ctx.lineWidth=Math.max(0.35, 1.1/z);
     ctx.beginPath();ctx.arc(0,0,PHAGE_R,0,Math.PI*2);ctx.fill();ctx.stroke();
     // Tail sheath
     ctx.strokeStyle='#c33';ctx.lineWidth=3;

@@ -382,7 +382,7 @@ document.getElementById('bZI').onclick=function(){tZoom=clamp(tZoom*1.3,0.01,100
 document.getElementById('bZO').onclick=function(){tZoom=clamp(tZoom/1.3,0.01,100);};
 
 document.getElementById('startBtn').onclick=()=>startGame(false);
-document.getElementById('screensaverBtn').onclick=()=>startGame(true);
+document.getElementById('screensaverBtn').onclick=function(){ if(typeof startDemoMode==='function') startDemoMode(); else startGame(true); };
 (function(){var b=document.getElementById('demoBtn'); if(b) b.onclick=function(){ if(typeof startDemoMode==='function') startDemoMode(); };})();
 document.getElementById('resBtn').onclick=function(){document.getElementById('pauseO').className='ov';state='playing';zoom=1;tZoom=1;};
 document.getElementById('helpBtn').onclick=function(){document.getElementById('helpO').className='ov show';};

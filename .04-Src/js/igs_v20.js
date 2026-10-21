@@ -1,6 +1,11 @@
 // igs_v20.js - v20 port helpers for release v2.0.0 (markers: pExit demoExit __igsTest)
 "use strict";
 
+window.closeIntroCard = function(){
+  var el=document.getElementById('roleCard'); if(el) el.remove();
+  if(typeof state!=='undefined' && state==='paused') state='playing';
+  if(window._pendingTutorial){ window._pendingTutorial=false; try{ window.startTutorial(false); }catch(e){} }
+};
 window.showDemoChrome = function(sp){
   var b=document.getElementById('demoBadge'), x=document.getElementById('demoExit');
   if(b){ try{ b.textContent=(typeof tt==='function'?tt('demo'):'DEMO')+' · '+(sp&&sp.name?sp.name:''); }catch(e){ b.textContent='DEMO'; } b.style.display='block'; }
@@ -42,6 +47,8 @@ function igsBindV20(){
   if(pExit && !pExit._v20){
     pExit._v20=1;
     pExit.onclick=function(){
+      try{ state='paused'; }catch(e){}
+      var po=document.getElementById('pauseO'); if(po) po.className='ov show';
       var ec=document.getElementById('exitConfirm'); if(ec) ec.className='ov show';
       var no=document.getElementById('ecNo'); if(no) try{ no.focus(); }catch(e){}
     };
@@ -57,7 +64,11 @@ function igsBindV20(){
   var ecNo=document.getElementById('ecNo');
   if(ecNo && !ecNo._v20){
     ecNo._v20=1;
-    ecNo.onclick=function(){ var ec=document.getElementById('exitConfirm'); if(ec) ec.className='ov'; };
+    ecNo.onclick=function(){
+      var ec=document.getElementById('exitConfirm'); if(ec) ec.className='ov';
+      try{ state='paused'; }catch(e){}
+      var po=document.getElementById('pauseO'); if(po) po.className='ov show';
+    };
   }
   var ecYes=document.getElementById('ecYes');
   if(ecYes && !ecYes._v20){

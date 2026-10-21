@@ -150,12 +150,12 @@ function updateMenuTexts(){
   document.getElementById('pauseT').textContent=tt('paused');
   document.getElementById('restartBtn').textContent=tt('restart');document.getElementById('menuBtn').textContent=tt('menu');
   document.getElementById('helpT').textContent=tt('help');document.getElementById('helpClose').textContent=tt('close');
-  document.getElementById('pLegend').textContent=tt('legend');
-  document.getElementById('pCam').textContent=tt('camFly');
-  document.getElementById('pMap').textContent=tt('mapChart');
-  document.getElementById('pMicro').textContent=tt('microscope');
-  document.getElementById('pPic').textContent=tt('picMode');
-  document.getElementById('menuBtnPause').textContent=tt('exit');
+  var pLegend=document.getElementById('pLegend'); if(pLegend) pLegend.textContent=tt('legend');
+  var pCam=document.getElementById('pCam'); if(pCam) pCam.textContent=tt('camFly');
+  var pMap=document.getElementById('pMap'); if(pMap) pMap.textContent=tt('mapChart');
+  var pMicro=document.getElementById('pMicro'); if(pMicro) pMicro.textContent=tt('microscope');
+  var pPic=document.getElementById('pPic'); if(pPic) pPic.textContent=tt('picMode');
+  var menuBtnPause=document.getElementById('menuBtnPause'); if(menuBtnPause) menuBtnPause.textContent=tt('exit');
   var demoBtn=document.getElementById('demoBtn'); if(demoBtn) demoBtn.textContent=tt('demo');
   function hudLabel(id, key, hk){
     var b=document.getElementById(id); if(!b) return;

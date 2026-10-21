@@ -31,3 +31,18 @@
 - ⚠️ **HEAD не самодостаточен**: `.04-Src/v3-webgl/index.html` грузит 8 js, которых нет в git (ai_move, biology_divide, biology_eat, biology_update, render_edu, render_fx, render_helpers, render_surface) → в чистом checkout 164 консольных ошибки, `ReferenceError: moveOrg is not defined` в gameLoop. Игра из HEAD-источника не работает; работает только закоммиченная копия `web-v20`.
 - Тесты: в git — только 17 vitest-файлов (84 теста); у разработчика — 36 файлов (298 тестов): 19 файлов/214 тестов **не закоммичены** (`.gitignore:37 .04-Src/07-QA-and-Testing/*` и др.). Контракт-спеки playwright (hud_contract, i18n_overflow, lab_tests_page) и qa_unit.js тоже вне git. Прогоны разработчика шли на грязном дереве (dirty_count 1037–1045 в results-*.json).
 - Прогоны разработчика по results-*.json: 0006 → 431/1/0 (vitest 297/1), 0031 → 431/**1**/0 (report V4 fail). «431 pass, 0 fail» — только после последующего снапшота, полный повтор с 0 fail не зафиксирован.
+
+### Мой прогон `run-all-tests.ps1` в чистом worktree HEAD 09e6756 (C:\Users\Space\kqstage\wt-spor-verify), скрыто, 21.10 08:43–~09:50 UTC+3
+(в worktree скопированы gitignored-спеки hud_contract/i18n_overflow/lab_tests_page и qa_unit.js из основного дерева; node_modules — junction; свой сервер :8815)
+| набор | заявлено | мой результат |
+|---|---|---|
+| vitest | 298/298 | **84/84** (в git только 17 файлов) |
+| qa_unit | 26/26 | 26/26 ✅ (файл вне git) |
+| playwright (contract) | 69/69 | **не завершён**: ≥44 падений (27+ hud_contract, 6+ i18n_overflow) за 55 мин — HEAD-источник не грузится (404 на 8 неотслеживаемых js); остановлен мной |
+| i18n | 24/24 | **22/2** (langs consistency — нет файла; critic artifacts 42 errors — артефакты вне git) |
+| report V1–V14 | VERIFY OK 14/14 | **7/7** на фактическом отчёте v20 (verify_report проверяет v17-шаблон; «14/14» разработчика — на отдельном снапшоте под v17, не на отчёте v20) |
+| aab | 1/1 | 1/1 ✅ |
+| ИТОГ | 431 pass / 0 skip | **140 pass / 10 fail / 0 skip из 150** |
+Логи: `C:\Users\Space\kqstage\spor-verify-logs\run1.log`, `results-20261021-0843.json`, `run-all-logs-0843\`.
+- playwright-v20 (11 спеков) против HEAD v3-webgl (:8816): **18 passed / 9 failed** (no_cyrillic ×5, virus_size и др. — из-за неработающего HEAD-источника). Лог `v20.log`.
+- Ослабление тестов: в отслеживаемых тестах сессии — только добавления (+594 строки), нет `.skip/.only`, удалённых файлов нет. Единственная правка — membrane.test.js (7bfa45e): регэксп guard приведён к коду (снят `!batched`) — обосновано. Не проверяемо: lab_tests_page.spec.js («приведён к странице») и qa_unit.js — вне git, история изменений недоступна.

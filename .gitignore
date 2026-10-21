@@ -40,6 +40,13 @@ backups/
 .04-Src/07-QA-and-Testing/vitest/*
 !.04-Src/07-QA-and-Testing/vitest/virus_scale.test.js
 !.04-Src/07-QA-and-Testing/vitest/membrane.test.js
+!.04-Src/07-QA-and-Testing/vitest/*.test.js
+!.04-Src/07-QA-and-Testing/qa_unit.js
+!.04-Src/07-QA-and-Testing/playwright/
+.04-Src/07-QA-and-Testing/playwright/*
+!.04-Src/07-QA-and-Testing/playwright/hud_contract.spec.js
+!.04-Src/07-QA-and-Testing/playwright/i18n_overflow.spec.js
+!.04-Src/07-QA-and-Testing/playwright/lab_tests_page.spec.js
 *.aab
 !.10-Archive/**/*.md
 # TZ v20 Y5: heartbeat журнала в git

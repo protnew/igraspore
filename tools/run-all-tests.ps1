@@ -160,6 +160,56 @@ if (Wants 'playwright') {
   }
 }
 
+# ===================== playwright-v20 (11 приёмочных спек) =====================
+if (Wants 'playwright_v20') {
+  $pw = Join-Path $root '.04-Src\node_modules\.bin\playwright.cmd'
+  $cfg = Join-Path $root 'playwright.v20.config.js'
+  $cmd = "$pw test --config playwright.v20.config.js"
+  $game = Join-Path $root '.04-Src\v3-webgl'
+  $env:GATE_BASE_URL = 'http://127.0.0.1:8796'
+  if ($NoE2E) {
+    $tests = @(New-Test 'playwright_v20.skip' 'playwright-v20' 'skipped by -NoE2E' 'skipped' 0 '')
+    Add-Suite 'playwright_v20' 'Playwright v20 acceptance' $cmd $tests $null 0
+  } else {
+    try {
+      $null = Invoke-WebRequest -Uri 'http://127.0.0.1:8796/index.html' -TimeoutSec 3 -UseBasicParsing
+    } catch {
+      $vbs = Join-Path $env:TEMP 'igs-serve-8796.vbs'
+      Set-Content -Encoding ASCII $vbs ('CreateObject("Wscript.Shell").Run "node ""' + $root + '\tools\serve-static.mjs"" 8796 ""' + $game + '""", 0, False')
+      & wscript $vbs
+      Start-Sleep -Seconds 2
+    }
+    $vj = Join-Path $root '.04-Src\07-QA-and-Testing\v20-results.json'
+    if (Test-Path $vj) { Remove-Item $vj -Force }
+    $sw = [Diagnostics.Stopwatch]::StartNew()
+    $out = & $pw test --config $cfg 2>&1
+    $sw.Stop(); $ec = $LASTEXITCODE
+    $out | Out-File -Encoding utf8 (Join-Path $logDir 'playwright_v20.log')
+    $tests = @(); $i = 0
+    if (Test-Path $vj) {
+      try {
+        $pr = Get-Content $vj -Raw | ConvertFrom-Json
+        foreach ($su in $pr.suites) {
+          foreach ($spc in $su.suites + $su) {
+            foreach ($sp in $spc.specs) {
+              foreach ($tt in $sp.tests) {
+                $i++
+                $r = $tt.results[0]
+                $st = if ($tt.expectedStatus -eq 'skipped' -or $r.status -eq 'skipped') { 'skipped' }
+                      elseif ($r.status -eq 'passed' -or $tt.status -eq 'expected') { 'pass' } else { 'fail' }
+                $err = if ($r.error -and $r.error.message) { $r.error.message } else { '' }
+                $tests += New-Test "playwright_v20.$i" $sp.file $sp.title $st ([double]($r.duration)) $err
+              }
+            }
+          }
+        }
+      } catch { $tests += New-Test 'playwright_v20.parse' 'v20-results.json' 'parse' 'fail' 0 $_.Exception.Message }
+    }
+    if (-not $tests.Count) { $tests += New-Test 'playwright_v20.run' 'playwright-v20' 'suite did not produce results' 'fail' $sw.ElapsedMilliseconds (($out | Select-Object -First 3) -join ' | ') }
+    Add-Suite 'playwright_v20' 'Playwright v20 acceptance' $cmd $tests $ec $sw.ElapsedMilliseconds
+  }
+}
+
 # ===================== i18n =====================
 if (Wants 'i18n') {
   $tests = @(); $sw = [Diagnostics.Stopwatch]::StartNew(); $allEc = 0

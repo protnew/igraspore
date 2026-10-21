@@ -1,5 +1,5 @@
 {
   "appId": "com.igraspore.app",
   "appName": "iGraSpore",
-  "webDir": "web-v20"
+  "webDir": "../cf-publish"
 }

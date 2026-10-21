@@ -3,6 +3,15 @@
 
 function drawBody(o,sz,fc2,fd, batched){
   var sh=o.sp.shape;
+  if(!batched && typeof membraneEnabled==='function' && membraneEnabled() && typeof zoom==='number' && zoom>3 && (sh==='circle'||sh==='oval'||sh==='rod'||sh==='slipper'||sh==='irregular'||sh==='bell')){
+    var _cy=ctx.createRadialGradient(-sz*0.25,-sz*0.25,0,0,0,sz*1.1);
+    _cy.addColorStop(0,fc2); _cy.addColorStop(0.7,fc2); _cy.addColorStop(1,fd);
+    ctx.fillStyle=_cy; ctx.strokeStyle=fd;
+    ctx.lineWidth=(settings.renderMode==='realistic'?Math.max(0.3,sz*0.02):Math.max(1.5,sz*0.1));
+    membranePath(o, sz);
+    ctx.fill(); ctx.stroke();
+    return;
+  }
   // Compute detail level locally (zoom-dependent)
   var _dtBase=(settings.microscopeMode?0.15:(settings.renderMode==="realistic"?0.35:0.55));
   var detail=(typeof zoom==="number"&&zoom>(2.8*_dtBase)?2:(zoom>(1.2*_dtBase)?1:0));

@@ -277,23 +277,17 @@ document.addEventListener('keydown',function(e){
   if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?tt('cam.fly'):tt('cam.follow'));var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?tt('cam.flyBtn'):'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}}
   if(k==='escape'){
     if(window.demoMode && window.demoPossessed){ exitDemoPossess(); e.preventDefault(); return; }
-    // ESC → return to main menu from game or demo
     if(state==='playing' || window.demoMode){
-      if(window.demoMode){
-        // demo exit: drop demo HUD state + restore keyHint from LS (demo used a session override)
-        document.body.classList.remove('demo-on');
-        try{ var _dt=document.getElementById('demoTip'); if(_dt) _dt.style.display='none'; }catch(_e2){}
-        if(typeof window.restoreKeyHintFromLS==='function') window.restoreKeyHintFromLS();
-      }
-      window.demoMode = false;
-      window.demoPossessed = null;
-      window.spectatorMode = false;
-      freeCam = false;
-      autoAI = false;
-      player = null;
-      state = 'menu';
-      document.getElementById('menuO').className = 'ov show';
-      e.preventDefault();
+      state='paused';
+      var po=document.getElementById('pauseO'); if(po) po.className='ov show';
+      e.preventDefault(); return;
+    }
+    if(state==='paused'){
+      var ec=document.getElementById('exitConfirm');
+      if(ec && ec.className==='ov show'){ e.preventDefault(); return; }
+      state='playing';
+      var p2=document.getElementById('pauseO'); if(p2) p2.className='ov';
+      e.preventDefault(); return;
     }
   }
   if(k==='v'){
@@ -402,8 +396,8 @@ document.getElementById('resBtn').onclick=function(){state='playing';document.ge
 document.getElementById('pHelp').onclick=function(){document.getElementById('helpO').className='ov show';};
 document.getElementById('pSet').onclick=function(){buildSettings();document.getElementById('setO').className='ov show';};
 document.getElementById('pWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
-document.getElementById('restartBtn').onclick=function(){document.getElementById('deadO').className='ov';document.getElementById('menuO').className='ov show';state='menu';};
-document.getElementById('menuBtn').onclick=function(){document.getElementById('deadO').className='ov';document.getElementById('menuO').className='ov show';state='menu';};
+document.getElementById('restartBtn').onclick=function(){document.getElementById('deadO').className='ov';startGame(false);};
+document.getElementById('menuBtn').onclick=function(){document.getElementById('deadO').className='ov';document.getElementById('menuO').className='ov show';state='menu';if(typeof hideGameHud==='function')hideGameHud();};
 
 window.addEventListener('resize',resize);
 window.addEventListener('mousemove', function(e){window.mouseX=e.clientX;window.mouseY=e.clientY;});

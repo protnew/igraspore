@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build-stamp:1790622000 ui-improve-2026-09-28 -->
+<!-- build-stamp:1792632100 ui-improve-2026-09-28 -->
 <html lang="ru">
 <head>
     <link rel="manifest" href="/manifest.json">
@@ -21,7 +21,7 @@
     <meta http-equiv="Expires" content="0">
 
 
-  <link rel="stylesheet" href="style.css?v=1790622000">
+  <link rel="stylesheet" href="style.css?v=1792632100">
 
 <style id="a11y-focus">:focus-visible{outline:2px solid #5ed4a0;outline-offset:2px;}a#apkBtn:focus-visible{outline:2px solid #5ed4a0;outline-offset:3px;}</style>
 </head>
@@ -126,7 +126,10 @@
 <div class="scrollbox" id="spGrid"></div>
 <div style="margin-top:4px"><button class="btn sm" id="helpBtn" aria-label="" data-k-aria="aria.help"></button> <button class="btn sm" id="setBtn2" aria-label="" data-k-aria="aria.set"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
 </div>
-<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button><button class="btn sm" id="pLegend" type="button"></button><button class="btn sm" id="pCam" type="button"></button><button class="btn sm" id="pMap" type="button"></button><button class="btn sm" id="pMicro" type="button"></button><button class="btn sm" id="pPic" type="button"></button><button class="btn sm" id="menuBtnPause" type="button"></button></div>
+<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button><button class="btn sm" id="pExit" type="button">Exit</button><button class="btn sm" id="pLegend" type="button"></button><button class="btn sm" id="pCam" type="button"></button><button class="btn sm" id="pMap" type="button"></button><button class="btn sm" id="pMicro" type="button"></button><button class="btn sm" id="pPic" type="button"></button><button class="btn sm" id="menuBtnPause" type="button"></button></div>
+<div id="exitConfirm" class="ov"><div style="background:rgba(4,12,18,0.94);padding:22px 16px;border-radius:14px;max-width:300px;width:88%;text-align:center"><div class="tt" style="font-size:20px" id="ecT">Exit?</div><div id="ecMsg" style="color:#cde;margin:8px 0 14px;font-size:14px">Progress of this life will be lost.</div><button class="btn" id="ecNo" type="button">No</button><button class="btn sm" id="ecYes" type="button">Yes</button></div></div>
+<button id="demoExit" type="button" aria-label="Exit demo" style="display:none;position:fixed;top:10px;right:10px;z-index:90;width:48px;height:48px;min-width:48px;min-height:48px;border-radius:24px;border:0;background:#c33;color:#fff;font-size:22px;line-height:48px;text-align:center;padding:0">×</button>
+<div id="demoBadge" style="display:none;position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:70;background:rgba(0,0,0,.55);color:#fff;padding:6px 12px;border-radius:8px;font-size:13px"></div>
 <div id="helpO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="helpT"></div><div id="helpBody" style="color:#bcd;font-size:12px;line-height:1.6;max-width:560px"></div><button class="btn sm" id="helpClose" style="margin-top:12px"></button></div>
 <div id="setO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="setT"></div><div class="scrollbox" id="setBody" style="max-width:400px"></div><button class="btn sm" id="setClose" style="margin-top:12px"></button></div>
 <div id="wikiO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:6px" id="wikiT"></div><input type="text" class="wiki-search" id="wikiSearch" placeholder="" data-k-ph="wiki.searchPh"><div id="wikiContent"></div><button class="btn sm" id="wikiClose" style="margin-top:10px"></button></div>
@@ -162,51 +165,55 @@
     </div>
   </div>
 </div>
-<script src="04-Src/js/config.js?v=1790622000"></script>
-<script src="04-Src/js/i18n_hud.js?v=1790622000"></script>
-<script src="04-Src/js/i18n_detect.js?v=1790622000"></script>
-<script src="04-Src/js/lifecycle.js?v=1790622000"></script>
-<script src="04-Src/js/camera_follow.js?v=1790622000"></script>
-<script src="04-Src/js/wiki_articles.js?v=1790622000"></script>
-<script src="04-Src/js/locomotion.js?v=1790622000"></script>
-<script src="04-Src/js/organs.js?v=1790622000"></script>
-<script src="04-Src/js/world.js?v=1790622000"></script>
-<script src="04-Src/js/world_update.js?v=1790622000"></script>
-<script src="04-Src/js/biology.js?v=1790622000"></script>
-<script src="04-Src/js/biology_divide.js?v=1790622000"></script>
-<script src="04-Src/js/biology_eat.js?v=1790622000"></script>
-<script src="04-Src/js/biology_virus.js?v=1790622000"></script>
-<script src="04-Src/js/biology_update.js?v=1790622000"></script>
-<script src="04-Src/js/biology_update_core.js?v=1790622000"></script>
-<script src="04-Src/js/biology_update_interact.js?v=1790622000"></script>
-<script src="04-Src/js/ai_move.js?v=1790622000"></script>
-<script src="04-Src/js/ai.js?v=1790622000"></script>
-<script src="04-Src/js/render_effects.js?v=1790622000"></script>
-<script src="04-Src/js/render_surface.js?v=1790622000"></script>
-<script src="04-Src/js/render_fx.js?v=1790622000"></script>
-<script src="04-Src/js/render_helpers.js?v=1790622000"></script>
-<script src="04-Src/js/entity_labels.js?v=1790622000"></script>
-  <script src="04-Src/js/render.js?v=1790622000"></script>
-<script src="04-Src/js/render_entities.js?v=1790622000"></script>
-<script src="04-Src/js/render_organs.js?v=1790622000"></script>
-<script src="04-Src/js/render_edu.js?v=1790622000"></script>
-<script src="04-Src/js/render_swiss.js?v=1790622000"></script>
-<script src="04-Src/js/render_webgl.js?v=1790622000"></script>
-<script src="04-Src/js/ui.js?v=1790622000"></script>
-<script src="04-Src/js/ui_menus.js?v=1790622000"></script>
-<script src="04-Src/js/ui_food_chain.js?v=1790622000"></script>
-<script src="04-Src/js/ui_screens.js?v=1790622000"></script>
-<script src="04-Src/js/main.js?v=1790622000"></script>
-<script src="04-Src/js/main_events.js?v=1790622000"></script>
-<script src="04-Src/js/toast_queue.js?v=1790622000"></script>
-<script src="04-Src/js/demo.js?v=1790622000"></script>
-<script src="04-Src/js/stars.js?v=1790622000"></script>
-<script src="04-Src/js/night_sky.js?v=1790622000"></script>
+<script src="04-Src/js/config.js?v=1792632100"></script>
+<script src="04-Src/js/i18n_hud_ru.js?v=1792632100"></script>
+<script src="04-Src/js/i18n_hud_en.js?v=1792632100"></script>
+<script src="04-Src/js/i18n_hud.js?v=1792632100"></script>
+<script src="04-Src/js/i18n_detect.js?v=1792632100"></script>
+<script src="04-Src/js/lifecycle.js?v=1792632100"></script>
+<script src="04-Src/js/camera_follow.js?v=1792632100"></script>
+<script src="04-Src/js/wiki_articles.js?v=1792632100"></script>
+<script src="04-Src/js/locomotion.js?v=1792632100"></script>
+<script src="04-Src/js/organs.js?v=1792632100"></script>
+<script src="04-Src/js/world.js?v=1792632100"></script>
+<script src="04-Src/js/world_update.js?v=1792632100"></script>
+<script src="04-Src/js/biology.js?v=1792632100"></script>
+<script src="04-Src/js/biology_divide.js?v=1792632100"></script>
+<script src="04-Src/js/biology_eat.js?v=1792632100"></script>
+<script src="04-Src/js/biology_virus.js?v=1792632100"></script>
+<script src="04-Src/js/biology_update.js?v=1792632100"></script>
+<script src="04-Src/js/biology_update_core.js?v=1792632100"></script>
+<script src="04-Src/js/biology_update_interact.js?v=1792632100"></script>
+<script src="04-Src/js/ai_move.js?v=1792632100"></script>
+<script src="04-Src/js/ai.js?v=1792632100"></script>
+<script src="04-Src/js/render_effects.js?v=1792632100"></script>
+<script src="04-Src/js/render_surface.js?v=1792632100"></script>
+<script src="04-Src/js/render_fx.js?v=1792632100"></script>
+<script src="04-Src/js/render_helpers.js?v=1792632100"></script>
+<script src="04-Src/js/entity_labels.js?v=1792632100"></script>
+  <script src="04-Src/js/render.js?v=1792632100"></script>
+<script src="04-Src/js/render_membrane.js?v=1792632100"></script>
+<script src="04-Src/js/render_entities.js?v=1792632100"></script>
+<script src="04-Src/js/render_organs.js?v=1792632100"></script>
+<script src="04-Src/js/render_edu.js?v=1792632100"></script>
+<script src="04-Src/js/render_swiss.js?v=1792632100"></script>
+<script src="04-Src/js/render_webgl.js?v=1792632100"></script>
+<script src="04-Src/js/ui.js?v=1792632100"></script>
+<script src="04-Src/js/ui_menus.js?v=1792632100"></script>
+<script src="04-Src/js/ui_food_chain.js?v=1792632100"></script>
+<script src="04-Src/js/ui_screens.js?v=1792632100"></script>
+<script src="04-Src/js/main.js?v=1792632100"></script>
+<script src="04-Src/js/igs_v20.js?v=1792632100"></script>
+<script src="04-Src/js/main_events.js?v=1792632100"></script>
+<script src="04-Src/js/toast_queue.js?v=1792632100"></script>
+<script src="04-Src/js/demo.js?v=1792632100"></script>
+<script src="04-Src/js/stars.js?v=1792632100"></script>
+<script src="04-Src/js/night_sky.js?v=1792632100"></script>
 <div id="globalTooltip" style="display:none; position:absolute; z-index:9999; background:rgba(10,20,35,0.95); border:1px solid #4af; color:#fff; padding:8px 12px; border-radius:6px; font-family:sans-serif; font-size:12px; pointer-events:none; box-shadow:0 4px 10px rgba(0,0,0,0.5); max-width:250px; text-shadow:0 1px 2px #000;"></div>
 
 
 
-<script src="04-Src/js/mobile.js?v=1790622000"></script>
+<script src="04-Src/js/mobile.js?v=1792632100"></script>
 
 <script>
 if ('serviceWorker' in navigator) {

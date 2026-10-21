@@ -1,4 +1,18 @@
 "use strict";
+var HUD_IDS=['hud','topR','ecoP','legP','actBar','scaleW','spdBar','todWrap','camM'];
+function hideGameHud(){
+  for(var i=0;i<HUD_IDS.length;i++){
+    var el=document.getElementById(HUD_IDS[i]);
+    if(el) el.style.display='none';
+  }
+}
+function showGameHud(){
+  for(var i=0;i<HUD_IDS.length;i++){
+    var el=document.getElementById(HUD_IDS[i]);
+    if(el && HUD_IDS[i]!=='ecoP' && HUD_IDS[i]!=='spdBar') el.style.display='';
+  }
+}
+window.hideGameHud=hideGameHud; window.showGameHud=showGameHud;
 function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight;}
 function showSpeedBar(){
   var sb=document.getElementById('spdBar');
@@ -192,9 +206,12 @@ function bindPauseExtras(){
   if(exit&&!exit._igs){
     exit._igs=1;
     exit.addEventListener('click', function(){
+      var ec=document.getElementById('exitConfirm');
+      if(ec){ ec.className='ov show'; return; }
       try{ state='menu'; player=null; }catch(e){}
       var po=document.getElementById('pauseO'); if(po) po.className='ov';
       var mo=document.getElementById('menuO'); if(mo) mo.className='ov show';
+      if(typeof hideGameHud==='function') hideGameHud();
       if(window.syncMenuChrome) window.syncMenuChrome();
     });
   }

@@ -301,6 +301,7 @@ var INIT_N={producer:1200,consumer1:150,consumer2:90,consumer3:40,decomposer:150
 var SEASONS=[{temp:16,light:0.85,ice:0,rain:0.15},{temp:24,light:1,ice:0,rain:0.08},{temp:10,light:0.7,ice:0.05,rain:0.25},{temp:3,light:0.45,ice:0.6,rain:0.03}];
 var SEASON_DAYS=2;
 var DCODE={STARVE:0,EATEN:1,TEMP:2,AGE:3,LYSIS:4};
+var VIRUS_SCALE=0.08;
 var DLAB_KEYS=['dStarve','dEaten','dTemp','dAge','dLysis'];
 var DIV_COOLDOWN=6;
 var DIV_SEPARATION=40;
@@ -360,6 +361,7 @@ var autoAI=false,freeCam=false;
 var gameStats={startTime:0,maxPop:0,maxPlayerSize:0,evoLvl:0};
 var timeScale=1.0,lastT=0;
 var settings={particles:true,bubbles:true,currents:true,vignette:false,healthBars:true,shadows:true,density:1.0,lightMul:1.0,virusRate:0.7,renderMode:'cartoon',microscopeMode:false,simSpeed:0.33,predation:1.0,divRate:1.0};
+try{ var _ls=(typeof window!=='undefined'?window.localStorage:null); settings.softMembrane = !_ls || _ls.getItem('igs.softMembrane') !== '0'; }catch(e){ settings.softMembrane = true; }
 var difficulty='easy',selCat='all',selSpecies=0;
 var mouseDown=false,moveTarget=null;
 var camKeys={w:false,a:false,s:false,d:false};
@@ -390,7 +392,11 @@ function showRoleCard(sp){
       '<div style="opacity:.8;font-size:12.5px">'+tt('roleHint')+'</div>'+
       '<button id="roleCardOk" style="margin-top:10px;width:100%;padding:10px;border:0;border-radius:10px;background:#2d8f55;color:#fff;font-weight:700;cursor:pointer">'+tt('roleOk')+'</button>';
     document.body.appendChild(d);
-    var close = function(){ var el=document.getElementById('roleCard'); if(el) el.remove(); };
+    var close = function(){
+      var el=document.getElementById('roleCard'); if(el) el.remove();
+      if(typeof state!=='undefined' && state==='paused') state='playing';
+      if(window._pendingTutorial){ window._pendingTutorial=false; try{ window.startTutorial(false); }catch(e2){} }
+    };
     var btn = document.getElementById('roleCardOk');
     if(btn) btn.onclick = close;
     setTimeout(close, 12000);

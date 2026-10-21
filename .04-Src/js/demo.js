@@ -122,9 +122,11 @@ function startDemoMode() {
   // Camera overview
   cam.x = 0;
   cam.y = rowY0 + (DEMO_GROUPS.length - 1) * rowGap * 0.45;
-  zoom = 1.4;
-  tZoom = 1.4;
+  zoom = 0.58;
+  tZoom = 0.58;
   window._demoFly = null;
+  window._demoOrbit = { t: 0 };
+  window.__igsDemo = true;
   freeCam = true;
   window.lastInteractionTime = Date.now();
   window.screensaverAutoCam = false;
@@ -150,6 +152,8 @@ function startDemoMode() {
       if (typeof window.buildKeyHint === 'function') window.buildKeyHint();
     } catch (e2) {}
     document.body.classList.add('demo-on');
+    if(typeof window.showDemoChrome==='function') window.showDemoChrome();
+    if(typeof window.demoBring==='function') window.demoBring(24);
   } catch (e) {}
 
   // HUD: free-cam controls tip (positioned by CSS above the actBar band)
@@ -420,6 +424,11 @@ function updateDemoCamera(dt) {
   if (kk['s'] || kk['arrowdown'] || ck.s) cam.y += spd * dt;
   if (kk['a'] || kk['arrowleft'] || ck.a) cam.x -= spd * dt;
   if (kk['d'] || kk['arrowright'] || ck.d) cam.x += spd * dt;
+  if (window._demoOrbit && !kk['w'] && !kk['s'] && !kk['a'] && !kk['d'] && !ck.w && !ck.s && !ck.a && !ck.d){
+    window._demoOrbit.t += dt || 0.016;
+    cam.x += Math.sin(window._demoOrbit.t * 0.35) * 18 * dt;
+    cam.y += Math.cos(window._demoOrbit.t * 0.28) * 12 * dt;
+  }
   if (typeof clamp === 'function') {
     cam.y = clamp(cam.y, -80, (typeof PD === 'number' ? PD : 2000) * 0.85);
     cam.x = clamp(cam.x, -((typeof PW === 'number' ? PW : 5000) * 0.6), (typeof PW === 'number' ? PW : 5000) * 0.6);

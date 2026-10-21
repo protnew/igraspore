@@ -121,7 +121,7 @@ function gameLoop(ts){
       }
     }
   }else if(state==='gameover'){showDeadScreen();state='dead';}
-if(state==='playing'||state==='menu')render();
+if(state==='playing'||state==='menu'||state==='paused')render();
   requestAnimationFrame(gameLoop);
   }catch(e){console.error('gameLoop:',e.message,e.stack);requestAnimationFrame(gameLoop);}
 }
@@ -320,12 +320,16 @@ function startGame(isScreensaver){
      } // end !virusPlayer food seed
      // 1) Карточка «ты кто / кого ешь»
      if(!isScreensaver && !window.virusPlayer && typeof showRoleCard==='function'){
-       setTimeout(function(){ try{ showRoleCard(sp); }catch(_e){} }, 600);
+       try{ showRoleCard(sp); }catch(_e){}
      }
   }
   
   // Start zoomed in enough to see neighbors (Spore/Agar feel)
   state='playing';zoom=1.8;tZoom=1.8;gt=0;fc=0;lastT=0;
+  if(!isScreensaver && !window.virusPlayer){
+    state='paused';
+    window._pendingTutorial=true;
+  }
   // Aquarium: modestly closer than play-start (was the same 1.8, organisms read far)
   if(isScreensaver){
     window._aquariumLock = true;
@@ -398,6 +402,6 @@ function startGame(isScreensaver){
         window.showToast('\u2620 '+tt('virusMode',{name:_vn}),'#f66',6000);
       }
     }, 800);
-  } else if(!isScreensaver){ setTimeout(function(){ window.startTutorial(false); }, 300); }
+  } else if(!isScreensaver){ window._pendingTutorial=true; }
 }
 

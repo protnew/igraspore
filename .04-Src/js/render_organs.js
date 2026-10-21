@@ -342,7 +342,25 @@ function renderViruses(vL,vR,vT,vB){
     ctx.restore();
     return;
   }
-  var PHAGE_R=11; // was 5.5 — doubled for visibility
+  var __vHeadR=0.32,__vHeadRAt=0;
+  function virusHeadR(){
+    if(typeof fc==='number'&&Math.abs(fc-__vHeadRAt)<30)return __vHeadR;
+    var sizes=[];
+    var step=Math.max(1,Math.floor((orgs&&orgs.length?orgs.length:1)/400));
+    for(var hi=0;hi<(orgs?orgs.length:0);hi+=step){
+      var ho=orgs[hi];
+      if(ho&&ho.alive&&ho.sp&&(ho.sp.cat==='producer'||ho.sp.cat==='consumer1'||ho.sp.cat==='decomposer')) sizes.push(ho.size||3);
+    }
+    if(sizes.length){
+      sizes.sort(function(a,b){return a-b});
+      var med=sizes[Math.floor(sizes.length/2)];
+      __vHeadR=Math.min(0.6,Math.max(0.05,med*(typeof VIRUS_SCALE==='number'?VIRUS_SCALE:0.08)));
+    }
+    __vHeadRAt=(typeof fc==='number')?fc:__vHeadRAt;
+    return __vHeadR;
+  }
+  window.virusHeadR=virusHeadR;
+  var PHAGE_R=virusHeadR();
   for(var i=0;i<viruses.length;i++){
     var v=viruses[i];if(v.x<vL-30||v.x>vR+30||v.y<vT-30||v.y>vB+30)continue;
     ctx.save();ctx.translate(v.x,v.y);ctx.rotate(v.angle+Math.sin(v.wobble)*0.03);

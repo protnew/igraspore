@@ -19,3 +19,15 @@
 
 ## Фаза 3 — архив
 - `.10-Archive\aab-20261018-2323\app-release.aab` существует, 111 579 859 б, sha256 BBE5A617…829C2 — ✅ (копия, mtime 20.10 23:46).
+
+## Фаза 4 — 21 баг (код в HEAD + тест)
+Код-след найден в HEAD `.04-Src/v3-webgl` (git grep) для B1 (VIRUS_SCALE/virusHeadR: config, render_organs, biology_virus), B2 (Escape/#pExit/exitConfirm), B3 (hideGameHud ×), B4 (__igsDemo/autoAI), B5 (#demoExit), B6 (igs.intro.*), B8 (tt/fallback), B9 (#menuFooter), B10, B11, B12 (lang select + replaceState), B13 (__igsTest только при test=1 — проверено: без ?test=1 `typeof __igsTest === 'undefined'`), B14, B17, B21 (#burgerBtn/#actionsPanel), M1 (render_membrane.js), B19 (замер). Тесты: playwright-v20 (11 спеков, 34+ кейса) + vitest virus_scale/membrane — существуют и закоммичены.
+- B1 численно (мой замер на web-v20): голова фага 0.378 при медиане бактерий ≈4.7 → 0.08× ✅.
+- N/A: **B15** («Pool will have…» дважды) — в v3-меню строка не выводится (есть только ключ `poolWill` в словарях) → N/A обоснован. **B16** (колонии в конце) — в v3 ui_menus нет логики сортировки колоний; N/A «колонии-впереди отсутствуют» — правдоподобно, но не доказано (нет теста/снимка, «grep-пруф в сессии» не сохранён) → ⚠️ частично.
+- **B18** отмечен ✅, но фактически тоже N/A: `#spFilterStatus` есть только в legacy `.04-Src/js/ui_menus.js`, в v3 отсутствует; тест проходит веткой «absent». Т.е. фактически N/A = 3, не 2.
+- **M1-OFF** — known-red (environment-limited) в v20-суите; **B19** Android — environment-limited. «Все 21 исправлены» — с этими оговорками.
+
+## Фаза 5 — воспроизводимость тестов (чистый worktree HEAD)
+- ⚠️ **HEAD не самодостаточен**: `.04-Src/v3-webgl/index.html` грузит 8 js, которых нет в git (ai_move, biology_divide, biology_eat, biology_update, render_edu, render_fx, render_helpers, render_surface) → в чистом checkout 164 консольных ошибки, `ReferenceError: moveOrg is not defined` в gameLoop. Игра из HEAD-источника не работает; работает только закоммиченная копия `web-v20`.
+- Тесты: в git — только 17 vitest-файлов (84 теста); у разработчика — 36 файлов (298 тестов): 19 файлов/214 тестов **не закоммичены** (`.gitignore:37 .04-Src/07-QA-and-Testing/*` и др.). Контракт-спеки playwright (hud_contract, i18n_overflow, lab_tests_page) и qa_unit.js тоже вне git. Прогоны разработчика шли на грязном дереве (dirty_count 1037–1045 в results-*.json).
+- Прогоны разработчика по results-*.json: 0006 → 431/1/0 (vitest 297/1), 0031 → 431/**1**/0 (report V4 fail). «431 pass, 0 fail» — только после последующего снапшота, полный повтор с 0 fail не зафиксирован.

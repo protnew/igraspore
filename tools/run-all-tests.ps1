@@ -122,14 +122,21 @@ if (Wants 'playwright') {
     $tests = @(New-Test 'playwright.skip' 'e2e' 'skipped by -NoE2E' 'skipped' 0 '')
     Add-Suite 'playwright' 'Playwright e2e' $cmd $tests $null 0
   } else {
+    $game = Join-Path $root '.04-Src\v3-webgl'
+    $env:GATE_BASE_URL = 'http://127.0.0.1:8795'
     $pj = Join-Path $root '.04-Src\07-QA-and-Testing\contract-results.json'
     if (Test-Path $pj) { Remove-Item $pj -Force }
-    # стенд :8795 — поднять serve-static.mjs, если не отвечает (скрыто, без окна)
+    # Стенд :8795 должен быть корнем игры, не корнем репозитория. index.html в корне репо даёт ложный 200.
+    $standOk = $false
     try {
-      $null = Invoke-WebRequest -Uri 'http://127.0.0.1:8795/index.html' -TimeoutSec 3 -UseBasicParsing
-    } catch {
+      $null = Invoke-WebRequest -Uri 'http://127.0.0.1:8795/js/biology.js' -TimeoutSec 3 -UseBasicParsing
+      try {
+        $null = Invoke-WebRequest -Uri 'http://127.0.0.1:8795/.04-Src/v3-webgl/index.html' -TimeoutSec 3 -UseBasicParsing
+      } catch { $standOk = $true }
+    } catch { $standOk = $false }
+    if (-not $standOk) {
       $vbs = Join-Path $env:TEMP 'igs-serve-8795.vbs'
-      Set-Content -Encoding ASCII $vbs ('CreateObject("Wscript.Shell").Run "node ""' + $root + '\tools\serve-static.mjs"" 8795", 0, False')
+      Set-Content -Encoding ASCII $vbs ('CreateObject("Wscript.Shell").Run "node ""' + $root + '\tools\serve-static.mjs"" 8795 ""' + $game + '""", 0, False')
       & wscript $vbs
       Start-Sleep -Seconds 2
     }

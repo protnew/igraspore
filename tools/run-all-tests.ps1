@@ -67,10 +67,12 @@ function Wants($id) { return ($OnlySet.Count -eq 0) -or ($OnlySet -contains $id)
 
 # ===================== vitest =====================
 if (Wants 'vitest') {
-  $cmd = 'node .04-Src\node_modules\vitest\vitest.mjs run --config vitest.config.js --root . --reporter=json --outputFile=<tmp>\vitest.json'
+  $cmd = 'node --localstorage-file=<tmp>\node-localstorage.json .04-Src\node_modules\vitest\vitest.mjs run --config vitest.config.js --root . --reporter=json --outputFile=<tmp>\vitest.json'
   $vj = Join-Path $logDir 'vitest.json'
+  $lsFile = Join-Path $logDir 'node-localstorage.json'
   $sw = [Diagnostics.Stopwatch]::StartNew()
-  $out = & node "$root\.04-Src\node_modules\vitest\vitest.mjs" run --config vitest.config.js --root . --reporter=json "--outputFile=$vj" 2>&1
+  # Node 24: global localStorage is undefined without this flag, so jsdom never installs the store the tests already call. Not a skip.
+  $out = & node "--localstorage-file=$lsFile" "$root\.04-Src\node_modules\vitest\vitest.mjs" run --config vitest.config.js --root . --reporter=json "--outputFile=$vj" 2>&1
   $sw.Stop(); $ec = $LASTEXITCODE
   $out | Out-File -Encoding utf8 (Join-Path $logDir 'vitest.log')
   $tests = @()

@@ -71,8 +71,14 @@ if (Wants 'vitest') {
   $vj = Join-Path $logDir 'vitest.json'
   $lsFile = Join-Path $logDir 'node-localstorage.json'
   $sw = [Diagnostics.Stopwatch]::StartNew()
-  # Node 24: global localStorage is undefined without this flag, so jsdom never installs the store the tests already call. Not a skip.
-  $out = & node "--localstorage-file=$lsFile" "$root\.04-Src\node_modules\vitest\vitest.mjs" run --config vitest.config.js --root . --reporter=json "--outputFile=$vj" 2>&1
+  # Node 24 workers do not inherit a parent CLI flag. NODE_OPTIONS reaches every vitest worker. Not a skip.
+  $prevNodeOptions = $env:NODE_OPTIONS
+  $env:NODE_OPTIONS = "--localstorage-file=$lsFile"
+  try {
+    $out = & node "--localstorage-file=$lsFile" "$root\.04-Src\node_modules\vitest\vitest.mjs" run --config vitest.config.js --root . --reporter=json "--outputFile=$vj" 2>&1
+  } finally {
+    if ($null -eq $prevNodeOptions) { Remove-Item Env:NODE_OPTIONS -ErrorAction SilentlyContinue } else { $env:NODE_OPTIONS = $prevNodeOptions }
+  }
   $sw.Stop(); $ec = $LASTEXITCODE
   $out | Out-File -Encoding utf8 (Join-Path $logDir 'vitest.log')
   $tests = @()

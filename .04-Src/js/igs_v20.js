@@ -101,7 +101,7 @@ if(typeof document!=='undefined'){
 
 if(typeof location!=='undefined' && location.search.indexOf('test=1')>=0){
   window.__igsTest={
-    killPlayer:function(cause){ if(player&&player.alive){ killOrg(player, (typeof cause==='number')?cause:DCODE.STARVE); player=null; } },
+    killPlayer:function(cause){ if(player&&player.alive){ killOrg(player, (typeof cause==='number')?cause:DCODE.STARVE); if(typeof showDeadScreen==='function') showDeadScreen(); else { var dO=document.getElementById('deadO'); if(dO) dO.className='ov show'; } } },
     setEnergy:function(v){ if(player){ player.energy=v; } },
     spawnVirusNear:function(){
       var x=(player?player.x:cam.x)+rng(-30,30), y=(player?player.y:cam.y)+rng(-30,30);
@@ -116,7 +116,8 @@ if(typeof location!=='undefined' && location.search.indexOf('test=1')>=0){
         if(o&&o.alive&&o.sp&&(o.sp.cat==='producer'||o.sp.cat==='consumer1'||o.sp.cat==='decomposer')) b.push(o.size||0);
       }
       b.sort(function(a,c){return a-c;});
-      return b;
+      var med=b.length?b[Math.floor(b.length/2)]:0;
+      return {bacteria:b, virusHead:med*0.08};
     }
   };
 }

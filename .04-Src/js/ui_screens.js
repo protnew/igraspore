@@ -72,7 +72,7 @@ function showDeadScreen(){
   var globalAlive = 0;
   for(var ai=0; ai<orgs.length; ai++){ if(orgs[ai] && orgs[ai].alive) globalAlive++; }
   var globalDead = Math.max(0, startPop + globalBorn - globalAlive);
-  var extinct = (player && player.sp && speciesPop[player.sp.id] && speciesPop[player.sp.id].alive===0);
+  var extinct = (player && player.sp && speciesPop[player.sp.id] && speciesPop[player.sp.id].alive===0 && globalAlive===0);
   html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.pondStatistics'))+'</div>';
   html+='<table class="stbl" style="margin-bottom:10px">';
   html+='<tr><td class="lbl">'+tt('days')+'</td><td class="val">'+totalDays+'</td></tr>';
@@ -114,7 +114,7 @@ function showDeadScreen(){
   html+='</table>';
   
   ds.innerHTML=html;
-  document.getElementById('deadT').textContent = extinct ? tt('dead') : (tt('yourCellDied') || 'Your cell died');
+  document.getElementById('deadT').textContent = extinct ? tt('dead') : 'Your cell died';
   document.getElementById('deadO').className='ov show';
 }
 

@@ -21,7 +21,9 @@
 @font-face{font-family:"Noto Sans Thai";src:url("04-Src/fonts/NotoSansThai-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0E01-0E5B,U+200C-200D}
 html,body{width:100%;height:100%;overflow:hidden;background:#000814;font-family:"Noto Sans Bengali","Noto Sans Devanagari","Noto Sans Thai",system-ui,Arial,sans-serif;user-select:none}
 canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
-.p{background:rgba(0,12,28,.92);border:1px solid #1a3a55;border-radius:8px;color:#ffffff;font-size:11px;backdrop-filter:blur(4px)}
+.p{background:rgba(0,12,28,.92);border:1px solid #1a3a55;border-radius:8px;color:#ffffff;font-size:13px;backdrop-filter:blur(4px)}
+.p:empty{display:none!important;border:0;background:transparent;padding:0;min-height:0}
+#hud:empty,#ecoP:empty,#topR:empty{display:none!important}
 #hud{position:relative;z-index:10;pointer-events:none;padding:8px 12px;min-width:160px;max-width:200px;font-size:13px}
 #hud #tempL,#hud #lightL,#hud #energyBar,#hud #fpsL,#hud #daysL,#hud #popC,#hud #ageBar{pointer-events:auto}
 #hud .nm{color:#ffffff;font-size:12px;font-weight:bold}
@@ -104,6 +106,7 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 #introO,#pauseO,#exitConfirm,#deadO{background:rgba(0,0,0,.78)!important;width:100%!important;height:100%!important;z-index:80}
 #setO{background:rgba(0,0,0,.78)!important;width:100%!important;height:100%!important;z-index:90}
 #menuO{background:rgba(0,5,15,.97);overflow-y:auto;padding:40px 0;justify-content:flex-start;z-index:40}
+#langSelWrap .lang-curr{min-height:48px;min-width:48px;font-size:16px;background:#123a66;color:#fff;border:2px solid #7cf}
 #menuO .tt span{display:none}
 #pauseO .btn,#exitConfirm .btn,#introO .btn,#deadO .btn{min-height:48px;min-width:48%;font-size:18px;box-sizing:border-box}
 #introO,#deadO,#pauseO,#setO,#exitConfirm{color:#e8f4ff;font-size:16px}

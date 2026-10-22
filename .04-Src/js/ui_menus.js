@@ -138,18 +138,17 @@ function updateMenuTexts(){
     } catch(e){ poolN = 1600; }
     if(!poolN) poolN = 1600;
     var el = document.getElementById('menuSub');
-    if(el) el.innerHTML = tt('menuSub') +
-      '<br><span style="color:#8cf;font-size:11px">\u{1F30A} '+tt('poolWill',{n:poolN,kinds:SPECIES_DB.length})+'</span>';
+    if(el) el.innerHTML = tt('menuSub');
   })();
-  document.getElementById('startBtn').textContent=tt('start');
-  document.getElementById('helpBtn').textContent=tt('help');
-  document.getElementById('setBtn2').textContent=tt('set');
-  document.getElementById('wikiBtnMenu').textContent=tt('wiki');
-  document.getElementById('resBtn').textContent=tt('resume');
-  document.getElementById('pHelp').textContent=tt('help');document.getElementById('pSet').textContent=tt('set');document.getElementById('pWiki').textContent=tt('wiki');
-  document.getElementById('pauseT').textContent=tt('paused');
-  document.getElementById('restartBtn').textContent=tt('restart');document.getElementById('menuBtn').textContent=tt('menu');
-  document.getElementById('helpT').textContent=tt('help');document.getElementById('helpClose').textContent=tt('close');
+  var sb=document.getElementById('startBtn'); if(sb) sb.textContent=tt('start');
+  var hb=document.getElementById('helpBtn'); if(hb) hb.textContent=tt('help');
+  var stb=document.getElementById('setBtn2'); if(stb) stb.textContent=tt('set');
+  var wb=document.getElementById('wikiBtnMenu'); if(wb) wb.textContent=tt('wiki');
+  var rb=document.getElementById('resBtn'); if(rb) rb.textContent=tt('resume');
+  var ph=document.getElementById('pHelp'); if(ph) ph.textContent=tt('help');var ps=document.getElementById('pSet'); if(ps) ps.textContent=tt('set');var pw=document.getElementById('pWiki'); if(pw) pw.textContent=tt('wiki');
+  var pt=document.getElementById('pauseT'); if(pt) pt.textContent=tt('paused');
+  var rsb=document.getElementById('restartBtn'); if(rsb) rsb.textContent=tt('restart');var mb=document.getElementById('menuBtn'); if(mb) mb.textContent=tt('menu');
+  var ht=document.getElementById('helpT'); if(ht) ht.textContent=tt('help');var hc=document.getElementById('helpClose'); if(hc) hc.textContent=tt('close');
   var pLegend=document.getElementById('pLegend'); if(pLegend) pLegend.textContent=tt('legend');
   var pCam=document.getElementById('pCam'); if(pCam) pCam.textContent=tt('camFly');
   var pMap=document.getElementById('pMap'); if(pMap) pMap.textContent=tt('mapChart');

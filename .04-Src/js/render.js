@@ -5,6 +5,7 @@ function render(){
   if(!isFinite(cam.x))cam.x=0;
   if(!isFinite(cam.y))cam.y=PD*0.3;
   if(!isFinite(zoom)||zoom<=0)zoom=1;
+  if(typeof snapTestCenter==='function') snapTestCenter();
   if(!isFinite(dayLight))dayLight=0.5;
   if(!isFinite(tod))tod=12;
   // minimap early-return removed
@@ -186,6 +187,7 @@ function render(){
   }
 
   if(window.eventManager) window.eventManager.draw(ctx, cv.width, cv.height);
+  if(typeof paintTestSilhouette==='function') paintTestSilhouette();
   /* renderEventLogs removed */
   
   // Damage indicators REMOVED

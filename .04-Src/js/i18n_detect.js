@@ -85,11 +85,13 @@ if (typeof window !== 'undefined') {
       }
     }
     applyLangFont(curLang);
+    if (typeof GENDERED_SP!=='undefined') GENDERED_SP.name = tt('sp.1001');
     if (curLang !== 'ru' && curLang !== 'en') {
       loadLangPack(curLang).then(function() {
         applyLangFont(curLang);
         if (typeof buildLangBar === 'function') buildLangBar();
         if (typeof updateMenuTexts === 'function') updateMenuTexts();
+        if (typeof GENDERED_SP!=='undefined') GENDERED_SP.name = tt('sp.1001');
       }).catch(function(){});
     }
   } catch (e) {}

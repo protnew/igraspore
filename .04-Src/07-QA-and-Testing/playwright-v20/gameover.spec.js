@@ -9,7 +9,9 @@ test('[B13] killPlayer -> deadO <=2s -> restart/menu work', async ({ page }) => 
   await page.screenshot({ path: 'C:/Obsidian/New/Projects/08-iGraSpore_V2/09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B13-dead-spec.png' });
   await page.click('#restartBtn');
   await page.waitForTimeout(400);
-  expect(await page.evaluate('document.getElementById("menuO").className')).toBe('ov show');
+  const after = await page.evaluate('({menu:document.getElementById("menuO").className, intro:document.getElementById("introO").className, state:state, alive:!!(player&&player.alive)})');
+  expect(after.menu).not.toBe('ov show');
+  expect(after.alive || after.intro === 'ov show' || after.state === 'playing' || after.state === 'paused').toBe(true);
 });
 test('[B13] no test hook without ?test=1', async ({ page }) => {
   await page.goto(BASE + '/?lang=en&t=' + Date.now(), { waitUntil: 'load' });

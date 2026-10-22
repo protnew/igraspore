@@ -3,8 +3,9 @@
 
 window.closeIntroCard = function(){
   var el=document.getElementById('roleCard'); if(el) el.remove();
+  var io=document.getElementById('introO'); if(io) io.className='ov';
   if(typeof state!=='undefined' && state==='paused') state='playing';
-  if(window._pendingTutorial){ window._pendingTutorial=false; try{ window.startTutorial(false); }catch(e){} }
+  window._pendingTutorial=false;
 };
 window.showDemoChrome = function(sp){
   var b=document.getElementById('demoBadge'), x=document.getElementById('demoExit');
@@ -88,6 +89,33 @@ function igsBindV20(){
     dx._v20=1;
     dx.onclick=function(ev){ if(ev){ev.stopPropagation();ev.preventDefault();} if(window.exitDemo) window.exitDemo(); };
   }
+  var bg=document.getElementById('burgerGame');
+  if(bg && !bg._v20){
+    bg._v20=1;
+    bg.onclick=function(){ var p=document.getElementById('actionsPanel'); if(p) p.className='ov show'; };
+  }
+  function wireAp(id, target){
+    var e=document.getElementById(id);
+    if(!e || e._v20) return;
+    e._v20=1;
+    e.onclick=function(){
+      var t=document.getElementById(target);
+      if(t){ if(typeof t.onclick==='function') t.onclick(); else t.click(); }
+      var p=document.getElementById('actionsPanel'); if(p) p.className='ov';
+    };
+  }
+  wireAp('apFree','bFree');
+  wireAp('apMicro','bMicro');
+  wireAp('apRender','bRender');
+  wireAp('apFol','bFol');
+  wireAp('apZI','bZI');
+  wireAp('apZO','bZO');
+  var sbx=document.getElementById('apSandbox');
+  if(sbx && !sbx._v20){ sbx._v20=1; sbx.onclick=function(){ var t=document.getElementById('sandboxTools'); if(t) t.style.display='block'; var p=document.getElementById('actionsPanel'); if(p) p.className='ov'; }; }
+  var ld=document.getElementById('apLeader');
+  if(ld && !ld._v20){ ld._v20=1; ld.onclick=function(){ var o=document.getElementById('leaderboardO'); if(o) o.className='ov show'; var p=document.getElementById('actionsPanel'); if(p) p.className='ov'; }; }
+  var cl=document.getElementById('apClose');
+  if(cl && !cl._v20){ cl._v20=1; cl.onclick=function(){ var p=document.getElementById('actionsPanel'); if(p) p.className='ov'; }; }
   var introOk=document.getElementById('roleCardOk');
   if(introOk && !introOk._v20){ introOk._v20=1; }
 }

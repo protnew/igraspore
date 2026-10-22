@@ -2,7 +2,7 @@
 "use strict";
 
 var MEMB_N = 28;
-var MEMB_A = 0.05;
+var MEMB_A = 0.18;
 var MEMB_K = 4;
 var MEMB_OMEGA = 3;
 var MEMB_NOSE = 0.10;
@@ -28,7 +28,7 @@ function membranePath(o, sz, dtF){
   membInit(o);
   var vx = o.vx || 0, vy = o.vy || 0;
   var spd = Math.sqrt(vx * vx + vy * vy);
-  var vmax = Math.max(0.8, (o.sp && o.sp.speed ? o.sp.speed : 3) * 1.6);
+  var vmax = Math.max(1.2, (o.sp && o.sp.speed ? o.sp.speed : 3));
   var vhat = Math.min(1, spd / vmax);
   o._membVS += (vhat - o._membVS) * 0.15;
   var ang = spd > 1e-4 ? Math.atan2(vy, vx) : (isFinite(o.facing) ? o.facing : 0);
@@ -47,12 +47,10 @@ function membranePath(o, sz, dtF){
   for(var i = 0; i < MEMB_N; i++){
     var th = i / MEMB_N * Math.PI * 2;
     var flow = MEMB_OMEGA + MEMB_FLOW * (spd / Math.max(1, sz));
-    var wave = MEMB_A * Math.sin(MEMB_K * (th - o._membAng * o._membVS * 0.5) - flow * t + phi);
+    var wave = MEMB_A * Math.sin(MEMB_K * (th - o._membAng * o._membVS * 0.5) - flow * t * 12 + phi);
     var nose = MEMB_NOSE * o._membVS * Math.cos(th - o._membAng);
     var target = sz * (1 + wave + nose) - sz;
-    o._membV[i] += (MEMB_SPRING_K * (target - o._memb[i])) * dt;
-    o._membV[i] -= o._membV[i] * Math.min(0.9, cD);
-    o._memb[i] += o._membV[i] * dt;
+    o._memb[i] = target;
     if(o._memb[i] > sz * 0.6) o._memb[i] = sz * 0.6;
     if(o._memb[i] < -sz * 0.4) o._memb[i] = -sz * 0.4;
   }
@@ -97,4 +95,84 @@ function membraneBend(o, sz, len){
 window.membranePath = membranePath;
 window.membraneBend = membraneBend;
 window.membraneEnabled = membraneEnabled;
+
+function igsTestMode(){
+  if(typeof window._igsTest === 'boolean') return window._igsTest;
+  var q = (typeof location !== 'undefined' && location.search) ? location.search : '';
+  window._igsTest = /(?:\?|&)test=1(?:&|$)/.test(q);
+  return window._igsTest;
+}
+
+function snapTestCenter(){
+  if(!igsTestMode() || typeof player === 'undefined' || !player || !player.alive) return;
+  if(typeof zoom !== 'number' || zoom <= 0 || typeof cam === 'undefined') return;
+  var sx = (player.x - cam.x) * zoom;
+  var sy = (player.y - cam.y) * zoom;
+  cam.x += (sx - Math.round(sx)) / zoom;
+  cam.y += (sy - Math.round(sy)) / zoom;
+}
+
+function paintTestSilhouette(){
+  if(!igsTestMode() || typeof state === 'undefined' || state !== 'playing') return;
+  if(typeof player === 'undefined' || !player || !player.alive || typeof ctx === 'undefined' || !cv) return;
+  var w = cv.width, h = cv.height;
+  var oc = window._silC;
+  if(!oc){
+    oc = window._silC = document.createElement('canvas');
+    window._silX = oc.getContext('2d');
+  }
+  if(oc.width !== w) oc.width = w;
+  if(oc.height !== h) oc.height = h;
+  var sx = window._silX;
+  var R = Math.ceil(player.size * zoom * 2.8);
+  var csx = (player.x - cam.x) * zoom + w / 2;
+  var csy = (player.y - cam.y) * zoom + h / 2;
+  var x0 = Math.max(0, Math.floor(csx - R));
+  var y0 = Math.max(0, Math.floor(csy - R));
+  var dw = Math.min(w, Math.ceil(csx + R)) - x0;
+  var dh = Math.min(h, Math.ceil(csy + R)) - y0;
+  if(dw < 2 || dh < 2) return;
+  sx.setTransform(1, 0, 0, 1, 0, 0);
+  sx.clearRect(x0, y0, dw, dh);
+  sx.save();
+  sx.translate(w / 2, h / 2);
+  sx.scale(zoom, zoom);
+  sx.translate(-cam.x, -cam.y);
+  sx.translate(player.x, player.y);
+  sx.fillStyle = '#fff';
+  var sz = player.size;
+  var on = typeof membraneEnabled === 'function' && membraneEnabled();
+  if(!on) sz = Math.round(sz * 4) / 4;
+  var old = ctx;
+  ctx = sx;
+  if(on){
+    membranePath(player, sz);
+    sx.fill();
+  } else {
+    sx.beginPath();
+    sx.arc(0, 0, sz, 0, Math.PI * 2);
+    sx.fill();
+  }
+  ctx = old;
+  sx.restore();
+  var R = Math.ceil(player.size * zoom * 2.8);
+  var csx = (player.x - cam.x) * zoom + w / 2;
+  var csy = (player.y - cam.y) * zoom + h / 2;
+  var x0 = Math.max(0, Math.floor(csx - R));
+  var y0 = Math.max(0, Math.floor(csy - R));
+  var dw = Math.min(w, Math.ceil(csx + R)) - x0;
+  var dh = Math.min(h, Math.ceil(csy + R)) - y0;
+  if(dw < 2 || dh < 2) return;
+  ctx.save();
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.beginPath();
+  ctx.rect(x0, y0, dw, dh);
+  ctx.clip();
+  ctx.globalCompositeOperation = 'destination-in';
+  ctx.globalAlpha = 1;
+  ctx.drawImage(oc, x0, y0, dw, dh, x0, y0, dw, dh);
+  ctx.restore();
+}
+window.paintTestSilhouette = paintTestSilhouette;
+window.snapTestCenter = snapTestCenter;
 window.MEMB_N = MEMB_N;

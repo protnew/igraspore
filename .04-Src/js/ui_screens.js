@@ -36,6 +36,12 @@ function buildDiff(){
     b.onclick=function(ev){difficulty=ev.target.getAttribute('data-d');buildDiff();};dw.appendChild(b);}
 }
 
+function deathLedger(startPop, born, alive, age, speciesAlive, pondAlive){
+  var a = alive|0, b = born|0, s = startPop|0;
+  var extinct = (speciesAlive|0)===0 && (pondAlive|0)===0;
+  return { dead: Math.max(0, s + b - a), alive: a, time: Math.max(0, Math.round(Number(age)||0)), extinct: extinct, title: extinct ? 'EXTINCT' : 'Your cell died' };
+}
+
 function showDeadScreen(){
   // Virus spectator mode — show infection stats, not death
   if(window.virusPlayer){
@@ -71,8 +77,11 @@ function showDeadScreen(){
   }
   var globalAlive = 0;
   for(var ai=0; ai<orgs.length; ai++){ if(orgs[ai] && orgs[ai].alive) globalAlive++; }
-  var globalDead = Math.max(0, startPop + globalBorn - globalAlive);
-  var extinct = (player && player.sp && speciesPop[player.sp.id] && speciesPop[player.sp.id].alive===0 && globalAlive===0);
+  var speciesAlive = (player && player.sp && speciesPop[player.sp.id]) ? (speciesPop[player.sp.id].alive||0) : 1;
+  var ledger = deathLedger(startPop, globalBorn, globalAlive, cellAge, speciesAlive, globalAlive);
+  var globalDead = ledger.dead;
+  var extinct = ledger.extinct;
+  playSec = ledger.time;
   html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.pondStatistics'))+'</div>';
   html+='<table class="stbl" style="margin-bottom:10px">';
   html+='<tr><td class="lbl">'+tt('days')+'</td><td class="val">'+totalDays+'</td></tr>';
@@ -114,7 +123,7 @@ function showDeadScreen(){
   html+='</table>';
   
   ds.innerHTML=html;
-  document.getElementById('deadT').textContent = extinct ? tt('dead') : 'Your cell died';
+  document.getElementById('deadT').textContent = extinct ? tt('dead') : ledger.title;
   document.getElementById('deadO').className='ov show';
 }
 
@@ -184,7 +193,29 @@ function buildSettings(){
   html+='<div class="slider-row"><span>'+tt('predation')+'</span><input type="range" min="0" max="2" step="0.1" value="'+settings.predation+'" oninput="settings.predation=parseFloat(this.value)" /><span class="slider-val">'+settings.predation.toFixed(1)+'</span></div>';
   // Reproduction rate
   html+='<div class="slider-row"><span>'+tt('divRate')+'</span><input type="range" min="0" max="3" step="0.1" value="'+settings.divRate+'" oninput="settings.divRate=parseFloat(this.value)" /><span class="slider-val">'+settings.divRate.toFixed(1)+'</span></div>';
+  var langEnabled = window.IGS_ENABLED || {ru:1,en:1,'pt-BR':1,id:1,de:1,fr:1,hi:1,ja:1,vi:1,ko:1,th:1,it:1,pl:1,uk:1,'zh-TW':1,ms:1,bn:1,es:1,tr:1,fil:1};
+  var langCodes = Object.keys(langEnabled);
+  html+='<div class="sr"><span>Language</span><select id="setLang" style="min-height:48px;font-size:16px;background:#123a66;color:#fff">';
+  for(var li=0; li<langCodes.length; li++){
+    var code=langCodes[li];
+    html+='<option value="'+code+'"'+(code===curLang?' selected':'')+'>'+code+'</option>';
+  }
+  html+='</select></div>';
   sb.innerHTML=html;
+  var sel=document.getElementById('setLang');
+  if(sel) sel.onchange=function(){
+    var next=sel.value;
+    function apply(){
+      curLang=next;
+      if(typeof applyLangFont==='function') applyLangFont(curLang);
+      try{ localStorage.setItem('igs_lang', curLang); localStorage.removeItem('igs_lang_auto'); }catch(eL){}
+      try{ history.replaceState(null,'', location.pathname+'?lang='+encodeURIComponent(curLang)); }catch(eU){}
+      if(typeof updateMenuTexts==='function') updateMenuTexts();
+      if(typeof buildLangBar==='function') buildLangBar();
+    }
+    if(window.loadLangPack) window.loadLangPack(next).then(apply).catch(apply);
+    else apply();
+  };
 }
 
 function toggleSet(el){var k=el.getAttribute('data-s');settings[k]=!settings[k];el.className='tg'+(settings[k]?' on':'');}

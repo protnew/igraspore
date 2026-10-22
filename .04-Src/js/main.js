@@ -320,8 +320,13 @@ function startGame(isScreensaver){
      } // end !virusPlayer food seed
      // 1) Карточка «ты кто / кого ешь» — показываем introO overlay
      if(!isScreensaver && !window.virusPlayer){
+       var introKey='igs.intro.'+((typeof selSpecies==='number')?selSpecies:0);
+       var introSeen=false;
+       try{ introSeen=localStorage.getItem(introKey)==='1'; }catch(eSeen){}
+       window._introSeen=introSeen;
        var io=document.getElementById('introO'); var ib=document.getElementById('introBody'); var it=document.getElementById('introT');
-       if(io && ib && it){
+       if(!introSeen && io && ib && it){
+         try{ localStorage.setItem(introKey,'1'); }catch(eSet){}
          var cat = sp.cat || '';
          var name = (typeof catName==='function' ? catName(cat) : cat);
          var role = (typeof catRole==='function' ? catRole(cat) : '');
@@ -341,7 +346,7 @@ function startGame(isScreensaver){
   
   // Start zoomed in enough to see neighbors (Spore/Agar feel)
   state='playing';zoom=1.8;tZoom=1.8;gt=0;fc=0;lastT=0;
-  if(!isScreensaver && !window.virusPlayer){
+  if(!isScreensaver && !window.virusPlayer && !window._introSeen){
     state='paused';
     window._pendingTutorial=true;
   }

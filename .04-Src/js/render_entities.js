@@ -28,14 +28,14 @@ function drawBody(o,sz,fc2,fd, batched){
   }
   if(sh==='circle'){
       var vmag = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
-      var stretch = Math.min(1.4, 1.0 + vmag * 0.08);
-      var squish = Math.max(0.7, 1.0 - vmag * 0.04);
-      // Membrane fluidity: subtle ripple on cell surface (lipid bilayer dynamics)
-      var memRipple=(settings.renderMode==='realistic'?0.008:0.025)*Math.min(1, 4/Math.max(zoom,1));
+      var membOn = typeof membraneEnabled==='function' && membraneEnabled();
+      var stretch = membOn ? Math.min(1.4, 1.0 + vmag * 0.08) : 1;
+      var squish = membOn ? Math.max(0.7, 1.0 - vmag * 0.04) : 1;
+      var memRipple = membOn ? (settings.renderMode==='realistic'?0.008:0.025)*Math.min(1, 4/Math.max(zoom,1)) : 0;
       if(o._preMitosis || (o._spikeHold||0)>0) memRipple *= 0.2;
       for(var i=0; i<=32; i++) {
           var a = (i/32) * Math.PI * 2;
-          var r = sz + Math.sin(a*6-o.pulse*1.2)*(Math.min(vmag,4)*0.12) + Math.sin(a*12+o.pulse*1.5)*sz*memRipple;
+          var r = membOn ? (sz + Math.sin(a*6-o.pulse*1.2)*(Math.min(vmag,4)*0.12) + Math.sin(a*12+o.pulse*1.5)*sz*memRipple) : sz;
           var x = Math.cos(a) * r * stretch;
           var y = Math.sin(a) * r * squish;
           if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);

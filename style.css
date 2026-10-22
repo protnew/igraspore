@@ -105,9 +105,16 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 .ov.show{display:flex}
 #introO,#pauseO,#exitConfirm,#deadO{background:rgba(0,0,0,.78)!important;width:100%!important;height:100%!important;z-index:80}
 #setO{background:rgba(0,0,0,.78)!important;width:100%!important;height:100%!important;z-index:90}
-#menuO{background:rgba(0,5,15,.97);overflow-y:auto;padding:40px 0;justify-content:flex-start;z-index:40}
+#menuO.ov.show{display:flex!important;position:fixed!important;inset:0!important;background:rgba(0,5,15,.97);overflow:hidden!important;padding:8px 0 0!important;justify-content:flex-start;align-items:stretch!important;z-index:40;width:100vw!important;max-width:100vw!important;height:100vh!important;left:0!important;right:0!important;box-sizing:border-box;flex-direction:column!important}
+#menuO.ov:not(.show){display:none!important}
+#menuO #spGrid{flex:1 1 auto!important;overflow-y:auto!important;min-height:0!important;width:100%!important;max-width:none!important;max-height:none!important;margin-bottom:72px!important}
+#menuFooter{position:absolute!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;min-height:64px;display:flex;gap:8px;justify-content:center;align-items:center;padding:8px;box-sizing:border-box;background:rgba(0,8,18,.97);z-index:6}
+#menuFooter .btn{min-height:48px;min-width:96px;font-size:18px;flex:1}
 #langSelWrap .lang-curr{min-height:48px;min-width:48px;font-size:16px;background:#123a66;color:#fff;border:2px solid #7cf}
-#menuO .tt span{display:none}
+#actBar .ab{min-width:48px;min-height:48px}
+#actionsPanel{z-index:96;background:rgba(0,0,0,.78)!important;width:100%!important;height:100%!important}
+#actionsPanel .ap-col{width:min(520px,86vw);display:flex;flex-direction:column;gap:8px}
+#actionsPanel .btn{width:100%;min-height:48px;font-size:18px}
 #pauseO .btn,#exitConfirm .btn,#introO .btn,#deadO .btn{min-height:48px;min-width:48%;font-size:18px;box-sizing:border-box}
 #introO,#deadO,#pauseO,#setO,#exitConfirm{color:#e8f4ff;font-size:16px}
 #helpO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
@@ -115,8 +122,8 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 #setO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
 #wikiO{background:rgba(0,5,15,.97);overflow:hidden}
 .tt{font-size:32px;color:#4ef;margin-bottom:3px;text-shadow:0 0 15px #2af}
-.sb2{font-size:12px;color:#678;margin-bottom:10px}
-.btn{padding:9px 26px;font-size:14px;background:#123;color:#bef;border:2px solid #345;border-radius:7px;cursor:pointer;font-family:inherit;margin:3px;transition:all .15s}
+.sb2{font-size:13px;color:#9bd;margin-bottom:10px}
+.btn{padding:9px 26px;font-size:18px;min-height:48px;background:#123;color:#bef;border:2px solid #345;border-radius:7px;cursor:pointer;font-family:inherit;margin:3px;transition:all .15s}
 .btn:hover{background:#234;border-color:#4af}
 .btn.sm{font-size:11px;padding:5px 14px}
 #catSel{display:flex;gap:3px;margin:6px 0;flex-wrap:wrap;justify-content:center}

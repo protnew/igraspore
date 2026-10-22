@@ -44,17 +44,17 @@ test('[B11+B14+B17] HUD: scale/status no overlap, watermark corner, tap sizes', 
     await page.waitForTimeout(700);
     const r = await page.evaluate(`(function(){
       function bb(id){var e=document.getElementById(id); if(!e)return null; var b=e.getBoundingClientRect(); return {t:b.top,l:b.left,r:b.right,b:b.bottom,w:b.width,h:b.height};}
-      var hud=bb('hud'), sw=bb('scaleW'), wm=bb('verWm');
+      var hud=bb('hud'), sw=bb('scaleW');
       var overlap = hud&&sw ? Math.min(hud.r,sw.r)-Math.max(hud.l,sw.l) : -1;
       var ovl = overlap>0 && (Math.min(hud.b,sw.b)-Math.max(hud.t,sw.t))>0;
       var small=[];
       ['helpBtn','setBtn2','wikiBtnMenu','burgerBtn'].forEach(function(id){var e=document.getElementById(id); if(e){var b=e.getBoundingClientRect(); if(b.height>0&&b.height<48)small.push(id+':'+Math.round(b.height));}});
       var acts=[].slice.call(document.querySelectorAll('#actBar .ab')).filter(function(e){return e.getBoundingClientRect().height>0;});
       acts.forEach(function(e){var b=e.getBoundingClientRect(); if(b.height<48)small.push(e.id+':'+Math.round(b.height));});
-      return {scaleOverlap: ovl, wmRight: wm?Math.round(window.innerWidth-wm.r):99, wmBottom: wm?Math.round(window.innerHeight-wm.b):99, small: small};})()`);
+      var versionInPlay = !!document.getElementById('verWm') || (document.body.innerText||'').indexOf('v2.0.0')>=0;
+      return {scaleOverlap: ovl, versionInPlay: versionInPlay, small: small};})()`);
     expect(r.scaleOverlap, sz.name + ' scale/status overlap').toBe(false);
-    expect(r.wmRight, sz.name + ' watermark right').toBeLessThanOrEqual(10);
-    expect(r.wmBottom, sz.name + ' watermark bottom').toBeLessThanOrEqual(8);
+    expect(r.versionInPlay, sz.name + ' version drawn in play').toBe(false);
     expect(r.small, sz.name + ' small taps').toEqual([]);
     await page.screenshot({ path: 'C:/Obsidian/New/Projects/08-iGraSpore_V2/09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-C-hud-' + sz.name + '.png' });
     await page.close();

@@ -151,7 +151,7 @@ window.tryPlayerEat = function(){
   if(!player.alive){ player.alive=true; }
   // Producers don't hunt — they photosynthesize
   if(player.sp && player.sp.cat === 'producer'){
-    if(window.showToast) window.showToast((tt('toast.eat.plant')), '#cf8');
+    if(window.showToast && !window._eatSilent) window.showToast((tt('toast.eat.plant')), '#cf8');
     player._lightHint = true;
     return false;
   }
@@ -187,16 +187,16 @@ window.tryPlayerEat = function(){
       // legacy
       best.divCD=0; best.invuln=0;
       eatOrg(player, best);
-      if(window.showToast) window.showToast(tt('toast.eat.ok'),'#8f8');
+      if(window.showToast && !window._eatSilent) window.showToast(tt('toast.eat.ok'),'#8f8');
       return true;
     }
     // Pull toward
     var dx=best.x-player.x, dy=best.y-player.y, dd=Math.sqrt(dx*dx+dy*dy)||1;
     player.vx += dx/dd*10; player.vy += dy/dd*10;
-    if(window.showToast) window.showToast(tt('toast.eat.closer'),'#fd8');
+    if(window.showToast && !window._eatSilent) window.showToast(tt('toast.eat.closer'),'#fd8');
     return false;
   }
-  if(window.showToast) window.showToast(tt('toast.eat.noneAuto'),'#faa');
+  if(window.showToast && !window._eatSilent) window.showToast(tt('toast.eat.noneAuto'),'#faa');
   return false;
 };
 
@@ -266,7 +266,7 @@ document.addEventListener('keydown',function(e){
     if(freeCam){camKeys[ck]=true;e.preventDefault();}
     if(autoAI)autoAI=false;
   }
-  if(k===' '||k==='space'||e.code==='Space'){ e.preventDefault(); window.tryPlayerEat && window.tryPlayerEat(); }
+  if(k===' '||k==='space'||e.code==='Space'){ e.preventDefault(); window._eatSilent=1; if(window.tryPlayerEat) window.tryPlayerEat(); window._eatSilent=0; }
   if(k==='tab'){
     var _ov = topmostOpenOverlay();
     if(_ov){ trapTabInOverlay(e, _ov); }              // overlay open → Tab stays inside
@@ -493,7 +493,6 @@ window.manualFeed = function(){
     return false;
   }
 };
-
 // Manual feed button
 (function(){
   var b = document.getElementById('bFeed');

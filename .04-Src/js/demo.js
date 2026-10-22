@@ -26,6 +26,7 @@ var DEMO_GROUPS = [
 
 function startDemoMode() {
   window.demoMode = true;
+  if(typeof showDemoChrome==='function') showDemoChrome();
   window.demoPossessed = null;
   window.spectatorMode = true;
   window.screensaverAutoCam = false;
@@ -173,7 +174,9 @@ function startDemoMode() {
       nav += '<button type="button" data-dg="'+(gi+1)+'" style="margin:2px 2px 0 0;padding:3px 7px;font:11px/1.2 system-ui;background:#123;color:#cfe;border:1px solid #4af;border-radius:5px;cursor:pointer">'+(gi+1)+'</button>';
     }
     var labelsBtn = '<button type="button" id="demoLabelsBtn" aria-pressed="'+(window._demoLabels?'true':'false')+'" style="margin:2px 0 0 2px;padding:3px 9px;font:700 11px/1.2 system-ui;background:'+(window._demoLabels?'#1a4':'#123')+';color:'+(window._demoLabels?'#fff':'#cfe')+';border:1px solid '+(window._demoLabels?'#4f8':'#4af')+';border-radius:5px;cursor:pointer">'+tt('demo.labels')+'</button>';
-    tip.innerHTML = tt('demo.tip') + nav + labelsBtn;
+    var tipTxt = tt('demo.tip');
+    if(window.matchMedia && matchMedia('(pointer:coarse)').matches) tipTxt = String(tipTxt).replace(/WASD\/\S+/g, 'touch');
+    tip.innerHTML = tipTxt + nav + labelsBtn;
     tip.onclick = function(ev){
       var b = ev.target;
       if(!b || !b.getAttribute) return;

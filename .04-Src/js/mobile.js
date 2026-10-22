@@ -19,7 +19,7 @@
   css.textContent = [
     /* UI-RESTORE §5.5: actBar stays visible (wrap into rows); visibility itself is JS-driven */
     '.is-mobile #actBar{flex-wrap:wrap!important;gap:4px!important;max-width:96vw!important;bottom:max(var(--actbar-bottom),env(safe-area-inset-bottom))!important}',
-    '.is-mobile .ab{min-width:44px!important;min-height:44px!important;padding:4px 4px!important;font-size:11px!important}',
+    '.is-mobile .ab{min-width:48px!important;min-height:48px!important;padding:4px 4px!important;font-size:13px!important}',
     '.is-mobile #spdBar{display:none!important}',
     '.is-mobile #sandboxTools{display:none!important}',
     '.is-mobile #leaderboardO{display:none!important}',
@@ -35,7 +35,7 @@
     '.is-mobile #todWrap{font-size:9px!important;top:22px!important}',
     '.is-mobile #tip{font-size:11px!important;max-width:88vw!important;z-index:80!important;pointer-events:none!important}',
     '.is-mobile #hDivReady{font-size:9px!important;max-width:120px!important}',
-    '.is-mobile .ov{width:94vw!important;max-width:94vw!important;padding:8px!important;max-height:92vh!important;overflow-y:auto!important;z-index:200!important}',
+    '.is-mobile .ov{width:100vw!important;max-width:100vw!important;left:0!important;right:0!important;padding:8px!important;height:100%!important;max-height:none!important;overflow-y:auto!important;z-index:200!important}',
     '.is-mobile .tt{font-size:16px!important}',
     '.is-mobile .scrollbox{max-height:35vh!important}',
     '.is-mobile #spGrid{grid-template-columns:repeat(auto-fill,minmax(70px,1fr))!important;gap:3px!important}',
@@ -58,7 +58,8 @@
     '#mTop .ma.menu{background:rgba(20,60,90,0.85);border-color:rgba(120,220,255,0.55);color:#9fe8ff}',
     /* Hide mobile chrome when menu open */
     '.is-mobile.menu-open #mActs,.is-mobile.menu-open #mJoy,.is-mobile.menu-open #mTop{display:none!important}',
-    '.is-mobile #menuO.show{display:block!important;z-index:300!important}'
+    '.is-mobile #setO,.is-mobile #exitConfirm,.is-mobile #actionsPanel{z-index:340!important;width:100vw!important}',
+    '.is-mobile #menuO.show{display:flex!important;z-index:280!important;width:100vw!important;max-width:100vw!important;height:100vh!important}'
   ].join('\n');
   document.head.appendChild(css);
 
@@ -373,12 +374,6 @@
     }
     return true;
   };
-  window.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' || e.keyCode === 27) {
-      e.preventDefault();
-      window.hardwareBack();
-    }
-  });
   window.onAndroidBack = function(){
     window.hardwareBack();
     return true;

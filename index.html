@@ -26,7 +26,6 @@
 <style id="a11y-focus">:focus-visible{outline:2px solid #5ed4a0;outline-offset:2px;}a#apkBtn:focus-visible{outline:2px solid #5ed4a0;outline-offset:3px;}</style>
 </head>
 <body>
-<div style="position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:9999;color:rgba(255,255,255,0.4);font-size:12px;font-family:monospace;pointer-events:none;text-shadow:0 0 2px #000;">iGraSpore V2 - v2.0.0</div>
 <canvas id="glCanvas" aria-hidden="true" style="position:absolute;top:0;left:0;z-index:0;pointer-events:none;display:none;"></canvas><canvas id="c"></canvas>
 <div id="mmWrap" style="width:110px">
 <canvas id="mm" width="110" height="80" style="width:110px;height:80px;border:1px solid #1a3a55;border-radius:4px;cursor:pointer;display:block;background:rgba(0,20,40,0.45)"></canvas>
@@ -88,8 +87,22 @@
 <div class="ab hud-parked" id="bWiki" role="button" aria-label="" data-k-aria="aria.wiki2" title="" data-k-title="tip.wikiB">&#128218;<span class="hk">B</span></div>
 <div class="ab" id="bPause" data-hud-slot="menu" role="button" aria-label="" data-k-aria="aria.pause" title="" data-k-title="tip.pause">☰</div>
 <div class="ab" id="pauseBtn" data-hud-slot="menu" role="button" aria-label="" data-k-aria="aria.pause" title="" data-k-title="tip.pause" style="min-width:48px;min-height:48px">⏸</div>
+<div class="ab" id="burgerGame" role="button" aria-label="More actions" style="min-width:48px;min-height:48px">☰</div>
 <div class="ab hud-parked" id="bZI" role="button" aria-label="" data-k-aria="aria.zi" title="" data-k-title="tip.zi">&#128269;+</div>
 <div class="ab hud-parked" id="bZO" role="button" aria-label="" data-k-aria="aria.zo" title="" data-k-title="tip.zo">&#128269;-</div>
+</div>
+<div id="actionsPanel" class="ov">
+  <div class="ap-col">
+    <button class="btn" id="apFree" type="button">Fly</button>
+    <button class="btn" id="apMicro" type="button">Micro</button>
+    <button class="btn" id="apRender" type="button">Render</button>
+    <button class="btn" id="apFol" type="button">Follow</button>
+    <button class="btn" id="apZI" type="button">Zoom+</button>
+    <button class="btn" id="apZO" type="button">Zoom-</button>
+    <button class="btn" id="apSandbox" type="button">Sandbox</button>
+    <button class="btn" id="apLeader" type="button">Leaderboard</button>
+    <button class="btn" id="apClose" type="button">Close</button>
+  </div>
 </div>
 <div id="leaderboardO" class="ov">
   <div class="tt" data-k="lb.title"></div>
@@ -97,7 +110,7 @@
   <button class="btn" id="lbClose" data-k="close"></button>
 </div>
 <div id="menuO" class="ov show">
-<div class="tt">iGraSpore <span style="font-size:12px;color:#789">v2.0.0</span></div>
+<div class="tt">iGraSpore <span id="menuVer" style="font-size:16px;color:#d7e8ff">v3.0.0</span></div>
 <div class="sb2" id="menuSub"></div>
 <div style="margin-bottom:8px" id="diffWrap"></div>
 <div id="menuActions" class="menu-actions">
@@ -125,8 +138,7 @@
 </div>
 <div id="catSel"></div>
 <div class="scrollbox" id="spGrid"></div>
-<div style="margin-top:4px"><button class="btn sm" id="helpBtn" aria-label="" data-k-aria="aria.help"></button> <button class="btn sm" id="setBtn2" aria-label="" data-k-aria="aria.set"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
-<div id="menuFooter"></div>
+<div id="menuFooter"><button class="btn" id="helpBtn" aria-label="" data-k-aria="aria.help"></button><button class="btn" id="setBtn2" aria-label="" data-k-aria="aria.set"></button><button class="btn" id="wikiBtnMenu"></button></div>
 </div>
 <div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn" id="pHelp"></button><button class="btn" id="pSet"></button><button class="btn" id="pWiki"></button><button class="btn" id="pExit" type="button">Exit</button></div>
 <div id="exitConfirm" class="ov" style="background:rgba(0,0,0,.78);z-index:95"><div style="background:rgba(4,12,18,0.94);padding:22px 16px;border-radius:14px;width:min(520px,86vw);text-align:center"><div class="tt" style="font-size:20px" id="ecT">Exit?</div><div id="ecMsg" style="color:#cde;margin:8px 0 14px;font-size:16px">Progress of this life will be lost.</div><button class="btn" id="ecNo" type="button">No</button><button class="btn" id="ecYes" type="button">Yes</button></div></div>

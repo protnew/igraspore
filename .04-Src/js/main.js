@@ -203,6 +203,7 @@ window.startTutorial = function(force){
 };
 
 function startGame(isScreensaver){
+  ['wikiO','helpO','setO','pauseO','leaderboardO'].forEach(function(id){var e=document.getElementById(id);if(e)e.className='ov';});
   window.demoMode = false;
   window.demoPossessed = null;
   try{ var dt=document.getElementById("demoTip"); if(dt) dt.style.display="none"; }catch(_e){}

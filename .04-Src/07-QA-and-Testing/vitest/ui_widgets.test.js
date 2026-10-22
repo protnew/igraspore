@@ -137,7 +137,7 @@ describe('UI-IMPROVE F6: mobile compact bottom bar', () => {
     expect(c).toMatch(/\.ab:not\(\.ab-keep\) \.abt \{ display: none !important; \}/);
     expect(c).toMatch(/\.ab\[data-ico\]:not\(\.ab-keep\)::before \{ content: attr\(data-ico\)/);
     expect(c).toMatch(/min-width: 44px !important; min-height: 44px !important/);
-    expect(read('mobile.js')).toMatch(/\.is-mobile \.ab\{min-width:44px!important;min-height:44px!important/);
+    expect(read('mobile.js')).toMatch(/\.is-mobile \.ab\{min-width:48px!important;min-height:48px!important/);
   });
   it('text stays only on eat / divide / auto / spore (labels from the dictionary)', () => {
     const m = read('main.js');

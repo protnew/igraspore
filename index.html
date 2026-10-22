@@ -87,6 +87,7 @@
 <div class="ab hud-parked" id="bFol" role="button" aria-label="" data-k-aria="aria.follow2" title="" data-k-title="tip.follow"><span class="abt" data-k="abt.follow"></span><span class="hk">V</span></div>
 <div class="ab hud-parked" id="bWiki" role="button" aria-label="" data-k-aria="aria.wiki2" title="" data-k-title="tip.wikiB">&#128218;<span class="hk">B</span></div>
 <div class="ab" id="bPause" data-hud-slot="menu" role="button" aria-label="" data-k-aria="aria.pause" title="" data-k-title="tip.pause">☰</div>
+<div class="ab" id="pauseBtn" data-hud-slot="menu" role="button" aria-label="" data-k-aria="aria.pause" title="" data-k-title="tip.pause" style="min-width:48px;min-height:48px">⏸</div>
 <div class="ab hud-parked" id="bZI" role="button" aria-label="" data-k-aria="aria.zi" title="" data-k-title="tip.zi">&#128269;+</div>
 <div class="ab hud-parked" id="bZO" role="button" aria-label="" data-k-aria="aria.zo" title="" data-k-title="tip.zo">&#128269;-</div>
 </div>
@@ -125,16 +126,18 @@
 <div id="catSel"></div>
 <div class="scrollbox" id="spGrid"></div>
 <div style="margin-top:4px"><button class="btn sm" id="helpBtn" aria-label="" data-k-aria="aria.help"></button> <button class="btn sm" id="setBtn2" aria-label="" data-k-aria="aria.set"></button> <button class="btn sm" id="wikiBtnMenu"></button></div>
+<div id="menuFooter"></div>
 </div>
-<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn sm" id="pHelp"></button><button class="btn sm" id="pSet"></button><button class="btn sm" id="pWiki"></button><button class="btn" id="pExit" type="button">Exit</button></div>
-<div id="exitConfirm" class="ov" style="background:rgba(0,0,0,0.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:55"><div style="background:rgba(4,12,18,0.94);padding:22px 16px;border-radius:14px;max-width:300px;width:88%;text-align:center"><div class="tt" style="font-size:20px" id="ecT">Exit?</div><div id="ecMsg" style="color:#cde;margin:8px 0 14px;font-size:14px">Progress of this life will be lost.</div><button class="btn" id="ecNo" type="button">No</button><button class="btn sm" id="ecYes" type="button">Yes</button></div></div>
+<div id="pauseO" class="ov"><div class="tt" style="font-size:24px" id="pauseT"></div><button class="btn" id="resBtn"></button><button class="btn" id="pHelp"></button><button class="btn" id="pSet"></button><button class="btn" id="pWiki"></button><button class="btn" id="pExit" type="button">Exit</button></div>
+<div id="exitConfirm" class="ov" style="background:rgba(0,0,0,.78);z-index:95"><div style="background:rgba(4,12,18,0.94);padding:22px 16px;border-radius:14px;width:min(520px,86vw);text-align:center"><div class="tt" style="font-size:20px" id="ecT">Exit?</div><div id="ecMsg" style="color:#cde;margin:8px 0 14px;font-size:16px">Progress of this life will be lost.</div><button class="btn" id="ecNo" type="button">No</button><button class="btn" id="ecYes" type="button">Yes</button></div></div>
 <button id="demoExit" type="button" aria-label="Exit demo" style="display:none;position:fixed;top:10px;right:10px;z-index:90;width:48px;height:48px;min-width:48px;min-height:48px;border-radius:24px;border:0;background:#c33;color:#fff;font-size:22px;line-height:48px;text-align:center;padding:0">×</button>
 <div id="demoBadge" style="display:none;position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:70;background:rgba(0,0,0,.55);color:#fff;padding:6px 12px;border-radius:8px;font-size:13px"></div>
 <div id="helpO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="helpT"></div><div id="helpBody" style="color:#bcd;font-size:12px;line-height:1.6;max-width:560px"></div><button class="btn sm" id="helpClose" style="margin-top:12px"></button></div>
 <div id="setO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="setT"></div><div class="scrollbox" id="setBody" style="max-width:400px"></div><button class="btn sm" id="setClose" style="margin-top:12px"></button></div>
 <div id="wikiO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:6px" id="wikiT"></div><input type="text" class="wiki-search" id="wikiSearch" placeholder="" data-k-ph="wiki.searchPh"><div id="wikiContent"></div><button class="btn sm" id="wikiClose" style="margin-top:10px"></button></div>
-<div id="deadO" class="ov"><div class="tt" style="color:#f44;font-size:24px" id="deadT"></div><div id="deadStats" style="margin-bottom:12px"></div><button class="btn" id="restartBtn"></button><button class="btn sm" id="menuBtn"></button></div>
+<div id="deadO" class="ov"><div class="tt" style="color:#f44;font-size:24px" id="deadT"></div><div id="deadStats" style="margin-bottom:12px;font-size:16px"></div><button class="btn" id="restartBtn"></button><button class="btn" id="menuBtn"></button></div>
 <div id="deadScreen"></div>
+<div id="introO" class="ov"><div class="tt" style="font-size:20px" id="introT"></div><div id="introBody" style="color:#cde;margin:8px 0 14px;font-size:14px"></div><button class="btn" id="introOk" type="button">OK</button></div>
 
 <div id="dnaModal" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(10,25,45,0.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(100,200,255,0.3);border-radius:16px;padding:25px;z-index:100;color:#fff;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.6), inset 0 0 15px rgba(100,200,255,0.1); width:280px;transition:opacity 0.3s ease, transform 0.3s ease;">
    <h2 id="dnaTitle" style="margin:0 0 10px 0;color:#4df;text-shadow:0 0 8px rgba(77,221,255,0.5);font-size:18px;letter-spacing:1px;"></h2>

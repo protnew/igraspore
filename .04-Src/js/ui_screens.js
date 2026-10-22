@@ -57,13 +57,22 @@ function showDeadScreen(){
     return;
   }
 
-  var ds=document.getElementById('deadStats');var playSec=Math.round((Date.now()-gameStats.startTime)/1000);
+  var ds=document.getElementById('deadStats');
+  var cellAge = (player && typeof player.age==='number') ? Math.max(0, Math.round(player.age)) : 0;
+  var playSec = cellAge;
   var html='';
-  
-  // Pond Stats
-  var globalBorn = 0; var globalAlive = orgs.length;
-  for(var i=0;i<SPECIES_DB.length;i++) globalBorn += (speciesPop[i] ? speciesPop[i].born : 0);
-  var globalDead = globalBorn - globalAlive;
+  var globalBorn = 0, startPop = 0, starved = 0, eatenC = 0;
+  for(var i=0;i<SPECIES_DB.length;i++){
+    var spx = speciesPop[i];
+    if(!spx) continue;
+    globalBorn += (spx.born||0);
+    startPop += (spx.start||0);
+    if(spx.deaths){ starved += (spx.deaths[0]||0); eatenC += (spx.deaths[1]||0); }
+  }
+  var globalAlive = 0;
+  for(var ai=0; ai<orgs.length; ai++){ if(orgs[ai] && orgs[ai].alive) globalAlive++; }
+  var globalDead = Math.max(0, startPop + globalBorn - globalAlive);
+  var extinct = (player && player.sp && speciesPop[player.sp.id] && speciesPop[player.sp.id].alive===0);
   html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.pondStatistics'))+'</div>';
   html+='<table class="stbl" style="margin-bottom:10px">';
   html+='<tr><td class="lbl">'+tt('days')+'</td><td class="val">'+totalDays+'</td></tr>';
@@ -85,7 +94,7 @@ function showDeadScreen(){
   // Personal Stats
   html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.yourCell'))+'</div>';
   html+='<table class="stbl">';
-  html+='<tr><td class="lbl">'+tt('gameTime')+'</td><td class="val">'+playSec+'s</td></tr>';
+  html+='<tr><td class="lbl">'+tt('age')+'</td><td class="val">'+playSec+'s</td></tr>';
   html+='<tr><td class="lbl">'+tt('offspring')+'</td><td class="val">'+(player?player.offspring:0)+'</td></tr>';
   html+='<tr><td class="lbl">'+tt('eaten')+'</td><td class="val">'+(player?player.eaten:0)+'</td></tr>';
   html+='</table>';
@@ -105,7 +114,8 @@ function showDeadScreen(){
   html+='</table>';
   
   ds.innerHTML=html;
-  document.getElementById('deadT').textContent=tt('dead');document.getElementById('deadO').className='ov show';
+  document.getElementById('deadT').textContent = extinct ? tt('dead') : (tt('yourCellDied') || 'Your cell died');
+  document.getElementById('deadO').className='ov show';
 }
 
 function toggleRenderMode(el){

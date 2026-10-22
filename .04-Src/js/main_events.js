@@ -258,6 +258,7 @@ document.addEventListener('keydown',function(e){
   var code=e.code||'';
   if(code==='KeyW')k='w'; else if(code==='KeyA')k='a'; else if(code==='KeyS')k='s'; else if(code==='KeyD')k='d';
   keys[k]=true;
+  if(k==='x'){ if(window.demoMode){ window.exitDemo(); e.preventDefault(); return; } }
   if(k==='w'||k==='a'||k==='s'||k==='d'||k==='arrowup'||k==='arrowdown'||k==='arrowleft'||k==='arrowright'){
     // Map arrows to camKeys
     var ck = k;
@@ -397,6 +398,7 @@ document.getElementById('pHelp').onclick=function(){document.getElementById('hel
 document.getElementById('pSet').onclick=function(){buildSettings();document.getElementById('setO').className='ov show';};
 document.getElementById('pWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
 document.getElementById('restartBtn').onclick=function(){document.getElementById('deadO').className='ov';startGame(false);};
+document.getElementById('pauseBtn').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};
 document.getElementById('menuBtn').onclick=function(){document.getElementById('deadO').className='ov';document.getElementById('menuO').className='ov show';state='menu';if(typeof hideGameHud==='function')hideGameHud();};
 
 window.addEventListener('resize',resize);

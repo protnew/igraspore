@@ -354,16 +354,33 @@
   }, {passive:false});
   document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
 
-  // ---- 8. Hardware back / Escape → menu ----
+  window.hardwareBack = function(){
+    var shown = function(id){ var el=document.getElementById(id); return !!(el && el.classList.contains('show')); };
+    if(shown('exitConfirm')){ var ec=document.getElementById('exitConfirm'); if(ec) ec.className='ov'; return true; }
+    if(shown('setO')||shown('helpO')||shown('wikiO')||shown('introO')){
+      ['setO','helpO','wikiO','introO'].forEach(function(id){ var el=document.getElementById(id); if(el) el.className='ov'; });
+      return true;
+    }
+    if(typeof state!=='undefined' && state==='playing'){
+      state='paused';
+      var po=document.getElementById('pauseO'); if(po) po.className='ov show';
+      return true;
+    }
+    if(typeof state!=='undefined' && (state==='paused' || state==='menu')){
+      var ec2=document.getElementById('exitConfirm'); if(ec2) ec2.className='ov show';
+      var no=document.getElementById('ecNo'); if(no) try{ no.focus(); }catch(e){}
+      return true;
+    }
+    return true;
+  };
   window.addEventListener('keydown', function(e){
     if (e.key === 'Escape' || e.keyCode === 27) {
       e.preventDefault();
-      window.toggleGameMenu();
+      window.hardwareBack();
     }
   });
-  // Android WebView back bridge
   window.onAndroidBack = function(){
-    window.toggleGameMenu();
+    window.hardwareBack();
     return true;
   };
 

@@ -318,9 +318,24 @@ function startGame(isScreensaver){
        }, 900);
      }
      } // end !virusPlayer food seed
-     // 1) Карточка «ты кто / кого ешь»
-     if(!isScreensaver && !window.virusPlayer && typeof showRoleCard==='function'){
-       try{ showRoleCard(sp); }catch(_e){}
+     // 1) Карточка «ты кто / кого ешь» — показываем introO overlay
+     if(!isScreensaver && !window.virusPlayer){
+       var io=document.getElementById('introO'); var ib=document.getElementById('introBody'); var it=document.getElementById('introT');
+       if(io && ib && it){
+         var cat = sp.cat || '';
+         var name = (typeof catName==='function' ? catName(cat) : cat);
+         var role = (typeof catRole==='function' ? catRole(cat) : '');
+         var eats = (typeof foodListRu==='function' ? foodListRu(cat) : '—');
+         if(cat==='producer') eats = tt('food.producer');
+         it.textContent = tt('roleWho') || 'Role';
+         ib.innerHTML = '<div style="font-size:18px;font-weight:700;color:#c8ffc0;margin-bottom:6px">'+(sp.name||name)+' · '+name+'</div><div style="opacity:.95;margin-bottom:8px">'+(role||'')+'</div><div style="background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;margin-bottom:8px"><b>'+tt('roleFood')+':</b> '+eats+'</div>';
+         io.className='ov show';
+         var okBtn=document.getElementById('introOk');
+         if(okBtn && !okBtn._v20Intro){
+           okBtn._v20Intro=1;
+           okBtn.onclick=function(){ io.className='ov'; state='playing'; window._pendingTutorial=false; };
+         }
+       }
      }
   }
   

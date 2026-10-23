@@ -430,3 +430,28 @@ body.debug #topRightStack{display:flex!important}
   #actBar .ab{min-width:44px!important;flex:1 1 0;overflow:hidden}
   #bPause{min-width:44px;min-height:44px}
 }
+@media (max-width: 430px) {
+  #hDivReady {
+    top: max(6px, env(safe-area-inset-top)) !important;
+    bottom: auto !important;
+    left: 8px !important;
+    right: 8px !important;
+    max-width: none !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+    background: rgba(0,0,0,0.72);
+    padding: 6px 8px;
+    border-radius: 8px;
+    z-index: 30 !important;
+  }
+  #divReason {
+    top: 110px !important;
+    bottom: auto !important;
+    font-size: 13px !important;
+  }
+  #scaleW {
+    right: 8px !important;
+    max-width: 110px !important;
+    font-size: 13px !important;
+  }
+}

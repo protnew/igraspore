@@ -82,7 +82,7 @@ function showDeadScreen(){
   var globalDead = ledger.dead;
   var extinct = ledger.extinct;
   playSec = ledger.time;
-  html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.pondStatistics'))+'</div>';
+  html+='<div style="color:#bcd;font-size:16px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.pondStatistics'))+'</div>';
   html+='<table class="stbl" style="margin-bottom:10px">';
   html+='<tr><td class="lbl">'+tt('days')+'</td><td class="val">'+totalDays+'</td></tr>';
   html+='<tr><td class="lbl">'+(tt('x.alive'))+'</td><td class="val">'+globalAlive+'</td></tr>';
@@ -93,7 +93,7 @@ function showDeadScreen(){
   // Species Stats
   if(player && player.sp) {
     var spData = speciesPop[player.sp.id];
-    html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.yourSpecies'))+player.sp.name+'</div>';
+    html+='<div style="color:#bcd;font-size:16px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.yourSpecies'))+player.sp.name+'</div>';
     html+='<table class="stbl" style="margin-bottom:10px">';
     html+='<tr><td class="lbl">'+(tt('x.currentlyAlive'))+'</td><td class="val">'+spData.alive+'</td></tr>';
     html+='<tr><td class="lbl">'+(tt('x.totalBorn'))+'</td><td class="val">'+spData.born+'</td></tr>';
@@ -101,7 +101,7 @@ function showDeadScreen(){
   }
 
   // Personal Stats
-  html+='<div style="color:#bcd;font-size:12px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.yourCell'))+'</div>';
+  html+='<div style="color:#bcd;font-size:16px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.yourCell'))+'</div>';
   html+='<table class="stbl">';
   html+='<tr><td class="lbl">'+tt('age')+'</td><td class="val">'+playSec+'s</td></tr>';
   html+='<tr><td class="lbl">'+tt('offspring')+'</td><td class="val">'+(player?player.offspring:0)+'</td></tr>';
@@ -111,18 +111,20 @@ function showDeadScreen(){
   // Causes with Tips
   var tips = [tt('dTip.starve'),tt('dTip.eaten'),tt('dTip.temp'),tt('dTip.age'),tt('dTip.lysis')];
 
-  html+='<div style="margin-top:12px;color:#4af;font-size:12px;text-align:center;font-weight:bold;">'+tt('dCauses')+' (Global)</div>';
+  html+='<div style="margin-top:12px;color:#4af;font-size:16px;text-align:center;font-weight:bold;">'+tt('dCauses')+'</div>';
   html+='<table class="stbl" style="margin-bottom:10px">';
   for(var d=0;d<5;d++){
     var dl=tt(DLAB_KEYS[d]);
     if(stats.deathCauses[d] > 0 || d===0) {
       html+='<tr><td class="lbl" style="color:#faa">'+dl+'</td><td class="val" style="color:#fff">'+stats.deathCauses[d]+'</td></tr>';
-      html+='<tr><td colspan="2" style="font-size:10px; color:#aaa; padding-bottom:6px; font-style:italic;">'+tips[d]+'</td></tr>';
+      html+='<tr><td colspan="2" style="font-size:13px; color:#ddd; padding-bottom:6px;">'+tips[d]+'</td></tr>';
     }
   }
   html+='</table>';
   
   ds.innerHTML=html;
+  var po=document.getElementById('pauseO'); if(po) po.className='ov';
+  var ec=document.getElementById('exitConfirm'); if(ec) ec.className='ov';
   document.getElementById('deadT').textContent = extinct ? tt('dead') : ledger.title;
   document.getElementById('deadO').className='ov show';
 }

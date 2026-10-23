@@ -23,26 +23,27 @@
     '.is-mobile #spdBar{display:none!important}',
     '.is-mobile #sandboxTools{display:none!important}',
     '.is-mobile #leaderboardO{display:none!important}',
-    '.is-mobile #leftContainer{display:none!important}',
+    '.is-mobile #leftContainer{display:flex!important;position:fixed!important;top:8px;left:8px;width:min(220px,calc(100vw - 72px))!important;z-index:35!important;background:transparent!important;pointer-events:none}',
+    '.is-mobile #hud{pointer-events:auto!important;font-size:13px!important;max-width:none!important}',
+    '.is-mobile.menu-open #hud,.is-mobile.menu-open #ecoP,.is-mobile.menu-open #legP{display:none!important}',
     '.is-mobile #topRightStack{width:104px!important;gap:4px!important}',
     '.is-mobile #renderModeBtn{font-size:10px!important;padding:4px 6px!important;width:100%!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}',
     '.is-mobile #mmWrap{width:64px!important;opacity:0.75!important}.is-mobile #mm{width:64px!important;height:44px!important}',
     '.is-mobile #pcWrap{width:64px!important;opacity:0.75!important}.is-mobile #pc{width:64px!important;height:32px!important}',
-    '.is-mobile #hud{font-size:9px!important;padding:2px 4px!important}',
-    '.is-mobile #hud .p,.is-mobile #ecoP,.is-mobile #legP,.is-mobile #topR,.is-mobile #weatherP{font-size:9px!important;padding:2px 3px!important;max-width:140px!important}',
+    '.is-mobile #hud .p,.is-mobile #ecoP,.is-mobile #legP,.is-mobile #topR,.is-mobile #weatherP{font-size:13px!important;padding:4px 6px!important;max-width:none!important}',
     '.is-mobile #weatherP{top:30px!important;right:4px!important}',
     '.is-mobile #camM{font-size:9px!important;top:2px!important}',
     '.is-mobile #todWrap{font-size:9px!important;top:22px!important}',
     '.is-mobile #tip{font-size:11px!important;max-width:88vw!important;z-index:80!important;pointer-events:none!important}',
-    '.is-mobile #hDivReady{font-size:13px!important;max-width:none!important;width:calc(100vw - 16px)!important;top:58px!important;bottom:auto!important;left:8px!important;right:8px!important;line-height:1.35!important;white-space:normal!important}',
+    '.is-mobile #hDivReady{font-size:13px!important;max-width:none!important;width:calc(100vw - 16px)!important;top:258px!important;bottom:auto!important;left:8px!important;right:8px!important;line-height:1.35!important;white-space:normal!important;z-index:34!important}',
     '.is-mobile .ov{width:100vw!important;max-width:100vw!important;left:0!important;right:0!important;padding:8px!important;height:100%!important;max-height:none!important;overflow-y:auto!important;z-index:200!important}',
     '.is-mobile .tt{font-size:16px!important}',
     '.is-mobile .scrollbox{max-height:35vh!important}',
     '.is-mobile #spGrid{grid-template-columns:repeat(auto-fill,minmax(70px,1fr))!important;gap:3px!important}',
-    '.is-mobile #spGrid>div{font-size:8px!important;padding:3px!important}',
-    '.is-mobile .btn{font-size:13px!important;padding:8px 12px!important}',
+    '.is-mobile #spGrid>div,.is-mobile #spGrid .sc,.is-mobile #spGrid .scN,.is-mobile #spGrid .scL,.is-mobile #spGrid .scC,.is-mobile #spGrid .scP{font-size:13px!important;padding:4px!important}',
+    '.is-mobile .btn{font-size:18px!important;min-height:48px!important;padding:8px 12px!important}',
     '.is-mobile #diffWrap{font-size:11px!important}',
-    '.is-mobile #catSel{font-size:10px!important;gap:3px!important}',
+    '.is-mobile #catSel,.is-mobile #catSel .cb{font-size:13px!important;gap:3px!important}',
     '.is-mobile #foodChainBar{font-size:7px!important;padding:3px!important}',
     '.is-mobile .sb2{flex-direction:column!important;gap:4px!important}',
     '.is-mobile #startBtn{font-size:15px!important;padding:10px 20px!important}',
@@ -58,7 +59,7 @@
     '#mTop .ma.menu{background:rgba(20,60,90,0.85);border-color:rgba(120,220,255,0.55);color:#9fe8ff}',
     /* Hide mobile chrome when menu open */
     '.is-mobile.menu-open #mActs,.is-mobile.menu-open #mJoy,.is-mobile.menu-open #mTop{display:none!important}',
-    '.is-mobile #setO,.is-mobile #exitConfirm,.is-mobile #actionsPanel{z-index:340!important;width:100vw!important}',
+    '.is-mobile #setO,.is-mobile #helpO,.is-mobile #wikiO,.is-mobile #exitConfirm,.is-mobile #actionsPanel,.is-mobile #introO,.is-mobile #pauseO,.is-mobile #deadO{z-index:400!important;width:100vw!important}',
     '.is-mobile #menuO.show{display:flex!important;z-index:280!important;width:100vw!important;max-width:100vw!important;height:100vh!important}'
   ].join('\n');
   document.head.appendChild(css);
@@ -387,10 +388,6 @@
       if (el && el.style.display !== 'none') {
         el.style.setProperty('display', 'none', 'important');
       }
-    }
-    var lc = document.getElementById('leftContainer');
-    if (lc && lc.style.display !== 'none') {
-      lc.style.setProperty('display', 'none', 'important');
     }
   }
   setInterval(purgeDesktop, 500);

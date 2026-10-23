@@ -363,8 +363,8 @@ function initTooltips() {
     }
   });
 }
-// initTooltips is called once
-setTimeout(initTooltips, 500);
+// initTooltips is called once. Guard: unit tests tear document down before the timer.
+setTimeout(function(){ if(typeof document==='undefined') return; initTooltips(); }, 500);
 
 window.openDNAEditor = function() {
     if(state !== 'playing' || !player || !player.alive) return;

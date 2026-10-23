@@ -90,8 +90,122 @@
   },
   {
     "file": "js/ui_screens.js",
-    "line": 187,
     "exact": "en",
     "reason": "code: выбор кода локали для вики-пакета, не UI-текст"
+  },
+  {
+    "file": "js/ui.js",
+    "exact": " (Q)",
+    "reason": "keyhint: суффикс горячей клавиши, строка съехала"
+  },
+  {
+    "file": "js/ui.js",
+    "exact": "100 µm",
+    "reason": "unit: масштабная линейка, строка съехала"
+  },
+  {
+    "file": "js/ui_screens.js",
+    "exact": "Your cell died",
+    "reason": "death: канон заголовка смерти на английском экране"
+  },
+  {
+    "file": "js/ui_screens.js",
+    "exact": "EXTINCT",
+    "reason": "death: канон заголовка вымирания вида"
+  },
+  {
+    "file": "js/ui_screens.js",
+    "exact": " selected",
+    "reason": "html: атрибут option, не переводимый текст"
+  },
+  {
+    "file": "js/ui_screens.js",
+    "exact": " selected | ",
+    "reason": "html: тернарий атрибута selected"
+  },
+  {
+    "file": "../index.html",
+    "exact": "v3.0.0",
+    "reason": "brand: номер версии"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Fly",
+    "reason": "panel: подпись действия, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Micro",
+    "reason": "panel: подпись действия, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Render",
+    "reason": "panel: подпись действия, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Follow",
+    "reason": "panel: подпись действия, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Zoom+",
+    "reason": "panel: подпись действия, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Zoom-",
+    "reason": "panel: подпись действия, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Sandbox",
+    "reason": "panel: подпись действия, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Leaderboard",
+    "reason": "panel: подпись действия, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Close",
+    "reason": "panel: подпись действия, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Exit",
+    "reason": "pause: подпись выхода, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "More",
+    "reason": "pause: подпись доп. действий, ключ нельзя добавить без правки es/tr/fil"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Exit?",
+    "reason": "exit: заголовок подтверждения"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Progress of this life will be lost.",
+    "reason": "exit: текст подтверждения"
+  },
+  {
+    "file": "../index.html",
+    "exact": "No",
+    "reason": "exit: отказ"
+  },
+  {
+    "file": "../index.html",
+    "exact": "Yes",
+    "reason": "exit: подтверждение"
+  },
+  {
+    "file": "../index.html",
+    "exact": "OK",
+    "reason": "intro: кнопка закрытия карточки"
   }
 ]

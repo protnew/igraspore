@@ -109,7 +109,7 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 #menuO.ov:not(.show){display:none!important}
 #menuO #spGrid{flex:1 1 auto!important;overflow-y:auto!important;min-height:0!important;width:100%!important;max-width:none!important;max-height:none!important;margin-bottom:72px!important}
 #menuFooter{position:absolute!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;min-height:64px;display:flex;gap:8px;justify-content:center;align-items:center;padding:8px;box-sizing:border-box;background:rgba(0,8,18,.97);z-index:6}
-#menuFooter .btn{min-height:48px;min-width:96px;font-size:18px;flex:1}
+#menuFooter .btn{min-height:48px;min-width:96px;font-size:18px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #langSelWrap .lang-curr{min-height:48px;min-width:48px;font-size:16px;background:#123a66;color:#fff;border:2px solid #7cf}
 #actBar .ab{min-width:48px;min-height:48px}
 #actionsPanel{z-index:96;background:rgba(0,0,0,.78)!important;width:100%!important;height:100%!important}
@@ -117,10 +117,10 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 #actionsPanel .btn{width:100%;min-height:48px;font-size:18px}
 #pauseO .btn,#exitConfirm .btn,#introO .btn,#deadO .btn{min-height:48px;min-width:48%;font-size:18px;box-sizing:border-box}
 #introO,#deadO,#pauseO,#setO,#exitConfirm{color:#e8f4ff;font-size:16px}
-#helpO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
+#helpO{background:rgba(0,5,15,.95);overflow:auto;padding:25px;z-index:85}
 #deadO{background:rgba(0,5,15,.96)}
 #setO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
-#wikiO{background:rgba(0,5,15,.97);overflow:hidden}
+#wikiO{background:rgba(0,5,15,.97);overflow:hidden;z-index:85}
 .tt{font-size:32px;color:#4ef;margin-bottom:3px;text-shadow:0 0 15px #2af}
 .sb2{font-size:13px;color:#9bd;margin-bottom:10px}
 .btn{padding:9px 26px;font-size:18px;min-height:48px;background:#123;color:#bef;border:2px solid #345;border-radius:7px;cursor:pointer;font-family:inherit;margin:3px;transition:all .15s}
@@ -426,6 +426,7 @@ body.debug #topRightStack{display:flex!important}
 #divReason{position:absolute;left:50%;bottom:76px;transform:translateX(-50%);z-index:12;color:#cfe;font:700 12px/1.2 system-ui,sans-serif;text-shadow:0 1px 2px #000;pointer-events:none;max-width:92vw;text-align:center}
 #actBar{max-height:72px}
 @media (max-width:900px){
-  #actBar{max-height:72px!important;flex-wrap:nowrap!important}
+  #actBar{position:fixed!important;bottom:4px!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:100%!important;max-height:72px!important;flex-wrap:nowrap!important}
+  #actBar .ab{min-width:44px!important;flex:1 1 0;overflow:hidden}
   #bPause{min-width:44px;min-height:44px}
 }

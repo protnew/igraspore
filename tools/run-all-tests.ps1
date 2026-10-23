@@ -168,9 +168,10 @@ if (Wants 'playwright') {
     if (Test-Path $pj) { Remove-Item $pj -Force }
     Ensure-ReleaseStand | Out-Null
     $sw = [Diagnostics.Stopwatch]::StartNew()
-    $out = & $pw test --config playwright.contract.config.js 2>&1
+    $pwLog = Join-Path $logDir 'playwright.log'
+    & $pw test --config playwright.contract.config.js *> $pwLog
     $sw.Stop(); $ec = $LASTEXITCODE
-    $out | Out-File -Encoding utf8 (Join-Path $logDir 'playwright.log')
+    $out = @(Get-Content -Encoding utf8 $pwLog -ErrorAction SilentlyContinue)
     $tests = @(); $i = 0
     if (Test-Path $pj) {
       try {

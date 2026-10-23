@@ -9,8 +9,8 @@ window.closeIntroCard = function(){
 };
 window.showDemoChrome = function(sp){
   var b=document.getElementById('demoBadge'), x=document.getElementById('demoExit');
-  if(b){ try{ b.textContent=(typeof tt==='function'?tt('demo'):'DEMO')+' · '+(sp&&sp.name?sp.name:''); }catch(e){ b.textContent='DEMO'; } b.style.display='block'; }
-  if(x){ x.style.display='flex'; x.setAttribute('aria-label','Exit demo'); }
+  if(b){ try{ b.textContent=tt('demo')+' · '+(sp&&sp.name?sp.name:''); }catch(e){ b.textContent=''; } b.style.display='block'; }
+  if(x){ x.style.display='flex'; x.setAttribute('aria-label', typeof tt==='function'?tt('exit'):''); }
 };
 window.exitDemoCleanup = function(){
   var b=document.getElementById('demoBadge'), x=document.getElementById('demoExit');
@@ -93,6 +93,11 @@ function igsBindV20(){
   if(bg && !bg._v20){
     bg._v20=1;
     bg.onclick=function(){ var p=document.getElementById('actionsPanel'); if(p) p.className='ov show'; };
+  }
+  var pMore=document.getElementById('pMore');
+  if(pMore && !pMore._v20){
+    pMore._v20=1;
+    pMore.onclick=function(){ var p=document.getElementById('actionsPanel'); if(p) p.className='ov show'; var po=document.getElementById('pauseO'); if(po) po.className='ov'; };
   }
   function wireAp(id, target){
     var e=document.getElementById(id);

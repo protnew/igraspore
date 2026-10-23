@@ -335,11 +335,20 @@ function startGame(isScreensaver){
          if(cat==='producer') eats = tt('food.producer');
          it.textContent = tt('roleWho') || 'Role';
          ib.innerHTML = '<div style="font-size:18px;font-weight:700;color:#c8ffc0;margin-bottom:6px">'+(sp.name||name)+' · '+name+'</div><div style="opacity:.95;margin-bottom:8px">'+(role||'')+'</div><div style="background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;margin-bottom:8px"><b>'+tt('roleFood')+':</b> '+eats+'</div>';
-         io.className='ov show';
+         setTimeout(function(){ io.className='ov show'; }, 0);
          var okBtn=document.getElementById('introOk');
          if(okBtn && !okBtn._v20Intro){
            okBtn._v20Intro=1;
            okBtn.onclick=function(){ io.className='ov'; state='playing'; window._pendingTutorial=false; };
+         }
+         if(okBtn && !document.getElementById('roleCardOk')){
+           var span=document.createElement('span');
+           span.id='roleCardOk';
+           span.textContent=okBtn.textContent||'OK';
+           span.style.cssText='display:inline-block;min-width:48px;min-height:48px;line-height:48px';
+           span.onclick=function(ev){ if(ev) ev.stopPropagation(); io.className='ov'; state='playing'; window._pendingTutorial=false; };
+           okBtn.textContent='';
+           okBtn.appendChild(span);
          }
        }
      }

@@ -172,6 +172,17 @@ function paintTestSilhouette(){
   ctx.globalAlpha = 1;
   ctx.drawImage(oc, x0, y0, dw, dh, x0, y0, dw, dh);
   ctx.restore();
+  if(typeof renderViruses==='function' && typeof cam!=='undefined' && cv){
+    var z=(typeof zoom==='number'&&zoom>0)?zoom:1;
+    var vw=cv.width/z, vh=cv.height/z;
+    ctx.save();
+    ctx.setTransform(1,0,0,1,0,0);
+    ctx.translate(cv.width/2, cv.height/2);
+    ctx.scale(z, z);
+    ctx.translate(-cam.x, -cam.y);
+    renderViruses(cam.x-vw/2, cam.x+vw/2, cam.y-vh/2, cam.y+vh/2);
+    ctx.restore();
+  }
 }
 window.paintTestSilhouette = paintTestSilhouette;
 window.snapTestCenter = snapTestCenter;

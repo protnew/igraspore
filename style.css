@@ -473,9 +473,9 @@ body:not(.in-menu) #pauseBtn {
   background:rgba(0,0,0,.78)!important;box-sizing:border-box;
 }
 #menuO.ov.show{z-index:40!important}
-#setO.ov.show,#helpO.ov.show,#wikiO.ov.show{z-index:420!important}
 #introO.ov.show,#pauseO.ov.show,#deadO.ov.show{z-index:430!important}
-#exitConfirm.ov.show{z-index:440!important}
+#setO.ov.show,#helpO.ov.show,#wikiO.ov.show{z-index:460!important}
+#exitConfirm.ov.show{z-index:480!important}
 body.in-menu #langSelWrap{position:fixed!important;top:8px;right:8px;z-index:450!important;display:block!important;width:max-content!important;max-width:168px!important}
 #setO.ov.show,#deadO.ov.show{background:rgba(0,0,0,.92)!important}
 #setBody{background:#07141f;border-radius:12px;padding:12px;width:min(520px,86vw)!important}

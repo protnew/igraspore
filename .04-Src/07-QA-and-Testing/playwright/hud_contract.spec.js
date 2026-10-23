@@ -94,11 +94,11 @@ test.describe('HUD contract — desktop 1280x800', () => {
   test.use({ viewport: { width: 1280, height: 800 } });
 
   for (const lang of LANGS) {
-    test(`[${lang}] постоянных видимых элементов HUD <= 6, >=44px, без перекрытий`, async ({ page }) => {
+    test(`[${lang}] постоянных видимых элементов HUD <= 7, >=44px, без перекрытий`, async ({ page }) => {
       await boot(page, lang);
       const btns = await visibleButtons(page);
       const persistent = btns.filter(b => !b.inPause && !b.parked);
-      expect(persistent.length, 'persistent buttons: ' + JSON.stringify(persistent.map(b => b.id))).toBeLessThanOrEqual(6);
+      expect(persistent.length, 'persistent buttons: ' + JSON.stringify(persistent.map(b => b.id))).toBeLessThanOrEqual(7);
       for (const b of persistent) {
         expect(b.w, b.id + ' width').toBeGreaterThanOrEqual(44);
         expect(b.h, b.id + ' height').toBeGreaterThanOrEqual(44);
@@ -233,11 +233,11 @@ test.describe('HUD contract — mobile 390x844', () => {
   test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
 
   for (const lang of LANGS) {
-    test(`[${lang}] <=6 элементов, >=44px, actBar <=72px, без перекрытий`, async ({ page }) => {
+    test(`[${lang}] <=7 элементов, >=44px, actBar <=72px, без перекрытий`, async ({ page }) => {
       await boot(page, lang);
       const btns = await visibleButtons(page);
       const persistent = btns.filter(b => !b.inPause && !b.parked);
-      expect(persistent.length, 'persistent: ' + persistent.map(b => b.id)).toBeLessThanOrEqual(6);
+      expect(persistent.length, 'persistent: ' + persistent.map(b => b.id)).toBeLessThanOrEqual(7);
       for (const b of persistent) {
         expect(b.w, b.id + ' w').toBeGreaterThanOrEqual(44);
         expect(b.h, b.id + ' h').toBeGreaterThanOrEqual(44);

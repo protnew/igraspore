@@ -478,6 +478,7 @@ body:not(.in-menu) #pauseBtn {
 #exitConfirm.ov.show{z-index:480!important}
 body.in-menu #langSelWrap{position:fixed!important;top:8px;right:8px;z-index:450!important;display:block!important;width:max-content!important;max-width:168px!important}
 #setO.ov.show,#deadO.ov.show{background:rgba(0,0,0,.92)!important}
+#deadO.ov.show,#pauseO.ov.show,#introO.ov.show,#setO.ov.show,#helpO.ov.show,#wikiO.ov.show,#exitConfirm.ov.show{overflow-y:auto}
 #setBody{background:#07141f;border-radius:12px;padding:12px;width:min(520px,86vw)!important}
 #pauseO.ov.show .tt,#pauseO.ov.show .btn,#deadO.ov.show .tt,#deadO.ov.show #deadStats,#deadO.ov.show .btn,#introO.ov.show .tt,#introO.ov.show #introBody,#introO.ov.show .btn,#exitConfirm.ov.show>div{
   width:max(40vw,512px);max-width:86vw;box-sizing:border-box;

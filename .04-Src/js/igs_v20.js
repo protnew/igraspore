@@ -154,3 +154,38 @@ if(typeof location!=='undefined' && location.search.indexOf('test=1')>=0){
     }
   };
 }
+
+function igsHardwareBack(){
+  var now=Date.now();
+  if(igsHardwareBack._at && now-igsHardwareBack._at<400) return;
+  igsHardwareBack._at=now;
+  function hide(id){
+    var e=document.getElementById(id);
+    if(e && String(e.className).indexOf('show')>=0){ e.className='ov'; return true; }
+  }
+  if(hide('setO')||hide('helpO')||hide('wikiO')||hide('actionsPanel')||hide('leaderboardO')||hide('exitConfirm')) return;
+  if(window.__igsDemo && window.exitDemo){ window.exitDemo(); return; }
+  if(window.state==='playing'){
+    try{ state='paused'; }catch(e){}
+    var po=document.getElementById('pauseO'); if(po) po.className='ov show';
+    return;
+  }
+  var ec=document.getElementById('exitConfirm'); if(ec) ec.className='ov show';
+}
+if (location.hostname === 'localhost') {
+  try {
+    history.pushState({igsBack:1}, '');
+    window.addEventListener('popstate', function(){
+      try { history.pushState({igsBack:1}, ''); } catch(e){}
+      igsHardwareBack();
+    });
+  } catch(e){}
+}
+function igsInstallBack(){
+  var App = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App;
+  if (!App || igsInstallBack.done) return;
+  igsInstallBack.done = true;
+  try { App.addListener('backButton', igsHardwareBack); } catch(e){}
+}
+igsInstallBack();
+setInterval(igsInstallBack, 500);

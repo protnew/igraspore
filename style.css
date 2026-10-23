@@ -455,3 +455,15 @@ body.debug #topRightStack{display:flex!important}
     font-size: 13px !important;
   }
 }
+body:not(.in-menu) #pauseBtn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 4px;
+  right: 8px;
+  width: 48px;
+  height: 48px;
+  z-index: 80;
+  font-size: 18px;
+}

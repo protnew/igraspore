@@ -34,7 +34,7 @@
     '.is-mobile #camM{font-size:9px!important;top:2px!important}',
     '.is-mobile #todWrap{font-size:9px!important;top:22px!important}',
     '.is-mobile #tip{font-size:11px!important;max-width:88vw!important;z-index:80!important;pointer-events:none!important}',
-    '.is-mobile #hDivReady{font-size:13px!important;max-width:none!important;width:calc(100vw - 16px)!important;top:48px!important;bottom:auto!important;left:8px!important;right:8px!important;line-height:1.35!important;white-space:normal!important}',
+    '.is-mobile #hDivReady{font-size:13px!important;max-width:none!important;width:calc(100vw - 16px)!important;top:58px!important;bottom:auto!important;left:8px!important;right:8px!important;line-height:1.35!important;white-space:normal!important}',
     '.is-mobile .ov{width:100vw!important;max-width:100vw!important;left:0!important;right:0!important;padding:8px!important;height:100%!important;max-height:none!important;overflow-y:auto!important;z-index:200!important}',
     '.is-mobile .tt{font-size:16px!important}',
     '.is-mobile .scrollbox{max-height:35vh!important}',

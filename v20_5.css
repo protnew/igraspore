@@ -43,13 +43,7 @@ input[type=range]{min-height:48px!important;height:48px!important}
 #leftContainer{max-width:min(240px,70vw)}
 #demoLabelsBtn,[id^="demoG"]{min-width:48px!important;min-height:48px!important;font-size:16px!important}
 body.demo-on #hDivReady,body.demo-on #hud{display:none!important}
-body:has(#helpO.show) #menuO,
-body:has(#setO.show) #menuO,
-body:has(#wikiO.show) #menuO,
-body:has(#introO.show) #menuO,
-body:has(#pauseO.show) #menuO,
-body:has(#deadO.show) #menuO,
-body:has(#exitConfirm.show) #menuO{display:none!important}
+body.menu-covered #menuO{display:none!important}
 #catSel,#catSel *,#spFilterStatus,#spFilterStatus *,#langSelWrap span{font-size:13px!important}
 #setBody,#setBody span,#setBody div,#rmodeLbl{font-size:16px!important}
 #scaleT,#hDivReady,#camM{font-size:13px!important}

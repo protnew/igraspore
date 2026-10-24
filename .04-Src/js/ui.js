@@ -79,6 +79,8 @@ function updateHUD(){
     document.getElementById('lightL').textContent = tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%';
     held.textContent = tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C';
     document.getElementById('daysL').textContent = tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0);
+    var popN=0; if(typeof orgs!=='undefined'){ for(var pi=0;pi<orgs.length;pi++) if(orgs[pi]&&orgs[pi].alive) popN++; }
+    var popEl=document.getElementById('popC'); if(popEl) popEl.textContent=tt('pop')+': '+popN;
     return;
   }
   // SIMPLE CLEAN HUD: only essential stats
@@ -99,7 +101,7 @@ function updateHUD(){
     '</div>'+
     '<div style="font-size:13px;color:#e8f4ff;line-height:1.45">'+
       '<span id="fpsL">'+tt('fps')+': '+(typeof fps!=='undefined'?fps:'')+'</span> \u00b7 <span id="lightL">'+tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%</span><br>'+
-      '<span id="tempL">'+tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C</span> \u00b7 <span id="daysL">'+tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0)+'</span> \u00b7 <span id="popC">'+tt('pop')+'</span>'+
+      '<span id="tempL">'+tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C</span> \u00b7 <span id="daysL">'+tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0)+'</span> \u00b7 <span id="popC">'+tt('pop')+': 0</span>'+
     '</div>'+
     '<div id="hudInfect" style="color:#f44;font-size:12px;margin-top:4px;'+(player.infected?'':'display:none')+'">\u2620 '+(tt('x.infected2'))+'</div>';
 }

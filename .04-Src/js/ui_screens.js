@@ -120,12 +120,15 @@ function showDeadScreen(){
       html+='<tr><td colspan="2" style="font-size:13px; color:#ddd; padding-bottom:6px;">'+tips[d]+'</td></tr>';
     }
   }
+  var causeSum=0; for(var cs=0;cs<5;cs++) causeSum+=(stats.deathCauses[cs]||0);
+  var other=Math.max(0, globalDead-causeSum);
+  if(other) html+='<tr><td class="lbl" style="color:#faa">'+tt('deadOther')+'</td><td class="val" style="color:#fff">'+other+'</td></tr>';
   html+='</table>';
   
   ds.innerHTML=html;
   var po=document.getElementById('pauseO'); if(po) po.className='ov';
   var ec=document.getElementById('exitConfirm'); if(ec) ec.className='ov';
-  document.getElementById('deadT').textContent = extinct ? tt('dead') : ledger.title;
+  document.getElementById('deadT').textContent = extinct ? tt('dead') : tt('deadYours');
   document.getElementById('deadO').className='ov show';
 }
 

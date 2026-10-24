@@ -410,5 +410,15 @@
   "loc.pseudopodia": "僞足",
   "loc.sessile": "固著",
   "loc.budding": "出芽",
-  "loc.growth": "生長"
+  "loc.growth": "生長",
+  "exitAsk": "要離開嗎？",
+  "exitMsg": "這一生的進度將會失去。",
+  "yes": "是",
+  "no": "否",
+  "more": "更多",
+  "deadYours": "你的細胞死了",
+  "aliveWord": "存活",
+  "deadOther": "其他",
+  "setLang": "語言",
+  "helpTouch": "<p><b>操作：</b>搖桿游泳。點水決定方向。下方按鈕：吃、分裂、孢子、自動。雙指縮放。</p>"
 }

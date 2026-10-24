@@ -96,22 +96,22 @@ function buildSpeciesGrid(){
         var cn = (typeof catName==='function')?catName(eatsCats[ec]):eatsCats[ec];
         parts.push((typeof roleColor==='function'?'<span style="color:'+roleColor(eatsCats[ec])+'">':'<span>')+cn+'</span>');
       }
-      eatInfo='<span style="font-size:8.5px">\u{1F5D1} '+tt('eats')+': '+parts.join(', ')+'</span>';
+      eatInfo='<span style="font-size:13px">'+tt('eats')+': '+parts.join(', ')+'</span>';
     }
     var roleShort='';
     if(typeof catName==='function'){ roleShort=catName(sp.cat); }
     var spNum=(typeof sp.num==='number')?sp.num:(i+1);
     var isCol=(sp.shape==='colony'||(sp.bio&&sp.bio.colony));
     var colonyTag=isCol?'':'';
-    var colonyBadge=isCol?'<div style="background:#2a6;color:#efc;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;margin:2px auto;display:inline-block;letter-spacing:0.5px">⬡ '+tt('colonyBadge')+'</div>':'';
+    var colonyBadge=isCol?'<div style="background:#2a6;color:#efc;font-size:13px;font-weight:800;padding:4px 8px;border-radius:4px;margin:2px auto;display:inline-block">'+tt('colonyBadge')+'</div>':'';
     if(isCol){c.style.boxShadow='inset 0 0 0 3px var(--success),0 0 14px var(--success-glow)';c.style.background='var(--success-bg)';c.style.order='-1';}
     c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+colonyBadge+
-      '<div class="scN" style="color:'+sp.color+';font-size:9px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+
-      '<div class="scL">'+(Math.round(sp.size*10)/10)+'\u03bcm &middot; '+sp.shape+colonyTag+'</div>'+
-      '<div class="scC">'+sp.locomotion+'</div>'+
-      '<div style="font-size:8.5px;opacity:.75;margin-top:1px">'+roleShort+'</div>'+
-      '<div style="font-size:8.5px;margin-top:1px;line-height:1.2">'+eatInfo+'</div>'+
-      '<div class="scP">'+pop+' alive</div>';
+      '<div class="scN" style="color:'+sp.color+';font-size:13px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+
+      '<div class="scL">'+(Math.round(sp.size*10)/10)+'\u03bcm</div>'+
+      '<div class="scC">'+tt('loc.'+sp.locomotion)+'</div>'+
+      '<div style="font-size:13px;opacity:.9;margin-top:1px">'+roleShort+'</div>'+
+      '<div style="font-size:13px;margin-top:1px;line-height:1.2">'+eatInfo+'</div>'+
+      '<div class="scP">'+pop+' '+tt('aliveWord')+'</div>';
     var pcv=c.querySelector('.scPrev'); try{ if(pcv&&typeof drawSpeciesPreview==='function') drawSpeciesPreview(pcv,sp,i); }catch(ePrev){ if(pcv){ var cxp=pcv.getContext('2d'); if(cxp){ cxp.fillStyle=sp.color||'#4c8'; cxp.beginPath(); cxp.arc(60,60,28,0,6.28); cxp.fill(); } } }
     c.onclick=function(ev){selSpecies=parseInt(ev.currentTarget.getAttribute('data-si'));buildSpeciesGrid();};
     sg.appendChild(c);
@@ -191,7 +191,17 @@ function updateMenuTexts(){
   var hk=tt('x.wasdSwimLmbCursorRmbTargetWheel');
   if(typeof window.buildKeyHint==='function') window.buildKeyHint(hk);
   else { var _kh=document.getElementById('keyHint'); if(_kh) _kh.innerHTML=hk; }
-  document.getElementById('helpBody').innerHTML=tt('help.body');
+  var helpHtml=tt('help.body');
+  if(window.matchMedia && matchMedia('(pointer:coarse),(max-width:500px)').matches){
+    var touchHelp=tt('helpTouch'); if(touchHelp && touchHelp!=='helpTouch') helpHtml=touchHelp;
+  }
+  document.getElementById('helpBody').innerHTML=helpHtml;
+  var pExitEl=document.getElementById('pExit'); if(pExitEl) pExitEl.textContent=tt('exit');
+  var pMoreEl=document.getElementById('pMore'); if(pMoreEl){ pMoreEl.textContent=tt('more'); pMoreEl.style.textAlign='center'; }
+  var ecT=document.getElementById('ecT'); if(ecT) ecT.textContent=tt('exitAsk');
+  var ecMsg=document.getElementById('ecMsg'); if(ecMsg) ecMsg.textContent=tt('exitMsg');
+  var ecNo=document.getElementById('ecNo'); if(ecNo) ecNo.textContent=tt('no');
+  var ecYes=document.getElementById('ecYes'); if(ecYes) ecYes.textContent=tt('yes');
   buildDiff();buildCatSel();buildSpeciesGrid();
 }
 

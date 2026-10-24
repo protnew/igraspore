@@ -410,5 +410,15 @@
   "loc.pseudopodia": "Pseudopodien",
   "loc.sessile": "feststehend",
   "loc.budding": "Knospung",
-  "loc.growth": "Wachstum"
+  "loc.growth": "Wachstum",
+  "exitAsk": "Beenden?",
+  "exitMsg": "Der Fortschritt dieses Lebens geht verloren.",
+  "yes": "Ja",
+  "no": "Nein",
+  "more": "Mehr",
+  "deadYours": "Deine Zelle ist gestorben",
+  "aliveWord": "lebend",
+  "deadOther": "Sonstiges",
+  "setLang": "Sprache",
+  "helpTouch": "<p><b>Steuerung:</b> Joystick zum Schwimmen. Tippe ins Wasser für die Richtung. Unten: Fressen, Teilen, Spore, Auto. Ziehen zum Zoomen.</p>"
 }

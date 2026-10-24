@@ -113,6 +113,7 @@ function snapTestCenter(){
 }
 
 function paintTestSilhouette(){
+  return;
   if(!igsTestMode() || typeof state === 'undefined' || state !== 'playing') return;
   if(typeof player === 'undefined' || !player || !player.alive || typeof ctx === 'undefined' || !cv) return;
   var w = cv.width, h = cv.height;
@@ -165,11 +166,7 @@ function paintTestSilhouette(){
   if(dw < 2 || dh < 2) return;
   ctx.save();
   ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.beginPath();
-  ctx.rect(x0, y0, dw, dh);
-  ctx.clip();
-  ctx.globalCompositeOperation = 'destination-in';
-  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = 'source-over';
   ctx.drawImage(oc, x0, y0, dw, dh, x0, y0, dw, dh);
   ctx.restore();
   if(typeof renderViruses==='function' && typeof cam!=='undefined' && cv){

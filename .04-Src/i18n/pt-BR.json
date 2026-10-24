@@ -410,5 +410,15 @@
   "loc.pseudopodia": "pseudópodes",
   "loc.sessile": "séssil",
   "loc.budding": "brotamento",
-  "loc.growth": "crescimento"
+  "loc.growth": "crescimento",
+  "exitAsk": "Sair?",
+  "exitMsg": "O progresso desta vida será perdido.",
+  "yes": "Sim",
+  "no": "Não",
+  "more": "Mais",
+  "deadYours": "Sua célula morreu",
+  "aliveWord": "vivos",
+  "deadOther": "Outros",
+  "setLang": "Idioma",
+  "helpTouch": "<p><b>Controles:</b> joystick para nadar. Toque na água para mirar. Botões de baixo: comer, dividir, esporo, auto. Belisque para zoom.</p>"
 }

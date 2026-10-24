@@ -410,5 +410,15 @@
   "loc.pseudopodia": "pseudopodi",
   "loc.sessile": "sessile",
   "loc.budding": "gemmazione",
-  "loc.growth": "crescita"
+  "loc.growth": "crescita",
+  "exitAsk": "Uscire?",
+  "exitMsg": "I progressi di questa vita andranno persi.",
+  "yes": "Sì",
+  "no": "No",
+  "more": "Altro",
+  "deadYours": "La tua cellula è morta",
+  "aliveWord": "vivi",
+  "deadOther": "Altro",
+  "setLang": "Lingua",
+  "helpTouch": "<p><b>Comandi:</b> joystick per nuotare. Tocca l’acqua per mirare. Pulsanti in basso: mangia, dividi, spora, auto. Pizzica per lo zoom.</p>"
 }

@@ -179,7 +179,7 @@ test.describe('HUD contract — desktop 1280x800', () => {
 
     test(`[${lang}] меню паузы: каждая кнопка даёт эффект`, async ({ page }) => {
       await boot(page, lang);
-      await page.click('#bPause');
+      await page.click('#pauseBtn');
       await page.waitForTimeout(250);
       expect(await page.evaluate(`document.getElementById('pauseO').className`)).toContain('show');
       const ids = await page.evaluate(`Array.from(document.querySelectorAll('#pauseO button')).map(b=>b.id)`);

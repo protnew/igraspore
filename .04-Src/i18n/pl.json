@@ -410,5 +410,15 @@
   "loc.pseudopodia": "nibynóżki",
   "loc.sessile": "sessilny",
   "loc.budding": "pączkowanie",
-  "loc.growth": "wzrost"
+  "loc.growth": "wzrost",
+  "exitAsk": "Wyjść?",
+  "exitMsg": "Postęp tego życia przepadnie.",
+  "yes": "Tak",
+  "no": "Nie",
+  "more": "Więcej",
+  "deadYours": "Twoja komórka zginęła",
+  "aliveWord": "żywych",
+  "deadOther": "Inne",
+  "setLang": "Język",
+  "helpTouch": "<p><b>Sterowanie:</b> joystick pływa. Dotknij wody, by celować. Dolne przyciski: jedz, dziel, spora, auto. Uszczypnij, by przybliżyć.</p>"
 }

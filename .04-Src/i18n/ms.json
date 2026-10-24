@@ -410,5 +410,15 @@
   "loc.pseudopodia": "pseudopodia",
   "loc.sessile": "sesil",
   "loc.budding": "bertunas",
-  "loc.growth": "pertumbuhan"
+  "loc.growth": "pertumbuhan",
+  "exitAsk": "Keluar?",
+  "exitMsg": "Kemajuan hayat ini akan hilang.",
+  "yes": "Ya",
+  "no": "Tidak",
+  "more": "Lagi",
+  "deadYours": "Sel anda mati",
+  "aliveWord": "hidup",
+  "deadOther": "Lain",
+  "setLang": "Bahasa",
+  "helpTouch": "<p><b>Kawalan:</b> kayu bedik untuk berenang. Ketik air untuk hala. Butang bawah: makan, bahagi, spora, auto. Cubit untuk zum.</p>"
 }

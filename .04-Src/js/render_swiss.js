@@ -320,7 +320,10 @@ function drawSprite(ctx, o, sz, shapeKey){
   // pale body under diagram so dark compartments don't read as missing textures
   ctx.fillStyle = 'rgba(236,238,242,0.92)';
   ctx.beginPath(); ctx.ellipse(0, 0, dw*0.46, dh*0.46, 0, 0, Math.PI*2); ctx.fill();
+  ctx.save();
+  ctx.beginPath(); ctx.ellipse(0, 0, dw*0.48, dh*0.48, 0, 0, Math.PI*2); ctx.clip();
   ctx.drawImage(img, -dw/2, -dh/2, dw, dh);
+  ctx.restore();
 
   // species identity: thin color halo only (does not destroy grey diagram)
   var col = (o.sp && o.sp.color) ? o.sp.color : null;

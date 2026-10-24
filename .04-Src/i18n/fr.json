@@ -410,5 +410,15 @@
   "loc.pseudopodia": "pseudopodes",
   "loc.sessile": "sessile",
   "loc.budding": "bourgeonnement",
-  "loc.growth": "croissance"
+  "loc.growth": "croissance",
+  "exitAsk": "Quitter ?",
+  "exitMsg": "La progression de cette vie sera perdue.",
+  "yes": "Oui",
+  "no": "Non",
+  "more": "Plus",
+  "deadYours": "Votre cellule est morte",
+  "aliveWord": "vivants",
+  "deadOther": "Autre",
+  "setLang": "Langue",
+  "helpTouch": "<p><b>Commandes :</b> joystick pour nager. Touchez l’eau pour viser. Boutons du bas : manger, diviser, spore, auto. Pincez pour zoomer.</p>"
 }

@@ -410,5 +410,15 @@
   "loc.pseudopodia": "偽足",
   "loc.sessile": "固着",
   "loc.budding": "出芽",
-  "loc.growth": "成長"
+  "loc.growth": "成長",
+  "exitAsk": "終了しますか？",
+  "exitMsg": "この命の進行は失われます。",
+  "yes": "はい",
+  "no": "いいえ",
+  "more": "その他",
+  "deadYours": "あなたの細胞は死にました",
+  "aliveWord": "生存",
+  "deadOther": "その他",
+  "setLang": "言語",
+  "helpTouch": "<p><b>操作:</b> ジョイスティックで泳ぐ。水をタップして向き。下のボタン: 食べる、分裂、胞子、自動。ピンチで拡大。</p>"
 }

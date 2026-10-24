@@ -394,9 +394,9 @@ document.getElementById('wikiBtnMenu').onclick=function(){buildWiki();document.g
 document.getElementById('wikiClose').onclick=function(){document.getElementById('wikiO').className='ov';};
 document.getElementById('wikiSearch').addEventListener('input',function(e){buildWiki(e.target.value);});
 document.getElementById('resBtn').onclick=function(){state='playing';document.getElementById('pauseO').className='ov';};
-document.getElementById('pHelp').onclick=function(){document.getElementById('helpO').className='ov show';};
-document.getElementById('pSet').onclick=function(){buildSettings();document.getElementById('setO').className='ov show';};
-document.getElementById('pWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
+document.getElementById('pHelp').onclick=function(){var po=document.getElementById('pauseO');if(po)po.className='ov';document.getElementById('helpO').className='ov show';};
+document.getElementById('pSet').onclick=function(){var po=document.getElementById('pauseO');if(po)po.className='ov';buildSettings();document.getElementById('setO').className='ov show';};
+document.getElementById('pWiki').onclick=function(){var po=document.getElementById('pauseO');if(po)po.className='ov';buildWiki();document.getElementById('wikiO').className='ov show';};
 document.getElementById('restartBtn').onclick=function(){document.getElementById('deadO').className='ov';startGame(false);};
 document.getElementById('pauseBtn').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};
 document.getElementById('menuBtn').onclick=function(){document.getElementById('deadO').className='ov';document.getElementById('menuO').className='ov show';state='menu';if(typeof hideGameHud==='function')hideGameHud();};

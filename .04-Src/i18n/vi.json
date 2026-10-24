@@ -410,5 +410,15 @@
   "loc.pseudopodia": "chân giả",
   "loc.sessile": "bám cố định",
   "loc.budding": "nảy chồi",
-  "loc.growth": "sinh trưởng"
+  "loc.growth": "sinh trưởng",
+  "exitAsk": "Thoát?",
+  "exitMsg": "Tiến trình đời này sẽ mất.",
+  "yes": "Có",
+  "no": "Không",
+  "more": "Thêm",
+  "deadYours": "Tế bào của bạn đã chết",
+  "aliveWord": "sống",
+  "deadOther": "Khác",
+  "setLang": "Ngôn ngữ",
+  "helpTouch": "<p><b>Điều khiển:</b> cần để bơi. Chạm nước để hướng. Nút dưới: ăn, chia, bào tử, tự động. Chụm để phóng.</p>"
 }

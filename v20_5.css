@@ -1,0 +1,55 @@
+/* v20.5 visual: readable type, 48px targets, solid overlays */
+#pauseBtn{display:none!important}
+body:not(.in-menu) #pauseBtn{
+  display:flex!important;position:fixed;top:8px;right:8px;width:48px;height:48px;
+  z-index:80;align-items:center;justify-content:center;background:#14324a;color:#fff;
+  border-radius:10px;font-size:20px;border:2px solid #7cf
+}
+body.in-menu #pauseBtn,
+body:has(#introO.show) #pauseBtn,
+body:has(#pauseO.show) #pauseBtn,
+body:has(#deadO.show) #pauseBtn,
+body:has(#setO.show) #pauseBtn,
+body:has(#helpO.show) #pauseBtn,
+body:has(#wikiO.show) #pauseBtn,
+body:has(#exitConfirm.show) #pauseBtn{display:none!important}
+body:not(.in-menu) #bPause{display:none!important}
+body.in-menu #mmWrap,body.in-menu #pcWrap,body.in-menu #mapLabel,body.in-menu #popLabel,
+body.in-menu #scaleW,body.in-menu #hDivReady,body.in-menu #divReason{display:none!important}
+#divReason{display:none!important}
+#introO.ov.show,#pauseO.ov.show,#deadO.ov.show,#setO.ov.show,#helpO.ov.show,#wikiO.ov.show,#exitConfirm.ov.show,#menuO.ov.show{
+  position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;max-width:none!important;
+  background:#05080e!important;z-index:400
+}
+#setO.ov.show,#helpO.ov.show,#wikiO.ov.show{z-index:460!important}
+#exitConfirm.ov.show{z-index:480!important}
+#deadO.ov.show{z-index:470!important}
+body:has(.ov.show) #actBar{visibility:hidden!important}
+#menuO.ov.show{z-index:40!important;background:#05080e!important}
+.diff{min-height:48px!important;font-size:15px!important;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+.sc,.scN,.scL,.scC,.scP,#spGrid .sc,#spGrid .sc *{font-size:13px!important}
+.hk{font-size:13px!important}
+@media (pointer:coarse),(max-width:500px){.hk{display:none!important}}
+#menuFooter .btn{white-space:normal!important;line-height:1.15;font-size:14px!important;overflow:visible;text-overflow:clip;min-height:48px}
+#menuO .tt{padding:8px 12px 0}
+body.in-menu #langSelWrap{top:56px!important;right:12px!important;max-width:150px!important}
+#pauseO .btn,#pauseO .tt,#exitConfirm .btn,#deadO .btn{text-align:center}
+.tg,#rmodeTg{min-width:48px!important;min-height:48px!important}
+input[type=range]{min-height:48px!important;height:48px!important}
+.slider-val,#wikiContent,#wikiContent *{font-size:13px!important}
+#wikiSearch,#starSelect,select{min-height:48px!important;font-size:16px!important}
+#hud,#hud *{max-width:100%}
+#leftContainer{max-width:min(240px,70vw)}
+#demoLabelsBtn,[id^="demoG"]{min-width:48px!important;min-height:48px!important;font-size:16px!important}
+body.demo-on #hDivReady,body.demo-on #hud{display:none!important}
+body:has(#helpO.show) #menuO,
+body:has(#setO.show) #menuO,
+body:has(#wikiO.show) #menuO,
+body:has(#introO.show) #menuO,
+body:has(#pauseO.show) #menuO,
+body:has(#deadO.show) #menuO,
+body:has(#exitConfirm.show) #menuO{display:none!important}
+#catSel,#catSel *,#spFilterStatus,#spFilterStatus *,#langSelWrap span{font-size:13px!important}
+#setBody,#setBody span,#setBody div,#rmodeLbl{font-size:16px!important}
+#scaleT,#hDivReady,#camM{font-size:13px!important}
+#demoTip button{min-width:48px!important;min-height:48px!important;font-size:16px!important;padding:8px 10px!important}

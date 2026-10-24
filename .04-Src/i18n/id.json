@@ -410,5 +410,15 @@
   "loc.pseudopodia": "pseudopodia",
   "loc.sessile": "sesil",
   "loc.budding": "bertunas",
-  "loc.growth": "pertumbuhan"
+  "loc.growth": "pertumbuhan",
+  "exitAsk": "Keluar?",
+  "exitMsg": "Kemajuan hidup ini akan hilang.",
+  "yes": "Ya",
+  "no": "Tidak",
+  "more": "Lainnya",
+  "deadYours": "Selmu mati",
+  "aliveWord": "hidup",
+  "deadOther": "Lainnya",
+  "setLang": "Bahasa",
+  "helpTouch": "<p><b>Kontrol:</b> joystick untuk berenang. Ketuk air untuk mengarah. Tombol bawah: makan, belah, spora, auto. Cubit untuk zoom.</p>"
 }

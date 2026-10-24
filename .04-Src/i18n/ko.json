@@ -410,5 +410,15 @@
   "loc.pseudopodia": "의사족",
   "loc.sessile": "고정",
   "loc.budding": "출아",
-  "loc.growth": "성장"
+  "loc.growth": "성장",
+  "exitAsk": "나갈까요?",
+  "exitMsg": "이번 삶의 진행이 사라집니다.",
+  "yes": "예",
+  "no": "아니요",
+  "more": "더보기",
+  "deadYours": "당신의 세포가 죽었습니다",
+  "aliveWord": "생존",
+  "deadOther": "기타",
+  "setLang": "언어",
+  "helpTouch": "<p><b>조작:</b> 조이스틱으로 헤엄. 물을 눌러 방향. 아래 버튼: 먹기, 분열, 포자, 자동. 집어서 확대.</p>"
 }

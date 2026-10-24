@@ -410,5 +410,15 @@
   "loc.pseudopodia": "pseudopodio",
   "loc.sessile": "nakadikit",
   "loc.budding": "pag-usbong",
-  "loc.growth": "paglago"
+  "loc.growth": "paglago",
+  "exitAsk": "Lumabas?",
+  "exitMsg": "Mawawala ang progreso ng buhay na ito.",
+  "yes": "Oo",
+  "no": "Hindi",
+  "more": "Iba pa",
+  "deadYours": "Namatay ang cell mo",
+  "aliveWord": "buhay",
+  "deadOther": "Iba",
+  "setLang": "Wika",
+  "helpTouch": "<p><b>Kontrol:</b> joystick para lumangoy. Pindutin ang tubig para tumutok. Mga pindutan sa ibaba: kain, hati, spore, auto. Kuran para mag-zoom.</p>"
 }

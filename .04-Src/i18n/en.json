@@ -410,5 +410,15 @@
   "loc.pseudopodia": "pseudopodia",
   "loc.sessile": "sessile",
   "loc.budding": "budding",
-  "loc.growth": "growth"
+  "loc.growth": "growth",
+  "exitAsk": "Exit?",
+  "exitMsg": "Progress of this life will be lost.",
+  "yes": "Yes",
+  "no": "No",
+  "more": "More",
+  "deadYours": "Your cell died",
+  "aliveWord": "alive",
+  "deadOther": "Other",
+  "setLang": "Language",
+  "helpTouch": "<p><b>Controls:</b> Drag the joystick to swim. Tap the water to aim. Bottom buttons: Eat, Divide, Spore, Auto. Pinch to zoom.</p>"
 }

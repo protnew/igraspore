@@ -30,7 +30,8 @@ body:has(.ov.show) #actBar{visibility:hidden!important}
 .sc,.scN,.scL,.scC,.scP,#spGrid .sc,#spGrid .sc *{font-size:13px!important}
 .hk{font-size:13px!important}
 @media (pointer:coarse),(max-width:500px){.hk{display:none!important}}
-#menuFooter .btn{white-space:normal!important;line-height:1.15;font-size:14px!important;overflow:visible;text-overflow:clip;min-height:48px}
+#menuFooter .btn{white-space:normal!important;line-height:1.15;font-size:13px!important;padding:6px 4px!important;overflow:visible;text-overflow:clip;min-height:48px}
+#camM{font-size:13px!important;white-space:normal!important;max-width:92vw!important;height:auto!important;text-align:center}
 #menuO .tt{padding:8px 12px 0}
 body.in-menu #langSelWrap{top:56px!important;right:12px!important;max-width:150px!important}
 #pauseO .btn,#pauseO .tt,#exitConfirm .btn,#deadO .btn{text-align:center}

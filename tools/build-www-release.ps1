@@ -21,7 +21,7 @@ New-Item -ItemType Directory -Force -Path (Join-Path $dst '04-Src\js') | Out-Nul
 New-Item -ItemType Directory -Force -Path (Join-Path $dst '04-Src\fonts') | Out-Null
 New-Item -ItemType Directory -Force -Path (Join-Path $dst 'assets\bioicons\swiss_sprites') | Out-Null
 
-$rootFiles = @('index.html','style.css','manifest.json','favicon-32.png','privacy.html')
+$rootFiles = @('index.html','style.css','v20_5.css','manifest.json','favicon-32.png','privacy.html')
 foreach ($n in $rootFiles) {
   $from = Join-Path $root $n
   if (-not (Test-Path $from)) { $from = Join-Path $srcPub $n }

@@ -420,5 +420,10 @@
   "aliveWord": "hidup",
   "deadOther": "Lainnya",
   "setLang": "Bahasa",
-  "helpTouch": "<p><b>Kontrol:</b> joystick untuk berenang. Ketuk air untuk mengarah. Tombol bawah: makan, belah, spora, auto. Cubit untuk zoom.</p>"
+  "helpTouch": "<p><b>Kontrol:</b> joystick untuk berenang. Ketuk air untuk mengarah. Tombol bawah: makan, belah, spora, auto. Cubit untuk zoom.</p>",
+  "loadingWorld": "Menyusun kolam…",
+  "economy": "Mode hemat",
+  "economyAsk": "Kurang dari 25 gambar. Mode hemat ada di pengaturan: lebih sedikit tulisan, kolam −30%.",
+  "demoTipTouch": "<b>DEMO</b> · geser untuk terbang · 1–6 pindah kelompok · ketuk sel untuk masuk<br>",
+  "camFlyTouch": "Kamera bebas"
 }

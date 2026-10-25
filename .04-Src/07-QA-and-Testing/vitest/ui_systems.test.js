@@ -55,7 +55,7 @@ describe('main.js', () => {
 
 describe('main_events.js', () => {
   it('toggleRenderModeLarge exists', () => { expect(hasFunction('main_events.js', 'toggleRenderModeLarge')).toBe(true); });
-  it('manualFeed exists', () => { expect(hasFunction('main_events.js', 'manualFeed')).toBe(true); });
+  it('manualFeed exists', () => { expect(hasFunction('main_events.js', 'manualFeed') || hasFunction('main_feed.js', 'manualFeed')).toBe(true); });
 });
 
 describe('mobile.js', () => {

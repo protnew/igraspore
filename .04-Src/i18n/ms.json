@@ -420,5 +420,10 @@
   "aliveWord": "hidup",
   "deadOther": "Lain",
   "setLang": "Bahasa",
-  "helpTouch": "<p><b>Kawalan:</b> kayu bedik untuk berenang. Ketik air untuk hala. Butang bawah: makan, bahagi, spora, auto. Cubit untuk zum.</p>"
+  "helpTouch": "<p><b>Kawalan:</b> kayu bedik untuk berenang. Ketik air untuk hala. Butang bawah: makan, bahagi, spora, auto. Cubit untuk zum.</p>",
+  "loadingWorld": "Membina kolam…",
+  "economy": "Mod jimat",
+  "economyAsk": "Bawah 25 bingkai. Mod jimat ada dalam tetapan: kurang kapsyen, kolam −30%.",
+  "demoTipTouch": "<b>DEMO</b> · seret untuk terbang · 1–6 tukar kumpulan · ketik sel untuk masuk<br>",
+  "camFlyTouch": "Kamera bebas"
 }

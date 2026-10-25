@@ -118,7 +118,7 @@ function initWorld(){
       sp:vsp,target:null,age:0,angle:rng(0,6.28),wobble:rng(0,6.28)});
   }
   // v20.6 G2: пропорциональное сжатие пула в тестовом режиме
-  var _poolScale = window.TEST_POOL ? Math.max(0.05, window.TEST_POOL/2450) : 1;
+  var _poolScale = window.TEST_POOL ? Math.max(0.05, window.TEST_POOL/2450) : (settings.economy ? 0.7 : 1);
   if(!(window._popQueue && window._popQueue.length))
   for(var cat in INIT_N){
     var pool=SPECIES_DB.filter(function(s){
@@ -298,6 +298,7 @@ function drainPopQueue(done){
     else {
       window._popQueue = null;
       igsMark('world.full');
+      var _ld=document.getElementById('igsLoad'); if(_ld) _ld.style.display='none';
       var n = 8;
       function mut(){
         if(!n || typeof orgs==='undefined'){ if(done) done(); return; }

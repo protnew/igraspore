@@ -35,19 +35,30 @@ function renderFoodChain(){
 }
 
 
-function getPoolCount(){
-  var poolN = 0;
-  try {
-    var dens = (typeof settings!=='undefined' && settings.density) ? settings.density : 1;
-    if(typeof INIT_N==='object'){
-      for(var k in INIT_N){ if(INIT_N.hasOwnProperty(k)) poolN += Math.round((INIT_N[k]||0)*dens); }
-    }
-    if(typeof DIFF!=='undefined' && typeof difficulty!=='undefined' && DIFF[difficulty] && DIFF[difficulty].spawn)
-      poolN = Math.round(poolN * DIFF[difficulty].spawn);
-  } catch(e){ poolN = 1600; }
-  if(!poolN) poolN = 1600;
-  return poolN;
+function igsPoolExpect(density, scale, virusMul){
+  var init = (typeof INIT_N==='object') ? INIT_N : {producer:1200,consumer1:150,consumer2:90,consumer3:40,decomposer:150};
+  var dens = (density==null) ? 1 : density;
+  var sc = (scale==null) ? 1 : scale;
+  var n = 0;
+  for(var k in init){
+    if(!init.hasOwnProperty(k) || k==='virus' || k==='macrophage' || !init[k]) continue;
+    n += 3 * Math.max(2, Math.round((init[k]/3 + 10) * dens * sc));
+  }
+  var vm = (virusMul==null) ? 0.4 : virusMul;
+  n += Math.max(15, Math.round(25 * vm));
+  return n;
 }
+function getPoolCount(){
+  var dens=1, sc=1, vm=0.4;
+  try{
+    dens = (typeof settings!=='undefined' && settings.density) ? settings.density : 1;
+    if(window.TEST_POOL) sc = Math.max(0.05, window.TEST_POOL/2450);
+    else if(settings && settings.economy) sc = 0.7;
+    if(typeof DIFF!=='undefined' && typeof difficulty!=='undefined' && DIFF[difficulty]) vm = DIFF[difficulty].virus||0.4;
+  }catch(e){}
+  return igsPoolExpect(dens, sc, vm);
+}
+window.igsPoolExpect = igsPoolExpect;
 
 function renderPoolBanner(){
   var el = document.getElementById('poolBanner');

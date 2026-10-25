@@ -104,7 +104,7 @@ function gameLoop(ts){
   var realDt = dt * cinematicTime;
   gt+=realDt;
   
-  fAcc+=dt;fCnt++;if(fAcc>=0.5){fps=Math.round(fCnt/fAcc);fAcc=0;fCnt=0;}
+  fAcc+=dt;fCnt++;if(fAcc>=0.5){fps=Math.round(fCnt/fAcc);fAcc=0;fCnt=0;if(window.igsFpsWatch)window.igsFpsWatch(fps);}
   
   if(state==='playing' || state==='menu'){
     updateWorld(realDt);
@@ -460,5 +460,6 @@ function startGame(isScreensaver){
     }, 800);
   } else if(!isScreensaver){ window._pendingTutorial=true; }
   igsMark('start.end');
+  if(!(window._popQueue&&window._popQueue.length)){ var _ld0=document.getElementById('igsLoad'); if(_ld0) _ld0.style.display='none'; }
 }
 

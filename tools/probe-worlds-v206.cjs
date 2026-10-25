@@ -25,8 +25,8 @@ const PAGE_SNAP = `(function(){
 async function freshStart(page){
   await page.evaluate(PAGE_SIDE);
   await page.waitForTimeout(150);
-  await page.evaluate(`(function(){document.getElementById("startBtn").click(); return 1})()`);
-  await page.waitForTimeout(700);
+  await page.evaluate(`(function(){ window.IGS_PHASE=[]; document.getElementById("startBtn").click(); return 1})()`);
+  await page.waitForFunction(`(function(){ var p=window.IGS_PHASE||[]; for(var i=0;i<p.length;i++) if(p[i][0]==='world.full') return true; return !window._chunkPop && (window.state==='playing'||window.state==='paused'); })()`, null, { timeout: 8000 });
   return page.evaluate(PAGE_SNAP);
 }
 

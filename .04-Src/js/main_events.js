@@ -275,7 +275,7 @@ document.addEventListener('keydown',function(e){
   if(window.demoMode && (k==='1'||k==='2'||k==='3'||k==='4'||k==='5') && typeof demoFlyToGroup==='function'){
     demoFlyToGroup(parseInt(k,10)); e.preventDefault(); return;
   }
-  if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?tt('cam.fly'):tt('cam.follow'));var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?tt('cam.flyBtn'):'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}}
+  if(k==='f'){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?tt('cam.fly'):tt('cam.follow'));var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?(window.camBadge?window.camBadge():tt('cam.flyBtn')):'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}}
   if(k==='escape'){
     if(window.demoMode && window.demoPossessed){ exitDemoPossess(); e.preventDefault(); return; }
     if(state==='playing' || window.demoMode){
@@ -318,13 +318,13 @@ document.addEventListener('keyup',function(e){var k=e.key.toLowerCase();
   if(k==='arrowup')camKeys.w=false; if(k==='arrowdown')camKeys.s=false;
   if(k==='arrowleft')camKeys.a=false; if(k==='arrowright')camKeys.d=false;});
 
-mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;try{var cm=document.getElementById('camM');if(cm){cm.style.display='block';cm.textContent=tt('cam.flyBtn');cm.className='free';}var bf=document.getElementById('bFree');if(bf){bf.classList.add('is-active-cam');}if(window.showToast)window.showToast(tt('cam.tip'));}catch(_e){}});
+mm.addEventListener('click',function(e){var r=mm.getBoundingClientRect();var cx=(e.clientX-r.left-5)/(110-10)*PW*2-PW;var cy=(e.clientY-r.top-5)/(80-10)*PD;cam.x=cx;cam.y=cy;freeCam=true;window.screensaverAutoCam=false;try{var cm=document.getElementById('camM');if(cm){cm.style.display='block';cm.textContent=(window.camBadge?window.camBadge():tt('cam.flyBtn'));cm.className='free';}var bf=document.getElementById('bFree');if(bf){bf.classList.add('is-active-cam');}if(window.showToast)window.showToast(tt('cam.tip'));}catch(_e){}});
 
 document.getElementById('bEat').onclick=function(){ window.tryPlayerEat && window.tryPlayerEat(); };
 document.getElementById('bDiv').onclick=function(){if(player&&player.alive){var okDiv=doDivide(player);if(window.showToast){if(okDiv||player.dividing)window.showToast(tt('toast.divide.go'),'#8ff');else window.showToast((window.divideBlockReason&&window.divideBlockReason(player))||tt('toast.divide.blocked'),'#faa');}}};
 document.getElementById('bCyst').onclick=function(){if(player&&player.alive)doCyst(player);};
 document.getElementById('bAuto').onclick=function(){if(player&&player.alive)autoAI=!autoAI;};
-document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?tt('cam.fly2'):tt('cam.follow'));var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?tt('cam.flyBtn'):'';cm.className=freeCam?'free':'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}};
+document.getElementById('bFree').onclick=function(){freeCam=!freeCam;camKeys={w:false,a:false,s:false,d:false};if(window.showToast)window.showToast(freeCam?tt('cam.fly2'):tt('cam.follow'));var cm=document.getElementById('camM');if(cm){cm.style.display=freeCam?'block':'none';cm.textContent=freeCam?(window.camBadge?window.camBadge():tt('cam.flyBtn')):'';cm.className=freeCam?'free':'';}var bf=document.getElementById('bFree');if(bf){bf.classList.toggle('is-active-cam',freeCam);;}};
 
 document.getElementById('bMicro').onclick=function(){
   settings.microscopeMode=!settings.microscopeMode;
@@ -378,7 +378,15 @@ function toggleRenderModeLarge(){
 }
 document.getElementById('bFol').onclick=function(){freeCam=false;autoAI=false;if(player&&player.alive){cam.x=player.x;cam.y=player.y-20;}if(window.showToast)window.showToast(tt('cam.followToast'));};
 document.getElementById('bWiki').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';};
-document.getElementById('bPause').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};
+function igsTogglePause(){
+  var now=Date.now();
+  if(igsTogglePause._at && now-igsTogglePause._at<350) return;
+  igsTogglePause._at=now;
+  if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}
+  else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';window._ovStack=null;}
+}
+var _bp=document.getElementById('bPause');
+if(_bp){ _bp.onclick=igsTogglePause; _bp.addEventListener('pointerup', igsTogglePause); }
 document.getElementById('bZI').onclick=function(){tZoom=clamp(tZoom*1.3,0.01,100);};
 document.getElementById('bZO').onclick=function(){tZoom=clamp(tZoom/1.3,0.01,100);};
 
@@ -386,24 +394,35 @@ document.getElementById('startBtn').onclick=function(){
   if(window._startBusy) return;
   if((window.state==='playing'||window.state==='paused')&&window.player){ return; }
   window._startBusy=true;
+  var ld=document.getElementById('igsLoad');
+  if(ld){ ld.textContent=(typeof tt==='function')?tt('loadingWorld'):'…'; ld.style.display='flex'; }
   setTimeout(function(){ try{ startGame(false); } finally { window._startBusy=false; } }, 0);
 };
 document.getElementById('screensaverBtn').onclick=function(){ if(typeof startDemoMode==='function') startDemoMode(); else startGame(true); };
 (function(){var b=document.getElementById('demoBtn'); if(b) b.onclick=function(){ if(typeof startDemoMode==='function') startDemoMode(); };})();
 document.getElementById('resBtn').onclick=function(){document.getElementById('pauseO').className='ov';state='playing';zoom=1;tZoom=1;};
-document.getElementById('helpBtn').onclick=function(){document.getElementById('helpO').className='ov show';setTimeout(function(){document.body.classList.add('menu-covered');},0);};
-document.getElementById('helpClose').onclick=function(){document.getElementById('helpO').className='ov';document.body.classList.remove('menu-covered');};
-document.getElementById('setBtn2').onclick=function(){buildSettings();document.getElementById('setO').className='ov show';setTimeout(function(){document.body.classList.add('menu-covered');},0);};
-document.getElementById('setClose').onclick=function(){document.getElementById('setO').className='ov';document.body.classList.remove('menu-covered');};
-document.getElementById('wikiBtnMenu').onclick=function(){buildWiki();document.getElementById('wikiO').className='ov show';setTimeout(function(){document.body.classList.add('menu-covered');},0);};
-document.getElementById('wikiClose').onclick=function(){document.getElementById('wikiO').className='ov';document.body.classList.remove('menu-covered');};
+function igsCloseOv(id){
+  var el=document.getElementById(id); if(el) el.className='ov';
+  document.body.classList.remove('menu-covered');
+  if(window._ovStack==='pause' && state==='paused'){
+    window._ovStack=null;
+    var po=document.getElementById('pauseO'); if(po) po.className='ov show';
+  }
+}
+document.getElementById('helpBtn').onclick=function(){window._ovStack=null;document.getElementById('helpO').className='ov show';setTimeout(function(){document.body.classList.add('menu-covered');},0);};
+document.getElementById('helpClose').onclick=function(){igsCloseOv('helpO');};
+document.getElementById('setBtn2').onclick=function(){window._ovStack=null;buildSettings();document.getElementById('setO').className='ov show';setTimeout(function(){document.body.classList.add('menu-covered');},0);};
+document.getElementById('setClose').onclick=function(){igsCloseOv('setO');};
+document.getElementById('wikiBtnMenu').onclick=function(){window._ovStack=null;buildWiki();document.getElementById('wikiO').className='ov show';setTimeout(function(){document.body.classList.add('menu-covered');},0);};
+document.getElementById('wikiClose').onclick=function(){igsCloseOv('wikiO');};
 document.getElementById('wikiSearch').addEventListener('input',function(e){buildWiki(e.target.value);});
 document.getElementById('resBtn').onclick=function(){state='playing';document.getElementById('pauseO').className='ov';};
-document.getElementById('pHelp').onclick=function(){var po=document.getElementById('pauseO');if(po)po.className='ov';document.getElementById('helpO').className='ov show';};
-document.getElementById('pSet').onclick=function(){var po=document.getElementById('pauseO');if(po)po.className='ov';buildSettings();document.getElementById('setO').className='ov show';};
-document.getElementById('pWiki').onclick=function(){var po=document.getElementById('pauseO');if(po)po.className='ov';buildWiki();document.getElementById('wikiO').className='ov show';};
+document.getElementById('pHelp').onclick=function(){window._ovStack='pause';var po=document.getElementById('pauseO');if(po)po.className='ov';document.getElementById('helpO').className='ov show';};
+document.getElementById('pSet').onclick=function(){window._ovStack='pause';var po=document.getElementById('pauseO');if(po)po.className='ov';buildSettings();document.getElementById('setO').className='ov show';};
+document.getElementById('pWiki').onclick=function(){window._ovStack='pause';var po=document.getElementById('pauseO');if(po)po.className='ov';buildWiki();document.getElementById('wikiO').className='ov show';};
 document.getElementById('restartBtn').onclick=function(){document.getElementById('deadO').className='ov';startGame(false);};
-document.getElementById('pauseBtn').onclick=function(){if(state==='playing'){state='paused';document.getElementById('pauseO').className='ov show';}else if(state==='paused'){state='playing';document.getElementById('pauseO').className='ov';}};
+var _pbtn=document.getElementById('pauseBtn');
+if(_pbtn){ _pbtn.onclick=igsTogglePause; _pbtn.addEventListener('pointerup', igsTogglePause); }
 document.getElementById('menuBtn').onclick=function(){document.getElementById('deadO').className='ov';document.getElementById('menuO').className='ov show';state='menu';if(typeof hideGameHud==='function')hideGameHud();};
 
 window.addEventListener('resize',resize);

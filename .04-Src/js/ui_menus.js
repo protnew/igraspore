@@ -139,6 +139,7 @@ function updateMenuTexts(){
     if(!poolN) poolN = 1600;
     var el = document.getElementById('menuSub');
     if(el) el.innerHTML = tt('menuSub');
+    if(typeof renderPoolBanner==='function') renderPoolBanner();
   })();
   var sb=document.getElementById('startBtn'); if(sb) sb.textContent=tt('start');
   var hb=document.getElementById('helpBtn'); if(hb) hb.textContent=tt('help');

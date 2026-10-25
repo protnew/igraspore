@@ -361,6 +361,10 @@
     if(shown('exitConfirm')){ var ec=document.getElementById('exitConfirm'); if(ec) ec.className='ov'; return true; }
     if(shown('setO')||shown('helpO')||shown('wikiO')||shown('introO')){
       ['setO','helpO','wikiO','introO'].forEach(function(id){ var el=document.getElementById(id); if(el) el.className='ov'; });
+      if(window._ovStack==='pause' && typeof state!=='undefined' && state==='paused'){
+        window._ovStack=null;
+        var backP=document.getElementById('pauseO'); if(backP) backP.className='ov show';
+      }
       return true;
     }
     if(typeof state!=='undefined' && state==='playing'){

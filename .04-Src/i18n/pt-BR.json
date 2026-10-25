@@ -420,5 +420,10 @@
   "aliveWord": "vivos",
   "deadOther": "Outros",
   "setLang": "Idioma",
-  "helpTouch": "<p><b>Controles:</b> joystick para nadar. Toque na água para mirar. Botões de baixo: comer, dividir, esporo, auto. Belisque para zoom.</p>"
+  "helpTouch": "<p><b>Controles:</b> joystick para nadar. Toque na água para mirar. Botões de baixo: comer, dividir, esporo, auto. Belisque para zoom.</p>",
+  "loadingWorld": "Montando o lago…",
+  "economy": "Modo econômico",
+  "economyAsk": "Menos de 25 quadros. O modo econômico está nos ajustes: menos legendas, lago −30%.",
+  "demoTipTouch": "<b>DEMO</b> · arraste para voar · 1–6 muda o grupo · toque numa célula para entrar<br>",
+  "camFlyTouch": "Câmera livre"
 }

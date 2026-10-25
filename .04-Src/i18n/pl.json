@@ -420,5 +420,10 @@
   "aliveWord": "żywych",
   "deadOther": "Inne",
   "setLang": "Język",
-  "helpTouch": "<p><b>Sterowanie:</b> joystick pływa. Dotknij wody, by celować. Dolne przyciski: jedz, dziel, spora, auto. Uszczypnij, by przybliżyć.</p>"
+  "helpTouch": "<p><b>Sterowanie:</b> joystick pływa. Dotknij wody, by celować. Dolne przyciski: jedz, dziel, spora, auto. Uszczypnij, by przybliżyć.</p>",
+  "loadingWorld": "Budujemy staw…",
+  "economy": "Tryb oszczędny",
+  "economyAsk": "Poniżej 25 klatek. Tryb oszczędny jest w ustawieniach: mniej podpisów, staw −30%.",
+  "demoTipTouch": "<b>DEMO</b> · przeciągnij, by lecieć · 1–6 zmienia grupę · dotknij komórki, by wejść<br>",
+  "camFlyTouch": "Wolna kamera"
 }

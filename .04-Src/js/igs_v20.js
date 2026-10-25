@@ -163,7 +163,13 @@ function igsHardwareBack(){
     var e=document.getElementById(id);
     if(e && String(e.className).indexOf('show')>=0){ e.className='ov'; return true; }
   }
-  if(hide('setO')||hide('helpO')||hide('wikiO')||hide('actionsPanel')||hide('leaderboardO')||hide('exitConfirm')) return;
+  if(hide('setO')||hide('helpO')||hide('wikiO')||hide('actionsPanel')||hide('leaderboardO')||hide('exitConfirm')){
+    if(window._ovStack==='pause' && window.state==='paused'){
+      window._ovStack=null;
+      var backP=document.getElementById('pauseO'); if(backP) backP.className='ov show';
+    }
+    return;
+  }
   if(window.__igsDemo && window.exitDemo){ window.exitDemo(); return; }
   if(window.state==='playing'){
     try{ state='paused'; }catch(e){}

@@ -420,5 +420,10 @@
   "aliveWord": "vivi",
   "deadOther": "Altro",
   "setLang": "Lingua",
-  "helpTouch": "<p><b>Comandi:</b> joystick per nuotare. Tocca l’acqua per mirare. Pulsanti in basso: mangia, dividi, spora, auto. Pizzica per lo zoom.</p>"
+  "helpTouch": "<p><b>Comandi:</b> joystick per nuotare. Tocca l’acqua per mirare. Pulsanti in basso: mangia, dividi, spora, auto. Pizzica per lo zoom.</p>",
+  "loadingWorld": "Sto costruendo lo stagno…",
+  "economy": "Modalità risparmio",
+  "economyAsk": "Meno di 25 fotogrammi. La modalità risparmio è nelle impostazioni: meno scritte, stagno −30%.",
+  "demoTipTouch": "<b>DEMO</b> · trascina per volare · 1–6 cambia gruppo · tocca una cellula per entrare<br>",
+  "camFlyTouch": "Camera libera"
 }

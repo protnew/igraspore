@@ -174,8 +174,9 @@ function startDemoMode() {
       nav += '<button type="button" data-dg="'+(gi+1)+'" style="margin:4px;min-width:48px;min-height:48px;font:16px/48px system-ui;background:#123;color:#cfe;border:1px solid #4af;border-radius:8px;cursor:pointer">'+(gi+1)+'</button>';
     }
     var labelsBtn = '<button type="button" id="demoLabelsBtn" aria-pressed="'+(window._demoLabels?'true':'false')+'" style="margin:2px 0 0 2px;padding:3px 9px;font:700 11px/1.2 system-ui;background:'+(window._demoLabels?'#1a4':'#123')+';color:'+(window._demoLabels?'#fff':'#cfe')+';border:1px solid '+(window._demoLabels?'#4f8':'#4af')+';border-radius:5px;cursor:pointer">'+tt('demo.labels')+'</button>';
-    var tipTxt = tt('demo.tip');
-    if(window.matchMedia && matchMedia('(pointer:coarse)').matches) tipTxt = String(tipTxt).replace(/WASD\/\S+/g, 'touch');
+    var coarse = window.matchMedia && matchMedia('(pointer:coarse),(max-width:500px)').matches;
+    var tipTxt = coarse ? tt('demoTipTouch') : tt('demo.tip');
+    if(!tipTxt || tipTxt==='demoTipTouch') tipTxt = tt('demo.tip');
     tip.innerHTML = tipTxt + nav + labelsBtn;
     tip.onclick = function(ev){
       var b = ev.target;
@@ -335,6 +336,7 @@ function renderDemoLabels() {
           }
         }
         var hx = (minX - cam.x) * zoom + cv.width / 2 - 20;
+        if(hx < 8) hx = 8;
         var hy = (anchorY - cam.y) * zoom + cv.height / 2 - Math.max(28, (o.size || 8) * zoom + 18);
         var label = o.demoLabel || ('#' + g);
         var col = (DEMO_GROUPS[g - 1] && DEMO_GROUPS[g - 1].color) || '#8ef';
@@ -343,6 +345,7 @@ function renderDemoLabels() {
         ctx.textBaseline = 'bottom';
         ctx.fillStyle = 'rgba(0,10,20,0.7)';
         var tw = ctx.measureText(label).width + 12;
+        if(hx + tw > cv.width - 8) hx = Math.max(8, cv.width - 8 - tw);
         ctx.fillRect(hx - 4, hy - 18, tw, 22);
         ctx.fillStyle = col;
         ctx.fillText(label, hx, hy);

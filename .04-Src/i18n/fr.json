@@ -420,5 +420,10 @@
   "aliveWord": "vivants",
   "deadOther": "Autre",
   "setLang": "Langue",
-  "helpTouch": "<p><b>Commandes :</b> joystick pour nager. Touchez l’eau pour viser. Boutons du bas : manger, diviser, spore, auto. Pincez pour zoomer.</p>"
+  "helpTouch": "<p><b>Commandes :</b> joystick pour nager. Touchez l’eau pour viser. Boutons du bas : manger, diviser, spore, auto. Pincez pour zoomer.</p>",
+  "loadingWorld": "Le bassin se construit…",
+  "economy": "Mode économe",
+  "economyAsk": "Moins de 25 images. Le mode économe est dans les réglages : moins de légendes, bassin −30 %.",
+  "demoTipTouch": "<b>DÉMO</b> · glisser pour voler · 1–6 change de groupe · toucher une cellule pour entrer<br>",
+  "camFlyTouch": "Caméra libre"
 }

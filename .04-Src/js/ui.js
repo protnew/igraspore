@@ -177,7 +177,8 @@ function updateDivReady(){
       var line=tt('energy')+' '+en+'/'+rep+' · '+tt('massWord')+' '+m.toFixed(1)+'/'+needM.toFixed(1);
       var txt;
       var ready=(typeof window.canDivide==='function')?window.canDivide(who):(n&&n.ok);
-      if(ready) txt=line+' · '+tt('ready')+' (Q)';
+      var qk=(window.matchMedia && matchMedia('(pointer:coarse),(max-width:500px)').matches)?'':' (Q)';
+      if(ready) txt=line+' · '+tt('ready')+qk;
       else if(window.divideBlockReason) txt=line+' · '+window.divideBlockReason(who);
       else txt=line;
       var goalN=(typeof window._divGoal==='number')?window._divGoal:0;

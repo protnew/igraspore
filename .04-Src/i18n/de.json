@@ -420,5 +420,10 @@
   "aliveWord": "lebend",
   "deadOther": "Sonstiges",
   "setLang": "Sprache",
-  "helpTouch": "<p><b>Steuerung:</b> Joystick zum Schwimmen. Tippe ins Wasser für die Richtung. Unten: Fressen, Teilen, Spore, Auto. Ziehen zum Zoomen.</p>"
+  "helpTouch": "<p><b>Steuerung:</b> Joystick zum Schwimmen. Tippe ins Wasser für die Richtung. Unten: Fressen, Teilen, Spore, Auto. Ziehen zum Zoomen.</p>",
+  "loadingWorld": "Der Teich wird aufgebaut…",
+  "economy": "Sparmodus",
+  "economyAsk": "Unter 25 Bildern. Der Sparmodus steht in den Einstellungen: weniger Beschriftungen, Teich −30 %.",
+  "demoTipTouch": "<b>DEMO</b> · ziehen zum Fliegen · 1–6 wechselt die Gruppe · Zelle antippen zum Betreten<br>",
+  "camFlyTouch": "Freie Kamera"
 }

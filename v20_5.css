@@ -13,7 +13,7 @@ body:has(#setO.show) #pauseBtn,
 body:has(#helpO.show) #pauseBtn,
 body:has(#wikiO.show) #pauseBtn,
 body:has(#exitConfirm.show) #pauseBtn{display:none!important}
-body:not(.in-menu) #bPause{display:none!important}
+#bPause{display:none!important}
 body.in-menu #mmWrap,body.in-menu #pcWrap,body.in-menu #mapLabel,body.in-menu #popLabel,
 body.in-menu #scaleW,body.in-menu #hDivReady,body.in-menu #divReason{display:none!important}
 #divReason{display:none!important}
@@ -32,11 +32,27 @@ body:has(.ov.show) #actBar{visibility:hidden!important}
 @media (pointer:coarse),(max-width:500px){.hk{display:none!important}}
 #menuFooter .btn{white-space:normal!important;line-height:1.15;font-size:13px!important;padding:6px 4px!important;overflow:visible;text-overflow:clip;min-height:48px}
 #camM{font-size:13px!important;white-space:normal!important;max-width:92vw!important;height:auto!important;text-align:center}
+body.demo-on #camM{top:56px!important}
+#pExit,#pMore{text-transform:none!important}
+.ecT{font-size:18px!important;text-transform:none!important;color:#fff!important}
+.scN,.scC,.scL,.scP{overflow-wrap:anywhere;word-break:break-word}
+@media (max-width:500px){
+  #actBar{max-width:100vw;left:0!important;right:0!important;transform:none!important;width:100%!important;padding:0 max(8px,env(safe-area-inset-left))!important;box-sizing:border-box}
+  #leftContainer{left:max(6px,env(safe-area-inset-left))!important}
+  #bEat .abt{font-size:13px!important;white-space:normal}
+}
 #menuO .tt{padding:8px 12px 0}
 body.in-menu #langSelWrap{top:56px!important;right:12px!important;max-width:150px!important}
 #pauseO .btn,#pauseO .tt,#exitConfirm .btn,#deadO .btn{text-align:center}
-.tg,#rmodeTg{min-width:48px!important;min-height:48px!important}
-input[type=range]{min-height:48px!important;height:48px!important}
+.sr{min-height:48px;width:100%;max-width:100%;box-sizing:border-box;padding:6px 8px}
+.tg,#rmodeTg{min-width:34px!important;width:34px!important;min-height:16px!important;height:16px!important;padding:16px 12px!important;box-sizing:content-box!important;background-clip:content-box!important}
+.tg::after{top:18px!important;left:14px!important}
+.tg.on::after{left:32px!important}
+.slider-row{width:100%;max-width:100%;box-sizing:border-box;min-height:48px;overflow:visible;gap:8px}
+.slider-row input[type=range]{flex:1;min-width:0;width:auto!important;height:4px!important;min-height:4px!important;padding:22px 0!important;box-sizing:content-box!important;background:#234!important;background-clip:content-box!important}
+.slider-val{min-width:4.2em;flex:none;white-space:nowrap}
+#setBody,#setO{overflow-x:hidden;max-width:100vw}
+#igsLoad{display:none;position:fixed;inset:0;z-index:520;background:rgba(5,8,14,.82);color:#fff;font:18px/1.4 system-ui,sans-serif;align-items:center;justify-content:center;text-align:center;padding:24px}
 .slider-val,#wikiContent,#wikiContent *{font-size:13px!important}
 #wikiSearch,#starSelect,select{min-height:48px!important;font-size:16px!important}
 #hud,#hud *{max-width:100%}

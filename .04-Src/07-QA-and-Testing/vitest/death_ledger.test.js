@@ -22,3 +22,43 @@ describe('deathLedger', () => {
     expect(deathLedger(10, 0, 0, 3, 0, 0).extinct).toBe(true);
   });
 });
+
+// v20.6 R1: сумма показанных причин + Other = Dead на экране (ТЗ: «Сумма причин = Dead»)
+describe('v20.6 R1: causes + Other = shown Dead', () => {
+  const screenSrc = fs.readFileSync(path.resolve(__dirname, '../../js/ui_screens.js'), 'utf-8');
+
+  const fn = screenSrc.match(/function deathCauseRow\([\s\S]*?\n\}/);
+  if (!fn) throw new Error('deathCauseRow missing');
+  const deathCauseRow = new Function(fn[0] + '\nreturn deathCauseRow;')();
+  function renderCauses(globalDead, causes){
+    return deathCauseRow(globalDead, causes);
+  }
+
+  it('Other closes the gap: sum + Other = Dead (long-life case 9 = 3+0+1+0+2 + 3)', () => {
+    const r = renderCauses(9, [3, 0, 1, 0, 2]);
+    expect(r.total).toBe(9);
+    expect(r.other).toBe(3);
+  });
+
+  it('приёмка de-1280 (Dead 0 при видимых 1+5): Dead показывается как сумма, не врёт', () => {
+    const r = renderCauses(0, [1, 0, 0, 0, 5]);
+    expect(r.shownDead).toBe(6);
+    expect(r.other).toBe(0);
+    expect(r.total).toBe(r.shownDead);
+  });
+
+  it('приёмка de-390 (Dead 9 при 1+21) / th-390 (Dead 5 при 1+17)', () => {
+    const a = renderCauses(9, [1, 0, 0, 0, 21]);
+    expect(a.shownDead).toBe(22);
+    expect(a.other).toBe(0);
+    expect(a.total).toBe(22);
+    const b = renderCauses(5, [1, 0, 0, 0, 17]);
+    expect(b.shownDead).toBe(18);
+    expect(b.total).toBe(18);
+  });
+
+  it('строка Other рендерится всегда (не под if), контракт исходника', () => {
+    expect(screenSrc).toContain("tt('deadOther')");
+    expect(screenSrc).not.toMatch(/if\s*\(\s*other\s*\)\s*html\s*\+=/);
+  });
+});

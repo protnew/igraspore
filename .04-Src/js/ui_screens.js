@@ -42,6 +42,14 @@ function deathLedger(startPop, born, alive, age, speciesAlive, pondAlive){
   return { dead: Math.max(0, s + b - a), alive: a, time: Math.max(0, Math.round(Number(age)||0)), extinct: extinct, title: extinct ? 'EXTINCT' : 'Your cell died' };
 }
 
+function deathCauseRow(globalDead, causes){
+  var sum=0;
+  for(var i=0;i<(causes?causes.length:0);i++) sum+=(causes[i]||0);
+  var shownDead=Math.max(globalDead||0, sum);
+  var other=shownDead-sum;
+  if(other<0) other=0;
+  return {shownDead:shownDead, other:other, total:sum+other};
+}
 function showDeadScreen(){
   // Virus spectator mode — show infection stats, not death
   if(window.virusPlayer){
@@ -79,7 +87,10 @@ function showDeadScreen(){
   for(var ai=0; ai<orgs.length; ai++){ if(orgs[ai] && orgs[ai].alive) globalAlive++; }
   var speciesAlive = (player && player.sp && speciesPop[player.sp.id]) ? (speciesPop[player.sp.id].alive||0) : 1;
   var ledger = deathLedger(startPop, globalBorn, globalAlive, cellAge, speciesAlive, globalAlive);
-  var globalDead = ledger.dead;
+  var causeArr=[];
+  for(var ci0=0;ci0<5;ci0++) causeArr.push((stats.deathCauses&&stats.deathCauses[ci0])||0);
+  var causeRow=deathCauseRow(ledger.dead, causeArr);
+  var globalDead = causeRow.shownDead;
   var extinct = ledger.extinct;
   playSec = ledger.time;
   html+='<div style="color:#bcd;font-size:16px;text-align:center;margin-bottom:4px;font-weight:bold;">'+(tt('x.pondStatistics'))+'</div>';
@@ -122,9 +133,7 @@ function showDeadScreen(){
   }
   // v20.6 R1: Other = Dead − сумма показанных причин; строка Other всегда есть,
   // поэтому сумма причин + Other строго равна Dead (unit-тест на 1280/390 и длинной жизни).
-  var causeSum=0; for(var cs=0;cs<5;cs++) causeSum+=(stats.deathCauses[cs]||0);
-  var other=globalDead-causeSum;
-  if(other<0) other=0;
+  var other=causeRow.other;
   html+='<tr><td class="lbl" style="color:#faa">'+tt('deadOther')+'</td><td class="val" style="color:#fff">'+other+'</td></tr>';
   html+='</table>';
   
@@ -186,27 +195,25 @@ function applyRenderMode(){
 
 function buildSettings(){
   var sb=document.getElementById('setBody');
-  var opts=[['particles',tt('particles')],['bubbles',tt('bubbles')],['currents',tt('currents')],['vignette',tt('vignette')],['healthBars',tt('healthBars')],['shadows',tt('shadows')]];
+  var opts=[['particles',tt('particles')],['bubbles',tt('bubbles')],['currents',tt('currents')],['vignette',tt('vignette')],['healthBars',tt('healthBars')],['shadows',tt('shadows')],['economy',tt('economy')]];
   var html='';
   for(var i=0;i<opts.length;i++)html+='<div class="sr"><span>'+opts[i][1]+'</span><div class="tg'+(settings[opts[i][0]]?' on':'')+'" data-s="'+opts[i][0]+'" onclick="toggleSet(this)"></div></div>';
   // Render mode toggle: cartoon ↔ swiss (same 2-mode cycle as N / big button)
   html+='<div class="sr"><span>'+tt('picMode')+': <b id="rmodeLbl">'+tt(settings.renderMode==='swiss'?'modeLbl.swiss':'modeLbl.cartoon')+'</b></span><div class="tg'+(settings.renderMode==='swiss'?' on':'')+'" id="rmodeTg" onclick="toggleRenderMode(this)"></div></div>';
   // Sliders
-  html+='<div class="slider-row"><span>'+tt('density')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.density+'" oninput="settings.density=parseFloat(this.value)" /><span class="slider-val">'+settings.density.toFixed(1)+'</span></div>';
-  html+='<div class="slider-row"><span>'+tt('lightInt')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.lightMul+'" oninput="settings.lightMul=parseFloat(this.value)" /><span class="slider-val">'+settings.lightMul.toFixed(1)+'</span></div>';
-  html+='<div class="slider-row"><span>'+tt('virusRate')+'</span><input type="range" min="0" max="2" step="0.1" value="'+settings.virusRate+'" oninput="settings.virusRate=parseFloat(this.value)" /><span class="slider-val">'+settings.virusRate.toFixed(1)+'</span></div>';
-  // User speed control (0.1 = very slow, 3.0 = fast). Default 0.33 = 3x slower
-  html+='<div class="slider-row"><span>'+tt('simSpeed')+'</span><input type="range" min="0.1" max="3" step="0.05" value="'+settings.simSpeed+'" oninput="settings.simSpeed=parseFloat(this.value)" /><span class="slider-val">'+settings.simSpeed.toFixed(2)+'\u00d7</span></div>';
-  // Predation intensity
-  html+='<div class="slider-row"><span>'+tt('predation')+'</span><input type="range" min="0" max="2" step="0.1" value="'+settings.predation+'" oninput="settings.predation=parseFloat(this.value)" /><span class="slider-val">'+settings.predation.toFixed(1)+'</span></div>';
-  // Reproduction rate
-  html+='<div class="slider-row"><span>'+tt('divRate')+'</span><input type="range" min="0" max="3" step="0.1" value="'+settings.divRate+'" oninput="settings.divRate=parseFloat(this.value)" /><span class="slider-val">'+settings.divRate.toFixed(1)+'</span></div>';
-  var langEnabled = window.IGS_ENABLED || {ru:1,en:1,'pt-BR':1,id:1,de:1,fr:1,hi:1,ja:1,vi:1,ko:1,th:1,it:1,pl:1,uk:1,'zh-TW':1,ms:1,bn:1,es:1,tr:1,fil:1};
-  var langCodes = Object.keys(langEnabled);
-  html+='<div class="sr"><span>Language</span><select id="setLang" style="min-height:48px;font-size:16px;background:#123a66;color:#fff">';
+  function sv(v,d){return (Math.round(v*100)/100).toFixed(d);}
+  html+='<div class="slider-row"><span>'+tt('density')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.density+'" oninput="settings.density=parseFloat(this.value);this.nextElementSibling.textContent=settings.density.toFixed(1)" /><span class="slider-val">'+sv(settings.density,1)+'</span></div>';
+  html+='<div class="slider-row"><span>'+tt('lightInt')+'</span><input type="range" min="0.3" max="2" step="0.1" value="'+settings.lightMul+'" oninput="settings.lightMul=parseFloat(this.value);this.nextElementSibling.textContent=settings.lightMul.toFixed(1)" /><span class="slider-val">'+sv(settings.lightMul,1)+'</span></div>';
+  html+='<div class="slider-row"><span>'+tt('virusRate')+'</span><input type="range" min="0" max="2" step="0.1" value="'+settings.virusRate+'" oninput="settings.virusRate=parseFloat(this.value);this.nextElementSibling.textContent=settings.virusRate.toFixed(1)" /><span class="slider-val">'+sv(settings.virusRate,1)+'</span></div>';
+  html+='<div class="slider-row"><span>'+tt('simSpeed')+'</span><input type="range" min="0.1" max="3" step="0.05" value="'+settings.simSpeed+'" oninput="settings.simSpeed=parseFloat(this.value);this.nextElementSibling.textContent=settings.simSpeed.toFixed(2)+\'\u00d7\'" /><span class="slider-val">'+sv(settings.simSpeed,2)+'\u00d7</span></div>';
+  html+='<div class="slider-row"><span>'+tt('predation')+'</span><input type="range" min="0" max="2" step="0.1" value="'+settings.predation+'" oninput="settings.predation=parseFloat(this.value);this.nextElementSibling.textContent=settings.predation.toFixed(1)" /><span class="slider-val">'+sv(settings.predation,1)+'</span></div>';
+  html+='<div class="slider-row"><span>'+tt('divRate')+'</span><input type="range" min="0" max="3" step="0.1" value="'+settings.divRate+'" oninput="settings.divRate=parseFloat(this.value);this.nextElementSibling.textContent=settings.divRate.toFixed(1)" /><span class="slider-val">'+sv(settings.divRate,1)+'</span></div>';
+  var langCodes = Object.keys(typeof LANGS!=='undefined'?LANGS:{en:1});
+  html+='<div class="sr"><span>'+tt('setLang')+'</span><select id="setLang" style="min-height:48px;font-size:16px;background:#123a66;color:#fff;max-width:70%">';
   for(var li=0; li<langCodes.length; li++){
     var code=langCodes[li];
-    html+='<option value="'+code+'"'+(code===curLang?' selected':'')+'>'+code+'</option>';
+    var nm=(typeof LANG_NAME!=='undefined'&&LANG_NAME[code])?LANG_NAME[code]:code;
+    html+='<option value="'+code+'"'+(code===curLang?' selected':'')+'>'+nm+'</option>';
   }
   html+='</select></div>';
   sb.innerHTML=html;
@@ -220,6 +227,7 @@ function buildSettings(){
       try{ history.replaceState(null,'', location.pathname+'?lang='+encodeURIComponent(curLang)); }catch(eU){}
       if(typeof updateMenuTexts==='function') updateMenuTexts();
       if(typeof buildLangBar==='function') buildLangBar();
+      if(typeof buildSettings==='function') buildSettings();
     }
     if(window.loadLangPack) window.loadLangPack(next).then(apply).catch(apply);
     else apply();

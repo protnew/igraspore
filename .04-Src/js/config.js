@@ -273,6 +273,12 @@ function getWikiEntry(i){
 
 // === CONFIG ===
 var PW=25000,PD=2000,BW=600,MAX_ORG=8000,DAY_SEC=120,SPD_SCALE=16;
+// v20.6 G2: тестовый режим — малый пул только при ?test=1 (игру не уменьшает)
+try{
+  var __qp=new URLSearchParams(location.search);
+  if(__qp.get('test')==='1'&&__qp.get('pool')){ window.TEST_POOL=parseInt(__qp.get('pool'),10)||200; }
+}catch(e){}
+if(window.TEST_POOL){ MAX_ORG=Math.min(MAX_ORG,window.TEST_POOL+80); }
 var SPAWN_RATES={producer:2,consumer1:0.3,consumer2:0.08,consumer3:0.02,decomposer:0.2,macrophage:0.05,virus:0.1};
 var FOOD={consumer1:["producer"],consumer2:["producer","consumer1","consumer2"],consumer3:["producer","consumer1","consumer2","consumer3"],decomposer:[],macrophage:["consumer1","consumer2","consumer3"]};
 // Кто есть кто — простыми словами (для UI/вики/подростка)

@@ -189,3 +189,14 @@ function igsInstallBack(){
 }
 igsInstallBack();
 setInterval(igsInstallBack, 500);
+
+// v20.6 G1: разблокировка аудио при первом жесте (после async initAudio)
+(function(){
+  function unlockOnce(){
+    try{ if(typeof window.unlockAudio==='function') window.unlockAudio(); }catch(e){}
+    document.removeEventListener('pointerdown', unlockOnce, true);
+    document.removeEventListener('keydown', unlockOnce, true);
+  }
+  document.addEventListener('pointerdown', unlockOnce, true);
+  document.addEventListener('keydown', unlockOnce, true);
+})();

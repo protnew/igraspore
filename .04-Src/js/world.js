@@ -92,7 +92,12 @@ window.getTempAt = function(x, y) {
     return t;
 };
 
+function igsMark(name){
+  window.IGS_PHASE = window.IGS_PHASE || [];
+  window.IGS_PHASE.push([name, (typeof performance!=='undefined')?performance.now():Date.now()]);
+}
 function initWorld(){
+  igsMark('world.begin');
   // Reset clock to morning every new game
   tod = 9.0;
   dayLight = 0.85;
@@ -112,6 +117,9 @@ function initWorld(){
     viruses.push({x:rng(-400,400),y:rng(30,200),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),
       sp:vsp,target:null,age:0,angle:rng(0,6.28),wobble:rng(0,6.28)});
   }
+  // v20.6 G2: пропорциональное сжатие пула в тестовом режиме
+  var _poolScale = window.TEST_POOL ? Math.max(0.05, window.TEST_POOL/2450) : 1;
+  if(!(window._popQueue && window._popQueue.length))
   for(var cat in INIT_N){
     var pool=SPECIES_DB.filter(function(s){
       if(s.cat!==cat) return false;
@@ -131,7 +139,7 @@ function initWorld(){
     // Spawn at least 15 of each selected species to avoid quick extinction
     for(var s=0; s<selectedSpecies.length; s++) {
        var sp = selectedSpecies[s];
-       var baseCnt = Math.round((INIT_N[cat]/3 + 10) * settings.density);
+       var baseCnt = Math.max(2, Math.round((INIT_N[cat]/3 + 10) * settings.density * _poolScale));
        for(var i=0;i<baseCnt;i++){
          // UNIFORM distribution across entire basin
          var d, hw;
@@ -148,10 +156,15 @@ function initWorld(){
            d = rng(15, PD*0.75);
            hw = Math.max(40, halfW(d) - 20);
          }
-         spawnOrg(sp, rng(-hw, hw), d);
+         var sx = rng(-hw, hw);
+         if(window._chunkPop){
+           if(!window._popQueue) window._popQueue=[];
+           window._popQueue.push([sp.id, sx, d]);
+         } else spawnOrg(sp, sx, d);
        }
     }
   }
+  igsMark('world.spawn');
   nutrientClouds=[];
   for(var i=0;i<22;i++){
     var cy=rng(15,180);
@@ -264,7 +277,41 @@ function initWorld(){
         });
      }
   }
+  igsMark('world.end');
+  if(window._chunkPop && window._popQueue && window._popQueue.length){
+    window.drainPopQueue();
+  }
 }
+
+function drainPopQueue(done){
+  var q = window._popQueue || [];
+  var i = 0;
+  function step(){
+    var t0 = (typeof performance!=='undefined') ? performance.now() : Date.now();
+    while(i < q.length && ((typeof performance!=='undefined')?performance.now():Date.now()) - t0 < 12){
+      var it = q[i++];
+      var sp = null;
+      for(var s=0; s<SPECIES_DB.length; s++){ if(SPECIES_DB[s].id===it[0]){ sp=SPECIES_DB[s]; break; } }
+      if(sp) spawnOrg(sp, it[1], it[2]);
+    }
+    if(i < q.length) requestAnimationFrame(step);
+    else {
+      window._popQueue = null;
+      igsMark('world.full');
+      var n = 8;
+      function mut(){
+        if(!n || typeof orgs==='undefined'){ if(done) done(); return; }
+        var o = orgs[(Math.random()*orgs.length)|0];
+        if(o && !o.isPlayer) o.speedMult = (o.speedMult||1) + (Math.random()*0.2-0.1);
+        n--;
+        requestAnimationFrame(mut);
+      }
+      requestAnimationFrame(mut);
+    }
+  }
+  requestAnimationFrame(step);
+}
+window.drainPopQueue = drainPopQueue;
 
 
 

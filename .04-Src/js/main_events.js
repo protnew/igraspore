@@ -79,11 +79,11 @@ var audioCtx = null;
 window.playSound = function(type, x, y) {
     if(!settings.sound) return;
     if(!audioCtx) {
-        var AudioContext = window.AudioContext || window.webkitAudioContext;
-        if(AudioContext) audioCtx = new AudioContext();
+        // v20.6 G1: 20-секундная блокировка new AudioContext() — играть только через общий async-контекст
+        if(typeof window.initAudio==='function') window.initAudio();
+        audioCtx = window.audioCtx;
     }
     if(!audioCtx) return;
-    
     // Pan based on x position relative to cam
     var pan = 0;
     if (x !== undefined && cam) {
@@ -382,7 +382,12 @@ document.getElementById('bPause').onclick=function(){if(state==='playing'){state
 document.getElementById('bZI').onclick=function(){tZoom=clamp(tZoom*1.3,0.01,100);};
 document.getElementById('bZO').onclick=function(){tZoom=clamp(tZoom/1.3,0.01,100);};
 
-document.getElementById('startBtn').onclick=()=>startGame(false);
+document.getElementById('startBtn').onclick=function(){
+  if(window._startBusy) return;
+  if((window.state==='playing'||window.state==='paused')&&window.player){ return; }
+  window._startBusy=true;
+  setTimeout(function(){ try{ startGame(false); } finally { window._startBusy=false; } }, 0);
+};
 document.getElementById('screensaverBtn').onclick=function(){ if(typeof startDemoMode==='function') startDemoMode(); else startGame(true); };
 (function(){var b=document.getElementById('demoBtn'); if(b) b.onclick=function(){ if(typeof startDemoMode==='function') startDemoMode(); };})();
 document.getElementById('resBtn').onclick=function(){document.getElementById('pauseO').className='ov';state='playing';zoom=1;tZoom=1;};
@@ -457,44 +462,4 @@ document.addEventListener('click', function(e){
   }
   setTimeout(updateStarUI, 500);
   setTimeout(updateStarUI, 2000);
-})();
-
-// Manual feed: Space key — player tries to eat NOW
-window._manualFeedCD = 0;
-window.manualFeed = function(){
-  if(!player||!player.alive||player.cyst) return false;
-  if(window._manualFeedCD > 0) {
-    if(window.showToast) window.showToast(tt('toast.digest',{s:Math.ceil(window._manualFeedCD)}), '#fa0');
-    return false;
-  }
-  var range = player.size + 30; // larger range for manual
-  var range2 = range*range;
-  var best = null, bestSize = 1e18;
-  for(var i=0;i<orgs.length;i++){
-    var p=orgs[i];
-    if(!p||!p.alive||p===player||p.cyst) continue;
-    if(p.size > player.size*1.5) continue;
-    if(dist2(player,p) <= range2){
-      if(p.size < bestSize){ bestSize = p.size; best = p; }
-    }
-  }
-  if(best){
-    best.divCD = 0; best.invuln = 0;
-    var ate = true;
-    if(typeof forceEat==='function') ate = !!forceEat(player, best);
-    else eatOrg(player, best);
-    if(!ate) return false;
-    window._manualFeedCD = 0.5; // short CD for manual
-    player.flash = 1; player.flashColor = '#ff0';
-    if(window.showToast) window.showToast(tt('toast.bite',{name:best.sp.name}), '#8f8');
-    return true;
-  } else {
-    if(window.showToast) window.showToast(tt('toast.eat.none'), '#faa');
-    return false;
-  }
-};
-// Manual feed button
-(function(){
-  var b = document.getElementById('bFeed');
-  if(b) b.onclick = function(){ window.tryPlayerEat&&window.tryPlayerEat(); };
 })();

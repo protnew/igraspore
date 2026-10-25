@@ -2,10 +2,28 @@
 "use strict";
 window.audioCtx = null;
 window.spectatorMode = false;
+// v20.6 G1: new AudioContext() блокирует поток до ~20 с (Windows аудиосессия).
+// Аудио инициализируем асинхронно после первого жеста — START отвечает мгновенно.
 window.initAudio = function() {
-  if (!window.audioCtx) {
-    try { window.audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){}
-  }
+  if (window.audioCtx || window._audioStarting) return;
+  var AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return;
+  window._audioStarting = true;
+  var kick = function(){
+    try { var c = new AC();
+      if (c.state === 'suspended' && c.resume) c.resume().catch(function(){});
+      window.audioCtx = c;
+    } catch(e){}
+    window._audioStarting = false;
+  };
+  // вне обработчика жеста: setTimeout не считается user gesture, но контекст
+  // создастся suspended и догонит resume() при первом клике/клавише (см. igs_v20 unlock)
+  setTimeout(kick, 0);
+};
+// разблокировка suspended-контекста при любом жесте (Chrome autoplay policy)
+window.unlockAudio = function(){
+  var c = window.audioCtx;
+  if (c && c.state === 'suspended' && c.resume) c.resume().catch(function(){});
 };
 window.playSound = function(type, x, y) {
   if (!window.audioCtx) return;
@@ -207,9 +225,16 @@ function startGame(isScreensaver){
   window.demoMode = false;
   window.demoPossessed = null;
   try{ var dt=document.getElementById("demoTip"); if(dt) dt.style.display="none"; }catch(_e){}
+  igsMark('start.click');
   window.initAudio();
   window._swissStrict = (settings.renderMode==='swiss');
+  window._chunkPop = !window.TEST_POOL && !isScreensaver;
+  window._popQueue = null;
+  if(window._chunkPop && window._bake && window._bake[difficulty] && window.transformBake){
+    window._popQueue = window.transformBake(window._bake[difficulty]);
+  }
   initWorld();
+  igsMark('start.world');
   // Always start in the MORNING (clear light, sun up)
   tod = 9.0;
   season = 1; // spring-ish light
@@ -278,6 +303,7 @@ function startGame(isScreensaver){
      var px = rng(-hw0*0.35, hw0*0.35);
      player=spawnOrg(sp, px, dY, true);
      if(!player)player=spawnOrg(sp,0,35,true);
+     igsMark('start.player');
      player.energy=100;player.facing=0;player.angle=0;player.aiTarget=null;cam.x=player.x;cam.y=player.y-20;player.acidResist=1.0;
 
 
@@ -433,5 +459,6 @@ function startGame(isScreensaver){
       }
     }, 800);
   } else if(!isScreensaver){ window._pendingTutorial=true; }
+  igsMark('start.end');
 }
 

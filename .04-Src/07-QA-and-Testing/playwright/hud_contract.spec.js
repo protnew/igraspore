@@ -191,6 +191,16 @@ test.describe('HUD contract — desktop 1280x800', () => {
         const after = await snap(page);
         const eff = snapChanged(before, after) || (await toastText(page));
         expect(!!eff, `pause button #${id} без эффекта`).toBe(true);
+        // v20.9.1 R3: exit confirmation must stay open until the player answers, then «No» returns to pause
+        if (id === 'pExit') {
+          await page.waitForTimeout(1200);
+          expect(await page.evaluate(`document.getElementById('exitConfirm').className`), 'exitConfirm висит без ответа').toContain('show');
+          await page.click('#ecNo');
+          await page.waitForTimeout(250);
+          expect(await page.evaluate(`document.getElementById('exitConfirm').className`)).not.toContain('show');
+          expect(await page.evaluate(`document.getElementById('pauseO').className`)).toContain('show');
+          continue;
+        }
         // закрыть любой всплывший оверлей поверх паузы
         const CLOSE = { helpO: 'helpClose', setO: 'setClose', wikiO: 'wikiClose' };
         for (const ovId of (after.ovs || '').split(',')) {

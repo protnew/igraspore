@@ -26,9 +26,13 @@ async function frameMasks(page, n){
       var sx=(player.x-cam.x)*zoom+w/2, sy=(player.y-cam.y)*zoom+h/2;
       var d=ctx.getImageData(x0,y0,x1-x0,y1-y0).data;
       var pts=[];
+      // v20.9.1 R2: canvas is opaque (water), so alpha always passes; the body is pixels that differ from the background colour.
+      // Background = median of the four corners of the sample box (outside the body ring).
+      var W=x1-x0,H=y1-y0,cs=[0,(W-1)*4,((H-1)*W)*4,((H-1)*W+W-1)*4].map(function(i){return [d[i],d[i+1],d[i+2]];});
+      var bg=[0,1,2].map(function(k){var v=cs.map(function(c){return c[k]}).sort(function(p,q){return p-q});return (v[1]+v[2])/2;});
       var Rb=window.__membRb||(window.__membRb=player.size*zoom);
       for(var y=0;y<y1-y0;y+=1) for(var x=0;x<x1-x0;x+=1){
-        if(d[(y*(x1-x0)+x)*4+3]<=60) continue;
+        var o4=(y*W+x)*4; if(Math.abs(d[o4]-bg[0])+Math.abs(d[o4+1]-bg[1])+Math.abs(d[o4+2]-bg[2])<=60) continue;
         var dx=x+x0-sx, dy=y+y0-sy, dd=Math.sqrt(dx*dx+dy*dy);
         // кольцо тела: органеллы внутри и реснички снаружи не входят в силуэт
         if(dd>=Rb*0.6 && dd<=Rb*1.32) pts.push([Math.round(dx), Math.round(dy)]);

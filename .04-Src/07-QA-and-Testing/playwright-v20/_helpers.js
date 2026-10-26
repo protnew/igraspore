@@ -1,15 +1,28 @@
 const BASE = process.env.GATE_BASE_URL || 'http://127.0.0.1:8795';
+
+// v20.6 G2: boot = evaluate-клик (page.click ловит pointer-захват оверлеев)
+// + ожидание state==='playing' до 60 с. Никаких фиксированных пауз.
 async function startGame(page, opts){
   opts = opts || {};
-  await page.goto(BASE + '/?lang=' + (opts.lang||'en') + (opts.test?'&test=1':'') + '&t=' + Date.now(), { waitUntil: 'load' });
-  await page.waitForTimeout(2000);
-  await page.click('#startBtn');
-  await page.waitForTimeout(400);
-  await page.evaluate('window.closeIntroCard && window.closeIntroCard()');
-  await page.evaluate(`(function(){ var b=document.getElementById('roleCardOk'); if(b) b.click(); var el=document.getElementById('roleCard'); if(el) el.remove(); if(typeof state!=='undefined' && state==='paused') state='playing'; })()`);
-  await page.evaluate(`(function(){ var b=[].slice.call(document.querySelectorAll('button')).find(function(x){return /Пропустить|Skip/.test(x.textContent||'');}); if(b&&b.style.display!=='none') b.click(); })()`);
-  await page.waitForTimeout(600);
+  const testSuffix = opts.test ? '&test=1' + (opts.pool ? '&pool=' + opts.pool : '&pool=200') : '';
+  const errs = collectErrs(page);
+  await page.goto(BASE + '/?lang=' + (opts.lang||'en') + testSuffix + '&t=' + Date.now(), { waitUntil: 'load', timeout: 45000 });
+  await page.waitForSelector('#startBtn', { timeout: 30000 });
+  await page.evaluate("document.getElementById('startBtn').click()");
+  await page.waitForFunction(`(function(){
+    if (typeof state === 'undefined') return false;
+    if (state !== 'paused' && state !== 'playing') return false;
+    var io = document.getElementById('introO');
+    var rc = document.getElementById('roleCardOk');
+    if (io && io.className.indexOf('show') >= 0 && typeof window.closeIntroCard === 'function') { window.closeIntroCard(); }
+    if (rc) { try { rc.click(); } catch(e){} }
+    var skip = document.getElementById('tutSkip');
+    if (skip && skip.offsetParent !== null) { try { skip.click(); } catch(e){} }
+    return state === 'playing' && window.player && player.alive;
+  })()`, undefined, { timeout: 60000, polling: 120 });
+  return errs;
 }
+
 function collectErrs(page){
   const errs = [];
   page.on('pageerror', e => errs.push(e.message.slice(0,200)));

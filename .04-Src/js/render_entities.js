@@ -3,7 +3,7 @@
 
 function drawBody(o,sz,fc2,fd, batched){
   var sh=o.sp.shape;
-  if(!batched && typeof membraneEnabled==='function' && membraneEnabled() && typeof zoom==='number' && zoom>3 && (sh==='circle'||sh==='oval'||sh==='rod'||sh==='slipper'||sh==='irregular'||sh==='bell')){
+  if(typeof membraneEnabled==='function' && membraneEnabled() && typeof zoom==='number' && zoom>3 && (sh==='circle'||sh==='oval'||sh==='rod'||sh==='slipper'||sh==='irregular'||sh==='bell')){
     var _cy=ctx.createRadialGradient(-sz*0.25,-sz*0.25,0,0,0,sz*1.1);
     _cy.addColorStop(0,fc2); _cy.addColorStop(0.7,fc2); _cy.addColorStop(1,fd);
     ctx.fillStyle=_cy; ctx.strokeStyle=fd;

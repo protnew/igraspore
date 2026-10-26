@@ -139,7 +139,7 @@ if(typeof location!=='undefined' && location.search.indexOf('test=1')>=0){
     spawnVirusNear:function(){
       var x=(player?player.x:cam.x)+rng(-30,30), y=(player?player.y:cam.y)+rng(-30,30);
       var d=rng(20,Math.max(30,PD*0.3)); var hw=halfW(d)-10;
-      viruses.push({x:clamp(x,-hw,hw),y:clamp(y,4,PD-4),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),
+      viruses.unshift({x:clamp(x,-hw,hw),y:clamp(y,4,PD-4),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),
         angle:0,wobble:0,sp:VIRUS_SPECS[0],target:null}); return viruses.length;
     },
     getSizes:function(){

@@ -831,5 +831,15 @@
     ],
     "category": "latin_species",
     "reason": "German/French spore = international Latin form"
+  },
+  {
+    "key": "no",
+    "value": "No",
+    "langs": [
+      "es",
+      "it"
+    ],
+    "category": "cognate",
+    "reason": "исп./итал. отрицание «No» — корректный перевод, совпадает с английским написанием (не недоперевод)"
   }
 ]

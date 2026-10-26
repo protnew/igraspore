@@ -372,17 +372,16 @@ function renderViruses(vL,vR,vT,vB){
     hg.addColorStop(0,'#ffaaa0');hg.addColorStop(0.5,'#f44');hg.addColorStop(1,'#a00');
     ctx.fillStyle=hg;ctx.strokeStyle='#200';ctx.lineWidth=Math.max(0.35, 1.1/z);
     ctx.beginPath();ctx.arc(0,0,PHAGE_R,0,Math.PI*2);ctx.fill();ctx.stroke();
-    // Tail sheath
-    ctx.strokeStyle='#c33';ctx.lineWidth=3;
+    // Tail sheath, plate and fibers scale with the head. Fixed 3px/4px vanished next to a sub-pixel head.
+    var tw=Math.max(0.35, PHAGE_R*0.45);
+    ctx.strokeStyle='#c33';ctx.lineWidth=tw;
     ctx.beginPath();ctx.moveTo(0,PHAGE_R);ctx.lineTo(0,PHAGE_R*2.4);ctx.stroke();
-    // Base plate
     ctx.fillStyle='#a00';
-    ctx.beginPath();ctx.ellipse(0,PHAGE_R*2.4,4,2,0,0,Math.PI*2);ctx.fill();
-    // Tail fibers
-    ctx.lineWidth=1.5;ctx.strokeStyle='#c33';
+    ctx.beginPath();ctx.ellipse(0,PHAGE_R*2.4,PHAGE_R*0.7,PHAGE_R*0.35,0,0,Math.PI*2);ctx.fill();
+    ctx.lineWidth=Math.max(0.25, PHAGE_R*0.22);ctx.strokeStyle='#c33';
     ctx.beginPath();
-    ctx.moveTo(-1,PHAGE_R*2.2);ctx.lineTo(-6,PHAGE_R*2.8);
-    ctx.moveTo(1,PHAGE_R*2.2);ctx.lineTo(6,PHAGE_R*2.8);
+    ctx.moveTo(-PHAGE_R*0.15,PHAGE_R*2.2);ctx.lineTo(-PHAGE_R*1.1,PHAGE_R*2.8);
+    ctx.moveTo(PHAGE_R*0.15,PHAGE_R*2.2);ctx.lineTo(PHAGE_R*1.1,PHAGE_R*2.8);
     ctx.moveTo(0,PHAGE_R*2.4);ctx.lineTo(0,PHAGE_R*3.0);
     ctx.stroke();
     ctx.restore();

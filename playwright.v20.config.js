@@ -1,15 +1,15 @@
-const { defineConfig } = require('@playwright/test');
-const path = require('path');
-const qa = path.join(__dirname, '.04-Src', '07-QA-and-Testing');
-module.exports = defineConfig({
-  testDir: path.join(qa, 'playwright-v20'),
+import { defineConfig } from '@playwright/test';
+
+// v20.6 G2: шардинг воркерами; GATE_BASE_URL/GATE_WORKERS из окружения
+export default defineConfig({
+  testDir: 'C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/07-QA-and-Testing/playwright-v20',
   testMatch: '**/*.spec.js',
   timeout: 120000,
   expect: { timeout: 15000 },
   fullyParallel: false,
   retries: 0,
-  workers: 1,
-  reporter: [['list'], ['json', { outputFile: path.join(qa, 'v20-results.json') }]],
+  workers: process.env.GATE_WORKERS ? parseInt(process.env.GATE_WORKERS, 10) : 4,
+  reporter: [['list'], ['json', { outputFile: 'C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/07-QA-and-Testing/v20-results.json' }]],
   use: {
     headless: true,
     viewport: { width: 1280, height: 800 },

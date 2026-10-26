@@ -361,7 +361,7 @@ function startGame(isScreensaver){
          if(cat==='producer') eats = tt('food.producer');
          it.textContent = tt('roleWho') || 'Role';
          ib.innerHTML = '<div style="font-size:18px;font-weight:700;color:#c8ffc0;margin-bottom:6px">'+(sp.name||name)+' · '+name+'</div><div style="opacity:.95;margin-bottom:8px">'+(role||'')+'</div><div style="background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;margin-bottom:8px"><b>'+tt('roleFood')+':</b> '+eats+'</div>';
-         setTimeout(function(){ io.className='ov show'; }, 0);
+         io.className='ov show'; // v20.7: синхронно — таймер(0) под нагрузкой опаздывал и открывал карточку поверх паузы
          var okBtn=document.getElementById('introOk');
          if(okBtn && !okBtn._v20Intro){
            okBtn._v20Intro=1;

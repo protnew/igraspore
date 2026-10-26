@@ -25,9 +25,10 @@ async function passStartCardAndTutorial(page) {
 async function boot(page, lang) {
   const errs = [];
   page.on('pageerror', e => errs.push(e.message.slice(0, 200)));
-  await page.goto(BASE + '/?lang=' + lang + '&t=' + Date.now(), { waitUntil: 'domcontentloaded', timeout: 45000 });
+  // v20.6 G2: тестовый режим (малый пул) + evaluate-клик (page.click ловит pointer-захват оверлеев)
+  await page.goto(BASE + '/?lang=' + lang + '&test=1&pool=200&t=' + Date.now(), { waitUntil: 'domcontentloaded', timeout: 45000 });
   await page.waitForSelector('#startBtn', { timeout: 20000 });
-  await page.click('#startBtn');
+  await page.evaluate("document.getElementById('startBtn').click()");
   await passStartCardAndTutorial(page);
   await page.waitForFunction(
     () => window.state === 'playing' && window.player && player.alive,

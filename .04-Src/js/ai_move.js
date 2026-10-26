@@ -4,6 +4,21 @@
 window.getNearby = function(x, y, radius) {
    var res=[];
    if(!window.spatialGrid) return orgs;
+   var fine = window.spatialGridFine;
+   if(fine){
+     // v20.9.1 K5: exact cell range on the 100-unit grid (was 3x3 cells of 400 = 1200x1200 per query).
+     var x0=Math.floor((x-radius)/100), x1=Math.floor((x+radius)/100);
+     var y0=Math.floor((y-radius)/100), y1=Math.floor((y+radius)/100);
+     for(var fx=x0; fx<=x1; fx++){
+       var fk=(fx+4096)*8192+4096;
+       for(var fy=y0; fy<=y1; fy++){
+         var fa = fine.get(fk+fy);
+         if(fa) for(var fi=0; fi<fa.length; fi++) res.push(fa[fi]);
+       }
+     }
+     if(res.length >= 3) return res;
+     res.length = 0;
+   }
    var CELL=400;
    var r = Math.ceil(radius/CELL);
    var cx = Math.floor(x/CELL);

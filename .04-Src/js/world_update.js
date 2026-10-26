@@ -6,6 +6,8 @@ function updateWorld(dt){
   dt*=_ss/0.33; // user speed multiplier (0.1..3.0)
   window.spatialGrid = {};
   window.spatialGridLarge = {};
+  // v20.9.1 K5: fine 100-unit grid for neighbour queries (coarse 400 grid kept for old readers).
+  var _fine = window.spatialGridFine = new Map(); // numeric key (gx+4096)*8192+(gy+4096)
   for(var i=0;i<orgs.length;i++) {
      var o=orgs[i];
      if(!o.alive) continue;
@@ -21,6 +23,8 @@ function updateWorld(dt){
      var k = gx+','+gy;
      if(!window.spatialGrid[k]) window.spatialGrid[k]=[];
      window.spatialGrid[k].push(o);
+     var kf = (Math.floor(o.x / 100)+4096)*8192 + Math.floor(o.y / 100)+4096;
+     var fb = _fine.get(kf); if(fb) fb.push(o); else _fine.set(kf, [o]);
   }
 
   // Sessile lock. Demo gallery must NOT use pond-floor home (spawnOrg used to set y=PD).
@@ -156,8 +160,9 @@ function updateWorld(dt){
     for(var si=window.sedimentClumps.length-1; si>=0; si--){
       var sc = window.sedimentClumps[si];
       if(!sc) continue;
-      for(var oi=0; oi<orgs.length; oi++){
-        var so = orgs[oi];
+      var _scN = window.getNearby ? window.getNearby(sc.x, sc.y, Math.max(sc.w, sc.h) + 200) : orgs;
+      for(var oi=0; oi<_scN.length; oi++){
+        var so = _scN[oi];
         if(so.alive && so.sp && so.sp.cat === 'decomposer' && Math.abs(so.x-sc.x)<(sc.w+so.size*2) && Math.abs(so.y-sc.y)<(sc.h+so.size*2)){
           sc.w -= dt * 0.6; sc.h -= dt * 0.6;
           so.energy += dt * 2.4 * (DIFF[difficulty]?DIFF[difficulty].energy:1); // bottom scavenger niche
@@ -216,10 +221,14 @@ function updateWorld(dt){
 
   // TSK-WRD-015: O2 bubble coalescence — merge intersecting bubbles
   if(settings.bubbles && typeof o2Bubbles !== 'undefined' && o2Bubbles.length > 1){
+    // v20.9.1 K5: sweep by x instead of all pairs (same merge rule, O(n log n)).
+    o2Bubbles.sort(function(p,q){return p.x-q.x;});
+    var _bmax=0; for(var bk=0; bk<o2Bubbles.length; bk++){ if(o2Bubbles[bk].r>_bmax) _bmax=o2Bubbles[bk].r; }
     for(var bi=0; bi<o2Bubbles.length-1; bi++){
       for(var bj=bi+1; bj<o2Bubbles.length; bj++){
         var ba=o2Bubbles[bi], bb=o2Bubbles[bj];
         if(!ba || !bb) continue;
+        if(bb.x-ba.x >= ba.r+_bmax) break;
         var ddx=ba.x-bb.x, ddy=ba.y-bb.y;
         if(ddx*ddx+ddy*ddy < (ba.r+bb.r)*(ba.r+bb.r)){
           ba.r = Math.sqrt(ba.r*ba.r + bb.r*bb.r); // conserve area

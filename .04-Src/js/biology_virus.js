@@ -62,8 +62,9 @@ function updateViruses(dt){
     // Find target bacteria
     if(!v.target||!v.target.alive){
       v.target=null;
-      for(var j=0;j<orgs.length;j++){
-        var o=orgs[j];
+      var _vn = window.getNearby ? window.getNearby(v.x, v.y, 500) : orgs; // v20.9.1 K5: neighbours, not the whole pond
+      for(var j=0;j<_vn.length;j++){
+        var o=_vn[j];
         // Phages only infect prokaryotes (bacteria/archaea = producer + consumer1).
       // Neuro-Parasite (type=parasite) targets player specifically.
       var isTarget;

@@ -82,7 +82,9 @@ window.getTempAt = function(x, y) {
     if (window.hydroVents) {
         for(let i=0; i<window.hydroVents.length; i++) {
             let v = window.hydroVents[i];
-            let d = Math.hypot(x - v.x, y - v.y);
+            let dx = x - v.x, dy = y - v.y;
+            if (dx*dx + dy*dy >= v.radius*v.radius) continue; // v20.9.1 K5: cheap reject before hypot
+            let d = Math.hypot(dx, dy);
             if (d < v.radius) {
                 let f = 1 - (d / v.radius);
                 t += (v.temp - t) * (f * f);

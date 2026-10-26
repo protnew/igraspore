@@ -340,8 +340,9 @@ function updateOrg(o,dt){
   // Flocking AI for Colony species
   if (o.sp.flags && o.sp.flags.chain && !o.dying && o.state !== 'flee' && o.state !== 'hunt') {
     var cx=0, cy=0, cvx=0, cvy=0, count=0;
-    for(var j=0; j<orgs.length; j++){
-      var n = orgs[j];
+    var _fl = window.getNearby ? window.getNearby(o.x, o.y, 159) : orgs; // v20.9.1 K5: was a scan of the whole pond per colony cell
+    for(var j=0; j<_fl.length; j++){
+      var n = _fl[j];
       if (n !== o && n.sp.id === o.sp.id && dist2(o, n) < 25000) {
          cx += n.x; cy += n.y; cvx += n.vx; cvy += n.vy; count++;
          if (dist2(o, n) < (o.size + n.sp.size)*2) {

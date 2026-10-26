@@ -54,8 +54,9 @@ function updateHUD(){
   var scent = (typeof foodScentStrength==='function') ? foodScentStrength(player) : 0;
   var sColor = scent>0.55?'#4f4':scent>0.25?'#fc4':'#678';
   var sLabel = tt('x.foodScent');
-  var cover = player._lilyCover ? (tt('x.cover')) : '';
-  var cyst = player.cyst ? (tt('x.cyst2')) : '';
+  var _nbw=function(x){return x?x.replace(/^ · /,'\u00a0·\u00a0').split('').join('\u2060'):'';};
+  var cover = player._lilyCover ? _nbw(tt('x.cover')) : '';
+  var cyst = player.cyst ? _nbw(tt('x.cyst2')) : '';
   var role = (typeof catName==='function') ? catName(player.sp.cat) : '';
   var held = document.getElementById('tempL');
   if(held && held.closest && held.closest('#hud')){

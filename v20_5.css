@@ -88,3 +88,16 @@ button.btn:disabled,button#startBtn:disabled{
 }
 #hDivReady,#divReason,#hud,#hud *{overflow-wrap:break-word;word-break:keep-all;line-break:strict}
 #pauseBtn:focus-visible{outline:3px solid #fff}
+
+/* v20.9.1 K7/K8: compact HUD on phones, colony badge on one line, START same font as DEMO/AQUARIUM */
+#menuActions #startBtn,#menuActions #demoBtn,#menuActions #screensaverBtn{font-size:17px!important;font-weight:600}
+#spGrid .colBadge{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;box-sizing:border-box}
+@media (max-width:430px){
+  #menuActions #startBtn,#menuActions #demoBtn,#menuActions #screensaverBtn{font-size:15px!important}
+  #spGrid .colBadge{font-size:11px!important;padding:3px 5px!important;letter-spacing:-.2px}
+  #hud{min-width:0!important;max-width:170px!important;padding:4px 7px!important}
+  #hud,#hud *{font-size:11px!important;line-height:1.25!important}
+  #hud #hudTitle{font-size:13px!important}
+  #hud #energyBar,#hud #scentBar{height:6px!important;margin:2px 0!important}
+  #hud #hudSub{margin-bottom:2px!important}
+}

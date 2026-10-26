@@ -103,7 +103,7 @@ function buildSpeciesGrid(){
     var spNum=(typeof sp.num==='number')?sp.num:(i+1);
     var isCol=(sp.shape==='colony'||(sp.bio&&sp.bio.colony));
     var colonyTag=isCol?'':'';
-    var colonyBadge=isCol?'<div style="background:#2a6;color:#efc;font-size:13px;font-weight:800;padding:4px 8px;border-radius:4px;margin:2px auto;display:inline-block">'+tt('colonyBadge')+'</div>':'';
+    var colonyBadge=isCol?'<div class="colBadge" style="background:#2a6;color:#efc;font-size:13px;font-weight:800;padding:4px 8px;border-radius:4px;margin:2px auto;display:inline-block">'+tt('colonyBadge')+'</div>':'';
     if(isCol){c.style.boxShadow='inset 0 0 0 3px var(--success),0 0 14px var(--success-glow)';c.style.background='var(--success-bg)';c.style.order='-1';}
     c.innerHTML='<canvas class="scPrev" width="120" height="120" style="display:block;margin:2px auto;background:rgba(0,15,35,0.6);border-radius:4px"></canvas>'+colonyBadge+
       '<div class="scN" style="color:'+sp.color+';font-size:13px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+

@@ -67,11 +67,8 @@
   // ---- 2. Performance caps ----
   function capPerf() {
     if (typeof settings === 'undefined') return;
-    var mem = navigator.deviceMemory || 4;
-    var cores = navigator.hardwareConcurrency || 4;
-    if (mem <= 3 || cores <= 4) settings.density = Math.min(settings.density || 1, 0.3);
-    else if (mem <= 4) settings.density = Math.min(settings.density || 1, 0.45);
-    else settings.density = Math.min(settings.density || 1, 0.55);
+    // v20.9.1 K6/E8: the pool is the same on every screen. Phones used to get density 0.3–0.55
+    // silently (menu ~996 vs ~1794). Lighter play is only the opt-in Economy mode (offered at <25 FPS).
     if (typeof window.MAX_PARTICLES !== 'undefined') window.MAX_PARTICLES = 60;
   }
   try { capPerf(); } catch(e) {}

@@ -207,5 +207,53 @@
     "file": "../index.html",
     "exact": "OK",
     "reason": "intro: кнопка закрытия карточки"
+  },
+  {
+    "file": "js/config.js",
+    "line": 4,
+    "exact": "Русский",
+    "reason": "v20.10 L1/R7: language endonym in LANG_NAME (language selector shows each language in its own script by design)"
+  },
+  {
+    "file": "js/config.js",
+    "line": 4,
+    "exact": "Português",
+    "reason": "v20.10 L1/R7: language endonym in LANG_NAME (language selector shows each language in its own script by design)"
+  },
+  {
+    "file": "js/config.js",
+    "line": 4,
+    "exact": "Français",
+    "reason": "v20.10 L1/R7: language endonym in LANG_NAME (language selector shows each language in its own script by design)"
+  },
+  {
+    "file": "js/config.js",
+    "line": 4,
+    "exact": "Tiếng Việt",
+    "reason": "v20.10 L1/R7: language endonym in LANG_NAME (language selector shows each language in its own script by design)"
+  },
+  {
+    "file": "js/config.js",
+    "line": 4,
+    "exact": "Українська",
+    "reason": "v20.10 L1/R7: language endonym in LANG_NAME (language selector shows each language in its own script by design)"
+  },
+  {
+    "file": "js/config.js",
+    "line": 4,
+    "exact": "Bahasa Melayu",
+    "reason": "v20.10 L1/R7: language endonym in LANG_NAME (language selector shows each language in its own script by design)"
+  },
+  {
+    "file": "js/config.js",
+    "line": 4,
+    "exact": "Español",
+    "reason": "v20.10 L1/R7: language endonym in LANG_NAME (language selector shows each language in its own script by design)"
+  },
+  {
+    "file": "js/config.js",
+    "line": 4,
+    "exact": "Türkçe",
+    "reason": "v20.10 L1/R7: language endonym in LANG_NAME (language selector shows each language in its own script by design)"
   }
 ]

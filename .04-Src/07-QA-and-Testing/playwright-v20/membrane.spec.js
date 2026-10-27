@@ -22,20 +22,21 @@ async function frameMasks(page, n){
     var x0=Math.max(0,Math.floor(sx0-R)), x1=Math.min(w,Math.ceil(sx0+R));
     var y0=Math.max(0,Math.floor(sy0-R)), y1=Math.min(h,Math.ceil(sy0+R));
     var grab=function(){
-      // центр игрока пересчитывается каждый кадр — маска в системе клетки
-      var sx=(player.x-cam.x)*zoom+w/2, sy=(player.y-cam.y)*zoom+h/2;
-      var d=ctx.getImageData(x0,y0,x1-x0,y1-y0).data;
-      var pts=[];
-      // v20.9.1 R2: canvas is opaque (water), so alpha always passes; the body is pixels that differ from the background colour.
-      // Background = median of the four corners of the sample box (outside the body ring).
-      var W=x1-x0,H=y1-y0,cs=[0,(W-1)*4,((H-1)*W)*4,((H-1)*W+W-1)*4].map(function(i){return [d[i],d[i+1],d[i+2]];});
-      var bg=[0,1,2].map(function(k){var v=cs.map(function(c){return c[k]}).sort(function(p,q){return p-q});return (v[1]+v[2])/2;});
+      // v20.10 R4: offscreen measurement. The player body is drawn by the same drawBody into a transparent
+      // canvas (only for the measurement); the visible frame is untouched. Body = alpha>60 inside the ring.
+      var oc=window.__membOC||(window.__membOC=document.createElement('canvas'));
+      var S=2*R; if(oc.width!==S){oc.width=S;oc.height=S;}
+      var c2=oc.getContext('2d'); c2.setTransform(1,0,0,1,0,0); c2.clearRect(0,0,S,S);
+      var keep=[player._membVS,player._membAng], vis=ctx;
+      try{ ctx=c2; c2.translate(R,R); c2.scale(zoom,zoom); drawBody(player, player.size, '#8c8', '#252'); }
+      finally{ ctx=vis; player._membVS=keep[0]; player._membAng=keep[1]; }
+      var d=c2.getImageData(0,0,S,S).data, pts=[];
       var Rb=window.__membRb||(window.__membRb=player.size*zoom);
-      for(var y=0;y<y1-y0;y+=1) for(var x=0;x<x1-x0;x+=1){
-        var o4=(y*W+x)*4; if(Math.abs(d[o4]-bg[0])+Math.abs(d[o4+1]-bg[1])+Math.abs(d[o4+2]-bg[2])<=60) continue;
-        var dx=x+x0-sx, dy=y+y0-sy, dd=Math.sqrt(dx*dx+dy*dy);
+      for(var y=0;y<S;y++) for(var x=0;x<S;x++){
+        if(d[(y*S+x)*4+3]<=60) continue;
+        var dx=x-R, dy=y-R, dd=Math.sqrt(dx*dx+dy*dy);
         // кольцо тела: органеллы внутри и реснички снаружи не входят в силуэт
-        if(dd>=Rb*0.6 && dd<=Rb*1.32) pts.push([Math.round(dx), Math.round(dy)]);
+        if(dd>=Rb*0.6 && dd<=Rb*1.32) pts.push([dx, dy]);
       }
       return pts;
     };

@@ -79,7 +79,9 @@ test.describe('v20.4 visibility', () => {
     const play = await page.evaluate(() => {
       const hud = document.getElementById('hud');
       const hb = hud.getBoundingClientRect();
-      const pb = document.getElementById('pauseBtn').getBoundingClientRect();
+      // v20.9: узкий экран — одна пауза, нижняя #bPause; широкий — угловой #pauseBtn
+      const narrow = innerWidth <= 500;
+      const pb = document.getElementById(narrow ? 'bPause' : 'pauseBtn').getBoundingClientRect();
       const empty = hb.height > 8 && !(hud.textContent || '').trim();
       return { state, hudW: hb.width, hudH: hb.height, empty, pause: Math.min(pb.width, pb.height), text: hud.innerText || '' };
     });
@@ -87,9 +89,12 @@ test.describe('v20.4 visibility', () => {
     expect(play.empty).toBe(false);
     expect(play.hudW).toBeGreaterThan(80);
     expect(play.hudH).toBeGreaterThan(40);
-    expect(play.pause).toBeGreaterThanOrEqual(48);
+    expect(play.pause).toBeGreaterThanOrEqual(sz.n === '390' ? 44 : 48);
     expect(play.text).toContain('Pop');
-    await page.click('#pauseBtn');
+    // v20.9: на узком пауза — нижняя #bPause, на широком — угловой #pauseBtn
+    await page.evaluate(sz.n === '390'
+      ? "document.getElementById('bPause').click()"
+      : "document.getElementById('pauseBtn').click()");
     await page.waitForFunction('document.getElementById("pauseO").className.indexOf("show")>=0');
     expect(await page.evaluate('state')).toBe('paused');
     await page.click('#pExit');

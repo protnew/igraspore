@@ -111,3 +111,7 @@ button.btn:disabled,button#startBtn:disabled{
 .colBadge{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;max-width:100%;box-sizing:border-box;overflow-wrap:anywhere;line-height:1.2}
 /* v20.12: wiki field labels (Движение:/捕食者:) must not split across lines */
 #wikiContent b{white-space:nowrap}
+/* v20.12: on phones the subtitle touched the left screen edge */
+@media (max-width:699px){#menuO #menuSub{padding-left:12px;padding-right:12px;box-sizing:border-box}}
+/* v20.12: in demo the exit X replaces the pause button (at 1280 the pause frame showed behind the X) */
+body.demo-on #pauseBtn,body:has(#demoExit[style*="flex"]) #pauseBtn{display:none!important}

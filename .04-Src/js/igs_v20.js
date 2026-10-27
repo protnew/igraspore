@@ -9,7 +9,7 @@ window.closeIntroCard = function(){
 };
 window.showDemoChrome = function(sp){
   var b=document.getElementById('demoBadge'), x=document.getElementById('demoExit');
-  if(b){ try{ b.textContent=tt('demo')+' · '+(sp&&sp.name?sp.name:''); }catch(e){ b.textContent=''; } b.style.display='block'; }
+  if(b){ try{ b.textContent=tt('demo')+(sp&&sp.name?' · '+sp.name:''); /* v20.12: no dangling separator without a name */ }catch(e){ b.textContent=''; } b.style.display='block'; }
   if(x){ x.style.display='flex'; x.setAttribute('aria-label', typeof tt==='function'?tt('exit'):''); }
 };
 window.exitDemoCleanup = function(){

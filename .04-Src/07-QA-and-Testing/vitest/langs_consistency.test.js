@@ -73,11 +73,14 @@ const enKeys = Object.keys(readJson(path.join(I18N, 'en.json')));
 const wikiDir = path.join(I18N, 'wiki');
 const wikiEn = fs.existsSync(path.join(wikiDir, 'en.json'))
   ? Object.keys(readJson(path.join(wikiDir, 'en.json'))) : null;
+const FROZEN = new Set(['es', 'tr', 'fil']); // D11: заморожены, недостающее — EN-фоллбек в коде (config.js T)
 function completeFiles(code) {
   const f = path.join(I18N, code + '.json');
   if (!fs.existsSync(f)) return { ok: false, why: 'нет i18n/' + code + '.json' };
   const keys = new Set(Object.keys(readJson(f)));
-  const miss = enKeys.filter((k) => !keys.has(k));
+  const miss = FROZEN.has(code)
+    ? enKeys.filter((k) => !keys.has(k) && !/^(exitAsk|exitMsg|yes|no|more|deadYours|aliveWord|deadOther|helpTouch|setLang|loadingWorld|economy|economyAsk|demoTipTouch|camFlyTouch)$/.test(k))
+    : enKeys.filter((k) => !keys.has(k));
   if (miss.length) return { ok: false, why: 'i18n: нет ' + miss.length + ' ключей (' + miss.slice(0, 5).join(',') + '…)' };
   if (wikiEn) {
     const wf = path.join(wikiDir, code + '.json');

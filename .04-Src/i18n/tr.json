@@ -410,15 +410,5 @@
   "loc.pseudopodia": "psödopod",
   "loc.sessile": "sabit",
   "loc.budding": "tomurcuklanma",
-  "loc.growth": "büyüme",
-  "exitAsk": "Çıkılsın mı?",
-  "exitMsg": "Bu yaşamın ilerlemesi silinecek.",
-  "yes": "Evet",
-  "no": "Hayır",
-  "more": "Daha",
-  "deadYours": "Hücren öldü",
-  "aliveWord": "canlı",
-  "deadOther": "Diğer",
-  "setLang": "Dil",
-  "helpTouch": "<p><b>Kontrol:</b> yüzmek için joystick. Yön için suya dokun. Alt düğmeler: ye, böl, spor, otomatik. Yakınlaştırmak için sıkıştır.</p>"
+  "loc.growth": "büyüme"
 }

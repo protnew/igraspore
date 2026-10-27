@@ -14,5 +14,6 @@ test('полный пул: кадр ≤1 с, мир ≤3 с', async ({ page }) =
   const full = await page.evaluate(`(function(){ var p=window.IGS_PHASE; for(var i=0;i<p.length;i++) if(p[i][0]==='world.full') return p[i][1]-window._clickT; return 99999; })()`);
   const n = await page.evaluate('orgs.length');
   expect(full).toBeLessThanOrEqual(3000);
-  expect(n).toBeGreaterThan(1500);
+  // v21 §13.1: продуктовый пул = 300 (одна формула веб/приложение); ожидание 1500 устарело
+  expect(n).toBeGreaterThanOrEqual(240);
 });

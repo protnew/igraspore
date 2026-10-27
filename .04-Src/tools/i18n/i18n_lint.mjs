@@ -40,7 +40,8 @@ function isAllowed(rel, text, line) {
   for (const a of allow) {
     if (a.file && a.file !== rel) continue;
     if (a.line != null && a.line !== line) continue;
-    if (a.exact != null) { if (a.exact === text) return a; continue; }
+    // v20.11 R7-b: a line-pinned exact entry covers exactly one occurrence (a duplicate on the same line is a finding)
+    if (a.exact != null) { if (a.exact === text) { if (a.line != null) { if (a.__used) continue; a.__used = true; } return a; } continue; }
     if (a.regex) { try { if (new RegExp(a.regex).test(text)) return a; } catch {} continue; }
     if (a.contains != null && String(text).includes(a.contains)) return a;
     if (a.exact == null && !a.regex && a.contains == null) return a; // file+line-only entry

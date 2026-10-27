@@ -309,12 +309,15 @@ function updateDemoPinned(dt) {
   }
 }
 
+function _demoHit(occ, x, y, w, h) { for (var k = 0; k < occ.length; k++) { var r = occ[k]; if (x < r[0] + r[2] && r[0] < x + w && y < r[1] + r[3] && r[1] < y + h) return true; } return false; }
+
 function renderDemoLabels() {
   if (!window.demoMode) return;
   ctx.save();
   var showLabels = !!window._demoLabels;
   // Group banners + per-organism index when «Метки» is on (default). Ring below is independent.
   var drawnGroup = {};
+  var numOcc = []; // v20.11 V30: caption rects drawn this frame (no overlapping #N captions)
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
     if (!o || !o.alive) continue;
@@ -359,6 +362,9 @@ function renderDemoLabels() {
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
         var ty = scy + (o.size || 8) * zoom + 4;
+        var nw = ctx.measureText(num).width + 4, nh = (zoom >= 0.7 && o.sp && o.sp.name) ? 26 : 15;
+        if (_demoHit(numOcc, scx - nw / 2, ty, nw, nh)) { ty = scy - (o.size || 8) * zoom - 4 - nh; if (_demoHit(numOcc, scx - nw / 2, ty, nw, nh)) continue; }
+        numOcc.push([scx - nw / 2, ty, nw, nh]);
         ctx.fillStyle = 'rgba(0,0,0,0.65)';
         ctx.fillText(num, scx + 1, ty + 1);
         ctx.fillStyle = (o.isPlayer ? '#4ff' : '#e8fff0');

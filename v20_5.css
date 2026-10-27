@@ -103,3 +103,6 @@ button.btn:disabled,button#startBtn:disabled{
 }
 /* v20.10 V42: intro OK as wide as the dialog text (was full overlay width, 880-1100px at 1280) */
 #introO #introOk{width:min(420px,90vw)!important;max-width:420px;margin-left:auto;margin-right:auto;align-self:center}
+
+/* v20.11 V40: desktop menu header on the same centred 920px column as #menuActions */
+@media (min-width:700px){#menuO .tt,#menuO #menuSub{max-width:920px;margin-left:auto;margin-right:auto;text-align:center;box-sizing:border-box}}

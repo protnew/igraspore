@@ -77,3 +77,5 @@
 - 27.10 10:03 v20.12: Choser R9 (membrane still flaky with median5) written; menuSub padding on phones; cycle2 running.
 - 27.10 10:24 v20.12 cycle2: 390 green/10 yellow (fil locked)/0 red. Visual review found 2 more: dangling '·' in demo badge (all langs) → fixed; pause frame behind demo X at 1280 → hidden in demo. npm 323/323. cycle3 next.
 - 2026-10-27 10:58 v20.12: cycle3 390g/10y/0r; APK/AAB rebuilt+installed kq_test35 10:44; report REPORT-TZ-08-SPOR-v20.12-2026-10-27_1054.md (75->90%); handoff 09-Docs/out-dev-factory/TZ-08-SPOR-HANDOFF-dev-2026-10-27_1057.md
+
+- 27.10 12:10 v21 Этап 0: HEAD 0e7998c; стенд 8821 поднят (8822 уже жил); npm test 323/323 (41 файл). Этап 1 (замеры ДО) стартует: находка №13.1 пул — сначала.

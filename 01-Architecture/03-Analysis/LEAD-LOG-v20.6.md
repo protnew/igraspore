@@ -57,3 +57,5 @@
 - 2026-10-27 05:49 vcheck2: PASS 31 / FAIL 1 / MANUAL 10 / ENV 2 (V09/V15/V27/V42 now PASS). V10 fail = menu .colBadge under setO (ellipsis = V15 fix) -> V10 restricted to elements inside #setO; vcheck3 started. L1 linter: all 116 open findings are translation values in config.js inline dictionaries (T.<lang>.<key>, LANG_NAME endonyms) + 1 fallback code 'ru'; justified one by one in i18n_lint.allow.json (file+line+exact+reason, tools/v20_10_lint_justify.cjs), each re-verified against source (116/116). Linter unchanged: open=0, --strict exit 0.
 
 - 06:31 v20.10: V15/V27/V42 fixed (v20_5.css, i18n_hud_ru.js); vcheck3 32/0/10/2; R7 evidence: NEG=1 -> V09 FAIL + V10 FAIL (rules still catch real defects), archive .10-Archive/v20.10-neg-r7; linter: allow trimmed to 8 endonyms, 107 inline translations reviewed one by one: 0 real errors, open=108 not green (R7); npm 323/323.
+
+- 06:34 v20.10: Choser R7 table, final report 01-Architecture\03-Analysis\REPORT-TZ-08-SPOR-v20.10-2026-10-27_0634.md, CPU 100% measured (perf open).

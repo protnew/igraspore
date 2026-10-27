@@ -106,3 +106,6 @@ button.btn:disabled,button#startBtn:disabled{
 
 /* v20.11 V40: desktop menu header on the same centred 920px column as #menuActions */
 @media (min-width:700px){#menuO .tt,#menuO #menuSub{max-width:920px;margin-left:auto;margin-right:auto;text-align:center;box-sizing:border-box}}
+
+/* v20.12 V30: colony badge on 1280 menu cards must wrap, not be clipped with ellipsis */
+.colBadge{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;max-width:100%;box-sizing:border-box;overflow-wrap:anywhere;line-height:1.2}

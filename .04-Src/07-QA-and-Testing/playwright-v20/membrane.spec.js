@@ -82,9 +82,10 @@ test('[M1] membrane ON: XOR >=3% соседние кадры, аспект >=1.1
   for (let i = 1; i < masks.length; i++) ratios.push(xorRatio({mask:masks[i-1]}, {mask:masks[i]}));
   const med = ratios.slice().sort((a,b)=>a-b)[Math.floor(ratios.length/2)];
   expect(med, 'XOR neighbor frames: ' + JSON.stringify(ratios.map(x=>+x.toFixed(3)))).toBeGreaterThanOrEqual(0.03);
-  const st = maskStats(masks[masks.length-1]);
-  const asp = st.len / Math.max(1, st.wid);
-  expect(asp, 'aspect len/wid').toBeGreaterThanOrEqual(1.10);
+  // v20.12 R8.1 (owner 27.10 08:54): aspect = median over the last 5 frames of the same player (threshold 1.10 unchanged)
+  const asps = masks.slice(-5).map(m => { const s = maskStats(m); return s.len / Math.max(1, s.wid); }).sort((a, b) => a - b);
+  const asp = asps[Math.floor(asps.length / 2)];
+  expect(asp, 'aspect len/wid median5 ' + JSON.stringify(asps.map(x => +x.toFixed(3)))).toBeGreaterThanOrEqual(1.10);
   const budget = await page.evaluate(`(function(){
     var t0=performance.now();
     for(var i=0;i<20;i++) render(cam.x-cv.width/2/zoom, cam.x+cv.width/2/zoom, cam.y-cv.height/2/zoom, cam.y+cv.height/2/zoom);

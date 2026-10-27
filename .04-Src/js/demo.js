@@ -311,13 +311,45 @@ function updateDemoPinned(dt) {
 
 function _demoHit(occ, x, y, w, h) { for (var k = 0; k < occ.length; k++) { var r = occ[k]; if (x < r[0] + r[2] && r[0] < x + w && y < r[1] + r[3] && r[1] < y + h) return true; } return false; }
 
+// v20.12 V30: one species caption (#N + short name); skipped if it would cover a banner, the demo panel or another caption
+function _demoNum(o, scx, scy, numOcc) {
+      // сквозной номер вида: #12
+      var num = '#' + String(o.demoSpNum || o.demoIndex);
+      ctx.font = 'bold ' + Math.max(10, Math.min(15, 12 * Math.sqrt(zoom))) + 'px monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      var ty = scy + (o.size || 8) * zoom + 4;
+      var nw = ctx.measureText(num).width + 4, nh = (zoom >= 0.7 && o.sp && o.sp.name) ? 26 : 15;
+      var numFree = true; // collision only hides this caption; the possessed ring below is still drawn
+      if (_demoHit(numOcc, scx - nw / 2, ty, nw, nh)) { ty = scy - (o.size || 8) * zoom - 4 - nh; numFree = !_demoHit(numOcc, scx - nw / 2, ty, nw, nh); }
+      if (numFree) {
+      numOcc.push([scx - nw / 2, ty, nw, nh]);
+      ctx.fillStyle = 'rgba(0,0,0,0.65)';
+      ctx.fillText(num, scx + 1, ty + 1);
+      ctx.fillStyle = (o.isPlayer ? '#4ff' : '#e8fff0');
+      ctx.fillText(num, scx, ty);
+      // short name under number (+ КОЛОНИЯ tag)
+      if (zoom >= 0.7 && o.sp && o.sp.name) {
+        var short = o.sp.name.split(' ')[0];
+        if(o.demoColony || o.sp.shape==='colony') short = tt('demo.colony') + short;
+        ctx.font = Math.max(8, Math.min(11, 9 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
+        ctx.fillStyle = 'rgba(0,0,0,0.55)';
+        ctx.fillText(short, scx + 1, ty + 14);
+        ctx.fillStyle = (o.demoColony||o.sp.shape==='colony') ? '#8f8' : 'rgba(200,230,255,0.85)';
+        ctx.fillText(short, scx, ty + 13);
+      }
+      }
+}
+
 function renderDemoLabels() {
   if (!window.demoMode) return;
   ctx.save();
   var showLabels = !!window._demoLabels;
   // Group banners + per-organism index when «Метки» is on (default). Ring below is independent.
   var drawnGroup = {};
-  var numOcc = []; // v20.11 V30: caption rects drawn this frame (no overlapping #N captions)
+  var numOcc = [], numQ = []; // V30: rects already taken this frame (banners, panel, captions)
+  var pnl = window._demoPanelEl || ((window._demoPanelEl = document.getElementById('demoLabelsBtn')) && (window._demoPanelEl = window._demoPanelEl.parentElement));
+  if (pnl && pnl.offsetParent !== null) { var pr = pnl.getBoundingClientRect(), k = cv.width / (window.innerWidth || cv.width); numOcc.push([pr.left * k, pr.top * k, pr.width * k, pr.height * k]); }
   for (var i = 0; i < orgs.length; i++) {
     var o = orgs[i];
     if (!o || !o.alive) continue;
@@ -350,39 +382,13 @@ function renderDemoLabels() {
         var tw = ctx.measureText(label).width + 12;
         if(hx + tw > cv.width - 8) hx = Math.max(8, cv.width - 8 - tw);
         ctx.fillRect(hx - 4, hy - 18, tw, 22);
+        numOcc.push([hx - 4, hy - 18, tw, 22]);
         ctx.fillStyle = col;
         ctx.fillText(label, hx, hy);
       }
 
-      // Small index under each cell
-      if (o.demoIndex) {
-        // сквозной номер вида: #12
-        var num = '#' + String(o.demoSpNum || o.demoIndex);
-        ctx.font = 'bold ' + Math.max(10, Math.min(15, 12 * Math.sqrt(zoom))) + 'px monospace';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'top';
-        var ty = scy + (o.size || 8) * zoom + 4;
-        var nw = ctx.measureText(num).width + 4, nh = (zoom >= 0.7 && o.sp && o.sp.name) ? 26 : 15;
-        var numFree = true; // collision only hides this caption; the possessed ring below is still drawn
-        if (_demoHit(numOcc, scx - nw / 2, ty, nw, nh)) { ty = scy - (o.size || 8) * zoom - 4 - nh; numFree = !_demoHit(numOcc, scx - nw / 2, ty, nw, nh); }
-        if (numFree) {
-        numOcc.push([scx - nw / 2, ty, nw, nh]);
-        ctx.fillStyle = 'rgba(0,0,0,0.65)';
-        ctx.fillText(num, scx + 1, ty + 1);
-        ctx.fillStyle = (o.isPlayer ? '#4ff' : '#e8fff0');
-        ctx.fillText(num, scx, ty);
-        // short name under number (+ КОЛОНИЯ tag)
-        if (zoom >= 0.7 && o.sp && o.sp.name) {
-          var short = o.sp.name.split(' ')[0];
-          if(o.demoColony || o.sp.shape==='colony') short = tt('demo.colony') + short;
-          ctx.font = Math.max(8, Math.min(11, 9 * Math.sqrt(zoom))) + 'px system-ui,sans-serif';
-          ctx.fillStyle = 'rgba(0,0,0,0.55)';
-          ctx.fillText(short, scx + 1, ty + 14);
-          ctx.fillStyle = (o.demoColony||o.sp.shape==='colony') ? '#8f8' : 'rgba(200,230,255,0.85)';
-          ctx.fillText(short, scx, ty + 13);
-        }
-        }
-      }
+      // Small index under each cell — drawn after the loop, once group banners and the demo panel are known (v20.12 V30)
+      if (o.demoIndex) numQ.push([o, scx, scy]);
     }
 
     // Possessed: simple thin ring (not the "lens" spam) — drawn even with labels off
@@ -394,6 +400,7 @@ function renderDemoLabels() {
       ctx.stroke();
     }
   }
+  for (var q = 0; q < numQ.length; q++) _demoNum(numQ[q][0], numQ[q][1], numQ[q][2], numOcc);
   ctx.restore();
 }
 

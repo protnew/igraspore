@@ -63,6 +63,18 @@ function _screenOf(x, y){
   };
 }
 
+// v20.12 V30: demo virus caption like species #N (no dark plaque); hidden under the demo panel or another caption
+function _demoVirusCap(text, x, y){
+  ctx.font = 'bold 12px monospace'; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  var w = ctx.measureText(text).width + 4, h = 15, l = x - w / 2, t = y;
+  var pe = window._demoPanelEl; if(pe && pe.offsetParent !== null){ var pr = pe.getBoundingClientRect(), k = cv.width / (window.innerWidth || cv.width);
+    if(l < (pr.right) * k && l + w > pr.left * k && t < pr.bottom * k && t + h > pr.top * k) return; }
+  for(var i = 0; i < window._capOcc.length; i++){ var c = window._capOcc[i]; if(l < c.r && l + w > c.l && t < c.b && t + h > c.t) return; }
+  window._capOcc.push({l:l, t:t, r:l + w, b:t + h});
+  ctx.fillStyle = 'rgba(0,0,0,0.65)'; ctx.fillText(text, x + 1, y + 1);
+  ctx.fillStyle = '#ffd0d0'; ctx.fillText(text, x, y);
+}
+
 function drawDemoVirusLabels(){
   if(!window.demoMode || !window._demoLabels) return;
   if(typeof viruses === 'undefined' || typeof ctx === 'undefined') return;
@@ -88,7 +100,7 @@ function drawDemoVirusLabels(){
     }
     var num = '#' + String(v.demoSpNum || v.demoIndex || '');
     var name = (v.sp && v.sp.name) ? v.sp.name.split(' ')[0] : 'virus';
-    _captionChip(num + ' ' + name, p.sx, p.sy + 18);
+    _demoVirusCap(num + ' ' + name, p.sx, p.sy + 18); // v20.12 V30: same look as species #N captions
   }
   ctx.restore();
 }

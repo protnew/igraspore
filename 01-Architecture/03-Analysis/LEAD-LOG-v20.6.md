@@ -41,3 +41,5 @@
 - 04:01 npm test 316/316 (40 файлов). Коммит: mobile_pool.test.js, Choser R4/R5/R6, вопрос R5.
 
 - 2026-10-27 04:20 R4 done: membrane.spec.js grab -> offscreen drawBody (visible render untouched, thresholds unchanged). ON+OFF 2/2 pass on 8821. NEG (ON-test with softMembrane=false) FAILS as required: XOR 0.2% < 3%; spec in .10-Archive/v20.10-neg-r4, screenshot agent-transfer/igraspore-v20-9-1/R4-negative-off.png. npm test 316/316. C 37 GB.
+
+- 2026-10-27 04:43 World diversity: tools/v20_10_world_diversity.cjs, 3 starts on 8821 -> hashes cd0d46cd / f7bd96bf / c56c767 (3/3 unique), n=1796 each, species 25/28/25. World has no seed (Math.random), so 'same seed = same world' does not apply. npm test 316/316.

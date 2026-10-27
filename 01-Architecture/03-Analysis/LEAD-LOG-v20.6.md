@@ -63,3 +63,5 @@
 - 07:13 v20.11: TZ+3 experts d749b3e; T1 before: 104-106 overlapping #N captions/frame at 390 (ru/en/hi), fix in demo.js renderDemoLabels (occupancy, captions only).
 
 - 07:40 v20.11 progress: T1 demo captions overlap 1->0 (fixed measurement: 1 frame), T2 menu header centred dC=0 at 1280/1400, T6 lint dup caught (108->109, positive 108), T3/T5 perf gate running; CPU 100% (openclaw gateway ~1GB, not ours).
+
+- 07:50 v20.11 progress: critic-1 found own bug (caption collision 'continue' skipped possessed ring) -> fixed with flag; cycles restarted on fixed tree; real tap/click START ok 390/1280.

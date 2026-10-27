@@ -363,7 +363,9 @@ function renderDemoLabels() {
         ctx.textBaseline = 'top';
         var ty = scy + (o.size || 8) * zoom + 4;
         var nw = ctx.measureText(num).width + 4, nh = (zoom >= 0.7 && o.sp && o.sp.name) ? 26 : 15;
-        if (_demoHit(numOcc, scx - nw / 2, ty, nw, nh)) { ty = scy - (o.size || 8) * zoom - 4 - nh; if (_demoHit(numOcc, scx - nw / 2, ty, nw, nh)) continue; }
+        var numFree = true; // collision only hides this caption; the possessed ring below is still drawn
+        if (_demoHit(numOcc, scx - nw / 2, ty, nw, nh)) { ty = scy - (o.size || 8) * zoom - 4 - nh; numFree = !_demoHit(numOcc, scx - nw / 2, ty, nw, nh); }
+        if (numFree) {
         numOcc.push([scx - nw / 2, ty, nw, nh]);
         ctx.fillStyle = 'rgba(0,0,0,0.65)';
         ctx.fillText(num, scx + 1, ty + 1);
@@ -378,6 +380,7 @@ function renderDemoLabels() {
           ctx.fillText(short, scx + 1, ty + 14);
           ctx.fillStyle = (o.demoColony||o.sp.shape==='colony') ? '#8f8' : 'rgba(200,230,255,0.85)';
           ctx.fillText(short, scx, ty + 13);
+        }
         }
       }
     }

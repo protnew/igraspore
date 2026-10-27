@@ -86,11 +86,15 @@ test.describe('v20.4 visibility', () => {
       return { state, hudW: hb.width, hudH: hb.height, empty, pause: Math.min(pb.width, pb.height), text: hud.innerText || '' };
     });
     expect(play.state).toBe('playing');
-    expect(play.empty).toBe(false);
-    expect(play.hudW).toBeGreaterThan(80);
-    expect(play.hudH).toBeGreaterThan(40);
+    // v21: на ≤500px левый HUD скрыт (мобильный дизайн), проверяем паузу на обоих, HUD-текст на широком
+    if (sz.n !== '390') {
+      expect(play.empty).toBe(false);
+      expect(play.hudW).toBeGreaterThan(80);
+      expect(play.hudH).toBeGreaterThan(40);
+    }
     expect(play.pause).toBeGreaterThanOrEqual(sz.n === '390' ? 44 : 48);
-    expect(play.text).toContain('Pop');
+    // v21: на 390 левый HUD скрыт — текст HUD проверяем только на широком
+    if (sz.n !== '390') expect(play.text).toContain('Pop');
     // v20.9: на узком пауза — нижняя #bPause, на широком — угловой #pauseBtn
     await page.evaluate(sz.n === '390'
       ? "document.getElementById('bPause').click()"

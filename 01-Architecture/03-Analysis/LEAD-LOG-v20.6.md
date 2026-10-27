@@ -72,3 +72,4 @@
 
 - 27.10 09:01 v20.12: R8.1 membrane median5 (1.10 kept); V30 demo: banners/panel pre-registered in occupancy, #N deferred after banners, virus chip without plaque + hidden under the panel; colBadge wraps at 1280. npm 323/323.
 - 27.10 09:11 v20.12: menu-load — liftDarkFills (609ms sync in onload) moved to a one-sprite-per-task queue; perf_gate 7 runs: A 965 / B 875 ms (was 1664/765), ENV-LIMITED CPU 100%. membrane.spec separately: 2 FAIL / 5 even with median5 (1.086, 1.066) → fork R9.
+- 27.10 09:52 v20.12: AAB/APK debug built (JDK21; android public synced from canon, old in .10-Archive\android-public-before-v20.12-20261027-091245, oversync of assets/bioicons 114MB moved to .10-Archive), installed on kq_test35 (emulator restarted -no-window; it dies under RAM pressure 2GB free). tools/v20_12_allscreens.cjs (10 screens, 5 bug classes, NEG=1 catches all 5). cycle1 20x2 running.

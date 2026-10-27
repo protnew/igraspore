@@ -469,7 +469,10 @@ function clamp(v,a,b){return v<a?a:v>b?b:v;}
 function rng(a,b){return a+Math.random()*(b-a);}
 function lerp(a,b,t){return a+(b-a)*t;}
 function dist2(a,b){var dx=a.x-b.x,dy=a.y-b.y;return dx*dx+dy*dy;}
-function hex2rgb(h){h=h.replace('#','');if(h.length===3){h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2];}return[parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)];}
+// v20.10: memoized (pure function, called per entity per frame); returns a copy so callers may mutate it
+var _h2rC=Object.create(null),_h2rN=0;
+function hex2rgb(h){var c=_h2rC[h];if(c)return c.slice();c=_hex2rgbRaw(h);if(_h2rN<4096){_h2rC[h]=c;_h2rN++;}return c.slice();}
+function _hex2rgbRaw(h){h=h.replace('#','');if(h.length===3){h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2];}return[parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)];}
 function shadeRgb(r,g,b,f){return'rgb('+Math.round(clamp(r*f,0,255))+','+Math.round(clamp(g*f,0,255))+','+Math.round(clamp(b*f,0,255))+')';}
 if(typeof module!=='undefined'&&module.exports){module.exports={clamp,rng,lerp,dist2,hex2rgb,shadeRgb,hslToHex,halfW};}
 // v20.7: ключи exit/смерть/справка (10) — inline из dicts (аналит. заморозка: dicts вернулись к 412)

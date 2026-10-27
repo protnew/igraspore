@@ -120,7 +120,8 @@ function initWorld(){
       sp:vsp,target:null,age:0,angle:rng(0,6.28),wobble:rng(0,6.28)});
   }
   // v20.6 G2: пропорциональное сжатие пула в тестовом режиме
-  var _poolScale = window.TEST_POOL ? Math.max(0.05, window.TEST_POOL/2450) : (settings.economy ? 0.7 : 1);
+  // v21 §13.1: одна формула — продуктовый потолок 300 (или тестовый ?pool=N); эконом-режим ×0.7
+  var _poolScale = Math.max(0.05, (window.TEST_POOL || (typeof PRODUCT_POOL!=='undefined' ? PRODUCT_POOL : 300)) / 2450) * (settings.economy ? 0.7 : 1);
   if(!(window._popQueue && window._popQueue.length))
   for(var cat in INIT_N){
     var pool=SPECIES_DB.filter(function(s){

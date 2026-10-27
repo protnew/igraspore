@@ -49,14 +49,15 @@ function igsPoolExpect(density, scale, virusMul){
   return n;
 }
 function getPoolCount(){
-  var dens=1, sc=1, vm=0.4;
+  // v21 §13.1: та же формула, что в initWorld (world.js) — баннер = факту, потолок 300
+  var dens=1, vm=0.4;
   try{
     dens = (typeof settings!=='undefined' && settings.density) ? settings.density : 1;
-    if(window.TEST_POOL) sc = Math.max(0.05, window.TEST_POOL/2450);
-    else if(settings && settings.economy) sc = 0.7;
     if(typeof DIFF!=='undefined' && typeof difficulty!=='undefined' && DIFF[difficulty]) vm = DIFF[difficulty].virus||0.4;
   }catch(e){}
-  return igsPoolExpect(dens, sc, vm);
+  var pool = window.TEST_POOL || (typeof PRODUCT_POOL!=='undefined' ? PRODUCT_POOL : 300);
+  // баннер = цель пула (потолок); стартовый засев меньше, рождения доводят до неё
+  return Math.max(2, Math.round(pool * dens * ((typeof settings!=='undefined' && settings.economy) ? 0.7 : 1)));
 }
 window.igsPoolExpect = igsPoolExpect;
 

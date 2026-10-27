@@ -53,7 +53,7 @@ window.IGS_HUD_RU={
       'modeBig.cartoon':'🎨 CARTOON',
       'modeLbl.swiss':'📗 SwissBioPics',
       'modeLbl.webgl':'🌊 WebGL',
-      'modeLbl.cartoon':'🎨 Cartoon',
+      'modeLbl.cartoon':'🎨 Мультяшный',
       'tip.swiss':'SwissBioPics. Клик → WebGL',
       'tip.webgl':'WebGL-вода. Клик → мультяшный',
       'tip.cartoon':'Мультяшный. Клик → SwissBioPics',

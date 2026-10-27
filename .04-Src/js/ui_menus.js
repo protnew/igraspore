@@ -109,7 +109,7 @@ function buildSpeciesGrid(){
       '<div class="scN" style="color:'+sp.color+';font-size:13px;line-height:1.2"><span style="opacity:.75;font-weight:700;margin-right:3px;color:#9cf">#'+spNum+'</span>'+sp.name+'</div>'+
       '<div class="scL">'+(Math.round(sp.size*10)/10)+'\u03bcm</div>'+
       '<div class="scC">'+tt('loc.'+sp.locomotion)+'</div>'+
-      '<div style="font-size:13px;opacity:.9;margin-top:1px">'+roleShort+'</div>'+
+      '<div class="scRole" style="font-size:13px;opacity:.9;margin-top:1px;color:#bfe0ff">'+roleShort+'</div>'+ // v20.12: was inheriting a dark colour (contrast 1.05, invisible)
       '<div style="font-size:13px;margin-top:1px;line-height:1.2">'+eatInfo+'</div>'+
       '<div class="scP">'+pop+' '+tt('aliveWord')+'</div>';
     var pcv=c.querySelector('.scPrev'); try{ if(pcv&&typeof drawSpeciesPreview==='function') drawSpeciesPreview(pcv,sp,i); }catch(ePrev){ if(pcv){ var cxp=pcv.getContext('2d'); if(cxp){ cxp.fillStyle=sp.color||'#4c8'; cxp.beginPath(); cxp.arc(60,60,28,0,6.28); cxp.fill(); } } }

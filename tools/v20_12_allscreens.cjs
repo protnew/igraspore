@@ -32,8 +32,9 @@ const PROBE = () => {
   // overlap between unrelated visible text boxes (both on top somewhere)
   const bx = onTop.map(e => [e, vr(e)]).filter(x => x[1].width > 2 && x[1].height > 2);
   for (let i = 0; i < bx.length; i++) for (let j = i + 1; j < bx.length; j++) { const [a, ra] = bx[i], [b, rb] = bx[j]; if (a.contains(b) || b.contains(a)) continue;
-    const w = Math.min(ra.right, rb.right) - Math.max(ra.left, rb.left), h = Math.min(ra.bottom, rb.bottom) - Math.max(ra.top, rb.top);
-    if (w > 2 && h > 2 && w * h > 0.25 * Math.min(ra.width * ra.height, rb.width * rb.height)) F.push(['overlap', nm(a) + ' x ' + nm(b) + ':' + a.textContent.trim().slice(0, 14)]); }
+    let hit = false; for (const qa of a.getClientRects()) for (const qb of b.getClientRects()) { const w = Math.min(qa.right, qb.right, ra.right) - Math.max(qa.left, qb.left, ra.left), h = Math.min(qa.bottom, qb.bottom, ra.bottom) - Math.max(qa.top, qb.top, ra.top);
+      if (w > 2 && h > 2 && w * h > 0.25 * Math.min(qa.width * qa.height, qb.width * qb.height)) hit = true; } // line boxes, not inline bounding boxes
+    if (hit) F.push(['overlap', nm(a) + ' x ' + nm(b) + ':' + a.textContent.trim().slice(0, 14)]); }
   // taps < 48px (height) / < 44 width for real controls
   for (const e of document.querySelectorAll('button, .btn, select, input:not([type=hidden]), .tg')) { if (!deep(e)) continue; const r = e.getBoundingClientRect();
     if (topAt(e, r) && (r.height < 47.5 || r.width < 44)) F.push(['tap48', nm(e) + ':' + Math.round(r.width) + 'x' + Math.round(r.height) + ':' + (e.innerText || e.value || '').trim().slice(0, 16)]); }
@@ -43,7 +44,8 @@ const PROBE = () => {
     if ((e.innerText || '').trim() || e.querySelector('canvas,img,svg,video,input,select')) continue;
     if (e.matches('.tg,[role=switch],[id$=Tg]') || e.closest('.tg,[role=switch]')) continue; // toggles are controls, not plaques
     if (/^(cv|gameCanvas|glCanvas)$/.test(e.id) || r.width >= innerWidth - 2 && r.height >= innerHeight - 2) continue;
-    if (getComputedStyle(e).backgroundImage !== 'none') continue; if (!topAt(e, r)) continue;
+    if (getComputedStyle(e).backgroundImage !== 'none') continue;
+    if ([...e.querySelectorAll('*')].some(x => { const q = rgba(getComputedStyle(x).backgroundColor); const rr = x.getBoundingClientRect(); return q && q[3] > 0.3 && rr.width > 0 && rr.height > 0; })) continue; // painted child (e.g. bar fill) if (!topAt(e, r)) continue;
     F.push(['emptyPlaque', nm(e) + ':' + Math.round(r.width) + 'x' + Math.round(r.height)]); }
   const ctl = {}; for (const e of document.querySelectorAll('button[id], .btn[id], h1[id], h2[id], h3[id], label[id], [data-k]')) { if (!deep(e)) continue; const t = (e.innerText || '').trim(); if (t) ctl[e.id || e.getAttribute('data-k')] = t.slice(0, 60); }
   return { F, ctl, state: window.state };
@@ -82,10 +84,12 @@ const NEGJS = "(function(){var m=document.getElementById('menuO')||document.body
   }
   await b.close();
   // untranslated: same control text as en (latin letters, >3 chars) on the same screen/viewport
+  // correct native words identical to English (verified): START de; MENU pt-BR/id/fr/vi/fil/it/pl/ms; AQUARIUM de/fr
+  const COGNATE = { START: ['de'], MENU: ['pt-BR', 'id', 'fr', 'vi', 'fil', 'it', 'pl', 'ms'], AQUARIUM: ['de', 'fr'] };
   const ALLOW = /^(iGraSpore|OK|DEMO|WIKI|Wiki|HUD|FPS|UI|μm|v\d.*|[\d\s.,:%×x+\-–—\/()#]+)$/;
   for (const k in R) { const [L, W] = k.split('_'); if (L === 'en' || !R['en_' + W]) continue;
     for (const st of SCREENS) { const a = R[k][st], e = R['en_' + W][st]; if (!a || !e || !a.ctl || !e.ctl) continue;
-      for (const id in a.ctl) if (e.ctl[id] && a.ctl[id] === e.ctl[id] && /[A-Za-z]{4,}/.test(a.ctl[id]) && !ALLOW.test(a.ctl[id])) (a.F = a.F || []).push(['untranslated', id + ':' + a.ctl[id].slice(0, 30)]); } }
+      for (const id in a.ctl) if (e.ctl[id] && a.ctl[id] === e.ctl[id] && /[A-Za-z]{4,}/.test(a.ctl[id]) && !ALLOW.test(a.ctl[id])) { if (COGNATE[a.ctl[id].toUpperCase()] && COGNATE[a.ctl[id].toUpperCase()].includes(L)) continue; (a.F = a.F || []).push([L === 'fil' ? 'untranslatedLocked' : 'untranslated', id + ':' + a.ctl[id].slice(0, 30)]); } } }
   const RED = ['crash', 'overlap', 'lowContrast', 'emptyPlaque', 'untranslated'];
   const light = s => !s ? 'RED' : (s.F || []).some(f => RED.includes(f[0])) ? 'RED' : (s.F || []).length ? 'YELLOW' : 'GREEN';
   const rows = []; for (const W of VPS) for (const L of order) { const k = L + '_' + W; rows.push([k, ...SCREENS.map(st => light(R[k][st]) + (R[k].crash && !R[k][st] ? '*' : ''))]); }

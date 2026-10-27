@@ -109,3 +109,5 @@ button.btn:disabled,button#startBtn:disabled{
 
 /* v20.12 V30: colony badge on 1280 menu cards must wrap, not be clipped with ellipsis */
 .colBadge{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;max-width:100%;box-sizing:border-box;overflow-wrap:anywhere;line-height:1.2}
+/* v20.12: wiki field labels (Движение:/捕食者:) must not split across lines */
+#wikiContent b{white-space:nowrap}

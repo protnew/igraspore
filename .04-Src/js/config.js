@@ -327,7 +327,9 @@ function foodListRu(cat){
 }
 
 var DIFF={easy:{spawn:1.5,energy:0.8,metab:0.3,virus:0.2},normal:{spawn:1.0,energy:1.0,metab:0.5,virus:0.4},hard:{spawn:0.7,energy:1.2,metab:0.8,virus:0.8}};
-var TGT={producer:1400,consumer1:160,consumer2:100,consumer3:40,decomposer:160,macrophage:0};
+// v21 C5: TGT отмасштабирован под продуктовый пул 300 (было от 2450: 1400/160/100/40/160)
+var _TGT_SC = (window.TEST_POOL || PRODUCT_POOL || 300) / 2450;
+var TGT={producer:Math.max(40,Math.round(1400*_TGT_SC)),consumer1:Math.max(6,Math.round(160*_TGT_SC)),consumer2:Math.max(4,Math.round(100*_TGT_SC)),consumer3:Math.max(2,Math.round(40*_TGT_SC)),decomposer:Math.max(6,Math.round(160*_TGT_SC)),macrophage:0};
 var INIT_N={producer:1200,consumer1:150,consumer2:90,consumer3:40,decomposer:150,macrophage:0,virus:3};
 var SEASONS=[{temp:16,light:0.85,ice:0,rain:0.15},{temp:24,light:1,ice:0,rain:0.08},{temp:10,light:0.7,ice:0.05,rain:0.25},{temp:3,light:0.45,ice:0.6,rain:0.03}];
 var SEASON_DAYS=2;

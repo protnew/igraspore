@@ -117,7 +117,7 @@ function initWorld(){
   for(var vi=0;vi<vCount;vi++){
     var vsp=vPool[vi%vPool.length];
     viruses.push({x:rng(-400,400),y:rng(30,200),vx:rng(-0.5,0.5),vy:rng(-0.5,0.5),
-      sp:vsp,target:null,age:0,angle:rng(0,6.28),wobble:rng(0,6.28)});
+      sp:vsp,target:null,age:rng(0,260),angle:rng(0,6.28),wobble:rng(0,6.28)}); // v21 C5: возраст разнесён — партия не удаляется хором к 300с
   }
   // v20.6 G2: пропорциональное сжатие пула в тестовом режиме
   // v21 §13.1: одна формула — продуктовый потолок 300 (или тестовый ?pool=N); эконом-режим ×0.7

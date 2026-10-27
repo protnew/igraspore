@@ -193,7 +193,9 @@ function findBestPrey(o, radius, forPlayer){
 function filterFeedPull(o, dt){
   if(!o || !o.alive || !o.sp || o.sp.cat !== 'consumer2') return;
   var foodCats = (typeof FOOD!=='undefined' && FOOD[o.sp.cat]) ? FOOD[o.sp.cat] : ['producer','consumer1'];
-  var zone = o.size * 3.2 + (o.isPlayer ? 36 : 22);
+  var _sess = o.sp && o.sp.locomotion === 'sessile';
+  // v21 C5: сидячим на стебельке — длинная ресничная воронка (зона ×2.2), иначе еда не доходит до дна
+  var zone = _sess ? (o.size * 7 + 60) : (o.size * 3.2 + (o.isPlayer ? 36 : 22));
   var near = window.getNearby ? window.getNearby(o.x, o.y, zone + 40) : orgs;
   var facing = (typeof o.facing==='number') ? o.facing : 0;
   // Oral groove slightly in front of cell

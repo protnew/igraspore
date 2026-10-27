@@ -38,7 +38,12 @@ function updateWorld(dt){
       }
     }
   }
-  for(var i=0;i<orgs.length;i++)updateOrg(orgs[i],dt);
+  for(var i=0;i<orgs.length;i++){
+    updateOrg(orgs[i],dt);
+    // v21 C4: фильтр-питание инфузорий (сидячие и свободноплавающие consumer2) —
+    // функция существовала, но не вызывалась: Vorticella/Zoothamnium/Opercularia голодали
+    try{ if(window.filterFeedPull && orgs[i] && orgs[i].alive && orgs[i].sp && orgs[i].sp.cat==='consumer2') window.filterFeedPull(orgs[i], dt); }catch(eFF){}
+  }
   updateInfections(dt);
   updateViruses(dt);
   if(window.eventManager) window.eventManager.update(dt);
@@ -86,6 +91,26 @@ function updateWorld(dt){
 
 
   spawnT+=dt;
+  // v21 C5: страховка разнообразия — раз в 30 игр-сек по 1 особи очередного вида (round-robin по всем),
+  // чтобы каждый вид из пула периодически появлялся даже при полном трофическом уровне
+  window.__rrAllT=(window.__rrAllT||0)+dt;
+  if(window.__rrAllT>30){
+    window.__rrAllT=0;
+    if(!window.__rrAll){ window.__rrAll=[]; for(var _ri=0;_ri<SPECIES_DB.length;_ri++){ var _rs=SPECIES_DB[_ri]; if(_rs && !(_rs.flags&&_rs.flags.noRandomSpawn) && (_rs.size||1)<16 && _rs.cat!=='virus') window.__rrAll.push(_rs); } window.__rrAllI=0; }
+    if(window.__rrAll.length && window.__rrAllI < window.__rrAll.length){
+      var _rsp=window.__rrAll[window.__rrAllI++];
+      // возврат только отсутствующих видов — не перекачиваем живые уровни
+      var _has=false;
+      for(var _hi=0;_hi<orgs.length;_hi++){ if(orgs[_hi]&&orgs[_hi].alive&&orgs[_hi].sp===_rsp){_has=true;break;} }
+      if(!_has){
+        var _rd=(_rsp.cat==='producer')?rng(2,80):(_rsp.cat==='decomposer'?rng(PD*0.4,PD*0.85):rng(15,PD*0.75));
+        var _rhw=Math.max(40,halfW(_rd)-20);
+        var _n=window.__rrAll.filter(function(x){return x===_rsp;}).length;
+        // пара особей: одиночная в 300-пуде быстро съедается до возврата
+        for(var _nn=0;_nn<2;_nn++) spawnOrg(_rsp,rng(-_rhw,_rhw),_rd);
+      }
+    } else window.__rrAllI=0;
+  }
   if(spawnT>2.5){
     spawnT=0;
     var catBm = {};
@@ -100,8 +125,8 @@ function updateWorld(dt){
     var nP=0, nAll=0;
     for(var j=0;j<orgs.length;j++){ if(orgs[j].alive){ nAll++; if(orgs[j].sp.cat==='producer') nP++; } }
     window._trophic = {nP:nP,nAll:nAll,pct:nAll?nP/nAll:0};
-    if(nP > (TGT.producer||1800) * 1.08){
-      var need = nP - Math.floor((TGT.producer||1800));
+    if(nP > (TGT.producer||171) * 1.08){
+      var need = nP - Math.floor((TGT.producer||171));
       if(need > 25) need = 25; // per spawn tick
       // kill weakest non-player producers (low energy first)
       var cands=[];
@@ -128,9 +153,12 @@ function updateWorld(dt){
       avgBm = pool.length ? avgBm/pool.length : 500;
       if(!window.demoMode && bm < TGT[cat]*avgBm*DIFF[difficulty].spawn*settings.density * ( (_aliveByCat[cat]||0) < Math.max(12, (TGT[cat]||40)*0.22) ? 0.68 : 1 )){ // NICHE_SOFT_FLOOR
         var numToSpawn = (cat === 'producer') ? 15 : 1;
+        // v21 C5: round-robin по пулу — каждый вид со временем появляется (random давал «слепые» виды)
+        if(!window.__rrSpawn) window.__rrSpawn = {};
+        if(window.__rrSpawn[cat] === undefined || window.__rrSpawn[cat] >= pool.length) window.__rrSpawn[cat] = 0;
         for (var k=0; k<numToSpawn; k++) {
            if(pool.length>0){
-             var sp=pool[Math.floor(Math.random()*pool.length)];
+             var sp=pool[(window.__rrSpawn[cat]++) % pool.length];
              var d, hw;
              if(cat==='producer'){ d=rng(2,80); hw=Math.max(40,halfW(d)-20); }
              else if(cat==='decomposer'){ d=rng(PD*0.4,PD*0.85); hw=Math.max(40,halfW(d)-20); }

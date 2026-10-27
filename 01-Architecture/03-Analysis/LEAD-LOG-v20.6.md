@@ -76,3 +76,4 @@
 - 27.10 10:01 v20.12 cycle1: 318 green / 82 red. Real bugs: invisible category text in menu cards (contrast 1.05) → color #bfe0ff; wiki labels split (捕食/者) → b nowrap. Checker false positives fixed (inline line boxes, bar fill, cognates START/MENU/AQUARIUM); fil SETTINGS = locked fil.json → yellow. NEG 5/5. npm 323/323. Recheck en/ja/fil: 0 red.
 - 27.10 10:03 v20.12: Choser R9 (membrane still flaky with median5) written; menuSub padding on phones; cycle2 running.
 - 27.10 10:24 v20.12 cycle2: 390 green/10 yellow (fil locked)/0 red. Visual review found 2 more: dangling '·' in demo badge (all langs) → fixed; pause frame behind demo X at 1280 → hidden in demo. npm 323/323. cycle3 next.
+- 2026-10-27 10:58 v20.12: cycle3 390g/10y/0r; APK/AAB rebuilt+installed kq_test35 10:44; report REPORT-TZ-08-SPOR-v20.12-2026-10-27_1054.md (75->90%); handoff 09-Docs/out-dev-factory/TZ-08-SPOR-HANDOFF-dev-2026-10-27_1057.md

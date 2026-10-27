@@ -213,6 +213,9 @@ function liftDarkFills(img){
   } catch(e){ return img; }
 }
 
+var _liftQ = [];
+function _liftNext(){ var fn = _liftQ.shift(); if(fn) fn(); if(_liftQ.length) setTimeout(_liftNext, 0); }
+
 window.loadSwissSprites = function(basePath){
   if (loadState === 'loading' || loadState === 'ready') return;
   loadState = 'loading';
@@ -231,7 +234,8 @@ window.loadSwissSprites = function(basePath){
   SHAPES.forEach(function(shape){
     var img = new Image();
     img.decoding = 'async';
-    img.onload = function(){ sprites[shape] = liftDarkFills(img) || img; done(); };
+    // v20.12 menu-load: pixel lift runs in its own task (one sprite per task) so it never blocks first menu paint; result identical
+    img.onload = function(){ _liftQ.push(function(){ sprites[shape] = liftDarkFills(img) || img; done(); }); if(_liftQ.length === 1) setTimeout(_liftNext, 0); };
     img.onerror = function(){ console.warn('[swiss] fail', shape); done(); };
     img.src = base + shape + '.png?v=1';
   });

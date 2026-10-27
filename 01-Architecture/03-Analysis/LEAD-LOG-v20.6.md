@@ -71,3 +71,4 @@
 - 08:35 v20.11: cycles 5-7 three consecutive green; membrane ON flaky in 3,4 -> fork R8 (Choser); 5 critics: fixed 2, checked 1, open 4; report 01-Architecture\03-Analysis\REPORT-TZ-08-SPOR-v20.11-2026-10-27_0830.md.
 
 - 27.10 09:01 v20.12: R8.1 membrane median5 (1.10 kept); V30 demo: banners/panel pre-registered in occupancy, #N deferred after banners, virus chip without plaque + hidden under the panel; colBadge wraps at 1280. npm 323/323.
+- 27.10 09:11 v20.12: menu-load — liftDarkFills (609ms sync in onload) moved to a one-sprite-per-task queue; perf_gate 7 runs: A 965 / B 875 ms (was 1664/765), ENV-LIMITED CPU 100%. membrane.spec separately: 2 FAIL / 5 even with median5 (1.086, 1.066) → fork R9.

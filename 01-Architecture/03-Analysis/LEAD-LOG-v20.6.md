@@ -65,3 +65,7 @@
 - 07:40 v20.11 progress: T1 demo captions overlap 1->0 (fixed measurement: 1 frame), T2 menu header centred dC=0 at 1280/1400, T6 lint dup caught (108->109, positive 108), T3/T5 perf gate running; CPU 100% (openclaw gateway ~1GB, not ours).
 
 - 07:50 v20.11 progress: critic-1 found own bug (caption collision 'continue' skipped possessed ring) -> fixed with flag; cycles restarted on fixed tree; real tap/click START ok 390/1280.
+
+- 08:11 v20.11 progress: cycles 1-2 green, cycle 3 membrane ON aspect 1.092<1.10 (flaky: unseeded player shape; threshold NOT lowered) -> cycles 4-6 started.
+
+- 08:35 v20.11: cycles 5-7 three consecutive green; membrane ON flaky in 3,4 -> fork R8 (Choser); 5 critics: fixed 2, checked 1, open 4; report 01-Architecture\03-Analysis\REPORT-TZ-08-SPOR-v20.11-2026-10-27_0830.md.

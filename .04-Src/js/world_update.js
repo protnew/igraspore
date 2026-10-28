@@ -91,23 +91,37 @@ function updateWorld(dt){
 
 
   spawnT+=dt;
+  window.__simT=(window.__simT||0)+dt; // v21 §13.1: игровые секунды с начала мира (окно разгона пула)
   // v21 C5: страховка разнообразия — раз в 30 игр-сек по 1 особи очередного вида (round-robin по всем),
   // чтобы каждый вид из пула периодически появлялся даже при полном трофическом уровне
   window.__rrAllT=(window.__rrAllT||0)+dt;
-  if(window.__rrAllT>30){
+  if(window.__rrAllT>15){ // v21 coexist C3: 15с вместо 30с — полный круг 101 вида быстрее, чем виды вымирают между инжекциями
     window.__rrAllT=0;
     if(!window.__rrAll){ window.__rrAll=[]; for(var _ri=0;_ri<SPECIES_DB.length;_ri++){ var _rs=SPECIES_DB[_ri]; if(_rs && !(_rs.flags&&_rs.flags.noRandomSpawn) && (_rs.size||1)<16 && _rs.cat!=='virus') window.__rrAll.push(_rs); } window.__rrAllI=0; }
     if(window.__rrAll.length && window.__rrAllI < window.__rrAll.length){
       var _rsp=window.__rrAll[window.__rrAllI++];
-      // возврат только отсутствующих видов — не перекачиваем живые уровни
-      var _has=false;
-      for(var _hi=0;_hi<orgs.length;_hi++){ if(orgs[_hi]&&orgs[_hi].alive&&orgs[_hi].sp===_rsp){_has=true;break;} }
-      if(!_has){
+      // возврат отсутствующих видов + подкрепление вымирающих (≤1 живой) — не перекачиваем живые уровни
+      var _cnt=0;
+      for(var _hi=0;_hi<orgs.length;_hi++){ if(orgs[_hi]&&orgs[_hi].alive&&orgs[_hi].sp===_rsp){_cnt++; if(_cnt>1)break;} }
+      if(_cnt<=1){
         var _rd=(_rsp.cat==='producer')?rng(2,80):(_rsp.cat==='decomposer'?rng(PD*0.4,PD*0.85):rng(15,PD*0.75));
         var _rhw=Math.max(40,halfW(_rd)-20);
-        var _n=window.__rrAll.filter(function(x){return x===_rsp;}).length;
-        // пара особей: одиночная в 300-пуде быстро съедается до возврата
-        for(var _nn=0;_nn<2;_nn++) spawnOrg(_rsp,rng(-_rhw,_rhw),_rd);
+        // v21 coexist C3: diversity-swap — если пул у потолка MAX_ORG, освобождаем место: убираем 2 слабейших из самого массового вида
+        if(typeof MAX_ORG!=='undefined' && orgs.filter(function(o){return o&&o.alive;}).length + 2 > MAX_ORG){
+          var _bySp={};
+          for(var _si=0;_si<orgs.length;_si++){ var _so=orgs[_si]; if(_so&&_so.alive&&!_so.isPlayer&&!_so.invuln&&_so.sp){ var _k2=_so.sp.name; (_bySp[_k2]=_bySp[_k2]||[]).push(_so); } }
+          var _bigList=Object.keys(_bySp).sort(function(a,b){return _bySp[b].length-_bySp[a].length;});
+          if(_bigList.length){
+            var _big=_bySp[_bigList[0]].sort(function(a,b){return (a.energy||0)-(b.energy||0);});
+            for(var _bk=0;_bk<2&&_bk<_big.length;_bk++){ if(typeof killOrg==='function') killOrg(_big[_bk],(typeof DCODE!=='undefined'?DCODE.STARVE:0)); else _big[_bk].alive=false; }
+          }
+        }
+        // v21: размер инъекции по трофике (крупные хищники парами/тройками перетягивают биомассу c3>c2 и ломали пирамиду):
+        // исчезнувшему — 3 (низ), 2 (середина), 1 (верховья — одиночная ре-колонизация, биологично для топ-хищников);
+        // единичному — подкрепление до 3/2/— (топ-хищников не качаем)
+        var _top=(_cnt===0)?((_rsp.cat==='consumer3')?1:(_rsp.cat==='consumer2'||_rsp.cat==='decomposer')?2:3)
+                            :((_rsp.cat==='consumer3')?0:(_rsp.cat==='consumer2'||_rsp.cat==='decomposer')?1:2);
+        for(var _nn=0;_nn<_top;_nn++) spawnOrg(_rsp,rng(-_rhw,_rhw),_rd);
       }
     } else window.__rrAllI=0;
   }
@@ -125,8 +139,9 @@ function updateWorld(dt){
     var nP=0, nAll=0;
     for(var j=0;j<orgs.length;j++){ if(orgs[j].alive){ nAll++; if(orgs[j].sp.cat==='producer') nP++; } }
     window._trophic = {nP:nP,nAll:nAll,pct:nAll?nP/nAll:0};
-    if(nP > (TGT.producer||171) * 1.08){
-      var need = nP - Math.floor((TGT.producer||171));
+    var _pcCeil = (window.__simT<60) ? 1.3 : 1.08; // v21 §13.1: первые 60с держим стартовый набор (~300 на 10-й секунде — ловушка пула), дальше прежний кал (разнообразие)
+    if(nP > (TGT.producer||171) * _pcCeil){
+      var need = nP - Math.floor((TGT.producer||171) * ((_pcCeil>1.2)?1.22:1));
       if(need > 25) need = 25; // per spawn tick
       // kill weakest non-player producers (low energy first)
       var cands=[];

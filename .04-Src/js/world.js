@@ -134,15 +134,17 @@ function initWorld(){
       }
       return true;
     });
-    // Pick 1 to 3 distinct species from this category to populate initially
+    // Pick 1 to 6 distinct species from this category to populate initially
     var selectedSpecies = [];
-    for(var k=0; k<Math.min(pool.length, 3); k++) {
+    for(var k=0; k<Math.min(pool.length, 6); k++) {
        selectedSpecies.push(pool[Math.floor(Math.random()*pool.length)]);
     }
     // Spawn at least 15 of each selected species to avoid quick extinction
     for(var s=0; s<selectedSpecies.length; s++) {
        var sp = selectedSpecies[s];
-       var baseCnt = Math.max(2, Math.round((INIT_N[cat]/3 + 10) * settings.density * _poolScale));
+       // v21 §13.1 (тестировщик, дефект №2): стартовый набор ~276 из ~300 (было 216, пул добирал 30-60с — ловушка ±5% на 10-й секунде падала).
+       // 6 видов × 0.64 вместо 3 × 1.28: тот же тотал, вдвое больше стартовое разнообразие (coexist C3).
+       var baseCnt = Math.max(2, Math.round((INIT_N[cat]/3 + 10) * settings.density * _poolScale * 0.64));
        for(var i=0;i<baseCnt;i++){
          // UNIFORM distribution across entire basin
          var d, hw;

@@ -138,7 +138,8 @@ function updateMenuTexts(){
     } catch(e){ poolN = 1600; }
     if(!poolN) poolN = 1600;
     var el = document.getElementById('menuSub');
-    if(el) el.innerHTML = tt('menuSub');
+    // v21 §13.3 (тестировщик, дефект №3): число видов динамическое — словари пишут «100», реально SPECIES_DB.length (101), фильтр и баннер показывают 101
+    if(el) el.innerHTML = tt('menuSub').replace(/\b100\b/, (typeof SPECIES_DB!=='undefined' && SPECIES_DB.length) ? SPECIES_DB.length : 100);
     if(typeof renderPoolBanner==='function') renderPoolBanner();
   })();
   var sb=document.getElementById('startBtn'); if(sb) sb.textContent=tt('start');

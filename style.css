@@ -466,6 +466,8 @@ body.debug #topRightStack{display:flex!important}
 #setO.ov.show,#helpO.ov.show,#wikiO.ov.show{z-index:460!important}
 #exitConfirm.ov.show{z-index:480!important}
 body.in-menu #langSelWrap{position:fixed!important;top:8px;right:8px;z-index:450!important;display:block!important;width:max-content!important;max-width:168px!important}
+/* v21 (тестировщик, дефект №1): контекст leftContainer (z10/35, инлайн; mobile.js даёт menuO z280) держал селектор языка под menuO — поднимаем контекст в меню выше 280, но ниже оверлеев 460/480 */
+body.in-menu #leftContainer{z-index:300!important}
 #setO.ov.show,#deadO.ov.show{background:rgba(0,0,0,.92)!important}
 #deadO.ov.show,#pauseO.ov.show,#introO.ov.show,#setO.ov.show,#helpO.ov.show,#wikiO.ov.show,#exitConfirm.ov.show{overflow-y:auto}
 #setBody{background:#07141f;border-radius:12px;padding:12px;width:min(520px,86vw)!important}

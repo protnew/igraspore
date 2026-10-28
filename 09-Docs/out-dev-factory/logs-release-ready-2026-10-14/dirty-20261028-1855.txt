@@ -1,0 +1,1008 @@
+ M .04-Src/js/ui_menus.js
+ M 06-DevOps-and-Release/cf-publish/04-Src/js/demo.js
+ M 06-DevOps-and-Release/cf-publish/04-Src/js/i18n_detect.js
+ M 06-DevOps-and-Release/cf-publish/04-Src/js/igs_v20.js
+ M 06-DevOps-and-Release/cf-publish/04-Src/js/main_events.js
+ M 06-DevOps-and-Release/cf-publish/04-Src/js/ui_menus.js
+ M 06-DevOps-and-Release/cf-publish/index.html
+ M 08-Backlog/backlog_iGraSpore_V2.db
+ M 09-Docs/out-dev-factory/01-forks.json
+ M 09-Docs/out-dev-factory/01-forks.md
+ M 09-Docs/out-dev-factory/02-tables.json
+ M 09-Docs/out-dev-factory/02-tables.md
+ M 09-Docs/out-dev-factory/03-cpo.json
+ M 09-Docs/out-dev-factory/03-cpo.md
+ M 09-Docs/out-dev-factory/04-ux.json
+ M 09-Docs/out-dev-factory/04-ux.md
+ M 09-Docs/out-dev-factory/05-dba.json
+ M 09-Docs/out-dev-factory/05-dba.md
+ M 09-Docs/out-dev-factory/06-devops.json
+ M 09-Docs/out-dev-factory/06-devops.md
+ M 09-Docs/out-dev-factory/07-secops.json
+ M 09-Docs/out-dev-factory/07-secops.md
+ M 09-Docs/out-dev-factory/08-controller.json
+ M 09-Docs/out-dev-factory/08-controller.md
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B1-virus-spec.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B1-virus.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B13-dead-spec.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B13-dead.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B2-confirm.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B2-pause.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B3-menu-clean.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B3-menu-spec.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B4-demo-0.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B4-demo-spec.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B5-demo-x.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B6-card-spec.png
+ M 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B6-card.png
+ M 09-Docs/out-dev-factory/PRIORITY_LIST.md
+ M 09-Docs/out-dev-factory/_role-texts/00-protocol.md
+ M 09-Docs/out-dev-factory/_role-texts/01-forks.md
+ M 09-Docs/out-dev-factory/_role-texts/02-tables.md
+ M 09-Docs/out-dev-factory/_role-texts/03-cpo.md
+ M 09-Docs/out-dev-factory/_role-texts/04-ux.md
+ M 09-Docs/out-dev-factory/_role-texts/05-dba.md
+ M 09-Docs/out-dev-factory/_role-texts/06-devops.md
+ M 09-Docs/out-dev-factory/_role-texts/07-secops.md
+ M 09-Docs/out-dev-factory/_role-texts/08-controller.md
+ M 09-Docs/out-dev-factory/_role-texts/09-qa.md
+ M 09-Docs/out-dev-factory/_role-texts/session_log.py
+ M 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/heartbeat.log
+ M 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-inventory-before.json
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/bn/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/bn/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/bn/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/bn/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/bn/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/bn/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/de/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/de/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/de/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/de/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/de/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/de/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/en/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/en/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/en/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/en/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/en/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/en/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/es/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/es/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/es/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/fil/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/fil/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/fil/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/fr/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/fr/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/fr/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/fr/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/fr/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/fr/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/hi/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/hi/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/hi/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/hi/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/hi/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/hi/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/id/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/id/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/id/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/id/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/id/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/id/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/it/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/it/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/it/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/it/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/it/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/it/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ja/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ja/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ja/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ja/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ja/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ja/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ko/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ko/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ko/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ko/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ko/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ko/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ms/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ms/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ms/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ms/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ms/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ms/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pl/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pl/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pl/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pl/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pl/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pl/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pt-BR/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pt-BR/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pt-BR/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pt-BR/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pt-BR/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/pt-BR/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ru/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ru/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ru/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ru/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ru/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/ru/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/th/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/th/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/th/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/th/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/th/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/th/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/tr/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/tr/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/tr/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/uk/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/uk/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/uk/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/uk/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/uk/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/uk/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/vi/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/vi/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/vi/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/vi/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/vi/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/vi/390-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/zh-TW/1280-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/zh-TW/1280-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/zh-TW/1280-menu.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/zh-TW/390-game.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/zh-TW/390-gameover.png
+ M 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/i18n/zh-TW/390-menu.png
+ M 09-Docs/test-runs/results-latest.json
+ M tools/build-www-release.ps1
+ M tools/v21_hash_full.cjs
+ M tools/v21_sync_public.ps1
+?? .04-Src/playwright.hardtimeout.config.js
+?? .04-Src/v3-webgl/js/_archive-pre-split-2026-09-23/
+?? .10-Archive/OBSOLETE-PROMPT-CRITIC-A-ROUND4-2026-10-16.md
+?? .10-Archive/aab-20261021-v20.3-cordova-stubs/
+?? .10-Archive/analyst-r5-2026-10-16/
+?? .10-Archive/analyst-r6-2026-10-16/
+?? .10-Archive/android-public-assets-oversync-v20.12-091650/
+?? .10-Archive/android-public-before-v20.12-20261027-091245/
+?? .10-Archive/android-public-before-v20.12b-20261027-102758/
+?? .10-Archive/decision-aab-signing-before-v5-2026-10-14.md
+?? .10-Archive/decision-aab-signing-before-v6-2026-10-14.md
+?? .10-Archive/i18n-snapshots/
+?? .10-Archive/igshots-2026-10-16-1830/
+?? .10-Archive/igshots-2026-10-16/
+?? .10-Archive/mk.py
+?? .10-Archive/mk10.py
+?? .10-Archive/mk2.py
+?? .10-Archive/mk3.py
+?? .10-Archive/mk4.py
+?? .10-Archive/mk5.py
+?? .10-Archive/mk6.py
+?? .10-Archive/mk7.py
+?? .10-Archive/mk8.py
+?? .10-Archive/mk9.py
+?? .10-Archive/pre-v20.3-20261021/
+?? .10-Archive/repro-v20-20261021-1424/
+?? .10-Archive/tz-v10-before-v11-2026-10-16.md
+?? .10-Archive/tz-v11-before-v12-2026-10-16.md
+?? .10-Archive/tz-v12-before-v13-2026-10-16.md
+?? .10-Archive/tz-v2-before-s26-2026-10-14.md
+?? .10-Archive/tz-v2-before-v3-2026-10-14.md
+?? .10-Archive/tz-v3-before-v4-2026-10-14.md
+?? .10-Archive/tz-v4-before-v5-2026-10-14.md
+?? .10-Archive/tz-v5-before-v6-2026-10-14.md
+?? .10-Archive/tz-v6-before-v7-2026-10-14.md
+?? .10-Archive/tz-v7-before-v8-2026-10-14.md
+?? .10-Archive/tz-v8-before-v9-2026-10-14.md
+?? .10-Archive/tz-v9-before-v10-2026-10-16.md
+?? .10-Archive/ui-improve-2026-09-28-before/
+?? .10-Archive/v20.10-water-rejected/
+?? .10-Archive/v20.9.1-root-junk-20261026/
+?? .10-Archive/v20.9.1-test-substitution/
+?? .10-Archive/v3-webgl-html-20260923-100046/
+?? .10-Archive/v3-webgl-html-20260923-100236/
+?? .10-Archive/verify-report-fixtures-run-20261017/
+?? .10-Archive/www-release-20261021-202447/
+?? .10-Archive/www-release-20261021-202527/
+?? .10-Archive/www-release-20261021-203020/
+?? .10-Archive/www-release-20261021-212835/
+?? .10-Archive/www-release-20261022-010806/
+?? .10-Archive/www-release-20261022-150741/
+?? .10-Archive/www-release-20261022-171422/
+?? .10-Archive/www-release-20261022-172019/
+?? .10-Archive/www-release-20261022-224602/
+?? .10-Archive/www-release-20261022-224707/
+?? .10-Archive/www-release-20261023-081637/
+?? .10-Archive/www-release-20261023-113916/
+?? .10-Archive/www-release-20261023-120107/
+?? .10-Archive/www-release-20261023-121611/
+?? .10-Archive/www-release-20261023-131148/
+?? .10-Archive/www-release-20261023-170310/
+?? .10-Archive/www-release-20261023-170805/
+?? .10-Archive/www-release-20261024-145717/
+?? .10-Archive/www-release-20261024-182728/
+?? .10-Archive/www-release-20261028-145712/
+?? .10-Archive/www-release-20261028-182604/
+?? .10-Archive/www-release-20261028-185243/
+?? .vitest-ls.json
+?? .vitest-ls.json-shm
+?? .vitest-ls.json-wal
+?? 01-Architecture/03-Analysis/.hermes-tmp.iwfLY7
+?? 01-Architecture/03-Analysis/BACKLOG-UNFINISHED-20261026.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-20261026-02-v2-20261026-1645.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-20261026-04-v1-20261026-1818.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261018-2336.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261019-1437.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-1705.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-1714.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-1951.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-2010.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-2031.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v21-20261023-1421.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v21-20261023-1439.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v22-20261023-1453.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-v20.4-2026-10-22-1142.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-v20.4-2026-10-22-1547.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-v20.4-2026-10-23-0850.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-v20.4-2026-10-23-1234.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-v20.4-2026-10-23-1331.md
+?? 01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-v20.4-2026-10-23-1333.md
+?? 01-Architecture/03-Analysis/TZ-08-20261016-01-CRITIQUE.md
+?? 01-Architecture/03-Analysis/TZ-08-SPOR-release-ready-20261019-0012-v18.md
+?? 01-Architecture/03-Analysis/TZ-08-SPOR-release-ready-20261020-1829-v20.md
+?? 01-Architecture/03-Analysis/TZ-08-SPOR-top100-android-bugs-20261016-2155-v3.md
+?? "01-Architecture/03-Analysis/_\320\260\321\200\321\205\320\270\320\262/"
+?? "01-Architecture/\320\242\320\260\320\261\320\273\320\270\321\206\321\213-\320\262\321\213\320\261\320\276\321\200\320\260/choser-08-igraspore-competitors-20261014.json"
+?? "01-Architecture/\320\242\320\260\320\261\320\273\320\270\321\206\321\213-\320\262\321\213\320\261\320\276\321\200\320\260/choser-08-igraspore-languages-20261014.json"
+?? 02-AI-and-Data/02-Sessions-Logs/2026-09-22_090557_analysis.json
+?? 02-AI-and-Data/02-Sessions-Logs/2026-09-22_090557_analysis.md
+?? 02-AI-and-Data/02-Sessions-Logs/2026-10-26_132746_analysis.json
+?? 02-AI-and-Data/02-Sessions-Logs/2026-10-26_132746_analysis.md
+?? 02-AI-and-Data/02-Sessions-Logs/_active.json.closed-1793020140
+?? 04-Src/i18n/
+?? 06-DevOps-and-Release/cf-publish/.nojekyll
+?? 06-DevOps-and-Release/cf-publish/04-Src/assets/
+?? 06-DevOps-and-Release/cf-publish/04-Src/i18n/
+?? 06-DevOps-and-Release/cf-publish/04-Src/shaders/
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/index.html
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/_archive-pre-split-2026-09-23/
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/ai.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/ai_move.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/biology.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/biology_divide.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/biology_eat.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/biology_update.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/biology_update_core.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/biology_virus.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/config.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/locomotion.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/main.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/main_events.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/organs.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/render.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/render_edu.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/render_effects.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/render_entities.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/render_fx.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/render_helpers.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/render_organs.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/render_surface.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/ui_menus.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/world.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/js/world_update.js
+?? 06-DevOps-and-Release/cf-publish/04-Src/v3-webgl/shaders/
+?? 06-DevOps-and-Release/cf-publish/_headers
+?? 06-DevOps-and-Release/cf-publish/assets/
+?? 06-DevOps-and-Release/cf-publish/favicon-32.png
+?? 06-DevOps-and-Release/cf-publish/i18n/bn.json
+?? 06-DevOps-and-Release/cf-publish/i18n/de.json
+?? 06-DevOps-and-Release/cf-publish/i18n/en.json
+?? 06-DevOps-and-Release/cf-publish/i18n/es.json
+?? 06-DevOps-and-Release/cf-publish/i18n/fil.json
+?? 06-DevOps-and-Release/cf-publish/i18n/fr.json
+?? 06-DevOps-and-Release/cf-publish/i18n/hi.json
+?? 06-DevOps-and-Release/cf-publish/i18n/i18n_identity.allow.json
+?? 06-DevOps-and-Release/cf-publish/i18n/id.json
+?? 06-DevOps-and-Release/cf-publish/i18n/it.json
+?? 06-DevOps-and-Release/cf-publish/i18n/ja.json
+?? 06-DevOps-and-Release/cf-publish/i18n/ko.json
+?? 06-DevOps-and-Release/cf-publish/i18n/languages.json
+?? 06-DevOps-and-Release/cf-publish/i18n/ms.json
+?? 06-DevOps-and-Release/cf-publish/i18n/pl.json
+?? 06-DevOps-and-Release/cf-publish/i18n/pt-BR.json
+?? 06-DevOps-and-Release/cf-publish/i18n/ru.json
+?? 06-DevOps-and-Release/cf-publish/i18n/th.json
+?? 06-DevOps-and-Release/cf-publish/i18n/tr.json
+?? 06-DevOps-and-Release/cf-publish/i18n/uk.json
+?? 06-DevOps-and-Release/cf-publish/i18n/vi.json
+?? 06-DevOps-and-Release/cf-publish/i18n/wave2-status.json
+?? 06-DevOps-and-Release/cf-publish/i18n/wiki/
+?? 06-DevOps-and-Release/cf-publish/manifest.json
+?? 06-DevOps-and-Release/cf-publish/privacy.html
+?? 06-DevOps-and-Release/cf-publish/sw.js
+?? 06-DevOps-and-Release/cf-publish/www-release/
+?? 06-DevOps-and-Release/deploy-github.bat
+?? 09-Docs/out-dev-factory/01-forks.json.bak-2026-09-22
+?? 09-Docs/out-dev-factory/01-forks.json.bak-20261026-1327
+?? 09-Docs/out-dev-factory/02-tables.json.bak-2026-09-22
+?? 09-Docs/out-dev-factory/02-tables.json.bak-20261026-1327
+?? 09-Docs/out-dev-factory/02-tables.md.bak-before-20261026
+?? 09-Docs/out-dev-factory/03-cpo.json.bak-2026-09-22
+?? 09-Docs/out-dev-factory/03-cpo.json.bak-20261026-1327
+?? 09-Docs/out-dev-factory/04-ux.json.bak-2026-09-22
+?? 09-Docs/out-dev-factory/04-ux.json.bak-20261026-1327
+?? 09-Docs/out-dev-factory/05-dba.json.bak-2026-09-22
+?? 09-Docs/out-dev-factory/05-dba.json.bak-20261026-1327
+?? 09-Docs/out-dev-factory/05-dba.json.bak-20261026-before-overwrite
+?? 09-Docs/out-dev-factory/06-devops.json.bak-2026-09-22
+?? 09-Docs/out-dev-factory/06-devops.json.bak-20261026-1327
+?? 09-Docs/out-dev-factory/07-secops.json.bak-2026-09-22
+?? 09-Docs/out-dev-factory/07-secops.json.bak-20261026-1327
+?? 09-Docs/out-dev-factory/08-controller.json.bak-2026-09-22
+?? 09-Docs/out-dev-factory/08-controller.json.bak-20261026-1327
+?? 09-Docs/out-dev-factory/09-qa-audit.json.bak-2026-09-22
+?? 09-Docs/out-dev-factory/09-qa.json
+?? 09-Docs/out-dev-factory/09-qa.json.bak-20261026-1327
+?? 09-Docs/out-dev-factory/09-qa.md
+?? 09-Docs/out-dev-factory/09a-techwriter-report.md
+?? 09-Docs/out-dev-factory/09a-techwriter.json
+?? 09-Docs/out-dev-factory/09a-techwriter.md
+?? 09-Docs/out-dev-factory/ACCEPT-v14-20261017-1601/
+?? 09-Docs/out-dev-factory/ACCEPT-v17-1019/
+?? 09-Docs/out-dev-factory/ACCEPT-v17-1119/shot-err.txt
+?? 09-Docs/out-dev-factory/ACCEPT-v17-1119/shot-out.txt
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B12-lang.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B8-en.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B8-es.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B8-fil.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B8-th.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-B8-tr.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-C-b21-panel.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-C-hud-360.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-C-hud-390.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-C-menu-1280.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-C-menu-360.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-C-menu-390.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-M1-off.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-M1-on.png
+?? 09-Docs/out-dev-factory/ACCEPT-v20-1854/v20-Y2-eat-toast.png
+?? 09-Docs/out-dev-factory/ANALYST-BACKLOG.md
+?? 09-Docs/out-dev-factory/AUDIT-20261020-0958/
+?? 09-Docs/out-dev-factory/AUDIT-VISUAL-ALL-LANG-v20-5-20261023_2342.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-15-1114.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-15-1248.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-16-1457.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-16-1606.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-16-1830.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-16-1921.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-20-2040.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-21-v20-1.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-21-v20-2.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-21-v20F.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-22-v20-3.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-2026-10-24-v20-5.md
+?? 09-Docs/out-dev-factory/CHECK-DEV-v20A-2026-10-20/
+?? 09-Docs/out-dev-factory/COMPARE-DEV-MODELS-2026-10-15.md
+?? 09-Docs/out-dev-factory/CRITIC-10-TZ-v11-2026-10-16.md
+?? 09-Docs/out-dev-factory/CRITIC-11-TZ-v12-2026-10-16.md
+?? 09-Docs/out-dev-factory/CRITIC-2-TZ-RELEASE-READY-v2-2026-10-14.md
+?? 09-Docs/out-dev-factory/CRITIC-3-TZ-v4-2026-10-14.md
+?? 09-Docs/out-dev-factory/CRITIC-4-TZ-v5-2026-10-14.md
+?? 09-Docs/out-dev-factory/CRITIC-5-TZ-v6-2026-10-14.md
+?? 09-Docs/out-dev-factory/CRITIC-6-TZ-v7-2026-10-14.md
+?? 09-Docs/out-dev-factory/CRITIC-7-TZ-v8-2026-10-14.md
+?? 09-Docs/out-dev-factory/CRITIC-8-TZ-v9-2026-10-14.md
+?? 09-Docs/out-dev-factory/CRITIC-9-TZ-v10-2026-10-16.md
+?? 09-Docs/out-dev-factory/DECISION-AAB-SIGNING-2026-10-14.md
+?? 09-Docs/out-dev-factory/DECISION-ANALYTICS-2026-10-16.md
+?? 09-Docs/out-dev-factory/DIAG-UI-BREAK-2026-09-23.md
+?? 09-Docs/out-dev-factory/DIAG-water-dots-20261021/
+?? 09-Docs/out-dev-factory/DOGON20-2026-09-23.md
+?? 09-Docs/out-dev-factory/DOGONYALOCHKA-20-PROOF-2026-09-24.md
+?? 09-Docs/out-dev-factory/EXEC-REFACTOR-V3WEBGL-2026-09-23.md
+?? 09-Docs/out-dev-factory/EXEC-UI-IMPROVE-2026-09-28.md
+?? 09-Docs/out-dev-factory/EXEC-UI-RESTORE-AUDIT-2026-09-28.md
+?? 09-Docs/out-dev-factory/FOUND_BUGS-v1-2026-09-24.md
+?? 09-Docs/out-dev-factory/FOUND_BUGS.md
+?? 09-Docs/out-dev-factory/GATE-AQUARIUM-1790163600-2026-09-23.md
+?? 09-Docs/out-dev-factory/GATE-playwright-1790163600.config.js
+?? 09-Docs/out-dev-factory/GATE-playwright-artifacts-1790163600/
+?? 09-Docs/out-dev-factory/GATE-playwright-artifacts-local-2026-09-28/
+?? 09-Docs/out-dev-factory/GATE-playwright-results-1790163600.json
+?? 09-Docs/out-dev-factory/GATE-playwright-results-local-2026-09-28.json
+?? 09-Docs/out-dev-factory/PRIORITY_LIST-v1-2026-09-24.md
+?? 09-Docs/out-dev-factory/PRIORITY_LIST.md.bak-2026-09-22
+?? 09-Docs/out-dev-factory/PROMPT-DEV-FIX-v12-2026-10-16-1830.md
+?? 09-Docs/out-dev-factory/PROMPT-DEV-NUDGE-v11-2026-10-16-1606.md
+?? 09-Docs/out-dev-factory/PROMPT-DEV-NUDGE-v12-2026-10-16-1921.md
+?? 09-Docs/out-dev-factory/PROMPT-DEV-NUDGE-v12-2026-10-16-2111.md
+?? 09-Docs/out-dev-factory/PUBLISH-REFACTOR-FINAL-2026-09-23.md
+?? 09-Docs/out-dev-factory/REPORT-TZ-08-SPOR-v20.1-2026-10-21.md
+?? 09-Docs/out-dev-factory/REPORT-TZ-RELEASE-READY-2026-10-14-v2-20261014-2332.md
+?? 09-Docs/out-dev-factory/REPORT-TZ-RELEASE-READY-2026-10-14-v2-20261014-2350.md
+?? 09-Docs/out-dev-factory/REPORT-TZ-RELEASE-READY-2026-10-14-v2-20261014-2355.md
+?? 09-Docs/out-dev-factory/REPORT-TZ-RELEASE-READY-2026-10-14-v2-20261015-0004.md
+?? 09-Docs/out-dev-factory/REPORT-TZ-RELEASE-READY-2026-10-14-v2-20261015-0015.md
+?? 09-Docs/out-dev-factory/REPORT-TZ-RELEASE-READY-2026-10-14-v2-20261015-0127.md
+?? 09-Docs/out-dev-factory/REPORT-TZ-RELEASE-READY-2026-10-15-v2-20261015-0002.md
+?? 09-Docs/out-dev-factory/SMOKE-AQUARIUM-1790163600.json
+?? 09-Docs/out-dev-factory/SMOKE-AQUARIUM-1790163600.png
+?? 09-Docs/out-dev-factory/SMOKE-DEMO-1790163600.png
+?? 09-Docs/out-dev-factory/SMOKE-FOLLOW-1790163600.json
+?? 09-Docs/out-dev-factory/TEST-REGRESS-CF-GIT-2026-09-22.md
+?? 09-Docs/out-dev-factory/TZ-08-20261014-01-CRITIQUE.md
+?? 09-Docs/out-dev-factory/TZ-08-20261014-01-v13-release-ready.md
+?? 09-Docs/out-dev-factory/TZ-08-20261026-02-CRITIQUE-panel-01-03.json
+?? 09-Docs/out-dev-factory/TZ-08-20261026-02-CRITIQUE-panel-04-06.json
+?? 09-Docs/out-dev-factory/TZ-08-20261026-02-CRITIQUE-panel-07-09.json
+?? 09-Docs/out-dev-factory/TZ-08-20261026-02-CRITIQUE.md
+?? 09-Docs/out-dev-factory/TZ-08-20261026-02-v1.md
+?? 09-Docs/out-dev-factory/TZ-08-20261026-02-v2.md
+?? 09-Docs/out-dev-factory/TZ-08-20261026-03-CRITIQUE.md
+?? 09-Docs/out-dev-factory/TZ-08-20261026-03-v1.md
+?? 09-Docs/out-dev-factory/TZ-08-20261026-03-v2.md
+?? 09-Docs/out-dev-factory/TZ-08-20261026-04-v1.md
+?? 09-Docs/out-dev-factory/TZ-08-20261026-05-v1.md
+?? 09-Docs/out-dev-factory/TZ-08-20261026-06-v1.md
+?? 09-Docs/out-dev-factory/TZ-08-SPOR-v20.5-visual-all-lang-2026-10-23_2350.md
+?? 09-Docs/out-dev-factory/TZ-08-SPOR-v20.6-gate-phone-i18n-2026-10-24_2105.md
+?? 09-Docs/out-dev-factory/TZ-08-SPOR-v20.6-gate-phone-i18n-2026-10-24_2125.md
+?? 09-Docs/out-dev-factory/TZ-08-SPOR-v20.7-dodelat-v20.6-2026-10-25_1115.md
+?? 09-Docs/out-dev-factory/TZ-08-SPOR-v20.8-nedodelki-2026-10-26_0910.md
+?? 09-Docs/out-dev-factory/TZ-08-SPOR-v20.9-prodolzhenie-2026-10-26_2200.md
+?? 09-Docs/out-dev-factory/TZ-08-SPOR-v20.9.1-prodolzhenie-3experta-2026-10-26_2210.md
+?? 09-Docs/out-dev-factory/TZ-CRITIQUE.md
+?? 09-Docs/out-dev-factory/TZ-OPEN-TAILS-AQUARIUM-CF-2026-09-23.md
+?? 09-Docs/out-dev-factory/TZ-REFACTOR-V3WEBGL-2026-09-23.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v10.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v11.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v12.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v3.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v4.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v5.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v6.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v7.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v8.md
+?? 09-Docs/out-dev-factory/TZ-RELEASE-READY-2026-10-14-v9.md
+?? 09-Docs/out-dev-factory/TZ-UI-IMPROVE-2026-09-28.md
+?? 09-Docs/out-dev-factory/TZ-UI-RESTORE-AUDIT-2026-09-28.md
+?? 09-Docs/out-dev-factory/TZ-v1.md
+?? 09-Docs/out-dev-factory/TZ-v3-CRITIQUE-5.json
+?? 09-Docs/out-dev-factory/TZ-v3-CRITIQUE-5.md
+?? 09-Docs/out-dev-factory/TZ-v3-DRAFT.md
+?? 09-Docs/out-dev-factory/TZ.md.bak-2026-09-22-v2
+?? 09-Docs/out-dev-factory/TZ.md.bak-before-v3-decisions
+?? 09-Docs/out-dev-factory/UI-AFTER-1280-demo.png
+?? 09-Docs/out-dev-factory/UI-AFTER-1280-keys-open.png
+?? 09-Docs/out-dev-factory/UI-AFTER-390.png
+?? 09-Docs/out-dev-factory/UI-LIVE-1280-demo.png
+?? 09-Docs/out-dev-factory/UI-POLISH-1280.png
+?? 09-Docs/out-dev-factory/UI-POLISH-390.png
+?? 09-Docs/out-dev-factory/UI-POLISH-measure-after.json
+?? 09-Docs/out-dev-factory/UI-POLISH-measure-before.json
+?? 09-Docs/out-dev-factory/UI-RESTORE-CRITIQUE-3x-2026-09-22.md
+?? 09-Docs/out-dev-factory/UI-RESTORE-TZ-2026-09-22.md
+?? 09-Docs/out-dev-factory/WINDOWS-APPLY-2026-09-23.md
+?? 09-Docs/out-dev-factory/_aab_v20_2.pid
+?? 09-Docs/out-dev-factory/_aab_v20_3.exit
+?? 09-Docs/out-dev-factory/_aab_v20_3.pid
+?? 09-Docs/out-dev-factory/_gradle_v20_2.exit
+?? 09-Docs/out-dev-factory/_gradle_v20_3b.exit
+?? 09-Docs/out-dev-factory/_gradle_v20_3c.exit
+?? 09-Docs/out-dev-factory/_probe_dead.js
+?? 09-Docs/out-dev-factory/_probe_dead2.js
+?? 09-Docs/out-dev-factory/_probe_loop.js
+?? 09-Docs/out-dev-factory/_probe_loop2.js
+?? 09-Docs/out-dev-factory/_probe_ov2.js
+?? 09-Docs/out-dev-factory/_probe_ov3.js
+?? 09-Docs/out-dev-factory/_probe_ov4.js
+?? 09-Docs/out-dev-factory/_probe_overflow.js
+?? 09-Docs/out-dev-factory/_probe_walk.js
+?? 09-Docs/out-dev-factory/_probe_walk2.js
+?? 09-Docs/out-dev-factory/_probe_walk_de.js
+?? 09-Docs/out-dev-factory/_role-texts/00-cloud-protocol.md
+?? 09-Docs/out-dev-factory/_role-texts/00-format-2026-10-08.md
+?? 09-Docs/out-dev-factory/_role-texts/00-multi-ai.md
+?? 09-Docs/out-dev-factory/_role-texts/00-output.md
+?? 09-Docs/out-dev-factory/_role-texts/00-vyvod.md
+?? 09-Docs/out-dev-factory/_role-texts/09a-techwriter.md
+?? 09-Docs/out-dev-factory/_role-texts/kickoff-choser.md
+?? 09-Docs/out-dev-factory/_runall_v20_3.exit
+?? 09-Docs/out-dev-factory/_runall_v20_3.py
+?? 09-Docs/out-dev-factory/_serve_8801.pid
+?? 09-Docs/out-dev-factory/_sha45.md
+?? 09-Docs/out-dev-factory/_sign_v20_2.exit
+?? 09-Docs/out-dev-factory/_smoke_aquarium_1790163600.js
+?? 09-Docs/out-dev-factory/_smoke_follow_1790163600.js
+?? 09-Docs/out-dev-factory/_tz_critique_panel.json
+?? 09-Docs/out-dev-factory/_v20_2_shots.js
+?? 09-Docs/out-dev-factory/_v20_3_mem.js
+?? 09-Docs/out-dev-factory/_v20_3_reshot.js
+?? 09-Docs/out-dev-factory/_v20_3_shots.js
+?? 09-Docs/out-dev-factory/_v20_shots_8795.js
+?? 09-Docs/out-dev-factory/_virus_shot.js
+?? 09-Docs/out-dev-factory/_who.ps1
+?? 09-Docs/out-dev-factory/bak-config-v1-20261021.js
+?? 09-Docs/out-dev-factory/bak-demo-v1-20261021.js
+?? 09-Docs/out-dev-factory/bak-main-v1-20261021.js
+?? 09-Docs/out-dev-factory/bak-main_events-v1-20261021.js
+?? 09-Docs/out-dev-factory/bak-render_entities-v1-20261021.js
+?? 09-Docs/out-dev-factory/bak-render_organs-v1-20261021.js
+?? 09-Docs/out-dev-factory/bak-ui-v1-20261021.js
+?? 09-Docs/out-dev-factory/decisions/OWNER-DECISIONS.md
+?? 09-Docs/out-dev-factory/decisions/Q1-polnyj-progon-20261026-1818.md
+?? 09-Docs/out-dev-factory/decisions/Q1-svetlaya-tema-20261016-2223.md
+?? 09-Docs/out-dev-factory/decisions/Q2-membrana-krasnaya-20261026-1818.md
+?? 09-Docs/out-dev-factory/eco-v21-after/
+?? 09-Docs/out-dev-factory/eco-v21-cycle1-det/
+?? 09-Docs/out-dev-factory/eco-v21-final/
+?? 09-Docs/out-dev-factory/eco-v21/
+?? 09-Docs/out-dev-factory/index-v1-20261021.html
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/buttons-before-pass1.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/dirty-20261017-1535.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/dirty-20261018-2336.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/dirty-20261019-1437.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/dirty-20261022-1705.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/dirty-20261022-1951.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/dirty-20261022-2010.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/dirty-20261022-2031.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/dirty-20261023-1421.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/dirty-20261028-1855.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-extract-map.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-15T1556.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-15T1601.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-15T1626.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-15T1856.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-15T1909.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-15T1958.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-15T2135.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T0506.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1227.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1228.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1230.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1231.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1307.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1407.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1419.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1420.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1427.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1428.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1535.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1732.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1737.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1758.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1801.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1804.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1812.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1822.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-16T1904.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T0641.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T0718.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T0803.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T0851.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T1006.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T1016.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T1205.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T1317.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T1345.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-17T1443.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-19T1308.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-19T1639.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-19T1934.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-20T0723.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-20T2129.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-20T2152.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-21T2025.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-21T2233.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-21T2245.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-22T0118.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-22T0731.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-22T2034.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-23T0549.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-23T1020.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-23T1118.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-24T1352.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-25T0554.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-25T1033.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-25T1212.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-25T1351.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-25T1445.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-25T1508.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-26T2250.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-27T1206.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-27T1207.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-27T1208.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-identity-2026-10-28T1542.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-inventory-after.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-inventory-mid.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/i18n-inventory-mid2.json
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261016-0905-v14-20261017-1059.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261016-0905-v14-20261017-1538.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261016-0905-v14-20261017-1540.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v13-20261017-1059.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v13-20261017-1538.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v13-20261017-1540.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1059.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1535.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1538.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1540.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1541.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261018-1759.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261018-2336.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261019-1437.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261019-2010.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261020-2326.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261020-2356.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v17-20261021-0053.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-1705.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-1714.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-1951.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-2010.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-2031.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v21-20261023-1421.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v21-20261023-1439.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261017-0905-v22-20261023-1453.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-08-SPOR-release-ready-20261020-1829-v20-20261020-1853.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v11-20261016-1549.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v12-20261016-2106.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v12-20261016-2258.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261015-1442.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261015-1758.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261015-1800.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261015-1801.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261015-1908.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261015-1910.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261015-1911.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261016-0808.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-0938.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-0949.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1048.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1059.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1428.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1430.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1538.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1540.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-no-such.md.txt
+?? 09-Docs/out-dev-factory/logs-release-ready-2026-10-14/verify-report-wrong-name.md.txt
+?? 09-Docs/out-dev-factory/logs-ui-improve-2026-09-28/
+?? 09-Docs/out-dev-factory/run_aab_v20_2.py
+?? 09-Docs/out-dev-factory/run_aab_v20_3.py
+?? 09-Docs/out-dev-factory/run_gradle_v20_2.py
+?? 09-Docs/out-dev-factory/run_gradle_v20_3b.py
+?? 09-Docs/out-dev-factory/run_gradle_v20_3c.py
+?? 09-Docs/out-dev-factory/run_sign_v20_2.py
+?? 09-Docs/out-dev-factory/runs/baseline-v14-20261017-1001/
+?? 09-Docs/out-dev-factory/runs/d5-buttons.pid
+?? 09-Docs/out-dev-factory/runs/serve-8795-err.txt
+?? 09-Docs/out-dev-factory/runs/serve-8795-out.txt
+?? 09-Docs/out-dev-factory/runs/v15-report-20261028/
+?? 09-Docs/out-dev-factory/runs/v15-x5-20261028/aab-extract/
+?? 09-Docs/out-dev-factory/runs/v204-aab-build.ps1
+?? 09-Docs/out-dev-factory/runs/v204-aab.err
+?? 09-Docs/out-dev-factory/runs/v204-apksign.ps1
+?? 09-Docs/out-dev-factory/runs/v204-gate7.ps1
+?? 09-Docs/out-dev-factory/runs/v204-gate8.ps1
+?? 09-Docs/out-dev-factory/runs/v204-jarsigner.txt
+?? 09-Docs/out-dev-factory/runs/v204-jarsigner2.txt
+?? 09-Docs/out-dev-factory/runs/v204-logcat.txt
+?? 09-Docs/out-dev-factory/runs/v204-rebuild.ps1
+?? 09-Docs/out-dev-factory/runs/v204-runall-2.err
+?? 09-Docs/out-dev-factory/runs/v204-runall-3.err
+?? 09-Docs/out-dev-factory/runs/v204-runall.err
+?? 09-Docs/out-dev-factory/runs/v204-sign.ps1
+?? 09-Docs/out-dev-factory/runs/v204-sign2.ps1
+?? 09-Docs/out-dev-factory/runs/v204-sign3.ps1
+?? 09-Docs/out-dev-factory/runs/v204-universal.ps1
+?? 09-Docs/out-dev-factory/runs/v205-aab.err
+?? 09-Docs/out-dev-factory/runs/v205-aab2.err
+?? 09-Docs/out-dev-factory/runs/v205-runall.err
+?? 09-Docs/out-dev-factory/runs/x6-run.err
+?? 09-Docs/out-dev-factory/runs/x6.pid
+?? 09-Docs/out-dev-factory/runs/x6b-run.err
+?? 09-Docs/out-dev-factory/shots-pl-20261026/
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G1-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G1-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G1-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G1-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G10-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G10-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G10-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G10-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G11-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G11-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G11-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G11-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G12-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G12-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G12-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G12-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G13-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G13-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G13-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G13-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G14-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G14-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G14-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G14-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G15-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G15-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G15-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G15-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G16-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G16-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G16-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G16-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G17-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G17-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G17-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G17-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G18-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G18-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G18-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G18-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G19-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G19-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G19-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G19-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G2-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G2-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G2-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G2-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G20-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G20-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G20-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G20-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G21-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G21-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G21-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G21-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G22-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G22-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G22-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G22-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G23-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G23-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G23-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G23-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G24-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G24-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G24-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G24-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G25-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G25-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G25-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G25-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G26-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G26-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G26-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G26-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G27-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G27-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G27-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G27-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G28-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G28-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G28-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G28-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G29-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G29-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G29-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G29-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G3-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G3-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G3-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G3-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G4-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G4-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G4-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G4-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G5-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G5-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G5-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G5-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G6-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G6-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G6-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G6-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G7-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G7-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G7-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G7-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G8-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G8-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G8-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G8-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G9-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G9-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G9-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/G9-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M1-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M1-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M1-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M1-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M10-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M10-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M10-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M10-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M2-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M2-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M2-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M2-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M3-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M3-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M3-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M3-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M4-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M4-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M4-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M4-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M5-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M5-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M5-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M5-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M6-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M6-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M6-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M6-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M7-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M7-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M7-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M7-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M8-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M8-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M8-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M8-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M9-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M9-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M9-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/M9-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O1-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O1-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O1-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O1-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O2-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O2-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O2-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O2-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O3-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O3-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O3-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O3-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O4-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O4-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O4-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O4-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O5-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O5-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O5-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O5-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O6-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O6-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O6-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O6-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O7-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O7-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O7-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O7-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O8-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O8-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O8-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O8-390-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O9-1280-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O9-1280-before.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O9-390-after.png
+?? 09-Docs/out-dev-factory/shots-release-ready-2026-10-14/buttons-before/O9-390-before.png
+?? 09-Docs/out-dev-factory/shots-tz-v2/
+?? 09-Docs/out-dev-factory/shots-ui-audit-2026-10-14/
+?? 09-Docs/out-dev-factory/shots-ui-improve-2026-09-28/
+?? 09-Docs/out-dev-factory/www-release-manifest.txt
+?? 09-Docs/test-runs/logs/20261016-2102/
+?? 09-Docs/test-runs/logs/20261016-2202/
+?? 09-Docs/test-runs/logs/20261017-0910/
+?? 09-Docs/test-runs/logs/20261017-1108/
+?? 09-Docs/test-runs/logs/20261017-1246/
+?? 09-Docs/test-runs/logs/20261017-1408/
+?? 09-Docs/test-runs/logs/20261017-1602/
+?? 09-Docs/test-runs/logs/20261017-1629/
+?? 09-Docs/test-runs/logs/20261019-1449/
+?? 09-Docs/test-runs/logs/20261019-1924/
+?? 09-Docs/test-runs/logs/20261020-0951/
+?? 09-Docs/test-runs/logs/20261021-0006/
+?? 09-Docs/test-runs/logs/20261021-0031/
+?? 09-Docs/test-runs/logs/20261021-0823/
+?? 09-Docs/test-runs/logs/20261021-1608/
+?? 09-Docs/test-runs/logs/20261021-1621/
+?? 09-Docs/test-runs/logs/20261021-1911/
+?? 09-Docs/test-runs/logs/20261021-2125/
+?? 09-Docs/test-runs/logs/20261021-2215/
+?? 09-Docs/test-runs/logs/20261021-2238/
+?? 09-Docs/test-runs/logs/20261021-2300/
+?? 09-Docs/test-runs/logs/20261022-0124/
+?? 09-Docs/test-runs/logs/20261022-0127/
+?? 09-Docs/test-runs/logs/20261022-0358/
+?? 09-Docs/test-runs/logs/20261022-0801/
+?? 09-Docs/test-runs/logs/20261022-1512/
+?? 09-Docs/test-runs/logs/20261022-1721/
+?? 09-Docs/test-runs/logs/20261022-1952/
+?? 09-Docs/test-runs/logs/20261022-2011/
+?? 09-Docs/test-runs/logs/20261022-2031/
+?? 09-Docs/test-runs/logs/20261022-2245/
+?? 09-Docs/test-runs/logs/20261022-playwright-bg.out
+?? 09-Docs/test-runs/logs/20261022-playwright.out
+?? 09-Docs/test-runs/logs/20261023-0820/
+?? 09-Docs/test-runs/logs/20261023-1233/
+?? 09-Docs/test-runs/logs/20261023-1331/
+?? 09-Docs/test-runs/logs/20261023-1459/
+?? 09-Docs/test-runs/logs/20261023-1709/
+?? 09-Docs/test-runs/logs/20261023-1745/
+?? 09-Docs/test-runs/logs/20261023-1942/
+?? 09-Docs/test-runs/logs/20261024-1457/
+?? 09-Docs/test-runs/logs/20261025-0549/
+?? 09-Docs/test-runs/logs/20261025-1205/
+?? 09-Docs/test-runs/logs/20261027-0100/
+?? 09-Docs/test-runs/logs/20261028-1612/
+?? 09-Docs/test-runs/logs/20261028-1815/
+?? 09-Docs/test-runs/results-20261016-2058.json
+?? 09-Docs/test-runs/results-20261016-2101.json
+?? 09-Docs/test-runs/results-20261016-2102.json
+?? 09-Docs/test-runs/results-20261017-0910.json
+?? 09-Docs/test-runs/results-20261017-1004.json
+?? 09-Docs/test-runs/results-20261017-1108.json
+?? 09-Docs/test-runs/results-20261017-1246.json
+?? 09-Docs/test-runs/results-20261017-1408.json
+?? 09-Docs/test-runs/results-20261017-1543.json
+?? 09-Docs/test-runs/results-20261017-1602.json
+?? 09-Docs/test-runs/results-20261019-1449.json
+?? 09-Docs/test-runs/results-20261020-0951.json
+?? 09-Docs/test-runs/results-20261021-0006.json
+?? 09-Docs/test-runs/results-20261021-0031.json
+?? 09-Docs/test-runs/results-20261021-0823.json
+?? 09-Docs/test-runs/results-20261021-1621.json
+?? 09-Docs/test-runs/results-20261021-1911.json
+?? 09-Docs/test-runs/results-20261021-2300.json
+?? 09-Docs/test-runs/results-20261022-0124.json
+?? 09-Docs/test-runs/results-20261022-0358.json
+?? 09-Docs/test-runs/results-20261022-0801.json
+?? 09-Docs/test-runs/results-20261022-2245.json
+?? 09-Docs/test-runs/results-20261023-0820.json
+?? 09-Docs/test-runs/results-20261023-1233.json
+?? 09-Docs/test-runs/results-20261023-1331.json
+?? 09-Docs/test-runs/results-20261024-1457.json
+?? 09-Docs/test-runs/results-20261025-0549.json
+?? 09-Docs/test-runs/results-20261025-1205.json
+?? 09-Docs/test-runs/results-20261027-0100.json
+?? 09-Docs/test-runs/results-20261028-1612.json
+?? 09-Docs/test-runs/results-20261028-1815.json
+?? 10-Archive/backlog.db-shm
+?? 10-Archive/backlog.db-wal
+?? _from-desktop/
+?? capture-screenshots.js
+?? favicon-32.png
+?? ru/
+?? sw.js
+?? tools/build-aab-jdk21.ps1
+?? tools/serve-lab.ps1
+?? tools/verify_report.fixtures/run/REPORT-TZ-08-SPOR-release-ready-20261016-0905-v14-20261017-1059.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-08-SPOR-release-ready-20261016-0905-v14-20261017-1538.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-08-SPOR-release-ready-20261016-0905-v14-20261017-1540.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v13-20261017-1059.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v13-20261017-1538.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v13-20261017-1540.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1059.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1538.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1540.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-0938.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-0949.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1048.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1059.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1428.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1430.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1538.md
+?? tools/verify_report.fixtures/run/REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1540.md

@@ -1,0 +1,22 @@
+язык | ключей UI | тел вики | круг аналитика | оценка | languages.json | LANGS в config.js
+en | 422 | 108 | 5 | 9 | вкл | вкл | en-analyst-round5.json
+ru | 422 | 108 | 6 | 8.8 | вкл | вкл | ru-analyst-round6.json
+pt-BR | 422 | 108 | 6 | 8.6 | вкл | вкл | pt-BR-analyst-round6.json
+es | 412 | 108 | 6 | 8.6 | вкл | вкл | es-analyst-round6.json
+hi | 422 | 108 | 6 | 8.3 | вкл | вкл | hi-analyst-round6.json
+id | 422 | 108 | 6 | 8.6 | вкл | вкл | id-analyst-round6.json
+tr | 412 | 108 | 8 | 8.6 | вкл | вкл | tr-analyst-round8.json
+de | 422 | 108 | 6 | 8.6 | вкл | вкл | de-analyst-round6.json
+fr | 422 | 108 | 6 | 8.6 | вкл | вкл | fr-analyst-round6.json
+ja | 422 | 108 | 6 | 8.7 | вкл | вкл | ja-analyst-round6.json
+vi | 422 | 108 | 6 | 8.6 | вкл | вкл | vi-analyst-round6.json
+ko | 422 | 108 | 6 | 8.7 | вкл | вкл | ko-analyst-round6.json
+th | 422 | 108 | 6 | 8.7 | вкл | вкл | th-analyst-round6.json
+fil | 412 | 108 | 8 | 8.2 | вкл | вкл | fil-analyst-round8.json
+it | 422 | 108 | 6 | 8.6 | вкл | вкл | it-analyst-round6.json
+pl | 422 | 108 | 6 | 8.6 | вкл | вкл | pl-analyst-round6.json
+uk | 422 | 108 | 6 | 8.6 | вкл | вкл | uk-analyst-round6.json
+zh-TW | 422 | 108 | 6 | 8.7 | вкл | вкл | zh-TW-analyst-round6.json
+ms | 422 | 108 | 6 | 8.6 | вкл | вкл | ms-analyst-round6.json
+bn | 422 | 108 | 6 | 8.4 | вкл | вкл | bn-analyst-round6.json
+ИТОГО: языков в languages.json = 20 | enabled=true = 20 | в LANGS (config.js) = 20 | оценка аналитика ≥ 8 = 20 | ключей en.json = 422 | файлов wiki = 20

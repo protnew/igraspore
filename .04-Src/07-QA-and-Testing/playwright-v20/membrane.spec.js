@@ -42,10 +42,13 @@ async function frameMasks(page, n){
     };
     return new Promise(function(res){
       var masks=[];
-      // AC: кадры движения — поддерживаем скорость клетки
+      // AC: кадры движения — поддерживаем скорость клетки.
+      // v21: 24 кадра warm-up до замера — деформация мембраны выходит на стационар (иначе ловим круглую стартовую фазу: median5 1.099 при пороге 1.10)
       if(player){ player.vx=4.5; player.vy=2.0; }
+      var warm=0;
       function step(){
         if(player){ player.vx=4.5; player.vy=2.0; }
+        if(warm<24){ warm++; requestAnimationFrame(step); return; }
         masks.push(grab());
         if(masks.length>=${n}) res(masks);
         else requestAnimationFrame(step);

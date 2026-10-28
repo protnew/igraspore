@@ -62,7 +62,11 @@ test('[B11+B14+B17] HUD: scale/status no overlap, watermark corner, tap sizes', 
 });
 test('[B18] #spFilterStatus in screen or absent', async ({ page }) => {
   await page.goto(BASE + '/?lang=en&t=' + Date.now(), { waitUntil: 'load' });
-  await page.waitForTimeout(1600);
+  // G2: ждать условия (сетка видов построена, элемент в вьюпорте), а не фиксированную паузу
+  await page.waitForFunction(`(function(){
+    var el=document.getElementById('spFilterStatus'); if(!el) return false;
+    var b=el.getBoundingClientRect();
+    return b.width>0 && b.left<window.innerWidth && b.right>0;})()`, null, { timeout: 8000 }).catch(() => {});
   const r = await page.evaluate(`(function(){
     var el=document.getElementById('spFilterStatus'); if(!el) return 'absent';
     var b=el.getBoundingClientRect();

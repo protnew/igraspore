@@ -1,0 +1,10 @@
+=== fil ===
+до клика: {"state":"menu","bodyH":1920,"vh":1920,"startBtn":[118,48],"menuO":[1080,1920],"overlays":"menuO","errBox":null}
+после клика: {"state":"paused","alive":true,"tutStep":0,"roleCard":false,"visibleOverlays":"introO","curLang":"fil"}
+ошибок: 0 —
+предупреждений: 0 —
+=== en ===
+до клика: {"state":"menu","bodyH":1920,"vh":1920,"startBtn":[104,48],"menuO":[1080,1920],"overlays":"menuO","errBox":null}
+после клика: {"state":"paused","alive":true,"tutStep":0,"roleCard":false,"visibleOverlays":"introO","curLang":"en"}
+ошибок: 0 —
+предупреждений: 0 —

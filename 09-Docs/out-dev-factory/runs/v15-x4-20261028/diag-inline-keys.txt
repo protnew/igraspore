@@ -1,0 +1,14 @@
+ключей T.en (инлайн в config.js) = 88 | ключей en.json = 422
+нет в en.json (значит и во всех словарях): 9
+Wiki, camFlyTouch, demoTipTouch, economy, economyAsk, errAsync, errGeneric, have, loadingWorld
+  fil: показывается по-английски у 9 ключей из этого списка
+  es: показывается по-английски у 9 ключей из этого списка
+  tr: показывается по-английски у 9 ключей из этого списка
+  ru: показывается по-английски у 9 ключей из этого списка
+  de: показывается по-английски у 9 ключей из этого списка
+  id: показывается по-английски у 9 ключей из этого списка
+проверка ключа setLang : в en.json = true , в fil.json = false
+проверка ключа economy : в en.json = false , в fil.json = false
+проверка ключа errGeneric : в en.json = false , в fil.json = false
+проверка ключа errAsync : в en.json = false , в fil.json = false
+проверка ключа more : в en.json = true , в fil.json = false

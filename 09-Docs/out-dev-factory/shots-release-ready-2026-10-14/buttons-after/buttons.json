@@ -9,10 +9,10 @@
       "selector": "#startBtn",
       "label": "START",
       "rect": {
-        "x": 346.625,
-        "y": 236,
-        "width": 93.9375,
-        "height": 41
+        "x": 304.46875,
+        "y": 260,
+        "width": 104.390625,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -20,7 +20,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -28,22 +28,22 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
-          "state": "playing",
+          "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1813,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "ov": "",
+          "ov": "introO",
           "curLang": "en",
           "tutStep": 0,
-          "roleCard": true,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -63,10 +63,10 @@
       "selector": "#demoBtn",
       "label": "DEMO / Gallery",
       "rect": {
-        "x": 452.5625,
-        "y": 236,
-        "width": 151.625,
-        "height": 41
+        "x": 420.859375,
+        "y": 260,
+        "width": 176.1875,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -74,7 +74,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -82,7 +82,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
@@ -92,12 +92,12 @@
           "orgs": 101,
           "autoAI": false,
           "freeCam": true,
-          "tZoom": 1.4,
+          "tZoom": 0.58,
           "ov": "",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -117,10 +117,10 @@
       "selector": "#screensaverBtn",
       "label": "AQUARIUM",
       "rect": {
-        "x": 616.1875,
-        "y": 236,
-        "width": 128.1875,
-        "height": 41
+        "x": 609.046875,
+        "y": 260,
+        "width": 146.484375,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -128,7 +128,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -136,22 +136,22 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1795,
+          "orgs": 101,
           "autoAI": false,
           "freeCam": true,
-          "tZoom": 2.25,
+          "tZoom": 0.58,
           "ov": "",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -171,10 +171,10 @@
       "selector": "#starSelect",
       "label": "☀ Sun\n★ Sirius A+B\n★ Betelgeuse\n★ Rigel\n★ Vega\n★ Antares\n★ Alpha Centauri A+B\n★ ",
       "rect": {
-        "x": 753.375,
-        "y": 241,
-        "width": 183,
-        "height": 31
+        "x": 764.53125,
+        "y": 260,
+        "width": 214,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -182,7 +182,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -190,14 +190,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 292,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -205,7 +205,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -225,10 +225,10 @@
       "selector": "#helpBtn",
       "label": "HOW TO PLAY",
       "rect": {
-        "x": 511.609375,
-        "y": 728,
-        "width": 101.765625,
-        "height": 29
+        "x": 11,
+        "y": 741,
+        "width": 410,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -236,7 +236,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -244,14 +244,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -259,7 +259,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -279,10 +279,10 @@
       "selector": "#setBtn2",
       "label": "SETTINGS",
       "rect": {
-        "x": 623.765625,
-        "y": 728,
-        "width": 79.703125,
-        "height": 29
+        "x": 435,
+        "y": 741,
+        "width": 410,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -290,7 +290,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -298,14 +298,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1797,
+          "orgs": 292,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -313,7 +313,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -333,10 +333,10 @@
       "selector": "#wikiBtnMenu",
       "label": "WIKI",
       "rect": {
-        "x": 713.859375,
-        "y": 728,
-        "width": 54.515625,
-        "height": 29
+        "x": 859,
+        "y": 741,
+        "width": 410,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -344,7 +344,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -352,14 +352,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 291,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -367,7 +367,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -387,10 +387,10 @@
       "selector": "#langSelWrap",
       "label": "🌐\nEnglish\n▼",
       "rect": {
-        "x": 18,
-        "y": 24,
-        "width": 130,
-        "height": 33
+        "x": 12,
+        "y": 56,
+        "width": 112.84375,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -398,7 +398,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -406,14 +406,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1797,
+          "orgs": 291,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -421,7 +421,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -441,10 +441,10 @@
       "selector": "#spGrid",
       "label": "Filter: All · shown 101 species · colonies: 6 (top of the list) · tap another bu",
       "rect": {
-        "x": 190,
-        "y": 388.546875,
-        "width": 900,
-        "height": 332.453125
+        "x": 0,
+        "y": 420.546875,
+        "width": 1280,
+        "height": 307.453125
       },
       "handlerFound": true,
       "effect": {
@@ -452,7 +452,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1783,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -460,14 +460,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1808,
+          "orgs": 297,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -475,7 +475,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -495,10 +495,10 @@
       "selector": "#diffWrap",
       "label": "Easy\nNormal\nHard",
       "rect": {
-        "x": 604.875,
-        "y": 128,
-        "width": 70.234375,
-        "height": 89
+        "x": 0,
+        "y": 89,
+        "width": 1280,
+        "height": 152
       },
       "handlerFound": true,
       "effect": {
@@ -506,7 +506,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -514,14 +514,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -529,7 +529,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -549,10 +549,10 @@
       "selector": "#helpClose",
       "label": "CLOSE",
       "rect": {
-        "x": 608.328125,
-        "y": 465.0625,
-        "width": 63.328125,
-        "height": 29
+        "x": 25,
+        "y": 487.078125,
+        "width": 1230,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -560,7 +560,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -568,14 +568,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 277,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -583,7 +583,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -603,10 +603,10 @@
       "selector": "#setClose",
       "label": "CLOSE",
       "rect": {
-        "x": 608.328125,
-        "y": 556.5,
-        "width": 63.328125,
-        "height": 29
+        "x": 25,
+        "y": 637.5,
+        "width": 1230,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -614,7 +614,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -622,14 +622,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1795,
+          "orgs": 281,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -637,7 +637,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -657,10 +657,10 @@
       "selector": "#setBody input[type=range]",
       "label": "",
       "rect": {
-        "x": 569.6875,
-        "y": 408.5,
-        "width": 140,
-        "height": 4
+        "x": 512.46875,
+        "y": 675.5,
+        "width": 240.34375,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -668,7 +668,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -676,14 +676,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1804,
+          "orgs": 292,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -691,7 +691,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1.1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1.1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -712,9 +712,9 @@
       "label": "",
       "rect": {
         "x": 490,
-        "y": 56.5,
+        "y": 37.5,
         "width": 300,
-        "height": 30
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -722,7 +722,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -730,14 +730,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 292,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -745,7 +745,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -765,10 +765,10 @@
       "selector": "#wikiClose",
       "label": "CLOSE",
       "rect": {
-        "x": 608.328125,
-        "y": 744.5,
-        "width": 63.328125,
-        "height": 29
+        "x": 0,
+        "y": 743.5,
+        "width": 1280,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -776,7 +776,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 276,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -784,14 +784,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1796,
+          "orgs": 280,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -799,7 +799,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -819,10 +819,10 @@
       "selector": "#resBtn",
       "label": "RESUME",
       "rect": {
-        "x": 585.90625,
-        "y": 239.5,
-        "width": 108.171875,
-        "height": 41
+        "x": 89.59375,
+        "y": 253.5,
+        "width": 1100.796875,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -830,30 +830,30 @@
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1824,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "pauseO",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1820,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "toast": "AUTO: ate"
@@ -873,10 +873,10 @@
       "selector": "#pHelp",
       "label": "HOW TO PLAY",
       "rect": {
-        "x": 589.109375,
-        "y": 286.5,
-        "width": 101.765625,
-        "height": 29
+        "x": 89.59375,
+        "y": 309.5,
+        "width": 1100.796875,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -884,30 +884,30 @@
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1825,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "pauseO",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1825,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "ov": "pauseO,helpO",
+          "ov": "helpO",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "toast": "AUTO: ate"
@@ -925,48 +925,15 @@
       "screen": "tutorial",
       "viewport": "1280",
       "selector": "#tutSkip",
-      "label": "Skip",
-      "rect": {
-        "x": 713.375,
-        "y": 640,
-        "width": 75.84375,
-        "height": 50
-      },
-      "handlerFound": true,
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
       "effect": {
-        "globalsBefore": {
-          "state": "playing",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 1791,
-          "autoAI": false,
-          "freeCam": false,
-          "tZoom": 1.8,
-          "ov": "",
-          "curLang": "en",
-          "tutStep": 0,
-          "roleCard": true,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "+16 en / +2.2 mass"
-        },
-        "globalsAfter": {
-          "state": "playing",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 1805,
-          "autoAI": false,
-          "freeCam": false,
-          "tZoom": 1.8,
-          "ov": "",
-          "curLang": "en",
-          "tutStep": 999,
-          "roleCard": true,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "AUTO: ate"
-        },
-        "toast": "AUTO: ate"
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
       },
-      "verdict": "work",
+      "verdict": "hidden",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-1280-after.png"
@@ -979,35 +946,35 @@
       "screen": "tutorial",
       "viewport": "1280",
       "selector": "#roleCardOk",
-      "label": "Got it — I'll swim",
+      "label": "OK",
       "rect": {
-        "x": 397,
-        "y": 329.265625,
-        "width": 486,
-        "height": 35
+        "x": 616,
+        "y": 464.5,
+        "width": 48,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
         "globalsBefore": {
-          "state": "playing",
+          "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1790,
+          "orgs": 299,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "ov": "",
+          "ov": "introO",
           "curLang": "en",
           "tutStep": 0,
-          "roleCard": true,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "AUTO: ate"
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": ""
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1807,
+          "orgs": 296,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -1015,7 +982,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "toast": "AUTO: ate"
@@ -1035,10 +1002,10 @@
       "selector": "#bEat",
       "label": "☀ LIGHT\nE",
       "rect": {
-        "x": 412.7734375,
-        "y": 723,
+        "x": 394.53125,
+        "y": 721,
         "width": 98.640625,
-        "height": 65
+        "height": 67
       },
       "handlerFound": true,
       "effect": {
@@ -1046,30 +1013,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1872,
+          "orgs": 290,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1902,
+          "orgs": 293,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "You are a plant: swim toward the light"
         },
         "toast": "You are a plant: swim toward the light"
@@ -1089,10 +1056,10 @@
       "selector": "#bDiv",
       "label": "DIVIDE\nQ",
       "rect": {
-        "x": 519.4140625,
-        "y": 723,
+        "x": 501.171875,
+        "y": 721,
         "width": 88.03125,
-        "height": 65
+        "height": 67
       },
       "handlerFound": true,
       "effect": {
@@ -1100,35 +1067,35 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1851,
+          "orgs": 284,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": true,
-          "orgs": 1869,
+          "dividing": false,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "Divided!"
         },
         "toast": "Divided!"
       },
-      "verdict": "work",
+      "verdict": "partial",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-1280-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-1280-after.png"
@@ -1143,10 +1110,10 @@
       "selector": "#bCyst",
       "label": "SPORE\nR",
       "rect": {
-        "x": 615.4453125,
-        "y": 723,
+        "x": 597.203125,
+        "y": 721,
         "width": 84.40625,
-        "height": 65
+        "height": 67
       },
       "handlerFound": true,
       "effect": {
@@ -1154,30 +1121,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1807,
+          "orgs": 299,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": true,
           "dividing": false,
-          "orgs": 1850,
+          "orgs": 299,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "Spore: protected, speed 0, energy drains slowly"
         },
         "toast": "Spore: protected, speed 0, energy drains slowly"
@@ -1218,10 +1185,10 @@
       "selector": "#bAuto",
       "label": "AUTO\nTab",
       "rect": {
-        "x": 707.8515625,
-        "y": 723,
+        "x": 689.609375,
+        "y": 721,
         "width": 79.375,
-        "height": 65
+        "height": 67
       },
       "handlerFound": true,
       "effect": {
@@ -1229,30 +1196,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1861,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": true,
-          "orgs": 1887,
+          "dividing": false,
+          "orgs": 299,
           "autoAI": true,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: on"
         },
         "toast": "AUTO: on"
@@ -1396,12 +1363,12 @@
       "screen": "game",
       "viewport": "1280",
       "selector": "#bPause",
-      "label": "☰",
+      "label": "⏸",
       "rect": {
-        "x": 795.2265625,
-        "y": 723,
-        "width": 72,
-        "height": 65
+        "x": 776.984375,
+        "y": 721,
+        "width": 51,
+        "height": 67
       },
       "handlerFound": true,
       "effect": {
@@ -1409,33 +1376,33 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1832,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "AUTO: ate"
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": ""
         },
         "globalsAfter": {
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1856,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "pauseO",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "AUTO: ate"
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": ""
         },
-        "toast": "AUTO: ate"
+        "toast": ""
       },
       "verdict": "work",
       "png": [
@@ -1746,10 +1713,10 @@
       "selector": "#demoLabelsBtn",
       "label": "Labels",
       "rect": {
-        "x": 166.625,
-        "y": 755.8125,
-        "width": 52.28125,
-        "height": 21.1875
+        "x": 135,
+        "y": 715.59375,
+        "width": 68.953125,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -1760,12 +1727,12 @@
           "orgs": 101,
           "autoAI": false,
           "freeCam": true,
-          "tZoom": 1.4,
+          "tZoom": 0.58,
           "ov": "",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
@@ -1775,12 +1742,12 @@
           "orgs": 101,
           "autoAI": false,
           "freeCam": true,
-          "tZoom": 1.4,
+          "tZoom": 0.58,
           "ov": "",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -1842,10 +1809,10 @@
       "selector": "#startBtn",
       "label": "START",
       "rect": {
-        "x": 23.0625,
-        "y": 194,
-        "width": 84.640625,
-        "height": 44
+        "x": 8,
+        "y": 252,
+        "width": 120.65625,
+        "height": 72
       },
       "handlerFound": true,
       "effect": {
@@ -1853,7 +1820,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -1861,25 +1828,25 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
-          "state": "playing",
+          "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1015,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "ov": "",
+          "ov": "introO",
           "curLang": "en",
           "tutStep": 0,
-          "roleCard": true,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "AUTO: ate"
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": ""
         },
-        "toast": "AUTO: ate"
+        "toast": ""
       },
       "verdict": "work",
       "png": [
@@ -1896,10 +1863,10 @@
       "selector": "#demoBtn",
       "label": "DEMO / Gallery",
       "rect": {
-        "x": 119.703125,
-        "y": 197.5,
-        "width": 116.796875,
-        "height": 37
+        "x": 134.65625,
+        "y": 252,
+        "width": 120.671875,
+        "height": 72
       },
       "handlerFound": true,
       "effect": {
@@ -1907,7 +1874,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -1915,7 +1882,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
@@ -1925,12 +1892,12 @@
           "orgs": 101,
           "autoAI": false,
           "freeCam": true,
-          "tZoom": 1.4,
+          "tZoom": 0.58,
           "ov": "",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -1950,10 +1917,10 @@
       "selector": "#screensaverBtn",
       "label": "AQUARIUM",
       "rect": {
-        "x": 248.5,
-        "y": 197.5,
-        "width": 95.03125,
-        "height": 37
+        "x": 261.328125,
+        "y": 252,
+        "width": 120.65625,
+        "height": 72
       },
       "handlerFound": true,
       "effect": {
@@ -1961,7 +1928,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -1969,22 +1936,22 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 997,
+          "orgs": 101,
           "autoAI": false,
           "freeCam": true,
-          "tZoom": 2.25,
+          "tZoom": 0.58,
           "ov": "",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -2004,10 +1971,10 @@
       "selector": "#starSelect",
       "label": "☀ Sun\n★ Sirius A+B\n★ Betelgeuse\n★ Rigel\n★ Vega\n★ Antares\n★ Alpha Centauri A+B\n★ ",
       "rect": {
-        "x": 91.796875,
-        "y": 247,
-        "width": 183,
-        "height": 31
+        "x": 8,
+        "y": 330,
+        "width": 373.984375,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2015,7 +1982,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2023,14 +1990,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1781,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2038,7 +2005,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -2059,9 +2026,9 @@
       "label": "HOW TO PLAY",
       "rect": {
         "x": 11,
-        "y": 744.9375,
-        "width": 110.453125,
-        "height": 37
+        "y": 787,
+        "width": 114.65625,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2069,7 +2036,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2077,14 +2044,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 297,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2092,7 +2059,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -2112,10 +2079,10 @@
       "selector": "#setBtn2",
       "label": "SETTINGS",
       "rect": {
-        "x": 131.84375,
-        "y": 744.9375,
-        "width": 84.375,
-        "height": 37
+        "x": 137.65625,
+        "y": 787,
+        "width": 114.671875,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2123,7 +2090,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2131,14 +2098,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1783,
+          "orgs": 297,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2146,7 +2113,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -2166,10 +2133,10 @@
       "selector": "#wikiBtnMenu",
       "label": "WIKI",
       "rect": {
-        "x": 226.609375,
-        "y": 744.9375,
-        "width": 54.609375,
-        "height": 37
+        "x": 264.328125,
+        "y": 787,
+        "width": 114.671875,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2177,7 +2144,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1783,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2185,14 +2152,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1787,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2200,7 +2167,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -2218,15 +2185,48 @@
       "screen": "menu",
       "viewport": "390",
       "selector": "#langSelWrap",
-      "label": "",
-      "rect": null,
-      "handlerFound": false,
+      "label": "🌐\nEnglish\n▼",
+      "rect": {
+        "x": 12,
+        "y": 56,
+        "width": 100.84375,
+        "height": 48
+      },
+      "handlerFound": true,
       "effect": {
-        "globalsBefore": {},
-        "globalsAfter": {},
+        "globalsBefore": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 282,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": ""
+        },
+        "globalsAfter": {
+          "state": "menu",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 282,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 3,
+          "ov": "menuO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": ""
+        },
         "toast": ""
       },
-      "verdict": "hidden",
+      "verdict": "partial",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\M8-390-after.png"
@@ -2241,10 +2241,10 @@
       "selector": "#spGrid",
       "label": "Filter: All · shown 101 species · colonies: 6 (top of the list) · tap another bu",
       "rect": {
-        "x": 8,
-        "y": 442.546875,
-        "width": 350.59375,
-        "height": 295.390625
+        "x": 0,
+        "y": 553.546875,
+        "width": 390,
+        "height": 218.453125
       },
       "handlerFound": true,
       "effect": {
@@ -2252,7 +2252,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2260,14 +2260,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 297,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2275,7 +2275,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -2295,10 +2295,10 @@
       "selector": "#diffWrap",
       "label": "Easy\nNormal\nHard",
       "rect": {
-        "x": 8,
-        "y": 90,
-        "width": 350.59375,
-        "height": 85
+        "x": 0,
+        "y": 84,
+        "width": 390,
+        "height": 152
       },
       "handlerFound": true,
       "effect": {
@@ -2306,7 +2306,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1782,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2314,14 +2314,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1790,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2329,7 +2329,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -2349,10 +2349,10 @@
       "selector": "#helpClose",
       "label": "CLOSE",
       "rect": {
-        "x": 150.78125,
-        "y": 455.890625,
-        "width": 65.015625,
-        "height": 37
+        "x": 8,
+        "y": 454.890625,
+        "width": 374,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2360,7 +2360,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1781,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2368,27 +2368,27 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1769,
+          "orgs": 297,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
-          "ov": "menuO,helpO",
+          "ov": "menuO",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O1-390-after.png"
@@ -2403,10 +2403,10 @@
       "selector": "#setClose",
       "label": "CLOSE",
       "rect": {
-        "x": 150.78125,
-        "y": 536.421875,
-        "width": 65.015625,
-        "height": 37
+        "x": 8,
+        "y": 564.1875,
+        "width": 374,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2414,7 +2414,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2422,27 +2422,27 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1756,
+          "orgs": 297,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
-          "ov": "menuO,setO",
+          "ov": "menuO",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O2-390-after.png"
@@ -2457,10 +2457,10 @@
       "selector": "#setBody input[type=range]",
       "label": "",
       "rect": {
-        "x": 117.6875,
-        "y": 391.03125,
-        "width": 140,
-        "height": 4
+        "x": 99.765625,
+        "y": 786.796875,
+        "width": 175.734375,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2468,7 +2468,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2476,14 +2476,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1760,
+          "orgs": 298,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2491,12 +2491,12 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1.1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O3-390-after.png"
@@ -2511,10 +2511,10 @@
       "selector": "#wikiSearch",
       "label": "",
       "rect": {
-        "x": 33.296875,
-        "y": 35,
+        "x": 45,
+        "y": 38.90625,
         "width": 300,
-        "height": 30
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2522,7 +2522,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 282,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2530,14 +2530,14 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1767,
+          "orgs": 297,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2545,7 +2545,7 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
@@ -2565,10 +2565,10 @@
       "selector": "#wikiClose",
       "label": "CLOSE",
       "rect": {
-        "x": 150.78125,
-        "y": 728.46875,
-        "width": 65.015625,
-        "height": 37
+        "x": 8,
+        "y": 780.09375,
+        "width": 374,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2576,7 +2576,7 @@
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1779,
+          "orgs": 286,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
@@ -2584,27 +2584,27 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "menu",
           "cyst": false,
           "dividing": false,
-          "orgs": 1748,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 3,
-          "ov": "menuO,wikiO",
+          "ov": "menuO",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""
       },
-      "verdict": "partial",
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O5-390-after.png"
@@ -2617,15 +2617,48 @@
       "screen": "pause",
       "viewport": "390",
       "selector": "#resBtn",
-      "label": "",
-      "rect": null,
-      "handlerFound": false,
-      "effect": {
-        "globalsBefore": {},
-        "globalsAfter": {},
-        "toast": ""
+      "label": "RESUME",
+      "rect": {
+        "x": 27.296875,
+        "y": 270,
+        "width": 335.390625,
+        "height": 48
       },
-      "verdict": "hidden",
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "paused",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 300,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "ov": "pauseO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": "AUTO: ate"
+        },
+        "globalsAfter": {
+          "state": "playing",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 300,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "ov": "",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": "AUTO: ate"
+        },
+        "toast": "AUTO: ate"
+      },
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O6-390-after.png"
@@ -2638,15 +2671,48 @@
       "screen": "pause",
       "viewport": "390",
       "selector": "#pHelp",
-      "label": "",
-      "rect": null,
-      "handlerFound": false,
-      "effect": {
-        "globalsBefore": {},
-        "globalsAfter": {},
-        "toast": ""
+      "label": "HOW TO PLAY",
+      "rect": {
+        "x": 27.296875,
+        "y": 326,
+        "width": 335.390625,
+        "height": 48
       },
-      "verdict": "hidden",
+      "handlerFound": true,
+      "effect": {
+        "globalsBefore": {
+          "state": "paused",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 299,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "ov": "pauseO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": "AUTO: ate"
+        },
+        "globalsAfter": {
+          "state": "paused",
+          "cyst": false,
+          "dividing": false,
+          "orgs": 299,
+          "autoAI": false,
+          "freeCam": false,
+          "tZoom": 1.8,
+          "ov": "helpO",
+          "curLang": "en",
+          "tutStep": 0,
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": "AUTO: ate"
+        },
+        "toast": "AUTO: ate"
+      },
+      "verdict": "work",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O7-390-after.png"
@@ -2659,48 +2725,15 @@
       "screen": "tutorial",
       "viewport": "390",
       "selector": "#tutSkip",
-      "label": "Skip",
-      "rect": {
-        "x": 191.375,
-        "y": 684,
-        "width": 75.84375,
-        "height": 50
-      },
-      "handlerFound": true,
+      "label": "",
+      "rect": null,
+      "handlerFound": false,
       "effect": {
-        "globalsBefore": {
-          "state": "playing",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 998,
-          "autoAI": false,
-          "freeCam": false,
-          "tZoom": 1.8,
-          "ov": "",
-          "curLang": "en",
-          "tutStep": 0,
-          "roleCard": true,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "AUTO: ate"
-        },
-        "globalsAfter": {
-          "state": "playing",
-          "cyst": false,
-          "dividing": false,
-          "orgs": 1010,
-          "autoAI": false,
-          "freeCam": false,
-          "tZoom": 1.8,
-          "ov": "",
-          "curLang": "en",
-          "tutStep": 999,
-          "roleCard": true,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "AUTO: ate"
-        },
-        "toast": "AUTO: ate"
+        "globalsBefore": {},
+        "globalsAfter": {},
+        "toast": ""
       },
-      "verdict": "work",
+      "verdict": "hidden",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\O8-390-after.png"
@@ -2713,35 +2746,35 @@
       "screen": "tutorial",
       "viewport": "390",
       "selector": "#roleCardOk",
-      "label": "Got it — I'll swim",
+      "label": "OK",
       "rect": {
-        "x": 32.6015625,
-        "y": 354.671875,
-        "width": 324.796875,
-        "height": 35
+        "x": 170.984375,
+        "y": 483.5,
+        "width": 48,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
         "globalsBefore": {
-          "state": "playing",
+          "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1012,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
-          "ov": "",
+          "ov": "introO",
           "curLang": "en",
           "tutStep": 0,
-          "roleCard": true,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "roleCard": false,
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1027,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
@@ -2749,10 +2782,10 @@
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": ""
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": "AUTO: ate"
         },
-        "toast": ""
+        "toast": "AUTO: ate"
       },
       "verdict": "work",
       "png": [
@@ -2767,12 +2800,12 @@
       "screen": "game",
       "viewport": "390",
       "selector": "#bEat",
-      "label": "☀ LIGHT\nE",
+      "label": "☀ LIGHT",
       "rect": {
-        "x": 65.203125,
-        "y": 788,
-        "width": 57.9375,
-        "height": 44
+        "x": 8,
+        "y": 784,
+        "width": 56.390625,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2780,30 +2813,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1149,
+          "orgs": 299,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1174,
+          "orgs": 299,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "You are a plant: swim toward the light"
         },
         "toast": "You are a plant: swim toward the light"
@@ -2821,12 +2854,12 @@
       "screen": "game",
       "viewport": "390",
       "selector": "#bDiv",
-      "label": "DIVIDE\nQ",
+      "label": "DIVIDE",
       "rect": {
-        "x": 127.140625,
-        "y": 788,
-        "width": 50.15625,
-        "height": 44
+        "x": 68.390625,
+        "y": 784,
+        "width": 56.40625,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2834,35 +2867,35 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1155,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": true,
-          "orgs": 1176,
+          "dividing": false,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": "Divided!"
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": "Division: second cell failed to form"
         },
-        "toast": "Divided!"
+        "toast": "Division: second cell failed to form"
       },
-      "verdict": "work",
+      "verdict": "partial",
       "png": [
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-390-before.png",
         "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\09-Docs\\out-dev-factory\\shots-release-ready-2026-10-14\\buttons-after\\G2-390-after.png"
@@ -2875,12 +2908,12 @@
       "screen": "game",
       "viewport": "390",
       "selector": "#bCyst",
-      "label": "SPORE\nR",
+      "label": "SPORE",
       "rect": {
-        "x": 181.296875,
-        "y": 788,
-        "width": 47.5,
-        "height": 44
+        "x": 128.796875,
+        "y": 784,
+        "width": 56.390625,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2888,30 +2921,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1133,
+          "orgs": 299,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
-          "toast": ""
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
+          "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": true,
           "dividing": false,
-          "orgs": 1179,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "Spore: protected, speed 0, energy drains slowly"
         },
         "toast": "Spore: protected, speed 0, energy drains slowly"
@@ -2950,12 +2983,12 @@
       "screen": "game",
       "viewport": "390",
       "selector": "#bAuto",
-      "label": "AUTO\nTab",
+      "label": "AUTO",
       "rect": {
-        "x": 232.796875,
-        "y": 788,
-        "width": 44,
-        "height": 44
+        "x": 189.1875,
+        "y": 784,
+        "width": 56.40625,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -2963,30 +2996,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1156,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
-          "dividing": true,
-          "orgs": 1191,
+          "dividing": false,
+          "orgs": 300,
           "autoAI": true,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: on"
         },
         "toast": "AUTO: on"
@@ -3130,12 +3163,12 @@
       "screen": "game",
       "viewport": "390",
       "selector": "#bPause",
-      "label": "☰",
+      "label": "⏸",
       "rect": {
-        "x": 280.796875,
-        "y": 788,
-        "width": 44,
-        "height": 44
+        "x": 249.59375,
+        "y": 784,
+        "width": 56.390625,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -3143,30 +3176,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1148,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "paused",
           "cyst": false,
           "dividing": false,
-          "orgs": 1153,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "pauseO",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "toast": "AUTO: ate"
@@ -3439,7 +3472,7 @@
       "label": "",
       "rect": {
         "x": 8,
-        "y": 670,
+        "y": 666,
         "width": 110,
         "height": 110
       },
@@ -3449,30 +3482,30 @@
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1100,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "globalsAfter": {
           "state": "playing",
           "cyst": false,
           "dividing": false,
-          "orgs": 1119,
+          "orgs": 300,
           "autoAI": false,
           "freeCam": false,
           "tZoom": 1.8,
           "ov": "",
           "curLang": "en",
-          "tutStep": 999,
+          "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": "AUTO: ate"
         },
         "toast": "AUTO: ate"
@@ -3513,10 +3546,10 @@
       "selector": "#demoLabelsBtn",
       "label": "Labels",
       "rect": {
-        "x": 166.625,
-        "y": 727.8125,
-        "width": 52.28125,
-        "height": 21.1875
+        "x": 23,
+        "y": 701,
+        "width": 68.953125,
+        "height": 48
       },
       "handlerFound": true,
       "effect": {
@@ -3527,12 +3560,12 @@
           "orgs": 101,
           "autoAI": false,
           "freeCam": true,
-          "tZoom": 1.4,
+          "tZoom": 0.58,
           "ov": "",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "globalsAfter": {
@@ -3542,12 +3575,12 @@
           "orgs": 101,
           "autoAI": false,
           "freeCam": true,
-          "tZoom": 1.4,
+          "tZoom": 0.58,
           "ov": "",
           "curLang": "en",
           "tutStep": 0,
           "roleCard": false,
-          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":0.55,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1}",
+          "settings": "{\"particles\":true,\"bubbles\":true,\"currents\":true,\"vignette\":false,\"healthBars\":true,\"shadows\":true,\"density\":1,\"lightMul\":1,\"virusRate\":0.7,\"renderMode\":\"cartoon\",\"microscopeMode\":false,\"simSpeed\":0.33,\"predation\":1,\"divRate\":1,\"economy\":false,\"softMembrane\":true}",
           "toast": ""
         },
         "toast": ""

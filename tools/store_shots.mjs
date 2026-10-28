@@ -44,7 +44,18 @@ for (const lang of WAVE1) {
       try {
         if (s === 'menu') { await page.reload({ waitUntil: 'domcontentloaded' }); await page.waitForSelector('#startBtn'); await page.waitForTimeout(1200); }
         if (s === 'tutorial') { await page.evaluate(() => localStorage.removeItem('igraspore_tut_v2')); await page.reload({ waitUntil: 'domcontentloaded' }); await page.waitForSelector('#startBtn'); await page.click('#startBtn'); await page.waitForTimeout(2000); }
-        if (s === 'game') { const st = page.locator('#startBtn'); if (await st.isVisible().catch(() => false)) { await st.click(); await page.waitForTimeout(1800); } const skip = page.locator('#tutSkip'); if (await skip.isVisible().catch(() => false)) await skip.click(); await waitPlaying(page); const ok = page.locator('#roleCardOk'); if (await ok.isVisible().catch(() => false)) await ok.click(); await page.waitForTimeout(1200); }
+        if (s === 'game') {
+          const st = page.locator('#startBtn'); if (await st.isVisible().catch(() => false)) { await st.click(); await page.waitForTimeout(1800); }
+          // вступление (introO → #introOk), карточка роли (#roleCardOk) и пропуск обучения (#tutSkip)
+          // закрываются кнопками интерфейса: пока они открыты, state = 'paused' и waitPlaying не проходит.
+          for (const sel of ['#introOk', '#roleCardOk', '#tutSkip']) {
+            const b = page.locator(sel);
+            if (await b.isVisible().catch(() => false)) await b.click().catch(() => {});
+            await page.waitForTimeout(300);
+          }
+          await waitPlaying(page);
+          await page.waitForTimeout(1200);
+        }
         if (s === 'settings') { await page.click('#bPause').catch(() => {}); await page.waitForTimeout(500); await page.click('#pSet').catch(() => {}); await page.waitForSelector('#setO.ov.show', { timeout: 6000 }).catch(() => {}); await page.waitForTimeout(500); }
         if (s === 'wiki-list') { await page.click('#setClose').catch(() => {}); await page.waitForTimeout(300); await page.click('#pWiki').catch(() => {}); await page.waitForSelector('#wikiO.ov.show', { timeout: 6000 }).catch(() => {}); await page.waitForSelector('#wikiContent .wiki-entry', { timeout: 15000 }).catch(() => {}); await page.waitForTimeout(600); }
         if (s === 'help') { await closeOverlays(page); await page.click('#bPause').catch(() => {}); await page.waitForTimeout(600); await page.click('#pHelp').catch(() => {}); await page.waitForSelector('#helpO.ov.show', { timeout: 6000 }).catch(() => {}); await page.waitForTimeout(900); }

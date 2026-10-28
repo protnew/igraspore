@@ -10,7 +10,7 @@ test('[B1px] phage on screen is at least 3px and has a dark outline', async ({ p
   await page.evaluate(`(function(){
     var keep=viruses[0];
     for(var i=1;i<viruses.length;i++){ viruses[i].x=-99999; viruses[i].y=-99999; }
-    if(keep){ keep.x=player.x+8; keep.y=player.y; cam.x=keep.x; cam.y=keep.y; }
+    if(keep){ keep.x=player.x+8; keep.y=player.y; keep.demoPinned=true; cam.x=keep.x; cam.y=keep.y; }
     zoom=10; tZoom=10;
     var po=document.getElementById('pauseO'); if(po) po.className='ov';
     state='playing';

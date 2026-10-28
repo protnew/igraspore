@@ -1,0 +1,10 @@
+﻿CHECK ключ: не-OLD-compromised, имя файла igraspore-release.keystore — пройдено
+CHECK storePassword в истории git: не найдено
+CHECK keyPassword в истории git: не найдено
+TARGET: C:\Obsidian\New\Projects\08-iGraSpore_V2\06-DevOps-and-Release\android\android\app\build\outputs\bundle\release\app-release.aab
+jar signed.
+
+Warning: 
+The signer's certificate is self-signed.
+SIGNED: jarsigner exit 0
+VERIFY: jar verified.

@@ -1,0 +1,24 @@
+﻿
+18:10:50 HEAD 4187991 branch release-ready-2026-10-14
+18:10:50 канон изменён (не закоммичено) файлов: 4
+18:10:51   WIP  M .04-Src/js/ui_menus.js
+18:10:51   WIP  M .04-Src/js/world.js
+18:10:51   WIP  M .04-Src/js/world_update.js
+18:10:51   WIP  M style.css
+18:10:51 канон скопирован в android public (js, i18n, i18n/wiki, index.html, style.css, v20_5.css, manifest.json)
+18:12:28 GRADLE_EXIT 0
+18:12:28 AAB собран: 7548410 байт
+18:12:29 AAB sha256 ДО подписи: 47a6ac2421f011c7a792ccaf234875c29aa019c38c37196d130740dcc7c534a1
+18:13:26 SIGN_EXIT 0
+18:13:26   CHECK ключ: не-OLD-compromised, имя файла igraspore-release.keystore — пройдено
+18:13:26   TARGET: C:\Obsidian\New\Projects\08-iGraSpore_V2\06-DevOps-and-Release\android\android\app\build\outputs\bundle\release\app-release.aab
+18:13:26   jar signed.
+18:13:26   
+18:13:26   Warning: 
+18:13:26   The signer's certificate is self-signed.
+18:13:26   SIGNED: jarsigner exit 0
+18:13:26   VERIFY: jar verified.
+18:13:27 JARSIGNER: jar verified.
+18:13:28 AAB sha256 ПОСЛЕ подписи: aa4d8cdfdfdb2d7b954f795f71c74b6880e91a541c047def4df7520e9fdec306
+18:13:28 AAB размер: 7604324
+18:13:28 aab.json записан

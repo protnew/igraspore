@@ -1,0 +1,9 @@
+﻿{
+    "status":  "собран и подписан 28.10 18:13",
+    "sha256":  "aa4d8cdfdfdb2d7b954f795f71c74b6880e91a541c047def4df7520e9fdec306",
+    "size":  "7604324",
+    "verified":  "jar verified.",
+    "built":  "из рабочей копии: HEAD f469f0d + незакоммиченный WIP канона (4 файлов)",
+    "android":  "Android-исходники (06-DevOps-and-Release/android) не менялись с прошлой сборки 24.10 19:02; менялись веб-исходники (js/i18n) — 22 коммита",
+    "proof":  "`jarsigner -verify` → jar verified.; sha256 aa4d8cdfdfdb2d7b954f795f71c74b6880e91a541c047def4df7520e9fdec306; лог `09-Docs\\out-dev-factory\\runs\\v15-x5-20261028\\` (gradle-bundleRelease.log, sign-output.txt, jarsigner-verify.txt)"
+}

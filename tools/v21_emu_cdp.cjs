@@ -9,7 +9,7 @@ const path = require('path');
 const ADB = process.env.ADB || process.env.LOCALAPPDATA + '\\Android\\Sdk\\platform-tools\\adb.exe';
 const DEVICE = (process.argv.includes('--device') ? process.argv[process.argv.indexOf('--device') + 1] : 'emulator-5584');
 const OUT = (process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'C:\\Users\\Space\\agent-transfer\\igraspore-v21\\emu');
-const LANGS = ['en','ru','de','es','fr','it','pt','pl','uk','tr','ko','ja','zh','hi','bn','vi','id','ms','fil','ar'];
+const LANGS = (process.argv.includes('--langs') ? process.argv[process.argv.indexOf('--langs') + 1].split(',') : ['en','ru','de','es','fr','it','pt','pl','uk','tr','ko','ja','zh','hi','bn','vi','id','ms','fil','th']);
 const FULL5 = ['en','ru','de','hi','ja']; // все 10 экранов; death в релизном APK без debug-хука — ENV-LIMITED (покрыт вебом на 20 языках)
 
 function adb(args, opts) { return execFileSync(ADB, ['-s', DEVICE].concat(args), Object.assign({ encoding: 'buffer', timeout: 30000 }, opts || {})); }

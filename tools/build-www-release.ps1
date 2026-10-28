@@ -38,8 +38,10 @@ if (Test-Path $fonts) {
     Copy-Item -LiteralPath $_.FullName -Destination (Join-Path (Join-Path $dst '04-Src\fonts') $_.Name)
   }
 }
-$i18nFrom = Join-Path $srcPub 'i18n'
-Copy-Item -LiteralPath $i18nFrom -Destination (Join-Path $dst 'i18n') -Recurse
+# v21 (критики 2+5): i18n — ТОЛЬКО из канона .04-Src\i18n. Прежний источник cf-publish\i18n был копией от 16.10
+# (17 словарей без 10 ключей exitAsk/yes/no/more/...), и каждая сборка AAB молча увозила старые словари.
+$i18nFrom = Join-Path $root '.04-Src\i18n'
+Copy-Item -LiteralPath $i18nFrom -Destination (Join-Path $dst 'i18n') -Recurse -Force
 
 $sprites = Join-Path $srcPub 'assets\bioicons\swiss_sprites'
 Get-ChildItem -LiteralPath $sprites -File | Where-Object {

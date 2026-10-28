@@ -53,6 +53,7 @@ const START_JS = `(function(){
 const SNAP_JS = `(function(){
   var per = {}, bio = {}, vel = {}, cats = {};
   var tot = 0, bioAll = 0;
+  if (!window.__velAny) window.__velAny = {};
   for (var i = 0; i < orgs.length; i++){
     var o = orgs[i]; if (!o || !o.alive) continue;
     var nm = o.sp.name, c = o.sp.cat;
@@ -61,10 +62,11 @@ const SNAP_JS = `(function(){
     bio[nm] = (bio[nm] || 0) + o.size * o.size;
     cats[c] = (cats[c] || 0) + 1;
     var v = Math.hypot(o.vx || 0, o.vy || 0);
-    if (!vel[nm] || v > vel[nm]) vel[nm] = v;
+    if (!vel[nm] || v > vel[nm]) vel[nm] = +v.toFixed(3);
+    if (v > 0.001 && v > (window.__velAny[nm] || 0)) window.__velAny[nm] = +v.toFixed(3);
   }
   return JSON.stringify({ t: window.__gt2 || 0, total: tot, biomass: +bioAll.toFixed(1), cats: cats,
-    per: per, bio: bio, vel: vel, viruses: (typeof viruses !== 'undefined' ? viruses.length : 0),
+    per: per, bio: bio, vel: vel, velAny: JSON.parse(JSON.stringify(window.__velAny)), viruses: (typeof viruses !== 'undefined' ? viruses.length : 0),
     ev: JSON.parse(JSON.stringify(window.__ev)) });
 })()`;
 
@@ -90,43 +92,31 @@ async function runSeed(browser, seed, minutes, speed, neg) {
   await p.evaluate('(function(){ window.state = "playing"; timeScale = ' + speed + '; window.__gt2 = 0; return 1; })()');
 
   const gameSecTotal = minutes * 60;
-  const LOOP_JS = `(function(){
-    var out = [];
-    var speed = ${speed};
-    var total = ${gameSecTotal};
-    var next = 10, gt2 = 0;
-    var t0 = Date.now();
-    while (gt2 < total) {
-      // v21 (критик 1, P0): продуктовая точность — speed вызовов updateWorld(0.05) на итерацию.
-      // Прежний один вызов при gt2+=0.05*speed давал 100x искажение time-capped механик (divT-кап деления,
-      // decay, возраст) — валидация не видела декомпозёрный монокультур живой игры.
-      try { for (var k = 0; k < speed; k++) updateWorld(0.05); } catch (e) { return JSON.stringify({ fatal: 'err:' + e.message, t: gt2 }); }
-      gt2 += 0.05 * speed;
-      if (gt2 >= next || gt2 >= total) {
-        var per = {}, bio = {}, vel = {}, cats = {};
-        var tot = 0, bioAll = 0;
-        if (!window.__velAny) window.__velAny = {};
-        for (var i = 0; i < orgs.length; i++) {
-          var o = orgs[i]; if (!o || !o.alive) continue;
-          var nm = o.sp.name;
-          tot++; bioAll += o.size * o.size;
-          per[nm] = (per[nm] || 0) + 1;
-          bio[nm] = (bio[nm] || 0) + o.size * o.size;
-          cats[o.sp.cat] = (cats[o.sp.cat] || 0) + 1;
-          var v = Math.hypot(o.vx || 0, o.vy || 0);
-          if (!vel[nm] || v > vel[nm]) vel[nm] = +v.toFixed(3);
-          if (v > 0.001 && v > (window.__velAny[nm] || 0)) window.__velAny[nm] = +v.toFixed(3);
-        }
-        out.push({ t: +gt2.toFixed(1), total: tot, biomass: +bioAll.toFixed(1), cats: cats,
-          per: per, bio: bio, vel: vel, velAny: window.__velAny || {}, viruses: (typeof viruses !== 'undefined' ? viruses.length : 0),
-          ev: JSON.parse(JSON.stringify(window.__ev)) });
-        next += 10;
-      }
+  // v21 (критик 1, P0): продуктовая точность — updateWorld(0.05) по одному тику, 5 игр-сек за чанк-вызов.
+  // Чанковый цикл на стороне node: один гигантский evaluate на 72k вызовов блокировал рендерер
+  // и Chrome убивал страницу ("Target page closed"). Сэмпл-логика идентична прежней.
+  const CHUNK_TICKS = 100; // 100 тиков × 0.05 = 5 игр-сек за один evaluate
+  const snaps = [];
+  let gt2 = 0, next = 10, fatal = null;
+  const t0 = Date.now();
+  while (gt2 < gameSecTotal && !fatal) {
+    const step = await p.evaluate(`(function(){
+      try {
+        for (var k = 0; k < ${CHUNK_TICKS}; k++) updateWorld(0.05);
+      } catch (e) { return JSON.stringify({ fatal: 'err:' + e.message }); }
+      return 1;
+    })()`);
+    if (typeof step === 'string' && step.indexOf('fatal') >= 0) { fatal = step; break; }
+    gt2 += 0.05 * CHUNK_TICKS;
+    if (gt2 >= next || gt2 >= gameSecTotal) {
+      const snapRaw = await p.evaluate(SNAP_JS);
+      const snap = JSON.parse(snapRaw);
+      snap.t = +gt2.toFixed(1);
+      snaps.push(snap);
+      next += 10;
     }
-    return JSON.stringify({ snaps: out, wallMs: Date.now() - t0 });
-  })()`;
-  const resRaw = await p.evaluate(LOOP_JS);
-  const res = JSON.parse(resRaw);
+  }
+  const res = { snaps, wallMs: Date.now() - t0 };
   const jsonl = fs.createWriteStream(path.join(OUT, 'seed' + seed + (neg ? '-neg' : '') + '.jsonl'));
   for (const snap of (res.snaps || [])) jsonl.write(JSON.stringify(snap) + String.fromCharCode(10));
   if (res.fatal) errs.push(res.fatal);

@@ -22,16 +22,27 @@ if (args.includes('--enabled')) {
 }
 if (!langs.length) { console.error('usage: node tools/i18n/i18n_coverage.mjs --all | <lang>...'); process.exit(2); }
 
+// D11 (TZ v20 §366, принято линией v20/v21): словари es/tr/fil заморожены, новые ключи
+// показываются английским фоллбеком из config.js (T.en) и уходят аналитику отдельным пакетом.
+// Тот же список, что в langs_consistency.test.js — иначе два checker'а противоречат друг другу
+// (один зелёный, второй красный на тех же данных). Фоллбек печатается в строке языка, а не молчит.
+const FROZEN = new Set(['es', 'tr', 'fil']);
+const D11 = /^(exitAsk|exitMsg|yes|no|more|deadYours|aliveWord|deadOther|helpTouch|setLang|loadingWorld|economy|economyAsk|demoTipTouch|camFlyTouch)$/;
+
 let bad = 0;
 for (const lang of langs) {
   const f = path.join(I18N, lang + '.json');
   if (!fs.existsSync(f)) { console.log(lang.padEnd(6), 'NO FILE'); bad++; continue; }
   const d = JSON.parse(fs.readFileSync(f, 'utf8'));
-  const miss = enKeys.filter((k) => !(k in d));
+  const missAll = enKeys.filter((k) => !(k in d));
+  const fb = FROZEN.has(lang) ? missAll.filter((k) => D11.test(k)) : [];
+  const miss = missAll.filter((k) => !fb.includes(k));
   const extra = Object.keys(d).filter((k) => !(k in en));
-  const pct = Math.round(100 * (enKeys.length - miss.length) / enKeys.length);
-  console.log(lang.padEnd(6), pct + '%', 'keys=' + Object.keys(d).length + '/' + enKeys.length,
+  const pct = Math.round(100 * (enKeys.length - missAll.length) / enKeys.length);
+  console.log(lang.padEnd(6), (miss.length || extra.length ? pct : 100) + '%',
+    'keys=' + Object.keys(d).length + '/' + enKeys.length,
     miss.length ? ('missing=' + miss.length + ': ' + miss.slice(0, 8).join(',') + (miss.length > 8 ? '…' : '')) : '',
+    fb.length ? ('D11-фоллбек EN: ' + fb.length + ' (' + fb.join(',') + ')') : '',
     extra.length ? ('extra=' + extra.length + ': ' + extra.slice(0, 5).join(',')) : '');
   if (miss.length || extra.length) bad++;
 }

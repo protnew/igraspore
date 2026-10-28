@@ -1,0 +1,26 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › .04-Src\07-QA-and-Testing\playwright\i18n_overflow.spec.js:205:9 › id › [id] 1280x800: 8 экранов без переполнений (2.0m)
+
+
+  1) [chromium] › .04-Src\07-QA-and-Testing\playwright\i18n_overflow.spec.js:205:9 › id › [id] 1280x800: 8 экранов без переполнений 
+
+    [31mTest timeout of 120000ms exceeded.[39m
+
+    Error: page.screenshot: Target page, context or browser has been closed
+
+      72 |   const dir = path.join(SHOTS, lang);
+      73 |   fs.mkdirSync(dir, { recursive: true });
+    > 74 |   await page.screenshot({ path: path.join(dir, `${vp}-${screen}.png`) });
+         |              ^
+      75 | }
+      76 |
+      77 | async function waitPlaying(page) {
+        at shot (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\07-QA-and-Testing\playwright\i18n_overflow.spec.js:74:14)
+        at C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\07-QA-and-Testing\playwright\i18n_overflow.spec.js:211:15
+
+    Error Context: .04-Src\07-QA-and-Testing\test-results-contract\i18n_overflow-id-id-1280x800-8-экранов-без-переполнений-chromium\error-context.md
+
+  1 failed
+    [chromium] › .04-Src\07-QA-and-Testing\playwright\i18n_overflow.spec.js:205:9 › id › [id] 1280x800: 8 экранов без переполнений 

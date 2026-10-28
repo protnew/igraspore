@@ -163,7 +163,7 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 .scrollbox::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1a4a6a,#0e3050);border-radius:4px;border:1px solid #2a5070}
 .scrollbox::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#2a6a8a,#1e4060)}
 .scrollbox{-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8)}
-#wikiContent{overflow-y:auto;max-height:80vh;max-width:700px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8)}
+#wikiContent{overflow-y:auto;max-height:80vh;max-width:700px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8);padding-bottom:64px}
 #wikiContent::-webkit-scrollbar{width:8px}
 #wikiContent::-webkit-scrollbar-track{background:rgba(0,10,25,.8);border-radius:4px}
 #wikiContent::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1a4a6a,#0e3050);border-radius:4px}

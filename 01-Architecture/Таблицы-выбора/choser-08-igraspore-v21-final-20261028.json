@@ -1,0 +1,28 @@
+{
+ "id": "08-igraspore-v21-final-20261028",
+ "title": "v21 финал: coexist 2/5, FPS на реальном устройстве, P2-полировка, fil YELLOW (28.10)",
+ "description": "project_tag: 08-iGraSpore\nРазвилки финального отчёта v21 (REPORT-TZ-08-SPOR-v21-2026-10-28_1645.md §Развилки). Владелец выбирает по каждой строке: чинить сейчас / принять как есть / отложить.",
+ "tags": "08-iGraSpore,igraspore,v21,развилка,таблица-выбора",
+ "state": "скрытая",
+ "visibility": "hidden",
+ "author": "dev-v21",
+ "project_tag": "08-iGraSpore",
+ "columns": [
+  {"key": "c_risk", "title": "Риск для релиза (30%)", "weight": 30, "type": "grade"},
+  {"key": "c_effort", "title": "Трудозатраты (20%)", "weight": 20, "type": "grade"},
+  {"key": "c_value", "title": "Ценность для игрока (25%)", "weight": 25, "type": "grade"},
+  {"key": "c_side", "title": "Побочные риски (25%)", "weight": 25, "type": "grade"}
+ ],
+ "rows": [
+  {"title": "N.1 coexist 2/5 → усилить rr-инжектор до 5/5", "cells": {"c_risk": "4 — не блокирует Play, но биологи заметят", "c_effort": "3 — 2-4 ч тюнинга + 5 сидов × 60 мин прогонов", "c_value": "4 — разнообразие мира = ядро игры", "c_side": "2 — риск взрыва биомассы (noBloom может упасть)"}},
+  {"title": "N.2 coexist принять 2/5 (65% видов живут)", "cells": {"c_risk": "2 — вымирание редких видов биологично", "c_effort": "5 — 0 ч", "c_value": "3 — статус-кво", "c_side": "5 — нет рисков"}},
+  {"title": "F.1 FPS замер на реальном телефоне (release APK)", "cells": {"c_risk": "3 — эмулятор ENV 7.3 fps, неизвестно на железе", "c_effort": "4 — сборка release + 15 мин владелец", "c_value": "5 — главный мобильный риск", "c_side": "5 — нет кодовых рисков"}},
+  {"title": "F.2 FPS принять ENV-LIMITED (цифры в отчёте)", "cells": {"c_risk": "4 — если на железе <20 — отзывов не избежать", "c_effort": "5 — 0 ч", "c_value": "2", "c_side": "4"}},
+  {"title": "P.1 P2-полировка UI (тумблеры 48px, CERRAR, контраст, de ZU)", "cells": {"c_risk": "2 — Play не отклонит", "c_effort": "4 — ~1 ч + 1 цикл тестов", "c_value": "3 — заметно в ревью стора", "c_side": "5"}},
+  {"title": "Y.1 fil 10 YELLOW (locked setBtn2/pSet) — CSS 2 строки", "cells": {"c_risk": "2 — решение владельца F.1 от v20.12", "c_effort": "5 — 10 мин", "c_value": "3", "c_side": "4 — es/tr/fil заморожены, правка только CSS"}}
+ ],
+ "decision": "",
+ "circles": [
+  {"n": 1, "date": "2026-10-28", "who": "dev-v21", "note": "Таблица создана при финализации v21; выбор за владельцем."}
+ ]
+}

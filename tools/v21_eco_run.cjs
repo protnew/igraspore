@@ -97,7 +97,10 @@ async function runSeed(browser, seed, minutes, speed, neg) {
     var next = 10, gt2 = 0;
     var t0 = Date.now();
     while (gt2 < total) {
-      try { updateWorld(0.05); } catch (e) { return JSON.stringify({ fatal: 'err:' + e.message, t: gt2 }); }
+      // v21 (критик 1, P0): продуктовая точность — speed вызовов updateWorld(0.05) на итерацию.
+      // Прежний один вызов при gt2+=0.05*speed давал 100x искажение time-capped механик (divT-кап деления,
+      // decay, возраст) — валидация не видела декомпозёрный монокультур живой игры.
+      try { for (var k = 0; k < speed; k++) updateWorld(0.05); } catch (e) { return JSON.stringify({ fatal: 'err:' + e.message, t: gt2 }); }
       gt2 += 0.05 * speed;
       if (gt2 >= next || gt2 >= total) {
         var per = {}, bio = {}, vel = {}, cats = {};

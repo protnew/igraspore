@@ -159,6 +159,28 @@ function updateWorld(dt){
         else { cands[k].alive=false; cands[k].energy=0; }
       }
     }
+    // v21 (критик 1, P0): декомпозёрный монокультур. На продуктовом тике деление декомпозёров (споры+DOM-субсидии)
+    // забивало MAX_ORG=300 (замер: 257/300 = 83%), NICHE-инъекции продюсеров отклонялись — экосистема коллапсировала
+    // в монокультур за 7-17 игр-мин. Кал зеркально продюсерскому: держим ~TGT×3 (≈54) — детрит чистится, слоты свободны.
+    var nD=0;
+    for(var j=0;j<orgs.length;j++){ if(orgs[j].alive && orgs[j].sp.cat==='decomposer') nD++; }
+    if(nD > (TGT.decomposer||18) * 3){
+      var needD = nD - Math.floor((TGT.decomposer||18) * 2.6);
+      if(needD > 25) needD = 25;
+      var dCands=[];
+      for(var j=0;j<orgs.length;j++){
+        var o=orgs[j];
+        if(o.alive && !o.isPlayer && o.sp.cat==='decomposer'
+           && !(o.invuln>0) && !o._fromDivide && !o._noCull
+           && !(o._parentRef && o._parentRef.isPlayer)) dCands.push(o);
+      }
+      dCands.sort(function(a,b){return (a.energy||0)-(b.energy||0);});
+      for(var k=0;k<needD && k<dCands.length;k++){
+        if(dCands[k].invuln>0 || dCands[k]._fromDivide || dCands[k]._noCull) continue;
+        if(typeof killOrg==='function') killOrg(dCands[k], (typeof DCODE!=='undefined'?DCODE.STARVE:0));
+        else { dCands[k].alive=false; dCands[k].energy=0; }
+      }
+    }
     // NICHE_SOFT_FLOOR: if a trophic level nearly empty, slightly raise spawn pressure (not hard control)
     var _aliveByCat={}; for(var _ai=0;_ai<orgs.length;_ai++){ if(orgs[_ai].alive&&orgs[_ai].sp){ var _c=orgs[_ai].sp.cat; _aliveByCat[_c]=(_aliveByCat[_c]||0)+1; } }
     for(var cat in TGT){

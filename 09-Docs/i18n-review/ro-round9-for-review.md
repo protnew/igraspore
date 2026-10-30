@@ -1,10 +1,11 @@
 # Пакет на проверку аналитику: ro (круг 9)
 
-- Дата: 2026-10-30 22:58:48 UTC+3  |  Круг: 9
+- Дата: 2026-10-30 23:02:15 UTC+3  |  Круг: 9
 - input_sha256 словарей (полные — для raw<ro-analyst-round9.json):
   - `en.json` = ecc487cf85a2d180c5dbddb6c53d7e52448d44e4c5c60ccd0df2d57db6c2a9ca
   - `ru.json` = a5ca4acf4f6733c835c9a84bb2ae33aa8fa2b8db5ab544e7fac907f8abc3f4cc
   - `ro.json` = af804ea28f29adff8be2a049dbba7e4a36f92a5c01498aecc04473f4171ae554
+  - `wiki/ro.json` = 6121f09659675f4b0b80660e58421c4aa326f9fafaed5868a5d5013be49449d5
 - Ключей UI: 436 (из них 🆕 новых после круга 4: 296 — U13 263 + U42 loc.* 9); вики-тел: 108
 - Rubric 0–10 по 5 осям: смысл, глоссарий, регистр, длина, ошибки. Порог включения ≥ 8.
 - Ответ аналитика: `09-Docs/i18n-review/raw/ro-analyst-round9.json` + строка в ANALYST-LEDGER.md (пишет ТОЛЬКО аналитик).
@@ -458,111 +459,111 @@
 
 | id | en | ro |
 |---|---|---|
-| `0` | Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism. | — НЕТ |
-| `1` | Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen. | — НЕТ |
-| `2` | Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film. | — НЕТ |
-| `3` | Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads. | — НЕТ |
-| `4` | Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film. | — НЕТ |
-| `5` | Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey. | — НЕТ |
-| `6` | Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat. | — НЕТ |
-| `7` | Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores. | — НЕТ |
-| `8` | Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model. | — НЕТ |
-| `9` | Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject. | — НЕТ |
-| `10` | Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony. | — НЕТ |
-| `11` | Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food. | — НЕТ |
-| `12` | Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts. | — НЕТ |
-| `13` | Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought. | — НЕТ |
-| `14` | Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella. | — НЕТ |
-| `15` | Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water. | — НЕТ |
-| `16` | Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death. | — НЕТ |
-| `17` | Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom. | — НЕТ |
-| `18` | Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton. | — НЕТ |
-| `19` | Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column. | — НЕТ |
-| `20` | Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll. | — НЕТ |
-| `21` | Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary. | — НЕТ |
-| `22` | Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella. | — НЕТ |
-| `23` | Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean. | — НЕТ |
-| `24` | Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony. | — НЕТ |
-| `25` | Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts. | — НЕТ |
-| `26` | Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire. | — НЕТ |
-| `27` | Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter. | — НЕТ |
-| `28` | Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body. | — НЕТ |
-| `29` | Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm. | — НЕТ |
-| `30` | Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside. | — НЕТ |
-| `31` | Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods. | — НЕТ |
-| `32` | Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface. | — НЕТ |
-| `33` | Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film. | — НЕТ |
-| `34` | Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria. | — НЕТ |
-| `35` | Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts. | — НЕТ |
-| `36` | Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia. | — НЕТ |
-| `37` | Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil. | — НЕТ |
-| `38` | Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria. | — НЕТ |
-| `39` | Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum. | — НЕТ |
-| `40` | Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model. | — НЕТ |
-| `41` | Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage. | — НЕТ |
-| `42` | Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria. | — НЕТ |
-| `43` | Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current. | — НЕТ |
-| `44` | Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem. | — НЕТ |
-| `45` | Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria. | — НЕТ |
-| `46` | Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night. | — НЕТ |
-| `47` | Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit. | — НЕТ |
-| `48` | Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball. | — НЕТ |
-| `49` | Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away. | — НЕТ |
-| `50` | Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus. | — НЕТ |
-| `51` | Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger. | — НЕТ |
-| `52` | Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral. | — НЕТ |
-| `53` | Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells. | — НЕТ |
-| `54` | Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces. | — НЕТ |
-| `55` | Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates. | — НЕТ |
-| `56` | Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists. | — НЕТ |
-| `57` | Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia. | — НЕТ |
-| `58` | Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded. | — НЕТ |
-| `59` | Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out. | — НЕТ |
-| `60` | Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter. | — НЕТ |
-| `61` | Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria. | — НЕТ |
-| `62` | Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once. | — НЕТ |
-| `63` | Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away. | — НЕТ |
-| `64` | Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia. | — НЕТ |
-| `65` | Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants. | — НЕТ |
-| `66` | Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt. | — НЕТ |
-| `67` | Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator. | — НЕТ |
-| `68` | Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters. | — НЕТ |
-| `69` | Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus. | — НЕТ |
-| `70` | Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in. | — НЕТ |
-| `71` | Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers. | — НЕТ |
-| `72` | Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter. | — НЕТ |
-| `73` | Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal. | — НЕТ |
-| `74` | Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males. | — НЕТ |
-| `75` | Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria. | — НЕТ |
-| `76` | Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton. | — НЕТ |
-| `77` | Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole. | — НЕТ |
-| `78` | Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus. | — НЕТ |
-| `79` | Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns. | — НЕТ |
-| `80` | Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists. | — НЕТ |
-| `81` | Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals. | — НЕТ |
-| `82` | Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids. | — НЕТ |
-| `83` | Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter. | — НЕТ |
-| `84` | Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth. | — НЕТ |
-| `85` | Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics. | — НЕТ |
-| `86` | Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus. | — НЕТ |
-| `87` | Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living. | — НЕТ |
-| `88` | Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch. | — НЕТ |
-| `89` | Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria. | — НЕТ |
-| `90` | Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph. | — НЕТ |
-| `91` | Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model. | — НЕТ |
-| `92` | Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate. | — НЕТ |
-| `93` | Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum. | — НЕТ |
-| `94` | Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model. | — НЕТ |
-| `95` | Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus. | — НЕТ |
-| `96` | Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae. | — НЕТ |
-| `97` | Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer. | — НЕТ |
-| `98` | Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant. | — НЕТ |
-| `99` | Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads. | — НЕТ |
+| `0` | Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism. | Synechocystis este o cianobacterie fără nucleu. Trăiește din lumină: fotosinteză oxigenică pe membrane, fără cloroplaste. Model de laborator pentru metabolismul hidrogenului. |
+| `1` | Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen. | Anabaena variabilis este un filament. Unele celule devin heterociste și fixează azot în timp ce vecinii produc zahăr. În iaz furnizează azot legat. |
+| `2` | Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film. | Spirulina (Arthrospira) este o spirală de celule cu vezicule de gaz. Plutește aproape de suprafață, fotosintetizează și este comestibilă. În joc un șurub verde mare la filmul de apă. |
+| `3` | Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads. | Nostoc punctiforme este un lanț de mărgele într-o capsulă de mucus. Trăiește liber sau în simbioză cu plante. Colonia arată ca un ghem de mărgele verzi. |
+| `4` | Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film. | Oscillatoria limnetica este un filament alunecător. Oscilează lateral și poate fotosintetiza fără să elibereze oxigen. Tipic pentru nămol și filmul de la suprafață. |
+| `5` | Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey. | Microcystis aeruginosa este o colonie de mucus, adesea toxică (microcistină). Produce înflorirea apei. În joc o bilă verde colonială, pradă riscantă. |
+| `6` | Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat. | Gloeocapsa sunt celule perechi în teche colorate. Trăiește pe stânci și sol, toleră UV. În iaz coci mici perechi într-o mantie. |
+| `7` | Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores. | Lyngbya majuscula este un filament cianobacterian gros. Poate elibera toxine iritante. Formează covoare aproape de țărmuri calde. |
+| `8` | Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model. | Chlamydomonas reinhardtii este o celulă verde cu doi flageli și o pată oculară. Înoată spre lumină. Model clasic de genetică algală. |
+| `9` | Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject. | Chlorella vulgaris este o bilă verde imobilă. Se divide rapid și este bogată în proteine. Hrană pentru mâncători mici și subiect de hrană spațială. |
+| `10` | Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony. | Volvox globator este o sferă goală de mii de celule. Colonii fiice se coc în interior și ies. În joc o colonie verde mare. |
+| `11` | Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food. | Euglena gracilis este un mixotrof: cloroplaste plus capacitatea de a mânca. O pată oculară roșie urmărește lumina. Verde ziua; în întuneric trece la hrană. |
+| `12` | Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts. | Scenedesmus quadricauda este de obicei patru celule în rând cu spini terminali. Spinii îngreunează înghițirea. Nu înoată — plutește. |
+| `13` | Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought. | Haematococcus pluvialis este o celulă verde mobilă; sub stres devine roșie (astaxantină) și își crește un perete gros. Chisturi roșii supraviețuiesc secetei. |
+| `14` | Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella. | Dunaliella salina nu are perete rigid și trăiește în apă foarte sărată. Acumulează beta-caroten și arată portocaliu. Doi flageli. |
+| `15` | Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water. | Micrasterias rotata este o desmidie plată în formă de stea. Două jumătăți oglindite cu crestături adânci. Imobilă; fotosintetizează în apă de turbă acidă. |
+| `16` | Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death. | Navicula este o diatomee în formă de barcă cu valvă de siliciu. Alunecă pe substrat de-a lungul unei fisuri rafe. Cojile rămân după moarte. |
+| `17` | Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom. | Pinnularia viridis este o diatomee penată mare. Coajă de siliciu cu model simetric. Alunecă încet pe fund. |
+| `18` | Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton. | Cyclotella meneghiniana este o diatomee centrică rotundă. Plutește ca un disc; coaja e două capace. Plankton tipic. |
+| `19` | Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column. | Diatoma vulgare este o diatomee care se lipește în zig-zag. Colonia crește rezistența în coloana de apă. |
+| `20` | Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll. | Rhodospirillum rubrum este o spirală purpurie. Fotosinteză anoxygenică plus substanțe organice. Culoarea roșie vine de la bacterioclorofilă. |
+| `21` | Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary. | Chromatium vinosum este o bacterie purpurie de sulf. Oxidează sulfură de hidrogen și stochează granule de sulf. Trăiește la granița oxigen/sulf. |
+| `22` | Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella. | Porphyridium cruentum este o algă roșie unicelulară. Ficoeritrina dă o culoare roșie-sângerie. Mantie de mucus, fără flageli. |
+| `23` | Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean. | Prochlorococcus marinus este cea mai mică și mai abundentă celulă fotosintetică de pe Pământ. Descoperită în anii 1980. Hrănește oceanul. |
+| `24` | Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony. | Chroococcidiopsis thermalis este un extremofil: deșert, stâncă, radiație. Candidat pentru viață dincolo de Pământ. În iaz o colonie de coci lentă. |
+| `25` | Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts. | Bdellovibrio bacteriovorus este un prădător bacterian minuscul. Se înșurubează în altă celulă și se multiplică până gazda explodează. |
+| `26` | Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire. | Vampirococcus stă pe pradă din exterior și suge conținutul fără să intre. Un vampir bacterian. |
+| `27` | Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter. | Daptobacter intră într-o bacterie pradă și o mănâncă din interior. Un vânător intracelular rar. |
+| `28` | Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body. | Myxococcus xanthus este o bacterie socială. În haie înconjoară prada și eliberează enzime. La foamete formează un corp fructifer. |
+| `29` | Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm. | Bacteriovorax stolpii este o rudă marină a Bdellovibrio. Atacă gram-negative și trăiește în periplasma prăzii. |
+| `30` | Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside. | Halobacteriovorax este un vânător bacterian tolerant la sare. Aceeași tactică: străpunge peretele și crește în interior. |
+| `31` | Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods. | Peredibacter starrii este încă un prădător BALO. Un flagelat virgulă rapid care vizează bastonașe mari. |
+| `32` | Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface. | Monas guttula este un flagelat heterotrof mic. Prinde bacterii la suprafața detritusului. |
+| `33` | Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film. | Oikomonas termo este un flagelat în formă de picătură. Un flagel; vânează în filmul bacterian. |
+| `34` | Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria. | Anthophysa vegetans este o colonie pe un pedicul de fier-mangan. Celulele stau în smoc și prind bacterii. |
+| `35` | Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts. | Chilomonas paramecium este o criptofită incoloră. Doi flageli; mănâncă substanțe organice dizolvate și bacterii minuscule. |
+| `36` | Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia. | Cercomonas longicauda este un ameboflagelat cu coadă lungă. Se târăște și înghite bacterii cu pseudopode. |
+| `37` | Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil. | Heteromita globosa este un flagelat de sol. Doi flageli de lungimi diferite; un consumator principal de bacterii în sol. |
+| `38` | Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria. | Bodo saltans este un kinetoplastid. 'Dansează' pe loc, atașat de flagelul posterior, și apucă bacterii. |
+| `39` | Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum. | Procryptobia sorokini este o rudă a Bodo. Înoată liber și lovește prada cu flagelul anterior. |
+| `40` | Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model. | Trypanosoma brucei este un parazit al sângelui care cauzează boala somnului. Membrană ondulantă și un flagel. În iaz un model de vânător zvelt. |
+| `41` | Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage. | Leishmania donovani este un parazit uman intracelular. Flagelat în insectă, fără flagel în interiorul unui macrofag. |
+| `42` | Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria. | Monosiga brevicollis este un coanoflagelat, rudă a animalelor. Un guler de microvilli filtrează bacterii. |
+| `43` | Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current. | Salpingoeca rosetta este un coanoflagelat sesil într-o lorică. Poate forma o rozetă. Filtrează un curent de apă. |
+| `44` | Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem. | Codonosiga botrytis este o colonie de coanoflagelați pe un pedicul comun. Mai multe filtre pe o tulpină. |
+| `45` | Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria. | Paramecium caudatum este papucul clasic. Mii de cilii, un șanț bucal, vacuole contractile. Filtrează bacterii. |
+| `46` | Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night. | Paramecium bursaria este un papuc cu simbionți zoochlorelle. Verde în interior: zahăr de la alge ziua, filtrare noaptea. |
+| `47` | Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit. | Stentor coeruleus este o trompetă albastră până la un milimetru. Se deschide într-o pâlnie și generează un curent cu cilii. Poate înota sau sta. |
+| `48` | Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball. | Stentor polymorphus este o rudă a stentorului albastru, adesea cu zoochlorelle. Își schimbă forma din trompetă în bilă. |
+| `49` | Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away. | Vorticella campanula este o clopotă pe un pedicul contractil. Pediculul se răsucește în spirală instantaneu. Celula însăși nu înoată. |
+| `50` | Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus. | Vorticella microstoma este o clopotă mică. Același pedicul arc, un câmp bucal mai îngust. Adesea pe detritus. |
+| `51` | Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger. | Didinium nasutum este un vânător butoi de papuci. Trage toxiciste și înghite prada întreagă, chiar dacă e mai mare. |
+| `52` | Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral. | Spirostomum ambiguum este o țigară foarte lungă. Se contractă de mai multe ori într-o fracțiune de secundă. Ciliile rulează în spirală. |
+| `53` | Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells. | Blepharisma americanum este un ciliat roz. Pigmentul blefarismină e sensibil la lumină. Filtrează și poate ataca celule mai mici. |
+| `54` | Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces. | Euplotes patella merge pe cirri ca pe picioare. Plat, viraje rapide. Răzuiește bacterii de pe suprafețe. |
+| `55` | Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates. | Stylonychia pustulata este un hipotrich care 'aleargă' pe fund. Cirii mari, o gură vizibilă. Prădător de ciliate mici. |
+| `56` | Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists. | Oxytricha trifallax este un model de genom: două nuclee și rescriere DNA complexă. Merge pe cirri și mănâncă bacterii și protiste mici. |
+| `57` | Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia. | Tetrahymena thermophila este un ciliat de laborator. Patru membranele bucale, diviziune rapidă. Model pentru telomeri și cilii. |
+| `58` | Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded. | Coleps hirtus este un butoi în plăci calcaroase cu spini. Necrofag și prădător: mușcă din răniți. |
+| `59` | Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out. | Litonotus lamella este un prădător plat cu toxiciste într-o 'trompă'. Paralizează prada și o suge. |
+| `60` | Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter. | Dileptus anser are un gât lung cu extrusome veninoase. Lovește cu gâtul, apoi înghite. Un vânător mare de nivel mediu. |
+| `61` | Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria. | Urocentrum turbo este o titirez: o centură ciliară ecuatorială rotește celula pe loc. Filtrează bacterii. |
+| `62` | Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once. | Zoothamnium arbuscula este o colonie ramificată de clopote. Un pedicul contractil comun smulge tot copacul deodată. |
+| `63` | Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away. | Opercularia coarctata este un peritrich sesil fără pedicul arc. Un capac acoperă gura. Filtrează și nu înoată. |
+| `64` | Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia. | Amoeba proteus este amiba clasică. Pseudopodele curg în jurul prăzii. Fără formă fixă, fără cilii. |
+| `65` | Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants. | Arcella vulgaris este o amibă cu o carapace rigidă în formă de cupolă. Pseudopodele ies prin apertură. Se târăște pe plante. |
+| `66` | Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt. | Difflugia oblonga are o carapace din grăunțe de nisip pe care amiba le lipește singură. Trăiește în nămol. |
+| `67` | Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator. | Euglypha alveolata are o carapace din solzi de siliciu. Pseudopode filiforme subțiri. Un prădător bacterian mic. |
+| `68` | Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters. | Nebela collaris este o carapace în formă de sticlă construită din solzi furați. Ape de pădure și turbă. |
+| `69` | Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus. | Centropyxis aculeata este o carapace disc cu spini. Apertura e deplasată. Se târăște pe detritus. |
+| `70` | Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in. | Actinophrys sol este un heliozoar: axopode subțiri radiază în jur. Prada se lipește de raze și e trasă. |
+| `71` | Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers. | Actinosphaerium eichhorni este un heliozoar mare multinucleat. Aceleași raze, celulă mult mai mare. Mănâncă ciliate și rotifere. |
+| `72` | Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter. | Raphidiophrys pallida este un heliozoar în solzi. Razele poartă ace de siliciu. Un vânător de plankton din ambuscadă. |
+| `73` | Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal. | Rotaria rotatoria este un rotifer care supraviețuiește uscării. O coroană rotește hrana spre gură. Un animal adevărat multicelular. |
+| `74` | Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males. | Philodina roseola este un rotifer bdelloid roz. Se târăște ca o lipitoare și înoată și. Doar femele; fără masculi. |
+| `75` | Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria. | Brachionus plicatilis este un rotifer planktonic cu lorică. Hrană pentru puiet în acvacultură. Filtrează alge și bacterii. |
+| `76` | Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton. | Keratella cochlearis este un rotifer cu un spin loric lung. Spinul descurajează prădătorii. Plankton comun de iaz. |
+| `77` | Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole. | Asplanchna priodonta este un sac fără lorică, un rotifer prădător. Înghite alți rotiferi și ciliate întregi. |
+| `78` | Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus. | Chaetonotus maximus este un gastrotrih. Acoperit cu solzi, se târăște pe fund. Mănâncă bacterii și detritus. |
+| `79` | Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns. | Lepidodermella squamata este un gastrotrih mic în solzi suprapuși. Viraje foarte rapide pe loc. |
+| `80` | Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists. | Macrostomum lignano este un vierme plat microscopic. Mușchi și ochi adevărați. Model de regenerare. Vânează protiste mici. |
+| `81` | Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals. | Stenostomum leucops este un vierme subțire ciliat. Se divide transversal într-un lanț de zoide. Prădător de detritus și animale mici. |
+| `82` | Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids. | Microstomum lineare este un vierme plat care mănâncă hidre și le încorporează celulele urticante în propria piele. Un lanț de zoide. |
+| `83` | Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter. | Prostoma graecense este un nemertean de apă dulce. O trompă lungă împușcă prada. Un vânător de fund mare și rar. |
+| `84` | Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth. | Trichoplax adhaerens este un placozoar, printre cele mai simple animale. Se târăște ca o pătură și digeră hrana afară. Fără gură. |
+| `85` | Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics. | Saccharomyces cerevisiae este drojdia de panificație. Se înmugurește, mănâncă zahăr, eliberează CO₂ și alcool. În iaz curăță organice dizolvate. |
+| `86` | Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus. | Candida albicans este o drojdie care poate crește ca filamente. Un patogen uman oportunist. În joc o ciupercă de detritus. |
+| `87` | Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living. | Mucor mucedo este mucegaiul de pâine. Sporangii pe pediculi, creștere rapidă peste morți. Nu vânează viii. |
+| `88` | Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch. | Rhizopus stolonifer este mucegaiul negru de pâine. Stoloni și rizoizi se răspândesc pe substrat. Descompune amidon. |
+| `89` | Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria. | Penicillium chrysogenum este mucegaiul penicilină, sursa penicilinei. Pensule conidiene. Descompune organice și suprimă bacteriile din apropiere. |
+| `90` | Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph. | Aspergillus niger este aspergillus negru. Capete de spori sferice. Producător industrial de acid citric. Un saprotof. |
+| `91` | Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model. | Batrachochytrium dendrobatidis este o chitridă a broaștelor. Zoospori uniflagelați. În iaz un model de ciupercă acvatică. |
+| `92` | Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate. | Chytriomyces aureus este o chitridă acvatică pe polen și alge. Sporangii aurii; zoosporii înoată spre substrat. |
+| `93` | Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum. | Allomyces macrogynus este o ciupercă acvatică cu miceliu adevărat. Alternează diploid și haploid. Zoosporii au un flagel posterior. |
+| `94` | Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model. | Bacillus subtilis este un bastonaș de sol. Sporii supraviețuiesc fierberii. Descompune proteine; un model gram-pozitiv. |
+| `95` | Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus. | Pseudomonas putida este un bastonaș de curățenie. Mănâncă chiar și produse petroliere. Flagel mobil, creștere rapidă pe detritus. |
+| `96` | Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae. | Streptomyces coelicolor este o bacterie filamentoasă de sol. Produce mirosul de pământ (geosmin) și multe antibiotice. Spori pe hife. |
+| `97` | Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer. | Cellulomonas fimi descompune celuloza. Un bastonaș galben pe detritus vegetal. Fără ea algele moarte ar zăcea mai mult. |
+| `98` | Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant. | Thermus aquaticus este un termofil din izvoare calde. Polimeraza Taq e baza PCR. Într-un iaz rece e aproape dormant. |
+| `99` | Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads. | Deinococcus radiodurans este campionul radiațiilor. Reasamlează un genom sfărâmat în câteva ore. Perete gros, tetrade celulare. |
 | `1001` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | — НЕТ |
-| `T4 Bacteriophage` | T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit. | — НЕТ |
-| `Lambda Phage` | Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis). | — НЕТ |
-| `T7 Bacteriophage` | T7 has a short tail and very fast replication. A favourite system in synthetic biology. | — НЕТ |
-| `Phi-6 Phage` | Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage. | — НЕТ |
-| `MS2 Phage` | MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read. | — НЕТ |
-| `Neuro-Parasite` | A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier. | — НЕТ |
-| `Sexual Eukaryote` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | — НЕТ |
+| `T4 Bacteriophage` | T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit. | T4 este un micovirus mare al E. coli. Coada se contractă și injectează DNA. În jumătate de oră celula explodează și zeci de fagi ies. |
+| `Lambda Phage` | Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis). | Lambda este un fag temperat. Se poate insera în cromozom și dormi (lizogenie) sau tăia celula imediat (liză). |
+| `T7 Bacteriophage` | T7 has a short tail and very fast replication. A favourite system in synthetic biology. | T7 are o coadă scurtă și replicare foarte rapidă. Un sistem favorit în biologia sintetică. |
+| `Phi-6 Phage` | Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage. | Phi-6 este un fag ARN cu anvelopă lipidică. Infectează Pseudomonas. O membrană rară pentru un fag. |
+| `MS2 Phage` | MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read. | MS2 este un fag ARN minuscul fără coadă. Se leagă de pilii E. coli masculi. Genomul său a fost unul dintre primele genomuri ARN citite. |
+| `Neuro-Parasite` | A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier. | Un neuro-parazit fictiv de iaz. Se prinde de eucariote și le alterează comportamentul până gazda devine purtătoare. |
+| `Sexual Eukaryote` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Eucariotul sexual este un model didactic de reproducere sexuată. Două sexe, fuziune de gameți, nu simplă diviziune binară. |

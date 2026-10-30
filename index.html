@@ -37,9 +37,9 @@
 <div id="popLabel" style="position:absolute;top:2px;left:4px;font:700 9px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;pointer-events:none"></div>
 </div>
 <div id="leftContainer" style="display:flex; flex-direction:column; gap:8px; pointer-events:auto; z-index:10; width:180px;">
-  <div id="langSelWrap" tabindex="0" style="position:relative; width:130px; outline:none; pointer-events:auto; z-index:50;">
-    <div class="lang-curr" style="cursor:pointer; display:flex; align-items:center; font-size:13px;font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.4); backdrop-filter:blur(5px); background:rgba(0,12,28,0.92); border:1px solid #1a3a55; border-radius:8px; color:#fff; padding:6px 12px;"><span style="font-size:14px;margin-right:6px">🌐</span> <span id="curLangTxt"></span> <span style="font-size:12px;margin-left:6px;opacity:0.7">▼</span></div>
-    <div class="lang-drop" id="langSelDrop"></div>
+  <!-- v24 Р10: нативный select вместо самописного дропдауна (100 языков = системный скролл Android); buildLangBar его наполняет -->
+  <div id="langSelWrap" style="pointer-events:auto; z-index:50;">
+    <select id="menuLangSel" aria-label="Language" data-k-aria="aria.lang" style="min-height:48px;min-width:48px;font-size:15px;background:#123a66;color:#fff;border:2px solid #7cf;border-radius:8px;padding:4px 8px;max-width:168px"></select>
   </div>
 <div id="hud" class="p" data-hud-slot="energy" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
   <div id="ecoP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
@@ -61,7 +61,7 @@
     <option value="alphacentauri" data-k="starg.alphacentauri"></option>
   </select>
   <button id="renderModeBtn" type="button" aria-label="" data-k-aria="picMode" class="cartoon" onclick="toggleRenderModeLarge()"></button>
-  <a id="apkBtn" href="/igraspore.apk" download="igraspore.apk" aria-label="" data-k-aria="aria.apk">📱 APK</a>
+  <a id="apkBtn" href="/igraspore.apk" download="igraspore.apk" aria-label="" data-k-aria="aria.apk" style="display:none">📱 APK</a><script>/* v24z4: APK-кнопка только вне Capacitor (в Android-сборке файла нет — битая ссылка) */if(!window.Capacitor){var _a=document.getElementById("apkBtn");if(_a)_a.style.display="";}</script>
 </div>
 <div id="weatherP" class="p" style="display:none; top:50px; right:6px;"></div>
 <div id="camM" style="top:5px; left:50%; transform:translateX(-50%);" data-k="cam.followBig"></div>
@@ -145,7 +145,7 @@
 <div id="exitConfirm" class="ov" style="background:rgba(0,0,0,.78);z-index:95"><div style="background:rgba(4,12,18,0.94);padding:22px 16px;border-radius:14px;width:min(520px,86vw);text-align:center"><div class="tt" style="font-size:20px" id="ecT">Exit?</div><div id="ecMsg" style="color:#cde;margin:8px 0 14px;font-size:16px">Progress of this life will be lost.</div><button class="btn" id="ecNo" type="button">No</button><button class="btn" id="ecYes" type="button">Yes</button></div></div>
 <button id="demoExit" type="button" aria-label="" style="display:none;position:fixed;top:10px;right:10px;z-index:90;width:48px;height:48px;min-width:48px;min-height:48px;border-radius:24px;border:0;background:#c33;color:#fff;font-size:22px;line-height:48px;text-align:center;padding:0">×</button>
 <div id="demoBadge" style="display:none;position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:70;background:rgba(0,0,0,.55);color:#fff;padding:6px 12px;border-radius:8px;font-size:13px"></div>
-<div id="helpO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="helpT"></div><div id="helpBody" style="color:#bcd;font-size:12px;line-height:1.6;max-width:560px"></div><button class="btn sm" id="helpClose" style="margin-top:12px"></button></div>
+<div id="helpO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="helpT"></div><div id="helpBody" style="color:#cde;font-size:13px;line-height:1.6;max-width:560px"></div><button class="btn sm" id="helpClose" style="margin-top:12px"></button></div>
 <div id="setO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:8px" id="setT"></div><div class="scrollbox" id="setBody" style="max-width:400px"></div><button class="btn sm" id="setClose" style="margin-top:12px"></button></div>
 <div id="wikiO" class="ov"><div class="tt" style="font-size:20px;margin-bottom:6px" id="wikiT"></div><input type="text" class="wiki-search" id="wikiSearch" placeholder="" data-k-ph="wiki.searchPh"><div id="wikiContent"></div><button class="btn sm" id="wikiClose" style="margin-top:10px"></button></div>
 <div id="deadO" class="ov"><div class="tt" style="color:#f44;font-size:24px" id="deadT"></div><div id="deadStats" style="margin-bottom:12px;font-size:16px"></div><button class="btn" id="restartBtn"></button><button class="btn" id="menuBtn"></button></div>

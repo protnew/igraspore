@@ -76,7 +76,7 @@ function updateHUD(){
     if(dv) dv.textContent = String(player.offspring||0);
     var inf = document.getElementById('hudInfect');
     if(inf) inf.style.display = player.infected ? 'block' : 'none';
-    document.getElementById('fpsL').textContent = tt('fps')+': '+(typeof fps!=='undefined'?fps:'');
+    var _fL=document.getElementById('fpsL'); if(_fL) _fL.textContent = tt('fps')+': '+(typeof fps!=='undefined'?fps:''); // v24z4: узла нет в проде
     document.getElementById('lightL').textContent = tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%';
     held.textContent = tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C';
     document.getElementById('daysL').textContent = tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0);
@@ -101,7 +101,7 @@ function updateHUD(){
       '<span style="color:#8af;font-weight:bold;">'+tt('divs')+':</span> <span id="hudDivs" style="color:#fff;">'+player.offspring+'</span>'+
     '</div>'+
     '<div style="font-size:13px;color:#e8f4ff;line-height:1.45">'+
-      '<span id="fpsL">'+tt('fps')+': '+(typeof fps!=='undefined'?fps:'')+'</span> \u00b7 <span id="lightL">'+tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%</span><br>'+
+      (location.search.indexOf('debug')>=0?'<span id="fpsL">'+tt('fps')+': '+(typeof fps!=='undefined'?fps:'')+'</span> \u00b7 ':'')+/*v24z4:fps только debug*/'<span id="lightL">'+tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%</span><br>'+
       '<span id="tempL">'+tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C</span> \u00b7 <span id="daysL">'+tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0)+'</span> \u00b7 <span id="popC">'+tt('pop')+': 0</span>'+
     '</div>'+
     '<div id="hudInfect" style="color:#f44;font-size:12px;margin-top:4px;'+(player.infected?'':'display:none')+'">\u2620 '+(tt('x.infected2'))+'</div>';

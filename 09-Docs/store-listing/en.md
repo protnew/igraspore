@@ -10,6 +10,6 @@ iGraSpore is a game about one cell in a pond. You eat, divide, and form a spore 
 
 The bottom bar has four buttons: eat, split, spore, auto. Everything else sits in the pause menu. If you cannot divide yet, the button says why: energy, mass, or cooldown.
 
-The game runs in the browser and is being prepared for Android. No ads. No account. No player data is collected.
+Works offline after install. No ads. No account. No player data is collected.
 
 This is a teaching model of a food chain, not a textbook. Latin species names stay in Latin.

@@ -410,5 +410,6 @@
   "loc.pseudopodia": "pseudópodos",
   "loc.sessile": "sésil",
   "loc.budding": "gemación",
-  "loc.growth": "crecimiento"
+  "loc.growth": "crecimiento",
+  "dCull": "Regulación del pool"
 }

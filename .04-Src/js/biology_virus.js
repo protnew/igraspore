@@ -10,13 +10,14 @@ function updateInfections(dt){
       o.flash=Math.max(o.flash,0.2+0.3*Math.sin(o.infectionT*3));o.flashColor='#f44';
       // Infected cell swells as virus replicates inside
       o.sizeMult=Math.min(1.8, 1.0+o.infectionT*0.06);
-      // v2: LYSIS after 10-20s — cell bursts, releasing ~100 phage copies (natural lytic cycle)
+      // v2: LYSIS after 10-20s — cell bursts (natural lytic cycle)
       if(o.infectionT>10+rng(0,10)){
-        // #21 Virus lysis: cell bursts, releasing 80-120 phage copies
-        var numNew=80+Math.floor(Math.random()*40); // ~100 copies as in nature
+        // v24z7 (критик 1 v21): бёрст 8-15 копий (волны лизиса), потолок 40 частиц в момент бёрста.
+        // Прежний кап min(...,3)&&<15 давал стационарный фон без волн при комменте «~100 копий».
+        var numNew=8+Math.floor(Math.random()*8);
         var burstSp=o.virusType||VIRUS_SPECS[0];
-        var maxV=Math.min(numNew, 80-viruses.length); // cap to prevent overload
-        for(var v=0;v<Math.min(maxV,3) && viruses.length<15;v++){
+        var maxV=Math.min(numNew, 40-viruses.length); // cap to prevent overload
+        for(var v=0;v<maxV;v++){
           var ang=v/maxV*Math.PI*2+rng(-0.3,0.3);
           var spd=rng(0.05,0.2);
           viruses.push({x:o.x+rng(-3,3),y:o.y+rng(-3,3),
@@ -83,8 +84,8 @@ function updateViruses(dt){
       var dx=v.target.x-v.x,dy=v.target.y-v.y,d=Math.sqrt(dx*dx+dy*dy);
       if(d<15){
           // v2: NATURAL LYTIC CYCLE — virus penetrates cell, replicates, bursts it
-          // Only 20% of contacts result in infection (realistic MOI)
-          if(Math.random() < 0.40 && Math.random() > (v.target.virusResist || 0)){
+          // v24z7: подключён infectRate вида (был захардкожен 0.40 при комменте «20%»); базовый шанс 0.4 × infectRate (0.3-0.5)
+          if(Math.random() < 0.4*((v.sp&&v.sp.infectRate)||1) && Math.random() > (v.target.virusResist || 0)){
             if(!v.target.cyst && !v.target.infected){
               v.target.infected = true;
               v.target.infectionT = 0;
@@ -119,7 +120,7 @@ function updateViruses(dt){
 }
 
 function spawnVirus(){
-  if(viruses.length>12)return; // passive phages: few in water column at any time
+  if(viruses.length>36)return; // v24z7: 12 гасило волны лизиса сразу после бёрста 8-15; 36 = фон ниже потолка бёрста 40
   var vi=Math.floor(Math.random()*VIRUS_SPECS.length);
   var vs=VIRUS_SPECS[vi];
   // Spawn near surface where bacteria density is highest (natural for aquatic phages)

@@ -334,9 +334,9 @@ var TGT={producer:Math.max(40,Math.round(1400*_TGT_SC)),consumer1:Math.max(6,Mat
 var INIT_N={producer:1200,consumer1:150,consumer2:90,consumer3:40,decomposer:150,macrophage:0,virus:3};
 var SEASONS=[{temp:16,light:0.85,ice:0,rain:0.15},{temp:24,light:1,ice:0,rain:0.08},{temp:10,light:0.7,ice:0.05,rain:0.25},{temp:3,light:0.45,ice:0.6,rain:0.03}];
 var SEASON_DAYS=2;
-var DCODE={STARVE:0,EATEN:1,TEMP:2,AGE:3,LYSIS:4};
+var DCODE={STARVE:0,EATEN:1,TEMP:2,AGE:3,LYSIS:4,CULL:5}; // v24z7: системные калы пула — отдельная причина, «Голод» честный
 var VIRUS_SCALE=0.08;
-var DLAB_KEYS=['dStarve','dEaten','dTemp','dAge','dLysis'];
+var DLAB_KEYS=['dStarve','dEaten','dTemp','dAge','dLysis','dCull']; // v24z7: +Регуляция пула (DCODE.CULL=5)
 var DIV_COOLDOWN=6;
 var DIV_SEPARATION=40;
 var DIV_ANIM=1.25;

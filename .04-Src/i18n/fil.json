@@ -410,5 +410,6 @@
   "loc.pseudopodia": "pseudopodio",
   "loc.sessile": "nakadikit",
   "loc.budding": "pag-usbong",
-  "loc.growth": "paglago"
+  "loc.growth": "paglago",
+  "dCull": "Regulasyon ng pool"
 }

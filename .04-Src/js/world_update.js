@@ -113,13 +113,13 @@ function updateWorld(dt){
           var _bigList=Object.keys(_bySp).sort(function(a,b){return _bySp[b].length-_bySp[a].length;});
           if(_bigList.length){
             var _big=_bySp[_bigList[0]].sort(function(a,b){return (a.energy||0)-(b.energy||0);});
-            for(var _bk=0;_bk<2&&_bk<_big.length;_bk++){ if(typeof killOrg==='function') killOrg(_big[_bk],(typeof DCODE!=='undefined'?DCODE.STARVE:0)); else _big[_bk].alive=false; }
+            for(var _bk=0;_bk<2&&_bk<_big.length;_bk++){ if(typeof killOrg==='function') killOrg(_big[_bk],(typeof DCODE!=='undefined'?DCODE.CULL:0)); else _big[_bk].alive=false; }
           }
         }
         // v21: размер инъекции по трофике (крупные хищники парами/тройками перетягивают биомассу c3>c2 и ломали пирамиду):
         // исчезнувшему — 3 (низ), 2 (середина), 1 (верховья — одиночная ре-колонизация, биологично для топ-хищников);
         // единичному — подкрепление до 3/2/— (топ-хищников не качаем)
-        var _top=(_cnt===0)?((_rsp.cat==='consumer3')?1:(_rsp.cat==='consumer2'||_rsp.cat==='decomposer')?2:3)
+        var _top=((_rsp.flags&&_rsp.flags.gendered))?Math.max(2,_cnt===0?2:2):((_cnt===0)?((_rsp.cat==='consumer3')?1:(_rsp.cat==='consumer2'||_rsp.cat==='decomposer')?2:3))
                             :((_rsp.cat==='consumer3')?0:(_rsp.cat==='consumer2'||_rsp.cat==='decomposer')?1:2);
         for(var _nn=0;_nn<_top;_nn++) spawnOrg(_rsp,rng(-_rhw,_rhw),_rd);
       }
@@ -139,6 +139,21 @@ function updateWorld(dt){
     var nP=0, nAll=0;
     for(var j=0;j<orgs.length;j++){ if(orgs[j].alive){ nAll++; if(orgs[j].sp.cat==='producer') nP++; } }
     window._trophic = {nP:nP,nAll:nAll,pct:nAll?nP/nAll:0};
+    // v24 задача 1: per-species мягкий кап производителей ≤22% их числа — против монокультурного bloom
+    // (замер: Lyngbya 49 игр-мин >40% = noBloom 4/5) и для самоподдержания мелких видов (места уходят им).
+    if(window.__simT>=60 && nP>40){
+      var _psp={};
+      for(var j=0;j<orgs.length;j++){ var o=orgs[j]; if(o.alive&&!o.isPlayer&&o.sp.cat==='producer'){ (_psp[o.sp.name]=_psp[o.sp.name]||[]).push(o); } }
+      for(var spn in _psp){
+        var arr=_psp[spn];
+        var cap=Math.ceil(nP*0.22);
+        if(arr.length>cap){
+          arr.sort(function(a,b){return (a.energy||0)-(b.energy||0);});
+          for(var kk=cap;kk<arr.length&&kk<cap+3;kk++){ if(arr[kk].invuln>0||arr[kk]._fromDivide||arr[kk]._noCull) continue;
+            if(typeof killOrg==='function') killOrg(arr[kk],(typeof DCODE!=='undefined'?DCODE.CULL:0)); else { arr[kk].alive=false; } }
+        }
+      }
+    }
     var _pcCeil = (window.__simT<60) ? 1.3 : 1.08; // v21 §13.1: первые 60с держим стартовый набор (~300 на 10-й секунде — ловушка пула), дальше прежний кал (разнообразие)
     if(nP > (TGT.producer||171) * _pcCeil){
       var need = nP - Math.floor((TGT.producer||171) * ((_pcCeil>1.2)?1.22:1));
@@ -155,7 +170,7 @@ function updateWorld(dt){
       cands.sort(function(a,b){return (a.energy||0)-(b.energy||0);});
       for(var k=0;k<need && k<cands.length;k++){
         if(cands[k].invuln>0 || cands[k]._fromDivide || cands[k]._noCull) continue;
-        if(typeof killOrg==='function') killOrg(cands[k], (typeof DCODE!=='undefined'?DCODE.STARVE:0));
+        if(typeof killOrg==='function') killOrg(cands[k], (typeof DCODE!=='undefined'?DCODE.CULL:0)); // v24z7: Density-cap — системный кал
         else { cands[k].alive=false; cands[k].energy=0; }
       }
     }
@@ -177,7 +192,7 @@ function updateWorld(dt){
       dCands.sort(function(a,b){return (a.energy||0)-(b.energy||0);});
       for(var k=0;k<needD && k<dCands.length;k++){
         if(dCands[k].invuln>0 || dCands[k]._fromDivide || dCands[k]._noCull) continue;
-        if(typeof killOrg==='function') killOrg(dCands[k], (typeof DCODE!=='undefined'?DCODE.STARVE:0));
+        if(typeof killOrg==='function') killOrg(dCands[k], (typeof DCODE!=='undefined'?DCODE.CULL:0));
         else { dCands[k].alive=false; dCands[k].energy=0; }
       }
     }

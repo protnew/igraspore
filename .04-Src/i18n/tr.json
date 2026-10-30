@@ -410,5 +410,6 @@
   "loc.pseudopodia": "psödopod",
   "loc.sessile": "sabit",
   "loc.budding": "tomurcuklanma",
-  "loc.growth": "büyüme"
+  "loc.growth": "büyüme",
+  "dCull": "Havuz düzenlemesi"
 }

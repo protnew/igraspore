@@ -420,5 +420,6 @@
   "aliveWord": "alive",
   "deadOther": "Other",
   "setLang": "Language",
-  "helpTouch": "<p><b>Controls:</b> Drag the joystick to swim. Tap the water to aim. Bottom buttons: Eat, Divide, Spore, Auto. Pinch to zoom.</p>"
+  "helpTouch": "<p><b>Controls:</b> Drag the joystick to swim. Tap the water to aim. Bottom buttons: Eat, Divide, Spore, Auto. Pinch to zoom.</p>",
+  "dCull": "Pool regulation"
 }

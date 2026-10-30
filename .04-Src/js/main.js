@@ -106,7 +106,7 @@ function gameLoop(ts){
   
   fAcc+=dt;fCnt++;if(fAcc>=0.5){fps=Math.round(fCnt/fAcc);fAcc=0;fCnt=0;if(window.igsFpsWatch)window.igsFpsWatch(fps);}
   
-  if(state==='playing' || state==='menu'){
+  if(state==='playing' || state==='menu' || state==='dead'){ // v24z8: spectator — мир живёт и на экране смерти (критик 1 v21 P2: замер на 12 мин)
     updateWorld(realDt);
     if(window.demoMode&&typeof updateDemoPinned==="function") updateDemoPinned(realDt||dt||0.016);
     if(window.demoMode&&typeof updateDemoCamera==="function") updateDemoCamera(realDt||dt||0.016);
@@ -139,7 +139,7 @@ function gameLoop(ts){
       }
     }
   }else if(state==='gameover'){showDeadScreen();state='dead';}
-if(state==='playing'||state==='menu'||state==='paused')render();
+if(state==='playing'||state==='menu'||state==='paused'||state==='dead')render(); // v24z8: рендер на экране смерти (spectator видит живой мир под оверлеем)
   requestAnimationFrame(gameLoop);
   }catch(e){console.error('gameLoop:',e.message,e.stack);requestAnimationFrame(gameLoop);}
 }

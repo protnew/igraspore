@@ -135,9 +135,9 @@ function initWorld(){
       return true;
     });
     // Pick 1 to 6 distinct species from this category to populate initially
-    var selectedSpecies = [];
-    for(var k=0; k<Math.min(pool.length, 6); k++) {
-       selectedSpecies.push(pool[Math.floor(Math.random()*pool.length)]);
+    var selectedSpecies = []; var _poolCopy = pool.slice();
+    for(var k=0; k<Math.min(_poolCopy.length, 6); k++) {
+       selectedSpecies.push(_poolCopy.splice(Math.floor(Math.random()*_poolCopy.length),1)[0]); // v24z7: без повторов (критик 1 P2)
     }
     // Spawn at least 15 of each selected species to avoid quick extinction
     for(var s=0; s<selectedSpecies.length; s++) {

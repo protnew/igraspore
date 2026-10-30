@@ -16,7 +16,7 @@ function spawnOrg(sp,x,y,isPlayer,parentEnergy){
       else sp.color = '#'+Math.floor(Math.random()*16777215).toString(16);
   }
   if(orgs.length>=MAX_ORG)return null;
-  if(sp.locomotion === 'sessile' && !window.demoMode) y = PD - sp.size;
+  if(sp.locomotion === 'sessile' && !window.demoMode) y = 200 + Math.random()*(Math.max(400,PD*0.55)); // v24z7: перитрихи — на субстрате в толще (критик 1 v21: на дне y=PD сидели без еды; их пища — толща)
   var o={x:x,y:y,vx:0,vy:0,sp:sp,species:sp.id,
     energy:Math.max(55, sp.energy*0.85+rng(0,15)),age:0,
     size:Math.min(9, sp.size*(0.85+rng(0,0.3))),

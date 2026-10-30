@@ -1,0 +1,326 @@
+{
+  "0": {
+    "body": "Synechocystis är en cyanobakterie utan kärna. Lever på ljus: syrebildande fotosyntes på membran, inga kloroplaster. Labmodell för vätemetabolism."
+  },
+  "1": {
+    "body": "Anabaena variabilis är en tråd. Vissa celler blir heterocyster och binder kväve medan grannarna gör socker. Försörjer dammen med bundet kväve."
+  },
+  "2": {
+    "body": "Spirulina (Arthrospira) är en spiral av celler med gasblåsor. Hänger nära ytan, fotosyntetiserar och är ätbar. I spelet en stor grön skruv i vattenfilmen."
+  },
+  "3": {
+    "body": "Nostoc punctiforme är en pärlkedja i en slemkapsel. Lever fritt eller i symbios med växter. Kolonin liknar en klump gröna pärlor."
+  },
+  "4": {
+    "body": "Oscillatoria limnetica är en glidtråd. Svänger sidledes och kan fotosyntetisera utan att avge syre. Typisk för slam och ytfilm."
+  },
+  "5": {
+    "body": "Microcystis aeruginosa är en slemlon, ofta giftig (mikrocystin). Orsakar vattenblomning. I spelet en grön koloniboll, riskabelt byte."
+  },
+  "6": {
+    "body": "Gloeocapsa är parade celler i färgade höljen. Lever på klippor och jord, tål UV. I dammen små parade kocker i en kappa."
+  },
+  "7": {
+    "body": "Lyngbya majuscula är en tjock cyanobakterietråd. Kan avge irriterande gifter. Bildar mattor nära varma stränder."
+  },
+  "8": {
+    "body": "Chlamydomonas reinhardtii är en grön cell med två flageller och en ögonfläck. Simmar mot ljuset. Klassisk modell för alggenetik."
+  },
+  "9": {
+    "body": "Chlorella vulgaris är en orörlig grön boll. Delar sig snabbt och är proteinrik. Mat för små ätare och rymdmat-ämne."
+  },
+  "10": {
+    "body": "Volvox globator är en ihålig klot av tusentals celler. Dotterkolonier mognar inuti och lämnar klotet. I spelet en stor grön koloni."
+  },
+  "11": {
+    "body": "Euglena gracilis är en mixotrof: kloroplaster plus förmåga att äta. En röd ögonfläck följer ljuset. Grön på dagen; i mörkret byter den till föda."
+  },
+  "12": {
+    "body": "Scenedesmus quadricauda är oftast fyra celler på rad med ändtaggar. Taggarna försvårar att sväljas. Simmar inte — driver."
+  },
+  "13": {
+    "body": "Haematococcus pluvialis är en grön rörlig cell; under stress blir den röd (astaxantin) och bildar tjock vägg. Röda cyster överlever torka."
+  },
+  "14": {
+    "body": "Dunaliella salina saknar stiv vägg och lever i mycket salt vatten. Lagrar betakaroten och ser orange ut. Två flageller."
+  },
+  "15": {
+    "body": "Micrasterias rotata är en platt stjärndesmidie. Två speglade halvor med djupa skåror. Orörlig; fotosyntetiserar i sur myrvatten."
+  },
+  "16": {
+    "body": "Navicula är en båtformad kiselalgs med kiselvalv. Glider på underlaget längs en rafe-springa. Skalet blir kvar efter döden."
+  },
+  "17": {
+    "body": "Pinnularia viridis är en stor pennat kiselalgs. Kiselskal med symmetriskt mönster. Glider långsamt på botten."
+  },
+  "18": {
+    "body": "Cyclotella meneghiniana är en rund centric kiselalgs. Flyter som en skiva; skalet är två lock. Typiskt plankton."
+  },
+  "19": {
+    "body": "Diatoma vulgare är en kiselalgs som sicksack-klistras. Kolonin ökar motståndet i vattenpelaren."
+  },
+  "20": {
+    "body": "Rhodospirillum rubrum är en lila spiral. Syrefri fotosyntes plus organik. Röd färg från bakterieklorofyll."
+  },
+  "21": {
+    "body": "Chromatium vinosum är en lila svavelbakterie. Oxiderar svavelväte och lagrar svavelkorn. Lever vid syre/svavel-gränsen."
+  },
+  "22": {
+    "body": "Porphyridium cruentum är en encellig rödalg. Fykoerytrin ger blodröd färg. Slemhölje, inga flageller."
+  },
+  "23": {
+    "body": "Prochlorococcus marinus är den minsta och vanligaste fotosyntetiska cellen på jorden. Upptäckt på 1980-talet. Föder oceanen."
+  },
+  "24": {
+    "body": "Chroococcidiopsis thermalis är en extremofil: öken, klippa, strålning. Kandidat för liv bortom jorden. I dammen en långsam kockkoloni."
+  },
+  "25": {
+    "body": "Bdellovibrio bacteriovorus är en pytteliten bakteriejägare. Skruvar sig in i en annan cell och förökar sig tills värden spricker."
+  },
+  "26": {
+    "body": "Vampirococcus sitter på bytet utifrån och suger ur innehållet utan att komma in. En bakterievampyr."
+  },
+  "27": {
+    "body": "Daptobacter tränger in i en bytesbakterie och äter den inifrån. En sällsynt intracellulär jägare."
+  },
+  "28": {
+    "body": "Myxococcus xanthus är en social bakterie. I flock omringar den byte och utsöndrar enzymer. Vid svält bildar den en fruktkropp."
+  },
+  "29": {
+    "body": "Bacteriovorax stolpii är en marin släkting till Bdellovibrio. Angriper gramnegativa och lever i bytets periplasma."
+  },
+  "30": {
+    "body": "Halobacteriovorax är en salttålig bakteriejägare. Samma trick: genomborra väggen och växa inuti."
+  },
+  "31": {
+    "body": "Peredibacter starrii är ännu en BALO-rovdjur. En snabb kommaformad flagellat som tar långa stavar."
+  },
+  "32": {
+    "body": "Monas guttula är en liten heterotrof flagellat. Fångar bakterier vid detritusytan."
+  },
+  "33": {
+    "body": "Oikomonas termo är en dropformad flagellat. En flagel; jagar i bakteriefilm."
+  },
+  "34": {
+    "body": "Anthophysa vegetans är en koloni på en järn-mangan stjälk. Cellerna sitter i en tova och fångar bakterier."
+  },
+  "35": {
+    "body": "Chilomonas paramecium är en färglös kryptofyt. Två flageller; äter löst organik och små bakterier."
+  },
+  "36": {
+    "body": "Cercomonas longicauda är en amöboflagellat med lång svans. Krälar och sväljer bakterier med pseudopoder."
+  },
+  "37": {
+    "body": "Heteromita globosa är en jordflagellat. Två flageller av olika längd; en huvudsaklig bakterieätare i jord."
+  },
+  "38": {
+    "body": "Bodo saltans är en kinetoplastid. 'Dansar' på plats, fäst vid bakre flagellen, och snappar bakterier."
+  },
+  "39": {
+    "body": "Procryptobia sorokini är en släkting till Bodo. Simmar fritt och slår byte med främre flagellen."
+  },
+  "40": {
+    "body": "Trypanosoma brucei är en blodparasit som orsakar sömnsjuka. Onderligt membran och en flagell. I dammen en modell för smal jägare."
+  },
+  "41": {
+    "body": "Leishmania donovani är en intracellulär human parasit. Flagellerad i insekten, oflagellerad inuti en makrofag."
+  },
+  "42": {
+    "body": "Monosiga brevicollis är en choanoflagellat, släkt med djur. En krage av mikrovilli filtrerar bakterier."
+  },
+  "43": {
+    "body": "Salpingoeca rosetta är en sessil choanoflagellat i ett lorica. Kan bilda en rosett. Filtrerar en vattenström."
+  },
+  "44": {
+    "body": "Codonosiga botrytis är en choanoflagellat-koloni på en gemensam stjälk. Flera filter på ett skaft."
+  },
+  "45": {
+    "body": "Paramecium caudatum är den klassiska toffeln. Tusentals cilier, en munfåra, sammandragande vakuoler. Filtrerar bakterier."
+  },
+  "46": {
+    "body": "Paramecium bursaria är en toffel med zoochlorella-symbionter. Grön inuti: socker från alger på dagen, filtrerar på natten."
+  },
+  "47": {
+    "body": "Stentor coeruleus är en blå trumpet upp till en millimeter. Vecklar ut en tratt och driver en ström med cilier. Kan simma eller sitta."
+  },
+  "48": {
+    "body": "Stentor polymorphus är en släkting till blå stentor, ofta med zoochloreller. Byter form från trumpet till boll."
+  },
+  "49": {
+    "body": "Vorticella campanula är en klocka på en sammandragbar stjälk. Stjälken ringlar sig ögonblickligen till en spiral. Själva cellen simmar inte iväg."
+  },
+  "50": {
+    "body": "Vorticella microstoma är en liten klocka. Samma fjäderstjälk, smalare munfält. Ofta på detritus."
+  },
+  "51": {
+    "body": "Didinium nasutum är en tunnformad jägare på tofflor. Avfyrar toxicyster och sväljer bytet helt, även om bytet är större."
+  },
+  "52": {
+    "body": "Spirostomum ambiguum är en mycket lång cigarr. Drar ihop sig flera gånger på en bråkdel av en sekund. Cilier löper i spiral."
+  },
+  "53": {
+    "body": "Blepharisma americanum är en rosa ciliat. Blepharismin-pigment är ljuskänsligt. Filtrerar och kan attackera mindre celler."
+  },
+  "54": {
+    "body": "Euplotes patella går på cirri som på ben. Platt, snabba svängar. Skrapar bakterier från ytor."
+  },
+  "55": {
+    "body": "Stylonychia pustulata är en hypotrich som 'springer' på botten. Stora cirri, tydlig mun. Rovdjur på små ciliater."
+  },
+  "56": {
+    "body": "Oxytricha trifallax är en genommodell: två kärnor och komplex DNA-omskrivning. Går på cirri och äter bakterier och små protister."
+  },
+  "57": {
+    "body": "Tetrahymena thermophila är en lab-ciliat. Fyra munmembraneller, snabb delning. Modell för telomerer och cilier."
+  },
+  "58": {
+    "body": "Coleps hirtus är en tunna i kalkplattor med taggar. Asätare och rovdjur: biter in i skadade."
+  },
+  "59": {
+    "body": "Litonotus lamella är ett platt rovdjur med toxicyster i en 'snabel'. Förlamar bytet och suger ur det."
+  },
+  "60": {
+    "body": "Dileptus anser har en lång hals med giftiga extrusomer. Slår med halsen, sväljer sedan. En stor mellanjägare."
+  },
+  "61": {
+    "body": "Urocentrum turbo är en snurra: ett ekvatoriellt ciliebälte snurrar cellen på plats. Filtrerar bakterier."
+  },
+  "62": {
+    "body": "Zoothamnium arbuscula är en förgrenad koloni av klockor. En gemensam sammandragbar stjälk rycker hela trädet på en gång."
+  },
+  "63": {
+    "body": "Opercularia coarctata är en sessil peritrich utan fjäderstjälk. Ett lock täcker munnen. Filtrerar och simmar inte iväg."
+  },
+  "64": {
+    "body": "Amoeba proteus är den klassiska amöban. Pseudopoder flyter runt bytet. Ingen fast form, inga cilier."
+  },
+  "65": {
+    "body": "Arcella vulgaris är en skalamöba med styv kupol. Pseudopoder kommer ut ur öppningen. Krälar på växter."
+  },
+  "66": {
+    "body": "Difflugia oblonga har ett skal av sandkorn som amöban klistrar själv. Lever i slam."
+  },
+  "67": {
+    "body": "Euglypha alveolata har ett skal av kiselfjäll. Tunna trådiga pseudopoder. Ett litet bakterierovdjur."
+  },
+  "68": {
+    "body": "Nebela collaris är en flaskformigt skal byggt av stulna fjäll. Skogs- och myrvatten."
+  },
+  "69": {
+    "body": "Centropyxis aculeata är ett skivformat skal med taggar. Öppningen är förskjuten. Krälar på detritus."
+  },
+  "70": {
+    "body": "Actinophrys sol är en heliozoér: tunna axopoder strålar åt alla håll. Byte fastnar på strålarna och dras in."
+  },
+  "71": {
+    "body": "Actinosphaerium eichhorni är en stor flerkärnig heliozoér. Samma strålar, mycket större cell. Äter ciliater och hjuldjur."
+  },
+  "72": {
+    "body": "Raphidiophrys pallida är en heliozoér i fjäll. Strålarna bär kiselnålar. Ett bakhållsplanktonjägare."
+  },
+  "73": {
+    "body": "Rotaria rotatoria är ett hjuldjur som överlever uttorkning. En corona hjular in mat i munnen. Ett äkta flercelligt djur."
+  },
+  "74": {
+    "body": "Philodina roseola är ett rosa bdelloid hjuldjur. Krälar som en igel och simmar också. Endast honor; inga hanar."
+  },
+  "75": {
+    "body": "Brachionus plicatilis är ett planktoniskt lorica-hjuldjur. Yngelfoder i vattenbruk. Filtrerar alger och bakterier."
+  },
+  "76": {
+    "body": "Keratella cochlearis är ett hjuldjur med lång lorica-tagga. Taggan avskräcker rovdjur. Vanligt dammplankton."
+  },
+  "77": {
+    "body": "Asplanchna priodonta är en säck utan lorica, ett rov hjuldjur. Sväljer andra hjuldjur och ciliater helt."
+  },
+  "78": {
+    "body": "Chaetonotus maximus är ett bukhårigt djur. Fjällklädd, krälar på bottnen. Äter bakterier och detritus."
+  },
+  "79": {
+    "body": "Lepidodermella squamata är ett litet bukhårigt djur i överlappande fjäll. Mycket snabba svängar på plats."
+  },
+  "80": {
+    "body": "Macrostomum lignano är en mikroskopisk plattmask. Riktiga muskler och ögon. Regenerationsmodell. Jagar små protister."
+  },
+  "81": {
+    "body": "Stenostomum leucops är en tunn cilierad mask. Delar sig på tvären till en kedja av zoider. Rovdjur på detritus och små djur."
+  },
+  "82": {
+    "body": "Microstomum lineare är en plattmask som äter hydra och bygger in deras nässelceller i egen hud. En kedja av zoider."
+  },
+  "83": {
+    "body": "Prostoma graecense är en sötvattens-nemertin. En lång snabel skjuter mot byte. En sällsynt stor bottenjägare."
+  },
+  "84": {
+    "body": "Trichoplax adhaerens är ett placozoér, bland de enklaste djuren. Krälar som en flo och smälter mat utanför. Ingen mun."
+  },
+  "85": {
+    "body": "Saccharomyces cerevisiae är jäst. Knoppas, äter socker, avger CO₂ och alkohol. Rensar löst organik i dammen."
+  },
+  "86": {
+    "body": "Candida albicans är en jäst som kan växa som trådar. En opportunistisk human patogen. I spelet en detritussvamp."
+  },
+  "87": {
+    "body": "Mucor mucedo är brödmögel. Sporangier på stjälkar, snabb tillväxt över de döda. Jagar inte levande."
+  },
+  "88": {
+    "body": "Rhizopus stolonifer är svart brödmögel. Stoloner och rhizoider sprider sig över underlaget. Bryter ner stärkelse."
+  },
+  "89": {
+    "body": "Penicillium chrysogenum är penselmögel, källan till penicillin. Konidiepenslar. Nedbryter organik och undertrycker närliggande bakterier."
+  },
+  "90": {
+    "body": "Aspergillus niger är svart aspergillus. Klotformade spornhuvuden. Industriell citronsyraproducent. En saprotrof."
+  },
+  "91": {
+    "body": "Batrachochytrium dendrobatidis är en chytrid på grodor. Enflagelliga zoosporer. I dammen en modell för vattensvamp."
+  },
+  "92": {
+    "body": "Chytriomyces aureus är en vattenchytrid på pollen och alger. Gyllene sporangier; zoosporer simmar till underlaget."
+  },
+  "93": {
+    "body": "Allomyces macrogynus är en vattensvamp med äkta mycel. Växlar diploid och haploid. Zoosporer har en bakre flagell."
+  },
+  "94": {
+    "body": "Bacillus subtilis är en jordstav. Sporer överlever kokning. Bryter ner protein; en grampositiv modell."
+  },
+  "95": {
+    "body": "Pseudomonas putida är en städstav. Äter till och med oljeprodukter. Rörlig flagell, snabb tillväxt på detritus."
+  },
+  "96": {
+    "body": "Streptomyces coelicolor är en trådig jordbakterie. Ger doften av jord (geosmin) och många antibiotika. Sporer på hyfer."
+  },
+  "97": {
+    "body": "Cellulomonas fimi bryter ner cellulosa. En gul stav på växtdetritus. Utan den skulle döda alger ligga kvar längre."
+  },
+  "98": {
+    "body": "Thermus aquaticus är en termofil från varma källor. Taq-polymeras är grunden för PCR. I en kall damm nästan vilande."
+  },
+  "99": {
+    "body": "Deinococcus radiodurans är strålningsmästaren. Sätter ihop ett krossat genom på timmar. Tjock vägg, celltetrader."
+  },
+  "1001": {
+    "body": "Sexuell eukaryot är en undervisningsmodell för sexuell fortplantning. Två kön, gametfusion, inte enkel binär delning."
+  },
+  "T4 Bacteriophage": {
+    "body": "T4 är ett stort myovirus på E. coli. Svansen drar ihop sig och injicerar DNA. Inom en halvtimme spricker cellen och dussintals fager lämnar den."
+  },
+  "Lambda Phage": {
+    "body": "Lambda är en tempererad fag. Kan infoga sig i kromosomen och sova (lysogeni) eller klippa cellen direkt (lys)."
+  },
+  "T7 Bacteriophage": {
+    "body": "T7 har kort svans och mycket snabb replikering. Ett favoritsystem i syntetisk biologi."
+  },
+  "Phi-6 Phage": {
+    "body": "Phi-6 är en RNA-fag med lipidhölje. Infekterar Pseudomonas. Ett sällsynt membran för en fag."
+  },
+  "MS2 Phage": {
+    "body": "MS2 är en pytteliten svanslös RNA-fag. Binder till pili på manliga E. coli. Dess genom var ett av de första RNA-genomen som lästes."
+  },
+  "Neuro-Parasite": {
+    "body": "En fiktiv damm-neuroparasit. Fäster på eukaryoter och bryter värdens beteende tills värden blir bärare."
+  },
+  "Sexual Eukaryote": {
+    "body": "Sexuell eukaryot är en undervisningsmodell för sexuell fortplantning. Två kön, gametfusion, inte enkel binär delning."
+  }
+}

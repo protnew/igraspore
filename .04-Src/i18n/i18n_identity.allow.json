@@ -1274,6 +1274,238 @@
     ],
     "category": "cognate"
   },
+  "131": {
+    "key": "aria.auto",
+    "value": "Auto (Tab)",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "132": {
+    "key": "aria.demo",
+    "value": "Demo",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "133": {
+    "key": "aria.start",
+    "value": "Start",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "134": {
+    "key": "aria.wiki2",
+    "value": "Wiki (B)",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "135": {
+    "key": "dTemp",
+    "value": "Temp",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "136": {
+    "key": "diffN",
+    "value": "Normal",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "137": {
+    "key": "edu.cell",
+    "value": "cell",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "138": {
+    "key": "filter",
+    "value": "Filter",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "139": {
+    "key": "hud.genSep",
+    "value": " · Gen ",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "140": {
+    "key": "maxPop",
+    "value": "Max pop",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "141": {
+    "key": "pop",
+    "value": "Pop",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "142": {
+    "key": "spcard.virus",
+    "value": "Virus",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "143": {
+    "key": "star.alphacentauri",
+    "value": "★ Alpha Centauri A+B",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "144": {
+    "key": "star.antares",
+    "value": "★ Antares",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "145": {
+    "key": "star.betelgeuse",
+    "value": "★ Betelgeuse",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "146": {
+    "key": "star.pulsar",
+    "value": "★ Neutron (pulsar)",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "147": {
+    "key": "star.rigel",
+    "value": "★ Rigel",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "148": {
+    "key": "star.sirius",
+    "value": "★ Sirius A+B",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "149": {
+    "key": "star.vega",
+    "value": "★ Vega",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "150": {
+    "key": "starg.alphacentauri",
+    "value": "★ α Centauri",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "151": {
+    "key": "starg.sirius",
+    "value": "★ Sirius",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "152": {
+    "key": "start",
+    "value": "START",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "153": {
+    "key": "temp",
+    "value": "Temp",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "154": {
+    "key": "tip.auto",
+    "value": "Auto",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "155": {
+    "key": "x.a",
+    "value": "A",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "156": {
+    "key": "x.cyst",
+    "value": "Cyst",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "157": {
+    "key": "x.cyst2",
+    "value": " · CYST",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "158": {
+    "key": "x.e",
+    "value": "E",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
+  "159": {
+    "key": "x.s",
+    "value": "S",
+    "langs": [
+      "sv"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

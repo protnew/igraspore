@@ -374,5 +374,21 @@
     "register": "je",
     "critics": [],
     "readyForReview": true
+  },
+  {
+    "code": "sv",
+    "name": "Svenska",
+    "native": "Svenska",
+    "wave": 9,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "sv",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "du",
+    "critics": []
   }
 ]

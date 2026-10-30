@@ -1,9 +1,10 @@
 {
  "schema": "review-input-sha/1",
  "round": 9,
- "generated": "2026-10-30 22:27:02 UTC+3",
+ "generated": "2026-10-30 22:43:30 UTC+3",
  "dicts": {
   "nl": "35e6a8e69a1934f4f3c4137a8863afeb386164cba71bdf5cd266f2242ec6a546",
-  "wiki/nl.json": "ae1de68a74587e8d6899516a3e13352a63df63b1c98602245734907c87949ae0"
+  "wiki/nl.json": "ae1de68a74587e8d6899516a3e13352a63df63b1c98602245734907c87949ae0",
+  "sv": "4561a644445f028d168feeabf7457555e80fe254e67c7cecfd5d858e47aecb93"
  }
 }

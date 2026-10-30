@@ -428,5 +428,17 @@
   "economy": "Економний режим",
   "economyAsk": "Кадрів менше 25. Економний режим — у налаштуваннях: менше підписів, басейн −30%.",
   "demoTipTouch": "<b>ДЕМО</b> · палець рухає камеру · 1–6 група · дотик клітини — увійти<br>",
-  "camFlyTouch": "Вільна камера"
+  "camFlyTouch": "Вільна камера",
+  "speciesShown.one": "{n} вид",
+  "speciesShown.few": "{n} види",
+  "speciesShown.many": "{n} видів",
+  "speciesShown.other": "{n} вид",
+  "coloniesCount.one": "{n} колонія",
+  "coloniesCount.few": "{n} колонії",
+  "coloniesCount.many": "{n} колоній",
+  "coloniesCount.other": "{n} колонія",
+  "aliveCount.one": "{n} жива",
+  "aliveCount.few": "{n} живі",
+  "aliveCount.many": "{n} живих",
+  "aliveCount.other": "{n} жива"
 }

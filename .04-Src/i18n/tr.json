@@ -428,5 +428,11 @@
   "aliveWord": "canlı",
   "deadOther": "Diğer",
   "setLang": "Dil",
-  "helpTouch": "<p><b>Kontroller:</b> Yüzmek için joysticki sürükle. Nişan almak için suya dokun. Alt düğmeler: ye, böl, spor, oto. Yakınlaştırmak için kıstır.</p>"
+  "helpTouch": "<p><b>Kontroller:</b> Yüzmek için joysticki sürükle. Nişan almak için suya dokun. Alt düğmeler: ye, böl, spor, oto. Yakınlaştırmak için kıstır.</p>",
+  "speciesShown.other": "{n} tür",
+  "coloniesCount.other": "{n} koloni",
+  "aliveCount.other": "{n} canlı",
+  "speciesShown.one": "{n} tür",
+  "coloniesCount.one": "{n} koloni",
+  "aliveCount.one": "{n} canlı"
 }

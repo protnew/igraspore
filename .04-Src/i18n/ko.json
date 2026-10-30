@@ -428,5 +428,11 @@
   "economy": "절전 모드",
   "economyAsk": "프레임이 25 미만. 절전 모드는 설정에서: 라벨 줄이기, 풀 −30%.",
   "demoTipTouch": "<b>데모</b> · 드래그로 비행 · 1–6 그룹 · 세포를 탭하면 진입<br>",
-  "camFlyTouch": "자유 카메라"
+  "camFlyTouch": "자유 카메라",
+  "speciesShown.other": "{n}종",
+  "coloniesCount.other": "{n}군락",
+  "aliveCount.other": "{n}마리",
+  "speciesShown.one": "{n}종",
+  "coloniesCount.one": "{n}군락",
+  "aliveCount.one": "{n}마리"
 }

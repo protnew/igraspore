@@ -428,5 +428,11 @@
   "economy": "Mode éco",
   "economyAsk": "Moins de 25 fps. Mode éco dans les réglages : moins de légendes, bassin −30%.",
   "demoTipTouch": "<b>DÉMO</b> · glisser pour voler · 1–6 groupe · toucher une cellule pour entrer<br>",
-  "camFlyTouch": "Caméra libre"
+  "camFlyTouch": "Caméra libre",
+  "speciesShown.one": "{n} espèce",
+  "speciesShown.other": "{n} espèces",
+  "coloniesCount.one": "{n} colonie",
+  "coloniesCount.other": "{n} colonies",
+  "aliveCount.one": "{n} vivante",
+  "aliveCount.other": "{n} vivantes"
 }

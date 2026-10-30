@@ -55,6 +55,17 @@ function igsText(key, fallback){
   var s=(typeof tt==='function')?tt(key):key;
   return (!s||s===key)?fallback:s;
 }
+var __plRules={},__plCats={};
+function ttn(key, n){
+  // v24 A7: счётная форма — key.<cat> по Intl.PluralRules; фолбэк key.other → key
+  var lang=(typeof curLang==='string'&&curLang)?curLang:'ru';
+  if(!__plRules[lang]){ try{ __plRules[lang]=new Intl.PluralRules(lang); }catch(e){ __plRules[lang]=null; } }
+  var cat=__plRules[lang]?__plRules[lang].select(n):'other';
+  var pack=T[curLang]||{};
+  var v=pack[key+'.'+cat] || pack[key+'.other'] || (T.en||{})[key+'.'+cat] || (T.en||{})[key+'.other'] || pack[key] || key;
+  return String(v).replace('{n}', (typeof igsNum==='function'?igsNum(n):String(n)));
+}
+if(typeof window!=='undefined'){ window.tt=tt; window.igsText=igsText; window.igsNum=igsNum; window.ttn=ttn; }
 function igsNum(n, digits){
   // v24 A3/Р7: система цифр — из реестра (digits), умолчание Intl; ar → latn (решение Р7)
   var lang=(typeof curLang==='string'&&curLang)?curLang:'ru';
@@ -74,7 +85,7 @@ function igsNum(n, digits){
     return s;
   }
 }
-if(typeof window!=='undefined'){ window.tt=tt; window.igsText=igsText; window.igsNum=igsNum; }
+// (экспорт tt/igsText/igsNum/ttn — выше, v24 A7)
 
 // === SPECIES DATABASE — 100 species + 5 virus types ===
 var SPEED_SCALE=0.5; if(typeof window!=='undefined')window.SPEED_SCALE=0.5; // v2: global movement speed halved

@@ -428,5 +428,17 @@
   "economy": "Tryb oszczędny",
   "economyAsk": "Mniej niż 25 kl/s. Tryb oszczędny w ustawieniach: mniej podpisów, basen −30%.",
   "demoTipTouch": "<b>DEMO</b> · przeciągnij, aby lecieć · 1–6 grupa · dotknij komórki, by wejść<br>",
-  "camFlyTouch": "Swobodna kamera"
+  "camFlyTouch": "Swobodna kamera",
+  "speciesShown.one": "{n} gatunek",
+  "speciesShown.few": "{n} gatunki",
+  "speciesShown.many": "{n} gatunków",
+  "speciesShown.other": "{n} gatunek",
+  "coloniesCount.one": "{n} kolonia",
+  "coloniesCount.few": "{n} kolonie",
+  "coloniesCount.many": "{n} kolonii",
+  "coloniesCount.other": "{n} kolonia",
+  "aliveCount.one": "{n} żywa",
+  "aliveCount.few": "{n} żywe",
+  "aliveCount.many": "{n} żywych",
+  "aliveCount.other": "{n} żywa"
 }

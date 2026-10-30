@@ -428,5 +428,11 @@
   "aliveWord": "buhay",
   "deadOther": "Iba",
   "setLang": "Wika",
-  "helpTouch": "<p><b>Kontrol:</b> I-drag ang joystick para lumangoy. I-tap ang tubig para mag-target. Mga button sa ibaba: kumain, maghati, spore, auto. Kurutin para sa zoom.</p>"
+  "helpTouch": "<p><b>Kontrol:</b> I-drag ang joystick para lumangoy. I-tap ang tubig para mag-target. Mga button sa ibaba: kumain, maghati, spore, auto. Kurutin para sa zoom.</p>",
+  "speciesShown.one": "{n} species",
+  "speciesShown.other": "{n} species",
+  "coloniesCount.one": "{n} colony",
+  "coloniesCount.other": "{n} colonies",
+  "aliveCount.one": "{n} buhay",
+  "aliveCount.other": "{n} buhay"
 }

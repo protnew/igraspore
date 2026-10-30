@@ -428,5 +428,11 @@
   "economy": "節約モード",
   "economyAsk": "フレームレート25未満。節約モードは設定から:ラベル減、プール−30%。",
   "demoTipTouch": "<b>デモ</b> · ドラッグで飛行 · 1–6 グループ · 細胞をタップで入る<br>",
-  "camFlyTouch": "フリーカメラ"
+  "camFlyTouch": "フリーカメラ",
+  "speciesShown.other": "{n}種",
+  "coloniesCount.other": "{n}コロニー",
+  "aliveCount.other": "{n}匹",
+  "speciesShown.one": "{n}種",
+  "coloniesCount.one": "{n}コロニー",
+  "aliveCount.one": "{n}匹"
 }

@@ -428,5 +428,11 @@
   "economy": "省電模式",
   "economyAsk": "幀率低於25。省電模式在設定中:減少標籤,池 −30%。",
   "demoTipTouch": "<b>示範</b> · 拖曳飛行 · 1–6 群組 · 點擊細胞進入<br>",
-  "camFlyTouch": "自由視角"
+  "camFlyTouch": "自由視角",
+  "speciesShown.other": "{n}種",
+  "coloniesCount.other": "{n}群落",
+  "aliveCount.other": "{n}隻",
+  "speciesShown.one": "{n}種",
+  "coloniesCount.one": "{n}群落",
+  "aliveCount.one": "{n}隻"
 }

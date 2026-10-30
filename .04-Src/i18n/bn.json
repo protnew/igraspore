@@ -428,5 +428,11 @@
   "economy": "সাশ্রয়ী মোড",
   "economyAsk": "ফ্রেম ২৫-এর নিচে। সাশ্রয়ী মোড সেটিংসে: কম লেবেল, পুল −৩০%.",
   "demoTipTouch": "<b>ডেমো</b> · ওড়ার জন্য টানুন · ১–৬ দল · কোষ ছুঁয়ে ঢুকুন<br>",
-  "camFlyTouch": "মুক্ত ক্যামেরা"
+  "camFlyTouch": "মুক্ত ক্যামেরা",
+  "speciesShown.one": "{n} প্রজাতি",
+  "speciesShown.other": "{n} প্রজাতি",
+  "coloniesCount.one": "{n} কলোনি",
+  "coloniesCount.other": "{n} কলোনি",
+  "aliveCount.one": "{n} জীবিত",
+  "aliveCount.other": "{n} জীবিত"
 }

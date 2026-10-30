@@ -428,5 +428,11 @@
   "economy": "โหมดประหยัด",
   "economyAsk": "เฟรมต่ำกว่า 25 โหมดประหยัดอยู่ในการตั้งค่า: ป้ายน้อยลง บ่อ −30%",
   "demoTipTouch": "<b>เดโม</b> · ลากเพื่อบิน · 1–6 กลุ่ม · แตะเซลล์เพื่อเข้า<br>",
-  "camFlyTouch": "กล้องอิสระ"
+  "camFlyTouch": "กล้องอิสระ",
+  "speciesShown.other": "{n} ชนิด",
+  "coloniesCount.other": "{n} โคโลนี",
+  "aliveCount.other": "{n} ตัว",
+  "speciesShown.one": "{n} ชนิด",
+  "coloniesCount.one": "{n} โคโลนี",
+  "aliveCount.one": "{n} ตัว"
 }

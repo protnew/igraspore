@@ -54,8 +54,8 @@ function buildSpeciesGrid(){
       var sx=SPECIES_DB[ci]; if(sx&&(sx.shape==='colony'||(sx.bio&&sx.bio.colony))&&(selCat==='all'||sx.cat===selCat)) colN++;
     }
   }
-  st.innerHTML = tt('filter')+': <span style="color:#8f8">'+catLabel+'</span> · '+tt('shown')+' <span style="color:#ff8">'+shownN+'</span> '+tt('speciesWord')
-    +(colN?(' · <span style="color:#9f6">'+tt('colonies')+': '+colN+'</span> ('+tt('topOfList')+')'):'')
+  st.innerHTML = tt('filter')+': <span style="color:#8f8">'+catLabel+'</span> · <span style="color:#ff8">'+ttn('speciesShown',shownN)+'</span>'
+    +(colN?(' · <span style="color:#9f6">'+ttn('coloniesCount',colN)+'</span> ('+tt('topOfList')+')'):'')
     +' <span style="opacity:.6;font-weight:400;font-size:11px">· '+tt('filterHint')+'</span>';
   sg.appendChild(st);
   if(selCat==='virus'){
@@ -111,7 +111,7 @@ function buildSpeciesGrid(){
       '<div class="scC">'+tt('loc.'+sp.locomotion)+'</div>'+
       '<div class="scRole" style="font-size:13px;opacity:.9;margin-top:1px;color:#bfe0ff">'+roleShort+'</div>'+ // v20.12: was inheriting a dark colour (contrast 1.05, invisible)
       '<div style="font-size:13px;margin-top:1px;line-height:1.2">'+eatInfo+'</div>'+
-      '<div class="scP">'+pop+' '+tt('aliveWord')+'</div>';
+      '<div class="scP">'+ttn('aliveCount',pop)+'</div>';
     var pcv=c.querySelector('.scPrev'); try{ if(pcv&&typeof drawSpeciesPreview==='function') drawSpeciesPreview(pcv,sp,i); }catch(ePrev){ if(pcv){ var cxp=pcv.getContext('2d'); if(cxp){ cxp.fillStyle=sp.color||'#4c8'; cxp.beginPath(); cxp.arc(60,60,28,0,6.28); cxp.fill(); } } }
     c.onclick=function(ev){selSpecies=parseInt(ev.currentTarget.getAttribute('data-si'));buildSpeciesGrid();};
     sg.appendChild(c);

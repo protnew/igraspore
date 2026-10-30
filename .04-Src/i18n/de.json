@@ -428,5 +428,11 @@
   "economy": "Sparmodus",
   "economyAsk": "Bildrate unter 25. Sparmodus in den Einstellungen: weniger Beschriftungen, Pool −30%.",
   "demoTipTouch": "<b>DEMO</b> · Finger bewegt die Kamera · 1–6 Gruppe · Zelle antippen — eintreten<br>",
-  "camFlyTouch": "Freie Kamera"
+  "camFlyTouch": "Freie Kamera",
+  "speciesShown.one": "{n} Art",
+  "speciesShown.other": "{n} Arten",
+  "coloniesCount.one": "{n} Kolonie",
+  "coloniesCount.other": "{n} Kolonien",
+  "aliveCount.one": "{n} lebend",
+  "aliveCount.other": "{n} lebend"
 }

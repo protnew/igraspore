@@ -428,5 +428,11 @@
   "economy": "मितव्ययी मोड",
   "economyAsk": "फ़्रेम 25 से कम। मितव्ययी मोड सेटिंग्स में: कम लेबल, पूल −30%.",
   "demoTipTouch": "<b>डेमो</b> · उड़ने के लिए खींचें · 1–6 समूह · कोशिका छूकर घुसें<br>",
-  "camFlyTouch": "मुक्त कैमरा"
+  "camFlyTouch": "मुक्त कैमरा",
+  "speciesShown.one": "{n} प्रजाति",
+  "speciesShown.other": "{n} प्रजातियाँ",
+  "coloniesCount.one": "{n} कॉलोनी",
+  "coloniesCount.other": "{n} कॉलोनियाँ",
+  "aliveCount.one": "{n} जीवित",
+  "aliveCount.other": "{n} जीवित"
 }

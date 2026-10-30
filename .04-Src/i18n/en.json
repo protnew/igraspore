@@ -428,5 +428,11 @@
   "economy": "Economy mode",
   "economyAsk": "Frame rate is under 25. Economy mode is in Settings: fewer captions, pool −30%.",
   "demoTipTouch": "<b>DEMO</b> · drag to fly · 1–6 jump group · tap a cell to enter<br>",
-  "camFlyTouch": "Free cam"
+  "camFlyTouch": "Free cam",
+  "speciesShown.one": "{n} species",
+  "speciesShown.other": "{n} species",
+  "coloniesCount.one": "{n} colony",
+  "coloniesCount.other": "{n} colonies",
+  "aliveCount.one": "{n} alive",
+  "aliveCount.other": "{n} alive"
 }

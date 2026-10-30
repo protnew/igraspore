@@ -428,5 +428,11 @@
   "economy": "Mode hemat",
   "economyAsk": "Di bawah 25 fps. Mode hemat di pengaturan: label lebih sedikit, kolam −30%.",
   "demoTipTouch": "<b>DEMO</b> · seret untuk terbang · 1–6 grup · ketuk sel untuk masuk<br>",
-  "camFlyTouch": "Kamera bebas"
+  "camFlyTouch": "Kamera bebas",
+  "speciesShown.other": "{n} spesies",
+  "coloniesCount.other": "{n} koloni",
+  "aliveCount.other": "{n} hidup",
+  "speciesShown.one": "{n} spesies",
+  "coloniesCount.one": "{n} koloni",
+  "aliveCount.one": "{n} hidup"
 }

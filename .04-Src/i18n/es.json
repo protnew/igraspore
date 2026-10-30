@@ -428,5 +428,11 @@
   "aliveWord": "vivas",
   "deadOther": "Otras",
   "setLang": "Idioma",
-  "helpTouch": "<p><b>Controles:</b> Arrastra el joystick para nadar. Toca el agua para apuntar. Botones inferiores: comer, dividirse, espora, auto. Pellizca para el zoom.</p>"
+  "helpTouch": "<p><b>Controles:</b> Arrastra el joystick para nadar. Toca el agua para apuntar. Botones inferiores: comer, dividirse, espora, auto. Pellizca para el zoom.</p>",
+  "speciesShown.one": "{n} especie",
+  "speciesShown.other": "{n} especies",
+  "coloniesCount.one": "{n} colonia",
+  "coloniesCount.other": "{n} colonias",
+  "aliveCount.one": "{n} viva",
+  "aliveCount.other": "{n} vivas"
 }

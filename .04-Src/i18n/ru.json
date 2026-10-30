@@ -428,5 +428,17 @@
   "economy": "Экономный режим",
   "economyAsk": "Кадров меньше 25. Экономный режим — в настройках: меньше подписей, водоём −30%.",
   "demoTipTouch": "<b>ДЕМО</b> · палец двигает камеру · 1–6 группа · касание клетки — войти<br>",
-  "camFlyTouch": "Свободная камера"
+  "camFlyTouch": "Свободная камера",
+  "speciesShown.one": "{n} вид",
+  "speciesShown.few": "{n} вида",
+  "speciesShown.many": "{n} видов",
+  "speciesShown.other": "{n} вид",
+  "coloniesCount.one": "{n} колония",
+  "coloniesCount.few": "{n} колонии",
+  "coloniesCount.many": "{n} колоний",
+  "coloniesCount.other": "{n} колония",
+  "aliveCount.one": "{n} жив",
+  "aliveCount.few": "{n} живы",
+  "aliveCount.many": "{n} живых",
+  "aliveCount.other": "{n} жив"
 }

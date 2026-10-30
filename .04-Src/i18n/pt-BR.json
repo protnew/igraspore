@@ -428,5 +428,11 @@
   "economy": "Modo econômico",
   "economyAsk": "Menos de 25 fps. Modo econômico nas configurações: menos legendas, piscina −30%.",
   "demoTipTouch": "<b>DEMO</b> · arraste para voar · 1–6 grupo · toque numa célula para entrar<br>",
-  "camFlyTouch": "Câmera livre"
+  "camFlyTouch": "Câmera livre",
+  "speciesShown.one": "{n} espécie",
+  "speciesShown.other": "{n} espécies",
+  "coloniesCount.one": "{n} colônia",
+  "coloniesCount.other": "{n} colônias",
+  "aliveCount.one": "{n} viva",
+  "aliveCount.other": "{n} vivas"
 }

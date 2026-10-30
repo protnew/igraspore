@@ -428,5 +428,11 @@
   "economy": "Modalità eco",
   "economyAsk": "Meno di 25 fps. Modalità eco nelle impostazioni: meno didascalie, piscina −30%.",
   "demoTipTouch": "<b>DEMO</b> · trascina per volare · 1–6 gruppo · tocca una cellula per entrare<br>",
-  "camFlyTouch": "Camera libera"
+  "camFlyTouch": "Camera libera",
+  "speciesShown.one": "{n} specie",
+  "speciesShown.other": "{n} specie",
+  "coloniesCount.one": "{n} colonia",
+  "coloniesCount.other": "{n} colonie",
+  "aliveCount.one": "{n} viva",
+  "aliveCount.other": "{n} vive"
 }

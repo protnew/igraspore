@@ -22,6 +22,8 @@ const script = `
   ${uiMenusCode}
   ${uiFoodChainCode}
   ${uiScreensCode}
+  ;try{var __rj=window.__RU_JSON__;for(var __k in __rj){if(!T.ru[__k])T.ru[__k]=__rj[__k];}}catch(e){}
+  // v24 A2: ядро ru из JSON (config.js больше не хранит словарь — единственный источник i18n/*.json)
   window.wapi = {
     set state(v) { state = v; },
     set player(v) { player = v; },
@@ -30,6 +32,7 @@ const script = `
     updateScaleBar: () => updateScaleBar(),
   };
 `;
+window.__RU_JSON__ = require('../../i18n/ru.json');
 try { eval(script); } catch (e) { console.error('EVAL ERROR:', e.message); throw e; }
 
 const mkPlayer = (over = {}) => ({

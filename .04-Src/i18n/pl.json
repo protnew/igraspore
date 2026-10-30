@@ -421,5 +421,12 @@
   "deadOther": "Inne",
   "setLang": "Język",
   "helpTouch": "<p><b>Sterowanie:</b> joystick pływa. Dotknij wody, by celować. Dolne przyciski: jedz, dziel, spora, auto. Uszczypnij, by przybliżyć.</p>",
-  "dCull": "Regulacja puli"
+  "dCull": "Regulacja puli",
+  "errGeneric": "Błąd",
+  "errAsync": "Błąd asynchroniczny",
+  "loadingWorld": "Budowanie stawu…",
+  "economy": "Tryb oszczędny",
+  "economyAsk": "Mniej niż 25 kl/s. Tryb oszczędny w ustawieniach: mniej podpisów, basen −30%.",
+  "demoTipTouch": "<b>DEMO</b> · przeciągnij, aby lecieć · 1–6 grupa · dotknij komórki, by wejść<br>",
+  "camFlyTouch": "Swobodna kamera"
 }

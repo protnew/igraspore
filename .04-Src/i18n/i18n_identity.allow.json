@@ -842,6 +842,14 @@
     "category": "cognate",
     "reason": "исп./итал. отрицание «No» — корректный перевод, совпадает с английским написанием (не недоперевод)"
   },
+  "77": {
+    "key": "errGeneric",
+    "value": "Error",
+    "langs": [
+      "es"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

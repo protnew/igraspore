@@ -411,5 +411,22 @@
   "loc.sessile": "sésil",
   "loc.budding": "gemación",
   "loc.growth": "crecimiento",
-  "dCull": "Regulación del pool"
+  "dCull": "Regulación del pool",
+  "more": "Más",
+  "errGeneric": "Error",
+  "errAsync": "Error asíncrono",
+  "loadingWorld": "Construyendo el estanque…",
+  "economy": "Modo económico",
+  "economyAsk": "Menos de 25 fps. El modo económico está en ajustes: menos etiquetas, piscina −30%.",
+  "demoTipTouch": "<b>DEMO</b> · arrastra para volar · 1–6 grupo · toca una célula para entrar<br>",
+  "camFlyTouch": "Cámara libre",
+  "exitAsk": "¿Salir?",
+  "exitMsg": "El progreso de esta vida se perderá.",
+  "yes": "Sí",
+  "no": "No",
+  "deadYours": "Tu célula murió",
+  "aliveWord": "vivas",
+  "deadOther": "Otras",
+  "setLang": "Idioma",
+  "helpTouch": "<p><b>Controles:</b> Arrastra el joystick para nadar. Toca el agua para apuntar. Botones inferiores: comer, dividirse, espora, auto. Pellizca para el zoom.</p>"
 }

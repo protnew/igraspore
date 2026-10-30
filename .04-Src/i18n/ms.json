@@ -421,5 +421,12 @@
   "deadOther": "Lain",
   "setLang": "Bahasa",
   "helpTouch": "<p><b>Kawalan:</b> kayu bedik untuk berenang. Ketik air untuk hala. Butang bawah: makan, bahagi, spora, auto. Cubit untuk zum.</p>",
-  "dCull": "Peraturan kolam"
+  "dCull": "Peraturan kolam",
+  "errGeneric": "Ralat",
+  "errAsync": "Ralat tak segerak",
+  "loadingWorld": "Membina kolam…",
+  "economy": "Mod jimat",
+  "economyAsk": "Bawah 25 fps. Mod jimat dalam tetapan: kurang label, kolam −30%.",
+  "demoTipTouch": "<b>DEMO</b> · seret untuk terbang · 1–6 kumpulan · sentuh sel untuk masuk<br>",
+  "camFlyTouch": "Kamera bebas"
 }

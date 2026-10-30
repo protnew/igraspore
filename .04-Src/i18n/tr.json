@@ -411,5 +411,22 @@
   "loc.sessile": "sabit",
   "loc.budding": "tomurcuklanma",
   "loc.growth": "büyüme",
-  "dCull": "Havuz düzenlemesi"
+  "dCull": "Havuz düzenlemesi",
+  "more": "Daha fazla",
+  "errGeneric": "Hata",
+  "errAsync": "Asenkron hata",
+  "loadingWorld": "Göl kuruluyor…",
+  "economy": "Ekonomik mod",
+  "economyAsk": "Kare hızı 25 altında. Ekonomik mod ayarlarda: daha az etiket, havuz −30%.",
+  "demoTipTouch": "<b>DEMO</b> · uçmak için sürükle · 1–6 grup · hücreye dokun — gir<br>",
+  "camFlyTouch": "Serbest kamera",
+  "exitAsk": "Çıkmak mı?",
+  "exitMsg": "Bu yaşamın ilerlemesi kaybolacak.",
+  "yes": "Evet",
+  "no": "Hayır",
+  "deadYours": "Hücren öldü",
+  "aliveWord": "canlı",
+  "deadOther": "Diğer",
+  "setLang": "Dil",
+  "helpTouch": "<p><b>Kontroller:</b> Yüzmek için joysticki sürükle. Nişan almak için suya dokun. Alt düğmeler: ye, böl, spor, oto. Yakınlaştırmak için kıstır.</p>"
 }

@@ -421,5 +421,12 @@
   "deadOther": "Other",
   "setLang": "Language",
   "helpTouch": "<p><b>Controls:</b> Drag the joystick to swim. Tap the water to aim. Bottom buttons: Eat, Divide, Spore, Auto. Pinch to zoom.</p>",
-  "dCull": "Pool regulation"
+  "dCull": "Pool regulation",
+  "errGeneric": "Error",
+  "errAsync": "Async error",
+  "loadingWorld": "Building the pond…",
+  "economy": "Economy mode",
+  "economyAsk": "Frame rate is under 25. Economy mode is in Settings: fewer captions, pool −30%.",
+  "demoTipTouch": "<b>DEMO</b> · drag to fly · 1–6 jump group · tap a cell to enter<br>",
+  "camFlyTouch": "Free cam"
 }

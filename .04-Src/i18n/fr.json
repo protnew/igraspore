@@ -421,5 +421,12 @@
   "deadOther": "Autre",
   "setLang": "Langue",
   "helpTouch": "<p><b>Commandes :</b> joystick pour nager. Touchez l’eau pour viser. Boutons du bas : manger, diviser, spore, auto. Pincez pour zoomer.</p>",
-  "dCull": "Régulation du bassin"
+  "dCull": "Régulation du bassin",
+  "errGeneric": "Erreur",
+  "errAsync": "Erreur asynchrone",
+  "loadingWorld": "Construction de l étang…",
+  "economy": "Mode éco",
+  "economyAsk": "Moins de 25 fps. Mode éco dans les réglages : moins de légendes, bassin −30%.",
+  "demoTipTouch": "<b>DÉMO</b> · glisser pour voler · 1–6 groupe · toucher une cellule pour entrer<br>",
+  "camFlyTouch": "Caméra libre"
 }

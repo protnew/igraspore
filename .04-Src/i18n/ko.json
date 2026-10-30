@@ -421,5 +421,12 @@
   "deadOther": "기타",
   "setLang": "언어",
   "helpTouch": "<p><b>조작:</b> 조이스틱으로 헤엄. 물을 눌러 방향. 아래 버튼: 먹기, 분열, 포자, 자동. 집어서 확대.</p>",
-  "dCull": "풀 조절"
+  "dCull": "풀 조절",
+  "errGeneric": "오류",
+  "errAsync": "비동기 오류",
+  "loadingWorld": "연못을 만드는 중…",
+  "economy": "절전 모드",
+  "economyAsk": "프레임이 25 미만. 절전 모드는 설정에서: 라벨 줄이기, 풀 −30%.",
+  "demoTipTouch": "<b>데모</b> · 드래그로 비행 · 1–6 그룹 · 세포를 탭하면 진입<br>",
+  "camFlyTouch": "자유 카메라"
 }

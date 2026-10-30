@@ -421,5 +421,12 @@
   "deadOther": "其他",
   "setLang": "語言",
   "helpTouch": "<p><b>操作：</b>搖桿游泳。點水決定方向。下方按鈕：吃、分裂、孢子、自動。雙指縮放。</p>",
-  "dCull": "池調節"
+  "dCull": "池調節",
+  "errGeneric": "錯誤",
+  "errAsync": "非同步錯誤",
+  "loadingWorld": "正在建造池塘…",
+  "economy": "省電模式",
+  "economyAsk": "幀率低於25。省電模式在設定中:減少標籤,池 −30%。",
+  "demoTipTouch": "<b>示範</b> · 拖曳飛行 · 1–6 群組 · 點擊細胞進入<br>",
+  "camFlyTouch": "自由視角"
 }

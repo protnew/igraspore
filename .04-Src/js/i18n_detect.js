@@ -93,7 +93,7 @@ if (typeof window !== 'undefined') {
     }
     applyLangFont(curLang);
     if (typeof GENDERED_SP!=='undefined') GENDERED_SP.name = tt('sp.1001');
-    if (curLang !== 'ru' && curLang !== 'en') {
+    { // v24 A2: en/ru грузятся из JSON как остальные (единственный источник — i18n/*.json)
       loadLangPack(curLang).then(function() {
         applyLangFont(curLang);
         if (typeof buildLangBar === 'function') buildLangBar();

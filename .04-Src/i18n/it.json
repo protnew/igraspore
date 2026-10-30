@@ -421,5 +421,12 @@
   "deadOther": "Altro",
   "setLang": "Lingua",
   "helpTouch": "<p><b>Comandi:</b> joystick per nuotare. Tocca l’acqua per mirare. Pulsanti in basso: mangia, dividi, spora, auto. Pizzica per lo zoom.</p>",
-  "dCull": "Regolazione del pool"
+  "dCull": "Regolazione del pool",
+  "errGeneric": "Errore",
+  "errAsync": "Errore asincrono",
+  "loadingWorld": "Costruzione dello stagno…",
+  "economy": "Modalità eco",
+  "economyAsk": "Meno di 25 fps. Modalità eco nelle impostazioni: meno didascalie, piscina −30%.",
+  "demoTipTouch": "<b>DEMO</b> · trascina per volare · 1–6 gruppo · tocca una cellula per entrare<br>",
+  "camFlyTouch": "Camera libera"
 }

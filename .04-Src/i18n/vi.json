@@ -421,5 +421,12 @@
   "deadOther": "Khác",
   "setLang": "Ngôn ngữ",
   "helpTouch": "<p><b>Điều khiển:</b> cần để bơi. Chạm nước để hướng. Nút dưới: ăn, chia, bào tử, tự động. Chụm để phóng.</p>",
-  "dCull": "Điều tiết pool"
+  "dCull": "Điều tiết pool",
+  "errGeneric": "Lỗi",
+  "errAsync": "Lỗi bất đồng bộ",
+  "loadingWorld": "Đang dựng ao…",
+  "economy": "Chế độ tiết kiệm",
+  "economyAsk": "Dưới 25 fps. Chế độ tiết kiệm trong cài đặt: ít nhãn hơn, bể −30%.",
+  "demoTipTouch": "<b>DEMO</b> · kéo để bay · 1–6 nhóm · chạm tế bào để vào<br>",
+  "camFlyTouch": "Camera tự do"
 }

@@ -15,8 +15,9 @@ const en = read(path.join(I18N, 'en.json'));
 const enWiki = fs.existsSync(path.join(WIKI, 'en.json')) ? read(path.join(WIKI, 'en.json')) : null;
 
 // разрешённые когнаты (те же правила, что i18n_identity)
-const allow = fs.existsSync(path.join(I18N, 'i18n_identity.allow.json'))
-  ? read(path.join(I18N, 'i18n_identity.allow.json')) : [];
+const allowRaw = fs.existsSync(path.join(I18N, 'i18n_identity.allow.json'))
+  ? read(path.join(I18N, 'i18n_identity.allow.json')) : {};
+const allow = Array.isArray(allowRaw) ? allowRaw : Object.values(allowRaw).filter(v => v && v.key); // v24z9: записи allow + отдельно cognates
 const allowHit = (key, val, lang) => allow.some(a => a.key === key &&
   String(a.value).trim().toLowerCase() === String(val).trim().toLowerCase() &&
   (a.langs.includes('*') || a.langs.includes(lang)));

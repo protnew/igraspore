@@ -421,5 +421,12 @@
   "deadOther": "Sonstiges",
   "setLang": "Sprache",
   "helpTouch": "<p><b>Steuerung:</b> Joystick zum Schwimmen. Tippe ins Wasser für die Richtung. Unten: Fressen, Teilen, Spore, Auto. Ziehen zum Zoomen.</p>",
-  "dCull": "Pool-Regulierung"
+  "dCull": "Pool-Regulierung",
+  "errGeneric": "Fehler",
+  "errAsync": "Asynchroner Fehler",
+  "loadingWorld": "Teich wird gebaut…",
+  "economy": "Sparmodus",
+  "economyAsk": "Bildrate unter 25. Sparmodus in den Einstellungen: weniger Beschriftungen, Pool −30%.",
+  "demoTipTouch": "<b>DEMO</b> · Finger bewegt die Kamera · 1–6 Gruppe · Zelle antippen — eintreten<br>",
+  "camFlyTouch": "Freie Kamera"
 }

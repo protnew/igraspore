@@ -421,5 +421,12 @@
   "deadOther": "Lainnya",
   "setLang": "Bahasa",
   "helpTouch": "<p><b>Kontrol:</b> joystick untuk berenang. Ketuk air untuk mengarah. Tombol bawah: makan, belah, spora, auto. Cubit untuk zoom.</p>",
-  "dCull": "Regulasi kolam"
+  "dCull": "Regulasi kolam",
+  "errGeneric": "Kesalahan",
+  "errAsync": "Kesalahan asinkron",
+  "loadingWorld": "Membangun kolam…",
+  "economy": "Mode hemat",
+  "economyAsk": "Di bawah 25 fps. Mode hemat di pengaturan: label lebih sedikit, kolam −30%.",
+  "demoTipTouch": "<b>DEMO</b> · seret untuk terbang · 1–6 grup · ketuk sel untuk masuk<br>",
+  "camFlyTouch": "Kamera bebas"
 }

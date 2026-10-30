@@ -4,3 +4,6 @@
 
 - 30.10 — Старт. HEAD 95a317a, ветка release-ready-2026-10-14. ТЗ прочитано (371 строка), решений-вопросов нет. Порядок: 0 → 1-9 → A1-A7 → L1-L2 → 12 → L3-L8.
 - 30.10 — Задача 0: DECISIONS-v24-2026-10-30.md (Р1-Р13) + LINE-LIMIT-EXCEPTIONS.md (Р3) + этот журнал. Следующий шаг: задача 1 (эко-перегон).
+- 30.10 — Задача 2 (код-часть): Р10 нативный select menu (#menuLangSel + igsLangCodes: устройство→en→localeCompare), setLang только enabled+native-имена; 48px: .btn.sm/.cb/.diff/#legToggle; контраст .diff #89c→#bcd; de restart=NEUSTART; pl webglNow/swissNow/cartoon=KRESKÓWKA. Браузерная приёмка — пакетом после задачи 1.
+- 30.10 18:0x — Задачи 2-8 закоммичены: 2(Р10 select+48px+de/pl), 3(иконки edc4b7f), 4(FPS-debug/apkBtn/листинги 12d9222), 5(lazy-swiss: меню 724КБ б18b43d), 6(FPS-гейт p5≥25 b9a79af), 7(CULL/сидячие/вирусы/дедуп/пара 06e6f58), 8(spectator 06e6f58). Эко-перегон №2 (per-species cap) в фоне.
+- 30.10 21:0x — A1-A7 конвейер готов (коммиты aa5c5f0..ee04bf6): реестр+генератор, один источник (en/ru из JSON, инлайн удалён), 10 ключей es/tr/fil (Р1 Г)+round9-пакет, цифры Р7, термин-линт (ru-дефекты починены), плюралы ttn. vitest 335/335, аудит 0/19, линт 0. Эко №2: жив, CPU-голод (122 чужих chrome) — ждёт.

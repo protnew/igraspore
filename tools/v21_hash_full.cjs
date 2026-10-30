@@ -4,6 +4,27 @@
 const fs = require('fs'), path = require('path'), crypto = require('crypto');
 const PUB = path.join(process.cwd(), '06-DevOps-and-Release', 'android', 'android', 'app', 'src', 'main', 'assets', 'public');
 const sha = p => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+
+if (process.env.NEG) {
+  // v24 задача 9: ломаем файл, который сейчас СХОДИТСЯ (иначе ловушка невидима на расходящемся дереве)
+  const RELLIST = [];
+  const relOf = (p) => path.relative(PUB, p).split(path.sep).join('/');
+  const walk = (d) => fs.readdirSync(d).forEach(f => { const fp = path.join(d, f);
+    if (fs.statSync(fp).isDirectory()) walk(fp); else RELLIST.push(relOf(fp)); });
+  walk(PUB);
+  const _origMap = {};
+  const shaF = p => require('crypto').createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+  let victim = null;
+  for (const rel of RELLIST) {
+    const pp = path.join(PUB, rel), cp = rel.startsWith('04-Src/') ? path.join(process.cwd(), '.04-Src', rel.slice(7)) : path.join(process.cwd(), rel);
+    if (!fs.existsSync(cp)) continue;
+    if (shaF(pp) === shaF(cp)) { victim = pp; break; }
+  }
+  if (!victim) { console.error('NEG: нет сходящегося файла для ловушки'); process.exit(2); }
+  const orig = fs.readFileSync(victim);
+  fs.writeFileSync(victim, orig + String.fromCharCode(10) + '//neg');
+  process.on('exit', () => { try { fs.writeFileSync(victim, orig); } catch (e) {} });
+}
 const diffs = []; let checked = 0;
 function cmp(pubRel, canonRel) {
   const pp = path.join(PUB, pubRel), cp = canonRel;

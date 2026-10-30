@@ -84,13 +84,17 @@ const NEGJS = "(function(){var m=document.getElementById('menuO')||document.body
   }
   await b.close();
   // untranslated: same control text as en (latin letters, >3 chars) on the same screen/viewport
-  // correct native words identical to English (verified): START de; MENU pt-BR/id/fr/vi/fil/it/pl/ms; AQUARIUM de/fr
-  const COGNATE = { START: ['de'], MENU: ['pt-BR', 'id', 'fr', 'vi', 'fil', 'it', 'pl', 'ms'], AQUARIUM: ['de', 'fr'] };
+  // v24 задача 9: карта когнатов читается из i18n/i18n_identity.allow.json (cognates); clip на кнопках/смерти/HUD — RED
   const ALLOW = /^(iGraSpore|OK|DEMO|WIKI|Wiki|HUD|FPS|UI|μm|v\d.*|[\d\s.,:%×x+\-–—\/()#]+)$/;
+  const COG = (() => { try { return JSON.parse(fs.readFileSync(path.join(process.cwd(), '.04-Src/i18n/i18n_identity.allow.json'), 'utf8')).cognates || {}; } catch (e) { return {}; } })();
   for (const k in R) { const [L, W] = k.split('_'); if (L === 'en' || !R['en_' + W]) continue;
     for (const st of SCREENS) { const a = R[k][st], e = R['en_' + W][st]; if (!a || !e || !a.ctl || !e.ctl) continue;
-      for (const id in a.ctl) if (e.ctl[id] && a.ctl[id] === e.ctl[id] && /[A-Za-z]{4,}/.test(a.ctl[id]) && !ALLOW.test(a.ctl[id])) { if (COGNATE[a.ctl[id].toUpperCase()] && COGNATE[a.ctl[id].toUpperCase()].includes(L)) continue; (a.F = a.F || []).push([L === 'fil' ? 'untranslatedLocked' : 'untranslated', id + ':' + a.ctl[id].slice(0, 30)]); } } }
-  const RED = ['crash', 'overlap', 'lowContrast', 'emptyPlaque', 'untranslated'];
+      for (const id in a.ctl) if (e.ctl[id] && a.ctl[id] === e.ctl[id] && /[A-Za-z]{4,}/.test(a.ctl[id]) && !ALLOW.test(a.ctl[id])) { const cg = COG[a.ctl[id].toUpperCase()]; if (cg && cg.includes(L)) continue; (a.F = a.F || []).push([L === 'fil' ? 'untranslatedLocked' : 'untranslated', id + ':' + a.ctl[id].slice(0, 30)]); } } }
+  // v24z9: clip на кнопках управления / заголовке смерти / HUD — дефект уровня RED (правило 3 ТЗ)
+  for (const k in R) for (const st of SCREENS) { const a = R[k][st]; if (!a || !a.F) continue;
+    const clipCtl = a.F.filter(f => f[0] === 'clip' && /^(startBtn|helpBtn|wikiBtnMenu|setBtn2|demoBtn|helpClose|wikiClose|setClose|ecYes|ecNo|deadT|pauseO|hud)/i.test(f[1])).length;
+    if (clipCtl) a.F.push(['clipCtl', clipCtl + ' clip on ctl/death/hud']); }
+  const RED = ['crash', 'overlap', 'lowContrast', 'emptyPlaque', 'untranslated', 'clipCtl']; // v24z9: clip на кнопках/HUD/заголовке смерти — RED (критик: clip был YELLOW)
   const light = s => !s ? 'RED' : (s.F || []).some(f => RED.includes(f[0])) ? 'RED' : (s.F || []).length ? 'YELLOW' : 'GREEN';
   const rows = []; for (const W of VPS) for (const L of order) { const k = L + '_' + W; rows.push([k, ...SCREENS.map(st => light(R[k][st]) + (R[k].crash && !R[k][st] ? '*' : ''))]); }
   const md = ['| lang_vp | ' + SCREENS.join(' | ') + ' |', '|' + '---|'.repeat(SCREENS.length + 1), ...rows.map(r => '| ' + r.join(' | ').replace(/GREEN/g, '🟢').replace(/YELLOW/g, '🟡').replace(/RED/g, '🔴') + ' |')].join('\n');

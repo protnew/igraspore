@@ -266,12 +266,9 @@ function spriteReady(img){
   return w > 1 && h > 1;
 }
 
-// Auto-preload shortly after parse (idle)
-if (typeof requestIdleCallback === 'function') {
-  requestIdleCallback(function(){ window.loadSwissSprites(); }, {timeout: 2500});
-} else {
-  setTimeout(function(){ window.loadSwissSprites(); }, 800);
-}
+// v24 задача 5: auto-preload УДАЛЁН — 28 PNG (3.88 МБ = 82% стартовой сети) грузились всегда,
+// даже в cartoon-режиме по умолчанию. Теперь лениво: первый вызов отрисовки swiss (строки с
+// `if (loadState === 'idle') loadSwissSprites()`) сам запускает загрузку — переключение режима работает как раньше.
 
 function drawSprite(ctx, o, sz, shapeKey){
   var img = sprites[shapeKey];

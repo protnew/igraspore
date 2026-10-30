@@ -56,10 +56,23 @@ function igsText(key, fallback){
   return (!s||s===key)?fallback:s;
 }
 function igsNum(n, digits){
+  // v24 A3/Р7: система цифр — из реестра (digits), умолчание Intl; ar → latn (решение Р7)
   var lang=(typeof curLang==='string'&&curLang)?curLang:'ru';
+  var sys='latn';
+  try{
+    var sysDef=new Intl.NumberFormat(lang).resolvedOptions().numberingSystem||'latn';
+    if(lang==='ar') sysDef='latn'; // Р7: единственное переопределение
+    sys=sysDef;
+  }catch(e){}
   var d=digits==null?0:digits;
-  try{ return new Intl.NumberFormat(lang,{maximumFractionDigits:d,numberingSystem:'latn'}).format(n); }
-  catch(e){ return (d?Number(n).toFixed(d):String(Math.round(n))); }
+  try{ return new Intl.NumberFormat(lang,{maximumFractionDigits:d,numberingSystem:sys}).format(n); }
+  catch(e){
+    // фолбэк без поддержки системы цифр — ручная транслитерация latn-цифр
+    var s=(d?Number(n).toFixed(d):String(Math.round(n)));
+    var MAP={beng:'০১২৩৪৫৬৭৮৯',deva:'०१२३४५६७८९',arab:'٠١٢٣٤٥٦٧٨٩',arabext:'۰۱۲۳۴۵۶۷۸۹',mymr:'၀၉'.length?'၀၁၂၃၄၅၆၇၈၉':'',khmr:'០១២៣៤៥៦៧៨៩',tibt:'༠༡༢༣༤༥༦༧༨༩',thai:'๐๑๒๓๔๕๖๗๘๙'};
+    if(MAP[sys]) s=s.replace(/[0-9]/g,function(x){return MAP[sys][+x];});
+    return s;
+  }
 }
 if(typeof window!=='undefined'){ window.tt=tt; window.igsText=igsText; window.igsNum=igsNum; }
 

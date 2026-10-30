@@ -137,14 +137,10 @@ function updateMenuTexts(){
         poolN = Math.round(poolN * DIFF[difficulty].spawn);
     } catch(e){ poolN = 1600; }
     if(!poolN) poolN = 1600;
-    var el = document.getElementById('menuSub');
-    // v21 §13.3 (тестировщик, дефект №3): число видов динамическое — словари пишут «100», реально SPECIES_DB.length (101).
-    // v21 (критик 3): bn пишет «১০০» бенгальскими цифрами — \b100\b его не матчил; подставляем и конвертируем цифры
+    // v21 (критик 3) → v24 A3: число видов через igsNum (система цифр из реестра digits — bn ১০১, ar 101 и т.д.)
     if(el){
       var _n = (typeof SPECIES_DB!=='undefined' && SPECIES_DB.length) ? SPECIES_DB.length : 100;
-      var _sub = tt('menuSub').replace(/\b100\b|১০০/, String(_n));
-      if(typeof curLang!=='undefined' && curLang==='bn') _sub = _sub.replace(/\b101\b/g, function(d){ return d.replace(/\d/g, function(x){ return '০১২৩৪৫৬৭৮৯'[+x]; }); });
-      el.innerHTML = _sub;
+      el.innerHTML = tt('menuSub').replace(/\b100\b|১০০/, (typeof igsNum==='function') ? igsNum(_n) : String(_n));
     }
     if(typeof renderPoolBanner==='function') renderPoolBanner();
   })();

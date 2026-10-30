@@ -1506,6 +1506,366 @@
     ],
     "category": "cognate"
   },
+  "160": {
+    "key": "aria.auto",
+    "value": "Auto (Tab)",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "161": {
+    "key": "aria.demo",
+    "value": "Demo",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "162": {
+    "key": "aria.start",
+    "value": "Start",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "163": {
+    "key": "aria.wiki2",
+    "value": "Wiki (B)",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "164": {
+    "key": "autoOn",
+    "value": "AUTO",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "165": {
+    "key": "dTemp",
+    "value": "Temp",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "166": {
+    "key": "diffN",
+    "value": "Normal",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "167": {
+    "key": "dna.io",
+    "value": "Import/Export DNA",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "168": {
+    "key": "edu.nucleoid.name",
+    "value": "Nucleoid",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "169": {
+    "key": "fps",
+    "value": "FPS",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "170": {
+    "key": "hud.btn.auto",
+    "value": "AUTO",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "171": {
+    "key": "hud.btn.auto.short",
+    "value": "AUTO",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "172": {
+    "key": "hud.genSep",
+    "value": " · Gen ",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "173": {
+    "key": "mob.eSep",
+    "value": " · E=",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "174": {
+    "key": "mode.swissLbl",
+    "value": "📗 SWISS",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "175": {
+    "key": "mode.webglLbl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "176": {
+    "key": "modeBig.swiss",
+    "value": "📗 SWISSBIOPICS",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "177": {
+    "key": "modeBig.webgl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "178": {
+    "key": "modeLbl.swiss",
+    "value": "📗 SwissBioPics",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "179": {
+    "key": "modeLbl.webgl",
+    "value": "🌊 WebGL",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "180": {
+    "key": "pop",
+    "value": "Pop",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "181": {
+    "key": "restart",
+    "value": "RESTART",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "182": {
+    "key": "spcard.virus",
+    "value": "Virus",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "183": {
+    "key": "star.alphacentauri",
+    "value": "★ Alpha Centauri A+B",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "184": {
+    "key": "star.antares",
+    "value": "★ Antares",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "185": {
+    "key": "star.betelgeuse",
+    "value": "★ Betelgeuse",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "186": {
+    "key": "star.polaris",
+    "value": "★ Polaris",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "187": {
+    "key": "star.pulsar",
+    "value": "★ Neutron (pulsar)",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "188": {
+    "key": "star.rigel",
+    "value": "★ Rigel",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "189": {
+    "key": "star.sirius",
+    "value": "★ Sirius A+B",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "190": {
+    "key": "star.vega",
+    "value": "★ Vega",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "191": {
+    "key": "starg.alphacentauri",
+    "value": "★ α Centauri",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "192": {
+    "key": "starg.sirius",
+    "value": "★ Sirius",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "193": {
+    "key": "start",
+    "value": "START",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "194": {
+    "key": "temp",
+    "value": "Temp",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "195": {
+    "key": "tip.auto",
+    "value": "Auto",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "196": {
+    "key": "tip.swiss",
+    "value": "SwissBioPics. Click -> WebGL",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "197": {
+    "key": "tip.zi",
+    "value": "Zoom+",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "198": {
+    "key": "tip.zo",
+    "value": "Zoom-",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "199": {
+    "key": "wiki",
+    "value": "WIKI",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "200": {
+    "key": "x.a",
+    "value": "A",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "201": {
+    "key": "x.e",
+    "value": "E",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "202": {
+    "key": "x.golgi",
+    "value": "Golgi",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "203": {
+    "key": "x.s",
+    "value": "S",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
+  "204": {
+    "key": "loc.drift",
+    "value": "drift",
+    "langs": [
+      "ro"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

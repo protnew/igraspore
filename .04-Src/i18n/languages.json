@@ -390,5 +390,21 @@
     "playListing": true,
     "register": "du",
     "critics": []
+  },
+  {
+    "code": "ro",
+    "name": "Română",
+    "native": "Română",
+    "wave": 9,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "ro",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "tu",
+    "critics": []
   }
 ]

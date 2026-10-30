@@ -1,32 +1,54 @@
 "use strict";
 
+// v24 Р10: общий порядок языков для обоих селекторов — язык устройства → en → остальные по native (localeCompare)
+function igsLangCodes(){
+  var enabled = window.IGS_ENABLED || {en:1}; // GEN:A1: полный набор генерируется в i18n_detect (реестр)
+  var nm = function(l){ return (typeof langNames!=='undefined' && langNames[l]) || (typeof LANG_NAME!=='undefined' && LANG_NAME[l]) || (typeof LANGS!=='undefined' && LANGS[l]) || l; };
+  var codes = [];
+  for(var l in LANGS){ if(enabled[l]) codes.push(l); }
+  var dev = (navigator.language||'en').toLowerCase();
+  var base = dev.split('-')[0];
+  var devCode = null;
+  if(dev.indexOf('hant')>=0 || dev==='zh-tw' || dev==='zh-hk' || dev==='zh-mo'){ devCode='zh-TW'; }
+  else if(base==='zh'){ devCode='zh-CN'; }
+  else if(dev==='pt-pt'||dev==='pt-ao'||dev==='pt-mz'){ devCode='pt-PT'; }
+  else if(base==='pt'){ devCode='pt-BR'; }
+  else if(dev==='in'){ devCode='id'; }
+  else if(base==='tl'){ devCode='fil'; }
+  else if(base==='iw'){ devCode='he'; }
+  else if(base==='nb'||base==='nn'){ devCode='no'; }
+  else { for(var c=0;c<codes.length;c++){ if(codes[c].toLowerCase()===base){ devCode=codes[c]; break; } } }
+  var rest = codes.filter(function(l){ return l!==devCode && l!=='en'; });
+  rest.sort(function(a,b){ return nm(a).localeCompare(nm(b)); });
+  var out = [];
+  if(devCode && enabled[devCode] && codes.indexOf(devCode)>=0) out.push(devCode);
+  if(enabled.en) out.push('en');
+  return out.concat(rest);
+}
+
 function buildLangBar() {
-  var lb = document.getElementById('langSelDrop');
-  if(!lb) return;
-  lb.innerHTML = '';
-  document.getElementById('curLangTxt').textContent = langNames[curLang] || curLang;
-  var enabled = window.IGS_ENABLED || {ru:1, en:1, 'pt-BR':1, id:1, de:1, fr:1, hi:1, ja:1, vi:1, ko:1, th:1, it:1, pl:1, uk:1, 'zh-TW':1, ms:1, bn:1, es:1, tr:1, fil:1};
-  for(var l in LANGS) {
-    if(!enabled[l]) continue;
-    var b = document.createElement('div');
-    b.className = 'lang-item' + (curLang === l ? ' act' : '');
-    b.textContent = langNames[l] || LANGS[l];
-    b.setAttribute('data-lang', l);
-    b.onclick = function(ev) {
-      var next = ev.target.getAttribute('data-lang');
-      function apply() {
-        curLang = next;
-        if (typeof applyLangFont === 'function') applyLangFont(curLang);
-        try { localStorage.setItem('igs_lang', curLang); localStorage.removeItem('igs_lang_auto'); } catch(e){}
-        buildLangBar();
-        if (typeof updateMenuTexts === 'function') updateMenuTexts();
-      }
-      if (window.loadLangPack) window.loadLangPack(next).then(apply).catch(apply);
-      else apply();
-      document.getElementById('langSelWrap').blur();
-    };
-    lb.appendChild(b);
+  // v24 Р10: меню — нативный <select id="menuLangSel"> (системный скролл на 100 языков), только enabled
+  var sel = document.getElementById('menuLangSel');
+  if(!sel) return;
+  var nm = function(l){ return (typeof langNames!=='undefined' && langNames[l]) || (typeof LANG_NAME!=='undefined' && LANG_NAME[l]) || l; };
+  var codes = igsLangCodes();
+  var html = '';
+  for(var i=0;i<codes.length;i++){
+    html += '<option value="'+codes[i]+'"'+(codes[i]===curLang?' selected':'')+'>'+nm(codes[i])+'</option>';
   }
+  sel.innerHTML = html;
+  sel.onchange = function(){
+    var next = sel.value;
+    function apply() {
+      curLang = next;
+      if (typeof applyLangFont === 'function') applyLangFont(curLang);
+      try { localStorage.setItem('igs_lang', curLang); localStorage.removeItem('igs_lang_auto'); } catch(e){}
+      buildLangBar();
+      if (typeof updateMenuTexts === 'function') updateMenuTexts();
+    }
+    if (window.loadLangPack) window.loadLangPack(next).then(apply).catch(apply);
+    else apply();
+  };
 }
 
 function buildDiff(){
@@ -208,11 +230,11 @@ function buildSettings(){
   html+='<div class="slider-row"><span>'+tt('simSpeed')+'</span><input type="range" min="0.1" max="3" step="0.05" value="'+settings.simSpeed+'" oninput="settings.simSpeed=parseFloat(this.value);this.nextElementSibling.textContent=settings.simSpeed.toFixed(2)+\'\u00d7\'" /><span class="slider-val">'+sv(settings.simSpeed,2)+'\u00d7</span></div>';
   html+='<div class="slider-row"><span>'+tt('predation')+'</span><input type="range" min="0" max="2" step="0.1" value="'+settings.predation+'" oninput="settings.predation=parseFloat(this.value);this.nextElementSibling.textContent=settings.predation.toFixed(1)" /><span class="slider-val">'+sv(settings.predation,1)+'</span></div>';
   html+='<div class="slider-row"><span>'+tt('divRate')+'</span><input type="range" min="0" max="3" step="0.1" value="'+settings.divRate+'" oninput="settings.divRate=parseFloat(this.value);this.nextElementSibling.textContent=settings.divRate.toFixed(1)" /><span class="slider-val">'+sv(settings.divRate,1)+'</span></div>';
-  var langCodes = Object.keys(typeof LANGS!=='undefined'?LANGS:{en:1});
+  var langCodes = (typeof igsLangCodes==='function') ? igsLangCodes() : Object.keys(typeof LANGS!=='undefined'?LANGS:{en:1}); // v24 Р10: только enabled, единый порядок
   html+='<div class="sr"><span>'+tt('setLang')+'</span><select id="setLang" style="min-height:48px;font-size:16px;background:#123a66;color:#fff;max-width:70%">';
   for(var li=0; li<langCodes.length; li++){
     var code=langCodes[li];
-    var nm=(typeof LANG_NAME!=='undefined'&&LANG_NAME[code])?LANG_NAME[code]:code;
+    var nm=(typeof langNames!=='undefined'&&langNames[code])?langNames[code]:((typeof LANG_NAME!=='undefined'&&LANG_NAME[code])?LANG_NAME[code]:code); // v24: native-имя единообразно с меню
     html+='<option value="'+code+'"'+(code===curLang?' selected':'')+'>'+nm+'</option>';
   }
   html+='</select></div>';

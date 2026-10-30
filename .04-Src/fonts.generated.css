@@ -1,0 +1,4 @@
+/* GEN:A1 — @font-face из реестра (languages.json, поле font). Не править руками. */
+@font-face{font-family:"Noto Sans Devanagari";src:url("04-Src/fonts/NotoSansDevanagari-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20B9}
+@font-face{font-family:"Noto Sans Thai";src:url("04-Src/fonts/NotoSansThai-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0E01-0E5B,U+200C-200D}
+@font-face{font-family:"Noto Sans Bengali";src:url("04-Src/fonts/NotoSansBengali-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0980-09FE,U+0964-0965,U+200C-200D}

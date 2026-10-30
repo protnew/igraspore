@@ -119,8 +119,11 @@ function updateWorld(dt){
         // v21: размер инъекции по трофике (крупные хищники парами/тройками перетягивают биомассу c3>c2 и ломали пирамиду):
         // исчезнувшему — 3 (низ), 2 (середина), 1 (верховья — одиночная ре-колонизация, биологично для топ-хищников);
         // единичному — подкрепление до 3/2/— (топ-хищников не качаем)
-        var _top=((_rsp.flags&&_rsp.flags.gendered))?Math.max(2,_cnt===0?2:2):((_cnt===0)?((_rsp.cat==='consumer3')?1:(_rsp.cat==='consumer2'||_rsp.cat==='decomposer')?2:3))
-                            :((_rsp.cat==='consumer3')?0:(_rsp.cat==='consumer2'||_rsp.cat==='decomposer')?1:2);
+        // v24z7: гендерному виду — минимум пара (иначе вид вечно без размножения, критик 1 v21)
+        var _top;
+        if (_rsp.flags && _rsp.flags.gendered) _top = 2;
+        else if (_cnt === 0) _top = (_rsp.cat === 'consumer3') ? 1 : (_rsp.cat === 'consumer2' || _rsp.cat === 'decomposer') ? 2 : 3;
+        else _top = (_rsp.cat === 'consumer3') ? 0 : (_rsp.cat === 'consumer2' || _rsp.cat === 'decomposer') ? 1 : 2;
         for(var _nn=0;_nn<_top;_nn++) spawnOrg(_rsp,rng(-_rhw,_rhw),_rd);
       }
     } else window.__rrAllI=0;

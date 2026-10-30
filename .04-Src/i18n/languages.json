@@ -1,22 +1,362 @@
 [
-  {"code":"en","name":"English","wave":1,"enabled":true,"font":"system","plural":"en","critics":[]},
-  {"code":"ru","name":"Русский","wave":1,"enabled":true,"font":"system","plural":"ru","critics":[]},
-  {"code":"pt-BR","name":"Português (Brasil)","wave":1,"enabled":true,"font":"system","plural":"pt","critics":[9.0,8.6]},
-  {"code":"es","name":"Español","wave":1,"enabled":true,"font":"system","plural":"es","critics":[8.4,7.4,8.5,8.6]},
-  {"code":"hi","name":"हिन्दी","wave":1,"enabled":true,"font":"Noto Sans Devanagari","plural":"hi","critics":[8.2,8.0]},
-  {"code":"id","name":"Bahasa Indonesia","wave":1,"enabled":true,"font":"system","plural":"id","critics":[9.2,8.4]},
-  {"code":"tr","name":"Türkçe","wave":1,"enabled":true,"font":"system","plural":"tr","critics":[8.4,7.5,8,8.3,8.6]},
-  {"code":"de","name":"Deutsch","wave":1,"enabled":true,"font":"system","plural":"de","critics":[8.8,8.6]},
-  {"code":"fr","name":"Français","wave":1,"enabled":true,"font":"system","plural":"fr","critics":[9.2,8.8]},
-  {"code":"ja","name":"日本語","wave":1,"enabled":true,"font":"system-cjk","plural":"ja","critics":[9.2,8.6]},
-  {"code":"vi","name":"Tiếng Việt","wave":2,"enabled":true,"font":"system","plural":"vi","critics":[8.4,8.8]},
-  {"code":"ko","name":"한국어","wave":2,"enabled":true,"font":"system-cjk","plural":"ko","critics":[8.2,9.0]},
-  {"code":"th","name":"ไทย","wave":2,"enabled":true,"font":"Noto Sans Thai","plural":"th","critics":[9.2,8.6]},
-  {"code":"fil","name":"Filipino","wave":2,"enabled":true,"font":"system","plural":"fil","critics":[7.8,8.6,8.2]},
-  {"code":"it","name":"Italiano","wave":2,"enabled":true,"font":"system","plural":"it","critics":[9.2,9.0]},
-  {"code":"pl","name":"Polski","wave":2,"enabled":true,"font":"system","plural":"pl","critics":[9.0,8.8]},
-  {"code":"uk","name":"Українська","wave":2,"enabled":true,"font":"system","plural":"uk","critics":[8.8,8.4]},
-  {"code":"zh-TW","name":"繁體中文","wave":2,"enabled":true,"font":"system-cjk","plural":"zh","critics":[9.4,8.8]},
-  {"code":"ms","name":"Bahasa Melayu","wave":2,"enabled":true,"font":"system","plural":"ms","critics":[8.8,8.2]},
-  {"code":"bn","name":"বাংলা","wave":2,"enabled":true,"font":"Noto Sans Bengali","plural":"bn","critics":[9.0,8.8]}
+  {
+    "code": "en",
+    "name": "English",
+    "wave": 1,
+    "enabled": true,
+    "font": "system",
+    "plural": "en",
+    "critics": [],
+    "native": "English",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "tu"
+  },
+  {
+    "code": "ru",
+    "name": "Русский",
+    "wave": 1,
+    "enabled": true,
+    "font": "system",
+    "plural": "ru",
+    "critics": [],
+    "native": "Русский",
+    "script": "cyrl",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "vy"
+  },
+  {
+    "code": "pt-BR",
+    "name": "Português (Brasil)",
+    "wave": 1,
+    "enabled": true,
+    "font": "system",
+    "plural": "pt",
+    "critics": [
+      9,
+      8.6
+    ],
+    "native": "Português (Brasil)",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "tu"
+  },
+  {
+    "code": "es",
+    "name": "Español",
+    "wave": 1,
+    "enabled": true,
+    "font": "system",
+    "plural": "es",
+    "critics": [
+      8.4,
+      7.4,
+      8.5,
+      8.6
+    ],
+    "native": "Español",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "tu"
+  },
+  {
+    "code": "hi",
+    "name": "हिन्दी",
+    "wave": 1,
+    "enabled": true,
+    "font": "Noto Sans Devanagari",
+    "plural": "hi",
+    "critics": [
+      8.2,
+      8
+    ],
+    "native": "हिन्दी",
+    "script": "deva",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "aap"
+  },
+  {
+    "code": "id",
+    "name": "Bahasa Indonesia",
+    "wave": 1,
+    "enabled": true,
+    "font": "system",
+    "plural": "id",
+    "critics": [
+      9.2,
+      8.4
+    ],
+    "native": "Bahasa Indonesia",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "kamu"
+  },
+  {
+    "code": "tr",
+    "name": "Türkçe",
+    "wave": 1,
+    "enabled": true,
+    "font": "system",
+    "plural": "tr",
+    "critics": [
+      8.4,
+      7.5,
+      8,
+      8.3,
+      8.6
+    ],
+    "native": "Türkçe",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "sen-siz"
+  },
+  {
+    "code": "de",
+    "name": "Deutsch",
+    "wave": 1,
+    "enabled": true,
+    "font": "system",
+    "plural": "de",
+    "critics": [
+      8.8,
+      8.6
+    ],
+    "native": "Deutsch",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "du"
+  },
+  {
+    "code": "fr",
+    "name": "Français",
+    "wave": 1,
+    "enabled": true,
+    "font": "system",
+    "plural": "fr",
+    "critics": [
+      9.2,
+      8.8
+    ],
+    "native": "Français",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "tu"
+  },
+  {
+    "code": "ja",
+    "name": "日本語",
+    "wave": 1,
+    "enabled": true,
+    "font": "system",
+    "plural": "ja",
+    "critics": [
+      9.2,
+      8.6
+    ],
+    "native": "日本語",
+    "script": "hani/kana",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "dictionary-form"
+  },
+  {
+    "code": "vi",
+    "name": "Tiếng Việt",
+    "wave": 2,
+    "enabled": true,
+    "font": "system",
+    "plural": "vi",
+    "critics": [
+      8.4,
+      8.8
+    ],
+    "native": "Tiếng Việt",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "ban"
+  },
+  {
+    "code": "ko",
+    "name": "한국어",
+    "wave": 2,
+    "enabled": true,
+    "font": "system",
+    "plural": "ko",
+    "critics": [
+      8.2,
+      9
+    ],
+    "native": "한국어",
+    "script": "hang",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "hae-yo-che"
+  },
+  {
+    "code": "th",
+    "name": "ไทย",
+    "wave": 2,
+    "enabled": true,
+    "font": "Noto Sans Thai",
+    "plural": "th",
+    "critics": [
+      9.2,
+      8.6
+    ],
+    "native": "ไทย",
+    "script": "thai",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "khrap"
+  },
+  {
+    "code": "fil",
+    "name": "Filipino",
+    "wave": 2,
+    "enabled": true,
+    "font": "system",
+    "plural": "fil",
+    "critics": [
+      7.8,
+      8.6,
+      8.2
+    ],
+    "native": "Filipino",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "ikaw"
+  },
+  {
+    "code": "it",
+    "name": "Italiano",
+    "wave": 2,
+    "enabled": true,
+    "font": "system",
+    "plural": "it",
+    "critics": [
+      9.2,
+      9
+    ],
+    "native": "Italiano",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "tu"
+  },
+  {
+    "code": "pl",
+    "name": "Polski",
+    "wave": 2,
+    "enabled": true,
+    "font": "system",
+    "plural": "pl",
+    "critics": [
+      9,
+      8.8
+    ],
+    "native": "Polski",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "per-TU-Voc"
+  },
+  {
+    "code": "uk",
+    "name": "Українська",
+    "wave": 2,
+    "enabled": true,
+    "font": "system",
+    "plural": "uk",
+    "critics": [
+      8.8,
+      8.4
+    ],
+    "native": "Українська",
+    "script": "cyrl",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "vy"
+  },
+  {
+    "code": "zh-TW",
+    "name": "繁體中文",
+    "wave": 2,
+    "enabled": true,
+    "font": "system",
+    "plural": "zh",
+    "critics": [
+      9.4,
+      8.8
+    ],
+    "native": "繁體中文",
+    "script": "hani",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "neutral"
+  },
+  {
+    "code": "ms",
+    "name": "Bahasa Melayu",
+    "wave": 2,
+    "enabled": true,
+    "font": "system",
+    "plural": "ms",
+    "critics": [
+      8.8,
+      8.2
+    ],
+    "native": "Bahasa Melayu",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "kamu"
+  },
+  {
+    "code": "bn",
+    "name": "বাংলা",
+    "wave": 2,
+    "enabled": true,
+    "font": "Noto Sans Bengali",
+    "plural": "bn",
+    "critics": [
+      9,
+      8.8
+    ],
+    "native": "বাংলা",
+    "script": "beng",
+    "dir": "ltr",
+    "digits": "beng",
+    "playListing": true,
+    "register": "apni"
+  }
 ]

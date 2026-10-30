@@ -1,4 +1,5 @@
 function detectLang(navLangs, enabled) {
+  // v24 A1: автовыбор по таблице ТЗ (первый включённый в цепочке)
   var list = Array.isArray(navLangs) ? navLangs : [];
   var on = {};
   (enabled || ['en']).forEach(function(code){ on[code] = true; });
@@ -7,25 +8,31 @@ function detectLang(navLangs, enabled) {
     var raw = String(list[i] || '').replace('_', '-');
     var low = raw.toLowerCase();
     if (!low) continue;
-    if (ok(raw)) return raw;
-    if (low === 'in' && ok('id')) return 'id';
-    if (low === 'tl' && ok('fil')) return 'fil';
-    if (low === 'pt-br' && ok('pt-BR')) return 'pt-BR';
-    if (low.indexOf('pt') === 0 && ok('pt-BR')) return 'pt-BR';
-    if (low.indexOf('es') === 0 && ok('es')) return 'es';
-    if ((low === 'zh-tw' || low === 'zh-hk' || low.indexOf('zh-hant') === 0) && ok('zh-TW')) return 'zh-TW';
-    if ((low === 'zh-cn' || low.indexOf('zh-hans') === 0 || low === 'zh') && ok('en')) return 'en';
     var base = low.split('-')[0];
-    if (ok(base)) return base;
-    if (base === 'en' && ok('en')) return 'en';
+    // цепочки
+    var chain;
+    if (low === 'zh-cn' || low === 'zh-sg' || low.indexOf('zh-hans') === 0 || low === 'zh') chain = ['zh-CN']
+    else if (low === 'zh-tw' || low === 'zh-hk' || low === 'zh-mo' || low.indexOf('zh-hant') === 0) chain = ['zh-TW'];
+    else if (low === 'pt-pt' || low === 'pt-ao' || low === 'pt-mz') chain = ['pt-PT', 'pt-BR'];
+    else if (base === 'pt') chain = ['pt-BR'];
+    else if (low === 'es-es' || low === 'es') chain = ['es'];
+    else if (base === 'es') chain = ['es-419', 'es'];
+    else if (base === 'nb' || base === 'nn' || base === 'no') chain = ['no'];
+    else if (base === 'iw' || base === 'he') chain = ['he'];
+    else if (base === 'in') chain = ['id'];
+    else if (base === 'tl') chain = ['fil'];
+    else if (base === 'sr') chain = ['sr'];
+    else chain = [raw, base];
+    for (var c = 0; c < chain.length; c++) if (ok(chain[c])) return chain[c];
   }
   return ok('en') || 'en';
 }
 function applyLangFont(code) {
   if (typeof document === 'undefined') return;
   document.documentElement.lang = code || 'en';
-  var face = code === 'bn' ? 'Noto Sans Bengali' : code === 'hi' ? 'Noto Sans Devanagari' : code === 'th' ? 'Noto Sans Thai' : '';
-  var sample = code === 'bn' ? '\u0995' : code === 'hi' ? '\u0915' : code === 'th' ? '\u0E01' : '';
+  var __IGS_FONTS = {"hi":"Noto Sans Devanagari","th":"Noto Sans Thai","bn":"Noto Sans Bengali"}; // GEN:A1
+  var face = __IGS_FONTS[code] || '';
+  var sample = (face && (LANG_NAME[code] || '')) ? (LANG_NAME[code] + '').trim().charAt(0) : '';
   if (face && sample && document.fonts && document.fonts.load) document.fonts.load('16px "' + face + '"', sample).catch(function(){});
 }
 // QA-only gate (U39): forcing a disabled language is allowed on the local QA stand or
@@ -53,7 +60,7 @@ function loadLangPack(code) {
 if (typeof window !== 'undefined') {
   window.loadLangPack = loadLangPack;
   window.detectLang = detectLang;
-  window.IGS_ENABLED = window.IGS_ENABLED || { ru: 1, en: 1, 'pt-BR': 1, id: 1, de: 1, fr: 1, hi: 1, ja: 1, vi: 1, ko: 1, th: 1, it: 1, pl: 1, uk: 1, 'zh-TW': 1, ms: 1, bn: 1, es: 1, tr: 1, fil: 1 };
+  window.IGS_ENABLED = window.IGS_ENABLED || {'en': 1, 'ru': 1, 'pt-BR': 1, 'es': 1, 'hi': 1, 'id': 1, 'tr': 1, 'de': 1, 'fr': 1, 'ja': 1, 'vi': 1, 'ko': 1, 'th': 1, 'fil': 1, 'it': 1, 'pl': 1, 'uk': 1, 'zh-TW': 1, 'ms': 1, 'bn': 1 }; // GEN:A1
   // Dev/QA hook (L.9 screenshots): force a language that is NOT in the enabled set
   // without editing languages.json / LANGS / localeConfig. QA-only (U39): honoured
   // solely on the localhost QA stand or with ?qa=1; elsewhere igs_force_lang is ignored.

@@ -188,7 +188,7 @@
   "massWord": "Jisim",
   "maxPop": "Pop. maks.",
   "menu": "MENU",
-  "menuSub": "Simulasi mikrob — 100 spesies + virus. Keratan rentas kolam.",
+  "menuSub": "Simulasi mikrob — {n} spesies + virus. Keratan rentas kolam.",
   "mic.scope": "MIKROSKOP ×",
   "microscope": "Mikroskop",
   "midEaterTip": "Pemakan sederhana: berenang ke alga atau bakteria. Silia menapis sendiri.",

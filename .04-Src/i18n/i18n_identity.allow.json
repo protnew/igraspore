@@ -850,6 +850,430 @@
     ],
     "category": "cognate"
   },
+  "78": {
+    "key": "cartoon",
+    "value": "CARTOON",
+    "langs": [
+      "fil"
+    ],
+    "category": "F1-locked"
+  },
+  "79": {
+    "key": "menu",
+    "value": "MENU",
+    "langs": [
+      "fil"
+    ],
+    "category": "F1-locked"
+  },
+  "80": {
+    "key": "set",
+    "value": "SETTINGS",
+    "langs": [
+      "fil"
+    ],
+    "category": "F1-locked"
+  },
+  "81": {
+    "key": "wiki",
+    "value": "WIKI",
+    "langs": [
+      "fil"
+    ],
+    "category": "F1-locked"
+  },
+  "82": {
+    "key": "hud.btn.menu",
+    "value": "Menu",
+    "langs": [
+      "fil"
+    ],
+    "category": "F1-locked"
+  },
+  "83": {
+    "key": "coloniesCount.other",
+    "value": "{n} colonies",
+    "langs": [
+      "fr"
+    ],
+    "category": "cognate"
+  },
+  "84": {
+    "key": "speciesShown.one",
+    "value": "{n} species",
+    "langs": [
+      "fil"
+    ],
+    "category": "cognate"
+  },
+  "85": {
+    "key": "speciesShown.other",
+    "value": "{n} species",
+    "langs": [
+      "fil"
+    ],
+    "category": "cognate"
+  },
+  "86": {
+    "key": "coloniesCount.one",
+    "value": "{n} colony",
+    "langs": [
+      "fil"
+    ],
+    "category": "cognate"
+  },
+  "87": {
+    "key": "coloniesCount.other",
+    "value": "{n} colonies",
+    "langs": [
+      "fil"
+    ],
+    "category": "cognate"
+  },
+  "88": {
+    "key": "aquarium",
+    "value": "AQUARIUM",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "89": {
+    "key": "aria.aqua",
+    "value": "Aquarium",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "90": {
+    "key": "aria.auto",
+    "value": "Auto (Tab)",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "91": {
+    "key": "aria.cyst",
+    "value": "Spore (R)",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "92": {
+    "key": "aria.demo",
+    "value": "Demo",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "93": {
+    "key": "aria.start",
+    "value": "Start",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "94": {
+    "key": "aria.wiki2",
+    "value": "Wiki (B)",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "95": {
+    "key": "cartoon",
+    "value": "CARTOON",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "96": {
+    "key": "dLysis",
+    "value": "Lysis",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "97": {
+    "key": "dTemp",
+    "value": "Temp",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "98": {
+    "key": "demo.labels",
+    "value": "Labels",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "99": {
+    "key": "edu.chloro.name",
+    "value": "Chloroplast",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "100": {
+    "key": "edu.mito.name",
+    "value": "Mitochondrion",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "101": {
+    "key": "edu.vacuole.name",
+    "value": "Vacuole",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "102": {
+    "key": "filter",
+    "value": "Filter",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "103": {
+    "key": "hud.btn.cyst",
+    "value": "SPORE",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "104": {
+    "key": "hud.btn.cyst.short",
+    "value": "SPORE",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "105": {
+    "key": "hud.btn.menu",
+    "value": "Menu",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "106": {
+    "key": "hud.genSep",
+    "value": " · Gen ",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "107": {
+    "key": "maxPop",
+    "value": "Max pop",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "108": {
+    "key": "menu",
+    "value": "MENU",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "109": {
+    "key": "modeBig.cartoon",
+    "value": "🎨 CARTOON",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "110": {
+    "key": "modeLbl.cartoon",
+    "value": "🎨 Cartoon",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "111": {
+    "key": "pop",
+    "value": "Pop",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "112": {
+    "key": "season3",
+    "value": "Winter",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "113": {
+    "key": "spcard.virus",
+    "value": "Virus",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "114": {
+    "key": "star.alphacentauri",
+    "value": "★ Alpha Centauri A+B",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "115": {
+    "key": "star.antares",
+    "value": "★ Antares",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "116": {
+    "key": "star.pulsar",
+    "value": "★ Neutron (pulsar)",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "117": {
+    "key": "star.rigel",
+    "value": "★ Rigel",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "118": {
+    "key": "star.sirius",
+    "value": "★ Sirius A+B",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "119": {
+    "key": "star.vega",
+    "value": "★ Vega",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "120": {
+    "key": "starg.alphacentauri",
+    "value": "★ α Centauri",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "121": {
+    "key": "starg.sirius",
+    "value": "★ Sirius",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "122": {
+    "key": "start",
+    "value": "START",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "123": {
+    "key": "temp",
+    "value": "Temp",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "124": {
+    "key": "tip.auto",
+    "value": "Auto",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "125": {
+    "key": "tip.cyst",
+    "value": "Spore",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "126": {
+    "key": "x.a",
+    "value": "A",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "127": {
+    "key": "x.e",
+    "value": "E",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "128": {
+    "key": "x.macroMicronucleus",
+    "value": "macro/micronucleus",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "129": {
+    "key": "x.s",
+    "value": "S",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
+  "130": {
+    "key": "x.wind",
+    "value": "Wind",
+    "langs": [
+      "nl"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

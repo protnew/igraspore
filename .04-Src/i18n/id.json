@@ -188,7 +188,7 @@
   "massWord": "Massa",
   "maxPop": "Pop. maks.",
   "menu": "MENU",
-  "menuSub": "Simulasi mikroba — 100 spesies + virus. Irisan kolam.",
+  "menuSub": "Simulasi mikroba — {n} spesies + virus. Irisan kolam.",
   "mic.scope": "MIKROSKOP ×",
   "microscope": "Mikroskop",
   "midEaterTip": "Pemakan sedang: berenang ke hijau-hijauan atau bakteri. Silia menyaring sendiri.",

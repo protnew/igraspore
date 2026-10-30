@@ -188,7 +188,7 @@
   "massWord": "Mass",
   "maxPop": "Max Pop",
   "menu": "MENU",
-  "menuSub": "Microorganism Simulation — 100 species + viruses. Pond cross-section view.",
+  "menuSub": "Microorganism Simulation — {n} species + viruses. Pond cross-section view.",
   "mic.scope": "MICROSCOPE ×",
   "microscope": "Microscope",
   "midEaterTip": "Mid eater: swim to greens or bacteria. Cilia filter on their own.",

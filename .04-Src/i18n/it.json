@@ -188,7 +188,7 @@
   "massWord": "Massa",
   "maxPop": "Pop. max",
   "menu": "MENU",
-  "menuSub": "Simulazione di microbi — 100 specie + virus. Sezione dello stagno.",
+  "menuSub": "Simulazione di microbi — {n} specie + virus. Sezione dello stagno.",
   "mic.scope": "MICROSCOPIO ×",
   "microscope": "Microscopio",
   "midEaterTip": "Mangiatore medio: nuota verso le alghe o i batteri. I cigli filtrano da soli.",

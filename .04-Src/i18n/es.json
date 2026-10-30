@@ -82,7 +82,7 @@
   "massWord": "Masa",
   "maxPop": "Pob. máx.",
   "menu": "MENÚ",
-  "menuSub": "Simulación de microbios — 100 especies + virus. Corte del estanque.",
+  "menuSub": "Simulación de microbios — {n} especies + virus. Corte del estanque.",
   "microscope": "Microscopio",
   "midEaterTip": "Comedor medio: nada hacia los verdes o las bacterias. Los cilios filtran solos.",
   "next": "Siguiente",

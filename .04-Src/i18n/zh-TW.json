@@ -188,7 +188,7 @@
   "massWord": "質量",
   "maxPop": "數量上限",
   "menu": "選單",
-  "menuSub": "微生物模擬 — 100 種 + 病毒。池塘剖面。",
+  "menuSub": "微生物模擬 — {n} 種 + 病毒。池塘剖面。",
   "mic.scope": "顯微鏡 ×",
   "microscope": "顯微鏡",
   "midEaterTip": "中型捕食者：游向綠藻或細菌。纖毛會自行過濾。",

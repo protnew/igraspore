@@ -188,7 +188,7 @@
   "massWord": "Masa",
   "maxPop": "Maks. pop.",
   "menu": "MENU",
-  "menuSub": "Symulacja mikrobów — 100 gatunków + wirusy. Przekrój stawu.",
+  "menuSub": "Symulacja mikrobów — {n} gatunków + wirusy. Przekrój stawu.",
   "mic.scope": "MIKROSKOP ×",
   "microscope": "Mikroskop",
   "midEaterTip": "Średni zjadacz: płyń do zielonych lub bakterii. Rzęski filtrują same.",

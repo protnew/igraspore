@@ -82,7 +82,7 @@
   "massWord": "Kütle",
   "maxPop": "Azami nüfus",
   "menu": "MENÜ",
-  "menuSub": "Mikrop simülasyonu — 100 tür + virüs. Gölet kesiti.",
+  "menuSub": "Mikrop simülasyonu — {n} tür + virüs. Gölet kesiti.",
   "microscope": "Mikroskop",
   "midEaterTip": "Orta yiyici: yeşillere veya bakterilere yüz. Kirpikler kendiliğinden süzer.",
   "next": "Sonraki",

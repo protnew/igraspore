@@ -358,5 +358,21 @@
     "digits": "beng",
     "playListing": true,
     "register": "apni"
+  },
+  {
+    "code": "nl",
+    "name": "Nederlands",
+    "native": "Nederlands",
+    "wave": 9,
+    "enabled": false,
+    "font": "system",
+    "plural": "nl",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "je",
+    "critics": [],
+    "readyForReview": true
   }
 ]

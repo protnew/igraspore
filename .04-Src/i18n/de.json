@@ -188,7 +188,7 @@
   "massWord": "Masse",
   "maxPop": "Max. Pop.",
   "menu": "MENÜ",
-  "menuSub": "Mikroben-Simulation — 100 Arten + Viren. Teich im Schnitt.",
+  "menuSub": "Mikroben-Simulation — {n} Arten + Viren. Teich im Schnitt.",
   "mic.scope": "MIKROSKOP ×",
   "microscope": "Mikroskop",
   "midEaterTip": "Mittelfresser: schwimm zu Grünalgen oder Bakterien. Zilien filtern von selbst.",

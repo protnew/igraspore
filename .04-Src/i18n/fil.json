@@ -82,7 +82,7 @@
   "massWord": "Bigat",
   "maxPop": "Max na populasyon",
   "menu": "MENU",
-  "menuSub": "Simulasyon ng mikrobyo — 100 uri + virus. Hiwa ng lawa.",
+  "menuSub": "Simulasyon ng mikrobyo — {n} uri + virus. Hiwa ng lawa.",
   "microscope": "Mikroskopyo",
   "midEaterTip": "Gitnang kumakain: lumangoy sa mga berde o bakteriya. Kusang nagsasala ang mga cilia.",
   "next": "Susunod",

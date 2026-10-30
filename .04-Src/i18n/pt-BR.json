@@ -188,7 +188,7 @@
   "massWord": "Massa",
   "maxPop": "Pop. máx.",
   "menu": "MENU",
-  "menuSub": "Simulação de micróbios — 100 espécies + vírus. Corte do lago.",
+  "menuSub": "Simulação de micróbios — {n} espécies + vírus. Corte do lago.",
   "mic.scope": "MICROSCÓPIO ×",
   "microscope": "Microscópio",
   "midEaterTip": "Comedor médio: nade até os verdes ou bactérias. Os cílios filtram sozinhos.",

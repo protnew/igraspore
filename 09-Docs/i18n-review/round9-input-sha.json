@@ -1,7 +1,7 @@
 {
  "schema": "review-input-sha/1",
  "round": 9,
- "generated": "2026-10-31 18:19:56 UTC+3",
+ "generated": "2026-10-31 18:21:40 UTC+3",
  "dicts": {
   "nl": "35e6a8e69a1934f4f3c4137a8863afeb386164cba71bdf5cd266f2242ec6a546",
   "wiki/nl.json": "ae1de68a74587e8d6899516a3e13352a63df63b1c98602245734907c87949ae0",
@@ -13,6 +13,7 @@
   "hu": "9f3f045e2b655e61e0ffdd1adffbd517a8f8bc90c3b18ab74efc1dbc873fbee8",
   "cs": "bdd3a7340943b133a8fa36472b0fe73b9a88f2ba7f33fb031b3fbeef63d19d1f",
   "da": "d9483ad3c7bfd1ef7e672572aff5cbe22e403f5e2f00d1f7a799f73137f0efc3",
-  "fi": "ff6e75b0f7b7cdef7676c131e2ef475b8898fb23c3aa52459fcb0963e360c778"
+  "fi": "ff6e75b0f7b7cdef7676c131e2ef475b8898fb23c3aa52459fcb0963e360c778",
+  "zh-CN": "4cba8dae63eccf88d6632490df995f84719b97989ea4fd196a466778ecbe4dd8"
  }
 }

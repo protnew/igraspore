@@ -3242,6 +3242,78 @@
     ],
     "category": "cognate"
   },
+  "377": {
+    "key": "mode.swissLbl",
+    "value": "📗 SWISS",
+    "langs": [
+      "zh-CN"
+    ],
+    "category": "cognate"
+  },
+  "378": {
+    "key": "mode.webglLbl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "zh-CN"
+    ],
+    "category": "cognate"
+  },
+  "379": {
+    "key": "modeBig.swiss",
+    "value": "📗 SWISSBIOPICS",
+    "langs": [
+      "zh-CN"
+    ],
+    "category": "cognate"
+  },
+  "380": {
+    "key": "modeBig.webgl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "zh-CN"
+    ],
+    "category": "cognate"
+  },
+  "381": {
+    "key": "modeLbl.swiss",
+    "value": "📗 SwissBioPics",
+    "langs": [
+      "zh-CN"
+    ],
+    "category": "cognate"
+  },
+  "382": {
+    "key": "modeLbl.webgl",
+    "value": "🌊 WebGL",
+    "langs": [
+      "zh-CN"
+    ],
+    "category": "cognate"
+  },
+  "383": {
+    "key": "x.a",
+    "value": "A",
+    "langs": [
+      "zh-CN"
+    ],
+    "category": "cognate"
+  },
+  "384": {
+    "key": "x.e",
+    "value": "E",
+    "langs": [
+      "zh-CN"
+    ],
+    "category": "cognate"
+  },
+  "385": {
+    "key": "x.s",
+    "value": "S",
+    "langs": [
+      "zh-CN"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

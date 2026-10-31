@@ -502,5 +502,21 @@
     "playListing": true,
     "register": "中性",
     "critics": []
+  },
+  {
+    "code": "no",
+    "name": "Norsk",
+    "native": "Norsk bokmål",
+    "wave": 9,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "no",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "du",
+    "critics": []
   }
 ]

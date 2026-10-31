@@ -438,5 +438,21 @@
     "playListing": true,
     "register": "tegező",
     "critics": []
+  },
+  {
+    "code": "cs",
+    "name": "Čeština",
+    "native": "Čeština",
+    "wave": 9,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "cs",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "tykání",
+    "critics": []
   }
 ]

@@ -2994,6 +2994,254 @@
     ],
     "category": "cognate"
   },
+  "346": {
+    "key": "aria.auto",
+    "value": "Auto (Tab)",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "347": {
+    "key": "aria.demo",
+    "value": "Demo",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "348": {
+    "key": "aria.wiki2",
+    "value": "Wiki (B)",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "349": {
+    "key": "autoOn",
+    "value": "AUTO",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "350": {
+    "key": "fps",
+    "value": "FPS",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "351": {
+    "key": "hud.btn.auto",
+    "value": "AUTO",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "352": {
+    "key": "hud.btn.auto.short",
+    "value": "AUTO",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "353": {
+    "key": "mob.eSep",
+    "value": " · E=",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "354": {
+    "key": "mode.swissLbl",
+    "value": "📗 SWISS",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "355": {
+    "key": "mode.webglLbl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "356": {
+    "key": "modeBig.swiss",
+    "value": "📗 SWISSBIOPICS",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "357": {
+    "key": "modeBig.webgl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "358": {
+    "key": "modeLbl.swiss",
+    "value": "📗 SwissBioPics",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "359": {
+    "key": "modeLbl.webgl",
+    "value": "🌊 WebGL",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "360": {
+    "key": "spcard.virus",
+    "value": "Virus",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "361": {
+    "key": "star.alphacentauri",
+    "value": "★ Alpha Centauri A+B",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "362": {
+    "key": "star.antares",
+    "value": "★ Antares",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "363": {
+    "key": "star.betelgeuse",
+    "value": "★ Betelgeuse",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "364": {
+    "key": "star.rigel",
+    "value": "★ Rigel",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "365": {
+    "key": "star.sirius",
+    "value": "★ Sirius A+B",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "366": {
+    "key": "star.vega",
+    "value": "★ Vega",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "367": {
+    "key": "starg.alphacentauri",
+    "value": "★ α Centauri",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "368": {
+    "key": "starg.sirius",
+    "value": "★ Sirius",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "369": {
+    "key": "start",
+    "value": "START",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "370": {
+    "key": "tip.zi",
+    "value": "Zoom+",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "371": {
+    "key": "tip.zo",
+    "value": "Zoom-",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "372": {
+    "key": "wiki",
+    "value": "WIKI",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "373": {
+    "key": "x.a",
+    "value": "A",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "374": {
+    "key": "x.e",
+    "value": "E",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "375": {
+    "key": "x.golgi",
+    "value": "Golgi",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
+  "376": {
+    "key": "x.s",
+    "value": "S",
+    "langs": [
+      "fi"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

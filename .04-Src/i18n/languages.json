@@ -470,5 +470,21 @@
     "playListing": true,
     "register": "du",
     "critics": []
+  },
+  {
+    "code": "fi",
+    "name": "Suomi",
+    "native": "Suomi",
+    "wave": 9,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "fi",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "sinuttelu",
+    "critics": []
   }
 ]

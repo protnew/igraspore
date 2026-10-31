@@ -1,10 +1,10 @@
 # Пакет на проверку аналитику: da (круг 9)
 
-- Дата: 2026-10-31 18:17:28 UTC+3  |  Круг: 9
+- Дата: 2026-10-31 18:19:56 UTC+3  |  Круг: 9
 - input_sha256 словарей (полные — для raw<da-analyst-round9.json):
   - `en.json` = ecc487cf85a2d180c5dbddb6c53d7e52448d44e4c5c60ccd0df2d57db6c2a9ca
   - `ru.json` = a5ca4acf4f6733c835c9a84bb2ae33aa8fa2b8db5ab544e7fac907f8abc3f4cc
-  - `da.json` = 60485c7f2aad7403e50c491b42b0e15beebde83d7c5ef0238b3b53a908b8048a
+  - `da.json` = d9483ad3c7bfd1ef7e672572aff5cbe22e403f5e2f00d1f7a799f73137f0efc3
 - Ключей UI: 436 (из них 🆕 новых после круга 4: 296 — U13 263 + U42 loc.* 9); вики-тел: 108
 - Rubric 0–10 по 5 осям: смысл, глоссарий, регистр, длина, ошибки. Порог включения ≥ 8.
 - Ответ аналитика: `09-Docs/i18n-review/raw/da-analyst-round9.json` + строка в ANALYST-LEDGER.md (пишет ТОЛЬКО аналитик).
@@ -37,7 +37,7 @@
 | 🆕 | `aria.light` | Свет | Light | Lys | общий UI / ≤60 |
 | 🆕 | `aria.micro` | Микроскоп (M) | Microscope (M) | Mikroskop (M) | общий UI / ≤60 |
 | 🆕 | `aria.pause` | Пауза (P) | Pause (P) | Pause (P) | общий UI / ≤60 |
-| 🆕 | `aria.render` | Режим картинки (N) | Picture mode (N) |  | общий UI / ≤60 |
+| 🆕 | `aria.render` | Режим картинки (N) | Picture mode (N) | Billedtilstand (N) | общий UI / ≤60 |
 | 🆕 | `aria.set` | Настройки | Settings | Indstillinger | общий UI / ≤60 |
 | 🆕 | `aria.start` | Старт | Start | Start | общий UI / ≤60 |
 | 🆕 | `aria.switches` | Игровые переключатели | Game switches | Spilkontakter | общий UI / ≤60 |

@@ -454,5 +454,21 @@
     "playListing": true,
     "register": "tykání",
     "critics": []
+  },
+  {
+    "code": "da",
+    "name": "Dansk",
+    "native": "Dansk",
+    "wave": 9,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "da",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "du",
+    "critics": []
   }
 ]

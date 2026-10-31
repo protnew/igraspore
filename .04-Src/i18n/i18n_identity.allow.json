@@ -2634,6 +2634,366 @@
     ],
     "category": "cognate"
   },
+  "301": {
+    "key": "aria.auto",
+    "value": "Auto (Tab)",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "302": {
+    "key": "aria.demo",
+    "value": "Demo",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "303": {
+    "key": "aria.pause",
+    "value": "Pause (P)",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "304": {
+    "key": "aria.start",
+    "value": "Start",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "305": {
+    "key": "aria.wiki2",
+    "value": "Wiki (B)",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "306": {
+    "key": "autoOn",
+    "value": "AUTO",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "307": {
+    "key": "dTemp",
+    "value": "Temp",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "308": {
+    "key": "diffN",
+    "value": "Normal",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "309": {
+    "key": "filter",
+    "value": "Filter",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "310": {
+    "key": "fps",
+    "value": "FPS",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "311": {
+    "key": "hud.btn.auto",
+    "value": "AUTO",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "312": {
+    "key": "hud.btn.auto.short",
+    "value": "AUTO",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "313": {
+    "key": "hud.btn.menu",
+    "value": "Menu",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "314": {
+    "key": "hud.genSep",
+    "value": " · Gen ",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "315": {
+    "key": "menu",
+    "value": "MENU",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "316": {
+    "key": "mob.eSep",
+    "value": " · E=",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "317": {
+    "key": "mode.swissLbl",
+    "value": "📗 SWISS",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "318": {
+    "key": "mode.webglLbl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "319": {
+    "key": "modeBig.swiss",
+    "value": "📗 SWISSBIOPICS",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "320": {
+    "key": "modeBig.webgl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "321": {
+    "key": "modeLbl.swiss",
+    "value": "📗 SwissBioPics",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "322": {
+    "key": "modeLbl.webgl",
+    "value": "🌊 WebGL",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "323": {
+    "key": "spcard.virus",
+    "value": "Virus",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "324": {
+    "key": "star.alphacentauri",
+    "value": "★ Alpha Centauri A+B",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "325": {
+    "key": "star.antares",
+    "value": "★ Antares",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "326": {
+    "key": "star.betelgeuse",
+    "value": "★ Betelgeuse",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "327": {
+    "key": "star.polaris",
+    "value": "★ Polaris",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "328": {
+    "key": "star.pulsar",
+    "value": "★ Neutron (pulsar)",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "329": {
+    "key": "star.rigel",
+    "value": "★ Rigel",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "330": {
+    "key": "star.sirius",
+    "value": "★ Sirius A+B",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "331": {
+    "key": "star.vega",
+    "value": "★ Vega",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "332": {
+    "key": "starg.alphacentauri",
+    "value": "★ α Centauri",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "333": {
+    "key": "starg.sirius",
+    "value": "★ Sirius",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "334": {
+    "key": "start",
+    "value": "START",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "335": {
+    "key": "temp",
+    "value": "Temp",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "336": {
+    "key": "tip.auto",
+    "value": "Auto",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "337": {
+    "key": "tip.pause",
+    "value": "Pause",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "338": {
+    "key": "tip.zi",
+    "value": "Zoom+",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "339": {
+    "key": "tip.zo",
+    "value": "Zoom-",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "340": {
+    "key": "vignette",
+    "value": "Vignette",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "341": {
+    "key": "wiki",
+    "value": "WIKI",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "342": {
+    "key": "x.a",
+    "value": "A",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "343": {
+    "key": "x.e",
+    "value": "E",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "344": {
+    "key": "x.golgi",
+    "value": "Golgi",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
+  "345": {
+    "key": "x.s",
+    "value": "S",
+    "langs": [
+      "da"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

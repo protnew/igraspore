@@ -1,6 +1,6 @@
 # Пакет на проверку аналитику: hu (круг 9)
 
-- Дата: 2026-10-31 18:15:27 UTC+3  |  Круг: 9
+- Дата: 2026-10-31 18:17:28 UTC+3  |  Круг: 9
 - input_sha256 словарей (полные — для raw<hu-analyst-round9.json):
   - `en.json` = ecc487cf85a2d180c5dbddb6c53d7e52448d44e4c5c60ccd0df2d57db6c2a9ca
   - `ru.json` = a5ca4acf4f6733c835c9a84bb2ae33aa8fa2b8db5ab544e7fac907f8abc3f4cc

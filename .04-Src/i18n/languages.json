@@ -518,5 +518,37 @@
     "playListing": true,
     "register": "du",
     "critics": []
+  },
+  {
+    "code": "pt-PT",
+    "name": "Português (Portugal)",
+    "native": "Português (Portugal)",
+    "wave": 10,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "pt",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "tú/vos",
+    "critics": []
+  },
+  {
+    "code": "es-419",
+    "name": "Español (Latinoamérica)",
+    "native": "Español (Latinoamérica)",
+    "wave": 10,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "es",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "tú/vos",
+    "critics": []
   }
 ]

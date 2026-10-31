@@ -1866,6 +1866,246 @@
     ],
     "category": "cognate"
   },
+  "205": {
+    "key": "aria.demo",
+    "value": "Demo",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "206": {
+    "key": "aria.wiki2",
+    "value": "Wiki (B)",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "207": {
+    "key": "autoOn",
+    "value": "AUTO",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "208": {
+    "key": "autoPilotOn",
+    "value": "AUTO ON",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "209": {
+    "key": "fps",
+    "value": "FPS",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "210": {
+    "key": "hud.btn.auto",
+    "value": "AUTO",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "211": {
+    "key": "hud.btn.auto.short",
+    "value": "AUTO",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "212": {
+    "key": "mob.eSep",
+    "value": " · E=",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "213": {
+    "key": "mode.swissLbl",
+    "value": "📗 SWISS",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "214": {
+    "key": "mode.webglLbl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "215": {
+    "key": "modeBig.swiss",
+    "value": "📗 SWISSBIOPICS",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "216": {
+    "key": "modeBig.webgl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "217": {
+    "key": "modeLbl.swiss",
+    "value": "📗 SwissBioPics",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "218": {
+    "key": "modeLbl.webgl",
+    "value": "🌊 WebGL",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "219": {
+    "key": "star.alphacentauri",
+    "value": "★ Alpha Centauri A+B",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "220": {
+    "key": "star.antares",
+    "value": "★ Antares",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "221": {
+    "key": "star.betelgeuse",
+    "value": "★ Betelgeuse",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "222": {
+    "key": "star.polaris",
+    "value": "★ Polaris",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "223": {
+    "key": "star.rigel",
+    "value": "★ Rigel",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "224": {
+    "key": "star.sirius",
+    "value": "★ Sirius A+B",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "225": {
+    "key": "star.vega",
+    "value": "★ Vega",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "226": {
+    "key": "starg.alphacentauri",
+    "value": "★ α Centauri",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "227": {
+    "key": "starg.sirius",
+    "value": "★ Sirius",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "228": {
+    "key": "start",
+    "value": "START",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "229": {
+    "key": "tip.wikiB",
+    "value": "Wiki/Bestiary",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "230": {
+    "key": "wiki",
+    "value": "WIKI",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "231": {
+    "key": "x.a",
+    "value": "A",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "232": {
+    "key": "x.e",
+    "value": "E",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "233": {
+    "key": "x.golgi",
+    "value": "Golgi",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
+  "234": {
+    "key": "x.s",
+    "value": "S",
+    "langs": [
+      "el"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

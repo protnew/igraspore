@@ -1,11 +1,11 @@
 # Пакет на проверку аналитику: ro (круг 9)
 
-- Дата: 2026-10-30 23:02:15 UTC+3  |  Круг: 9
+- Дата: 2026-10-31 18:09:10 UTC+3  |  Круг: 9
 - input_sha256 словарей (полные — для raw<ro-analyst-round9.json):
   - `en.json` = ecc487cf85a2d180c5dbddb6c53d7e52448d44e4c5c60ccd0df2d57db6c2a9ca
   - `ru.json` = a5ca4acf4f6733c835c9a84bb2ae33aa8fa2b8db5ab544e7fac907f8abc3f4cc
   - `ro.json` = af804ea28f29adff8be2a049dbba7e4a36f92a5c01498aecc04473f4171ae554
-  - `wiki/ro.json` = 6121f09659675f4b0b80660e58421c4aa326f9fafaed5868a5d5013be49449d5
+  - `wiki/ro.json` = 523d83ae479457eedd3d998780cacd3cb631ba7f0067335ea8dbd6928eff89e5
 - Ключей UI: 436 (из них 🆕 новых после круга 4: 296 — U13 263 + U42 loc.* 9); вики-тел: 108
 - Rubric 0–10 по 5 осям: смысл, глоссарий, регистр, длина, ошибки. Порог включения ≥ 8.
 - Ответ аналитика: `09-Docs/i18n-review/raw/ro-analyst-round9.json` + строка в ANALYST-LEDGER.md (пишет ТОЛЬКО аналитик).
@@ -559,7 +559,7 @@
 | `97` | Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer. | Cellulomonas fimi descompune celuloza. Un bastonaș galben pe detritus vegetal. Fără ea algele moarte ar zăcea mai mult. |
 | `98` | Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant. | Thermus aquaticus este un termofil din izvoare calde. Polimeraza Taq e baza PCR. Într-un iaz rece e aproape dormant. |
 | `99` | Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads. | Deinococcus radiodurans este campionul radiațiilor. Reasamlează un genom sfărâmat în câteva ore. Perete gros, tetrade celulare. |
-| `1001` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | — НЕТ |
+| `1001` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Eucariotul sexual este un model didactic de reproducere sexuată. Două sexe, fuziune de gameți, nu simplă diviziune binară. |
 | `T4 Bacteriophage` | T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit. | T4 este un micovirus mare al E. coli. Coada se contractă și injectează DNA. În jumătate de oră celula explodează și zeci de fagi ies. |
 | `Lambda Phage` | Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis). | Lambda este un fag temperat. Se poate insera în cromozom și dormi (lizogenie) sau tăia celula imediat (liză). |
 | `T7 Bacteriophage` | T7 has a short tail and very fast replication. A favourite system in synthetic biology. | T7 are o coadă scurtă și replicare foarte rapidă. Un sistem favorit în biologia sintetică. |

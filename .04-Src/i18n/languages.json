@@ -406,5 +406,21 @@
     "playListing": true,
     "register": "tu",
     "critics": []
+  },
+  {
+    "code": "el",
+    "name": "Ελληνικά",
+    "native": "Ελληνικά",
+    "wave": 9,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "el",
+    "script": "grek",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "ευγενική",
+    "critics": []
   }
 ]

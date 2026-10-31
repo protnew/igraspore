@@ -3314,6 +3314,94 @@
     ],
     "category": "cognate"
   },
+  "386": {
+    "key": "fps",
+    "value": "FPS",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "387": {
+    "key": "mob.eSep",
+    "value": " · E=",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "388": {
+    "key": "mode.swissLbl",
+    "value": "📗 SWISS",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "389": {
+    "key": "mode.webglLbl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "390": {
+    "key": "modeBig.swiss",
+    "value": "📗 SWISSBIOPICS",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "391": {
+    "key": "modeBig.webgl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "392": {
+    "key": "modeLbl.swiss",
+    "value": "📗 SwissBioPics",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "393": {
+    "key": "modeLbl.webgl",
+    "value": "🌊 WebGL",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "394": {
+    "key": "x.a",
+    "value": "A",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "395": {
+    "key": "x.e",
+    "value": "E",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
+  "396": {
+    "key": "x.s",
+    "value": "S",
+    "langs": [
+      "bg"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

@@ -2106,6 +2106,238 @@
     ],
     "category": "cognate"
   },
+  "235": {
+    "key": "aria.wiki2",
+    "value": "Wiki (B)",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "236": {
+    "key": "autoOn",
+    "value": "AUTO",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "237": {
+    "key": "fps",
+    "value": "FPS",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "238": {
+    "key": "hud.btn.auto",
+    "value": "AUTO",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "239": {
+    "key": "hud.btn.auto.short",
+    "value": "AUTO",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "240": {
+    "key": "hud.genSep",
+    "value": " · Gen ",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "241": {
+    "key": "mob.eSep",
+    "value": " · E=",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "242": {
+    "key": "mode.swissLbl",
+    "value": "📗 SWISS",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "243": {
+    "key": "mode.webglLbl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "244": {
+    "key": "modeBig.swiss",
+    "value": "📗 SWISSBIOPICS",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "245": {
+    "key": "modeBig.webgl",
+    "value": "🌊 WEBGL",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "246": {
+    "key": "modeLbl.swiss",
+    "value": "📗 SwissBioPics",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "247": {
+    "key": "modeLbl.webgl",
+    "value": "🌊 WebGL",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "248": {
+    "key": "star.alphacentauri",
+    "value": "★ Alpha Centauri A+B",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "249": {
+    "key": "star.antares",
+    "value": "★ Antares",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "250": {
+    "key": "star.betelgeuse",
+    "value": "★ Betelgeuse",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "251": {
+    "key": "star.polaris",
+    "value": "★ Polaris",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "252": {
+    "key": "star.pulsar",
+    "value": "★ Neutron (pulsar)",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "253": {
+    "key": "star.rigel",
+    "value": "★ Rigel",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "254": {
+    "key": "star.sirius",
+    "value": "★ Sirius A+B",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "255": {
+    "key": "star.vega",
+    "value": "★ Vega",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "256": {
+    "key": "starg.alphacentauri",
+    "value": "★ α Centauri",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "257": {
+    "key": "starg.sirius",
+    "value": "★ Sirius",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "258": {
+    "key": "start",
+    "value": "START",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "259": {
+    "key": "wiki",
+    "value": "WIKI",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "260": {
+    "key": "x.a",
+    "value": "A",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "261": {
+    "key": "x.e",
+    "value": "E",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "262": {
+    "key": "x.golgi",
+    "value": "Golgi",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
+  "263": {
+    "key": "x.s",
+    "value": "S",
+    "langs": [
+      "hu"
+    ],
+    "category": "cognate"
+  },
   "cognates": {
     "START": [
       "de"

@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis سیانوباکتریومی بدون هسته است. با نور زندگی می‌کند: فتوسنتز اکسیژن‌زا روی غشاها، بدون سبزدیسه. مدل آزمایشگاهی سوخت‌وساز هیدروژن."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis یک رشته است. برخی سلول‌ها هتروسیست می‌شوند و نیتروژن تثبیت می‌کنند، در حالی‌که همسایه‌ها قند می‌سازند. در برکه، نیتروژن ثابت‌شده تأمین می‌کند."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) فنری از سلول‌ها با وزیکول‌های گازی است. نزدیک سطح معلق می‌ماند، فتوسنتز می‌کند و خوراکی است. در بازی، پیچ بزرگ سبزی روی لایه آب است."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme زنجیره دانه‌هایی در کپسول موکوسی است. آزاد یا در هم‌زیستی با گیاهان زندگی می‌کند. کلنی مثل توده‌ای از دانه‌های سبز دیده می‌شود."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica رشته‌ای لیزنده است. به چپ و راست نوسان می‌کند و می‌تواند بدون آزادکردن اکسیژن فتوسنتز کند. در لای و لایه سطح معمول است."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa کلنی موکوسی و اغلب سمی است (میکروسیستین). شکوفایی آب را ایجاد می‌کند. در بازی، توپ کلنی سبز و شکار پرخطری است."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa سلول‌های جفتی در غلاف‌های رنگی است. روی سنگ و خاک زندگی می‌کند و در برابر UV مقاوم است. در برکه، کوکسی‌های جفتی کوچکی در غلاف است."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula رشته سیانوباکتریومی ضخیمی است. ممکن است سم‌های محرک آزاد کند. نزدیک کرانه‌های گرم تشک می‌سازد."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii سلولی سبز با دو تاژ و لکه چشمی است. به‌سوی نور شنا می‌کند. مدل کلاسیک ژنتیک جلبکی."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris گوی سبز بی‌حرکت است. سریع تقسیم می‌شود و سرشار از پروتئین است. غذای خورندگان کوچک و موضوع پژوهش غذای فضایی."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator گوی توخالی از هزاران سلول است. کلنی‌های دختری درون آن می‌رسند و بیرون می‌روند. در بازی، کلنی سبز بزرگی است."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis میکسوتروف است: سبزدیسه‌ها همراه با توانایی خوردن. لکه چشمی سرخ نور را دنبال می‌کند. روزها سبز است؛ در تاریکی به خوردن غذا می‌گذرد."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda معمولاً چهار سلول در یک ردیف با خارهای انتهایی است. خارها بلع را سخت‌تر می‌کنند. شنا نمی‌کند؛ با آب رانده می‌شود."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis سلول سبز متحرکی است؛ در تنش سرخ می‌شود (آستاکسانتین) و دیواره ضخیمی می‌سازد. کیست‌های سرخ خشکسالی را تحمل می‌کنند."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina دیواره سفت ندارد و در آب بسیار شور زندگی می‌کند. بتاکاروتن ذخیره می‌کند و نارنجی دیده می‌شود. دو تاژ دارد."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata دسمید ستاره‌ای تخت است. دو نیمه آینه‌ای با شکاف‌های عمیق. بی‌حرکت است؛ در آب اسیدی تالاب‌ها فتوسنتز می‌کند."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula دیاتومه قایق‌شکلی با دریچه سیلیسی است. روی بستر از میان شکاف راپه می‌لغزد. پوسته پس از مرگ باقی می‌ماند."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis دیاتومه پناته بزرگی است. پوسته سیلیسی با نقش متقارن. به‌آرامی روی بستر می‌لغزد."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana دیاتومه مرکزی گردی است. مانند قرص شناور است؛ پوسته دو درپوش دارد. پلانکتون معمولی است."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare دیاتومه‌ای است که زیگزاگی به هم می‌چسبد. کلنی مقاومت آب را در ستون آب بیشتر می‌کند."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum مارپیچ بنفشی است. فتوسنتز بدون اکسیژن به‌همراه استفاده از مواد آلی. رنگ سرخ از باکتریوکلروفیل است."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum باکتری گوگردی بنفش است. سولفید هیدروژن را اکسید می‌کند و دانه‌های گوگرد ذخیره می‌کند. در مرز اکسیژن و گوگرد زندگی می‌کند."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum جلبک سرخ تک‌سلولی است. فیکواریترین رنگ سرخ خونی می‌دهد. غلاف موکوسی و بدون تاژ."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus کوچک‌ترین و فراوان‌ترین سلول فتوسنتزی زمین است. در دهه ۱۹۸۰ کشف شد. اقیانوس را تغذیه می‌کند."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis موجودی اکسترموفیل است: کویر، سنگ، پرتودهی. نامزد زندگی فراتر از زمین. در برکه، کلنی کندی از کوکوس‌هاست."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus شکارچی ریز باکتریایی است. خود را درون سلول دیگر می‌پیچد و تا ترکیدن میزبان تکثیر می‌شود."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus از بیرون روی شکار می‌نشیند و بی‌آنکه وارد شود محتویاتش را می‌مکد. خون‌آشام باکتریایی."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter وارد باکتری شکار می‌شود و آن را از درون می‌خورد. شکارچی درون‌سلولی کمیابی."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus باکتری اجتماعی است. به‌گروه شکار را محاصره می‌کند و آنزیم آزاد می‌کند. در گرسنگی جسم زایشی می‌سازد."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii خویشاوند دریایی Bdellovibrio است. گرم‌منفی‌ها را می‌گیرد و در پری‌پلاسم شکار زندگی می‌کند."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax شکارچی باکتریاییِ نمک‌دوست است. همان ترفند: سوراخ‌کردن دیواره و رشد در درون."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii شکارچی بالوی دیگری است. تاژدار سریع و ویرگولی‌شکل که میله‌های بزرگ را هدف می‌گیرد."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula تاژدار کوچک دگرتغذیه است. در سطح بقایای آلی باکتری می‌گیرد."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo تاژداری قطره‌ای‌شکل است. یک تاژ دارد؛ در لایه باکتریایی شکار می‌کند."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans کلنی روی دمینه آهن و منگنز است. سلول‌ها دسته می‌شوند و باکتری می‌گیرند."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium کریپتوفیت بی‌رنگی است. دو تاژ دارد؛ مواد آلی محلول و باکتری‌های ریز را می‌خورد، سبزدیسه ندارد."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda آمیب‌تاژداری با دم بلند است. می‌خزد و با پای کاذب باکتری‌ها را می‌بلعد."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa تاژدار خاکی است. دو تاژ با طول متفاوت؛ خورنده اصلی باکتری در خاک."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans کینتوپلاستیدی است. با تاژ عقبی آویخته در جای خود می‌رقصد و باکتری‌ها را قاپ می‌زند."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini خویشاوده Bodo است. آزادانه شنا می‌کند و با تاژ پیشین به شکار ضربه می‌زند."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei انگل خونی و مولد بیماری خواب است. غشای موجدار و یک تاژ. در برکه، مدل شکارچی باریک است."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani انگل درون‌سلولی انسانی است. در حشره تاژدار و درون ماکروفاژ بی‌تاژ."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis کوانوتاژداری است، خویشاوند جانوران. طوق ریزپرزیش باکتری‌ها را می‌پالاید."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta کوانوتاژدار ثابتی در لوریکاست. می‌تواند شکل گلسازی بسازد. جریان آب را می‌پالاید."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis کلنی کوانوتاژداران روی دمینه مشترک است. چند پالاینده روی یک ساقه."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum کفشِ کلاسیک است. هزاران مژک، شیار دهانی و واکوئل‌های انقباضی. باکتری‌ها را می‌پالاید."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria کفشی با هم‌زیست‌های زوکلرلا است. درونش سبز است: روزها قند از جلبک‌ها، شب‌ها پالایش."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus ترومپتی آبی تا یک میلی‌متر است. قیفی باز می‌شود و با مژک‌ها جریان می‌سازد. می‌تواند شنا کند یا بنشیند."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus خویشاوده استنتور آبی است، اغلب با زوکلرلاها. شکلش از ترومپت تا گوی تغییر می‌کند."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula زنگی روی ساقه انقباضی است. ساقه در یک لحظه فنری می‌پیچد. خود سلول شنا کنار نمی‌رود."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma زنگ کوچکی است. همان ساقه فنری، با میدان دهانی باریک‌تر. اغلب روی بقایا."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum شکارچی بشکه‌ایِ کفش‌هاست. توکسیسیست می‌اندازد و شکار را کامل می‌بلعد، حتی اگر بزرگ‌تر باشد."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum سیگار بسیار درازی است. در کسری از ثانیه چند برابر منقبض می‌شود. مژک‌ها مارپیچی می‌دوند."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum مژکداری صورتی است. رنگدانه بلفاریسمین نورحساس است. پالایش می‌کند و می‌تواند به سلول‌های کوچک‌تر حمله کند."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella روی سیرُس‌ها مانند پا راه می‌رود. تخت و پُرچرخش است. باکتری را از سطوح می‌خراشد."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata هیپوتریشی است که روی بستر می‌دود. سیرُس‌های بزرگ و دهان روشن. شکارچی مژکداران کوچک."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax مدل ژنومی است: دو هسته و بازنویسی پیچیده DNA. روی سیرُس‌ها راه می‌رود و باکتری و پروتیست‌های کوچک می‌خورد."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila مژکدار آزمایشگاهی است. چهار غشای دهانی و تقسیم سریع. مدل تلومرها و مژک‌ها."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus بشکه‌ای در صفحه‌های آهکی با خار است. لاشه‌خوار و شکارچی: در بدن زخمی‌ها گاز می‌گیرد."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella شکارچی تختی با توکسیسیست در خرطوم است. شکار را فلج می‌کند و می‌مکد."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser گردنی دراز با اکستروزوم‌های سمی دارد. با گردن ضربه می‌زند، سپس می‌بلعد. شکارچی بزرگی از رده میانی."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo یک فرفره است: کمربند مژکی استوایی، سلول را درجا می‌چرخاند. باکتری‌ها را می‌پالاید."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula کلنی شاخه‌ای زنگ‌هاست. ساقه انقباضی مشترک کل درخت را یک‌جا می‌جنباند."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata پریتریش ثابتی بدون ساقه فنری است. درپوشی دهان را می‌پوشاند. پالایش می‌کند و شنا کنار نمی‌رود."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus آمیب کلاسیک است. پای‌های کاذب دور شکار جاری می‌شوند. نه شکل ثابت دارد و نه مژک."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris آمیب صدف‌دار با گنبد سخت است. پای کاذب از روزنه بیرون می‌آید. روی گیاهان می‌خزد."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga صدفی از دانه‌های شن دارد که آمیب خودشان را می‌چسباند. در لای زندگی می‌کند."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata صدفی از فلس‌های سیلیسی دارد. پای کاذب نخی ظریف. شکارچی کوچک باکتری."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris صدف کوزه‌ای از فلس‌های دزدیده‌شده ساخته می‌شود. آب‌های جنگلی و تالابی."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata صدف قرصی با خار است. روزنه جابه‌جاست. روی بقایا می‌خزد."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol خورشیدی‌گونه است: آکسوپودی‌های نازک همه‌سو می‌تابند. شکار به پرتوها می‌چسبد و به درون کشیده می‌شود."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni خورشیدی‌گونه بزرگ چند‌هسته‌ای است. همان پرتوها، سلولی بسیار بزرگ‌تر. مژکداران و روتیفرها را می‌خورد."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida خورشیدی‌گونه‌ای در فلس‌هاست. پرتوها سوزن سیلیسی دارند. شکارچی کمین‌گر پلانکتونی."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria روتیفری است که خشک‌شدن را تحمل می‌کند. تاج غذا را چرخانده به دهان می‌رساند. جانوری راستینِ پرسلولی."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola روتیفر صورتی بیدلوئیدی است. مانند زالو می‌خزد و شنا هم می‌کند. فقط ماده‌ها؛ نری ندارد."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis روتیفر پلانکتونی لوریکادار است. غذای لارو ماهی در آبزی‌پروری. جلبک و باکتری می‌پالاید."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis روتیفری با خار لوریکای بلند است. خار شکارچیان را می‌راند. پلانکتون معمول برکه."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta کیسه‌ای بی‌لوریکا و روتیفر شکارچی است. روتیفرها و مژکداران دیگر را کامل می‌بلعد."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus گاستروتریشی است. پوشیده از فلس، روی بستر می‌خزد. باکتری و بقایا می‌خورد."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata گاستروتریش کوچکی با فلس‌های هم‌پوشان است. چرخش‌های درجایی بسیار سریع."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano کرم پهن میکروسکوپی است. عضلات و چشمان واقعی. مدل بازسازی بافت. پروتیست‌های کوچک را می‌شکارد."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops کرم نازک مژکداری است. عرضی تقسیم می‌شود و زنجیره زوئید می‌سازد. شکارچی بقایا و جانوران کوچک."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare کرم پهنی است که هیدرا می‌خورد و یاخته‌های نیش‌دار آن را در پوست خود جای می‌دهد. زنجیره‌ای از زوئیدها."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense نمرتین آب شیرین است. خرطومی دراز به‌سوی شکار شلیک می‌شود. شکارچی بزرگ و کمیاب بستر."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens پلاکوزوئی و از ساده‌ترین جانوران است. به‌صورت ورقه می‌خزد و غذا را از بیرون هضم می‌کند. دهان ندارد."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae مخمر نان است. جوانه می‌زند، قند می‌خورد و CO2 و الکل آزاد می‌کند. در برکه مواد آلی محلول را پاک می‌کند."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans مخمری است که می‌تواند رشته‌ای رشد کند. عامل بیماری فرصت‌طلب انسانی. در بازی قارچ بقایایی است."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo کپک نان است. اسپورانژیم روی ساقه‌ها و رشد سریع بر مرده‌ها. شکار زنده‌ها نمی‌کند."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer کپک سیاه نان است. استولون‌ها و ریزوئیدها روی بستر می‌پرکنند. نشاسته را تجزیه می‌کند."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum کپک قلمویی و سرچشمه پنی‌سیلین است. قلم‌موهای کونیدی. مواد آلی را تجزیه و باکتری‌های اطراف را سرکوب می‌کند."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger آسپرژیلوس سیاه است. سرهای اسپوری کروی. تولیدکننده صنعتی اسید سیتریک. یک ساپروتروف."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis کیترید قورباغه‌هاست. زواسپورهای تک‌تاژی. در برکه، مدل قارچ آبی است."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus کیترید آبی روی گرده و جلبک‌هاست. اسپورانژیم طلایی؛ زواسپورها به‌سوی بستر شنا می‌کنند."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus قارچ آبی با میسلیوم راستین است. میان دیپلوئید و هاپلوئید یکی‌درمیان می‌رود. زواسپورهایش تاژ عقبی دارند."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis باسیل خاکی است. هاگ‌هایش جوشیدن را دو می‌آورند. پروتئین را تجزیه می‌کند؛ مدل گرم‌مثبت."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida باسیل پاک‌کننده است. حتی فراورده‌های نفتی می‌خورد. با تاژ حرکت می‌کند و روی بقایا تند رشد می‌کند."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor باکتری خاکی رشته‌ای است. بوی خاک (جئوسمین) و بسیاری آنتی‌بیوتیک می‌سازد. هاگ روی هیف‌ها."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi سلولز را تجزیه می‌کند. باسیلی زرد روی بقایای گیاهی. بدون آن، جلبک‌های مرده درنگ طولانی‌تری می‌داشتند."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus گرمادوستی از چشمه‌های آب‌گرم است. پلیمراز Taq پایه PCR است. در برکه سرد تقریباً خاموش است."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans قهرمان پرتو است. ژنوم خردشده را در چند ساعت بازمی‌سازد. دیواره ضخیم و چهارتایی‌های سلولی."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote مدل آموزشی تولید مثل جنسی است: دو جنس، پیوند گامت‌ها؛ نه تقسیم دوتایی ساده."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 میوویروس بزرگ E. coli است. دم منقبض می‌شود و DNA را تزریق می‌کند. در نیم ساعت سلول می‌ترکد و ده‌ها فاژ بیرون می‌آیند."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "لامبدا فاژی معتدل است. می‌تواند در کروموزوم درج شود و بخوابد (لیزوژنی) یا سلول را یک‌جا از میان ببرد (لیز)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 دم کوتاه و همانندسازی بسیار سریعی دارد. سیستم محبوب زیست‌شناسی ترکیبی."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 فاژ RNA با پوشش چربی است. Pseudomonas را آلوده می‌کند. غشایی کمیاب برای یک فاژ."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 فاژ RNA ریز و بی‌دم است. به پیل‌های E. coli نر می‌چسبد. ژنومش از نخستین ژنوم‌های RNA خوانده‌شده بود."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "انگل عصبی برکه‌ای و خیالی است. به یوکاریوت‌ها می‌چسبد و رفتار میزبان را می‌شکند تا میزبان ناقل شود."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote مدل آموزشی تولید مثل جنسی است: دو جنس، پیوند گامت‌ها؛ نه تقسیم دوتایی ساده."
   }
 }

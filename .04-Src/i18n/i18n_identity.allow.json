@@ -3790,6 +3790,15 @@
    ],
    "category": "cognate",
    "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "aria.demo",
+   "value": "Demo",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
   }
  ],
  "aria.start": [
@@ -3917,6 +3926,15 @@
    ],
    "category": "cognate",
    "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "diffN",
+   "value": "Normal",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
   }
  ],
  "edu.chloro.name": [
@@ -4119,6 +4137,15 @@
    ],
    "category": "cognate",
    "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "spcard.virus",
+   "value": "Virus",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
   }
  ],
  "star.alphacentauri": [
@@ -4195,6 +4222,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
   }
  ],
  "star.betelgeuse": [
@@ -4336,6 +4372,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
   }
  ],
  "star.sirius": [
@@ -4374,6 +4419,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
   }
  ],
  "star.vega": [
@@ -4524,6 +4578,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
   }
  ],
  "start": [
@@ -4720,6 +4783,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "x.e": [
@@ -4845,6 +4944,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "fps": [
@@ -4964,6 +5099,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "mob.eSep": [
@@ -5110,6 +5281,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "mode.swissLbl": [
@@ -5229,6 +5436,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "mode.webglLbl": [
@@ -5348,6 +5591,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "modeBig.swiss": [
@@ -5467,6 +5746,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "modeBig.webgl": [
@@ -5586,6 +5901,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "modeLbl.swiss": [
@@ -5705,6 +6056,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "modeLbl.webgl": [
@@ -5824,6 +6211,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "autoOn": [
@@ -6347,6 +6770,42 @@
    ],
    "category": "cognate",
    "reason": "kk: интернационализм — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "be"
+   ],
+   "category": "cognate",
+   "reason": "be: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "az"
+   ],
+   "category": "cognate",
+   "reason": "az: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "ky"
+   ],
+   "category": "cognate",
+   "reason": "ky: интернационализм/бренд — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "mn"
+   ],
+   "category": "cognate",
+   "reason": "mn: интернационализм/бренд — пишется так же"
   }
  ],
  "legend": [

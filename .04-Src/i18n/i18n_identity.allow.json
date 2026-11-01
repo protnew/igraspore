@@ -1,3672 +1,4955 @@
 {
-  "0": {
-    "key": "fps",
-    "value": "FPS",
-    "langs": [
-      "*"
-    ],
-    "category": "abbr",
-    "reason": "fps — общепринятая аббревиатура кадров/с, не переводится"
-  },
-  "1": {
-    "key": "autoOn",
-    "value": "AUTO",
-    "langs": [
-      "*"
-    ],
-    "category": "abbr",
-    "reason": "AUTO — короткая метка автопилота, международная аббревиатура"
-  },
-  "2": {
-    "key": "autoPilotOn",
-    "value": "AUTO ON",
-    "langs": [
-      "*"
-    ],
-    "category": "abbr",
-    "reason": "AUTO — международная аббревиатура автопилота"
-  },
-  "3": {
-    "key": "hud.btn.auto",
-    "value": "AUTO",
-    "langs": [
-      "*"
-    ],
-    "category": "abbr",
-    "reason": "кнопка 72px; AUTO — международная аббревиатура"
-  },
-  "4": {
-    "key": "hud.btn.auto.short",
-    "value": "AUTO",
-    "langs": [
-      "*"
-    ],
-    "category": "abbr",
-    "reason": "кнопка 72px; AUTO — международная аббревиатура"
-  },
-  "5": {
-    "key": "wiki",
-    "value": "WIKI",
-    "langs": [
-      "*"
-    ],
-    "category": "brand",
-    "reason": "Wiki — заимствованный термин названия раздела, корректен во всех языках"
-  },
-  "6": {
-    "key": "menu",
-    "value": "MENU",
-    "langs": [
-      "fr",
-      "id",
-      "it",
-      "ms",
-      "pl",
-      "pt-BR",
-      "vi",
-      "fil"
-    ],
-    "category": "cognate",
-    "reason": "Menu — родное слово языка, совпадает с en; не недоперевод"
-  },
-  "7": {
-    "key": "hud.btn.menu",
-    "value": "Menu",
-    "langs": [
-      "fr",
-      "id",
-      "it",
-      "ms",
-      "pl",
-      "pt-BR",
-      "vi",
-      "fil"
-    ],
-    "category": "cognate",
-    "reason": "Menu — родное слово языка, совпадает с en; не недоперевод"
-  },
-  "8": {
-    "key": "diffN",
-    "value": "Normal",
-    "langs": [
-      "de",
-      "fr",
-      "es",
-      "pt-BR",
-      "tr"
-    ],
-    "category": "cognate",
-    "reason": "Normal — родное слово языка, совпадает с en"
-  },
-  "9": {
-    "key": "vignette",
-    "value": "Vignette",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Vignette — родное/заимствованное слово языка, совпадает с en"
-  },
-  "10": {
-    "key": "season3",
-    "value": "Winter",
-    "langs": [
-      "de"
-    ],
-    "category": "cognate",
-    "reason": "Winter — немецкое слово, написание совпадает с en"
-  },
-  "11": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "de"
-    ],
-    "category": "cognate",
-    "reason": "Start — немецкое слово, написание совпадает с en"
-  },
-  "12": {
-    "key": "hud.btn.cyst",
-    "value": "SPORE",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en"
-  },
-  "13": {
-    "key": "hud.btn.cyst.short",
-    "value": "SPORE",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en"
-  },
-  "14": {
-    "key": "divRate",
-    "value": "Reproduction",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Reproduction — французское слово, совпадает с en"
-  },
-  "15": {
-    "key": "divs",
-    "value": "Divisions",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Divisions — французское слово, совпадает с en"
-  },
-  "16": {
-    "key": "cartoon",
-    "value": "CARTOON",
-    "langs": [
-      "fil"
-    ],
-    "category": "brand",
-    "reason": "режим назван CARTOON по прямому решению владельца (CHECK-DEV-1114 §2)"
-  },
-  "17": {
-    "key": "set",
-    "value": "SETTINGS",
-    "langs": [
-      "fil"
-    ],
-    "category": "brand",
-    "reason": "SETTINGS по прямому решению владельца (CHECK-DEV-1114 §2)"
-  },
-  "18": {
-    "key": "aquarium",
-    "value": "AQUARIUM",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Aquarium — родное слово de/fr, совпадает с en"
-  },
-  "19": {
-    "key": "cartoon",
-    "value": "CARTOON",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Cartoon — родное слово de/fr, совпадает с en"
-  },
-  "20": {
-    "key": "filter",
-    "value": "Filter",
-    "langs": [
-      "de",
-      "id"
-    ],
-    "category": "cognate",
-    "reason": "Filter — родное слово de/id, совпадает с en"
-  },
-  "21": {
-    "key": "colonies",
-    "value": "colonies",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "colonies — французское слово, совпадает с en"
-  },
-  "22": {
-    "key": "microscope",
-    "value": "Microscope",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Microscope — французское слово, совпадает с en"
-  },
-  "23": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "*"
-    ],
-    "category": "brand",
-    "reason": "SwissBioPics — название режима/бренда, не переводится"
-  },
-  "24": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "*"
-    ],
-    "category": "brand",
-    "reason": "WebGL — имя технологии, не переводится"
-  },
-  "25": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "*"
-    ],
-    "category": "brand",
-    "reason": "SwissBioPics — бренд набора иконок, не переводится"
-  },
-  "26": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "*"
-    ],
-    "category": "brand",
-    "reason": "WebGL — имя технологии"
-  },
-  "27": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "*"
-    ],
-    "category": "brand",
-    "reason": "SwissBioPics — бренд"
-  },
-  "28": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "*"
-    ],
-    "category": "brand",
-    "reason": "WebGL — имя технологии"
-  },
-  "29": {
-    "key": "modeBig.cartoon",
-    "value": "🎨 CARTOON",
-    "langs": [
-      "de",
-      "fr",
-      "it",
-      "pt-BR",
-      "ru"
-    ],
-    "category": "cognate",
-    "reason": "Cartoon — заимствованное слово этих языков"
-  },
-  "30": {
-    "key": "modeLbl.cartoon",
-    "value": "🎨 Cartoon",
-    "langs": [
-      "de",
-      "fr",
-      "it",
-      "pt-BR",
-      "ru"
-    ],
-    "category": "cognate",
-    "reason": "Cartoon — заимствованное слово этих языков"
-  },
-  "31": {
-    "key": "mob.eSep",
-    "value": " · E=",
-    "langs": [
-      "*"
-    ],
-    "category": "abbr",
-    "reason": "разделитель + буква-параметр, не текст"
-  },
-  "32": {
-    "key": "hud.genSep",
-    "value": " · Gen ",
-    "langs": [
-      "de",
-      "es",
-      "id",
-      "it",
-      "ms",
-      "pl",
-      "ru"
-    ],
-    "category": "abbr",
-    "reason": "Gen — латинская аббревиатура поколения (generatio)"
-  },
-  "33": {
-    "key": "tip.zi",
-    "value": "Zoom+",
-    "langs": [
-      "*"
-    ],
-    "category": "abbr",
-    "reason": "Zoom+ — псевдо-аббревиатура зума с плюсом"
-  },
-  "34": {
-    "key": "tip.zo",
-    "value": "Zoom-",
-    "langs": [
-      "*"
-    ],
-    "category": "abbr",
-    "reason": "Zoom- — псевдо-аббревиатура зума с минусом"
-  },
-  "35": {
-    "key": "tip.swiss",
-    "value": "SwissBioPics. Click -> WebGL",
-    "langs": [
-      "vi"
-    ],
-    "category": "brand",
-    "reason": "строка из брендов SwissBioPics/WebGL + Click; vi-допустимо"
-  },
-  "36": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "de",
-      "fil",
-      "fr",
-      "id",
-      "ms",
-      "pt-BR",
-      "tr",
-      "vi"
-    ],
-    "category": "latin_species",
-    "reason": "Sirius — имя звезды"
-  },
-  "37": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "de",
-      "fil",
-      "fr",
-      "id",
-      "ms",
-      "pt-BR",
-      "tr",
-      "vi"
-    ],
-    "category": "latin_species",
-    "reason": "Sirius — имя звезды"
-  },
-  "38": {
-    "key": "star.betelgeuse",
-    "value": "★ Betelgeuse",
-    "langs": [
-      "de",
-      "es",
-      "fil",
-      "id",
-      "it",
-      "ms",
-      "pt-BR",
-      "tr",
-      "vi"
-    ],
-    "category": "latin_species",
-    "reason": "Betelgeuse — имя звезды"
-  },
-  "39": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "de",
-      "es",
-      "fil",
-      "fr",
-      "id",
-      "it",
-      "ms",
-      "pl",
-      "pt-BR",
-      "tr",
-      "vi"
-    ],
-    "category": "latin_species",
-    "reason": "Rigel — имя звезды"
-  },
-  "40": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "es",
-      "fil",
-      "id",
-      "it",
-      "ms",
-      "pt-BR",
-      "tr",
-      "vi"
-    ],
-    "category": "latin_species",
-    "reason": "Vega — имя звезды"
-  },
-  "41": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "de",
-      "es",
-      "fil",
-      "id",
-      "it",
-      "ms",
-      "pl",
-      "pt-BR",
-      "tr",
-      "vi"
-    ],
-    "category": "latin_species",
-    "reason": "Antares — имя звезды"
-  },
-  "42": {
-    "key": "star.polaris",
-    "value": "★ Polaris",
-    "langs": [
-      "fr",
-      "id",
-      "it",
-      "ms",
-      "pt-BR",
-      "vi"
-    ],
-    "category": "latin_species",
-    "reason": "Polaris — имя звезды"
-  },
-  "43": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "de",
-      "fil",
-      "fr",
-      "id",
-      "it",
-      "ms",
-      "pt-BR",
-      "tr",
-      "vi"
-    ],
-    "category": "latin_species",
-    "reason": "Alpha Centauri — имя звезды"
-  },
-  "44": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "de",
-      "es",
-      "fil",
-      "fr",
-      "id",
-      "it",
-      "ms",
-      "pl",
-      "pt-BR",
-      "tr",
-      "vi"
-    ],
-    "category": "latin_species",
-    "reason": "Alpha Centauri — имя звезды"
-  },
-  "45": {
-    "key": "star.trinary",
-    "value": "★★★ Triple",
-    "langs": [
-      "es",
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Triple — французское слово"
-  },
-  "46": {
-    "key": "star.quadruple",
-    "value": "★★★★ Quadruple",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Quadruple — французское слово"
-  },
-  "47": {
-    "key": "aria.aqua",
-    "value": "Aquarium",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Aquarium — родное слово de/fr"
-  },
-  "48": {
-    "key": "aria.auto",
-    "value": "Auto (Tab)",
-    "langs": [
-      "de",
-      "es",
-      "fr",
-      "it",
-      "ms",
-      "pl",
-      "pt-BR"
-    ],
-    "category": "cognate",
-    "reason": "Auto — родное/заимствованное слово языка"
-  },
-  "49": {
-    "key": "tip.auto",
-    "value": "Auto",
-    "langs": [
-      "de",
-      "es",
-      "fr",
-      "it",
-      "ms",
-      "pl",
-      "pt-BR"
-    ],
-    "category": "cognate",
-    "reason": "Auto — родное/заимствованное слово языка"
-  },
-  "50": {
-    "key": "aria.demo",
-    "value": "Demo",
-    "langs": [
-      "de",
-      "es",
-      "fil",
-      "id",
-      "it",
-      "ms",
-      "pl",
-      "pt-BR",
-      "tr",
-      "vi"
-    ],
-    "category": "cognate",
-    "reason": "Demo — заимствованный термин языка"
-  },
-  "51": {
-    "key": "aria.micro",
-    "value": "Microscope (M)",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Microscope — французское слово"
-  },
-  "52": {
-    "key": "mic.scope",
-    "value": "MICROSCOPE ×",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Microscope — французское слово в верхнем регистре"
-  },
-  "53": {
-    "key": "aria.pause",
-    "value": "Pause (P)",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Pause — родное слово de/fr"
-  },
-  "54": {
-    "key": "tip.pause",
-    "value": "Pause",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Pause — родное слово de/fr"
-  },
-  "55": {
-    "key": "aria.start",
-    "value": "Start",
-    "langs": [
-      "de",
-      "pl"
-    ],
-    "category": "cognate",
-    "reason": "Start — родное слово de, заимствованное в pl"
-  },
-  "56": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "de",
-      "es",
-      "fil",
-      "fr",
-      "id",
-      "it",
-      "ms",
-      "pl",
-      "pt-BR",
-      "vi"
-    ],
-    "category": "brand",
-    "reason": "Wiki — заимствованный термин"
-  },
-  "57": {
-    "key": "dna.import",
-    "value": "Import DNA",
-    "langs": [
-      "ms"
-    ],
-    "category": "cognate",
-    "reason": "import/DNA — заимствованные термины ms"
-  },
-  "58": {
-    "key": "edu.chloro.name",
-    "value": "Chloroplast",
-    "langs": [
-      "de",
-      "pl"
-    ],
-    "category": "cognate",
-    "reason": "Chloroplast — научный термин de/pl"
-  },
-  "59": {
-    "key": "edu.membrane.name",
-    "value": "Membrane",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Membrane — французское слово"
-  },
-  "60": {
-    "key": "edu.vacuole.name",
-    "value": "Vacuole",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Vacuole — французский научный термин"
-  },
-  "61": {
-    "key": "x.golgi",
-    "value": "Golgi",
-    "langs": [
-      "*"
-    ],
-    "category": "latin_species",
-    "reason": "Golgi — аппарат Гольджи, фамилия учёного"
-  },
-  "62": {
-    "key": "x.mitochondria",
-    "value": "mitochondria",
-    "langs": [
-      "pl"
-    ],
-    "category": "cognate",
-    "reason": "mitochondria — латинский научный термин pl"
-  },
-  "63": {
-    "key": "x.pseudopodia",
-    "value": "pseudopodia",
-    "langs": [
-      "id",
-      "ms",
-      "pl"
-    ],
-    "category": "cognate",
-    "reason": "pseudopodia — латинский научный термин"
-  },
-  "64": {
-    "key": "x.phages",
-    "value": "Phages",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Phages — французское слово"
-  },
-  "65": {
-    "key": "x.division",
-    "value": "Division",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Division — французское слово"
-  },
-  "66": {
-    "key": "x.locomotion",
-    "value": "Locomotion",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "Locomotion — французское слово"
-  },
-  "67": {
-    "key": "x.wind",
-    "value": "Wind",
-    "langs": [
-      "de"
-    ],
-    "category": "cognate",
-    "reason": "Wind — немецкое слово"
-  },
-  "68": {
-    "key": "spcard.virus",
-    "value": "Virus",
-    "langs": [
-      "de",
-      "es",
-      "fil",
-      "fr",
-      "id",
-      "it",
-      "ms",
-      "vi"
-    ],
-    "category": "cognate",
-    "reason": "Virus — латинский/родной термин языков"
-  },
-  "69": {
-    "key": "tut.s4.title",
-    "value": "Division",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate",
-    "reason": "fr «division» — родное слово, идентично en написанию"
-  },
-  "70": {
-    "key": "loc.pseudopodia",
-    "value": "pseudopodia",
-    "langs": [
-      "id",
-      "ms"
-    ],
-    "category": "latin_species",
-    "reason": "scientific/Latin term, same form across languages"
-  },
-  "71": {
-    "key": "loc.drift",
-    "value": "Drift",
-    "langs": [
-      "de"
-    ],
-    "category": "cognate",
-    "reason": "scientific/Latin term, same form across languages"
-  },
-  "72": {
-    "key": "loc.sessile",
-    "value": "sessile",
-    "langs": [
-      "fr",
-      "it"
-    ],
-    "category": "latin_species",
-    "reason": "scientific/Latin term, same form across languages"
-  },
-  "73": {
-    "key": "tip.cyst",
-    "value": "Spore",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "latin_species",
-    "reason": "German biological term for spore is identical to the international Latin form"
-  },
-  "74": {
-    "key": "aria.cyst",
-    "value": "Spore (R)",
-    "langs": [
-      "de",
-      "fr"
-    ],
-    "category": "latin_species",
-    "reason": "German/French spore = international Latin form"
-  },
-  "75": {
-    "key": "no",
-    "value": "No",
-    "langs": [
-      "es",
-      "it"
-    ],
-    "category": "cognate",
-    "reason": "исп./итал. отрицание «No» — корректный перевод, совпадает с английским написанием (не недоперевод)"
-  },
-  "77": {
-    "key": "errGeneric",
-    "value": "Error",
-    "langs": [
-      "es"
-    ],
-    "category": "cognate"
-  },
-  "78": {
-    "key": "cartoon",
-    "value": "CARTOON",
-    "langs": [
-      "fil"
-    ],
-    "category": "F1-locked"
-  },
-  "79": {
-    "key": "menu",
-    "value": "MENU",
-    "langs": [
-      "fil"
-    ],
-    "category": "F1-locked"
-  },
-  "80": {
-    "key": "set",
-    "value": "SETTINGS",
-    "langs": [
-      "fil"
-    ],
-    "category": "F1-locked"
-  },
-  "81": {
-    "key": "wiki",
-    "value": "WIKI",
-    "langs": [
-      "fil"
-    ],
-    "category": "F1-locked"
-  },
-  "82": {
-    "key": "hud.btn.menu",
-    "value": "Menu",
-    "langs": [
-      "fil"
-    ],
-    "category": "F1-locked"
-  },
-  "83": {
-    "key": "coloniesCount.other",
-    "value": "{n} colonies",
-    "langs": [
-      "fr"
-    ],
-    "category": "cognate"
-  },
-  "84": {
-    "key": "speciesShown.one",
-    "value": "{n} species",
-    "langs": [
-      "fil"
-    ],
-    "category": "cognate"
-  },
-  "85": {
-    "key": "speciesShown.other",
-    "value": "{n} species",
-    "langs": [
-      "fil"
-    ],
-    "category": "cognate"
-  },
-  "86": {
-    "key": "coloniesCount.one",
-    "value": "{n} colony",
-    "langs": [
-      "fil"
-    ],
-    "category": "cognate"
-  },
-  "87": {
-    "key": "coloniesCount.other",
-    "value": "{n} colonies",
-    "langs": [
-      "fil"
-    ],
-    "category": "cognate"
-  },
-  "88": {
-    "key": "aquarium",
-    "value": "AQUARIUM",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "89": {
-    "key": "aria.aqua",
-    "value": "Aquarium",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "90": {
-    "key": "aria.auto",
-    "value": "Auto (Tab)",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "91": {
-    "key": "aria.cyst",
-    "value": "Spore (R)",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "92": {
-    "key": "aria.demo",
-    "value": "Demo",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "93": {
-    "key": "aria.start",
-    "value": "Start",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "94": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "95": {
-    "key": "cartoon",
-    "value": "CARTOON",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "96": {
-    "key": "dLysis",
-    "value": "Lysis",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "97": {
-    "key": "dTemp",
-    "value": "Temp",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "98": {
-    "key": "demo.labels",
-    "value": "Labels",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "99": {
-    "key": "edu.chloro.name",
-    "value": "Chloroplast",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "100": {
-    "key": "edu.mito.name",
-    "value": "Mitochondrion",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "101": {
-    "key": "edu.vacuole.name",
-    "value": "Vacuole",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "102": {
-    "key": "filter",
-    "value": "Filter",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "103": {
-    "key": "hud.btn.cyst",
-    "value": "SPORE",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "104": {
-    "key": "hud.btn.cyst.short",
-    "value": "SPORE",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "105": {
-    "key": "hud.btn.menu",
-    "value": "Menu",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "106": {
-    "key": "hud.genSep",
-    "value": " · Gen ",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "107": {
-    "key": "maxPop",
-    "value": "Max pop",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "108": {
-    "key": "menu",
-    "value": "MENU",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "109": {
-    "key": "modeBig.cartoon",
-    "value": "🎨 CARTOON",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "110": {
-    "key": "modeLbl.cartoon",
-    "value": "🎨 Cartoon",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "111": {
-    "key": "pop",
-    "value": "Pop",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "112": {
-    "key": "season3",
-    "value": "Winter",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "113": {
-    "key": "spcard.virus",
-    "value": "Virus",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "114": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "115": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "116": {
-    "key": "star.pulsar",
-    "value": "★ Neutron (pulsar)",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "117": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "118": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "119": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "120": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "121": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "122": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "123": {
-    "key": "temp",
-    "value": "Temp",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "124": {
-    "key": "tip.auto",
-    "value": "Auto",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "125": {
-    "key": "tip.cyst",
-    "value": "Spore",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "126": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "127": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "128": {
-    "key": "x.macroMicronucleus",
-    "value": "macro/micronucleus",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "129": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "130": {
-    "key": "x.wind",
-    "value": "Wind",
-    "langs": [
-      "nl"
-    ],
-    "category": "cognate"
-  },
-  "131": {
-    "key": "aria.auto",
-    "value": "Auto (Tab)",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "132": {
-    "key": "aria.demo",
-    "value": "Demo",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "133": {
-    "key": "aria.start",
-    "value": "Start",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "134": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "135": {
-    "key": "dTemp",
-    "value": "Temp",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "136": {
-    "key": "diffN",
-    "value": "Normal",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "137": {
-    "key": "edu.cell",
-    "value": "cell",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "138": {
-    "key": "filter",
-    "value": "Filter",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "139": {
-    "key": "hud.genSep",
-    "value": " · Gen ",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "140": {
-    "key": "maxPop",
-    "value": "Max pop",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "141": {
-    "key": "pop",
-    "value": "Pop",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "142": {
-    "key": "spcard.virus",
-    "value": "Virus",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "143": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "144": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "145": {
-    "key": "star.betelgeuse",
-    "value": "★ Betelgeuse",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "146": {
-    "key": "star.pulsar",
-    "value": "★ Neutron (pulsar)",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "147": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "148": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "149": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "150": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "151": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "152": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "153": {
-    "key": "temp",
-    "value": "Temp",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "154": {
-    "key": "tip.auto",
-    "value": "Auto",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "155": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "156": {
-    "key": "x.cyst",
-    "value": "Cyst",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "157": {
-    "key": "x.cyst2",
-    "value": " · CYST",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "158": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "159": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "sv"
-    ],
-    "category": "cognate"
-  },
-  "160": {
-    "key": "aria.auto",
-    "value": "Auto (Tab)",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "161": {
-    "key": "aria.demo",
-    "value": "Demo",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "162": {
-    "key": "aria.start",
-    "value": "Start",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "163": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "164": {
-    "key": "autoOn",
-    "value": "AUTO",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "165": {
-    "key": "dTemp",
-    "value": "Temp",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "166": {
-    "key": "diffN",
-    "value": "Normal",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "167": {
-    "key": "dna.io",
-    "value": "Import/Export DNA",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "168": {
-    "key": "edu.nucleoid.name",
-    "value": "Nucleoid",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "169": {
-    "key": "fps",
-    "value": "FPS",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "170": {
-    "key": "hud.btn.auto",
-    "value": "AUTO",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "171": {
-    "key": "hud.btn.auto.short",
-    "value": "AUTO",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "172": {
-    "key": "hud.genSep",
-    "value": " · Gen ",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "173": {
-    "key": "mob.eSep",
-    "value": " · E=",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "174": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "175": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "176": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "177": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "178": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "179": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "180": {
-    "key": "pop",
-    "value": "Pop",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "181": {
-    "key": "restart",
-    "value": "RESTART",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "182": {
-    "key": "spcard.virus",
-    "value": "Virus",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "183": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "184": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "185": {
-    "key": "star.betelgeuse",
-    "value": "★ Betelgeuse",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "186": {
-    "key": "star.polaris",
-    "value": "★ Polaris",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "187": {
-    "key": "star.pulsar",
-    "value": "★ Neutron (pulsar)",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "188": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "189": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "190": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "191": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "192": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "193": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "194": {
-    "key": "temp",
-    "value": "Temp",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "195": {
-    "key": "tip.auto",
-    "value": "Auto",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "196": {
-    "key": "tip.swiss",
-    "value": "SwissBioPics. Click -> WebGL",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "197": {
-    "key": "tip.zi",
-    "value": "Zoom+",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "198": {
-    "key": "tip.zo",
-    "value": "Zoom-",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "199": {
-    "key": "wiki",
-    "value": "WIKI",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "200": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "201": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "202": {
-    "key": "x.golgi",
-    "value": "Golgi",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "203": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "204": {
-    "key": "loc.drift",
-    "value": "drift",
-    "langs": [
-      "ro"
-    ],
-    "category": "cognate"
-  },
-  "205": {
-    "key": "aria.demo",
-    "value": "Demo",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "206": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "207": {
-    "key": "autoOn",
-    "value": "AUTO",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "208": {
-    "key": "autoPilotOn",
-    "value": "AUTO ON",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "209": {
-    "key": "fps",
-    "value": "FPS",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "210": {
-    "key": "hud.btn.auto",
-    "value": "AUTO",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "211": {
-    "key": "hud.btn.auto.short",
-    "value": "AUTO",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "212": {
-    "key": "mob.eSep",
-    "value": " · E=",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "213": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "214": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "215": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "216": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "217": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "218": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "219": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "220": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "221": {
-    "key": "star.betelgeuse",
-    "value": "★ Betelgeuse",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "222": {
-    "key": "star.polaris",
-    "value": "★ Polaris",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "223": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "224": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "225": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "226": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "227": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "228": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "229": {
-    "key": "tip.wikiB",
-    "value": "Wiki/Bestiary",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "230": {
-    "key": "wiki",
-    "value": "WIKI",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "231": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "232": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "233": {
-    "key": "x.golgi",
-    "value": "Golgi",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "234": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "el"
-    ],
-    "category": "cognate"
-  },
-  "235": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "236": {
-    "key": "autoOn",
-    "value": "AUTO",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "237": {
-    "key": "fps",
-    "value": "FPS",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "238": {
-    "key": "hud.btn.auto",
-    "value": "AUTO",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "239": {
-    "key": "hud.btn.auto.short",
-    "value": "AUTO",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "240": {
-    "key": "hud.genSep",
-    "value": " · Gen ",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "241": {
-    "key": "mob.eSep",
-    "value": " · E=",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "242": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "243": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "244": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "245": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "246": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "247": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "248": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "249": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "250": {
-    "key": "star.betelgeuse",
-    "value": "★ Betelgeuse",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "251": {
-    "key": "star.polaris",
-    "value": "★ Polaris",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "252": {
-    "key": "star.pulsar",
-    "value": "★ Neutron (pulsar)",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "253": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "254": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "255": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "256": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "257": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "258": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "259": {
-    "key": "wiki",
-    "value": "WIKI",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "260": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "261": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "262": {
-    "key": "x.golgi",
-    "value": "Golgi",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "263": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "hu"
-    ],
-    "category": "cognate"
-  },
-  "264": {
-    "key": "aria.auto",
-    "value": "Auto (Tab)",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "265": {
-    "key": "aria.demo",
-    "value": "Demo",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "266": {
-    "key": "aria.start",
-    "value": "Start",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "267": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "268": {
-    "key": "autoOn",
-    "value": "AUTO",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "269": {
-    "key": "dna.io",
-    "value": "Import/Export DNA",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "270": {
-    "key": "edu.chloro.name",
-    "value": "Chloroplast",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "271": {
-    "key": "fps",
-    "value": "FPS",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "272": {
-    "key": "hud.btn.auto",
-    "value": "AUTO",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "273": {
-    "key": "hud.btn.auto.short",
-    "value": "AUTO",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "274": {
-    "key": "hud.btn.menu",
-    "value": "Menu",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "275": {
-    "key": "hud.genSep",
-    "value": " · Gen ",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "276": {
-    "key": "menu",
-    "value": "MENU",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "277": {
-    "key": "mob.eSep",
-    "value": " · E=",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "278": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "279": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "280": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "281": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "282": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "283": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "284": {
-    "key": "restart",
-    "value": "RESTART",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "285": {
-    "key": "spcard.virus",
-    "value": "Virus",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "286": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "287": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "288": {
-    "key": "star.betelgeuse",
-    "value": "★ Betelgeuse",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "289": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "290": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "291": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "292": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "293": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "294": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "295": {
-    "key": "tip.auto",
-    "value": "Auto",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "296": {
-    "key": "wiki",
-    "value": "WIKI",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "297": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "298": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "299": {
-    "key": "x.golgi",
-    "value": "Golgi",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "300": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "cs"
-    ],
-    "category": "cognate"
-  },
-  "301": {
-    "key": "aria.auto",
-    "value": "Auto (Tab)",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "302": {
-    "key": "aria.demo",
-    "value": "Demo",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "303": {
-    "key": "aria.pause",
-    "value": "Pause (P)",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "304": {
-    "key": "aria.start",
-    "value": "Start",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "305": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "306": {
-    "key": "autoOn",
-    "value": "AUTO",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "307": {
-    "key": "dTemp",
-    "value": "Temp",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "308": {
-    "key": "diffN",
-    "value": "Normal",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "309": {
-    "key": "filter",
-    "value": "Filter",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "310": {
-    "key": "fps",
-    "value": "FPS",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "311": {
-    "key": "hud.btn.auto",
-    "value": "AUTO",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "312": {
-    "key": "hud.btn.auto.short",
-    "value": "AUTO",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "313": {
-    "key": "hud.btn.menu",
-    "value": "Menu",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "314": {
-    "key": "hud.genSep",
-    "value": " · Gen ",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "315": {
-    "key": "menu",
-    "value": "MENU",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "316": {
-    "key": "mob.eSep",
-    "value": " · E=",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "317": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "318": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "319": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "320": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "321": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "322": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "323": {
-    "key": "spcard.virus",
-    "value": "Virus",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "324": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "325": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "326": {
-    "key": "star.betelgeuse",
-    "value": "★ Betelgeuse",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "327": {
-    "key": "star.polaris",
-    "value": "★ Polaris",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "328": {
-    "key": "star.pulsar",
-    "value": "★ Neutron (pulsar)",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "329": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "330": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "331": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "332": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "333": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "334": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "335": {
-    "key": "temp",
-    "value": "Temp",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "336": {
-    "key": "tip.auto",
-    "value": "Auto",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "337": {
-    "key": "tip.pause",
-    "value": "Pause",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "338": {
-    "key": "tip.zi",
-    "value": "Zoom+",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "339": {
-    "key": "tip.zo",
-    "value": "Zoom-",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "340": {
-    "key": "vignette",
-    "value": "Vignette",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "341": {
-    "key": "wiki",
-    "value": "WIKI",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "342": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "343": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "344": {
-    "key": "x.golgi",
-    "value": "Golgi",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "345": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "da"
-    ],
-    "category": "cognate"
-  },
-  "346": {
-    "key": "aria.auto",
-    "value": "Auto (Tab)",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "347": {
-    "key": "aria.demo",
-    "value": "Demo",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "348": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "349": {
-    "key": "autoOn",
-    "value": "AUTO",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "350": {
-    "key": "fps",
-    "value": "FPS",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "351": {
-    "key": "hud.btn.auto",
-    "value": "AUTO",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "352": {
-    "key": "hud.btn.auto.short",
-    "value": "AUTO",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "353": {
-    "key": "mob.eSep",
-    "value": " · E=",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "354": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "355": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "356": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "357": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "358": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "359": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "360": {
-    "key": "spcard.virus",
-    "value": "Virus",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "361": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "362": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "363": {
-    "key": "star.betelgeuse",
-    "value": "★ Betelgeuse",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "364": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "365": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "366": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "367": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "368": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "369": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "370": {
-    "key": "tip.zi",
-    "value": "Zoom+",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "371": {
-    "key": "tip.zo",
-    "value": "Zoom-",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "372": {
-    "key": "wiki",
-    "value": "WIKI",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "373": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "374": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "375": {
-    "key": "x.golgi",
-    "value": "Golgi",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "376": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "fi"
-    ],
-    "category": "cognate"
-  },
-  "377": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "zh-CN"
-    ],
-    "category": "cognate"
-  },
-  "378": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "zh-CN"
-    ],
-    "category": "cognate"
-  },
-  "379": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "zh-CN"
-    ],
-    "category": "cognate"
-  },
-  "380": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "zh-CN"
-    ],
-    "category": "cognate"
-  },
-  "381": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "zh-CN"
-    ],
-    "category": "cognate"
-  },
-  "382": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "zh-CN"
-    ],
-    "category": "cognate"
-  },
-  "383": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "zh-CN"
-    ],
-    "category": "cognate"
-  },
-  "384": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "zh-CN"
-    ],
-    "category": "cognate"
-  },
-  "385": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "zh-CN"
-    ],
-    "category": "cognate"
-  },
-  "386": {
-    "key": "fps",
-    "value": "FPS",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "387": {
-    "key": "mob.eSep",
-    "value": " · E=",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "388": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "389": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "390": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "391": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "392": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "393": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "394": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "395": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "396": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "bg"
-    ],
-    "category": "cognate"
-  },
-  "397": {
-    "key": "aria.demo",
-    "value": "Demo",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "398": {
-    "key": "aria.start",
-    "value": "Start",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "399": {
-    "key": "aria.wiki2",
-    "value": "Wiki (B)",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "400": {
-    "key": "autoOn",
-    "value": "AUTO",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "401": {
-    "key": "filter",
-    "value": "Filter",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "402": {
-    "key": "fps",
-    "value": "FPS",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "403": {
-    "key": "hud.btn.auto",
-    "value": "AUTO",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "404": {
-    "key": "hud.btn.auto.short",
-    "value": "AUTO",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "405": {
-    "key": "hud.genSep",
-    "value": " · Gen ",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "406": {
-    "key": "mob.eSep",
-    "value": " · E=",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "407": {
-    "key": "mode.swissLbl",
-    "value": "📗 SWISS",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "408": {
-    "key": "mode.webglLbl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "409": {
-    "key": "modeBig.swiss",
-    "value": "📗 SWISSBIOPICS",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "410": {
-    "key": "modeBig.webgl",
-    "value": "🌊 WEBGL",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "411": {
-    "key": "modeLbl.swiss",
-    "value": "📗 SwissBioPics",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "412": {
-    "key": "modeLbl.webgl",
-    "value": "🌊 WebGL",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "413": {
-    "key": "restart",
-    "value": "RESTART",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "414": {
-    "key": "spcard.virus",
-    "value": "Virus",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "415": {
-    "key": "star.alphacentauri",
-    "value": "★ Alpha Centauri A+B",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "416": {
-    "key": "star.antares",
-    "value": "★ Antares",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "417": {
-    "key": "star.rigel",
-    "value": "★ Rigel",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "418": {
-    "key": "star.sirius",
-    "value": "★ Sirius A+B",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "419": {
-    "key": "star.vega",
-    "value": "★ Vega",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "420": {
-    "key": "starg.alphacentauri",
-    "value": "★ α Centauri",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "421": {
-    "key": "starg.sirius",
-    "value": "★ Sirius",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "422": {
-    "key": "start",
-    "value": "START",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "423": {
-    "key": "wiki",
-    "value": "WIKI",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "424": {
-    "key": "x.a",
-    "value": "A",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "425": {
-    "key": "x.e",
-    "value": "E",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "426": {
-    "key": "x.golgi",
-    "value": "Golgi",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "427": {
-    "key": "x.s",
-    "value": "S",
-    "langs": [
-      "hr"
-    ],
-    "category": "cognate"
-  },
-  "cognates": {
-    "START": [
-      "de"
-    ],
-    "MENU": [
-      "pt-BR",
-      "id",
-      "fr",
-      "vi",
-      "fil",
-      "it",
-      "pl",
-      "ms"
-    ],
-    "AQUARIUM": [
-      "de",
-      "fr"
-    ]
+ "0": {
+  "key": "fps",
+  "value": "FPS",
+  "langs": [
+   "*"
+  ],
+  "category": "abbr",
+  "reason": "fps — общепринятая аббревиатура кадров/с, не переводится"
+ },
+ "1": {
+  "key": "autoOn",
+  "value": "AUTO",
+  "langs": [
+   "*"
+  ],
+  "category": "abbr",
+  "reason": "AUTO — короткая метка автопилота, международная аббревиатура"
+ },
+ "2": {
+  "key": "autoPilotOn",
+  "value": "AUTO ON",
+  "langs": [
+   "*"
+  ],
+  "category": "abbr",
+  "reason": "AUTO — международная аббревиатура автопилота"
+ },
+ "3": {
+  "key": "hud.btn.auto",
+  "value": "AUTO",
+  "langs": [
+   "*"
+  ],
+  "category": "abbr",
+  "reason": "кнопка 72px; AUTO — международная аббревиатура"
+ },
+ "4": {
+  "key": "hud.btn.auto.short",
+  "value": "AUTO",
+  "langs": [
+   "*"
+  ],
+  "category": "abbr",
+  "reason": "кнопка 72px; AUTO — международная аббревиатура"
+ },
+ "5": {
+  "key": "wiki",
+  "value": "WIKI",
+  "langs": [
+   "*"
+  ],
+  "category": "brand",
+  "reason": "Wiki — заимствованный термин названия раздела, корректен во всех языках"
+ },
+ "6": {
+  "key": "menu",
+  "value": "MENU",
+  "langs": [
+   "fr",
+   "id",
+   "it",
+   "ms",
+   "pl",
+   "pt-BR",
+   "vi",
+   "fil"
+  ],
+  "category": "cognate",
+  "reason": "Menu — родное слово языка, совпадает с en; не недоперевод"
+ },
+ "7": {
+  "key": "hud.btn.menu",
+  "value": "Menu",
+  "langs": [
+   "fr",
+   "id",
+   "it",
+   "ms",
+   "pl",
+   "pt-BR",
+   "vi",
+   "fil"
+  ],
+  "category": "cognate",
+  "reason": "Menu — родное слово языка, совпадает с en; не недоперевод"
+ },
+ "8": {
+  "key": "diffN",
+  "value": "Normal",
+  "langs": [
+   "de",
+   "fr",
+   "es",
+   "pt-BR",
+   "tr"
+  ],
+  "category": "cognate",
+  "reason": "Normal — родное слово языка, совпадает с en"
+ },
+ "9": {
+  "key": "vignette",
+  "value": "Vignette",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Vignette — родное/заимствованное слово языка, совпадает с en"
+ },
+ "10": {
+  "key": "season3",
+  "value": "Winter",
+  "langs": [
+   "de"
+  ],
+  "category": "cognate",
+  "reason": "Winter — немецкое слово, написание совпадает с en"
+ },
+ "11": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "de"
+  ],
+  "category": "cognate",
+  "reason": "Start — немецкое слово, написание совпадает с en"
+ },
+ "12": {
+  "key": "hud.btn.cyst",
+  "value": "SPORE",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en"
+ },
+ "13": {
+  "key": "hud.btn.cyst.short",
+  "value": "SPORE",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Spore — родное слово de/fr, в верхнем регистре совпадает с en"
+ },
+ "14": {
+  "key": "divRate",
+  "value": "Reproduction",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Reproduction — французское слово, совпадает с en"
+ },
+ "15": {
+  "key": "divs",
+  "value": "Divisions",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Divisions — французское слово, совпадает с en"
+ },
+ "16": {
+  "key": "cartoon",
+  "value": "CARTOON",
+  "langs": [
+   "fil"
+  ],
+  "category": "brand",
+  "reason": "режим назван CARTOON по прямому решению владельца (CHECK-DEV-1114 §2)"
+ },
+ "17": {
+  "key": "set",
+  "value": "SETTINGS",
+  "langs": [
+   "fil"
+  ],
+  "category": "brand",
+  "reason": "SETTINGS по прямому решению владельца (CHECK-DEV-1114 §2)"
+ },
+ "18": {
+  "key": "aquarium",
+  "value": "AQUARIUM",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Aquarium — родное слово de/fr, совпадает с en"
+ },
+ "19": {
+  "key": "cartoon",
+  "value": "CARTOON",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Cartoon — родное слово de/fr, совпадает с en"
+ },
+ "20": {
+  "key": "filter",
+  "value": "Filter",
+  "langs": [
+   "de",
+   "id"
+  ],
+  "category": "cognate",
+  "reason": "Filter — родное слово de/id, совпадает с en"
+ },
+ "21": {
+  "key": "colonies",
+  "value": "colonies",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "colonies — французское слово, совпадает с en"
+ },
+ "22": {
+  "key": "microscope",
+  "value": "Microscope",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Microscope — французское слово, совпадает с en"
+ },
+ "23": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "*"
+  ],
+  "category": "brand",
+  "reason": "SwissBioPics — название режима/бренда, не переводится"
+ },
+ "24": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "*"
+  ],
+  "category": "brand",
+  "reason": "WebGL — имя технологии, не переводится"
+ },
+ "25": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "*"
+  ],
+  "category": "brand",
+  "reason": "SwissBioPics — бренд набора иконок, не переводится"
+ },
+ "26": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "*"
+  ],
+  "category": "brand",
+  "reason": "WebGL — имя технологии"
+ },
+ "27": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "*"
+  ],
+  "category": "brand",
+  "reason": "SwissBioPics — бренд"
+ },
+ "28": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "*"
+  ],
+  "category": "brand",
+  "reason": "WebGL — имя технологии"
+ },
+ "29": {
+  "key": "modeBig.cartoon",
+  "value": "🎨 CARTOON",
+  "langs": [
+   "de",
+   "fr",
+   "it",
+   "pt-BR",
+   "ru"
+  ],
+  "category": "cognate",
+  "reason": "Cartoon — заимствованное слово этих языков"
+ },
+ "30": {
+  "key": "modeLbl.cartoon",
+  "value": "🎨 Cartoon",
+  "langs": [
+   "de",
+   "fr",
+   "it",
+   "pt-BR",
+   "ru"
+  ],
+  "category": "cognate",
+  "reason": "Cartoon — заимствованное слово этих языков"
+ },
+ "31": {
+  "key": "mob.eSep",
+  "value": " · E=",
+  "langs": [
+   "*"
+  ],
+  "category": "abbr",
+  "reason": "разделитель + буква-параметр, не текст"
+ },
+ "32": {
+  "key": "hud.genSep",
+  "value": " · Gen ",
+  "langs": [
+   "de",
+   "es",
+   "id",
+   "it",
+   "ms",
+   "pl",
+   "ru"
+  ],
+  "category": "abbr",
+  "reason": "Gen — латинская аббревиатура поколения (generatio)"
+ },
+ "33": {
+  "key": "tip.zi",
+  "value": "Zoom+",
+  "langs": [
+   "*"
+  ],
+  "category": "abbr",
+  "reason": "Zoom+ — псевдо-аббревиатура зума с плюсом"
+ },
+ "34": {
+  "key": "tip.zo",
+  "value": "Zoom-",
+  "langs": [
+   "*"
+  ],
+  "category": "abbr",
+  "reason": "Zoom- — псевдо-аббревиатура зума с минусом"
+ },
+ "35": {
+  "key": "tip.swiss",
+  "value": "SwissBioPics. Click -> WebGL",
+  "langs": [
+   "vi"
+  ],
+  "category": "brand",
+  "reason": "строка из брендов SwissBioPics/WebGL + Click; vi-допустимо"
+ },
+ "36": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "de",
+   "fil",
+   "fr",
+   "id",
+   "ms",
+   "pt-BR",
+   "tr",
+   "vi"
+  ],
+  "category": "latin_species",
+  "reason": "Sirius — имя звезды"
+ },
+ "37": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "de",
+   "fil",
+   "fr",
+   "id",
+   "ms",
+   "pt-BR",
+   "tr",
+   "vi"
+  ],
+  "category": "latin_species",
+  "reason": "Sirius — имя звезды"
+ },
+ "38": {
+  "key": "star.betelgeuse",
+  "value": "★ Betelgeuse",
+  "langs": [
+   "de",
+   "es",
+   "fil",
+   "id",
+   "it",
+   "ms",
+   "pt-BR",
+   "tr",
+   "vi"
+  ],
+  "category": "latin_species",
+  "reason": "Betelgeuse — имя звезды"
+ },
+ "39": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "de",
+   "es",
+   "fil",
+   "fr",
+   "id",
+   "it",
+   "ms",
+   "pl",
+   "pt-BR",
+   "tr",
+   "vi"
+  ],
+  "category": "latin_species",
+  "reason": "Rigel — имя звезды"
+ },
+ "40": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "es",
+   "fil",
+   "id",
+   "it",
+   "ms",
+   "pt-BR",
+   "tr",
+   "vi"
+  ],
+  "category": "latin_species",
+  "reason": "Vega — имя звезды"
+ },
+ "41": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "de",
+   "es",
+   "fil",
+   "id",
+   "it",
+   "ms",
+   "pl",
+   "pt-BR",
+   "tr",
+   "vi"
+  ],
+  "category": "latin_species",
+  "reason": "Antares — имя звезды"
+ },
+ "42": {
+  "key": "star.polaris",
+  "value": "★ Polaris",
+  "langs": [
+   "fr",
+   "id",
+   "it",
+   "ms",
+   "pt-BR",
+   "vi"
+  ],
+  "category": "latin_species",
+  "reason": "Polaris — имя звезды"
+ },
+ "43": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "de",
+   "fil",
+   "fr",
+   "id",
+   "it",
+   "ms",
+   "pt-BR",
+   "tr",
+   "vi"
+  ],
+  "category": "latin_species",
+  "reason": "Alpha Centauri — имя звезды"
+ },
+ "44": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "de",
+   "es",
+   "fil",
+   "fr",
+   "id",
+   "it",
+   "ms",
+   "pl",
+   "pt-BR",
+   "tr",
+   "vi"
+  ],
+  "category": "latin_species",
+  "reason": "Alpha Centauri — имя звезды"
+ },
+ "45": {
+  "key": "star.trinary",
+  "value": "★★★ Triple",
+  "langs": [
+   "es",
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Triple — французское слово"
+ },
+ "46": {
+  "key": "star.quadruple",
+  "value": "★★★★ Quadruple",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Quadruple — французское слово"
+ },
+ "47": {
+  "key": "aria.aqua",
+  "value": "Aquarium",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Aquarium — родное слово de/fr"
+ },
+ "48": {
+  "key": "aria.auto",
+  "value": "Auto (Tab)",
+  "langs": [
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ms",
+   "pl",
+   "pt-BR"
+  ],
+  "category": "cognate",
+  "reason": "Auto — родное/заимствованное слово языка"
+ },
+ "49": {
+  "key": "tip.auto",
+  "value": "Auto",
+  "langs": [
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ms",
+   "pl",
+   "pt-BR"
+  ],
+  "category": "cognate",
+  "reason": "Auto — родное/заимствованное слово языка"
+ },
+ "50": {
+  "key": "aria.demo",
+  "value": "Demo",
+  "langs": [
+   "de",
+   "es",
+   "fil",
+   "id",
+   "it",
+   "ms",
+   "pl",
+   "pt-BR",
+   "tr",
+   "vi"
+  ],
+  "category": "cognate",
+  "reason": "Demo — заимствованный термин языка"
+ },
+ "51": {
+  "key": "aria.micro",
+  "value": "Microscope (M)",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Microscope — французское слово"
+ },
+ "52": {
+  "key": "mic.scope",
+  "value": "MICROSCOPE ×",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Microscope — французское слово в верхнем регистре"
+ },
+ "53": {
+  "key": "aria.pause",
+  "value": "Pause (P)",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Pause — родное слово de/fr"
+ },
+ "54": {
+  "key": "tip.pause",
+  "value": "Pause",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Pause — родное слово de/fr"
+ },
+ "55": {
+  "key": "aria.start",
+  "value": "Start",
+  "langs": [
+   "de",
+   "pl"
+  ],
+  "category": "cognate",
+  "reason": "Start — родное слово de, заимствованное в pl"
+ },
+ "56": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "de",
+   "es",
+   "fil",
+   "fr",
+   "id",
+   "it",
+   "ms",
+   "pl",
+   "pt-BR",
+   "vi"
+  ],
+  "category": "brand",
+  "reason": "Wiki — заимствованный термин"
+ },
+ "57": {
+  "key": "dna.import",
+  "value": "Import DNA",
+  "langs": [
+   "ms"
+  ],
+  "category": "cognate",
+  "reason": "import/DNA — заимствованные термины ms"
+ },
+ "58": {
+  "key": "edu.chloro.name",
+  "value": "Chloroplast",
+  "langs": [
+   "de",
+   "pl"
+  ],
+  "category": "cognate",
+  "reason": "Chloroplast — научный термин de/pl"
+ },
+ "59": {
+  "key": "edu.membrane.name",
+  "value": "Membrane",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Membrane — французское слово"
+ },
+ "60": {
+  "key": "edu.vacuole.name",
+  "value": "Vacuole",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Vacuole — французский научный термин"
+ },
+ "61": {
+  "key": "x.golgi",
+  "value": "Golgi",
+  "langs": [
+   "*"
+  ],
+  "category": "latin_species",
+  "reason": "Golgi — аппарат Гольджи, фамилия учёного"
+ },
+ "62": {
+  "key": "x.mitochondria",
+  "value": "mitochondria",
+  "langs": [
+   "pl"
+  ],
+  "category": "cognate",
+  "reason": "mitochondria — латинский научный термин pl"
+ },
+ "63": {
+  "key": "x.pseudopodia",
+  "value": "pseudopodia",
+  "langs": [
+   "id",
+   "ms",
+   "pl"
+  ],
+  "category": "cognate",
+  "reason": "pseudopodia — латинский научный термин"
+ },
+ "64": {
+  "key": "x.phages",
+  "value": "Phages",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Phages — французское слово"
+ },
+ "65": {
+  "key": "x.division",
+  "value": "Division",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Division — французское слово"
+ },
+ "66": {
+  "key": "x.locomotion",
+  "value": "Locomotion",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "Locomotion — французское слово"
+ },
+ "67": {
+  "key": "x.wind",
+  "value": "Wind",
+  "langs": [
+   "de"
+  ],
+  "category": "cognate",
+  "reason": "Wind — немецкое слово"
+ },
+ "68": {
+  "key": "spcard.virus",
+  "value": "Virus",
+  "langs": [
+   "de",
+   "es",
+   "fil",
+   "fr",
+   "id",
+   "it",
+   "ms",
+   "vi"
+  ],
+  "category": "cognate",
+  "reason": "Virus — латинский/родной термин языков"
+ },
+ "69": {
+  "key": "tut.s4.title",
+  "value": "Division",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate",
+  "reason": "fr «division» — родное слово, идентично en написанию"
+ },
+ "70": {
+  "key": "loc.pseudopodia",
+  "value": "pseudopodia",
+  "langs": [
+   "id",
+   "ms"
+  ],
+  "category": "latin_species",
+  "reason": "scientific/Latin term, same form across languages"
+ },
+ "71": {
+  "key": "loc.drift",
+  "value": "Drift",
+  "langs": [
+   "de"
+  ],
+  "category": "cognate",
+  "reason": "scientific/Latin term, same form across languages"
+ },
+ "72": {
+  "key": "loc.sessile",
+  "value": "sessile",
+  "langs": [
+   "fr",
+   "it"
+  ],
+  "category": "latin_species",
+  "reason": "scientific/Latin term, same form across languages"
+ },
+ "73": {
+  "key": "tip.cyst",
+  "value": "Spore",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "latin_species",
+  "reason": "German biological term for spore is identical to the international Latin form"
+ },
+ "74": {
+  "key": "aria.cyst",
+  "value": "Spore (R)",
+  "langs": [
+   "de",
+   "fr"
+  ],
+  "category": "latin_species",
+  "reason": "German/French spore = international Latin form"
+ },
+ "75": {
+  "key": "no",
+  "value": "No",
+  "langs": [
+   "es",
+   "it"
+  ],
+  "category": "cognate",
+  "reason": "исп./итал. отрицание «No» — корректный перевод, совпадает с английским написанием (не недоперевод)"
+ },
+ "77": {
+  "key": "errGeneric",
+  "value": "Error",
+  "langs": [
+   "es"
+  ],
+  "category": "cognate"
+ },
+ "78": {
+  "key": "cartoon",
+  "value": "CARTOON",
+  "langs": [
+   "fil"
+  ],
+  "category": "F1-locked"
+ },
+ "79": {
+  "key": "menu",
+  "value": "MENU",
+  "langs": [
+   "fil"
+  ],
+  "category": "F1-locked"
+ },
+ "80": {
+  "key": "set",
+  "value": "SETTINGS",
+  "langs": [
+   "fil"
+  ],
+  "category": "F1-locked"
+ },
+ "81": {
+  "key": "wiki",
+  "value": "WIKI",
+  "langs": [
+   "fil"
+  ],
+  "category": "F1-locked"
+ },
+ "82": {
+  "key": "hud.btn.menu",
+  "value": "Menu",
+  "langs": [
+   "fil"
+  ],
+  "category": "F1-locked"
+ },
+ "83": {
+  "key": "coloniesCount.other",
+  "value": "{n} colonies",
+  "langs": [
+   "fr"
+  ],
+  "category": "cognate"
+ },
+ "84": {
+  "key": "speciesShown.one",
+  "value": "{n} species",
+  "langs": [
+   "fil"
+  ],
+  "category": "cognate"
+ },
+ "85": {
+  "key": "speciesShown.other",
+  "value": "{n} species",
+  "langs": [
+   "fil"
+  ],
+  "category": "cognate"
+ },
+ "86": {
+  "key": "coloniesCount.one",
+  "value": "{n} colony",
+  "langs": [
+   "fil"
+  ],
+  "category": "cognate"
+ },
+ "87": {
+  "key": "coloniesCount.other",
+  "value": "{n} colonies",
+  "langs": [
+   "fil"
+  ],
+  "category": "cognate"
+ },
+ "88": {
+  "key": "aquarium",
+  "value": "AQUARIUM",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "89": {
+  "key": "aria.aqua",
+  "value": "Aquarium",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "90": {
+  "key": "aria.auto",
+  "value": "Auto (Tab)",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "91": {
+  "key": "aria.cyst",
+  "value": "Spore (R)",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "92": {
+  "key": "aria.demo",
+  "value": "Demo",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "93": {
+  "key": "aria.start",
+  "value": "Start",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "94": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "95": {
+  "key": "cartoon",
+  "value": "CARTOON",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "96": {
+  "key": "dLysis",
+  "value": "Lysis",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "97": {
+  "key": "dTemp",
+  "value": "Temp",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "98": {
+  "key": "demo.labels",
+  "value": "Labels",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "99": {
+  "key": "edu.chloro.name",
+  "value": "Chloroplast",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "100": {
+  "key": "edu.mito.name",
+  "value": "Mitochondrion",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "101": {
+  "key": "edu.vacuole.name",
+  "value": "Vacuole",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "102": {
+  "key": "filter",
+  "value": "Filter",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "103": {
+  "key": "hud.btn.cyst",
+  "value": "SPORE",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "104": {
+  "key": "hud.btn.cyst.short",
+  "value": "SPORE",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "105": {
+  "key": "hud.btn.menu",
+  "value": "Menu",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "106": {
+  "key": "hud.genSep",
+  "value": " · Gen ",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "107": {
+  "key": "maxPop",
+  "value": "Max pop",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "108": {
+  "key": "menu",
+  "value": "MENU",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "109": {
+  "key": "modeBig.cartoon",
+  "value": "🎨 CARTOON",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "110": {
+  "key": "modeLbl.cartoon",
+  "value": "🎨 Cartoon",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "111": {
+  "key": "pop",
+  "value": "Pop",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "112": {
+  "key": "season3",
+  "value": "Winter",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "113": {
+  "key": "spcard.virus",
+  "value": "Virus",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "114": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "115": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "116": {
+  "key": "star.pulsar",
+  "value": "★ Neutron (pulsar)",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "117": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "118": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "119": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "120": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "121": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "122": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "123": {
+  "key": "temp",
+  "value": "Temp",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "124": {
+  "key": "tip.auto",
+  "value": "Auto",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "125": {
+  "key": "tip.cyst",
+  "value": "Spore",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "126": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "127": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "128": {
+  "key": "x.macroMicronucleus",
+  "value": "macro/micronucleus",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "129": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "130": {
+  "key": "x.wind",
+  "value": "Wind",
+  "langs": [
+   "nl"
+  ],
+  "category": "cognate"
+ },
+ "131": {
+  "key": "aria.auto",
+  "value": "Auto (Tab)",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "132": {
+  "key": "aria.demo",
+  "value": "Demo",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "133": {
+  "key": "aria.start",
+  "value": "Start",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "134": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "135": {
+  "key": "dTemp",
+  "value": "Temp",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "136": {
+  "key": "diffN",
+  "value": "Normal",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "137": {
+  "key": "edu.cell",
+  "value": "cell",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "138": {
+  "key": "filter",
+  "value": "Filter",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "139": {
+  "key": "hud.genSep",
+  "value": " · Gen ",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "140": {
+  "key": "maxPop",
+  "value": "Max pop",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "141": {
+  "key": "pop",
+  "value": "Pop",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "142": {
+  "key": "spcard.virus",
+  "value": "Virus",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "143": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "144": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "145": {
+  "key": "star.betelgeuse",
+  "value": "★ Betelgeuse",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "146": {
+  "key": "star.pulsar",
+  "value": "★ Neutron (pulsar)",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "147": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "148": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "149": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "150": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "151": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "152": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "153": {
+  "key": "temp",
+  "value": "Temp",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "154": {
+  "key": "tip.auto",
+  "value": "Auto",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "155": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "156": {
+  "key": "x.cyst",
+  "value": "Cyst",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "157": {
+  "key": "x.cyst2",
+  "value": " · CYST",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "158": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "159": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "sv"
+  ],
+  "category": "cognate"
+ },
+ "160": {
+  "key": "aria.auto",
+  "value": "Auto (Tab)",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "161": {
+  "key": "aria.demo",
+  "value": "Demo",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "162": {
+  "key": "aria.start",
+  "value": "Start",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "163": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "164": {
+  "key": "autoOn",
+  "value": "AUTO",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "165": {
+  "key": "dTemp",
+  "value": "Temp",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "166": {
+  "key": "diffN",
+  "value": "Normal",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "167": {
+  "key": "dna.io",
+  "value": "Import/Export DNA",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "168": {
+  "key": "edu.nucleoid.name",
+  "value": "Nucleoid",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "169": {
+  "key": "fps",
+  "value": "FPS",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "170": {
+  "key": "hud.btn.auto",
+  "value": "AUTO",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "171": {
+  "key": "hud.btn.auto.short",
+  "value": "AUTO",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "172": {
+  "key": "hud.genSep",
+  "value": " · Gen ",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "173": {
+  "key": "mob.eSep",
+  "value": " · E=",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "174": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "175": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "176": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "177": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "178": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "179": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "180": {
+  "key": "pop",
+  "value": "Pop",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "181": {
+  "key": "restart",
+  "value": "RESTART",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "182": {
+  "key": "spcard.virus",
+  "value": "Virus",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "183": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "184": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "185": {
+  "key": "star.betelgeuse",
+  "value": "★ Betelgeuse",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "186": {
+  "key": "star.polaris",
+  "value": "★ Polaris",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "187": {
+  "key": "star.pulsar",
+  "value": "★ Neutron (pulsar)",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "188": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "189": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "190": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "191": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "192": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "193": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "194": {
+  "key": "temp",
+  "value": "Temp",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "195": {
+  "key": "tip.auto",
+  "value": "Auto",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "196": {
+  "key": "tip.swiss",
+  "value": "SwissBioPics. Click -> WebGL",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "197": {
+  "key": "tip.zi",
+  "value": "Zoom+",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "198": {
+  "key": "tip.zo",
+  "value": "Zoom-",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "199": {
+  "key": "wiki",
+  "value": "WIKI",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "200": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "201": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "202": {
+  "key": "x.golgi",
+  "value": "Golgi",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "203": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "204": {
+  "key": "loc.drift",
+  "value": "drift",
+  "langs": [
+   "ro"
+  ],
+  "category": "cognate"
+ },
+ "205": {
+  "key": "aria.demo",
+  "value": "Demo",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "206": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "207": {
+  "key": "autoOn",
+  "value": "AUTO",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "208": {
+  "key": "autoPilotOn",
+  "value": "AUTO ON",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "209": {
+  "key": "fps",
+  "value": "FPS",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "210": {
+  "key": "hud.btn.auto",
+  "value": "AUTO",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "211": {
+  "key": "hud.btn.auto.short",
+  "value": "AUTO",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "212": {
+  "key": "mob.eSep",
+  "value": " · E=",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "213": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "214": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "215": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "216": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "217": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "218": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "219": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "220": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "221": {
+  "key": "star.betelgeuse",
+  "value": "★ Betelgeuse",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "222": {
+  "key": "star.polaris",
+  "value": "★ Polaris",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "223": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "224": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "225": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "226": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "227": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "228": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "229": {
+  "key": "tip.wikiB",
+  "value": "Wiki/Bestiary",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "230": {
+  "key": "wiki",
+  "value": "WIKI",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "231": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "232": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "233": {
+  "key": "x.golgi",
+  "value": "Golgi",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "234": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "el"
+  ],
+  "category": "cognate"
+ },
+ "235": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "236": {
+  "key": "autoOn",
+  "value": "AUTO",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "237": {
+  "key": "fps",
+  "value": "FPS",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "238": {
+  "key": "hud.btn.auto",
+  "value": "AUTO",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "239": {
+  "key": "hud.btn.auto.short",
+  "value": "AUTO",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "240": {
+  "key": "hud.genSep",
+  "value": " · Gen ",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "241": {
+  "key": "mob.eSep",
+  "value": " · E=",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "242": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "243": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "244": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "245": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "246": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "247": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "248": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "249": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "250": {
+  "key": "star.betelgeuse",
+  "value": "★ Betelgeuse",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "251": {
+  "key": "star.polaris",
+  "value": "★ Polaris",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "252": {
+  "key": "star.pulsar",
+  "value": "★ Neutron (pulsar)",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "253": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "254": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "255": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "256": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "257": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "258": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "259": {
+  "key": "wiki",
+  "value": "WIKI",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "260": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "261": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "262": {
+  "key": "x.golgi",
+  "value": "Golgi",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "263": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "hu"
+  ],
+  "category": "cognate"
+ },
+ "264": {
+  "key": "aria.auto",
+  "value": "Auto (Tab)",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "265": {
+  "key": "aria.demo",
+  "value": "Demo",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "266": {
+  "key": "aria.start",
+  "value": "Start",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "267": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "268": {
+  "key": "autoOn",
+  "value": "AUTO",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "269": {
+  "key": "dna.io",
+  "value": "Import/Export DNA",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "270": {
+  "key": "edu.chloro.name",
+  "value": "Chloroplast",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "271": {
+  "key": "fps",
+  "value": "FPS",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "272": {
+  "key": "hud.btn.auto",
+  "value": "AUTO",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "273": {
+  "key": "hud.btn.auto.short",
+  "value": "AUTO",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "274": {
+  "key": "hud.btn.menu",
+  "value": "Menu",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "275": {
+  "key": "hud.genSep",
+  "value": " · Gen ",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "276": {
+  "key": "menu",
+  "value": "MENU",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "277": {
+  "key": "mob.eSep",
+  "value": " · E=",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "278": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "279": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "280": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "281": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "282": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "283": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "284": {
+  "key": "restart",
+  "value": "RESTART",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "285": {
+  "key": "spcard.virus",
+  "value": "Virus",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "286": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "287": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "288": {
+  "key": "star.betelgeuse",
+  "value": "★ Betelgeuse",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "289": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "290": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "291": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "292": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "293": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "294": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "295": {
+  "key": "tip.auto",
+  "value": "Auto",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "296": {
+  "key": "wiki",
+  "value": "WIKI",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "297": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "298": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "299": {
+  "key": "x.golgi",
+  "value": "Golgi",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "300": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "cs"
+  ],
+  "category": "cognate"
+ },
+ "301": {
+  "key": "aria.auto",
+  "value": "Auto (Tab)",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "302": {
+  "key": "aria.demo",
+  "value": "Demo",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "303": {
+  "key": "aria.pause",
+  "value": "Pause (P)",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "304": {
+  "key": "aria.start",
+  "value": "Start",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "305": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "306": {
+  "key": "autoOn",
+  "value": "AUTO",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "307": {
+  "key": "dTemp",
+  "value": "Temp",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "308": {
+  "key": "diffN",
+  "value": "Normal",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "309": {
+  "key": "filter",
+  "value": "Filter",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "310": {
+  "key": "fps",
+  "value": "FPS",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "311": {
+  "key": "hud.btn.auto",
+  "value": "AUTO",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "312": {
+  "key": "hud.btn.auto.short",
+  "value": "AUTO",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "313": {
+  "key": "hud.btn.menu",
+  "value": "Menu",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "314": {
+  "key": "hud.genSep",
+  "value": " · Gen ",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "315": {
+  "key": "menu",
+  "value": "MENU",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "316": {
+  "key": "mob.eSep",
+  "value": " · E=",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "317": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "318": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "319": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "320": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "321": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "322": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "323": {
+  "key": "spcard.virus",
+  "value": "Virus",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "324": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "325": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "326": {
+  "key": "star.betelgeuse",
+  "value": "★ Betelgeuse",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "327": {
+  "key": "star.polaris",
+  "value": "★ Polaris",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "328": {
+  "key": "star.pulsar",
+  "value": "★ Neutron (pulsar)",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "329": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "330": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "331": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "332": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "333": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "334": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "335": {
+  "key": "temp",
+  "value": "Temp",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "336": {
+  "key": "tip.auto",
+  "value": "Auto",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "337": {
+  "key": "tip.pause",
+  "value": "Pause",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "338": {
+  "key": "tip.zi",
+  "value": "Zoom+",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "339": {
+  "key": "tip.zo",
+  "value": "Zoom-",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "340": {
+  "key": "vignette",
+  "value": "Vignette",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "341": {
+  "key": "wiki",
+  "value": "WIKI",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "342": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "343": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "344": {
+  "key": "x.golgi",
+  "value": "Golgi",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "345": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "da"
+  ],
+  "category": "cognate"
+ },
+ "346": {
+  "key": "aria.auto",
+  "value": "Auto (Tab)",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "347": {
+  "key": "aria.demo",
+  "value": "Demo",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "348": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "349": {
+  "key": "autoOn",
+  "value": "AUTO",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "350": {
+  "key": "fps",
+  "value": "FPS",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "351": {
+  "key": "hud.btn.auto",
+  "value": "AUTO",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "352": {
+  "key": "hud.btn.auto.short",
+  "value": "AUTO",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "353": {
+  "key": "mob.eSep",
+  "value": " · E=",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "354": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "355": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "356": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "357": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "358": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "359": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "360": {
+  "key": "spcard.virus",
+  "value": "Virus",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "361": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "362": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "363": {
+  "key": "star.betelgeuse",
+  "value": "★ Betelgeuse",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "364": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "365": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "366": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "367": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "368": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "369": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "370": {
+  "key": "tip.zi",
+  "value": "Zoom+",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "371": {
+  "key": "tip.zo",
+  "value": "Zoom-",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "372": {
+  "key": "wiki",
+  "value": "WIKI",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "373": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "374": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "375": {
+  "key": "x.golgi",
+  "value": "Golgi",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "376": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "fi"
+  ],
+  "category": "cognate"
+ },
+ "377": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "zh-CN"
+  ],
+  "category": "cognate"
+ },
+ "378": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "zh-CN"
+  ],
+  "category": "cognate"
+ },
+ "379": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "zh-CN"
+  ],
+  "category": "cognate"
+ },
+ "380": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "zh-CN"
+  ],
+  "category": "cognate"
+ },
+ "381": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "zh-CN"
+  ],
+  "category": "cognate"
+ },
+ "382": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "zh-CN"
+  ],
+  "category": "cognate"
+ },
+ "383": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "zh-CN"
+  ],
+  "category": "cognate"
+ },
+ "384": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "zh-CN"
+  ],
+  "category": "cognate"
+ },
+ "385": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "zh-CN"
+  ],
+  "category": "cognate"
+ },
+ "386": {
+  "key": "fps",
+  "value": "FPS",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "387": {
+  "key": "mob.eSep",
+  "value": " · E=",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "388": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "389": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "390": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "391": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "392": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "393": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "394": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "395": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "396": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "bg"
+  ],
+  "category": "cognate"
+ },
+ "397": {
+  "key": "aria.demo",
+  "value": "Demo",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "398": {
+  "key": "aria.start",
+  "value": "Start",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "399": {
+  "key": "aria.wiki2",
+  "value": "Wiki (B)",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "400": {
+  "key": "autoOn",
+  "value": "AUTO",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "401": {
+  "key": "filter",
+  "value": "Filter",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "402": {
+  "key": "fps",
+  "value": "FPS",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "403": {
+  "key": "hud.btn.auto",
+  "value": "AUTO",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "404": {
+  "key": "hud.btn.auto.short",
+  "value": "AUTO",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "405": {
+  "key": "hud.genSep",
+  "value": " · Gen ",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "406": {
+  "key": "mob.eSep",
+  "value": " · E=",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "407": {
+  "key": "mode.swissLbl",
+  "value": "📗 SWISS",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "408": {
+  "key": "mode.webglLbl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "409": {
+  "key": "modeBig.swiss",
+  "value": "📗 SWISSBIOPICS",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "410": {
+  "key": "modeBig.webgl",
+  "value": "🌊 WEBGL",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "411": {
+  "key": "modeLbl.swiss",
+  "value": "📗 SwissBioPics",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "412": {
+  "key": "modeLbl.webgl",
+  "value": "🌊 WebGL",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "413": {
+  "key": "restart",
+  "value": "RESTART",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "414": {
+  "key": "spcard.virus",
+  "value": "Virus",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "415": {
+  "key": "star.alphacentauri",
+  "value": "★ Alpha Centauri A+B",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "416": {
+  "key": "star.antares",
+  "value": "★ Antares",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "417": {
+  "key": "star.rigel",
+  "value": "★ Rigel",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "418": {
+  "key": "star.sirius",
+  "value": "★ Sirius A+B",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "419": {
+  "key": "star.vega",
+  "value": "★ Vega",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "420": {
+  "key": "starg.alphacentauri",
+  "value": "★ α Centauri",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "421": {
+  "key": "starg.sirius",
+  "value": "★ Sirius",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "422": {
+  "key": "start",
+  "value": "START",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "423": {
+  "key": "wiki",
+  "value": "WIKI",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "424": {
+  "key": "x.a",
+  "value": "A",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "425": {
+  "key": "x.e",
+  "value": "E",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "426": {
+  "key": "x.golgi",
+  "value": "Golgi",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "427": {
+  "key": "x.s",
+  "value": "S",
+  "langs": [
+   "hr"
+  ],
+  "category": "cognate"
+ },
+ "cognates": {
+  "START": [
+   "de"
+  ],
+  "MENU": [
+   "pt-BR",
+   "id",
+   "fr",
+   "vi",
+   "fil",
+   "it",
+   "pl",
+   "ms"
+  ],
+  "AQUARIUM": [
+   "de",
+   "fr"
+  ]
+ },
+ "all": [
+  {
+   "key": "all",
+   "value": "All",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
   }
+ ],
+ "aria.auto": [
+  {
+   "key": "aria.auto",
+   "value": "Auto (Tab)",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "aria.auto",
+   "value": "Auto (Tab)",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "aria.auto",
+   "value": "Auto (Tab)",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "aria.demo": [
+  {
+   "key": "aria.demo",
+   "value": "Demo",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "aria.demo",
+   "value": "Demo",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "aria.demo",
+   "value": "Demo",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "aria.demo",
+   "value": "Demo",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "aria.start": [
+  {
+   "key": "aria.start",
+   "value": "Start",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "aria.wiki2": [
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "cartoon": [
+  {
+   "key": "cartoon",
+   "value": "CARTOON",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "dTemp": [
+  {
+   "key": "dTemp",
+   "value": "Temp",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "diffN": [
+  {
+   "key": "diffN",
+   "value": "Normal",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "edu.chloro.name": [
+  {
+   "key": "edu.chloro.name",
+   "value": "Chloroplast",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "edu.chloro.name",
+   "value": "Chloroplast",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "edu.nucleoid.name": [
+  {
+   "key": "edu.nucleoid.name",
+   "value": "Nucleoid",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "filter": [
+  {
+   "key": "filter",
+   "value": "Filter",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "filter",
+   "value": "Filter",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "filter",
+   "value": "Filter",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "hud.genSep": [
+  {
+   "key": "hud.genSep",
+   "value": " · Gen ",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "hud.genSep",
+   "value": "· Gen",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  }
+ ],
+ "massWord": [
+  {
+   "key": "massWord",
+   "value": "Mass",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "maxPop": [
+  {
+   "key": "maxPop",
+   "value": "Max Pop",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "modeBig.cartoon": [
+  {
+   "key": "modeBig.cartoon",
+   "value": "🎨 CARTOON",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "modeLbl.cartoon": [
+  {
+   "key": "modeLbl.cartoon",
+   "value": "🎨 Cartoon",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "pop": [
+  {
+   "key": "pop",
+   "value": "Pop",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "season1": [
+  {
+   "key": "season1",
+   "value": "Summer",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "spcard.virus": [
+  {
+   "key": "spcard.virus",
+   "value": "Virus",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "spcard.virus",
+   "value": "Virus",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "star.alphacentauri": [
+  {
+   "key": "star.alphacentauri",
+   "value": "★ Alpha Centauri A+B",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "star.antares": [
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "star.betelgeuse": [
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "star.polaris": [
+  {
+   "key": "star.polaris",
+   "value": "★ Polaris",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "star.rigel": [
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "star.sirius": [
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "star.vega": [
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "starg.alphacentauri": [
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "starg.sirius": [
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "start": [
+  {
+   "key": "start",
+   "value": "START",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "temp": [
+  {
+   "key": "temp",
+   "value": "Temp",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "tip.auto": [
+  {
+   "key": "tip.auto",
+   "value": "Auto",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "tip.auto",
+   "value": "Auto",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "tip.auto",
+   "value": "Auto",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "tip.auto",
+   "value": "Auto",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "vignette": [
+  {
+   "key": "vignette",
+   "value": "Vignette",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  }
+ ],
+ "x.a": [
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "x.e": [
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "fps": [
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "bg"
+   ],
+   "category": "cognate",
+   "reason": "bg: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "mob.eSep": [
+  {
+   "key": "mob.eSep",
+   "value": " · E=",
+   "langs": [
+    "bg"
+   ],
+   "category": "cognate",
+   "reason": "bg: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": " · E=",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": " · E=",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "bg"
+   ],
+   "category": "cognate",
+   "reason": "bg: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "mode.swissLbl": [
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "bg"
+   ],
+   "category": "cognate",
+   "reason": "bg: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "mode.webglLbl": [
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "bg"
+   ],
+   "category": "cognate",
+   "reason": "bg: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "modeBig.swiss": [
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "bg"
+   ],
+   "category": "cognate",
+   "reason": "bg: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "modeBig.webgl": [
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "bg"
+   ],
+   "category": "cognate",
+   "reason": "bg: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "modeLbl.swiss": [
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "bg"
+   ],
+   "category": "cognate",
+   "reason": "bg: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "modeLbl.webgl": [
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "bg"
+   ],
+   "category": "cognate",
+   "reason": "bg: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "autoOn": [
+  {
+   "key": "autoOn",
+   "value": "AUTO",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "autoOn",
+   "value": "AUTO",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "autoOn",
+   "value": "AUTO",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "autoOn",
+   "value": "AUTO",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "hud.btn.auto": [
+  {
+   "key": "hud.btn.auto",
+   "value": "AUTO",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto",
+   "value": "AUTO",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto",
+   "value": "AUTO",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto",
+   "value": "AUTO",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "hud.btn.auto.short": [
+  {
+   "key": "hud.btn.auto.short",
+   "value": "AUTO",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto.short",
+   "value": "AUTO",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto.short",
+   "value": "AUTO",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto.short",
+   "value": "AUTO",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "hud.btn.menu": [
+  {
+   "key": "hud.btn.menu",
+   "value": "Menu",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "menu": [
+  {
+   "key": "menu",
+   "value": "MENU",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  }
+ ],
+ "wiki": [
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "lt"
+   ],
+   "category": "cognate",
+   "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  }
+ ],
+ "x.golgi": [
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "sl"
+   ],
+   "category": "cognate",
+   "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  }
+ ],
+ "dna.io": [
+  {
+   "key": "dna.io",
+   "value": "Import/export DNA",
+   "langs": [
+    "sk"
+   ],
+   "category": "cognate",
+   "reason": "sk: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  }
+ ],
+ "hud.divide.reason.mass": [
+  {
+   "key": "hud.divide.reason.mass",
+   "value": "Mass {cur}/{need}",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  }
+ ],
+ "toast.gain": [
+  {
+   "key": "toast.gain",
+   "value": "+{e} En / +{m} Mass",
+   "langs": [
+    "lb"
+   ],
+   "category": "cognate",
+   "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  }
+ ]
 }

@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis ბირთვის არმქონე ციანობაქტერიაა. სინათლით იკვებება: მემბრანებზე მიმდინარეობს ჟანგბადის გამომყოფი ფოტოსინთეზი, ქლოროპლასტები კი არ აქვს. ლაბორატორიაში წყალბადის ცვლის მოდელია."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis ძაფია. ზოგი უჯრედი ჰეტეროცისტად იქცევა და აზოტს ამაგრებს, მეზობლები კი შაქარს აწარმოებენ. ტბორში ის შეკრული აზოტის მიმწოდებელია."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) გაზის ბუშტუკებიანი უჯრედების სპირალია. ზედაპირთან ახლოს ჰკიდება, ფოტოსინთეზს ახდენს და საკვებად ვარგა. თამაშში ეს წყლის სახურავზე დიდი მწვანე ხრახნისმაგვარი სპირალია."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme ლორწოვან კაფსულაში მძივების ჯაჭვია. თავისუფლად ცხოვრობს ან მცენარეებთან სიმბიოზში. კოლონია მწვანე მძივების გროვას ჰგავს."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica სრიალავი ძაფია. გვერდიდან გვერდზე როკავს და შეუძლია ფოტოსინთეზი ჟანგბადის გამოყოფის გარეშე. დამახასიათებელია ლამისა და ზედაპირის აპკისთვის."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa ლორწოვანი კოლონიაა, ხშირად ტოქსიკურია (მიკროცისტინი). იწვევს წყლის ყვავილობას. თამაშში მწვანე კოლონიური ბურთია – სახიფათო ნადავლი."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa ფერად საფარებში მოთავსებული წყვილი უჯრედებია. ქვებსა და ნიადაგზე ცხოვრობს და ულტრაიისფერ სხივებს იტანს. ტბორში საფარში ჩალაგებული პატარა წყვილი კოკებია."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula სქელი ციანობაქტერიული ძაფია. შეუძლია გამოიყოს მწვავე ტოქსინები. თბილ ნაპირებთან ახლოს წარმოქმნის ხალიჩებს."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii ორი ფლაგელუმითა და თვალის ლაქით მწვანე უჯრედია. სინათლისკენ მიცურავს. წყალმცენარეების გენეტიკის კლასიკური მოდელია."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris უმოძრაო მწვანე ბურთულაა. სწრაფად იყოფა და ცილებით მდიდარია. პატარა მჭამელების საკვებია და კოსმოსური კვების კვლევის საგანი."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator ათასობით უჯრედისგან შემდგარი ღრუ სფეროა. შვილი კოლონიები შიგნით მწიფდება და გარეთ გამოდის. თამაშში დიდი მწვანე კოლონიაა."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis მიქსოტროფია: ქლოროპლასტები პლუს ჭამის უნარი. წითელი თვალის ლაქა სინათლეს ადევნებს თვალ-ყურს. დღეს მწვანეა; სიბნელეში საკვებზე გადადის."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda ჩვეულებრივ რიგში მდგარი ოთხი უჯრედია ბოლოებზე ეკლებით. ეკლები ყლაპვას ართულებს. არ ცურავს – დინებას ერთვის."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis მწვანე მოძრავი უჯრედია; სტრესში წითლდება (ასტაქსანტინით) და სქელ კედელს იზრდის. წითელი ცისტები გვალვას უძლებს."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina-ს მყარი კედელი არ აქვს და ძალიან მლაშე წყალში ცხოვრობს. აგროვებს ბეტა-კაროტინს და ფორთოხლისფრად ჩანს. ორი ფლაგელუმი აქვს."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata ბრტყელი ვარსკვლავის ფორმის დესმიდია. ორი სარკისებრი ნახევარი ღრმა ამოჭრილობებით. უმოძრაოა; მჟავიან ჭაობის წყალში ახდენს ფოტოსინთეზს."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula ნავის ფორმის დიატომეაა სილიკატის სახურავით. სუბსტრატზე სრიალავს რაფეს ნაჭრის გასწვრივ. ნიჟარა სიკვდილის შემდეგაც რჩება."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis დიდი ბუმბულისებრი დიატომეაა. სილიკატის ჯავშანი სიმეტრიული ნახატით აქვს. ფსკერზე ნელა სრიალავს."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana მრგვალი ცენტრული დიატომეაა. დისკოსავით ტივტივებს; ჯავშანი ორი თავსახურისგან შედგება. დამახასიათებელი პლანქტონია."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare დიატომეაა, რომელიც ზიგზაგურ ჯაჭვად ეწებება. კოლონია წყალში მოძრაობის წინააღმდეგობას ზრდის."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum მეწამული სპირალია. უჟანგბადო ფოტოსინთეზი პლუს ორგანული ნივთიერებები. წითელი ფერი ბაქტერიოქლოროფილისგან მოდის."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum მეწამული გოგირდის ბაქტერიაა. ჟანგავს წყალბადის სულფიდს და აგროვებს გოგირდის მარცვლებს. ცხოვრობს ჟანგბადისა და გოგირდის საზღვარზე."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum ერთუჯრედიანი წითელი წყალმცენარეა. ფიკოერითრინი სისხლის-წითელ ფერს აძლევს. ლორწოვანი საფარი აქვს, ფლაგელუმი – არა."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus დედამიწაზე ყველაზე პატარა და ყველაზე მრავალრიცხოვანი ფოტოსინთეზური უჯრედია. აღმოჩენილ იქნა 1980-იან წლებში. ის ოკეანეს კვებავს."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis ექსტრემოფილია: უდაბნო, კლდე, რადიაცია. დედამიწის ფარგლებს გარეთ სიცოცხლის კანდიდატია. ტბორში ნელა მზარდი კოკების კოლონიაა."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus პაწაწინა ბაქტერიული მტაცებელია. ხრახნივით შედის სხვა უჯრედში და მრავლდება მანამ, სანამ მასპინძელი არ აფეთქდება."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus ნადავლს გარედან ეკარება და შიგთავსს ასწორებს – შესვლის გარეშე. ბაქტერიული ვამპირია."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter ნადავლ ბაქტერიაში შედის და შიგნიდან ჭამს. იშვიათი უჯრედშიდა მონადირეა."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus სოციალური ბაქტერიაა. ჯგუფურად ალყაში აქცევს ნადავლს და გამოიყოფს ფერმენტებს. შიმშილობისას ქმნის ნაყოფსხეულს."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii ზღვის Bdellovibrio-ს ნათესავია. ესხმის თავს გრამ-უარყოფითებს და ნადავლის პერიპლაზმაში ცხოვრობს."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax მარილგამძლე ბაქტერიული მონადირეა. იგივე ხერხი: კედლის გახვრეტა და შიგნით ზრდა."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii კიდევ ერთი BALO მტაცებელია. სწრაფი, მძიმის ფორმის ფლაგელატი, რომელიც დიდ ჩხირებს ნადირობს."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula პატარა ჰეტეროტროფული ფლაგელატია. დეტრიტის ზედაპირზე იჭერს ბაქტერიებს."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo წვეთის ფორმის ფლაგელატია. ერთი ფლაგელუმი აქვს; ბაქტერიულ აპკში ნადირობს."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans რკინა-მანგანუმის ყურეზე მჯდომი კოლონიაა. უჯრედები კონებად ზის და ბაქტერიებს იჭერს."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium უფერული კრიპტოფიტია. ორი ფლაგელუმი აქვს; ჭამს ხსნად ორგანულს და პატარა ბაქტერიებს, ქლოროპლასტები არ აქვს."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda გრძელკუდიანი ამებოფლაგელატია. სრიალებს და ფსევდოპოდიებით ბაქტერიებს ყლაპავს."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa ნიადაგის ფლაგელატია. ორი სხვადასხვა სიგრძის ფლაგელუმი აქვს; ნიადაგში ბაქტერიების მთავარი მომხმარებელია."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans კინეტოპლასტიდია. უკანა ფლაგელუმზე ჩამოკიდებული ადგილზე „ცეხავს“ და ბაქტერიებს სწორს."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini Bodo-ს ნათესავია. თავისუფლად ცურავს და წინა ფლაგელუმით გესრის ნადავლს."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei სისხლის პარაზიტია, რომელიც ძილის დაავადებას იწვევს. ტალღოვანი მემბრანა და ერთი ფლაგელუმი აქვს. ტბორში გამჭოლი მტაცებლის მოდელია."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani ადამიანის უჯრედშიდა პარაზიტია. მწერის სხეულში ფლაგელუმიანია, მაკროფაგში კი – უფლაგელო."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis ქოანოფლაგელატია – ცხოველების ნათესავი. მიკროვილების საყელო ბაქტერიებს ფილტრავს."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta ლორიკაში ჩამჯდომი ქოანოფლაგელატია. შეუძლია როზეტის შექმნა. ფილტრავს წყლის დინებას."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis საერთო ყურეზე მჯდომი ქოანოფლაგელატების კოლონიაა. ერთ ღეროზე რამდენიმე ფილტრია."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum კლასიკური „ჩუსტია“. ათასობით წამწამი, პირის ღარი და შეკუმშვადი ვაკუოლები აქვს. ბაქტერიებს ფილტრავს."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria ზოოქლორელა სიმბიონტებიანი ჩუსტია. შიგნით მწვანეა: დღეს წყალმცენარეებისგან შაქარს იღებს, ღამეს კი ფილტრავს."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus მილიმეტრამდე აღწეული ლურჯი საყვირია. იშლება ძაბრად და წამწამებით წყლის დინებას ქმნის. ცურავს ან ზის."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus ლურჯი სტენტორის ნათესავია, ხშირად ზოოქლორელებით. სახეს საყვირიდან ბურთამდე იცვლის."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula მოკვეთად ყურეზე მჯდომი ზარია. ყურე მომენტალურად იხვევა სპირალად. თვითონ უჯრედი შორს არ მიცურავს."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma პატარა ზარია. იგივე ზედგირავანი ყურე, უფრო ვიწრო პირის ველით. ხშირად დეტრიტზე ზის."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum ჩუსტებზე მონადირე კასრია. ტოქსიცისტებს ისვრის და ნადავლს მთლიანად ყლაპავს – საკუთარ თავზე დიდსაც კი."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum ძალიან გრძელი სიგარაა. წამის ნაწილში რამდენჯერმე იკუმშება. წამწამები სპირალურად დაურბის."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum ვარდისფერი ინფუზორიაა. ბლეფარიზმინის პიგმენტი სინათლის მიმართ მგრძნობიარეა. ფილტრავს და შეუძლია პატარა უჯრედებსაც გესის."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella ცირებზე დადის – თითქოს ფეხებზე. ბრტყელია და მკვეთრად ტრიაებს. ზედაპირებიდან ბაქტერიებს ფხეკს."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata ჰიპოტრიქია, რომელიც ფსკერზე „რბის“. დიდი ცირები და მკაფიო პირი აქვს. პატარა ინფუზორიების მტაცებელია."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax გენომური მოდელია: ორი ბირთვი და რთული დნმ-ის გადაწერა. ცირებზე დადის და ბაქტერიებსა და პატარა პროტისტებს ჭამს."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila ლაბორატორული ინფუზორიაა. ოთხი პირის მემბრანელა და სწრაფი გაყოფა აქვს. ტელომერებისა და წამწამების მოდელია."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus კიროვანი ფირფილებითა და ეკლებით კასრია. მკვდრისმჭამელი და მტაცებელია: დაჭრილებს ეკარება და კბიტავს."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella ბრტყელი მტაცებელია, რომლის „ნისკარტშიც“ ტოქსიცისტებია. ნადავლს განიბეჟებს და შიგთავსს ასწორებს."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser-ს გრძელი კისერი აქვს შხამიანი ექსტრუსომებით. კისრით გესრის, მერე ყლაპავს. დიდი, საშუალო დონის მონადირეა."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo მბრუნავი ტოპაა: ეკვატორული წამწამების სარტყელი უჯრედს ადგილზე ატრიალებს. ბაქტერიებს ფილტრავს."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula დატოტვილი ზარების კოლონიაა. საერთო მოკვეთადი ყურე მთელ ხეს ერთდროულად ანძრევს."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata ზედგირავანი ყურის გარეშე მჯდომი პერიტრიქია. თავსახური პირს აფარებს. ფილტრავს და შორს არ მიცურავს."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus კლასიკური ამებაა. ფსევდოპოდიები ნადავლს გარს ახვევს. ფიქსირებული ფორმა არ აქვს, წამწამებიც – არა."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris მაგარი გუმბათის მქონე ნიჟარიანი ამებაა. ფსევდოპოდიები ნახვრეტიდან გამოდის. მცენარეებზე აცოცავს."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga-ს ქვიშის მარცვლებისგან აგებული ნიჟარა აქვს – თვითონ ეწებება მარცვლებს. ლამში ცხოვრობს."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata-ს სილიკატის ქერცლებისგან აგებული ნიჟარა აქვს. წვრილი ფილისებრი ფსევდოპოდიები აქვს. პატარა ბაქტერიული მტაცებელია."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris სასმისის ფორმის ნიჯარაა, აგებული სხვისგან წაღებული ქერცლებისგან. ტყისა და ჭაობის წყლების ბინადარია."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata ეკლიანი დისკოს ნიჟარაა. ნახვრეტი გვერდზე აქვს გადაადგილებული. დეტრიტზე აცოცავს."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol ჰელიოზოაა: წვრილი აქსოპოდიები ყველა მიმართულებით გამოსჭვივს. ნადავლი სხივებზე ეკარება და შიგნით იქაჩება."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni დიდი მრავალბირთვიანი ჰელიოზოაა. იგივე სხივები, ბევრად უფრო დიდი უჯრედით. ინფუზორიებსა და როტიფერებს ჭამს."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida ქერცლებიანი ჰელიოზოაა. სხივებზე სილიკატის ნემსები გამოსჭვივს. მალსახური პლანქტონური მტაცებელია."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria როტიფერია, რომელიც გამოშრობას უძლებს. კორონა საკვებს ბორბლისავით პირში შეატანს. ჭეშმარიტი მრავალუჯრედიანი ცხოველია."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola ვარდისფერი ბდელოიდური როტიფერია. ღმერთკვერასავით აცოცავს და ასევე ცურავს. მხოლოდ მდედრები არსებობენ; მამრები – არა."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis პლანქტონური ლორიცირებული როტიფერია. აკვაკულტურაში ახალგაზრდა თევზებისთვის საკვებია. წყალმცენარეებსა და ბაქტერიებს ფილტრავს."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis გრძელი ლორიცის ეკალიანი როტიფერია. ეკალი მტაცებლებს აფრთხობს. გავრცელებული ტბორის პლანქტონია."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta ლორიცის გარეშე, პარკისებრი მტაცებელი როტიფერია. სხვა როტიფერებსა და ინფუზორიებს მთლიანად ყლაპავს."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus გასტროტრიქია. ქერცლებით დაფარული, ფსკერზე აცოცავს. ბაქტერიებსა და დეტრიტს ჭამს."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata შემოდგმული ქერცლებიანი პაწაწინა გასტროტრიქია. ადგილზე ძალიან სწრაფად ტრიაებს."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano მიკროსკოპული ბრტყელი ჭიაა. ნამდვილი კუნთები და თვალები აქვს. რეგენერაციის მოდელია. პატარა პროტისტებზე ნადირობს."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops წვრილი წამწამიანი ჭიაა. განივად იყოფა ზოიდების ჯაჭვად. დეტრიტისა და პატარა ცხოველების მტაცებელია."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare ბრტყელი ჭიაა, რომელიც ჰიდრას ჭამს და მათ ნემსიან უჯრედებს საკუთარ კანში ამაგრებს. ზოიდების ჯაჭვია."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense მტკნარი წყლის ნემერტინია. გრძელი ხორთუმი ნადავლს ესხმის თავს. იშვიათი, დიდი ფსკერის მტაცებელია."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens პლაკოზოაა – ერთ-ერთი ყველაზე მარტივი ცხოველი. ფირფიტასავით აცოცავს და საკვებს გარეთ ინელებს. პირი არ აქვს."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae საცხობი საფუარია. კვირტებით მრავლდება, შაქარს ჭამს, CO2-სა და სპირტს გამოყოფს. ტბორში ხსნად ორგანულს ასუფთავებს."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans საფუარია, რომელსაც ძაფებად ზრდა შეუძლია. ადამიანისთვის ოპორტუნისტული პათოგენია. თამაშში დეტრიტული სოკოა."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo პურის სოკოა. ღეროებზე სპორანგიუმები აქვს; მკვდარზე სწრაფად იზრდება. ცოცხალზე არ ნადირობს."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer შავი პურის სოკოა. სტოლონები და რიზოიდები სუბსტრატზე ვრცელდება. სახამებელს შლის."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum ფუნჯისებრი სოკოა – პენიცილინის წყარო. კონიდიუმიანი ფუნჯები აქვს. ორგანულს შლის და მეზობელ ბაქტერიებს თრგუნავს."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger შავი ასპერგილუსია. სფერული სპორიანი თავები აქვს. სამრეწველო ლიმონმჟავას მწარმოებელია. საპროტროფია."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis ბაყაყების ქიტრიდია. ერთფლაგელუმიანი ზოსპორები აქვს. ტბორში წყლის სოკოს მოდელია."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus ყვავილის მტვერსა და წყალმცენარეებზე მცხოვრები წყლის ქიტრიდია. ოქროსფერი სპორანგიუმები აქვს; ზოსპორები სუბსტრატისკენ მიცურავს."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus ნამდვილი მიცელიუმიანი წყლის სოკოა. თაობრივად იცვლება დიპლოიდური და ჰაპლოიდური ფაზები. ზოსპორებს უკანა ფლაგელუმი აქვთ."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis ნიადაგის ჩხირია. სპორები დუღილს გადაურჩება. ცილებს შლის; გრამდადებითი მოდელია."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida მომწმენდი ჩხირია. ნავთპროდუქტებსაც კი ჭამს. ფლაგელუმით მოძრაობს, დეტრიტზე სწრაფად იზრდება."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor ძაფოვანი ნიადაგის ბაქტერიაა. ქმნის მიწის სუნს (გეოსმინს) და მრავალ ანტიბიოტიკს. სპორები ჰიფებზე აქვს."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi ცელულოზას შლის. მცენარეულ დეტრიტზე მცხოვრები ყვითელი ჩხირია. მის გარეშე მკვდარი წყალმცენარეები უფრო დიდხანს დარჩებოდა."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus ცხელი წყაროების თერმოფილია. Taq პოლიმერაზა PCR-ის საფუძველია. ცივ ტბორში თითქმის მიძინებულია."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans რადიაციის ჩემპიონია. დამსხვრეულ გენომს საათებში აღადგენს. სქელი კედელი და უჯრედების ტეტრადები აქვს."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote სქესობრივი გამრავლების სასწავლო მოდელია. ორი სქესია, გამეტების შერწყმა – და არა მარტივი ორად გაყოფა."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 დიდი მიოვირუსია E. coli-ს მიმართ. კუდი იკუმშება და დნმ-ს ნერგავს. ნახევარ საათში უჯრედი აფეთქდება და ათეულობით ფაგი გარეთ გამოდის."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda ზომიერი ფაგია. შეუძლია ქრომოსომაში ჩაესმეს და დაიძინოს (ლიზოგენია) ან უჯრედი მაშინვე დააშლის (ლიზისი)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7-ს მოკლე კუდი აქვს და ძალიან სწრაფად მრავლდება. სინთეზური ბიოლოგიის საყვარელი სისტემაა."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 რნმ ფაგია ლიპიდური გარსით. აინფიცირებს Pseudomonas-ს. ფაგისთვის ეს იშვიათი მემბრანაა."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 პაწაწინა, კუდის გარეშე რნმ ფაგია. მიემაგრება მამრობითი E. coli-ს პილებს. მისი გენომი ერთ-ერთი პირველი წაკითხული რნმ გენომი იყო."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "გამოგონილი ტბორის ნეირო-პარაზიტია. ევკარიოტებს ემაგრება და მასპინძლის ქცევას ანგრევს, სანამ ის გადამტანი არ გახდება."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote სქესობრივი გამრავლების სასწავლო მოდელია. ორი სქესია, გამეტების შერწყმა – და არა მარტივი ორად გაყოფა."
   }
 }

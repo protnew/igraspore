@@ -16,3 +16,11 @@
 - 01.11 18:05 — Эко-перегон ЗАПУЩЕН реально: node tools/v21_eco_run.cjs http://127.0.0.1:8821 09-Docs/out-dev-factory/eco-v26-s1 1 60 100 (фон, браузер жив — 9 процессов).
 - 01.11 18:40 — Задача 4 волна 1 ✅ (9365bae): bg sk sl lt lb — 436/436 реальные переводы (агент + lb вручную); sr x.* фикс; allow-лист +131 когнат. Полных словарей: 36/100.
 - Конвейер: агенты работают над lv et pt-PT es-419 (словари), ta te mr gu, si my ar fa (словари), bg sk sl (wiki). Следом: L4-L8 остаток (52 языка) + wiki 70 паков.
+- 02.11 (ночь) — Конвейер доперевода волнами (агенты + вручную), все слияния через tools/v26_merge_data.cjs, после каждой волны recheck+commit+push:
+  волна 1: bg sk sl lt lb + sr-фикс → 36 полных
+  волна 2: ta te mr gu si my ar fa (+kk) → 51
+  волна 3: et lv pt-PT es-419 ur he sw → 60
+  волна 4-5: be az ky mn ca gl eu sq mk + wiki (bg sk sl lt lv et lb ta te ar fa si my ur he sw kk be az ky mn ca gl eu sq mk is) → словари 65, wiki 61
+  волна 6-8: is af zu km lo am hy ka uz tg ps ckb sd as or ha yo ig so rw + no/lv allow-когнаты → 82
+  волна 9: kn ml ne bs mt → 87/100 словарей (89% значений), wiki 61/100
+- Allow-лист вырос на ~700 легитимных когнатов (интернационализмы, бренды SWISS/WEBGL, звёзды, HUD-аббревиатуры A/E/S) — по языкам, с reason.

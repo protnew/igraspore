@@ -3745,6 +3745,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "aria.demo",
+   "value": "Demo",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "aria.demo",
+   "value": "Demo",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "aria.start": [
@@ -3887,6 +3905,15 @@
    ],
    "category": "cognate",
    "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "filter",
+   "value": "Filter",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "hud.genSep": [
@@ -3918,6 +3945,15 @@
    ],
    "category": "cognate",
    "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "massWord",
+   "value": "Mass",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "maxPop": [
@@ -4033,6 +4069,15 @@
    ],
    "category": "cognate",
    "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "star.betelgeuse": [
@@ -4044,6 +4089,15 @@
    ],
    "category": "cognate",
    "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "star.polaris": [
@@ -4084,6 +4138,15 @@
    ],
    "category": "cognate",
    "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "star.sirius": [
@@ -4104,6 +4167,15 @@
    ],
    "category": "cognate",
    "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "star.vega": [
@@ -4142,6 +4214,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "starg.alphacentauri": [
@@ -4182,6 +4272,15 @@
    ],
    "category": "cognate",
    "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "start": [
@@ -4297,6 +4396,24 @@
    ],
    "category": "abbr",
    "reason": "HUD-сокращение (Age/Energy/Size): латинская аббревиатура — норма UI"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "x.e": [
@@ -4359,6 +4476,24 @@
    ],
    "category": "abbr",
    "reason": "HUD-сокращение (Age/Energy/Size): латинская аббревиатура — норма UI"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "fps": [
@@ -4406,6 +4541,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "mob.eSep": [
@@ -4480,6 +4633,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "mode.swissLbl": [
@@ -4527,6 +4698,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "mode.webglLbl": [
@@ -4574,6 +4763,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "modeBig.swiss": [
@@ -4621,6 +4828,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "modeBig.webgl": [
@@ -4668,6 +4893,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "modeLbl.swiss": [
@@ -4715,6 +4958,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "modeLbl.webgl": [
@@ -4762,6 +5023,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "autoOn": [
@@ -4800,6 +5079,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "autoOn",
+   "value": "AUTO",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "autoOn",
+   "value": "AUTO",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "hud.btn.auto": [
@@ -4838,6 +5135,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto",
+   "value": "AUTO",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto",
+   "value": "AUTO",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "hud.btn.auto.short": [
@@ -4876,6 +5191,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto.short",
+   "value": "AUTO",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto.short",
+   "value": "AUTO",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "hud.btn.menu": [
@@ -4965,6 +5298,15 @@
    ],
    "category": "cognate",
    "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "dna.io": [
@@ -4987,6 +5329,15 @@
    ],
    "category": "cognate",
    "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "hud.divide.reason.mass",
+   "value": "mass {cur}/{need}",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ],
  "toast.gain": [
@@ -5024,6 +5375,35 @@
    ],
    "category": "abbr",
    "reason": "HUD-сокращение (Age/Energy/Size): латинская аббревиатура — норма UI"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "lv"
+   ],
+   "category": "cognate",
+   "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  }
+ ],
+ "legend": [
+  {
+   "key": "legend",
+   "value": "Legend",
+   "langs": [
+    "et"
+   ],
+   "category": "cognate",
+   "reason": "et: интернационализм/бренд/звезда — пишется так же"
   }
  ]
 }

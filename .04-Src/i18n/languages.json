@@ -550,5 +550,21 @@
     "playListing": true,
     "register": "tú/vos",
     "critics": []
+  },
+  {
+    "code": "hr",
+    "name": "Hrvatski",
+    "native": "Hrvatski",
+    "wave": 10,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "hr",
+    "script": "latn",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "ti",
+    "critics": []
   }
 ]

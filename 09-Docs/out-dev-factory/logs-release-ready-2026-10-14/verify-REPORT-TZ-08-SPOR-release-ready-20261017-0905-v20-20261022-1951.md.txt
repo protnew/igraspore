@@ -1,0 +1,15 @@
+﻿PASS V1 имя и время ок, новый шаблон v20 (REPORT-TZ-08-SPOR-release-ready-20261017-0905-v20-20261022-1951.md)
+PASS V2 финальная строка: inter
+PASS V3 code block содержит путь к отчёту
+PASS V4 sha=fb86df9 head=fb86df9 parent=3e5a8ef ab=[0	0]
+PASS V5 dirty=1133 файл=1133 мои=1 wip=1132
+PASS V6 ref=True; heartbeat gap=0 мин
+PASS V7 не ОСТАНОВЛЕН — пропуск
+PASS V8 не финал — пропуск
+PASS V9 критики не упомянуты — пропуск
+PASS V10 нет diff-чисел
+PASS V11 sha проверено=1 bad=
+PASS V12 не Strict — пропуск
+PASS V13 маркер + ТЗ TZ-08-SPOR-v20.4 (файл на диске есть)
+PASS V14 явный ноль, строка 7: Файлы >500 строк: 0
+VERIFY OK 14 checks

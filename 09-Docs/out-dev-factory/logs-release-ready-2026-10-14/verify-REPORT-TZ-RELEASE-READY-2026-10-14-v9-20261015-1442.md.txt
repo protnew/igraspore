@@ -1,0 +1,13 @@
+﻿FAIL V1 время имени расходится с LastWriteTime на 52 мин
+PASS V2 финальная строка: inter
+PASS V3 code block содержит путь к отчёту
+FAIL V4 sha=01e5bac head=30cc86b parent=58d3a29 ab=[5	0]
+PASS V5 dirty=573 файл=573 мои=393 wip=180
+FAIL V6 ref=True; heartbeat gap=572 мин
+PASS V7 не ОСТАНОВЛЕН — пропуск
+PASS V8 не финал — пропуск
+PASS V9 cited=0 missing=0 critic_check exit=0
+PASS V10 нет diff-чисел
+PASS V11 sha проверено=2 bad=
+PASS V12 не Strict — пропуск
+VERIFY FAIL 3/12

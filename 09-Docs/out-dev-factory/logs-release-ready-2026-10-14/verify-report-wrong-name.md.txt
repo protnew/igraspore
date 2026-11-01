@@ -1,0 +1,15 @@
+﻿FAIL V1 имя не по шаблону (ни новый TZ-08-SPOR v14+, ни легаси RELEASE-READY v3+): report-wrong-name.md
+FAIL V2 финальная строка не по шаблону: x
+FAIL V3 последний code block != путь к md
+FAIL V4 git-строка не найдена
+FAIL V5 нет dirty-строки/файла
+PASS V6 не промежуточный — пропуск
+PASS V7 не ОСТАНОВЛЕН — пропуск
+PASS V8 не финал — пропуск
+PASS V9 критики не упомянуты — пропуск
+PASS V10 нет diff-чисел
+PASS V11 sha проверено=0 bad=
+PASS V12 не Strict — пропуск
+FAIL V13 первая строка не маркер: x
+FAIL V14 фраза «Файлы >500 строк» не найдена
+VERIFY FAIL 7/14

@@ -1,0 +1,13 @@
+﻿PASS V1 имя и время ок (REPORT-TZ-RELEASE-READY-2026-10-14-v11-20261016-1549.md)
+PASS V2 финальная строка: stop
+PASS V3 code block содержит путь к отчёту
+PASS V4 sha=4014982 head=81fd73b parent=4014982 ab=[0	0]
+PASS V5 dirty=425 файл=425 мои=279 wip=146
+PASS V6 не промежуточный — пропуск
+PASS V7 Осталось=True; от=Алексей
+PASS V8 не финал — пропуск
+PASS V9 cited=0 missing=0 critic_check exit=0
+PASS V10 diff-числа есть; shortstat=True
+PASS V11 sha проверено=2 bad=
+PASS V12 не Strict — пропуск
+VERIFY OK 12 checks

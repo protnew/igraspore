@@ -1,0 +1,15 @@
+﻿FAIL V1 имя не этого ТЗ (ТЗ-дата-время != 20261017-0905): REPORT-TZ-08-SPOR-release-ready-20261016-0905-v14-20261017-1538.md
+PASS V2 финальная строка: stop
+PASS V3 code block содержит путь к отчёту
+PASS V4 sha=d5fe31a head=d5fe31a parent=4ed0f53 ab=[2	0]
+PASS V5 dirty=793 файл=793 мои=793 wip=0
+PASS V6 не промежуточный — пропуск
+PASS V7 Осталось=True; от=Алексей
+PASS V8 не финал — пропуск
+PASS V9 критики не упомянуты — пропуск
+PASS V10 нет diff-чисел
+FAIL V11 sha проверено=1 bad=d5fe31a(not-in-origin)
+PASS V12 не Strict — пропуск
+PASS V13 маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v14 (файл на диске есть)
+PASS V14 блок со строки 9, строк таблицы с путями=1
+VERIFY FAIL 2/14

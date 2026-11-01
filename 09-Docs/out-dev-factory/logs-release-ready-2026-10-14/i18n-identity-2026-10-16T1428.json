@@ -1,0 +1,157 @@
+{
+  "ts": "2026-10-16T14:28:14.850Z",
+  "langs": {
+    "bn": {
+      "total": 412,
+      "identical": 9,
+      "allowed": 9,
+      "violations": [],
+      "identical_pct": 2.2,
+      "allowed_pct": 2.2
+    },
+    "de": {
+      "total": 412,
+      "identical": 47,
+      "allowed": 47,
+      "violations": [],
+      "identical_pct": 11.4,
+      "allowed_pct": 11.4
+    },
+    "es": {
+      "total": 412,
+      "identical": 28,
+      "allowed": 28,
+      "violations": [],
+      "identical_pct": 6.8,
+      "allowed_pct": 6.8
+    },
+    "fil": {
+      "total": 412,
+      "identical": 30,
+      "allowed": 30,
+      "violations": [],
+      "identical_pct": 7.3,
+      "allowed_pct": 7.3
+    },
+    "fr": {
+      "total": 412,
+      "identical": 54,
+      "allowed": 54,
+      "violations": [],
+      "identical_pct": 13.1,
+      "allowed_pct": 13.1
+    },
+    "hi": {
+      "total": 412,
+      "identical": 9,
+      "allowed": 9,
+      "violations": [],
+      "identical_pct": 2.2,
+      "allowed_pct": 2.2
+    },
+    "id": {
+      "total": 412,
+      "identical": 31,
+      "allowed": 31,
+      "violations": [],
+      "identical_pct": 7.5,
+      "allowed_pct": 7.5
+    },
+    "it": {
+      "total": 412,
+      "identical": 34,
+      "allowed": 34,
+      "violations": [],
+      "identical_pct": 8.3,
+      "allowed_pct": 8.3
+    },
+    "ja": {
+      "total": 412,
+      "identical": 9,
+      "allowed": 9,
+      "violations": [],
+      "identical_pct": 2.2,
+      "allowed_pct": 2.2
+    },
+    "ko": {
+      "total": 412,
+      "identical": 9,
+      "allowed": 9,
+      "violations": [],
+      "identical_pct": 2.2,
+      "allowed_pct": 2.2
+    },
+    "ms": {
+      "total": 412,
+      "identical": 34,
+      "allowed": 34,
+      "violations": [],
+      "identical_pct": 8.3,
+      "allowed_pct": 8.3
+    },
+    "pl": {
+      "total": 412,
+      "identical": 29,
+      "allowed": 29,
+      "violations": [],
+      "identical_pct": 7,
+      "allowed_pct": 7
+    },
+    "pt-BR": {
+      "total": 412,
+      "identical": 34,
+      "allowed": 34,
+      "violations": [],
+      "identical_pct": 8.3,
+      "allowed_pct": 8.3
+    },
+    "ru": {
+      "total": 412,
+      "identical": 13,
+      "allowed": 13,
+      "violations": [],
+      "identical_pct": 3.2,
+      "allowed_pct": 3.2
+    },
+    "th": {
+      "total": 412,
+      "identical": 9,
+      "allowed": 9,
+      "violations": [],
+      "identical_pct": 2.2,
+      "allowed_pct": 2.2
+    },
+    "tr": {
+      "total": 412,
+      "identical": 21,
+      "allowed": 21,
+      "violations": [],
+      "identical_pct": 5.1,
+      "allowed_pct": 5.1
+    },
+    "uk": {
+      "total": 412,
+      "identical": 8,
+      "allowed": 8,
+      "violations": [],
+      "identical_pct": 1.9,
+      "allowed_pct": 1.9
+    },
+    "vi": {
+      "total": 412,
+      "identical": 31,
+      "allowed": 31,
+      "violations": [],
+      "identical_pct": 7.5,
+      "allowed_pct": 7.5
+    },
+    "zh-TW": {
+      "total": 412,
+      "identical": 9,
+      "allowed": 9,
+      "violations": [],
+      "identical_pct": 2.2,
+      "allowed_pct": 2.2
+    }
+  }
+}

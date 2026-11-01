@@ -1,0 +1,15 @@
+﻿FAIL V1 время имени расходится с LastWriteTime на 7 мин
+PASS V2 финальная строка: inter
+PASS V3 code block содержит путь к отчёту
+PASS V4 sha=d4b741f head=d4b741f parent=e4cb41e ab=[0	0]
+PASS V5 dirty=1177 файл=1177 мои=0 wip=1177
+PASS V6 ref=True; heartbeat gap=0 мин
+PASS V7 не ОСТАНОВЛЕН — пропуск
+PASS V8 не финал — пропуск
+PASS V9 критики не упомянуты — пропуск
+PASS V10 нет diff-чисел
+PASS V11 sha проверено=1 bad=
+PASS V12 не Strict — пропуск
+PASS V13 маркер + ТЗ TZ-08-SPOR-v20.4 (файл на диске есть)
+PASS V14 явный ноль, строка 7: Файлы >500 строк: 0
+VERIFY FAIL 1/14

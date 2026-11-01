@@ -1,0 +1,13 @@
+﻿PASS V1 имя и время ок (REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261015-1800.md)
+PASS V2 финальная строка: inter
+PASS V3 code block содержит путь к отчёту
+PASS V4 sha=27e4e4a head=27e4e4a parent=01e5bac ab=[0	0]
+PASS V5 dirty=573 файл=573 мои=573 wip=0
+FAIL V6 ref=False; heartbeat gap=136 мин
+PASS V7 не ОСТАНОВЛЕН — пропуск
+PASS V8 не финал — пропуск
+PASS V9 критики не упомянуты — пропуск
+PASS V10 нет diff-чисел
+PASS V11 sha проверено=1 bad=
+PASS V12 не Strict — пропуск
+VERIFY FAIL 1/12

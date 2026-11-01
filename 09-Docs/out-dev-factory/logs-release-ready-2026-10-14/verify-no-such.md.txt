@@ -1,0 +1,15 @@
+﻿FAIL V1 md не найден: tools\verify_report.fixtures\run\no-such.md
+FAIL V2 финальная строка не по шаблону: 
+FAIL V3 последний code block != путь к md
+FAIL V4 git-строка не найдена
+FAIL V5 нет dirty-строки/файла
+PASS V6 не промежуточный — пропуск
+PASS V7 не ОСТАНОВЛЕН — пропуск
+PASS V8 не финал — пропуск
+PASS V9 критики не упомянуты — пропуск
+PASS V10 нет diff-чисел
+PASS V11 sha проверено=0 bad=
+PASS V12 не Strict — пропуск
+FAIL V13 пустой файл
+FAIL V14 фраза «Файлы >500 строк» не найдена
+VERIFY FAIL 7/14

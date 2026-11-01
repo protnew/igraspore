@@ -1,0 +1,15 @@
+﻿PASS V1 имя и время ок, новый шаблон v14 (REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1535.md)
+PASS V2 финальная строка: stop
+PASS V3 code block содержит путь к отчёту
+PASS V4 sha=d5fe31a head=d5fe31a parent=4ed0f53 ab=[2	0]
+PASS V5 dirty=793 файл=793 мои=26 wip=767
+PASS V6 не промежуточный — пропуск
+PASS V7 Осталось=True; от=Алексея
+PASS V8 не финал — пропуск
+PASS V9 cited=0 missing=0 critic_check exit=0
+PASS V10 нет diff-чисел
+FAIL V11 sha проверено=13 bad=d5fe31a(not-in-origin)
+PASS V12 не Strict — пропуск
+PASS V13 маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v14 (файл на диске есть)
+PASS V14 явный ноль: - V14 (новая): в отчёте есть блок «Файлы >500 строк» — таблица со строками-путями или явное «Файлы >500 строк: 0».
+VERIFY FAIL 1/14

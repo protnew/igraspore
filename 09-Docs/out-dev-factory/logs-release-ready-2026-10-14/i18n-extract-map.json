@@ -1,0 +1,359 @@
+{
+  "toast.eat.plant": {
+    "ru": "Ты растение: плыви к свету",
+    "en": "",
+    "sites": [
+      "main_events.js"
+    ]
+  },
+  "x.starving": {
+    "ru": "Голод",
+    "en": "Starving",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "x.healthy": {
+    "ru": "Здоров",
+    "en": "Healthy",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "x.dividing": {
+    "ru": "Делится",
+    "en": "Dividing",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "x.cyst": {
+    "ru": "Циста",
+    "en": "Cyst",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "x.infected": {
+    "ru": "Заражен",
+    "en": "Infected",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "x.e": {
+    "ru": "Эн",
+    "en": "E",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "x.a": {
+    "ru": "Взр",
+    "en": "A",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "x.s": {
+    "ru": "Рзм",
+    "en": "S",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "x.move": {
+    "ru": "Движение",
+    "en": "Move",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "x.you": {
+    "ru": "Это Вы",
+    "en": "You",
+    "sites": [
+      "render_helpers.js"
+    ]
+  },
+  "hud.btn.light.short": {
+    "ru": "СВЕТ",
+    "en": "",
+    "sites": [
+      "ui.js"
+    ]
+  },
+  "hud.btn.eat.short": {
+    "ru": "ЕСТЬ",
+    "en": "",
+    "sites": [
+      "ui.js"
+    ]
+  },
+  "hud.goal": {
+    "ru": "Поделись: {cur}/{need}",
+    "en": "",
+    "sites": [
+      "ui.js"
+    ]
+  },
+  "x.foodScent": {
+    "ru": "Запах еды",
+    "en": "Food scent",
+    "sites": [
+      "ui.js"
+    ]
+  },
+  "x.cover": {
+    "ru": " · укрытие",
+    "en": " · cover",
+    "sites": [
+      "ui.js"
+    ]
+  },
+  "x.cyst2": {
+    "ru": " · ЦИСТА",
+    "en": " · CYST",
+    "sites": [
+      "ui.js"
+    ]
+  },
+  "x.infected2": {
+    "ru": "Заражен!",
+    "en": "Infected!",
+    "sites": [
+      "ui.js"
+    ]
+  },
+  "x.wind": {
+    "ru": "Ветер",
+    "en": "Wind",
+    "sites": [
+      "ui.js"
+    ]
+  },
+  "x.wasdSwimLmbCursorRmbTargetWheel": {
+    "ru": "<span><kbd>WASD</kbd> Плывать</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПкМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class=\"kh-sum\">Кнопки: E Q R Space Tab F M N V B P</span>",
+    "en": "<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class=\"kh-sum\">Buttons: E Q R Space Tab F M N V B P</span>",
+    "sites": [
+      "ui_menus.js"
+    ]
+  },
+  "x.wasdSwimLmbCursorRmbTargetWheel2": {
+    "ru": "<span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class=\"kh-sum\">Кнопки: E Q R Space Tab F M N V B P</span>",
+    "en": "<span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class=\"kh-sum\">Buttons: E Q R Space Tab F M N V B P</span>",
+    "sites": [
+      "ui_menus.js"
+    ]
+  },
+  "x.virusMode": {
+    "ru": "РЕЖИМ ВИРУСА",
+    "en": "VIRUS MODE",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.infected3": {
+    "ru": "Инфицировано",
+    "en": "Infected",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.lysed": {
+    "ru": "Лизировано",
+    "en": "Lysed",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.phages": {
+    "ru": "Фагов",
+    "en": "Phages",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.pondStatistics": {
+    "ru": "Статистика Водоёма",
+    "en": "Pond Statistics",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.alive": {
+    "ru": "Живых",
+    "en": "Alive",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.born": {
+    "ru": "Родилось",
+    "en": "Born",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.dead": {
+    "ru": "Погибло",
+    "en": "Dead",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.yourSpecies": {
+    "ru": "Ваш вид: ",
+    "en": "Your species: ",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.currentlyAlive": {
+    "ru": "Сейчас живы",
+    "en": "Currently alive",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.totalBorn": {
+    "ru": "Всего родилось",
+    "en": "Total born",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.yourCell": {
+    "ru": "Ваша клетка",
+    "en": "Your cell",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.chloroplasts": {
+    "ru": "хлоропласты",
+    "en": "chloroplasts",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.nucleus": {
+    "ru": "ядро",
+    "en": "nucleus",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.macroMicronucleus": {
+    "ru": "макро/микронуклеус",
+    "en": "macro/micronucleus",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.cilia": {
+    "ru": "реснички",
+    "en": "cilia",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.flagella": {
+    "ru": "жгутик",
+    "en": "flagella",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.pseudopodia": {
+    "ru": "псевдоподии",
+    "en": "pseudopodia",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.mitochondria": {
+    "ru": "митохондрии",
+    "en": "mitochondria",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.golgi": {
+    "ru": "гольджи",
+    "en": "Golgi",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.trichocysts": {
+    "ru": "трихоцисты",
+    "en": "trichocysts",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.contractileVacuole": {
+    "ru": "сокр. вакуоль",
+    "en": "contractile vacuole",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.locomotion": {
+    "ru": "Движение",
+    "en": "Locomotion",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.division": {
+    "ru": "Деление",
+    "en": "Division",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.food": {
+    "ru": "Пища",
+    "en": "Food",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.predators": {
+    "ru": "Враги",
+    "en": "Predators",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.bacteriophageInfectsBacteriaCauses": {
+    "ru": "Бактериофаг. Заражает бактерии, вызывает лизис.",
+    "en": "Bacteriophage. Infects bacteria, causes lysis.",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.size": {
+    "ru": "Размер",
+    "en": "Size",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.organelles": {
+    "ru": "Органеллы",
+    "en": "Organelles",
+    "sites": [
+      "ui_screens.js"
+    ]
+  },
+  "x.nothingFound": {
+    "ru": "Ничего не найдено.",
+    "en": "Nothing found.",
+    "sites": [
+      "ui_screens.js"
+    ]
+  }
+}

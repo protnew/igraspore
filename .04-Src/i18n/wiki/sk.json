@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis je cyanobaktéria bez jadra. Žije zo svetla: kyslíková fotosyntéza na membránach, bez chloroplastov. Model vodíkového metabolizmu."
+    "body": "Synechocystis je sinica bez jadra. Žije zo svetla: kyslíkatá fotosyntéza na membránach, bez chloroplastov. Laboratórny model pre metabolizmus vodíka."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis je vlákno. Časť buniek sa mení na heterocysty a viaže dusík, kým susedia vyrábajú cukor. V rybníku dodáva viazaný dusík."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) je závit buniek s plynovými vezikulami. Visí pri hladine, fotosyntetizuje a je jedlá. V hre je veľká zelená skrutka pri vodnom filme."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme je retiazka guličiek v slizovej kapsule. Žije voľne alebo v symbióze s rastlinami. Kolónia vyzerá ako zhluk zelených korálikov."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica je kĺzavé vlákno. Kyvuje sa zo strany na stranu a vie fotosyntetizovať bez uvoľňovania kyslíka. Typická pre bahno a povrchový film."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa je slizová kolónia, často toxická (mikrocystín). Spôsobuje vodný kvet. V hre je zelená guľa kolónie, riskantná korisť."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa sú dvojice buniek vo farebných pošvách. Žije na skalách a v pôde a znesie UV. V rybníku sú to malé dvojice kokov v obale."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula je hrubé sinicové vlákno. Môže uvoľňovať dráždivé toxíny. Tvorí koberce pri teplých brehoch."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii je zelená bunka s dvoma bičíkmi a očnou škvrnou. Pláva k svetlu. Klasický model genetiky rias."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris je nehybná zelená guľôčka. Delí sa rýchlo a je bohatá na bielkoviny. Potrava drobných žravcov a námet pre kozmickú stravu."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator je dutá guľa z tisícov buniek. Dcérske kolónie dozrievajú vnútri a vychádzajú von. V hre je veľká zelená kolónia."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis je mixotrof: chloroplasty plus schopnosť žrať. Červená očná škvrna sleduje svetlo. Zelená za dňa; v tme prejde na prijímanie potravy."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda je zvyčajne štyri bunky v rade s koncovými ostňami. Ostne sťažujú prehltovanie. Nepláva — nechá sa unášať."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis je zelená pohyblivá bunka; v strese sčervená (astaxantín) a vyrastie jej hrubá stena. Červené cysty prežijú sucho."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina nemá pevnú stenu a žije vo veľmi slanej vode. Ukladá betakarotén a pôsobí oranžovo. Dva bičíky."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata je plochá riasa v tvare hviezdy. Dve zrkadlové polovice s hlbokými zárezmi. Nehybná; fotosyntetizuje v kyslej močiarnej vode."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula je rozsievka v tvare člna s kremíkovou lastúrou. Kĺže sa po substráte pozdĺž štrbiny raphe. Schránka po odumretí zostáva."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis je veľká perovitá rozsievka. Kremíková schránka so symetrickým vzorom. Pomaly kĺže po dne."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana je okrúhla stredová rozsievka. Pláva ako disk; schránku tvoria dve viečka. Typický planktón."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare je rozsievka, ktorá sa zlepuje do cikcaku. Kolónia zvyšuje odpor vo vodnom stĺpci."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum je purpurová špirála. Bezkyslíková fotosyntéza plus organika. Červená farba pochádza z bakteriochlorofylu."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum je purpurová sírová baktéria. Oxiduje sírovodík a ukladá zrnká síry. Žije na hranici kyslík/síra."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum je jednobunková červená riasa. Fykoerytrín jej dáva krvavočervenú farbu. Slizový obal, bez bičíkov."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus je najmenšia a najpočetnejšia fotosyntetizujúca bunka Zeme. Objavená v 80. rokoch. Živí oceán."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis je extremofil: púšť, skala, žiarenie. Kandidát na život mimo Zeme. V rybníku je pomalá kolónia kokov."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus je drobný bakteriálny predátor. Zavrtí sa do cudzej bunky a rozmnožuje sa, kým hostiteľ nepraskne."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus sadne na korisť zvonka a vysaje z nej obsah bez vniknutia. Bakteriálny upír."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter vnikne do baktérie-koristi a zožerie ju zvnútra. Vzácny vnútrobunkový lovec."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus je sociálna baktéria. Vo svorke obklopí korisť a vylučuje enzýmy. Pri hladovaní vytvára plodnicu."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii je morský príbuzný Bdellovibrio. Napáda gramnegatívne baktérie a žije v periplazme koristi."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax je bakteriálny lovec znášajúci soľ. Rovnaký trik: prepichne stenu a rastie vo vnútri."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii je ďalší BALO predátor. Rýchly bičíkovec v tvare čiarky loviaci veľké paličky."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula je malý heterotrofný bičíkovec. Chytá baktérie na povrchu detritu."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo je kvapkovitý bičíkovec. Jeden bičík; loví v bakteriálnom filme."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans je kolónia na železno-mangánovej stopke. Bunky sedia v strapci a lovia baktérie."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium je bezfarebný kryptofyt. Dva bičíky; žerie rozpustenú organiku a drobné baktérie, bez chloroplastov."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda je amébovitý bičíkovec s dlhým chvostom. Plazí sa a prehltáva baktérie panožkami."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa je pôdny bičíkovec. Dva bičíky rôznej dĺžky; hlavný požierač baktérií v pôde."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans je kinetoplastida. „Tančí“ na mieste, pripnutá zadným bičíkom, a chytá baktérie."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini je príbuzný rodu Bodo. Pláva voľne a udrie korisť predným bičíkom."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei je krvný parazit vyvolávajúci spavú nemoc. Vlnitá membrána a jeden bičík. V rybníku je modelom štíhleho lovca."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani je vnútrobunkový ľudský parazit. S bičíkom v hmyzu, bez bičíka v makrofágu."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis je choanoflagelát, príbuzný živočíchov. Golier z mikrovilov filtruje baktérie."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta je prisadnutý choanoflagelát v lorike. Môže tvoriť ružicu. Filtruje prúd vody."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis je kolónia choanoflagelátov na spoločnej stopke. Viac filtrov na jednej stopke."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum je klasická papučka. Tisíce riasiniek, ústna brázda, pulzujúce vakuoly. Filtruje baktérie."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria je papučka so symbiotickými zoochlorellami. Zelená zvnútra: cukor z rias cez deň, filtrovanie v noci."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus je modrá trúbka až do milimetra. Rozvíja sa do lievika a riasinkami ženie prúd. Môže plávať aj sedieť."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus je príbuzný modrého stentora, často so zoochlorellami. Tvar mení od trúbky po guľu."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula je zvonček na stiahnuteľnej stopke. Stopka sa okamžite zvinie do špirály. Samotná bunka neodpláva."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma je malý zvonček. Rovnaká pružinová stopka, užšie ústne pole. Často na detrite."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum je sudovitý lovec papučiek. Vystreľuje toxicysty a prehltne korisť celú, aj keď je väčšia."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum je veľmi dlhé cigaro. Stiahne sa niekoľkonásobne za zlomok sekundy. Riasinky idú v špirále."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum je ružový nálevník. Pigment blepharismin je citlivý na svetlo. Filtruje a môže napádať menšie bunky."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella chodí po cirách ako po nohách. Plochý, s rýchlymi obratmi. Oškrabuje baktérie z povrchov."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata je hypotrich, ktorý „beží“ po dne. Veľké círie, zreteľné ústa. Predátor malých nálevníkov."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax je model pre genóm: dve jadrá a zložité prepisovanie DNA. Chodí po cirách a žerie baktérie a malé protisty."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila je laboratórny nálevník. Štyri ústne membranelly, rýchle delenie. Model pre teloméry a riasinky."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus je sudček z vápenatých doštičiek s ostňami. Mrchožrút aj predátor: zahryzuje sa do ranených."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella je plochý predátor s toxicystami v „chobote“. Paralyzuje korisť a vysaje ju."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser má dlhý krk s jedovatými extruzómami. Udrie krkom a potom prehltne. Veľký lovec stredného poschodia."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo sa točí na mieste: rovníkové riasinkové pásmo roztočí bunku. Filtruje baktérie."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula je rozkonárená kolónia zvončekov. Spoločná stiahnuteľná stopka trhne celým stromom naraz."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata je prisadnutý peritrich bez pružinovej stopky. Víčko zakrýva ústa. Filtruje a neodpláva."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus je klasická améba. Panožky obtekajú korisť. Bez pevného tvaru, bez riasiniek."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris je pancierniková améba s tvrdou kupolou. Panožky vychádzajú z otvoru. Plazí sa po rastlinách."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga má schránku z pieskových zrniek, ktoré si améba sama prilepí. Žije v bahu."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata má schránku z kremíkových šupiniek. Tenké vláknité panožky. Drobný bakteriálny predátor."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris je améba s fľaškovitou schránkou z ukradnutých šupiniek. Vody lesov a močiarov."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata je améba s diskovitou schránkou s ostňami. Otvor je posunutý. Plazí sa po detrite."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol je slnečné zviera (Heliozoa): tenké axopódie žiaria dookola. Korisť sa prilepí na lúče a je vtiahnutá dnu."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni je veľký mnohojadrový zástupca Heliozoa. Rovnaké lúče, oveľa väčšia bunka. Žerie nálevníky a bukovky."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida je Heliozoa v šupinách. Lúče nesú kremíkové ihly. Planktonový lovec zo zálohy."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria je bukovka, ktorá prežije vyschnutie. Korunka navíja potravu do úst. Skutočné mnohobunkové zviera."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola je ružová bdeloidná bukovka. Plazí sa ako pijavica a aj pláva. Len samičky; samčeky nie."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis je planktonová bukovka s lorikou. Potrava pre plôdik v akvakultúre. Filtruje riasy a baktérie."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis je bukovka s dlhým ostňom na lorike. Osteň odrádza predátorov. Bežný rybníkový planktón."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta je vak bez loriky, dravá bukovka. Celé prehltáva iné bukovky a nálevníky."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus je mnohobunkovec zo skupiny gastrotrichov. Pokrytý šupinami, plazí sa po dne. Žerie baktérie a detrit."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata je drobný gastrotrich s prekrývajúcimi sa šupinami. Veľmi rýchle obraty na mieste."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano je mikroskopický plochý červ. Skutočné svaly a oči. Model regenerácie. Loví malé protisty."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops je tenký riasinkový červ. Delí sa priečne na reťaz zoidov. Žerie detrit a drobné živočíchy."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare je plochý červ, ktorý žerie hydry a zabudováva ich pŕhlivé bunky do vlastnej pokožky. Reťaz zoidov."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense je sladkovodná nemertina. Dlhým chobotom vystrelí na korisť. Vzácny veľký lovec dna."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens je placozóum, jedno z najjednoduchších živočíchov. Plazí sa ako plachta a trávi potravu vonku. Bez úst."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae je pekárska kvasinka. Pučia, žerú cukor, uvoľňujú CO2 a alkohol. V rybníku čistí rozpustenú organiku."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans je kvasinka, ktorá vie rásť vo vláknach. Oportúnny ľudský patogén. V hre je to detritová huba."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo je chlebová pleseň. Sporangia na stopkách, rýchly rast nad mŕtvym. Neloví živé."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer je čierna chlebová pleseň. Stolony a rizoidy sa šíria po substráte. Rozkladá škrob."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum je štetková pleseň, zdroj penicilínu. Konidiové štetky. Rozkladá organiku a potláča baktérie v okolí."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger je čierny aspergíl. Guľovité hlávky spór. Priemyselný výrobca kyseliny citrónovej. Saprotrof."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis je chitridiová huba žiab. Jednobičíkaté zoospóry. V rybníku je modelom vodnej huby."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus je vodný chitrid na peľu a riasach. Zlatisté sporangie; zoospóry plávajú k substrátu."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus je vodná huba s pravým mycéliom. Strieda diploidnú a haploidnú fázu. Zoospóry majú zadný bičík."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis je pôdna palička. Spóry prežijú var. Rozkladá bielkoviny; gram-pozitívny model."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida je upratovacia palička. Žerie aj ropné produkty. Pohyblivá bičíkom, rýchlo rastie na detrite."
   },
   "96": {
-    "body": "Streptomyces coelicolor je vláknitá pôdna baktéria. Vytvára vôňu zeme (geosmín) a mnoho antibiotík. Spóry na hýfach."
+    "body": "Streptomyces coelicolor je vláknitá pôdna baktéria. Vytvára vôňu zeme (geosmín) a množstvo antibiotík. Spóry na hyfách."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi rozkladá celulózu. Žltá palička na rastlinnom detrite. Bez nej by mŕtve riasy zotrvávali dlhšie."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus je termofil z horúcich prameňov. Taq polymeráza je základ PCR. V studenom rybníku je takmer nečinný."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans je šampión žiarenia. Za pár hodín znovu poskladá rozbitý génom. Hrubá stena, tetrády buniek."
   },
   "1001": {
-    "body": "Pohlavný eukaryot je náučný model pohlavného rozmnožovania. Dva pohlavia, splývanie gamét, nie jednoduché binárne delenie."
+    "body": "Pohlavný eukaryot je učebný model pohlavného rozmnožovania. Dve pohlavia, splynutie gamét, nielen jednoduché delenie."
   },
   "T4 Bacteriophage": {
-    "body": "T4 je veľký myofág E. coli. Chvost sa stiahne a vstrekne DNA. Za pol hodiny bunka praskne a vychádzajú desiatky fágov."
+    "body": "T4 je veľký myovírus E. coli. Chvost sa stiahne a vstrekne DNA. Za pol hodiny bunka praskne a von vyjde desiatky fágov."
   },
   "Lambda Phage": {
-    "body": "Lambda je umiernený fág. Môže sa vložiť do chromozómu a spať (lyzogénia) alebo bunku hneď zničiť (lyza)."
+    "body": "Lambda je temperovaný fág. Môže sa vsunúť do chromozómu a spať (lyzogénia) alebo bunku hneď roztrhať (lýza)."
   },
   "T7 Bacteriophage": {
     "body": "T7 má krátky chvost a veľmi rýchlu replikáciu. Obľúbený systém v syntetickej biológii."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 je RNA fág s lipidovým obalom. Infikuje Pseudomonas. Zriedkavá membrána pre fága."
+    "body": "Phi-6 je RNA fág s lipidovým obalom. Infikuje Pseudomonas. Vzácna membrána pre fága."
   },
   "MS2 Phage": {
-    "body": "MS2 je drobný RNA fág bez chvosta. Viaže sa na pily samčieho E. coli. Jeho genom bol jeden z prvých prečítaných RNA génov."
+    "body": "MS2 je drobný RNA fág bez chvosta. Viaže sa na pilius samčích E. coli. Jeho génom bol jedným z prvých prečítaných RNA genómov."
   },
   "Neuro-Parasite": {
-    "body": "Vymyslený neuroparazit z mlaky. Prichytí sa na eukaryoty a kazí správanie hostiteľa, kým sa nestane nosičom."
+    "body": "Vymyslený rybníkový neuro-parazit. Prichytí sa na eukaryoty a naruší správanie hostiteľa, kým sa nestane nosičom."
   },
   "Sexual Eukaryote": {
-    "body": "Pohlavný eukaryot je náučný model pohlavného rozmnožovania. Dva pohlavia, splývanie gamét, nie jednoduché binárne delenie."
+    "body": "Pohlavný eukaryot je učebný model pohlavného rozmnožovania. Dve pohlavia, splynutie gamét, nielen jednoduché delenie."
   }
 }

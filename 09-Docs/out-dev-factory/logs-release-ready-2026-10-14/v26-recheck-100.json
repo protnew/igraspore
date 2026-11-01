@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-01 18:40:58",
+  "at": "2026-11-01 18:55:28",
   "enKeys": 436,
   "enWiki": 108,
   "rows": [
@@ -503,8 +503,8 @@
       "frozen": false,
       "dictTotal": 436,
       "wikiTotal": 108,
-      "dictTranslated": 68,
-      "dictCopyEn": 368,
+      "dictTranslated": 436,
+      "dictCopyEn": 0,
       "dictMissing": 0,
       "wikiTranslated": 0,
       "wikiCopyEn": 108,
@@ -516,8 +516,8 @@
       "frozen": false,
       "dictTotal": 436,
       "wikiTotal": 108,
-      "dictTranslated": 68,
-      "dictCopyEn": 368,
+      "dictTranslated": 436,
+      "dictCopyEn": 0,
       "dictMissing": 0,
       "wikiTranslated": 0,
       "wikiCopyEn": 108,
@@ -594,8 +594,8 @@
       "frozen": false,
       "dictTotal": 436,
       "wikiTotal": 108,
-      "dictTranslated": 68,
-      "dictCopyEn": 368,
+      "dictTranslated": 436,
+      "dictCopyEn": 0,
       "dictMissing": 0,
       "wikiTranslated": 0,
       "wikiCopyEn": 108,
@@ -1273,8 +1273,8 @@
       "dictTranslated": 436,
       "dictCopyEn": 0,
       "dictMissing": 0,
-      "wikiTranslated": 10,
-      "wikiCopyEn": 98,
+      "wikiTranslated": 108,
+      "wikiCopyEn": 0,
       "wikiMissing": 0
     },
     {
@@ -1286,8 +1286,8 @@
       "dictTranslated": 436,
       "dictCopyEn": 0,
       "dictMissing": 0,
-      "wikiTranslated": 10,
-      "wikiCopyEn": 98,
+      "wikiTranslated": 108,
+      "wikiCopyEn": 0,
       "wikiMissing": 0
     },
     {

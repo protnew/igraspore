@@ -1,0 +1,211 @@
+{
+  "ts": "2026-10-15T15:56:57.248Z",
+  "langs": {
+    "bn": {
+      "total": 140,
+      "identical": 1,
+      "allowed": 1,
+      "violations": [],
+      "identical_pct": 0.7,
+      "allowed_pct": 0.7
+    },
+    "de": {
+      "total": 140,
+      "identical": 11,
+      "allowed": 4,
+      "violations": [
+        "diffN",
+        "hud.btn.cyst",
+        "hud.btn.cyst.short",
+        "season3",
+        "start",
+        "vignette",
+        "wiki"
+      ],
+      "identical_pct": 7.9,
+      "allowed_pct": 2.9
+    },
+    "es": {
+      "total": 140,
+      "identical": 6,
+      "allowed": 4,
+      "violations": [
+        "diffN",
+        "wiki"
+      ],
+      "identical_pct": 4.3,
+      "allowed_pct": 2.9
+    },
+    "fil": {
+      "total": 140,
+      "identical": 9,
+      "allowed": 4,
+      "violations": [
+        "cartoon",
+        "hud.btn.menu",
+        "menu",
+        "set",
+        "wiki"
+      ],
+      "identical_pct": 6.4,
+      "allowed_pct": 2.9
+    },
+    "fr": {
+      "total": 140,
+      "identical": 13,
+      "allowed": 4,
+      "violations": [
+        "diffN",
+        "divRate",
+        "divs",
+        "hud.btn.cyst",
+        "hud.btn.cyst.short",
+        "hud.btn.menu",
+        "menu",
+        "vignette",
+        "wiki"
+      ],
+      "identical_pct": 9.3,
+      "allowed_pct": 2.9
+    },
+    "hi": {
+      "total": 140,
+      "identical": 1,
+      "allowed": 1,
+      "violations": [],
+      "identical_pct": 0.7,
+      "allowed_pct": 0.7
+    },
+    "id": {
+      "total": 140,
+      "identical": 4,
+      "allowed": 1,
+      "violations": [
+        "hud.btn.menu",
+        "menu",
+        "wiki"
+      ],
+      "identical_pct": 2.9,
+      "allowed_pct": 0.7
+    },
+    "it": {
+      "total": 140,
+      "identical": 7,
+      "allowed": 4,
+      "violations": [
+        "hud.btn.menu",
+        "menu",
+        "wiki"
+      ],
+      "identical_pct": 5,
+      "allowed_pct": 2.9
+    },
+    "ja": {
+      "total": 140,
+      "identical": 1,
+      "allowed": 1,
+      "violations": [],
+      "identical_pct": 0.7,
+      "allowed_pct": 0.7
+    },
+    "ko": {
+      "total": 140,
+      "identical": 1,
+      "allowed": 1,
+      "violations": [],
+      "identical_pct": 0.7,
+      "allowed_pct": 0.7
+    },
+    "ms": {
+      "total": 140,
+      "identical": 7,
+      "allowed": 4,
+      "violations": [
+        "hud.btn.menu",
+        "menu",
+        "wiki"
+      ],
+      "identical_pct": 5,
+      "allowed_pct": 2.9
+    },
+    "pl": {
+      "total": 140,
+      "identical": 7,
+      "allowed": 4,
+      "violations": [
+        "hud.btn.menu",
+        "menu",
+        "wiki"
+      ],
+      "identical_pct": 5,
+      "allowed_pct": 2.9
+    },
+    "pt-BR": {
+      "total": 140,
+      "identical": 8,
+      "allowed": 4,
+      "violations": [
+        "diffN",
+        "hud.btn.menu",
+        "menu",
+        "wiki"
+      ],
+      "identical_pct": 5.7,
+      "allowed_pct": 2.9
+    },
+    "ru": {
+      "total": 140,
+      "identical": 1,
+      "allowed": 1,
+      "violations": [],
+      "identical_pct": 0.7,
+      "allowed_pct": 0.7
+    },
+    "th": {
+      "total": 140,
+      "identical": 1,
+      "allowed": 1,
+      "violations": [],
+      "identical_pct": 0.7,
+      "allowed_pct": 0.7
+    },
+    "tr": {
+      "total": 140,
+      "identical": 2,
+      "allowed": 1,
+      "violations": [
+        "diffN"
+      ],
+      "identical_pct": 1.4,
+      "allowed_pct": 0.7
+    },
+    "uk": {
+      "total": 140,
+      "identical": 1,
+      "allowed": 1,
+      "violations": [],
+      "identical_pct": 0.7,
+      "allowed_pct": 0.7
+    },
+    "vi": {
+      "total": 140,
+      "identical": 7,
+      "allowed": 4,
+      "violations": [
+        "hud.btn.menu",
+        "menu",
+        "wiki"
+      ],
+      "identical_pct": 5,
+      "allowed_pct": 2.9
+    },
+    "zh-TW": {
+      "total": 140,
+      "identical": 1,
+      "allowed": 1,
+      "violations": [],
+      "identical_pct": 0.7,
+      "allowed_pct": 0.7
+    }
+  }
+}

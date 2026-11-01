@@ -1,0 +1,15 @@
+﻿PASS V1 имя и время ок, новый шаблон v14 (REPORT-TZ-08-SPOR-release-ready-20261017-0905-v14-20261017-1541.md)
+PASS V2 финальная строка: stop
+PASS V3 code block содержит путь к отчёту
+FAIL V4 sha=7446950 head=905b1cd parent=4ad66b4 ab=[2	0]
+PASS V5 dirty=817 файл=817 мои=37 wip=780
+PASS V6 не промежуточный — пропуск
+PASS V7 Осталось=True; от=Алексея
+PASS V8 не финал — пропуск
+PASS V9 cited=0 missing=0 critic_check exit=0
+PASS V10 нет diff-чисел
+PASS V11 sha проверено=12 bad=
+PASS V12 не Strict — пропуск
+PASS V13 маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v14 (файл на диске есть)
+PASS V14 блок со строки 240, строк таблицы с путями=4
+VERIFY FAIL 1/14

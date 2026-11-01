@@ -1,0 +1,15 @@
+﻿PASS V1 имя и время ок, легаси v9 (REPORT-TZ-RELEASE-READY-2026-10-14-v9-20261017-1428.md)
+PASS V2 финальная строка: inter
+PASS V3 code block содержит путь к отчёту
+PASS V4 sha=d5fe31a head=d5fe31a parent=4ed0f53 ab=[2	0]
+PASS V5 dirty=793 файл=793 мои=793 wip=0
+FAIL V6 ref=False; heartbeat gap=70 мин
+PASS V7 не ОСТАНОВЛЕН — пропуск
+PASS V8 не финал — пропуск
+PASS V9 критики не упомянуты — пропуск
+PASS V10 нет diff-чисел
+FAIL V11 sha проверено=1 bad=d5fe31a(not-in-origin)
+PASS V12 не Strict — пропуск
+PASS V13 маркер + ТЗ TZ-08-SPOR-release-ready-20261017-0905-v14 (файл на диске есть)
+PASS V14 блок со строки 9, строк таблицы с путями=1
+VERIFY FAIL 2/14

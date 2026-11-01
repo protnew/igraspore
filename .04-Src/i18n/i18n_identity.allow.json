@@ -3983,6 +3983,51 @@
    ],
    "category": "cognate",
    "reason": "af: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "cartoon": [
@@ -4099,6 +4144,15 @@
    ],
    "category": "cognate",
    "reason": "af: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "edu.chloro.name",
+   "value": "Chloroplast",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
   }
  ],
  "edu.nucleoid.name": [
@@ -4400,6 +4454,51 @@
    ],
    "category": "cognate",
    "reason": "lo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.alphacentauri",
+   "value": "★ Alpha Centauri A+B",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.alphacentauri",
+   "value": "★ Alpha Centauri A+B",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.alphacentauri",
+   "value": "★ Alpha Centauri A+B",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.alphacentauri",
+   "value": "★ Alpha Centauri A+B",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.alphacentauri",
+   "value": "★ Alpha Centauri A+B",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "star.antares": [
@@ -4564,6 +4663,51 @@
    ],
    "category": "cognate",
    "reason": "uz: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "star.betelgeuse": [
@@ -4692,6 +4836,51 @@
    ],
    "category": "cognate",
    "reason": "lo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "star.polaris": [
@@ -4802,6 +4991,51 @@
    ],
    "category": "cognate",
    "reason": "lo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.polaris",
+   "value": "★ Polaris",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.polaris",
+   "value": "★ Polaris",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.polaris",
+   "value": "★ Polaris",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.polaris",
+   "value": "★ Polaris",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.polaris",
+   "value": "★ Polaris",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "star.rigel": [
@@ -4966,6 +5200,51 @@
    ],
    "category": "cognate",
    "reason": "uz: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "star.sirius": [
@@ -5085,6 +5364,51 @@
    ],
    "category": "cognate",
    "reason": "uz: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "star.vega": [
@@ -5258,6 +5582,51 @@
    ],
    "category": "cognate",
    "reason": "uz: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "starg.alphacentauri": [
@@ -5368,6 +5737,51 @@
    ],
    "category": "cognate",
    "reason": "lo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "starg.sirius": [
@@ -5487,6 +5901,51 @@
    ],
    "category": "cognate",
    "reason": "uz: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "start": [
@@ -5935,6 +6394,51 @@
    ],
    "category": "cognate",
    "reason": "or: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "x.e": [
@@ -6276,6 +6780,51 @@
    ],
    "category": "cognate",
    "reason": "or: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "fps": [
@@ -6611,6 +7160,51 @@
    ],
    "category": "cognate",
    "reason": "or: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "mob.eSep": [
@@ -7218,6 +7812,51 @@
    ],
    "category": "cognate",
    "reason": "tg: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "mode.webglLbl": [
@@ -7544,6 +8183,51 @@
    ],
    "category": "cognate",
    "reason": "or: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "modeBig.swiss": [
@@ -7870,6 +8554,51 @@
    ],
    "category": "cognate",
    "reason": "or: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "modeBig.webgl": [
@@ -8196,6 +8925,51 @@
    ],
    "category": "cognate",
    "reason": "or: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "modeLbl.swiss": [
@@ -8522,6 +9296,51 @@
    ],
    "category": "cognate",
    "reason": "or: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "modeLbl.webgl": [
@@ -8848,6 +9667,51 @@
    ],
    "category": "cognate",
    "reason": "or: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "autoOn": [
@@ -9337,6 +10201,51 @@
    ],
    "category": "cognate",
    "reason": "af: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "x.golgi": [
@@ -9456,6 +10365,51 @@
    ],
    "category": "cognate",
    "reason": "af: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "dna.io": [
@@ -9803,6 +10757,51 @@
    ],
    "category": "cognate",
    "reason": "or: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "yo"
+   ],
+   "category": "cognate",
+   "reason": "yo: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "ig"
+   ],
+   "category": "cognate",
+   "reason": "ig: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "so"
+   ],
+   "category": "cognate",
+   "reason": "so: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "rw"
+   ],
+   "category": "cognate",
+   "reason": "rw: когнат/интернационализм — пишется так же"
   }
  ],
  "legend": [
@@ -10030,6 +11029,50 @@
    ],
    "category": "cognate",
    "reason": "af: когнат/интернационализм — пишется так же"
+  }
+ ],
+ "edu.vacuole.name": [
+  {
+   "key": "edu.vacuole.name",
+   "value": "Vacuole",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  }
+ ],
+ "star.pulsar": [
+  {
+   "key": "star.pulsar",
+   "value": "★ Neutron (pulsar)",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  }
+ ],
+ "x.chloroplasts": [
+  {
+   "key": "x.chloroplasts",
+   "value": "chloroplasts",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
+  }
+ ],
+ "x.nucleus": [
+  {
+   "key": "x.nucleus",
+   "value": "nucleus",
+   "langs": [
+    "ha"
+   ],
+   "category": "cognate",
+   "reason": "ha: когнат/интернационализм — пишется так же"
   }
  ]
 }

@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis ni bakteria ya samawi isiyo na kiini. Inaishi kwa nuru: usanisinuru wenye oksijeni kwenye utando, bila kloroplasti. Ni kielelezo cha maabara cha umetaboli wa hidrojeni."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis ni nyuzi ndefu. Selu zingine huwa heterosisti na kufunga nitrojeni huku jirani zake zikitengeneza sukari. Katika bwawa hutoa nitrojeni iliyoshikamana."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) ni msokoto wa selu wenye mafuko ya gesi. Inaelea karibu na uso wa maji, inafanya usanisinuru, na inaliwa. Katika mchezo ni skrubu kubwa ya kijani kwenye ganda la maji."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme ni mnyororo wa shanga ndani ya ganda la ute. Inaishi huria au kwa ushirika na mimea. Koloni yake inaonekana kama fungu la shanga za kijani."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica ni nyuzi inayoteleza. Inatikisika kushoto na kulia na inaweza kufanya usanisinuru bila kutoa oksijeni. Hupatikana katika matope na ganda la uso wa maji."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa ni koloni ya ute, mara nyingi yenye sumu (mikrosisti). Husababisha mwani kustawi sana juu ya maji. Katika mchezo ni tufe la koloni la kijani; kuila ni hatari."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa ni selu zinazoishi jozi ndani ya majipu yenye rangi. Inaishi kwenye mawe na udongo na kuvumilia mnururisho wa UV. Katika bwawa ni kokisi ndogo jozi ndani ya ganda."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula ni nyuzi nene ya bakteria ya samawi. Inaweza kutoa sumu zinazowasha. Hujenga matabaka karibu na ufuko wa joto."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii ni selu ya kijani yenye flajela mbili na doa la jicho. Huogelea kuelekea nuru. Ni kielelezo cha kihistoria cha jeni za mwani."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris ni tufe la kijani lisilosogea. Inagawanyika haraka na ina protini nyingi. Ni chakula cha wanyama wadogo na mada ya chakula cha angani."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator ni tufe tupu lenye selu elfu kadhaa. Koloni mpya huiva ndani yake na kutoka nje. Katika mchezo ni koloni kubwa ya kijani."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis ni mseto: ina kloroplasti pamoja na uwezo wa kula. Doa jekundu la jicho linafuata nuru. Mchana ni ya kijani; gizani huanza kula."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda kwa kawaida ni selu nne mfululizo wenye miiba mwishoni. Miiba huifanya iwe vigumu kumeza. Haogui; inaelea tu."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis ni selu ya kijani inayosogea; ikiwa kwenye shinikizo hugeuka jekundu (astaxanthini) na kujenga ukuta mzito. Sisti nyekundu zinavumilia ukame."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina haina ukuta mgumu na inaishi katika maji yenye chumvi nyingi sana. Huhifadhi beta-karoteni, hivyo inaonekana chungwa. Ina flajela mbili."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata ni nyota tambarare ya desmidi. Ina nusu mbili zinazofanana kioo zenye michomo mingi. Haigeuki; inafanya usanisinuru katika maji yenye asidi ya maheka."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula ni diatome yenye umbo la boti na ganda la silika. Inateleza juu ya msingi kufuatia pengo la raphe. Ganda lake hubaki baada ya kifo."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis ni diatome kubwa ya aina ya pennate. Ina ganda la silika lenye mchoro ulio sawa. Inateleza taratibu juu ya sakafu."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana ni diatome ya kitovu yenye umbo la duara. Inaelea kama diski; ganda lake ni makofu mawili. Ni planktoni ya kawaida."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare ni diatome inayoshikana umbo la zigzag. Koloni huongeza upinzani ndani ya nguzo ya maji."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum ni kizunguzungu cha zambarau. Hufanya usanisinuru bila oksijeni na hutumia mada za kikaboni. Rangi yake nyekundu inatokana na bakterioklorofili."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum ni bakteria ya zambarau ya sulfuri. Huchoma hidrojeni sulfidi na kuhifadhi punju za sulfuri. Inaishi kwenye mpaka wa oksijeni na sulfuri."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum ni mwani nyekundu wa selu moja. Fikoeritrini inatoa rangi ya damu. Ganda la ute, hakuna flajela."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus ni selu ndogo zaidi na nyingi zaidi yenye usanisinuru duniani. Iligunduliwa miaka ya 1980. Inalisha bahari."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis ni mkaazi wa mazingira magumu kabisa: jangwa, mwamba, mnururisho. Ni mgombea wa uhai nje ya Dunia. Katika bwawa ni koloni ya kokisi inayotembea polepole."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus ni mla-bakteria mdogo sana. Hujipenya kama skrubu ndani ya selu nyingine na kuzidika hadi mwenyeji apasuke."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus hukaa juu ya mwathirika nje na kunyonya yaliyomo bila kuingia ndani. Ni vampiri wa bakteria."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter huingia ndani ya bakteria mwathirika na kuila kutoka ndani. Ni mwindaji adimu wa ndani ya selu."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus ni bakteria ya kijamii. Kwa kundi huzunguka mwathirika na kutoa vimeng'enya. Ikiwa na njaa hujenga kiwiliwili cha matunda."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii ni jamaa ya bahari ya Bdellovibrio. Huwashambulia bakteria Gram-hasi na kuishi kwenye periplasamu ya mwathirika."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax ni mwindaji wa bakteria anayevumilia chumvi. Mbinu ile ile: kuchoma ukuta na kukua ndani."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii ni mwindaji mwingine wa kundi la BALO. Ni flajelati ya haraka yenye umbo la koma, inayolenga bakteria kubwa za umbo la fimbo."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula ni flajelati ndogo inayotegemea chakula cha nje. Inakamata bakteria juu ya uso wa mabaki ya viumbe."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo ni flajelati yenye umbo la tone. Flajela moja; huwinda kwenye ganda la bakteria."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans ni koloni juu ya shina la chuma na manganezi. Selu zimekaa kwenye mkusanyiko wa nywele na kukamata bakteria."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium ni kriptofiti isiyo na rangi. Flajela mbili; hula mada za kikaboni zilizoyeyuka na bakteria ndogo; hakuna kloroplasti."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda ni amiboflajelati yenye mkia mrefu. Inapambazuka na kumeza bakteria kwa pseudopodia."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa ni flajelati ya udongo. Flajela mbili za urefu tofauti; ni mla-bakteria mkuu wa udongo."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans ni kinetoplastidi. Hucheza ngoma mahali pale, ameshikiliwa na flajela ya nyuma, na kukamata bakteria."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini ni jamaa ya Bodo. Huogelea huru na kupiga mwathirika kwa flajela ya mbele."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei ni kidusi cha damu kinachosababisha ugonjwa wa usingizi. Kina utando wa mawimbi na flajela moja. Katika bwawa ni kielelezo cha mwindaji mwembamba."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani ni kidusi cha selu za binadamu. Kina flajela ndani ya mdudu, kikawa bila flajela ndani ya makrofaji."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis ni koanoflajelati, jamaa ya wanyama. Kolari la microvilli huchuja bakteria."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta ni koanoflajelati isiyohama ndani ya lorika. Inaweza kuunda umbo la roseti. Huchuja mkondo wa maji."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis ni koloni ya koanoflajelati juu ya shina moja la pamoja. Vichujio kadhaa juu ya mguu mmoja."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum ni kiatu cha kihistoria. Ina silia elfu, jachende la mdomo, na fuko za mkazo. Huchuja bakteria."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria ni kiatu chenye zooklorella ndani. Ndani ni kijani: sukari kutoka mwani mchana, kuchuja usiku."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus ni tarumbeta ya bluu yenye ukubwa hadi milimita moja. Inapanua umbo la kitungi na kuendesha mkondo wa maji kwa silia. Inaweza kuogelea au kukaa."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus ni jamaa ya stentori ya bluu, mara nyingi na zooklorella. Umbo hubadilika kutoka tarumbeta hadi tufe."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula ni kengele juu ya shina la mkazo. Shina hujikunja kama msokoto papo hapo. Selu yenyewe haiogei mbali."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma ni kengele ndogo. Shina la mbugu ile ile; uwanja wa mdomo ni nyembamba zaidi. Mara nyingi huwa juu ya mabaki ya viumbe."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum ni mwindaji wa umbo la pipa, anayewinda viatu. Anatoa toksisisti na kumeza mwathirika mzima, hata kama ni mkubwa zaidi."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum ni sigara ndefu sana. Inajikaza mara kadhaa katika sehemu ndogo ya sekunde. Silia zinaenda kwa msokoto."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum ni siliati ya pinki. Rangi ya blefarismini ni nyeti kwa mwanga. Huchuja na inaweza kushambulia selu ndogo."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella hutembea kwa cirri kama miguu. Ni tambarare na hugeuka haraka. Inakuna bakteria kutoka kwenye nyuso."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata ni hypotrichi inayokimbia sakafuni. Cirri kubwa, mdomo dhahiri. Ni mwindaji wa siliati ndogo."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax ni kielelezo cha jenioma: kiini mbili na uandishi upya wa DNA tata. Hutembea kwa cirri na kula bakteria na protisti ndogo."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila ni siliati ya maabara. Membraneli nne za mdomo, mgawanyo wa haraka. Ni kielelezo cha telomere na silia."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus ni pipa la sahani za chokaa lenye miiba. Ni mla-mizoga na mwindaji: huuma waliojeruhiwa."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella ni mwindaji tambarare mwenye toksisisti kwenye sehemu ya mdomo mrefu. Anazimia mwathirika na kumnyonya yaliyomo."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser ina shingo ndefu yenye eksirusomu za sumu. Huwashambulia kwa shingo, kisha humeza. Ni mwindaji mkubwa wa ngazi ya kati."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo ni mzungukaji: ukanda wa silia wa ikweta huzungusha selu mahali pake. Huchuja bakteria."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula ni koloni yenye matawi ya kengele. Shina moja la mkazo hutikisa mti mzima kwa pamoja."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata ni peritrichi isiyohama bila shina la mbugu. Kifuniko hufunika mdomo. Huchuja na haiogei mbali."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus ni amiba ya kihistoria. Pseudopodia huzunguka mwathirika. Hakuna umbo maalum, hakuna silia."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris ni amiba yenye ganda la kuba ngumu. Pseudopodia hutoka kwenye tundu. Hupambazuka juu ya mimea."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga ina ganda la punju za mchanga ambazo amiba huwashika pamoja. Inaishi matopeni."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata ina ganda la mizani ya silika. Pseudopodia nyembamba za nyuzi. Ni mwindaji mdogo wa bakteria."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris ina ganda la umbo la chupa lililojengwa kwa mizani iliyoibiwa. Maji ya msitu na maheka."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata ni ganda la diski lenye miiba. Tundu liko pembeni. Hupambazuka juu ya mabaki ya viumbe."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol ni heliozoa: akopodia nyembamba zinatoa miali pande zote. Mwathirika anagandishwa kwenye miali na kuvutwa ndani."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni ni heliozoa kubwa yenye viini vingi. Miali ile ile, selu kubwa zaidi. Hula siliati na rotifai."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida ni heliozoa yenye mizani. Miali inabebea sindano za silika. Ni mwindaji msubiri wa planktoni."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria ni rotifai inayoweza kuvumilia ukavu. Korona huzungusha chakula hadi mdomoni. Ni mnyama wa kweli wa selu nyingi."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola ni rotifai ya pinki ya aina ya bdelloid. Hupambazuka kama mnyoo na pia huogelea. Majike tu; hakuna madume."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis ni rotifai ya planktoni yenye lorika. Ni chakula cha mavipezi kwenye ufugaji wa samaki. Huchuja mwani na bakteria."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis ni rotifai yenye sindano ndefu ya lorika. Sindano huwafukuza wawindaji. Ni planktoni ya kawaida ya mabwawa."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta ni mfuko bila lorika, rotifai mwindaji. Humeza rotifai nyingine na siliati nzima."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus ni gastrotriki. Wenye mizani, hupambazuka sakafuni. Hula bakteria na mabaki ya viumbe."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata ni gastrotriki ndogo yenye mizani zinazofunikana. Hugeuka haraka sana akiwa mahali pake."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano ni mnyoo tambarare wa kimikroskopu. Ina misuli na macho ya kweli. Ni kielelezo cha uponyaji. Huwinda protisti ndogo."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops ni mnyoo mwembamba wenye silia. Hugawanyika kwa kuvuka kuwa mnyororo wa zoidi. Hula mabaki na wanyama wadogo."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare ni mnyoo tambarare anayela hidra na kuweka selu zao za sumu kwenye ngozi yake. Ni mnyororo wa zoidi."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense ni nemertea ya maji matamu. Mdomo-mrefu unarushwa kwa mwathirika. Ni mwindaji adimu mkubwa wa sakafu."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens ni plakozoa, miongoni mwa wanyama rahisi zaidi. Hupambazuka kama ganda na kumeng'enya chakula nje. Hakuna mdomo."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae ni chachu ya mkate. Inachipuka, hula sukari, hutoa CO2 na alkoholi. Katika bwawa hulisafisha mada za kikaboni zilizoyeyuka."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans ni chachu inayoweza kua kama nyuzi. Ni kimelea cha binadamu kinachotumia fursa. Katika mchezo ni uyoga wa mabaki."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo ni koga la mkate. Sporangia juu ya mashina; huenea haraka juu ya viumbe vilivyokufa. Haiwindi viumbe hai."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer ni koga jeusi la mkate. Stoloni na rizoidi zinaenea juu ya uso. Huvunja wanga."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum ni koga la brashi, chanzo cha penisilini. Braseli za konidia. Huambua mada za kikaboni na kuzuia bakteria za karibu."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger ni aspergiliusi mweusi. Vichwa vya spora vya duara. Ni mzalishaji wa asidi ya sitriki kwa viwanda. Ni saprotrofi."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis ni kitridi wa vyura. Zospora zenye flajela moja. Katika bwawa ni kielelezo cha uyoga wa maji."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus ni kitridi wa maji juu ya chavua na mwani. Sporangia za dhahabu; zospora huogelea kuelekea mahali pa kukaa."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus ni uyoga wa maji wenye miseli ya kweli. Hubadilisha diploidi na haploidi. Zospora zina flajela ya nyuma."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis ni fimbo ya udongo. Spora zinavumilia kuchemshwa. Huvunja protini; ni kielelezo cha Gram-chanya."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida ni fimbo ya kusafisha. Hata hula bidhaa za petroli. Flajela ya kusogea, ukuaji wa haraka juu ya mabaki."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor ni bakteria ya udongo yenye nyuzi. Hutoa harufu ya udongo (geosmini) na antibiotiki nyingi. Spora juu ya hyfai."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi huvunja selulosi. Ni fimbo ya njano juu ya mabaki ya mimea. Bila hiyo mwani maiti ungebaki muda mrefu zaidi."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus ni mpenzi wa joto kutoka vyanzo vya maji moto. Polimerasi ya Taq ni msingi wa PCR. Katika bwawa baridi inapumzika karibu kabisa."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans ni bingwa wa mnururisho. Huweka pamoja jenioma iliyovunjika kwa masaa. Ukuta mzito, selu zinakaa nne-nne."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Eukaryote ya uzazi wa jinsia ni kielelezo cha kufundisha uzazi wa jinsia. Jinsia mbili, muunganiko wa gameti; si mgawanyo rahisi wa selu mbili."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 ni myovirusi mkubwa unaoshambulia E. coli. Mkia hujikaza na kudunga DNA. Kwa nusu saa selu inapasuka na faji makumi kutoka nje."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda ni faji tulivu. Inaweza kujipachika kwenye kromosomu na kulala (lisogenia) au kufanya selu ipasuke mara moja (lisisi)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 ina mkia mfupi na unakili wa haraka sana. Ni mfumo unaopendwa katika biolojia sanifu."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 ni faji ya RNA yenye ganda la lipidi. Huambukiza Pseudomonas. Utando ni nadra kwa faji."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 ni faji ndogo ya RNA isiyo na mkia. Huunganisha pili za kiume za E. coli. Jenioma yake ilikuwa miongoni mwa jenioma za kwanza za RNA kusomwa."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "Ni kidudu cha neva cha bwawa, cha kubuni. Hushikilia eukaryota na kuvuruga tabia ya mwenyeji hadi mwenyeji kuwa mbeba."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Eukaryote ya uzazi wa jinsia ni kielelezo cha kufundisha uzazi wa jinsia. Jinsia mbili, muunganiko wa gameti; si mgawanyo rahisi wa selu mbili."
   }
 }

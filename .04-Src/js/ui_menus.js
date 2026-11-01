@@ -137,6 +137,7 @@ function updateMenuTexts(){
         poolN = Math.round(poolN * DIFF[difficulty].spawn);
     } catch(e){ poolN = 1600; }
     if(!poolN) poolN = 1600;
+    var el = document.getElementById('menuSub'); // v26: возвращено — выпадение в ee04bf6b ломало updateMenuTexts (ReferenceError: el)
     // v21 (критик 3) → v24 A3: число видов через igsNum (система цифр из реестра digits — bn ১০১, ar 101 и т.д.)
     if(el){
       var _n = (typeof SPECIES_DB!=='undefined' && SPECIES_DB.length) ? SPECIES_DB.length : 100;

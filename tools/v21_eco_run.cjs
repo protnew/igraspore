@@ -84,6 +84,12 @@ async function runSeed(browser, seed, minutes, speed, neg) {
   await p.evaluate("document.getElementById('startBtn').click()");
   await p.waitForFunction(`(function(){
     if (typeof state === 'undefined') return false;
+    // v26: интро-карточка вида (introO) ставит state='paused' до подтверждения — закрываем как игрок
+    var io = document.getElementById('introO');
+    if (io && io.offsetParent !== null) {
+      var ok = document.getElementById('introOk'); if (ok) { try { ok.click(); } catch(e){} }
+      else { try { io.className = 'ov'; } catch(e){} state = 'playing'; }
+    }
     var rc = document.getElementById('roleCardOk'); if (rc) { try { rc.click(); } catch(e){} }
     var skip = document.getElementById('tutSkip');
     if (skip && skip.offsetParent !== null) { try { skip.click(); } catch(e){} }

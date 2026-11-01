@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis — ядроосу жок цианобактерия. Жарык менен жашайт: мембраналарда кислороддук фотосинтез, хлоропласттары жок. Лабораторияда суутек алмашуунун модели."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis — жипче формасындагы бактерия. Айрым клеткалар гетероцистке айланып азот байлашат, коңшулары ошол убакта кант жасашат. Көлмөдө байланган азотту берет."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) — газ вакуолдору бар, спираль түрүндөгү клеткалар. Суу бетине жакын илинип турат, фотосинтез кылат жана жегиликтүү. Оюнда суу кабыгындагы чоң жашыл бурама."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme — былпылдак капсуладагы мончок тизмеги. Эркин же өсүмдүктөр менен симбиоздо жашайт. Колониясы жашыл мончоктордун тобундай көрүнөт."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica — сыргып жүрүүчү жипче. Капталынан капталга термелет жана кислород бөлбөй туруп фотосинтез жасай алат. Илге жана суу кабыгына мүнөздүү."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa — былпылдак колония, көбүнчө уулуу (микроцистин). Суунун гүлдөшүн пайда кылат. Оюнда — жашыл тоголок колония, тобокелдүү олжа."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa — түстүү кабыкчалардагы кош клеткалар. Таштарда жана топуракта жашайт, ультрафиолетке чыдамдуу. Көлмөдө — кабыктагы кичинекей кош кокктор."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula — жоон цианобактерия жипчеси. Дүүлүктүрүүчү ууларды бөлүп чыгара алат. Жылуу жээктерге жакын катмарларды пайда кылат."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii — эки камчысы жана көз такасы бар жашыл клетка. Жарыкка карай сүзөт. Балырлар генетикасынын классикалык модели."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris — кыймылсыз жашыл шар. Тез бөлүнөт жана белокко бай. Кичинекей жегичтер үчүн азык жана космостук тамактын изилдөө объектиси."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator — миңдеген клеткадан турган көңдөй шар. Ичинде жаңы колониялар бышып сыртка чыгышат. Оюнда — чоң жашыл колония."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis — миксотроф: хлоропласттары да, тамактануу жөндөмү да бар. Кызыл көз такасы жарыкты көздөйт. Күндүз жашыл; караңгыда тамактанууга өтөт."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda — көбүнчө учтарында тикендери бар төрт клетка катар. Тикендер жутууну кыйындатат. Сүзбөйт — агын менен калкыйт."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis — кыймылдуу жашыл клетка; стрессте кызыл түскө кирет (астаксантин) жана жоон кабык өстүрөт. Кызыл цисталар кургакчылыкта да аман калат."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina — катуу кабыгы жок, абдан туздуу сууда жашайт. Бета-каротин топтойт жана саргыч көрүнөт. Эки камчысы бар."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata — жалпак жылдыз сымал десмидия. Күзгүдөй эки бөлүгү терең кесиктердүү. Кыймылсыз; кычкыл саз суусунда фотосинтез жүргүзөт."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula — кайык формасындагы, кремнезем панелдүү диатомея. Рапа жарыгы боюнча субстратта сыргып жүрөт. Өлгөндөн кийин да кабыгы калат."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis — чоң пеннаттуу диатомея. Симметриялуу оюмдагы кремнезем кабыгы бар. Түбүндө жай сыргыйт."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana — тегерек центрдүү диатомея. Диск катары калкыйт; кабыгы эки капкакчадан турат. Типтүү планктон."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare — зигзаг түрүндө чырмалышкан диатомея. Колония суу катмарындагы каршылыкты күчөтөт."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum — кызгылт спираль. Кислородсуз фотосинтез жана органика менен азыктанат. Кызыл түсү бактериохлорофиллден келет."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum — кызгылт күкүрт бактериясы. Суутек сульфидин кычкылдантып, күкүрт гранулаларын топтойт. Кислород/күкүрт чегинде жашайт."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum — бир клеткалуу кызыл балыр. Фикоэритрин кан кызыл түс берет. Былпылдак кабыгы бар, камчысы жок."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus — Жер дүйнөсүндөгү эң кичинекей жана эң көп таралган фотосинтездик клетка. 1980-жылдары ачылган. Океанды азыктандырат."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis — экстремофил: чөл, таш, радиация. Жерден тышкаркы жашоого талапкер. Көлмөдө — жай өсүүчү кокк колониясы."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus — майда бактерия жырткычы. Башка клеткага бурап кирип, ээси жарылганга чейин көбөйөт."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus олжонун сыртынан отуруп, ичине кирбей туруп ичиндегисин соруп алат. Бактерия-вампир."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter олжо бактериянын ичине кирип, ичинен жейт. Сейрек кездешүүчү клетка ичиндеги аңчы."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus — коомдук бактерия. Топ болуп олжону курчап, ферменттерди бөлүп чыгарат. Ачка калганда мөмө денечесин пайда кылат."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii — деңиздик Bdellovibrio тууганы. Грам-терис бактерияларга кол салат да, олжонун периплазмасында жашайт."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax — тузга чыдамдуу бактерия аңчысы. Ыкмасы окшош: кабыкты тешип, ичинде өсөт."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii — дагы бир BALO жырткычы. Тез, үтүр формасындагы, камчылуу; ири таякчаларга аңчылык кылат."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula — кичинекей гетеротроф камчылуу. Детриттин үстүндө бактерияларды кармайт."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo — тамча формасындагы камчылуу. Бир камчысы бар; бактерия кабатында аңчылык кылат."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans — темир-марганец сабагындагы колония. Клеткалар тобу болуп отуруп, бактерияларды кармашат."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium — түссүз криптофит. Эки камчысы бар; эриген органика жана майда бактериялар менен азыктанат, хлоропласттары жок."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda — узун куйруктуу амёба-камчылуу. Сойлойт жана жалганч буттары менен бактерияларды жутат."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa — топурак камчылуусу. Узундугу ар башка эки камчысы бар; топурактагы негизги бактерия жегич."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans — кинетопластида. Арткы камчысы менен жабышып, ортунда «бийлеп», бактерияларды кармап алат."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini — Bodo тууганы. Эркин сүзүп, алдыңкы камчысы менен олжого урат."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei — уйку оорусун козгогон кан паразити. Толкундуу мембранасы жана бир камчысы бар. Көлмөдө — ичке аңчы модели."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani — клетка ичинде жашоочу адам паразити. Курт-кумурскада камчылуу, макрофагдын ичинде камчысыз."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis — хоанофлагеллат, жаныбарлардын тууганы. Микровилла жагасы бактерияларды сүзөт."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta — лорикасында отурган хоанофлагеллат. Розетка пайда кылышы мүмкүн. Суу агымын сүзөт."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis — жалпы сабакта отурган хоанофлагеллат колониясы. Бир сабакта бир нече сүзгүч."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum — классикалык табыт. Миңдеген кылчыктары, ооз оюгу, жыйрылуучу вакуолдору бар. Бактерияларды сүзөт."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria — зоохлорелла симбионттору бар табыт. Ичи жашыл: күндүз балырлардан кант, түнкүсүн сүзүү."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus — миллиметрге чейин жетүүчү көк керней. Воронка сыяктуу кеңейип, кылчыктары менен агым түрөт. Сүзө да, отура да алат."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus — көк стентордун тууганы, көбүнчө зоохлореллаларды алып жүрөт. Формасы кернейден шарга өзгөрөт."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula — жыйрылуучу сабактагы коңгуроо. Сабак бир заматта спиральга түрүлөт. Клетканын өзү сүзүп кетпейт."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma — кичинекей коңгуроо. Ошол эле пружина-сабак, ооз аянты тар. Көбүнчө детритте болот."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum — челек формасындагы табыт аңчысы. Токсицисттерин атып, олжону бүт бойдон жутат, олжо чоң болгон менен да."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum — өтө узун сигара. Секунданын үлүшүндө бир нече эсе кыскарат. Кылчыктары спираль боюнча жайгашкан."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum — кызгылт инфузория. Блефаризмин пигменти жарыкка сезгич. Сүзөт жана кичинекей клеткаларга кол салышы мүмкүн."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella циррустары менен бутадай басат. Жалпак, тез бурулат. Беттерден бактерияларды кырып алат."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata — түбүндө «чуркаган» гипотрих. Чоң циррустары, ачык билинген оозу бар. Кичинекей инфузориялардын жырткычы."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax — геном модели: эки ядросу жана татаал ДНК кайра жазуусу бар. Циррустар менен басат, бактерияларды жана кичинекей протисттерди жейт."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila — лабораториялык инфузория. Төрт ооз мембранелласы, тез бөлүнөт. Теломералардын жана кылчыктардын модели."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus — аки таш пластинкалуу, тикендүү челек. Өлүк жегич жана жырткыч: жаралангандарды тиштейт."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella — «хоботунда» токсицисттери бар жалпак жырткыч. Олжону шал кылып, соруп алат."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser — уу экструсомдору бар узун моюндуу. Моюн менен уруп, анан жутат. Ири орто деңгээлдеги аңчы."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo — өз ортунда айланма: экватордук кылчык куру клетканы ордуна айлантат. Бактерияларды сүзөт."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula — бутактанган коңгуроолор колониясы. Жалпы жыйрылуучу сабак бүт даракты бир эле убакта тартып коёт."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata — пружина сабагы жок отурган перитрих. Оозун капкак жаап турат. Сүзөт, бирок сүзүп кетпейт."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus — классикалык амёба. Жалганч буттары олжону агызып курчап алат. Түркүн формасы жок, кылчыктары да жок."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris — катуу купол кабыктуу амёба. Жалганч буттары тешиктен чыгып турат. Өсүмдүктөрдө сойлойт."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga — өзү чаптаган кум данчаларынан турган кабыктуу. Илде жашайт."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata — кремнезем чыныктарынан жасалган кабыктуу. Ичке жип сымал жалганч буттары бар. Кичинекей бактерия жырткычы."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris — уурдалган чыныктардан куралган бөтөлкө формасындагы кабык. Токой жана саз сууларында жашайт."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata — тикендүү диск кабык. Тешиги бир жагына жылышкан. Детритте сойлойт."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol — гелиозоа: ичке нурчалары ар тарапка тарайт. Олжа нурчаларга жабышып, ичине тартылат."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni — ири, көп ядролуу гелиозоа. Нурчалары ошол эле, клеткасы эсе чоң. Инфузорияларды жана ротифераларды жейт."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida — чыныктуу гелиозоа. Нурчалары кремнезем ийнелерди көтөрүп жүрөт. Планктонго кол салуучу аңчы."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria — кургоодон аман кала турган ротифера. Коронасы айланып, азыкты оозуна тартат. Чыныгы көп клеткалуу жаныбар."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola — кызгылт бделлоид ротифера. Сүлөкөндөй сойлойт, ошондой эле сүзөт. Ургаачылары гана бар; эркектери жок."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis — планктондук лорикалуу ротифера. Аквакультурада жаш балыктарга тоют. Балырларды жана бактерияларды сүзөт."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis — лорикасында узун тикени бар ротифера. Тикени жырткычтарды тосуп турат. Көлмө планктонунда жыш кездешет."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta — лорикасыз байламча, жырткыч ротифера. Башка ротифераларды жана инфузорияларды бүт бойдон жутат."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus — гастротрих. Чыныктар менен капталган, түбүндө сойлойт. Бактерияларды жана детритти жейт."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata — кабатташкан чыныктары бар кичинекей гастротрих. Өз ортунда абдан тез бурулат."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano — микроскопиялык жалпак курт. Чыныгы булчуңдары жана көздөрү бар. Регенерация модели. Кичинекей протисттерге аңчылык кылат."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops — ичке кылчыктүү курт. Кесилиши боюнча бөлүнүп, зооиддер тизмегин пайда кылат. Детрит жана кичинекей жаныбарлардын жырткычы."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare — гидраларды жеп, алардын уу клеткаларын өз терисине жайгаштырган жалпак курт. Зооиддер тизмеги."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense — тузсуз суу немертинасы. Узун хоботу олжого атылат. Сейрек кездешүүчү, түбүндөгү ири аңчы."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens — плацозоя, эң жөнөкөй жаныбарлардын бири. Катман болуп сойлойт жана азыгын сыртында сиңирет. Оозу жок."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae — нан ачыткысы. Бүртүкчөлөп көбөйөт, кант жейт, CO2 жана спирт бөлүп чыгарат. Көлмөдө эриген органиканы тазалайт."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans — жипче түрүндө өсө ала турган ачыткы. Шарттуу оору козгогуч. Оюнда — детрит козу карыны."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo — нан көгөрүүсү. Сабактарында спорангийлерди көтөрөт, өлгөн нерселердин үстүндө тез өсөт. Тирүүлөргө аңчылык кылбайт."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer — кара нан көгөрүүсү. Столондору жана ризоиддери субстратка жайылат. Крахмалды ажыратат."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum — калемче формасындагы көгөрүү, пенициллиндин булагы. Конидия калемчелери. Органиканы ажыратат жана жакындагы бактерияларды бастырат."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger — кара аспергилл. Тоголок спора баштары. Өнөр жайда лимон кислотасын өндүрүүчү. Сапротроф."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis — бакалардын хитридиомицети. Бир камчылуу зооспоралары бар. Көлмөдө — суу козу карынынын модели."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus — гүл чаңында жана балырларда жашоочу суу хитриди. Алтын түстөгү спорангийлери; зооспоралары субстратка сүзүп барышат."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus — чыныгы мицелийүү суу козу карыны. Диплоид жана гаплоид абалдары алмашып турат. Зооспораларынын арткы камчысы бар."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis — топурактагы таякча. Споралары кайноодон да аман калат. Белокту ажыратат; грам-позитивдүү модель."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida — тазалоочу таякча. Нефть продукттарын да жейт. Камчысы менен кыймылдайт, детритте тез өсөт."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor — жипчелүү топурак бактериясы. Топурак жытын (геосмин) жана көп антибиотиктерди пайда кылат. Гифаларында споралары болот."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi клетчатканы ажыратат. Өсүмдүк детритиндеги сары таякча. Аныссыз өлгөн балырлар андан узак жаткан болмак."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus — ысык булактардагы термофил. Taq полимераза — ПЦРдин негизи. Суук көлмөдө дээрлик уйку абалында."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans — радиация боюнча чемпион. Талкаланган геномду бир нече сааттын ичинде кайра чогултат. Жоон кабыгы, клетка тетрадалары бар."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote — жыныстык көбөйүүнүн окуу модели. Эки жыныс, гаметалардын кошулушу; жөнөкөй экиге бөлүнүү эмес."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 — E. coli'ге чабуулдаган ири миковирус. Куйругу жыйрылып, ДНКны киргизет. Жарым сааттын ичинде клетка жарылып, ондогон фаг сыртка чыгат."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda — шарттуу фаг: хромосомага кирип уктай алат (лизогения) же клетканы дароо жара алат (лизис)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 кыска куйруктуу жана абдан тез көбөйөт. Синтетикалык биологиядагы сүйүктүү система."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 — липид кабыгуусу бар РНК фагы. Pseudomonas'ты жугузат. Фаг үчүн сейрек кездешүүчү мембрана."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 — куйругу жок, өтө майда РНК фагы. Эркек E. coli клеткасынын пилдисине жабышат. Геному алгач окулган РНК геномдорунун бири."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "Ойдон чыгарылган көлмө нейро-паразити. Эукариотторго жабышып алып, ээси алып жүрүүчүгө айланганча анын жүрүм-турумун бузат."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote — жыныстык көбөйүүнүн окуу модели. Эки жыныс, гаметалардын кошулушу; жөнөкөй экиге бөлүнүү эмес."
   }
 }

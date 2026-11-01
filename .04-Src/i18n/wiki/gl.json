@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis é unha cianobacteria sen núcleo. Vive da luz: fotosíntese oxixénica nas membranas, sen cloroplastos. Modelo de laboratorio do metabolismo do hidróxeno."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis é un filamento. Algunhas células convértense en heterocistos e fixan nitróxeno mentres as veciñas fan azucre. No estanque achega nitróxeno fixado."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) é unha espiral de células con vesículas de gas. Pende preto da superficie, fotosintetiza e é comestible. No xogo é un gran parafuso verde na película da auga."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme é unha cadea de contas dentro dunha cápsula de mucilaxe. Vive libre ou en simbiose con plantas. A colonia parece un acio de contas verdes."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica é un filamento deslizante. Oscila dun lado ao outro e pode fotosintetizar sen liberar osíxeno. Típico do lodo e da película superficial."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa é unha colonia mucosa, a miúdo tóxica (microcistina). Provoca a floración da auga. No xogo é unha bola verde de colonia, unha presa arriscada."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa son células por parellas dentro de vaíñas coloreadas. Vive en rochas e solos e tolera os raios UV. No estanque son cocos parellos pequenos con vaíña."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula é un filamento cianobacteriano groso. Pode liberar toxinas irritantes. Forma tapices preto das beiras cálidas."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii é unha célula verde con dous flaxelos e un estigma. Nada cara á luz. Modelo clásico de xenética de algas."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris é unha bola verde inmóbil. Divídese rápido e é rica en proteínas. Comida para pequenos comensais e candidata a comida espacial."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator é unha esfera oca de milleiros de células. As colonias fillas maduran dentro e saen. No xogo é unha gran colonia verde."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis é un mixótrofo: cloroplastos máis capacidade de comer. Un estigma vermello segue a luz. Verde de día; na escuridade pasa a comer."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda adoita ser catro células en fila con espiñas terminais. As espiñas fan máis difícil tragarlla. Non nada: deriva."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis é unha célula verde móbil; con estrés vólvese vermella (astaxantina) e crea unha parede groseira. Os quistes vermellos sobreviven á seca."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina non ten parede ríxida e vive en auga moi salgada. Armacena beta-caroteno e parece laranxa. Dous flaxelos."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata é unha desmidia estrela plana. Dúas metades en espello con cortes profundos. Inmóbil; fotosintetiza en auga ácida de turbeira."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula é unha diatomea en forma de barca cunha válvula de sílice. Desliza polo substrato seguindo unha fendedura, a raphe. A cuncha queda tras a morte."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis é unha diatomea pennada grande. Cuncha de sílice cun debuxo simétrico. Desliza amodo polo fondo."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana é unha diatomea céntrica circular. Flota como un disco; a cuncha son dúas tapas. Plancto típico."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare é unha diatomea que se engancha en ziga-zaga. A colonia aumenta a resistencia na columna de auga."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum é unha espiral púrpura. Fotosíntese anoxixénica máis orgánicos. A cor vermella vén da bacterioclorofila."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum é unha bacteria púrpura do xofre. Oxida o sulfuro de hidróxeno e armacena gránulos de xofre. Vive no límite osíxeno/xofre."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum é unha alga vermella unicelular. A ficoeritrina dá unha cor vermella sangue. Manto de mucilaxe, sen flaxelos."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus é a célula fotosintética máis pequena e abundante da Terra. Descuberto nos anos oitenta. Alimenta o océano."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis é un extremófilo: deserto, rocha, radiación. Candidato a vida fóra da Terra. No estanque é unha colonia lenta de cocos."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus é un pequeno depredador bacteriano. Enróscase noutra célula e multiplícase ata que o hospedador rebenta."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus séntase sobre a presa por fóra e chupa o contido sen entrar. Un vampiro bacteriano."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter entra nunha bacteria presa e cómea desde dentro. Un cazador intracelular raro."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus é unha bacteria social. En grupo arrodea a presa e libera encimas. Cando pasa fame forma un corpo frutífero."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii é un parente mariño de Bdellovibrio. Ataca gramnegativos e vive no periplasma da presa."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax é un cazador bacteriano tolerante ao sal. O mesmo truco: furar a parede e medrar dentro."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii é outro depredador BALO. Un flaxelado rápido con forma de coma que caza bastóns grandes."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula é un pequeno flaxelado heterótrofo. Apaña bacterias na superficie do detrito."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo é un flaxelado con forma de gota. Un flaxelo; caza na película bacteriana."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans é unha colonia sobre un pedúnculo de ferro-manganeso. As células forman un feixe e capturan bacterias."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium é un criptófito incoloro. Dous flaxelos; come orgánicos disoltos e bacterias diminutas, sen cloroplastos."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda é un ameboflaxelado con cola longa. Arrástrase e engole bacterias con pseudópodos."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa é un flaxelado do solo. Dous flaxelos de lonxitude distinta; un gran comedor de bacterias no solo."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans é un cinetoplástido. 'Baila' no sitio, suxeitado polo flaxelo traseiro, e arrebata bacterias."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini é un parente de Bodo. Nada libremente e golpea a presa co flaxelo anterior."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei é un parasito do sangue que causa a doenza do sono. Membrana ondulante e un flaxelo. No estanque é un modelo de cazador esvelto."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani é un parasito humano intracelular. Flaxelado no insecto, sen flaxelo dentro dun macrófago."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis é un coanoflaxelado, parente dos animais. Un colar de microvilosidades filtra bacterias."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta é un coanoflaxelado sésil nunha lórica. Pode formar unha roseta. Filtra unha corrente de auga."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis é unha colonia de coanoflaxelados sobre un pedúnculo común. Varios filtros nun talo."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum é o zapato clásico. Miles de cilios, un suco oral, vacúolos contráctiles. Filtra bacterias."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria é un zapato con simbiontes zoooclorelas. Verde por dentro: azucre das algas de día, filtrando de noite."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus é unha trompeta azul de ata un milímetro. Ábrese en funil e move unha corrente cos cilios. Pode nadar ou quedarse quedo."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus é un parente do estentor azul, a miúdo con zoooclorelas. Cambia de forma de trompeta a bola."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula é unha campá nun pedúnculo contráctil. O pedúnculo énrolase en espiral nun instante. A célula mesma non nada lonxe."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma é unha campá pequena. O mesmo pedúnculo-mola, un campo oral máis estreito. A miúdo sobre detrito."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum é un cazador barril de zapatos. Dispara toxicistes e traga a presa enteira, aínda que sexa maior."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum é un cigarro moi longo. Contráese varias veces nunha fracción de segundo. Os cilios corren en espiral."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum é un ciliado rosado. O pigmento blefarismina é sensible á luz. Filtra e pode atacar células máis pequenas."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella camiña sobre cirros como se fosen patas. Plano, con xiros rápidos. Raspa bacterias das superficies."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata é un hipotrico que 'corre' polo fondo. Cirros grandes, unha boca ben visible. Depredador de ciliados pequenos."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax é un modelo de xenoma: dous núcleos e reescritura complexa do ADN. Camiña sobre cirros e come bacterias e pequenos protistas."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila é un ciliado de laboratorio. Catro membranelas orais, división rápida. Modelo de telómeros e cilios."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus é un barril de placas calcarias con espiñas. Carroñeiro e depredador: morde os feridos."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella é un depredador plano con toxicistes na 'trompa'. Paraliza a presa e chúpaa."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser ten un colo longo con extrusomas velenosos. Golpea co colo e despois traga. Un gran cazador de nivel medio."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo é unha buxaina: un cinto ciliar ecuatorial fai xirar a célula no seu sitio. Filtra bacterias."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula é unha colonia ramificada de campás. Un pedúnculo contráctil común move toda a árbore dun golpe."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata é un peritrico sésil sen pedúnculo de mola. Unha tapa cobre a boca. Filtra e non nada lonxe."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus é a ameba clásica. Os pseudópodos flúen arredor da presa. Sen forma fixa, sen cilios."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris é unha ameba testada cunha cúpula ríxida. Os pseudópodos saen pola abertura. Arrástrase polas plantas."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga ten unha cuncha de grans de area que a propia ameba pega. Vive no lodo."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata ten unha cuncha de escamas de sílice. Pseudópodos filosos finos. Un pequeno depredador de bacterias."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris é unha cuncha en forma de botella feita de escamas roubadas. Augas de bosque e turbeira."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata é unha cuncha disco con espiñas. A abertura está desprazada. Arrástrase polo detrito."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol é un helozoo: axopodios finos irradan por todas partes. A presa pégase aos raios e é atraída cara dentro."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni é un helozoo grande multinucleado. Os mesmos raios, a célula moito maior. Come ciliados e rotíferos."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida é un helozoo con escamas. Os raios levan agullas de sílice. Un cazador de plancto á espreita."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria é un rotífero que sobrevive á desecación. Unha coroa fai xirar a comida cara á boca. Un animal verdadeiramente pluricelular."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola é un rotífero bdeloide rosado. Arrástrase coma unha sambesuga e tamén nada. Só femias; sen machos."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis é un rotífero planctónico con lórica. Comida de alevines en acuicultura. Filtra algas e bacterias."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis é un rotífero cunha espiña longa na lórica. A espiña disuade depredadores. Plancto de estanque común."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta é un saco sen lórica, un rotífero depredador. Traga enteiros outros rotíferos e ciliados."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus é un gastrotrico. Cuberto de escamas, arrástrase polo fondo. Come bacterias e detrito."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata é un gastrotrico pequeno con escamas superpostas. Xiros no sitio moi rápidos."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano é un verme plano microscópico. Músculos e ollos reais. Un modelo de rexeneración. Caza pequenos protistas."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops é un verme fino ciliado. Divídese transversalmente nunha cadea de zooides. Depredador de detrito e animais pequenos."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare é un verme plano que come hidras e incrusta os seus nematocistos na propia pel. Unha cadea de zooides."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense é un nemertino de auga doce. Unha trompa longa dispara contra a presa. Un cazador grande do fondo, raro."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens é un placozoo, un dos animais máis simples. Arrástrase coma unha folla e dixeire a comida fóra. Sen boca."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae é o lévedo do pan. Reprodúcese por brotes, come azucre, libera CO2 e alcol. No estanque limpa orgánicos disoltos."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans é un lévedo que pode medrar como filamentos. Un patóxeno humano oportunista. No xogo é un fungo do detrito."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo é o mofo do pan. Esporanxios en pedúnculos, crecemento rápido sobre o morto. Non caza o vivo."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer é o mofo negro do pan. Estolóns e rizoides esténdense polo substrato. Descompón amidón."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum é un mofo en brocha, a fonte da penicilina. Brochas de conidios. Descompón orgánicos e reprime bacterias próximas."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger é o asperxilo negro. Cabezas esporais esféricas. Produtor industrial de ácido cítrico. Un saprófito."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis é un quitrido de ras. Zoósporas cun flaxelo. No estanque é un modelo de fungo acuático."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus é un quitrido acuático sobre pole e algas. Esporanxios dourados; as zoósporas nadan cara ao substrato."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus é un fungo acuático con micelio verdadeiro. Alterna diploide e haploide. As zoósporas teñen un flaxelo traseiro."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis é un bastón do solo. As esporas sobreviven á fervura. Descompón proteínas; modelo grampositivo."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida é un bastón limpador. Incluso come produtos do petróleo. Flaxelo móbil, crecemento rápido no detrito."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor é unha bacteria filamentosa do solo. Fai o cheiro da terra (xeosmina) e moitos antibióticos. Esporas nas hifas."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi descompón celulosa. Un bastón amarelo no detrito vexetal. Sen ela as algas mortas durarían máis."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus é un termófilo de fontes termais. A polimerase Taq é a base da PCR. Nun estanque frío está case dormente."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans é o campión da radiación. Volve montar un xenoma esnaquizado en horas. Parede groseira, tétradas celulares."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote é un modelo didáctico de reprodución sexual. Dous sexos, fusión de gametos, non unha simple división binaria."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 é un gran miovirus de E. coli. A cola contráese e inxecta ADN. En media hora a célula rebenta e saen decenas de fagos."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda é un fago temperado. Pode inserirse no cromosoma e durmir (lisoxenia) ou rachar a célula de inmediato (lise)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 ten a cola curta e unha replicación moi rápida. Un sistema apreciado en bioloxía sintética."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 é un fago de ARN con envoltura lipídica. Infecta Pseudomonas. Unha membrana rara para un fago."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 é un fago de ARN minúsculo sen cola. Únese aos pilus de E. coli macho. O seu xenoma foi un dos primeiros xenomas de ARN lidos."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "Un neuro-parasito de estanque de ficción. Agárrase aos eucariotas e altera o comportamento do hospedador ata que se torna portador."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote é un modelo didáctico de reprodución sexual. Dous sexos, fusión de gametos, non unha simple división binaria."
   }
 }

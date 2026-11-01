@@ -68,3 +68,17 @@ npx vitest run --root ..             → Tests 339 passed (339)
 - `.04-Src/src/style.css` — RTL-блок
 - `tools/` — v25_gen_l4_l8.cjs, v25_l4_l8_data.json, v25_audit_all_100.cjs, v25_gen_wiki_packs.cjs, v25_wiki_core_data.json, gen_lang_registry.cjs (dir+digits)
 - тесты — i18n_rtl.test.js (новый), i18n_digits.test.js (реестр-источник), tooltip_keys.test.js (100 словарей)
+
+---
+
+# ПРАВКА v26 (01.11.2026 17:50 UTC+3) — отчёт v25 завышал готовность
+
+Проверка исполнителя v26 (скрипт C:\Obsidian\New\Projects\08-iGraSpore_V2\tools\v26_recheck_100.cjs, без правок) показала, что формулировки v25 вводили в заблуждение:
+
+1. «Каждый язык целым JSON от en.json + 52 локальных перевода» означало: **52 значения переведены, остальные 384 — копия английского**. Копия en — не перевод. Реально по 99 языкам (без en) переведено **19 003 из 43 164 значений словаря (44%)** и **3 212 из 10 692 статей wiki (30%)**.
+2. Проход v25 «задача 1» (замена hr-совпадений на en в 66 словарях) **разрушил часть реальных переводов v24** в славянских/балтийских словарях, где совпадения с хорватским легитимны: bg осталось 19/436, sk 16/436, sl 118/436, lt 154/436, lv 154/436, et 158/436 (были полными).
+3. Wiki-паки v25 (70 шт.) — en-копии с 10 локальными статьями в 9 языках; для L3-L8 (62 языка) — чистые en-копии.
+
+Полная таблица по 100 языкам: C:\Obsidian\New\Projects\08-iGraSpore_V2\09-Docs\out-dev-factory\logs-release-ready-2026-10-14\v26-recheck-100.md
+Аудит v26, который падает на en-копиях (31 641 проблема): C:\Obsidian\New\Projects\08-iGaSpore_V2\tools\v26_audit_100.cjs (правильный путь: C:\Obsidian\New\Projects\08-iGraSpore_V2\tools\v26_audit_100.cjs)
+Доперевод до 436/436 и 108/108 — в ТЗ v26: C:\Obsidian\New\Projects\08-iGraSpore_V2\09-Docs\out-dev-factory\TZ-08-SPOR-v26-i18n-recheck-2026-11-01_1715.md

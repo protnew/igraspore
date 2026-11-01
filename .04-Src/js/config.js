@@ -2,6 +2,7 @@ function hslToHex(h,s,l){l/=100;var a=s*Math.min(l,1-l)/100;var f=function(n){va
 "use strict";
 var LANGS={'en':'ENG','ru':'Рус','pt-BR':'POR','es':'ESP','hi':'हिन','id':'BAH IN','tr':'TÜR','de':'DEU','fr':'FRA','ja':'日本語','vi':'TIẾ VI','ko':'한국어','th':'ไทย','fil':'FIL','it':'ITA','pl':'POL','uk':'Укр','zh-TW':'繁體中','ms':'BAH ME','bn':'বাং'}; // GEN:A1 — не править руками, генерирует tools/gen_lang_registry.cjs
 var LANG_NAME={'en':'English','ru':'Русский','pt-BR':'Português (Brasil)','es':'Español','hi':'हिन्दी','id':'Bahasa Indonesia','tr':'Türkçe','de':'Deutsch','fr':'Français','ja':'日本語','vi':'Tiếng Việt','ko':'한국어','th':'ไทย','fil':'Filipino','it':'Italiano','pl':'Polski','uk':'Українська','zh-TW':'繁體中文','ms':'Bahasa Melayu','bn':'বাংলা'}; // GEN:A1
+var __IGS_DIGITS={'en':'latn','ru':'latn','pt-BR':'latn','es':'latn','hi':'latn','id':'latn','tr':'latn','de':'latn','fr':'latn','ja':'latn','vi':'latn','ko':'latn','th':'latn','fil':'latn','it':'latn','pl':'latn','uk':'latn','zh-TW':'latn','ms':'latn','bn':'beng','nl':'latn','sv':'latn','ro':'latn','el':'latn','hu':'latn','cs':'latn','da':'latn','fi':'latn','zh-CN':'latn','no':'latn','pt-PT':'latn','es-419':'latn','hr':'latn','sr':'latn','lt':'latn','lv':'latn','et':'latn','sl':'latn','ta':'latn','te':'latn','mr':'latn','gu':'latn','kn':'latn','ml':'latn','ne':'latn','si':'latn','my':'latn','ar':'latn','fa':'latn','ur':'latn','he':'latn','sw':'latn','kk':'latn','be':'latn','az':'latn','ky':'latn','mn':'latn','ca':'latn','gl':'latn','eu':'latn','sq':'latn','mk':'latn','is':'latn','af':'latn','zu':'latn','km':'khmr','lo':'laoo','am':'latn','hy':'latn','ka':'latn','uz':'latn','tg':'latn','ps':'latn','ckb':'latn','sd':'latn','as':'beng','or':'orya','bs':'latn','mt':'latn','ha':'latn','yo':'latn','ig':'latn','so':'latn','rw':'latn','sn':'latn','ga':'latn','cy':'latn','ht':'latn','qu':'latn','lb':'latn','fo':'latn','jv':'latn','su':'latn','mi':'latn','bo':'tibt','dz':'tibt','ti':'latn','bg':'latn','sk':'latn','pa':'latn'}; // GEN:A1
 var curLang='ru',T={};
 
 // v20.7: строки быстрого старта/эконом-режима — inline (es/tr/fil — английский фоллбек по D11,
@@ -71,7 +72,7 @@ function igsNum(n, digits){
   var lang=(typeof curLang==='string'&&curLang)?curLang:'ru';
   var sys='latn';
   try{
-    var sysDef=new Intl.NumberFormat(lang).resolvedOptions().numberingSystem||'latn';
+    var sysDef=(typeof __IGS_DIGITS==='object'&&__IGS_DIGITS&&__IGS_DIGITS[lang])||new Intl.NumberFormat(lang).resolvedOptions().numberingSystem||'latn';
     if(lang==='ar') sysDef='latn'; // Р7: единственное переопределение
     sys=sysDef;
   }catch(e){}

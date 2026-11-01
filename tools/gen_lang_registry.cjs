@@ -27,18 +27,43 @@ function replaceLine(file, pattern, newLine) {
   fs.writeFileSync(p, s);
 }
 
+// v25: как replaceLine, но при отсутствии строки — вставка после afterRe (идемпотентный бутстрап)
+function ensureLineAfter(file, pattern, newLine, afterRe) {
+  const p = path.join(ROOT, file);
+  let s = fs.readFileSync(p, 'utf8');
+  if (pattern.test(s)) { s = s.replace(pattern, newLine); }
+  else {
+    const m = s.match(afterRe);
+    if (!m) { console.error('НЕ НАЙДЕНО якорь в ' + file + ': ' + afterRe.source); process.exitCode = 1; return; }
+    s = s.replace(m[0], m[0] + '\n' + newLine);
+  }
+  fs.writeFileSync(p, s);
+}
+
 // 1. config.js: LANGS и LANG_NAME
 const LANGS = 'var LANGS={' + ON.map(l => q(l.code) + ':' + q(shortTag(l))).join(',') + '}; // GEN:A1 — не править руками, генерирует tools/gen_lang_registry.cjs';
 const LANG_NAME = 'var LANG_NAME={' + ON.map(l => q(l.code) + ':' + q(l.native)).join(',') + '}; // GEN:A1';
+// v25: карта систем цифр — ВСЕ 100 из реестра (детерминизм: ICU-версии сред различаются, реестр — единственный источник)
+const DIGITS = 'var __IGS_DIGITS={' + REG.map(l => q(l.code) + ':' + q(l.digits || 'latn')).join(',') + '}; // GEN:A1';
 replaceLine('.04-Src/js/config.js', /^var LANGS=\{.*$/m, LANGS);
 replaceLine('.04-Src/js/config.js', /^var LANG_NAME=\{.*$/m, LANG_NAME);
+ensureLineAfter('.04-Src/js/config.js', /^var __IGS_DIGITS=\{.*$/m, DIGITS, /^var LANG_NAME=\{.*$/m);
 
 // 2. i18n_detect.js: IGS_ENABLED (обе копии: window.= и фолбэк) + applyLangFont карта
 const EN = '  window.IGS_ENABLED = window.IGS_ENABLED || {' + ON.map(l => q(l.code) + ': 1').join(', ') + ' }; // GEN:A1';
 replaceLine('.04-Src/js/i18n_detect.js', /^[ \t]*window\.IGS_ENABLED = window\.IGS_ENABLED \|\| \{.*$/m, EN);
 const FONTMAP = {};
 for (const l of ON) if (l.font && l.font !== 'system') FONTMAP[l.code] = l.font;
-const fontLine = "var __IGS_FONTS = " + JSON.stringify(FONTMAP) + "; // GEN:A1\n  var face = __IGS_FONTS[code] || '';\n  var sample = (face && (LANG_NAME[code] || '')) ? (LANG_NAME[code] + '').trim().charAt(0) : '';";
+// v25 A4: карта направлений — ВСЕ 100 (не только enabled), чтобы включение RTL-языка не требовало правок кода
+const DIRMAP = {};
+for (const l of REG) if (l.dir === 'rtl') DIRMAP[l.code] = 'rtl';
+const fontLine = "var __IGS_FONTS = " + JSON.stringify(FONTMAP) + "; // GEN:A1\n" +
+  "  var __IGS_DIR = " + JSON.stringify(DIRMAP) + "; // GEN:A1 (v25 A4)\n" +
+  "  var face = __IGS_FONTS[code] || '';\n" +
+  "  var sample = (face && (LANG_NAME[code] || '')) ? (LANG_NAME[code] + '').trim().charAt(0) : '';\n" +
+  "  var _dir = __IGS_DIR[code] || 'ltr';\n" +
+  "  document.documentElement.setAttribute('dir', _dir);\n" +
+  "  if (document.body) document.body.classList.toggle('igs-rtl', _dir === 'rtl');";
 // applyLangFont-карта: строковый патч тела функции (регексп на \u-эскейпах нестабилен)
 {
   const p = path.join(ROOT, '.04-Src/js/i18n_detect.js');

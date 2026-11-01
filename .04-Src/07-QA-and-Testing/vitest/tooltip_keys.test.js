@@ -28,9 +28,9 @@ describe('HUD tooltips', () => {
     }
     expect(bad).toEqual([]);
   });
-  it('девять ключей подсказок есть в 20 словарях', () => {
+  it('девять ключей подсказок есть во всех 100 словарях', () => {
     const langs = JSON.parse(fs.readFileSync(path.join(ROOT, '.04-Src/i18n/languages.json'), 'utf8')).map((l) => l.code);
-    expect(langs.length).toBe(20);
+    expect(langs.length).toBe(100); // v25: реестр 100 языков
     const miss = [];
     for (const code of langs) {
       const dict = JSON.parse(fs.readFileSync(path.join(ROOT, '.04-Src/i18n', code + '.json'), 'utf8'));

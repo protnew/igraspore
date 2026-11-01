@@ -31,8 +31,12 @@ function applyLangFont(code) {
   if (typeof document === 'undefined') return;
   document.documentElement.lang = code || 'en';
   var __IGS_FONTS = {"hi":"Noto Sans Devanagari","th":"Noto Sans Thai","bn":"Noto Sans Bengali"}; // GEN:A1
+  var __IGS_DIR = {"ar":"rtl","fa":"rtl","ur":"rtl","he":"rtl","ps":"rtl","ckb":"rtl","sd":"rtl"}; // GEN:A1 (v25 A4)
   var face = __IGS_FONTS[code] || '';
   var sample = (face && (LANG_NAME[code] || '')) ? (LANG_NAME[code] + '').trim().charAt(0) : '';
+  var _dir = __IGS_DIR[code] || 'ltr';
+  document.documentElement.setAttribute('dir', _dir);
+  if (document.body) document.body.classList.toggle('igs-rtl', _dir === 'rtl');
   if (face && sample && document.fonts && document.fonts.load) document.fonts.load('16px "' + face + '"', sample).catch(function(){});
 }
 // QA-only gate (U39): forcing a disabled language is allowed on the local QA stand or

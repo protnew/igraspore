@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis היא ציאנובקטריה בלי גרעין. היא חיה על אור: פוטוסינתזה מפיקת חמצן על הקרומים, בלי כלורופלסטים. דגם מעבדה לחילוף החומרים של מימן."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis היא סיב ארוך של תאים. חלק מהתאים הופכים להטרוציסטים וקושרים חנקן בזמן שהשכנים מייצרים סוכר. בבריכה היא מספקת חנקן קשור."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) היא סליל של תאים עם שלפוחיות גז. היא תלויה סמוך לפני המים, מבצעת פוטוסינתזה וראויה למאכל. במשחק היא בורג ירוק גדול על שכבת המים."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme היא שרשרת חרוזים בתוך כמוסת ריר. היא חיה חופשית או בסימביוזה עם צמחים. המושבה נראית כגוש של חרוזים ירוקים."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica היא סיב מחליק. היא מתנדנדת מצד לצד ויכולה לבצע פוטוסינתזה בלי לשחרר חמצן. אופיינית לטיט ולקרום הפנים."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa היא מושבת ריר, לעיתים קרובות רעילה (מיקרוציסטין). היא גורמת לפריחת מים. במשחק היא כדור מושבה ירוק, טרף מסוכן."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa הם תאים מזווגים בנדנים צבעוניים. היא חיה על סלעים וקרקע ועמידה לקרינה על־סגולה. בבריכה הם קוקים מזווגים קטנים בתוך מעטפת."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula היא סיב ציאנובקטריאלי עבה. היא יכולה לשחרר רעלנים מגרים. היא יוצרת שטיחים ליד חופים חמים."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii הוא תא ירוק עם שני שוטונים וכתם עין. הוא שוחה לעבר האור. דגם קלאסי לגנטיקה של אצות."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris הוא כדור ירוק בלתי נייד. הוא מתחלק מהר ועשיר בחלבון. מזון לאוכלים קטנים ונושא למזון חלל."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator הוא כדור חלול מאלפי תאים. מושבות הבת מבשילות בפנים ויוצאות החוצה. במשחק הוא מושבה ירוקה גדולה."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis היא מיקסוטרוף: כלורופלסטים וגם יכולת לאכול. כתם עין אדום עוקב אחר האור. ירוקה ביום; בחושך עוברת למזון."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda הם בדרך כלל ארבעה תאים בשורה עם קוצים בקצוות. הקוצים מקשים על בליעה. הוא לא שוחה — הוא נסחף."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis הוא תא ירוק נייד; בעקבות לחץ הוא מאדים (אסטקסנתין) ומגדל דופן עבה. ציסטים אדומים שורדים יובש."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "ל-Dunaliella salina אין דופן קשיח והיא חיה במים מלוחים מאוד. היא אוגרת בטא־קרוטן ונראית כתומה. שני שוטונים."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata היא דסמיד שטוח בצורת כוכב. שני חצאי ראי עם חריצים עמוקים. בלתי נייד; מבצעת פוטוסינתזה במי ביצה חומציים."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula היא צורנית בצורת סירה עם שסתום צורן. היא מחליקה על המצע לאורך חריץ הרפה. הקונכייה נשארת אחרי המוות."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis היא צורנית נוצתית גדולה. שריון צורן עם תבנית סימטרית. היא מחליקה לאט על הקרקעית."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana היא צורנית מרכזית עגולה. היא צפה כדיסק; הקונכייה היא שני מכסים. פלנקטון טיפוסי."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare היא צורנית שנצמדת בזיגזג. המושבה מגדילה את הגרר בעמודת המים."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum הוא סליל סגול. פוטוסינתזה בלתי מחמצנת וגם חומר אורגני. הצבע האדום מגיע מבקטריוכלורופיל."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum הוא חיידק גופרית סגול. הוא מחמצן מימן גופרי ומאחסן גרגירי גופרית. חי בגבול חמצן/גופרית."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum היא אצה אדומה חד־תאית. פיקואריתרין נותן צבע אדום דם. מעטה ריר, בלי שוטונים."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus הוא התא הפוטוסינתטי הקטן והנפוץ ביותר על כדור הארץ. התגלה בשנות ה־80. הוא מזין את האוקיינוס."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis הוא אקסטרמופיל: מדבר, סלע, קרינה. מועמד לחיים מחוץ לכדור הארץ. בבריכה הוא מושבה איטית של קוקים."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus הוא טורף חיידקי זעיר. הוא מבריג לתוך תא אחר ומתרבה עד שהפונדקאי מתפוצץ."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus יושב על הטרף מבחוץ ושואב את התוכן בלי להיכנס. ערפד חיידקי."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter נכנס לחיידק הטרף ואוכל אותו מבפנים. צייד תוך־תאי נדיר."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus הוא חיידק חברתי. בלהקה הוא מקיף טרף ומשחרר אנזימים. ברעב הוא יוצר גוף פרי."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii הוא קרוב ימי של Bdellovibrio. הוא תוקף גראם־שליליים וחי בפריפלזמת הטרף."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax הוא צייד חיידקי עמיד למלח. אותו טריק: לנקב את הדופן ולגדול בפנים."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii הוא טורף BALO נוסף. יצור מהיר בצורת פסיק, בעל שוטון, שמכוון למוטות גדולים."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula הוא חד־תאי שוטוני הטרוטרוף קטן. הוא תופס חיידקים על פני הדטריטוס."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo הוא חד־תאי שוטוני בצורת טיפה. שוטון אחד; הוא צד בסרטים חיידקים."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans היא מושבה על גבעול ברזל־מנגן. תאים יושבים בציצית ותופסים חיידקים."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium הוא קריפטופיט חסר צבע. שני שוטונים; הוא אוכל חומר אורגני מומס וחיידקים זעירים, בלי כלורופלסטים."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda הוא אמב־שוטון עם זנב ארוך. הוא זוחל ובולע חיידקים בפסאודופודים."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa הוא חד־תאי שוטוני של קרקע. שני שוטונים באורך שונה; אוכל החיידקים העיקרי בקרקע."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans הוא קינטופלסטיד. הוא 'רוקד' במקום, מעוגן בשוטון האחורי, וחוטף חיידקים."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini הוא קרוב של Bodo. הוא שוחה בחופשיות ומכה בטרף עם השוטון הקדמי."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei הוא טפיל דם הגורם למחלת השינה. קרום מתנופף ושוטון אחד. בבריכה הוא דגם של צייד רזה."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani הוא טפיל אנושי תוך־תאי. עם שוטון בחרק, בלי שוטון בתוך מקרופאג'."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis הוא כואנופלגלט, קרוב של בעלי חיים. צווארון מיקרווילי מסנן חיידקים."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta הוא כואנופלגלט יושב בתוך לוריקה. הוא יכול להתאגד בתבנית שושנה. הוא מסנן זרם מים."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis היא מושבת כואנופלגלטים על גבעול משותף. כמה מסננים על גבעול אחד."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum היא הסנדלית הקלאסית. אלפי ריסונים, חריץ פה, חלוליות כיווץ. היא מסננת חיידקים."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria היא סנדלית עם זואוכלורלות סימביונטיות. ירוקה מבפנים: סוכר מהאצות ביום, סינון בלילה."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus הוא חצוצרה כחולה עד מילימטר. הוא נפתח למשפך ומניע זרם בריסונים. הוא יכול לשחות או לשבת."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus הוא קרוב של הסטנטור הכחול, לעיתים קרובות עם זואוכלורלות. הצורה משתנה מחצוצרה לכדור."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula היא פעמונית על רגלית מתכווצת. הרגלית מתקפלת לסליל באופן מיידי. התא עצמו לא בורח בשחייה."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma היא פעמונית קטנה. אותה רגלית קפיץ, שדה פה צר יותר. לעיתים קרובות על דטריטוס."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum הוא טורף חבית של סנדליות. הוא יורה טוקסיציסטים ובולע את הטרף בשלמותו, גם אם הטרף גדול יותר."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum הוא סיגר ארוך מאוד. הוא מתכווץ פי כמה בחלקיק של שנייה. ריסונים רצים בסליל."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum הוא ריסנית ורודה. פיגמנט בלפריזמין רגיש לאור. הוא מסנן ויכול לתקוף תאים קטנים יותר."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella מהלך על צירים כמו על רגליים. שטוח, פניות מהירות. הוא מגרד חיידקים ממשטחים."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata היא היפוטריך ש'רץ' על הקרקעית. צירים גדולים, פה ברור. טורף של ריסניות קטנות."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax הוא דגם גנום: שני גרעינים ושכתוב DNA מורכב. הוא מהלך על צירים ואוכל חיידקים ופרוטיסטים קטנים."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila היא ריסנית מעבדה. ארבע ממברנלות פה, חלוקה מהירה. דגם לטלומרים ולריסונים."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus הוא חבית בלוחיות גיר עם קוצים. אוכל־נבלות וטורף: הוא נושך את הפצועים."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella הוא טורף שטוח עם טוקסיציסטים ב'חדק'. הוא משתק את הטרף ושואב אותו."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "ל-Dileptus anser יש צוואר ארוך עם אקסטרוזומים ארסיים. הוא מכה בצוואר ואז בולע. צייד גדול בדרג ביניים."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo הוא סביבון: חגורת ריסונים משוונית מסובבת את התא במקום. הוא מסנן חיידקים."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula היא מושבה מסועפת של פעמוניות. רגלית כיווץ משותפת מזניקה את כל העץ בבת אחת."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata הוא פריטריך יושב בלי רגלית קפיץ. מכסה מכסה את הפה. הוא מסנן ולא בורח בשחייה."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus היא האמבה הקלאסית. פסאודופודים זורמים סביב הטרף. אין צורה קבועה, אין ריסונים."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris היא אמבה משוריינת עם כיפה קשיחה. פסאודופודים יוצאים מהפתח. היא זוחלת על צמחים."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "ל-Difflugia oblonga יש קונכייה מגרגירי חול שהאמבה מדביקה בעצמה. היא חיה בטיט."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "ל-Euglypha alveolata יש קונכייה מקשקשי צורן. פסאודופודים דקים דמויי חוט. טורף חיידקים קטן."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris היא קונכייה בצורת בקבוק הבנויה מקשקשים גנובים. מים של יערות וביצות."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata היא קונכיית דיסק עם קוצים. הפתח מוסט הצידה. היא זוחלת על דטריטוס."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol הוא הליוזואן: אקסופודיה דקים קורנים לכל עבר. טרף נדבק לקרניים ונמשך פנימה."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni הוא הליוזואן גדול רב־גרעיני. אותן קרניים, תא גדול בהרבה. הוא אוכל ריסניות וגלגליות."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida הוא הליוזואן בקשקשים. הקרניים נושאות מחטי צורן. צייד פלנקטון ממארב."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria היא גלגלית שיכולה לשרוד ייבוש. העטרה מגלגלת מזון אל הפה. בעל חיים רב־תאי אמיתי."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola היא גלגלית בדלואידית ורודה. היא זוחלת כמו עלוקה וגם שוחה. נקבות בלבד; אין זכרים."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis היא גלגלית פלנקטונית עם לוריקה. מזון לדגיגים בגידול דגים. היא מסננת אצות וחיידקים."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis היא גלגלית עם קוץ לוריקה ארוך. הקוץ מרתיע טורפים. פלנקטון בריכות נפוץ."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta היא שק בלי לוריקה, גלגלית טורפת. היא בולעת גלגליות וריסניות אחרות בשלמותן."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus הוא גסטרוטריך. מכוסה קשקשים, זוחל על הקרקעית. הוא אוכל חיידקים ודטריטוס."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata הוא גסטרוטריך קטן בקשקשים חופפים. פניות במקום מהירות מאוד."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano הוא תולעת שטוחה מיקרוסקופית. שרירים ועיניים אמיתיים. דגם להתחדשות. הוא צד פרוטיסטים קטנים."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops היא תולעת דקה מרוסנת. היא מתחלקת רוחבית לשרשרת זואואידים. טורפת של דטריטוס וחיות קטנות."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare היא תולעת שטוחה שאוכלת הידרות ומטמיעה את תאי הצריבה שלהן בעורה. שרשרת זואואידים."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense הוא נמרטין של מים מתוקים. חדק ארוך נורה אל הטרף. צייד קרקעית גדול ונדיר."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens הוא פלקוזואן, מהחיות הפשוטות ביותר. הוא זוחל כיריעה ומעכל מזון מחוץ לגוף. אין פה."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae הוא שמרי אפייה. הוא מנץ, אוכל סוכר, משחרר CO2 ואלכוהול. בבריכה הוא מנקה חומר אורגני מומס."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans הוא שמר שיכול לגדול כסיבים. פתוגן אנושי אופורטוניסטי. במשחק הוא פטריית דטריטוס."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo הוא עובש לחם. ספורנגיות על עוקצים, צמיחה מהירה על המת. הוא לא צד את החי."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer הוא עובש לחם שחור. סטולונים וריזואידים מתפשטים על המצע. הוא מפרק עמילן."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum הוא עובש מברשת, מקור הפניצילין. מברשות קונידיות. הוא מפרק חומר אורגני ומדכא חיידקים סמוכים."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger הוא אספרגילוס שחור. ראשי נבגים כדוריים. מפיק חומצת לימון בתעשייה. ספרוטרוף."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis הוא כיטריד של צפרדעים. זואוספורים חד־שוטונים. בבריכה הוא דגם של פטריית מים."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus הוא כיטריד מים על אבקנים ואצות. ספורנגיות זהובות; זואוספורים שוחים אל המצע."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus הוא פטריית מים עם מיצליום אמיתי. הוא מחליף דורות דיפלואידיים והפלואידיים. לזואוספורים שוטון אחורי."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis הוא מוט קרקע. נבגים שורדים רתיחה. הוא מפרק חלבון; דגם גראם־חיובי."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida הוא מוט ניקוי. הוא אוכל אפילו מוצרי נפט. שוטון נייד, צמיחה מהירה על דטריטוס."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor הוא חיידק קרקע סיבי. הוא מייצר את ריח האדמה (גאוסמין) ואנטיביוטיקות רבות. נבגים על ההיפות."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi מפרק תאית. מוט צהוב על דטריטוס צמחי. בלעדיו אצות מתות היו מתעכבות זמן רב יותר."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus הוא תרמופיל ממעיינות חמים. פולימראז Taq הוא בסיס ה־PCR. בבריכה קרה הוא כמעט רדום."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans הוא אלוף הקרינה. הוא מרכיב גנום מנופץ בשעות. דופן עבה, טטרדות תאים."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "אאוקריוט מיני הוא דגם הוראה של רבייה זוויגית. שני זוויגים, מיזוג גמטות, לא חלוקה בינארית פשוטה."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 הוא מיובירוס גדול של E. coli. הזנב מתכווץ ומזריק DNA. בחצי שעה התא מתפוצץ ועשרות פאגים יוצאים."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "למדא הוא פאג מתון. הוא יכול להשתלב בכרומוזום ולישון (ליזוגניה) או לבקע את התא מיד (ליזיס)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "ל-T7 זנב קצר ושכפול מהיר מאוד. מערכת חביבה בביולוגיה סינתטית."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "פי־6 הוא פאג RNA עם מעטפת ליפידית. הוא מדביק Pseudomonas. ממברנה נדירה לפאג."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 הוא פאג RNA זעיר חסר זנב. הוא נקשר לפילי של E. coli זכריים. הגנום שלו היה מהגנומים הראשונים של RNA שנקראו."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "טפיל עצבים בדיוני של בריכה. הוא נאחז באאוקריוטים ומשבש את התנהגות הפונדקאי עד שהפונדקאי הופך לנשא."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "אאוקריוט מיני הוא דגם הוראה של רבייה זוויגית. שני זוויגים, מיזוג גמטות, לא חלוקה בינארית פשוטה."
   }
 }

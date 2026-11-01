@@ -3707,6 +3707,15 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "aria.auto",
+   "value": "Auto (Tab)",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "aria.demo": [
@@ -3763,6 +3772,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "aria.demo",
+   "value": "Demo",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "aria.demo",
+   "value": "Demo",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "aria.start": [
@@ -3812,6 +3839,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "aria.wiki2",
+   "value": "Wiki (B)",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "cartoon": [
@@ -3845,6 +3890,24 @@
    ],
    "category": "cognate",
    "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "diffN",
+   "value": "Normal",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "diffN",
+   "value": "Normal",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "edu.chloro.name": [
@@ -3934,6 +3997,15 @@
    ],
    "category": "cognate",
    "reason": "lb: интернационализм (импорт/экспорт DNA, бренд, аббревиатура) — пишется так же"
+  },
+  {
+   "key": "hud.genSep",
+   "value": "· Gen",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "massWord": [
@@ -4029,6 +4101,15 @@
    ],
    "category": "cognate",
    "reason": "sl: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "spcard.virus",
+   "value": "Virus",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "star.alphacentauri": [
@@ -4078,6 +4159,24 @@
    ],
    "category": "cognate",
    "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "star.betelgeuse": [
@@ -4098,6 +4197,24 @@
    ],
    "category": "cognate",
    "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "star.polaris": [
@@ -4109,6 +4226,15 @@
    ],
    "category": "cognate",
    "reason": "lb: то же слово в люксембургском (латинская аббревиатура/интернационализм/название звезды)"
+  },
+  {
+   "key": "star.polaris",
+   "value": "★ Polaris",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "star.rigel": [
@@ -4147,6 +4273,24 @@
    ],
    "category": "cognate",
    "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "star.sirius": [
@@ -4232,6 +4376,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "starg.alphacentauri": [
@@ -4252,6 +4414,15 @@
    ],
    "category": "cognate",
    "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "starg.sirius": [
@@ -4341,6 +4512,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "tip.auto",
+   "value": "Auto",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "tip.auto",
+   "value": "Auto",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "vignette": [
@@ -4414,6 +4603,15 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "x.e": [
@@ -4494,6 +4692,15 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "fps": [
@@ -4559,6 +4766,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "mob.eSep": [
@@ -4651,6 +4876,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "mode.swissLbl": [
@@ -4716,6 +4959,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "mode.webglLbl": [
@@ -4781,6 +5042,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "modeBig.swiss": [
@@ -4846,6 +5125,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "modeBig.webgl": [
@@ -4911,6 +5208,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "modeLbl.swiss": [
@@ -4976,6 +5291,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "modeLbl.webgl": [
@@ -5041,6 +5374,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "autoOn": [
@@ -5097,6 +5448,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "autoOn",
+   "value": "AUTO",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "autoOn",
+   "value": "AUTO",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "hud.btn.auto": [
@@ -5153,6 +5522,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto",
+   "value": "AUTO",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto",
+   "value": "AUTO",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "hud.btn.auto.short": [
@@ -5209,6 +5596,24 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto.short",
+   "value": "AUTO",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "hud.btn.auto.short",
+   "value": "AUTO",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "hud.btn.menu": [
@@ -5220,6 +5625,15 @@
    ],
    "category": "cognate",
    "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "hud.btn.menu",
+   "value": "Menu",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "menu": [
@@ -5231,6 +5645,15 @@
    ],
    "category": "cognate",
    "reason": "sk: интернационализм/бренд-режим/название звезды — пишется так же"
+  },
+  {
+   "key": "menu",
+   "value": "MENU",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "wiki": [
@@ -5269,6 +5692,24 @@
    ],
    "category": "cognate",
    "reason": "lt: интернационализм/название звезды/аббревиатура — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "wiki",
+   "value": "WIKI",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "x.golgi": [
@@ -5307,6 +5748,24 @@
    ],
    "category": "cognate",
    "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "Golgi",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "x.golgi",
+   "value": "golgi",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "dna.io": [
@@ -5393,6 +5852,15 @@
    ],
    "category": "cognate",
    "reason": "lv: интернационализм/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
   }
  ],
  "legend": [
@@ -5404,6 +5872,79 @@
    ],
    "category": "cognate",
    "reason": "et: интернационализм/бренд/звезда — пишется так же"
+  }
+ ],
+ "tip.zi": [
+  {
+   "key": "tip.zi",
+   "value": "Zoom+",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "tip.zi",
+   "value": "Zoom+",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
+  }
+ ],
+ "tip.zo": [
+  {
+   "key": "tip.zo",
+   "value": "Zoom-",
+   "langs": [
+    "pt-PT"
+   ],
+   "category": "cognate",
+   "reason": "pt-PT: интернационализм/когнат романского языка — пишется так же"
+  },
+  {
+   "key": "tip.zo",
+   "value": "Zoom-",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
+  }
+ ],
+ "star.trinary": [
+  {
+   "key": "star.trinary",
+   "value": "★★★ Triple",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
+  }
+ ],
+ "no": [
+  {
+   "key": "no",
+   "value": "No",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
+  }
+ ],
+ "errGeneric": [
+  {
+   "key": "errGeneric",
+   "value": "Error",
+   "langs": [
+    "es-419"
+   ],
+   "category": "cognate",
+   "reason": "es-419: интернационализм/когнат романского языка — пишется так же"
   }
  ]
 }

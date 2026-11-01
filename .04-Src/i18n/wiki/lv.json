@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis ir cianobaktērija bez kodola. Dzīvo no gaismas: skābekļa fotosintēze membrānās, bez hloroplastiem. Ūdeņraža metabolisma modelis."
+    "body": "Synechocystis ir cianobaktērija bez šūnas kodola. Tā dzīvo no gaismas: skābekļa fotosintēze notiek uz membrānām, hloroplastu nav. Laboratorijas modelis ūdeņraža metabolismam."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis ir pavediens. Dažas šūnas kļūst par heterocistiem un saista slāpekli, kamēr kaimiņi rada cukuru. Dīķī tā piegādā saistīto slāpekli."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) ir šūnu spirāle ar gāzes pūslītēm. Tā karājas pie virsmas, fotosintezē un ir ēdama. Spēlē tas ir liels zaļš skrūvveida pavediens pie ūdens plēves."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme ir krellīšu virkne gļotu kapsulā. Dzīvo brīvi vai simbiozē ar augiem. Kolonija izskatās kā zaļu krellīšu kamols."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica ir slīdošs pavediens. Tas svārstās uz sāniem un prot fotosintēzi bez skābekļa atbrīvošanas. Tipisks dūņām un virsmas plēvei."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa ir gļotaina kolonija, bieži indīga (mikrocistīns). Izraisa ūdens ziedēšanu. Spēlē tā ir zaļa kolonijas bumba, riskants laupījums."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa ir pa pāriem savienotas šūnas krāsainos apvalkos. Dzīvo uz akmeņiem un augsnē, iztur UV. Dīķī tās ir mazas apaļas baktērijas pa pāriem apvalkā."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula ir biezs cianobaktēriju pavediens. Var izdalīt kairinošas indes. Veido paklājus pie siltiem krastiem."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii ir zaļa šūna ar divām viciņām un acs plankumu. Peld pret gaismu. Klasisks aļģu ģenētikas modelis."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris ir nekustīga zaļa bumbiņa. Ātri dalās un bagāta ar olbaltumvielām. Barība mazajiem ēdājiem un kosmiskās pārtikas pētījumu objekts."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator ir dobjā lode no tūkstošiem šūnu. Meitas kolonijas nogatavojas iekšpusē un iznāk ārā. Spēlē tā ir liela zaļa kolonija."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis ir miksotrofs: hloroplasti un spēja baroties. Sarkans acs plankums seko gaismas virzienam. Zaļa dienā; tumsā pārslēdzas uz barību."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda parasti ir četras šūnas rindā ar smailēm galos. Smailes apgrūtina norīšanu. Nepeld — dreifē."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis ir zaļa kustīga šūna; stresa apstākļos kļūst sarkana (astaksantīns) un audzē biezu sieniņu. Sarkanās cistas pārdzīvo sausumu."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina nav stingras sieniņas un dzīvo ļoti sāļā ūdenī. Uzkrāj beta-karotīnu un izskatās oranža. Divas vicas."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata ir plakana zvaigznes veida desmīda aļģe. Divas spoguļsimetriskas puses ar dziļiem iegriezumiem. Nekustīga; fotosintezē skābā purva ūdenī."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula ir laivas formas diatomeja ar silīcija vāciņu. Tā slīd pa substrātu gar rafes spraugu. Čaule paliek pēc nāves."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis ir liela pennātu diatomeja. Silīcija čaule ar simetrisku rakstu. Lēni slīd pa dibenu."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana ir apaļa centriskā diatomeja. Peld kā disks; čaule ir divi vāciņi. Tipisks planktons."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare ir diatomeja, kas savienojas zigzaga. Kolonija palielina pretestību kustībai ūdens slānī."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum ir purpura spirāle. Anoksigēna fotosintēze un organiskās vielas. Sarkanā krāsa nāk no bakteriohlorofila."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum ir purpura sēra baktērija. Tā oksidē sērūdeņradi un uzkrāj sēra granulas. Dzīvo skābekļa un sēra robežjoslā."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum ir vienšūnu sarkanā aļģe. Fikoeritrīns dod asins sarkanu krāsu. Gļotu apvalks, bez vicām."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus ir mazākā un bagātīgākā fotosintezējošā šūna uz Zemes. Atklāta 20. gadsimta 80. gados. Tā baro okeānu."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis ir ekstremofils: tuksnesis, klintis, radiācija. Kandidāts dzīvībai ārpus Zemes. Dīķī tas ir lēna apaļu baktēriju kolonija."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus ir sīka baktērija-plēsēja. Tā ieskrūvējas citā šūnā un vairojas, kamēr saimnieks pārsprāgst."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus pieķeras laupījumam no ārpuses un izsūc saturu, neieejot iekšā. Īsts bakteriāls vampīrs."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter iekļūst upura baktērijā un apēd to no iekšpuses. Rets intracelulārs mednieks."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus ir sociāla baktērija. Barā tā aplenk laupījumu un izdala fermentus. Badā veido augļķermi."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii ir jūras Bdellovibrio radinieks. Uzbrūk gramnegatīvajām baktērijām un dzīvo upura periplazmā."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax ir sāls izturīgs bakteriāls mednieks. Tas pats paņēmiens: caurdur sienu un aug iekšpusē."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii ir vēl viens BALO plēsējs. Ātrs komatveida vicainis, kas medī lielas nūjiņveida baktērijas."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula ir sīks heterotrofs vicainis. Tas satver baktērijas detrīta virsmā."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo ir piliena formas vicainis. Viena vica; medī bakteriālajā plēvē."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans ir kolonija uz dzelzs-mangāna kātiņa. Šūnas sēž pušķī un ķer baktērijas."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium ir bezkrāsains kriptofīts. Divas vicas; barojas ar izšķīdušajām organiskajām vielām un sīkām baktērijām, hloroplastu nav."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda ir amēbovicainis ar garu asti. Tas rāpo un norij baktērijas ar pseidopodijām."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa ir augsnes vicainis. Divas dažāda garuma vicas; viens no galvenajiem augsnes baktēriju ēdājiem."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans ir kinetoplastīds. Tas 'dejo' vietā, piestiprinājies ar aizmugurējo viciņu, un izrauj baktērijas."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini ir Bodo radinieks. Peld brīvi un uzbrūk laupījumam ar priekšējo vicu."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei ir asins parazīts, kas izrausa miega slimību. Viļņojoša membrāna un viena vica. Dīķī tas ir tieva mednieka modelis."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani ir intracelulārs cilvēka parazīts. Ar viciņu kukaiņa ķermenī, bez viciņas makrofāga iekšienē."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis ir hoanovicainis, dzīvnieku radinieks. Mikrovillu apkakle filtrē baktērijas."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta ir sēdošs hoanovicainis lorikā. Var veidot rozeti. Filtrē ūdens plūsmu."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis ir hoanovicainu kolonija uz kopīga kātiņa. Vairāki filtri uz viena stilba."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum ir klasiskā tupelīte. Tūkstošiem skropstiņu, mutes rieviņa, pulsējošās vakuolas. Filtrē baktērijas."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria ir tupelīte ar zoochlorella simbiontiem. Iekšpusē zaļa: cukurs no aļģēm dienā, filtrēšana naktī."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus ir zila trompete līdz milimetram. Tā izplešas piltuvē un ar skropstiņām dzen straumi. Var peldēt vai sēdēt."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus ir zilā stentora radinieks, bieži ar zoochlorellām. Forma mainās no trompetes līdz bumbai."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula ir zvaniņš uz saraujošā kātiņa. Kātiņš momentāni savijas spirālē. Pati šūna aizpeldēt nespēj."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma ir mazs zvaniņš. Tas pats atsperes kātiņš, šaurāks mutes lauks. Bieži uz detrīta."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum ir tupelīšu mednieks mucveida ķermenim. Tas izšauj toksicistas un norij laupījumu veselu, pat ja laupījums ir lielāks."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum ir ļoti gara cigārveida šūna. Sekundes daļā savilkjas vairākas reizes īsāka. Skropstiņas iet spirālē."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum ir rozā skropstiņainis. Blepharismīna pigments ir jutīgs pret gaismu. Tas filtrē un var uzbrukt mazākām šūnām."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella staigā pa ciriem kā ar kājām. Plakans, ar straujiem pagriezieniem. Noslauka baktērijas no virsmām."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata ir hipotrihs, kas 'skrej' pa dibenu. Lieli ciri, skaidra mute. Mazu skropstiņaiņu plēsējs."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax ir genoma modelis: divi kodoli un sarežģīta DNS pārrakstīšana. Tas staigā uz ciriem un ēd baktērijas un sīkus protistus."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila ir laboratorijas skropstiņainis. Četri mutes membranelli, ātra dalīšanās. Telomēru un skropstiņu modelis."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus ir mucīte no kaļķu plāksnītēm ar smailēm. Maitēdājs un plēsējs: iekožas ievainotajos."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella ir plakans plēsējs ar toksicistām 'snuķī'. Tas paralizē laupījumu un to izsūc."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser ir garā kakla īpašnieks ar indīgām ekstrusomām. Tas sit ar kaklu un pēc tam norij. Liels vidējā līmeņa mednieks."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo ir griezens: ekvatoriālā skropstiņu josma griež šūnu vietā. Filtrē baktērijas."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula ir zaraina zvaniņu kolonija. Kopīgais saraujošais kātiņš vienā rāvienā pakustina visu koku."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata ir sēdošs peritrihs bez atsperes kātiņa. Muti sedz vāks. Filtrē un nepeld projām."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus ir klasiskā amēba. Pseidopodijas apņem laupījumu. Nav pastāvīgas formas, nav skropstiņu."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris ir čaulas amēba ar cietu kupolu. Pseidopodijas iznāk caur atveri. Rāpo pa augiem."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga čaula ir no smilšu graudiņiem, ko amēba pati salīmē. Dzīvo dūņās."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata čaula ir no silīcija zvīņiņām. Plānas filozas pseidopodijas. Sīks baktēriju plēsējs."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris ir pudeles formas čaula, būvēta no nozagtiem zvīņiņām. Sastopama mežu un purvu ūdeņos."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata ir diska čaula ar smailēm. Atvere ir nobīdīta. Rāpo uz detrīta."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol ir saules dzīvnieciņš: plānas aksopodijas staro uz visām pusēm. Laupījums pielīp stariem un tiek ievilkts."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni ir liels daudzkodolu heliozojs. Tie paši stari, daudz lielāka šūna. Ēd skropstiņaiņus un riteņdzīvniekus."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida ir zvīņains heliozojs. Stari nes silīcija adatas. Planktona mednieks, kas uzbrūk no slēpņa."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria ir riteņdzīvnieks, kas iztur izžūšanu. Kronīša skropstiņas kā rats dzen barību mutē. Īsts daudzšūnu dzīvnieks."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola ir rozā bdelloīdais riteņdzīvnieks. Tas rāpo kā dēle un arī peld. Tikai mātītes; tēviņu nav."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis ir planktona riteņdzīvnieks ar loriku. Zivju mazuļu barība akvakultūrā. Filtrē aļģes un baktērijas."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis ir riteņdzīvnieks ar garu lorikas smaili. Smaile atbaida plēsējus. Izplatīts dīķa planktons."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta ir plēsīgs riteņdzīvnieks — maiss bez lorikas. Tas norij citus riteņdzīvniekus un skropstiņaiņus veselus."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus ir gastrotrihs. Ar zvīņiņām klāts, rāpo pa dibenu. Ēd baktērijas un detrītu."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata ir mazs gastrotrihs ar pārklājošām zvīņiņām. Ļoti ātri pagriezieni uz vietas."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano ir mikroskopiska plakantārpiņa. Īstie muskuļi un acis. Regenerācijas modelis. Medī sīkus protistus."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops ir tievs skropstiņu tārpiņš. Tas dalās šķērseni zooidu ķēdē. Detrīta un sīku dzīvnieku plēsējs."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare ir plakantārps, kas ēd hidras un iestrādā to dzelošās šūnas savā ādā. Zooidu ķēde."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense ir saldūdens nemertīne. Garš snuķis izšaujas uz laupījumu. Rets liels dibena mednieks."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens ir plakozoa, viens no vienkāršākajiem dzīvniekiem. Tas rāpo kā plāksne un sagremo barību ārpusē. Mutes nav."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae ir maizes raugs. Tas pumpurojas, ēd cukuru, izdala CO2 un spirtu. Dīķī tas attīra izšķīdušās organiskās vielas."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans ir raugs, kas var veidot hifas. Oportūnistisks cilvēka patogēns. Spēlē tas ir detrīta sēne."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo ir maizes pelējums. Sporangi uz kātiem, ātra augšana uz beigušajiem. Nemedī dzīvos."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer ir melnais maizes pelējums. Stoloni un rizoīdi izplatās pa substrātu. Sadala cieti."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum ir sukas pelējums, penicilīna avots. Konīdiju sukas. Sadala organiku un apspiež tuvākās baktērijas."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger ir melnais aspergils. Apaļas sporu galviņas. Rūpniecisks citronskābes ražotājs. Saprofīts."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis ir varžu hitrīds. Zoosporas ar vienu viciņu. Dīķī tas ir ūdens sēnes modelis."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus ir ūdens hitrīds uz ziedputekšņiem un aļģēm. Zeltainas sporangijas; zoosporas peld pie substrāta."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus ir ūdens sēne ar īstu micēliju. Mijas diploidā un haploidā paaudze. Zoosporai ir aizmugurējā viciņa."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis ir augsnes nūjiņa. Sporas iztur vārīšanu. Sadala olbaltumvielas; grampozitīvs modelis."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida ir attīrīšanas nūjiņa. Tā ēd pat naftas produktus. Kustīga ar viciņu, ātri aug uz detrīta."
   },
   "96": {
-    "body": "Streptomyces coelicolor ir pavedienaina augsnes baktērija. Rada zemes smaržu (geosmīnu) un daudz antibiotiku. Sporas uz hifām."
+    "body": "Streptomyces coelicolor ir hifaina augsnes baktērija. Tā rada zemes smaržu (geosmīnu) un daudz antibiotiku. Sporas uz hifām."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi sadala celulozi. Dzeltena nūjiņa uz augu detrīta. Bez tās mirušās aļģes saglabātos ilgāk."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus ir termofils no karstajiem avotiem. Taq polimerāze ir PĶR pamats. Aukstā dīķī tas ir gandrīz neaktīvs."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans ir radiācijas čempions. Tas dažās stundās no jauna saliek saplēsto genomu. Bieza sieniņa, šūnu tetrādes."
   },
   "1001": {
-    "body": "Dzimuma eikariots ir dzimumvairošanās mācību modelis. Divi dzimumi, gametu saplūšana, ne vienkārša bināra dalīšanās."
+    "body": "Sexual Eukaryote ir mācību modelis dzimumvairošanai. Divi dzimumi, gametu saplūšana, nevis vienkārša dalīšanās."
   },
   "T4 Bacteriophage": {
-    "body": "T4 ir liels E. coli miofāgs. Aste saraujas un ievada DNS. Pusstundas laikā šūna pārplīst un iznāk desmiti fāgu."
+    "body": "T4 ir liels E. coli miovīruss. Aste saraujas un ievada DNS. Pusstundas laikā šūna pārsprāgst un izlaiž desmitiem fāgu."
   },
   "Lambda Phage": {
-    "body": "Lambda ir mērens fāgs. Var ievietoties hromosomā un gulēt (lizogēnija) vai uzreiz sagraut šūnu (līze)."
+    "body": "Lambda ir mērenais fāgs. Tas var ievietoties hromosomā un aizmigt (lizogēnija) vai uzreiz iznīcināt šūnu (lizē)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 ir īsa aste un ļoti ātra replikācija. Iecienīta sintētiskās bioloģijas sistēma."
+    "body": "T7 ir īsa aste un ļoti ātra replikācija. Iecienīta sistēma sintētiskajā bioloģijā."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 ir RNK fāgs ar lipīdu apvalku. Inficē Pseudomonas. Retas membrānas fāgam."
+    "body": "Phi-6 ir RNS fāgs ar lipīdu apvalku. Tas inficē Pseudomonas. Membrāna fāgam ir retums."
   },
   "MS2 Phage": {
-    "body": "MS2 ir sīks RNK fāgs bez astes. Saistās ar tēviņa E. coli pili. Tā genoms bija viens no pirmajiem nolasītajiem RNK genomiem."
+    "body": "MS2 ir sīks bezastes RNS fāgs. Tas pieķeras vīrišķo E. coli piliem. Tā genoms bija viens no pirmajiem nolasītajiem RNS genomiem."
   },
   "Neuro-Parasite": {
-    "body": "Izdomāts dīķa neiroparazīts. Pielīp pie eikariotiem un bojā saimnieka uzvedību, līdz tas kļūst par nesēju."
+    "body": "Izdomāts dīķa neiro-parazīts. Tas pieķeras pie eikariotiem un lauž saimnieka uzvedību, līdz saimnieks kļūst par pārnēsātāju."
   },
   "Sexual Eukaryote": {
-    "body": "Dzimuma eikariots ir dzimumvairošanās mācību modelis. Divi dzimumi, gametu saplūšana, ne vienkārša bināra dalīšanās."
+    "body": "Sexual Eukaryote ir mācību modelis dzimumvairošanai. Divi dzimumi, gametu saplūšana, nevis vienkārša dalīšanās."
   }
 }

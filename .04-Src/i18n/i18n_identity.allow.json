@@ -4284,6 +4284,19 @@
    ],
    "category": "abbr",
    "reason": "HUD-сокращение (Age/Energy/Size): в индийских UI латинская аббревиатура — норма (как у sk/lt)"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "ar",
+    "mr",
+    "my",
+    "fa",
+    "gu"
+   ],
+   "category": "abbr",
+   "reason": "HUD-сокращение (Age/Energy/Size): латинская аббревиатура — норма UI"
   }
  ],
  "x.e": [
@@ -4333,6 +4346,19 @@
    ],
    "category": "abbr",
    "reason": "HUD-сокращение (Age/Energy/Size): в индийских UI латинская аббревиатура — норма (как у sk/lt)"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "ar",
+    "mr",
+    "my",
+    "fa",
+    "gu"
+   ],
+   "category": "abbr",
+   "reason": "HUD-сокращение (Age/Energy/Size): латинская аббревиатура — норма UI"
   }
  ],
  "fps": [
@@ -4985,6 +5011,19 @@
    ],
    "category": "abbr",
    "reason": "HUD-сокращение (Age/Energy/Size): в индийских UI латинская аббревиатура — норма (как у sk/lt)"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "ar",
+    "mr",
+    "my",
+    "fa",
+    "gu"
+   ],
+   "category": "abbr",
+   "reason": "HUD-сокращение (Age/Energy/Size): латинская аббревиатура — норма UI"
   }
  ]
 }

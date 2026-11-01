@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-01 19:26:24",
+  "at": "2026-11-01 19:36:26",
   "enKeys": 436,
   "enWiki": 108,
   "rows": [
@@ -685,8 +685,8 @@
       "frozen": false,
       "dictTotal": 436,
       "wikiTotal": 108,
-      "dictTranslated": 68,
-      "dictCopyEn": 368,
+      "dictTranslated": 436,
+      "dictCopyEn": 0,
       "dictMissing": 0,
       "wikiTranslated": 0,
       "wikiCopyEn": 108,

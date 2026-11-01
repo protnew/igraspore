@@ -4711,6 +4711,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "x.e": [
@@ -4827,6 +4836,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "fps": [
@@ -4937,6 +4955,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "mob.eSep": [
@@ -5074,6 +5101,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "mode.swissLbl": [
@@ -5184,6 +5220,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "mode.webglLbl": [
@@ -5294,6 +5339,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "modeBig.swiss": [
@@ -5404,6 +5458,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "modeBig.webgl": [
@@ -5514,6 +5577,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "modeLbl.swiss": [
@@ -5624,6 +5696,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "modeLbl.webgl": [
@@ -5734,6 +5815,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "autoOn": [
@@ -6248,6 +6338,15 @@
    ],
    "category": "cognate",
    "reason": "sw: интернационализм/бренд/аббревиатура — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "kk"
+   ],
+   "category": "cognate",
+   "reason": "kk: интернационализм — пишется так же"
   }
  ],
  "legend": [

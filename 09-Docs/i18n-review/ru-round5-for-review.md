@@ -1,12 +1,12 @@
 # Пакет на проверку аналитику: ru (круг 5)
 
-- Дата: 2026-10-16 17:46:37 UTC+3  |  Круг: 5
+- Дата: 2026-11-01 16:47:56 UTC+3  |  Круг: 5
 - input_sha256 словарей (полные — для raw<ru-analyst-round5.json):
-  - `en.json` = d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938
-  - `ru.json` = b0d7750efcee45dc350b2ecb9d1e01e19439799c121fe595394c25ba9d11e8c1
-  - `ru.json` = b0d7750efcee45dc350b2ecb9d1e01e19439799c121fe595394c25ba9d11e8c1
+  - `en.json` = ecc487cf85a2d180c5dbddb6c53d7e52448d44e4c5c60ccd0df2d57db6c2a9ca
+  - `ru.json` = a5ca4acf4f6733c835c9a84bb2ae33aa8fa2b8db5ab544e7fac907f8abc3f4cc
+  - `ru.json` = a5ca4acf4f6733c835c9a84bb2ae33aa8fa2b8db5ab544e7fac907f8abc3f4cc
   - `wiki/ru.json` = b77acfd0bee0d711775d08cf6bb0e94fda9a06c02135269ca3ae03461385cb62
-- Ключей UI: 412 (из них 🆕 новых после круга 4: 272 — U13 263 + U42 loc.* 9); вики-тел: 108
+- Ключей UI: 436 (из них 🆕 новых после круга 4: 296 — U13 263 + U42 loc.* 9); вики-тел: 108
 - Rubric 0–10 по 5 осям: смысл, глоссарий, регистр, длина, ошибки. Порог включения ≥ 8.
 - Ответ аналитика: `09-Docs/i18n-review/raw/ru-analyst-round5.json` + строка в ANALYST-LEDGER.md (пишет ТОЛЬКО аналитик).
 
@@ -29,7 +29,7 @@
 - `../out-dev-factory/shots-release-ready-2026-10-14/i18n/ru/390-wiki-article.png`
 - `../out-dev-factory/shots-release-ready-2026-10-14/i18n/ru/390-wiki-list.png`
 
-## Словарь UI (412)
+## Словарь UI (436)
 
 | 🆕 | ключ | ru | en | ru | где / макс. длина |
 |---|---|---|---|---|---|
@@ -183,7 +183,7 @@
 |  | `gameTime` | Время | Time | Время | общий UI / ≤60 |
 |  | `healthBars` | Шкалы здоровья | Health Bars | Шкалы здоровья | общий UI / ≤60 |
 |  | `help` | КАК ИГРАТЬ | HOW TO PLAY | КАК ИГРАТЬ | общий UI / ≤60 |
-| 🆕 | `help.body` | <p><b style="color:#4df">Управление:</b> WASD — плавание. Вверх = поверхность, вниз = дно. ЛКМ — плыть к курсору. Пробел — укус.</p><p><b style="color:#8f8">Кто кого ест (просто):</b></p><p style="line-height:1.45">🌱 <b>Зелёные</b> — не охотятся. Кормятся светом (как растения). Это основной корм пруда.<br>🔵 <b>Мелкие едоки</b> — бактерии. Грызут зелёных.<br>🟠 <b>Средние едоки</b> — инфузории. Фильтруют воду: затягивают бактерий и зелёных. Не прыгают на гигантов.<br>🟣 <b>Крупные охотники</b> — едят зелёных, бактерий и средних. Можно кусать и чуть более крупных (опасно). Без еды живут долго.</p><p><b style="color:#4df">Камера:</b> F — свободный полёт. V — вернуться к клетке. Колесо — зум.</p><p><b style="color:#4df">Деление:</b> Наелся и вырос — делишься на двоих. Q — вручную.</p> | <p><b style="color:#4df">Controls:</b> WASD swim. Space = bite. LMB = swim to cursor.</p><p><b style="color:#8f8">Who eats whom:</b></p><p>🌱 Greens eat light. 🔵 Small eaters eat greens. 🟠 Mid eaters filter bacteria+greens. 🟣 Big hunters eat greens, bacteria and mid-eaters — and can bite slightly larger prey.</p><p><b style="color:#4df">Camera:</b> F free cam, V back to cell. Wheel = zoom.</p><p><b style="color:#4df">Division:</b> Eat, grow, split. Q = manual.</p> | <p><b style="color:#4df">Управление:</b> WASD — плавание. Вверх = поверхность, вниз = дно. ЛКМ — плыть к курсору. Пробел — укус.</p><p><b style="color:#8f8">Кто кого ест (просто):</b></p><p style="line-height:1.45">🌱 <b>Зелёные</b> — не охотятся. Кормятся светом (как растения). Это основной корм пруда.<br>🔵 <b>Мелкие едоки</b> — бактерии. Грызут зелёных.<br>🟠 <b>Средние едоки</b> — инфузории. Фильтруют воду: затягивают бактерий и зелёных. Не прыгают на гигантов.<br>🟣 <b>Крупные охотники</b> — едят зелёных, бактерий и средних. Можно кусать и чуть более крупных (опасно). Без еды живут долго.</p><p><b style="color:#4df">Камера:</b> F — свободный полёт. V — вернуться к клетке. Колесо — зум.</p><p><b style="color:#4df">Деление:</b> Наелся и вырос — делишься на двоих. Q — вручную.</p> | помощь / ≤200 |
+| 🆕 | `help.body` | <p><b style="color:#4df">Управление:</b> WASD — плавать. Пробел = укус. ЛКМ — плыть к курсору.</p><p><b style="color:#8f8">Кто кого ест:</b></p><p>🌱 Зелёные едят свет. 🔵 Мелкие едоки едят зелёных. 🟠 Средние фильтруют бактерий и зелёных. 🟣 Крупные охотники едят зелёных, бактерий и средних — и могут кусать чуть более крупных.</p><p><b style="color:#4df">Камера:</b> F свободная камера, V к клетке. Колесо = зум.</p><p><b style="color:#4df">Деление:</b> Ешь, расти, делись. Q — вручную.</p> | <p><b style="color:#4df">Controls:</b> WASD swim. Space = bite. LMB = swim to cursor.</p><p><b style="color:#8f8">Who eats whom:</b></p><p>🌱 Greens eat light. 🔵 Small eaters eat greens. 🟠 Mid eaters filter bacteria+greens. 🟣 Big hunters eat greens, bacteria and mid-eaters — and can bite slightly larger prey.</p><p><b style="color:#4df">Camera:</b> F free cam, V back to cell. Wheel = zoom.</p><p><b style="color:#4df">Division:</b> Eat, grow, split. Q = manual.</p> | <p><b style="color:#4df">Управление:</b> WASD — плавать. Пробел = укус. ЛКМ — плыть к курсору.</p><p><b style="color:#8f8">Кто кого ест:</b></p><p>🌱 Зелёные едят свет. 🔵 Мелкие едоки едят зелёных. 🟠 Средние фильтруют бактерий и зелёных. 🟣 Крупные охотники едят зелёных, бактерий и средних — и могут кусать чуть более крупных.</p><p><b style="color:#4df">Камера:</b> F свободная камера, V к клетке. Колесо = зум.</p><p><b style="color:#4df">Деление:</b> Ешь, расти, делись. Q — вручную.</p> | помощь / ≤200 |
 |  | `hud.btn.auto` | АВТО | AUTO | АВТО | HUD кнопка / ≤14 |
 |  | `hud.btn.auto.short` | АВТО | AUTO | АВТО | HUD кнопка (короткая) / ≤8 |
 |  | `hud.btn.cyst` | СПОРА | SPORE | СПОРА | HUD кнопка / ≤14 |
@@ -209,7 +209,7 @@
 | 🆕 | `lb.title` | 🏆 Таблица лидеров | 🏆 Leaderboard | 🏆 Таблица лидеров | общий UI / ≤60 |
 | 🆕 | `leg.apex` | Крупные охотники | Apex hunters | Крупные охотники | общий UI / ≤60 |
 | 🆕 | `leg.bacteria` | Бактерии | Bacteria | Бактерии | общий UI / ≤60 |
-| 🆕 | `leg.decomp` | Разлагатели | Decomposers | Разлагатели | общий UI / ≤60 |
+| 🆕 | `leg.decomp` | редуценти | Decomposers | редуценти | общий UI / ≤60 |
 | 🆕 | `leg.large` | Крупные | Large | Крупные | общий UI / ≤60 |
 | 🆕 | `leg.producer` | Водоросли | Algae | Водоросли | общий UI / ≤60 |
 | 🆕 | `leg.virus` | Вирусы | Viruses | Вирусы | общий UI / ≤60 |
@@ -222,7 +222,7 @@
 |  | `massWord` | Масса | Mass | Масса | общий UI / ≤60 |
 |  | `maxPop` | Макс. поп | Max Pop | Макс. поп | общий UI / ≤60 |
 |  | `menu` | В МЕНЮ | MENU | В МЕНЮ | общий UI / ≤60 |
-|  | `menuSub` | Симуляция микроорганизмов — 100 видов + вирусы. Разрез водоёма сбоку. | Microorganism Simulation — 100 species + viruses. Pond cross-section view. | Симуляция микроорганизмов — 100 видов + вирусы. Разрез водоёма сбоку. | общий UI / ≤60 |
+|  | `menuSub` | Симуляция микроорганизмов — {n} видов + вирусы. Разрез водоёма сбоку. | Microorganism Simulation — {n} species + viruses. Pond cross-section view. | Симуляция микроорганизмов — {n} видов + вирусы. Разрез водоёма сбоку. | общий UI / ≤60 |
 | 🆕 | `mic.scope` | МИКРОСКОП × | MICROSCOPE × | МИКРОСКОП × | микроскоп / ≤30 |
 |  | `microscope` | Микроскоп | Microscope | Микроскоп | общий UI / ≤60 |
 |  | `midEaterTip` | Средний едок: подплыви к зелёным/бактериям — реснички фильтруют сами. | Mid eater: swim to greens or bacteria. Cilia filter on their own. | Средний едок: подплыви к зелёным/бактериям — реснички фильтруют сами. | общий UI / ≤60 |
@@ -231,10 +231,10 @@
 | 🆕 | `mob.you` |  · ВЫ |  · YOU |  · ВЫ | моб. UI / ≤30 |
 | 🆕 | `mode.swissLbl` | 📗 SWISS | 📗 SWISS | 📗 SWISS | общий UI / ≤60 |
 | 🆕 | `mode.webglLbl` | 🌊 WEBGL | 🌊 WEBGL | 🌊 WEBGL | общий UI / ≤60 |
-| 🆕 | `modeBig.cartoon` | 🎨 CARTOON | 🎨 CARTOON | 🎨 CARTOON | общий UI / ≤60 |
+| 🆕 | `modeBig.cartoon` | 🎨 МУЛЬТЯШНЫЙ | 🎨 CARTOON | 🎨 МУЛЬТЯШНЫЙ | общий UI / ≤60 |
 | 🆕 | `modeBig.swiss` | 📗 SWISSBIOPICS | 📗 SWISSBIOPICS | 📗 SWISSBIOPICS | общий UI / ≤60 |
 | 🆕 | `modeBig.webgl` | 🌊 WEBGL | 🌊 WEBGL | 🌊 WEBGL | общий UI / ≤60 |
-| 🆕 | `modeLbl.cartoon` | 🎨 Cartoon | 🎨 Cartoon | 🎨 Cartoon | общий UI / ≤60 |
+| 🆕 | `modeLbl.cartoon` | 🎨 Мультяшный | 🎨 Cartoon | 🎨 Мультяшный | общий UI / ≤60 |
 | 🆕 | `modeLbl.swiss` | 📗 SwissBioPics | 📗 SwissBioPics | 📗 SwissBioPics | общий UI / ≤60 |
 | 🆕 | `modeLbl.webgl` | 🌊 WebGL | 🌊 WebGL | 🌊 WebGL | общий UI / ≤60 |
 |  | `next` | Далее | Next | Далее | общий UI / ≤60 |
@@ -244,7 +244,7 @@
 |  | `paused` | ПАУЗА | PAUSED | ПАУЗА | общий UI / ≤60 |
 |  | `picMode` | Режим картинки | Picture mode | Режим картинки | общий UI / ≤60 |
 |  | `play` | Играть | Play | Играть | общий UI / ≤60 |
-|  | `poolWill` | В бассейне будет: ~{n} организмов · {kinds} видов | Pool will have: ~{n} organisms · {kinds} species | В бассейне будет: ~{n} организмов · {kinds} видов | общий UI / ≤60 |
+|  | `poolWill` | В водоёме будет: ~{n} организмов · {kinds} видов | Pool will have: ~{n} organisms · {kinds} species | В водоёме будет: ~{n} организмов · {kinds} видов | общий UI / ≤60 |
 |  | `pop` | Поп-ция | Pop | Поп-ция | общий UI / ≤60 |
 |  | `popTip` | График популяции — сколько микробов во времени. | Population chart: how many microbes over time. | График популяции — сколько микробов во времени. | общий UI / ≤60 |
 |  | `predation` | Хищники | Predators | Хищники | общий UI / ≤60 |
@@ -313,7 +313,7 @@
 | 🆕 | `tip.fly` | Свободный полёт: F или WASD / мышь | Free flight: F or WASD / mouse | Свободный полёт: F или WASD / мышь | общий UI / ≤60 |
 | 🆕 | `tip.follow` | Следить | Follow | Следить | общий UI / ≤60 |
 | 🆕 | `tip.fpsL` | Кадры в секунду (FPS). Показывает производительность игры. | Frames per second (FPS). Shows game performance. | Кадры в секунду (FPS). Показывает производительность игры. | общий UI / ≤60 |
-| 🆕 | `tip.lang` | Выбор языка (Language Selector) | Language selector | Выбор языка (Language Selector) | общий UI / ≤60 |
+| 🆕 | `tip.lang` | Выбор языка | Language selector | Выбор языка | общий UI / ≤60 |
 | 🆕 | `tip.lightL` | Уровень освещенности. Важен для фотосинтеза водорослей. | Light level. Important for algae photosynthesis. | Уровень освещенности. Важен для фотосинтеза водорослей. | общий UI / ≤60 |
 | 🆕 | `tip.microMode` | Режим микроскопа | Microscope Mode | Режим микроскопа | общий UI / ≤60 |
 | 🆕 | `tip.pause` | Пауза | Pause | Пауза | общий UI / ≤60 |
@@ -430,8 +430,8 @@
 | 🆕 | `x.totalBorn` | Всего родилось | Total born | Всего родилось | метки/подписи / ≤60 |
 | 🆕 | `x.trichocysts` | трихоцисты | trichocysts | трихоцисты | метки/подписи / ≤60 |
 | 🆕 | `x.virusMode` | РЕЖИМ ВИРУСА | VIRUS MODE | РЕЖИМ ВИРУСА | метки/подписи / ≤60 |
-| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel` | <span><kbd>WASD</kbd> Плывать</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПкМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Плывать</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПкМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
-| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel2` | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
+| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel` | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> Курсор</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> Курсор</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
+| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel2` | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> Курсор</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> Курсор</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
 | 🆕 | `x.wind` | Ветер | Wind | Ветер | метки/подписи / ≤60 |
 | 🆕 | `x.you` | Это Вы | You | Это Вы | метки/подписи / ≤60 |
 | 🆕 | `x.yourCell` | Ваша клетка | Your cell | Ваша клетка | метки/подписи / ≤60 |
@@ -445,6 +445,30 @@
 | 🆕 | `loc.sessile` | прикреплённый | sessile | прикреплённый | вики «Движение» / ≤18 |
 | 🆕 | `loc.budding` | почкование | budding | почкование | вики «Движение» / ≤18 |
 | 🆕 | `loc.growth` | рост | growth | рост | вики «Движение» / ≤18 |
+| 🆕 | `exitAsk` | Выйти? | Exit? | Выйти? | общий UI / ≤60 |
+| 🆕 | `exitMsg` | Прогресс этой жизни будет потерян. | Progress of this life will be lost. | Прогресс этой жизни будет потерян. | общий UI / ≤60 |
+| 🆕 | `yes` | Да | Yes | Да | общий UI / ≤60 |
+| 🆕 | `no` | Нет | No | Нет | общий UI / ≤60 |
+| 🆕 | `more` | Ещё | More | Ещё | общий UI / ≤60 |
+| 🆕 | `deadYours` | Ваша клетка погибла | Your cell died | Ваша клетка погибла | общий UI / ≤60 |
+| 🆕 | `aliveWord` | живых | alive | живых | общий UI / ≤60 |
+| 🆕 | `deadOther` | Прочее | Other | Прочее | общий UI / ≤60 |
+| 🆕 | `setLang` | Язык | Language | Язык | настройки / ≤40 |
+| 🆕 | `helpTouch` | <p><b>Управление:</b> Джойстик — плыть. Касание воды — направление. Нижние кнопки: есть, делиться, спора, авто. Щипок — масштаб.</p> | <p><b>Controls:</b> Drag the joystick to swim. Tap the water to aim. Bottom buttons: Eat, Divide, Spore, Auto. Pinch to zoom.</p> | <p><b>Управление:</b> Джойстик — плыть. Касание воды — направление. Нижние кнопки: есть, делиться, спора, авто. Щипок — масштаб.</p> | общий UI / ≤60 |
+| 🆕 | `dCull` | Регуляция пула | Pool regulation | Регуляция пула | общий UI / ≤60 |
+| 🆕 | `errGeneric` | Ошибка | Error | Ошибка | общий UI / ≤60 |
+| 🆕 | `errAsync` | Асинхронная ошибка | Async error | Асинхронная ошибка | общий UI / ≤60 |
+| 🆕 | `loadingWorld` | Собираем пруд… | Building the pond… | Собираем пруд… | общий UI / ≤60 |
+| 🆕 | `economy` | Экономный режим | Economy mode | Экономный режим | общий UI / ≤60 |
+| 🆕 | `economyAsk` | Кадров меньше 25. Экономный режим — в настройках: меньше подписей, водоём −30%. | Frame rate is under 25. Economy mode is in Settings: fewer captions, pool −30%. | Кадров меньше 25. Экономный режим — в настройках: меньше подписей, водоём −30%. | общий UI / ≤60 |
+| 🆕 | `demoTipTouch` | <b>ДЕМО</b> · палец двигает камеру · 1–6 группа · касание клетки — войти<br> | <b>DEMO</b> · drag to fly · 1–6 jump group · tap a cell to enter<br> | <b>ДЕМО</b> · палец двигает камеру · 1–6 группа · касание клетки — войти<br> | общий UI / ≤60 |
+| 🆕 | `camFlyTouch` | Свободная камера | Free cam | Свободная камера | общий UI / ≤60 |
+| 🆕 | `speciesShown.one` | {n} вид | {n} species | {n} вид | общий UI / ≤60 |
+| 🆕 | `speciesShown.other` | {n} вид | {n} species | {n} вид | общий UI / ≤60 |
+| 🆕 | `coloniesCount.one` | {n} колония | {n} colony | {n} колония | общий UI / ≤60 |
+| 🆕 | `coloniesCount.other` | {n} колония | {n} colonies | {n} колония | общий UI / ≤60 |
+| 🆕 | `aliveCount.one` | {n} жив | {n} alive | {n} жив | общий UI / ≤60 |
+| 🆕 | `aliveCount.other` | {n} жив | {n} alive | {n} жив | общий UI / ≤60 |
 
 ## Вики — тела видов (108)
 

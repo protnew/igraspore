@@ -1,12 +1,12 @@
 # Пакет на проверку аналитику: zh-TW (круг 5)
 
-- Дата: 2026-10-16 17:46:37 UTC+3  |  Круг: 5
+- Дата: 2026-11-01 16:47:56 UTC+3  |  Круг: 5
 - input_sha256 словарей (полные — для raw<zh-TW-analyst-round5.json):
-  - `en.json` = d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938
-  - `ru.json` = b0d7750efcee45dc350b2ecb9d1e01e19439799c121fe595394c25ba9d11e8c1
-  - `zh-TW.json` = 2e3e4087d0e1b1cbd7a9323bc032b75a0f3c6fc3e98dc09c737757eb8d47a48a
+  - `en.json` = ecc487cf85a2d180c5dbddb6c53d7e52448d44e4c5c60ccd0df2d57db6c2a9ca
+  - `ru.json` = a5ca4acf4f6733c835c9a84bb2ae33aa8fa2b8db5ab544e7fac907f8abc3f4cc
+  - `zh-TW.json` = d5b91bcfd7aa88704ee85f81fb0483b75f200e15173453555acbda096f160626
   - `wiki/zh-TW.json` = f1ecfb2fcdccd1532e0572bb7e911e9e10f3838efc2299b769bd6d7cf7f2a505
-- Ключей UI: 412 (из них 🆕 новых после круга 4: 272 — U13 263 + U42 loc.* 9); вики-тел: 108
+- Ключей UI: 436 (из них 🆕 новых после круга 4: 296 — U13 263 + U42 loc.* 9); вики-тел: 108
 - Rubric 0–10 по 5 осям: смысл, глоссарий, регистр, длина, ошибки. Порог включения ≥ 8.
 - Ответ аналитика: `09-Docs/i18n-review/raw/zh-TW-analyst-round5.json` + строка в ANALYST-LEDGER.md (пишет ТОЛЬКО аналитик).
 
@@ -29,7 +29,7 @@
 - `../out-dev-factory/shots-release-ready-2026-10-14/i18n/zh-TW/390-wiki-article.png`
 - `../out-dev-factory/shots-release-ready-2026-10-14/i18n/zh-TW/390-wiki-list.png`
 
-## Словарь UI (412)
+## Словарь UI (436)
 
 | 🆕 | ключ | ru | en | zh-TW | где / макс. длина |
 |---|---|---|---|---|---|
@@ -42,7 +42,7 @@
 | 🆕 | `aria.apk` | Скачать приложение Android APK | Download Android APK app | 下載 Android APK 應用 | общий UI / ≤60 |
 | 🆕 | `aria.aqua` | Аквариум | Aquarium | 水族箱 | общий UI / ≤60 |
 | 🆕 | `aria.auto` | Авто (Tab) | Auto (Tab) | 自動 (Tab) | общий UI / ≤60 |
-| 🆕 | `aria.cyst` | Спора (R) | Spore (R) | 胞囊 (R) | общий UI / ≤60 |
+| 🆕 | `aria.cyst` | Спора (R) | Spore (R) | 孢子 (R) | общий UI / ≤60 |
 | 🆕 | `aria.demo` | Демо | Demo | 展示 | общий UI / ≤60 |
 | 🆕 | `aria.divide` | Делить (Q) | Split (Q) | 分裂 (Q) | общий UI / ≤60 |
 | 🆕 | `aria.eat` | Есть (E) | Eat (E) | 進食 (E) | общий UI / ≤60 |
@@ -96,9 +96,9 @@
 |  | `dStarve` | Голод | Starved | 餓死 | общий UI / ≤60 |
 |  | `dTemp` | Температура | Temp | 溫度 | общий UI / ≤60 |
 | 🆕 | `dTip.age` | Совет: Старость неизбежна. Важно успеть разделиться до гибели. | Tip: Old age is inevitable. Divide before you die. | 提示: 衰老不可避免。死前先分裂。 | общий UI / ≤60 |
-| 🆕 | `dTip.eaten` | Совет: Избегайте хищников, используйте Режим везения для бегства. | Tip: Avoid predators, use Grace Period to run away. | 提示: 避開捕食者,利用寬限期逃跑。 | общий UI / ≤60 |
+| 🆕 | `dTip.eaten` | Совет: Избегайте хищников, используйте Режим везения для бегства. | Tip: Avoid predators, use Grace Period to run away. | 提示: 避開獵手，趁機逃跑。 | общий UI / ≤60 |
 | 🆕 | `dTip.lysis` | Совет: Лизис (разрыв мембраны) вызывает вирус. Держитесь от них подальше. | Tip: Lysis is caused by viruses. Stay away from them. | 提示: 裂解由病毒造成。遠離牠們。 | общий UI / ≤60 |
-| 🆕 | `dTip.starve` | Совет: Чаще питайтесь, держитесь ближе к скоплениям еды или ускорьте свой вид. | Tip: Eat more often, stay near food clusters, or mutate speed. | 提示: 更常進食,待在食物群附近,或變異速度。 | общий UI / ≤60 |
+| 🆕 | `dTip.starve` | Совет: Чаще питайтесь, держитесь ближе к скоплениям еды или ускорьте свой вид. | Tip: Eat more often, stay near food clusters, or mutate speed. | 提示: 多進食，靠近食物。 | общий UI / ≤60 |
 | 🆕 | `dTip.temp` | Совет: Следите за термометром. Мутируйте температурный диапазон. | Tip: Watch the thermometer. Mutate your temp range. | 提示: 注意溫度計。變異你的溫度範圍。 | общий UI / ≤60 |
 |  | `days` | Дней | Days | 天 | общий UI / ≤60 |
 |  | `dead` | ВЫМИРАНИЕ | EXTINCT | 滅絕 | общий UI / ≤60 |
@@ -183,7 +183,7 @@
 |  | `gameTime` | Время | Time | 時間 | общий UI / ≤60 |
 |  | `healthBars` | Шкалы здоровья | Health Bars | 血條 | общий UI / ≤60 |
 |  | `help` | КАК ИГРАТЬ | HOW TO PLAY | 怎麼玩 | общий UI / ≤60 |
-| 🆕 | `help.body` | <p><b style="color:#4df">Управление:</b> WASD — плавание. Вверх = поверхность, вниз = дно. ЛКМ — плыть к курсору. Пробел — укус.</p><p><b style="color:#8f8">Кто кого ест (просто):</b></p><p style="line-height:1.45">🌱 <b>Зелёные</b> — не охотятся. Кормятся светом (как растения). Это основной корм пруда.<br>🔵 <b>Мелкие едоки</b> — бактерии. Грызут зелёных.<br>🟠 <b>Средние едоки</b> — инфузории. Фильтруют воду: затягивают бактерий и зелёных. Не прыгают на гигантов.<br>🟣 <b>Крупные охотники</b> — едят зелёных, бактерий и средних. Можно кусать и чуть более крупных (опасно). Без еды живут долго.</p><p><b style="color:#4df">Камера:</b> F — свободный полёт. V — вернуться к клетке. Колесо — зум.</p><p><b style="color:#4df">Деление:</b> Наелся и вырос — делишься на двоих. Q — вручную.</p> | <p><b style="color:#4df">Controls:</b> WASD swim. Space = bite. LMB = swim to cursor.</p><p><b style="color:#8f8">Who eats whom:</b></p><p>🌱 Greens eat light. 🔵 Small eaters eat greens. 🟠 Mid eaters filter bacteria+greens. 🟣 Big hunters eat greens, bacteria and mid-eaters — and can bite slightly larger prey.</p><p><b style="color:#4df">Camera:</b> F free cam, V back to cell. Wheel = zoom.</p><p><b style="color:#4df">Division:</b> Eat, grow, split. Q = manual.</p> | <p><b style="color:#4df">操作:</b> WASD 游動。Space = 咬。LMB = 游向游標。</p><p><b style="color:#8f8">誰吃誰:</b></p><p>🌱 綠色吃光。🔵 小型食客吃綠色。🟠 中型濾食細菌+綠色。🟣 大型獵手吃綠色、細菌與中型 — 還能咬稍大的獵物。</p><p><b style="color:#4df">鏡頭:</b> F 自由鏡頭,V 回到細胞。滾輪 = 縮放。</p><p><b style="color:#4df">分裂:</b> 吃、長大、分裂。Q = 手動。</p> | помощь / ≤200 |
+| 🆕 | `help.body` | <p><b style="color:#4df">Управление:</b> WASD — плавать. Пробел = укус. ЛКМ — плыть к курсору.</p><p><b style="color:#8f8">Кто кого ест:</b></p><p>🌱 Зелёные едят свет. 🔵 Мелкие едоки едят зелёных. 🟠 Средние фильтруют бактерий и зелёных. 🟣 Крупные охотники едят зелёных, бактерий и средних — и могут кусать чуть более крупных.</p><p><b style="color:#4df">Камера:</b> F свободная камера, V к клетке. Колесо = зум.</p><p><b style="color:#4df">Деление:</b> Ешь, расти, делись. Q — вручную.</p> | <p><b style="color:#4df">Controls:</b> WASD swim. Space = bite. LMB = swim to cursor.</p><p><b style="color:#8f8">Who eats whom:</b></p><p>🌱 Greens eat light. 🔵 Small eaters eat greens. 🟠 Mid eaters filter bacteria+greens. 🟣 Big hunters eat greens, bacteria and mid-eaters — and can bite slightly larger prey.</p><p><b style="color:#4df">Camera:</b> F free cam, V back to cell. Wheel = zoom.</p><p><b style="color:#4df">Division:</b> Eat, grow, split. Q = manual.</p> | <p><b style="color:#4df">操作:</b> WASD 游動。Space = 咬。LMB = 游向游標。</p><p><b style="color:#8f8">誰吃誰:</b></p><p>🌱 綠色吃光。🔵 小型食客吃綠色。🟠 中型濾食細菌+綠色。🟣 大型獵手吃綠色、細菌與中型 — 還能咬稍大的獵物。</p><p><b style="color:#4df">鏡頭:</b> F 自由鏡頭,V 回到細胞。滾輪 = 縮放。</p><p><b style="color:#4df">分裂:</b> 吃、長大、分裂。Q = 手動。</p> | помощь / ≤200 |
 |  | `hud.btn.auto` | АВТО | AUTO | 自動 | HUD кнопка / ≤14 |
 |  | `hud.btn.auto.short` | АВТО | AUTO | 自動 | HUD кнопка (короткая) / ≤8 |
 |  | `hud.btn.cyst` | СПОРА | SPORE | 孢子 | HUD кнопка / ≤14 |
@@ -209,7 +209,7 @@
 | 🆕 | `lb.title` | 🏆 Таблица лидеров | 🏆 Leaderboard | 🏆 排行榜 | общий UI / ≤60 |
 | 🆕 | `leg.apex` | Крупные охотники | Apex hunters | 頂級獵手 | общий UI / ≤60 |
 | 🆕 | `leg.bacteria` | Бактерии | Bacteria | 細菌 | общий UI / ≤60 |
-| 🆕 | `leg.decomp` | Разлагатели | Decomposers | 分解者 | общий UI / ≤60 |
+| 🆕 | `leg.decomp` | редуценти | Decomposers | 分解者 | общий UI / ≤60 |
 | 🆕 | `leg.large` | Крупные | Large | 大型 | общий UI / ≤60 |
 | 🆕 | `leg.producer` | Водоросли | Algae | 藻類 | общий UI / ≤60 |
 | 🆕 | `leg.virus` | Вирусы | Viruses | 病毒 | общий UI / ≤60 |
@@ -222,7 +222,7 @@
 |  | `massWord` | Масса | Mass | 質量 | общий UI / ≤60 |
 |  | `maxPop` | Макс. поп | Max Pop | 數量上限 | общий UI / ≤60 |
 |  | `menu` | В МЕНЮ | MENU | 選單 | общий UI / ≤60 |
-|  | `menuSub` | Симуляция микроорганизмов — 100 видов + вирусы. Разрез водоёма сбоку. | Microorganism Simulation — 100 species + viruses. Pond cross-section view. | 微生物模擬 — 100 種 + 病毒。池塘剖面。 | общий UI / ≤60 |
+|  | `menuSub` | Симуляция микроорганизмов — {n} видов + вирусы. Разрез водоёма сбоку. | Microorganism Simulation — {n} species + viruses. Pond cross-section view. | 微生物模擬 — {n} 種 + 病毒。池塘剖面。 | общий UI / ≤60 |
 | 🆕 | `mic.scope` | МИКРОСКОП × | MICROSCOPE × | 顯微鏡 × | микроскоп / ≤30 |
 |  | `microscope` | Микроскоп | Microscope | 顯微鏡 | общий UI / ≤60 |
 |  | `midEaterTip` | Средний едок: подплыви к зелёным/бактериям — реснички фильтруют сами. | Mid eater: swim to greens or bacteria. Cilia filter on their own. | 中型捕食者：游向綠藻或細菌。纖毛會自行過濾。 | общий UI / ≤60 |
@@ -231,10 +231,10 @@
 | 🆕 | `mob.you` |  · ВЫ |  · YOU |  · 你 | моб. UI / ≤30 |
 | 🆕 | `mode.swissLbl` | 📗 SWISS | 📗 SWISS | 📗 SWISS | общий UI / ≤60 |
 | 🆕 | `mode.webglLbl` | 🌊 WEBGL | 🌊 WEBGL | 🌊 WEBGL | общий UI / ≤60 |
-| 🆕 | `modeBig.cartoon` | 🎨 CARTOON | 🎨 CARTOON | 🎨 卡通 | общий UI / ≤60 |
+| 🆕 | `modeBig.cartoon` | 🎨 МУЛЬТЯШНЫЙ | 🎨 CARTOON | 🎨 卡通 | общий UI / ≤60 |
 | 🆕 | `modeBig.swiss` | 📗 SWISSBIOPICS | 📗 SWISSBIOPICS | 📗 SWISSBIOPICS | общий UI / ≤60 |
 | 🆕 | `modeBig.webgl` | 🌊 WEBGL | 🌊 WEBGL | 🌊 WEBGL | общий UI / ≤60 |
-| 🆕 | `modeLbl.cartoon` | 🎨 Cartoon | 🎨 Cartoon | 🎨 卡通 | общий UI / ≤60 |
+| 🆕 | `modeLbl.cartoon` | 🎨 Мультяшный | 🎨 Cartoon | 🎨 卡通 | общий UI / ≤60 |
 | 🆕 | `modeLbl.swiss` | 📗 SwissBioPics | 📗 SwissBioPics | 📗 SwissBioPics | общий UI / ≤60 |
 | 🆕 | `modeLbl.webgl` | 🌊 WebGL | 🌊 WebGL | 🌊 WebGL | общий UI / ≤60 |
 |  | `next` | Далее | Next | 下一步 | общий UI / ≤60 |
@@ -244,7 +244,7 @@
 |  | `paused` | ПАУЗА | PAUSED | 暫停 | общий UI / ≤60 |
 |  | `picMode` | Режим картинки | Picture mode | 圖片模式 | общий UI / ≤60 |
 |  | `play` | Играть | Play | 遊玩 | общий UI / ≤60 |
-|  | `poolWill` | В бассейне будет: ~{n} организмов · {kinds} видов | Pool will have: ~{n} organisms · {kinds} species | 池塘將有：約 {n} 個生物 · {kinds} 種 | общий UI / ≤60 |
+|  | `poolWill` | В водоёме будет: ~{n} организмов · {kinds} видов | Pool will have: ~{n} organisms · {kinds} species | 池塘將有：約 {n} 個生物 · {kinds} 種 | общий UI / ≤60 |
 |  | `pop` | Поп-ция | Pop | 數量 | общий UI / ≤60 |
 |  | `popTip` | График популяции — сколько микробов во времени. | Population chart: how many microbes over time. | 族群數量圖：隨時間的微生物數。 | общий UI / ≤60 |
 |  | `predation` | Хищники | Predators | 掠食者 | общий UI / ≤60 |
@@ -304,7 +304,7 @@
 | 🆕 | `tip.auto` | Авто | Auto | 自動 | общий UI / ≤60 |
 | 🆕 | `tip.cartoon` | Мультяшный. Клик → SwissBioPics | Cartoon. Click -> SwissBioPics | 卡通。點擊 -> SwissBioPics | общий UI / ≤60 |
 | 🆕 | `tip.cbFilter` | Фильтр организмов. Нажмите, чтобы показать только этот вид в меню. | Organism filter. Click to show only this species in the menu. | 生物篩選。點擊後選單只顯示此物種。 | общий UI / ≤60 |
-| 🆕 | `tip.cyst` | Спора | Spore | 胞囊 | общий UI / ≤60 |
+| 🆕 | `tip.cyst` | Спора | Spore | 孢子 | общий UI / ≤60 |
 | 🆕 | `tip.daysL` | Игровые дни. Смена сезонов влияет на температуру. | Game days. Season changes affect temperature. | 遊戲天數。季節變化影響溫度。 | общий UI / ≤60 |
 | 🆕 | `tip.divide` | Делить | Split | 分裂 | общий UI / ≤60 |
 | 🆕 | `tip.eat` | Есть | Eat | 進食 | общий UI / ≤60 |
@@ -313,7 +313,7 @@
 | 🆕 | `tip.fly` | Свободный полёт: F или WASD / мышь | Free flight: F or WASD / mouse | 自由飛行: F 或 WASD / 滑鼠 | общий UI / ≤60 |
 | 🆕 | `tip.follow` | Следить | Follow | 跟隨 | общий UI / ≤60 |
 | 🆕 | `tip.fpsL` | Кадры в секунду (FPS). Показывает производительность игры. | Frames per second (FPS). Shows game performance. | 每秒影格數 (FPS)。顯示遊戲效能。 | общий UI / ≤60 |
-| 🆕 | `tip.lang` | Выбор языка (Language Selector) | Language selector | 語言選擇 | общий UI / ≤60 |
+| 🆕 | `tip.lang` | Выбор языка | Language selector | 語言選擇 | общий UI / ≤60 |
 | 🆕 | `tip.lightL` | Уровень освещенности. Важен для фотосинтеза водорослей. | Light level. Important for algae photosynthesis. | 光照等級。對藻類光合作用很重要。 | общий UI / ≤60 |
 | 🆕 | `tip.microMode` | Режим микроскопа | Microscope Mode | 顯微鏡模式 | общий UI / ≤60 |
 | 🆕 | `tip.pause` | Пауза | Pause | 暫停 | общий UI / ≤60 |
@@ -430,8 +430,8 @@
 | 🆕 | `x.totalBorn` | Всего родилось | Total born | 總誕生數 | метки/подписи / ≤60 |
 | 🆕 | `x.trichocysts` | трихоцисты | trichocysts | 刺絲胞 | метки/подписи / ≤60 |
 | 🆕 | `x.virusMode` | РЕЖИМ ВИРУСА | VIRUS MODE | 病毒模式 | метки/подписи / ≤60 |
-| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel` | <span><kbd>WASD</kbd> Плывать</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПкМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> 游動</span><span><kbd>LMB</kbd> 游標</span><span><kbd>RMB</kbd> 目標</span><span><kbd>滾輪</kbd> 縮放</span><span class="kh-sum">按鍵: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
-| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel2` | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> 游動</span><span><kbd>LMB</kbd> 游標</span><span><kbd>RMB</kbd> 目標</span><span><kbd>滾輪</kbd> 縮放</span><span class="kh-sum">按鍵: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
+| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel` | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> Курсор</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> 游動</span><span><kbd>左鍵</kbd> 游標</span><span><kbd>右鍵</kbd> 目標</span><span><kbd>滾輪</kbd> 縮放</span><span class="kh-sum">按鍵: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
+| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel2` | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> Курсор</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> 游動</span><span><kbd>左鍵</kbd> 游標</span><span><kbd>右鍵</kbd> 目標</span><span><kbd>滾輪</kbd> 縮放</span><span class="kh-sum">按鍵: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
 | 🆕 | `x.wind` | Ветер | Wind | 風 | метки/подписи / ≤60 |
 | 🆕 | `x.you` | Это Вы | You | 你 | метки/подписи / ≤60 |
 | 🆕 | `x.yourCell` | Ваша клетка | Your cell | 你的細胞 | метки/подписи / ≤60 |
@@ -445,6 +445,30 @@
 | 🆕 | `loc.sessile` | прикреплённый | sessile | 固著 | вики «Движение» / ≤18 |
 | 🆕 | `loc.budding` | почкование | budding | 出芽 | вики «Движение» / ≤18 |
 | 🆕 | `loc.growth` | рост | growth | 生長 | вики «Движение» / ≤18 |
+| 🆕 | `exitAsk` | Выйти? | Exit? | 要離開嗎？ | общий UI / ≤60 |
+| 🆕 | `exitMsg` | Прогресс этой жизни будет потерян. | Progress of this life will be lost. | 這一生的進度將會失去。 | общий UI / ≤60 |
+| 🆕 | `yes` | Да | Yes | 是 | общий UI / ≤60 |
+| 🆕 | `no` | Нет | No | 否 | общий UI / ≤60 |
+| 🆕 | `more` | Ещё | More | 更多 | общий UI / ≤60 |
+| 🆕 | `deadYours` | Ваша клетка погибла | Your cell died | 你的細胞死了 | общий UI / ≤60 |
+| 🆕 | `aliveWord` | живых | alive | 存活 | общий UI / ≤60 |
+| 🆕 | `deadOther` | Прочее | Other | 其他 | общий UI / ≤60 |
+| 🆕 | `setLang` | Язык | Language | 語言 | настройки / ≤40 |
+| 🆕 | `helpTouch` | <p><b>Управление:</b> Джойстик — плыть. Касание воды — направление. Нижние кнопки: есть, делиться, спора, авто. Щипок — масштаб.</p> | <p><b>Controls:</b> Drag the joystick to swim. Tap the water to aim. Bottom buttons: Eat, Divide, Spore, Auto. Pinch to zoom.</p> | <p><b>操作：</b>搖桿游泳。點水決定方向。下方按鈕：吃、分裂、孢子、自動。雙指縮放。</p> | общий UI / ≤60 |
+| 🆕 | `dCull` | Регуляция пула | Pool regulation | 池調節 | общий UI / ≤60 |
+| 🆕 | `errGeneric` | Ошибка | Error | 錯誤 | общий UI / ≤60 |
+| 🆕 | `errAsync` | Асинхронная ошибка | Async error | 非同步錯誤 | общий UI / ≤60 |
+| 🆕 | `loadingWorld` | Собираем пруд… | Building the pond… | 正在建造池塘… | общий UI / ≤60 |
+| 🆕 | `economy` | Экономный режим | Economy mode | 省電模式 | общий UI / ≤60 |
+| 🆕 | `economyAsk` | Кадров меньше 25. Экономный режим — в настройках: меньше подписей, водоём −30%. | Frame rate is under 25. Economy mode is in Settings: fewer captions, pool −30%. | 幀率低於25。省電模式在設定中:減少標籤,池 −30%。 | общий UI / ≤60 |
+| 🆕 | `demoTipTouch` | <b>ДЕМО</b> · палец двигает камеру · 1–6 группа · касание клетки — войти<br> | <b>DEMO</b> · drag to fly · 1–6 jump group · tap a cell to enter<br> | <b>示範</b> · 拖曳飛行 · 1–6 群組 · 點擊細胞進入<br> | общий UI / ≤60 |
+| 🆕 | `camFlyTouch` | Свободная камера | Free cam | 自由視角 | общий UI / ≤60 |
+| 🆕 | `speciesShown.one` | {n} вид | {n} species | {n}種 | общий UI / ≤60 |
+| 🆕 | `speciesShown.other` | {n} вид | {n} species | {n}種 | общий UI / ≤60 |
+| 🆕 | `coloniesCount.one` | {n} колония | {n} colony | {n}群落 | общий UI / ≤60 |
+| 🆕 | `coloniesCount.other` | {n} колония | {n} colonies | {n}群落 | общий UI / ≤60 |
+| 🆕 | `aliveCount.one` | {n} жив | {n} alive | {n}隻 | общий UI / ≤60 |
+| 🆕 | `aliveCount.other` | {n} жив | {n} alive | {n}隻 | общий UI / ≤60 |
 
 ## Вики — тела видов (108)
 

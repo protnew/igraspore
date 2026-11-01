@@ -1,12 +1,12 @@
 # Пакет на проверку аналитику: tr (круг 5)
 
-- Дата: 2026-10-16 17:46:37 UTC+3  |  Круг: 5
+- Дата: 2026-11-01 16:47:56 UTC+3  |  Круг: 5
 - input_sha256 словарей (полные — для raw<tr-analyst-round5.json):
-  - `en.json` = d5b54954a7f4cff6ed13d7abf00c1cd9616eacbbc225d250ea4893dd9411d938
-  - `ru.json` = b0d7750efcee45dc350b2ecb9d1e01e19439799c121fe595394c25ba9d11e8c1
-  - `tr.json` = e683fdfb14374c58d9f0954268d1d25e0ac71927c5b00461982ecb0e3715f684
-  - `wiki/tr.json` = 00dba564ab596759f4ec72c641e03d7d951c5cd5a22ff9e94a0960902fc2706f
-- Ключей UI: 412 (из них 🆕 новых после круга 4: 272 — U13 263 + U42 loc.* 9); вики-тел: 108
+  - `en.json` = ecc487cf85a2d180c5dbddb6c53d7e52448d44e4c5c60ccd0df2d57db6c2a9ca
+  - `ru.json` = a5ca4acf4f6733c835c9a84bb2ae33aa8fa2b8db5ab544e7fac907f8abc3f4cc
+  - `tr.json` = 6799d6a264d195da701c9d554321b2d090f8f837ee409fd0dcb077e809ae994b
+  - `wiki/tr.json` = 63873b2494d5c985a3ce6d203ee926ef1f0c1e5d7d8c68139d06bac4a3b23d4b
+- Ключей UI: 436 (из них 🆕 новых после круга 4: 296 — U13 263 + U42 loc.* 9); вики-тел: 108
 - Rubric 0–10 по 5 осям: смысл, глоссарий, регистр, длина, ошибки. Порог включения ≥ 8.
 - Ответ аналитика: `09-Docs/i18n-review/raw/tr-analyst-round5.json` + строка в ANALYST-LEDGER.md (пишет ТОЛЬКО аналитик).
 
@@ -21,7 +21,7 @@
 - `../out-dev-factory/shots-release-ready-2026-10-14/i18n/tr/390-wiki-article.png`
 - `../out-dev-factory/shots-release-ready-2026-10-14/i18n/tr/390-wiki-list.png`
 
-## Словарь UI (412)
+## Словарь UI (436)
 
 | 🆕 | ключ | ru | en | tr | где / макс. длина |
 |---|---|---|---|---|---|
@@ -87,11 +87,11 @@
 |  | `dLysis` | Лизис | Lysis | Lizis | общий UI / ≤60 |
 |  | `dStarve` | Голод | Starved | Açlık | общий UI / ≤60 |
 |  | `dTemp` | Температура | Temp | Sıcaklık | общий UI / ≤60 |
-| 🆕 | `dTip.age` | Совет: Старость неизбежна. Важно успеть разделиться до гибели. | Tip: Old age is inevitable. Divide before you die. | İpucu: Yaşlanma kaçınılmaz. Ölmeden önce bölünün. | общий UI / ≤60 |
-| 🆕 | `dTip.eaten` | Совет: Избегайте хищников, используйте Режим везения для бегства. | Tip: Avoid predators, use Grace Period to run away. | İpucu: Yırtıcılardan kaçının, kaçmak için Lütuf Süresi’ni kullanın. | общий UI / ≤60 |
-| 🆕 | `dTip.lysis` | Совет: Лизис (разрыв мембраны) вызывает вирус. Держитесь от них подальше. | Tip: Lysis is caused by viruses. Stay away from them. | İpucu: Lizise virüsler yol açar. Onlardan uzak durun. | общий UI / ≤60 |
-| 🆕 | `dTip.starve` | Совет: Чаще питайтесь, держитесь ближе к скоплениям еды или ускорьте свой вид. | Tip: Eat more often, stay near food clusters, or mutate speed. | İpucu: Daha sık yiyin, yiyeğin toplandığı yerlerde durun ya da hızınızı mutasyonlayın. | общий UI / ≤60 |
-| 🆕 | `dTip.temp` | Совет: Следите за термометром. Мутируйте температурный диапазон. | Tip: Watch the thermometer. Mutate your temp range. | İpucu: Termmetreyle ilgilenin. Sıcaklık aralığınızı mutasyonlayın. | общий UI / ≤60 |
+| 🆕 | `dTip.age` | Совет: Старость неизбежна. Важно успеть разделиться до гибели. | Tip: Old age is inevitable. Divide before you die. | İpucu: Yaşlanma kaçınılmaz. Ölmeden önce böl. | общий UI / ≤60 |
+| 🆕 | `dTip.eaten` | Совет: Избегайте хищников, используйте Режим везения для бегства. | Tip: Avoid predators, use Grace Period to run away. | İpucu: Yırtıcılardan kaç, kaçmak için Lütuf Süresi’ni kullan. | общий UI / ≤60 |
+| 🆕 | `dTip.lysis` | Совет: Лизис (разрыв мембраны) вызывает вирус. Держитесь от них подальше. | Tip: Lysis is caused by viruses. Stay away from them. | İpucu: Lizise virüsler yol açar. Onlardan uzak dur. | общий UI / ≤60 |
+| 🆕 | `dTip.starve` | Совет: Чаще питайтесь, держитесь ближе к скоплениям еды или ускорьте свой вид. | Tip: Eat more often, stay near food clusters, or mutate speed. | İpucu: Daha sık ye, yiyecek kümelerinin yakınında kal ya da hızını mutasyona uğrat. | общий UI / ≤60 |
+| 🆕 | `dTip.temp` | Совет: Следите за термометром. Мутируйте температурный диапазон. | Tip: Watch the thermometer. Mutate your temp range. | İpucu: Termometreyi izle. Sıcaklık aralığını mutasyona uğrat. | общий UI / ≤60 |
 |  | `days` | Дней | Days | Gün | общий UI / ≤60 |
 |  | `dead` | ВЫМИРАНИЕ | EXTINCT | NESLİ TÜKENDİ | общий UI / ≤60 |
 |  | `decomposer` | Уборщики (грибки) | Cleaners (fungi) | Ayrıştırıcılar (mantarlar) | общий UI / ≤60 |
@@ -135,7 +135,7 @@
 | 🆕 | `edu.cilia.name` | Реснички | Cilia | Kirpikler | анатомия / ≤120 |
 | 🆕 | `edu.cyto.desc` | Внутренняя среда клетки: вода, белки, органеллы. Здесь идут тысячи биохимических реакций. | The cell's inner medium: water, proteins, organelles. Thousands of biochemical reactions run here. | Hücrenin iç ortamı: su, proteinler, organeller. Burada binlerce biyokimyasal tepkime gerçekleşir. | анатомия / ≤120 |
 | 🆕 | `edu.cyto.name` | Цитоплазма | Cytoplasm | Sitoplazma | анатомия / ≤120 |
-| 🆕 | `edu.flagella.desc` | Длинный «мотор» для плавания. Вращается или изгибается — клетка плывёт к пище или от опасности (хемотаксис). | Long swimming motor. Rotates or bends — the cell swims to food or away from danger (chemotaxis). | Uzun yüzme motoru. Döner ya da kıvrılır — hücre yiyeğe ya da tehlikeden uzağa yüzer (kemotaksi). | анатомия / ≤120 |
+| 🆕 | `edu.flagella.desc` | Длинный «мотор» для плавания. Вращается или изгибается — клетка плывёт к пище или от опасности (хемотаксис). | Long swimming motor. Rotates or bends — the cell swims to food or away from danger (chemotaxis). | Uzun yüzme motoru. Döner ya da kıvrılır — hücre yiyeceğe ya da tehlikeden uzağa yüzer (kemotaksi). | анатомия / ≤120 |
 | 🆕 | `edu.flagella.name` | Жгутик | Flagellum | Kamçı | анатомия / ≤120 |
 | 🆕 | `edu.hoverHint` | Наведи на точку внутри клетки — название и роль органа | Hover a dot inside the cell — organelle name and role | Hücre içinde bir noktanın üzerine gel — organel adı ve görevi | анатомия / ≤120 |
 | 🆕 | `edu.membrane.desc` | Тонкая оболочка из липидов. Контролирует, что входит и выходит. У всех клеток есть мембрана. | Thin lipid envelope. Controls what goes in and out. Every cell has a membrane. | İnce lipit zarf. Ne girip ne çıktığını denetler. Her hücrenin zarı vardır. | анатомия / ≤120 |
@@ -175,7 +175,7 @@
 |  | `gameTime` | Время | Time | Zaman | общий UI / ≤60 |
 |  | `healthBars` | Шкалы здоровья | Health Bars | Can çubukları | общий UI / ≤60 |
 |  | `help` | КАК ИГРАТЬ | HOW TO PLAY | NASIL OYNANIR | общий UI / ≤60 |
-| 🆕 | `help.body` | <p><b style="color:#4df">Управление:</b> WASD — плавание. Вверх = поверхность, вниз = дно. ЛКМ — плыть к курсору. Пробел — укус.</p><p><b style="color:#8f8">Кто кого ест (просто):</b></p><p style="line-height:1.45">🌱 <b>Зелёные</b> — не охотятся. Кормятся светом (как растения). Это основной корм пруда.<br>🔵 <b>Мелкие едоки</b> — бактерии. Грызут зелёных.<br>🟠 <b>Средние едоки</b> — инфузории. Фильтруют воду: затягивают бактерий и зелёных. Не прыгают на гигантов.<br>🟣 <b>Крупные охотники</b> — едят зелёных, бактерий и средних. Можно кусать и чуть более крупных (опасно). Без еды живут долго.</p><p><b style="color:#4df">Камера:</b> F — свободный полёт. V — вернуться к клетке. Колесо — зум.</p><p><b style="color:#4df">Деление:</b> Наелся и вырос — делишься на двоих. Q — вручную.</p> | <p><b style="color:#4df">Controls:</b> WASD swim. Space = bite. LMB = swim to cursor.</p><p><b style="color:#8f8">Who eats whom:</b></p><p>🌱 Greens eat light. 🔵 Small eaters eat greens. 🟠 Mid eaters filter bacteria+greens. 🟣 Big hunters eat greens, bacteria and mid-eaters — and can bite slightly larger prey.</p><p><b style="color:#4df">Camera:</b> F free cam, V back to cell. Wheel = zoom.</p><p><b style="color:#4df">Division:</b> Eat, grow, split. Q = manual.</p> | <p><b style="color:#4df">Kontroller:</b> WASD ile yüz. Space = ısır. Sol tık = imlece yüz.</p><p><b style="color:#8f8">Kim kimi yer:</b></p><p>🌱 Yeşiller ışığı yer. 🔵 Küçük yiyiciler yeşilleri yer. 🟠 Orta yiyiciler bakteri+yeşil süzer. 🟣 Büyük avcılar yeşil, bakteri ve orta yiyicileri yer — biraz daha büyük avı da ısırabilir.</p><p><b style="color:#4df">Kamera:</b> F serbest kamera, V hücreye dön. Tekerlek = zum.</p><p><b style="color:#4df">Bölünme:</b> Ye, büyü, böl. Q = manuel.</p> | помощь / ≤200 |
+| 🆕 | `help.body` | <p><b style="color:#4df">Управление:</b> WASD — плавать. Пробел = укус. ЛКМ — плыть к курсору.</p><p><b style="color:#8f8">Кто кого ест:</b></p><p>🌱 Зелёные едят свет. 🔵 Мелкие едоки едят зелёных. 🟠 Средние фильтруют бактерий и зелёных. 🟣 Крупные охотники едят зелёных, бактерий и средних — и могут кусать чуть более крупных.</p><p><b style="color:#4df">Камера:</b> F свободная камера, V к клетке. Колесо = зум.</p><p><b style="color:#4df">Деление:</b> Ешь, расти, делись. Q — вручную.</p> | <p><b style="color:#4df">Controls:</b> WASD swim. Space = bite. LMB = swim to cursor.</p><p><b style="color:#8f8">Who eats whom:</b></p><p>🌱 Greens eat light. 🔵 Small eaters eat greens. 🟠 Mid eaters filter bacteria+greens. 🟣 Big hunters eat greens, bacteria and mid-eaters — and can bite slightly larger prey.</p><p><b style="color:#4df">Camera:</b> F free cam, V back to cell. Wheel = zoom.</p><p><b style="color:#4df">Division:</b> Eat, grow, split. Q = manual.</p> | <p><b style="color:#4df">Kontroller:</b> WASD ile yüz. Space = ısır. Sol tık = imlece yüz.</p><p><b style="color:#8f8">Kim kimi yer:</b></p><p>🌱 Yeşiller ışığı yer. 🔵 Küçük yiyiciler yeşilleri yer. 🟠 Orta yiyiciler bakteri+yeşil süzer. 🟣 Büyük avcılar yeşil, bakteri ve orta yiyicileri yer — biraz daha büyük avı da ısırabilir.</p><p><b style="color:#4df">Kamera:</b> F serbest kamera, V hücreye dön. Tekerlek = zum.</p><p><b style="color:#4df">Bölünme:</b> Ye, büyü, böl. Q = manuel.</p> | помощь / ≤200 |
 |  | `hud.btn.auto` | АВТО | AUTO | OTO | HUD кнопка / ≤14 |
 |  | `hud.btn.auto.short` | АВТО | AUTO | OTO | HUD кнопка (короткая) / ≤8 |
 |  | `hud.btn.cyst` | СПОРА | SPORE | SPOR | HUD кнопка / ≤14 |
@@ -201,7 +201,7 @@
 | 🆕 | `lb.title` | 🏆 Таблица лидеров | 🏆 Leaderboard | 🏆 Skor tablosu | общий UI / ≤60 |
 | 🆕 | `leg.apex` | Крупные охотники | Apex hunters | Büyük avcılar | общий UI / ≤60 |
 | 🆕 | `leg.bacteria` | Бактерии | Bacteria | Bakteriler | общий UI / ≤60 |
-| 🆕 | `leg.decomp` | Разлагатели | Decomposers | Ayrıştırıcılar | общий UI / ≤60 |
+| 🆕 | `leg.decomp` | редуценти | Decomposers | Ayrıştırıcılar | общий UI / ≤60 |
 | 🆕 | `leg.large` | Крупные | Large | Büyük | общий UI / ≤60 |
 | 🆕 | `leg.producer` | Водоросли | Algae | Yosunlar | общий UI / ≤60 |
 | 🆕 | `leg.virus` | Вирусы | Viruses | Virüsler | общий UI / ≤60 |
@@ -214,19 +214,19 @@
 |  | `massWord` | Масса | Mass | Kütle | общий UI / ≤60 |
 |  | `maxPop` | Макс. поп | Max Pop | Azami nüfus | общий UI / ≤60 |
 |  | `menu` | В МЕНЮ | MENU | MENÜ | общий UI / ≤60 |
-|  | `menuSub` | Симуляция микроорганизмов — 100 видов + вирусы. Разрез водоёма сбоку. | Microorganism Simulation — 100 species + viruses. Pond cross-section view. | Mikrop simülasyonu — 100 tür + virüs. Gölet kesiti. | общий UI / ≤60 |
+|  | `menuSub` | Симуляция микроорганизмов — {n} видов + вирусы. Разрез водоёма сбоку. | Microorganism Simulation — {n} species + viruses. Pond cross-section view. | Mikrop simülasyonu — {n} tür + virüs. Gölet kesiti. | общий UI / ≤60 |
 | 🆕 | `mic.scope` | МИКРОСКОП × | MICROSCOPE × | MİKROSKOP × | микроскоп / ≤30 |
 |  | `microscope` | Микроскоп | Microscope | Mikroskop | общий UI / ≤60 |
-|  | `midEaterTip` | Средний едок: подплыви к зелёным/бактериям — реснички фильтруют сами. | Mid eater: swim to greens or bacteria. Cilia filter on their own. | Orta yiyici: yeşillere veya bakterilere yüz. Siller kendiliğinden süzer. | общий UI / ≤60 |
+|  | `midEaterTip` | Средний едок: подплыви к зелёным/бактериям — реснички фильтруют сами. | Mid eater: swim to greens or bacteria. Cilia filter on their own. | Orta yiyici: yeşillere veya bakterilere yüz. Kirpikler kendiliğinden süzer. | общий UI / ≤60 |
 | 🆕 | `mob.eSep` |  · E= |  · E= |  · E= | моб. UI / ≤30 |
 | 🆕 | `mob.infected` |  · 🦠 заражён |  · 🦠 infected |  · 🦠 enfekte | моб. UI / ≤30 |
 | 🆕 | `mob.you` |  · ВЫ |  · YOU |  · SEN | моб. UI / ≤30 |
 | 🆕 | `mode.swissLbl` | 📗 SWISS | 📗 SWISS | 📗 SWISS | общий UI / ≤60 |
 | 🆕 | `mode.webglLbl` | 🌊 WEBGL | 🌊 WEBGL | 🌊 WEBGL | общий UI / ≤60 |
-| 🆕 | `modeBig.cartoon` | 🎨 CARTOON | 🎨 CARTOON | 🎨 ÇİZGİ FİLM | общий UI / ≤60 |
+| 🆕 | `modeBig.cartoon` | 🎨 МУЛЬТЯШНЫЙ | 🎨 CARTOON | 🎨 ÇİZGİ FİLM | общий UI / ≤60 |
 | 🆕 | `modeBig.swiss` | 📗 SWISSBIOPICS | 📗 SWISSBIOPICS | 📗 SWISSBIOPICS | общий UI / ≤60 |
 | 🆕 | `modeBig.webgl` | 🌊 WEBGL | 🌊 WEBGL | 🌊 WEBGL | общий UI / ≤60 |
-| 🆕 | `modeLbl.cartoon` | 🎨 Cartoon | 🎨 Cartoon | 🎨 Çizgi film | общий UI / ≤60 |
+| 🆕 | `modeLbl.cartoon` | 🎨 Мультяшный | 🎨 Cartoon | 🎨 Çizgi film | общий UI / ≤60 |
 | 🆕 | `modeLbl.swiss` | 📗 SwissBioPics | 📗 SwissBioPics | 📗 SwissBioPics | общий UI / ≤60 |
 | 🆕 | `modeLbl.webgl` | 🌊 WebGL | 🌊 WebGL | 🌊 WebGL | общий UI / ≤60 |
 |  | `next` | Далее | Next | Sonraki | общий UI / ≤60 |
@@ -236,7 +236,7 @@
 |  | `paused` | ПАУЗА | PAUSED | DURAKLATILDI | общий UI / ≤60 |
 |  | `picMode` | Режим картинки | Picture mode | Resim modu | общий UI / ≤60 |
 |  | `play` | Играть | Play | Oyna | общий UI / ≤60 |
-|  | `poolWill` | В бассейне будет: ~{n} организмов · {kinds} видов | Pool will have: ~{n} organisms · {kinds} species | Gölette olacak: ~{n} organizma · {kinds} tür | общий UI / ≤60 |
+|  | `poolWill` | В водоёме будет: ~{n} организмов · {kinds} видов | Pool will have: ~{n} organisms · {kinds} species | Gölette olacak: ~{n} organizma · {kinds} tür | общий UI / ≤60 |
 |  | `pop` | Поп-ция | Pop | Nüfus | общий UI / ≤60 |
 |  | `popTip` | График популяции — сколько микробов во времени. | Population chart: how many microbes over time. | Nüfus grafiği: zamanla kaç mikrop olduğu. | общий UI / ≤60 |
 |  | `predation` | Хищники | Predators | Avcılar | общий UI / ≤60 |
@@ -305,11 +305,11 @@
 | 🆕 | `tip.fly` | Свободный полёт: F или WASD / мышь | Free flight: F or WASD / mouse | Serbest uçuş: F ya da WASD / fare | общий UI / ≤60 |
 | 🆕 | `tip.follow` | Следить | Follow | Takip | общий UI / ≤60 |
 | 🆕 | `tip.fpsL` | Кадры в секунду (FPS). Показывает производительность игры. | Frames per second (FPS). Shows game performance. | Saniyedeki kare (FPS). Oyun performansını gösterir. | общий UI / ≤60 |
-| 🆕 | `tip.lang` | Выбор языка (Language Selector) | Language selector | Dil seçici | общий UI / ≤60 |
+| 🆕 | `tip.lang` | Выбор языка | Language selector | Dil seçici | общий UI / ≤60 |
 | 🆕 | `tip.lightL` | Уровень освещенности. Важен для фотосинтеза водорослей. | Light level. Important for algae photosynthesis. | Işık düzeyi. Yosun fotosentezi için önemli. | общий UI / ≤60 |
 | 🆕 | `tip.microMode` | Режим микроскопа | Microscope Mode | Mikroskop modu | общий UI / ≤60 |
 | 🆕 | `tip.pause` | Пауза | Pause | Duraklat | общий UI / ≤60 |
-| 🆕 | `tip.popC` | График популяции. Показывает историю рождений и смертей. | Population chart. Shows birth and death history. | Popülasyon grafiği. Doğum ve ölüm geçmişini gösterir. | общий UI / ≤60 |
+| 🆕 | `tip.popC` | График популяции. Показывает историю рождений и смертей. | Population chart. Shows birth and death history. | Nüfus grafiği. Doğum ve ölüm geçmişini gösterir. | общий UI / ≤60 |
 | 🆕 | `tip.render` | Картинка: мульт / Swiss | Picture: cartoon / Swiss | Görüntü: çizgi film / Swiss | общий UI / ≤60 |
 | 🆕 | `tip.starSel` | Выбор звезды/солнца | Select star/sun | Yıldız/güneş seç | общий UI / ≤60 |
 | 🆕 | `tip.swiss` | SwissBioPics. Клик → WebGL | SwissBioPics. Click -> WebGL | SwissBioPics. Tıkla -> WebGL | общий UI / ≤60 |
@@ -354,7 +354,7 @@
 | 🆕 | `tut.s1.title` | Добро пожаловать | Welcome | Hoş geldin | обучение / ≤200 |
 | 🆕 | `tut.s2.body` | WASD — плыть. Мышь задаёт направление. Попробуйте сдвинуться, затем «Далее». | WASD to swim. The mouse sets direction. Move, then tap Next. | Yüzmek için WASD. Fare yönü belirler. Hareket et, sonra İleri’ye dokun. | обучение / ≤200 |
 | 🆕 | `tut.s2.title` | Движение | Movement | Hareket | обучение / ≤200 |
-| 🆕 | `tut.s3.body` | Подойдите к меньшей клетке и нажмите ЕСТЬ (E). Должны появиться вспышка и «+энергия». | Swim to a smaller cell and press EAT (E). You should see a flash. | Daha küçük bir hücreye yüz ve YE’ye (E) bas. Bir parlam görmelisin. | обучение / ≤200 |
+| 🆕 | `tut.s3.body` | Подойдите к меньшей клетке и нажмите ЕСТЬ (E). Должны появиться вспышка и «+энергия». | Swim to a smaller cell and press EAT (E). You should see a flash. | Daha küçük bir hücreye yüz ve YE’ye (E) bas. Bir parlama görmelisin. | обучение / ≤200 |
 | 🆕 | `tut.s3.title` | Питание | Eating | Beslenme | обучение / ≤200 |
 | 🆕 | `tut.s4.body` | При полной энергии нажмите ДЕЛИТЬ (Q). Клетка станет заметно меньше — это нормально. | When energy is full, press SPLIT (Q). The cell gets smaller. That is normal. | Enerji dolunca BÖL’e (Q) bas. Hücre küçülür. Bu normal. | обучение / ≤200 |
 | 🆕 | `tut.s4.title` | Деление | Division | Bölünme | обучение / ≤200 |
@@ -366,7 +366,7 @@
 |  | `virusMode` | Режим вируса: {name}. Кликни по бактерии = инфицировать. WASD = камера. | Virus mode: {name}. Click a bacterium to infect. WASD moves the camera. | Virüs modu: {name}. Enfekte etmek için bir bakteriye tıkla. WASD kamerayı hareket ettirir. | общий UI / ≤60 |
 |  | `virusRate` | Частота вирусов | Virus Rate | Virüs oranı | общий UI / ≤60 |
 |  | `webglNow` | Сейчас: WebGL-вода. Клик → мультяшный. | Now: WebGL water. Click for cartoon. | Şimdi: WebGL su. Çizgi için tıkla. | общий UI / ≤60 |
-| 🆕 | `wgl.diff1` | Фон воды рисует WebGL-шейдер (рябь, каустика, блик) | Water background drawn by WebGL shader (ripples, caustics, glints) | Su arka planını WebGL shader’ı çizer (dalga, kauistik, parıltı) | общий UI / ≤60 |
+| 🆕 | `wgl.diff1` | Фон воды рисует WebGL-шейдер (рябь, каустика, блик) | Water background drawn by WebGL shader (ripples, caustics, glints) | Su arka planını WebGL shader’ı çizer (dalga, kostik, parıltı) | общий UI / ≤60 |
 | 🆕 | `wgl.diff2` | Основной canvas прозрачный поверх GL | Main canvas transparent over GL | Ana tuval GL üzerinde saydam | общий UI / ≤60 |
 | 🆕 | `wgl.same1` | Мир и организмы на Canvas 2D | World and organisms on Canvas 2D | Dünya ve organizmalar Canvas 2D’de | общий UI / ≤60 |
 | 🆕 | `wgl.same2` | Управление/еда/движение без смены симуляции | Controls/food/movement without simulation change | Kontrol/yiyecek/hareket simülasyon değişmeden | общий UI / ≤60 |
@@ -376,7 +376,7 @@
 | 🆕 | `wiki.def.toxic` | Токсичность | Toxicity | Toksisite | вики / ≤300 |
 | 🆕 | `wiki.def.venom` | Яд | Venom | Zehir | вики / ≤300 |
 | 🆕 | `wiki.defs` | Особенности: | Features: | Özellikler: | вики / ≤300 |
-| 🆕 | `wiki.div.binary` | Деление надвое | Binary fission | İkilii bölünme | вики / ≤300 |
+| 🆕 | `wiki.div.binary` | Деление надвое | Binary fission | İkili bölünme | вики / ≤300 |
 | 🆕 | `wiki.div.budding` | Почкование | Budding | Tomurcuklanma | вики / ≤300 |
 | 🆕 | `wiki.searchPh` | Поиск… | Search... | Ara... | вики / ≤300 |
 |  | `wikiT` | Вики: жители лужи | Wiki: Pond Life | Viki: gölet yaşamı | общий UI / ≤60 |
@@ -422,8 +422,8 @@
 | 🆕 | `x.totalBorn` | Всего родилось | Total born | Toplam doğan | метки/подписи / ≤60 |
 | 🆕 | `x.trichocysts` | трихоцисты | trichocysts | trikocist | метки/подписи / ≤60 |
 | 🆕 | `x.virusMode` | РЕЖИМ ВИРУСА | VIRUS MODE | VİRÜS MODU | метки/подписи / ≤60 |
-| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel` | <span><kbd>WASD</kbd> Плывать</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПкМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Yüz</span><span><kbd>Sol tık</kbd> İmleç</span><span><kbd>Sağ tık</kbd> Hedef</span><span><kbd>Tekerlek</kbd> Zum</span><span class="kh-sum">Tuşlar: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
-| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel2` | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> К курсору</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Yüz</span><span><kbd>Sol tık</kbd> İmleç</span><span><kbd>Sağ tık</kbd> Hedef</span><span><kbd>Tekerlek</kbd> Zum</span><span class="kh-sum">Tuşlar: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
+| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel` | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> Курсор</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Yüz</span><span><kbd>Sol tık</kbd> İmleç</span><span><kbd>Sağ tık</kbd> Hedef</span><span><kbd>Tekerlek</kbd> Zum</span><span class="kh-sum">Tuşlar: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
+| 🆕 | `x.wasdSwimLmbCursorRmbTargetWheel2` | <span><kbd>WASD</kbd> Плыть</span><span><kbd>ЛКМ</kbd> Курсор</span><span><kbd>ПКМ</kbd> Цель</span><span><kbd>Колесо</kbd> Зум</span><span class="kh-sum">Кнопки: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Swim</span><span><kbd>LMB</kbd> Cursor</span><span><kbd>RMB</kbd> Target</span><span><kbd>Wheel</kbd> Zoom</span><span class="kh-sum">Buttons: E Q R Space Tab F M N V B P</span> | <span><kbd>WASD</kbd> Yüz</span><span><kbd>Sol tık</kbd> İmleç</span><span><kbd>Sağ tık</kbd> Hedef</span><span><kbd>Tekerlek</kbd> Zum</span><span class="kh-sum">Tuşlar: E Q R Space Tab F M N V B P</span> | метки/подписи / ≤60 |
 | 🆕 | `x.wind` | Ветер | Wind | Rüzgâr | метки/подписи / ≤60 |
 | 🆕 | `x.you` | Это Вы | You | Sen | метки/подписи / ≤60 |
 | 🆕 | `x.yourCell` | Ваша клетка | Your cell | Hücren | метки/подписи / ≤60 |
@@ -437,6 +437,30 @@
 | 🆕 | `loc.sessile` | прикреплённый | sessile | sabit | вики «Движение» / ≤18 |
 | 🆕 | `loc.budding` | почкование | budding | tomurcuklanma | вики «Движение» / ≤18 |
 | 🆕 | `loc.growth` | рост | growth | büyüme | вики «Движение» / ≤18 |
+| 🆕 | `exitAsk` | Выйти? | Exit? | Çıkmak mı? | общий UI / ≤60 |
+| 🆕 | `exitMsg` | Прогресс этой жизни будет потерян. | Progress of this life will be lost. | Bu yaşamın ilerlemesi kaybolacak. | общий UI / ≤60 |
+| 🆕 | `yes` | Да | Yes | Evet | общий UI / ≤60 |
+| 🆕 | `no` | Нет | No | Hayır | общий UI / ≤60 |
+| 🆕 | `more` | Ещё | More | Daha fazla | общий UI / ≤60 |
+| 🆕 | `deadYours` | Ваша клетка погибла | Your cell died | Hücren öldü | общий UI / ≤60 |
+| 🆕 | `aliveWord` | живых | alive | canlı | общий UI / ≤60 |
+| 🆕 | `deadOther` | Прочее | Other | Diğer | общий UI / ≤60 |
+| 🆕 | `setLang` | Язык | Language | Dil | настройки / ≤40 |
+| 🆕 | `helpTouch` | <p><b>Управление:</b> Джойстик — плыть. Касание воды — направление. Нижние кнопки: есть, делиться, спора, авто. Щипок — масштаб.</p> | <p><b>Controls:</b> Drag the joystick to swim. Tap the water to aim. Bottom buttons: Eat, Divide, Spore, Auto. Pinch to zoom.</p> | <p><b>Kontroller:</b> Yüzmek için joysticki sürükle. Nişan almak için suya dokun. Alt düğmeler: ye, böl, spor, oto. Yakınlaştırmak için kıstır.</p> | общий UI / ≤60 |
+| 🆕 | `dCull` | Регуляция пула | Pool regulation | Havuz düzenlemesi | общий UI / ≤60 |
+| 🆕 | `errGeneric` | Ошибка | Error | Hata | общий UI / ≤60 |
+| 🆕 | `errAsync` | Асинхронная ошибка | Async error | Asenkron hata | общий UI / ≤60 |
+| 🆕 | `loadingWorld` | Собираем пруд… | Building the pond… | Göl kuruluyor… | общий UI / ≤60 |
+| 🆕 | `economy` | Экономный режим | Economy mode | Ekonomik mod | общий UI / ≤60 |
+| 🆕 | `economyAsk` | Кадров меньше 25. Экономный режим — в настройках: меньше подписей, водоём −30%. | Frame rate is under 25. Economy mode is in Settings: fewer captions, pool −30%. | Kare hızı 25 altında. Ekonomik mod ayarlarda: daha az etiket, havuz −30%. | общий UI / ≤60 |
+| 🆕 | `demoTipTouch` | <b>ДЕМО</b> · палец двигает камеру · 1–6 группа · касание клетки — войти<br> | <b>DEMO</b> · drag to fly · 1–6 jump group · tap a cell to enter<br> | <b>DEMO</b> · uçmak için sürükle · 1–6 grup · hücreye dokun — gir<br> | общий UI / ≤60 |
+| 🆕 | `camFlyTouch` | Свободная камера | Free cam | Serbest kamera | общий UI / ≤60 |
+| 🆕 | `speciesShown.one` | {n} вид | {n} species | {n} tür | общий UI / ≤60 |
+| 🆕 | `speciesShown.other` | {n} вид | {n} species | {n} tür | общий UI / ≤60 |
+| 🆕 | `coloniesCount.one` | {n} колония | {n} colony | {n} koloni | общий UI / ≤60 |
+| 🆕 | `coloniesCount.other` | {n} колония | {n} colonies | {n} koloni | общий UI / ≤60 |
+| 🆕 | `aliveCount.one` | {n} жив | {n} alive | {n} canlı | общий UI / ≤60 |
+| 🆕 | `aliveCount.other` | {n} жив | {n} alive | {n} canlı | общий UI / ≤60 |
 
 ## Вики — тела видов (108)
 
@@ -493,15 +517,15 @@
 | `48` | Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball. | Stentor polymorphus, mavi stentorun akrabası, sıklıkla zooklorellalı. Biçim borazandan küreye değişir. |
 | `49` | Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away. | Vorticella campanula, kasılan bir sap üstünde zildir. Sap anında sarmala büzülür. Hücre kendisi yüzüp kaçmaz. |
 | `50` | Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus. | Vorticella microstoma, küçük bir zildir. Aynı yay sap, daha dar ağız alanı. Sıklıkla detritus üzerinde. |
-| `51` | Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger. | Didinium nasutum, terlikleri avlayan fıçıdır. Toksisitler fırlatır, avı kendinden büyük olsa bile bütün yutar. |
+| `51` | Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger. | Didinium nasutum, terlikleri avlayan fıçıdır. Toksisistler fırlatır, avı kendinden büyük olsa bile bütün yutar. |
 | `52` | Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral. | Spirostomum ambiguum, çok uzun bir purodur. Saniyenin kesrinde birkaç kat büzülür. Siller sarmal dizilir. |
 | `53` | Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells. | Blepharisma americanum, pembe bir siliattır. Blefarizmin pigmenti ışığa duyarlıdır. Süzer ve daha küçük hücrelere saldırabilir. |
-| `54` | Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces. | Euplotes patella, sirleri bacak gibi kullanarak yürür. Yassı, hızlı dönüşler. Yüzeylerden bakterileri sıyırır. |
-| `55` | Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates. | Stylonychia pustulata, dipte 'koşan' bir hypotriktir. Büyük sirler, belirgin ağız. Küçük siliatların avcısı. |
-| `56` | Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists. | Oxytricha trifallax, bir genom modelidir: iki çekirdek ve karmaşık DNA yeniden yazımı. Sirlerle yürür, bakteri ve küçük protistlerle beslenir. |
+| `54` | Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces. | Euplotes patella, sirruslarını bacak gibi kullanarak yürür. Yassı, hızlı dönüşler. Yüzeylerden bakterileri sıyırır. |
+| `55` | Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates. | Stylonychia pustulata, dipte 'koşan' bir hypotriktir. Büyük sirruslar, belirgin ağız. Küçük siliatların avcısı. |
+| `56` | Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists. | Oxytricha trifallax, bir genom modelidir: iki çekirdek ve karmaşık DNA yeniden yazımı. Sirruslarla yürür, bakteri ve küçük protistlerle beslenir. |
 | `57` | Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia. | Tetrahymena thermophila, laboratuvar siliatıdır. Ağızda dört membranella, hızlı bölünme. Telomer ve sil modeli. |
 | `58` | Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded. | Coleps hirtus, dikenli kireçli plakalar içinde bir fıçıdır. Leşçi ve avcı: yaralılara diş geçirir. |
-| `59` | Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out. | Litonotus lamella, 'hortumunda' toksisitler olan yassı bir avcıdır. Avı felç edip emer. |
+| `59` | Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out. | Litonotus lamella, 'hortumunda' toksisistler olan yassı bir avcıdır. Avı felç edip emer. |
 | `60` | Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter. | Dileptus anser'in zehirli ekstruzomları olan uzun bir boynu vardır. Boyunla vurur, sonra yutar. Orta kademe büyük avcı. |
 | `61` | Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria. | Urocentrum turbo, bir topaçtır: ekvatoral sil kuşağı hücreyi yerinde döndürür. Bakteri süzer. |
 | `62` | Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once. | Zoothamnium arbuscula, dallanan zil kolonisidir. Ortak kasılan sap tüm ağacı birden çeker. |
@@ -542,11 +566,11 @@
 | `97` | Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer. | Cellulomonas fimi, selülozu parçalar. Bitki detritusunda sarı basili. O olmadan ölü algler daha uzun kalırdı. |
 | `98` | Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant. | Thermus aquaticus, sıcak kaynakların termofilidir. Taq polimeraz PCR'ın temelidir. Soğuk gölette neredeyse uykuda. |
 | `99` | Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads. | Deinococcus radiodurans, radyasyon şampiyonudur. Paramparça genomu saatler içinde yeniden kurar. Kalın duvar, hücre tetradları. |
-| `1001` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Sexual Eukaryote, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil. |
+| `1001` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Eşeyli Ökaryot, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil. |
 | `T4 Bacteriophage` | T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit. | T4, E. coli'nin büyük bir myovirüsüdür. Kuyruk kasılır ve DNA enjekte eder. Yarım saatte hücre patlar ve düzinelerce faj çıkar. |
 | `Lambda Phage` | Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis). | Lambda, ılımlı bir fajdır. Kromozoma yerleşip uyuyabilir (lizojeni) ya da hücreyi hemen parçalayabilir (lizis). |
 | `T7 Bacteriophage` | T7 has a short tail and very fast replication. A favourite system in synthetic biology. | T7'nin kısa kuyruğu ve çok hızlı replikasyonu vardır. Sentetik biyolojinin gözde sistemi. |
 | `Phi-6 Phage` | Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage. | Phi-6, lipit zarfı olan bir RNA fajıdır. Pseudomonas'ı enfekte eder. Faj için nadir bir zar. |
 | `MS2 Phage` | MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read. | MS2, kuyruksuz minicik bir RNA fajıdır. Erkek E. coli pililerine bağlanır. Genomu okunan ilk RNA genomlarından biriydi. |
 | `Neuro-Parasite` | A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier. | Kurgusal bir göl nöro-parazitidir. Ökaryotlara tutunur ve konak taşıyıcı olana dek davranışını bozar. |
-| `Sexual Eukaryote` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Sexual Eukaryote, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil. |
+| `Sexual Eukaryote` | Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission. | Eşeyli Ökaryot, eşeyli üremenin öğretim modelidir. İki cinsiyet, gamet kaynaşması — basit ikiye bölünme değil. |

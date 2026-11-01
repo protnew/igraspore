@@ -566,5 +566,21 @@
     "playListing": true,
     "register": "ti",
     "critics": []
+  },
+  {
+    "code": "sr",
+    "name": "Српски",
+    "native": "Српски",
+    "wave": 10,
+    "enabled": false,
+    "readyForReview": true,
+    "font": "system",
+    "plural": "sr",
+    "script": "cyrl",
+    "dir": "ltr",
+    "digits": "latn",
+    "playListing": true,
+    "register": "ти",
+    "critics": []
   }
 ]

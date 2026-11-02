@@ -1,0 +1,15 @@
+FAIL V1 имя не по шаблону (ни новый TZ-08-SPOR v14+, ни легаси RELEASE-READY v3+): REPORT-TZ-08-SPOR-v26-i18n-recheck-2026-11-01.md
+PASS V2 финальная строка: inter
+PASS V3 code block содержит путь к отчёту
+PASS V4 sha=b5b8f6d head=c0171cb parent=b5b8f6d ab=[0	0]
+PASS V5 dirty=958 файл=958 мои=35 wip=923
+FAIL V6 ref=False; время отчёта из имени не распознано
+PASS V7 не ОСТАНОВЛЕН — пропуск
+PASS V8 не финал — пропуск
+PASS V9 cited=0 missing=0 critic_check exit=0
+PASS V10 нет diff-чисел
+PASS V11 sha проверено=29 bad=
+PASS V12 не Strict — пропуск
+FAIL V13 первая строка не маркер: # Отчёт по ТЗ-08-SPOR-v26-i18n-recheck (исполнитель)
+PASS V14 блок со строки 111, строк таблицы с путями=6
+VERIFY FAIL 3/14

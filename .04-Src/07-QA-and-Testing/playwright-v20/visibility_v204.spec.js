@@ -28,7 +28,9 @@ test.describe('v20.4 visibility', () => {
       const m = document.getElementById('menuO').getBoundingClientRect();
       const card = document.querySelector('#spGrid .sc');
       const name = card.querySelector('.scN') || card;
-      const lang = document.querySelector('#langSelWrap .lang-curr');
+      // v24 Р10: самописный #langSelWrap/.lang-curr заменён нативным <select id="menuLangSel">;
+      // проверяем тот же элемент (высота тапа и контраст подписи), а не несуществующий узел.
+      const lang = document.getElementById('menuLangSel');
       const lb = lang.getBoundingClientRect();
       const cs = getComputedStyle(name);
       const bg = getComputedStyle(card).backgroundColor;

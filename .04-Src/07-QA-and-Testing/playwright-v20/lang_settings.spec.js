@@ -12,7 +12,9 @@ test('[B12] switch language in settings mid-game', async ({ page }) => {
   const hasLang = await page.evaluate(`!!document.getElementById('setLang')`);
   expect(hasLang).toBe(true);
   const nOpts = await page.evaluate(`document.getElementById('setLang').options.length`);
-  expect(nOpts).toBe(20);
+  // в26: в сообщении печатаем и сами коды — иначе «21 вместо 20» непонятно чем вызвано
+  const optVals = await page.evaluate(`JSON.stringify(Array.from(document.getElementById('setLang').options).map(function(o){return o.value;}))`);
+  expect(nOpts, 'options=' + nOpts + ' vals=' + optVals + ' enabled=' + await page.evaluate('JSON.stringify(Object.keys(window.IGS_ENABLED||{}))')).toBe(20);
   await page.selectOption('#setLang', 'tr');
   await page.waitForTimeout(500);
   const after = await page.evaluate(`({url: location.search, lang: curLang, pid: player?player.sp.id:-1, div: document.getElementById('bDiv').textContent, pause: document.getElementById('pauseT').textContent})`);

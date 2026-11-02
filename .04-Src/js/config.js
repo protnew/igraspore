@@ -25,7 +25,10 @@ if(!T['bn'])T['bn']={};T['bn'].loadingWorld="পুকুর তৈরি হচ
 for(var l in LANGS){if(!T[l]){T[l]={};var ks=Object.keys(T.en);for(var k=0;k<ks.length;k++)T[l][ks[k]]=T.en[ks[k]];}}
 function tt(k, params){
   var s=(T[curLang]&&T[curLang][k])||(T.en&&T.en[k])||k;
-  if(s===k && !(T.en&&T.en[k]) && typeof window!=='undefined'){
+  // в26 Д8: misses = ключа нет ни в языке, ни в en. Обращения ДО загрузки пакета таким не являются:
+  // в момент первого кадра T[curLang] ещё пуст, а рукописный inline-слой T.en покрывает не все 436 ключей.
+  // Флаг ставит i18n_detect после loadLangPack (then и catch), поэтому реальный пропуск по-прежнему считается.
+  if(s===k && !(T.en&&T.en[k]) && typeof window!=='undefined' && window.__igsLangReady){
     window.__i18nMiss=window.__i18nMiss||0;
     window.__i18nMissKeys=window.__i18nMissKeys||{};
     var mk=(curLang||'')+':'+k;

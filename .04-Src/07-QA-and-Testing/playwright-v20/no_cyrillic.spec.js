@@ -9,8 +9,13 @@ for (const lang of LANGS) {
     await page.waitForTimeout(2000);
     // меню
     let bad = await page.evaluate(`(function(){
+      // B8 разрешает кириллицу в названиях языков (TZ v20: «кроме названий языков в списке»).
+      // v24 Р10 заменил самописный #langSelDrop на нативный <select id="menuLangSel">, и innerText
+      // селекта теперь отдаёт текст всех option'ов — закрываем оба, как закрывали один.
       var drop=document.getElementById('langSelDrop'); var hid=drop?drop.innerHTML:''; if(drop)drop.style.display='none';
+      var sel=document.getElementById('menuLangSel'); var sd=sel?sel.style.display:''; if(sel)sel.style.display='none';
       var t=(document.body.innerText||'');
+      if(sel){sel.style.display=sd;}
       if(drop){drop.style.display='';}
       return (t.match(/[\\u0400-\\u04FF]+/g)||[]).slice(0,5);
     })()`);

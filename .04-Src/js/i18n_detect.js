@@ -99,11 +99,12 @@ if (typeof window !== 'undefined') {
     if (typeof GENDERED_SP!=='undefined') GENDERED_SP.name = tt('sp.1001');
     { // v24 A2: en/ru грузятся из JSON как остальные (единственный источник — i18n/*.json)
       loadLangPack(curLang).then(function() {
+        window.__igsLangReady = 1; // в26 Д8: с этого момента tt() вправе считать ключ отсутствующим
         applyLangFont(curLang);
         if (typeof buildLangBar === 'function') buildLangBar();
         if (typeof updateMenuTexts === 'function') updateMenuTexts();
         if (typeof GENDERED_SP!=='undefined') GENDERED_SP.name = tt('sp.1001');
-      }).catch(function(){});
+      }).catch(function(){ window.__igsLangReady = 1; });
     }
   } catch (e) {}
 }

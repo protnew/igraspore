@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis അണുകേന്ദ്രമില്ലാത്ത സയനോബാക്ടീരിയമാണ്. പ്രകാശത്തിൽ ജീവിക്കുന്നു: സ്തരങ്ങളിൽ ഓക്സിജൻ-ദ്യുതിസംശ്ലേഷണം, ക്ലോറോപ്ലാസ്റ്റ് ഇല്ല. ഹൈഡ്രജൻ ഉപാപചയത്തിന്റെ ലാബ് മാതൃക."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis ഒരു നാര്‌മാല. ചില കോശങ്ങൾ ഹെറ്ററോസിസ്റ്റ് ആയി നൈട്രജൻ ബന്ധിക്കുന്നു, അയൽക്കാർ പഞ്ചസാര ഉണ്ടാക്കുന്നു. കുളത്തിൽ ഇത് ബന്ധിത നൈട്രജൻ നൽകുന്നു."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) വാതക സഞ്ചികളുള്ള കോശങ്ങളുടെ ചുരുൾ. ഉപരിതലത്തിനടുത്ത് പൊങ്ങിക്കിടക്കുന്നു, ദ്യുതിസംശ്ലേഷണം നടത്തുന്നു, ഭക്ഷ്യയോഗ്യം. കളിയിൽ ജലപ്പടലത്തിൽ വലിയ പച്ച സ്ക്രൂ."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme പശ കാപ്സ്യൂളിലെ മണുസരം. സ്വതന്ത്രമായോ സസ്യ സഹജീവനത്തിലോ ജീവിക്കുന്നു. കോളനി പച്ച മണുക്കളുടെ കൂമ്പാരം പോലെ."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica തെന്നിനീങ്ങുന്ന നാര്‌മാല. ഇത് വശങ്ങളിലേക്ക് ആടുന്നു, ഓക്സിജൻ പുറത്തുവിടാതെ ദ്യുതിസംശ്ലേഷണം ചെയ്യാനാവും. ചളിയിലും ഉപരിതല പടലത്തിലും സാധാരണം."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa പശയുടെ കോളനി, പലപ്പോഴും വിഷമുള്ളത് (മൈക്രോസിസ്റ്റിൻ). ഇത് ജലാരുണൽ (ബ്ലൂം) ഉണ്ടാക്കുന്നു. കളിയിൽ പച്ച കോളനി-ഉരുണ്ട, അപകടകരമായ ഇര."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa നിറമുള്ള ആവരണങ്ങളിലെ ജോഡി കോശങ്ങൾ. പാറകളിലും മണ്ണിലും ജീവിക്കുന്നു, UV സഹിക്കുന്നു. കുളത്തിൽ ആവരണത്തിനുള്ളിലെ ചെറിയ ജോഡി കോക്കസ്."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula കട്ടിയുള്ള സയനോബാക്ടീരിയ നാര്‌മാല. ചൊറിച്ചിൽ ഉണ്ടാക്കുന്ന വിഷം പുറത്തുവിടാം. ചൂടുള്ള കരകൾക്കടുത്ത് പടലങ്ങൾ ഉണ്ടാക്കുന്നു."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii രണ്ട് ഫ്ലാജെല്ലയും കണ്ണുകുത്തുമുള്ള പച്ച കോശം. ഇത് പ്രകാശത്തിലേക്ക് നീന്തുന്നു. ആൽഗ ജനിതകശാസ്ത്രത്തിന്റെ ക്ലാസിക് മാതൃക."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris ചലനമില്ലാത്ത പച്ച ഉരുണ്ട. വേഗം വിഭജിക്കുന്നു, പ്രോട്ടീൻ സമൃദ്ധം. ചെറിയ തിന്നുന്നവരുടെ ഭക്ഷണവും ബഹിരാകാശ-ഭക്ഷണ വിഷയവും."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator ആയിരക്കണക്കിന് കോശങ്ങളുടെ പൊള്ളയായ ഗോളം. പുത്രി-കോളനികൾ അകത്ത് പാകുകയും പുറത്തുപോവുകയും ചെയ്യുന്നു. കളിയിൽ വലിയ പച്ച കോളനി."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis മിക്സോട്രോഫ്: ക്ലോറോപ്ലാസ്റ്റും ഭക്ഷണം കഴിക്കാനുള്ള കഴിവും. ചുവന്ന കണ്ണുകുത്ത് വെളിച്ചം പിന്തുടരുന്നു. പകലിൽ പച്ച; ഇരുട്ടിൽ ഭക്ഷണത്തിലേക്ക് മാറുന്നു."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda സാധാരണയായി അറ്റത്ത് മുള്ളുകളുള്ള നാല് കോശങ്ങളുടെ നിര. മുള്ളുകൾ വിഴുങ്ങൽ കഠിനമാക്കുന്നു. ഇത് നീന്തുന്നില്ല — ഒഴുകിനീങ്ങുന്നു."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis പച്ച ചലകോശം; സമ്മർദ്ദത്തിൽ ചുവക്കുന്നു (ആസ്റ്റാക്സാന്തിൻ), കട്ടിയുള്ള ഭിത്തി വളർക്കുന്നു. ചുവന്ന സിസ്റ്റുകൾ വരൾച്ച അതിജീവിക്കുന്നു."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina ക്ക് കട്ടിയുള്ള ഭിത്തിയില്ല, വളരെ ഉപ്പുള്ള വെള്ളത്തിൽ ജീവിക്കുന്നു. ബീറ്റാ-കരോട്ടിൻ സംഭരിച്ച് ഓറഞ്ച് നിറം. രണ്ട് ഫ്ലാജെല്ല."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata പരന്ന നക്ഷത്ര ഡെസ്മിഡ്. ആഴമുള്ള വെട്ടുകളുള്ള രണ്ട് കണ്ണാടി-പകർപ്പ് പകുതികൾ. ചലനമില്ല; അമ്ല ചതുപ്പ് വെള്ളത്തിൽ ദ്യുതിസംശ്ലേഷണം."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula സിലിക്ക പാളികളുള്ള വഞ്ചി ആകൃതിയിലുള്ള ഡയാടം. റാഫെ വിടവിലൂടെ അടിത്തട്ടിൽ തെന്നിനീങ്ങുന്നു. മരണശേഷം ഷെൽ അവശേഷിക്കുന്നു."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis വലിയ പെന്നേറ്റ് ഡയാടം. സമമിത വിന്യാസമുള്ള സിലിക്ക ഷെൽ. അടിത്തട്ടിൽ പതുക്കെ തെന്നുന്നു."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana വൃത്താകൃതിയിലുള്ള സെൻട്രിക് ഡയാടം. തകിട് പോലെ പൊങ്ങിക്കിടക്കുന്നു; ഷെൽ രണ്ട് മൂടികൾ. സാധാരണ പ്ലവകം."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare സിഗ്സാഗായി ഒട്ടിപ്പിടിക്കുന്ന ഡയാടം. കോളനി ജലസ്തംഭത്തിൽ വലിവ് കൂട്ടുന്നു."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum ധൂമള സർപ്പിളം. ഓക്സിജനരഹിത ദ്യുതിസംശ്ലേഷണവും ജൈവിക വസ്തുക്കളും. ചുവപ്പ് നിറം ബാക്ടീരിയോക്ലോറോഫില്ലിൽ നിന്ന്."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum ധൂമള സൾഫർ ബാക്ടീരിയ. ഹൈഡ്രജൻ സൾഫൈഡ് ഓക്സിഡൈസ് ചെയ്ത് സൾഫർ കണികകൾ സംഭരിക്കുന്നു. ഓക്സിജൻ/സൾഫർ അതിർത്തിയിൽ ജീവിക്കുന്നു."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum ഏകകോശ ചുവപ്പ് ആൽഗ. ഫൈക്കോഎറിത്രിൻ രക്ത-ചുവപ്പ് നിറം നൽകുന്നു. പശ ആവരണം, ഫ്ലാജെല്ല ഇല്ല."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus ഭൂമിയിലെ ഏറ്റവും ചെറുതും സമൃദ്ധവുമായ ദ്യുതിസംശ്ലേഷക കോശം. 1980-കളിൽ കണ്ടെത്തി. ഇത് സമുദ്രത്തിന് ഭക്ഷണം നൽകുന്നു."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis എക്സ്ട്രീമോഫൈൽ: മരുഭൂമി, പാറ, റേഡിയേഷൻ. ഭൂമിക്ക് പുറത്തുള്ള ജീവന്റെ സ്ഥാനാർത്ഥി. കുളത്തിൽ മന്ദഗതിയിലുള്ള കോക്കസ് കോളനി."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus ചെറിയ ബാക്ടീരിയ വേട്ടക്കാരൻ. മറ്റൊരു കോശത്തിലേക്ക് സ്ക്രൂ പോലെ കയറി ആതിഥേയൻ പൊട്ടുന്നതുവരെ പെരുകുന്നു."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus ഇരയുടെ പുറത്ത് ഇരുന്ന്, ഉള്ളിലേക്ക് കടക്കാതെ, ഉള്ളടക്കം ഊറ്റിയെടുക്കുന്നു. ബാക്ടീരിയ വാമ്പയർ."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter ഇരയായ ബാക്ടീരിയയിലേക്ക് കടന്ന് അകത്തുനിന്ന് തിന്നുന്നു. അപൂർവ ഇൻട്രാസെല്ലുലാർ വേട്ടക്കാരൻ."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus സാമൂഹിക ബാക്ടീരിയ. കൂട്ടമായി ഇരയെ വളഞ്ഞ് എൻസൈമുകൾ പുറത്തുവിടുന്നു. വിശന്നാൽ ഫ്രൂട്ടിംഗ് ബോഡി ഉണ്ടാക്കുന്നു."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii കടൽ Bdellovibrio ബന്ധു. ഗ്രാം-നെഗറ്റീവുകളെ ആക്രമിച്ച് ഇരയുടെ പെരിപ്ലാസത്തിൽ ജീവിക്കുന്നു."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax ഉപ്പ് സഹിക്കുന്ന ബാക്ടീരിയ വേട്ടക്കാരൻ. അതേ തന്ത്രം: ഭിത്തി തുളച്ച് ഉള്ളിൽ വളരുക."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii മറ്റൊരു BALO വേട്ടക്കാരൻ. വേഗതയുള്ള കോമ-ആകൃതിയിലുള്ള ഫ്ലാജെലേറ്റ്, വലിയ റോഡുകളെ ലക്ഷ്യമിടുന്നു."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula ചെറിയ വിഷമപോഷി ഫ്ലാജെലേറ്റ്. ഡിട്രിറ്റസ് ഉപരിതലത്തിൽ ബാക്ടീരിയയെ പിടിക്കുന്നു."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo തുള്ളി-ആകൃതിയിലുള്ള ഫ്ലാജെലേറ്റ്. ഒരു ഫ്ലാജെല്ലം; ബാക്ടീരിയ പടലത്തിൽ വേട്ടയാടുന്നു."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans ഇരുമ്പ്-മാംഗനീസ് കാണ്ഡത്തിലുള്ള കോളനി. കോശങ്ങൾ കൂമ്പാരമായി ഇരുന്ന് ബാക്ടീരിയയെ പിടിക്കുന്നു."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium നിറമില്ലാത്ത ക്രിപ്റ്റോഫൈറ്റ്. രണ്ട് ഫ്ലാജെല്ല; അലിഞ്ഞ ജൈവികവും ചെറിയ ബാക്ടീരിയയും തിന്നുന്നു, ക്ലോറോപ്ലാസ്റ്റ് ഇല്ല."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda നീണ്ട വാലുള്ള അമീബോഫ്ലാജെലേറ്റ്. ഇഴഞ്ഞ് നീങ്ങി സൂഡോപോഡിയ കൊണ്ട് ബാക്ടീരിയയെ വിഴുങ്ങുന്നു."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa മണ്ണിലെ ഫ്ലാജെലേറ്റ്. വ്യത്യസ്ത നീളമുള്ള രണ്ട് ഫ്ലാജെല്ല; മണ്ണിലെ പ്രധാന ബാക്ടീരിയ-ഭക്ഷകൻ."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans കൈനറ്റോപ്ലാസ്റ്റിഡ്. പിൻ ഫ്ലാജെല്ലത്തിൽ ഒട്ടിനിന്ന് അതേ ഇടത്ത് 'ചുവടുവയ്ക്കുന്നു', ബാക്ടീരിയയെ പിടിക്കുന്നു."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini Bodo ബന്ധു. സ്വതന്ത്രമായി നീന്തി മുൻ ഫ്ലാജെല്ലം കൊണ്ട് ഇരയെ ആക്രമിക്കുന്നു."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei ഉറക്കരോഗം ഉണ്ടാക്കുന്ന രക്ത പരാന്നഭോജി. തരംഗിക്കുന്ന സ്തരവും ഒരു ഫ്ലാജെല്ലവും. കുളത്തിൽ നേർത്ത-വേട്ടക്കാരൻ മാതൃക."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani കോശത്തിനുള്ളിലെ മനുഷ്യ പരാന്നഭോജി. പ്രാണിയിൽ ഫ്ലാജെല്ലേറ്റ്, മാക്രോഫേജിനുള്ളിൽ അഫ്ലാജെല്ലേറ്റ്."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis ചോണോഫ്ലാജെലേറ്റ്, മൃഗങ്ങളുടെ ബന്ധു. മൈക്രോവില്ലി കോളർ ബാക്ടീരിയയെ അരിച്ചെടുക്കുന്നു."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta ലോറിക്കയിലെ ഇരിപ്പൻ ചോണോഫ്ലാജെലേറ്റ്. റോസറ്റ് ഉണ്ടാക്കാം. ജലപ്രവാഹം അരിച്ചെടുക്കുന്നു."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis പൊതു കാണ്ഡത്തിലുള്ള ചോണോഫ്ലാജെലേറ്റ് കോളനി. ഒരു കാണ്ഡത്തിൽ പല അരിപ്പകളും."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum ക്ലാസിക് ചെരിപ്പ്. ആയിരം സിലിയ, വായ്-വരമ്പ്, സങ്കോചക ശൂന്യകങ്ങൾ. ബാക്ടീരിയയെ അരിച്ചെടുക്കുന്നു."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria സൂക്ലോറെല്ല സഹജീവികളുള്ള ചെരിപ്പ്. അകത്ത് പച്ച: പകലിൽ ആൽഗയിൽ നിന്ന് പഞ്ചസാര, രാത്രി അരിക്കൽ."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus മില്ലിമീറ്റർ വരെ വലുപ്പമുള്ള നീല കാഹളം. കുമ്പിളി പോലെ വിരിഞ്ഞ് സിലിയ കൊണ്ട് പ്രവാഹം സൃഷ്ടിക്കുന്നു. നീന്താനും ഇരിക്കാനും കഴിയും."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus നീല സ്റ്റെന്ററിന്റെ ബന്ധു, പലപ്പോഴും സൂക്ലോറെല്ലയുമായി. രൂപം കാഹളത്തിൽ നിന്ന് ഉരുണ്ടയായി മാറുന്നു."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula സങ്കോചക കാണ്ഡത്തിലുള്ള മണി. കാണ്ഡം നിമിഷനേരം കൊണ്ട് ചുരുളുന്നു. കോശം നീന്തി രക്ഷപ്പെടുന്നില്ല."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma ചെറിയ മണി. അതേ സ്പ്രിംഗ്-കാണ്ഡം, ഇടുങ്ങിയ വായ്-പ്രദേശം. പലപ്പോഴും ഡിട്രിറ്റസിൽ."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum ചെരിപ്പുകളുടെ ബാരൽ വേട്ടക്കാരൻ. ടോക്സിസിസ്റ്റുകൾ എയ്ത് ഇര വലുതാണെങ്കിലും മുഴുവനായി വിഴുങ്ങുന്നു."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum വളരെ നീണ്ട സിഗാർ. സെക്കൻഡിന്റെ ഭാഗത്തിൽ പല മടങ്ങ് ചുരുങ്ങുന്നു. സിലിയ സർപ്പിളത്തിൽ ഓടുന്നു."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum പിങ്ക് സിലിയേറ്റ്. ബ്ലെഫാരിസ്മിൻ വർണ്ണകം പ്രകാശ-സംവേദനക്ഷമം. അരിച്ചെടുക്കുകയും ചെറിയ കോശങ്ങളെ ആക്രമിക്കുകയും ചെയ്യാം."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella സിരികളിൽ കാലുകളെപ്പോലെ നടക്കുന്നു. പരന്നത്, വേഗമേറിയ തിരിവുകൾ. പ്രതലങ്ങളിൽ നിന്ന് ബാക്ടീരിയയെ ചുരണ്ടിയെടുക്കുന്നു."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata അടിത്തട്ടിൽ 'ഓടുന്ന' ഹൈപ്പോട്രിക്. വലിയ സിരികൾ, വ്യക്തമായ വായ്. ചെറിയ സിലിയേറ്റുകളുടെ വേട്ടക്കാരൻ."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax ജീനോം മാതൃക: രണ്ട് ന്യൂക്ലിയസും സങ്കീർണ DNA പുനരെഴുത്തും. സിരികളിൽ നടന്ന് ബാക്ടീരിയയും ചെറിയ പ്രോട്ടിസ്റ്റുകളും തിന്നുന്നു."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila ലാബ് സിലിയേറ്റ്. നാല് വായ് മെംബ്രാനെല്ലകൾ, വേഗമേറിയ വിഭജനം. ടെലോമിയറുകൾക്കും സിലിയയ്ക്കും മാതൃക."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus കുമ്മായ പാളികളും മുള്ളുകളുമുള്ള ബാരൽ. അഴുക്കുഭക്ഷകനും വേട്ടക്കാരനും: മുറിവേറ്റവരെ കടിക്കുന്നു."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella 'തുമ്പിക്കൈ'യിൽ ടോക്സിസിസ്റ്റുകളുള്ള പരന്ന വേട്ടക്കാരൻ. ഇരയെ തളർത്തി ഊറ്റിയെടുക്കുന്നു."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser ന് വിഷമുള്ള എക്സ്ട്രുസോമുകളുള്ള നീണ്ട കഴുത്തുണ്ട്. കഴുത്തുകൊണ്ട് പ്രഹരിച്ച് പിന്നെ വിഴുങ്ങുന്നു. വലിയ ഇടത്തരം വേട്ടക്കാരൻ."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo കറങ്ങുന്ന റോമ്പം: മദ്ധ്യരേഖയിലെ സിലിയ-വരി കോശത്തെ അതേ ഇടത്ത് കറക്കുന്നു. ബാക്ടീരിയയെ അരിച്ചെടുക്കുന്നു."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula മണികളുടെ കൊമ്പുകളുള്ള കോളനി. പൊതു സങ്കോചക കാണ്ഡം മുഴുവൻ മരത്തെയും ഒറ്റ വലിക്ക് വലിക്കുന്നു."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata സ്പ്രിംഗ്-കാണ്ഡമില്ലാത്ത ഇരിപ്പൻ പെരിട്രിക്. മൂടി വായ് മൂടുന്നു. അരിച്ചെടുക്കുന്നു, രക്ഷപ്പെട്ട് പോകുന്നില്ല."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus ക്ലാസിക് അമീബ. സൂഡോപോഡിയ ഇരയ്ക്കു ചുറ്റും ഒഴുകുന്നു. ഉറച്ച രൂപമില്ല, സിലിയയില്ല."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris കട്ടിയുള്ള കുടയുള്ള ഷെൽ അമീബ. സൂഡോപോഡിയ ദ്വാരത്തിലൂടെ പുറത്തുവരുന്നു. ചെടികളിൽ ഇഴയുന്നു."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga യുടെ ഷെൽ മണൽ കണങ്ങളുടേത്, അമീബ അവ ഒട്ടിച്ചുണ്ടാക്കുന്നു. ചളിയിൽ ജീവിക്കുന്നു."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata യുടെ ഷെൽ സിലിക്ക-ചെതുകളുടേത്. നേർത്ത ഫിലോസ് സൂഡോപോഡിയ. ചെറിയ ബാക്ടീരിയ വേട്ടക്കാരൻ."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris മോഷ്ടിച്ച ചെതുകൊണ്ട് പണിത കുപ്പി-ആകൃതിയിലുള്ള ഷെൽ. കാട്ടും ചതുപ്പും വെള്ളം."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata മുള്ളുകളുള്ള തകിട്-ഷെൽ. ദ്വാരം നീങ്ങിയിരിക്കുന്നു. ഡിട്രിറ്റസിൽ ഇഴയുന്നു."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol ഹീലിയോസോവൻ: നേർത്ത ആക്സോപോഡിയ ചുറ്റും വിരിയുന്നു. ഇര കിരണങ്ങളിൽ ഒട്ടി ഉള്ളിലേക്ക് വലിക്കപ്പെടുന്നു."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni വലിയ ബഹുന്യൂക്ലിയസ് ഹീലിയോസോവൻ. അതേ കിരണങ്ങൾ, വളരെ വലിയ കോശം. സിലിയേറ്റുകളെയും റോട്ടിഫറുകളെയും തിന്നുന്നു."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida ചെതുകളുള്ള ഹീലിയോസോവൻ. കിരണങ്ങളിൽ സിലിക്ക-സൂചികൾ. ഒളിഞ്ഞിരുന്ന് ആക്രമിക്കുന്ന പ്ലവക വേട്ടക്കാരൻ."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria ഉണങ്ങൽ അതിജീവിക്കുന്ന റോട്ടിഫർ. കൊറോണ ഭക്ഷണത്തെ ചക്രം പോലെ വായിലേക്ക് കൊണ്ടുവരുന്നു. ശരിക്കുമുള്ള ബഹുകോശ ജീവി."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola പിങ്ക് ബ്ഡെല്ലോയ്ഡ് റോട്ടിഫർ. അട്ടപോലെ ഇഴയുന്നു, നീന്തുകയും ചെയ്യുന്നു. പെണ്ണുങ്ങൾ മാത്രം; ആണുങ്ങളില്ല."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis പ്ലവക ലോറിക്ക-റോട്ടിഫർ. ആക്വാകൾച്ചറിൽ കുഞ്ഞുമത്സ്യങ്ങളുടെ ഭക്ഷണം. ആൽഗയെയും ബാക്ടീരിയയെയും അരിച്ചെടുക്കുന്നു."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis നീണ്ട ലോറിക്ക-മുള്ളുള്ള റോട്ടിഫർ. മുള്ള് വേട്ടക്കാരെ പിന്തിരിപ്പിക്കുന്നു. സാധാരണ കുളം-പ്ലവകം."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta ലോറിക്കയില്ലാത്ത സഞ്ചി, വേട്ടക്കാരൻ റോട്ടിഫർ. മറ്റ് റോട്ടിഫറുകളെയും സിലിയേറ്റുകളെയും മുഴുവനായി വിഴുങ്ങുന്നു."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus ഗാസ്ട്രോട്രിക്. ചെതുകൾ നിറഞ്ഞത്, അടിത്തട്ടിൽ ഇഴയുന്നു. ബാക്ടീരിയയും ഡിട്രിറ്റസും തിന്നുന്നു."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata ഒന്നിനുമുകളിൽ ഒന്നായ ചെതുകളുള്ള ചെറിയ ഗാസ്ട്രോട്രിക്. അതേ ഇടത്ത് വളരെ വേഗമേറിയ തിരിവുകൾ."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano സൂക്ഷ്മ പരന്ന പുഴു. ശരിക്കുള്ള പേശികളും കണ്ണുകളും. പുനരുൽപ്പാദന മാതൃക. ചെറിയ പ്രോട്ടിസ്റ്റുകളെ വേട്ടയാടുന്നു."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops നേർത്ത സിലിയേറ്റഡ് പുഴു. കുറുകെ വിഭജിച്ച് സോയിഡുകളുടെ ശൃംഖല ഉണ്ടാക്കുന്നു. ഡിട്രിറ്റസിന്റെയും ചെറിയ ജീവികളുടെയും വേട്ടക്കാരൻ."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare ഹൈഡ്രയെ തിന്ന് അവയുടെ കുത്തുകോശങ്ങൾ സ്വന്തം ത്വക്കിൽ പതിയച്ചുവയ്ക്കുന്ന പുഴു. സോയിഡുകളുടെ ശൃംഖല."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense ശുദ്ധജല നെമെർട്ടിൻ. നീണ്ട തുമ്പിക്കൈ ഇരയിലേക്ക് എയ്യപ്പെടുന്നു. അപൂർവ വലിയ അടിത്തറ-വേട്ടക്കാരൻ."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens പ്ലാക്കോസോവൻ, ഏറ്റവും ലളിതമായ ജീവികളിലൊന്ന്. പാളിപോലെ ഇഴഞ്ഞ് ഭക്ഷണം പുറത്ത് ദഹിപ്പിക്കുന്നു. വായില്ല."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae ബ്രെഡ് യീസ്റ്റ്. മുകുളനം വഴി പെരുകുന്നു, പഞ്ചസാര തിന്ന്, CO2-ഉം ആൽക്കഹോളും പുറത്തുവിടുന്നു. കുളത്തിൽ അലിഞ്ഞ ജൈവികം വൃത്തിയാക്കുന്നു."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans നാരുകളായി വളരാനാവുന്ന യീസ്റ്റ്. അവസരവാദി മനുഷ്യ രോഗകാരി. കളിയിൽ ഡിട്രിറ്റൽ ഫംഗസ്."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo ബ്രെഡ് പൂപ്പൽ. കാണ്ഡങ്ങളിൽ സ്പോറാഞ്ചിയ, ചത്തവയ്ക്ക് മുകളിൽ വേഗമേറിയ വളർച്ച. ജീവനുള്ളവയെ വേട്ടയാടുന്നില്ല."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer കറുത്ത ബ്രെഡ് പൂപ്പൽ. സ്റ്റോലോണും റൈസോയ്ഡും അടിത്തറയിൽ പടരുന്നു. സ്റ്റാർച്ച് വിഘടിപ്പിക്കുന്നു."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum ബ്രഷ് പൂപ്പൽ, പെനിസിലിന്റെ ഉറവിടം. കോണിഡിയൽ ബ്രഷുകൾ. ജൈവികം വിഘടിപ്പിച്ച് അടുത്തുള്ള ബാക്ടീരിയയെ തടയുന്നു."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger കറുത്ത ആസ്പർജില്ലസ്. ഗോളാകൃതിയിലുള്ള ബീജ-തലകൾ. വ്യാവസായിക സിട്രിക്-ആസിഡ് ഉൽപാദകൻ. സാപ്രോട്രോഫ്."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis തവളകളുടെ കൈട്രിഡ്. ഏക-ഫ്ലാജെല്ല സൂസ്പോറുകൾ. കുളത്തിൽ വെള്ളം-ഫംഗസ് മാതൃക."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus പരാഗത്തിലും ആൽഗയിലും ജീവിക്കുന്ന ജല കൈട്രിഡ്. സ്വർണ്ണ സ്പോറാഞ്ചിയ; സൂസ്പോറുകൾ അടിത്തട്ടിലേക്ക് നീന്തുന്നു."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus ശരിക്കുള്ള മൈസീലിയമുള്ള ജല ഫംഗസ്. ദ്വിഗുണിതവും ഏകഗുണിതവും ഇടവിട്ട്. സൂസ്പോറുകൾക്ക് പിൻ ഫ്ലാജെല്ലം."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis മണ്ണിലെ ദണ്ഡ്. ബീജാണുക്കൾ തിളപ്പിച്ചാലും അതിജീവിക്കും. പ്രോട്ടീൻ വിഘടിപ്പിക്കുന്നു; ഗ്രാം-പോസിറ്റീവ് മാതൃക."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida വൃത്തിയാക്കുന്ന ദണ്ഡ്. പെട്രോളിയം ഉൽപ്പന്നങ്ങൾ പോലും തിന്നും. ഫ്ലാജെല്ലം കൊണ്ട് ചലനശേഷി, ഡിട്രിറ്റസിൽ വേഗമേറിയ വളർച്ച."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor നാരുള്ള മണ്ണ്-ബാക്ടീരിയ. മണ്ണിന്റെ മണം (ജിയോസ്മിൻ), ഒട്ടേറെ ആന്റിബയോട്ടിക്കുകൾ. ഹൈഫകളിൽ ബീജാണുക്കൾ."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi സെല്ലുലോസ് വിഘടിപ്പിക്കുന്നു. ചെടി-ഡിട്രിറ്റസിലെ മഞ്ഞ ദണ്ഡ്. ഇതില്ലെങ്കിൽ ചത്ത ആൽഗ കൂടുതൽ നാൾ പൊങ്ങിക്കിടക്കുമായിരുന്നു."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus ചൂട് നീരുറവകളിലെ തെർമോഫൈൽ. Taq പോളിമറേസ് PCR-ന്റെ അടിസ്ഥാനം. തണുത്ത കുളത്തിൽ മിക്കവാറും നിഷ്ക്രിയം."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans റേഡിയേഷൻ ചാമ്പ്യൻ. ചുളിച്ചിതറിയ ജീനോമിനെ മണിക്കൂറുകൾക്കുള്ളിൽ പുനഃസംയോജിപ്പിക്കുന്നു. കട്ടിയുള്ള ഭിത്തി, കോശ ചതുഷ്കങ്ങൾ."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote ലൈംഗിക പ്രത്യുൽപാദനത്തിന്റെ പഠന-മാതൃക. രണ്ട് ലിംഗങ്ങൾ, ഗാമീറ്റ്-സംയോജനം, ലളിതമായ ദ്വിവിഭജനമല്ല."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 എന്നത് E. coli-യുടെ വലിയ മിയോവൈറസ്. വാൽ ചുരുങ്ങി DNA ഉള്ളിലേക്ക് കുത്തിവയ്ക്കുന്നു. അര മണിക്കൂറിൽ കോശം പൊട്ടി ഡസൻ കണക്കിന് ഫേജുകൾ പുറത്തുപോകുന്നു."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda സൗമ്യമായ ഫേജ്. ക്രോമസോമിൽ ഇഴചേർന്ന് ഉറങ്ങാം (ലൈസോജനി), അല്ലെങ്കിൽ കോശത്തെ ഉടനെ മുറിക്കാം (ലൈസിസ്)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7-ന് ചെറിയ വാലും വളരെ വേഗമേറിയ പ്രതിരൂപണവും. സിന്തറ്റിക് ജീവശാസ്ത്രത്തിലെ പ്രിയപ്പെട്ട സംവിധാനം."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 ലിപിഡ്-ആവരണമുള്ള RNA ഫേജ്. Pseudomonas-നെ ബാധിക്കുന്നു. ഒരു ഫേജിന് അപൂർവമായ സ്തരം."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 ചെറുതും വാലില്ലാത്തതുമായ RNA ഫേജ്. ആൺ E. coli പിലികളോട് ബന്ധപ്പെടുന്നു. ഇതിന്റെ ജീനോം ആദ്യം വായിച്ച RNA ജീനോമുകളിലൊന്ന്."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "സങ്കൽപ്പിക കുളം നാഡീ-പരാന്നഭോജി. യൂകാരിയോട്ടുകളിൽ പിടിച്ചുകെട്ടി ആതിഥേയൻ വാഹകനാകുന്നതുവരെ അതിന്റെ പെരുമാറ്റം തകർക്കുന്നു."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote ലൈംഗിക പ്രത്യുൽപാദനത്തിന്റെ പഠന-മാതൃക. രണ്ട് ലിംഗങ്ങൾ, ഗാമീറ്റ്-സംയോജനം, ലളിതമായ ദ്വിവിഭജനമല്ല."
   }
 }

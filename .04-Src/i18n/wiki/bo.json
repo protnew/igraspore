@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis ནི་ལྟེ་བ་མེད་པའི་སྔོ་སྲིན་ཞིག་སྟེ། འོད་ལ་བརྟེན་ནས་འཚོ་ལ་དབྱང་རླུང་འབྱིན་ཞིང་chloroplastམེད། hydrogen་ཞིབ་འཇུག་གི་ཚོད་ལྟ་ཁང་དཔེ་མཚོན་ཡིན།"
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis ནི་སྐུད་དབྱིབས་སྲིན་ཞིག་ཡིན། ཕྲ་ཕུང་ལ་ལས་heterocyst་བྱས་ནས་nitrogenསྡུད་ཅིང་ཁྱིམ་མཚེས་ཀྱིས་ཀ་ར་བཟོ། རྫིང་བུའི་ནང་དུ་nitrogenམཁོ་སྤྲོད་བྱེད་མཁན་ཡིན།"
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) ནི་རླུང་སྒྲོམ་ཡོད་པའི་ཕྲ་ཕུང་འཁྱིལ་སྐུད་ཅིག་ཡིན། ཆུ་ཁའི་ཉེ་སར་གནས་ཤིང་འོད་སྦྱོར་བྱེད་ལ་ཟ་ཡང་ཆོག རོལ་རྩེད་ནང་ཆུ་སྐྱིའི་སྟེང་གི་ལྗང་མདོག་འཁྱིལ་སྒྲིག་ཆེན་པོ་ཞིག་ཡིན།"
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme ནི་འདམ་སྐྱིའི་ནང་གི་ཕྲེང་བ་ཞིག་ཡིན། རང་དབང་ངམ་རྩི་ཤིང་དང་མཉམ་འབྲེལ་གྱིས་འཚོ། ཁྱུ་དེ་ལྗང་མདོག་ཕྲེང་བའི་ཚོམས་ལྟར་སྣང་།"
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica ནི་འདྲེད་འགྲོའི་སྐུད་པ་ཞིག་ཡིན། གཡས་གཡོན་དུ་གཡོ་ཞིང་དབྱང་རླུང་མ་བཏང་བར་འོད་སྦྱོར་ཐུབ། འདམ་དང་ཆུ་སྐྱིའི་རང་བཞིན་ཡིན།"
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa ནི་འདམ་ཞད་ལྡན་པའི་ཁྱུ་ཞིག་སྟེ་རྟག་ཏུ་དུག་(microcystin)ལྡན། དེས་ཆུ་ཁ་ལྗང་ཁུར་འགྱུར་བ་བྱེད། རོལ་རྩེད་ནང་ལྗང་མདོག་གི་ཟླུམ་ཁྱུ་ཡིན་ལ་ཟས་སུ་ཉེན་ཁ་ཡོད།"
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa ནི་ཚོས་གཞི་ཅན་གྱི་ཕྱི་སྐོགས་ནང་གི་ཕྲ་ཕུང་ཟུང་ཡིན། རྡོ་དང་ས་ལ་གནས་ཤིང་UVབཟོད་ཐུབ། རྫིང་བུའི་ནང་སྐོགས་པ་ཅན་གྱི་ཕྲ་ཕུང་ཟླུམ་ཟུང་ཆུང་ཆུང་ཡིན།"
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula ནི་སྔོ་སྲིན་སྐུད་པ་མཐུག་པོ་ཞིག་ཡིན། དེས་པགས་པ་ལ་ཚ་བའི་དུག་གཏོང་ཐུབ། ཆུ་འགྲམ་དྲོད་ཁུལ་དུ་གདན་ལྟར་སྐྱེ།"
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii ནི་རྔ་སྤུ་གཉིས་དང་མིག་ཐིག་ལྡན་པའི་ལྗང་ཕྲ་ཕུང་ཞིག་ཡིན། འོད་ཕྱོགས་སུ་རྐྱལ་འགྲོ། ལྗང་སྲིན་རྒྱུད་འདེད་ཀྱི་དཔེ་མཚོན་ཡིན།"
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris ནི་མི་འགུལ་བའི་ལྗང་ཟླུམ་ཞིག་ཡིན། མགྱོགས་པོར་ཕྲལ་ཞིང་སྤྲི་དཀར་མོད། ཟས་ཆུང་བ་ཚོའི་ཁ་ཟས་དང་ནམ་མཁའི་ཟས་ཞིབ་འཇུག་གི་གནས་ཡིན།"
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator ནི་ཕྲ་ཕུང་སྟོང་ཕྲག་ལས་གྲུབ་པའི་སྟོང་ཟླུམ་ཞིག་ཡིན། ནང་དུ་བུ་ཁྱུ་སྨིན་ནས་ཕྱིར་ཐོན། རོལ་རྩེད་ནང་ལྗང་ཁྱུ་ཆེན་པོ་ཞིག་ཡིན།"
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis ནི་ཟས་ལམ་གཉིས་ལྡན་ཞིག་སྟེ། chloroplastདང་ཟ་ནུས་གཉིས་ཀ་ཡོད། མིག་དམར་པོས་འོད་འཚོལ། ཉིན་མོ་ལྗང་ལ་མུན་ནག་ཏུ་ཟས་ལ་བརྟེན།"
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda སྤྱིར་བཏང་ཕྲ་ཕུང་བཞི་གྲལ་འགྲིག་ལ་མཐའ་ཚེར་ཡོད། ཚེར་གྱིས་མིད་པ་དཀའ་རུ་འཇུག རྐྱལ་མི་ཐུབ་པར་གཡེང་ཙམ་བྱེད།"
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis ནི་འགུལ་ཐུབ་པའི་ལྗང་ཕྲ་ཕུང་ཡིན། གནོན་ཤུགས་སྐབས་དམར་པོར་(astaxanthin)འགྱུར་ཞིང་སྐོགས་མཐུག་པོ་སྐྱེད། དམར་སྒྲོམ་གྱིས་སྐམ་པོར་གསོན་ཐུབ།"
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina ལ་སྐོགས་མཁྲེགས་མེད་ལ་ཚྭ་མང་བའི་ཆུར་གནས། beta-caroteneགསོག་ཅིང་ལི་མདོག་ཏུ་སྣང་། རྔ་སྤུ་གཉིས་ཡོད།"
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata ནི་ལེབ་མོའི་སྐར་དབྱིབས་ཤིག་ཡིན། ངོས་གཉིས་མེ་ལོང་ལྟར་ལ་གཏུབ་རྒྱུག་ཟབ་མོ་ཡོད། མི་འགུལ་བར་འདམ་ཆུ་སྐྱུར་མོའི་ནང་དུ་འོད་སྦྱོར་བྱེད།"
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula ནི་གྲུ་དབྱིབས་ཀྱི་ཤེལ་སྐོགས་ལྗང་སྲིན་ཞིག་སྟེ་silicaཁ་ལེབ་ཡོད། ས་གཞིའི་སྟེང་rapheབརྒྱུད་ནས་འདྲེད་འགྲོ། ཤི་རྗེས་སྐོགས་པ་ལུས་སྡོད།"
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis ནི་ཤེལ་སྐོགས་ལྗང་སྲིན་ཆེན་པོ་ཞིག་ཡིན། silicaསྐོགས་པའི་རི་མོ་ཆ་མཉམ་ཡིན། ཞབས་སུ་དལ་མོར་འདྲེད་འགྲོ།"
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana ནི་ཟླུམ་དབྱིབས་ཀྱི་ཤེལ་སྐོགས་ལྗང་སྲིན་ཡིན། ཁ་ལེབ་ལྟར་གཡེང་ཞིང་སྐོགས་པ་ཁ་ལེབ་གཉིས་ཡིན། སྤྱིར་བཏང་གི་ཆུ་གཡེང་ཡིན།"
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare ནི་གཡས་གཡོན་ཕྲེང་དུ་འབྱར་བའི་ཤེལ་སྐོགས་ལྗང་སྲིན་ཡིན། ཁྱུ་དེས་ཆུའི་ནང་འགུལ་སྐྱོད་ལ་དཀའ་ངལ་བཟོ།"
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum ནི་དམར་སྨུག་འཁྱིལ་སྐུད་ཅིག་ཡིན། དབྱང་རླུང་མེད་པའི་འོད་སྦྱོར་དང་ཟས་རྙིང་གཉིས་ཀ་བྱེད། དམར་མདོག་ནི་bacteriochlorophyllལས་བྱུང་།"
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum ནི་དམར་སྨུག་མུ་ཟིའི་སྲིན་ཞིག་ཡིན། hydrogen sulfide་འགྱུར་བྱས་ནས་མུ་ཟིའི་འབྲུ་གསོག དབྱང་རླུང་དང་མུ་ཟིའི་བར་མཚམས་སུ་གནས།"
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum ནི་ཕྲ་ཕུང་གཅིག་པའི་དམར་ལྗང་སྲིན་ཞིག་ཡིན། phycoerythrin་གིས་ཁྲག་ལྟའི་དམར་མདོག་སྟོན། འདམ་སྐྱི་ལྡན་ལ་རྔ་སྤུ་མེད།"
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus ནི་ས་གཞིའི་འོད་སྦྱོར་ཕྲ་ཕུང་ཆེས་ཆུང་ཤོས་དང་གྲངས་ཆེས་མང་ཤོས་ཡིན། 1980ལོར་རྙེད། དེས་རྒྱ་མཚོ་ལ་ཟས་སྤྲོད།"
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis ནི་ཐང་སྟོང་དང་རྡོ། འགྱེད་འཕྲོ་བཅས་བཟོད་པའི་མཐའ་སྐྱོང་གནས་མཁན་ཞིག་ཡིན། ས་གཞིའི་ཕྱི་རུ་ཚེ་གནས་ཀྱི་གོ་སྐབས་ཤིག་ཡིན། རྫིང་བུར་ཟླུམ་ཁྱུ་དལ་མོ་ཞིག་ཡིན།"
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus ནི་ཕྲ་སྲིན་གྱི་ཤ་གཟན་ཆུང་ཆུང་ཞིག་ཡིན། ཕྲ་ཕུང་གཞན་གྱི་ནང་དུ་འཁྱིལ་ནས་ཞུགས་ཏེ་བདག་པོ་གས་བར་དུ་འཕེལ།"
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus ཟས་ཀྱི་ཕྱི་ནས་གནས་ཤིང་ནང་དུ་མི་འཛུལ་བར་ནང་གི་བཅུད་འཐུ། ཕྲ་སྲིན་གྱི་ཁྲག་འཐུང་ལྟ་བུ་ཞིག་ཡིན།"
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter ཟས་སྲིན་གྱི་ནང་དུ་ཞུགས་ནས་ནང་ནས་ཟ་བ་ཞིག་ཡིན། ནང་ཞུགས་རྔོན་པོའི་དཀོན་མོ་ཞིག་རེད།"
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus སྤྱི་ཚོགས་སྲིན་ཞིག་ཡིན། ཁྱུ་བྱས་ནས་ཟས་བསྐོར་ཏེ་རྩབས་གཏོང་། ལྟོགས་དུས་འབྲས་བུའི་ལུས་བཟོ།"
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii རྒྱ་མཚོའི་Bdellovibrioཡི་གཉེན་ཉེ་ཞིག་ཡིན། Gram-negativeལ་འཇབ་ཅིང་ཟས་ཀྱི་periplasmནང་གནས།"
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax ཚྭ་བཟོད་ཀྱི་སྲིན་རྔོན་པ་ཞིག་ཡིན། ཐབས་གཅིག་པ་སྟེ་སྐོགས་པ་ཕུག་ནས་ནང་དུ་སྐྱེད།"
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii ནི་BALOཤ་གཟན་གཞན་ཞིག་ཡིན། དབྱིབས་ཕྱེད་ཚིགས་མྱུར་བགྲོད་ཀྱི་རྔ་སྤུ་ཅན་ལ་དབྱུག་པ་ཆེན་པོ་དམིགས་འཛུགས་བྱེད།"
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula གཞན་ཟས་ཀྱི་རྔ་སྤུ་ཅན་ཆུང་ཆུང་ཞིག་ཡིན། རུལ་ལྷག་གི་ངོས་ནས་སྲིན་འཛིན།"
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo ཆུ་ཐིགས་དབྱིབས་ཀྱི་རྔ་སྤུ་ཅན་ཞིག་ཡིན། རྔ་སྤུ་གཅིག་ཡོད་ལ་སྲིན་གྱི་སྐྱིའི་ནང་རྔོན་བྱེད།"
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans ལྕགས་དང་manganeseསྡོང་རྐུབ་ཐོག་གི་ཁྱུ་ཞིག་ཡིན། ཕྲ་ཕུང་ཚོ་སྡེབ་ནས་སྲིན་འཛིན།"
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium ཚོས་མེད་ཀྱི་ཆུ་སྲིན་ཞིག་ཡིན། རྔ་སྤུ་གཉིས་ལྡན་ཞིང་བཞུར་ཟས་དང་སྲིན་ཕྲན་ཟ་ལ་chloroplastམེད།"
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda མཇུག་མ་རིང་པོ་ཅན་གྱི་ཨ་མེ་བ་རྔ་སྤུ་ཅན་ཞིག་ཡིན། གོག་འགྲོ་བྱེད་ཅིང་ལག་པ་རྫུན་གྱིས་སྲིན་མིད།"
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa སའི་རྔ་སྤུ་ཅན་ཞིག་ཡིན། རིང་ཐུང་མི་འདྲའི་རྔ་སྤུ་གཉིས་ལྡན་ལ་སའི་ནང་གི་སྲིན་ཟ་མཁན་གཙོ་བོ་ཡིན།"
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans ཆུ་སྲིན་ཕྲ་ཞིག་ཡིན། རྒྱབ་རྔ་སྤུས་འཛིན་ནས་གནས་སར་'ཞབས་བྲོ་'འཁྲབ་ཅིང་སྲིན་འཕྲོག"
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini Bodoཡི་གཉེན་ཉེ་ཞིག་ཡིན། རང་དབང་གིས་རྐྱལ་ཞིང་མདུན་རྔ་སྤུས་ཟས་ལ་རྡུང་།"
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei གཉིད་ནད་སློང་བའི་ཁྲག་སྲིན་ཞིག་ཡིན། གཡོ་འགུལ་སྐྱི་དང་རྔ་སྤུ་གཅིག་ལྡན། རྫིང་བུར་སྲབ་མོའི་རྔོན་པའི་དཔེ་གཟུགས་ཡིན།"
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani མིའི་ནང་ཞུགས་སྲིན་ཞིག་ཡིན། འབུ་ཡི་ནང་དུ་རྔ་སྤུ་ལྡན་ལ་macrophageཡི་ནང་དུ་རྔ་སྤུ་མེད།"
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis སྲོག་ཆགས་ཀྱི་གཉེན་ཉེ་choanoflagellateཞིག་ཡིན། སྤུ་ཕྲན་གྱི་མགུལ་རྒྱན་གྱིས་སྲིན་གཙང་འཕྱང་།"
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta སྐྱི་ཆས་ནང་གི་གནས་འཇགས་choanoflagellateཞིག་ཡིན། དེས་མེ་ཏོག་ཕྲེང་དབྱིབས་བཟོ་ཐུབ། ཆུ་རྒྱུན་གཙང་འཕྱང་བྱེད།"
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis སྡོང་རྐུབ་མཉམ་སྤྱོད་ཅན་གྱི་choanoflagellateཁྱུ་ཞིག་ཡིན། སྡོང་གཅིག་ཐོག་འཕྱང་ཆས་མང་པོ་ཡོད།"
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum ལྷམ་དབྱིབས་ཀྱི་དཔེ་མཚོན་ཞིག་ཡིན། སྤུ་ཕྲན་ཁྲི་མང་པོ་དང་ཁ་ཕུག བསྐུམ་བཤེར་ཁབ་ཡོད། དེས་སྲིན་གཙང་འཕྱང་བྱེད།"
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria ལྗང་སྲིན་མཉམ་འཚོ་ཅན་གྱི་ལྷམ་ཞིག་ཡིན། ནང་དུ་ལྗང་མདོག་ཡིན་ཏེ་ཉིན་མོ་ལྗང་སྲིན་ལས་ཀ་ར་དང་མཚན་མོ་གཙང་འཕྱང་བྱེད།"
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus ནི་ལི་གཅིག་བར་ཆེ་བའི་རྒྱང་ལྔ་སྔོན་པོ་ཞིག་ཡིན། དེ་སྦུ་གུར་བརྐྱང་ནས་སྤུ་ཕྲན་གྱིས་ཆུ་རྒྱུན་བྱེད། རྐྱལ་ཡང་ཆོག་སྡོད་ཀྱང་ཆོག"
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus སྔོན་པོའི་རྒྱང་ལྔ་ཅན་གྱི་གཉེན་ཉེ་ཞིག་སྟེ་རྟག་ཏུ་ལྗང་སྲིན་ལྡན། དབྱིབས་རྒྱང་ལྔ་ནས་ཟླུམ་པོར་འགྱུར།"
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula བསྐུམ་ཐུབ་སྡོང་རྐུབ་ཐོག་གི་དྲིལ་ཆུང་ཞིག་ཡིན། སྡོང་རྐུབ་འཕྲལ་དུ་འཁྱིལ་ནས་ཡོང་། ཕྲ་ཕུང་རང་གིས་རྐྱལ་ནས་མི་འབྲོ།"
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma དྲིལ་ཆུང་ཆུང་ཞིག་ཡིན། སྡོང་རྐུབ་གཅིག་མཚུངས་ལ་ཁ་ཡུ་དོག་མོ་ཡིན། རྟག་ཏུ་རུལ་ལྷག་ཐོག་ཡོད།"
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum ལྷམ་གྱི་ཤ་གཟན་ནར་མ་ཞིག་ཡིན། toxicystའཕངས་ཏེ་ཟས་ཧྲིལ་པོ་མིད། ཟས་ཆེ་ནའང་མིད་ཐུབ།"
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum ཧ་ཅང་རིང་བའི་ནར་མ་ཞིག་ཡིན། སྐད་ཅིག་མའི་ཁྲོད་ལ་ལྡབ་འགའ་བསྐུམ་ཐུབ། སྤུ་ཕྲན་འཁྱིལ་རིས་སུ་ཡོད།"
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum དམར་མདངས་ཀྱི་སྤུ་ཅན་ཞིག་ཡིན། blepharisminཚོས་འོད་ཚོར་བ་ཡིན། གཙང་འཕྱང་བྱེད་ལ་ཕྲ་ཕུང་ཆུང་བ་ལ་འཇབ་ཀྱང་ཐུབ།"
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella ནི་cirriཡི་སྟེང་རྐང་ལྟར་འགྲོ་བ་ཞིག་ཡིན། ལེབ་ལ་དཀྱོག་མགྱོགས། ངོས་ནས་སྲིན་ཕྱི་ལེན་བྱེད།"
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata ཞབས་སུ་'རྒྱུག་'ཐུབ་པའི་སྤུ་ཅན་ཞིག་ཡིན། cirriཆེ་ལ་ཁ་མངོན་གསལ་ཡིན། སྤུ་ཅན་ཆུང་བའི་ཤ་གཟན་ཡིན།"
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax ནི་རྒྱུད་ཆ་ཚང་གི་དཔེ་གཟུགས་ཤིག་སྟེ། ལྟེ་བ་གཉིས་དང་DNAབསྐྱར་འབྲི་རྙོག་འཛིང་ལྡན། cirriསྟེང་འགྲོ་ཞིང་སྲིན་དང་ཕྲ་སྲིན་ཆུང་བ་ཟ།"
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila ཚོད་ལྟ་ཁང་གི་སྤུ་ཅན་ཞིག་ཡིན། ཁ་ཡི་membranelle་བཞི་དང་མགྱོགས་པོར་ཕྲལ། telomere་དང་སྤུ་ཕྲན་གྱི་དཔེ་གཟུགས་ཡིན།"
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus ཚེར་ལྡན་རྡོ་ཞུན་ལེབ་ཀྱི་ནར་མ་ཞིག་ཡིན། ཤ་ཟན་དང་རུལ་ཟན་གཉིས་ཀ་ཡིན་ཏེ་རྨས་མ་ལ་སོ་འདེབས།"
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella ཡོབ་སྣ་ནང་དུ་toxicystལྡན་པའི་ལེབ་མོའི་ཤ་གཟན་ཞིག་ཡིན། ཟས་ཚོར་མེད་བཟོས་ནས་བཅུད་འཐུ།"
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser་ལ་དུག་ལྡན་extrusome་མང་བའི་མགྲིན་པ་རིང་པོ་ཡོད། མགྲིན་པས་རྡུང་རྗེས་མིད། ཆེ་འབྲིང་རྔོན་པ་ཞིག་ཡིན།"
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo སྐོར་མདའ་ལྟ་བུ་ཞིག་ཡིན། དཀྱིལ་ཐིག་གི་སྤུ་ཕྲན་སྐ་རགས་ཀྱིས་ཕྲ་ཕུང་གནས་ས་དེ་རང་དུ་སྐོར་བཅུག སྲིན་གཙང་འཕྱང་བྱེད།"
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula ཡལ་ག་ལྡན་གྱི་དྲིལ་ཆུང་ཁྱུ་ཞིག་ཡིན། སྡོང་རྐུབ་མཉམ་སྤྱོད་ཀྱིས་བསྐུམ་དུས་ལྗོན་ཤིང་ཧྲིལ་པོ་ཕྱི་ལ་འཐེན།"
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata འཕར་སྡོང་མེད་པའི་གནས་འཇགས་སྤུ་ཅན་ཞིག་ཡིན། ཁ་ལེབ་ཀྱིས་ཁ་གཡོགས། གཙང་འཕྱང་བྱེད་ལ་རྐྱལ་ནས་མི་འབྲོ།"
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus ཨ་མེ་བའི་དཔེ་མཚོན་ཞིག་ཡིན། ལག་པ་རྫུན་གྱིས་ཟས་བསྐོར་ནས་ཟ། དབྱིབས་གཏན་འཁེལ་མེད་ལ་སྤུ་ཕྲན་མེད།"
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris སྒྲོམ་མཁྲེགས་ཟླུམ་པོ་ལྡན་གྱི་ཨ་མེ་བ་ཞིག་ཡིན། ལག་པ་རྫུན་ཁུང་ནས་ཐོན། རྩི་ཤིང་ཐོག་གོག་འགྲོ་བྱེད།"
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga ལ་བྱེ་མའི་འབྲུ་ལས་རང་གིས་སྦྱར་བའི་སྒྲོམ་ཡོད། འདམ་ནང་གནས།"
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata ལ་silicaཁྲབ་ལེབ་ལས་བཟོས་པའི་སྒྲོམ་ཡོད། སྐུད་པ་ཕྲ་མོའི་ལག་པ་རྫུན་ཡོད། སྲིན་གྱི་ཤ་གཟན་ཆུང་ཆུང་ཞིག་ཡིན།"
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris རྐུན་ཁྲབ་ལས་བཟོས་པའི་བུམ་དབྱིབས་སྒྲོམ་ཞིག་ཡིན། ནགས་དང་འདམ་ཆུར་གནས།"
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata ཚེར་ལྡན་སྒྲོམ་ལེབ་ཞིག་ཡིན། ཁུང་བུ་དཀྱིལ་ནས་མིན་པར་གཅིག་ཏུ་ཡོད། རུལ་ལྷག་ཐོག་གོག་འགྲོ་བྱེད།"
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol ཉི་ཟེགས་ཞིག་སྟེ་ཕྲ་སྐུད་ཕྱོགས་བཞིར་འཕྲོ། ཟས་འོད་ཟེར་ལ་འབྱར་ནས་ནང་དུ་འཐེན།"
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni ལྟེ་བ་མང་པོའི་ཉི་ཟེགས་ཆེན་པོ་ཞིག་ཡིན། འོད་ཟེར་གཅིག་འདྲ་ལ་ཕྲ་ཕུང་ཧ་ཅང་ཆེ། སྤུ་ཅན་དང་འཁོར་ལོ་ཅན་ཟ།"
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida ཁྲབ་ལེབ་ཅན་གྱི་ཉི་ཟེགས་ཞིག་ཡིན། འོད་ཟེར་ལ་silicaཁབ་ཡོད། རུབ་འཇབ་ཆུ་གཡེང་རྔོན་པ་ཞིག་ཡིན།"
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria སྐམ་པོར་ཡང་གསོན་ཐུབ་པའི་འཁོར་ལོ་ཅན་ཞིག་ཡིན། མེ་ཏོག་ཕྲེང་གིས་ཟས་ཁ་ནང་སྐོར། ཕྲ་ཕུང་མང་པོའི་སྲོག་ཆགས་ངོ་མ་ཞིག་ཡིན།"
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola དམར་མདངས་ཅན་གྱི་འཁོར་ལོ་ཅན་ཕྲ་མོ་ཞིག་ཡིན། གོག་འགྲོ་དང་རྐྱལ་བ་གཉིས་ཀ་ཐུབ། མོ་ཁོ་ན་ཡོད་ལ་ཕོ་མེད།"
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis ཆུ་གཡེང་གི་སྒྲོམ་ལྡན་འཁོར་ལོ་ཅན་ཞིག་ཡིན། ཉ་གསོ་སའི་ཉ་ཕྲུག་གི་ཟས་ཡིན། ལྗང་སྲིན་དང་སྲིན་གཙང་འཕྱང་བྱེད།"
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis སྒྲོམ་གྱི་ཚེར་མ་རིང་པོ་ལྡན་པའི་འཁོར་ལོ་ཅན་ཞིག་ཡིན། ཚེར་མས་ཤ་གཟན་སྐྲག་པ་བཟོ། སྤྱིར་བཏང་རྫིང་བུའི་ཆུ་གཡེང་ཡིན།"
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta སྒྲོམ་མེད་ཀྱི་ཤག་ཤ་གཟན་འཁོར་ལོ་ཅན་ཞིག་ཡིན། འཁོར་ལོ་ཅན་གཞན་དང་སྤུ་ཅན་ཧྲིལ་པོ་མིད།"
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus གྲོད་སྤུ་ཅན་ཞིག་ཡིན། ཁྲབ་ལེབ་ཀྱིས་གཡོགས་ཤིང་ཞབས་སུ་གོག་འགྲོ་བྱེད། སྲིན་དང་རུལ་ལྷག་ཟ།"
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata ཁྲབ་ལེབ་རིམ་འགེབས་ཅན་གྱི་གྲོད་སྤུ་ཅན་ཆུང་ཆུང་ཞིག་ཡིན། གནས་ས་དེ་རང་དུ་འཁོར་མགྱོགས་ཧ་ཅང་ཆེ།"
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano མཐོང་དཀའ་བའི་ལེབ་འབུ་ཞིག་ཡིན། ཤ་གནད་དང་མིག་ངོ་མ་ཡོད། སླར་སྐྱེས་ཀྱི་དཔེ་གཟུགས་ཡིན་ལ་ཕྲ་སྲིན་ཆུང་བ་རྔོན།"
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops སྤུ་ཕྲན་ལྡན་གྱི་འབུ་སྲབ་མོ་ཞིག་ཡིན། ཐད་ཀར་ཕྲལ་ནས་zooidཡི་ཕྲེང་བ་བཟོ། རུལ་ལྷག་དང་སྲོག་ཆགས་ཆུང་བའི་ཤ་གཟན་ཡིན།"
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare hydraཟ་ཞིང་དེའི་ཚེར་ཕྲུག་རང་གི་པགས་པར་འཛུགས་པའི་ལེབ་འབུ་ཞིག་ཡིན། zooidཕྲེང་བ་ཡིན།"
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense ཆུ་མངར་གྱིnemerteanཞིག་ཡིན། ཡོབ་སྣ་རིང་པོས་ཟས་ལ་འཕང་། དཀོན་པའི་ཞབས་སའི་རྔོན་པ་ཆེན་པོ་ཞིག་ཡིན།"
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens སྲོག་ཆགས་ཆེས་འཇམ་པོའི་གྲས་ཀྱི་placozoanཞིག་ཡིན། ལེབ་མོ་ལྟར་གོག་འགྲོ་ཞིང་ཟས་ཕྱི་རུ་ཞུ། ཁ་མེད།"
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae གོ་རེའི་ཕབས་ཡིན། མཆེད་ནས་འཕེལ་ཞིང་ཀ་ར་ཟས་སུ་CO2དང་ཨ་རག་གཏོང་། རྫིང་བུར་བཞུར་ཟས་གཙང་བཟོ་བྱེད།"
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans སྐུད་པ་ལྟར་སྐྱེ་ཐུབ་པའི་ཕབས་ཤིག་ཡིན། གོ་སྐབས་འཚོལ་མཁན་མིའི་ནད་སྲིན་ཡིན། རོལ་རྩེད་ནང་རུལ་ལྷག་གི་ཤ་མོ་ཡིན།"
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo གོ་རེའི་རུལ་ཤ་མོ་ཞིག་ཡིན། སྡོང་རྐུབ་ཐོག་sporangia་དང་ཤི་བོའི་ཐོག་མྱུར་སྐྱེད། གསོན་པོ་མི་རྔོན།"
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer གོ་རེའི་ཤ་མོ་ནག་པོ་ཡིན། stolon་དང་rhizoid་གིས་ངོས་ལ་ཁྱབ། དེས་ཕྱེ་ཞུ་བ་བྱེད།"
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum སྤྱི་ཤད་དབྱིབས་ཀྱི་ཤ་མོ་ཞིག་སྟེ་penicillinགི་འབྱུང་ཁུངས་ཡིན། conidia་སྤྱི་ཤད་ལྟར་སྐྱེ། རྙིང་ཞུ་ཞིང་ཉེ་འཁོར་གྱི་སྲིན་གནོན།"
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger ཤ་མོ་ནག་པོ་ཞིག་ཡིན། ས་བོན་མགོ་ཟླུམ་པོ་ཡིན། བཟོ་ལས་ཀྱི་citric acidཐོན་སྐྱེད་མཁན་ཡིན། རུལ་ཟས་ལ་བརྟེན་པ་ཞིག་ཡིན།"
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis སྦལ་པའི་chytridཞིག་ཡིན། རྔ་སྤུ་གཅིག་ལྡན་zoospore་ཡིན། རྫིང་བུར་ཆུ་ཤ་མོའི་དཔེ་གཟུགས་ཡིན།"
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus མེ་ཏོག་ཕྱེ་དང་ལྗང་སྲིན་ཐོག་གི་ཆུ་chytridཞིག་ཡིན། sporangia་སེར་པོ་དང་zoospore་ངོས་ལ་རྐྱལ།"
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus mycelium་ངོ་མ་ལྡན་པའི་ཆུ་ཤ་མོ་ཞིག་ཡིན། diploid་དང་haploid་རེས་འགྲོ་བྱེད། zoospore་ལ་རྒྱབ་རྔ་སྤུ་ཡོད།"
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis སའི་དབྱུག་པ་ཞིག་ཡིན། ས་བོན་གྱིས་ཁོལ་ཆུ་བཟོད། སྤྲི་དཀར་ཞུ་ཞིང་Gram-positiveཀྱི་དཔེ་གཟུགས་ཡིན།"
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida གཙང་སེལ་གྱི་དབྱུག་པ་ཞིག་ཡིན། སྣུམ་རྫས་ཀྱང་ཟ། རྔ་སྤུས་འགུལ་ཞིང་རུལ་ལྷག་ཐོག་མྱུར་སྐྱེད།"
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor སའི་སྐུད་དབྱིབས་སྲིན་ཞིག་ཡིན། དེས་ས་ཡི་དྲི་དང་སྲིན་འགོག་སྨན་མང་པོ་བཟོ་ཐུབ། hyphae་ཐོག་ས་བོན་ཡོད།"
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi ཀྱིས་རྩི་ཤིང་གི་སྐུད་རྒྱུ་ཞུ་ཐུབ། རྩི་ཤིང་རུལ་ལྷག་ཐོག་གི་དབྱུག་པ་སེར་པོ་ཞིག་ཡིན། དེ་མེད་ན་ལྗང་སྲིན་ཤི་བོ་ཡུན་རིང་ལུས།"
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus ཆུ་ཚ་མིག་གི་ཚ་བཟོད་ཞིག་ཡིན། Taq polymerase་ནི་PCR་ཡི་རྨང་གཞི་ཡིན། གྲང་རྫིང་དུ་ཕལ་ཆེར་ཉལ་ནས་སྡོད།"
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans འགྱེད་འཕྲོའི་རྒྱལ་པོ་ཞིག་ཡིན། ཆག་ཆག་ཏུ་གྱུར་བའི་རྒྱུད་ཆ་ཚང་ཆུ་ཚོད་ཁ་ཤས་ནང་བསྐྱར་སྒྲིག་ཐུབ། སྐོགས་མཐུག་ལ་ཕྲ་ཕུང་བཞི་ཚོམ་ཡིན།"
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote ཕོ་མོའི་སྐྱེ་འཕེལ་གྱི་སློབ་སྟོན་དཔེ་གཟུགས་ཤིག་ཡིན། ཕོ་མོ་གཉིས་དང་ས་བོན་ཕྲ་མོ་ཟུང་འབྲེལ། ཐད་ཀར་གཉིས་ཕྲལ་གཅིག་པུ་མིན།"
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 ནི་E. coliཡི་myovirus་ཆེན་པོ་ཞིག་ཡིན། མཇུག་མ་བསྐུམ་ནས་DNA་ནང་དུ་འཇུག ཆུ་ཚོད་ཕྱེད་ཀའི་ནང་ཕྲ་ཕུང་གས་ནས་phage་མང་པོ་ཐོན།"
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda ཞི་ལྷོད་phage་ཞིག་ཡིན། chromosome་ནང་དུ་ཞུགས་ནས་གཉིད་(lysogeny)ཐུབ་ལ། ཡང་ན་ཕྲ་ཕུང་འཕྲལ་དུ་གས་(lysis)ཐུབ།"
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 ལ་མཇུག་མ་ཐུང་ལ་འཕེལ་བ་ཧ་ཅང་མྱུར། སྲིན་བཟོ་རིག་པའི་ནང་གི་དགའ་སའི་མ་ལག་ཡིན།"
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 ཚིལ་སྐྱི་ལྡན་གྱི་RNA phage་ཞིག་ཡིན། Pseudomonas་ལ་འགོས། phage་ལ་མཚོན་ན་སྐྱི་དཀོན་པོ་ཞིག་ཡིན།"
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 མཇུག་མ་མེད་པའི་RNA phage་ཕྲ་མོ་ཞིག་ཡིན། E. coliཕོའི་pili་ལ་འབྱར། དེའི་རྒྱུད་ཆ་ཚང་སྔ་ཤོས་ཀྱི་RNAརྒྱུད་ཡིག་འགོད་གྲས་ཡིན།"
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "བསམ་བཟོས་ཀྱི་རྫིང་བུའི་ཀླད་སྲིན་ཞིག་ཡིན། eukaryote་ལ་འབྱར་ནས་བདག་པོའི་སྤྱོད་ལམ་བཅོས་ཏེ་བདག་པོ་སྐྱེལ་མཁན་ཆགས་བར་བྱེད།"
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote ཕོ་མོའི་སྐྱེ་འཕེལ་གྱི་སློབ་སྟོན་དཔེ་གཟུགས་ཤིག་ཡིན། ཕོ་མོ་གཉིས་དང་ས་བོན་ཕྲ་མོ་ཟུང་འབྲེལ། ཐད་ཀར་གཉིས་ཕྲལ་གཅིག་པུ་མིན།"
   }
 }

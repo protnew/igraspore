@@ -63,7 +63,8 @@ function crit() {
       for (const c in cb) catBio[c] += cb[c];
     }
     for (const c in catBio) catBio[c] /= Math.max(1, win.length);
-    pyramidPass.push(catBio.producer > catBio.consumer1 && catBio.consumer1 > catBio.consumer2 && catBio.consumer2 > catBio.consumer3);
+    if (win.length < 3) { pyramidPass.push('N/A: горизонт короче окна критерия (t≥600 игр-сек, тут ' + (run.length ? run[run.length - 1].t : 0) + ' с)'); }
+    else pyramidPass.push(catBio.producer > catBio.consumer1 && catBio.consumer1 > catBio.consumer2 && catBio.consumer2 > catBio.consumer3);
     // вымирание: на 60-й мин живы ≥3 уровня
     const last = run[run.length - 1];
     noTotalDieoff.push(Object.keys(last.cats).length >= 3);
@@ -142,28 +143,30 @@ async function plots() {
   await plots();
   const reds = table.filter(r => r.eatS === '🔴' || r.divS === '🔴' || r.dieS === '🔴' || r.moveS === '🔴' || r.survS === '🔴');
   const md = [];
-  md.push('# C1/C3: вид × механика (' + SEEDS.length + ' сидов × 60 мин)');
+  const HORIZON = Math.max(...SEEDS.map(s => { const a = load(s); return a.length ? a[a.length - 1].t : 0; })) / 60; // в26: честный горизонт из данных, а не литерал «60 мин»
+  md.push('# C1/C3: вид × механика (' + SEEDS.length + ' сидов × ' + HORIZON.toFixed(1) + ' игр-мин)');
   md.push('');
-  md.push('Пороги: ест ≥' + N_EAT + ', делится ≥' + N_DIV + ', умирает ≥' + N_DIE + ' (суммарно по 5 сидам); движение vel>0.001; выживает ≥3 сидов.');
+  md.push('Пороги: ест ≥' + N_EAT + ', делится ≥' + N_DIV + ', умирает ≥' + N_DIE + ' (суммарно по ' + SEEDS.length + ' сидам); движение vel>0.001; выживает ≥3 сидов.');
   md.push('');
-  md.push('| вид | кат | ест | делится | умирает | движ | жив на 60м |');
+  md.push('| вид | кат | ест | делится | умирает | движ | жив на финале |');
   md.push('|---|---|---|---|---|---|---|');
-  for (const r of table) md.push('| ' + r.name + ' | ' + r.cat + ' | ' + r.eatS + r.eat + ' | ' + r.divS + r.div + ' | ' + r.dieS + r.die + ' | ' + r.moveS + ' | ' + r.survS + r.aliveEnd + '/5 |');
+  for (const r of table) md.push('| ' + r.name + ' | ' + r.cat + ' | ' + r.eatS + r.eat + ' | ' + r.divS + r.div + ' | ' + r.dieS + r.die + ' | ' + r.moveS + ' | ' + r.survS + r.aliveEnd + '/' + SEEDS.length + ' |');
   md.push('');
   md.push('## C3 критерии (по сидам ' + SEEDS.join(',') + ')');
   md.push('- пирамида биомассы prod>c1>c2>c3: ' + JSON.stringify(C3.pyramid));
-  md.push('- нет тотального вымирания (≥3 уровней на 60м): ' + JSON.stringify(C3.noDieoff));
+  md.push('- нет тотального вымирания (≥3 уровней на финале): ' + JSON.stringify(C3.noDieoff));
   md.push('- нет взрыва (>40% дольше 5 мин): ' + JSON.stringify(C3.noBloom));
-  md.push('- сосуществование ≥60% видов на 60м: ' + JSON.stringify(C3.coexist));
+  md.push('- сосуществование ≥60% видов на финале: ' + JSON.stringify(C3.coexist));
   md.push('- вирусы живы и не убили всё: ' + C3.viruses);
   md.push('');
   md.push('🔴-строк: ' + reds.length + ' из ' + table.length);
   fs.writeFileSync(path.join(OUT, 'eco-report.md'), md.join('\n'));
   fs.writeFileSync(path.join(OUT, 'eco-table.json'), JSON.stringify(table, null, 1));
-  const green = (arr) => arr.filter(Boolean).length;
+  const green = (arr) => arr.filter(x => x === true).length; // в26: строка «N/A» не считается зелёным
+  const na = (arr) => arr.filter(x => typeof x === 'string').length;
   console.log(JSON.stringify({
     species: table.length, redRows: reds.length,
-    pyramid: green(C3.pyramid) + '/' + C3.pyramid.length,
+    pyramid: green(C3.pyramid) + '/' + C3.pyramid.length + (na(C3.pyramid) ? ' (N/A ' + na(C3.pyramid) + ')' : ''),
     noDieoff: green(C3.noDieoff) + '/' + C3.noDieoff.length,
     noBloom: green(C3.noBloom) + '/' + C3.noBloom.length,
     coexist: green(C3.coexist) + '/' + C3.coexist.length,

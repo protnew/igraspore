@@ -1,0 +1,8 @@
+FONT SHA OK
+fonts.generated.css разложен в C:\Obsidian\New\Projects\08-iGraSpore_V2\04-Src C:\Obsidian\New\Projects\08-iGraSpore_V2\06-DevOps-and-Release\cf-publish\04-Src
+LAB ROOT OK C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\dist-lab\index.html
+tests.html C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\dist-lab\lab\tests.html bytes 2414630
+run 20261102-1459 commit=9e31fe3 branch=release-ready-2026-10-14 dirty=953
+  playwright pass=68 fail=2 skip=0 exit=1 ms=1123071
+TOTAL pass=576 fail=8 skipped=0 total=584
+results: C:\Obsidian\New\Projects\08-iGraSpore_V2\09-Docs\test-runs\results-20261102-1459.json

@@ -1,0 +1,15 @@
+{
+ "base": "http://127.0.0.1:8821",
+ "minutes": 3,
+ "speed": 100,
+ "seeds": [
+  1
+ ],
+ "results": [
+  {
+   "seed": 1,
+   "wallSec": "742.2",
+   "errs": []
+  }
+ ]
+}

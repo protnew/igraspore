@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Is ciainibhictéir gan núicléas é Synechocystis. Maireann sé ar sholas: fótaisintéise ocsaigínigh ar na scannáin, gan chlóraplastaí. Samhail saotharlainne d'ábharais hidrigine."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Is snáithín é Anabaena variabilis. Éiríonn cealla áirithe ina heitiricistí a ghabhann nítrigin, fad is a dhéanann na comharsana siúcra. Sa lochán soláthraíonn sé nítrigin cheangailte."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Is corna ceall le veisicílí gáis í Spirulina (Arthrospira). Crochann sí síos gar don dromchla, déanann sí fótaisintéise, agus is inite í. Sa chluiche is scriú mór glas í ag scannán an uisce."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Is slabhra caor i gcapsúl glib é Nostoc punctiforme. Maireann sé saor nó i siimbeóisis le plandaí. Feiceann an coilíneacht mar chuachán caor glas."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Is snáithín sleamhnáin é Oscillatoria limnetica. Luascann sé ó thaobh go taobh agus is féidir leis fótaisintéise a dhéanamh gan ocsaigin a scaoileadh. Coitianta i láib agus i scannán dromchla."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Is coilíneacht ghlúineach í Microcystis aeruginosa, go minic nimhiúil (micreacystin). Fágann sí fás mór algach ar an uisce. Sa chluiche is liathróid choilíneach ghlas í, creach rioscach."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Is cealla péireáilte i bhfáiscíní daite iad Gloeocapsa. Maireann siad ar charraigeacha agus in ithir agus sheasann siad UV. Sa lochán is cocoí bheaga péireáilte i sciathán iad."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Is snáithín tiubh ciainibhictéiriach é Lyngbya majuscula. Is féidir leis tocsainí greannúla a scaoileadh. Cruthaíonn sé haenéanna gar do chladaí te."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Is cill ghlas í Chlamydomonas reinhardtii le dhá lasc agus súilín. Snámhann sí i dtreo an tsolais. Samhail chlasaiceach ghéinitice algaí."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Is liathróid ghlas neamhghluaiste é Chlorella vulgaris. Roinneann sé go tapa agus tá sé saibhir i bpróitéin. Bia d'ithitheoirí beaga agus ábhar taighde ar bhia spáis."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Is sféar cuasach de na mílte cill é Volvox globator. Aibíonn coilíneachtaí iníonacha istigh agus éalaíonn siad amach. Sa chluiche is coilíneacht ghlas mhór é."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Is measctrófaigh í Euglena gracilis: clóraplastaí chomh maith le cumas ithe. Leanann súilín dearg an tsolais. Glas le linn an lae; sa dorchadas aistríonn sí chuig bia."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Is ceithre chill i sraith le spíonanna ar na ceanntaí de ghnáth é Scenedesmus quadricauda. Déanann na spíonanna slogadh níos deacra. Ní snámhann sé — bíonn sé á iompar ag an uisce."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Is cill ghlas ghluaiste í Haematococcus pluvialis; faoi struis iompaíonn sí dearg (astaxanthin) agus fásann balla tiubh uirthi. Mhaireann cístí dearga tríd an triomaic."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Níl balla daingean ag Dunaliella salina agus maireann sí in uisce an-shalainn. Stórálann sí béitea-caraitéin agus tá sí oráiste. Dhá lasc."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Is deismid réaltach leathan í Micrasterias rotata. Dhá leath scáthánaithe le ghearradh domhain. Neamhghluaiseach; déanann sí fótaisintéise in uisce portaigh aigéadaigh."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Is diaitéim bhádchruthach í Navicula le clár silice. Sleamhnaíonn sí ar an tsubstráit ar scoilt rafe. Fágann an bhlaosc ina diaidh tar éis báis."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Is diaitéim pheannata mhór í Pinnularia viridis. Blaosc shilice le patrún siméadrach. Sleamhnaíonn sí go mall ar an mbonn."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Is diaitéim lárnach chruthach í Cyclotella meneghiniana. Snámhann sí mar dhiosca; is dhá chlúdach a bhíonn sa bhlaosc. Plancsatón tipiciúil."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Is diaitéim í Diatoma vulgare a ghreamaíonn a chéile i zigzag. Méadaíonn an coilíneacht an fhrithchuaird sa cholún uisce."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Is corchró dearg é Rhodospirillum rubrum. Fótaisintéise anocsaigíneach mó ábhair orgánacha. Tagann an dath dearg ó bhactéirchlóraifill."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Is baictéir shulfair chorcair í Chromatium vinosum. Ocsaídíonn sí sulfíd hidrigine agus stórálann sí gráinníní sulfair. Maireann sí ag teorainn na hocsaigine agus an tsulfair."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Is alga dhearg aonceallach í Porphyridium cruentum. Tugann phycoerythrin dath dearg fola di. Sciath ghlib, gan laisc."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Is í Prochlorococcus marinus an chill fótaisintéiseach is lú agus is flúirsí ar domhan. Aimsíodh í sna 1980idí. Cothaíonn sí an t-aigéan."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Maireann Chroococcidiopsis thermalis in áiteanna foircneacha: fásach, carraig, radaíocht. Is iarrthóir í ar bheatha lasmuigh den domhan. Sa lochán is coilíneacht mhall cocoí í."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Is creachadóir baictéiriach beag é Bdellovibrio bacteriovorus. Déanann sé sceird bhíseach isteach i gcill eile agus iolraíonn sé go dtí go bpléascann an t-óstach."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Suíonn Vampirococcus ar a chreach ón taobh amuigh agus súnn sé an t-ábhar amach gan dul isteach. Vaimpír baictéiriach."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Tagann Daptobacter isteach i mbaictéir chreach agus itheann sé ón taobh istigh. Sealgóir incheallach annamh."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Is baictéir shóisialta é Myxococcus xanthus. Ina phacaid thimpeallaíonn sé creach agus scaoileann sé einsímí. Nuair a bhíonn ocras air cruthaíonn sé struchtúr torthaíochta."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Is gaol mara de Bhdellovibrio í Bacteriovorax stolpii. Ionsaíonn sí baictéir Ghram-dhiúltacha agus maireann sí i bperioplasm na creiche."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Is sealgóir baictéiriach í Halobacteriovorax a iompaíonn salann go maith. An cleas céanna: poll a dhéanamh sa bhalla agus fás istigh."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Is creachadóir BALO eile é Peredibacter starrii. Lascach tapa camógchruthach a thagann ar bhataigh mhóra."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Is lascach heitreatrófach beag é Monas guttula. Gabhann sé baictéir ar dhromchla an dríodair."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Is lascach bhraonchruthach é Oikomonas termo. Lasc amháin; seilgeann sé i scannán baictéiriach."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Is coilíneacht ar ghás iarainn-mhangainéise í Anthophysa vegetans. Suíonn na cealla i dtoppa agus ghabhann siad baictéir."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Is cripteifít gan dath é Chilomonas paramecium. Dhá lasc; itheann sé orgánaigh tuaslagtha agus baictéir bheaga, gan chlóraplastaí."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Is aimbéilascach le heireaball fada í Cercomonas longicauda. Bogann sí ar aghaidh agus slogann sí baictéir lena loba bhréagacha."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Is lascach ithreach í Heteromita globosa. Dhá lasc ar fhadanna éagsúla; príomh-itheoir baictéiriach san ithir."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Is cinitéiplisteach é Bodo saltans. 'Damhsaíonn' sé ina áit, ceangailte ag an lasc dheireanach, agus beireann sé ar bhactéir."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Is gaol de Bhodo é Procryptobia sorokini. Snámhann sé saor agus buaileann sé a chreach leis an lasc tosaigh."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Is seadóir fola é Trypanosoma brucei a fhágann galar codlata. Scannán tonnach agus lasc amháin. Sa lochán is samhail shealgóra tanaí é."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Is seadóir daonna incheallach í Leishmania donovani. Lascach san fheithid, gan lasc laistigh de mhacrafág."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Is cóanafhlagalláit é Monosiga brevicollis, gaol d'ainmhithe. Scagann muincíl micrea-villí baictéir."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Is cóanafhlagalláit shuiteach i lorica í Salpingoeca rosetta. Is féidir léi rós a chruthú. Scagann sí sruth uisce."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Is coilíneacht chóanafhlagalláite ar ghás coiteann é Codonosiga botrytis. Scagairí éagsúla ar ghás amháin."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Is an phampúit chlasaiceach é Paramecium caudatum. Mílte luitreailí, umar béil, vacuóil chrapthacha. Scagann sé baictéir."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Is pampúit le siimbiontí zúchlóréille é Paramecium bursaria. Glas istigh: siúcra ó algaí le linn an lae, scagadh san oíche."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Is trumpa gorm suas le milliméadar é Stentor coeruleus. Osclaíonn sé amach mar chuachán agus tiomáineann sé sruth le luitreailí. Is féidir leis snámh nó suí."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Is gaol den stentor gorm é Stentor polymorphus, go minic le zúchlóréillí. Athraíonn a chruth ó trumpa go liathróid."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Is clog ar ghás craptha é Vorticella campanula. Casann an gás ina bhíseach láithreach. Ní héalaíonn an chill féin amach."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Is clog beag é Vorticella microstoma. An gás leapaidh céanna, réimse béil níos cúinge. Go minic ar dhríodar."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Is sealgóir bairille é Didinium nasutum ar phampúití. Loisceann sé toicsistí agus slogann sé a chreach iomlán, fiú má tá sí níos mó."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Is todóg an-fhada é Spirostomum ambiguum. Laghdaíonn sé a fad go huillinneacha i bhfrídeán soicinde. Ritheann na luitreailí ina bhíseach."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Is ciliat bhándearg é Blepharisma americanum. Tá pigment blepharismin íogair do sholas. Scagann sé agus is féidir leis ionsaí a dhéanamh ar chealla níos lú."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Siúlann Euplotes patella ar chirí dá chosa. Cothrom, casanna tapa. Scriobann sé baictéir ó dhromchlaí."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Is hipeotriach é Stylonychia pustulata a 'riteann' ar an mbonn. Cirí móra, béal soiléir. Creachadóir chilití beaga."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Is samhail ghinim í Oxytricha trifallax: dhá núicléas agus athscríobh casta DNA. Siúlann sé ar chirí agus itheann sé baictéir agus prótaistigh bheaga."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Is ciliat saotharlainne é Tetrahymena thermophila. Ceithre mheambráinéil bhéil, roinntear go tapa. Samhail d'telomérí agus luitreailí."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Is bairille i bplátaí cailcith le spíonanna é Coleps hirtus. Feochadóir agus creachadóir: ionannaíonn sé na gortaithe."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Is creachadóir cothrom é Litonotus lamella le toicsistí ina bhéal fada. Pairilíonn sé a chreach agus súnn sé amach í."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Tá muineál fada le heicstrusóimí nimhiúla ag Dileptus anser. Buaileann sé leis an muineál, ansin slogann sé. Sealgóir mór meánraoin."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Is cill a chasann ina háit í Urocentrum turbo: crios luitreailí cothrománach a rothlaíonn an chill. Scagann sí baictéir."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Is coilíneacht chlóg brainseach í Zoothamnium arbuscula. Giorríonn gás craptha comóntar an crann iomlán go tobann."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Is peiritrigh shuiteach gan ghás leapaidh é Opercularia coarctata. Clúdaíonn clár an béal. Scagann sé agus ní éalaíonn sé."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Is an aimbéib chlasaiceach í Amoeba proteus. Sreabann a loba bhréagacha timpeall na creiche. Gan chruth seasta, gan luitreailí."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Is aimbéib bhlaoscach le blaosc chruinn dhaingean í Arcella vulgaris. Tagann loba bréagacha amach as an bpoll. Bogann sí ar phlandaí."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Tá blaosc de ghráinníní gaineamh a ghreamaíonn an aimbéib le chéile ag Difflugia oblonga. Maireann sí i láib."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Tá blaosc de scálaí silice ag Euglypha alveolata. Loba bhréagacha tanaí snáithíocha. Creachadóir baictéiriach beag."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Is blaosc bhuidéalchruthach í Nebela collaris a tógadh ó scálaí goide. Uiscí foraoise agus portaigh."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Is blaosc dhioscach le spíonanna í Centropyxis aculeata. Tá an poll as a áit. Tarraingíonn sí ar dhríodar."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Is héileazón é Actinophrys sol: aicsiopóidí tanaí ag sileadh amach ar gach taobh. Greamaíonn creach do na gathanna agus tarraingtear isteach í."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Is héileazón ilnúicléasach mór é Actinosphaerium eichhorni. Na gathanna céanna, cill i bhfad níos mó. Itheann sé cilití agus rotaiféir."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Is héileazón le scálaí í Raphidiophrys pallida. Iompraíonn na gathanna snáthaidí silice. Sealgóir feithítheach plancsatóin."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Is rotaifear é Rotaria rotatoria a fhanann beo trí thrioma. Rothlaíonn coróin bia isteach sa bhéal. Ainmhí fíor-ilcheallach."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Is rotaifear bdéalaíoch bándearg í Philodina roseola. Bogann sí cosúil le súiteoir fola agus is féidir léi snámh. Baineanna amháin; gan fhear ar bith."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Is rotaifear loracach plancsatúnach é Brachionus plicatilis. Bia báibíní éisc i saothrú éisc. Scagann sé algaí agus baictéir."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Is rotaifear le deilg loraca fhada í Keratella cochlearis. Coinníonn an deilg creachadóirí ar shiúl. Plancsatón locháin choitianta."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Is mála gan loraca í Asplanchna priodonta, rotaifear chreachadóra. Slogann sí rotaiféir eile agus cilití ina n-iomláine."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Is gaistritríoch é Chaetonotus maximus. Clúdaithe le scálaí, tarraingíonn sé ar an mbonn. Itheann sé baictéir agus dríodar."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Is gaistritríoch beag é Lepidodermella squamata i scálaí a chlúdaíonn a chéile. Casanna an-tapa ina áit."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Is pheist leathan mhicreascópach é Macrostomum lignano. Fíormhatáin agus súile. Samhail athghiniúna. Seilgeann sé prótaistigh bheaga."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Is pheist thanaí luitreálach é Stenostomum leucops. Roinneann sé trasna ina slabhra zóóidí. Creachadóir dríodair agus ainmhithe beaga."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Is pheist leathan í Microstomum lineare a itheann hiodra agus a chuireann a gcuid ceall nimhe ina craiceann féin. Slabhra zóóidí."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Is néimeartán uisce úr é Prostoma graecense. Scaoileann proboscis fhada ar chreach. Sealgóir búin mór annamh."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Is placosón é Trichoplax adhaerens, ar cheann de na hainmhithe is simplí. Bogann sé ar aghaidh mar bhileóg agus déileálann sé bia lasmuigh. Gan bhéal."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Is ghiosta bácús é Saccharomyces cerevisiae. Itheann sé siúcra, sceitheann CO2 agus alcól. Sa lochán glanann sé orgánaigh tuaslagtha."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Is giosta í Candida albicans is féidir a fhás mar shnáthíní. Pataigin daonna deiseach. Sa chluiche is fungas dríodair í."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Is músc aráin é Mucor mucedo. Sporangia ar ghasanna, fás tapa ar shubstaintí marbha. Ní sheilgeann sé na beo."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Is músc aráin dhubh é Rhizopus stolonifer. Scaipeann stólóin agus rísóidigh ar an tsubstráit. Leánn sé stáirse."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Is músc scuaba é Penicillium chrysogenum, foinse pheinicillin. Scuaba coinidiacha. Dianscaoileann sé orgánaigh agus choisceann sé baictéir in aice láimhe."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Is aspergillus dubh é Aspergillus niger. Cinn spóir sféarúla. Táirgeoir tionscail aigéid chitrig. Sapratrastach."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Is ciotráid froganna é Batrachochytrium dendrobatidis. Zóispóir aonlascach. Sa lochán is samhail fhungais uisce é."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Is ciotráid uisce ar phailin agus algaí é Chytriomyces aureus. Sporangia óra; snámhann zóispóir go dtí an tsubstráit."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Is fungas uisce le mícéiliam fíor é Allomyces macrogynus. Malartaíonn sé glúine dhéphlóideacha agus haplóideacha. Tá lasc chuí ar na zóispóir."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Is bata ithreach é Bacillus subtilis. Mhaireann a spóir fiuchadh. Leánn sé próitéiní; samhail Ghram-dheimhnigh."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Is bata glantacháin í Pseudomonas putida. Itheann sí fiú táirgí pheitriliam. Lasc le gluaiseacht, fás tapa ar dhríodar."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Is bata ithreach snáithíneach é Streptomyces coelicolor. Déanann sé boladh na hithreach (geosmin) agus go leor frithbheathach. Spóir ar hífí."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Leánn Cellulomonas fimi ceallalós. Bata buí ar dhríodar plandaí. Gan í, mhairfeadh algaí marbha níos faide."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Is teirmeifíl é Thermus aquaticus as foinsethe te. Is bun le PCR é polaiméaráis Taq. Sa lochán fuar tá sé beagnach ina chodladh."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Is curadh radaíochta é Deinococcus radiodurans. Athchuireann sé genom briste le chéile ina chuid uaireanta. Balla tiubh, teitridí ceall."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Is samhail theagaisc í Sexual Eukaryote d'atáirgeadh gnéasach. Dhá inscne, cumasc gaiméadach, ní roinnt dhúbailte shimplí."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "Is mhióvíreas mór é T4 d'E. coli. Crapann an t-eireaball agus insteallann sé DNA. I leath uair an chloig pléascann an chill agus tagann scórtha faig amach."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Is faig mheasartha í Lambda. Is féidir léi ionsá isteach sa chrómasóm agus a chodladh (lisigineacht), nó an chill a bhriseadh láithreach (leá)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "Tá eireaball gearr ag T7 agus atáirgeadh an-tapa. Córas a thugann taitneamh i mbiththeicníocht shintéiseach."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Is faig RNA í Phi-6 le timpeallacht lipidí. Ionfhabhraíonn sí Pseudomonas. Scannán annamh d'fhaig."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "Is faig RNA bheag gan eireaball í MS2. Ceanglaíonn sí pili fireann E. coli. Bhí a genom ar cheann de chéad ghinim RNA a léadh."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "Paraisít néarach ficseanúil locháin. Greamaíonn sé d'eoicéiréitigh agus bhriseann sé iompar an óstaigh go dtí go mbeidh an t-óstach ina iompróir."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Is samhail theagaisc í Sexual Eukaryote d'atáirgeadh gnéasach. Dhá inscne, cumasc gaiméadach, ní roinnt dhúbailte shimplí."
   }
 }

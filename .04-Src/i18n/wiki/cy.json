@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Mae Synechocystis yn giwanobacteriwm heb niwclews. Mae'n byw ar olau: ffotosynthesis ocsigenig ar y membraneau, dim cloroplastau. Model labordy ar gyfer metaboledd hydrogen."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Mae Anabaena variabilis yn edau o gelloedd. Mae rhai celloedd yn troi'n heterosystiaid sy'n clymu nitrogen tra mae'r cymdogion yn gwneud siwgr. Yn y pwll mae'n cyflenwi nitrogen wedi'i glymu."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Mae Spirulina (Arthrospira) yn sbiral o gelloedd gyda swigod nwy. Mae'n hongian ger yr wyneb, yn gwneud ffotosynthesis, ac yn fwytadwy. Yn y gêm mae'n sgriw mawr gwyrdd ar ffilm y dŵr."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Mae Nostoc punctiforme yn gadwyn o beadiau mewn capsiwl mwcos. Mae'n byw yn rhydd neu mewn cyfyweithio â phlanhigion. Mae'r drefedigaeth yn edrych fel clytwaith o beadiau gwyrdd."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Mae Oscillatoria limnetica yn edau llithro. Mae'n osgiledu o'r naill ochr i'r llall a gall wneud ffotosynthesis heb ryddhau ocsigen. Nodweddiadol o fwd a ffilm yr wyneb."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Mae Microcystis aeruginosa yn drefedigaeth fwcaidd, yn aml yn wenwynig (microcystin). Mae'n achosi blodyn algâu ar y dŵr. Yn y gêm mae'n bêl drefedigaeth wyrdd, ysglyfaeth beryglus."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Mae Gloeocapsa yn gelloedd parau mewn gwisgoedd lliwgar. Mae'n byw ar greigiau a phridd ac yn oddef UV. Yn y pwll mae'n gocosi bach mewn parau mewn cot."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Mae Lyngbya majuscula yn edau trwchus ciwanobacteraidd. Gall ryddhau tocsinau llidol. Mae'n ffurfio haenau algâu ger glannau cynnes."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Mae Chlamydomonas reinhardtii yn gell wyrdd gyda dwy fflagela a llygadyn. Mae'n nofio tua'r golau. Model clasurol mewn geneteg algâu."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Mae Chlorella vulgaris yn bêl wyrdd nad yw'n symud. Mae'n rhannu'n gyflym ac yn gyfoethog mewn protein. Bwyd i fwytwyr bach a phwnc ymchwil bwyd gofod."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Mae Volvox globator yn sffêr gwag o filoedd o gelloedd. Mae trefedigaethau merch yn aeddfedu y tu mewn ac yn gadael. Yn y gêm mae'n drefedigaeth fawr wyrdd."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Mae Euglena gracilis yn gymysgyfwyr: cloroplastau ynghyd â'r gallu i fwyta. Mae llygadyn coch yn olrhain y golau. Gwyrdd yn ystod y dydd; yn y tywyllwch mae'n troi at fwyd."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Mae Scenedesmus quadricauda fel arfer yn bedwar cell mewn rhes gyda sbinau ar y penau. Mae'r sbinau'n gwneud llyncu'n anoddach. Nid yw'n nofio — mae'n arnofio."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Mae Haematococcus pluvialis yn gell wyrdd symudol; o dan straen mae'n troi'n goch (astaxanthin) ac yn tyfu wal drwchus. Mae systiaid coch yn goroesi sychder."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Does dim wal anhydwys gan Dunaliella salina ac mae'n byw mewn dŵr hallt iawn. Mae'n storio beta-caroten ac mae'n edrych yn oren. Dwy fflagela."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Mae Micrasterias rotata yn ddesmid fflat siâp seren. Dwy hanner drychulaidd gyda thoriadau dwfn. Ddim yn symud; mae'n gwneud ffotosynthesis mewn dŵr corsog asidig."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Mae Navicula yn ddeiatom siâp cwch gyda falf silica. Mae'n llithro ar y swbstrad ar hyd slît raphe. Mae'r gragen yn aros ar ôl marwolaeth."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Mae Pinnularia viridis yn ddeiatom bennog fawr. Cragen silica gyda phatrym cymesur. Mae'n llithro'n araf ar y gwaelod."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Mae Cyclotella meneghiniana yn ddeiatom ganolog grwn. Mae'n arnofio fel disg; mae'r gragen yn ddau glawr. Plancton nodweddiadol."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Mae Diatoma vulgare yn ddeiatom sy'n glynu ei gilydd mewn zigzag. Mae'r drefedigaeth yn cynyddu gwrthiant yn y golofn dŵr."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Mae Rhodospirillum rubrum yn sbiral borffor. Ffotosynthesis anocsigenig ynghyd â sylweddau organig. Mae'r lliw coch yn dod o facteriochloroffyl."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Mae Chromatium vinosum yn bacteriwm sylffwr porffor. Mae'n ocsideiddio hydrogen sylffid ac yn storio gronynnau sylffwr. Mae'n byw ar ffin yr ocsigen a'r sylffwr."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Mae Porphyridium cruentum yn alg goch ungell. Mae phycoerythrin yn rhoi lliw coch gwaed iddi. Cot fwcaidd, dim fflagela."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Mae Prochlorococcus marinus y gell ffotosynthetig leiaf a mwyaf cyffredin ar y Ddaear. Cafodd ei ddarganfod yn y 1980au. Mae'n bwydo'r cefnfor."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Mae Chroococcidiopsis thermalis yn eithafialaeth: anialwch, craig, ymbelydredd. Ymgeisydd am fywyd y tu hwnt i'r Ddaear. Yn y pwll mae'n drefedigaeth gocos araf."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Mae Bdellovibrio bacteriovorus yn ysglyfaethwr bacteriol bach. Mae'n sgriwio i mewn i gell arall ac yn amlhau nes bod y gwesteiwr yn ffrwydro."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Mae Vampirococcus yn eistedd ar ei ysglyfaeth o'r tu allan ac yn sugno'r cynnwys allan heb fynd i mewn. Fampir bacteriol."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Mae Daptobacter yn mynd i mewn i facteriwm ysglyfaeth ac yn ei fwyta o'r tu mewn. Heliwr mewngellol prin."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Mae Myxococcus xanthus yn bacteriwm cymdeithasol. Mewn pecyn mae'n amgylchynu ysglyfaeth ac yn rhyddhau ensymau. Pan mae newyn mae'n ffurfio corff ffrwythlon."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Mae Bacteriovorax stolpii yn berthynas môr i Bdellovibrio. Mae'n ymosod ar Facteria Gram-negyddol ac yn byw ym mheryplasm yr ysglyfaeth."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Mae Halobacteriovorax yn heliwr bacteriol sy'n goddef halen. Yr un tric: tyllu'r wal a thyfu y tu mewn."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Mae Peredibacter starrii yn ysglyfaethwr BALO arall. Fflagelaidd siâp coma cyflym sy'n targedu pastwnnau mawr."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Mae Monas guttula yn fflagelaidd heterotroffig bach. Mae'n dal bacteria ar wyneb y detritws."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Mae Oikomonas termo yn fflagelaidd siâp difer. Un fflagellwm; mae'n hela mewn ffilm bacteriol."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Mae Anthophysa vegetans yn drefedigaeth ar goesyn haearn-manganês. Mae'r celloedd yn eistedd mewn clustog ac yn dal bacteria."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Mae Chilomonas paramecium yn griptoffit di-liw. Dwy fflagela; mae'n bwyta deunydd organig toddiedig a bacteria bach, dim cloroplastau."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Mae Cercomonas longicauda yn amebofflagelaidd gyda chynffon hir. Mae'n llusgo ac yn llyncu bacteria â pseudopodia."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Mae Heteromita globosa yn fflagelaidd y pridd. Dwy fflagela o wahanol hyd; prif fwyttyr bacteriol yn y pridd."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Mae Bodo saltans yn ginetoplastid. Mae'n 'dawnsio' yn ei le, wedi'i atodi gan y fflagellwm cefn, ac yn cipio bacteria."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Mae Procryptobia sorokini yn berthynas i Bodo. Mae'n nofio'n rhydd ac yn taro'r ysglyfaeth gyda'r fflagellwm blaen."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Mae Trypanosoma brucei yn barasit gwaed sy'n achosi clefyd cysgu. Membran tonnog ac un fflagellwm. Yn y pwll mae'n fodel helaidd main."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Mae Leishmania donovani yn barasit dynol mewngellol. Fflagelaidd yn yr pryfyn, ddim fflagelaidd y tu mewn i facroffag."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Mae Monosiga brevicollis yn choanofflagelaidd, perthynas i anifeiliaid. Mae coler microfili yn hidlo bacteria."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Mae Salpingoeca rosetta yn goanofflagelaidd sydd ddim yn symud, mewn lorica. Gall ffurfio roset. Mae'n hidlo cerrynt dŵr."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Mae Codonosiga botrytis yn drefedigaeth choanofflagelaidd ar goesyn cyffredin. Sawl hidlydd ar un goesyn."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Mae Paramecium caudatum yn y pantoff clasurol. Miloedd o gilia, sianel y genau, facuolau cyfangol. Mae'n hidlo bacteria."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Mae Paramecium bursaria yn bantoff gyda symbiontau zoochlorella. Gwyrdd y tu mewn: siwgr oddi wrth algâu yn ystod y dydd, hidlo yn y nos."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Mae Stentor coeruleus yn drwmped glas hyd at filimetr. Mae'n agor allan fel twmffat ac yn gyrru cerrynt â chilia. Gall nofio neu eistedd."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Mae Stentor polymorphus yn berthynas i'r stentor glas, yn aml gyda zoochlorellae. Mae'r siâp yn newid o drwmped i bêl."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Mae Vorticella campanula yn gloch ar goesyn cyfangol. Mae'r goesyn yn troi'n sbiral ar unwaith. Nid yw'r gell ei hun yn nofio i ffwrdd."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Mae Vorticella microstoma yn gloch fach. Yr un goesyn sbring, maes y genau culach. Yn aml ar detritws."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Mae Didinium nasutum yn gasgen sy'n hela pantoffi. Mae'n saethu tocsistiaid ac yn llyncu'r ysglyfaeth gyfan, hyd yn oed os yw'n fwy."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Mae Spirostomum ambiguum yn sigâr hir iawn. Mae'n crebachu lawer gwaith dros ffracsiwn o eiliad. Mae'r cilia'n rhedeg mewn sbiral."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Mae Blepharisma americanum yn giliad pinc. Mae'r pigment blepharismin yn sensitif i olau. Mae'n hidlo a gall ymosod ar gelloedd llai."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Mae Euplotes patella yn cerdded ar girri fel coesau. Fflat, troiadau cyflym. Mae'n crafu bacteria oddi ar arwynebau."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Mae Stylonychia pustulata yn hipotrich sy'n 'rhedeg' ar y gwaelod. Cirri mawr, genau clir. Ysglyfaethwr siliad bach."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Mae Oxytricha trifallax yn fodel genom: dwy niwclews ac ailysgrifennu DNA cymhleth. Mae'n cerdded ar girri ac yn bwyta bacteria a phrotistiaid bach."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Mae Tetrahymena thermophila yn giliad labordy. Pedwar membranel y genau, rhaniad cyflym. Model ar gyfer telomerau a chilia."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Mae Coleps hirtus yn gasgen mewn platiau calchaidd gyda sbinau. Carthffil ac ysglyfaethwr: mae'n brathu'r clwyfedig."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Mae Litonotus lamella yn ysglyfaethwr fflat gyda thocsistiaid mewn 'proboscis'. Mae'n parlysu'r ysglyfaeth ac yn ei sugno allan."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Mae gan Dileptus anser wddf hir gydag estrwsomau gwenwynig. Mae'n taro gyda'r gwddf, yna'n llyncu. Heliwr mawr canolradd."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Mae Urocentrum turbo fel top troelli: gwregys cilia cyhydeddol yn troi'r gell yn ei le. Mae'n hidlo bacteria."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Mae Zoothamnium arbuscula yn drefedigaeth glochyddion canghennog. Mae goesyn cyfangol cyffredin yn ysgwyd y coeden gyfan ar unwaith."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Mae Opercularia coarctata yn beritrich sesnil heb goesyn sbring. Mae cae'n gorchuddio'r genau. Mae'n hidlo ac nid yw'n nofio i ffwrdd."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Mae Amoeba proteus yr amoeba clasurol. Mae pseudopodia'n llifo o amgylch ysglyfaeth. Dim siâp sefydlog, dim cilia."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Mae Arcella vulgaris yn amoeba cragenog gyda chromen galed. Mae pseudopodia'n dod allan trwy'r agoriad. Mae'n llusgo ar blanhigion."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Mae gan Difflugia oblonga gragen o ronynnau tywod y mae'r amoeba'n eu gludo at ei gilydd. Mae'n byw mewn llaid."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Mae gan Euglypha alveolata gragen o sgwaliau silica. Pseudopodia tenau edafog. Ysglyfaethwr bacteriol bach."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Mae Nebela collaris yn gragen siâp potel wedi'i hadeiladu o sgwaliau dwyn. Dyfroedd coedwig a chorsydd."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Mae Centropyxis aculeata yn gragen ddisg gyda sbinau. Mae'r agoriad wedi'i symud i'r ochr. Mae'n llusgo ar detritws."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Mae Actinophrys sol yn heliosôr: axopodia tenau'n ymledu bob cyfeiriad. Mae ysglyfaeth yn glanio ar y pelydrau ac yn cael ei thynnu i mewn."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Mae Actinosphaerium eichhorni yn heliosôr mawr amlniwclews. Yr un pelydrau, cell llawer mwy. Mae'n bwyta ciliaid a rotiferaid."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Mae Raphidiophrys pallida yn heliosôr mewn sgwaliau. Mae'r pelydrau'n cario nodau silica. Heliwr cudd-arsyll plancton."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Mae Rotaria rotatoria yn rotifer gall oroesi sychu. Mae'r corona'n troi bwyd i mewn i'r genau. Anifail amlgellog gwirioneddol."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Mae Philodina roseola yn rotifer bdelloid pinc. Mae'n llusgo fel sugnydd ac yn nofio hefyd. Benywod yn unig; dim gwrywod."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Mae Brachionus plicatilis yn rotifer lorica planctonig. Bwyd i bysgod ifanc mewn pysgodfeydd. Mae'n hidlo algâu a bacteria."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Mae Keratella cochlearis yn rotifer gyda sbinau lorica hir. Mae'r sbinau'n dychryn ysglyfaethwyr. Plancton pwll cyffredin."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Mae Asplanchna priodonta yn god heb lorica, rotifer ysglyfaethus. Mae'n llyncu rotifer eraill a giliaid yn gyfan."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Mae Chaetonotus maximus yn gastrotrich. Wedi'i wisgo mewn sgwaliau, mae'n llusgo ar y gwaelod. Mae'n bwyta bacteria a detritws."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Mae Lepidodermella squamata yn gastrotrich bach mewn sgwaliau sy'n gorgyffwrdd. Troiadau cyflym iawn yn ei le."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Mae Macrostomum lignano yn llyngyren fflat feicrosgopig. Cyhyrau a llygaid go iawn. Model adfywiad. Mae'n hela protistiaid bach."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Mae Stenostomum leucops yn llyngyren denau bigog. Mae'n rhannu ar draws i fod yn gadwyn o soïdiaid. Ysglyfaethwr detritws ac anifeiliaid bach."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Mae Microstomum lineare yn llyngyren fflat sy'n bwyta hydra ac yn mewnosod eu celloedd gwenwynig yn ei chroen ei hun. Cadwyn o soïdiaid."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Mae Prostoma graecense yn nemertan dŵr croyw. Mae proboscis hir yn saethu at ysglyfaeth. Heliwr gwaelod mawr prin."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Mae Trichoplax adhaerens yn blacozöan, un o'r anifeiliaid symlaf. Mae'n llusgo fel dalen ac yn treulio bwyd yn allanol. Dim ceg."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Mae Saccharomyces cerevisiae yn furum pobydd. Mae'n blaguro, yn bwyta siwgr, yn rhyddhau CO2 ac alcohol. Yn y pwll mae'n glanhau organig toddiedig."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Mae Candida albicans yn furum gall dyfu fel ffiliamentau. Pathogen dynol cyfleol. Yn y gêm mae'n ffwng detritws."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mae Mucor mucedo yn llwydni bara. Sporangia ar goesynnau, twf cyflym dros y meirw. Nid yw'n hela'r byw."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Mae Rhizopus stolonifer yn lwydni bara du. Stoloniaid a rhisoidau'n lledu dros y swbstrad. Mae'n torri lawr startsh."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Mae Penicillium chrysogenum yn llwydni brwsh, tarddle penicillin. Brwshau conidiol. Mae'n dadelfennu organig ac yn atal bacteria gerllaw."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Mae Aspergillus niger yn aspergillus du. Penau sbor crwn. Cynhyrchydd diwydiannol asid sitrig. Saprotroff."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Mae Batrachochytrium dendrobatidis yn chytrid llyffantod. Sbosorau unfflagelaidd. Yn y pwll mae'n fodel ffwng dŵr."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Mae Chytriomyces aureus yn chytrid dŵr ar beill ac algâu. Sporangia aur; sbosorau'n nofio i'r swbstrad."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Mae Allomyces macrogynus yn ffwng dŵr gyda myceliwm go iawn. Mae'n newid rhwng diploid a haploid. Mae gan sbosorau fflagellwm cefn."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Mae Bacillus subtilis yn wialen o'r pridd. Mae sborau'n goroesi berwi. Mae'n dadelfennu protein; model Gram-positif."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Mae Pseudomonas putida yn wialen lanhau. Mae'n bwyta hyd yn oed gynhyrchion petroliwm. Fflagellwm symudol, twf cyflym ar detritws."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Mae Streptomyces coelicolor yn facteriwm pridd ffilamentaidd. Mae'n gwneud arogl y ddaear (geosmin) a llawer o wrthfiotigau. Sborau ar hyffa."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Mae Cellulomonas fimi yn torri lawr cellwlos. Gwialen felen ar detritws planhigion. Hebddi byddai algâu marw'n aros yn hwy."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Mae Thermus aquaticus yn thermoffyl o ffynhonnau poeth. Polymerase Taq yw sail PCR. Mewn pwll oer mae bron yn cysgu."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Mae Deinococcus radiodurans yn bencampwr ymbelydredd. Mae'n ailosod genom wedi'i ddarnio o fewn oriau. Wal drwchus, tetradau cell."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Mae Sexual Eukaryote yn fodel addysgu o atgynhyrchiad rhywiol. Dau ryw, cyfuniad gemetâu, dim rhaniad deuaidd syml."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "Mae T4 yn fiowirws mawr E. coli. Mae'r gynffon yn crebachu ac yn chwistrellu DNA. Mewn hanner awr mae'r gell yn ffrwydro ac mae dwsinau o ffagiaid yn gadael."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Mae Lambda yn ffag dymherol. Gall fewnosod i'r cromosom a chysgu (lisogeni) neu dorri'r gell i fyny ar unwaith (lysis)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "Mae gan T7 gynffon fer ac atgynhyrchiad cyflym iawn. System ffefryn mewn bioleg synthetig."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Mae Phi-6 yn ffag RNA gyda amlen lipid. Mae'n heintio Pseudomonas. Membrân prin i ffag."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "Mae MS2 yn ffag RNA bach di-gynffon. Mae'n rhwymo pili E. coli gwrywol. Ei genom oedd un o'r genomau RNA cyntaf i'w darllen."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "Parasit niwronol dychmygol o'r pwll. Mae'n glynu wrth ewcariotau ac yn torri ymddygiad y gwesteiwr nes bod y gwesteiwr yn gludwr."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Mae Sexual Eukaryote yn fodel addysgu o atgynhyrchiad rhywiol. Dau ryw, cyfuniad gemetâu, dim rhaniad deuaidd syml."
   }
 }

@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis сианобактерияи бе ядро аст. Аз рӯшноӣ ғизо мегирад: фотосинтези оксигенӣ дар пардаҳо мегузарад, хлоропласт надорад. Модели лаборатории мубодилаи гидроген аст."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis тори нитмонанд аст. Баъзе ҳуҷайраҳо гетеросист шуда нитрогенро мустаҳкам мекунанд, дар ҳоле ки ҳамсояҳо қанд месозанд. Дар ҳавз нитрогени пайвастшударо таъмин мекунад."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) спирали ҳуҷайраҳо бо везикулаҳои газӣ аст. Назди сатҳ мечаспад, фотосинтез мекунад ва хӯрда мешавад. Дар бозӣ он печи сабзи калон дар пардаи об аст."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme занҷири донуҳо дар капсулаи луобӣ аст. Озод ё дар симбиози рустанӣ зиндагӣ мекунад. Колония ҳамчун хӯшаи донуҳои сабз менамояд."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica тори лағжонанда аст. Аз як паҳлӯ ба паҳлӯи дигар такон мехӯрад ва метавонад бе ихроҷи оксиген фотосинтез кунад. Ба лой ва пардаи сатҳи об хос аст."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa колонияи луобӣ аст, аксар вақт заҳрнок (микроцистин). Боиси сабзиши об мешавад. Дар бозӣ тӯпи сабзи колониявӣ аст, шикори хатарнок."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa ҷуфт ҳуҷайраҳо дар ҷилдҳои рангин аст. Дар сангу хок зиндагӣ мекунад ва нурҳои ултрабунафшро тоб медиҳад. Дар ҳавз коккҳои ҷуфти хурд дар ҷилд аст."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula тори ғафси сианобактериалӣ аст. Метавонад заҳрҳои ангезанда ихроҷ кунад. Дар соҳилҳои гарм қабатҳои зич месозад."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii ҳуҷайраи сабз бо ду флагелла ва доғи чашм аст. Ба сӯи рӯшноӣ шино мекунад. Модели классикии генетикаи обсабзҳост."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris тӯпи сабзи беҳаракат аст. Зуд таксим мешавад ва аз сафеда бой аст. Хӯроки хӯрандагони хурд ва объекти хӯроки кайҳонӣ."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator кӯраи холии аз ҳазорон ҳуҷайра аст. Колонияҳои духтар дар дохил мепазанд ва берун мебароянд. Дар бозӣ колонияи сабзи калон аст."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis миксотроф аст: хлоропластҳо ва қобилияти ғизогирӣ дорад. Доғи сурхи чашм рӯшноиро пайгирӣ мекунад. Рӯз сабз аст; дар торикӣ ба ғизогирӣ мегузарад."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda одатан чор ҳуҷайра дар як саф бо хорҳои сарӣ аст. Хорҳо фурӯ бурданро душвор мекунанд. Шино намекунад — бо ҷараён ҳаракат мекунад."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis ҳуҷайраи сабзи ҳаракатӣ аст; дар зери фишор сурх мешавад (астаксантин) ва девори ғафс месабзонад. Кистаҳои сурх хушксолиро тоб медиҳанд."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina девори сахт надорад ва дар оби хеле шӯр зиндагӣ мекунад. Бета-каротин нигоҳ медорад ва норинҷӣ менамояд. Ду флагелла дорад."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata десмиди ҳамвори ситорашакл аст. Ду нимаи оинаӣ бо буришҳои чуқур. Беҳаракат; дар оби турши ботлоқӣ фотосинтез мекунад."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula диатомеяи киштишакл бо қапоқи силикатӣ аст. Дар замина тавассути дарзҳои рафа лағжонанда ҳаракат мекунад. Садафаш баъди марг боқӣ мемонад."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis диатомеяи калони паррадор аст. Садафи силикатӣ бо нақши мутаносиб дорад. Дар қаъри об оҳиста-оҳиста лағжонанда меравад."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana диатомеяи доиравии марказӣ аст. Ҳамчун диск дар болои об мемонад; садаф аз ду қапоқ иборат аст. Планктони хос аст."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare диатомеяест, ки ба шакли зигзаг ба ҳам мечаспанд. Колония муқовиматро дар сутуни об зиёд мекунад."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum спирали бунафш аст. Фотосинтези бе оксиген, инчунин истеъмоли моддаҳои органикӣ. Ранги сурх аз бактериохлорофилл мебошад."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum бактерияи бунафши гӯгирдӣ аст. Гидроген сулфидро оксид мекунад ва донаҳои гӯгирд нигоҳ медорад. Дар сарҳади оксиген ва гӯгурд зиндагӣ мекунад."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum обсабзи сурхи якҳуҷайра аст. Фикоэритрин ба он ранги сурхи хунин медиҳад. Ҷилди луобӣ дорад, флагелла надорад."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus хурдтарин ва сершумортарин ҳуҷайраи фотосинтезкунандаи Замин аст. Дар солҳои 1980 кашф шудааст. Уқёнусро ғизо медиҳад."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis экстремофил аст: биёбон, сангҳо, радиатсия. Номзади ҳаёт берун аз Замин. Дар ҳавз колонияи сустҳаракати коккҳост."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus шикорчии хурди бактериявӣ аст. Ба ҳуҷайраи дигар печонда ворид мешавад ва афзуда мешавад, то ки соҳиб мешиканад."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus аз берун ба шикор мечаспад ва бе ворид шудан мӯҳтавояшро мемакад. Вампири бактериявӣ."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter ба бактерияи шикор ворид мешавад ва онро аз дохил мехӯрад. Шикорчии нодири доҳуҷайравӣ."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus бактерияи иҷтимоӣ аст. Дар гурӯҳ шикорро иҳота мекунад ва ферментҳо ихроҷ мекунад. Дар гуруснагӣ бадани мевадор месозад."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii хешованди баҳрии Bdellovibrio аст. Ба грам-манфиҳо ҳамла мекунад ва дар периплазмаи шикор зиндагӣ мекунад."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax шикорчии бактериявии тобовар ба шӯрӣ аст. Ҳамон усул: деворро сӯрох мекунад ва дар дохил месабзад."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii шикорчии дигари BALO аст. Флагелляти зудҳаракати вергулшакл, ки чӯбчаҳои калонро шикор мекунад."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula флагелляти хурди гетеротрофӣ аст. Дар сатҳи детрит бактерияҳоро мегирад."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo флагелляти қатрашакл аст. Як флагелла дорад; дар пардаи бактериявӣ шикор мекунад."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans колония дар пояи оҳану марганец аст. Ҳуҷайраҳо дар хӯша нишаста бактерияҳоро мегиранд."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium криптофити беранг аст. Ду флагелла; моддаҳои органикии ҳалшуда ва бактерияҳои хурдро мехӯрад, хлоропласт надорад."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda амёбафлагелляти думдароз аст. Мехазад ва бо псевдоподиҳо бактерияҳоро фурӯ мебарад."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa флагелляти хокин аст. Ду флагеллаи дарозии гуногун; хӯрандаи асосии бактерияҳо дар хок."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans кинетопластид аст. Бо флагеллаи қафо часпида, дар ҷояш 'рақс' мекунад ва бактерияҳоро мегирад."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini хешованди Bodo аст. Озодона шино мекунад ва бо флагеллаи пеш ба шикор зарба мезанад."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei паразити хун аст, ки боиси бемории хоб мешавад. Пардаи мавҷмонанд ва як флагелла дорад. Дар ҳавз модели шикорчии назук аст."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani паразити доҳуҷайраии инсон аст. Дар ҳашарот флагелладор, дар дохили макрофаг бефлагелла аст."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis хоанофлагеллят — хешованди ҳайвонот аст. Яқаи микровилӣ бактерияҳоро филтр мекунад."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta хоанофлагелляти муқим дар лорика аст. Метавонад розетка шакл диҳад. Ҷараёни обро филтр мекунад."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis колонияи хоанофлагеллятҳо дар пояи умумӣ аст. Чанд филтр дар як поя."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum куфии классикӣ аст. Ҳазорон мӯйча, ҷӯйчаи даҳонӣ, вакуолҳои кашишавӣ дорад. Бактерияҳоро филтр мекунад."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria куфӣ бо симбионтҳои зухлорелла аст. Аз дохил сабз аст: рӯз аз обсабзҳо қанд мегирад, шаб филтр мекунад."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus карнаи кабуд то як миллиметр аст. Ба шакли қиф кушода мешавад ва бо мӯйчаҳо ҷараён месозад. Метавонад шино кунад ё нишинад."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus хешованди стентори кабуд аст, аксар вақт бо зухлореллаҳо. Шаклаш аз карнай то тӯп иваз мешавад."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula зангӯла дар пояи кашишавӣ аст. Поя фавран ба спирал мечарчад. Худи ҳуҷайра шино карда дур намешавад."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma зангӯлаи хурд аст. Ҳамон пояи пружинӣ, майдони даҳонии бориктар. Аксар вақт дар детрит."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum челикшакл шикорчии куфиҳо аст. Токсикистҳоро мепартояд ва шикорро пурра фурӯ мебарад, ҳатто агар шикор калонтар бошад."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum сигори хеле дароз аст. Дар як ҳиссаи сония чанд баробар кашиш мешавад. Мӯйчаҳо дар спирал ҷойгиранд."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum инфузорияи гулобӣ аст. Ранги блефарисмин ба рӯшноӣ ҳассос аст. Филтр мекунад ва метавонад ба ҳуҷайраҳои хурдтар ҳамла кунад."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella бо сирҳо ҳамчун пой мегардад. Ҳамвор аст, гардишҳои зуд месозад. Аз сатҳҳо бактерияҳоро мекобад."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata гипотрихест, ки дар қаър 'медавад'. Сирҳои калон, даҳони равшан дорад. Шикорчии инфузорияҳои хурд аст."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax модели геном аст: ду ядро ва дубора-нависии мураккаби DNA. Бо сирҳо мегардад ва бактерияҳо ва протистҳои хурдро мехӯрад."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila инфузорияи лабораторӣ аст. Чор мембранелаи даҳонӣ, таксимии зуд дорад. Модели теломераҳо ва мӯйчаҳост."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus челикшакл дар лавҳаҳои охакин бо хорҳост. Ҷасадхӯр ва шикорчӣ: ба ҷонварони маҷрӯҳ газоқ мезанад."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella шикорчии ҳамвор бо токсикистҳо дар 'хартут' аст. Шикорро фалҷ мекунад ва мемакад."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser гардани дароз бо экструзомҳои заҳрнок дорад. Бо гардан зарба мезанад, сипас фурӯ мебарад. Шикорчии калони дараҷаи миёна аст."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo чархаки гаргон аст: камари мӯйчаҳои экваторӣ ҳуҷайраро дар ҷо мечархонад. Бактерияҳоро филтр мекунад."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula колонияи шохадори зангӯлаҳо аст. Пояи умумии кашишавӣ тамоми дарахтро якбора мекашад."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata перитрихи муқим бе пояи пружинӣ аст. Қапоқ даҳонро мепӯшонад. Филтр мекунад ва дур намешавад."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus амёбаи классикӣ аст. Псевдоподиҳо шикорро иҳота мекунанд. Шакли муқаррарӣ ва мӯйча надорад."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris амёбаи садафдор бо гунбази сахт аст. Псевдоподиҳо аз сӯрох баромада меоянд. Дар рустаниҳо мехазад."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga садафе аз дончаҳои рег дорад, ки амёба худаш часбонда месозад. Дар лой зиндагӣ мекунад."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata садафи аз пулакчаҳои силикатӣ дорад. Псевдоподиҳои борики филозӣ. Шикорчии хурди бактериявӣ."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris садафи шишашакл аз пулакчаҳои дуздида сохта мешавад. Обҳои ҷангал ва ботлоқ."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata садафи дискӣ бо хорҳост. Сӯрох дар канор ҷойгир аст. Дар детрит мехазад."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol хелиозоон аст: аксоподияҳои борик аз ҳар тараф шуоъ мебароранд. Шикор ба шуоъҳо мечаспад ва кашида мешавад."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni хелиозоони калон бо ядроҳои бисёр аст. Ҳамон шуоъҳо, вале ҳуҷайра хеле калонтар. Инфузорияҳо ва ротиферҳоро мехӯрад."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida хелиозоони пулакчадор аст. Шуоъҳо сӯзанҳои силикатӣ доранд. Шикорчии каминии планктонӣ."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria ротиферест, ки хушкшавиро тоб медиҳад. Тоҷи мӯйчаҳо хӯрокро чархонда ба даҳон мебарад. Ҳайвони ҳақиқии бисёрҳуҷайра."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola ротифери гулобии бделлоидӣ аст. Ҳамчун золу мехазад ва ҳам шино мекунад. Танҳо модинаҳо; наррина надорад."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis ротифери планктонии лорикадор аст. Дар аквакултура хӯроки бичаҳои моҳӣ. Обсабзҳо ва бактерияҳоро филтр мекунад."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis ротифер бо хори дарози лорика аст. Хор шикорчиёнро дур мекунад. Планктони маъмули ҳавз."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta халтаи бе лорика — ротифери шикорчӣ. Ротиферҳо ва инфузорияҳои дигарро пурра фурӯ мебарад."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus гастротрих аст. Пулакчапӯш аст, дар қаър мехазад. Бактерияҳо ва детрит мехӯрад."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata гастротрихи хурди пулакчаҳои болоҳам аст. Дар ҷо гардишҳои хеле зуд месозад."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano кирми ҳамвори микроскопӣ аст. Мушакҳо ва чашмҳои ҳақиқӣ дорад. Модели барқарорсозӣ. Протистҳои хурдро шикор мекунад."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops кирми борики мӯйчадор аст. Бо буриши трансверсӣ ба занҷири зооидҳо таксим мешавад. Шикорчии детрит ва ҳайвоноти хурд."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare кирми ҳамворест, ки гидраро мехӯрад ва ҳуҷайраҳои нематоцисти онҳоро дар пӯсти худ ҷойгир мекунад. Занҷири зооидҳо."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense немертини оби ширин аст. Хартути дароз ба сӯи шикор партофта мешавад. Шикорчии калон ва нодири қаър."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens плахозоон аст, аз соддатарин ҳайвонот. Ҳамчун варақ мехазад ва хӯрокро берун ҳазм мекунад. Даҳон надорад."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae хамиртуруши нонпазӣ аст. Гул карда таксим мешавад, қанд мехӯрад, CO2 ва спирт ихроҷ мекунад. Дар ҳавз моддаҳои органикии ҳалшударо тоза мекунад."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans хамиртурушест, ки метавонад ҳамчун тор сабзад. Патогени фурсатхоҳи инсон. Дар бозӣ занбӯруғи детритӣ аст."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo занбӯруғи нон аст. Спорангияҳо дар пояҳо, сабзиши зуд бар ҷасадҳо. Зиндаро шикор намекунад."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer занбӯруғи сиёҳи нон аст. Столонҳо ва ризоидҳо дар замина паҳн мешаванд. Нишастаро вайрон мекунад."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum занбӯруғи қаламшакл, манбаи пенисилин аст. Қаламҳои конидиалӣ дорад. Моддаҳои органикиро вайрон мекунад ва бактерияҳои наздикро пахш мекунад."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger аспергиллуси сиёҳ аст. Сарҳои кӯравии спора дорад. Истеҳсолкунандаи саноатии туршии лимӯ. Сапротроф."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis хитриди қурбоққаҳо аст. Зооспораҳои якфлагелладор дорад. Дар ҳавз модели занбӯруғи обӣ аст."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus хитриди обӣ рӯи гарди гул ва обсабзҳост. Спорангияҳои тиллоӣ; зооспораҳо ба замина шино мекунанд."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus занбӯруғи обӣ бо миселиуми ҳақиқӣ аст. Диплоид ва гаплоидро иваз мекунад. Зооспораҳо флагеллаи қафо доранд."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis чӯбчаи хокин аст. Спораҳо ҷӯшонданро тоб медиҳанд. Сафедаро вайрон мекунад; модели грам-мусбат."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida чӯбчаи тозакунанда аст. Ҳатто маҳсулоти нафтӣ мехӯрад. Флагеллаи ҳаракатӣ дорад, дар детрит зуд месабзад."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor бактерияи торшакли хокин аст. Бӯйи хок (геосмин) ва антибиотикҳои зиёд месозад. Спораҳо дар ҳифаҳо."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi селлюлозаро вайрон мекунад. Чӯбчаи зард дар детрити рустанӣ. Бе он обсабзҳои мурда дарозтар боқӣ мемонанд."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus термофили чашмаҳои гарм аст. Полимерази Taq асоси PCR аст. Дар ҳавзи хунук қариб фаъол нест."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans қаҳрамони радиатсия аст. Геноми вайроншударо дар чанд соат аз нав ҷамъ мекунад. Девори ғафс, тетрадаҳои ҳуҷайравӣ."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote модели таълимии афзоиши ҷинсӣ аст. Ду ҷинс, якҷояшавии гаметҳо, на таксимии оддии дукарата."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 миовируси калони E. coli аст. Дум кашиш мешавад ва DNA-ро ба дохил мегузаронад. Дар ним соат ҳуҷайра мешиканад ва даҳҳо фаг берун мебароянд."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda фаги муътадил аст. Метавонад ба хромосома ворид шуда хобад (лизогения) ё ҳуҷайраро фавран мешиканад (лизис)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 думи кӯтоҳ ва таксимии хеле зуд дорад. Системаи маҳбуб дар биологияи синтетикӣ."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 фаги RNA бо пардаи липидӣ аст. Pseudomonas-ро сироят мекунад. Пардаи нодир барои фаг."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 фаги хурди бедуми RNA аст. Ба пилҳои E. coli-и нарӣ мечаспад. Геномааш яке аз аввалин геномҳои хонидашудаи RNA буд."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "Нейропаразити хаёлии ҳавз. Ба эукариотҳо мечаспад ва рафтори соҳибро вайрон мекунад, то ки соҳиб ҳамлкунанда шавад."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote модели таълимии афзоиши ҷинсӣ аст. Ду ҷинс, якҷояшавии гаметҳо, на таксимии оддии дукарата."
   }
 }

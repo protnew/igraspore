@@ -1,0 +1,608 @@
+[
+ {
+  "code": "ar",
+  "name": "Арабский",
+  "vp": "375",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ar:diffE",
+   "ar:diffN",
+   "ar:diffH",
+   "ar:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ar/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ar/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ar/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ar/375-game.png"
+  ]
+ },
+ {
+  "code": "ar",
+  "name": "Арабский",
+  "vp": "1400",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ar:diffE",
+   "ar:diffN",
+   "ar:diffH",
+   "ar:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ar/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ar/1400-wiki.png"
+  ]
+ },
+ {
+  "code": "fa",
+  "name": "Персидский",
+  "vp": "375",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "fa:diffE",
+   "fa:diffN",
+   "fa:diffH",
+   "fa:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/fa/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/fa/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/fa/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/fa/375-game.png"
+  ]
+ },
+ {
+  "code": "fa",
+  "name": "Персидский",
+  "vp": "1400",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "fa:diffE",
+   "fa:diffN",
+   "fa:diffH",
+   "fa:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/fa/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/fa/1400-wiki.png"
+  ]
+ },
+ {
+  "code": "ur",
+  "name": "Урду",
+  "vp": "375",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ur:diffE",
+   "ur:diffN",
+   "ur:diffH",
+   "ur:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ur/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ur/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ur/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ur/375-game.png"
+  ]
+ },
+ {
+  "code": "ur",
+  "name": "Урду",
+  "vp": "1400",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ur:diffE",
+   "ur:diffN",
+   "ur:diffH",
+   "ur:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ur/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ur/1400-wiki.png"
+  ]
+ },
+ {
+  "code": "he",
+  "name": "Иврит",
+  "vp": "375",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "he:diffE",
+   "he:diffN",
+   "he:diffH",
+   "he:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/he/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/he/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/he/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/he/375-game.png"
+  ]
+ },
+ {
+  "code": "he",
+  "name": "Иврит",
+  "vp": "1400",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "he:diffE",
+   "he:diffN",
+   "he:diffH",
+   "he:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/he/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/he/1400-wiki.png"
+  ]
+ },
+ {
+  "code": "ps",
+  "name": "Пушту",
+  "vp": "375",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ps:diffE",
+   "ps:diffN",
+   "ps:diffH",
+   "ps:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ps/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ps/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ps/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ps/375-game.png"
+  ]
+ },
+ {
+  "code": "ps",
+  "name": "Пушту",
+  "vp": "1400",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ps:diffE",
+   "ps:diffN",
+   "ps:diffH",
+   "ps:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ps/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ps/1400-wiki.png"
+  ]
+ },
+ {
+  "code": "ckb",
+  "name": "Сорани",
+  "vp": "375",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ckb:diffE",
+   "ckb:diffN",
+   "ckb:diffH",
+   "ckb:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ckb/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ckb/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ckb/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ckb/375-game.png"
+  ]
+ },
+ {
+  "code": "ckb",
+  "name": "Сорани",
+  "vp": "1400",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ckb:diffE",
+   "ckb:diffN",
+   "ckb:diffH",
+   "ckb:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ckb/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ckb/1400-wiki.png"
+  ]
+ },
+ {
+  "code": "sd",
+  "name": "Синдхи",
+  "vp": "375",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "sd:diffE",
+   "sd:diffN",
+   "sd:diffH",
+   "sd:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/sd/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/sd/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/sd/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/sd/375-game.png"
+  ]
+ },
+ {
+  "code": "sd",
+  "name": "Синдхи",
+  "vp": "1400",
+  "expectDir": "rtl",
+  "dir": "rtl",
+  "rtlClass": true,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "sd:diffE",
+   "sd:diffN",
+   "sd:diffH",
+   "sd:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/sd/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/sd/1400-wiki.png"
+  ]
+ },
+ {
+  "code": "dz",
+  "name": "Дзонг-кэ",
+  "vp": "375",
+  "expectDir": "ltr",
+  "dir": "ltr",
+  "rtlClass": false,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 1,
+  "outsideItems": [
+   "scaleL 257,437"
+  ],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "dz:diffE",
+   "dz:diffN",
+   "dz:diffH",
+   "dz:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/dz/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/dz/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/dz/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/dz/375-game.png"
+  ]
+ },
+ {
+  "code": "dz",
+  "name": "Дзонг-кэ",
+  "vp": "1400",
+  "expectDir": "ltr",
+  "dir": "ltr",
+  "rtlClass": false,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "dz:diffE",
+   "dz:diffN",
+   "dz:diffH",
+   "dz:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/dz/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/dz/1400-wiki.png"
+  ]
+ },
+ {
+  "code": "ti",
+  "name": "Тигринья",
+  "vp": "375",
+  "expectDir": "ltr",
+  "dir": "ltr",
+  "rtlClass": false,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 1,
+  "outsideItems": [
+   "scaleL 257,437"
+  ],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ti:diffE",
+   "ti:diffN",
+   "ti:diffH",
+   "ti:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ti/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ti/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ti/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ti/375-game.png"
+  ]
+ },
+ {
+  "code": "ti",
+  "name": "Тигринья",
+  "vp": "1400",
+  "expectDir": "ltr",
+  "dir": "ltr",
+  "rtlClass": false,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "ti:diffE",
+   "ti:diffN",
+   "ti:diffH",
+   "ti:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/ti/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/ti/1400-wiki.png"
+  ]
+ },
+ {
+  "code": "pa",
+  "name": "Панджаби",
+  "vp": "375",
+  "expectDir": "ltr",
+  "dir": "ltr",
+  "rtlClass": false,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 1,
+  "outsideItems": [
+   "scaleL 257,437"
+  ],
+  "i18nRecorded": 63,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "pa:diffE",
+   "pa:diffN",
+   "pa:diffH",
+   "pa:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/pa/375-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/pa/375-settings.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/pa/375-wiki.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/pa/375-game.png"
+  ]
+ },
+ {
+  "code": "pa",
+  "name": "Панджаби",
+  "vp": "1400",
+  "expectDir": "ltr",
+  "dir": "ltr",
+  "rtlClass": false,
+  "font": "\"Noto Sans Bengali\", \"Noto Sans Devanagari\", \"Noto Sans Thai",
+  "digitsSample": "24 4 100 3 0 0",
+  "over": 0,
+  "overItems": [],
+  "outside": 0,
+  "outsideItems": [],
+  "i18nRecorded": 62,
+  "i18nMiss": 6,
+  "i18nMissKeys": [
+   "pa:diffE",
+   "pa:diffN",
+   "pa:diffH",
+   "pa:poolWill"
+  ],
+  "pageErrors": 0,
+  "errSamples": [],
+  "hud": "",
+  "frames": [
+   "09-Docs/out-dev-factory/shots-v26-rtl/pa/1400-menu.png",
+   "09-Docs/out-dev-factory/shots-v26-rtl/pa/1400-wiki.png"
+  ]
+ }
+]

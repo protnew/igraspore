@@ -70,7 +70,11 @@ const PROBE = `(function(){
           await page.waitForFunction(() => window.state === 'playing', undefined, { timeout: 25000 }).catch(() => {});
           await page.click('#bPause').catch(() => {}); await page.waitForTimeout(300);
           await page.click('#pSet').catch(() => {}); await page.waitForSelector('#setO.ov.show', { timeout: 6000 }).catch(() => {}); await page.waitForTimeout(400); }
-        if (s === 'wiki') { await page.click('#setClose').catch(() => {}); await page.click('#pWiki').catch(() => {});
+        if (s === 'wiki') { await page.click('#setClose').catch(() => {});
+          // на десктопе игра не запускается → #pWiki (пауза) невидим, wiki открывается кнопкой меню
+          const pw = page.locator('#pWiki');
+          if (await pw.isVisible().catch(() => false)) await pw.click().catch(() => {});
+          else await page.click('#wikiBtnMenu').catch(() => {});
           await page.waitForSelector('#wikiContent .wiki-entry', { timeout: 15000 }).catch(() => {}); await page.waitForTimeout(500); }
         if (s === 'game') { await page.click('#wikiClose').catch(() => {}); await page.waitForTimeout(600); }
         const png = path.join(OUT, code, `${vp}-${s}.png`);
@@ -104,6 +108,12 @@ const PROBE = `(function(){
   for (const r of rows) md.push(`| ${r.code} (${r.name}) | ${r.vp}px | ${r.dir || '—'} | ${r.expectDir} | ${r.rtlClass ? 'да' : 'нет'} | ${r.digitsSample || '—'} | ${r.over} | ${r.outside} | ${r.i18nRecorded} | ${r.i18nMiss}${r.i18nMiss ? ' (' + r.i18nMissKeys.join(', ') + ')' : ''} | ${r.pageErrors} |`);
   md.push('', '## Кадры', '');
   for (const r of rows) md.push(`- ${r.code} ${r.vp}px: ${r.frames.join(' · ')}`);
+  md.push('', '## Как читать колонки', '',
+    '«tt() обращений» — счётчик __i18nMiss: сколько раз tt() был вызван до загрузки языкового пакета. Это НЕ число непереведённых ключей.',
+    '«реально нет в словаре» — те же обращения, отфильтрованные по загруженному T.en. Для en = 1 ключ (aria.lang). Для не-EN языков в списке 6:',
+    'когда curLang ≠ en, i18n/en.json не подгружается и T.en остаётся рукописным inline-набором в config.js — фоллбек на английском там не работает.',
+    '«Вылезают за вьюпорт» = 1 у ltr-языков на 375px — это #scaleL (линейка масштаба), так же ведёт себя в en/ru/th: к переводу отношения не имеет.',
+    '«Ошибок консоли» = 0 после починки Д9 (404 на fonts.generated.css и на woff2).');
   fs.writeFileSync(path.join(OUT, 'v26-rtl-table.md'), md.join('\n') + '\n');
   console.log('готово: ' + OUT + '\\v26-rtl-table.md, кадров=' + rows.reduce((a, r) => a + r.frames.length, 0));
 })();

@@ -103,6 +103,9 @@ async function runSeed(browser, seed, minutes, speed, neg) {
   // и Chrome убивал страницу ("Target page closed"). Сэмпл-логика идентична прежней.
   const CHUNK_TICKS = 100; // 100 тиков × 0.05 = 5 игр-сек за один evaluate
   const snaps = [];
+  // v26: сэмпл пишется на диск сразу и печатается прогресс-строка — иначе прогон на 60 игр-мин
+  // молчит часами, а при остановке не остаётся ничего (calibration: v24 seed1 = 63 218 s wall).
+  const jsonl = fs.createWriteStream(path.join(OUT, 'seed' + seed + (neg ? '-neg' : '') + '.jsonl'));
   let gt2 = 0, next = 10, fatal = null;
   const t0 = Date.now();
   while (gt2 < gameSecTotal && !fatal) {
@@ -119,12 +122,14 @@ async function runSeed(browser, seed, minutes, speed, neg) {
       const snap = JSON.parse(snapRaw);
       snap.t = +gt2.toFixed(1);
       snaps.push(snap);
+      jsonl.write(JSON.stringify(snap) + String.fromCharCode(10));
+      console.error('seed ' + seed + ': t=' + gt2.toFixed(0) + 's из ' + gameSecTotal + ' игр-сек | биомасса ' + snap.biomass +
+        ' | организмов ' + snap.total + ' | видов ' + Object.keys(snap.cats || {}).length +
+        ' | wall ' + ((Date.now() - t0) / 1000).toFixed(0) + 's');
       next += 10;
     }
   }
-  const res = { snaps, wallMs: Date.now() - t0 };
-  const jsonl = fs.createWriteStream(path.join(OUT, 'seed' + seed + (neg ? '-neg' : '') + '.jsonl'));
-  for (const snap of (res.snaps || [])) jsonl.write(JSON.stringify(snap) + String.fromCharCode(10));
+  const res = { snaps, wallMs: Date.now() - t0, fatal };
   if (res.fatal) errs.push(res.fatal);
   jsonl.end();
   const wall = (res.wallMs ? (res.wallMs / 1000).toFixed(1) : '?');

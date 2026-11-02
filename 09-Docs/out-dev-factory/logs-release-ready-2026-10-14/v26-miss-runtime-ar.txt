@@ -1,0 +1,75 @@
+# v26 — ключи, которые код зовёт через tt(), но их нет ни в словаре, ни в en.json
+
+Стенд: http://127.0.0.1:8821 · язык ar · снято 2026-11-02 12:32:42 (UTC+3)
+__i18nMiss считается по обращениям к tt(); в таблице ниже оставлены только те ключи, которых НЕТ в загруженном T.en (292 ключей) — обращения до загрузки пакета отброшены.
+
+| Этап | записано обращений | реально absent-ключей |
+|---|---|---|
+| Меню (до старта) | 62 | 59 |
+| Игра (state=playing) | 62 | 59 |
+| + настройки | 62 | 59 |
+| + закрытие настроек | 62 | 59 |
+
+Уникальных absent-ключей: 59
+
+```
+ar:all
+ar:aquarium
+ar:aria.lang
+ar:close
+ar:colonyBadge
+ar:consumer1
+ar:consumer2
+ar:consumer3
+ar:decomposer
+ar:demo
+ar:diffE
+ar:diffH
+ar:diffN
+ar:dnaPoints
+ar:dnaShell
+ar:dnaSize
+ar:dnaSpeed
+ar:dnaSpikes
+ar:dnaTitle
+ar:eats
+ar:eatsDead
+ar:eatsLight
+ar:exit
+ar:exitAsk
+ar:exitMsg
+ar:filter
+ar:filterHint
+ar:help
+ar:loc.budding
+ar:loc.cilia
+ar:loc.drift
+ar:loc.flagella
+ar:loc.glide
+ar:loc.growth
+ar:loc.pseudopodia
+ar:loc.sessile
+ar:map
+ar:mapTip
+ar:menu
+ar:more
+ar:next
+ar:no
+ar:paused
+ar:picMode
+ar:poolWill
+ar:pop
+ar:popTip
+ar:producer
+ar:restart
+ar:resume
+ar:set
+ar:settingsT
+ar:skip
+ar:start
+ar:topOfList
+ar:virus
+ar:wiki
+ar:wikiT
+ar:yes
+```

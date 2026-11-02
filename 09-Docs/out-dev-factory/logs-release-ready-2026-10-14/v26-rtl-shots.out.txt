@@ -1,0 +1,22 @@
+ar 375: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=63 absent=6
+ar 1400: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=62 absent=6
+fa 375: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=63 absent=6
+fa 1400: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=62 absent=6
+ur 375: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=63 absent=6
+ur 1400: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=62 absent=6
+he 375: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=63 absent=6
+he 1400: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=62 absent=6
+ps 375: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=63 absent=6
+ps 1400: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=62 absent=6
+ckb 375: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=63 absent=6
+ckb 1400: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=62 absent=6
+sd 375: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=63 absent=6
+sd 1400: dir=rtl rtl=true over=0 outside=0 errs=0 tt-обращений=62 absent=6
+dz 375: dir=ltr rtl=false over=0 outside=1 errs=0 tt-обращений=63 absent=6
+dz 1400: dir=ltr rtl=false over=0 outside=0 errs=0 tt-обращений=62 absent=6
+ti 375: dir=ltr rtl=false over=0 outside=1 errs=0 tt-обращений=63 absent=6
+ti 1400: dir=ltr rtl=false over=0 outside=0 errs=0 tt-обращений=62 absent=6
+pa 375: dir=ltr rtl=false over=0 outside=1 errs=0 tt-обращений=63 absent=6
+pa 1400: dir=ltr rtl=false over=0 outside=0 errs=0 tt-обращений=62 absent=6
+готово: 09-Docs/out-dev-factory/shots-v26-rtl\v26-rtl-table.md, кадров=60
+EXIT=0

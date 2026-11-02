@@ -4760,6 +4760,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.alphacentauri",
+   "value": "★ Alpha Centauri A+B",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "star.alphacentauri",
+   "value": "★ Alpha Centauri A+B",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "star.antares": [
@@ -5041,6 +5059,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "star.antares",
+   "value": "★ Antares",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "star.betelgeuse": [
@@ -5277,6 +5313,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "star.betelgeuse",
+   "value": "★ Betelgeuse",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "star.polaris": [
@@ -5495,6 +5549,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.polaris",
+   "value": "★ Polaris",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "star.polaris",
+   "value": "★ Polaris",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "star.rigel": [
@@ -5776,6 +5848,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "star.rigel",
+   "value": "★ Rigel",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "star.sirius": [
@@ -6012,6 +6102,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "star.sirius",
+   "value": "★ Sirius A+B",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "star.vega": [
@@ -6302,6 +6410,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "star.vega",
+   "value": "★ Vega",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "starg.alphacentauri": [
@@ -6511,6 +6637,33 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "starg.alphacentauri",
+   "value": "★ α Centauri",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "starg.sirius": [
@@ -6747,6 +6900,33 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "starg.sirius",
+   "value": "★ Sirius",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "start": [
@@ -7384,6 +7564,42 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "dz"
+   ],
+   "category": "cognate",
+   "reason": "dz: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "x.e": [
@@ -7869,6 +8085,42 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "dz"
+   ],
+   "category": "cognate",
+   "reason": "dz: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "fps": [
@@ -8348,6 +8600,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "fps",
+   "value": "FPS",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
   }
  ],
  "mob.eSep": [
@@ -8773,6 +9043,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "mob.eSep",
+   "value": "· E=",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
   }
  ],
  "mode.swissLbl": [
@@ -9198,6 +9486,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "mode.swissLbl",
+   "value": "📗 SWISS",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
   }
  ],
  "mode.webglLbl": [
@@ -9668,6 +9974,24 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "mode.webglLbl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
   }
  ],
  "modeBig.swiss": [
@@ -10138,6 +10462,33 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.swiss",
+   "value": "📗 SWISSBIOPICS",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "modeBig.webgl": [
@@ -10608,6 +10959,33 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "modeBig.webgl",
+   "value": "🌊 WEBGL",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "modeLbl.swiss": [
@@ -11078,6 +11456,33 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.swiss",
+   "value": "📗 SwissBioPics",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "modeLbl.webgl": [
@@ -11548,6 +11953,42 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "dz"
+   ],
+   "category": "cognate",
+   "reason": "dz: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "modeLbl.webgl",
+   "value": "🌊 WebGL",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "autoOn": [
@@ -12971,6 +13412,42 @@
    ],
    "category": "cognate",
    "reason": "qu: когнат/интернационализм — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "dz"
+   ],
+   "category": "cognate",
+   "reason": "dz: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "ti"
+   ],
+   "category": "cognate",
+   "reason": "ti: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "pa"
+   ],
+   "category": "cognate",
+   "reason": "pa: когнат/бренд — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "bo"
+   ],
+   "category": "cognate",
+   "reason": "bo: когнат/бренд — пишется так же"
   }
  ],
  "legend": [

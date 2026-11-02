@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis ƙwayar shuɗi-ƙore ce (cyanobacterium) babu nucleus. Tana rayuwa da haske: photosynthesis mai samar da oxygen a kan membrane, babu chloroplasts. Abin koyi ce ta dakin gwaje-gwaje akan musayar hydrogen."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis tsani ce (filament). Wasu sel na zama heterocysts suka ɗaure nitrogen, sai makwabta su samar da sukari. A tafki tana ba da nitrogen mai ɗaure."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) da'ira ce ta sel masu kumfa iska. Tana kwance kusa da saman ruwa, tana yin photosynthesis, kuma ana iya cin ta. A wasa babbar maɗaure ce ta kore a saman ruwa."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme sarkar lulu ce a cikin jakar slimi. Tana rayuwa da kanta ko a cikin abota da shuke-shuke. Gungunta kama da tarin lulu kore."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica tsani ce mai zamzama. Tana motsawa dama da hagu, kuma za ta iya yin photosynthesis ba tare da fitar da oxygen ba. A cikin laka da saman ruwa ake samunta."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa gungu ne na slimi, sau da yawa mai guba (microcystin). Ita ke haifar da furen ruwa. A wasa kwalliya ce ta kore, ganima mai haɗari."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa sel ne biyu-biyu a cikin murruƙan launi. Tana rayuwa a kan duwatsu da ƙasa, kuma tana jure wa UV. A tafki ƙananan sel ne biyu a cikin wando."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula tsanin cyanobacteria ne mai kauri. Zai iya fitar da guba mai tunzura. Yana yin tabarma kusa da bakin ruwa mai zafi."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii kore sel ce mai flagella biyu da wuri na gani. Tana iyo zuwa haske. Abin koyi ne na farko a ilimin halittar algae."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris kore kwalliya ce marar motsi. Tana rabuwa cikin sauri kuma tana da protein da yawa. Abinci ne ga ƙananan masu ci kuma abin nazarin abincin sararin samaniya."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator kwalliya ce mai hura a ciki, dubban sel suka kewaye ta. 'Ya'yan gungunta na girma a ciki kafin su fita. A wasa babbar gungu ce ta kore."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis tana cin abinci ta hanyoyi biyu: tana da chloroplasts kuma tana iya cin abinci. Wurin ja na gani yana bin haske. Kore da rana; a duhu ta koma cin abinci."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda yawanci sel huɗu ne a layi ɗaya, mai ƙaya a ƙarshen. Ƙayoyi na wuya hadiye. Ba ta iyo ba — tana yawo."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis kore sel ce mai motsi; a ƙarƙashin matsin yanayi ta juya ja (astaxanthin) kuma ta sami bango mai kauri. Kwayoyin ja (cysts) na tsira daga fari."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina ba ta da wando mai ƙarfi, tana rayuwa a ruwa mai gishiri sosai. Tana ajiye beta-carotene saboda haka launin ta orange. Tana da flagella biyu."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata desmid ce mai laushi kamar tauraro. Rabin biyu ne masu kama da madubi, da yanke na zurfi. Marar motsi; tana yin photosynthesis a ruwan acidic na marsh."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula diatom ce siffarta kamar jirgi, tana da sikka daga silica. Tana zamzama a kan ƙasa ta tsagar raphe. Sikkarta na kasancewa bayan mutuwa."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis diatom ce mai girma. Sikkar silica ce mai zane na daidaito. Tana zamzama a hankali a ƙasa."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana diatom ce mai zagaye. Tana yawo kamar diski; sikkarta murfai biyu ne. Plankton ce ta kowa."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare diatom ce da ke haɗuwa cikin zigzag. Gungunta na ƙara juriya a tsakanin ginshiƙin ruwa."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum da'ira ce mai launin purple. Tana yin photosynthesis ba tare da oxygen ba tare da cin organics. Jan launin ta daga bacteriochlorophyll ne."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum kwayar cuta ce ta sulfur mai ja. Tana konar hydrogen sulfide kuma tana ajiye ƙananan ƙwayoyin sulfur. Tana rayuwa a iyakar oxygen da sulfur."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum algae ja ce ta sel ɗaya. Phycoerythrin yana ba ta launin jini. Tana da murfin slimi, babu flagella."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus ita ce mafi ƙanƙanta kuma mafi yawa kwayar photosynthesis a duniya. An gano ta a shekarun 1980. Ita ke ciyar da teku."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis halitta ce mai tsira daga matsananci: hamada, dutse, radiation. Wani zaɓi ne a neman rayuwa a wajen duniya. A tafki gungu ce ta hankali."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus ƙaramin mafarauci ne na kwayoyin cuta. Yana jujjuya kansa cikin wata kwaya kuma yana yawaita har sai kwayar da yake ciki ta fashe."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus yana zauna a wajen ganima kuma yana shan cikinta ba tare da shiga ba. Vampire ne na kwayoyin cuta."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter yana shiga cikin kwayar ganima kuma yana cin ta daga ciki. Mafarauci ne na cikin kwaya wanda ba a ga shi yawa ba."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus kwayar cuta ce ta zamantakewa. Cikin gungi tana kewaye ganima kuma tana fitar da enzymes. Lokacin yunwa tana samar da fruiting body."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii 'yar'uwar Bdellovibrio ce ta ruwan gishiri. Tana kai farmaki Gram-negatives kuma tana rayuwa a cikin periplasm na ganima."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax mafarauci ne na kwayoyin cuta mai jure gishiri. Hanya ɗaya ce: yana huda bango kuma yana girma a ciki."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii wani mafarauci ne na BALO. Flagellate ne mai sauri siffarsa kamar kwoma, yana farautar manyan wanduna."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula ƙaramin flagellate ne mai cin abinci. Yana kama kwayoyin cuta a saman detritus."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo flagellate ne siffarsa kamar faɗin ruwa. Yana da flagellum ɗaya; yana farauta a cikin fim ɗin kwayoyin cuta."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans gungu ne a kan tsani na ƙarfe da manganese. Sel na zauna cikin tarin gashi suna kama kwayoyin cuta."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium cryptophyte ce marar launi. Tana da flagella biyu; tana cin organics da aka narke da ƙananan kwayoyin cuta, babu chloroplasts."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda amoeboflagellate ce mai wutsiya mai tsawo. Tana rarrafe kuma tana hadiye kwayoyin cuta da pseudopodia."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa flagellate ce ta ƙasa. Tana da flagella biyu na tsawon dabam-dabam; babbar mai cin kwayoyin cuta ce a ƙasa."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans kinetoplastid ce. Tana rawa a wuri, aɗiɓa da flagellum na baya, kuma tana kama kwayoyin cuta da sauri."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini 'yar'uwar Bodo ce. Tana iyo 'yanci kuma tana kai hari da flagellum na gaba."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei kwayar cuta ce ta jini da ke haifar da cutar barci. Tana da membrane mai raƙuma da flagellum ɗaya. A tafki abin koyi ne na mafarauci mai sirara."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani kwayar cuta ce ta cikin sel a jikin mutum. Tana da flagellum a cikin kwari, babu flagellum a cikin macrophage."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis choanoflagellate ce, 'yar'uwar dabbobi ce. Wuyan microvilli yana tace kwayoyin cuta."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta choanoflagellate ce mai zama wurin ɗaya a cikin lorica. Za ta iya samar da rosette. Tana tace kwararar ruwa."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis gungu ne na choanoflagellate a kan tsani guda. Masu tacewa da yawa a kan tsani guda."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum shahararren 'takalmi' ne. Dubban cilia, ramin baki, da vacuoles masu kwangila. Tana tace kwayoyin cuta."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria takalmi ne mai zoochlorella a ciki. Kore a ciki: sukari daga algae da rana, tacewa da dare."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus ƙaho ne mai shuɗi har milimita. Yana buɗewa kamar mbaɗa, yana jan kwarara da cilia. Zai iya iyo ko zauna."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus 'yar'uwar Stentor mai shuɗi ce, sau da yawa tana da zoochlorellae. Siffarta na canzawa daga ƙaho zuwa kwalla."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula ƙararrawa ce a kan tsani mai kwangila. Tsanin yana juyawa cikin da'ira nan take. Kwayar kanta ba ta iya iyo nesa ba."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma ƙaramar ƙararrawa ce. Tsani ɗaya na spring, wurin baki mai ƙunci. Sau da yawa a kan detritus."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum mafarauci ne mai siffar ganga, yana farautar takalmi. Yana harba toxicysts kuma yana hadiye ganima gabaɗaya, ko ta fi shi girma."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum sigari ce mai tsawo sosai. Tana kwangila sau da yawa a cikin ƙasa da daƙiƙa. Cilia na gudana cikin da'ira."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum ciliate ce mai launin rose. Pigment ɗin blepharismin yana jin haske. Tana tacewa kuma za ta iya kai wa ƙananan sel hari."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella na tafiya da cirri kamar ƙafafuwa. Mai laushi ne, sauyawa cikin sauri. Yana ƙwace kwayoyin cuta daga saman."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata hypotrich ce mai 'gudu' a ƙasa. Cirri manya ne, baki bayyane. Mafarauci ne na ƙananan ciliates."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax abin koyi ne na genome: nuclei biyu da sake rubuta DNA mai ruɗani. Na tafiya da cirri, kuma yana cin kwayoyin cuta da ƙananan protists."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila ciliate ce ta dakin gwaje-gwaje. Tana da membranelles na baki huɗu, rabuwa cikin sauri. Abin koyi ne na telomeres da cilia."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus ganga ce a cikin allunan calcium da ƙayoyi. Mai cin gawa ne kuma mafarauci: yana cinye waɗanda suka raunata."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella mafarauci ne mai laushi, yana da toxicysts a cikin 'bakin dogo'. Yana sa ganima ta daina motsi kuma yana shan ta."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser yana da wuya mai tsawo da extrusomes na guba. Yana kai hari da wuya, sa'an nan yana hadiye. Babban mafarauci ne na matakin tsakiya."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo na juyawa a wurinsa: belin cilia a tsakiyar jiki yana juya kwayar a wurin. Tana tace kwayoyin cuta."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula gungu ne na ƙararraki masu rassoshi. Tsani guda mai kwangila yana jan dukkan itacen a lokaci ɗaya."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata peritrich ce mai zama wurin ɗaya, babu tsanin spring. Murfi na rufe baki. Tana tacewa kuma ba ta iyo nesa ba."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus shahararren amoeba ne. Pseudopodia na kewaye ganima. Babu siffa ta dindindin, babu cilia."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris amoeba ce mai rugu mai wuya. Pseudopodia na fita daga ramin. Tana rarrafe a kan shuke-shuke."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga tana da hula daga ƙwayayen yashi da amoeba ke liƙa wa kanta. Tana rayuwa cikin laka."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata tana da hula daga sikel na silica. Pseudopodia na sirara ne. Ƙaramin mafarauci ne na kwayoyin cuta."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris hula ce kamar kwalba, an gina ta daga sikelin da aka sace. Tana cikin ruwan daji da marsh."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata hula ce diski mai ƙayoyi. Ramin yana gefe. Tana rarrafe a kan detritus."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol heliozoan ne: axopodia na sirara suna yaɗuwa dukkan gefuna. Ganima ta manna a layukan, a ke jan ta ciki."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni heliozoan ne mai girma da nuclei da yawa. Layuka ɗaya, kwaya mafi girma. Yana cin ciliates da rotifers."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida heliozoan ne cikin sikel. Layukansa na ɗauke da alluran silica. Mafarauci ne na kwanto a cikin plankton."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria rotifer ce za ta iya tsira daga bushewa. Corona na jan abinci zuwa baki. Dabba ce ta gaske mai sel da yawa."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola rotifer ce mai launin rose. Tana rarrafe kamar jeje, kuma tana iyo. Mata kawai; babu maza."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis rotifer ce ta plankton mai lorica. Abincin ƙananan kifi a kiwon kifi. Tana tace algae da kwayoyin cuta."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis rotifer ce mai ƙaya mai tsawo a lorica. Ƙayar na hana masu farauta. Plankton ce ta tafki ta kowa."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta jaka ce babu lorica, rotifer mai farauta. Yana hadiye sauran rotifers da ciliates gabaɗaya."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus gastrotrich ne. An rufe shi da sikel, yana rarrafe a ƙasa. Yana cin kwayoyin cuta da detritus."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata gastrotrich ne ƙarami cikin sikel na kan juna. Saurin juyawa a wurinta sosai."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano tsutsa ce mai laushi mai ƙanƙanta. Tana da tsokoki da idanu na gaske. Abin koyi ne na sake ginawa. Yana farautar ƙananan protists."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops tsutsa ce mai sirara mai cilia. Tana rabuwa a tsaye zuwa sarkar zooids. Mafarauci ne na detritus da ƙananan dabbobi."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare tsutsa ce mai laushi da ke cin hydra kuma tana ajiye sel suma a fata ta. Sarkar zooids ce."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense nemertean ce ta ruwan zaki. Bakin dogo mai tsawo yana harbi ganima. Babban mafarauci ne na ƙasa, ba a ganinsa yawa ba."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens placozoan ne, ɗaya daga cikin mafi sauƙin dabbobi. Yana rarrafe kamar takarda, yana narkar da abinci a waje. Babu baki."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae yisti ce ta burodi. Tana haifuwa da buds, tana cin sukari, tana fitar da CO2 da barasa. A tafki tana tsaftace organics da aka narke."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans yisti ce za ta iya girma kamar tsani. Kwayar cuta ce ta lokaci-lokaci a jikin mutum. A wasa fungus ce ta detritus."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo ƙaƙa ce ta burodi. Tana da sporangia a kan tsanuna, tana girma cikin sauri a kan matattu. Ba ta farautar masu rai."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer baƙar ƙaƙa ce ta burodi. Stolons da rhizoids suna yaɗuwa a kan ƙasa. Tana warware starch."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum ƙaƙa ce kamar marmara, asalin penicillin. Tana da marmarorin conidial. Tana warware organics kuma tana hana kwayoyin cuta makwabta."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger baƙar aspergillus ce. Tana da kanyoyin spore masu zagaye. Mai samar da citric acid a masana'antu ce. Saprotroph ce."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis chytrid ce ta kwaɗo. Tana da zoospores mai flagellum ɗaya. A tafki abin koyi ne na fungus na ruwa."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus chytrid ce ta ruwa a kan pollin da algae. Tana da sporangia zinariya; zoospores na iyo zuwa ƙasa."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus fungus ne na ruwa mai mycelium na gaske. Yana musanyawa tsakanin diploid da haploid. Zoospores na da flagellum na baya."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis wandi ce ta ƙasa. Spores na tsira daga tafasasshen ruwa. Tana warware protein; abin koyi ne na Gram-positive."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida wandi ce ta tsaftacewa. Ko da abincan fetur tana ci. Tana da flagellum mai motsi, tana girma cikin sauri a kan detritus."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor kwayar cuta ce ta ƙasa mai tsani. Tana samar da ƙamshin ƙasa (geosmin) da antibiotics da yawa. Spores a kan hyphae."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi tana warware cellulose. Wandi ce rawaya a kan detritus na shuke-shuke. Ba tare da ita matattun algae za su dawwara tsawon lokaci."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus thermophile ce daga maɓuɓɓugar ruwan zafi. Taq polymerase ita ce asalin PCR. A cikin tafki mai sanyi kusan tana barci."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans zakara ne na radiation. Yana sake tattara genome da aka watse a cikin awanni. Yana da bango mai kauri, da tetrads na sel."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Eukaryote mai jima'i abin koyi ne na haifuwa ta jima'i. Jinsi biyu, haɗuwar gametes, ba rabuwa mai sauƙi ba."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 myovirus ne mai girma na E. coli. Wutsiya tana kwangila kuma tana shigar da DNA. A cikin awa rabi kwayar tana fashe kuma phages da yawa suke fita."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda phage ce mai matsakaici. Zai iya shiga cikin chromosome ya kwanta (lysogeny) ko kuma ya yanke kwayar nan take (lysis)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 phage ce mai wutsiya mai ƙanƙanta kuma kwafi cikin sauri. Tsari ne da ake so a synthetic biology."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 phage ce ta RNA mai membrane na lipid. Tana cutar da Pseudomonas. Membrane ne mai wuya a samu a phage."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 ƙaramin phage ne na RNA babu wutsiya. Yana manne da pili na E. coli na maza. Genome ɗinsa ɗaya daga cikin farkon RNA genomes da aka karanta."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "Neuro-parasite na almara ce na tafki. Yana manne da eukaryotes kuma yana canza halin mai gida har sai mai gida ya zamo mai ɗauke da shi."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Eukaryote mai jima'i abin koyi ne na koyar da haifuwa ta jima'i. Jinsi biyu, haɗuwar gametes, ba rabuwa mai sauƙi ba."
   }
 }

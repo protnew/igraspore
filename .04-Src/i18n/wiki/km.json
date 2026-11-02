@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis ជាបាក់តេរីបៃតងគ្មានស្នូលកោសិកា។ វារស់ដោយពន្លឺ៖ ធ្វើសំយោគពន្លឺបញ្ចេញអុកស៊ីជេនលើស្រទាប់ស្តើង ដោយគ្មានក្លូរូប្លាស។ ជាគំរូមន្ទីរពិសោធន៍សម្រាប់ការប្រើប្រាស់ហ៊ីដ្រូជេន។"
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis មានរាងជាខ្សែវែង។ កោសិកាខ្លះប្រែទៅជាហិតេរ៉ូស៊ីស ដើម្បីចងអាសូត ខណៈកោសិកាជិតខាងបង្កើតស្ករ។ ក្នុងស្រះ វាផ្តល់អាសូតដែលអាចប្រើបាន។"
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) ជាខ្សែកោសិកាចងកួច មានពន្លកឧស្ម័ន។ វាស្ថិតនៅជិតផ្ទៃទឹក ធ្វើសំយោគពន្លឺ ហើយអាចបរិភោគបាន។ ក្នុងហ្គេម វាជាប៉ាប់ស្រូវបៃតងធំនៅផ្ទៃទឹកស្តើង។"
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme ជាខ្សែគ្រាប់នៅក្នុងស្រោមស្លេក។ វារស់ដោយឯករាជ្យ ឬរួមគ្នាជាមួយរុក្ខជាតិ។ អាណានិគមរបស់វាមានរូបដូចដុំគ្រាប់បៃតង។"
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica ជាខ្សែកោសិការំកិល។ វាឆលត្រឡប់ទៅចុងម្ខាងៗ ហើយអាចធ្វើសំយោគពន្លឺដោយមិនបញ្ចេញអុកស៊ីជេន។ ជាធម្មតារស់ក្នុងភក់ និងផ្ទៃទឹកស្តើង។"
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa ជាអាណានិគមក្នុងម្សៅស្អិត ជាញឹកញាប់មានជាតិពិស (microcystin)។ វាបង្កឱ្យទឹកឡើងបៃតងខ្លាំង។ ក្នុងហ្គេម វាជាបាល់អាណានិគមបៃតង ជាចំណីដ៏មានហានិភ័យ។"
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa ជាកោសិកាទ្វេនៅក្នុងស្រោមមានពណ៌។ វារស់លើថ្មនិងដី ហើយទប់ទល់នឹងកាំរស្មីUV។ ក្នុងស្រះ វាជាកោសិកាក្រូមតូចៗគូគ្នាក្នុងស្រោម។"
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula ជាខ្សែបាក់តេរីបៃតងក្រាស់។ វាអាចបញ្ចេញជាតិពិសធ្វើឱ្យរមាស់។ វាបង្កើតផ្ទាំងគ្របក្បែរច្រាំងក្តៅ។"
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii ជាកោសិកាបៃតងមានកន្ទុយពីរ និងចំណុចភ្នែក។ វាហែលទៅរកពន្លឺ។ វាជាគំរូដ៏ល្បីនៃការសិក្សាហ្សេននៃសារាយ។"
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris ជាបាល់បៃតងមិនចេញចលនា។ វាបែកចែកលឿន ហើយមានប្រូតេអ៊ីនច្រើន។ ជាអាហាររបស់អ្នកស៊ីតូចៗ និងប្រធានបទអាហារអវកាស។"
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator ជាបាល់ទំនេរពីកោសិការាប់ពាន់។ អាណានិគមកូនឆ្លាស់ពេញវ័យខាងក្នុង រួចចេញមកក្រៅ។ ក្នុងហ្គេម វាជាអាណានិគមបៃតងធំ។"
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis ស៊ីបានពីររបៀប៖ មានក្លូរូប្លាស ក៏អាចស៊ីអាហារដែរ។ ចំណុចភ្នែកពណ៌ក្រហមតាមដានពន្លឺ។ ពេលថ្ងៃពណ៌បៃតង ពេលងងឹតប្តូរទៅស៊ីអាហារ។"
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda ជាធម្មតាមានកោសិកាបួនជាជួរ មានខ្នាច់នៅចុង។ ខ្នាច់ធ្វើឱ្យពិបាកក្នុងការលេប។ វាមិនហែលទេ គ្រាន់តែអណ្តែត។"
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis ជាកោសិកាបៃតងចេញចលនា។ ពេលជួបស្ត្រេស វាប្រែទៅពណ៌ក្រហម (astaxanthin) ហើយដុះជញ្ជាំងក្រាស់។ ស៊ីស្តពណ៌ក្រហមអាចឆ្លងកាត់ភាពរាំងស្ងួត។"
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina គ្មានជញ្ជាំងរឹង ហើយរស់ក្នុងទឹកប្រៃខ្លាំង។ វាទុកបេតាការ៉ូតែន ធ្វើឱ្យមើលទៅពណ៌ក្រូច។ មានកន្ទុយពីរ។"
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata ជាដេសមីដរាបស្មើរាងផ្កាយ។ មានពាក់កណ្តាលពីរដូចកញ្ចក់ មានការកាត់ជ្រៅ។ មិនចេញចលនា ធ្វើសំយោគពន្លឺក្នុងទឹកភក់ជាតិអាស៊ីត។"
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula ជាដីយ៉ាតូមរាងទូក មានសន្លឹកសីលីកា។ វារំកិលលើផ្ទៃតាមបន្ទាត់រេភេ។ សំបកនៅសល់បន្ទាប់ពីស្លាប់។"
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis ជាដីយ៉ាតូមធំប្រភេទ pennate។ សំបកសីលីកាមានលំនាំស៊ីមេទ្រី។ វារំកិលយឺតៗលើបាត។"
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana ជាដីយ៉ាតូមរាងមូល។ វាអណ្តែតដូចថាស សំបកជាគម្របពីរ។ ជាប្លងកតុនធម្មតា។"
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare ជាដីយ៉ាតូមភ្ជាប់គ្នាជារូប zigzag។ អាណានិគមបង្កើនការទប់ទល់ក្នុងជួរទឹក។"
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum ជាស្ពីរ៉ាល់ពណ៌ស្វាយ។ សំយោគពន្លឺដោយមិនបញ្ចេញអុកស៊ីជេន ហើយស៊ីអាហារបានផង។ ពណ៌ក្រហមមកពីបាក់តេរីយូក្លូរូហ្វីល។"
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum ជាបាក់តេរីស្វាយក្ពើ។ វាអុកស៊ីដក់អ៊ីដ្រូជេនសាល់ហ្វីត ហើយទុកគ្រាប់ក្ពើ។ រស់នៅព្រំដែនរវាងអុកស៊ីជេននិងក្ពើ។"
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum ជាសារាយក្រហមកោសិកាតែមួយ។ ហ្វីកូអ៊ីរីទ្រីនផ្តល់ពណ៌ក្រហមដូចឈាម។ មានស្រោមស្អិត គ្មានកន្ទុយ។"
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus ជាកោសិកាសំយោគពន្លឺតូចបំផុត និងមានច្រើនបំផុតលើផែនដី។ រកឃើញក្នុងទសវត្សរ៍ឆ្នាំ 1980។ វាផ្តល់អាហារដល់មហាសមុទ្រ។"
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis ជាជីវិតរស់ក្នុងស្ថានការណ៍អាក្រក់៖ វាលខ្សាច់ ថ្ម និងកាំរស្មី។ ជាបេក្ខជននៃជីវិតក្រៅផែនដី។ ក្នុងស្រះ វាជាអាណានិគមក្រូមយឺត។"
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus ជាសត្វប្រមាញ់បាក់តេរីតូចមួយ។ វាវិលចូលទៅក្នុងកោសិកាផ្សេងទៀត រួចពង្រីកចំនួនរហូតម្ចាស់ផ្ទុះ។"
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus អង្គុយលើចំណីពីខាងក្រៅ ហើយស៊ីយករបស់ខាងក្នុងដោយមិនចូលទៅ។ វាជាបាក់តេរីជាខ្មោចស៊ីឈាម។"
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter ចូលទៅក្នុងបាក់តេរីដែលជាចំណី រួចស៊ីវាពីខាងក្នុង។ ជាអ្នកប្រមាញ់ក្នុងកោសិកាកម្រមួយ។"
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus ជាបាក់តេរីសង្គម។ ក្នុងក្រុម វារុំព័ទ្ធចំណី រួចបញ្ចេញអេនស៊ីម។ ពេលអត់អាហារ វាបង្កើតរាងកាយបង្កផ្លែ។"
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii ជាញាតិសមុទ្រនៃ Bdellovibrio។ វាវាយបាក់តេរីហ្គ្រាមអវិជ្ជមាន ហើយរស់ក្នុងប៉េរីប្លាស្មារបស់ចំណី។"
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax ជាអ្នកប្រមាញ់បាក់តេរីទប់ទល់ប្រៃ។ វិធីដូចគ្នា៖ ចាក់ជញ្ជាំង រួចលូតលាស់ខាងក្នុង។"
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii ជាអ្នកប្រមាញ់ BALO មួយទៀត។ វាជាកោសិកាមានកន្ទុយរាងក្បៀសលឿន ដែលតាមដានរ៉ុដធំៗ។"
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula ជាកោសិកាមានកន្ទុយតូចស៊ីអ្វីៗដែលមានជីវិត។ វាចាប់បាក់តេរីនៅផ្ទៃសំណល់។"
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo ជាកោសិកាមានកន្ទុយរាងដំណក់ទឹក។ មានកន្ទុយមួយ វាប្រមាញ់ក្នុងស្រទាប់បាក់តេរី។"
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans ជាអាណានិគមលើដើមដែក-ម៉ង់កាណែស។ កោសិកាអង្គុយជាចុម ហើយចាប់បាក់តេរី។"
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium ជាក្រីប្តូហ្វីតគ្មានពណ៌។ មានកន្ទុយពីរ វាស៊ីអាហាររំលាយ និងបាក់តេរីតូចៗ គ្មានក្លូរូប្លាស។"
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda ជាអាមីបាមានកន្ទុយវែង។ វារាបនៅបាត ហើយលេបបាក់តេរីដោយពង្រីកខ្លួន។"
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa ជាកោសិកាមានកន្ទុយរបស់ដី។ មានកន្ទុយពីរប្រវែងផ្សេងគ្នា ជាអ្នកស៊ីបាក់តេរីសំខាន់ក្នុងដី។"
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans ជាកីណេតូប្លាស្ទីត។ វារាំនៅនឹងកន្លែង ដោយប្រកាន់ខ្លួនដោយកន្ទុយខាងក្រោយ ហើយចាប់យកបាក់តេរី។"
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini ជាញាតិរបស់ Bodo។ វាហែលដោយសេរី ហើយវាយចំណីដោយកន្ទុយខាងមុខ។"
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei ជាប៉ារ៉ាស៊ីតក្នុងឈាម បង្កជំងឺគេងលក់។ មានស្រទាប់រលក និងកន្ទុយមួយ។ ក្នុងស្រះ វាជាគំរូអ្នកប្រមាញ់រាងស្គមស្គាំង។"
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani ជាប៉ារ៉ាស៊ីតក្នុងកោសិកាមនុស្ស។ មានកន្ទុយក្នុងសត្វល្ហុក គ្មានកន្ទុយក្នុងម៉ាក្រូហ្វាស។"
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis ជាសូអាណូហ្វ្លាហ្សេល ជាញាតិរបស់សត្វ។ រង្វង់រោមតូចៗច្រោះបាក់តេរី។"
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta ជាសូអាណូហ្វ្លាហ្សេលភ្ជាប់ខ្លួនក្នុងឡូរីកា។ វាអាចបង្កើតរូបរាងផ្កាកុលាប។ វាច្រោះទឹកដែលហូរ។"
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis ជាអាណានិគមសូអាណូហ្វ្លាហ្សេលលើដើមរួម។ មានតម្រងច្រើនលើដើមតែមួយ។"
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum ជាប៉ារ៉ាមេស៊ូមរាងស្បែកជើងដ៏ល្បី។ មានរោមខ្លីរាប់ពាន់ រូងមាត់ និងវ៉ាកុយល់។ វាច្រោះបាក់តេរី។"
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria ជាប៉ារ៉ាមេស៊ូមមានស៊ីមប៊ីយ៉ុងស៊ូក្លូរេឡា។ បៃតងខាងក្នុង៖ ស្ករពីសារាយពេលថ្ងៃ ច្រោះអាហារពេលយប់។"
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus ជាត្រែពណ៌ខៀវធំរហូតមួយមីលីម៉ែត្រ។ វាលាតជារាងស្នោ ហើយបញ្ជូនក្រូចទឹកដោយរោមខ្លីៗ។ វាអាចហែល ឬអង្គុយ។"
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus ជាញាតិរបស់ស្តេនត័រខៀវ ជាញឹកញាប់មានស៊ូក្លូរេឡា។ រាងប្រែពីត្រែទៅជាបាល់។"
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula ជាក្លឹងលើដើមដែលរួញបាន។ ដើមរួញទៅជាស្ពីរ៉ាល់ភ្លាមៗ។ កោសិកាខ្លួនឯងមិនហែលចេញទេ។"
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma ជាក្លឹងតូច។ ដើមដូចស្ព្រីញដូចគ្នា ចន្លោះមាត់តូចជាង។ ជាធម្មតានៅលើសំណល់។"
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum ជាអ្នកប្រមាញ់រាងបារ៉ីនៃប៉ារ៉ាមេស៊ូម។ វាបាញ់ toxicyst ហើយលេបចំណីទាំងមូល ទោះបីចំណីធំជាងក៏ដោយ។"
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum ជាស៊ីហ្គារវែងខ្លាំង។ វារួញខ្លួនច្រើនដងក្នុងពេលតែបន្តិច។ រោមខ្លីដើរជាស្ពីរ៉ាល់។"
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum ជាកោសិកាមានរោមពណ៌ក្រហមស្រាល។ ធាតុពណ៌ blepharismin យល់ដឹងពន្លឺ។ វាច្រោះអាហារ ហើយអាចវាយកោសិកាតូចជាង។"
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella ដើរលើ cirri ដូចជើង។ រាបស្មើ បត់បែនលឿន។ វាខាត់បាក់តេរីចេញពីផ្ទៃ។"
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata ជាហ៊ីប៉ូត្រិច 'រត់' លើបាត។ មាន cirri ធំ មាត់ច្បាស់លាស់។ ជាអ្នកប្រមាញ់កោសិកាមានរោមតូចៗ។"
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax ជាគំរូហ្សេនូម៖ មានស្នូលពីរ និងការសរសេរឌីអិនអេឡើងវិញស្មុគស្មាញ។ វាដើរលើ cirri ហើយស៊ីបាក់តេរី និងប្រូទីសតូចៗ។"
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila ជាកោសិកាមានរោមនៅមន្ទីរពិសោធន៍។ មានម៉ែមប្រាណែលមាត់បួន បែកចែកលឿន។ ជាគំរូសម្រាប់ធីឡូមែរ និងរោមខ្លី។"
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus ជាបារ៉ីក្នុងផ្លាកកំបោរមានខ្នាច់។ ស៊ីសាច់ស្លាប់ និងប្រមាញ់៖ វាខាំសត្វដែលរងរបួស។"
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella ជាអ្នកប្រមាញ់រាបស្មើមាន toxicyst ក្នុង 'ប្រូបូស៊ីស'។ វាធ្វើឱ្យចំណីអស់កម្លាំង រួចស៊ីវាទាំងស្រុង។"
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser មានកវែងមាន extrusome ពិស។ វាវាយដោយក រួចលេប។ ជាអ្នកប្រមាញ់ធំកម្រិតមធ្យម។"
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo ដូចកង់បង្វិល៖ ខ្សែរោមជុំវិញខ្លួនបង្វិលកោសិកានៅនឹងកន្លែង។ វាច្រោះបាក់តេរី។"
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula ជាអាណានិគមមានសាខានៃក្លឹងៗ។ ដើមរួញរួមអូសដើមឈើទាំងមូលព្រមគ្នា។"
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata ជាភ្ជាប់ខ្លួនគ្មានដើមស្ព្រីញ។ គម្របបិទមាត់។ វាច្រោះអាហារ ហើយមិនហែលចេញទេ។"
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus ជាអាមីបាដ៏ល្បី។ វាពង្រីកខ្លួនហូតព័ទ្ធចំណី។ គ្មានរាងថេរ គ្មានរោម។"
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris ជាអាមីបាមានសំបករឹងរាងដំបូល។ វាពង្រីកខ្លួនចេញពីរន្ធសំបក។ វារាបលើរុក្ខជាតិ។"
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga មានសំបកធ្វើពីគ្រាប់ខ្សាច់ដែលវាបិទភ្ជាប់ខ្លួនឯង។ វារស់ក្នុងភក់។"
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata មានសំបកធ្វើពីស្លឹកសីលីកា។ វាពង្រីកខ្លួនស្តើងៗ។ ជាអ្នកប្រមាញ់បាក់តេរីតូច។"
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris មានសំបករាងដបសាងពីស្លឹកលួចពីគេ។ រស់ក្នុងទឹកព្រៃ និងត្រពាំងភក់។"
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata មានសំបករាងថាសមានខ្នាច់។ រន្ធមិននៅកណ្តាល។ វារាបលើសំណល់។"
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol ជាហេលីអូសូន៖ ខ្សែស្តើងៗចាំងចេញជុំវិញខ្លួន។ ចំណីជាប់នឹងកាំ រួចត្រូវអូសចូល។"
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni ជាហេលីអូសូនធំមានស្នូលច្រើន។ កាំដូចគ្នា តែកោសិកាធំជាងច្រើន។ វាស៊ីកោសិកាមានរោម និងរ៉ូទីហ្វេរ។"
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida ជាហេលីអូសូនក្នុងស្លឹក។ កាំមានម្ជុលសីលីកា។ ជាអ្នកប្រមាញ់លបលាក់ក្នុងប្លងកតុន។"
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria ជារ៉ូទីហ្វេរអាចទប់នឹងការស្ងួត។ កូរ៉ូណាបង្វិលអាហារចូលមាត់។ ជាសត្វពិតប្រាកដមានកោសិកាច្រើន។"
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola ជារ៉ូទីហ្វេរពណ៌ក្រហមស្រាលប្រភេទ bdelloid។ វារាបនៅបាត ហើយក៏ហែលបានដែរ។ មានតែភេទស្រី គ្មានភេទប្រុសទេ។"
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis ជារ៉ូទីហ្វេរប្លងកតុនមានឡូរីកា។ ជាអាហារកូនត្រីក្នុងការចិញ្ចឹមត្រី។ វាច្រោះសារាយ និងបាក់តេរី។"
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis ជារ៉ូទីហ្វេរមានខ្នាច់ឡូរីកាវែង។ ខ្នាច់ធ្វើឱ្យសត្វប្រមាញ់ខ្លាច។ ជាប្លងកតុនស្រះទូទៅ។"
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta ជាថងគ្មានឡូរីកា ជារ៉ូទីហ្វេរប្រមាញ់។ វាលេបរ៉ូទីហ្វេរផ្សេង និងកោសិកាមានរោមទាំងមូល។"
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus ជាហ្គាស្ត្រូទ្រិក។ គ្របដោយស្លឹក វារាបលើបាត។ វាស៊ីបាក់តេរី និងសំណល់។"
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata ជាហ្គាស្ត្រូទ្រិកតូចគ្រប់ដោយស្លឹកជាន់គ្នា។ វាបត់ខ្លួននៅនឹងកន្លែងលឿនខ្លាំង។"
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano ជាសត្វផ្ទាំងស្តើងតូចមើលមិនឃើញ។ មានសាច់ដុំ និងភ្នែកពិតប្រាកដ។ ជាគំរូនៃការជាសារជាថ្មី។ វាប្រមាញ់ប្រូទីសតូចៗ។"
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops ជាសត្វផ្ទាំងស្តើងមានរោម។ វាបែកចែកទៅជាខ្សែ zooid។ វាប្រមាញ់សំណល់ និងសត្វតូចៗ។"
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare ជាសត្វផ្ទាំងស្តើងស៊ីហៃដ្រា ហើយយកកោសិកាពិសរបស់វាមកដាក់ក្នុងស្បែកខ្លួន។ ជាខ្សែ zooid។"
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense ជានេមឺទីនទឹកស្អាត។ ប្រូបូស៊ីសវែងបាញ់ទៅរកចំណី។ ជាអ្នកប្រមាញ់បាតធំកម្រ។"
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens ជាប្លាកូសូន ក្នុងចំណោមសត្វសាមញ្ញបំផុត។ វារាបដូចសន្លឹក ហើយរំលាយអាហារខាងក្រៅ។ គ្មានមាត់។"
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae ជាយ៉េសធ្វើនំបុ័ង។ វាដុះ ស៊ីស្ករ បញ្ចេញ CO2 និងអាល់កុហុល។ ក្នុងស្រះ វាសម្អាតសារធាតុរំលាយ។"
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans ជាយ៉េសអាចដុះជាខ្សែបាន។ ជាមេរោគមនុស្សពេលខ្សោយ។ ក្នុងហ្គេម វាជាផ្សិតនៅលើសំណល់។"
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo ជាផ្សិតនំបុ័ង។ មាន sporangia លើដើម ដុះលឿនលើអ្វីដែលស្លាប់។ វាមិនប្រមាញ់សត្វរស់នៅទេ។"
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer ជាផ្សិតខ្មៅលើនំបុ័ង។ stolon និង rhizoid រាលដាលលើផ្ទៃ។ វាបំបែកម្សៅ។"
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum ជាផ្សិតរាងជុល ជាប្រភពនៃ penicillin។ មានជុល conidia។ វាបំបែកសារធាតុ ហើយទប់ស្កាត់បាក់តេរីជិតខាង។"
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger ជាអាស្ពេរគីល័សខ្មៅ។ មានក្បាលស្ពរាងបាល់។ ជាអ្នកផលិតអាស៊ីត citric ឧស្សាហកម្ម។ ជាអ្នកបំបែកសំណល់ស្លាប់។"
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis ជាឆ្ស្តីទ្រីដនៃកង្ហារ។ មាន zoospore កន្ទុយតែមួយ។ ក្នុងស្រះ វាជាគំរូផ្សិតទឹក។"
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus ជាឆ្ស្តីទ្រីទឹកលើល្បាក់ផ្កានិងសារាយ។ មាន sporangia ពណ៌មាស ហើយ zoospore ហែលទៅរកផ្ទៃ។"
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus ជាផ្សិតទឹកមាន mycelium ពិតប្រាកដ។ វាប្តូរជំនាន់ diploid និង haploid។ zoospore មានកន្ទុយខាងក្រោយ។"
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis ជាបាក់តេរីរ៉ុដនៅក្នុងដី។ ស្ពរ៍ទប់នឹងការពុះពួរ។ វាបំបែកប្រូតេអ៊ីន ហើយជាគំរូ Gram-positive។"
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida ជាបាក់តេរីសម្អាត។ វាស៊ីរហូតដល់ផលិតផលប្រេងកាត។ មានកន្ទុយចលនា ដុះលឿនលើសំណល់។"
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor ជាបាក់តេរីដីមានខ្សែ។ វាបង្កើតក្លិនដី (geosmin) និងអង់ទីប៊ីយ៉ូទិកច្រើន។ មានស្ពរ៍លើ hyphae។"
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi បំបែក cellulose។ ជារ៉ុដលឿងនៅលើសំណល់រុក្ខជាតិ។ បើគ្មានវា សារាយស្លាប់នឹងនៅយូរជាង។"
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus ជាជីវិតស្រឡះក្តៅពីទឹកភ្នំក្តៅ។ Taq polymerase ជាមូលដ្ឋាននៃ PCR។ ក្នុងស្រះត្រជាក់ វាស្ទើរតែគេង។"
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans ជាជើងឯកនៃកាំរស្មី។ វាផ្គុំឡើងវិញហ្សេនដែលបែកខ្ញែកក្នុងម៉ោងច្រើន។ មានជញ្ជាំងក្រាស់ កោសិកាជាក្រុមបួន។"
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote ជាគំរូបង្រៀននៃការបន្តពូជដោយភេទ។ មានភេទពីរ ការរួមបញ្ចូល gamete មិនមែនជាការបែកពីរសាមញ្ញទេ។"
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 ជាមីយ៉ូវីរុសធំនៃ E. coli។ កន្ទុយរួញ ហើយចាក់ដាក់ឌីអិនអេ។ ក្នុងកន្លះម៉ោង កោសិកាផ្ទុះ ហើយ phage រាប់សិបចេញមក។"
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda ជា phage ស្ងប់។ វាអាចចូលចំណុះក្នុង chromosome ហើយគេង (lysogeny) ឬកាត់កោសិកាភ្លាមៗ (lysis)។"
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 មានកន្ទុយខ្លី និងការចម្លងលឿនខ្លាំង។ ជាប្រព័ន្ធដ៏ល្បីក្នុងជីវវិទ្យាសំយោគ។"
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 ជា phage RNA មានស្រោមជីវភាព។ វាឆ្លង Pseudomonas។ ជាស្រោមកម្រនៃ phage។"
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 ជា phage RNA តូចគ្មានកន្ទុយ។ វាចងនឹង pili របស់ E. coli ភេទប្រុស។ ហ្សេនរបស់វាជាហ្សេន RNA ដំបូងៗដែលអានបាន។"
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "ជាប៉ារ៉ាស៊ីតប្រសាទស្រះជាការស្រមើលស្រមៃ។ វាចាប់ដូចកោសិក eukaryote ហើយបំផ្លាញឥរិយាបថរបស់ម្ចាស់ រហូតម្ចាស់ក្លាយជាអ្នកនាំយក។"
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote ជាគំរូបង្រៀននៃការបន្តពូជដោយភេទ។ មានភេទពីរ ការរួមបញ្ចូល gamete មិនមែនជាការបែកពីរសាមញ្ញទេ។"
   }
 }

@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis је цијанобактерија без једра. Живи од свјетлости: кисеонички фотосинтеза по мембранама, без хлоропласта. Модел за метаболизам водоника."
+    "body": "Synechocystis је цијанобактерија без језгра. Живи од светлости: фотосинтеза уз ослобађање кисеоника на мембранама, без хлоропласта. Лабораторијски модел метаболизма водоника."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis је нит. Неке ћелије постају хетероцисти и везују азот док суседи стварају шећер. У бари снабдева везаним азотом."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) је завојница од ћелија са гасним вакуолама. Виси близу површине, фотосинтетише и јестива је. У игри је велики зелени вијак на воденој опни."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme је низ зрнаца у слузавој капсули. Живи слободно или у симбиози са биљкама. Колонија личи на накупину зелених зрнаца."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica је нит која клизи. Осцилира лево-десно и може да фотосинтетише без ослобађања кисеоника. Типична за муљ и површинску опну."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa је слузава колонија, често отровна (микроцистин). Изазива цветање воде. У игри је зелена колонијална лопта, ризичан плен."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa tvori uparene ћелије у обојеним овојницама. Живи на стенама и земљишту и подноси УВ. У бари су то ситни упарени коки у овоју."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula је дебела цијанобактеријска нит. Може да ослобађа надражујуће токсине. Образује простирке уз топле обале."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii је зелена ћелија са два бича и очном пегом. Плива према светлости. Класичан модел генетике алги."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris је непокретна зелена лоптица. Брзо се дели и богата је беланчевинама. Храна ситним једућима и тема свемирске хране."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator је шупља лопта од хиљада ћелија. Кћерне колоније сазревају изнутра па излазе. У игри је велика зелена колонија."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis је миксотроф: хлоропласти плус способност исхране. Црвена очна пега прати светлост. Зелена дању; у мраку прелази на храну."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda tvori обично четири ћелије у низу са бодљама на крајевима. Бодље отежавају гутање. Не плива — носи је вода."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis је зелена покретна ћелија; под стресом поцрвени (астаксантин) и израсте јој дебео зид. Црвене цисте преживе сушу."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina нема чврст зид и живи у веома сланој води. Складишти бета-каротен и изгледа наранџасто. Два бича."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata је спљоштена звездаста десмидија. Два огледалски симетрична дела са дубоким урезима. Непокретна; фотосинтетише у киселој мочварној води."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula је дијатомеја облика чамца са валвом од силицијума. Клизи по подлози уздуж пукотине рафе. Љуска остаје после смрти."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis је велика пената дијатомеја. Силицијумска љуска са симетричним шарама. Полако клизи по дну."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana је округла центрична дијатомеја. Плута као диск; љуска су два поклопца. Типичан планктон."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare је дијатомеја која се спаја у цик-цак. Колонија повећава отпор у стубу воде."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum је љубичаста спирала. Аноксична фотосинтеза плус органске материје. Црвена боја долази од бактериохлорофила."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum је љубичаста сумпорна бактерија. Оксидира водоник-сулфид и складишти зрнца сумпора. Живи на граници кисеоника и сумпора."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum је једноћелијска црвена алга. Фикоеритрин јој даје крваво црвену боју. Слузав овој, без бичева."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus је најмања и најбројнија фотосинтетска ћелија на Земљи. Откривена осамдесетих година. Храни океан."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis је екстремофил: пустиња, стена, радијација. Кандидат за живот ван Земље. У бари је спора колонија кока."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus је ситна бактерија грабљивица. Завија се у другу ћелију и размножава се док домаћин не пукне."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus се споља прилепи за плен и исиса садржај без уласка. Бактеријски вампир."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter улази у бактерију плена и изједа је изнутра. Редак унутарћелијски ловац."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus је друштвена бактерија. У чопору опкољава плен и ослобађа ензиме. Када огладни, образује плодно тело."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii је морски сродник Bdellovibrio. Напада грам-негативне бактерије и живи у периплазми плена."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax је ловац на бактерије који подноси со. Исти трик: пробије зид и расте изнутра."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii је још један BALO грабљивац. Брзи бичар облика зареза који циља велике штапиће."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula је мали хетеротрофни бичар. Хвата бактерије на површини детритуса."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo је бичар облика капи. Један бич; лови у бактеријском филму."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans је колонија на дршци од гвожђа и мангана. Ћелије седе у прамену и хватају бактерије."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium је безбојни криптофит. Два бича; једе растворене органске материје и ситне бактерије, без хлоропласта."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda је амебобичар са дугим репом. Пузи и гута бактерије псеудоподијама."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa је бичар земљишта. Два бича различите дужине; главни потрошач бактерија у земљишту."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans је кинетопластид. „Игрише“ у месту, везан задњим бичем, и граби бактерије."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini је сродник Bodo. Слободно плива и удара плен предњим бичем."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei је крвни паразит који изазива болест спавања. Валовита мембрана и један бич. У бари је модел витког ловца."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani је унутарћелијски хумани паразит. Са бичем у инсекту, без бича унутар макрофага."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis је хоанофлагелат, сродник животиња. Овратник од микровила филтрира бактерије."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta је причвршћени хоанофлагелат у лорици. Може да образује розету. Филтрира струју воде."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis је колонија хоанофлагелата на заједничкој дршци. Неколико филтера на једној дршци."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum је класична папучица. Хиљаде трепљи, усна бразда, контрактилне вакуоле. Филтрира бактерије."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria је папучица са симбиотским зоохлорелама. Зелена изнутра: шећер од алги дању, филтрирање ноћу."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus је плавa труба до једног милиметра. Шири се у левак и покреће струју трепљама. Може да плива или да седи."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus је сродник плавог стентора, често са зоохлорелама. Мења облик од трубе до лопте."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula је звонце на контрактилној дршци. Дршка се у трену смота у спиралу. Сама ћелија не отпловава."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma је мало звонце. Иста дршка-опруга, уже усно поље. Често на детритусу."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum је бачваст ловац на папучице. Испаљује токсицисте и гута плен целог, чак и када је плен већи."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum је врло дугачка цигара. Скупи се неколико пута у делићу секунде. Трепље теку у спиралу."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum је ружичасти цилијат. Пигмент блефарисмин осетљив је на светлост. Филтрира и може да нападне мање ћелије."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella хода по цирусима као по ногама. Спљоштен, брзи заокрети. Стружи бактерије са површина."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata је хипотрих који „трчи“ по дну. Велики цируси, јасна уста. Грабљивац малих цилијата."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax је геномски модел: два језгра и сложено преписивање ДНК. Хода по цирусима и једе бактерије и мале протисте."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila је лабораторијски цилијат. Четири усне мембранеле, брза деоба. Модел за теломере и трепље."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus је бачва од кречњачких плочица са бодљама. Лешинар и грабљивац: гризе рањене."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella је спљоштен грабљивац са токсицистама у „рилу“. Паралише плен и исиса га."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser има дуг врат са отровним екструзомима. Удара вратом, па гута. Велики ловац средњег ранга."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo је чигра: екваторијални појас трепљи обрће ћелију у месту. Филтрира бактерије."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula је разграната колонија звона. Заједничка контрактилна дршка тргне цело дрво одједном."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata је причвршћен перитрих без дршке-опруге. Поклопац покрива уста. Филтрира и не отпловава."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus је класична амеба. Псеудоподије обавијају плен. Без сталног облика, без трепљи."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris је амеба са љуском и чврстом куполом. Псеудоподије излазе кроз отвор. Пузи по биљкама."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga има љуску од зрнаца песка коју сама амеба залепи. Живи у муљу."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata има кућицу од силицијумских љуски. Танке филозне псеудоподије. Мала грабљивица на бактерије."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris је кућица у облику боце саграђена од украдених љуски. Воде шума и мочвара."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata је амеба са дисколиком љуском и бодљама. Отвор је померен. Пузи по детритусу."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol је хелиозој: танке аксоподије зраче на све стране. Плен се залепи за зраке и бива увучен."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni је велик хелиозој са много језгара. Исти зраци, много већа ћелија. Једе цилијате и ротифере."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida је хелиозој у љускама. Зраци носе силицијумске игле. Планктонски ловац из заседе."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria је ротифера која преживи исушивање. Венчић као точкић уводи храну у уста. Права вишећелијска животиња."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola је ружичасти бделоидни ротифер. Пузи као пијавица и такође плива. Само женке; без мужјака."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis је планктонски ротифер са лориком. Храна за ларве риба у аквакултури. Филтрира алге и бактерије."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis је ротифер са дугом бодљом на лорици. Бодља одбија грабљивце. Уобичајени планктон бара."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta је врећа без лорике, грабљиви ротифер. Гута целе друге ротифере и цилијате."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus је гастротрих. Покривен љускама, пузи по дну. Једе бактерије и детритус."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata је мали гастротрих у наслаганим љускама. Веома брзи заокрети у месту."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano је микроскопски пљоснати црв. Прави мишићи и очи. Модел за регенерацију. Лови мале протисте."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops је танак црв са трепљама. Дели се попречно у низ зооида. Грабљивац детритуса и малих животиња."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare је пљоснати црв који једе хидре и уграђује њихове жалне ћелије у сопствену кожу. Низ зооида."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense је слатководни немертин. Дуга рилка избацује се на плен. Редак велики ловац на дну."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens је плакозој, међу најједноставнијим животињама. Пузи као опна и вари храну напољу. Без уста."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae је пекарски квасац. Размножава се пупљењем, једе шећер, ослобађа CO2 и алкохол. У бари чисти растворене органске материје."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans је квасац који може да расте као нити. Опортунистички хумани патоген. У игри је детритусна гљива."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo је плесан хлеба. Спорангии на дршкама, брз раст по мртвом. Не лови живо."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer је црна плесан хлеба. Столони и ризоиди шире се по подлози. Разграђује скроб."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum је плесан у облику четке, извор пеницилина. Конидијалне четке. Разграђује органске материје и сузбија оближње бактерије."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger је црни аспергил. Кугласте главице спора. Индустријски произвођач лимунске киселине. Сапротроф."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis је хитридија жаба. Зооспоре са једним бичем. У бари је модел водене гљиве."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus је водена хитридија на полену и алгама. Златни спорангии; зооспоре пливају до подлоге."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus је водена гљива са правим мицелијумом. Смењује диплоидну и хаплоидну фазу. Зооспоре имају задњи бич."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis је штапић из земљишта. Споре преживе кључање. Разграђује беланчевине; модел грам-позитивних бактерија."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida је штапић чистач. Једе чак и нафтне производе. Покретљив бичем, брз раст на детритусу."
   },
   "96": {
-    "body": "Streptomyces coelicolor је нитаста земљишна бактерија. Ствара мирис земље (геосмин) и многе антибиотике. Споре на хифама."
+    "body": "Streptomyces coelicolor је влакнаста бактерија земљишта. Ствара мирис земље (геосмин) и многе антибиотике. Споре на хифама."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi разграђује целулозу. Жути штапић на биљном детритусу. Без ње би мртве алге дуже трајале."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus је термофил из врелих извора. Taq полимераза је основа PCR. У хладној бари је скоро успавана."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans је првак радијације. За неколико сати састави разбијени геном. Дебео зид, тетраде ћелија."
   },
   "1001": {
-    "body": "Половни еукариот је наставни модел половног размножавања. Два пола, стапање гамета, не просто бинарна диоба."
+    "body": "Сексуални еукариот је наставни модел полног размножавања. Два пола, спајање гамета, не обична бинарна деоба."
   },
   "T4 Bacteriophage": {
-    "body": "T4 је велики миовирус E. coli. Реп се скупља и убризгава ДНК. За пола сата ћелија пуца и излазе десетине фагова."
+    "body": "T4 је велики миовирус E. coli. Реп се контрахује и убризгава ДНК. За пола сата ћелија пукне и изађу десетине фагова."
   },
   "Lambda Phage": {
-    "body": "Lambda је умјерени фаг. Може се уградити у хромозом и спавати (лизогенија) или одмах разорити ћелију (лиза)."
+    "body": "Lambda је умерени фаг. Може да се убаци у хромозом и спава (лизогенија) или одмах да разбије ћелију (лиза)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 има кратак реп и врло брзу репликацију. Омиљен систем у синтетичкој биологији."
+    "body": "T7 има кратак реп и веома брзу репликацију. Омиљени систем у синтетичкој биологији."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 је РНК фаг с липидним омотачем. Инфектира Pseudomonas. Ријетка мембрана за фаг."
+    "body": "Phi-6 је РНК фаг са липидним овојем. Инфицира Pseudomonas. Ретка мембрана за фаг."
   },
   "MS2 Phage": {
-    "body": "MS2 је ситни РНК фаг без репа. Везује се за пиле мушког E. coli. Његов геном био је један од првих прочитаних РНК генома."
+    "body": "MS2 је ситан РНК фаг без репа. Везује се за пилусе мушких E. coli. Његов геном био је међу првима прочитаним РНК геномима."
   },
   "Neuro-Parasite": {
-    "body": "Измишљени неуропаразит из баре. Хвата се за еукариоте и квари понашање домаћина док он не постане носилац."
+    "body": "Измишљени неуро-паразит баре. Закачи се за еукариоте и квари понашање домаћина док домаћин не постане носилац."
   },
   "Sexual Eukaryote": {
-    "body": "Половни еукариот је наставни модел половног размножавања. Два пола, стапање гамета, не просто бинарна диоба."
+    "body": "Сексуални еукариот је наставни модел полног размножавања. Два пола, спајање гамета, не обична бинарна деоба."
   }
 }

@@ -46,13 +46,26 @@ const PROBE = `(function(){
   });
 })()`;
 
+const arg = (n, d) => { const a = process.argv.find(x => x.startsWith('--' + n + '=')); return a ? a.slice(3 + n.length) : d; };
+const ONLY_LANGS = arg('langs', '').split(',').filter(Boolean);
+const ONLY_VP = arg('vp', '').split(',').filter(Boolean);
+const ONLY_SCREENS = arg('screens', '').split(',').filter(Boolean);
+
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
   const br = await chromium.launch({ channel: 'chrome', headless: true });
-  const rows = [];
-  for (const [code, name, expectDir] of LANGS) {
+  // при выборочной пересъёмке дописываем в существующую таблицу, не затирая остальные строки
+  const prevPath = path.join(OUT, 'v26-rtl-probe.json');
+  let rows = fs.existsSync(prevPath) ? JSON.parse(fs.readFileSync(prevPath, 'utf8')) : [];
+  const prevBy = {}; for (const r of rows) prevBy[r.code + '@' + r.vp] = r;
+  const VPS = [['375', 375, 812, ['menu', 'settings', 'wiki', 'game']], ['1400', 1400, 900, ['menu', 'wiki']]]
+    .filter(v => !ONLY_VP.length || ONLY_VP.includes(v[0]))
+    .map(v => [v[0], v[1], v[2], ONLY_SCREENS.length ? v[3].filter(s => ONLY_SCREENS.includes(s)) : v[3]])
+    .filter(v => v[3].length);
+  for (const [code, name, expectDir] of LANGS.filter(l => !ONLY_LANGS.length || ONLY_LANGS.includes(l[0]))) {
+    for (const [vp] of VPS) rows = rows.filter(r => !(r.code === code && r.vp === vp));
     fs.mkdirSync(path.join(OUT, code), { recursive: true });
-    for (const [vp, w, h, screens] of [['375', 375, 812, ['menu', 'settings', 'wiki', 'game']], ['1400', 1400, 900, ['menu', 'wiki']]]) {
+    for (const [vp, w, h, screens] of VPS) {
       const ctx = await br.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1, isMobile: vp === '375', hasTouch: vp === '375' });
       const page = await ctx.newPage();
       const errs = [];
@@ -76,7 +89,11 @@ const PROBE = `(function(){
           if (await pw.isVisible().catch(() => false)) await pw.click().catch(() => {});
           else await page.click('#wikiBtnMenu').catch(() => {});
           await page.waitForSelector('#wikiContent .wiki-entry', { timeout: 15000 }).catch(() => {}); await page.waitForTimeout(500); }
-        if (s === 'game') { await page.click('#wikiClose').catch(() => {}); await page.waitForTimeout(600); }
+        if (s === 'game') { await page.click('#wikiClose').catch(() => {}); await page.waitForTimeout(400);
+          // после wiki остаётся открытым оверлей паузы — снимаем его кнопкой «продолжить», иначе кадр = меню паузы
+          const rb = page.locator('#resBtn'); if (await rb.isVisible().catch(() => false)) await rb.click().catch(() => {});
+          await page.waitForFunction(() => window.state === 'playing', undefined, { timeout: 10000 }).catch(() => {});
+          await page.waitForTimeout(900); }
         const png = path.join(OUT, code, `${vp}-${s}.png`);
         await page.screenshot({ path: png }).catch(() => {});
         const probe = JSON.parse(await page.evaluate(PROBE).catch(() => '{"dir":"","over":[],"outside":[],"digits":[],"hudText":"","i18nMiss":-1,"rtlClass":false,"font":""}'));
@@ -93,7 +110,12 @@ const PROBE = `(function(){
         i18nRecorded: Math.max(...shots.map(s => s.i18nRecorded || 0)),
         i18nMiss: absentKeys.length, i18nMissKeys: absentKeys.slice(0, 4),
         pageErrors: errs.length, errSamples: errs.slice(0, 2),
-        hud: first.hudText, frames: shots.map(s => s.png.replace(/\\/g, '/'))
+        hud: first.hudText, frames: (() => {
+          const mine = shots.map(s => s.png.replace(/\\/g, '/'));
+          const pr = prevBy[code + '@' + vp];
+          const keep = pr ? (pr.frames || []).filter(f => !screens.some(sc => f.endsWith('/' + vp + '-' + sc + '.png'))) : [];
+          return keep.concat(mine);
+        })()
       });
       console.log(`${code} ${vp}: dir=${first.dir} rtl=${first.rtlClass} over=${rows[rows.length - 1].over} outside=${rows[rows.length - 1].outside} errs=${errs.length} tt-обращений=${rows[rows.length - 1].i18nRecorded} absent=${rows[rows.length - 1].i18nMiss}`);
       await ctx.close();

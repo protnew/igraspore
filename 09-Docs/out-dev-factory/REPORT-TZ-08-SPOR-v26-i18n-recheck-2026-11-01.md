@@ -66,7 +66,7 @@ run-all-tests.ps1 20261102-1540 commit=b5ba895 → TOTAL pass=580 fail=4 skipped
 
 ### 4.1 Проверка самого отчёта v26
 
-Прогон `powershell -NoProfile -File toolserify_report.ps1 -Report <этот файл>` после финального коммита → **11 PASS / 3 FAIL** (лог: `09-Docsout-dev-factorylogs-release-ready-2026-10-1426-verify-my-report.txt`). Зелёные: V2 финальная строка, V3 путь в последнем code block, V4 `sha=b5b8f6d head=c0171cb parent=b5b8f6d ab=[0 0]`, V7–V11 (sha коммитов сверены с origin, 29 записей, 0 плохих), V12, V14 «Файлы >500 строк» с 6 строками таблицы. Красные — все три из-за того, что канон `verify_report.ps1` (реv 14.10) описывал отчёты серии release-ready v14+/v15, а ТЗ v26 задала свой путь и свой формат первой строки:
+Прогон `powershell -NoProfile -File toolserify_report.ps1 -Report <этот файл>` после финального коммита → **11 PASS / 3 FAIL** (лог: `09-Docsout-dev-factorylogs-release-ready-2026-10-1426-verify-my-report.txt`). Зелёные: V2 финальная строка, V3 путь в последнем code block, V4 `sha=b5b8f6d head=c0171cb parent=b5b8f6d ab=[0 0]` (V4 сверяет sha из отчёта с HEAD: любой коммит после этого сдвигает HEAD, так что проверка верна на момент замера, а не навсегда), V7–V11 (sha коммитов сверены с origin, 29 записей, 0 плохих), V12, V14 «Файлы >500 строк» с 6 строками таблицы. Красные — все три из-за того, что канон `verify_report.ps1` (реv 14.10) описывал отчёты серии release-ready v14+/v15, а ТЗ v26 задала свой путь и свой формат первой строки:
 
 | Проверка | Что требует канон | Что требует ТЗ v26 | Решение |
 |---|---|---|---|

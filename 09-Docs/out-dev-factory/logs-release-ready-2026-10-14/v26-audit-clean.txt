@@ -1,0 +1,9 @@
+Языков: 100/100 · всего проблем: 0
+  dict missing: 0
+  dict empty: 0
+  dict плейсхолдер: 0
+  dict длина: 0
+  dict sameAsEn: 0
+  wiki missing/empty: 0
+  wiki sameAsEn: 0
+Аудит чист

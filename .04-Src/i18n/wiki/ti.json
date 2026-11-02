@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis ሳይኖባክቴሪያ (ሰማያዊ ባክቴሪያ) እዩ፤ ናይ ህዋስ ማእከል የብሉን። ብብርሃን ይነብር፦ ኣብ ሽፋናቱ ኦክሲጅን ዘውጽእ ፎቶሲንተሲስ ይገብር፣ ክሎሮፕላስት ግን የብሉን። ኣብ ቤት-ፈተነ ንመጽናዕቲ ሜታቦሊዝም ሃይድሮጅን ኣብነት እዩ።"
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis ሰንሰለት ህዋሳት እዩ። ገለ ካብኦም ፍሉያት ናይትሮጅን-ሓዝቲ ህዋሳት ኮይኖም ናይትሮጅን ይሕዙ፣ ጎረቤቶም ድማ ስኳር ይሰርሑ። ኣብቲ ማዕበል ዝተኣስረ ናይትሮጅን ብኣቶም እዩ ዝበጽሕ።"
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) ኣየር ዝመልኦም ንኣንሽቲ ኣቕሓ ዘለዎ፣ ዝተጠውዩ ሰንሰለት ህዋሳት እዩ። ኣብ ላዕለዋይ ገጽ ማይ ተንሳፊፉ ፎቶሲንተሲስ ይገብር፣ ዝበላዕ እዩ። ኣብ ጨዋታ ኣብ ገጽ ማይ ዝርአ ዓቢ ኣረንጓዊ ዝተጠውዩ ህዋሳት እዩ።"
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme ኣብ ውሽጢ ተጣባቒ ሽፋን ዝርከብ ሰንሰለት ንኣንሽቲ ኣረንጓዶ ኩዕሰ-ህዋሳት እዩ። በገዛእ ርእሱ ወይ ምስ ተኽሊ ብሓባር ይነብር። እታ ቅጥልቲ ከም ዝተኣከቡ ኣረንጓዶ ንኣንሽቲ ኩዕሶታት ትርአ።"
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica ዝንሸራተት ሰንሰለት ህዋሳት እዩ። ናብ ገማ-ገማ ብምንቅጥጣር ይንቀሳቐስ፣ ኦክሲጅን ከየውጽአ ድማ ፎቶሲንተሲስ ክገብር ይኽእል። ኣብ ጭቃን ገጽ ማይን ዝርአ ዓይነት እዩ።"
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa ተጣባቒ ቅጥልቲ እያ፤ ብዙሕ ግዜ መርዛዊት እያ (ማይኮሲስቲን)። እቲ ማይ ብኣረንጓዴ ከም ዝበቅል ትገብር። ኣብ ጨዋታ ኣረንጓዊት ኩዕሳ ቅጥልቲ እያ፤ ምብላዓ ግን ሓደገኛ እዩ።"
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa ጽምዲ ጽምዲ ህዋሳት ኮይኖም ኣብ ሕብሪ ዘለዎም ሽፋናት ይነብሩ። ኣብ እምኒን ሓመድን ይርከቡ፣ ንብርሃን ኣልትራቫዮሌት ድማ ይጻወሩ። ኣብቲ ማዕበል ኣብ ሽፋን ዝተጠላለፉ ንኣንሽቲ ጽምዲ-ኩዕሶ ህዋሳት እዮም።"
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula ወፍራ ሰንሰለት ሳይኖባክቴሪያ እዩ። ቆፍሊ ዘስዕቡ መርዛታት ክፍኑ ይኽእል። ኣብ ጥቓ ልሙሳት ገምገም ማይ ድልዱል ሽፋን ይሰርሕ።"
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii ክልተ ፍላጀላ ነጥቢ-ዓይንን ዘለዎ ኣረንጓዊ ህዋስ እዩ። ናብ ብርሃን ይንሳፈፍ። ንመጽናዕቲ ውርሻ ኣልጌ ፍሉጥ ኣብነት እዩ።"
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris ዘይንቀሳቐስ ኣረንጓዊ ኩዕሶ እዩ። ብቕልጡፍ ይምቀል፣ ብፕሮቶን ሃብታም እዩ። ንንኣንሽቲ ተባዕትቲ ምግቢ እዩ፤ ንመግቢ ጠፈር እውን ዝተጻረረሉ።"
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator ብኣሽሓት ህዋሳት ዝተሰርሐ ባዶ ኩዕሶ እዩ። ደቂ ቅጥልትታት ኣብ ውሽጢ ይበስሉ እሞ ወጻኢ ይወጹ። ኣብ ጨዋታ ዓቢ ኣረንጓዊ ቅጥልቲ እዩ።"
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis ክልተ መንገዲ ዝመገብ እዩ፦ ክሎሮፕላስት ኣለዎ፣ ምብላዕ እውን ይኽእል። ቀይሕት ነጥቢ-ዓይኒ ብርሃን ትከታተል። ብብርሃን ኣረንጓዊ ይኸውን፣ በጸልማት ግን ናብ ምብላዕ ይቕየር።"
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda ብዙሕ ግዜ ኣብ ሓደ መስመር ዝተሰርዑ ኣርባዕተ ህዋሳት እየን፤ ኣብ ጫፈን ሓረፍቲ ነጥብታት ኣለወን። እቶም ሓረፍቲ ነጥብታት ምውሓጥ የኽፍኡ። ኣይንሳፈፍን እዩ፤ ብፍሰት ማይ ጥራይ ይንሳፈፍ።"
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis ኣረንጓዊ ዝንቀሳቐስ ህዋስ እዩ፤ ጸቕጢ ምስ ደፍኦ ግን ቀይሕ ይኸውን (ኣስታክሳንቲን)፣ ወፍራ ግድግዳእውን ይለብስ። እቶም ቀያሕቲ ዕቑባት-ህዋሳት ንደረት ይጻወሩ።"
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina ድልዱል ግድግዳ የብሉን፤ ኣብ ኣዝዩ ጨው ዝበዝሖ ማይ ይነብር። ቤታ-ካሮቲን ይኽዝን፣ ሕብሩ ድማ ቢጫ-ቀይሕ እዩ። ክልተ ፍላጀላ ኣለዉዎ።"
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata ጸፍሒት፣ ቅርጣ ከም ኮኸብ ዝኾነት ዴዝሚድ እያ። ክልተ ንሓድሕዶም ዝመሳሰሉ ክፍልታት ኣለዉዋ፣ መንጎኦም ድማ ይጥልቕ። ኣይትንቀሳቐስን እያ፤ ኣብ ኣሲዳዊ ማይ ጭቃ ፎቶሲንተሲስ ትገብር።"
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula ቅርጹ ከም ጃልባ ዝኾነ፣ ብሲሊካ ዝተሰርሐ ሽፋን ዘለዎ ዲያቶም እዩ። ብንእሽቲ ክፍተት መስመር (ራፌ) ኣብቲ ዝርከበሉ ገጽ ይንሸራተት። ጋሻኡ ድሕሪ ሞቱ ይጸንሕ።"
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis ትልቅ ጸፍሒ-ቅርጂ ዲያቶም እዩ። ጋሻኡ ብሲሊካ ተሰሪሑ፣ ብማዕረ ዝተሰርዐ ንድፊ ኣለዎ። ኣብ ታሕቲ እቲ ማዕበል ቀስ ብቐስ ይንሸራተት።"
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana ክቢት ዝኾነት፣ ማእኸላይ ቅርጂ ዘለዋ ዲያቶም እያ። ከም ጸፍሒ ክቢ ተንሳፊፋ ትነብር፣ ጋሻኣ ድማ ክልተ ሽፋን እዩ። ፍሉጥ ፕላንክቶን እያ።"
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare ንሓድሕዶም ተጠውዮም፣ ከም ዙግ-ዙግ መስመር ዝቕመጡ ዲያቶማት እዮም። እታ ቅጥልቲ ኣብቲ ማይ ዘሎ ዕንቅፋት ምንቅስቓስ ትውስእ።"
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum ሓምራይ ዝተጠውዩ ዘለዎ ባክቴሪያ እዩ። ኦክሲጅን ዘየውጽእ ፎቶሲንተሲስ ይገብር፣ ኦርጋናዊ ነገራት እውን ይውስኸሎም። እቲ ቀይሕ ሕብሪ ካብ ባክቴሪዮክሎሮፊል ይመጽእ።"
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum ሓምራይ ባክቴሪያ ኩኒት እዩ። ጋዝ ሃይድሮጅን-ኩኒት የቃጽል፣ ንኣንሽቲ እንክብልቲ ኩኒትውን ይኽዝን። ኣብ ዶብ ኦክሲጅንን ኩኒትን ይነብር።"
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum ሓደ-ህዋሳ ቀይሕት ኣልጌ እያ። ፊኮኤሪትሪን ደም-ቀይሕ ሕብሪ ትህባ። ተጣባቒ ሽፋን ኣለዋ፣ ፍላጀላ ግን የብላን።"
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus ኣብዛ ምድር ዝነኣሰትን ዝበዝሐትን ብብርሃን ዝመገብ ህዋስ እያ። በ1980ታት ተረኸበት። ንውቅያኖስ መግቢ ትኸውን።"
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis ከቢድ ኩነታት ዝጻወር እዩ፦ በረሃ፣ እምኒ፣ ጨረር። ንህይወት ካብ ምድር ወጻኢ እጩ እዩ። ኣብ ማዕበል ቀስ ዝበዝሕ ንኡስ-ኩዕሶ ቅጥልቲ እዩ።"
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus ንእሽቶ ኣዳኒ ባክቴሪያ እዩ። ብምጥዋይ ናብ ካልእ ህዋስ ይኣቱ፣ እቲ ዝሓዎ ህዋስ ክሳብ ዝፈነዳ ድማ ይበዝሕ።"
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus ካብ ደገ ኣብቲ ዝበልዖ ተቐሚጡ፣ ከይኣተወ ነቲ ኣብ ውሽጡ ዘሎ ወጻኢ ይስሕቦ። ናይ ባክቴሪያ ቫምፓየር እዩ።"
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter ናብ ውሽጢ ዝበልዖ ባክቴሪያ ይኣቱ እሞ ካብ ውሽጢ ይበልዖ። ኣልፎ-ኣልፎ ዝርከብ ናይ ውሽጢ ኣዳኒ እዩ።"
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus ማሕበራዊ ባክቴሪያ እዩ። ብጉጅለ ኮይኑ ነቲ ዝበልዖ ይከብቦ፣ ኢንዛይማት እውን ይፍኑ። ጥሜት ምስ ሓደሮ ግን ዘርኢ-ዋንጫ ይሰርሕ።"
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii ናይ ባሕሪ ዘመድ Bdellovibrio እዩ። ግራም-ኣሉታውያን ባክቴሪያ ይጋፍዕ፣ ኣብ ሞንጎ ግድግዳን ደጋዊ ሽፋንን ናይቲ ዝበልዖ ድማ ይነብር።"
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax ጨው ዝጻወር ኣዳኒ ባክቴሪያ እዩ። ተመሳሳሊ ሜላ፦ ግድግዳ ምስባር እሞ ኣብ ውሽጢ ምዓቢ።"
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii ካብቶም ከም Bdellovibrio ዝኣድኑ ሓደ እዩ። ቅልጡፍ፣ ቅርጁ ከም ፍርቂ-ክቢ ዝኾነ ፍላጀላ ዘለዎ፤ ነዋሕቲ ባክቴሪያ ይጋፍዕ።"
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula ንእሽቶ ፍላጀላ ዘለዋ ህዋስ ኮይና ምግባ ግን ካብ ካልኦት ትረክብ። ኣብ ገጽ ርስሓት ባክቴሪያ ትሓዝ።"
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo ቅርጃ ከም ጥብቲ ማይ ዝኾነት ፍላጀላ ዘለዋ እያ። ሓደ ፍላጀላ ኣለዋ፤ ኣብ ሽፋን ባክቴሪያ ትጋፍዕ።"
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans ኣብ ግንድ ሓጺን-ማንጋኒዝ እትነብር ቅጥልቲ እያ። እቶም ህዋሳት ከም ጸጉሪ ተጠላሊፎም ባክቴሪያ ይሓዙ።"
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium ሕብሪ ዘይብላ ክሪፕቶፊት እያ። ክልተ ፍላጀላ ኣለዋ፤ ኣብ ማይ ዝመኸኸ ኦርጋናዊ ነገር ኣዝዮም ንኣንሽቲ ባክቴሪያትን ትበልዕ፣ ክሎሮፕላስት ግን የብላን።"
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda ነዊሕ ጅራት ዘለዋ ኣሞባ-ፍላጀላ እያ። ትንሽረትት እሞ ባክቴሪያ ብዝዘርግሖ ክፍሊ ኣካላ ትውሕጦ።"
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa ናይ ሓመድ ፍላጀላ እያ። ክልተ ፍላጀላ ብዝተፈላለየ ንውሓት ኣለዋ፤ ኣብ ሓመድ ቀንዲ በላዒ ባክቴሪያ እያ።"
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans ኪነቶፕላስቲድ እዩ። ብድሕረዋይ ፍላጀሉ ተጠልሒዑ ኣብ ሓደ ቦታ ከም ዝዘፍን ይንቀጥጥር፣ ባክቴሪያ ድማ ይሓዝ።"
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini ዘመድ Bodo እዩ። ብነጻነት ይንሳፈፍ፣ ብቕድሚት ፍላጀሉ ድማ ነቲ ዝበልዖ ይወቕዖ።"
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei ናይ ደም ፓራሲት ኮይኑ ሕማም ድቃስ የመጽእ። ዝንቀጥጠር ሽፋን ሓደ ፍላጀላን ኣለዉዎ። ኣብቲ ማዕበል ኣብነት ጠጠን ዝኾነ ኣዳኒ የገልግል።"
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani ኣብ ውሽጢ ህዋስ ሰብ ዝነብር ፓራሲት እዩ። ኣብ ሓሰኻ ፍላጀላ ኣለዎ፤ ኣብ ውሽጢ ማክሮፋጅ ግን የብሉን።"
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis ኮዋኖፍላጀሌት — ዘመድ እንስሳታት — እዩ። ኣብ ከባቢ ፍላጀሉ ዘሎ ንኣንሽቲ ዝርጋ ከም ማጣሪ ተሰርዩ ባክቴሪያ ይሓዝ።"
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta ኣብ ደጋዊ ጋሻ (ሎሪካ) ተቐሚጣ እትነብር ኮዋኖፍላጀሌት እያ። ንሓድሕዳ ተጠርናፊ ከም ዕምባላ ቅርጺ ክትሰርሕ ትኽእል። ፍሰት ማይ ትጣሪ።"
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis ኣብ ሓደ ጋራ ግንድ ዝቕመጥ ቅጥልቲ ኮዋኖፍላጀሌት እዩ። ኣብ ሓደ ግንድ ብዙሓት ማጣሪታት ኣለዋ።"
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum እቲ ፍሉጥ ፍርቂ-ጫማ ዝመስል ህዋስ እዩ። ብኣሽሓት ዝቑጸሩ ሲሊያ፣ ጉድጓድ ኣፍ፣ ዝጸባብቓ ኣቕሑን ኣለዉዎ። ባክቴሪያ ይጣሪ።"
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria ምስ ኣልጌ Zoochlorella ብሓባር ዝነብር ፍርቂ-ጫማ እዩ። ኣብ ውሽጡ ኣረንጓዊ እዩ፦ ብብርሃን ጸሓይ ካብ ኣልጌ ስኳር ይረክብ፣ ብለይቲ ግን ባክቴሪያ ይጣሪ።"
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus ክሳብ ሓደ ሚሊመተር ዝንውሓቱ፣ ቅርጁ ሰፊሕ ኣፍ ዘለዎ ቱቦ ዝኾነ ሰማያዊ ህዋስ እዩ። ኣፉ ተዘርጊሑ ከም ቅርጂ ማጣረሒ ይኸውን፣ ብሲሊያኡ ድማ ፍሰት ይፈጥር። ክንሳፈፍ ይኽእል ወይ ክቕመጥ።"
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus ዘመድ እቲ ሰማያዊ Stentor ኮይኑ ብዙሕ ግዜ ኣልጌ Zoochlorella ምስኡ ኣለዉ። ቅርጁ ካብ ሰፊሕ-ኣፍ ቱቦ ናብ ኩዕሶ ይቕየር።"
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula ኣብ ዝኩረፍ ግንድ ዝቕመጥ፣ ቅርጁ ከም ደወል ዝኾነ ህዋስ እዩ። እቲ ግንድ በቲኽኩ ናብ ቅርጂ ዝተጠውዩ ይቕየር። እቲ ህዋስ ግን ባዕሉ ኣይንሳፈፍን።"
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma ንእሽቶ ደወል እዩ። ተመሳሳሊ ተለጣጢ ግንድ ዘለዎ ኮይኑ ክፍሊ ኣፉ ዝጸበበ እዩ። ብዙሕ ግዜ ኣብ ልዕሊ ርስሓት ይርከብ።"
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum ንፍርቂ-ጫማታት ዝኣድን፣ ቅርጁ ከም ሳህኒ ዝኾነ ኣዳኒ እዩ። መርዛዊ ነጥብታት (ቶክሲሲስት) ይወቕዕ፤ ነቲ ዝበልዖ ሙሉእ ይውሕጦ — እኳ ካባኡ ዝዓበየ እንተኾነ።"
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum ኣዝዩ ነዊሕ፣ ቅርጁ ከም ቱቦ ዝኾነ ህዋስ እዩ። ብብዙሕ ዕጽፊ ብሓደ ክፋል ሰከንድ ይኩረፍ። ሲሊያኡ ብዝተጠውዩ መስመር ዝተሰርዑ እዮም።"
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum ሮዛዊ ሕብሪ ዘለዎ ሲሊያዊ ህዋስ እዩ። እቲ ሕብሪ ብሌፋሪዝሚን ንብርሃን ብቐሊሉ ይቕየር። ይጣሪ፤ ካብኡ ዝነኣሱ ህዋሳት እውን ክጋፍዕ ይኽእል።"
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella ብእግሪ ዝመስሉ ሲሪዳቱ ይጉዓዝ። ጸፍሒ እዩ፣ ብቕልጡፍ ኣንፈት ይቕይር። ካብ ገጽታ ባክቴሪያ ብምጭዋር ይእክብ።"
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata ኣብ ታሕቲ ማዕበል «ዝጎዪ» ሃይፖትሪኽ እዩ። ዓበይቲ ሲሪዳት፣ ግልጺ ኣፍ ኣለዎ። ንንኣንሽቲ ሲሊያውያን ዝበልዕ ኣዳኒ እዩ።"
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax ኣብነት ጂኖም እዩ፦ ክልተ ናይ ህዋስ ማእከላት፣ ውሁድ ምምሕዳር ዲ.ኤን.ኤ። ብሲሪዳቱ ይጉዓዝ፣ ባክቴሪያ ንኣንሽቲ ፕሮቲስታትን ይበልዕ።"
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila ሲሊያዊ ህዋስ ቤት-ፈተነ እዩ። ኣርባዕተ ክንፈኛታት ኣፍ ኣለዉዎ፣ ብቕልጡፍ ይምቀል። ኣብነት ንመጽናዕቲ ጫፍ-ክሮሞዞም ሲሊያን።"
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus ብካልሲየም ዝተሰርሑ ሳህናት ዝተሸፈነ፣ ሓረፍቲ ጫፋት ዘለዉዎ ሳህኒ-ቅርጂ ህዋስ እዩ። ደሪሱ ዝበልዕ ኮይኑ የድንውን እዩ — ነቶም ዝቖሰሉ ይነኽእ።"
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella ኣብ ነዊሕ ኣፍ (መንጋግ) መርዛዊ ነጥብታት ዘለዉዎ ጸፍሒ ኣዳኒ እዩ። ነቲ ዝበልዖ ብዘይ ምንቅስቓስ ይገብሮ እሞ ውሽጡ ወጻኢ የውጽኦ።"
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser መርዛዊ ነጥብታት ዘለዉዎ ነዊሕ ክሳድ ኣለዎ። ብክሳዱ ይወቕዕ፣ ድሕሪኡ ይውሕጦ። ኣብ ማእኸላይ ደረጃ ዝርከብ ዓቢ ኣዳኒ እዩ።"
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo ከም እሽከ ዝዘውር ህዋስ እዩ፦ ኣብ ማእኸላይ ክፍሉ ዘሎ ክቢ ሲሊያ ነቲ ህዋስ ኣብ ሓደ ቦታ ዘውድሮ። ባክቴሪያ ይጣሪ።"
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula መከፋፈሊ ዘለዋ ቅጥልቲ ንኣንሽቶ ደወሎች እያ። ሓደ ጋራ ዝኩረፍ ግንድ ንኹላተን ብሓደ ግዜ የንቀጥበን።"
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata ኣብ ቦትኡ ዝቕመጥ፣ ተለጣጢ ግንድ ዘይብሉ ፔሪትሪኽ እዩ። ሽፋን ንኣፉ ይሽፍኖ። ይጣሪ እምበር ባዕሉ ኣይንሳፈፍን።"
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus እቲ ፍሉጥ ኣሞባ እዩ። ዝዘርግሖም ክፍሊ ኣካላቱ ነቲ ዝበልዖ ይከብብዎ። ዝተጸብአ ቅርጂ የብሉን፣ ሲሊያ የብሉን።"
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris ድልዱል ጉምባ (ኮፍያ) ዘለዋ ጋሻ-ኣሞባ እያ። እቶም ዝዘርግሑዋ ክፍሊ ኣካላ ካብታ ክፍተት ወጻኢ ይወጹ። ኣብ ልዕሊ ተኽሊ ትንሽረትት።"
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga ካብ ንኣንሽቲ እምኒ ተጠርኒፉ፣ ባዕላ ኣሞባ ዝገጠመቶ ጋሻ ኣለዋ። ኣብ ጭቃ ትነብር።"
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata ብሳህናት ሲሊካ ዝተሰርሐ ጋሻ ኣለዎ። ኣዝዮም ቀጠንቲ ዝዘርግሕዎ ክፍሊ ኣካላት ኣለዉዎ። ንእሽቶ ኣዳኒ ባክቴሪያ እዩ።"
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris ካብ ዝሰረቐቶም ንኣንሽቲ ሳህናት ዝተሰርሐ፣ ቅርጁ ከም ጠርሙስ ዝኾነ ጋሻ ኣለዋ። ኣብ ማይ ደንን ጉድጓድ ሓመድን ትርከብ።"
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata ሓረፍቲ ጫፋት ዘለዉዋ ክቢት ጋሻ እያ። ክፍተታ ናብ ሓደ ገማ ዝዘንበለ እዩ። ኣብ ልዕሊ ርስሓት ትንሽረትት።"
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol ሄልዮዞዋን እዩ፦ ቀጠንቲ፣ ቀጥ ዝበሉ ክፍሊ ኣካላት ናብ ኩሉ ኣንፈት ይዘርግሕ። እቲ ዝበልዖ ኣብኦም ይጣበቕ እሞ ናብ ውሽጢ ይስሓብ።"
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni ዓቢ፣ ብዙሕ ማእኸል ዘለዎ ሄልዮዞዋን እዩ። ተመሳሳሊ ዝዘርግሕ ኣካላት፣ ኣዝዩ ዓቢ ህዋስ። ሲሊያውያን ሮቲፈራትን ይበልዕ።"
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida ብሳህናት ዝተሸፈነ ሄልዮዞዋን እዩ። ኣብቶም ዝዘርግሖም ክፍሊ ኣካላት ሲሊካ ዘለዎም እርካባት ሒዙ ይርከብ። ኣብ ፕላንክቶን ብምጽባይ ዘድኒ እዩ።"
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria ንደረት ዝጻወር ሮቲፈር እዩ። እቲ ኣብ ኣፉ ዘሎ ክቢ-ሲሊያ ምግቢ ናብ ኣፍ ብምዝዋር የእቱ። ሓቀኛ ብዙሕ-ህዋስ እንስሳ እዩ።"
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola ሮዛዊ ባዴሎይድ ሮቲፈር እዩ። ከም ደም-ዓራፊ ሓሰኻ ይንሽረት፣ ይንሳፈፍ እውን። ኣንስተይቲ ጥራይ እየን ዘለዋ፣ ተባዕትዮ የሎምን።"
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis ፕላንክቶናዊ፣ ብጋሻ ዝተሸፈነ ሮቲፈር እዩ። ኣብ ምርባሕ ዓሳ ንንኣሽቱ ዓሳ ምግቢ እዩ። ኣልጌ ባክቴሪያን ይጣሪ።"
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis ነዊሕ ሓሪፉ ክፍሊ ጋሻ ዘለዎ ሮቲፈር እዩ። እቲ ሓሪፉ ክፍሊ ካብ ኣደውቲ ይከላኸለሉ። ፍሉጥ ፕላንክቶን ማዕበል እዩ።"
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta ጋሻ ዘይብሉ፣ ቅርጁ ከም ቦርሳ ዝኾነ ኣዳኒ ሮቲፈር እዩ። ካልኦት ሮቲፈራትን ሲሊያውያንን ሙሉእ ብሙሉእ ይውሕጦም።"
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus ጋስትሮትሪክ እዩ። ብሳህናት ዝተሸፈነ ኮይኑ ኣብ ታሕቲ ማዕበል ይንሽረት። ባክቴሪያ ርስሓትን ይበልዕ።"
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata ተደራሪቦም ብሳህናት ዝተሸፈነት ንእሽቶ ጋስትሮትሪክ እያ። ኣብ ሓደ ቦታ ብቕልጡፍ ኣንፈት ትቕይር።"
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano ብማይክሮስኮፕ ዝርአ፣ ጸፍሒ ኣካል ዘለዎ ንእሽቶ እንስሳ እዩ። ሓቀኛ ጭዋዳታትን ዓይንን ኣለዉዎ። ንመጽናዕቲ እንደገና ኣካል ምህናጽ ኣብነት እዩ። ንኣንሽቲ ፕሮቲስታት ይጋፍዕ።"
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops ረጊሕ፣ ሲሊያ ተሸፋኒ ኣካሉ ዘለዎ ንእሽቶ እንስሳ እዩ። ኣካሉ ተቘራጺጡ ሰንሰለት ወለዶ-ክፍልታት ይፈጥር። ናይ ርስሓት ንኣንሽቲ እንስሳትን ኣዳኒ እዩ።"
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare ጸፍሒ ኣካል ዘለዎ እንስሳ ኮይኑ ሃይድራ ይበልዕ፤ እቶም ዘውቅዑ ህዋሳት ናብ ቆዳኡ የሰክሖም። ሰንሰለት ወለዶ-ክፍልታት ኣለዎ።"
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense ኣብ ጽሩይ ማይ ዝነብር ነዊሕ-ኣካል እንስሳ እዩ። ነዊሕ መንጋጉ ናብቲ ዝበልዖ ብቕጽበት ይንደቕ። ሳሕን ዝርከብ ዓቢ ናይ ታሕቲ ማዕበል ኣዳኒ እዩ።"
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens ፕላኮዞዋን — ካብቶም ዝቐለሉ እንስሳታት ሓደ — እዩ። ከም ጸፍሒ ሽፋን ይንሽረት፣ ምግቡ ድማ ኣብ ደገ ኣካሉ እዩ ዝበልዕ። ኣፍ የብሉን።"
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae እቲ ንዳቦ ምፍላሕ ዝገብር ንእሽቶ ጠንጢን እዩ። ብንኣንሽቲ ጨንፈር-ህዋሳት ብምውጻእ ይባዛሕ፣ ሽኮር ይበልዕ፣ ካርቦን ዳይኦክሳይድ ኣልኮልን የውጽእ። ኣብ ማዕበል ነቲ ኣብ ማይ ዝመኸኸ ኦርጋናዊ ነገር የጽርዮ።"
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans ከም ነዋሕቲ ሰንሰለታት ክዓቢ ዝኽእል ጠንጢን እዩ። ዕድመ ምስ ረኸበ ንሰብ ሕማም ዘምጽእ እዩ። ኣብ ጨዋታ ናይ ርስሓት ጠንጢን እዩ።"
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo ጠንጢን ዳቦ እዩ። ኣብ ግንድኦም ዝቕመጡ ዘርኢ-ኩዕሶታት ኣለዉዎ፣ ኣብ ልዕሊ ዝሞተ ነገር ድማ ብቕልጡፍ ይዓቢ። ንህያዋት ኣይበልዕን እዩ።"
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer ጸሊም ጠንጢን ዳቦ እዩ። ተንሸራተቲ ግንዳቱን ሱሩን ኣብቲ ዝዓቢሉ ገጽ ይዘርግሕ። ስታርች ይበታትን።"
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum ከም ብሩሽ ዝመስል ጠንጢን ኮይኑ ምንጪ ፔንሲሊን እዩ። ብሩሽ ዝመስሉ ዘርኢ-ክፍልታት ኣለዉዎ። ኦርጋናዊ ነገር ይበታትን፣ ኣብ ጥቓኡ ዘለዉ ባክቴሪያውን ይገትት።"
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger ጸሊም ጠንጢን (ኣስፐርጊለስ) እዩ። ኩዕሶ ዝመስሉ ርእሰ-ዘርኢ ኣለዉዎ። ኣብ ኢንዱስትሪ ንኣሲድ ሊሙን ኣፍሪ እዩ፤ ዝሞተ ነገር ዝበልዕ እዩ።"
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis ንእንስሳ ማይን ሓመድን ዝልፍፍ ኪትሪድ (ጠንጢን ማይ) እዩ። ዘርኢ-ህዋሳቱ ሓደ ፍላጀላ ኣለዎም። ኣብ ማዕበል ኣብነት ጠንጢን ማይ የገልግል።"
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus ኣብ ኣበባ-ዘርኢ ኣልጌን ዝዓቢ ኪትሪድ (ጠንጢን ማይ) እዩ። ወርቃዊ ርእሰ-ዘርኢ ኣለዉዎ፤ እቶም ዘርኢ-ህዋሳት ናብቲ ዝዓብሉ ገጽ ይንሳፈፉ።"
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus ሓቀኛ ሱር-ጠንጢን ዘለዎ ጠንጢን ማይ እዩ። ወለዶ ክልተ-ክሮሞዞም ሓደ-ክሮሞዞም ብተራ ይካኣኣሉ። እቶም ዘርኢ-ህዋሳት ድሕረዋይ ፍላጀላ ኣለዎም።"
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis ናይ ሓመድ ነዊሕ-ቅርጂ ባክቴሪያ እዩ። ዘርኡ (ስፖራቱ) ኣብ ዝፈልሕ ማይ እውን ይድሕኑ። ፕሮቶን ይበታትን፣ ኣብነት ግራም-ኣዎንታዊ ባክቴሪያ እዩ።"
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida ንጽህና ዘምጽእ ነዊሕ-ቅርጂ ባክቴሪያ እዩ። ናይ ነዳጅ ፍርያት እውን ይበልዕ። ብፍላጀላ ይንቀሳቐስ፣ ኣብ ልዕሊ ርስሓት ብቕልጡፍ ይዓቢ።"
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor ናይ ሓመድ፣ ነዋሕቲ ሰንሰለት ዘለዉዎ ባክቴሪያ እዩ። መዓዛ ሓመድ (ጀኦዝሚን) ብዙሓት መድሃኒታት ጸረ-ባክቴሪያን ይሰርሕ። ኣብ ሰንሰለታዊ ሱሩ ዘርኢ ኣለዎ።"
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi ሴሉሎዝ (ጽንተ-ነገር ተኽሊ) ይበታትን። ኣብ ልዕሊ ርስሓት ተኽሊ ዝርከብ ቢጫ ነዊሕ-ቅርጂ ባክቴሪያ እዩ። ብዘይኡ እቶም ዝሞቱ ኣልጌ ንዝያዳ ግዜ ምጸንሑ ነበሩ።"
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus ካብ ሙቐት ዘለዎም ማይ-ምንጽታት ዝመጸ ሙቐት-ጻዋሪ ባክቴሪያ እዩ። ታክ-ፖሊመራዝ መሰረት ፒ.ሲ.ኣር እዩ። ኣብ ዝሑል ማዕበል ግን ብዘይ ምንቅስቓስ ይጸንሕ።"
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans ጀጋንነ ጨረር እዩ። እቲ ዝተሰባበረ ጂኖሙ ኣብ ውሽጢ ሰዓታት እንደገና የሰርዖ። ወፍራ ግድግዳ ኣለዎ፣ ህዋሳቱውን ኣርባዕተ-ኣድ ይኾኑ።"
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "ጾታዊ ዩካርዮት ኣብነት መምሃሪ ንብጾታ ዝካየድ ምብዛሕ እዩ። ክልተ ጾታ፣ ምዋሃድ ዘርኢ-ህዋሳት፣ ዘይኮነ ቀሊል ክልተ-ምክፋል።"
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 ንE. coli ዝልፍፍ ዓቢ ባክቴሪዮፋጅ (ማዮቫይረስ) እዩ። ጭራኡ ይጸባብቕ እሞ ዲ.ኤን.ኤ ናብ ውሽጢ የእቱ። ኣብ ፍርቂ ሰዓት እቲ ህዋስ ይፈነዳ፣ ብዙሓት ፋጃት ድማ ወጻኢ ይወጹ።"
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda ምስ ባክቴሪያ ተሰማሚዑ ዝነብር ፋጅ እዩ። ናብ ክሮሞዞም ኣትዩ ክደክስ (ላይሶጀኒ) ወይ ነቲ ህዋስ በቲኽኩ ክበታትኖ (ላይሲስ) ይኽእል።"
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 ሓጺር ጭራ ዘለዎ ኮይኑ ብኣዝዩ ቅልጡፍ ይባዛሕ። ኣብ ሳይንስ ሰብ-ሰርሖ ህዋሳት ዝተወደደ ስርዓት እዩ።"
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 ብቅባቈ (ሊፒድ) ሽፋን ዝተሸፈነ፣ ጂኖሙ ኣር.ኤን.ኤ ዝኾነ ፋጅ እዩ። ንPseudomonas ይልፍፍ። ንፋጅ ዘይስለዎ ዓይነት ሽፋን እዩ።"
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 ጭራ ዘይብሉ ንእሽቶ ኣር.ኤን.ኤ ፋጅ እዩ። ምስ ንኣንሽቲ ጸጉሪ (ፒሊ) ተባዕታይ E. coli ይተኣሳሰር። ጂኖሙ ካብቶም ቀዳሞት ዝተንበቡ ኣር.ኤን.ኤ ጂኖማት ሓደ እዩ።"
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "ኣብ ጨዋታ ዝርከብ ሓሰተኛ ናይ ነርባት ፓራሲት እዩ። ኣብ ዩካርዮታት ተጣቢቡ ናይቲ ዝሓዎ ባህሪ ይበላሽዎ፣ እቲ ዝሓዎውን ኣመሓላላፊ ክሳብ ዝኸውን።"
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "ጾታዊ ዩካርዮት ኣብነት መምሃሪ ንብጾታ ዝካየድ ምብዛሕ እዩ። ክልተ ጾታ፣ ምዋሃድ ዘርኢ-ህዋሳት፣ ዘይኮነ ቀሊል ክልተ-ምክፋል።"
   }
 }

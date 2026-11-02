@@ -1,0 +1,9 @@
+Языков: 100/100 · всего проблем: 8
+  dict missing: 1
+  dict empty: 1
+  dict плейсхолдер: 1
+  dict длина: 1
+  dict sameAsEn: 1
+  wiki missing/empty: 2
+  wiki sameAsEn: 1
+NEG: OK — все 7 категорий найдены

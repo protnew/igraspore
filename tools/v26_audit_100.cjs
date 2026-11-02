@@ -2,7 +2,7 @@
 // Категории (7): dict missing / dict empty / dict плейсхолдер / dict длина / dict sameAsEn / wiki missing-или-empty / wiki sameAsEn.
 // sameAsEn исключает: разрешённые когнаты (i18n_identity.allow.json), INLINE_FALLBACK у замороженных es/tr/fil (D11).
 // Без NEG: exit 1 если есть проблемы (сейчас — падает на 24161 en-копиях словарей и 7480 wiki).
-// NEG=1: 7 дефектов в памяти на ar — все 7 категорий должны быть найдены, иначе exit 1.
+// NEG=1: 8 дефектов на памяти на ar (по одному на каждую из 7 категорий) — все 7 категорий должны быть найдены, иначе exit 1.
 // Usage: node tools/v26_audit_100.cjs   |  NEG=1 node tools/v26_audit_100.cjs
 const fs = require('fs'), path = require('path');
 const ROOT = process.cwd();
@@ -38,6 +38,7 @@ const negPatch = (d, w, lang) => {
   d['demo'] = en['demo'];                                     // 5: dict sameAsEn
   delete w['0'];                                              // 6: wiki missing
   w['1'] = { body: '' };                                      // 7: wiki empty (входит в wiki missing-или-empty)
+  w['2'] = wikiBody(enWiki['2']);                              // 8: wiki sameAsEn
 };
 
 const probs = { 'dict missing': [], 'dict empty': [], 'dict плейсхолдер': [], 'dict длина': [], 'dict sameAsEn': [], 'wiki missing/empty': [], 'wiki sameAsEn': [] };
@@ -76,7 +77,7 @@ fs.writeFileSync(LOG, JSON.stringify({ at: new Date().toLocaleString('sv-SE', { 
 console.log('Языков: ' + langsChecked + '/' + L.length + ' · всего проблем: ' + total);
 for (const c in counts) console.log('  ' + c + ': ' + counts[c]);
 if (NEG) {
-  const need = ['dict missing', 'dict empty', 'dict плейсхолдер', 'dict длина', 'dict sameAsEn', 'wiki missing/empty'];
+  const need = Object.keys(probs);
   const ok7 = need.every(c => counts[c] > 0);
   console.log(ok7 ? 'NEG: OK — все 7 категорий найдены' : 'NEG: ПРОВАЛ — ' + need.filter(c => !counts[c]).join(', '));
   process.exit(ok7 ? 0 : 1);

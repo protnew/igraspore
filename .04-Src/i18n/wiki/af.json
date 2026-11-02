@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis is 'n sianobakterium sonder kern. Dit leef van lig: suurstofproduserende fotosintese op membrane, geen chloroplaste nie. 'n Laboratoriummodel vir waterstofmetabolisme."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis is 'n filament. Sommige selle word heterociste en bind stikstof terwyl bure suiker maak. In die dam verskaf dit gebonde stikstof."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) is 'n spiraal van selle met gasblasies. Dit hang naby die oppervlak, fotosintetiseer, en is eetbaar. In die spel is dit 'n groot groen skroef aan die waterfilm."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme is 'n kraleryg in 'n slymkapsule. Dit leef vry of in simbiose met plante. Die kolonie lyk soos 'n bondeltjie groen krale."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica is 'n glydende filament. Dit swaai heen en weer en kan fotosintetiseer sonder om suurstof vry te stel. Tipies vir slik en die oppervlakfilm."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa is 'n slymkolonie, dikwels giftig (mikrocistien). Dit veroorsaak algebloei. In die spel is dit 'n groen koloniebol, 'n riskante prooi."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa is gepaarde selle in gekleurde skedes. Dit leef op rotse en in grond en verdra UV-strale. In die dam is dit klein gepaarde kokke in 'n omhulsel."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula is 'n dik sianobakteriese filament. Dit kan irritante gifstowwe vrystel. Dit vorm matte naby warm oewers."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii is 'n groen sel met twee sweephare en 'n oogvlek. Dit swem na lig. 'n Klassieke genetikamodel vir alge."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris is 'n onbeweeglike groen bolletjie. Dit deel vinnig en is ryk aan proteïen. Voedsel vir klein eters en 'n ruimtevoedsel-onderwerp."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator is 'n hol sfeer van duisende selle. Dogterkolonies ryp binne-in en verlaat dit. In die spel is dit 'n groot groen kolonie."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis is 'n mixotroof: chloroplaste plus die vermoë om te eet. 'n Rooi oogvlek volg lig. Groen bedags; in die donker skakel dit oor na voedsel."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda is gewoonlik vier selle in 'n ry met stekels aan die punte. Stekels maak sluk moeiliker. Dit swem nie — dit dryf."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis is 'n groen beweeglike sel; onder stres word dit rooi (astaksantien) en groei 'n dik wand. Rooi siste oorleef droogte."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina het geen stywe wand nie en leef in baie sout water. Dit stoor beta-karoteen en lyk oranje. Twee sweephare."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata is 'n plat ster-dedesmid. Twee gespieëlde helftes met diep inkepinge. Onbeweeglik; fotosintetiseer in suur moeraswater."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula is 'n bootvormige diatomee met 'n silika-klep. Dit gly oor die substraat langs 'n raphe-spleet. Die dop bly ná die dood oor."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis is 'n groot pennate diatomee. Silikadop met 'n simmetriese patroon. Dit gly stadig op die bodem."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana is 'n ronde sentriese diatomee. Dit dryf as 'n skyf; die dop is twee deksels. Tipiese plankton."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare is 'n diatomee wat in 'n sigzag aanmekaar kleef. Die kolonie verhoog weerstand in die waterkolom."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum is 'n pers spiraal. Anoksiese fotosintese plus organiese stowwe. Die rooi kleur kom van bakteriochlorofil."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum is 'n pers swawelbakterium. Dit oksideer waterstofsulfied en stoor swawelkorrels. Leef aan die suurstof/swawelgrens."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum is 'n eensellige rooi alge. Fikoëritrien gee 'n bloedrooi kleur. Slykomhulsel, geen sweephare nie."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus is die kleinste en volopste fotosintetiese sel op aarde. In die 1980's ontdek. Dit voed die oseaan."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis is 'n ekstremofiel: woestyn, rots, straling. 'n Kandidaat vir lewe buite die aarde. In die dam is dit 'n stadige kokke-kolonie."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus is 'n piepklein bakteriële roofdier. Dit skroef in 'n ander sel in en vermenigvuldig tot die gasheer bars."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus sit van buite op prooi en suig die inhoud uit sonder om in te gaan. 'n Bakteriële vampier."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter gaan 'n prooibakterium binne en eet dit van binne. 'n Seldsame intrasellulêre jagter."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus is 'n sosiale bakterium. In 'n trop omsirkel dit prooi en stel ensieme vry. By honger vorm dit 'n vrugliggaam."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii is 'n see-verwant van Bdellovibrio. Dit val gram-negatiewes aan en leef in die periplasma van die prooi."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax is 'n soutverdraende bakteriële jagter. Selfde truuk: deurboor die wand en groei binne."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii is nog 'n BALO-roofdier. 'n Vinnige kommvormige flagellaat wat groot stawe teiken."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula is 'n klein heterotrofe flagellaat. Dit gryp bakterieë aan die detritusoppervlak."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo is 'n druppelvormige flagellaat. Een sweephaar; dit jag in 'n bakterie-film."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans is 'n kolonie op 'n yster-mangaan-stingel. Selle sit in 'n pluis en vang bakterieë."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium is 'n kleurlose kriptofiet. Twee sweephare; dit eet opgeloste organiese stowwe en klein bakterieë, geen chloroplaste nie."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda is 'n amoeboflagellaat met 'n lang stert. Dit kruip en sluk bakterieë met skynpote."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa is 'n grondflagellaat. Twee sweephare van verskillende lengte; 'n hoof-bakterie-eter in grond."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans is 'n kinetoplastied. Dit 'dans' ter plaatse, vasgeheg deur die agterste sweephaar, en gryp bakterieë."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini is 'n Bodo-verwant. Dit swem vrylik en slaan prooi met die voorste sweephaar."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei is 'n bloedparasiet wat slaapsiekte veroorsaak. Golwend membraan en een sweephaar. In die dam is dit 'n model van 'n slanke jagter."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani is 'n intrasellulêre menslike parasiet. Met sweephaar in die insek, sonder sweephaar binne 'n makrofaag."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis is 'n choanoflagellaat, 'n verwant van diere. 'n Mikrovilli-kraag filtreer bakterieë."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta is 'n sessiele choanoflagellaat in 'n lorica. Dit kan 'n roset vorm. Dit filtreer 'n waterstroom."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis is 'n choanoflagellaat-kolonie op 'n gedeelde stingel. Verskeie filters op een sting."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum is die klassieke pantoffeldiertjie. Duisende trilhare, 'n mondgleuf, saamtrekkende vakuole. Dit filtreer bakterieë."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria is 'n pantoffeldiertjie met soöchlorella-simbionte. Groen van binne: suiker van alge bedags, filtreer snags."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus is 'n blou trompet tot 'n millimeter. Dit sper in 'n tregter oop en dryf 'n stroom met trilhare aan. Dit kan swem of sit."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus is 'n verwant van die blou stentor, dikwels met soöchlorellae. Vorm skuif van trompet na bal."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula is 'n klok op 'n saamtrekkende stingel. Die stingel rol dadelik in 'n spiraal. Die sel self swem nie weg nie."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma is 'n klein klok. Selfde veerstingel, 'n nouer mondveld. Dikwels op detritus."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum is 'n vaatjievormige jagter van pantoffeldiertjies. Dit skiet toksiste af en sluk prooi heel, selfs as die prooi groter is."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum is 'n baie lange sigaar. Dit trek in 'n fraksie van 'n sekonde etlike kere saam. Trilhare loop in 'n spiraal."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum is 'n pienk trilhaardiertjie. Blepharismin-pigment is liggevoelig. Dit filtreer en kan kleiner selle aanval."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella loop op cirri soos op pote. Platterige lyf, vinnige draaie. Dit skraap bakterieë van oppervlakke af."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata is 'n hipotrig wat op die bodem 'hardloop'. Groot cirri, 'n duidelike mond. Roofdier van klein trilhaardiertjies."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax is 'n genoommodel: twee kerne en komplekse DNA-herskrywing. Dit loop op cirri en eet bakterieë en klein protiste."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila is 'n laboratorium-trilhaardiertjie. Vier mondmembranelle, vinnige deling. Model vir telomere en trilhare."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus is 'n vaatjie in kalkplaatjies met stekels. Aaseter en roofdier: dit byt in gewondes."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella is 'n plat roofdier met toksiste in 'n 'slurf'. Dit verlam prooi en suig dit uit."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser het 'n lang nek met giftige extrusome. Dit slaan met die nek, dan sluk dit. 'n Groot middelvlak-jagter."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo is 'n tol: 'n ewenaar-band van trilhare spin die sel ter plaatse rond. Dit filtreer bakterieë."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula is 'n vertakte kolonie van klokke. 'n Gedeelde saamtrekkende stingel ruk die hele boom gelyktydig."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata is 'n sessiele peritrich sonder veerstingel. 'n Deksel bedek die mond. Dit filtreer en swem nie weg nie."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus is die klassieke amoebe. Skynpote vloei om prooi. Geen vaste vorm, geen trilhare nie."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris is 'n dopdraende amoebe met 'n stewige koepel. Skynpote kom uit die opening. Dit kruip op plante."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga het 'n dop van sandkorrels wat die amoebe self vaslym. Dit leef in slik."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata het 'n dop van silikaskubbels. Dun draadagtige skynpote. 'n Klein bakteriële roofdier."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris het 'n bottelvormige dop gebou uit gesteelde skubbels. Bos- en moeraswater."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata is 'n skyfvormige dop met stekels. Die opening is verskuif. Dit kruip op detritus."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol is 'n heliozoön: dun aksoponde straal oral uit. Prooi kleef aan die strale en word ingetrek."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni is 'n groot meerkernige heliozoön. Selfde strale, baie groter sel. Dit eet trilhaardiertjies en raderdiertjies."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida is 'n heliozoön in skubbels. Strale dra silikanaalde. 'n Lê-en-wag planktonjagter."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria is 'n raderdiertjie wat uitdroging oorleef. 'n Kroon wiel voedsel in die mond in. 'n Regte meersellige dier."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola is 'n pienk bdelloïde raderdiertjie. Dit kruip soos 'n bloedsuier en swem ook. Slegs wyfies; geen mannetjies nie."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis is 'n planktoniese lorica-draende raderdiertjie. Broeivoer in akwakultuur. Dit filtreer alge en bakterieë."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis is 'n raderdiertjie met 'n lange lorica-stekel. Die stekel keer roofdiere af. Gewone damplankton."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta is 'n sak sonder lorica, 'n roofsugtige raderdiertjie. Dit sluk ander raderdiertjies en trilhaardiertjies heel."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus is 'n gastrotrich. Met skubbels bedek, kruip dit op die bodem. Dit eet bakterieë en detritus."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata is 'n klein gastrotrich in oorvleuelende skubbels. Baie vinnige draaie ter plaatse."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano is 'n mikroskopiese platwurm. Regte spiere en oë. 'n Regenerasiemodel. Dit jag klein protiste."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops is 'n dun trilhaarwurm. Dit deel dwars in 'n ketting zoïede. Eter van detritus en klein diertjies."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare is 'n platwurm wat hidra eet en hul steekselle in sy eie vel inbou. 'n Ketting zoïede."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense is 'n varswater-nemertien. 'n Lang slurf skiet op prooi. 'n Seldsame groot bodemjagter."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens is 'n plakosoön, onder die eenvoudigste diere. Dit kruip as 'n plaat en vertery voedsel buite. Geen mond nie."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae is bakkersgis. Dit bot, eet suiker, stel CO2 en alkohol vry. In die dam skoon dit opgeloste organiese stowwe op."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans is 'n gis wat as filamente kan groei. 'n Opportunistiese menslike patogeen. In die spel is dit 'n detritusswam."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo is broodskimmel. Sporangia op stingels, vinnige groei oor die dooies. Dit jag nie die lewendes nie."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer is swart broodskimmel. Stolone en risoïede versprei oor die substraat. Dit breek stysel af."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum is 'n borselskimmel, die bron van penisillien. Konidiale borsels. Dit ontbind organiese stowwe en onderdruk nabygeleë bakterieë."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger is swart aspergillus. Bolvormige sporekoppe. Nywerheidsprodusent van sitroensuur. 'n Saprofiet."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis is 'n chitrid van paddas. Soöspore met een sweephaar. In die dam is dit 'n waterswam-model."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus is 'n waterchitrid op stuifmeel en alge. Goue sporangia; soöspore swem na die substraat."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus is 'n waterswam met egte miselium. Dit wissel diploïed en haploïed af. Soöspore het 'n agterste sweephaar."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis is 'n grondstaaf. Spore oorleef kook. Dit breek proteïen af; 'n gram-positiewe model."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida is 'n skoonmaakstaaf. Dit eet selfs petroleumprodukte. Beweeglike sweephaar, vinnige groei op detritus."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor is 'n filamentiese grondbakterium. Dit maak die reuk van aarde (geosmien) en baie antibiotika. Spore op hifes."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi breek sellulose af. 'n Geel staaf op plantdetritus. Sonder dit sou dooie alge langer bly rondlê."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus is 'n termofiel uit warm bronne. Taq-polymerase is die basis van PCR. In 'n koue dam is dit byna dormant."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans is die stralingskampioen. Dit herstel 'n verskeurde genoom binne ure. Dik wand, seltetrades."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Seksuele eukarioot is 'n onderrigmodel van seksuele voortplanting. Twee geslagte, gametefusie, nie net eenvoudige tweedeling nie."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 is 'n groot myovirus van E. coli. Die stert trek saam en spuit DNA in. Oor 'n halfuur bars die sel en dosyne fae kom uit."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda is 'n gematigde faag. Dit kan in die chromosoom invoeg en slaap (lisogenie) of die sel dadelik laat bars (lise)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 het 'n kort stert en baie vinnige replikasie. 'n Gunsteling stelsel in sintetiese biologie."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 is 'n RNA-faag met 'n lipidomhulsel. Dit besmet Pseudomonas. 'n Seldsame membraan vir 'n faag."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 is 'n piepklein stertlose RNA-faag. Dit bind manlike E. coli-pili. Sy genoom was een van die eerste RNA-genome wat gelees is."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "'n Fiktiewe dam-neuroparasiet. Dit heg aan eukariote en breek gasheergedrag af totdat die gasheer 'n draer word."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Seksuele eukarioot is 'n onderrigmodel van seksuele voortplanting. Twee geslagte, gametefusie, nie net eenvoudige tweedeling nie."
   }
 }

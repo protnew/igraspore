@@ -15,7 +15,7 @@ const enWiki = JSON.parse(fs.readFileSync(path.join(WIKI, 'en.json'), 'utf8'));
 let dictDone = [], wikiDone = [], skipped = [];
 if (!fs.existsSync(DATA)) fs.mkdirSync(DATA, { recursive: true });
 for (const f of fs.readdirSync(DATA)) {
-  const m = f.match(/^([a-zA-Z-]+)\.(dict|wiki)\.json$/);
+  const m = f.match(/^([a-zA-Z][a-zA-Z0-9-]*)\.(dict|wiki)\.json$/); // v26 fix: es-419 и др. коды с цифрами
   if (!m) continue;
   const [, lang, kind] = m;
   const data = JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8'));

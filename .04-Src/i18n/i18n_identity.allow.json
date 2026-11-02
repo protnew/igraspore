@@ -7942,6 +7942,15 @@
    ],
    "category": "cognate",
    "reason": "mi: когнат/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.a",
+   "value": "A",
+   "langs": [
+    "es-419"
+   ],
+   "category": "abbr",
+   "reason": "es-419: HUD-аббревиатура Age/Energy/Size — латиница норма"
   }
  ],
  "x.e": [
@@ -8499,6 +8508,15 @@
    ],
    "category": "cognate",
    "reason": "mi: когнат/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.e",
+   "value": "E",
+   "langs": [
+    "es-419"
+   ],
+   "category": "abbr",
+   "reason": "es-419: HUD-аббревиатура Age/Energy/Size — латиница норма"
   }
  ],
  "fps": [
@@ -14258,6 +14276,15 @@
    ],
    "category": "cognate",
    "reason": "mi: когнат/бренд/звезда — пишется так же"
+  },
+  {
+   "key": "x.s",
+   "value": "S",
+   "langs": [
+    "es-419"
+   ],
+   "category": "abbr",
+   "reason": "es-419: HUD-аббревиатура Age/Energy/Size — латиница норма"
   }
  ],
  "legend": [

@@ -141,7 +141,7 @@ function updateMenuTexts(){
     // v21 (критик 3) → v24 A3: число видов через igsNum (система цифр из реестра digits — bn ১০১, ar 101 и т.д.)
     if(el){
       var _n = (typeof SPECIES_DB!=='undefined' && SPECIES_DB.length) ? SPECIES_DB.length : 100;
-      el.innerHTML = tt('menuSub').replace(/\b100\b|১০০/, (typeof igsNum==='function') ? igsNum(_n) : String(_n));
+      el.innerHTML = (typeof ttn==='function' ? ttn('menuSub', _n) : tt('menuSub')).replace(/\b100\b|১০০/, (typeof igsNum==='function') ? igsNum(_n) : String(_n));
     }
     if(typeof renderPoolBanner==='function') renderPoolBanner();
   })();

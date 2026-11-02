@@ -82,7 +82,8 @@ const fontLine = "var __IGS_FONTS = " + JSON.stringify(FONTMAP) + "; // GEN:A1\n
 
 // 3. i18n_hud.js: langNames — только enabled (без лишних zh/ar/pt)
 const ln = 'window.langNames = {\n  ' + ON.map(l => q(l.code) + ': ' + q(l.native)).join(',\n  ') + '\n}; // GEN:A1 (реестр languages.json)';
-replaceLine('.04-Src/js/i18n_hud.js', /window\.langNames = \{[\s\S]*?\};/, ln);
+// v26: матчим и хвостовой комментарий прошлых прогонов — без этого каждый запуск добавлял ещё один «// GEN:A1»
+replaceLine('.04-Src/js/i18n_hud.js', /window\.langNames = \{[\s\S]*?\};[^\n]*/, ln);
 
 // 4. fonts.generated.css: @font-face для font!=system (файл .04-Src/fonts/NotoSans<Script>-Regular.woff2)
 const SCRIPT_RANGE = { deva: 'U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20B9', beng: 'U+0980-09FE,U+0964-0965,U+200C-200D', thai: 'U+0E01-0E5B,U+200C-200D' };
@@ -93,10 +94,13 @@ for (const l of ON) {
   const file = FILE_BY_FACE[l.font];
   if (!file) { console.error('нет файла для face ' + l.font + ' (' + l.code + ') — добавь в FILE_BY_FACE'); return; }
   if (!fs.existsSync(path.join(ROOT, '.04-Src/fonts', file))) { console.error('шрифт не найден: ' + file + ' (' + l.code + ')'); continue; }
-  css += '@font-face{font-family:"' + l.font + '";src:url("04-Src/fonts/' + file + '") format("woff2");font-weight:400;font-style:normal;font-display:swap' +
+  css += '@font-face{font-family:"' + l.font + '";src:url("fonts/' + file + '") format("woff2");font-weight:400;font-style:normal;font-display:swap' +
     (SCRIPT_RANGE[l.script.split('/')[0]] ? ';unicode-range:' + SCRIPT_RANGE[l.script.split('/')[0]] : '') + '}\n';
 }
 fs.writeFileSync(path.join(ROOT, '.04-Src/fonts.generated.css'), css);
+// v26 Д9: index.html лежит в корне и зовёт «04-Src/fonts.generated.css» (реальный лэйаут webDir/AppImage),
+// а генератор писал только каноническую копию в .04-Src → @font-face не загружались нигде. Пишем обе.
+fs.writeFileSync(path.join(ROOT, '04-Src/fonts.generated.css'), css);
 
 // 5. locales_config.xml — только enabled (BCP-47 коды как в реестре)
 const xml = '<?xml version="1.0" encoding="utf-8"?>\n<!-- GEN:A1 — только enabled из languages.json -->\n<locale-config xmlns:android="http://schemas.android.com/apk/res/android">\n' +

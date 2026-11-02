@@ -22,3 +22,13 @@ foreach ($dest in $dests) {
   }
 }
 Write-Output 'FONT SHA OK'
+# v26 Д9: вместе с woff2 раскладываем и сгенерированный из реестра @font-face — без него ссылка
+# «04-Src/fonts.generated.css» в index.html вела в никуда (в url внутри css пути относительные: fonts/…).
+$css = Join-Path $root '.04-Src\fonts.generated.css'
+if (Test-Path $css) {
+  foreach ($dest in $dests) {
+    $dir = Split-Path $dest -Parent
+    Copy-Item -LiteralPath $css -Destination (Join-Path $dir 'fonts.generated.css') -Force
+  }
+  Write-Output ('fonts.generated.css разложен в ' + ($dests | ForEach-Object { Split-Path $_ -Parent }) -join ', ')
+} else { Write-Output 'НЕТ .04-Src\fonts.generated.css — запусти node tools/gen_lang_registry.cjs' }

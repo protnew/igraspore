@@ -9,6 +9,8 @@ Copy-Item "$root\.04-Src\js\*.js" "$pub\04-Src\js\" -Force
 Copy-Item "$root\.04-Src\i18n\*.json" "$pub\i18n\" -Force
 if (Test-Path "$root\.04-Src\i18n\wiki") { New-Item -ItemType Directory -Force -Path "$pub\i18n\wiki" | Out-Null; Copy-Item "$root\.04-Src\i18n\wiki\*.json" "$pub\i18n\wiki\" -Force }
 if (Test-Path "$root\.04-Src\fonts") { Copy-Item "$root\.04-Src\fonts\*" "$pub\04-Src\fonts\" -Force }
+# v26 Д9: сгенерированный из реестра @font-face без этого шага в APK не попадал (ссылка в index.html вела в никуда)
+if (Test-Path "$root\.04-Src\fonts.generated.css") { Copy-Item "$root\.04-Src\fonts.generated.css" "$pub\04-Src\fonts.generated.css" -Force }
 Copy-Item "$root\index.html" "$pub\index.html" -Force
 Copy-Item "$root\style.css" "$pub\style.css" -Force
 Copy-Item "$root\v20_5.css" "$pub\v20_5.css" -Force

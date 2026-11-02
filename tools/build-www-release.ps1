@@ -32,6 +32,9 @@ Get-ChildItem -LiteralPath $srcJs -Filter '*.js' -File | ForEach-Object {
   Copy-Item -LiteralPath $_.FullName -Destination (Join-Path (Join-Path $dst '04-Src\js') $_.Name)
 }
 $fonts = Join-Path $root '04-Src\fonts'
+# v26 Д9: @font-face из реестра — файл кладём РЯДОМ с fonts\ (в url внутри css пути относительные: fonts/…)
+$genCss = Join-Path $root '04-Src\fonts.generated.css'
+if (Test-Path $genCss) { Copy-Item -LiteralPath $genCss -Destination (Join-Path $dst '04-Src\fonts.generated.css') -Force }
 if (-not (Test-Path $fonts)) { $fonts = Join-Path $srcPub '04-Src\fonts' }
 if (Test-Path $fonts) {
   Get-ChildItem -LiteralPath $fonts -File | ForEach-Object {

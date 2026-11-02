@@ -30,6 +30,6 @@ window.langNames = {
   'zh-TW': '繁體中文',
   'ms': 'Bahasa Melayu',
   'bn': 'বাংলা'
-}; // GEN:A1 (реестр languages.json) // GEN:A1 (реестр languages.json) // GEN:A1 (реестр languages.json) // GEN:A1 (реестр languages.json) // GEN:A1 (реестр languages.json) // GEN:A1 (реестр languages.json) // GEN:A1 (реестр languages.json)
+}; // GEN:A1 (реестр languages.json)
 
 if(typeof T!=='undefined'){ if(T.ru)T.ru['x.scaleBar']='Масштаб: 100 мкм'; if(T.en)T.en['x.scaleBar']='Scale: 100 µm'; }

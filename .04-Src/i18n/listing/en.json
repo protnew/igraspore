@@ -1,0 +1,15 @@
+{
+  "title": "iGraSpore: Microbes",
+  "shortDescription": "A pond in cross-section: eat, divide, hide in a spore.",
+  "fullDescription": "iGraSpore is a game about one cell in a pond. You eat, divide, and form a spore when it is dangerous. About one hundred species live around you: greens, bacteria, ciliates, and cleaners.\n\nThe bottom bar has four buttons: eat, split, spore, auto. Everything else sits in the pause menu. If you cannot split yet, the button tells you why: energy, mass, or wait time.\n\nThere are no ads. No account is needed. We do not collect player data.\n\nThis is an educational model of a food chain, not a textbook. Latin species names stay in Latin, such as Paramecium caudatum and Chlorella vulgaris.\n\nThe game runs in your browser. It works on phones, tablets, and computers. Touch or click to control the cell. The simulation runs in real time. You can pause at any moment.\n\nThe pond has several zones. Near the surface there is more light and oxygen. Deeper down it is darker and cooler. Different organisms prefer different zones. Greens need light for photosynthesis. Bacteria thrive in organic matter. Ciliates hunt bacteria. Cleaners break down dead material.\n\nYou start as a small cell. You eat and grow. When you have enough mass and energy, you can divide. Division creates two cells. You control one. The other becomes independent. It may join you or go its own way.\n\nWhen danger approaches, you can form a spore. A spore is a protective shell. Inside it, you wait until conditions improve. Then you emerge and continue.\n\nThe simulation tracks many variables: temperature, light, oxygen, nutrients, population of each species. Changes in one affect the others. If bacteria multiply too fast, they consume all the oxygen. If greens die off, oxygen production drops. The system seeks balance, but it is not always stable.\n\nYou can speed up or slow down time. You can zoom in to see individual cells or zoom out to see the whole pond. You can tag organisms to follow them. You can place food or remove organisms.\n\nThe goal is to understand how a simple ecosystem works. There is no winning or losing. There is only observation and experimentation. You learn by doing.\n\nThe game is open source. The code is available for study and modification. Teachers can use it in biology classes. Students can explore ecology through play.\n\nFeatures:\n• Real-time simulation of a pond ecosystem\n• Control a single cell: eat, divide, form spores\n• Observe interactions between species\n• Adjust environmental conditions\n• No ads, no accounts, no data collection\n• Works offline after initial load\n• Available in 100 languages\n• Open source and free to use",
+  "screenshotCaptions": [
+    "Pond ecosystem simulation",
+    "Cell eating bacteria",
+    "Cell division in progress",
+    "Spore formation",
+    "Population dynamics graph",
+    "Environmental controls",
+    "Multi-language support",
+    "Open source biology game"
+  ]
+}

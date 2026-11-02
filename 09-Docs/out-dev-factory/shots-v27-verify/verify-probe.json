@@ -1,0 +1,62 @@
+[
+ {
+  "lang": "bn",
+  "expect": "beng ০-৯",
+  "errs": 0,
+  "hud": "Synechocystis sp.সবুজ (খাবার) · প্রজন্ম ০ · ৩.২μm ⁠·⁠ ⁠আ⁠শ⁠্⁠র⁠য⁠়খাবারের গন্ধশক্তি: ১০৩বয়স: ৩sবিভাজন: ০আলো: ৮৫%তাপ: 24°C · দিন: ০ · সংখ্যা",
+  "nativeDigitsInHud": true,
+  "over": 1,
+  "state": "playing",
+  "png": "bn-375-hud.png"
+ },
+ {
+  "lang": "dz",
+  "expect": "tibt ༠-༩",
+  "errs": 0,
+  "hud": "Synechocystis sp.ལྗང་གུ་ (ཟས་) · ཕྲ་རབས་ ༠ · ༣,༨μm ⁠·⁠ ⁠ཉ⁠ེ⁠ན⁠་⁠ས⁠ྲ⁠ུ⁠ང⁠་⁠།ཟས་ཀྱི་དྲི།ནུས་ཤུགས།: ༡༡༢ལོ་ན།: ༣sབགོ་བཤིབ་ཚུ།: ༠སྣང་བ།: ༨༥%དྲོད་",
+  "nativeDigitsInHud": true,
+  "over": 1,
+  "state": "playing",
+  "png": "dz-375-hud.png"
+ },
+ {
+  "lang": "bo",
+  "expect": "tibt ༠-༩",
+  "errs": 0,
+  "hud": "Synechocystis sp.ལྗང་མདོག་ (ཟས་) · རྒྱུད་ཕྲེང་ ༠ · ༣,༤μmཟས་དྲི།ནུས་པ།: ༡༠༢ལོ་ན།: ༣sདབྱེ་འཕྲིན་རྣམས།: ༠འོད་ཟེར།: ༨༥%དྲོད་ཚད།: 24°C · ཉིན་མ་རྣ",
+  "nativeDigitsInHud": true,
+  "over": 1,
+  "state": "playing",
+  "png": "bo-375-hud.png"
+ },
+ {
+  "lang": "km",
+  "expect": "khmr ០-៩",
+  "errs": 0,
+  "hud": "Synechocystis sp.បៃតង (អាហារ) · ជំនាន់ ០ · ៣,៤μmក្លិនអាហារថាមពល: ១១២អាយុ: ៣sការបំបែក: ០ពន្លឺ: ៨៥%កំដៅ: 24°C · ថ្ងៃ: ០ · ចំនួន: ២៩៧☠ ឆ្លងរោគ!",
+  "nativeDigitsInHud": true,
+  "over": 1,
+  "state": "playing",
+  "png": "km-375-hud.png"
+ },
+ {
+  "lang": "lo",
+  "expect": "laoo ໐-໙",
+  "errs": 0,
+  "hud": "Synechocystis sp.ສີຂຽວ (ອາຫານ) · ລຸ້ນ ໐ · ໓,໘μm ⁠·⁠ ⁠ປ⁠ົ⁠ກກິ່ນອາຫານພະລັງງານ: ໑໑໒ອາຍຸ: ໓sການແບ່ງຕົວ: ໐ແສງ: ໘໕%ອຸນຫະພູມ: 24°C · ວັນ: ໐ · ຈຳນວນ",
+  "nativeDigitsInHud": true,
+  "over": 1,
+  "state": "playing",
+  "png": "lo-375-hud.png"
+ },
+ {
+  "lang": "or",
+  "expect": "orya ୦-୯",
+  "errs": 0,
+  "hud": "Synechocystis sp.ସବୁଜିଆ (ଖାଦ୍ୟ) · ପିଢ଼ି ୦ · ୩,୮μmଖାଦ୍ୟ ଗନ୍ଧଶକ୍ତି: ୧୧୨ବୟସ: ୩sବିଭାଜନ: ୦ଆଲୋକ: ୮୫%ତାପ: 24°C · ଦିନ: ୦ · ଜନସଂଖ୍ୟା: ୨୯୩☠ ସଂକ୍ରମିତ!",
+  "nativeDigitsInHud": true,
+  "over": 1,
+  "state": "playing",
+  "png": "or-375-hud.png"
+ }
+]

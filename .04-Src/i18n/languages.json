@@ -1203,7 +1203,7 @@
     "script": "arab",
     "dir": "rtl",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "ته",
     "critics": []
   },
@@ -1219,7 +1219,7 @@
     "script": "arab",
     "dir": "rtl",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "تۆ",
     "critics": []
   },
@@ -1235,7 +1235,7 @@
     "script": "arab",
     "dir": "rtl",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "توهان",
     "critics": []
   },
@@ -1299,7 +1299,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "int",
     "critics": []
   },
@@ -1315,7 +1315,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "kai",
     "critics": []
   },
@@ -1331,7 +1331,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "ìwọ",
     "critics": []
   },
@@ -1347,7 +1347,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "gị",
     "critics": []
   },
@@ -1363,7 +1363,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "aad",
     "critics": []
   },
@@ -1379,7 +1379,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "wowe",
     "critics": []
   },
@@ -1395,7 +1395,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "iwe",
     "critics": []
   },
@@ -1411,7 +1411,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "tú",
     "critics": []
   },
@@ -1427,7 +1427,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "ti",
     "critics": []
   },
@@ -1443,7 +1443,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "ou",
     "critics": []
   },
@@ -1459,7 +1459,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "qam",
     "critics": []
   },
@@ -1475,7 +1475,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "du",
     "critics": []
   },
@@ -1491,7 +1491,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "tú",
     "critics": []
   },
@@ -1507,7 +1507,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "kowe",
     "critics": []
   },
@@ -1523,7 +1523,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "anjeun",
     "critics": []
   },
@@ -1539,7 +1539,7 @@
     "script": "latn",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "koe",
     "critics": []
   },
@@ -1555,7 +1555,7 @@
     "script": "tibt",
     "dir": "ltr",
     "digits": "tibt",
-    "playListing": false,
+    "playListing": true,
     "register": "ཁེ་ཆ་",
     "critics": []
   },
@@ -1571,7 +1571,7 @@
     "script": "tibt",
     "dir": "ltr",
     "digits": "tibt",
-    "playListing": false,
+    "playListing": true,
     "register": "ཁེ་ཆ་",
     "critics": []
   },
@@ -1587,7 +1587,7 @@
     "script": "ethi",
     "dir": "ltr",
     "digits": "latn",
-    "playListing": false,
+    "playListing": true,
     "register": "ንን",
     "critics": []
   },

@@ -63,25 +63,25 @@ function updateHUD(){
     var fill = document.querySelector('#energyBar > div');
     if(fill){ fill.style.width=(eRatio*100)+'%'; fill.style.background=eColor; }
     var et = document.getElementById('hudEnergyText');
-    if(et) et.textContent = displayE+'';
+    if(et) et.textContent = (typeof igsNum==='function'?igsNum(displayE):displayE+'');
     var ab = document.getElementById('ageBar');
-    if(ab) ab.textContent = Math.round(player.age)+'s';
+    if(ab) ab.textContent = (typeof igsNum==='function'?igsNum(Math.round(player.age)):Math.round(player.age)+'')+'s';
     var scentFill = document.querySelector('#scentBar > div');
     if(scentFill){ scentFill.style.width=(scent*100)+'%'; scentFill.style.background=sColor; }
     var title = document.getElementById('hudTitle');
     if(title) title.textContent = player.sp.name;
     var sub = document.getElementById('hudSub');
-    if(sub) sub.textContent = role+tt('hud.genSep')+player.generation+' · '+player.size.toFixed(1)+'\u03bcm'+cover+cyst;
+    if(sub) sub.textContent = role+tt('hud.genSep')+(typeof igsNum==='function'?igsNum(player.generation):player.generation)+' · '+(typeof igsNum==='function'?igsNum(parseFloat(player.size.toFixed(1)),1):player.size.toFixed(1))+'\u03bcm'+cover+cyst;
     var dv = document.getElementById('hudDivs');
-    if(dv) dv.textContent = String(player.offspring||0);
+    if(dv) dv.textContent = (typeof igsNum==='function'?igsNum(player.offspring||0):String(player.offspring||0));
     var inf = document.getElementById('hudInfect');
     if(inf) inf.style.display = player.infected ? 'block' : 'none';
-    var _fL=document.getElementById('fpsL'); if(_fL) _fL.textContent = tt('fps')+': '+(typeof fps!=='undefined'?fps:''); // v24z4: узла нет в проде
-    document.getElementById('lightL').textContent = tt('light')+': '+Math.round((typeof dayLight==='number'?dayLight:0)*100)+'%';
+    var _fL=document.getElementById('fpsL'); if(_fL) _fL.textContent = tt('fps')+': '+(typeof fps!=='undefined'?(typeof igsNum==='function'?igsNum(fps):fps):''); // v24z4: узла нет в проде
+    document.getElementById('lightL').textContent = tt('light')+': '+(typeof igsNum==='function'?igsNum(Math.round((typeof dayLight==='number'?dayLight:0)*100)):Math.round((typeof dayLight==='number'?dayLight:0)*100))+'%';
     held.textContent = tt('temp')+': '+(typeof SEASONS!=='undefined'&&typeof season!=='undefined'?SEASONS[season].temp:'')+'\u00b0C';
-    document.getElementById('daysL').textContent = tt('days')+': '+(typeof totalDays!=='undefined'?totalDays:0);
+    document.getElementById('daysL').textContent = tt('days')+': '+(typeof totalDays!=='undefined'?(typeof igsNum==='function'?igsNum(totalDays):totalDays):0);
     var popN=0; if(typeof orgs!=='undefined'){ for(var pi=0;pi<orgs.length;pi++) if(orgs[pi]&&orgs[pi].alive) popN++; }
-    var popEl=document.getElementById('popC'); if(popEl) popEl.textContent=tt('pop')+': '+popN;
+    var popEl=document.getElementById('popC'); if(popEl) popEl.textContent=tt('pop')+': '+(typeof igsNum==='function'?igsNum(popN):popN);
     return;
   }
   // SIMPLE CLEAN HUD: only essential stats
@@ -109,9 +109,9 @@ function updateHUD(){
 function updateTopRight(){
   var t=document.getElementById('topR');var pop=0;for(var i=0;i<orgs.length;i++)if(orgs[i].alive)pop++;
   var s=SEASONS[season];
-  t.innerHTML='<div class="rw">'+tt('pop')+': <b style="color:#4df">'+pop+'</b></div>'+
-    '<div class="rw">'+tt('fps')+': '+fps+' \u00b7 '+tt('light')+': '+Math.round(dayLight*100)+'%</div>'+
-    '<div class="rw">'+tt('temp')+': '+s.temp+'\u00b0C \u00b7 '+tt('days')+': '+totalDays+'</div>';
+  t.innerHTML='<div class="rw">'+tt('pop')+': <b style="color:#4df">'+(typeof igsNum==='function'?igsNum(pop):pop)+'</b></div>'+
+    '<div class="rw">'+tt('fps')+': '+(typeof igsNum==='function'?igsNum(fps):fps)+' \u00b7 '+tt('light')+': '+(typeof igsNum==='function'?igsNum(Math.round(dayLight*100)):Math.round(dayLight*100))+'%</div>'+
+    '<div class="rw">'+tt('temp')+': '+s.temp+'\u00b0C \u00b7 '+tt('days')+': '+(typeof igsNum==='function'?igsNum(totalDays):totalDays)+'</div>';
   t.style.display='block';
 }
 function updateWeather(){

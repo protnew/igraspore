@@ -1,0 +1,9 @@
+Языков: 100/100 · всего проблем: 216
+  dict missing: 0
+  dict empty: 0
+  dict плейсхолдер: 0
+  dict длина: 0
+  dict sameAsEn: 0
+  wiki missing/empty: 0
+  wiki sameAsEn: 216
+АУДИТ ПАДАЕТ (есть проблемы — см. C:\Obsidian\New\Projects\08-iGraSpore_V2\09-Docs\out-dev-factory\logs-release-ready-2026-10-14\v26-audit-100.json)

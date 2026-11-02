@@ -22,7 +22,7 @@ function igsLangCodes(){
   rest.sort(function(a,b){ return nm(a).localeCompare(nm(b)); });
   var out = [];
   if(devCode && enabled[devCode] && codes.indexOf(devCode)>=0) out.push(devCode);
-  if(enabled.en) out.push('en');
+  if(enabled.en && devCode!=='en') out.push('en'); // v26: без этого при языке браузера en «English» дублировался (21 option вместо 20 → B12 краснел)
   return out.concat(rest);
 }
 

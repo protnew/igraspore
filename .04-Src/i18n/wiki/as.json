@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis হৈছে নিউক্লিয়াছ নথকা এটা চাইনেবেক্টেৰিয়া। ই পোহৰতে জীয়ে: ঝিল্লিত অক্সিজেন ওলোৱা পোহৰ-সংশ্লেষণ চলে, ক্লৰ'প্লাষ্ট নাথাকে। হাইড্ৰ'জেন বিপাকৰ গৱেষণাগাৰৰ আৰ্হি।"
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis হৈছে এটা সূতা। কিছুমান কোষ হেটেৰ'চিষ্টলৈ পৰিণত হৈ নাইট্ৰ'জেন বান্ধে, আনহাতে চুবুৰীয়া কোষে চেনি বনায়। পুখুৰীত ই বান্ধনীযুক্ত নাইট্ৰ'জেন যোগান ধৰে।"
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) হৈছে গেছ ভেছিকল থকা কোষৰ এটা পেঁচা। ই পৃষ্ঠৰ কাষত ওলমি পোহৰ-সংশ্লেষণ কৰে আৰু খাদ্য হিচাপে উপযোগী। খেলত ই পানীৰ পৰ্দাত ডাঙৰ সেউজীয়া স্ক্ৰু।"
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme হৈছে শ্লেষ্মাৰ আৱৰণত থকা মণিৰ শৃংখল। ই মুক্তভাৱে বা উদ্ভিদৰ সংগত সহজীৱনত জীয়ে। উপনিবেশটো সেউজীয়া মণিৰ গোট এটাৰ দৰে দেখা যায়।"
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica হৈছে পিছলি ফুৰা এটা সূতা। ই ইফাল-সিফালকৈ দুলি অক্সিজেন নিষ্কাশন নকৰাকৈ পোহৰ-সংশ্লেষণ কৰিব পাৰে। পলস আৰু পৃষ্ঠ-পৰ্দাৰ সাধাৰণ বাসিন্দা।"
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa হৈছে শ্লেষ্মাৰ উপনিবেশ, প্ৰায়ে বিষাক্ত (মাইক্ৰ'চিষ্টিন)। ইয়াৰ বাবে পানীত শেলেইৰ বিস্তাৰ (ব্লুম) ঘটে। খেলত ই সেউজীয়া গোল উপনিবেশ — ইয়াক চিকাৰ কৰাটো বিপজ্জনক।"
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa হৈছে ৰঙীন আৱৰণত থকা যোৰা কোষ। ই শিল আৰু মাটিত জীয়ে আৰু অতিবেগুনী সহ্য কৰে। পুখুৰীত ই আৱৰণৰ ভিতৰত সৰু যোৰা ক'কাছ।"
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula হৈছে ডাঠ চাইনেবেক্টেৰিয়াল সূতা। ই জ্বলা-পোৰা কৰা বিষ এৰিব পাৰে। গৰম পাৰৰ ওচৰত মেট গঠন কৰে।"
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii হৈছে দুটা ফ্লাজেলা আৰু চকু-দাগ থকা সেউজীয়া কোষ। ই পোহৰৰ ফালে সাঁতুৰে। শেলেই জিনীয় গৱেষণাৰ ক্লাছিক আৰ্হি।"
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris হৈছে অচলনশীল সেউজ বল। ই খৰকৈ ভাগ হয় আৰু প্ৰ'টিনেৰে ভৰপূৰ। সৰু ভক্ষকৰ খাদ্য আৰু মহাকাশ-খাদ্য গৱেষণাৰ বিষয়।"
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator হৈছে হাজাৰ হাজাৰ কোষৰ ফোঁপোলা গোলক। জীয়াইক-উপনিবেশবোৰ ভিতৰত পকি ওলাই যায়। খেলত ই এটা ডাঙৰ সেউজীয়া উপনিবেশ।"
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis হৈছে মিক্স'ট্ৰ'ফ: ক্লৰ'প্লাষ্টৰ লগতে খাদ্য খোৱাৰ ক্ষমতাও আছে। ৰঙা চকু-দাগে পোহৰ বিচাৰি লয়। দিনত সেউজীয়া; আন্ধাৰত খাদ্যৰ ফালে ঘূৰে।"
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda সাধাৰণতে শাৰীত চাৰিটা কোষ, মূৰত কাঁইট। কাঁইটে গিলাটো কঠিন কৰে। ই সাঁতুৰে নাথাকে — পানীৰ লগত ওটৰে।"
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis সেউজীয়া চলনশীল কোষ; চাপত পৰিলে ৰঙা হয় (এষ্টাক্সেন্থিন) আৰু ডাঠ বেৰ গজায়। ৰঙা ছিষ্টে খৰাং সহ্য কৰে।"
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salinaৰ কঠিন বেৰ নাথাকে আৰু ই অতি নিমখীয়া পানীত জীয়ে। ই বিটা-কেৰ'টিন জমা ৰাখে, গতিকে কমলা দেখা যায়। দুটা ফ্লাজেলা।"
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata হৈছে সমতল তৰা-আকৃতিৰ ডেজমিড। গভীৰ কটোৰে ভৰা দুটা দাপোণ-সদৃশ অৰ্ধ। অচলনশীল; অম্লীয় জলা-ভূমিৰ পানীত পোহৰ-সংশ্লেষণ কৰে।"
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula হৈছে নাও-আকৃতিৰ ডায়াটম, ছিলিকাৰ ভালভ থকা। ই ৰেফ ফাটেদি তলত পিছলি যায়। মৃত্যুৰ পাছতো খোলটো ৰৈ যায়।"
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis হৈছে ডাঙৰ পেনেট ডায়াটম। সমমিত আৰ্হিৰ ছিলিকা খোল। ই তলত লেহেমকৈ পিছলি ফুৰে।"
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana হৈছে ঘূৰণীয়া চেন্ট্ৰিক ডায়াটম। ই ডিস্কৰ দৰে ভাহে; খোলাটো দুটা ঢাকনি। সাধাৰণ প্লেংকটন।"
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare হৈছে জিগজেগত লাগি থকা ডায়াটম। উপনিবেশে পানীৰ স্তম্ভত বাধা বঢ়াই দিয়ে।"
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum হৈছে বেঙুনীয়া সৰ্পিল। অক্সিজেনবিহীন পোহৰ-সংশ্লেষণ আৰু জৈৱিক পদাৰ্থ। ৰঙটো আহে বেক্টেৰিঅ'ক্লৰ'ফিলৰ পৰা।"
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum হৈছে বেঙুনীয়া ছালফাৰ বেক্টেৰিয়া। ই হাইড্ৰ'জেন ছালফাইড অক্সাইড কৰি ছালফাৰৰ দানা জমা কৰে। অক্সিজেন/ছালফাৰ সীমাত বাস কৰে।"
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum হৈছে এককোষীয়া ৰঙা শেলেই। ফাইক'এৰিথ্ৰিনে তেজ-ৰঙা ৰং দিয়ে। শ্লেষ্মা আৱৰণ, ফ্লাজেলা নাই।"
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus পৃথিৱীৰ আটাইতকৈ সৰু আৰু সৰ্বাধিক সংখ্যক পোহৰ-সংশ্লেষণকাৰী কোষ। ১৯৮০ৰ দশকত আৱিষ্কৃত। ই সাগৰক খাদ্য যোগায়।"
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis হৈছে এক্সট্ৰিম'ফাইল: মৰুভূমি, শিল, ৰেডিয়েচন। পৃথিৱীৰ বাহিৰৰ জীৱনৰ প্ৰাৰ্থী। পুখুৰীত ই লেহেমীয়া ক'কাছ উপনিবেশ।"
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus হৈছে ক্ষুদ্ৰ বেক্টেৰিয়াল চিকাৰী। ই স্ক্ৰুৰ দৰে ঘূৰি আন এটা কোষত সোমায় আৰু গৃহস্থ ফাটিলেইকৈ বংশবৃদ্ধি কৰে।"
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus চিকাৰৰ ওপৰত বাহিৰৰ পৰা বহি ভিতৰত নসোমাই ভিতৰৰ পদাৰ্থ শুহি লয়। এটা বেক্টেৰিয়াল ভেম্পায়াৰ।"
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter চিকাৰ বেক্টেৰিয়াৰ ভিতৰত সোমাই ভিতৰৰ পৰাই খায়। এটা বিৰল অন্তঃকোষীয় চিকাৰী।"
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus হৈছে সামাজিক বেক্টেৰিয়া। দলত ই চিকাৰক আগুৰি এনজাইম এৰে। খাদ্যৰ অভাৱত ফ্ৰুটিং বডি গঠন কৰে।"
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii হৈছে সাগৰীয় Bdellovibrioৰ আত্মীয়। ই গ্ৰাম-নেগেটিভক আক্ৰমণ কৰে আৰু চিকাৰৰ পেৰিপ্লাজমত থাকে।"
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax হৈছে নিমখ-সহিষ্ণু বেক্টেৰিয়াল চিকাৰী। কৌশল একেই: বেৰত ফুটা কৰি ভিতৰত বঢ়ে।"
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii হৈছে আন এটা BALO চিকাৰী। কমা-আকৃতিৰ দ্ৰুতগামী ফ্লাজেলেট, ডাঙৰ ৰডক লক্ষ্য কৰে।"
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula হৈছে সৰু হেটেৰ'ট্ৰফিক ফ্লাজেলেট। ই ডেট্ৰিটাছৰ পৃষ্ঠত বেক্টেৰিয়া ধৰে।"
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo হৈছে ফোঁট-আকৃতিৰ ফ্লাজেলেট। এটা ফ্লাজেলা; বেক্টেৰিয়াল পৰ্দাত চিকাৰ কৰে।"
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans হৈছে লোহা-মেংগানিজৰ ষ্টকত থকা উপনিবেশ। কোষবোৰ গুচি এটাত বহি বেক্টেৰিয়া ধৰে।"
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium হৈছে ৰঙহীন ক্ৰিপ্ট'ফাইট। দুটা ফ্লাজেলা; দ্ৰবীভূত জৈৱিক পদাৰ্থ আৰু ক্ষুদ্ৰ বেক্টেৰিয়া খায়, ক্লৰ'প্লাষ্ট নাই।"
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda হৈছে দীঘল নেজৰ এমিব'ফ্লাজেলেট। ই বগাই ফুৰে আৰু ছিউড'প'ডিয়াৰে বেক্টেৰিয়া গিলে।"
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa হৈছে মাটিৰ ফ্লাজেলেট। বেলেগ দৈৰ্ঘ্যৰ দুটা ফ্লাজেলা; মাটিৰ মুখ্য বেক্টেৰিয়া-ভক্ষক।"
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans হৈছে কাইনেট'প্লাষ্টিড। পাছৰ ফ্লাজেলাত ওলমি ই ঠাইতে 'নাচে' আৰু বেক্টেৰিয়া তুলি লয়।"
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini হৈছে Bodoৰ আত্মীয়। ই মুক্তভাৱে সাঁতুৰে আৰু আগৰ ফ্লাজেলাৰে চিকাৰত আঘাত কৰে।"
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei হৈছে নিদ্ৰা ৰোগ ঘটাওতা তেজৰ পৰজীৱী। উত্তাল ঝিল্লি আৰু এটা ফ্লাজেলা। পুখুৰীত ই পাতল-চিকাৰীৰ আৰ্হি।"
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani হৈছে অন্তঃকোষীয় মানৱ পৰজীৱী। পতংগৰ দেহত ফ্লাজেলাযুক্ত, মেক্ৰ'ফেজৰ ভিতৰত ফ্লাজেলাহীন।"
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis হৈছে কোয়ান'ফ্লাজেলেট, প্ৰাণীৰ আত্মীয়। মাইক্ৰ'ভিলিৰ কলাৰে বেক্টেৰিয়া ফিল্টাৰ কৰে।"
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta হৈছে লৰিকাত থকা অচল কোয়ান'ফ্লাজেলেট। ই ৰোজেট গঠন কৰিব পাৰে। পানীৰ সোঁত ফিল্টাৰ কৰে।"
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis হৈছে সাধাৰণ ষ্টকত থকা কোয়ান'ফ্লাজেলেট উপনিবেশ। এডাল কাণ্ডত কেইবাটাও ফিল্টাৰকাৰী।"
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum হৈছে প্ৰখ্যাত চেপেটা-জোতাৰ দৰে চিলিয়েট। হাজাৰ হাজাৰ চিলিয়া, মুখৰ খাঁজ, সংকোচনশীল ভেকুঅল। ই বেক্টেৰিয়া ফিল্টাৰ কৰে।"
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria হৈছে জুক্ল'ৰেলা সহজীৱী থকা চেপেটা। ভিতৰত সেউজীয়া: দিনত শেলেইৰ পৰা চেনি, ৰাতি ফিল্টাৰ।"
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus হৈছে এক মিলিমিটাৰলৈকে ডাঙৰ নীলা তুৰী-আকৃতিৰ চিলিয়েট। ই ফুলি উঠি চিলিয়াৰে পানীৰ সোঁত টানে। সাঁতুৰিব পাৰে বা বহি থাকিব পাৰে।"
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus হৈছে নীলা ষ্টেণ্টৰৰ আত্মীয়, প্ৰায়ে জুক্ল'ৰেলা থাকে। আকৃতি তুৰীৰ পৰা বললৈ সলনি হয়।"
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula হৈছে সংকোচনশীল ষ্টকত থকা ঘণ্টা। ষ্টকডাল মুহূৰ্ততে সৰ্পিল হৈ গুটাই যায়। কোষটোৱে নিজে সাঁতুৰি নাপলায়।"
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma হৈছে সৰু ঘণ্টা। একেই স্প্ৰিং-ষ্টক, মুখৰ ক্ষেত্ৰ ঠেৰেঙীয়া। প্ৰায়ে ডেট্ৰিটাছত থাকে।"
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum হৈছে চেপেটাবোৰৰ চিকাৰী কৰা পীপা-আকৃতিৰ চিলিয়েট। ই টক্সিচিষ্ট দাগি চিকাৰ ডাঙৰ হ'লেও গিলি লয়।"
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum হৈছে বৰ দীঘল চুৰুট-আকৃতিৰ চিলিয়েট। ই এক ছেকেণ্ডৰ ভগ্নাংশত কেইবাগুণো সংকুচিত হয়। চিলিয়াবোৰ সৰ্পিলত সজা।"
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum হৈছে গোলাপী চিলিয়েট। ব্লেফাৰিজমিন ৰঞ্জক পোহৰ-সংবেদনশীল। ই ফিল্টাৰ কৰে আৰু সৰু কোষ আক্ৰমণ কৰিব পাৰে।"
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella হৈছে ভৰিৰ নিচিনা চিৰিৰে খোজ কঢ়া চিলিয়েট। চেপেটা, দ্ৰুত মোৰ মাৰে। ই পৃষ্ঠৰ পৰা বেক্টেৰিয়া খুমুৱাই খায়।"
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata হৈছে তলত 'দৌৰ়ি' ফুৰা হাইপ'ট্ৰিক। ডাঙৰ চিৰি, স্পষ্ট মুখ। সৰু চিলিয়েটৰ চিকাৰী।"
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax হৈছে জিন'ম আৰ্হি: দুটা নিউক্লিয়াছ আৰু জটিল DNA পুনৰ্লিখন। ই চিৰিৰে খোজ কাঢ়ি বেক্টেৰিয়া আৰু সৰু প্ৰটিষ্ট খায়।"
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila হৈছে গৱেষণাগাৰৰ চিলিয়েট। চাৰিটা মুখীয় মেম্ব্ৰেনেল, দ্ৰুত বিভাজন। টেল'মিয়াৰ আৰু চিলিয়াৰ আৰ্হি।"
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus হৈছে কাঁইটযুক্ত চুনাৰ প্লেটৰ পীপা। শৱ-ভক্ষক আৰু চিকাৰী: আহত জীৱক কামোৰে।"
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella হৈছে 'শুঁড়'ত টক্সিচিষ্ট থকা চেপেটা চিকাৰী। ই চিকাৰ অসাড় কৰি শুহি লয়।"
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anserৰ বিষাক্ত এক্সট্ৰুজ'মেৰে ভৰা দীঘল ডিঙি। ডিঙিৰে দাগি তাৰ পাছত গিলে। ডাঙৰ মধ্যম-স্তৰৰ চিকাৰী।"
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo হৈছে লাটিমৰ দৰে: মধ্যৰেখাৰ চিলিয়াৰ বেল্টে কোষটো ঠাইতে ঘূৰায়। ই বেক্টেৰিয়া ফিল্টাৰ কৰে।"
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula হৈছে ডালে-ডালে সজা ঘণ্টাৰ উপনিবেশ। সাধাৰণ সংকোচনশীল ষ্টকে গোটেই গছজোপা একেলগে ঠেলি দিয়ে।"
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata হৈছে স্প্ৰিং-ষ্টক নথকা অচল পেৰিট্ৰিক। ঢাকনিয়ে মুখ ঢাকে। ই ফিল্টাৰ কৰে, সাঁতুৰি নাপলায়।"
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus হৈছে ক্লাছিক এমিবা। ছিউড'প'ডিয়া চিকাৰক আগুৰি ধৰে। নিৰ্দিষ্ট আকৃতি নাই, চিলিয়া নাই।"
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris হৈছে কঠিন গম্বুজ থকা টেষ্টেট এমিবা। ছিউড'প'ডিয়া মুখৰ ফুটাৰে ওলায়। ই উদ্ভিদত বগাই ফুৰে।"
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblongaৰ খোল বালিৰ দানাৰ — এমিবাটোৱে নিজেই আঠা লগায়। ই পলসত থাকে।"
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolataৰ খোল ছিলিকাৰ বাকলিৰ। পাতল ফাইল'জ ছিউড'প'ডিয়া। সৰু বেক্টেৰিয়া-চিকাৰী।"
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collarisৰ বটল-আকৃতিৰ খোল আনৰ পৰা লোৱা বাকলিৰে সজা। অৰণ্য আৰু জলা-ভূমিৰ পানীৰ বাসিন্দা।"
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeataৰ খোল কাঁইটযুক্ত ডিস্কৰ। মুখৰ ফুটা কাষলৈ সৰি থাকে। ই ডেট্ৰিটাছত বগাই ফুৰে।"
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol হৈছে হেলিঅ'জ'য়ান: পাতল এক্স'প'ডিয়া চাৰিওফালে বিকিৰিত। চিকাৰ ৰশ্মিবোৰত লাগি টানি ভিতৰলৈ নিয়া হয়।"
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni হৈছে ডাঙৰ বহুনিউক্লিয়াছ হেলিঅ'জ'য়ান। ৰশ্মি একেই, কোষ বহু ডাঙৰ। ই চিলিয়েট আৰু ৰটিফাৰ খায়।"
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida হৈছে বাকলিত থকা হেলিঅ'জ'য়ান। ৰশ্মিত ছিলিকাৰ বেজী। ঘাত-প্ৰতীক্ষাধীন প্লেংকটন চিকাৰী।"
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria হৈছে শুকান সহ্য কৰিব পৰা ৰটিফাৰ। কৰ'নাই খাদ্য ঘূৰাই মুখলৈ আনে। প্ৰকৃত বহুকোষীয় প্ৰাণী।"
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola হৈছে গোলাপী বডেলয়েড ৰটিফাৰ। ই জোঁকৰ দৰে বগায়, লগতে সাঁতুৰেও। কেৱল মাইকী; মতা নাথাকে।"
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis হৈছে প্লেংকটনিক লৰিকা-ৰটিফাৰ। মাছ-পোনাৰ খাদ্য। ই শেলেই আৰু বেক্টেৰিয়া ফিল্টাৰ কৰে।"
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis হৈছে দীঘল লৰিকা-কাঁইট থকা ৰটিফাৰ। কাঁইটে চিকাৰীক আঁতৰাই ৰাখে। পুখুৰীৰ সাধাৰণ প্লেংকটন।"
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta হৈছে লৰিকা নথকা মোনাসদৃশ চিকাৰী ৰটিফাৰ। ই আন ৰটিফাৰ আৰু চিলিয়েট গিলি লয়।"
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus হৈছে গেষ্ট্ৰ'ট্ৰিক। বাকলিযুক্ত দেহ, তলত বগাই ফুৰে। ই বেক্টেৰিয়া আৰু ডেট্ৰিটাছ খায়।"
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata হৈছে ওপৰত-ওপৰে থকা বাকলিৰ সৰু গেষ্ট্ৰ'ট্ৰিক। ঠাইতে বৰ দ্ৰুত মোৰ মাৰে।"
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano হৈছে অণুবীক্ষণিক ফ্লেটৱৰ্ম। প্ৰকৃত মাংসপেশী আৰু চকু আছে। ৰিজেনেৰেচনৰ আৰ্হি। ই সৰু প্ৰটিষ্ট চিকাৰ কৰে।"
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops হৈছে পাতল চিলিয়াযুক্ত কৃমি। ই প্ৰস্থভাৱে ভাগ হৈ জুইডৰ শৃংখল হয়। ডেট্ৰিটাছ আৰু সৰু প্ৰাণীৰ চিকাৰী।"
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare হৈছে হাইড্ৰা খোৱা ফ্লেটৱৰ্ম; সিহতৰ জ্বলা-কোষ নিজৰ ছালত সুমুৱাই লয়। জুইডৰ শৃংখল।"
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense হৈছে মিঠা পানীৰ নেমাৰ্টিয়ান। দীঘল শুঁড় চিকাৰৰ ফালে গুলিৰ দৰে যায়। বিৰল ডাঙৰ তলুৱা-চিকাৰী।"
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens হৈছে প্লাক'জ'য়ান, আটাইতকৈ সৰল প্ৰাণীৰ ভিতৰৰ এটা। ই চাদৰৰ দৰে বগাই খাদ্য বাহিৰতে হজম কৰে। মুখ নাথাকে।"
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae হৈছে ব্ৰেডৰ খামীৰ। ই মুগু গজায়, চেনি খায়, CO2 আৰু মদ এৰে। পুখুৰীত ই দ্ৰবীভূত জৈৱিক পদাৰ্থ পৰিষ্কাৰ কৰে।"
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans হৈছে সূত্ৰৰ দৰে বঢ়িব পৰা খামীৰ। সুবিধাবাদী মানৱ ৰোগজীৱ। খেলত ই ডেট্ৰিটাছৰ ভেঁকুৰ।"
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo হৈছে ব্ৰেডৰ পঁইচ। ষ্টকত স্প'ৰেঞ্জিয়া, মৃতৰ ওপৰত দ্ৰুত বঢ়ে। ই জীৱিতক চিকাৰ নকৰে।"
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer হৈছে ক'লা ব্ৰেড-পঁইচ। ষ্ট'লন আৰু ৰাইজয়ডে তলত বিয়পে। ই ষ্টাৰ্চ ভাঙে।"
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum হৈছে ব্ৰাছ-পঁইচ, পেনিচিলিনৰ উৎস। কনিডিয়াল ব্ৰাছ। ই জৈৱিক পদাৰ্থ পচায় আৰু কাষৰ বেক্টেৰিয়া দমন কৰে।"
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger হৈছে ক'লা এস্পাৰগিলাছ। গোল স্প'ৰ-মূৰ। উদ্যোগিক চিট্ৰিক-এচিড উৎপাদক। এটা সেপ্ৰ'ট্ৰ'ফ।"
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis হৈছে ভেকুলীৰ কাইট্ৰিড। একফ্লাজেলা জুস্প'ৰ। পুখুৰীত ই পানী-ভেঁকুৰৰ আৰ্হি।"
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus হৈছে পৰাগ আৰু শেলেইৰ ওপৰত থকা পানীৰ কাইট্ৰিড। সোণালী স্প'ৰেঞ্জিয়া; জুস্প'ৰবোৰ তলৰ ফালে সাঁতুৰে।"
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus হৈছে প্ৰকৃত মাইচেলিয়াম থকা পানীৰ ভেঁকুৰ। ডিপ্লয়ড আৰু হেপ্লয়ড পাল পালি আহে। জুস্প'ৰৰ পাছফালে ফ্লাজেলা থাকে।"
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis হৈছে মাটিৰ ৰড। স্প'ৰে উতলা সহ্য কৰে। ই প্ৰ'টিন ভাঙে; গ্ৰাম-পজিটিভ আৰ্হি।"
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida হৈছে চাফাই-ৰড। ই পেট্ৰ'লিয়ামজাত পদাৰ্থো খায়। ফ্লাজেলাৰে চলে, ডেট্ৰিটাছত দ্ৰুত বঢ়ে।"
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor হৈছে সূতাকৃতিৰ মাটিৰ বেক্টেৰিয়া। ই মাটিৰ গোন্ধ (জিঅ'সমিন) আৰু বহু এন্টিবায়'টিক তৈয়াৰ কৰে। হাইফাত স্প'ৰ।"
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi হৈছে চেলুলজ ভঙা বেক্টেৰিয়া। উদ্ভিদ-ডেট্ৰিটাছত থকা হালধীয়া ৰড। ইয়াক নাথাকিলে মৰা শেলেই অধিক দিন ৰৈ যাব।"
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus হৈছে গৰম পানীৰ উৎসৰ পৰা অহা থাৰ্ম'ফাইল। Taq পলিমাৰেজ PCR-ৰ ভিত্তি। ঠাণ্ডা পুখুৰীত ই প্ৰায় নিষ্ক্ৰিয় থাকে।"
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans হৈছে ৰেডিয়েচন-বিজেতা। ই ভাঙি যোৱা জিন'ম কেইঘণ্টামানত পুনৰ জোৰে। ডাঠ বেৰ, কোষৰ টেট্ৰাড।"
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote হৈছে যৌন প্ৰজননৰ শিক্ষণ-আৰ্হি। দুটা লিংগ, গেমেটৰ সংলয়ন — সাধাৰণ দ্বিখণ্ডন নহয়।"
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 হৈছে E. coliৰ ডাঙৰ মায়'ভাইৰাছ। নেজডাল সংকুচিত হৈ DNA ভিতৰলৈ দিয়ে। আধা ঘণ্টামানত কোষ ফাটে আৰু বহু ফাজ ওলাই যায়।"
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda হৈছে টেম্পাৰেট ফাজ। ই ক্ৰম'জমত সুমাই টোপনি যাব পাৰে (লাইছ'জেনি) বা লগে লগে কোষ কাটি দিব পাৰে (লাইছিছ)।"
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7ৰ নেজ চুটি আৰু প্ৰতিলিপি বৰ দ্ৰুত। ছিন্থেটিক বায়'লজীৰ প্ৰিয় ব্যৱস্থা।"
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 হৈছে লিপিড আৱৰণযুক্ত RNA ফাজ। ই Pseudomonasক সংক্ৰমিত কৰে। ফাজৰ কাৰণে ই বিৰল ঝিল্লি।"
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 হৈছে নেজবিহীন ক্ষুদ্ৰ RNA ফাজ। ই মতা E. coliৰ পাইলিত লাগে। ইয়াৰ জিন'ম প্ৰথমে পঢ়া RNA জিন'মসমূহৰ এটা।"
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "এইটো পুখুৰীৰ কাল্পনিক স্নায়ু-পৰজীৱী। ই ইউকেৰিঅ'টৰ গাত লাগি গৃহস্থৰ আচৰণ ভাঙে, অৱশেষত গৃহস্থ বাহক হৈ পৰে।"
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote হৈছে যৌন প্ৰজননৰ শিক্ষণ-আৰ্হি। দুটা লিংগ, গেমেটৰ সংলয়ন — সাধাৰণ দ্বিখণ্ডন নহয়।"
   }
 }

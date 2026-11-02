@@ -1,326 +1,326 @@
 {
   "0": {
-    "body": "Synechocystis is a cyanobacterium with no nucleus. It lives on light: oxygenic photosynthesis on membranes, no chloroplasts. Lab model for hydrogen metabolism."
+    "body": "Synechocystis hija cjanobatterju bla nukleu. Tgħix bid-dawl: fotosintesi bl-ossiġnu fuq il-membrani, bla kloroplasti. Mudell ta' laboratorju għall-metaboliżmu tal-idroġenu."
   },
   "1": {
-    "body": "Anabaena variabilis is a filament. Some cells become heterocysts and fix nitrogen while neighbours make sugar. In the pond it supplies bound nitrogen."
+    "body": "Anabaena variabilis hija filament. Xi ċelluli jsiru eteroċisti u jiffissaw in-nitroġnu filwaqt li l-ġar tagħhom jagħmel iz-zokkor. Fil-għadira tipprovdi nitroġnu marbut."
   },
   "2": {
-    "body": "Spirulina (Arthrospira) is a coil of cells with gas vesicles. It hangs near the surface, photosynthesizes, and is edible. In-game it is a large green screw at the water film."
+    "body": "Spirulina (Arthrospira) hija spiral ta' ċelluli b'vesiċli ta' gass. Tibqa' ħdejn il-wiċċ, tagħmel fotosintesi u tista' tintuża b'ikel. Fil-logħba tidher bħala skru ħadra kbira fuq il-wiċċ tal-ilma."
   },
   "3": {
-    "body": "Nostoc punctiforme is a bead chain in a slime capsule. It lives free or in plant symbiosis. The colony looks like a clump of green beads."
+    "body": "Nostoc punctiforme hija katina ta' żibeġ f'kapsula ta' ħama. Tgħix ħielsa jew f'simbjożi mal-pjanti. Il-kolonja tidher bħal ġemgħa ta' żibeġ ħodor."
   },
   "4": {
-    "body": "Oscillatoria limnetica is a gliding filament. It oscillates side to side and can photosynthesize without releasing oxygen. Typical of silt and surface film."
+    "body": "Oscillatoria limnetica hija filament li jiżżerżaq. Tidwew minn naħa għall-oħra u tista' tagħmel fotosintesi bla ma taħraq ossiġnu. Tipika tat-tajn u tas-superfiċi tal-ilma."
   },
   "5": {
-    "body": "Microcystis aeruginosa is a mucilage colony, often toxic (microcystin). It causes water bloom. In-game it is a green colony ball, risky prey."
+    "body": "Microcystis aeruginosa hija kolonja ta' ħama, spiss velenuża (mikroċistina). Tikkawża l-fjoritura tal-ilma. Fil-logħba hija ballun ta' kolonja ħadra, preża riskjuża."
   },
   "6": {
-    "body": "Gloeocapsa is paired cells in colored sheaths. It lives on rocks and soil and tolerates UV. In the pond it is small paired cocci in a coat."
+    "body": "Gloeocapsa għandha ċelluli mżewġa f'tegumenti kkuluriti. Tgħix fuq il-blat u l-ħamrija u tiflaħ għall-UV. Fil-għadira tidher bħala kokki mżewġa żgħar f'kis."
   },
   "7": {
-    "body": "Lyngbya majuscula is a thick cyanobacterial filament. It can release irritating toxins. It forms mats near warm shores."
+    "body": "Lyngbya majuscula hija filament oħxon ta' cjanobatterju. Tista' tħareġ tossini li jixxennaqu. Tifforma tapiti ħdejn ix-xtut sħan."
   },
   "8": {
-    "body": "Chlamydomonas reinhardtii is a green cell with two flagella and an eyespot. It swims toward light. Classic algal genetics model."
+    "body": "Chlamydomonas reinhardtii hija ċellula ħadra b'żewġ flagella u stigma. Tgħum lejn id-dawl. Mudell klassiku tal-ġenetika tal-algi."
   },
   "9": {
-    "body": "Chlorella vulgaris is a non-motile green ball. It divides fast and is protein-rich. Food for small eaters and a space-food subject."
+    "body": "Chlorella vulgaris hija ballun ħadar li ma jiċċaqlaqx. Taqsam malajr u hija rikka bil-proteini. Ikel għal ħlejjaq żgħar u suġġett ta' ikel għall-ispazju."
   },
   "10": {
-    "body": "Volvox globator is a hollow sphere of thousands of cells. Daughter colonies ripen inside and exit. In-game it is a large green colony."
+    "body": "Volvox globator hija sfera vojta minn eluf ta' ċelluli. Il-kolonji ulied isiru ġewwa u joħorġu barra. Fil-logħba hija kolonja ħadra kbira."
   },
   "11": {
-    "body": "Euglena gracilis is a mixotroph: chloroplasts plus the ability to eat. A red eyespot tracks light. Green by day; in the dark it switches to food."
+    "body": "Euglena gracilis hija miksotrofa: kloroplasti flimkien ma' l-abbiltà li tiekol. Stigma ħamra tibqa' għad-dawl. Ħadra binhar; fid-dlamja tbiddel għall-ikel."
   },
   "12": {
-    "body": "Scenedesmus quadricauda is usually four cells in a row with end spines. Spines make swallowing harder. It does not swim — it drifts."
+    "body": "Scenedesmus quadricauda ħafna drabi għandha erba' ċelluli f'ringiel bi xewk fuq it-truf. Ix-xewk jagħmluha iebsa biex tinbelgħa. Ma tgħumx — titmexxa mal-ilma."
   },
   "13": {
-    "body": "Haematococcus pluvialis is a green motile cell; under stress it turns red (astaxanthin) and grows a thick wall. Red cysts survive drought."
+    "body": "Haematococcus pluvialis hija ċellula ħadra li tiċċaqlaq; taħt stress ssir ħamra (astaxantin) u tkabbar ħajt oħxon. Iċ-ċisti ħomor jiflaħu n-nixfa."
   },
   "14": {
-    "body": "Dunaliella salina has no rigid wall and lives in very salty water. It stores beta-carotene and looks orange. Two flagella."
+    "body": "Dunaliella salina m'għandhiex ħajt iebsa u tgħix f'ilma mielaħ ħafna. Taħżen beta-karotene u tidher oranġjo. Għandha żewġ flagella."
   },
   "15": {
-    "body": "Micrasterias rotata is a flat star desmid. Two mirrored halves with deep cuts. Non-motile; photosynthesizes in acidic bog water."
+    "body": "Micrasterias rotata hija desmida ċatta b'forma ta' stilla. Żewġ nofsin simetriċi b'taqsimiet fondi. Ma tiċċaqlaqx; tagħmel fotosintesi fl-ilma aċiduż tal-beraxx."
   },
   "16": {
-    "body": "Navicula is a boat-shaped diatom with a silica valve. It glides on the substrate along a raphe slit. The shell remains after death."
+    "body": "Navicula hija dijatomea b'forma ta' dgħajsa u valva tas-siliċju. Tiżżerżaq fuq is-sottostrat tul fetħa rafe. Il-qoxra tagħha tibqa' wara mewtha."
   },
   "17": {
-    "body": "Pinnularia viridis is a large pennate diatom. Silica shell with a symmetric pattern. It glides slowly on the bottom."
+    "body": "Pinnularia viridis hija dijatomea pennata kbira. Qoxra tas-siliċju b'disinn simetriku. Tiżżerżaq bil-mod fil-qiegħ."
   },
   "18": {
-    "body": "Cyclotella meneghiniana is a circular centric diatom. It floats as a disc; the shell is two lids. Typical plankton."
+    "body": "Cyclotella meneghiniana hija dijatomea ċentrika tonda. Tifflijja bħal diska; il-qoxra magħmula minn żewġ qwieqed. Plankton tipiku."
   },
   "19": {
-    "body": "Diatoma vulgare is a diatom that sticks into a zigzag. The colony increases drag in the water column."
+    "body": "Diatoma vulgare hija dijatomea li tpoġġi f'żigżag. Il-kolonja żżid ir-reżistenza fl-ilma."
   },
   "20": {
-    "body": "Rhodospirillum rubrum is a purple spiral. Anoxygenic photosynthesis plus organics. Red color comes from bacteriochlorophyll."
+    "body": "Rhodospirillum rubrum hija spiral vjola. Fotosintesi bla ossiġnu flimkien ma' materja organika. Il-kulur l-aħmar ġej mill-batterjoklorofilla."
   },
   "21": {
-    "body": "Chromatium vinosum is a purple sulfur bacterium. It oxidizes hydrogen sulfide and stores sulfur granules. Lives at the oxygen/sulfur boundary."
+    "body": "Chromatium vinosum hija batterju vjola tal-kubrit. Tossida l-idroġenu solfat u taħżen granuli ta' kubrit. Tgħix fuq il-fruntiera bejn l-ossiġnu u l-kubrit."
   },
   "22": {
-    "body": "Porphyridium cruentum is a unicellular red alga. Phycoerythrin gives a blood-red color. Mucilage coat, no flagella."
+    "body": "Porphyridium cruentum hija alga ħamra ta' ċellula waħda. Il-fikoeritrina tagħtiha lewn aħmar tad-demm. Tgħattiha ħama, u m'għandha l-ebda flagellum."
   },
   "23": {
-    "body": "Prochlorococcus marinus is the smallest and most abundant photosynthetic cell on Earth. Discovered in the 1980s. It feeds the ocean."
+    "body": "Prochlorococcus marinus hija l-iżgħar u l-aktar ċellula fotosintetika komuni fid-Dinja. Instabet fis-snin tmenin. Tipprovdi l-ikel lill-oċean."
   },
   "24": {
-    "body": "Chroococcidiopsis thermalis is an extremophile: desert, rock, radiation. A candidate for life beyond Earth. In the pond it is a slow coccus colony."
+    "body": "Chroococcidiopsis thermalis hija estremofila: deżert, blat, radjazzjoni. Kandidat għal ħajja 'l barra mid-Dinja. Fil-għadira hija kolonja kokka li tkabber bil-mod."
   },
   "25": {
-    "body": "Bdellovibrio bacteriovorus is a tiny bacterial predator. It screws into another cell and multiplies until the host bursts."
+    "body": "Bdellovibrio bacteriovorus hija predatur batterjali żgħir ħafna. Tidħol bħal skru ġo ċellula oħra u timmultiplika sakemm l-ospitanti jisplodi."
   },
   "26": {
-    "body": "Vampirococcus sits on prey from the outside and sucks out the contents without entering. A bacterial vampire."
+    "body": "Vampirococcus joqogħod fuq il-preża minn barra u jixrob il-kontenut tagħha bla ma jidħol. Vampir ta' batterji."
   },
   "27": {
-    "body": "Daptobacter enters a prey bacterium and eats it from inside. A rare intracellular hunter."
+    "body": "Daptobacter jidħol ġol-batterju preża u jieklu minn ġewwa. Kaċċatur intraċellulari rari."
   },
   "28": {
-    "body": "Myxococcus xanthus is a social bacterium. In a pack it surrounds prey and releases enzymes. When starved it forms a fruiting body."
+    "body": "Myxococcus xanthus huwa batterju soċjali. F'grupp iwaqqaf madwar il-preża u jirrilaxxa enzimi. Meta jkollu ġuħ, jifforma korp għall-ispori."
   },
   "29": {
-    "body": "Bacteriovorax stolpii is a marine Bdellovibrio relative. It attacks Gram-negatives and lives in the prey periplasm."
+    "body": "Bacteriovorax stolpii hija qruba tal-Bdellovibrio tal-baħar. Tattakka l-batterji Gram-negattivi u tgħix fil-periplażma tal-preża."
   },
   "30": {
-    "body": "Halobacteriovorax is a salt-tolerant bacterial hunter. Same trick: puncture the wall and grow inside."
+    "body": "Halobacteriovorax huwa kaċċatur batterjali li jiflaħ il-melħ. L-istess triq: tobrox il-ħajt u tikber minn ġewwa."
   },
   "31": {
-    "body": "Peredibacter starrii is another BALO predator. A fast comma-shaped flagellate targeting large rods."
+    "body": "Peredibacter starrii huwa predatur BALO ieħor. Flagellat mgħaġġel b'forma ta' virgola li jikkaċċja l-bastuni kbar."
   },
   "32": {
-    "body": "Monas guttula is a small heterotrophic flagellate. It grabs bacteria at the detritus surface."
+    "body": "Monas guttula hija flagellata eterotrofika żgħira. Taqbad il-batterji fuq wiċċ id-detritu."
   },
   "33": {
-    "body": "Oikomonas termo is a drop-shaped flagellate. One flagellum; it hunts in bacterial film."
+    "body": "Oikomonas termo hija flagellata b'forma ta' qatra. Flagellum wieħed; tikkaċċja fil-film tal-batterji."
   },
   "34": {
-    "body": "Anthophysa vegetans is a colony on an iron-manganese stalk. Cells sit in a tuft and catch bacteria."
+    "body": "Anthophysa vegetans hija kolonja fuq stalk ta' ħadid u manganis. Iċ-ċelluli jibqgħu f'ċufu u jaqbdu batterji."
   },
   "35": {
-    "body": "Chilomonas paramecium is a colorless cryptophyte. Two flagella; it eats dissolved organics and tiny bacteria, no chloroplasts."
+    "body": "Chilomonas paramecium hija kriptofita bla kulur. Żewġ flagella; tiekol materja organika maħlula u batterji minuri, bla kloroplasti."
   },
   "36": {
-    "body": "Cercomonas longicauda is an amoeboflagellate with a long tail. It crawls and swallows bacteria with pseudopodia."
+    "body": "Cercomonas longicauda hija ameboflagellata b'denb twil. Titkaxkar u tibla' batterji bil-pseudopodji."
   },
   "37": {
-    "body": "Heteromita globosa is a soil flagellate. Two flagella of different length; a main bacterial eater in soil."
+    "body": "Heteromita globosa hija flagellata tal-ħamrija. Żewġ flagella ta' tul differenti; hija fost l-aktar organiżmi li jieklu batterji fil-ħamrija."
   },
   "38": {
-    "body": "Bodo saltans is a kinetoplastid. It 'dances' in place, attached by the rear flagellum, and snatches bacteria."
+    "body": "Bodo saltans hija kinetoplastida. Tiżfen fuq postha, imwaħħla bil-flagellum ta' wara, u taqbad batterji."
   },
   "39": {
-    "body": "Procryptobia sorokini is a Bodo relative. It swims freely and strikes prey with the anterior flagellum."
+    "body": "Procryptobia sorokini hija qruba tal-Bodo. Tgħum liberament u tilħaq il-preża bil-flagellum ta' quddiem."
   },
   "40": {
-    "body": "Trypanosoma brucei is a blood parasite causing sleeping sickness. Undulating membrane and one flagellum. In the pond it is a slim-hunter model."
+    "body": "Trypanosoma brucei hija parassita tad-demm li tikkawża l-marda tal-irqad. Membrana ondulata u flagellum wieħed. Fil-għadira hija mudell ta' kaċċatur irqiq."
   },
   "41": {
-    "body": "Leishmania donovani is an intracellular human parasite. Flagellated in the insect, aflagellate inside a macrophage."
+    "body": "Leishmania donovani hija parassita umana intraċellulari. Bil-flagellum ġol-insett, bla flagellum ġewwa l-makrofaġi."
   },
   "42": {
-    "body": "Monosiga brevicollis is a choanoflagellate, an animal relative. A microvilli collar filters bacteria."
+    "body": "Monosiga brevicollis hija hoanoflagellata, qruba tal-annimali. Kollar ta' mikrovilli jiffiltra l-batterji."
   },
   "43": {
-    "body": "Salpingoeca rosetta is a sessile choanoflagellate in a lorica. It can form a rosette. It filters a water current."
+    "body": "Salpingoeca rosetta hija hoanoflagellata fissi ġo lorika. Tista' tifforma rożetta. Tiffiltra l-kurrent tal-ilma."
   },
   "44": {
-    "body": "Codonosiga botrytis is a choanoflagellate colony on a shared stalk. Several filters on one stem."
+    "body": "Codonosiga botrytis hija kolonja ta' hoanoflagellati fuq stalk komuni. Diversi filtri fuq zokk wieħed."
   },
   "45": {
-    "body": "Paramecium caudatum is the classic slipper. Thousands of cilia, an oral groove, contractile vacuoles. It filters bacteria."
+    "body": "Paramecium caudatum huwa l-klasiku b'forma ta' xorpa. Eluf ta' ċilja, solk orali u vakuoli kontrattili. Jiffiltra l-batterji."
   },
   "46": {
-    "body": "Paramecium bursaria is a slipper with zoochlorella symbionts. Green inside: sugar from algae by day, filtering at night."
+    "body": "Paramecium bursaria hija xorpa b'simbjonti zuklorelli. Ħadra minn ġewwa: zokkor mill-algi binhar, filtrazzjoni billejl."
   },
   "47": {
-    "body": "Stentor coeruleus is a blue trumpet up to a millimetre. It flares into a funnel and drives a current with cilia. It can swim or sit."
+    "body": "Stentor coeruleus hija tromba blu sa millimetru. Tiftaħ bħal lembut u ttajjar kurrent biċ-ċilja. Tista' tgħum jew toqgħod f'postha."
   },
   "48": {
-    "body": "Stentor polymorphus is a relative of the blue stentor, often with zoochlorellae. Shape shifts from trumpet to ball."
+    "body": "Stentor polymorphus huwa qrub tal-istentor blu, spiss biz-zuklorelli. Il-forma tiegħu tinbidel minn tromba għal ballun."
   },
   "49": {
-    "body": "Vorticella campanula is a bell on a contractile stalk. The stalk coils into a spiral instantly. The cell itself does not swim away."
+    "body": "Vorticella campanula hija qanpiena fuq stalk li jinġabar. L-istalk jitgħallegħ f'spiral f'mument. Iċ-ċellula nnifisha ma toħrogx biex tgħum."
   },
   "50": {
-    "body": "Vorticella microstoma is a small bell. Same spring-stalk, a narrower oral field. Often on detritus."
+    "body": "Vorticella microstoma hija qanpiena żgħira. L-istess stalk bħal rebbħa, iżda l-għalq iddejjaq. Spiss tinsab fuq id-detritu."
   },
   "51": {
-    "body": "Didinium nasutum is a barrel hunter of slippers. It fires toxicysts and swallows prey whole, even if the prey is larger."
+    "body": "Didinium nasutum hija barmil li jikkaċċja l-parameċi. Jispara toksiċisti u jibla' lill-preża kollha, anke jekk ikbar minnu."
   },
   "52": {
-    "body": "Spirostomum ambiguum is a very long cigar. It contracts several-fold in a fraction of a second. Cilia run in a spiral."
+    "body": "Spirostomum ambiguum hija sigar twil ħafna. Tikkontratti b'diversi drabi f'frazzjoni ta' sekonda. Iċ-ċilja jinsab f'spiral."
   },
   "53": {
-    "body": "Blepharisma americanum is a pink ciliate. Blepharismin pigment is light-sensitive. It filters and can attack smaller cells."
+    "body": "Blepharisma americanum hija ċiljata roża. Il-pigment blefarizmin huwa sensittiv għad-dawl. Tiffiltra u tista' tattakka ċelluli iżgħar."
   },
   "54": {
-    "body": "Euplotes patella walks on cirri as if on legs. Flat, quick turns. It scrapes bacteria off surfaces."
+    "body": "Euplotes patella jimxi fuq ċirri qishom riġlejn. Ċatt, u jagħmel dawrriet mgħaġġla. Jiġbor batterji mis-superfiċi."
   },
   "55": {
-    "body": "Stylonychia pustulata is a hypotrich that 'runs' on the bottom. Large cirri, a clear mouth. Predator of small ciliates."
+    "body": "Stylonychia pustulata hija ipotrika li 'tiġri' fil-qiegħ. Ċirri kbar u ħalq ċar. Predatur ta' ċiljati żgħar."
   },
   "56": {
-    "body": "Oxytricha trifallax is a genome model: two nuclei and complex DNA rewriting. It walks on cirri and eats bacteria and small protists."
+    "body": "Oxytricha trifallax hija mudell tal-ġenoma: żewġ nuklei u kitba ġdida kumplessa tad-DNA. Timxi fuq ċirri u tiekol batterji u protisti żgħar."
   },
   "57": {
-    "body": "Tetrahymena thermophila is a lab ciliate. Four oral membranelles, fast division. Model for telomeres and cilia."
+    "body": "Tetrahymena thermophila hija ċiljata ta' laboratorju. Erbgħa membranelli orali u diviżjoni mgħaġġla. Mudell għat-telomeri u ċ-ċilja."
   },
   "58": {
-    "body": "Coleps hirtus is a barrel in calcareous plates with spines. Scavenger and predator: it bites into the wounded."
+    "body": "Coleps hirtus hija barmil f'pjanċi kalċari bi xewk. Tiekol l-imwiet u taqdem lil min huwa midrub."
   },
   "59": {
-    "body": "Litonotus lamella is a flat predator with toxicysts in a 'proboscis'. It paralyzes prey and sucks it out."
+    "body": "Litonotus lamella hija predatur ċatt b'toksiċisti f'proboscide. Tipparaliżża lill-preża u mbagħad tixrobha."
   },
   "60": {
-    "body": "Dileptus anser has a long neck with venomous extrusomes. It strikes with the neck, then swallows. A large mid-tier hunter."
+    "body": "Dileptus anser għandu għonq twil b'estrusomi velenużi. Jaħbat bl-għonq u mbagħad jibla'. Kaċċatur kbir ta' livell tan-nofs."
   },
   "61": {
-    "body": "Urocentrum turbo is a spinning top: an equatorial ciliary belt spins the cell in place. It filters bacteria."
+    "body": "Urocentrum turbo tiddawwar bħal turbina: ċinturin ta' ċilja fl-ekwatur jiddawwar iċ-ċellula f'postha. Tiffiltra batterji."
   },
   "62": {
-    "body": "Zoothamnium arbuscula is a branched colony of bells. A shared contractile stalk jerks the whole tree at once."
+    "body": "Zoothamnium arbuscula hija kolonja fergħata ta' qniepen. Stalk kontrattli komuni jagħti xokk lis-siġra kollha f'daqqa."
   },
   "63": {
-    "body": "Opercularia coarctata is a sessile peritrich without a spring stalk. A lid covers the mouth. It filters and does not swim away."
+    "body": "Opercularia coarctata hija peritrika fissa bla stalk ta' rebbħa. Għatu jaħbi l-ħalq tagħha. Tiffiltra u ma toħrox biex tgħum."
   },
   "64": {
-    "body": "Amoeba proteus is the classic amoeba. Pseudopodia flow around prey. No fixed shape, no cilia."
+    "body": "Amoeba proteus hija l-ameba klassika. Il-pseudopodji tagħha jdorru madwar il-preża. M'għandha la forma fissja la ċilja."
   },
   "65": {
-    "body": "Arcella vulgaris is a testate amoeba with a rigid dome. Pseudopodia emerge from the aperture. It crawls on plants."
+    "body": "Arcella vulgaris hija ameba b'qoxra u b'koppla rġida. Il-pseudopodji joħorġu mill-fetħa. Titkaxkar fuq il-pjanti."
   },
   "66": {
-    "body": "Difflugia oblonga has a shell of sand grains the amoeba glues itself. It lives in silt."
+    "body": "Difflugia oblonga għandha qoxra ta' trab ramel li l-ameba tkolla hi stess. Tgħix fit-tajn."
   },
   "67": {
-    "body": "Euglypha alveolata has a shell of silica scales. Thin filose pseudopodia. A small bacterial predator."
+    "body": "Euglypha alveolata għandha qoxra ta' pjanċi tas-siliċju. Pseudopodji filożi fin. Predatur żgħir ta' batterji."
   },
   "68": {
-    "body": "Nebela collaris is a bottle-shaped shell built from stolen scales. Forest and bog waters."
+    "body": "Nebela collaris għandha qoxra b'forma ta' buttalja mibnija minn pjanċi misruqa. Ilmijiet ta' foresti u marġi."
   },
   "69": {
-    "body": "Centropyxis aculeata is a disc shell with spines. The aperture is offset. It crawls on detritus."
+    "body": "Centropyxis aculeata għandha qoxra ta' diska bi xewk. Il-fetħa tagħha mhux fiċ-ċentru. Titkaxkar fuq id-detritu."
   },
   "70": {
-    "body": "Actinophrys sol is a heliozoan: thin axopodia radiate all around. Prey sticks to the rays and is pulled in."
+    "body": "Actinophrys sol hija eljożou: assopodji fin jirradjaw minn kull naħa. Il-preża twaħħal mar-raġġi u tiġi mdaħħla ġewwa."
   },
   "71": {
-    "body": "Actinosphaerium eichhorni is a large multinucleate heliozoan. Same rays, much bigger cell. It eats ciliates and rotifers."
+    "body": "Actinosphaerium eichhorni hija eljożou kbir b'bosta nuklei. L-istess raġġi, ċellula ħafna akbar. Tiekol ċiljati u rotiferi."
   },
   "72": {
-    "body": "Raphidiophrys pallida is a heliozoan in scales. Rays carry silica needles. An ambush plankton hunter."
+    "body": "Raphidiophrys pallida hija eljożou miksija pjanċi. Ir-raġġi tagħha jġorru labra tas-siliċju. Kaċċatur planktoniku li jistenna moħbi."
   },
   "73": {
-    "body": "Rotaria rotatoria is a rotifer that can survive drying. A corona wheels food into the mouth. A true multicellular animal."
+    "body": "Rotaria rotatoria hija rotiferu li jiflaħ in-nixfa. Il-kuruna ddawwar l-ikel ġol-ħalq. Annimal plurikellulari veru."
   },
   "74": {
-    "body": "Philodina roseola is a pink bdelloid rotifer. It crawls like a leech and also swims. Females only; no males."
+    "body": "Philodina roseola hija rotiferu bdelloid roża. Titkaxkar bħal birġa u xi drabi tgħum. Nisa biss; l-irġiel ma jeżistux."
   },
   "75": {
-    "body": "Brachionus plicatilis is a planktonic loricate rotifer. Fry food in aquaculture. It filters algae and bacteria."
+    "body": "Brachionus plicatilis hija rotiferu planktoniku b'lorika. Ikel għall-ġuvni tal-ħut fl-akwakultura. Jiffiltra algi u batterji."
   },
   "76": {
-    "body": "Keratella cochlearis is a rotifer with a long lorica spine. The spine deters predators. Common pond plankton."
+    "body": "Keratella cochlearis hija rotiferu b'xewka twila tal-lorika. Ix-xewka żżomm lill-predaturi bogħod. Plankton komuni tal-għadira."
   },
   "77": {
-    "body": "Asplanchna priodonta is a sack without a lorica, a predatory rotifer. It swallows other rotifers and ciliates whole."
+    "body": "Asplanchna priodonta hija ħorża bla lorika, rotiferu predatorju. Jibla' rotiferi u ċiljati oħra kollha."
   },
   "78": {
-    "body": "Chaetonotus maximus is a gastrotrich. Scale-covered, it crawls on the bottom. It eats bacteria and detritus."
+    "body": "Chaetonotus maximus hija gastrotriku. Miksija pjanċi, titkaxkar fil-qiegħ. Tiekol batterji u detritu."
   },
   "79": {
-    "body": "Lepidodermella squamata is a small gastrotrich in overlapping scales. Very fast in-place turns."
+    "body": "Lepidodermella squamata hija gastrotriku żgħira miksija pjanċi li jaqbżu waħda fuq l-oħra. Tagħmel dawrriet mgħaġġla f'postha."
   },
   "80": {
-    "body": "Macrostomum lignano is a microscopic flatworm. Real muscles and eyes. A regeneration model. It hunts small protists."
+    "body": "Macrostomum lignano hija dudu ċatt mikroskopiku. Għandu muskoli u għajnejn veri. Mudell ta' riġenerazzjoni. Jikkaċċja protisti żgħar."
   },
   "81": {
-    "body": "Stenostomum leucops is a thin ciliated worm. It divides across into a chain of zooids. Predator of detritus and small animals."
+    "body": "Stenostomum leucops hija dudu fin miksija ċilja. Jaqsam trasversalment f'katina ta' zooidi. Predatur ta' detritu u annimali żgħar."
   },
   "82": {
-    "body": "Microstomum lineare is a flatworm that eats hydra and embeds their stinging cells in its own skin. A chain of zooids."
+    "body": "Microstomum lineare hija dudu ċatt li jiekol l-idri u jdaħħal iċ-ċelluli tagħhom li jaħrbu f'ġildu. Katina ta' zooidi."
   },
   "83": {
-    "body": "Prostoma graecense is a freshwater nemertean. A long proboscis shoots at prey. A rare large bottom hunter."
+    "body": "Prostoma graecense hija nemertina ta' ilma ħelu. Proboscide twila tispara għall-preża. Kaċċatur kbir rar fil-qiegħ."
   },
   "84": {
-    "body": "Trichoplax adhaerens is a placozoan, among the simplest animals. It crawls as a sheet and digests food outside. No mouth."
+    "body": "Trichoplax adhaerens hija plakożou, fost l-aktar annimali sempliċi. Titkaxkar bħala folja u tiddiġerixxi l-ikel barra. M'għandha ħalq."
   },
   "85": {
-    "body": "Saccharomyces cerevisiae is baker's yeast. It buds, eats sugar, releases CO2 and alcohol. In the pond it cleans dissolved organics."
+    "body": "Saccharomyces cerevisiae hija l-ħmira tal-ħobż. Tagħmel gemmazzjoni, tiekol iz-zokkor, u tħareġ CO2 u alkoħol. Fil-għadira tnaddaf il-materja organika maħlula."
   },
   "86": {
-    "body": "Candida albicans is a yeast that can grow as filaments. An opportunistic human pathogen. In-game it is a detrital fungus."
+    "body": "Candida albicans hija ħmira li tista' tikber bħala filamenti. Patoġenu uman opportunistiku. Fil-logħba hija faqqus tad-detritu."
   },
   "87": {
-    "body": "Mucor mucedo is bread mold. Sporangia on stalks, fast growth over the dead. It does not hunt the living."
+    "body": "Mucor mucedo hija moffa tal-ħobż. Sporanġi fuq stalks u tkabbir mgħaġġel fuq l-imwiet. Ma tikkaċċjax lill-ħajjin."
   },
   "88": {
-    "body": "Rhizopus stolonifer is black bread mold. Stolons and rhizoids spread over the substrate. It breaks down starch."
+    "body": "Rhizopus stolonifer hija moffa sewda tal-ħobż. Stoloni u rizożidi jiftxu fuq is-sottostrat. Tiddiġerixxi l-amidu."
   },
   "89": {
-    "body": "Penicillium chrysogenum is a brush mold, the source of penicillin. Conidial brushes. It decomposes organics and suppresses nearby bacteria."
+    "body": "Penicillium chrysogenum hija moffa b'pinzell, is-sors tal-peniċillina. Pinzelli konidjali. Tiddiġerixxi materja organika u tnaqqas il-batterji viċin."
   },
   "90": {
-    "body": "Aspergillus niger is black aspergillus. Spherical spore heads. Industrial citric-acid producer. A saprotroph."
+    "body": "Aspergillus niger hija aspergillus iswed. Rjus tondi ta' spori. Produttur industrijali ta' aċitu ċitriku. Saprofitu."
   },
   "91": {
-    "body": "Batrachochytrium dendrobatidis is a chytrid of frogs. Uniflagellate zoospores. In the pond it is a water-fungus model."
+    "body": "Batrachochytrium dendrobatidis hija kitrid tal-żrinġijiet. Zoospuri b'flagellum wieħed. Fil-għadira hija mudell ta' faqqus tal-ilma."
   },
   "92": {
-    "body": "Chytriomyces aureus is a water chytrid on pollen and algae. Golden sporangia; zoospores swim to the substrate."
+    "body": "Chytriomyces aureus hija kitrid tal-ilma fuq il-pollina u l-algi. Sporanġi dehbija; iz-zospuri jgħumu sal-sottostrat."
   },
   "93": {
-    "body": "Allomyces macrogynus is a water fungus with true mycelium. It alternates diploid and haploid. Zoospores have a posterior flagellum."
+    "body": "Allomyces macrogynus hija faqqus tal-ilma b'miċelju veru. Talternja bejn diplojde u aplojde. Iz-zospuri għandhom flagellum ta' wara."
   },
   "94": {
-    "body": "Bacillus subtilis is a soil rod. Spores survive boiling. It breaks down protein; a Gram-positive model."
+    "body": "Bacillus subtilis hija bastun tal-ħamrija. L-ispori tagħha jiflaħu l-iveljar. Tiddiġerixxi l-proteina; mudell Gram-pozittiv."
   },
   "95": {
-    "body": "Pseudomonas putida is a cleanup rod. It even eats petroleum products. Motile flagellum, fast growth on detritus."
+    "body": "Pseudomonas putida hija bastuna tat-tindif. Anke prodotti tal-pitrolju tiekol. Tiċċaqlaq bil-flagellum u tikber malajr fuq id-detritu."
   },
   "96": {
-    "body": "Streptomyces coelicolor is a filamentous soil bacterium. It makes the smell of earth (geosmin) and many antibiotics. Spores on hyphae."
+    "body": "Streptomyces coelicolor hija batterju tal-ħamrija filamentuż. Jagħmel riħa ta' ħamrija (ġeosmin) u ħafna antibijotiċi. Spori fuq l-ife."
   },
   "97": {
-    "body": "Cellulomonas fimi breaks down cellulose. A yellow rod on plant detritus. Without it dead algae would linger longer."
+    "body": "Cellulomonas fimi tiddiġerixxi iċ-ċelluloża. Bastun isfar fuq id-detritu tal-pjanti. Mingħajrha l-algi mejta jibqgħu aktar żmien fl-ilma."
   },
   "98": {
-    "body": "Thermus aquaticus is a thermophile from hot springs. Taq polymerase is the basis of PCR. In a cold pond it is almost dormant."
+    "body": "Thermus aquaticus hija termofila mill-għejun sħan. Il-polimerażi Taq hija l-bażi tal-PCR. F'għadira kesħa tkun kważi rieqda."
   },
   "99": {
-    "body": "Deinococcus radiodurans is the radiation champion. It reassembles a shattered genome in hours. Thick wall, cell tetrads."
+    "body": "Deinococcus radiodurans hija ċampjin tar-radjazzjoni. Terġa' tassamblea ġenoma mkisser f'sigħat. Ħajt oħxon u tetradi ta' ċelluli."
   },
   "1001": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote huwa mudell edukattiv tar-riproduzzjoni sesswali. Żewġ sessi, fużjoni ta' gameti, mhux diviżjoni binarja sempliċi."
   },
   "T4 Bacteriophage": {
-    "body": "T4 is a large myovirus of E. coli. The tail contracts and injects DNA. In half an hour the cell bursts and dozens of phages exit."
+    "body": "T4 huwa mijovirus kbir ta' E. coli. Id-denb jikkontratta u jdaħħal id-DNK. F'nofs siegħa iċ-ċellula tisplodi u joħorġu tużżani ta' faġi."
   },
   "Lambda Phage": {
-    "body": "Lambda is a temperate phage. It can insert into the chromosome and sleep (lysogeny) or cut the cell at once (lysis)."
+    "body": "Lambda huwa faġu moderat. Jista' jidħol fiċ-ċromosoma u jorqod (liżoġenija) jew jaqsam iċ-ċellula minnufih (liżi)."
   },
   "T7 Bacteriophage": {
-    "body": "T7 has a short tail and very fast replication. A favourite system in synthetic biology."
+    "body": "T7 għandu denb qosru u replikazzjoni mgħaġġla ħafna. Sistema preferuta fil-bijoloġija sintetika."
   },
   "Phi-6 Phage": {
-    "body": "Phi-6 is an RNA phage with a lipid envelope. It infects Pseudomonas. A rare membrane for a phage."
+    "body": "Phi-6 huwa faġu ta' RNA b'envelop lipidi. Jinfetta l-Pseudomonas. Membrana rari għal faġu."
   },
   "MS2 Phage": {
-    "body": "MS2 is a tiny tailless RNA phage. It binds male E. coli pili. Its genome was one of the first RNA genomes read."
+    "body": "MS2 huwa faġu ta' RNA minuri bla denb. Jorbot mal-pili ta' E. coli maskil. Il-ġenoma tiegħu kien wieħed mill-ewwel ġenomi ta' RNA li ġew maqraw."
   },
   "Neuro-Parasite": {
-    "body": "A fictional pond neuro-parasite. It latches onto eukaryotes and breaks host behaviour until the host becomes a carrier."
+    "body": "Dan huwa newro-parassita tal-għadira, mill-finzjoni. Jwaħħal ma' eukarjoti u jfixkel l-imġieba tal-ospitanti sakemm l-ospitanti jsir vettur."
   },
   "Sexual Eukaryote": {
-    "body": "Sexual Eukaryote is a teaching model of sexual reproduction. Two sexes, gamete fusion, not simple binary fission."
+    "body": "Sexual Eukaryote huwa mudell edukattiv tar-riproduzzjoni sesswali. Żewġ sessi, fużjoni ta' gameti, mhux diviżjoni binarja sempliċi."
   }
 }

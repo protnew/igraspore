@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-02 04:13:46",
+  "at": "2026-11-02 04:52:32",
   "enKeys": 436,
   "enWiki": 108,
   "rows": [
@@ -987,8 +987,8 @@
       "dictTranslated": 436,
       "dictCopyEn": 0,
       "dictMissing": 0,
-      "wikiTranslated": 0,
-      "wikiCopyEn": 108,
+      "wikiTranslated": 108,
+      "wikiCopyEn": 0,
       "wikiMissing": 0
     },
     {
@@ -1000,8 +1000,8 @@
       "dictTranslated": 436,
       "dictCopyEn": 0,
       "dictMissing": 0,
-      "wikiTranslated": 0,
-      "wikiCopyEn": 108,
+      "wikiTranslated": 108,
+      "wikiCopyEn": 0,
       "wikiMissing": 0
     },
     {
@@ -1013,8 +1013,8 @@
       "dictTranslated": 436,
       "dictCopyEn": 0,
       "dictMissing": 0,
-      "wikiTranslated": 0,
-      "wikiCopyEn": 108,
+      "wikiTranslated": 108,
+      "wikiCopyEn": 0,
       "wikiMissing": 0
     },
     {
@@ -1026,8 +1026,8 @@
       "dictTranslated": 436,
       "dictCopyEn": 0,
       "dictMissing": 0,
-      "wikiTranslated": 0,
-      "wikiCopyEn": 108,
+      "wikiTranslated": 108,
+      "wikiCopyEn": 0,
       "wikiMissing": 0
     },
     {
@@ -1179,8 +1179,8 @@
       "frozen": false,
       "dictTotal": 436,
       "wikiTotal": 108,
-      "dictTranslated": 68,
-      "dictCopyEn": 368,
+      "dictTranslated": 423,
+      "dictCopyEn": 13,
       "dictMissing": 0,
       "wikiTranslated": 0,
       "wikiCopyEn": 108,
@@ -1192,8 +1192,8 @@
       "frozen": false,
       "dictTotal": 436,
       "wikiTotal": 108,
-      "dictTranslated": 67,
-      "dictCopyEn": 369,
+      "dictTranslated": 421,
+      "dictCopyEn": 15,
       "dictMissing": 0,
       "wikiTranslated": 0,
       "wikiCopyEn": 108,
@@ -1205,8 +1205,8 @@
       "frozen": false,
       "dictTotal": 436,
       "wikiTotal": 108,
-      "dictTranslated": 68,
-      "dictCopyEn": 368,
+      "dictTranslated": 421,
+      "dictCopyEn": 15,
       "dictMissing": 0,
       "wikiTranslated": 0,
       "wikiCopyEn": 108,
@@ -1218,8 +1218,8 @@
       "frozen": false,
       "dictTotal": 436,
       "wikiTotal": 108,
-      "dictTranslated": 68,
-      "dictCopyEn": 368,
+      "dictTranslated": 429,
+      "dictCopyEn": 7,
       "dictMissing": 0,
       "wikiTranslated": 0,
       "wikiCopyEn": 108,

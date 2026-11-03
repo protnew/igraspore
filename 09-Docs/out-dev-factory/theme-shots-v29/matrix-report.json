@@ -1,0 +1,96 @@
+{
+  "shots": [
+    "pond_classic_375_en.png",
+    "bestiary_classic_375_en.png",
+    "pond_neon-bio_375_en.png",
+    "bestiary_neon-bio_375_en.png",
+    "pond_phase-contrast_375_en.png",
+    "bestiary_phase-contrast_375_en.png",
+    "pond_classic_375_ru.png",
+    "bestiary_classic_375_ru.png",
+    "pond_neon-bio_375_ru.png",
+    "bestiary_neon-bio_375_ru.png",
+    "pond_phase-contrast_375_ru.png",
+    "bestiary_phase-contrast_375_ru.png",
+    "pond_classic_375_ar.png",
+    "bestiary_classic_375_ar.png",
+    "pond_neon-bio_375_ar.png",
+    "bestiary_neon-bio_375_ar.png",
+    "pond_phase-contrast_375_ar.png",
+    "bestiary_phase-contrast_375_ar.png",
+    "pond_classic_375_hi.png",
+    "bestiary_classic_375_hi.png",
+    "pond_neon-bio_375_hi.png",
+    "bestiary_neon-bio_375_hi.png",
+    "pond_phase-contrast_375_hi.png",
+    "bestiary_phase-contrast_375_hi.png",
+    "pond_classic_1400_en.png",
+    "bestiary_classic_1400_en.png",
+    "pond_neon-bio_1400_en.png",
+    "bestiary_neon-bio_1400_en.png",
+    "pond_phase-contrast_1400_en.png",
+    "bestiary_phase-contrast_1400_en.png",
+    "pond_classic_1400_ru.png",
+    "bestiary_classic_1400_ru.png",
+    "pond_neon-bio_1400_ru.png",
+    "bestiary_neon-bio_1400_ru.png",
+    "pond_phase-contrast_1400_ru.png",
+    "bestiary_phase-contrast_1400_ru.png",
+    "pond_classic_1400_ar.png",
+    "bestiary_classic_1400_ar.png",
+    "pond_neon-bio_1400_ar.png",
+    "bestiary_neon-bio_1400_ar.png",
+    "pond_phase-contrast_1400_ar.png",
+    "bestiary_phase-contrast_1400_ar.png",
+    "pond_classic_1400_hi.png",
+    "bestiary_classic_1400_hi.png",
+    "pond_neon-bio_1400_hi.png",
+    "bestiary_neon-bio_1400_hi.png",
+    "pond_phase-contrast_1400_hi.png",
+    "bestiary_phase-contrast_1400_hi.png"
+  ],
+  "hitTargets": {
+    "375": {
+      "pond": {
+        "w": 145,
+        "h": 48
+      },
+      "bestiary": {
+        "w": 145,
+        "h": 48
+      }
+    },
+    "1400": {
+      "pond": {
+        "w": 145,
+        "h": 48
+      },
+      "bestiary": {
+        "w": 145,
+        "h": 48
+      }
+    }
+  },
+  "errors": [],
+  "base": "http://127.0.0.1:8820",
+  "startedAt": "2026-11-03T16:00:23.853Z",
+  "shotCount": 48,
+  "finishedAt": "2026-11-03T16:01:33.524Z",
+  "fps": {
+    "classic": {
+      "n": 829,
+      "med": 30,
+      "p5": 59.5
+    },
+    "neon-bio": {
+      "n": 731,
+      "med": 29.9,
+      "p5": 30
+    },
+    "phase-contrast": {
+      "n": 897,
+      "med": 30,
+      "p5": 59.9
+    }
+  }
+}

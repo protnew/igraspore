@@ -7,3 +7,6 @@ html[data-theme-pond="phase-contrast"], body[data-theme-pond="phase-contrast"] {
 #wikiO[data-theme-bestiary="neon-bio"] .tt { color:#00ffff; text-shadow:0 0 8px #ff00aa88; }
 #themePondBar, #themeBestiaryBar, .theme-set-row select { min-height:48px; }
 .theme-sel-wrap select { min-height:48px; min-width:48px; }
+
+#themePondBar{position:fixed;top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));z-index:45;display:flex;background:rgba(0,12,28,.72);padding:6px 8px;border-radius:10px;}
+body.in-menu #themePondBar{display:none!important;}

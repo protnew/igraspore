@@ -18,3 +18,13 @@
 - index/ui_screens/CSS/en+ru keys
 - vitest theme_engine.test.js
 
+
+### 2026-11-03 17:41 — shots+FPS старт
+- vitest theme_engine 6/6 PASS
+- коммиты ab665cb, e7081ed
+- запуск tools/v29_theme_shots.cjs (матрица 48 + FPS 30с×3)
+
+
+### 2026-11-03 17:55 — shots retry на :8820
+- :8795 hang/spawn-null при test=1; новый стенд :8820 стартует (paused+alive)
+

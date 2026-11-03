@@ -66,3 +66,10 @@
 - Synced theme JSON/engine/webgl/effects/css into www-release for local APK rebuild
 - Emulator emulator-5554 device ready; next: assembleDebug + install + APK shots
 - Re-shoot web 1400/375 after color fixes
+
+## 2026-11-03 20:37 Asia/Jerusalem — closeout all-styles
+- HEAD a1482a4 (+REPORT next): specificity #wikiO.ov.show fixed; light bestiary glass/phase/haeckel/engraving
+- Web 28 shots reshot; APK 14 theme shots via CDP on emulator-5554; overlapFails=0; neon p5=classic=20 on 375
+- vitest theme_engine 6/6 ×3; qa_unit 26/26; playwright lab_tests 5/5
+- Pond water deltas still milder than mockups (esp. neon); organism sprites not per-theme
+- Box /workspace/v29all/ receiving post-fix PNGs + apk samples

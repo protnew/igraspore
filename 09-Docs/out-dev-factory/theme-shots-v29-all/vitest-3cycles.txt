@@ -1,0 +1,118 @@
+
+=== CYCLE 1 ===
+
+ RUN  v3.2.6 C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src
+
+node.exe : stderr | 07-QA-and-Testing/vitest/theme_engine.test.js
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (stderr | 07-QA-..._engine.test.js:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\node_modules\jsdom\lib\jsdom\browser\not-implem
+ented.js:9:17)
+    at HTMLCanvasElementImpl.getContext (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\node_modules\jsdom\lib\jsdom\
+living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\node_modules\jsdom\lib\jsdom\livi
+ng\generated\HTMLCanvasElement.js:131:58)
+    at C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\vitest.setup.js:5:16
+    at VitestExecutor.runModule (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/dist/c
+lient.mjs:397:10)
+    at VitestExecutor.runModule (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vitest/dist/chun
+ks/execute.B7h3T_Hc.js:667:57)
+    at VitestExecutor.directRequest (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/di
+st/client.mjs:375:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at VitestExecutor.cachedRequest (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/di
+st/client.mjs:189:11)
+    at VitestExecutor.executeId (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/dist/c
+lient.mjs:166:10) undefined
+
+ ✓ 07-QA-and-Testing/vitest/theme_engine.test.js (6 tests) 46ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  20:25:53
+   Duration  2.72s (transform 95ms, setup 42ms, collect 51ms, tests 46ms, environment 1.22s, prepare 596ms)
+
+
+=== CYCLE 2 ===
+
+ RUN  v3.2.6 C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src
+
+node.exe : stderr | 07-QA-and-Testing/vitest/theme_engine.test.js
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (stderr | 07-QA-..._engine.test.js:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\node_modules\jsdom\lib\jsdom\browser\not-implem
+ented.js:9:17)
+    at HTMLCanvasElementImpl.getContext (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\node_modules\jsdom\lib\jsdom\
+living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\node_modules\jsdom\lib\jsdom\livi
+ng\generated\HTMLCanvasElement.js:131:58)
+    at C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\vitest.setup.js:5:16
+    at VitestExecutor.runModule (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/dist/c
+lient.mjs:397:10)
+    at VitestExecutor.runModule (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vitest/dist/chun
+ks/execute.B7h3T_Hc.js:667:57)
+    at VitestExecutor.directRequest (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/di
+st/client.mjs:375:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at VitestExecutor.cachedRequest (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/di
+st/client.mjs:189:11)
+    at VitestExecutor.executeId (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/dist/c
+lient.mjs:166:10) undefined
+
+ ✓ 07-QA-and-Testing/vitest/theme_engine.test.js (6 tests) 46ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  20:26:02
+   Duration  2.37s (transform 70ms, setup 35ms, collect 62ms, tests 46ms, environment 1.20s, prepare 427ms)
+
+
+=== CYCLE 3 ===
+
+ RUN  v3.2.6 C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src
+
+node.exe : stderr | 07-QA-and-Testing/vitest/theme_engine.test.js
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (stderr | 07-QA-..._engine.test.js:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\node_modules\jsdom\lib\jsdom\browser\not-implem
+ented.js:9:17)
+    at HTMLCanvasElementImpl.getContext (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\node_modules\jsdom\lib\jsdom\
+living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext (C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\node_modules\jsdom\lib\jsdom\livi
+ng\generated\HTMLCanvasElement.js:131:58)
+    at C:\Obsidian\New\Projects\08-iGraSpore_V2\.04-Src\vitest.setup.js:5:16
+    at VitestExecutor.runModule (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/dist/c
+lient.mjs:397:10)
+    at VitestExecutor.runModule (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vitest/dist/chun
+ks/execute.B7h3T_Hc.js:667:57)
+    at VitestExecutor.directRequest (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/di
+st/client.mjs:375:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at VitestExecutor.cachedRequest (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/di
+st/client.mjs:189:11)
+    at VitestExecutor.executeId (file:///C:/Obsidian/New/Projects/08-iGraSpore_V2/.04-Src/node_modules/vite-node/dist/c
+lient.mjs:166:10) undefined
+
+ ✓ 07-QA-and-Testing/vitest/theme_engine.test.js (6 tests) 48ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  20:26:09
+   Duration  2.28s (transform 60ms, setup 42ms, collect 50ms, tests 48ms, environment 1.09s, prepare 368ms)
+
+

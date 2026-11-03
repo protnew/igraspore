@@ -56,7 +56,7 @@ async function fps(page, ms){
 }
 
 (async()=>{
-  const browser = await chromium.launch({ headless:true });
+  const browser = await chromium.launch({ headless:true, channel:'chrome' });
   const report = { shots:[], fps:{}, overlap:{}, errors:[], base:BASE, startedAt:new Date().toISOString() };
   let n=0;
   for (const view of VIEWS) {
@@ -79,11 +79,15 @@ async function fps(page, ms){
         })()`);
         report.overlap[theme+'_'+view.name] = ov;
 
-        await closeWiki(page); await dismiss(page); await page.waitForTimeout(300);
+        await closeWiki(page); await dismiss(page); await page.evaluate('try{if(window.igsThemeVisuals)igsThemeVisuals.install()}catch(e){}'); await page.waitForTimeout(700);
         const pf = 'pond_'+theme+'_'+view.name+'_en.png';
         await page.screenshot({ path: path.join(OUT, pf) }); n++; report.shots.push(pf);
 
         await openWiki(page);
+        await page.evaluate('try{if(window.igsThemeWikiEnhance)igsThemeWikiEnhance()}catch(e){}');
+        await page.waitForTimeout(400);
+        const thumbs=await page.evaluate('document.querySelectorAll(".wiki-thumb").length');
+        report['thumbs_'+theme+'_'+view.name]=thumbs;
         const bf = 'bestiary_'+theme+'_'+view.name+'_en.png';
         await page.screenshot({ path: path.join(OUT, bf) }); n++; report.shots.push(bf);
         await closeWiki(page);

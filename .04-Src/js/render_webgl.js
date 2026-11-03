@@ -1,4 +1,4 @@
-/* iGraSpore — WebGL water style (from .04-Src/v3-webgl). Active only when settings.renderMode==="webgl". */
+﻿/* iGraSpore — WebGL water style (from .04-Src/v3-webgl). Active only when settings.renderMode==="webgl". */
 (function(){
   var WATER_VERT = "attribute vec2 aPosition; attribute vec2 aTexCoord; uniform float uTime; varying vec2 vTexCoord; varying float vWaveHeight;\n"+
 "float hash(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}\n"+
@@ -126,7 +126,7 @@
     var surf=v3(sh.surface,[0.12,0.50,0.45]), mid=v3(sh.mid,[0.05,0.25,0.28]), deep=v3(sh.deep,[0.01,0.06,0.10]), cau=v3(sh.caustic,[0.6,0.95,0.85]);
     var fx=(sh.fallback==='low')?Math.min(sh.fx||0.4,0.4):(typeof sh.fx==='number'?sh.fx:1.0);
     gl.uniform1f(gl.getUniformLocation(waterProgram,'uTime'), time);
-    gl.uniform1f(gl.getUniformLocation(waterProgram,'uDayLight'), (typeof dayLight==='number'?dayLight:0.85));
+    var _dl=(typeof dayLight==='number'?dayLight:0.85); if(typeof window.__igsThemeDayLight==='number') _dl=window.__igsThemeDayLight; gl.uniform1f(gl.getUniformLocation(waterProgram,'uDayLight'), _dl);
     gl.uniform2f(gl.getUniformLocation(waterProgram,'uResolution'), w, h);
     gl.uniform3f(gl.getUniformLocation(waterProgram,'uSurface'), surf[0],surf[1],surf[2]);
     gl.uniform3f(gl.getUniformLocation(waterProgram,'uMid'), mid[0],mid[1],mid[2]);

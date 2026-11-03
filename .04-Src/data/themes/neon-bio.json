@@ -1,69 +1,69 @@
 {
-    "id":  "neon-bio",
-    "labelKey":  "theme.neonBio",
-    "cssVars":  {
-                    "--theme-bg":  "#000000",
-                    "--theme-panel":  "rgba(5,0,20,.94)",
-                    "--theme-border":  "#ff00aa",
-                    "--theme-text":  "#e8fffe",
-                    "--theme-muted":  "#a0ffe8",
-                    "--theme-accent":  "#00ffff",
-                    "--theme-card":  "rgba(10,0,30,.85)",
-                    "--theme-title":  "#00ffff",
-                    "--theme-entry-b":  "#ff66cc",
-                    "--theme-font-ui":  "system-ui,Arial,sans-serif",
-                    "--theme-font-title":  "system-ui,Arial,sans-serif"
-                },
-    "shader":  {
-                   "surface":  [
-                                   0,
-                                   0.45,
-                                   0.55
-                               ],
-                   "mid":  [
-                               0,
-                               0.05,
-                               0.12
-                           ],
-                   "deep":  [
-                                0,
-                                0,
-                                0
-                            ],
-                   "caustic":  [
-                                   0,
-                                   1,
-                                   1
-                               ],
-                   "bloom":  2,
-                   "causticAmt":  2.4,
-                   "sat":  1.6,
-                   "vignette":  0.45,
-                   "fx":  0.85,
-                   "fallback":  "low",
-                   "rgbTop":  [
-                                  0,
-                                  18,
-                                  28
-                              ],
-                   "rgbMid":  [
-                                  0,
-                                  4,
-                                  18
-                              ],
-                   "rgbBot":  [
-                                  0,
-                                  0,
-                                  0
-                              ]
-               },
-    "fpsBudget":  {
-                      "target":  30,
-                      "lowDeviceMaxFx":  0.35
-                  },
-    "a11y":  {
-                 "minContrast":  4.5,
-                 "minTapPx":  48
-             },
-    "wave":  1
+  "id": "neon-bio",
+  "labelKey": "theme.neonBio",
+  "cssVars": {
+    "--theme-bg": "#000000",
+    "--theme-panel": "rgba(5,0,20,.94)",
+    "--theme-border": "#ff00aa",
+    "--theme-text": "#e8fffe",
+    "--theme-muted": "#a0ffe8",
+    "--theme-accent": "#00ffff",
+    "--theme-card": "rgba(10,0,30,.85)",
+    "--theme-title": "#00ffff",
+    "--theme-entry-b": "#ff66cc",
+    "--theme-font-ui": "system-ui,Arial,sans-serif",
+    "--theme-font-title": "system-ui,Arial,sans-serif"
+  },
+  "shader": {
+    "surface": [
+      0.02,
+      0.12,
+      0.18
+    ],
+    "mid": [
+      0.0,
+      0.03,
+      0.08
+    ],
+    "deep": [
+      0.0,
+      0.0,
+      0.02
+    ],
+    "caustic": [
+      0.0,
+      1.0,
+      1.0
+    ],
+    "bloom": 2.4,
+    "causticAmt": 2.8,
+    "sat": 1.8,
+    "vignette": 0.55,
+    "fx": 0.9,
+    "fallback": "low",
+    "rgbTop": [
+      0,
+      8,
+      14
+    ],
+    "rgbMid": [
+      0,
+      2,
+      8
+    ],
+    "rgbBot": [
+      0,
+      0,
+      0
+    ]
+  },
+  "fpsBudget": {
+    "target": 30,
+    "lowDeviceMaxFx": 0.35
+  },
+  "a11y": {
+    "minContrast": 4.5,
+    "minTapPx": 48
+  },
+  "wave": 1
 }

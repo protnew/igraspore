@@ -1,0 +1,294 @@
+{
+  "shots": [
+    "pond_classic_375_en.png",
+    "bestiary_classic_375_en.png",
+    "pond_phase-contrast_375_en.png",
+    "bestiary_phase-contrast_375_en.png",
+    "pond_neon-bio_375_en.png",
+    "bestiary_neon-bio_375_en.png",
+    "pond_glass-lab_375_en.png",
+    "bestiary_glass-lab_375_en.png",
+    "pond_cyberpunk-scanner_375_en.png",
+    "bestiary_cyberpunk-scanner_375_en.png",
+    "pond_haeckel-watercolor_375_en.png",
+    "bestiary_haeckel-watercolor_375_en.png",
+    "pond_engraving_375_en.png",
+    "bestiary_engraving_375_en.png",
+    "pond_classic_1400_en.png",
+    "bestiary_classic_1400_en.png",
+    "pond_phase-contrast_1400_en.png",
+    "bestiary_phase-contrast_1400_en.png",
+    "pond_neon-bio_1400_en.png",
+    "bestiary_neon-bio_1400_en.png",
+    "pond_glass-lab_1400_en.png",
+    "bestiary_glass-lab_1400_en.png",
+    "pond_cyberpunk-scanner_1400_en.png",
+    "bestiary_cyberpunk-scanner_1400_en.png",
+    "pond_haeckel-watercolor_1400_en.png",
+    "bestiary_haeckel-watercolor_1400_en.png",
+    "pond_engraving_1400_en.png",
+    "bestiary_engraving_1400_en.png"
+  ],
+  "fps": {
+    "classic_375": {
+      "n": 561,
+      "med": 30,
+      "p5": 20
+    },
+    "neon-bio_375": {
+      "n": 557,
+      "med": 30,
+      "p5": 20
+    },
+    "classic_1400": {
+      "n": 160,
+      "med": 10,
+      "p5": 10
+    }
+  },
+  "overlap": {
+    "classic_375": {
+      "bar": {
+        "x": 8,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "disp": "none"
+      },
+      "overlap": false
+    },
+    "phase-contrast_375": {
+      "bar": {
+        "x": 8,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "disp": "none"
+      },
+      "overlap": false
+    },
+    "neon-bio_375": {
+      "bar": {
+        "x": 8,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "disp": "none"
+      },
+      "overlap": false
+    },
+    "glass-lab_375": {
+      "bar": {
+        "x": 8,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "disp": "none"
+      },
+      "overlap": false
+    },
+    "cyberpunk-scanner_375": {
+      "bar": {
+        "x": 8,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "disp": "none"
+      },
+      "overlap": false
+    },
+    "haeckel-watercolor_375": {
+      "bar": {
+        "x": 8,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "disp": "none"
+      },
+      "overlap": false
+    },
+    "engraving_375": {
+      "bar": {
+        "x": 8,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "disp": "none"
+      },
+      "overlap": false
+    },
+    "classic_1400": {
+      "bar": {
+        "x": 1173,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 1344,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "disp": "flex"
+      },
+      "overlap": false
+    },
+    "phase-contrast_1400": {
+      "bar": {
+        "x": 1173,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 1344,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "disp": "flex"
+      },
+      "overlap": false
+    },
+    "neon-bio_1400": {
+      "bar": {
+        "x": 1173,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 1344,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "disp": "flex"
+      },
+      "overlap": false
+    },
+    "glass-lab_1400": {
+      "bar": {
+        "x": 1173,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 1344,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "disp": "flex"
+      },
+      "overlap": false
+    },
+    "cyberpunk-scanner_1400": {
+      "bar": {
+        "x": 1173,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 1344,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "disp": "flex"
+      },
+      "overlap": false
+    },
+    "haeckel-watercolor_1400": {
+      "bar": {
+        "x": 1173,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 1344,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "disp": "flex"
+      },
+      "overlap": false
+    },
+    "engraving_1400": {
+      "bar": {
+        "x": 1173,
+        "y": 8,
+        "w": 163,
+        "h": 81,
+        "disp": "flex"
+      },
+      "pause": {
+        "x": 1344,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "disp": "flex"
+      },
+      "overlap": false
+    }
+  },
+  "errors": [],
+  "base": "http://127.0.0.1:8820",
+  "startedAt": "2026-11-03T17:45:19.801Z",
+  "shotCount": 28,
+  "finishedAt": "2026-11-03T17:47:32.362Z"
+}

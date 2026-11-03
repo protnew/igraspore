@@ -52,3 +52,11 @@
 - JSON×7, theme_engine THEMES, CSS бестиария по мокапам
 - WebGL uniforms + 2D rgbTop/Mid/Bot; pond bar right:64px (не на pause)
 - lab/theme-preview.html тестовые ссылки; URL ?themePond=&themeBestiary=
+
+### 2026-11-03 19:44 — shots all 7 styles start (vitest 6/6 @ c4365d4)
+
+
+### 2026-11-03 19:47 — web shots 7×2×2=28 PASS
+- overlapFails=0 (pond bar vs pause)
+- FPS 375: classic med30/p5=20; neon med30/p5=20 (neon p5 ≥ classic)
+- out: 09-Docs\out-dev-factory\theme-shots-v29-all\

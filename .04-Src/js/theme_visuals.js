@@ -114,8 +114,15 @@
         c.save();
         var col = (o && o.sp && o.sp.color) || "#0ff";
         c.shadowColor = col;
-        c.shadowBlur = Math.max(8, (sz || 4) * 2.2);
+        c.shadowBlur = Math.max(18, (sz || 4) * 4.5);
         orig(c, o, sz, sh);
+        // second pass: neon rim
+        try {
+          c.globalCompositeOperation = "screen";
+          c.shadowBlur = Math.max(24, (sz || 4) * 5.5);
+          c.globalAlpha = 0.55;
+          orig(c, o, sz, sh);
+        } catch (eN) {}
         c.restore();
         return;
       }
@@ -256,9 +263,9 @@
   }
   function thumbFilter(theme) {
     var m = {
-      "neon-bio": "drop-shadow(0 0 8px #0ff) drop-shadow(0 0 4px #f0f) saturate(1.8) brightness(1.15)",
+      "neon-bio": "drop-shadow(0 0 12px #0ff) drop-shadow(0 0 8px #f0f) drop-shadow(0 0 4px #0f8) saturate(2.2) brightness(1.25)",
       "phase-contrast": "grayscale(1) contrast(1.4) brightness(1.2)",
-      "haeckel-watercolor": "sepia(0.4) saturate(0.8) contrast(0.95)",
+      "haeckel-watercolor": "sepia(0.55) saturate(1.35) contrast(1.15) brightness(1.05)",
       "engraving": "grayscale(1) contrast(1.35) sepia(0.5)",
       "cyberpunk-scanner": "saturate(1.7) contrast(1.3) hue-rotate(50deg) drop-shadow(0 0 6px #0f8)",
       "glass-lab": "saturate(0.65) brightness(1.12) contrast(1.05)",
@@ -316,7 +323,7 @@
 
   function install() {
     wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapBuildWiki();
-    var id=tid(); var dark={"neon-bio":0.22,"cyberpunk-scanner":0.28,"phase-contrast":0.55,"engraving":0.5,"haeckel-watercolor":0.75,"glass-lab":0.9};
+    var id=tid(); var dark={"neon-bio":0.12,"cyberpunk-scanner":0.28,"phase-contrast":0.55,"engraving":0.5,"haeckel-watercolor":0.75,"glass-lab":0.9};
     if(dark[id]!=null) w.__igsThemeDayLight=dark[id]; else if(id==="classic") w.__igsThemeDayLight=null;
   }
   w.igsThemeVisuals = { install: install, postFX: postFX, enhanceWiki: enhanceWiki };

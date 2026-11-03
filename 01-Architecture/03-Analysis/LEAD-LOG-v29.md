@@ -83,3 +83,12 @@
 - Box target /workspace/v29all2/ small PNG + side-by-side
 - Ban: no i18n es/tr/fil commit; no .04-Src/src; no add -A; no prod
 
+
+## 2026-11-03 22:07 Asia/Jerusalem — strict eye vs inflated auto MAD
+- Web: 28 shots + side-by-side; FPS neon=classic (med 59.9); thumbs count 107/style
+- Eye (strict): neon pond ~48% (sky dark OK; water murky; organism glow << mock rays/outlines)
+- Eye: haeckel bestiary ~72% (thumbs present but faint technical sprites ≠ watercolor gallery mock)
+- Auto MAD neon pond 92.8 / haeckel best 86.4 — REJECTED as inflated (owner was right)
+- APK: assembleDebug+cap sync+themes in assets; emulator ANR/System UI not responding on kq_test35; theme APK shots invalid (wait-for-debugger earlier, then crash). Need stable emu pass next.
+- Box /workspace/v29all2/: sides + key web shots (no big zip)
+

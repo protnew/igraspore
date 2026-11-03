@@ -101,8 +101,10 @@ html[data-theme-pond="engraving"],body[data-theme-pond="engraving"]{background:#
 
 /* wiki creature thumbs */
 .wiki-entry.wiki-entry-has-thumb{display:grid;grid-template-columns:88px 1fr;gap:10px 14px;align-items:start}
-.wiki-thumb-wrap{grid-row:1 / span 6;width:88px;height:88px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border:1px solid var(--theme-border,rgba(255,255,255,.2))}
-.wiki-thumb{max-width:80px;max-height:80px;object-fit:contain;image-rendering:auto}
+.wiki-thumb-wrap{grid-row:1 / span 6;width:104px;height:104px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border:1px solid var(--theme-border,rgba(255,255,255,.2))}
+.wiki-thumb{max-width:96px;max-height:96px;width:96px;height:96px;object-fit:contain;image-rendering:auto}
+#wikiO.ov.show[data-theme-bestiary="haeckel-watercolor"] .wiki-thumb{filter:sepia(0.55) saturate(1.6) contrast(1.35) brightness(1.08) !important}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb{filter:drop-shadow(0 0 10px #0ff) drop-shadow(0 0 6px #f0f) saturate(2.4) brightness(1.35) !important}
 #wikiO.ov.show[data-theme-bestiary="haeckel-watercolor"] .wiki-thumb-wrap{background:#fff8ec;border-color:#c4a882;border-radius:8px;box-shadow:2px 2px 0 rgba(100,70,40,.12)}
 #wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb-wrap{background:#050010;border-color:#ff00aa;box-shadow:0 0 12px #0ff6}
 #wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-thumb-wrap{background:#eee;border-color:#333}

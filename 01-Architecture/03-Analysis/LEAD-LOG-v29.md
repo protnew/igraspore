@@ -92,3 +92,9 @@
 - APK: assembleDebug+cap sync+themes in assets; emulator ANR/System UI not responding on kq_test35; theme APK shots invalid (wait-for-debugger earlier, then crash). Need stable emu pass next.
 - Box /workspace/v29all2/: sides + key web shots (no big zip)
 
+
+## 2026-11-04 01:20 Asia/Jerusalem — neon-bio dedicated assets + species-named bestiary
+- 101 species sprites under assets/themes/neon-bio/sprites/species/NNN.png (labels=SPECIES_DB names, not shape ids)
+- theme_neon_draw.js + theme_visuals ensureNeonDraw/wiki species thumbs; HUD css; Worker+theme-stats all 7; tests ready; NO deploy
+- box sides /workspace/v29all3/side_{menu,pond,bestiary}_neon-bio.jpg
+

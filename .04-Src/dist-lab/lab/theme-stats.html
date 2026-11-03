@@ -38,19 +38,21 @@ table{width:100%;border-collapse:collapse} th,td{border-bottom:1px solid #2a3558
   <div class="card"><h3>D1 / D7</h3><div id="ret"></div></div>
 </main>
 <script>
-const FIXTURE = {
-  bestiary: {
-    sessions: 240,
-    d1: 0.31, d7: 0.12,
-    timeMedian: { classic: 120000, 'neon-bio': 180000, 'phase-contrast': 150000 },
-    changes: [ { from:'classic', to:'neon-bio', n:40 }, { from:'neon-bio', to:'phase-contrast', n:12 } ]
-  },
-  pond: {
-    sessions: 240,
-    d1: 0.28, d7: 0.11,
-    timeMedian: { classic: 200000, 'neon-bio': 160000, 'phase-contrast': 210000 },
-    changes: [ { from:'classic', to:'phase-contrast', n:33 }, { from:'phase-contrast', to:'neon-bio', n:9 } ]
+const ALL = ["classic","neon-bio","phase-contrast","glass-lab","cyberpunk-scanner","haeckel-watercolor","engraving"];
+function fullTime(base){
+  const o={}; ALL.forEach((t,i)=>{ o[t]=base+i*15000; }); return o;
+}
+function fullChanges(){
+  const out=[];
+  for(let i=0;i<ALL.length;i++){
+    const a=ALL[i], b=ALL[(i+1)%ALL.length];
+    out.push({from:a,to:b,n:10+i*3});
   }
+  return out;
+}
+const FIXTURE = {
+  bestiary: { sessions: 240, d1: 0.31, d7: 0.12, timeMedian: fullTime(120000), changes: fullChanges() },
+  pond: { sessions: 240, d1: 0.28, d7: 0.11, timeMedian: fullTime(160000), changes: fullChanges().reverse() }
 };
 let screen = 'bestiary';
 let data = { bestiary: { sessions:0,d1:0,d7:0,timeMedian:{},changes:[] }, pond: { sessions:0,d1:0,d7:0,timeMedian:{},changes:[] } };
@@ -62,11 +64,11 @@ if (useFixture) {
 }
 function render() {
   const d = data[screen] || {};
-  document.getElementById('summary').innerHTML = '<p>Экран: <b>'+screen+'</b></p><p>Сессии: <b>'+(d.sessions||0)+'</b></p><p>D1: <b>'+((d.d1||0)*100).toFixed(1)+'%</b> · D7: <b>'+((d.d7||0)*100).toFixed(1)+'%</b></p>';
+  document.getElementById('summary').innerHTML = '<p>Экран: <b>'+screen+'</b></p><p>Сессии: <b>'+(d.sessions||0)+'</b></p><p>D1: <b>'+((d.d1||0)*100).toFixed(1)+'%</b> · D7: <b>'+((d.d7||0)*100).toFixed(1)+'%</b></p><p>Стили: <b>'+ALL.join(', ')+'</b></p>';
   const ct = document.querySelector('#changes tbody'); ct.innerHTML = '';
   (d.changes||[]).forEach(r => { ct.innerHTML += '<tr><td>'+r.from+'</td><td>'+r.to+'</td><td>'+r.n+'</td></tr>'; });
   const tt = document.querySelector('#times tbody'); tt.innerHTML = '';
-  Object.keys(d.timeMedian||{}).forEach(k => { tt.innerHTML += '<tr><td>'+k+'</td><td>'+(d.timeMedian[k])+'</td><td>—</td></tr>'; });
+  ALL.forEach(k => { const v=(d.timeMedian||{})[k]; if(v==null) return; tt.innerHTML += '<tr><td>'+k+'</td><td>'+v+'</td><td>—</td></tr>'; });
   document.getElementById('ret').textContent = 'D1='+(d.d1||0)+' D7='+(d.d7||0)+' (порог смены дефолта: n>=200 и +3 п.п.)';
 }
 document.querySelectorAll('.tabs button').forEach(btn => {

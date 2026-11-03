@@ -156,3 +156,35 @@ html[data-theme-pond="engraving"],body[data-theme-pond="engraving"]{background:#
   #wikiContent.wiki-grid-cards .wiki-entry.wiki-entry-has-thumb{min-height:180px}
 }
 
+
+/* neon-bio dedicated HUD / menu chrome */
+body[data-theme-pond="neon-bio"] #hud .btn,
+html[data-theme="neon-bio"] .menu-panel,
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] {
+  --theme-border: #ff00aa;
+  --theme-accent: #00ffff;
+}
+body[data-theme-pond="neon-bio"] #hud .btn {
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 12px #00ffff88, inset 0 0 8px #ff00aa44;
+  background: rgba(0,0,8,.75);
+  color: #e8fffe;
+}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] {
+  background: #000008;
+}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-entry {
+  border: 1px solid #00e5ff66;
+  box-shadow: 0 0 10px #00ffff33;
+  background: rgba(0,8,20,.85);
+}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb-wrap {
+  background: #000;
+  border: 1px solid #ff00aa88;
+  box-shadow: 0 0 16px #00ffff55;
+}
+body[data-theme-pond="neon-bio"] .menu-root,
+html[data-igs-theme="neon-bio"] .menu-root {
+  background: #000;
+}
+

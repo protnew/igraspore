@@ -31,6 +31,12 @@ function validEvent(ev) {
   return true;
 }
 
+function emptyAgg() {
+  const themes = {};
+  for (const t of ALLOWED) themes[t] = { sessions: 0, timeMedian: 0, changesOut: 0 };
+  return { sessions: 0, d1: 0, d7: 0, timeMedian: Object.fromEntries([...ALLOWED].map(t=>[t,0])), changes: [], themes };
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
@@ -60,10 +66,18 @@ export default {
       if (env.STATS_GATE && gate !== env.STATS_GATE) {
         return json({ ok:false, error:"forbidden" }, 403, headers);
       }
-      // Live SQL requires CF_API_TOKEN in env — never echoed. Placeholder aggregate for wrangler dev.
-      return json({ ok:true, source: env.CF_API_TOKEN ? "ae-pending-query" : "dev-empty", bestiary: {}, pond: {}, note: "Configure CF_API_TOKEN + account to enable SQL" }, 200, headers);
+      return json({
+        ok:true,
+        source: env.CF_API_TOKEN ? "ae-pending-query" : "dev-empty",
+        themes: [...ALLOWED],
+        bestiary: emptyAgg(),
+        pond: emptyAgg(),
+        note: "Configure CF_API_TOKEN + account to enable SQL"
+      }, 200, headers);
     }
-    if (url.pathname === "/health") return json({ ok:true }, 200, headers);
+    if (url.pathname === "/health") return json({ ok:true, themes:[...ALLOWED] }, 200, headers);
     return json({ ok:false, error:"not_found" }, 404, headers);
   }
 };
+
+export { ALLOWED, SCREENS, EVENTS, validEvent, emptyAgg };

@@ -1,0 +1,1012 @@
+[
+  {
+    "i": 0,
+    "name": "Synechocystis sp.",
+    "shape": "circle",
+    "label_en": "Synechocystis sp.",
+    "label_ru": "Synechocystis sp.",
+    "sprite": "assets/themes/neon-bio/sprites/species/000.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Synechocystis_sp.png",
+    "color": "#00ffff"
+  },
+  {
+    "i": 1,
+    "name": "Anabaena variabilis",
+    "shape": "filament",
+    "label_en": "Anabaena variabilis",
+    "label_ru": "Anabaena variabilis",
+    "sprite": "assets/themes/neon-bio/sprites/species/001.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Anabaena_variabilis.png",
+    "color": "#ff00c8"
+  },
+  {
+    "i": 2,
+    "name": "Spirulina platensis",
+    "shape": "spiral",
+    "label_en": "Spirulina platensis",
+    "label_ru": "Spirulina platensis",
+    "sprite": "assets/themes/neon-bio/sprites/species/002.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Spirulina_platensis.png",
+    "color": "#78ff50"
+  },
+  {
+    "i": 3,
+    "name": "Nostoc punctiforme",
+    "shape": "trichormus",
+    "label_en": "Nostoc punctiforme",
+    "label_ru": "Nostoc punctiforme",
+    "sprite": "assets/themes/neon-bio/sprites/species/003.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Nostoc_punctiforme.png",
+    "color": "#b464ff"
+  },
+  {
+    "i": 4,
+    "name": "Oscillatoria limnetica",
+    "shape": "filament",
+    "label_en": "Oscillatoria limnetica",
+    "label_ru": "Oscillatoria limnetica",
+    "sprite": "assets/themes/neon-bio/sprites/species/004.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Oscillatoria_limnetica.png",
+    "color": "#ffdc50"
+  },
+  {
+    "i": 5,
+    "name": "Microcystis aeruginosa",
+    "shape": "colony",
+    "label_en": "Microcystis aeruginosa",
+    "label_ru": "Microcystis aeruginosa",
+    "sprite": "assets/themes/neon-bio/sprites/species/005.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Microcystis_aeruginosa.png",
+    "color": "#50b4ff"
+  },
+  {
+    "i": 6,
+    "name": "Gloeocapsa sp.",
+    "shape": "diplococci",
+    "label_en": "Gloeocapsa sp.",
+    "label_ru": "Gloeocapsa sp.",
+    "sprite": "assets/themes/neon-bio/sprites/species/006.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Gloeocapsa_sp.png",
+    "color": "#ff50a0"
+  },
+  {
+    "i": 7,
+    "name": "Lyngbya majuscula",
+    "shape": "filament",
+    "label_en": "Lyngbya majuscula",
+    "label_ru": "Lyngbya majuscula",
+    "sprite": "assets/themes/neon-bio/sprites/species/007.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Lyngbya_majuscula.png",
+    "color": "#28ffb4"
+  },
+  {
+    "i": 8,
+    "name": "Chlamydomonas reinhardtii",
+    "shape": "bell",
+    "label_en": "Chlamydomonas reinhardtii",
+    "label_ru": "Chlamydomonas reinhardtii",
+    "sprite": "assets/themes/neon-bio/sprites/species/008.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Chlamydomonas_reinhardtii.png",
+    "color": "#c8ff28"
+  },
+  {
+    "i": 9,
+    "name": "Chlorella vulgaris",
+    "shape": "circle",
+    "label_en": "Chlorella vulgaris",
+    "label_ru": "Chlorella vulgaris",
+    "sprite": "assets/themes/neon-bio/sprites/species/009.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Chlorella_vulgaris.png",
+    "color": "#ff6450"
+  },
+  {
+    "i": 10,
+    "name": "Volvox globator",
+    "shape": "volvox",
+    "label_en": "Volvox globator",
+    "label_ru": "Volvox globator",
+    "sprite": "assets/themes/neon-bio/sprites/species/010.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Volvox_globator.png",
+    "color": "#64ffff"
+  },
+  {
+    "i": 11,
+    "name": "Euglena gracilis",
+    "shape": "oval",
+    "label_en": "Euglena gracilis",
+    "label_ru": "Euglena gracilis",
+    "sprite": "assets/themes/neon-bio/sprites/species/011.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Euglena_gracilis.png",
+    "color": "#ff3264"
+  },
+  {
+    "i": 12,
+    "name": "Scenedesmus quadricauda",
+    "shape": "rodtococcus",
+    "label_en": "Scenedesmus quadricauda",
+    "label_ru": "Scenedesmus quadricauda",
+    "sprite": "assets/themes/neon-bio/sprites/species/012.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Scenedesmus_quadricauda.png",
+    "color": "#00ffff"
+  },
+  {
+    "i": 13,
+    "name": "Haematococcus pluvialis",
+    "shape": "oval",
+    "label_en": "Haematococcus pluvialis",
+    "label_ru": "Haematococcus pluvialis",
+    "sprite": "assets/themes/neon-bio/sprites/species/013.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Haematococcus_pluvialis.png",
+    "color": "#ff00c8"
+  },
+  {
+    "i": 14,
+    "name": "Dunaliella salina",
+    "shape": "oval",
+    "label_en": "Dunaliella salina",
+    "label_ru": "Dunaliella salina",
+    "sprite": "assets/themes/neon-bio/sprites/species/014.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Dunaliella_salina.png",
+    "color": "#78ff50"
+  },
+  {
+    "i": 15,
+    "name": "Micrasterias rotata",
+    "shape": "star",
+    "label_en": "Micrasterias rotata",
+    "label_ru": "Micrasterias rotata",
+    "sprite": "assets/themes/neon-bio/sprites/species/015.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Micrasterias_rotata.png",
+    "color": "#b464ff"
+  },
+  {
+    "i": 16,
+    "name": "Navicula sp.",
+    "shape": "rod",
+    "label_en": "Navicula sp.",
+    "label_ru": "Navicula sp.",
+    "sprite": "assets/themes/neon-bio/sprites/species/016.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Navicula_sp.png",
+    "color": "#ffdc50"
+  },
+  {
+    "i": 17,
+    "name": "Pinnularia viridis",
+    "shape": "rod",
+    "label_en": "Pinnularia viridis",
+    "label_ru": "Pinnularia viridis",
+    "sprite": "assets/themes/neon-bio/sprites/species/017.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Pinnularia_viridis.png",
+    "color": "#50b4ff"
+  },
+  {
+    "i": 18,
+    "name": "Cyclotella meneghiniana",
+    "shape": "circle",
+    "label_en": "Cyclotella meneghiniana",
+    "label_ru": "Cyclotella meneghiniana",
+    "sprite": "assets/themes/neon-bio/sprites/species/018.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Cyclotella_meneghiniana.png",
+    "color": "#ff50a0"
+  },
+  {
+    "i": 19,
+    "name": "Diatoma vulgare",
+    "shape": "rod",
+    "label_en": "Diatoma vulgare",
+    "label_ru": "Diatoma vulgare",
+    "sprite": "assets/themes/neon-bio/sprites/species/019.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Diatoma_vulgare.png",
+    "color": "#28ffb4"
+  },
+  {
+    "i": 20,
+    "name": "Rhodospirillum rubrum",
+    "shape": "spiral",
+    "label_en": "Rhodospirillum rubrum",
+    "label_ru": "Rhodospirillum rubrum",
+    "sprite": "assets/themes/neon-bio/sprites/species/020.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Rhodospirillum_rubrum.png",
+    "color": "#c8ff28"
+  },
+  {
+    "i": 21,
+    "name": "Chromatium vinosum",
+    "shape": "rod",
+    "label_en": "Chromatium vinosum",
+    "label_ru": "Chromatium vinosum",
+    "sprite": "assets/themes/neon-bio/sprites/species/021.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Chromatium_vinosum.png",
+    "color": "#ff6450"
+  },
+  {
+    "i": 22,
+    "name": "Porphyridium cruentum",
+    "shape": "circle",
+    "label_en": "Porphyridium cruentum",
+    "label_ru": "Porphyridium cruentum",
+    "sprite": "assets/themes/neon-bio/sprites/species/022.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Porphyridium_cruentum.png",
+    "color": "#64ffff"
+  },
+  {
+    "i": 23,
+    "name": "Prochlorococcus marinus",
+    "shape": "circle",
+    "label_en": "Prochlorococcus marinus",
+    "label_ru": "Prochlorococcus marinus",
+    "sprite": "assets/themes/neon-bio/sprites/species/023.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Prochlorococcus_marinus.png",
+    "color": "#ff3264"
+  },
+  {
+    "i": 24,
+    "name": "Chroococcidiopsis thermalis",
+    "shape": "archaea",
+    "label_en": "Chroococcidiopsis thermalis",
+    "label_ru": "Chroococcidiopsis thermalis",
+    "sprite": "assets/themes/neon-bio/sprites/species/024.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Chroococcidiopsis_thermalis.png",
+    "color": "#00ffff"
+  },
+  {
+    "i": 25,
+    "name": "Bdellovibrio bacteriovorus",
+    "shape": "comma",
+    "label_en": "Bdellovibrio bacteriovorus",
+    "label_ru": "Bdellovibrio bacteriovorus",
+    "sprite": "assets/themes/neon-bio/sprites/species/025.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Bdellovibrio_bacteriovorus.png",
+    "color": "#ff00c8"
+  },
+  {
+    "i": 26,
+    "name": "Vampirococcus sp.",
+    "shape": "circle",
+    "label_en": "Vampirococcus sp.",
+    "label_ru": "Vampirococcus sp.",
+    "sprite": "assets/themes/neon-bio/sprites/species/026.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Vampirococcus_sp.png",
+    "color": "#78ff50"
+  },
+  {
+    "i": 27,
+    "name": "Daptobacter sp.",
+    "shape": "rod",
+    "label_en": "Daptobacter sp.",
+    "label_ru": "Daptobacter sp.",
+    "sprite": "assets/themes/neon-bio/sprites/species/027.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Daptobacter_sp.png",
+    "color": "#b464ff"
+  },
+  {
+    "i": 28,
+    "name": "Myxococcus xanthus",
+    "shape": "rod",
+    "label_en": "Myxococcus xanthus",
+    "label_ru": "Myxococcus xanthus",
+    "sprite": "assets/themes/neon-bio/sprites/species/028.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Myxococcus_xanthus.png",
+    "color": "#ffdc50"
+  },
+  {
+    "i": 29,
+    "name": "Bacteriovorax stolpii",
+    "shape": "rod",
+    "label_en": "Bacteriovorax stolpii",
+    "label_ru": "Bacteriovorax stolpii",
+    "sprite": "assets/themes/neon-bio/sprites/species/029.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Bacteriovorax_stolpii.png",
+    "color": "#50b4ff"
+  },
+  {
+    "i": 30,
+    "name": "Halobacteriovorax sp.",
+    "shape": "rod",
+    "label_en": "Halobacteriovorax sp.",
+    "label_ru": "Halobacteriovorax sp.",
+    "sprite": "assets/themes/neon-bio/sprites/species/030.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Halobacteriovorax_sp.png",
+    "color": "#ff50a0"
+  },
+  {
+    "i": 31,
+    "name": "Peredibacter starrii",
+    "shape": "rod",
+    "label_en": "Peredibacter starrii",
+    "label_ru": "Peredibacter starrii",
+    "sprite": "assets/themes/neon-bio/sprites/species/031.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Peredibacter_starrii.png",
+    "color": "#28ffb4"
+  },
+  {
+    "i": 32,
+    "name": "Monas guttula",
+    "shape": "oval",
+    "label_en": "Monas guttula",
+    "label_ru": "Monas guttula",
+    "sprite": "assets/themes/neon-bio/sprites/species/032.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Monas_guttula.png",
+    "color": "#c8ff28"
+  },
+  {
+    "i": 33,
+    "name": "Oikomonas termo",
+    "shape": "oval",
+    "label_en": "Oikomonas termo",
+    "label_ru": "Oikomonas termo",
+    "sprite": "assets/themes/neon-bio/sprites/species/033.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Oikomonas_termo.png",
+    "color": "#ff6450"
+  },
+  {
+    "i": 34,
+    "name": "Anthophysa vegetans",
+    "shape": "oval",
+    "label_en": "Anthophysa vegetans",
+    "label_ru": "Anthophysa vegetans",
+    "sprite": "assets/themes/neon-bio/sprites/species/034.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Anthophysa_vegetans.png",
+    "color": "#64ffff"
+  },
+  {
+    "i": 35,
+    "name": "Chilomonas paramecium",
+    "shape": "oval",
+    "label_en": "Chilomonas paramecium",
+    "label_ru": "Chilomonas paramecium",
+    "sprite": "assets/themes/neon-bio/sprites/species/035.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Chilomonas_paramecium.png",
+    "color": "#ff3264"
+  },
+  {
+    "i": 36,
+    "name": "Cercomonas longicauda",
+    "shape": "irregular",
+    "label_en": "Cercomonas longicauda",
+    "label_ru": "Cercomonas longicauda",
+    "sprite": "assets/themes/neon-bio/sprites/species/036.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Cercomonas_longicauda.png",
+    "color": "#00ffff"
+  },
+  {
+    "i": 37,
+    "name": "Heteromita globosa",
+    "shape": "circle",
+    "label_en": "Heteromita globosa",
+    "label_ru": "Heteromita globosa",
+    "sprite": "assets/themes/neon-bio/sprites/species/037.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Heteromita_globosa.png",
+    "color": "#ff00c8"
+  },
+  {
+    "i": 38,
+    "name": "Bodo saltans",
+    "shape": "comma",
+    "label_en": "Bodo saltans",
+    "label_ru": "Bodo saltans",
+    "sprite": "assets/themes/neon-bio/sprites/species/038.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Bodo_saltans.png",
+    "color": "#78ff50"
+  },
+  {
+    "i": 39,
+    "name": "Procryptobia sorokini",
+    "shape": "comma",
+    "label_en": "Procryptobia sorokini",
+    "label_ru": "Procryptobia sorokini",
+    "sprite": "assets/themes/neon-bio/sprites/species/039.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Procryptobia_sorokini.png",
+    "color": "#b464ff"
+  },
+  {
+    "i": 40,
+    "name": "Trypanosoma brucei",
+    "shape": "filament",
+    "label_en": "Trypanosoma brucei",
+    "label_ru": "Trypanosoma brucei",
+    "sprite": "assets/themes/neon-bio/sprites/species/040.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Trypanosoma_brucei.png",
+    "color": "#ffdc50"
+  },
+  {
+    "i": 41,
+    "name": "Leishmania donovani",
+    "shape": "oval",
+    "label_en": "Leishmania donovani",
+    "label_ru": "Leishmania donovani",
+    "sprite": "assets/themes/neon-bio/sprites/species/041.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Leishmania_donovani.png",
+    "color": "#50b4ff"
+  },
+  {
+    "i": 42,
+    "name": "Monosiga brevicollis",
+    "shape": "bell",
+    "label_en": "Monosiga brevicollis",
+    "label_ru": "Monosiga brevicollis",
+    "sprite": "assets/themes/neon-bio/sprites/species/042.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Monosiga_brevicollis.png",
+    "color": "#ff50a0"
+  },
+  {
+    "i": 43,
+    "name": "Salpingoeca rosetta",
+    "shape": "bell",
+    "label_en": "Salpingoeca rosetta",
+    "label_ru": "Salpingoeca rosetta",
+    "sprite": "assets/themes/neon-bio/sprites/species/043.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Salpingoeca_rosetta.png",
+    "color": "#28ffb4"
+  },
+  {
+    "i": 44,
+    "name": "Codonosiga botrytis",
+    "shape": "bell",
+    "label_en": "Codonosiga botrytis",
+    "label_ru": "Codonosiga botrytis",
+    "sprite": "assets/themes/neon-bio/sprites/species/044.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Codonosiga_botrytis.png",
+    "color": "#c8ff28"
+  },
+  {
+    "i": 45,
+    "name": "Paramecium caudatum",
+    "shape": "slipper",
+    "label_en": "Paramecium caudatum",
+    "label_ru": "Paramecium caudatum",
+    "sprite": "assets/themes/neon-bio/sprites/species/045.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Paramecium_caudatum.png",
+    "color": "#ff6450"
+  },
+  {
+    "i": 46,
+    "name": "Paramecium bursaria",
+    "shape": "slipper",
+    "label_en": "Paramecium bursaria",
+    "label_ru": "Paramecium bursaria",
+    "sprite": "assets/themes/neon-bio/sprites/species/046.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Paramecium_bursaria.png",
+    "color": "#64ffff"
+  },
+  {
+    "i": 47,
+    "name": "Stentor coeruleus",
+    "shape": "bell",
+    "label_en": "Stentor coeruleus",
+    "label_ru": "Stentor coeruleus",
+    "sprite": "assets/themes/neon-bio/sprites/species/047.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Stentor_coeruleus.png",
+    "color": "#ff3264"
+  },
+  {
+    "i": 48,
+    "name": "Stentor polymorphus",
+    "shape": "bell",
+    "label_en": "Stentor polymorphus",
+    "label_ru": "Stentor polymorphus",
+    "sprite": "assets/themes/neon-bio/sprites/species/048.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Stentor_polymorphus.png",
+    "color": "#00ffff"
+  },
+  {
+    "i": 49,
+    "name": "Vorticella campanula",
+    "shape": "bell",
+    "label_en": "Vorticella campanula",
+    "label_ru": "Vorticella campanula",
+    "sprite": "assets/themes/neon-bio/sprites/species/049.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Vorticella_campanula.png",
+    "color": "#ff00c8"
+  },
+  {
+    "i": 50,
+    "name": "Vorticella microstoma",
+    "shape": "bell",
+    "label_en": "Vorticella microstoma",
+    "label_ru": "Vorticella microstoma",
+    "sprite": "assets/themes/neon-bio/sprites/species/050.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Vorticella_microstoma.png",
+    "color": "#78ff50"
+  },
+  {
+    "i": 51,
+    "name": "Didinium nasutum",
+    "shape": "oval",
+    "label_en": "Didinium nasutum",
+    "label_ru": "Didinium nasutum",
+    "sprite": "assets/themes/neon-bio/sprites/species/051.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Didinium_nasutum.png",
+    "color": "#b464ff"
+  },
+  {
+    "i": 52,
+    "name": "Spirostomum ambiguum",
+    "shape": "rod",
+    "label_en": "Spirostomum ambiguum",
+    "label_ru": "Spirostomum ambiguum",
+    "sprite": "assets/themes/neon-bio/sprites/species/052.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Spirostomum_ambiguum.png",
+    "color": "#ffdc50"
+  },
+  {
+    "i": 53,
+    "name": "Blepharisma americanum",
+    "shape": "slipper",
+    "label_en": "Blepharisma americanum",
+    "label_ru": "Blepharisma americanum",
+    "sprite": "assets/themes/neon-bio/sprites/species/053.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Blepharisma_americanum.png",
+    "color": "#50b4ff"
+  },
+  {
+    "i": 54,
+    "name": "Euplotes patella",
+    "shape": "irregular",
+    "label_en": "Euplotes patella",
+    "label_ru": "Euplotes patella",
+    "sprite": "assets/themes/neon-bio/sprites/species/054.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Euplotes_patella.png",
+    "color": "#ff50a0"
+  },
+  {
+    "i": 55,
+    "name": "Stylonychia pustulata",
+    "shape": "irregular",
+    "label_en": "Stylonychia pustulata",
+    "label_ru": "Stylonychia pustulata",
+    "sprite": "assets/themes/neon-bio/sprites/species/055.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Stylonychia_pustulata.png",
+    "color": "#28ffb4"
+  },
+  {
+    "i": 56,
+    "name": "Oxytricha trifallax",
+    "shape": "irregular",
+    "label_en": "Oxytricha trifallax",
+    "label_ru": "Oxytricha trifallax",
+    "sprite": "assets/themes/neon-bio/sprites/species/056.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Oxytricha_trifallax.png",
+    "color": "#c8ff28"
+  },
+  {
+    "i": 57,
+    "name": "Tetrahymena thermophila",
+    "shape": "oval",
+    "label_en": "Tetrahymena thermophila",
+    "label_ru": "Tetrahymena thermophila",
+    "sprite": "assets/themes/neon-bio/sprites/species/057.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Tetrahymena_thermophila.png",
+    "color": "#ff6450"
+  },
+  {
+    "i": 58,
+    "name": "Coleps hirtus",
+    "shape": "oval",
+    "label_en": "Coleps hirtus",
+    "label_ru": "Coleps hirtus",
+    "sprite": "assets/themes/neon-bio/sprites/species/058.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Coleps_hirtus.png",
+    "color": "#64ffff"
+  },
+  {
+    "i": 59,
+    "name": "Litonotus lamella",
+    "shape": "slipper",
+    "label_en": "Litonotus lamella",
+    "label_ru": "Litonotus lamella",
+    "sprite": "assets/themes/neon-bio/sprites/species/059.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Litonotus_lamella.png",
+    "color": "#ff3264"
+  },
+  {
+    "i": 60,
+    "name": "Dileptus anser",
+    "shape": "rod",
+    "label_en": "Dileptus anser",
+    "label_ru": "Dileptus anser",
+    "sprite": "assets/themes/neon-bio/sprites/species/060.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Dileptus_anser.png",
+    "color": "#00ffff"
+  },
+  {
+    "i": 61,
+    "name": "Urocentrum turbo",
+    "shape": "oval",
+    "label_en": "Urocentrum turbo",
+    "label_ru": "Urocentrum turbo",
+    "sprite": "assets/themes/neon-bio/sprites/species/061.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Urocentrum_turbo.png",
+    "color": "#ff00c8"
+  },
+  {
+    "i": 62,
+    "name": "Zoothamnium arbuscula",
+    "shape": "bell",
+    "label_en": "Zoothamnium arbuscula",
+    "label_ru": "Zoothamnium arbuscula",
+    "sprite": "assets/themes/neon-bio/sprites/species/062.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Zoothamnium_arbuscula.png",
+    "color": "#78ff50"
+  },
+  {
+    "i": 63,
+    "name": "Opercularia coarctata",
+    "shape": "bell",
+    "label_en": "Opercularia coarctata",
+    "label_ru": "Opercularia coarctata",
+    "sprite": "assets/themes/neon-bio/sprites/species/063.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Opercularia_coarctata.png",
+    "color": "#b464ff"
+  },
+  {
+    "i": 64,
+    "name": "Amoeba proteus",
+    "shape": "irregular",
+    "label_en": "Amoeba proteus",
+    "label_ru": "Amoeba proteus",
+    "sprite": "assets/themes/neon-bio/sprites/species/064.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Amoeba_proteus.png",
+    "color": "#ffdc50"
+  },
+  {
+    "i": 65,
+    "name": "Arcella vulgaris",
+    "shape": "irregular",
+    "label_en": "Arcella vulgaris",
+    "label_ru": "Arcella vulgaris",
+    "sprite": "assets/themes/neon-bio/sprites/species/065.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Arcella_vulgaris.png",
+    "color": "#50b4ff"
+  },
+  {
+    "i": 66,
+    "name": "Difflugia oblonga",
+    "shape": "irregular",
+    "label_en": "Difflugia oblonga",
+    "label_ru": "Difflugia oblonga",
+    "sprite": "assets/themes/neon-bio/sprites/species/066.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Difflugia_oblonga.png",
+    "color": "#ff50a0"
+  },
+  {
+    "i": 67,
+    "name": "Euglypha alveolata",
+    "shape": "irregular",
+    "label_en": "Euglypha alveolata",
+    "label_ru": "Euglypha alveolata",
+    "sprite": "assets/themes/neon-bio/sprites/species/067.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Euglypha_alveolata.png",
+    "color": "#28ffb4"
+  },
+  {
+    "i": 68,
+    "name": "Nebela collaris",
+    "shape": "irregular",
+    "label_en": "Nebela collaris",
+    "label_ru": "Nebela collaris",
+    "sprite": "assets/themes/neon-bio/sprites/species/068.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Nebela_collaris.png",
+    "color": "#c8ff28"
+  },
+  {
+    "i": 69,
+    "name": "Centropyxis aculeata",
+    "shape": "irregular",
+    "label_en": "Centropyxis aculeata",
+    "label_ru": "Centropyxis aculeata",
+    "sprite": "assets/themes/neon-bio/sprites/species/069.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Centropyxis_aculeata.png",
+    "color": "#ff6450"
+  },
+  {
+    "i": 70,
+    "name": "Actinophrys sol",
+    "shape": "star",
+    "label_en": "Actinophrys sol",
+    "label_ru": "Actinophrys sol",
+    "sprite": "assets/themes/neon-bio/sprites/species/070.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Actinophrys_sol.png",
+    "color": "#64ffff"
+  },
+  {
+    "i": 71,
+    "name": "Actinosphaerium eichhorni",
+    "shape": "star",
+    "label_en": "Actinosphaerium eichhorni",
+    "label_ru": "Actinosphaerium eichhorni",
+    "sprite": "assets/themes/neon-bio/sprites/species/071.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Actinosphaerium_eichhorni.png",
+    "color": "#ff3264"
+  },
+  {
+    "i": 72,
+    "name": "Raphidiophrys pallida",
+    "shape": "star",
+    "label_en": "Raphidiophrys pallida",
+    "label_ru": "Raphidiophrys pallida",
+    "sprite": "assets/themes/neon-bio/sprites/species/072.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Raphidiophrys_pallida.png",
+    "color": "#00ffff"
+  },
+  {
+    "i": 73,
+    "name": "Rotaria rotatoria",
+    "shape": "oval",
+    "label_en": "Rotaria rotatoria",
+    "label_ru": "Rotaria rotatoria",
+    "sprite": "assets/themes/neon-bio/sprites/species/073.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Rotaria_rotatoria.png",
+    "color": "#ff00c8"
+  },
+  {
+    "i": 74,
+    "name": "Philodina roseola",
+    "shape": "oval",
+    "label_en": "Philodina roseola",
+    "label_ru": "Philodina roseola",
+    "sprite": "assets/themes/neon-bio/sprites/species/074.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Philodina_roseola.png",
+    "color": "#78ff50"
+  },
+  {
+    "i": 75,
+    "name": "Brachionus plicatilis",
+    "shape": "oval",
+    "label_en": "Brachionus plicatilis",
+    "label_ru": "Brachionus plicatilis",
+    "sprite": "assets/themes/neon-bio/sprites/species/075.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Brachionus_plicatilis.png",
+    "color": "#b464ff"
+  },
+  {
+    "i": 76,
+    "name": "Keratella cochlearis",
+    "shape": "star",
+    "label_en": "Keratella cochlearis",
+    "label_ru": "Keratella cochlearis",
+    "sprite": "assets/themes/neon-bio/sprites/species/076.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Keratella_cochlearis.png",
+    "color": "#ffdc50"
+  },
+  {
+    "i": 77,
+    "name": "Asplanchna priodonta",
+    "shape": "oval",
+    "label_en": "Asplanchna priodonta",
+    "label_ru": "Asplanchna priodonta",
+    "sprite": "assets/themes/neon-bio/sprites/species/077.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Asplanchna_priodonta.png",
+    "color": "#50b4ff"
+  },
+  {
+    "i": 78,
+    "name": "Chaetonotus maximus",
+    "shape": "rod",
+    "label_en": "Chaetonotus maximus",
+    "label_ru": "Chaetonotus maximus",
+    "sprite": "assets/themes/neon-bio/sprites/species/078.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Chaetonotus_maximus.png",
+    "color": "#ff50a0"
+  },
+  {
+    "i": 79,
+    "name": "Lepidodermella squamata",
+    "shape": "rod",
+    "label_en": "Lepidodermella squamata",
+    "label_ru": "Lepidodermella squamata",
+    "sprite": "assets/themes/neon-bio/sprites/species/079.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Lepidodermella_squamata.png",
+    "color": "#28ffb4"
+  },
+  {
+    "i": 80,
+    "name": "Macrostomum lignano",
+    "shape": "oval",
+    "label_en": "Macrostomum lignano",
+    "label_ru": "Macrostomum lignano",
+    "sprite": "assets/themes/neon-bio/sprites/species/080.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Macrostomum_lignano.png",
+    "color": "#c8ff28"
+  },
+  {
+    "i": 81,
+    "name": "Stenostomum leucops",
+    "shape": "rod",
+    "label_en": "Stenostomum leucops",
+    "label_ru": "Stenostomum leucops",
+    "sprite": "assets/themes/neon-bio/sprites/species/081.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Stenostomum_leucops.png",
+    "color": "#ff6450"
+  },
+  {
+    "i": 82,
+    "name": "Microstomum lineare",
+    "shape": "rod",
+    "label_en": "Microstomum lineare",
+    "label_ru": "Microstomum lineare",
+    "sprite": "assets/themes/neon-bio/sprites/species/082.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Microstomum_lineare.png",
+    "color": "#64ffff"
+  },
+  {
+    "i": 83,
+    "name": "Prostoma graecense",
+    "shape": "rod",
+    "label_en": "Prostoma graecense",
+    "label_ru": "Prostoma graecense",
+    "sprite": "assets/themes/neon-bio/sprites/species/083.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Prostoma_graecense.png",
+    "color": "#ff3264"
+  },
+  {
+    "i": 84,
+    "name": "Trichoplax adhaerens",
+    "shape": "irregular",
+    "label_en": "Trichoplax adhaerens",
+    "label_ru": "Trichoplax adhaerens",
+    "sprite": "assets/themes/neon-bio/sprites/species/084.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Trichoplax_adhaerens.png",
+    "color": "#00ffff"
+  },
+  {
+    "i": 85,
+    "name": "Saccharomyces cerevisiae",
+    "shape": "circle",
+    "label_en": "Saccharomyces cerevisiae",
+    "label_ru": "Saccharomyces cerevisiae",
+    "sprite": "assets/themes/neon-bio/sprites/species/085.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Saccharomyces_cerevisiae.png",
+    "color": "#ff00c8"
+  },
+  {
+    "i": 86,
+    "name": "Candida albicans",
+    "shape": "circle",
+    "label_en": "Candida albicans",
+    "label_ru": "Candida albicans",
+    "sprite": "assets/themes/neon-bio/sprites/species/086.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Candida_albicans.png",
+    "color": "#78ff50"
+  },
+  {
+    "i": 87,
+    "name": "Mucor mucedo",
+    "shape": "filament",
+    "label_en": "Mucor mucedo",
+    "label_ru": "Mucor mucedo",
+    "sprite": "assets/themes/neon-bio/sprites/species/087.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Mucor_mucedo.png",
+    "color": "#b464ff"
+  },
+  {
+    "i": 88,
+    "name": "Rhizopus stolonifer",
+    "shape": "filament",
+    "label_en": "Rhizopus stolonifer",
+    "label_ru": "Rhizopus stolonifer",
+    "sprite": "assets/themes/neon-bio/sprites/species/088.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Rhizopus_stolonifer.png",
+    "color": "#ffdc50"
+  },
+  {
+    "i": 89,
+    "name": "Penicillium chrysogenum",
+    "shape": "filament",
+    "label_en": "Penicillium chrysogenum",
+    "label_ru": "Penicillium chrysogenum",
+    "sprite": "assets/themes/neon-bio/sprites/species/089.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Penicillium_chrysogenum.png",
+    "color": "#50b4ff"
+  },
+  {
+    "i": 90,
+    "name": "Aspergillus niger",
+    "shape": "filament",
+    "label_en": "Aspergillus niger",
+    "label_ru": "Aspergillus niger",
+    "sprite": "assets/themes/neon-bio/sprites/species/090.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Aspergillus_niger.png",
+    "color": "#ff50a0"
+  },
+  {
+    "i": 91,
+    "name": "Batrachochytrium dendrobatidis",
+    "shape": "circle",
+    "label_en": "Batrachochytrium dendrobatidis",
+    "label_ru": "Batrachochytrium dendrobatidis",
+    "sprite": "assets/themes/neon-bio/sprites/species/091.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Batrachochytrium_dendrobatidis.png",
+    "color": "#28ffb4"
+  },
+  {
+    "i": 92,
+    "name": "Chytriomyces aureus",
+    "shape": "circle",
+    "label_en": "Chytriomyces aureus",
+    "label_ru": "Chytriomyces aureus",
+    "sprite": "assets/themes/neon-bio/sprites/species/092.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Chytriomyces_aureus.png",
+    "color": "#c8ff28"
+  },
+  {
+    "i": 93,
+    "name": "Allomyces macrogynus",
+    "shape": "filament",
+    "label_en": "Allomyces macrogynus",
+    "label_ru": "Allomyces macrogynus",
+    "sprite": "assets/themes/neon-bio/sprites/species/093.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Allomyces_macrogynus.png",
+    "color": "#ff6450"
+  },
+  {
+    "i": 94,
+    "name": "Bacillus subtilis",
+    "shape": "rod",
+    "label_en": "Bacillus subtilis",
+    "label_ru": "Bacillus subtilis",
+    "sprite": "assets/themes/neon-bio/sprites/species/094.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Bacillus_subtilis.png",
+    "color": "#64ffff"
+  },
+  {
+    "i": 95,
+    "name": "Pseudomonas putida",
+    "shape": "rod",
+    "label_en": "Pseudomonas putida",
+    "label_ru": "Pseudomonas putida",
+    "sprite": "assets/themes/neon-bio/sprites/species/095.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Pseudomonas_putida.png",
+    "color": "#ff3264"
+  },
+  {
+    "i": 96,
+    "name": "Streptomyces coelicolor",
+    "shape": "filament",
+    "label_en": "Streptomyces coelicolor",
+    "label_ru": "Streptomyces coelicolor",
+    "sprite": "assets/themes/neon-bio/sprites/species/096.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Streptomyces_coelicolor.png",
+    "color": "#00ffff"
+  },
+  {
+    "i": 97,
+    "name": "Cellulomonas fimi",
+    "shape": "rod",
+    "label_en": "Cellulomonas fimi",
+    "label_ru": "Cellulomonas fimi",
+    "sprite": "assets/themes/neon-bio/sprites/species/097.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Cellulomonas_fimi.png",
+    "color": "#ff00c8"
+  },
+  {
+    "i": 98,
+    "name": "Thermus aquaticus",
+    "shape": "rod",
+    "label_en": "Thermus aquaticus",
+    "label_ru": "Thermus aquaticus",
+    "sprite": "assets/themes/neon-bio/sprites/species/098.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Thermus_aquaticus.png",
+    "color": "#78ff50"
+  },
+  {
+    "i": 99,
+    "name": "Deinococcus radiodurans",
+    "shape": "circle",
+    "label_en": "Deinococcus radiodurans",
+    "label_ru": "Deinococcus radiodurans",
+    "sprite": "assets/themes/neon-bio/sprites/species/099.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Deinococcus_radiodurans.png",
+    "color": "#b464ff"
+  },
+  {
+    "i": 100,
+    "name": "Sexual Eukaryote",
+    "shape": "oval",
+    "label_en": "Sexual Eukaryote",
+    "label_ru": "Sexual Eukaryote",
+    "sprite": "assets/themes/neon-bio/sprites/species/100.png",
+    "sprite_slug": "assets/themes/neon-bio/sprites/species/Sexual_Eukaryote.png",
+    "color": "#ffdc50"
+  }
+]

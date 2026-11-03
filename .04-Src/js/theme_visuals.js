@@ -130,23 +130,13 @@
       var id = tid();
       var ssz = sz || 4;
       if (id === "neon-bio") {
+        if (w.igsNeonDraw && typeof w.igsNeonDraw.drawCell === "function") {
+          try { w.igsNeonDraw.drawCell(c, o, ssz); return; } catch (eN2) {}
+        }
         c.save();
         var col = (o && o.sp && o.sp.color) || "#0ff";
-        c.shadowColor = col;
-        c.shadowBlur = Math.max(28, ssz * 7);
-        c.globalAlpha = 0.95;
+        c.shadowColor = col; c.shadowBlur = Math.max(28, ssz * 7); c.globalAlpha = 0.95;
         orig(c, o, ssz, sh);
-        try {
-          c.globalCompositeOperation = "lighter";
-          c.shadowColor = "#fff";
-          c.shadowBlur = Math.max(14, ssz * 3);
-          c.globalAlpha = 0.65;
-          orig(c, o, ssz * 1.05, sh);
-          c.shadowColor = col;
-          c.shadowBlur = Math.max(36, ssz * 8);
-          c.globalAlpha = 0.4;
-          orig(c, o, ssz, sh);
-        } catch (eN) {}
         c.restore();
         return;
       }
@@ -390,9 +380,28 @@
       img.className = "wiki-thumb";
       img.alt = name;
       img.loading = "lazy";
-      img.src = SPRITE_BASE + shape + ".png?v=2";
-      img.onerror = function () { if (this.dataset.fb) return; this.dataset.fb = "1"; this.src = SPRITE_BASE + "circle.png?v=2"; };
-      img.style.filter = thumbFilter(theme);
+      if (theme === "neon-bio") {
+        var idx = (sp && typeof sp.i === "number") ? sp.i : (sp && sp.idx);
+        if (idx == null && typeof SPECIES_DB !== "undefined") {
+          for (var zi = 0; zi < SPECIES_DB.length; zi++) {
+            if (SPECIES_DB[zi] && SPECIES_DB[zi].name === name) { idx = zi; if (SPECIES_DB[zi].i != null) idx = SPECIES_DB[zi].i; break; }
+          }
+        }
+        var pad = (idx != null) ? ("00" + idx).slice(-3) : null;
+        img.src = pad ? ("assets/themes/neon-bio/sprites/species/" + pad + ".png") : ("assets/themes/neon-bio/sprites/" + shape + ".png");
+        img.onerror = function () {
+          if (this.dataset.fb === "2") return;
+          if (this.dataset.fb === "1") { this.dataset.fb = "2"; this.src = "assets/themes/neon-bio/sprites/circle.png"; return; }
+          this.dataset.fb = "1"; this.src = "assets/themes/neon-bio/sprites/" + shape + ".png";
+        };
+        img.style.filter = "none";
+        var cap = el.querySelector("b");
+        if (cap && name) cap.textContent = name;
+      } else {
+        img.src = SPRITE_BASE + shape + ".png?v=2";
+        img.onerror = function () { if (this.dataset.fb) return; this.dataset.fb = "1"; this.src = SPRITE_BASE + "circle.png?v=2"; };
+        img.style.filter = thumbFilter(theme);
+      }
       wrap.appendChild(img);
       el.insertBefore(wrap, el.firstChild);
       el.classList.add("wiki-entry-has-thumb");
@@ -410,7 +419,18 @@
     buildWiki.__igsThemeWrap = true;
   }
 
+  function ensureNeonDraw(cb) {
+    if (w.igsNeonDraw) { if (cb) cb(); return; }
+    var s = document.createElement("script");
+    s.src = (document.querySelector('script[src*="theme_visuals"]') || {}).src
+      ? String(document.querySelector('script[src*="theme_visuals"]').src).replace(/theme_visuals\.js.*/, "theme_neon_draw.js")
+      : "04-Src/js/theme_neon_draw.js";
+    s.onload = function () { if (cb) cb(); };
+    s.onerror = function () { try { s.src = ".04-Src/js/theme_neon_draw.js"; } catch (e) {} };
+    document.head.appendChild(s);
+  }
   function install() {
+    ensureNeonDraw();
     wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapBuildWiki();
     var id = tid();
     var dark = {"neon-bio":0.08,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.55,"haeckel-watercolor":0.75,"glass-lab":0.9};

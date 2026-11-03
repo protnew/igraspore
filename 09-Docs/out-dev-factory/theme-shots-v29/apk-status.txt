@@ -1,0 +1,6 @@
+﻿APK on disk (wave1):
+- debug: C:\Obsidian\New\Projects\08-iGraSpore_V2\06-DevOps-and-Release\android\android\app\build\outputs\apk\debug\app-debug.apk size=62453187 mtime=10/28/2026 17:53:20
+- release: missing
+adb: True
+AVDs present: kq_art25, kq_deep26, ... (list-avds earlier)
+Emulator -no-window smoke: NOT RUN to completion this session (time/interrupt risk). Owner checklist item 5.

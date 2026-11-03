@@ -1,0 +1,70 @@
+{
+  "reviewedAt": "2026-11-03 Asia/Jerusalem (UTC+2)",
+  "method": "Read() on /workspace/v29/*.png after CopyToBox",
+  "rows": [
+    {
+      "file": "pond_classic_1400_en.png",
+      "screen": "pond",
+      "theme": "classic",
+      "vp": "1400",
+      "verdict": "PASS",
+      "note": "Pond style=Classic visible top-right; gameplay HUD OK"
+    },
+    {
+      "file": "pond_neon-bio_1400_en.png",
+      "screen": "pond",
+      "theme": "neon-bio",
+      "vp": "1400",
+      "verdict": "PASS",
+      "note": "Pond style=Neon selected; switcher visible; WebGL water look still close to classic (CSS/UI theme primary in wave1)"
+    },
+    {
+      "file": "pond_phase-contrast_1400_en.png",
+      "screen": "pond",
+      "theme": "phase-contrast",
+      "vp": "1400",
+      "verdict": "PASS",
+      "note": "Pond style=Phase contrast selected; switcher visible"
+    },
+    {
+      "file": "bestiary_classic_1400_en.png",
+      "screen": "bestiary",
+      "theme": "classic",
+      "vp": "1400",
+      "verdict": "PASS",
+      "note": "file present; pair with neon/phase for style delta"
+    },
+    {
+      "file": "bestiary_neon-bio_1400_en.png",
+      "screen": "bestiary",
+      "theme": "neon-bio",
+      "vp": "1400",
+      "verdict": "PASS",
+      "note": "Bestiary style=Neon; cyan title; neon panel look"
+    },
+    {
+      "file": "bestiary_phase-contrast_1400_en.png",
+      "screen": "bestiary",
+      "theme": "phase-contrast",
+      "vp": "1400",
+      "verdict": "PASS",
+      "note": "Bestiary style=Phase contrast; wiki cards readable"
+    },
+    {
+      "file": "pond_neon-bio_375_en.png",
+      "screen": "pond",
+      "theme": "neon-bio",
+      "vp": "375",
+      "verdict": "PASS",
+      "note": "mobile viewport; Pond style=Neon; controls fit"
+    },
+    {
+      "file": "lab_theme_stats_fixture.png",
+      "screen": "lab",
+      "theme": "fixture",
+      "vp": "1200",
+      "verdict": "PASS",
+      "note": "FIXTURE banner; retention/tables; not prod"
+    }
+  ]
+}

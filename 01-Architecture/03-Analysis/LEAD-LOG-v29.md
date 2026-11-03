@@ -39,3 +39,11 @@
 - CopyToBox 8/8 → /workspace/v29/
 - Eye-read: pond Classic/Neon/PhaseContrast select виден; bestiary Neon/Phase стили; lab FIXTURE
 - Добавлен startFpsGate + i18n theme.fpsFallback (en/ru)
+
+### 2026-11-03 18:12 — СТОП волны 1: PASS
+- REPORT: 01-Architecture\03-Analysis\REPORT-TZ-08-SPOR-v29-wave1-20261103.md
+- eye-review.json PASS (8 кадров просмотрены Read)
+- vitest 6/6 после FPS gate
+- APK файлы на диске; emulator -no-window e2e не закрыт
+- Оговорки: слабая WebGL-дельта пруда; прод AE — чек-лист владельца
+- Волна 2 НЕ начата

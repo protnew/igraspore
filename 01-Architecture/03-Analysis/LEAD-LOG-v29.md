@@ -60,3 +60,9 @@
 - overlapFails=0 (pond bar vs pause)
 - FPS 375: classic med30/p5=20; neon med30/p5=20 (neon p5 ≥ classic)
 - out: 09-Docs\out-dev-factory\theme-shots-v29-all\
+
+## 2026-11-03 19:55 Asia/Jerusalem — all-styles strengthen + APK sync
+- Strengthened neon/glass/cyberpunk shader rgb + glass/phase/engraving wiki light CSS force
+- Synced theme JSON/engine/webgl/effects/css into www-release for local APK rebuild
+- Emulator emulator-5554 device ready; next: assembleDebug + install + APK shots
+- Re-shoot web 1400/375 after color fixes

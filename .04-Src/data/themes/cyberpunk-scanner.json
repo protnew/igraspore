@@ -1,69 +1,69 @@
-{
-  "id": "cyberpunk-scanner",
-  "labelKey": "theme.cyberpunk",
-  "cssVars": {
-    "--theme-bg": "#050010",
-    "--theme-panel": "rgba(10,0,25,.92)",
-    "--theme-border": "#00ff66",
-    "--theme-text": "#d0ffe0",
-    "--theme-muted": "#66aa88",
-    "--theme-accent": "#ff00aa",
-    "--theme-card": "rgba(0,20,10,.8)",
-    "--theme-title": "#00ff88",
-    "--theme-entry-b": "#ff33aa",
-    "--theme-font-ui": "Consolas,monospace",
-    "--theme-font-title": "Consolas,monospace"
-  },
-  "shader": {
-    "surface": [
-      0.05,
-      0.4,
-      0.15
-    ],
-    "mid": [
-      0.08,
-      0.05,
-      0.2
-    ],
-    "deep": [
-      0.02,
-      0,
-      0.05
-    ],
-    "caustic": [
-      0.2,
-      1,
-      0.4
-    ],
-    "bloom": 1.3,
-    "causticAmt": 1.4,
-    "sat": 1.4,
-    "vignette": 0.5,
-    "fx": 0.9,
-    "fallback": "low",
-    "rgbTop": [
-      10,
-      80,
-      40
-    ],
-    "rgbMid": [
-      20,
-      10,
-      50
-    ],
-    "rgbBot": [
-      5,
-      0,
-      15
-    ]
-  },
-  "fpsBudget": {
-    "target": 30,
-    "lowDeviceMaxFx": 0.35
-  },
-  "a11y": {
-    "minContrast": 4.5,
-    "minTapPx": 48
-  },
-  "wave": 2
+﻿{
+    "id":  "cyberpunk-scanner",
+    "labelKey":  "theme.cyberpunk",
+    "cssVars":  {
+                    "--theme-bg":  "#050010",
+                    "--theme-panel":  "rgba(10,0,25,.92)",
+                    "--theme-border":  "#00ff66",
+                    "--theme-text":  "#d0ffe0",
+                    "--theme-muted":  "#66aa88",
+                    "--theme-accent":  "#ff00aa",
+                    "--theme-card":  "rgba(0,20,10,.8)",
+                    "--theme-title":  "#00ff88",
+                    "--theme-entry-b":  "#ff33aa",
+                    "--theme-font-ui":  "Consolas,monospace",
+                    "--theme-font-title":  "Consolas,monospace"
+                },
+    "shader":  {
+                   "surface":  [
+                                   0.15,
+                                   0,
+                                   0.35
+                               ],
+                   "mid":  [
+                               0.08,
+                               0,
+                               0.18
+                           ],
+                   "deep":  [
+                                0,
+                                0,
+                                0.02
+                            ],
+                   "caustic":  [
+                                   1,
+                                   0,
+                                   0.85
+                               ],
+                   "bloom":  1.3,
+                   "causticAmt":  1.4,
+                   "sat":  1.4,
+                   "vignette":  0.5,
+                   "fx":  0.9,
+                   "fallback":  "low",
+                   "rgbTop":  [
+                                  10,
+                                  0,
+                                  30
+                              ],
+                   "rgbMid":  [
+                                  25,
+                                  0,
+                                  40
+                              ],
+                   "rgbBot":  [
+                                  0,
+                                  0,
+                                  5
+                              ]
+               },
+    "fpsBudget":  {
+                      "target":  30,
+                      "lowDeviceMaxFx":  0.35
+                  },
+    "a11y":  {
+                 "minContrast":  4.5,
+                 "minTapPx":  48
+             },
+    "wave":  2
 }

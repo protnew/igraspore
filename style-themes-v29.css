@@ -1,4 +1,4 @@
-/* v29 theme styles — all 7 approved themes */
+﻿/* v29 theme styles — all 7 approved themes */
 .theme-sel-wrap{display:flex;flex-direction:column;gap:4px;min-width:120px}
 .theme-sel-label{font-size:11px;color:#bcd}
 .theme-sel-wrap select,.theme-set-row select,#themeBestiaryBar select,#themePondBar select{
@@ -48,15 +48,29 @@ body.in-menu #themePondBar{display:none!important}
 html[data-theme-pond="neon-bio"],body[data-theme-pond="neon-bio"]{background:#000!important}
 
 /* phase-contrast — light microscopic */
-#wikiO[data-theme-bestiary="phase-contrast"]{box-shadow:inset 0 0 40px rgba(0,0,0,.08)}
+#wikiO[data-theme-bestiary="phase-contrast"]{background:#dfe8ea!important;color:#1a2426!important;box-shadow:inset 0 0 40px rgba(0,0,0,.08)}
 #wikiO[data-theme-bestiary="phase-contrast"] .wiki-entry{box-shadow:0 1px 3px rgba(0,0,0,.12)}
 html[data-theme-pond="phase-contrast"],body[data-theme-pond="phase-contrast"]{background:#cfd8da!important}
 
 /* glass-lab — light glass, dark text */
 #wikiO[data-theme-bestiary="glass-lab"]{
+  background:linear-gradient(165deg,#eef6fb 0%,#d5e6f2 55%,#c5d9ea 100%)!important;
+  color:#1a2a33!important;
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   box-shadow:0 8px 32px rgba(40,80,120,.18), inset 0 1px 0 rgba(255,255,255,.6)
 }
+#wikiO[data-theme-bestiary="glass-lab"] .wiki-entry{
+  background:rgba(255,255,255,.55)!important;color:#1a2a33!important
+}
+#wikiO[data-theme-bestiary="glass-lab"] .wiki-entry b{color:#0a6a8a!important}
+#wikiO[data-theme-bestiary="glass-lab"] .wiki-entry .wa,
+#wikiO[data-theme-bestiary="glass-lab"] .wiki-entry .wf{color:#1a2a33!important}
+#wikiO[data-theme-bestiary="glass-lab"] .wiki-entry .wl,
+#wikiO[data-theme-bestiary="glass-lab"] .wiki-entry .wo{color:#4a6070!important}
+#wikiO[data-theme-bestiary="glass-lab"] .tt{color:#0a6a8a!important}
+#wikiO[data-theme-bestiary="glass-lab"] #wikiSearch{background:rgba(255,255,255,.7)!important;color:#1a2a33!important;border-color:rgba(255,255,255,.8)!important}
+#wikiO[data-theme-bestiary="glass-lab"] .btn,
+#wikiO[data-theme-bestiary="glass-lab"] #wikiClose{background:rgba(255,255,255,.65)!important;color:#1a2a33!important}
 #wikiO[data-theme-bestiary="glass-lab"] .wiki-entry{
   backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(30,60,90,.12), inset 0 1px 0 #fff;
   border:1px solid rgba(255,255,255,.75)!important
@@ -78,8 +92,11 @@ html[data-theme-pond="haeckel-watercolor"],body[data-theme-pond="haeckel-waterco
 
 /* engraving */
 #wikiO[data-theme-bestiary="engraving"]{
+  background:#f5f0e6!important;color:#111!important;
   background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 3px)!important
 }
 #wikiO[data-theme-bestiary="engraving"] .wiki-entry{border-width:2px!important;border-radius:0!important}
 #wikiO[data-theme-bestiary="engraving"] .tt{letter-spacing:.06em;text-transform:uppercase;font-size:28px}
 html[data-theme-pond="engraving"],body[data-theme-pond="engraving"]{background:#ddd6c8!important}
+
+

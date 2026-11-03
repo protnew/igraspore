@@ -28,3 +28,9 @@
 ### 2026-11-03 17:55 — shots retry на :8820
 - :8795 hang/spawn-null при test=1; новый стенд :8820 стартует (paused+alive)
 
+
+### 2026-11-03 18:07 — resume после прерывания
+- HEAD: 3973bb8; матрица 48/48, hitTargets 145x48, vitest 3+3 PASS уже были
+- FPS remeasure (30с, sort asc): classic med20/p5=20; neon-bio med20/p5=15; phase med30/p5=20
+- 8 png в C:\Users\Space\agent-transfer\v29\; CopyToBox был aborted
+- Дальше: commit FPS-отчёта → копирование 8 кадров → eye-review → REPORT → APK/чек-лист → СТОП волны 1

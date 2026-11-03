@@ -444,5 +444,6 @@
   "theme.analyticsOptOut": "Theme usage stats",
   "theme.analyticsHint": "Anonymous style stats (no personal data). Can disable.",
   "aria.themeBestiary": "Bestiary visual style",
-  "aria.themePond": "Pond visual style"
+  "aria.themePond": "Pond visual style",
+  "theme.fpsFallback": "Theme FX reduced (FPS)"
 }

@@ -26,6 +26,28 @@
   function settingsRowsHtml() { return '<div class="sr theme-set-row">' + buildSelectHtml('themeSelBestiarySet', 'bestiary', currentBestiary()) + '</div><div class="sr theme-set-row">' + buildSelectHtml('themeSelPondSet', 'pond', currentPond()) + '</div>'; }
   function bindSettingsSelects() { bindSelect(document.getElementById('themeSelBestiarySet')); bindSelect(document.getElementById('themeSelPondSet')); }
   function loadPresets(cb) { var left = WAVE1.length; function doneOne(){ left--; if(!left && cb) cb(); } WAVE1.forEach(function(id){ if(cache[id]){ doneOne(); return; } fetch('.04-Src/data/themes/' + id + '.json').then(function(r){ return r.json(); }).then(function(j){ cache[id]=j; doneOne(); }).catch(function(){ cache[id]={ id:id, labelKey:'theme.'+id, cssVars:{}, shader:{ fallback:'low' } }; doneOne(); }); }); }
-  function initThemes() { ensureAnon(); loadPresets(function(){ if(!lsGet(LS_B)) pickAb('bestiary'); if(!lsGet(LS_P)) pickAb('pond'); injectPondSwitcher(); applyThemePond(currentPond()); applyThemeBestiary(currentBestiary()); }); }
-  w.igsThemeEngine = { listThemes:listThemes, getTheme:getTheme, applyThemeBestiary:applyThemeBestiary, applyThemePond:applyThemePond, currentBestiary:currentBestiary, currentPond:currentPond, injectWikiSwitcher:injectWikiSwitcher, settingsRowsHtml:settingsRowsHtml, bindSettingsSelects:bindSettingsSelects, initThemes:initThemes, WAVE1:WAVE1, _cache:cache, seedCache:function(id,j){ cache[id]=j; } };
+  
+  var _fpsLowStreak = 0;
+  function startFpsGate() {
+    if (w.__igsThemeFpsGate) return;
+    w.__igsThemeFpsGate = true;
+    var last = performance.now();
+    function tick(now) {
+      var dt = now - last; last = now;
+      var fps = 1000 / Math.max(dt, 0.001);
+      var th = getTheme(currentPond()) || {};
+      var budget = (th.fpsBudget && th.fpsBudget.target) || 30;
+      if (fps < budget) _fpsLowStreak++; else _fpsLowStreak = 0;
+      if (_fpsLowStreak >= 180) { // ~3s at 60fps samples; at 20fps ~9s wall — also check wall
+        w.__igsThemePondShader = Object.assign({}, th.shader || {}, { fallback: 'low', bloom: 0, caustic: 0 });
+        _fpsLowStreak = 0;
+        try { if (typeof toast === 'function') toast((typeof tt === 'function' ? tt('theme.fpsFallback') : 'Theme FX reduced')); } catch (e) {}
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function initThemes() { ensureAnon(); loadPresets(function(){ if(!lsGet(LS_B)) pickAb('bestiary'); if(!lsGet(LS_P)) pickAb('pond'); injectPondSwitcher(); applyThemePond(currentPond()); applyThemeBestiary(currentBestiary()); startFpsGate(); }); }
+  w.igsThemeEngine = { listThemes:listThemes, getTheme:getTheme, applyThemeBestiary:applyThemeBestiary, applyThemePond:applyThemePond, currentBestiary:currentBestiary, currentPond:currentPond, injectWikiSwitcher:injectWikiSwitcher, settingsRowsHtml:settingsRowsHtml, bindSettingsSelects:bindSettingsSelects, initThemes:initThemes, startFpsGate:startFpsGate, WAVE1:WAVE1, _cache:cache, seedCache:function(id,j){ cache[id]=j; } };
 })(typeof window !== 'undefined' ? window : globalThis);

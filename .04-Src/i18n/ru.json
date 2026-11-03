@@ -450,5 +450,6 @@
   "theme.analyticsOptOut": "Статистика стилей",
   "theme.analyticsHint": "Анонимная статистика стилей без персональных данных.",
   "aria.themeBestiary": "Стиль бестиария",
-  "aria.themePond": "Стиль водоёма"
+  "aria.themePond": "Стиль водоёма",
+  "theme.fpsFallback": "Эффекты темы снижены (FPS)"
 }

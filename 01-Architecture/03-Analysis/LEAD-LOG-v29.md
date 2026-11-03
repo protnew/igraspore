@@ -34,3 +34,8 @@
 - FPS remeasure (30с, sort asc): classic med20/p5=20; neon-bio med20/p5=15; phase med30/p5=20
 - 8 png в C:\Users\Space\agent-transfer\v29\; CopyToBox был aborted
 - Дальше: commit FPS-отчёта → копирование 8 кадров → eye-review → REPORT → APK/чек-лист → СТОП волны 1
+
+### 2026-11-03 18:11 — FPS gate + 8 кадров на box
+- CopyToBox 8/8 → /workspace/v29/
+- Eye-read: pond Classic/Neon/PhaseContrast select виден; bestiary Neon/Phase стили; lab FIXTURE
+- Добавлен startFpsGate + i18n theme.fpsFallback (en/ru)

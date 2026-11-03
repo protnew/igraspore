@@ -1,0 +1,14 @@
+name = "igraspore-theme-analytics"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# DO NOT commit real account_id or tokens.
+# account_id = "YOUR_ACCOUNT_ID"
+
+[[analytics_engine_datasets]]
+binding = "THEME_AE"
+dataset = "igs_theme_events"
+
+# Secrets via: wrangler secret put CF_API_TOKEN / STATS_GATE
+# [vars]
+# ALLOWED_ORIGINS = "http://127.0.0.1:8795,http://127.0.0.1:8793,https://igraspore.pages.dev"

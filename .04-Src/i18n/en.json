@@ -434,5 +434,15 @@
   "coloniesCount.one": "{n} colony",
   "coloniesCount.other": "{n} colonies",
   "aliveCount.one": "{n} alive",
-  "aliveCount.other": "{n} alive"
+  "aliveCount.other": "{n} alive",
+  "aria.lang": "Language",
+  "theme.classic": "Classic",
+  "theme.neonBio": "Neon",
+  "theme.phaseContrast": "Phase contrast",
+  "theme.bestiary": "Bestiary style",
+  "theme.pond": "Pond style",
+  "theme.analyticsOptOut": "Theme usage stats",
+  "theme.analyticsHint": "Anonymous style stats (no personal data). Can disable.",
+  "aria.themeBestiary": "Bestiary visual style",
+  "aria.themePond": "Pond visual style"
 }

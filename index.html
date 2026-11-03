@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="04-Src/fonts.generated.css?v=1"> <!-- GEN:A1 @font-face из реестра -->
 
 <style id="a11y-focus">:focus-visible{outline:2px solid #5ed4a0;outline-offset:2px;}a#apkBtn:focus-visible{outline:2px solid #5ed4a0;outline-offset:3px;}</style>
+<link rel="stylesheet" href="style-themes-v29.css?v=1793720001">
 </head>
 <body>
 <canvas id="glCanvas" aria-hidden="true" style="position:absolute;top:0;left:0;z-index:0;pointer-events:none;display:none;"></canvas><canvas id="c"></canvas>
@@ -40,7 +41,7 @@
 <div id="leftContainer" style="display:flex; flex-direction:column; gap:8px; pointer-events:auto; z-index:10; width:180px;">
   <!-- v24 Р10: нативный select вместо самописного дропдауна (100 языков = системный скролл Android); buildLangBar его наполняет -->
   <div id="langSelWrap" style="pointer-events:auto; z-index:50;">
-    <select id="menuLangSel" aria-label="Language" style="min-height:48px;min-width:48px;font-size:15px;background:#123a66;color:#fff;border:2px solid #7cf;border-radius:8px;padding:4px 8px;max-width:168px"></select>
+    <select id="menuLangSel" aria-label="Language" data-k-aria="aria.lang" style="min-height:48px;min-width:48px;font-size:15px;background:#123a66;color:#fff;border:2px solid #7cf;border-radius:8px;padding:4px 8px;max-width:168px"></select>
   </div>
 <div id="hud" class="p" data-hud-slot="energy" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
   <div id="ecoP" class="p" style="display:none; position:relative; top:auto; left:auto; width:100%; box-sizing:border-box;"></div>
@@ -221,6 +222,8 @@
 <script src="04-Src/js/ui.js?v=1792632100"></script>
 <script src="04-Src/js/ui_menus.js?v=1792632100"></script>
 <script src="04-Src/js/ui_food_chain.js?v=1792632100"></script>
+<script src="04-Src/js/theme_analytics.js?v=1793720001"></script>
+<script src="04-Src/js/theme_engine.js?v=1793720001"></script>
 <script src="04-Src/js/ui_screens.js?v=1792632100"></script>
 <script src="04-Src/js/main.js?v=1792632100"></script>
 <script src="04-Src/js/global_errors.js?v=1792632100"></script>
@@ -267,6 +270,7 @@ window.addEventListener('load', function(){
 });
 </script>
 <script>if(typeof initIgrasporWebGLStyle==='function'){initIgrasporWebGLStyle();}</script>
+<script>document.addEventListener("DOMContentLoaded",function(){try{if(window.igsThemeEngine)window.igsThemeEngine.initThemes();}catch(e){}});</script>
 </body>
 </html>
 

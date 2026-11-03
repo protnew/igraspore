@@ -440,5 +440,15 @@
   "aliveCount.one": "{n} жив",
   "aliveCount.few": "{n} живы",
   "aliveCount.many": "{n} живых",
-  "aliveCount.other": "{n} жив"
+  "aliveCount.other": "{n} жив",
+  "aria.lang": "Язык",
+  "theme.classic": "Классика",
+  "theme.neonBio": "Неон",
+  "theme.phaseContrast": "Фазовый контраст",
+  "theme.bestiary": "Стиль бестиария",
+  "theme.pond": "Стиль водоёма",
+  "theme.analyticsOptOut": "Статистика стилей",
+  "theme.analyticsHint": "Анонимная статистика стилей без персональных данных.",
+  "aria.themeBestiary": "Стиль бестиария",
+  "aria.themePond": "Стиль водоёма"
 }

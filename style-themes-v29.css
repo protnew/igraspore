@@ -1,0 +1,9 @@
+/* v29 theme engine */
+html[data-theme-pond="neon-bio"], body[data-theme-pond="neon-bio"] { background:#000 !important; }
+html[data-theme-pond="phase-contrast"], body[data-theme-pond="phase-contrast"] { background:#081214 !important; }
+#wikiO[data-theme-bestiary] { background: var(--theme-panel, rgba(0,12,28,.92)); color: var(--theme-text,#fff); border-color: var(--theme-border,#1a3a55); }
+#wikiO[data-theme-bestiary="neon-bio"] .wiki-entry { border:1px solid #00ffff55; box-shadow:0 0 8px #ff00aa33; }
+#wikiO[data-theme-bestiary="phase-contrast"] .wiki-entry { border:1px solid #7fb2b255; font-family: Georgia, serif; }
+#wikiO[data-theme-bestiary="neon-bio"] .tt { color:#00ffff; text-shadow:0 0 8px #ff00aa88; }
+#themePondBar, #themeBestiaryBar, .theme-set-row select { min-height:48px; }
+.theme-sel-wrap select { min-height:48px; min-width:48px; }

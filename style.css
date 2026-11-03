@@ -85,7 +85,7 @@ canvas{display:block;touch-action:none} #c{position:absolute;top:0;left:0;}
 #khToggle:focus-visible{outline:2px solid #5ed4a0;outline-offset:2px}
 @media (prefers-reduced-motion: reduce){#keyHint,.kh-keys,#khToggle{transition:none;animation:none}}
 #legP{position:relative;z-index:10;padding:4px 7px;max-height:40vh;overflow-y:auto}
-#legToggle{pointer-events:auto;cursor:pointer;border:1px solid #3a6a95;background:#012;color:#def;border-radius:6px;padding:6px 10px;min-height:32px;font:700 12px/1 system-ui,sans-serif;width:100%;text-align:left}
+#legToggle{pointer-events:auto;cursor:pointer;border:1px solid #3a6a95;background:#012;color:#def;border-radius:6px;padding:12px 10px;min-height:48px;font:700 12px/1 system-ui,sans-serif;width:100%;text-align:left} /* v24 задача 2: 48px */
 #legBody{display:flex;flex-direction:column;gap:2px;margin-top:4px}
 #legP.collapsed #legBody{display:none}
 .lgR{display:flex;align-items:center;gap:8px;font-size:12px;color:#dde;margin:1px 0}
@@ -125,9 +125,9 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 .sb2{font-size:13px;color:#9bd;margin-bottom:10px}
 .btn{padding:9px 26px;font-size:18px;min-height:48px;background:#123;color:#bef;border:2px solid #345;border-radius:7px;cursor:pointer;font-family:inherit;margin:3px;transition:all .15s}
 .btn:hover{background:#234;border-color:#4af}
-.btn.sm{font-size:11px;padding:5px 14px}
+.btn.sm{font-size:13px;padding:12px 16px;min-height:48px} /* v24 задача 2: зона касания 48px (es CERRAR ~40px и пр.) */
 #catSel{display:flex;gap:3px;margin:6px 0;flex-wrap:wrap;justify-content:center}
-.cb{padding:4px 12px;font-size:12px;background:#012;color:#89c;border:1px solid #234;border-radius:3px;cursor:pointer;font-family:inherit;transition:all .1s}
+.cb{padding:10px 14px;font-size:12px;min-height:48px;box-sizing:border-box;background:#012;color:#89c;border:1px solid #234;border-radius:3px;cursor:pointer;font-family:inherit;transition:all .1s} /* v24 задача 2: чипы-фильтры ≥48px */
 .cb:hover{background:#123;color:#cef}
 .cb.act{background:#246;color:#cef;border-color:#4af}
 .scrollbox{max-height:60vh;overflow-y:auto;max-width:900px;width:100%;padding:10px;}
@@ -140,7 +140,7 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 .scL{color:#fff !important;text-shadow:1px 1px 3px #000 !important;font-size:13px;font-style:italic;word-wrap:break-word}
 .scC{font-size:13px;color:#fff !important;text-shadow:1px 1px 2px #000 !important;margin-top:1px}
 .scP{font-size:8px;font-weight:bold;color:#aef !important;text-shadow:1px 1px 2px #000 !important;margin-top:1px}
-.diff{padding:5px 14px;font-size:11px;background:#012;color:#89c;border:1px solid #234;border-radius:3px;cursor:pointer;font-family:inherit;margin:2px}
+.diff{padding:10px 14px;font-size:12px;min-height:48px;box-sizing:border-box;background:#014;color:#bcd;border:1px solid #345;border-radius:3px;cursor:pointer;font-family:inherit;margin:2px} /* v24 задача 2: 48px + контраст невыбранной сложности */
 .diff:hover{background:#123;color:#cef}
 .diff.act{background:#2a6;color:#fff;border-color:#4c8}
 .stbl{color:#bcd;font-size:12px;border-collapse:collapse;margin:0 auto}
@@ -451,7 +451,7 @@ body.debug #topRightStack{display:flex!important}
   }
   #scaleW {
     right: 8px !important;
-    max-width: 110px !important;
+    max-width: min(260px, calc(100vw - 24px)) !important;
     font-size: 13px !important;
   }
 }

@@ -12,3 +12,9 @@
 - Следующее: commit ТЗ → волна 1 код
 
 ### 2026-11-03 17:18 — Старт волны 1 (разработка)
+
+### 2026-11-03 17:35 — Волна 1 код
+- theme_engine.js, theme_analytics.js, 3 JSON, Worker skeleton, theme-stats.html
+- index/ui_screens/CSS/en+ru keys
+- vitest theme_engine.test.js
+

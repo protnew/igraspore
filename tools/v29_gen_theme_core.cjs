@@ -1,0 +1,73 @@
+﻿const fs = require('fs');
+const path = require('path');
+const root = process.cwd();
+function w(rel, s) {
+  const p = path.join(root, rel);
+  fs.mkdirSync(path.dirname(p), { recursive: true });
+  fs.writeFileSync(p, s, 'utf8');
+  console.log('wrote', rel, s.split(/\n/).length);
+}
+const engine = [
+'/* theme_engine.js — visual themes bestiary+pond wave1 */',
+'(function (w) {',
+"  var LS_B = 'igs.theme.bestiary';",
+"  var LS_P = 'igs.theme.pond';",
+"  var LS_AB_B = 'igs.theme.ab.bestiary';",
+"  var LS_AB_P = 'igs.theme.ab.pond';",
+"  var WAVE1 = ['classic', 'neon-bio', 'phase-contrast'];",
+'  var cache = {};',
+'  function lsGet(k) { try { return w.localStorage ? w.localStorage.getItem(k) : null; } catch (e) { return null; } }',
+'  function lsSet(k, v) { try { if (w.localStorage) w.localStorage.setItem(k, v); } catch (e) {} }',
+'  function hashAnon(s) { var h = 0, i; for (i = 0; i < s.length; i++) { h = ((h << 5) - h) + s.charCodeAt(i); h |= 0; } return Math.abs(h); }',
+"  function ensureAnon() { var id = lsGet('igs.anon.id'); if (!id) { id = 'a' + Math.random().toString(36).slice(2) + Date.now().toString(36); lsSet('igs.anon.id', id); } return id; }",
+"  function pickAb(screen) { var key = screen === 'pond' ? LS_AB_P : LS_AB_B; var existing = lsGet(key); if (existing && WAVE1.indexOf(existing) >= 0) return existing; var anon = ensureAnon(); var th = WAVE1[hashAnon(anon + ':' + screen) % WAVE1.length]; lsSet(key, th); if (w.igsThemeAnalytics && w.igsThemeAnalytics.track) w.igsThemeAnalytics.track('theme_assign', { screen: screen, themeId: th, groupId: th }); return th; }",
+'  function listThemes() { return WAVE1.slice(); }',
+"  function getTheme(id) { if (!id || WAVE1.indexOf(id) < 0) id = 'classic'; return cache[id] || null; }",
+'  function applyVars(el, vars) { if (!el || !vars) return; Object.keys(vars).forEach(function (k) { el.style.setProperty(k, vars[k]); }); }',
+"  function applyThemeBestiary(id) { if (WAVE1.indexOf(id) < 0) id = 'classic'; var prev = lsGet(LS_B) || 'classic'; lsSet(LS_B, id); var wiki = document.getElementById('wikiO'); if (wiki) { wiki.setAttribute('data-theme-bestiary', id); applyVars(wiki, (getTheme(id) || {}).cssVars); } ['themeSelBestiary','themeSelBestiarySet'].forEach(function(sid){ var sel=document.getElementById(sid); if(sel&&sel.value!==id) sel.value=id; }); if (prev !== id && w.igsThemeAnalytics && w.igsThemeAnalytics.track) w.igsThemeAnalytics.track('theme_change', { screen: 'bestiary', from: prev, to: id }); w.__igsThemeBestiary = id; return id; }",
+"  function applyThemePond(id) { if (WAVE1.indexOf(id) < 0) id = 'classic'; var prev = lsGet(LS_P) || 'classic'; lsSet(LS_P, id); document.documentElement.setAttribute('data-theme-pond', id); applyVars(document.documentElement, (getTheme(id) || {}).cssVars); if (document.body) document.body.setAttribute('data-theme-pond', id); ['themeSelPond','themeSelPondSet'].forEach(function(sid){ var sel=document.getElementById(sid); if(sel&&sel.value!==id) sel.value=id; }); w.__igsThemePondShader = (getTheme(id) || {}).shader || null; if (prev !== id && w.igsThemeAnalytics && w.igsThemeAnalytics.track) w.igsThemeAnalytics.track('theme_change', { screen: 'pond', from: prev, to: id }); w.__igsThemePond = id; return id; }",
+"  function currentBestiary() { return lsGet(LS_B) || pickAb('bestiary'); }",
+"  function currentPond() { return lsGet(LS_P) || pickAb('pond'); }",
+"  function themeLabel(tid) { var th = getTheme(tid) || { labelKey: tid }; var lab = (typeof tt === 'function' ? tt(th.labelKey) : ''); if (!lab || lab === th.labelKey) { if (tid === 'neon-bio') return 'Neon'; if (tid === 'phase-contrast') return 'Phase contrast'; return 'Classic'; } return lab; }",
+"  function buildSelectHtml(id, screen, cur) { var label = screen === 'pond' ? (typeof tt === 'function' ? tt('theme.pond') : 'Pond style') : (typeof tt === 'function' ? tt('theme.bestiary') : 'Bestiary style'); var html = '<label class=\"theme-sel-wrap\" style=\"display:flex;flex-direction:column;gap:4px;min-width:120px\">'; html += '<span style=\"font-size:11px;color:#bcd\">' + label + '</span>'; html += '<select id=\"' + id + '\" data-theme-screen=\"' + screen + '\" aria-label=\"' + label + '\" style=\"min-height:48px;min-width:48px;font-size:14px;background:#123a66;color:#fff;border:1px solid #4af;border-radius:8px;padding:6px 8px\">'; WAVE1.forEach(function (tid) { html += '<option value=\"' + tid + '\"' + (tid === cur ? ' selected' : '') + '>' + themeLabel(tid) + '</option>'; }); html += '</select></label>'; return html; }",
+'  function bindSelect(el) { if (!el || el.__igsThemeBound) return; el.__igsThemeBound = true; el.addEventListener(\"change\", function () { var screen = el.getAttribute(\"data-theme-screen\"); if (screen === \"pond\") applyThemePond(el.value); else applyThemeBestiary(el.value); }); }',
+"  function injectWikiSwitcher() { var wiki = document.getElementById('wikiO'); if (!wiki) return; if (!document.getElementById('themeSelBestiary')) { var wrap = document.createElement('div'); wrap.id = 'themeBestiaryBar'; wrap.style.cssText = 'margin:0 0 8px 0;display:flex;justify-content:flex-end'; wrap.innerHTML = buildSelectHtml('themeSelBestiary', 'bestiary', currentBestiary()); var ttEl = wiki.querySelector('.tt'); if (ttEl && ttEl.parentNode) ttEl.parentNode.insertBefore(wrap, ttEl.nextSibling); else wiki.insertBefore(wrap, wiki.firstChild); } bindSelect(document.getElementById('themeSelBestiary')); applyThemeBestiary(currentBestiary()); }",
+"  function injectPondSwitcher() { var stack = document.getElementById('topRightStack'); if (!stack) return; if (!document.getElementById('themeSelPond')) { var wrap = document.createElement('div'); wrap.id = 'themePondBar'; wrap.innerHTML = buildSelectHtml('themeSelPond', 'pond', currentPond()); stack.insertBefore(wrap, stack.firstChild); } bindSelect(document.getElementById('themeSelPond')); applyThemePond(currentPond()); }",
+"  function settingsRowsHtml() { return '<div class=\"sr theme-set-row\">' + buildSelectHtml('themeSelBestiarySet', 'bestiary', currentBestiary()) + '</div><div class=\"sr theme-set-row\">' + buildSelectHtml('themeSelPondSet', 'pond', currentPond()) + '</div>'; }",
+"  function bindSettingsSelects() { bindSelect(document.getElementById('themeSelBestiarySet')); bindSelect(document.getElementById('themeSelPondSet')); }",
+"  function loadPresets(cb) { var left = WAVE1.length; function doneOne(){ left--; if(!left && cb) cb(); } WAVE1.forEach(function(id){ if(cache[id]){ doneOne(); return; } fetch('04-Src/data/themes/' + id + '.json').then(function(r){ return r.json(); }).then(function(j){ cache[id]=j; doneOne(); }).catch(function(){ cache[id]={ id:id, labelKey:'theme.'+id, cssVars:{}, shader:{ fallback:'low' } }; doneOne(); }); }); }",
+"  function initThemes() { ensureAnon(); loadPresets(function(){ if(!lsGet(LS_B)) pickAb('bestiary'); if(!lsGet(LS_P)) pickAb('pond'); injectPondSwitcher(); applyThemePond(currentPond()); applyThemeBestiary(currentBestiary()); }); }",
+'  w.igsThemeEngine = { listThemes:listThemes, getTheme:getTheme, applyThemeBestiary:applyThemeBestiary, applyThemePond:applyThemePond, currentBestiary:currentBestiary, currentPond:currentPond, injectWikiSwitcher:injectWikiSwitcher, settingsRowsHtml:settingsRowsHtml, bindSettingsSelects:bindSettingsSelects, initThemes:initThemes, WAVE1:WAVE1, _cache:cache, seedCache:function(id,j){ cache[id]=j; } };',
+"})(typeof window !== 'undefined' ? window : globalThis);",
+''
+].join('\n');
+w('.04-Src/js/theme_engine.js', engine);
+
+const analytics = [
+'/* theme_analytics.js — local buffer + optional Worker POST (no secrets in client). */',
+'(function (w) {',
+"  var LS_E = 'igs.theme.events';",
+"  var LS_OPT = 'igs.theme.analytics';",
+"  var LS_SID = 'igs.theme.session';",
+'  var MAX = 500;',
+'  function lsGet(k){ try{ return w.localStorage?w.localStorage.getItem(k):null;}catch(e){return null;} }',
+'  function lsSet(k,v){ try{ if(w.localStorage) w.localStorage.setItem(k,v);}catch(e){} }',
+"  function enabled(){ return lsGet(LS_OPT) !== '0'; }",
+"  function setEnabled(on){ lsSet(LS_OPT, on ? '1' : '0'); }",
+"  function anonId(){ var id=lsGet('igs.anon.id'); if(!id){ id='a'+Math.random().toString(36).slice(2); lsSet('igs.anon.id', id);} return id; }",
+"  function sessionId(){ var id=lsGet(LS_SID); if(!id){ id='s'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); lsSet(LS_SID,id);} return id; }",
+'  function readBuf(){ try{ return JSON.parse(lsGet(LS_E)||\"[]\"); }catch(e){ return []; } }',
+'  function writeBuf(arr){ if(arr.length>MAX) arr=arr.slice(arr.length-MAX); lsSet(LS_E, JSON.stringify(arr)); }',
+'  function endpoint(){ if(typeof w.IGS_THEME_ANALYTICS_URL===\"string\" && w.IGS_THEME_ANALYTICS_URL) return w.IGS_THEME_ANALYTICS_URL; var m=document.querySelector && document.querySelector(\"meta[name=igs-theme-analytics-url]\"); return m && m.content ? m.content : \"\"; }',
+'  function track(type, fields){ if(!enabled()) return null; var ev={ event:type, ts:Date.now(), anonId:anonId(), sessionId:sessionId() }; if(fields){ Object.keys(fields).forEach(function(k){ ev[k]=fields[k]; }); } var buf=readBuf(); buf.push(ev); writeBuf(buf); flushSoon(); return ev; }',
+'  var flushTimer=null;',
+'  function flushSoon(){ if(flushTimer) return; flushTimer=setTimeout(function(){ flushTimer=null; flush(); }, 800); }',
+'  function flush(){ var url=endpoint(); if(!url) return { sent:0, local:true }; if(!enabled()) return { sent:0, optedOut:true }; var buf=readBuf(); if(!buf.length) return { sent:0 }; var body=JSON.stringify({ events: buf.slice(-50) }); try{ if(navigator.sendBeacon){ navigator.sendBeacon(url, new Blob([body],{type:\"application/json\"})); } else { fetch(url,{ method:\"POST\", headers:{\"Content-Type\":\"application/json\"}, body:body, keepalive:true }).catch(function(){}); } }catch(e){} return { sent: Math.min(50, buf.length) }; }',
+'  function clear(){ writeBuf([]); }',
+'  w.igsThemeAnalytics = { track:track, flush:flush, readBuf:readBuf, clear:clear, enabled:enabled, setEnabled:setEnabled, endpoint:endpoint, anonId:anonId };',
+'  if(typeof document!==\"undefined\"){ document.addEventListener(\"visibilitychange\", function(){ if(document.visibilityState===\"hidden\") flush(); }); }',
+"})(typeof window !== 'undefined' ? window : globalThis);",
+''
+].join('\n');
+w('.04-Src/js/theme_analytics.js', analytics);
+console.log('done');

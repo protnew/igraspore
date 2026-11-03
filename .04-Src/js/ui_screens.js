@@ -28,13 +28,20 @@ function igsLangCodes(){
 
 function buildLangBar() {
   // v24 Р10: меню — нативный <select id="menuLangSel"> (системный скролл на 100 языков), только enabled
+  // v28 T4b Д18: если curLang нет в codes, добавить опцию и пометить selected
   var sel = document.getElementById('menuLangSel');
   if(!sel) return;
   var nm = function(l){ return (typeof langNames!=='undefined' && langNames[l]) || (typeof LANG_NAME!=='undefined' && LANG_NAME[l]) || l; };
   var codes = igsLangCodes();
   var html = '';
+  var curLangInCodes = false;
   for(var i=0;i<codes.length;i++){
     html += '<option value="'+codes[i]+'"'+(codes[i]===curLang?' selected':'')+'>'+nm(codes[i])+'</option>';
+    if(codes[i]===curLang) curLangInCodes = true;
+  }
+  // Д18: если curLang нет в enabled списке, добавляем его как отдельную опцию
+  if(!curLangInCodes && curLang){
+    html = '<option value="'+curLang+'" selected>'+nm(curLang)+'</option>' + html;
   }
   sel.innerHTML = html;
   sel.onchange = function(){
@@ -238,7 +245,10 @@ function buildSettings(){
     html+='<option value="'+code+'"'+(code===curLang?' selected':'')+'>'+nm+'</option>';
   }
   html+='</select></div>';
-  sb.innerHTML=html;
+  if(window.igsThemeEngine&&window.igsThemeEngine.settingsRowsHtml){ html+=window.igsThemeEngine.settingsRowsHtml(); }
+html+='<div class="sr"><span>'+(typeof tt==='function'?tt('theme.analyticsOptOut'):'Theme analytics')+'</span><div class="tg'+(window.igsThemeAnalytics&&window.igsThemeAnalytics.enabled&&window.igsThemeAnalytics.enabled()?' on':'')+'" id="themeAnalyticsTg" onclick="window.__igsToggleThemeAnalytics&&window.__igsToggleThemeAnalytics(this)"></div></div>';
+sb.innerHTML=html;
+try{ if(window.igsThemeEngine&&window.igsThemeEngine.bindSettingsSelects) window.igsThemeEngine.bindSettingsSelects(); }catch(eTs){}
   var sel=document.getElementById('setLang');
   if(sel) sel.onchange=function(){
     var next=sel.value;
@@ -355,4 +365,5 @@ function buildWiki(filter){
     html='<div class="wiki-entry">Wiki error: '+(eBuild&&eBuild.message?eBuild.message:'unknown')+'</div>';
   }
   wc.innerHTML=html;
+  try{ if(window.igsThemeEngine&&window.igsThemeEngine.injectWikiSwitcher) window.igsThemeEngine.injectWikiSwitcher(); }catch(eTh){}
 }

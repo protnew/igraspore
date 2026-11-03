@@ -16,45 +16,45 @@
   },
   "shader": {
     "surface": [
-      0.02,
-      0.12,
-      0.18
+      0.01,
+      0.08,
+      0.14
     ],
     "mid": [
       0.0,
-      0.04,
-      0.1
+      0.02,
+      0.07
     ],
     "deep": [
       0.0,
       0.0,
-      0.02
+      0.015
     ],
     "caustic": [
       0.25,
       1.0,
       1.0
     ],
-    "bloom": 3.4,
-    "causticAmt": 3.6,
-    "sat": 2.1,
-    "vignette": 0.65,
+    "bloom": 3.8,
+    "causticAmt": 3.8,
+    "sat": 2.2,
+    "vignette": 0.72,
     "fx": 1.0,
     "fallback": "low",
     "rgbTop": [
       0,
-      12,
-      28
+      8,
+      22
     ],
     "rgbMid": [
       0,
-      4,
-      14
+      2,
+      10
     ],
     "rgbBot": [
       0,
       0,
-      2
+      1
     ]
   },
   "fpsBudget": {

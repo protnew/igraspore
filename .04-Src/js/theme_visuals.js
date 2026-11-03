@@ -15,15 +15,15 @@
       if (h < 1) return;
       if (id === "neon-bio" || id === "cyberpunk-scanner") {
         w._sunPos = null;
-        ctx.fillStyle = id === "neon-bio" ? "#000006" : "#050008";
+        ctx.fillStyle = id === "neon-bio" ? "#000004" : "#050008";
         ctx.fillRect(vL - 20, vT - 2, (vR - vL) + 40, h + 4);
         ctx.save();
-        for (var si = 0; si < 40; si++) {
+        for (var si = 0; si < 48; si++) {
           var sx = vL + ((si * 97) % Math.max(1, vR - vL));
           var sy = vT + 8 + ((si * 53) % Math.max(1, h * 0.7));
-          ctx.globalAlpha = 0.25 + (si % 5) * 0.08;
-          ctx.fillStyle = id === "neon-bio" ? "#6ff" : "#f0f";
-          ctx.beginPath(); ctx.arc(sx, sy, 0.7, 0, Math.PI * 2); ctx.fill();
+          ctx.globalAlpha = 0.3 + (si % 5) * 0.1;
+          ctx.fillStyle = id === "neon-bio" ? "#7ff" : "#f0f";
+          ctx.beginPath(); ctx.arc(sx, sy, 0.8, 0, Math.PI * 2); ctx.fill();
         }
         ctx.restore();
         return;
@@ -31,7 +31,7 @@
       if (id === "phase-contrast") {
         w._sunPos = null;
         var g = ctx.createLinearGradient(0, vT, 0, 0);
-        g.addColorStop(0, "#0e1212"); g.addColorStop(0.55, "#3a4545"); g.addColorStop(1, "#7a8888");
+        g.addColorStop(0, "#0c0e10"); g.addColorStop(0.55, "#4a5050"); g.addColorStop(1, "#a8b0b0");
         ctx.fillStyle = g;
         ctx.fillRect(vL - 20, vT - 2, (vR - vL) + 40, h + 4);
         return;
@@ -39,9 +39,22 @@
       if (id === "engraving") {
         w._sunPos = null;
         var ge = ctx.createLinearGradient(0, vT, 0, 0);
-        ge.addColorStop(0, "#2a2218"); ge.addColorStop(0.5, "#8a7a60"); ge.addColorStop(1, "#d8c8a8");
+        ge.addColorStop(0, "#3a3020"); ge.addColorStop(0.45, "#a09070"); ge.addColorStop(1, "#e8dcc0");
         ctx.fillStyle = ge;
         ctx.fillRect(vL - 20, vT - 2, (vR - vL) + 40, h + 4);
+        var cx = (vL + vR) / 2, cy = vT + h * 0.35, rr = Math.min(28, h * 0.22);
+        ctx.save();
+        ctx.fillStyle = "rgba(40,30,18,0.55)";
+        ctx.beginPath(); ctx.arc(cx, cy, rr, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = "rgba(30,22,12,0.35)"; ctx.lineWidth = 1;
+        for (var ray = 0; ray < 16; ray++) {
+          var a = (ray / 16) * Math.PI * 2;
+          ctx.beginPath();
+          ctx.moveTo(cx + Math.cos(a) * rr * 1.1, cy + Math.sin(a) * rr * 1.1);
+          ctx.lineTo(cx + Math.cos(a) * rr * 2.2, cy + Math.sin(a) * rr * 2.2);
+          ctx.stroke();
+        }
+        ctx.restore();
         return;
       }
       if (id === "haeckel-watercolor") {
@@ -97,6 +110,13 @@
     function themedPads(vL, vR, surfW) {
       var id = tid();
       if (id === "neon-bio" || id === "cyberpunk-scanner" || id === "phase-contrast") return;
+      if (id === "engraving") {
+        ctx.save();
+        try { ctx.filter = "grayscale(1) contrast(1.4) sepia(0.7) brightness(0.85)"; } catch (eP) {}
+        orig(vL, vR, surfW);
+        ctx.restore();
+        return;
+      }
       return orig.apply(this, arguments);
     }
     themedPads.__igsThemeWrap = true;
@@ -108,114 +128,88 @@
     var orig = w.drawSwissCell;
     w.drawSwissCell = function (c, o, sz, sh) {
       var id = tid();
+      var ssz = sz || 4;
       if (id === "neon-bio") {
         c.save();
         var col = (o && o.sp && o.sp.color) || "#0ff";
         c.shadowColor = col;
-        c.shadowBlur = Math.max(28, (sz || 4) * 6.5);
-        orig(c, o, sz, sh);
+        c.shadowBlur = Math.max(28, ssz * 7);
+        c.globalAlpha = 0.95;
+        orig(c, o, ssz, sh);
         try {
-          c.globalCompositeOperation = "screen";
-          c.shadowColor = "#ff00aa";
-          c.shadowBlur = Math.max(20, (sz || 4) * 5);
-          c.globalAlpha = 0.45;
-          orig(c, o, sz, sh);
-          c.shadowColor = "#00ffaa";
-          c.globalAlpha = 0.35;
-          orig(c, o, sz, sh);
+          c.globalCompositeOperation = "lighter";
+          c.shadowColor = "#fff";
+          c.shadowBlur = Math.max(14, ssz * 3);
+          c.globalAlpha = 0.65;
+          orig(c, o, ssz * 1.05, sh);
+          c.shadowColor = col;
+          c.shadowBlur = Math.max(36, ssz * 8);
+          c.globalAlpha = 0.4;
+          orig(c, o, ssz, sh);
         } catch (eN) {}
         c.restore();
         return;
       }
       if (id === "phase-contrast") {
         c.save();
-        try { c.filter = "grayscale(1) contrast(1.7) brightness(1.2)"; } catch (e) {}
-        orig(c, o, sz, sh);
+        try { c.filter = "grayscale(1) contrast(1.85) brightness(1.35)"; } catch (e) {}
+        c.shadowColor = "rgba(255,255,255,0.95)";
+        c.shadowBlur = Math.max(16, ssz * 4.5);
+        orig(c, o, Math.max(ssz * 1.35, ssz + 2), sh);
         c.restore();
-        try {
-          var x = o.x, y = o.y, r = Math.max(7, (sz || 4) * 1.55);
-          c.save();
-          c.strokeStyle = "rgba(255,255,255,0.75)";
-          c.lineWidth = 2.2;
-          c.shadowColor = "rgba(220,255,255,0.85)";
-          c.shadowBlur = 10;
-          c.beginPath(); c.arc(x, y, r, 0, Math.PI * 2); c.stroke();
-          c.strokeStyle = "rgba(180,220,220,0.35)";
-          c.lineWidth = 4;
-          c.beginPath(); c.arc(x, y, r + 3, 0, Math.PI * 2); c.stroke();
-          c.restore();
-        } catch (e2) {}
+        c.save();
+        try { c.filter = "grayscale(1) contrast(2.1) brightness(1.05)"; } catch (e3) {}
+        c.shadowColor = "rgba(220,255,255,0.7)";
+        c.shadowBlur = Math.max(8, ssz * 2);
+        orig(c, o, Math.max(ssz * 1.25, ssz + 1.5), sh);
+        c.restore();
         return;
       }
       if (id === "engraving") {
         c.save();
-        try { c.filter = "grayscale(1) contrast(1.45) sepia(0.7) brightness(0.95)"; } catch (e) {}
-        orig(c, o, sz, sh);
+        try { c.filter = "grayscale(1) contrast(1.55) sepia(0.7) brightness(0.78)"; } catch (e) {}
+        c.shadowColor = "rgba(20,12,4,0.55)";
+        c.shadowBlur = 1.5;
+        orig(c, o, ssz, sh);
         c.restore();
         try {
-          var xe = o.x, ye = o.y, re = Math.max(6, (sz || 4) * 1.35);
           c.save();
-          c.strokeStyle = "rgba(40,28,16,0.75)";
-          c.lineWidth = 1.4;
-          c.beginPath(); c.arc(xe, ye, re, 0, Math.PI * 2); c.stroke();
+          c.globalCompositeOperation = "multiply";
+          c.globalAlpha = 0.55;
+          try { c.filter = "grayscale(1) contrast(2.2) brightness(0.35)"; } catch (e4) {}
+          orig(c, o, ssz * 1.08, sh);
           c.restore();
-        } catch (eE) {}
+        } catch (eInk) {}
         return;
       }
       if (id === "cyberpunk-scanner") {
         c.save();
         c.shadowColor = "#0f8";
-        c.shadowBlur = 14;
-        try { c.filter = "saturate(1.8) contrast(1.3) hue-rotate(40deg)"; } catch (e) {}
-        orig(c, o, sz, sh);
+        c.shadowBlur = 12;
+        try { c.filter = "saturate(1.7) contrast(1.3) hue-rotate(40deg)"; } catch (e) {}
+        orig(c, o, ssz, sh);
         c.restore();
         return;
       }
       if (id === "haeckel-watercolor") {
         c.save();
-        try { c.filter = "sepia(0.3) saturate(1.05) contrast(0.98) brightness(1.05)"; } catch (e) {}
-        orig(c, o, sz, sh);
+        try { c.filter = "sepia(0.3) saturate(0.95) contrast(1.05)"; } catch (e) {}
+        orig(c, o, ssz, sh);
         c.restore();
         return;
       }
       if (id === "glass-lab") {
         c.save();
-        try { c.filter = "saturate(0.7) brightness(1.1) contrast(1.05)"; } catch (e) {}
-        orig(c, o, sz, sh);
+        try { c.filter = "saturate(0.7) brightness(1.12) contrast(1.08)"; } catch (e) {}
+        c.shadowColor = "rgba(180,220,255,0.5)";
+        c.shadowBlur = 8;
+        orig(c, o, ssz, sh);
         c.restore();
         return;
       }
-      return orig(c, o, sz, sh);
+      return orig(c, o, ssz, sh);
     };
     w.drawSwissCell.__igsThemeWrap = true;
-  }
-
-  function drawGodRays(W, H, color, strength) {
-    var cx = W * 0.5, cy = H * 0.02;
-    ctx.save();
-    ctx.globalCompositeOperation = "screen";
-    for (var i = -7; i <= 7; i++) {
-      var ang = (i / 7) * 0.55;
-      var len = H * 0.85;
-      var grd = ctx.createLinearGradient(cx, cy, cx + Math.sin(ang) * len * 0.35, cy + len);
-      grd.addColorStop(0, color.replace("ALP", String(0.55 * strength)));
-      grd.addColorStop(0.45, color.replace("ALP", String(0.18 * strength)));
-      grd.addColorStop(1, color.replace("ALP", "0"));
-      ctx.fillStyle = grd;
-      ctx.beginPath();
-      ctx.moveTo(cx - 8, cy);
-      ctx.lineTo(cx + Math.sin(ang) * len * 0.35 - 28, cy + len);
-      ctx.lineTo(cx + Math.sin(ang) * len * 0.35 + 28, cy + len);
-      ctx.lineTo(cx + 8, cy);
-      ctx.closePath();
-      ctx.fill();
-    }
-    var core = ctx.createRadialGradient(cx, cy, 0, cx, cy, H * 0.35);
-    core.addColorStop(0, color.replace("ALP", String(0.7 * strength)));
-    core.addColorStop(1, color.replace("ALP", "0"));
-    ctx.fillStyle = core;
-    ctx.fillRect(0, 0, W, H * 0.55);
-    ctx.restore();
   }
 
   function postFX() {
@@ -225,57 +219,106 @@
     ctx.save();
     if (id === "neon-bio") {
       ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "rgba(0,0,0,0.88)";
-      ctx.fillRect(0, 0, W, Math.max(1, H * 0.32));
-      var g = ctx.createLinearGradient(0, 0, 0, H * 0.5);
-      g.addColorStop(0, "rgba(0,0,0,0.95)");
-      g.addColorStop(0.35, "rgba(0,0,18,0.55)");
-      g.addColorStop(1, "rgba(0,30,50,0)");
-      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.5);
-      drawGodRays(W, H, "rgba(0,220,255,ALP)", 1.15);
+      var sky = ctx.createLinearGradient(0, 0, 0, H * 0.42);
+      sky.addColorStop(0, "rgba(0,0,0,0.98)");
+      sky.addColorStop(0.55, "rgba(0,0,10,0.72)");
+      sky.addColorStop(1, "rgba(0,18,36,0)");
+      ctx.fillStyle = sky; ctx.fillRect(0, 0, W, H * 0.48);
+      var cx = W * 0.5, topY = H * 0.18, bot = H * 0.95;
+      ctx.save();
       ctx.globalCompositeOperation = "screen";
-      ctx.fillStyle = "rgba(0,200,220,0.12)";
+      var ray = ctx.createLinearGradient(cx, topY, cx, bot);
+      ray.addColorStop(0, "rgba(0,255,255,0.42)");
+      ray.addColorStop(0.35, "rgba(0,200,255,0.18)");
+      ray.addColorStop(1, "rgba(0,80,160,0)");
+      ctx.fillStyle = ray;
+      ctx.beginPath();
+      ctx.moveTo(cx - 18, topY);
+      ctx.lineTo(cx + 18, topY);
+      ctx.lineTo(cx + W * 0.28, bot);
+      ctx.lineTo(cx - W * 0.28, bot);
+      ctx.closePath();
+      ctx.fill();
+      ctx.globalAlpha = 0.45;
+      ctx.beginPath();
+      ctx.moveTo(cx - 40, topY + 8);
+      ctx.lineTo(cx - 10, topY + 8);
+      ctx.lineTo(cx - W * 0.08, bot);
+      ctx.lineTo(cx - W * 0.32, bot);
+      ctx.closePath();
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(cx + 10, topY + 8);
+      ctx.lineTo(cx + 40, topY + 8);
+      ctx.lineTo(cx + W * 0.32, bot);
+      ctx.lineTo(cx + W * 0.08, bot);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+      ctx.globalCompositeOperation = "screen";
+      ctx.fillStyle = "rgba(0,200,220,0.08)";
       ctx.fillRect(0, 0, W, H);
       ctx.globalCompositeOperation = "multiply";
-      ctx.fillStyle = "rgba(0,0,0,0.28)";
+      ctx.fillStyle = "rgba(0,0,0,0.42)";
       ctx.fillRect(0, 0, W, H);
       ctx.globalCompositeOperation = "source-over";
       var vig = ctx.createRadialGradient(W / 2, H * 0.55, H * 0.1, W / 2, H * 0.55, H * 0.85);
       vig.addColorStop(0, "rgba(0,0,0,0)");
-      vig.addColorStop(1, "rgba(0,0,0,0.7)");
+      vig.addColorStop(1, "rgba(0,0,0,0.72)");
       ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
     } else if (id === "phase-contrast") {
       ctx.globalCompositeOperation = "saturation";
       ctx.fillStyle = "rgba(128,128,128,0.92)";
       ctx.fillRect(0, 0, W, H);
       ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "rgba(180,210,210,0.07)";
+      ctx.fillStyle = "rgba(200,220,220,0.05)";
       ctx.fillRect(0, 0, W, H);
-      var v2 = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * 0.22, W / 2, H / 2, Math.min(W, H) * 0.68);
+      var R = Math.min(W, H) * 0.48;
+      var v2 = ctx.createRadialGradient(W / 2, H / 2, R * 0.55, W / 2, H / 2, R * 1.05);
       v2.addColorStop(0, "rgba(0,0,0,0)");
       v2.addColorStop(0.7, "rgba(0,0,0,0.25)");
-      v2.addColorStop(1, "rgba(0,0,0,0.72)");
+      v2.addColorStop(1, "rgba(0,0,0,0.78)");
       ctx.fillStyle = v2; ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = "rgba(255,255,255,0.03)";
+      for (var di = 0; di < 30; di++) {
+        var dx = ((di * 97) % W), dy = ((di * 53) % H);
+        ctx.fillRect(dx, dy, 1.5, 1.5);
+      }
     } else if (id === "engraving") {
+      ctx.globalCompositeOperation = "color";
+      ctx.fillStyle = "rgba(190,170,130,1)";
+      ctx.fillRect(0, 0, W, H);
       ctx.globalCompositeOperation = "soft-light";
-      ctx.fillStyle = "rgba(190,160,110,0.42)";
+      ctx.fillStyle = "rgba(210,185,140,0.55)";
+      ctx.fillRect(0, 0, W, H);
+      ctx.globalCompositeOperation = "multiply";
+      ctx.fillStyle = "rgba(210,195,160,0.35)";
       ctx.fillRect(0, 0, W, H);
       ctx.globalCompositeOperation = "source-over";
-      ctx.strokeStyle = "rgba(40,30,20,0.12)";
+      ctx.strokeStyle = "rgba(35,25,15,0.14)";
       ctx.lineWidth = 1;
       for (var y = 0; y < H; y += 2) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
-      ctx.strokeStyle = "rgba(40,30,20,0.06)";
-      for (var x = 0; x < W; x += 5) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x + H * 0.15, H); ctx.stroke(); }
+      ctx.strokeStyle = "rgba(35,25,15,0.10)";
+      for (var x = -H; x < W; x += 4) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x + H, H); ctx.stroke();
+      }
+      for (var x2 = 0; x2 < W + H; x2 += 5) {
+        ctx.beginPath(); ctx.moveTo(x2, 0); ctx.lineTo(x2 - H, H); ctx.stroke();
+      }
+      var ve = ctx.createRadialGradient(W / 2, H / 2, H * 0.2, W / 2, H / 2, H * 0.75);
+      ve.addColorStop(0, "rgba(0,0,0,0)");
+      ve.addColorStop(1, "rgba(40,28,12,0.35)");
+      ctx.fillStyle = ve; ctx.fillRect(0, 0, W, H);
     } else if (id === "cyberpunk-scanner") {
       ctx.globalCompositeOperation = "screen";
-      ctx.fillStyle = "rgba(0,255,100,0.06)";
+      ctx.fillStyle = "rgba(0,255,100,0.05)";
       ctx.fillRect(0, 0, W, H);
       ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "rgba(0,0,0,0.14)";
+      ctx.fillStyle = "rgba(0,0,0,0.12)";
       for (var sl = 0; sl < H; sl += 3) ctx.fillRect(0, sl, W, 1);
-      ctx.strokeStyle = "rgba(0,255,140,0.18)";
+      ctx.strokeStyle = "rgba(0,255,140,0.14)";
       ctx.lineWidth = 1;
-      var step = 36;
+      var step = 40;
       for (var gx = 0; gx < W; gx += step) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke(); }
       for (var gy = 0; gy < H; gy += step) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke(); }
       var top = ctx.createLinearGradient(0, 0, 0, H * 0.35);
@@ -307,10 +350,10 @@
   function thumbFilter(theme) {
     var m = {
       "neon-bio": "drop-shadow(0 0 14px #0ff) drop-shadow(0 0 10px #f0f) drop-shadow(0 0 6px #0f8) saturate(2.6) brightness(1.4) contrast(1.15)",
-      "phase-contrast": "grayscale(1) contrast(1.65) brightness(1.25) drop-shadow(0 0 6px #fff)",
-      "haeckel-watercolor": "sepia(0.45) saturate(1.55) contrast(1.2) brightness(1.08)",
-      "engraving": "grayscale(1) contrast(1.5) sepia(0.65) brightness(0.98)",
-      "cyberpunk-scanner": "saturate(1.85) contrast(1.35) hue-rotate(45deg) drop-shadow(0 0 8px #0f8)",
+      "phase-contrast": "grayscale(1) contrast(1.85) brightness(1.35) drop-shadow(0 0 8px #fff)",
+      "haeckel-watercolor": "sepia(0.55) saturate(1.45) contrast(1.2) brightness(1.08)",
+      "engraving": "grayscale(1) contrast(2.0) sepia(0.65) brightness(0.72)",
+      "cyberpunk-scanner": "saturate(1.8) contrast(1.35) hue-rotate(50deg) drop-shadow(0 0 6px #0f8)",
       "glass-lab": "saturate(0.65) brightness(1.12) contrast(1.05)",
       classic: "none"
     };
@@ -320,9 +363,9 @@
     var wiki = document.getElementById("wikiO");
     if (!wiki || !wiki.classList.contains("show")) return;
     var theme = wiki.getAttribute("data-theme-bestiary") || bid();
-    var wc = document.getElementById("wikiContent");
-    if (wc && theme && theme !== "classic") wc.classList.add("wiki-grid-cards");
-    else if (wc) wc.classList.remove("wiki-grid-cards");
+    wiki.classList.add("wiki-grid-mode");
+    var content = document.getElementById("wikiContent");
+    if (content) content.classList.add("wiki-grid-cards");
     var entries = wiki.querySelectorAll(".wiki-entry");
     for (var i = 0; i < entries.length; i++) {
       var el = entries[i];
@@ -370,7 +413,7 @@
   function install() {
     wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapBuildWiki();
     var id = tid();
-    var dark = { "neon-bio": 0.18, "cyberpunk-scanner": 0.28, "phase-contrast": 0.42, "engraving": 0.55, "haeckel-watercolor": 0.75, "glass-lab": 0.9 };
+    var dark = {"neon-bio":0.08,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.55,"haeckel-watercolor":0.75,"glass-lab":0.9};
     if (dark[id] != null) w.__igsThemeDayLight = dark[id];
     else if (id === "classic") w.__igsThemeDayLight = null;
   }

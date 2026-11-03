@@ -1,4 +1,4 @@
-/* v29 theme styles — all 7 approved themes */
+﻿/* v29 theme styles — all 7 approved themes */
 .theme-sel-wrap{display:flex;flex-direction:column;gap:4px;min-width:120px}
 .theme-sel-label{font-size:11px;color:#bcd}
 .theme-sel-wrap select,.theme-set-row select,#themeBestiaryBar select,#themePondBar select{
@@ -139,9 +139,9 @@ html[data-theme-pond="engraving"],body[data-theme-pond="engraving"]{background:#
 #wikiContent.wiki-grid-cards .wiki-entry b{font-size:15px;order:-1;margin-bottom:2px}
 
 #wikiO.ov.show[data-theme-bestiary="haeckel-watercolor"] .wiki-thumb{filter:sepia(0.45) saturate(1.7) contrast(1.35) brightness(1.1) !important}
-#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb{filter:drop-shadow(0 0 12px #0ff) drop-shadow(0 0 8px #f0f) saturate(2.6) brightness(1.45) contrast(1.15) !important}
-#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-thumb{filter:grayscale(1) contrast(1.7) brightness(1.3) drop-shadow(0 0 8px #fff) !important}
-#wikiO.ov.show[data-theme-bestiary="engraving"] .wiki-thumb{filter:grayscale(1) contrast(1.55) sepia(0.7) brightness(0.98) !important}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb{filter:drop-shadow(0 0 16px #0ff) drop-shadow(0 0 10px #f0f) saturate(2.8) brightness(1.55) contrast(1.2) !important}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-thumb{filter:grayscale(1) contrast(2.2) brightness(1.5) drop-shadow(0 0 14px #fff) drop-shadow(0 0 4px #cff) !important}
+#wikiO.ov.show[data-theme-bestiary="engraving"] .wiki-thumb{filter:grayscale(1) contrast(2.8) brightness(0.55) sepia(0.85) !important}
 #wikiO.ov.show[data-theme-bestiary="cyberpunk-scanner"] .wiki-thumb{filter:saturate(1.85) contrast(1.35) hue-rotate(45deg) drop-shadow(0 0 8px #0f8) !important}
 #wikiO.ov.show[data-theme-bestiary="haeckel-watercolor"] .wiki-thumb-wrap{background:#fff8ec;border-color:#c4a882;border-radius:8px;box-shadow:2px 2px 0 rgba(100,70,40,.12)}
 #wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb-wrap{background:#030008;border-color:#ff00aa;box-shadow:0 0 16px #0ff7}
@@ -155,3 +155,4 @@ html[data-theme-pond="engraving"],body[data-theme-pond="engraving"]{background:#
   #wikiContent.wiki-grid-cards .wiki-thumb{max-width:110px;max-height:110px;width:110px;height:110px}
   #wikiContent.wiki-grid-cards .wiki-entry.wiki-entry-has-thumb{min-height:180px}
 }
+

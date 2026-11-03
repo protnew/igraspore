@@ -163,11 +163,15 @@ def make_apk(theme, shot):
     ], shell=False)
     return signed
 
-def adb(*args):
-    return subprocess.check_output(["adb", *args], stderr=subprocess.STDOUT)
+ADB = str(Path(os.environ.get("LOCALAPPDATA","")) / "Android" / "Sdk" / "platform-tools" / "adb.exe")
+def adb(*args, check=True):
+    cmd = [ADB, *args]
+    if check:
+        return subprocess.check_output(cmd, stderr=subprocess.STDOUT)
+    return subprocess.run(cmd, stderr=subprocess.STDOUT, stdout=subprocess.PIPE).stdout
 
 def screencap(dest: Path):
-    raw = subprocess.check_output(["adb", "exec-out", "screencap", "-p"])
+    raw = subprocess.check_output([ADB, "exec-out", "screencap", "-p"])
     # fix CRLF sometimes
     if raw[:8].find(b"\r\n") >= 0:
         raw = raw.replace(b"\r\n", b"\n")
@@ -180,9 +184,9 @@ for theme in THEMES:
   for shot in ["pond", "bestiary"]:
     try:
       signed = make_apk(theme, shot)
-      adb("shell", "am", "force-stop", "com.igraspore.app")
+      adb("shell", "am", "force-stop", "com.igraspore.app", check=False)
       adb("push", str(signed), "/data/local/tmp/igs-theme.apk")
-      out = subprocess.check_output(["adb", "shell", "pm", "install", "-r", "-t", "/data/local/tmp/igs-theme.apk"], stderr=subprocess.STDOUT)
+      out = subprocess.check_output([ADB, "shell", "pm", "install", "-r", "-t", "/data/local/tmp/igs-theme.apk"], stderr=subprocess.STDOUT)
       print(theme, shot, out.decode("utf-8", "replace").strip())
       adb("shell", "am", "start", "-n", "com.igraspore.app/.MainActivity")
       time.sleep(12 if shot=="pond" else 14)

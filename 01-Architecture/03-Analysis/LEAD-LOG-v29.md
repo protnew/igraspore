@@ -73,3 +73,13 @@
 - vitest theme_engine 6/6 ×3; qa_unit 26/26; playwright lab_tests 5/5
 - Pond water deltas still milder than mockups (esp. neon); organism sprites not per-theme
 - Box /workspace/v29all/ receiving post-fix PNGs + apk samples
+
+## 2026-11-03 21:46 Asia/Jerusalem — resume owner eye-check (neon=classic / haeckel no art)
+- HEAD was 2caff5b: theme_visuals + darker neon dayLight 0.12 + chrome channel shots
+- Web matrix 28/28; thumbs=107 all styles; FPS neon med59.9 = classic; overlapFails=0
+- Eye: neon sky dark OK, water/glow still below mock; haeckel cards HAVE sprite thumbs now
+- Auto MAD % inflated (neon pond 92.8) — eye table will be stricter
+- APK: assembleDebug OK (Java 17 lang level temp on capacitor); MainActivity WebView debug before onCreate; emulator-5554 up; CDP socket for app WebView still missing — next screencap via zip-boot theme or input
+- Box target /workspace/v29all2/ small PNG + side-by-side
+- Ban: no i18n es/tr/fil commit; no .04-Src/src; no add -A; no prod
+

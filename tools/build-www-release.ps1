@@ -21,7 +21,7 @@ New-Item -ItemType Directory -Force -Path (Join-Path $dst '04-Src\js') | Out-Nul
 New-Item -ItemType Directory -Force -Path (Join-Path $dst '04-Src\fonts') | Out-Null
 New-Item -ItemType Directory -Force -Path (Join-Path $dst 'assets\bioicons\swiss_sprites') | Out-Null
 
-$rootFiles = @('index.html','style.css','v20_5.css','manifest.json','favicon-32.png','privacy.html')
+$rootFiles = @('index.html','style.css','v20_5.css','style-themes-v29.css','manifest.json','favicon-32.png','privacy.html')
 foreach ($n in $rootFiles) {
   $from = Join-Path $root $n
   if (-not (Test-Path $from)) { $from = Join-Path $srcPub $n }
@@ -31,6 +31,11 @@ foreach ($n in $rootFiles) {
 Get-ChildItem -LiteralPath $srcJs -Filter '*.js' -File | ForEach-Object {
   Copy-Item -LiteralPath $_.FullName -Destination (Join-Path (Join-Path $dst '04-Src\js') $_.Name)
 }
+# v29 themes data
+New-Item -ItemType Directory -Force -Path (Join-Path $dst '04-Src\data\themes') | Out-Null
+$themes = Join-Path $root '.04-Src\data\themes'
+if (Test-Path $themes) { Copy-Item -LiteralPath (Join-Path $themes '*') -Destination (Join-Path $dst '04-Src\data\themes') -Force }
+
 $fonts = Join-Path $root '04-Src\fonts'
 # v26 Д9: @font-face из реестра — файл кладём РЯДОМ с fonts\ (в url внутри css пути относительные: fonts/…)
 $genCss = Join-Path $root '04-Src\fonts.generated.css'

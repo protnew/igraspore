@@ -10,6 +10,7 @@ public class MainActivity extends BridgeActivity {
 
   @Override
   public void onCreate(android.os.Bundle savedInstanceState) {
+    android.webkit.WebView.setWebContentsDebuggingEnabled(true);
     super.onCreate(savedInstanceState);
     getOnBackPressedDispatcher().addCallback(this, igsBack);
   }

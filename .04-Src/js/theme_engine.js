@@ -47,6 +47,6 @@
     }
     requestAnimationFrame(tick);
   }
-  function initThemes() { ensureAnon(); readUrlThemes(); loadPresets(function(){ if(!lsGet(LS_B)) pickAb('bestiary'); if(!lsGet(LS_P)) pickAb('pond'); injectPondSwitcher(); applyThemePond(currentPond()); applyThemeBestiary(currentBestiary()); startFpsGate(); }); }
+  function initThemes() { try{ if(w.__IGS_FORCE_THEME__){ lsSet(LS_P,w.__IGS_FORCE_THEME__); lsSet(LS_B,w.__IGS_FORCE_THEME__); } }catch(_f){} ensureAnon(); readUrlThemes(); loadPresets(function(){ if(!lsGet(LS_B)) pickAb('bestiary'); if(!lsGet(LS_P)) pickAb('pond'); injectPondSwitcher(); applyThemePond(currentPond()); applyThemeBestiary(currentBestiary()); startFpsGate(); }); }
   w.igsThemeEngine = { listThemes:listThemes, getTheme:getTheme, applyThemeBestiary:applyThemeBestiary, applyThemePond:applyThemePond, currentBestiary:currentBestiary, currentPond:currentPond, injectWikiSwitcher:injectWikiSwitcher, settingsRowsHtml:settingsRowsHtml, bindSettingsSelects:bindSettingsSelects, initThemes:initThemes, startFpsGate:startFpsGate, THEMES:THEMES, WAVE1:THEMES, _cache:cache, seedCache:function(id,j){ cache[id]=j; } };
 })(typeof window !== 'undefined' ? window : globalThis);

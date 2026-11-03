@@ -1,12 +1,85 @@
-/* v29 theme engine */
-html[data-theme-pond="neon-bio"], body[data-theme-pond="neon-bio"] { background:#000 !important; }
-html[data-theme-pond="phase-contrast"], body[data-theme-pond="phase-contrast"] { background:#081214 !important; }
-#wikiO[data-theme-bestiary] { background: var(--theme-panel, rgba(0,12,28,.92)); color: var(--theme-text,#fff); border-color: var(--theme-border,#1a3a55); }
-#wikiO[data-theme-bestiary="neon-bio"] .wiki-entry { border:1px solid #00ffff55; box-shadow:0 0 8px #ff00aa33; }
-#wikiO[data-theme-bestiary="phase-contrast"] .wiki-entry { border:1px solid #7fb2b255; font-family: Georgia, serif; }
-#wikiO[data-theme-bestiary="neon-bio"] .tt { color:#00ffff; text-shadow:0 0 8px #ff00aa88; }
-#themePondBar, #themeBestiaryBar, .theme-set-row select { min-height:48px; }
-.theme-sel-wrap select { min-height:48px; min-width:48px; }
+/* v29 theme styles — all 7 approved themes */
+.theme-sel-wrap{display:flex;flex-direction:column;gap:4px;min-width:120px}
+.theme-sel-label{font-size:11px;color:#bcd}
+.theme-sel-wrap select,.theme-set-row select,#themeBestiaryBar select,#themePondBar select{
+  min-height:48px;min-width:48px;font-size:14px;background:#123a66;color:#fff;border:1px solid #4af;border-radius:8px;padding:6px 8px
+}
+/* Pond bar: left of #pauseBtn (top:8px;right:8px;48x48) — never overlap */
+#themePondBar{
+  position:fixed;top:max(8px,env(safe-area-inset-top));right:64px;z-index:85;
+  display:flex;flex-direction:column;gap:4px;pointer-events:auto;
+  background:rgba(0,12,28,.78);padding:6px 8px;border-radius:10px;border:1px solid #1a3a55;max-width:min(220px,42vw)
+}
+body.in-menu #themePondBar{display:none!important}
+@media (max-width:500px){
+  #themePondBar{right:auto;left:max(8px,env(safe-area-inset-left));top:max(8px,env(safe-area-inset-top));max-width:46vw}
+}
+#themeBestiaryBar{margin:0 0 8px 0;display:flex;justify-content:flex-end}
 
-#themePondBar{position:fixed;top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));z-index:45;display:flex;background:rgba(0,12,28,.72);padding:6px 8px;border-radius:10px;}
-body.in-menu #themePondBar{display:none!important;}
+#wikiO[data-theme-bestiary]{
+  background:var(--theme-panel,rgba(0,12,28,.92))!important;
+  color:var(--theme-text,#fff)!important;
+  border-color:var(--theme-border,#1a3a55);
+  font-family:var(--theme-font-ui,system-ui,sans-serif)
+}
+#wikiO[data-theme-bestiary] .tt{
+  color:var(--theme-title,#4ef)!important;
+  font-family:var(--theme-font-title,system-ui,sans-serif)
+}
+#wikiO[data-theme-bestiary] .wiki-entry{
+  background:var(--theme-card,rgba(0,15,35,.6))!important;
+  border:1px solid var(--theme-border,#234)!important;
+  color:var(--theme-text,#fff)!important
+}
+#wikiO[data-theme-bestiary] .wiki-entry b{color:var(--theme-entry-b,#4df)!important}
+#wikiO[data-theme-bestiary] .wiki-entry .wa,#wikiO[data-theme-bestiary] .wiki-entry .wf{color:var(--theme-text,#d8ecff)!important}
+#wikiO[data-theme-bestiary] .wiki-entry .wl,#wikiO[data-theme-bestiary] .wiki-entry .wo{color:var(--theme-muted,#789)!important}
+#wikiO[data-theme-bestiary] .wiki-entry .ww a{color:var(--theme-accent,#7cf)!important}
+#wikiO[data-theme-bestiary] #wikiSearch{
+  background:var(--theme-card,#123)!important;color:var(--theme-text,#fff)!important;border:1px solid var(--theme-border,#345)!important
+}
+#wikiO[data-theme-bestiary] .btn,#wikiO[data-theme-bestiary] #wikiClose{
+  color:var(--theme-text,#fff)!important;border-color:var(--theme-border,#345)!important;background:var(--theme-card,#123)!important
+}
+
+/* neon */
+#wikiO[data-theme-bestiary="neon-bio"] .wiki-entry{box-shadow:0 0 12px #ff00aa44, inset 0 0 20px #00ffff11}
+#wikiO[data-theme-bestiary="neon-bio"] .tt{text-shadow:0 0 10px #00ffffaa,0 0 20px #ff00aa66}
+html[data-theme-pond="neon-bio"],body[data-theme-pond="neon-bio"]{background:#000!important}
+
+/* phase-contrast — light microscopic */
+#wikiO[data-theme-bestiary="phase-contrast"]{box-shadow:inset 0 0 40px rgba(0,0,0,.08)}
+#wikiO[data-theme-bestiary="phase-contrast"] .wiki-entry{box-shadow:0 1px 3px rgba(0,0,0,.12)}
+html[data-theme-pond="phase-contrast"],body[data-theme-pond="phase-contrast"]{background:#cfd8da!important}
+
+/* glass-lab — light glass, dark text */
+#wikiO[data-theme-bestiary="glass-lab"]{
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 8px 32px rgba(40,80,120,.18), inset 0 1px 0 rgba(255,255,255,.6)
+}
+#wikiO[data-theme-bestiary="glass-lab"] .wiki-entry{
+  backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(30,60,90,.12), inset 0 1px 0 #fff;
+  border:1px solid rgba(255,255,255,.75)!important
+}
+#wikiO[data-theme-bestiary="glass-lab"] .tt{text-shadow:0 1px 0 #fff}
+html[data-theme-pond="glass-lab"],body[data-theme-pond="glass-lab"]{background:#c8daf0!important}
+
+/* cyberpunk */
+#wikiO[data-theme-bestiary="cyberpunk-scanner"] .wiki-entry{box-shadow:0 0 8px #00ff6644;border-style:dashed!important}
+#wikiO[data-theme-bestiary="cyberpunk-scanner"] .tt{text-shadow:0 0 8px #00ff88,0 0 16px #ff00aa55;letter-spacing:.04em}
+html[data-theme-pond="cyberpunk-scanner"],body[data-theme-pond="cyberpunk-scanner"]{background:#050010!important}
+
+/* haeckel parchment */
+#wikiO[data-theme-bestiary="haeckel-watercolor"]{
+  background-image:radial-gradient(ellipse at 30% 20%,#fff8e8 0%,transparent 50%),linear-gradient(180deg,#faf3e6,#f0e2c8)!important
+}
+#wikiO[data-theme-bestiary="haeckel-watercolor"] .wiki-entry{box-shadow:2px 3px 0 rgba(100,70,40,.15)}
+html[data-theme-pond="haeckel-watercolor"],body[data-theme-pond="haeckel-watercolor"]{background:#e8dcc0!important}
+
+/* engraving */
+#wikiO[data-theme-bestiary="engraving"]{
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 3px)!important
+}
+#wikiO[data-theme-bestiary="engraving"] .wiki-entry{border-width:2px!important;border-radius:0!important}
+#wikiO[data-theme-bestiary="engraving"] .tt{letter-spacing:.06em;text-transform:uppercase;font-size:28px}
+html[data-theme-pond="engraving"],body[data-theme-pond="engraving"]{background:#ddd6c8!important}

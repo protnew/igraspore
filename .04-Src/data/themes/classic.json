@@ -1,1 +1,69 @@
-{"id":"classic","labelKey":"theme.classic","cssVars":{"--theme-bg":"#000814","--theme-panel":"rgba(0,12,28,.92)","--theme-border":"#1a3a55","--theme-text":"#ffffff","--theme-muted":"#dddddd","--theme-accent":"#88ccff","--theme-font-ui":"system-ui,Arial,sans-serif","--theme-font-title":"system-ui,Arial,sans-serif"},"contrastPairs":[["--theme-text","--theme-bg"],["--theme-accent","--theme-bg"]],"shader":{"bloom":0.2,"caustic":1.0,"saturation":1.0,"vignette":0.0,"fallback":"full"},"sprites":{"pack":"default","glow":false},"fpsBudget":{"target":30,"lowDeviceMaxFx":0.5},"a11y":{"minContrast":4.5,"minTapPx":48},"wave":1}
+{
+  "id": "classic",
+  "labelKey": "theme.classic",
+  "cssVars": {
+    "--theme-bg": "#020814",
+    "--theme-panel": "rgba(0,12,28,.92)",
+    "--theme-border": "#1a3a55",
+    "--theme-text": "#e8f4ff",
+    "--theme-muted": "#9bb",
+    "--theme-accent": "#4af",
+    "--theme-card": "rgba(0,15,35,.6)",
+    "--theme-title": "#4ef",
+    "--theme-entry-b": "#4df",
+    "--theme-font-ui": "system-ui,Arial,sans-serif",
+    "--theme-font-title": "system-ui,Arial,sans-serif"
+  },
+  "shader": {
+    "surface": [
+      0.12,
+      0.5,
+      0.45
+    ],
+    "mid": [
+      0.05,
+      0.25,
+      0.28
+    ],
+    "deep": [
+      0.01,
+      0.06,
+      0.1
+    ],
+    "caustic": [
+      0.6,
+      0.95,
+      0.85
+    ],
+    "bloom": 1,
+    "causticAmt": 1.2,
+    "sat": 1,
+    "vignette": 0.35,
+    "fx": 1,
+    "fallback": "low",
+    "rgbTop": [
+      12,
+      70,
+      85
+    ],
+    "rgbMid": [
+      8,
+      30,
+      55
+    ],
+    "rgbBot": [
+      12,
+      18,
+      22
+    ]
+  },
+  "fpsBudget": {
+    "target": 30,
+    "lowDeviceMaxFx": 0.5
+  },
+  "a11y": {
+    "minContrast": 4.5,
+    "minTapPx": 48
+  },
+  "wave": 0
+}

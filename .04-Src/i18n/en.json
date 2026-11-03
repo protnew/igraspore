@@ -441,9 +441,13 @@
   "theme.phaseContrast": "Phase contrast",
   "theme.bestiary": "Bestiary style",
   "theme.pond": "Pond style",
-  "theme.analyticsOptOut": "Theme usage stats",
-  "theme.analyticsHint": "Anonymous style stats (no personal data). Can disable.",
+  "theme.analyticsOptOut": "Theme analytics",
+  "theme.analyticsHint": "Anonymous style stats",
   "aria.themeBestiary": "Bestiary visual style",
   "aria.themePond": "Pond visual style",
-  "theme.fpsFallback": "Theme FX reduced (FPS)"
+  "theme.fpsFallback": "Theme FX reduced (FPS)",
+  "theme.glassLab": "Glass lab",
+  "theme.cyberpunk": "Cyberpunk",
+  "theme.haeckel": "Haeckel",
+  "theme.engraving": "Engraving"
 }

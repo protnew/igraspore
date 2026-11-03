@@ -6,14 +6,13 @@
 "void main(){vTexCoord=aTexCoord;vec2 wp=aPosition*1000.0;float w=sn(wp*0.02+uTime*0.3)*2.0+sn(wp*0.05+uTime*0.5);vWaveHeight=w;gl_Position=vec4(aPosition,0.0,1.0);}";
 
   var WATER_FRAG = "precision highp float; varying vec2 vTexCoord; varying float vWaveHeight; uniform float uTime; uniform float uDayLight; uniform vec2 uResolution;\n"+
+"uniform vec3 uSurface; uniform vec3 uMid; uniform vec3 uDeep; uniform vec3 uCaustic; uniform float uCausticAmt; uniform float uBloom; uniform float uSat; uniform float uVig; uniform float uFx;\n"+
 "float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}\n"+
 "float pn(vec2 p){vec2 i=floor(p);vec2 f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);}\n"+
 "float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*pn(p);p*=2.;a*=.5;}return v;}\n"+
 "void main(){\n"+
 "  vec2 uv=vTexCoord; float t=uTime*0.12;\n"+
-"  vec3 surfaceColor=vec3(0.12,0.50,0.45);\n"+
-"  vec3 midColor=vec3(0.05,0.25,0.28);\n"+
-"  vec3 deepColor=vec3(0.01,0.06,0.10);\n"+
+"  vec3 surfaceColor=uSurface; vec3 midColor=uMid; vec3 deepColor=uDeep;\n"+
 "  float depth=1.0-uv.y;\n"+
 "  vec3 waterColor;\n"+
 "  if(depth<0.5) waterColor=mix(surfaceColor,midColor,depth*2.0);\n"+
@@ -23,19 +22,21 @@
 "  float r2=fbm(uv*10.0+vec2(-t*0.5,t));\n"+
 "  float r3=fbm(uv*20.0+vec2(t*0.3,-t*0.2));\n"+
 "  float ripples=r1*0.5+r2*0.3+r3*0.2;\n"+
-"  float caustic=pow(ripples,2.0)*1.2;\n"+
-"  vec3 causticColor=vec3(0.6,0.95,0.85)*caustic*uDayLight*0.5;\n"+
+"  float caustic=pow(ripples,2.0)*uCausticAmt*uFx;\n"+
+"  vec3 causticColor=uCaustic*caustic*uDayLight*0.5;\n"+
 "  float sunY=0.85;\n"+
 "  float ds=length((uv-vec2(0.5,sunY))*uResolution)/uResolution.x;\n"+
-"  float sg=exp(-ds*ds*12.0)*uDayLight;\n"+
-"  float sparkle=pow(max(r2-0.3,0.0),4.0)*sg*3.0;\n"+
+"  float sg=exp(-ds*ds*12.0)*uDayLight*uBloom;\n"+
+"  float sparkle=pow(max(r2-0.3,0.0),4.0)*sg*3.0*uFx;\n"+
 "  vec3 glitter=vec3(1.0,0.95,0.7)*sparkle;\n"+
-"  float vig=1.0-length(uv-0.5)*0.35;\n"+
+"  float vig=1.0-length(uv-0.5)*uVig;\n"+
 "  vec3 col=waterColor+causticColor+glitter;\n"+
+"  float luma=dot(col,vec3(0.299,0.587,0.114));\n"+
+"  col=mix(vec3(luma),col,uSat);\n"+
 "  col*=vig;\n"+
-"  col+=vec3(vWaveHeight*0.015);\n"+
+"  col+=vec3(vWaveHeight*0.015*uFx);\n"+
 "  gl_FragColor=vec4(col,1.0);\n"+
-"}";
+"}";;
 
   var glCanvas=null, gl=null, waterProgram=null, waterBuffer=null, webglReady=false, webglLoopOn=false;
 
@@ -120,9 +121,22 @@
     gl.vertexAttribPointer(posLoc,2,gl.FLOAT,false,0,0);
     gl.enableVertexAttribArray(tcLoc);
     gl.vertexAttribPointer(tcLoc,2,gl.FLOAT,false,0,6*2*4);
+    var sh=(window.__igsThemePondShader)||{};
+    function v3(a,d){a=a||d; return a;}
+    var surf=v3(sh.surface,[0.12,0.50,0.45]), mid=v3(sh.mid,[0.05,0.25,0.28]), deep=v3(sh.deep,[0.01,0.06,0.10]), cau=v3(sh.caustic,[0.6,0.95,0.85]);
+    var fx=(sh.fallback==='low')?Math.min(sh.fx||0.4,0.4):(typeof sh.fx==='number'?sh.fx:1.0);
     gl.uniform1f(gl.getUniformLocation(waterProgram,'uTime'), time);
     gl.uniform1f(gl.getUniformLocation(waterProgram,'uDayLight'), (typeof dayLight==='number'?dayLight:0.85));
     gl.uniform2f(gl.getUniformLocation(waterProgram,'uResolution'), w, h);
+    gl.uniform3f(gl.getUniformLocation(waterProgram,'uSurface'), surf[0],surf[1],surf[2]);
+    gl.uniform3f(gl.getUniformLocation(waterProgram,'uMid'), mid[0],mid[1],mid[2]);
+    gl.uniform3f(gl.getUniformLocation(waterProgram,'uDeep'), deep[0],deep[1],deep[2]);
+    gl.uniform3f(gl.getUniformLocation(waterProgram,'uCaustic'), cau[0],cau[1],cau[2]);
+    gl.uniform1f(gl.getUniformLocation(waterProgram,'uCausticAmt'), typeof sh.causticAmt==='number'?sh.causticAmt:1.2);
+    gl.uniform1f(gl.getUniformLocation(waterProgram,'uBloom'), typeof sh.bloom==='number'?sh.bloom:1.0);
+    gl.uniform1f(gl.getUniformLocation(waterProgram,'uSat'), typeof sh.sat==='number'?sh.sat:1.0);
+    gl.uniform1f(gl.getUniformLocation(waterProgram,'uVig'), typeof sh.vignette==='number'?sh.vignette:0.35);
+    gl.uniform1f(gl.getUniformLocation(waterProgram,'uFx'), fx);
     gl.drawArrays(gl.TRIANGLES,0,6);
   }
 
@@ -178,6 +192,7 @@
   };
 
   window.webglStyleReady=function(){ return !!webglReady; };
+  window.igsThemeApplyWebGL=function(sh){ window.__igsThemePondShader = sh || window.__igsThemePondShader; };
 
   // Compare report helper
   window.webglCompareNotes=function(){

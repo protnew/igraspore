@@ -447,9 +447,13 @@
   "theme.phaseContrast": "Фазовый контраст",
   "theme.bestiary": "Стиль бестиария",
   "theme.pond": "Стиль водоёма",
-  "theme.analyticsOptOut": "Статистика стилей",
-  "theme.analyticsHint": "Анонимная статистика стилей без персональных данных.",
+  "theme.analyticsOptOut": "Аналитика стилей",
+  "theme.analyticsHint": "Анонимная статистика стилей",
   "aria.themeBestiary": "Стиль бестиария",
   "aria.themePond": "Стиль водоёма",
-  "theme.fpsFallback": "Эффекты темы снижены (FPS)"
+  "theme.fpsFallback": "Эффекты темы снижены (FPS)",
+  "theme.glassLab": "Стеклянная лаб.",
+  "theme.cyberpunk": "Киберпанк",
+  "theme.haeckel": "Геккель",
+  "theme.engraving": "Гравюра"
 }

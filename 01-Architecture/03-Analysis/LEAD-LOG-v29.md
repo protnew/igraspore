@@ -47,3 +47,8 @@
 - APK файлы на диске; emulator -no-window e2e не закрыт
 - Оговорки: слабая WebGL-дельта пруда; прод AE — чек-лист владельца
 - Волна 2 НЕ начата
+
+### 2026-11-03 19:43 — все 6+classic стили: код
+- JSON×7, theme_engine THEMES, CSS бестиария по мокапам
+- WebGL uniforms + 2D rgbTop/Mid/Bot; pond bar right:64px (не на pause)
+- lab/theme-preview.html тестовые ссылки; URL ?themePond=&themeBestiary=

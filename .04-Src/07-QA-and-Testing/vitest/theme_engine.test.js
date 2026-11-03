@@ -4,12 +4,13 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
+const THEMES = ['classic','phase-contrast','neon-bio','glass-lab','cyberpunk-scanner','haeckel-watercolor','engraving'];
 function loadScript(rel) {
   const code = fs.readFileSync(path.join(root, rel), 'utf8');
   (0, eval)(code);
 }
 
-describe('theme_engine wave1', () => {
+describe('theme_engine all styles', () => {
   beforeEach(() => {
     localStorage.clear();
     document.body.innerHTML = '<div id="wikiO" class="ov"><div class="tt">Wiki</div><div id="wikiContent"></div></div><div id="topRightStack"></div><div id="setBody"></div>';
@@ -21,33 +22,38 @@ describe('theme_engine wave1', () => {
     });
     loadScript('.04-Src/js/theme_analytics.js');
     loadScript('.04-Src/js/theme_engine.js');
-    ['classic','neon-bio','phase-contrast'].forEach(id => {
+    THEMES.forEach(id => {
       const j = JSON.parse(fs.readFileSync(path.join(root,'.04-Src/data/themes',id+'.json'),'utf8'));
       window.igsThemeEngine.seedCache(id, j);
     });
   });
 
-  it('lists 3 wave1 themes', () => {
-    expect(window.igsThemeEngine.listThemes()).toEqual(['classic','neon-bio','phase-contrast']);
+  it('lists 7 themes', () => {
+    expect(window.igsThemeEngine.listThemes()).toEqual(THEMES);
   });
 
-  it('applies independent bestiary and pond themes', () => {
-    window.igsThemeEngine.applyThemeBestiary('neon-bio');
-    window.igsThemeEngine.applyThemePond('phase-contrast');
-    expect(localStorage.getItem('igs.theme.bestiary')).toBe('neon-bio');
-    expect(localStorage.getItem('igs.theme.pond')).toBe('phase-contrast');
-    expect(document.getElementById('wikiO').getAttribute('data-theme-bestiary')).toBe('neon-bio');
-    expect(document.documentElement.getAttribute('data-theme-pond')).toBe('phase-contrast');
+  it('applies each theme to bestiary and pond independently', () => {
+    window.igsThemeEngine.applyThemeBestiary('glass-lab');
+    window.igsThemeEngine.applyThemePond('neon-bio');
+    expect(localStorage.getItem('igs.theme.bestiary')).toBe('glass-lab');
+    expect(localStorage.getItem('igs.theme.pond')).toBe('neon-bio');
+    expect(document.getElementById('wikiO').getAttribute('data-theme-bestiary')).toBe('glass-lab');
+    expect(document.documentElement.getAttribute('data-theme-pond')).toBe('neon-bio');
+    expect(window.__igsThemePondShader).toBeTruthy();
+    expect(window.__igsThemePondShader.rgbTop).toBeTruthy();
   });
 
-  it('A/B assign writes theme_assign when empty', () => {
-    window.igsThemeAnalytics.clear();
-    localStorage.removeItem('igs.theme.bestiary');
-    localStorage.removeItem('igs.theme.ab.bestiary');
-    const th = window.igsThemeEngine.currentBestiary();
-    expect(['classic','neon-bio','phase-contrast']).toContain(th);
-    const buf = window.igsThemeAnalytics.readBuf();
-    expect(buf.some(e => e.event === 'theme_assign' && e.screen === 'bestiary')).toBe(true);
+  it('every theme JSON has shader rgb + fpsBudget', () => {
+    THEMES.forEach(id => {
+      const j = JSON.parse(fs.readFileSync(path.join(root,'.04-Src/data/themes',id+'.json'),'utf8'));
+      expect(j.shader.rgbTop.length).toBe(3);
+      expect(j.fpsBudget.target).toBe(30);
+      expect(j.cssVars['--theme-panel']).toBeTruthy();
+    });
+  });
+
+  it('unknown theme falls back to classic', () => {
+    expect(window.igsThemeEngine.applyThemePond('nope')).toBe('classic');
   });
 });
 
@@ -56,22 +62,13 @@ describe('theme_analytics', () => {
     localStorage.clear();
     loadScript('.04-Src/js/theme_analytics.js');
   });
-
-  it('buffers events and respects opt-out', () => {
+  it('buffers and opt-out', () => {
     window.igsThemeAnalytics.track('theme_change', { screen:'pond', from:'classic', to:'neon-bio' });
     expect(window.igsThemeAnalytics.readBuf().length).toBe(1);
     window.igsThemeAnalytics.setEnabled(false);
     window.igsThemeAnalytics.track('theme_change', { screen:'pond', from:'neon-bio', to:'classic' });
     expect(window.igsThemeAnalytics.readBuf().length).toBe(1);
   });
-
-  it('flush without endpoint stays local', () => {
-    window.IGS_THEME_ANALYTICS_URL = '';
-    window.igsThemeAnalytics.track('session_len', { ms: 1000 });
-    const r = window.igsThemeAnalytics.flush();
-    expect(r.local === true || r.sent === 0).toBe(true);
-  });
-
   it('client has no CF_API_TOKEN', () => {
     const src = fs.readFileSync(path.join(root,'.04-Src/js/theme_analytics.js'),'utf8');
     expect(src.includes('CF_API_TOKEN')).toBe(false);

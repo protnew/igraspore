@@ -2,59 +2,59 @@
   "id": "phase-contrast",
   "labelKey": "theme.phaseContrast",
   "cssVars": {
-    "--theme-bg": "#0a1214",
-    "--theme-panel": "#dfe8ea",
-    "--theme-border": "#7a9aa0",
-    "--theme-text": "#1a2426",
-    "--theme-muted": "#4a6066",
-    "--theme-accent": "#2a6a72",
-    "--theme-card": "#f2f6f7",
-    "--theme-title": "#0d3a40",
-    "--theme-entry-b": "#1a5058",
+    "--theme-bg": "#0a0c0e",
+    "--theme-panel": "#0a0c0e",
+    "--theme-border": "#3a5055",
+    "--theme-text": "#e8f0f0",
+    "--theme-muted": "#789090",
+    "--theme-accent": "#a8d0d0",
+    "--theme-card": "#12161a",
+    "--theme-title": "#c8e0e0",
+    "--theme-entry-b": "#d8eeee",
     "--theme-font-ui": "Georgia,Times New Roman,serif",
     "--theme-font-title": "Georgia,serif"
   },
   "shader": {
     "surface": [
-      0.75,
-      0.82,
-      0.8
+      0.55,
+      0.62,
+      0.6
     ],
     "mid": [
-      0.45,
-      0.55,
-      0.52
+      0.28,
+      0.34,
+      0.32
     ],
     "deep": [
-      0.12,
-      0.18,
-      0.16
+      0.06,
+      0.09,
+      0.08
     ],
     "caustic": [
-      0.9,
-      0.95,
-      0.92
+      0.75,
+      0.85,
+      0.82
     ],
-    "bloom": 0.4,
-    "causticAmt": 0.5,
-    "sat": 0.55,
-    "vignette": 0.25,
-    "fx": 0.7,
+    "bloom": 0.55,
+    "causticAmt": 0.7,
+    "sat": 0.35,
+    "vignette": 0.45,
+    "fx": 0.75,
     "fallback": "low",
     "rgbTop": [
-      180,
-      200,
-      195
+      120,
+      140,
+      138
     ],
     "rgbMid": [
-      90,
-      110,
-      105
+      55,
+      70,
+      68
     ],
     "rgbBot": [
-      30,
-      40,
-      38
+      18,
+      24,
+      22
     ]
   },
   "fpsBudget": {

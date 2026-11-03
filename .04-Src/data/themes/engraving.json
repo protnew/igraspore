@@ -37,24 +37,24 @@
     ],
     "bloom": 0.2,
     "causticAmt": 0.35,
-    "sat": 0.2,
-    "vignette": 0.4,
+    "sat": 0.15,
+    "vignette": 0.5,
     "fx": 0.6,
     "fallback": "low",
     "rgbTop": [
-      170,
-      170,
-      160
+      175,
+      168,
+      150
     ],
     "rgbMid": [
-      100,
-      100,
-      95
+      105,
+      98,
+      88
     ],
     "rgbBot": [
+      40,
       35,
-      35,
-      32
+      28
     ]
   },
   "fpsBudget": {

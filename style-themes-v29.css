@@ -43,14 +43,24 @@ body.in-menu #themePondBar{display:none!important}
 }
 
 /* neon */
-#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-entry{box-shadow:0 0 12px #ff00aa44, inset 0 0 20px #00ffff11}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"]{background:#000008!important}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-entry{box-shadow:0 0 14px #ff00aa55, inset 0 0 24px #00ffff18;border-color:#ff00aa!important;background:#050012!important}
 #wikiO.ov.show[data-theme-bestiary="neon-bio"] .tt{text-shadow:0 0 10px #00ffffaa,0 0 20px #ff00aa66}
 html[data-theme-pond="neon-bio"],body[data-theme-pond="neon-bio"]{background:#000!important}
 
-/* phase-contrast — light microscopic */
-#wikiO.ov.show[data-theme-bestiary="phase-contrast"]{background:#dfe8ea!important;color:#1a2426!important;box-shadow:inset 0 0 40px rgba(0,0,0,.08)}
-#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-entry{box-shadow:0 1px 3px rgba(0,0,0,.12)}
-html[data-theme-pond="phase-contrast"],body[data-theme-pond="phase-contrast"]{background:#cfd8da!important}
+/* phase-contrast — DARK microscope like mock */
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"]{background:#0a0c0e!important;color:#e8f0f0!important;box-shadow:inset 0 0 60px rgba(0,0,0,.55)}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-entry{background:#12161a!important;border-color:#3a5055!important;box-shadow:0 0 10px rgba(200,240,240,.12);color:#e8f0f0!important}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-entry b{color:#d8eeee!important}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .tt{color:#c8e0e0!important}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-entry .wa,
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-entry .wf{color:#b8d0d0!important}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-entry .wl,
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-entry .wo{color:#789090!important}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] #wikiSearch{background:#12161a!important;color:#e8f0f0!important;border-color:#3a5055!important}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .btn,
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] #wikiClose{background:#12161a!important;color:#e8f0f0!important}
+html[data-theme-pond="phase-contrast"],body[data-theme-pond="phase-contrast"]{background:#1a2222!important}
 
 /* glass-lab — light glass, dark text */
 #wikiO.ov.show[data-theme-bestiary="glass-lab"]{
@@ -95,19 +105,53 @@ html[data-theme-pond="haeckel-watercolor"],body[data-theme-pond="haeckel-waterco
   background:#f5f0e6!important;color:#111!important;
   background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 3px)!important
 }
-#wikiO.ov.show[data-theme-bestiary="engraving"] .wiki-entry{border-width:2px!important;border-radius:0!important}
+#wikiO.ov.show[data-theme-bestiary="engraving"] .wiki-entry{border-width:2px!important;border-radius:0!important;background:#fffef8!important}
 #wikiO.ov.show[data-theme-bestiary="engraving"] .tt{letter-spacing:.06em;text-transform:uppercase;font-size:28px}
 html[data-theme-pond="engraving"],body[data-theme-pond="engraving"]{background:#ddd6c8!important}
 
-/* wiki creature thumbs */
+/* wiki creature thumbs — base */
 .wiki-entry.wiki-entry-has-thumb{display:grid;grid-template-columns:88px 1fr;gap:10px 14px;align-items:start}
 .wiki-thumb-wrap{grid-row:1 / span 6;width:104px;height:104px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border:1px solid var(--theme-border,rgba(255,255,255,.2))}
 .wiki-thumb{max-width:96px;max-height:96px;width:96px;height:96px;object-fit:contain;image-rendering:auto}
-#wikiO.ov.show[data-theme-bestiary="haeckel-watercolor"] .wiki-thumb{filter:sepia(0.55) saturate(1.6) contrast(1.35) brightness(1.08) !important}
-#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb{filter:drop-shadow(0 0 10px #0ff) drop-shadow(0 0 6px #f0f) saturate(2.4) brightness(1.35) !important}
+
+/* mock-like 2-col card grid for themed bestiaries */
+#wikiContent.wiki-grid-cards{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  align-items:stretch
+}
+#wikiContent.wiki-grid-cards .wiki-cat,
+#wikiContent.wiki-grid-cards .wiki-role{grid-column:1 / -1}
+#wikiContent.wiki-grid-cards .wiki-entry.wiki-entry-has-thumb{
+  display:flex!important;flex-direction:column;align-items:center;text-align:center;
+  min-height:210px;padding:12px 10px 14px;gap:8px
+}
+#wikiContent.wiki-grid-cards .wiki-thumb-wrap{
+  grid-row:auto;width:100%;height:150px;max-width:100%;border-radius:14px;margin:0 0 4px
+}
+#wikiContent.wiki-grid-cards .wiki-thumb{max-width:140px;max-height:140px;width:140px;height:140px}
+#wikiContent.wiki-grid-cards .wiki-entry .wa,
+#wikiContent.wiki-grid-cards .wiki-entry .wf,
+#wikiContent.wiki-grid-cards .wiki-entry .wo,
+#wikiContent.wiki-grid-cards .wiki-entry .ww{display:none!important}
+#wikiContent.wiki-grid-cards .wiki-entry .wl{font-size:11px;opacity:.85;max-height:2.6em;overflow:hidden}
+#wikiContent.wiki-grid-cards .wiki-entry b{font-size:15px;order:-1;margin-bottom:2px}
+
+#wikiO.ov.show[data-theme-bestiary="haeckel-watercolor"] .wiki-thumb{filter:sepia(0.45) saturate(1.7) contrast(1.35) brightness(1.1) !important}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb{filter:drop-shadow(0 0 12px #0ff) drop-shadow(0 0 8px #f0f) saturate(2.6) brightness(1.45) contrast(1.15) !important}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-thumb{filter:grayscale(1) contrast(1.7) brightness(1.3) drop-shadow(0 0 8px #fff) !important}
+#wikiO.ov.show[data-theme-bestiary="engraving"] .wiki-thumb{filter:grayscale(1) contrast(1.55) sepia(0.7) brightness(0.98) !important}
+#wikiO.ov.show[data-theme-bestiary="cyberpunk-scanner"] .wiki-thumb{filter:saturate(1.85) contrast(1.35) hue-rotate(45deg) drop-shadow(0 0 8px #0f8) !important}
 #wikiO.ov.show[data-theme-bestiary="haeckel-watercolor"] .wiki-thumb-wrap{background:#fff8ec;border-color:#c4a882;border-radius:8px;box-shadow:2px 2px 0 rgba(100,70,40,.12)}
-#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb-wrap{background:#050010;border-color:#ff00aa;box-shadow:0 0 12px #0ff6}
-#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-thumb-wrap{background:#eee;border-color:#333}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb-wrap{background:#030008;border-color:#ff00aa;box-shadow:0 0 16px #0ff7}
+#wikiO.ov.show[data-theme-bestiary="phase-contrast"] .wiki-thumb-wrap{background:#0c1012;border-color:#6a8888;box-shadow:0 0 12px rgba(220,255,255,.2)}
 #wikiO.ov.show[data-theme-bestiary="engraving"] .wiki-thumb-wrap{background:#f5f0e6;border:2px solid #111;border-radius:0}
 #wikiO.ov.show[data-theme-bestiary="cyberpunk-scanner"] .wiki-thumb-wrap{background:#020805;border:1px dashed #0f8;box-shadow:0 0 8px #0f84}
 #wikiO.ov.show[data-theme-bestiary="glass-lab"] .wiki-thumb-wrap{background:rgba(255,255,255,.55);border-color:rgba(255,255,255,.8)}
+
+@media (max-width:500px){
+  #wikiContent.wiki-grid-cards .wiki-thumb-wrap{height:120px}
+  #wikiContent.wiki-grid-cards .wiki-thumb{max-width:110px;max-height:110px;width:110px;height:110px}
+  #wikiContent.wiki-grid-cards .wiki-entry.wiki-entry-has-thumb{min-height:180px}
+}

@@ -9,9 +9,12 @@ fs.mkdirSync(OUT, { recursive: true });
 
 async function dismiss(page){
   await page.evaluate(`(function(){try{closeIntroCard&&closeIntroCard()}catch(e){}
-    ['roleCardOk','tutSkip','resBtn'].forEach(function(id){var el=document.getElementById(id); if(el) try{el.click()}catch(e){}});
-    ['introO','roleCard','tutO','pauseO'].forEach(function(id){var el=document.getElementById(id); if(el) el.classList.remove('show');});
-    try{if(state==='paused') state='playing';}catch(e){}})()`);
+    ['roleCardOk','tutSkip','resBtn','okBtn'].forEach(function(id){var el=document.getElementById(id); if(el) try{el.click()}catch(e){}});
+    document.querySelectorAll('.ov.show button,.role-card button,#roleCard button').forEach(function(b){try{b.click()}catch(e){}});
+    ['introO','roleCard','tutO','pauseO'].forEach(function(id){var el=document.getElementById(id); if(el){ el.classList.remove('show'); el.style.display='none'; }});
+    try{if(typeof state!=='undefined' && state==='paused') state='playing';}catch(e){}
+    try{ if(window.igsThemeVisuals) igsThemeVisuals.install(); }catch(e){}})()`);
+  await page.waitForTimeout(200);
 }
 async function start(page, theme){
   const url = BASE+'/?lang=en&themePond='+theme+'&themeBestiary='+theme+'&t='+Date.now();
@@ -24,7 +27,7 @@ async function start(page, theme){
   await page.waitForFunction('!!window.igsThemeEngine', null, { timeout:10000 });
   await page.evaluate(`(function(th){
     if(window.igsThemeEngine){ window.igsThemeEngine.applyThemePond(th); window.igsThemeEngine.applyThemeBestiary(th); }
-    try{ if(typeof enableWebGLRenderMode==='function'){ settings.renderMode='webgl'; enableWebGLRenderMode(); } }catch(e){}
+    try{ if(window.igsThemeVisuals) igsThemeVisuals.install(); }catch(e){} try{ if(typeof enableWebGLRenderMode==='function'){ settings.renderMode='webgl'; enableWebGLRenderMode(); } }catch(e){}
   })(${JSON.stringify(theme)})`);
   await page.waitForTimeout(500);
 }
@@ -32,7 +35,7 @@ async function openWiki(page){
   await page.evaluate(`(function(){
     var b=document.getElementById('bWiki')||document.getElementById('wikiBtnMenu');
     if(b) b.click(); else { var w=document.getElementById('wikiO'); if(w) w.className='ov show'; if(typeof buildWiki==='function') try{buildWiki()}catch(e){} }
-    if(window.igsThemeEngine&&window.igsThemeEngine.injectWikiSwitcher) window.igsThemeEngine.injectWikiSwitcher();
+    if(window.igsThemeEngine&&window.igsThemeEngine.injectWikiSwitcher) window.igsThemeEngine.injectWikiSwitcher(); if(window.igsThemeWikiEnhance) window.igsThemeWikiEnhance();
   })()`);
   await page.waitForTimeout(500);
 }

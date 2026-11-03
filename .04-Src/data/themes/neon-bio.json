@@ -17,12 +17,12 @@
     "shader":  {
                    "surface":  [
                                    0,
-                                   0.55,
-                                   0.65
+                                   0.45,
+                                   0.55
                                ],
                    "mid":  [
+                               0,
                                0.05,
-                               0.02,
                                0.12
                            ],
                    "deep":  [
@@ -35,21 +35,21 @@
                                    1,
                                    1
                                ],
-                   "bloom":  1.8,
-                   "causticAmt":  2.2,
+                   "bloom":  2,
+                   "causticAmt":  2.4,
                    "sat":  1.6,
                    "vignette":  0.45,
                    "fx":  0.85,
                    "fallback":  "low",
                    "rgbTop":  [
                                   0,
-                                  25,
-                                  35
+                                  18,
+                                  28
                               ],
                    "rgbMid":  [
-                                  8,
                                   0,
-                                  25
+                                  4,
+                                  18
                               ],
                    "rgbBot":  [
                                   0,

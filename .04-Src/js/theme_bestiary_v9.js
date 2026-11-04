@@ -55,8 +55,8 @@
       for (v = 0; v < M; v++) { var acc = 0; for (u = -R; u < M; u++) { if (u + R < M) acc += al[v * M + u + R]; if (u - R - 1 >= 0) acc -= al[v * M + u - R - 1]; if (u >= 0) tm[v * M + u] = acc / (2 * R + 1); } }
       for (u = 0; u < M; u++) { var ac2 = 0; for (v = -R; v < M; v++) { if (v + R < M) ac2 += tm[(v + R) * M + u]; if (v - R - 1 >= 0) ac2 -= tm[(v - R - 1) * M + u]; if (v >= 0) al[v * M + u] = ac2 / (2 * R + 1); } }
       for (u = 0; u < M * M; u++) { var aa = p[u * 4 + 3] / 255; if (aa < 0.02) continue; var dep = al[u], rim = Math.max(0, 1 - dep * 1.6);
-        p[u * 4] = p[u * 4] * (1 - 0.45 * rim) + 40 * 0.45 * rim + (255 - p[u * 4]) * 0.35 * dep; p[u * 4 + 1] = p[u * 4 + 1] * (1 - 0.45 * rim) + 100 * 0.45 * rim + (255 - p[u * 4 + 1]) * 0.35 * dep; p[u * 4 + 2] = p[u * 4 + 2] * (1 - 0.45 * rim) + 160 * 0.45 * rim + (255 - p[u * 4 + 2]) * 0.35 * dep;
-        p[u * 4 + 3] = Math.min(255, aa * 255 * (0.55 + 0.45 * rim)); }
+        var kr = 0.7 * rim, kw = 0.12 * dep; p[u * 4] = p[u * 4] * (1 - kr) + 30 * kr + (255 - p[u * 4]) * kw; p[u * 4 + 1] = p[u * 4 + 1] * (1 - kr) + 80 * kr + (255 - p[u * 4 + 1]) * kw; p[u * 4 + 2] = p[u * 4 + 2] * (1 - kr) + 140 * kr + (255 - p[u * 4 + 2]) * kw;
+        p[u * 4 + 3] = Math.min(255, aa * 255 * (0.75 + 0.25 * rim)); }
       G.putImageData(id, 0, 0); }
     if (s === "glass") { var g = cv.getContext("2d"), N = cv.width, gr = g.createRadialGradient(N * 0.36, N * 0.3, 2, N * 0.42, N * 0.38, N * 0.42);
       g.save(); g.globalCompositeOperation = "source-atop"; gr.addColorStop(0, "rgba(255,255,255,.85)"); gr.addColorStop(0.35, "rgba(255,255,255,.2)"); gr.addColorStop(1, "rgba(70,130,190,.28)");

@@ -118,3 +118,7 @@
 - LIVE browser shots (box :8820 + headless chrome): menu/pond/bestiary → /workspace/v29all3/*_neon-bio_live.jpg + side_pond_neon-bio.jpg
 - bestiary labels = scientific names; NO deploy
 - theme_neon_draw v2: contour-only glow (no soft circular halo plates / no lighter bloom)
+
+## 2026-11-04 02:55 Asia/Jerusalem — phase-contrast dedicated assets
+- phase_pond_bg.jpg CLEAN (no orgs/HUD); 101 species sprites; theme_visuals bed+thumbs
+- LIVE shots box :8820 → /workspace/v29all3/*_phase-contrast_live.jpg + sides; labels scientific; NO deploy

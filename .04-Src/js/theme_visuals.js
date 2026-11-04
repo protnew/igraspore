@@ -258,6 +258,7 @@
       vig.addColorStop(1, "rgba(0,0,0,0.72)");
       ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
     } else if (id === "phase-contrast") {
+      try { drawPhasePondBed(); } catch (eBed) {}
       ctx.globalCompositeOperation = "saturation";
       ctx.fillStyle = "rgba(128,128,128,0.92)";
       ctx.fillRect(0, 0, W, H);
@@ -331,6 +332,7 @@
   }
 
   var _neonBed=null,_neonBedTried=false,_neonBedFail=false;
+  var _phaseBed=null,_phaseBedTried=false,_phaseBedFail=false;
   function drawNeonPondBed() {
     if (_neonBedFail) return;
     if (!_neonBed) {
@@ -353,6 +355,28 @@
     ctx.globalCompositeOperation="source-over";
     ctx.globalAlpha=0.42;
     ctx.drawImage(_neonBed, 0, 0, cv.width, cv.height);
+    ctx.restore();
+  }
+
+
+  function drawPhasePondBed() {
+    if (_phaseBedFail) return;
+    if (!_phaseBed) {
+      if (_phaseBedTried) return;
+      _phaseBedTried=true;
+      try {
+        var im=new Image();
+        im.onload=function(){ _phaseBed=im; };
+        im.onerror=function(){ _phaseBedFail=true; };
+        im.src="assets/themes/phase-contrast/phase_pond_bg.jpg";
+      } catch(e) { _phaseBedFail=true; return; }
+      return;
+    }
+    if (typeof ctx==="undefined" || !cv) return;
+    ctx.save();
+    ctx.globalCompositeOperation="source-over";
+    ctx.globalAlpha=0.40;
+    ctx.drawImage(_phaseBed, 0, 0, cv.width, cv.height);
     ctx.restore();
   }
 
@@ -408,7 +432,7 @@
       img.className = "wiki-thumb";
       img.alt = name;
       img.loading = "lazy";
-      if (theme === "neon-bio") {
+      if (theme === "neon-bio" || theme === "phase-contrast") {
         var idx = (sp && typeof sp.i === "number") ? sp.i : (sp && sp.idx);
         if (idx == null && typeof SPECIES_DB !== "undefined") {
           for (var zi = 0; zi < SPECIES_DB.length; zi++) {
@@ -416,11 +440,12 @@
           }
         }
         var pad = (idx != null) ? ("00" + idx).slice(-3) : null;
-        img.src = pad ? ("assets/themes/neon-bio/sprites/species/" + pad + ".png") : ("assets/themes/neon-bio/sprites/" + shape + ".png");
+        var base = (theme === "neon-bio") ? "assets/themes/neon-bio/sprites/" : "assets/themes/phase-contrast/sprites/";
+        img.src = pad ? (base + "species/" + pad + ".png") : (base + shape + ".png");
         img.onerror = function () {
           if (this.dataset.fb === "2") return;
-          if (this.dataset.fb === "1") { this.dataset.fb = "2"; this.src = "assets/themes/neon-bio/sprites/circle.png"; return; }
-          this.dataset.fb = "1"; this.src = "assets/themes/neon-bio/sprites/" + shape + ".png";
+          if (this.dataset.fb === "1") { this.dataset.fb = "2"; this.src = base + "circle.png"; return; }
+          this.dataset.fb = "1"; this.src = base + shape + ".png";
         };
         img.style.filter = "none";
         var cap = el.querySelector("b");

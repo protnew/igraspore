@@ -51,7 +51,7 @@
   var PAL = { producer: [92, 140, 52], consumer1: [214, 146, 40], consumer2: [196, 102, 44], consumer3: [186, 70, 64], decomposer: [150, 104, 56], virus: [190, 72, 60] };
   /* engraving: light hatched linework; haeckel: translucent watercolour washes in ochre/sepia/olive */
   function restyle(cv, s, sp) {
-    if (s === "glass") { try { var G = cv.getContext("2d"), M = cv.width, id = G.getImageData(0, 0, M, M), p = id.data, m = new Float32Array(M * M), t2 = new Float32Array(M * M), R = 10, u, v, q;
+    if (s === "glass" && !FILG) { try { var G = cv.getContext("2d"), M = cv.width, id = G.getImageData(0, 0, M, M), p = id.data, m = new Float32Array(M * M), t2 = new Float32Array(M * M), R = 10, u, v, q;
       for (u = 0; u < M * M; u++) m[u] = p[u * 4 + 3] > 12 ? 1 : 0;
       for (q = 0; q < 2; q++) { for (v = 0; v < M; v++) { var ac = 0; for (u = -R; u < M; u++) { if (u + R < M) ac += m[v * M + u + R]; if (u - R - 1 >= 0) ac -= m[v * M + u - R - 1]; if (u >= 0) t2[v * M + u] = ac / (2 * R + 1); } }
         for (u = 0; u < M; u++) { var a2 = 0; for (v = -R; v < M; v++) { if (v + R < M) a2 += t2[(v + R) * M + u]; if (v - R - 1 >= 0) a2 -= t2[(v - R - 1) * M + u]; if (v >= 0) m[v * M + u] = a2 / (2 * R + 1); } } }
@@ -79,25 +79,28 @@
   /* filamentous cyanobacteria (producer, shape filament/trichormus): a curved trichome of real cells;
      trichormus (Nostoc) = bead-like cells with larger pale heterocysts, filament = short disc cells in a sheath */
   function chain(c, px, sp, s, col) {
-    var bead = String(sp.shape) === "trichormus", r = rnd(hash(sp.name)), n = bead ? 16 : 22, ph = r() * 6, ink = INK[s], glow = s === "neon" || s === "cyber" || s === "phase";
-    var pts = []; for (var i = 0; i < n; i++) { var t = i / (n - 1); pts.push([px * (0.08 + 0.84 * t), px * (0.5 + 0.2 * Math.sin(t * 5.2 + ph))]); }
+    var bead = String(sp.shape) === "trichormus", r = rnd(hash(sp.name)), n = bead ? 16 : 22, ph = r() * 6, ink = INK[s], glow = s === "neon" || s === "cyber" || s === "phase", hel = /Spirulina/.test(sp.name), gl = s === "glass";
+    var pts = []; for (var i = 0; i < n; i++) { var t = i / (n - 1); pts.push([px * (0.08 + 0.84 * t), px * (0.5 + (hel ? 0.16 * Math.sin(t * 13 + ph) : 0.2 * Math.sin(t * 5.2 + ph)))]); }
     c.save(); c.lineWidth = px / 160; c.strokeStyle = s === "neon" ? col : ink; if (glow) { c.shadowColor = s === "neon" ? col : ink; c.shadowBlur = px / 40; }
-    if (!bead) { c.globalAlpha = 0.35; c.lineWidth = px / 11; c.lineCap = "round"; c.beginPath(); pts.forEach(function (q, j) { if (j) c.lineTo(q[0], q[1]); else c.moveTo(q[0], q[1]); }); c.strokeStyle = col; c.stroke(); c.globalAlpha = 1; c.lineWidth = px / 160; c.strokeStyle = s === "neon" ? col : ink; }
+    if (!bead) { c.globalAlpha = gl ? 0.18 : 0.35; c.lineWidth = px / 11; c.lineCap = "round"; c.beginPath(); pts.forEach(function (q, j) { if (j) c.lineTo(q[0], q[1]); else c.moveTo(q[0], q[1]); }); c.strokeStyle = col; c.stroke(); c.globalAlpha = 1; c.lineWidth = px / 160; c.strokeStyle = s === "neon" ? col : ink; }
     for (var k = 0; k < n; k++) { var a = pts[Math.max(0, k - 1)], b2 = pts[Math.min(n - 1, k + 1)], ang = Math.atan2(b2[1] - a[1], b2[0] - a[0]), het = bead && k % 5 === 3;
       var rx = bead ? px * 0.05 * (het ? 1.2 : 1) : px * 0.018, ry = bead ? px * 0.045 * (het ? 1.2 : 1) : px * 0.04;
       c.save(); c.translate(pts[k][0], pts[k][1]); c.rotate(ang); c.beginPath(); c.ellipse(0, 0, rx, ry, 0, 0, 6.283);
+      if (gl) { var gg = c.createRadialGradient(-rx * 0.35, -ry * 0.4, 0, 0, 0, Math.max(rx, ry) * 1.05); gg.addColorStop(0, "rgba(255,255,255,0.95)"); gg.addColorStop(0.35, het ? "rgba(214,236,250,0.55)" : "rgba(170,205,232,0.75)"); gg.addColorStop(0.8, "rgba(84,130,172,0.85)"); gg.addColorStop(1, "rgba(30,62,98,0.95)");
+        c.fillStyle = gg; c.fill(); c.strokeStyle = "rgba(24,52,86,0.9)"; c.lineWidth = px / 220; c.stroke(); c.beginPath(); c.ellipse(-rx * 0.35, -ry * 0.45, rx * 0.28, ry * 0.16, -0.5, 0, 6.283); c.fillStyle = "rgba(255,255,255,0.9)"; c.fill(); c.restore(); continue; }
       c.globalAlpha = het ? 0.25 : 0.6; c.fillStyle = col; c.fill(); c.globalAlpha = 1; c.stroke();
       if (!het) { c.globalAlpha = 0.7; c.fillStyle = ink; for (var g = 0; g < 3; g++) { c.beginPath(); c.arc((r() - 0.5) * rx, (r() - 0.5) * ry, px * 0.005, 0, 6.283); c.fill(); } c.globalAlpha = 1; }
       else { c.beginPath(); c.arc(rx * 0.8, 0, px * 0.006, 0, 6.283); c.fillStyle = ink; c.fill(); }
       c.restore(); }
     c.restore();
   }
+  var FILG = false;
   function render(sp, s) {
     var key = s + "|" + sp.id; if (BIG[key]) return BIG[key];
     var D = w.igsNeonDraw, shape = sp.shape ? String(sp.shape) : D.shapeOf({ sp: sp }), col = D.colOf({ sp: sp }, s), px = 300;
-    var fil = sp.cat === "producer" && (shape === "filament" || shape === "trichormus"), spr = sp.cat === "virus" || fil ? null : D.bake(shape, col, px, s, hash(sp.id || sp.name) % 4);
+    var fil = sp.cat === "producer" && (shape === "filament" || shape === "trichormus" || (s === "glass" && /Spirulina/.test(sp.name))), spr = sp.cat === "virus" || fil ? null : D.bake(shape, col, px, s, hash(sp.id || sp.name) % 4);
     var c = document.createElement("canvas"); c.width = c.height = px; var x = c.getContext("2d");
-    if (fil) chain(x, px, sp, s, col); else if (spr) { x.drawImage(spr, 0, 0); detail(x, sp, s, px); } else phage(x, px, s === "cyber" || s === "neon" || s === "phase" ? (s === "cyber" ? "#ff3cf0" : "#e8fff9") : (s === "glass" ? "#5b7f9e" : "#5a3a1e"), hash(sp.name), sp.name);
+    FILG = fil; if (fil) chain(x, px, sp, s, col); else if (spr) { x.drawImage(spr, 0, 0); detail(x, sp, s, px); } else phage(x, px, s === "cyber" || s === "neon" || s === "phase" ? (s === "cyber" ? "#ff3cf0" : "#e8fff9") : (s === "glass" ? "#5b7f9e" : "#5a3a1e"), hash(sp.name), sp.name);
     /* crop to the creature so it fills the card */
     try { var d = x.getImageData(0, 0, px, px).data, x0 = px, y0 = px, x1 = 0, y1 = 0;
       for (var yy = 0; yy < px; yy += 2) for (var xx = 0; xx < px; xx += 2) if (d[(yy * px + xx) * 4 + 3] > 24) { if (xx < x0) x0 = xx; if (xx > x1) x1 = xx; if (yy < y0) y0 = yy; if (yy > y1) y1 = yy; }

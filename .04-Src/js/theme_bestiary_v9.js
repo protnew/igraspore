@@ -24,11 +24,12 @@
     c.restore();
   }
   /* procedural phage for viruses (icosahedral head, collar, tail, fibres) */
-  /* real morphology of the game's named phages: T4 Myoviridae (long contractile tail), Lambda Siphoviridae (long flexible
+  /* card fill keeps the real size order T4/Lambda > Phi-6 > T7 > MS2 with a ~45% minimum so small phages stay readable
+     real morphology of the game's named phages: T4 Myoviridae (long contractile tail), Lambda Siphoviridae (long flexible
      non-contractile tail), T7 Podoviridae (short stub tail), Phi-6 Cystoviridae (enveloped, no tail), MS2 Leviviridae (tiny, no tail) */
   var MORPH = { "T4 Bacteriophage": "myo", "Lambda Phage": "sipho", "T7 Bacteriophage": "podo", "Phi-6 Phage": "cysto", "MS2 Phage": "levi" };
   function phage(c, px, ink, seed, nm) {
-    var mo = MORPH[nm] || "myo", r = rnd(seed), k = px / 2, h = k * 0.32 * ({ podo: 0.62, cysto: 0.6, levi: 0.42 }[mo] || 1);
+    var mo = MORPH[nm] || "myo", r = rnd(seed), k = px / 2, h = k * 0.32 * ({ cysto: 1.26, podo: 1.16, levi: 1.875 }[mo] || 1);
     if (mo === "cysto" || mo === "levi" || mo === "podo" || mo === "sipho") { c.save(); c.translate(k, mo === "sipho" ? k * 0.55 : k); c.strokeStyle = ink; c.fillStyle = ink; c.lineWidth = px / 110;
       var R = mo === "levi" ? h * 0.75 : h * 1.05, i, a;
       if (mo === "cysto") { c.beginPath(); c.arc(0, 0, R * 1.15, 0, 6.283); c.globalAlpha = 0.18; c.fill(); c.globalAlpha = 1; c.stroke();
@@ -50,14 +51,14 @@
   var PAL = { producer: [92, 140, 52], consumer1: [214, 146, 40], consumer2: [196, 102, 44], consumer3: [186, 70, 64], decomposer: [150, 104, 56], virus: [190, 72, 60] };
   /* engraving: light hatched linework; haeckel: translucent watercolour washes in ochre/sepia/olive */
   function restyle(cv, s, sp) {
-    if (s === "glass") { var G = cv.getContext("2d"), M = cv.width, id = G.getImageData(0, 0, M, M), p = id.data, al = new Float32Array(M * M), tm = new Float32Array(M * M), R = 9, u, v;
-      for (u = 0; u < M * M; u++) al[u] = p[u * 4 + 3] / 255;
-      for (v = 0; v < M; v++) { var acc = 0; for (u = -R; u < M; u++) { if (u + R < M) acc += al[v * M + u + R]; if (u - R - 1 >= 0) acc -= al[v * M + u - R - 1]; if (u >= 0) tm[v * M + u] = acc / (2 * R + 1); } }
-      for (u = 0; u < M; u++) { var ac2 = 0; for (v = -R; v < M; v++) { if (v + R < M) ac2 += tm[(v + R) * M + u]; if (v - R - 1 >= 0) ac2 -= tm[(v - R - 1) * M + u]; if (v >= 0) al[v * M + u] = ac2 / (2 * R + 1); } }
-      for (u = 0; u < M * M; u++) { var aa = p[u * 4 + 3] / 255; if (aa < 0.02) continue; var dep = al[u], rim = Math.max(0, 1 - dep * 1.6);
-        var kr = 0.7 * rim, kw = 0.12 * dep; p[u * 4] = p[u * 4] * (1 - kr) + 30 * kr + (255 - p[u * 4]) * kw; p[u * 4 + 1] = p[u * 4 + 1] * (1 - kr) + 80 * kr + (255 - p[u * 4 + 1]) * kw; p[u * 4 + 2] = p[u * 4 + 2] * (1 - kr) + 140 * kr + (255 - p[u * 4 + 2]) * kw;
-        p[u * 4 + 3] = Math.min(255, aa * 255 * (0.75 + 0.25 * rim)); }
-      G.putImageData(id, 0, 0); }
+    if (s === "glass") { try { var G = cv.getContext("2d"), M = cv.width, id = G.getImageData(0, 0, M, M), p = id.data, m = new Float32Array(M * M), t2 = new Float32Array(M * M), R = 10, u, v, q;
+      for (u = 0; u < M * M; u++) m[u] = p[u * 4 + 3] > 12 ? 1 : 0;
+      for (q = 0; q < 2; q++) { for (v = 0; v < M; v++) { var ac = 0; for (u = -R; u < M; u++) { if (u + R < M) ac += m[v * M + u + R]; if (u - R - 1 >= 0) ac -= m[v * M + u - R - 1]; if (u >= 0) t2[v * M + u] = ac / (2 * R + 1); } }
+        for (u = 0; u < M; u++) { var a2 = 0; for (v = -R; v < M; v++) { if (v + R < M) a2 += t2[(v + R) * M + u]; if (v - R - 1 >= 0) a2 -= t2[(v - R - 1) * M + u]; if (v >= 0) m[v * M + u] = a2 / (2 * R + 1); } } }
+      for (u = 0; u < M * M; u++) { var aa = p[u * 4 + 3] / 255; if (aa < 0.02) continue; var yy2 = (u / M | 0) / M, dep = Math.min(1, m[u] * 1.4), rim = Math.pow(1 - dep, 1.5), lit = Math.max(0, 1 - yy2 * 1.6) * dep;
+        var bR = 150 + 90 * lit - 120 * rim, bG = 190 + 60 * lit - 110 * rim, bB = 225 + 30 * lit - 90 * rim, mix = 0.65;
+        p[u * 4] = p[u * 4] * (1 - mix) + bR * mix; p[u * 4 + 1] = p[u * 4 + 1] * (1 - mix) + bG * mix; p[u * 4 + 2] = p[u * 4 + 2] * (1 - mix) + bB * mix; p[u * 4 + 3] = Math.max(p[u * 4 + 3], 200 * Math.sqrt(aa)); }
+      G.putImageData(id, 0, 0); } catch (e) {} }
     if (s === "glass") { var g = cv.getContext("2d"), N = cv.width, gr = g.createRadialGradient(N * 0.36, N * 0.3, 2, N * 0.42, N * 0.38, N * 0.42);
       g.save(); g.globalCompositeOperation = "source-atop"; gr.addColorStop(0, "rgba(255,255,255,.85)"); gr.addColorStop(0.35, "rgba(255,255,255,.2)"); gr.addColorStop(1, "rgba(70,130,190,.28)");
       g.fillStyle = gr; g.fillRect(0, 0, N, N); var lg = g.createLinearGradient(0, N, N, 0); lg.addColorStop(0, "rgba(40,110,170,.25)"); lg.addColorStop(0.5, "rgba(255,255,255,0)"); lg.addColorStop(1, "rgba(255,255,255,.25)");

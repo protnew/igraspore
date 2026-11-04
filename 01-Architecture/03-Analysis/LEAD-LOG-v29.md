@@ -130,3 +130,7 @@
 ## 2026-11-04 03:05 Asia/Jerusalem — cyberpunk-scanner dedicated assets
 - clean pond bg (no orgs/HUD) + 101 species sprites; theme_visuals bed+thumbs
 - LIVE shots /workspace/v29all3/*_cyberpunk-scanner_live.jpg + sides; scientific labels; NO deploy
+
+## 2026-11-04 03:05 Asia/Jerusalem — glass-lab dedicated assets
+- clean pond bg (no orgs/HUD) + 101 species sprites; theme_visuals bed+thumbs
+- LIVE shots /workspace/v29all3/*_glass-lab_live.jpg + sides; scientific labels; NO deploy

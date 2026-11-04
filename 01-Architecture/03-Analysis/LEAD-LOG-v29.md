@@ -205,3 +205,4 @@ Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/
 - engraving: clean bg, sepia paper bodies + ink hatching/cross-hatch + ink contour; light chrome (paper/ink). Pop PASS.
 - cyberpunk-scanner: clean bg, wireframe cyan/magenta/green bodies + scanner brackets; dark neon chrome. FPS 60/60 (1400,375), Pop PASS.
 - glass-lab: clean petri bg, saturated glassy bodies w/ coloured rim + white highlights; frosted chrome. FPS 60 (1400,375), Pop PASS.
+- haeckel-watercolor: clean bg, layered watercolour washes + thin sepia outline; parchment chrome. Pop PASS.

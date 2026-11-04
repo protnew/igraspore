@@ -98,3 +98,9 @@
 - theme_neon_draw.js + theme_visuals ensureNeonDraw/wiki species thumbs; HUD css; Worker+theme-stats all 7; tests ready; NO deploy
 - box sides /workspace/v29all3/side_{menu,pond,bestiary}_neon-bio.jpg
 
+
+## 2026-11-04 02:25 Asia/Jerusalem — neon-bio pond → concept 03
+- neon_pond_bg.jpg rebuilt (concept env + god-rays + cavern walls + biolum bed); theme_visuals drawNeonPondBed alpha 0.78 + path fallback
+- box sides: /workspace/v29all3/side_pond_neon-bio.jpg + pond_neon-bio_dedicated.jpg (v3)
+- bestiary species names already real; NO deploy
+- note: Windows Shell hung — commit via GitHub API; local Obsidian tree may lag until pull

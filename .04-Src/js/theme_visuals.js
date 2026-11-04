@@ -208,6 +208,7 @@
     var W = cv.width, H = cv.height;
     ctx.save();
     if (id === "neon-bio") {
+      try { drawNeonPondBed(); } catch (eBed) {}
       ctx.globalCompositeOperation = "source-over";
       var sky = ctx.createLinearGradient(0, 0, 0, H * 0.42);
       sky.addColorStop(0, "rgba(0,0,0,0.98)");
@@ -328,6 +329,32 @@
     }
     ctx.restore();
   }
+
+  var _neonBed=null,_neonBedTried=false,_neonBedFail=false;
+  function drawNeonPondBed() {
+    if (_neonBedFail) return;
+    if (!_neonBed) {
+      if (_neonBedTried) return;
+      _neonBedTried=true;
+      try {
+        var im=new Image();
+        im.onload=function(){ _neonBed=im; };
+        im.onerror=function(){
+          try { im.onerror=function(){ _neonBedFail=true; }; im.src="assets/themes/neon-bio/pond/neon_pond_bg.jpg"; }
+          catch(e2){ _neonBedFail=true; }
+        };
+        im.src="assets/themes/neon-bio/neon_pond_bg.jpg";
+      } catch(e) { _neonBedFail=true; return; }
+      return;
+    }
+    if (typeof ctx==="undefined" || !cv) return;
+    ctx.save();
+    ctx.globalCompositeOperation="source-over";
+    ctx.globalAlpha=0.78;
+    ctx.drawImage(_neonBed, 0, 0, cv.width, cv.height);
+    ctx.restore();
+  }
+
   w.igsThemePondPostFX = postFX;
 
   var SPRITE_BASE = "assets/bioicons/swiss_sprites/";

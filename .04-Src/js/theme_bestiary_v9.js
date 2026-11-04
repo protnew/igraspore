@@ -93,7 +93,8 @@
       f.innerHTML = ""; f.setAttribute("data-n", wc.childNodes.length);
       var mk = function (lbl, gi) { var b = document.createElement("button"); b.type = "button"; b.textContent = lbl; if (gi < 0) b.className = "on";
         b.onclick = function () { var bs = f.querySelectorAll("button"); for (var q = 0; q < bs.length; q++) bs[q].className = ""; b.className = "on"; o.setAttribute("data-g", gi);
-          var es = wc.children; for (var e = 0; e < es.length; e++) { var g = es[e].getAttribute("data-g"); es[e].style.display = (gi < 0 || g === String(gi)) ? "" : "none"; } }; f.appendChild(b); };
+          var es = wc.children, cg = -1; for (var e = 0; e < es.length; e++) { if (es[e].classList.contains("wiki-cat")) cg++; es[e].setAttribute("data-g", cg);
+            if (gi < 0 || cg === gi) es[e].style.removeProperty("display"); else es[e].style.setProperty("display", "none", "important"); } }; f.appendChild(b); };
       mk("ALL", -1); var g = -1, kids = wc.children;
       for (var k = 0; k < kids.length; k++) { if (kids[k].classList.contains("wiki-cat")) { g++; mk(kids[k].textContent.replace(/\s*\(\d+\)\s*$/, ""), g); } kids[k].setAttribute("data-g", g); }
     }
@@ -104,6 +105,7 @@
       for (var z = 0; z < db.length; z++) if (db[z].name === nm) { sp = db[z]; break; }
       if (!sp && typeof VIRUS_SPECS !== "undefined") for (var vz = 0; vz < VIRUS_SPECS.length; vz++) if (VIRUS_SPECS[vz].name === nm) { sp = VIRUS_SPECS[vz]; break; }
       en.setAttribute("data-v9", s); if (!sp) continue;
+      if (!im && sp.cat === "virus") { var tw = document.createElement("div"); tw.className = "wiki-thumb-wrap"; im = document.createElement("img"); im.className = "wiki-thumb"; im.alt = sp.name; tw.appendChild(im); var bb = en.querySelector("b"); en.insertBefore(tw, bb ? bb.nextSibling : en.firstChild); }
       var u = render(sp, s); if (u && im) { im.src = u; im.classList.add("v9big"); }
       var ex = en.querySelector(".v9x"); if (ex) ex.remove(); ex = document.createElement("div"); ex.className = "v9x";
       var grp = CAT[sp.cat] || sp.cat, desc = ((en.querySelector(".wa") || {}).textContent || "").split(/(?<=\.)\s/)[0];

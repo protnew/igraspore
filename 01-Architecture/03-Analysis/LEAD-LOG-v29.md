@@ -222,3 +222,4 @@ Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/
 - 2026-11-04 perf: offscreen micro на телефоне, бюджет 2 bake/кадр, prewarm engraving-спрайтов. FPS engraving 375 (style/classic): 58.2/59.3, 52.9/60.2, 3-й прогон упал (ошибка страницы, бокс перегружен). Скрины engraving _badges_v5 проверены — ок.
 - 2026-11-04 glass v6: меню по концепту 07 — аквариум-герой с организмами, чипы темп/O2, боковые кнопки VIEW/ZOOM/SAMPLE/ANALYZE, таб-бар POND/ORGANISMS/POPULATION/DATA (ведут на демо/скринсейвер/вики/настройки/старт). side_menu_glass-lab_{375,1400}_v6
 - 2026-11-04 fix: чипы меню показывают реальные данные (число видов SPECIES_DB, ~организмов getPoolCount, свет из starSelect) вместо скопированных из концепта; glass 375 пересъёмка — боковые кнопки помещаются
+- 2026-11-04 v6 меню cyberpunk(10)/neon(03)/phase(01)/engraving(09): герой с организмами, чипы (реальные данные), рейка (cyber), таб-бар по концепту; side_menu_*_{375,1400}_v6

@@ -23,7 +23,7 @@
     "haeckel-watercolor": { hero: "haeckel-watercolor/haeckel_pond_bg.jpg", cls: "haeckel",
       stats: [], rail: [], tabs: [["\u2766", "OBSERVE", "startBtn"], ["\u2740", "", "wikiBtnMenu"], ["\u270e", "WIKI", "setBtn2"]] }
   };
-  var ON = { "glass-lab": 1 };
+  var ON = { "glass-lab": 1, "cyberpunk-scanner": 1, "neon-bio": 1, "phase-contrast": 1, "engraving": 1 };
   function val(t) {
     if (t === "$sp") return String((typeof SPECIES_DB !== "undefined") ? SPECIES_DB.length : "");
     if (t === "$pool") { try { return "~" + getPoolCount(); } catch (e) { return ""; } }
@@ -45,6 +45,7 @@
       var sp = db[pick[i] % db.length], u = sp && D.thumb(sp, st); if (!u) continue;
       var im = document.createElement("img"); im.src = u; im.alt = ""; im.className = "v6org";
       im.style.left = pos[i][0] + "%"; im.style.top = pos[i][1] + "%"; im.style.animationDelay = (i * 0.7) + "s"; hero.appendChild(im);
+      if (C[st] && C[st].cls === "cyber") { var lb = document.createElement("span"); lb.className = "v6tag"; lb.textContent = "#" + (sp.num || (pick[i] % db.length) + 1); lb.style.left = pos[i][0] + "%"; lb.style.top = "calc(" + pos[i][1] + "% - 14px)"; hero.appendChild(lb); }
     }
   }
   function build(id) {

@@ -111,3 +111,9 @@
 - neon_pond_bg.jpg rebuilt procedural: water/rays/walls/bed/particles ONLY
 - removed concept organisms + corner HUD baked into prior bg
 - live browser shots next (box http+headless); no deploy
+
+## 2026-11-04 02:45 Asia/Jerusalem — neon pond CLEAN + LIVE shots
+- neon_pond_bg.jpg procedural CLEAN (water/rays/walls/bed/particles; NO organisms/HUD)
+- theme_neon_draw contour glow tightened; fallback shadowBlur reduced; bed overlay alpha 0.42
+- LIVE browser shots (box :8820 + headless chrome): menu/pond/bestiary → /workspace/v29all3/*_neon-bio_live.jpg + side_pond_neon-bio.jpg
+- bestiary labels = scientific names; NO deploy

@@ -135,7 +135,7 @@
         }
         c.save();
         var col = (o && o.sp && o.sp.color) || "#0ff";
-        c.shadowColor = col; c.shadowBlur = Math.max(28, ssz * 7); c.globalAlpha = 0.95;
+        c.shadowColor = col; c.shadowBlur = Math.max(10, ssz * 2.5); c.globalAlpha = 0.95;
         orig(c, o, ssz, sh);
         c.restore();
         return;
@@ -349,8 +349,9 @@
     }
     if (typeof ctx==="undefined" || !cv) return;
     ctx.save();
+    // light overlay: canvas is opaque so destination-over would hide bed
     ctx.globalCompositeOperation="source-over";
-    ctx.globalAlpha=0.78;
+    ctx.globalAlpha=0.42;
     ctx.drawImage(_neonBed, 0, 0, cv.width, cv.height);
     ctx.restore();
   }

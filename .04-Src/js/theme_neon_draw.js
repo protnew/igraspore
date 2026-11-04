@@ -25,10 +25,10 @@
     var cx = px / 2, cy = px / 2, s = px * 0.38;
     function glowStroke(drawFn, w0) {
       g.save();
-      for (var i = 6; i >= 1; i--) {
-        g.shadowColor = color; g.shadowBlur = 6 + i * 5;
-        g.strokeStyle = color; g.globalAlpha = 0.18 + i * 0.08;
-        g.lineWidth = (w0 || 2) + i * 0.6;
+      for (var i = 4; i >= 1; i--) {
+        g.shadowColor = color; g.shadowBlur = 3 + i * 3.5;
+        g.strokeStyle = color; g.globalAlpha = 0.22 + i * 0.1;
+        g.lineWidth = (w0 || 2) + i * 0.45;
         g.beginPath(); drawFn(); g.stroke();
       }
       g.shadowColor = "#fff"; g.shadowBlur = 8; g.globalAlpha = 0.95;
@@ -37,7 +37,7 @@
       g.restore();
     }
     function bodyFill(drawFn) {
-      g.save(); g.globalAlpha = 0.22; g.fillStyle = color;
+      g.save(); g.globalAlpha = 0.10; g.fillStyle = color;
       g.beginPath(); drawFn(); g.fill(); g.restore();
     }
     if (shape === "rod" || shape === "filament" || shape === "clubrod" || shape === "trichormus" || shape === "rodtococcus") {
@@ -117,9 +117,10 @@
     var color = colOf(o);
     var px = Math.max(48, Math.min(192, Math.round((sz || 4) * 22)));
     var spr = bake(shape, color, px);
-    var s = (sz || 4) * 2.2;
+    var s = (sz || 4) * 2.05;
     c.save();
     c.globalCompositeOperation = "lighter";
+    c.globalAlpha = 0.85;
     c.drawImage(spr, -s, -s, s * 2, s * 2);
     c.restore();
   }

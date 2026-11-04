@@ -115,3 +115,6 @@ html body #wikiO.v9b[data-v9=glass] .wiki-entry>b{font-size:12px;color:#3d556c!i
 [data-v9=glass] .v9x{color:#6b86a0;font-size:10px}
 [data-v9=glass] #v9bbar{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);border:1px solid #fff;border-radius:24px;color:#4d6a86;box-shadow:0 8px 20px rgba(80,120,160,.2)}
 [data-v9=glass] #v9bbar button.on{color:#1f7ad0}
+/* v9 fix: compact 3-col grid on desktop, long names fit */
+@media(min-width:900px){html body #wikiO.v9b #wikiContent{max-width:880px!important;margin:0 auto}html body #wikiO.v9b .wiki-thumb-wrap{max-height:220px!important}html body #wikiO.v9b img.wiki-thumb.v9big{max-height:220px!important;object-fit:contain}}
+html body #wikiO.v9b[data-v9=engr] .wiki-entry>b{font-size:9.5px!important;letter-spacing:.02em!important}

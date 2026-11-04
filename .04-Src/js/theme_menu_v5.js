@@ -26,12 +26,12 @@
     if (!v5()) { if (b) b.style.display = "none"; return; }
     if (!b) { b = document.createElement("div"); b.id = "v5Badges"; m.appendChild(b); }
     var n = (typeof SPECIES_DB !== "undefined") ? SPECIES_DB.length : 0, f = document.getElementById("spFilterStatus");
-    var pop = f ? ((f.textContent.match(/~?\s*(\d+)/) || [])[1] || "") : "";
+    var pop = f ? ((f.textContent.match(/~\s*(\d+)/) || [])[1] || "") : "";
     var h = '<span class="v5b"><i>\u2697</i>' + n + '</span><span class="v5b"><i>\u2766</i>' + pop + '</span>';
     if (b.innerHTML !== h) b.innerHTML = h; b.style.display = "";
   }
   var pend = false;
-  function sched() { if (pend) return; pend = true; setTimeout(function () { pend = false; try { paint(); } catch (e) {} }, 30); }
+  function sched() { if (pend) return; pend = true; setTimeout(function () { pend = false; try { paint(); badges(); } catch (e) {} }, 30); }
   function init() {
     var sg = document.getElementById("spGrid"); if (!sg) return setTimeout(init, 500);
     new MutationObserver(sched).observe(sg, { childList: true, subtree: false });

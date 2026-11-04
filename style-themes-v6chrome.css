@@ -109,3 +109,32 @@ html body #menuO .v6-haeckel .v6tab{background:none!important;border:0!important
 .v6-haeckel .v6tab b{color:#3b2a1a}
 body.v6on[data-theme-pond="haeckel-watercolor"] #menuFooter{display:none!important}
 .v6-engr .v6tab i svg{width:75%;height:75%;stroke-width:1.3}
+/* v8 */
+.v6cube{position:absolute;inset:8% 6% 4% 6%;pointer-events:none;z-index:2}
+.v6cube svg{width:100%;height:100%}.v6cube path{stroke:rgba(255,255,255,.85);stroke-width:.6;vector-effect:non-scaling-stroke;stroke-width:2;filter:drop-shadow(0 0 4px rgba(120,200,255,.8))}
+.v6cube .hl{stroke:rgba(255,255,255,1);stroke-width:3}.v6cube .wl{stroke:rgba(150,230,255,.7);stroke-dasharray:4 3}
+.v6ret{position:absolute;left:50%;bottom:6%;width:34%;max-width:200px;aspect-ratio:1;transform:translateX(-50%);pointer-events:none;z-index:3;animation:v6spin 14s linear infinite}
+.v6ret svg{width:100%;height:100%;fill:none;stroke:#39ff88;stroke-width:1.2;filter:drop-shadow(0 0 4px #39ff88)}.v6ret .d{stroke:#ff3cf0;stroke-dasharray:6 4}.v6ret .f{fill:#39ff88}
+@keyframes v6spin{to{transform:translateX(-50%) rotate(360deg)}}
+.v6timer{position:absolute;right:6px;top:6px;width:54px;height:54px;pointer-events:none;z-index:4}
+.v6timer svg{width:100%;height:100%;transform:rotate(-90deg);fill:none;stroke-width:2.5}.v6timer .bg{stroke:rgba(160,230,220,.2)}
+.v6timer .arc{stroke:#7fe6d4;stroke-dasharray:107 107;stroke-dashoffset:107;filter:drop-shadow(0 0 3px #7fe6d4);animation:v6arc 30s linear infinite}
+@keyframes v6arc{to{stroke-dashoffset:0}}
+.v6cards{position:absolute;inset:38% 3% 6% 3%;pointer-events:none;z-index:3}
+.v6card{position:absolute;width:24%;max-width:120px;background:#f3e6c8;border:1px solid #8a6a3c;box-shadow:0 0 0 3px #f3e6c8,0 0 0 4px #8a6a3c,2px 4px 8px rgba(0,0,0,.3);padding:4px;text-align:center}
+.v6card:nth-child(1){left:0;top:0}.v6card:nth-child(2){left:0;bottom:0}.v6card:nth-child(3){right:0;bottom:8%}
+.v6card img{width:100%;aspect-ratio:1;object-fit:contain}.v6card em{display:block;font:italic 11px/1.15 Georgia,serif;color:#4a3420}
+.v6-neon .v6tabs{display:none}
+html body #menuO .v6-neon .v6chip{width:46px;height:46px;border-radius:50%;box-shadow:0 0 12px currentColor,inset 0 0 8px currentColor}
+.v6-engr .v6org{filter:sepia(.7) contrast(1.4) brightness(1.05) drop-shadow(0 0 1px #2b1a0e)!important;width:15%!important;mix-blend-mode:multiply}
+.v6-engr .v6org.sm{width:8%!important}
+html body #menuO .v6hub i svg{width:30px!important;height:30px!important}
+/* v8b */
+html body #menuO #v6chrome.v6-neon .v6tabs{display:none!important}
+.v6-engr .v6org{filter:drop-shadow(0 0 1.5px rgba(245,232,205,.9))!important;mix-blend-mode:normal!important;width:17%!important;height:auto!important;background:none!important}
+.v6-engr .v6org.sm{width:9%!important}
+.v6card{width:19%}.v6card:nth-child(1){left:0;top:0}.v6card:nth-child(2){left:auto;right:0;top:6%;bottom:auto}.v6card:nth-child(3){left:0;right:auto;bottom:0}
+.v6card img{aspect-ratio:1.4}
+.v6cube path{stroke-width:3!important}
+.v6-engr .v6org{opacity:1!important;animation-name:none!important}
+.v6card img{transform:scale(1.8)}.v6card em{font-size:10px;position:relative}

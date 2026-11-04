@@ -64,16 +64,32 @@
     var tgt = cls === "v6chip" ? it[3] : it[2]; if (tgt) b.onclick = function () { fire(tgt); }; else b.disabled = true;
     return b;
   }
+  var ENG = [
+    '<ellipse cx="50" cy="30" rx="44" ry="18"/><path d="M14 22l-6-5M24 15l-3-6M38 12l-1-7M52 12v-7M66 13l2-7M80 17l4-6M88 26l7-3M86 38l7 4M74 46l3 6M58 48v7M42 48l-1 7M26 45l-4 6M12 38l-7 4"/><path d="M20 24l60 0M18 30h64M20 36h60" class="h"/><circle cx="42" cy="30" r="5"/><path d="M60 26c4 2 4 6 0 8"/>',
+    '<ellipse cx="50" cy="30" rx="46" ry="14"/><path d="M8 30h84"/><path d="M14 22v16M22 19v22M30 17v26M38 16v28M46 16v28M54 16v28M62 16v28M70 17v26M78 19v22M86 22v16" class="h"/>',
+    '<circle cx="50" cy="30" r="26"/><circle cx="50" cy="30" r="18"/><circle cx="50" cy="30" r="5"/><path d="M50 4v8M50 48v8M24 30h8M68 30h8M32 12l5 5M63 43l5 5M32 48l5-5M63 17l5-5" class="h"/>',
+    '<path d="M30 52c-6-10-4-22 4-30 6-6 4-14 16-16 12 2 10 10 16 16 8 8 10 20 4 30z"/><path d="M34 10c-4-4-10-2-12 2M66 10c4-4 10-2 12 2M40 8l-2-6M60 8l2-6"/><path d="M38 24c8 4 16 4 24 0M36 34c9 4 19 4 28 0M38 44c8 3 16 3 24 0" class="h"/><circle cx="50" cy="28" r="4"/>'
+  ];
+  function engSvg(i) { return 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60"><g fill="none" stroke="#1e1208" stroke-width="2.4" stroke-linecap="round">' + ENG[i % ENG.length].replace(/class="h"/g, 'stroke-width="1.2"') + '</g></svg>'); }
   function organisms(hero, st) {
     var D = w.igsNeonDraw, db = (typeof SPECIES_DB !== "undefined") ? SPECIES_DB : null; if (!D || !db) return;
     var cls = C[st] && C[st].cls, pick = [7, 19, 33, 48, 61, 75], pos = [[18, 30], [62, 22], [38, 58], [74, 60], [12, 70], [52, 40]];
     if (cls === "engr") { pick = [3, 9, 14, 22, 27, 35, 41, 52, 58, 66, 71, 83]; pos = [[14, 50], [30, 58], [48, 52], [66, 56], [80, 62], [20, 70], [40, 74], [58, 68], [74, 78], [26, 84], [50, 86], [68, 88]]; }
     for (var i = 0; i < pick.length; i++) {
-      var sp = db[pick[i] % db.length], u = sp && D.thumb(sp, st); if (!u) continue;
+      var sp = db[pick[i] % db.length], u = cls === "engr" ? engSvg(i) : (sp && D.thumb(sp, st)); if (!u) continue;
       var im = document.createElement("img"); im.src = u; im.alt = ""; im.className = "v6org" + (cls === "engr" && i > 3 ? " sm" : "");
       im.style.left = pos[i][0] + "%"; im.style.top = pos[i][1] + "%"; im.style.animationDelay = (i * 0.7) + "s"; hero.appendChild(im);
       if (C[st] && C[st].cls === "cyber") { var lb = document.createElement("span"); lb.className = "v6tag"; var nm = String(sp.name || sp.id || "").split(/\s+/); lb.textContent = (nm[0] || "").slice(0, 4).toUpperCase() + (nm[1] ? "." + nm[1].charAt(0).toUpperCase() : "") + "-" + (sp.num || (pick[i] % db.length) + 1); lb.style.left = pos[i][0] + "%"; lb.style.top = "calc(" + pos[i][1] + "% - 14px)"; hero.appendChild(lb); }
     }
+  }
+  function extras(hero, c, st) {
+    var db = (typeof SPECIES_DB !== "undefined") ? SPECIES_DB : null, D = w.igsNeonDraw, x = document.createElement("div");
+    if (c.cls === "glass") { x.className = "v6cube"; x.innerHTML = '<svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M8 22L20 10H92L80 22ZM8 22V94H80V22M80 94L92 82V10" fill="none"/><path d="M8 22H80L92 10" class="hl" fill="none"/><path d="M8 40H80L92 28" class="wl" fill="none"/></svg>'; }
+    else if (c.cls === "cyber") { x.className = "v6ret"; x.innerHTML = '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="30" class="d"/><circle cx="50" cy="50" r="3" class="f"/><path d="M50 0v14M50 86v14M0 50h14M86 50h14M20 8h-12v12M80 8h12v12M20 92h-12v-12M80 92h12v-12"/></svg>'; }
+    else if (c.cls === "phase") { x.className = "v6timer"; x.innerHTML = '<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" class="bg"/><circle cx="20" cy="20" r="17" class="arc"/></svg>'; }
+    else if (c.cls === "haeckel" && db && D) { x.className = "v6cards"; [12, 47, 80].forEach(function (k) { var sp = db[k % db.length], u = sp && D.thumb(sp, st); if (!sp) return; var d = document.createElement("div"); d.className = "v6card"; d.innerHTML = (u ? '<img src="' + u + '" alt="">' : '') + '<em>' + String(sp.name || "").replace(/</g, "") + '</em>'; x.appendChild(d); }); }
+    else return;
+    hero.appendChild(x);
   }
   function build(id) {
     var m = document.getElementById("menuO"), c = C[id]; if (!m || !c) return;
@@ -84,6 +100,7 @@
     organisms(hero, id);
     if (c.stats.length) { var sb = document.createElement("div"); sb.className = "v6stats"; c.stats.forEach(function (s) { sb.appendChild(btn("v6chip", s)); }); hero.appendChild(sb); }
     if (c.rail.length) { var rl = document.createElement("div"); rl.className = "v6rail"; c.rail.forEach(function (s) { rl.appendChild(btn("v6rb", s)); }); hero.appendChild(rl); }
+    extras(hero, c, id);
     root.appendChild(hero);
     var tb = document.createElement("div"); tb.className = "v6tabs"; c.tabs.forEach(function (s, i) { var b = btn("v6tab" + (i === 0 ? " on" : ""), s); tb.appendChild(b); }); root.appendChild(tb);
     if (c.hub) { var hb = btn("v6hub", c.hub); root.appendChild(hb); }

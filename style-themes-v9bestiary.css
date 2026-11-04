@@ -78,3 +78,17 @@ html body #wikiO.v9b[data-v9=cyber] .wiki-entry>b{font-family:"Courier New",mono
 [data-v9=cyber] .v9x .id{order:-1;color:#7fffc4}[data-v9=cyber] .v9x .gp{color:#ff7cf5}[data-v9=cyber] .v9x .sz{border-left:6px solid #ff3cf0;padding-left:4px;background:repeating-linear-gradient(90deg,#b03cff 0 1px,transparent 1px 3px) left/34px 100% no-repeat;padding-left:40px}
 [data-v9=cyber] #v9bbar{background:#060a14;border:1px solid #39ff88;border-radius:0;color:#39ff88;font-family:"Courier New",monospace;box-shadow:0 0 12px rgba(57,255,136,.3)}
 [data-v9=cyber] #v9bbar button.on{color:#ff3cf0}
+/* v9 neon bestiary */
+#wikiO.v9b[data-v9=neon]::before{content:"";position:fixed;inset:0;background:rgba(2,4,10,.8);pointer-events:none}
+#wikiO.v9b[data-v9=neon]>*{position:relative}
+[data-v9=neon] #v9bhead .v9f button{background:#050810;border:1.5px solid #22d3ee;color:#bff6ff;border-radius:20px;box-shadow:0 0 8px rgba(34,211,238,.5)}
+[data-v9=neon] #v9bhead .v9f button:nth-child(3n+2){border-color:#e040fb;box-shadow:0 0 8px rgba(224,64,251,.5)}[data-v9=neon] #v9bhead .v9f button:nth-child(3n){border-color:#a3e635;box-shadow:0 0 8px rgba(163,230,53,.5)}
+[data-v9=neon] #v9bhead .v9f button.on{background:rgba(34,211,238,.2)}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry{background:rgba(6,10,18,.92)!important;border:1px solid rgba(34,211,238,.45)!important;border-radius:16px!important;box-shadow:0 0 10px rgba(34,211,238,.15)!important;color:#dffaff;position:relative}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry[data-g="1"],html body #wikiO.v9b[data-v9=neon] .wiki-entry[data-g="4"]{border-color:rgba(224,64,251,.5)!important}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry[data-g="0"],html body #wikiO.v9b[data-v9=neon] .wiki-entry[data-g="3"]{border-color:rgba(163,230,53,.5)!important}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry::after{content:"";position:absolute;right:10px;top:10px;width:10px;height:10px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;color:#22d3ee}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry>b{font-size:12px;color:#bff6ff!important;padding-right:16px}
+[data-v9=neon] .v9x{color:#7dd3fc;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+[data-v9=neon] #v9bbar{background:rgba(4,8,14,.9);border:1px solid rgba(34,211,238,.4);color:#bff6ff;box-shadow:0 0 14px rgba(34,211,238,.25)}
+[data-v9=neon] #v9bbar button.on{color:#22d3ee;filter:drop-shadow(0 0 4px #22d3ee)}

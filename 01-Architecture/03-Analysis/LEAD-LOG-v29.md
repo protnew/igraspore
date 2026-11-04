@@ -117,3 +117,4 @@
 - theme_neon_draw contour glow tightened; fallback shadowBlur reduced; bed overlay alpha 0.42
 - LIVE browser shots (box :8820 + headless chrome): menu/pond/bestiary → /workspace/v29all3/*_neon-bio_live.jpg + side_pond_neon-bio.jpg
 - bestiary labels = scientific names; NO deploy
+- theme_neon_draw v2: contour-only glow (no soft circular halo plates / no lighter bloom)

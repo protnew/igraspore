@@ -12,11 +12,12 @@
 }
 body.in-menu #themePondBar{display:none!important}
 @media (max-width:500px){
-  /* top-right compact; must clear #hud (max ~200px) on 375 */
-  #themePondBar{right:8px;left:auto!important;top:max(6px,env(safe-area-inset-top));max-width:110px;padding:3px 5px}
+  /* fully inside 375: kill .theme-sel-wrap min-width:120 that blew select to 120px */
+  #themePondBar{right:18px;left:auto!important;top:max(6px,env(safe-area-inset-top));width:82px;max-width:82px;padding:3px 4px;box-sizing:border-box;overflow:hidden}
+  #themePondBar .theme-sel-wrap{min-width:0!important;width:100%!important;max-width:100%!important}
   #themePondBar .theme-sel-label{font-size:9px;line-height:1.1}
-  #themePondBar select{min-height:36px;font-size:11px;padding:3px 4px;max-width:100%}
-  body[data-theme-pond] #hud, body[data-theme-pond] #hud.p{max-width:min(200px,52vw)!important}
+  #themePondBar select{display:block;width:100%!important;min-width:0!important;min-height:34px;font-size:10px;padding:2px 4px;max-width:100%!important;box-sizing:border-box;box-shadow:none!important}
+  body[data-theme-pond] #hud, body[data-theme-pond] #hud.p{max-width:min(185px,48vw)!important}
 }
 #themeBestiaryBar{margin:0 0 8px 0;display:flex;justify-content:flex-end}
 
@@ -232,5 +233,32 @@ body[data-theme-pond="neon-bio"] #startBtn{
 #wikiO.ov.show[data-theme-bestiary="neon-bio"] .btn,
 #wikiO.ov.show[data-theme-bestiary="neon-bio"] #wikiClose{
   border:1px solid #ff00aa!important;box-shadow:0 0 12px #ff00aa55;background:#050012!important;color:#e8fffe!important;
+}
+
+@media (max-width:500px){
+  body[data-theme-pond="neon-bio"] #themePondBar{
+    right:18px!important;width:82px!important;max-width:82px!important;
+    box-shadow:inset 0 0 8px #00ffff44!important;
+  }
+  body[data-theme-pond="neon-bio"] #themePondBar .theme-sel-wrap{min-width:0!important;width:100%!important}
+  body[data-theme-pond="neon-bio"] #themePondBar select{
+    width:100%!important;max-width:100%!important;min-width:0!important;
+    box-shadow:inset 0 0 6px #ff00aa55!important;
+  }
+  /* Divide/Energy: bottom-left above actBar like desktop classic — not mid-scene */
+  body[data-theme-pond="neon-bio"] #hDivReady{
+    top:auto!important;bottom:calc(76px + env(safe-area-inset-bottom,0px))!important;
+    left:max(8px,env(safe-area-inset-left))!important;right:auto!important;
+    max-width:min(210px,62vw)!important;width:auto!important;
+    background:rgba(0,0,12,.78)!important;padding:5px 8px!important;border-radius:8px!important;
+    border:1px solid #00ffff66!important;box-shadow:0 0 10px #00ffff33!important;
+    font-size:11px!important;z-index:20!important;
+  }
+  body[data-theme-pond="neon-bio"] #divReason{
+    top:auto!important;bottom:calc(108px + env(safe-area-inset-bottom,0px))!important;
+    left:50%!important;transform:translateX(-50%)!important;
+    max-width:min(280px,88vw)!important;font-size:11px!important;
+    background:rgba(0,0,12,.7);padding:4px 8px;border-radius:8px;
+  }
 }
 

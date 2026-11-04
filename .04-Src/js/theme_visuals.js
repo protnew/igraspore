@@ -101,7 +101,6 @@
     themedSun.__igsThemeWrap = true;
     renderSunOverlay = themedSun;
   }
-
   function wrapPads() {
     if (typeof drawNaturalLilypads !== "function" || drawNaturalLilypads.__igsThemeWrap) return;
     var orig = drawNaturalLilypads;
@@ -213,7 +212,7 @@
     var W = cv.width, H = cv.height;
     ctx.save();
     if (id === "neon-bio") {
-      /* bed via wrapWater; postFX rays+vignette */
+      /* bed via wrapWater */
       var cx = W * 0.5, topY = H * 0.14, bot = H * 0.98;
       ctx.globalCompositeOperation = "screen";
       var ray = ctx.createLinearGradient(cx, topY, cx, bot);
@@ -228,7 +227,7 @@
       ctx.globalCompositeOperation = "source-over";
       var vig = ctx.createRadialGradient(W / 2, H * 0.55, H * 0.18, W / 2, H * 0.55, H * 0.92);
       vig.addColorStop(0, "rgba(0,0,0,0)");
-      vig.addColorStop(1, "rgba(0,0,0,0.55)");
+      vig.addColorStop(1, "rgba(0,0,0,0.38)");
       ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
     } else if (id === "phase-contrast") {
       try { drawThemePondBed("phase-contrast","assets/themes/phase-contrast/phase_pond_bg.jpg",0.40); } catch (eBed) {}
@@ -357,18 +356,6 @@
           ctx.save(); ctx.setTransform(1,0,0,1,0,0);
           ctx.fillStyle = "#000014"; ctx.fillRect(0,0,cv.width,cv.height); ctx.restore();
         }
-        ctx.save();
-        var sh = ctx.createLinearGradient(0, -2, 0, 40);
-        sh.addColorStop(0, "rgba(0,255,255,0.28)");
-        sh.addColorStop(1, "rgba(0,40,80,0)");
-        ctx.fillStyle = sh; ctx.fillRect(vL, -6, vR-vL, 48);
-        ctx.strokeStyle = "rgba(120,255,255,0.6)"; ctx.lineWidth = 2;
-        ctx.beginPath();
-        for (var sx=vL; sx<=vR; sx+=8) {
-          var sy = Math.sin(sx*0.04+(typeof gt==="number"?gt:0)*1.2)*2.2;
-          if (sx===vL) ctx.moveTo(sx, sy); else ctx.lineTo(sx, sy);
-        }
-        ctx.stroke(); ctx.restore();
         return;
       }
       return orig.apply(this, arguments);
@@ -480,7 +467,7 @@
   }
   function install() {
     ensureNeonDraw();
-    wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapWater(); wrapBuildWiki();
+    wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapWater(); wrapShoreBubbles(); wrapBuildWiki();
     var id = tid();
     var dark = {"neon-bio":0.18,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.55,"haeckel-watercolor":0.75,"glass-lab":0.9};
     if (dark[id] != null) w.__igsThemeDayLight = dark[id];
@@ -492,6 +479,19 @@
       } catch (eSw) {}
     }
   }
+
+  function wrapShoreBubbles() {
+    function skip(get, set) {
+      var fn = get(); if (typeof fn !== "function" || fn.__igsThemeWrap) return;
+      var orig = fn;
+      var wrapped = function () { if (tid() === "neon-bio") return; return orig.apply(this, arguments); };
+      wrapped.__igsThemeWrap = true; set(wrapped);
+    }
+    skip(function () { return typeof renderShore === "function" ? renderShore : null; }, function (f) { renderShore = f; });
+    skip(function () { return typeof renderBubbles === "function" ? renderBubbles : null; }, function (f) { renderBubbles = f; });
+    skip(function () { return typeof renderSediment === "function" ? renderSediment : null; }, function (f) { renderSediment = f; });
+  }
+
   w.igsThemeVisuals = { install: install, postFX: postFX, enhanceWiki: enhanceWiki };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", install);
   else install();

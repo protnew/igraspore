@@ -1,4 +1,4 @@
-/* theme_neon_draw.js — neon-bio organisms: bright contour + species PNG. ≤500L */
+/* theme_neon_draw.js — neon-bio organisms: species PNG + contour glow. ≤500L */
 (function (w) {
   "use strict";
   var CACHE = {};
@@ -22,10 +22,12 @@
     if (!o || !o.sp) return null;
     if (typeof o.sp.i === "number") return o.sp.i;
     if (typeof o.sp.idx === "number") return o.sp.idx;
+    /* species PNG files are 000-based array index; sp.num is 1-based */
+    if (typeof o.sp.num === "number") return Math.max(0, o.sp.num - 1);
     try {
       if (typeof SPECIES_DB !== "undefined" && o.sp.name) {
         for (var i = 0; i < SPECIES_DB.length; i++) {
-          if (SPECIES_DB[i] && SPECIES_DB[i].name === o.sp.name) return (SPECIES_DB[i].i != null ? SPECIES_DB[i].i : i);
+          if (SPECIES_DB[i] && SPECIES_DB[i].name === o.sp.name) return i;
         }
       }
     } catch (e2) {}
@@ -46,72 +48,72 @@
     } catch (e3) {}
     return null;
   }
+  function neonDrawSz(sz) {
+    /* Readable game scale (cilia/nucleus visible) without half-screen giants */
+    if (w.demoMode) return Math.max(18, Math.min(34, (sz || 4) * 5));
+    return Math.max(5.5, Math.min(26, (sz || 4) * 2.6));
+  }
   function bake(shape, color, px) {
-    var key = shape + "|" + color + "|" + px + "|v3";
+    var key = shape + "|" + color + "|" + px + "|v4";
     if (CACHE[key]) return CACHE[key];
     var c = document.createElement("canvas");
-    c.width = c.height = px;
+    c.width = px; c.height = px;
     var g = c.getContext("2d");
-    var cx = px / 2, cy = px / 2, s = px * 0.34;
-    function strokeContour(drawFn, w0) {
+    var cx = px / 2, cy = px / 2, s = px * 0.28;
+    function faintFill(pathFn) {
       g.save();
-      g.shadowColor = color; g.shadowBlur = 8; g.globalAlpha = 0.65;
-      g.strokeStyle = color; g.lineWidth = (w0 || 2) + 2.4;
-      g.beginPath(); drawFn(); g.stroke();
-      g.shadowBlur = 4; g.globalAlpha = 1;
-      g.strokeStyle = color; g.lineWidth = (w0 || 2) + 0.6;
-      g.beginPath(); drawFn(); g.stroke();
-      g.shadowColor = "#fff"; g.shadowBlur = 4; g.globalAlpha = 0.95;
-      g.strokeStyle = "#fff"; g.lineWidth = Math.max(1.2, (w0 || 2) * 0.55);
-      g.beginPath(); drawFn(); g.stroke();
+      g.globalAlpha = 0.38;
+      g.fillStyle = color;
+      g.beginPath(); pathFn(); g.fill();
       g.restore();
     }
-    function faintFill(drawFn) {
-      g.save(); g.globalAlpha = 0.32; g.fillStyle = color;
-      g.shadowColor = color; g.shadowBlur = 12;
-      g.beginPath(); drawFn(); g.fill(); g.restore();
+    function strokeContour(pathFn, lw) {
+      g.save();
+      g.strokeStyle = color; g.shadowColor = color; g.shadowBlur = Math.max(6, px * 0.08);
+      g.lineWidth = lw || 2.2; g.lineJoin = "round"; g.lineCap = "round";
+      g.beginPath(); pathFn(); g.stroke();
+      g.shadowBlur = 0; g.strokeStyle = "#fff"; g.globalAlpha = 0.85; g.lineWidth = Math.max(1, (lw || 2.2) * 0.45);
+      g.beginPath(); pathFn(); g.stroke();
+      g.restore();
     }
-    if (shape === "rod" || shape === "filament" || shape === "clubrod" || shape === "trichormus" || shape === "rodtococcus") {
-      var rw = s * (shape === "filament" ? 0.2 : 0.32), rh = s * 1.15;
-      var path = function () { g.ellipse(cx, cy, rw, rh, 0, 0, Math.PI * 2); };
-      faintFill(path); strokeContour(path, 2.4);
-    } else if (shape === "spiral" || shape === "trypanosoma" || shape === "comma" || shape === "apicomplexa") {
-      var pathS = function () {
-        var n = shape === "comma" ? 28 : 60, amp = shape === "comma" ? 0.55 : 1;
-        for (var i = 0; i < n; i++) {
-          var t = i / 9, rr = 3 + i * 1.05 * amp;
-          var x = cx + Math.cos(t) * rr, y = cy + Math.sin(t) * rr * 0.85;
-          if (i === 0) g.moveTo(x, y); else g.lineTo(x, y);
-        }
-      };
-      strokeContour(pathS, 2.6);
-    } else if (shape === "colony" || shape === "star" || shape === "volvox") {
-      var n = shape === "star" ? 5 : 7;
-      for (var i = 0; i < n; i++) {
-        var ang = (i / n) * Math.PI * 2;
-        var x = cx + Math.cos(ang) * s * 0.55, y = cy + Math.sin(ang) * s * 0.55;
-        (function (xx, yy) {
-          var p = function () { g.arc(xx, yy, s * 0.2, 0, Math.PI * 2); };
-          faintFill(p); strokeContour(p, 1.7);
-        })(x, y);
+    function nucleus() {
+      g.save(); g.fillStyle = "#fff"; g.globalAlpha = 0.92; g.shadowBlur = 0;
+      g.beginPath(); g.arc(cx - s * 0.18, cy - s * 0.08, s * 0.11, 0, Math.PI * 2); g.fill();
+      g.beginPath(); g.arc(cx + s * 0.22, cy + s * 0.14, s * 0.08, 0, Math.PI * 2); g.fill();
+      g.restore();
+    }
+    function cilia(rx, ry, n) {
+      g.save(); g.strokeStyle = color; g.globalAlpha = 0.9; g.lineWidth = Math.max(1, px * 0.012);
+      g.shadowColor = color; g.shadowBlur = 4;
+      for (var a = 0; a < Math.PI * 2; a += (Math.PI * 2) / n) {
+        g.beginPath();
+        g.moveTo(cx + Math.cos(a) * rx, cy + Math.sin(a) * ry);
+        g.lineTo(cx + Math.cos(a) * rx * 1.38, cy + Math.sin(a) * ry * 1.38);
+        g.stroke();
       }
-      var pc = function () { g.arc(cx, cy, s * 0.26, 0, Math.PI * 2); };
-      faintFill(pc); strokeContour(pc, 2.1);
-    } else if (shape === "slipper" || shape === "hypotrich" || shape === "oval" || shape === "bell" || shape === "rotifer" || shape === "testate" || shape === "testate2" || shape === "flatworm") {
-      var rx = s * (shape === "slipper" || shape === "hypotrich" ? 1.05 : 0.85);
-      var ry = s * (shape === "slipper" || shape === "hypotrich" ? 0.45 : 0.65);
-      var po = function () { g.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2); };
-      faintFill(po); strokeContour(po, 2.3);
-      if (shape === "slipper" || shape === "hypotrich" || shape === "rotifer") {
-        g.save(); g.strokeStyle = color; g.globalAlpha = 0.9; g.lineWidth = 1.4; g.shadowColor = color; g.shadowBlur = 6;
-        for (var a = -0.7; a <= 0.7; a += 0.2) {
-          g.beginPath();
-          g.moveTo(cx + rx * 0.85, cy + Math.sin(a) * ry);
-          g.lineTo(cx + rx * 1.35, cy + Math.sin(a) * ry * 1.35);
-          g.stroke();
-        }
-        g.restore();
+      g.restore();
+    }
+    if (shape === "rod" || shape === "bacillus" || shape === "filament" || shape === "clubrod" || shape === "trichormus") {
+      var rr = function () { g.ellipse(cx, cy, s * 1.15, s * 0.42, 0, 0, Math.PI * 2); };
+      faintFill(rr); strokeContour(rr, 2.2); nucleus();
+      g.save(); g.strokeStyle = color; g.globalAlpha = 0.85; g.lineWidth = 1.3; g.shadowColor = color; g.shadowBlur = 4;
+      for (var i = 0; i < 8; i++) {
+        var yy = cy - s * 0.35 + (i / 7) * s * 0.7;
+        g.beginPath(); g.moveTo(cx - s * 1.15, yy); g.lineTo(cx - s * 1.45, yy); g.stroke();
+        g.beginPath(); g.moveTo(cx + s * 1.15, yy); g.lineTo(cx + s * 1.45, yy); g.stroke();
       }
+      g.restore();
+    } else if (shape === "spiral" || shape === "spirillum" || shape === "comma" || shape === "vibrio") {
+      g.save(); g.strokeStyle = color; g.shadowColor = color; g.shadowBlur = 8; g.lineWidth = 3.2; g.lineCap = "round";
+      g.beginPath();
+      for (var t = 0; t <= 1.001; t += 0.02) {
+        var xx = cx + (t - 0.5) * s * 2.2;
+        var yy = cy + Math.sin(t * Math.PI * 3) * s * 0.45;
+        if (t === 0) g.moveTo(xx, yy); else g.lineTo(xx, yy);
+      }
+      g.stroke(); g.restore();
+      faintFill(function () { g.ellipse(cx, cy, s * 0.9, s * 0.35, 0, 0, Math.PI * 2); });
+      nucleus();
     } else if (shape === "phage") {
       var ph = function () { g.ellipse(cx, cy - s * 0.35, s * 0.45, s * 0.35, 0, 0, Math.PI * 2); };
       faintFill(ph); strokeContour(ph, 2.2);
@@ -121,37 +123,52 @@
     } else if (shape === "diplococci") {
       var p1 = function () { g.arc(cx - s * 0.4, cy, s * 0.4, 0, Math.PI * 2); };
       var p2 = function () { g.arc(cx + s * 0.4, cy, s * 0.4, 0, Math.PI * 2); };
-      faintFill(p1); strokeContour(p1, 2.1); faintFill(p2); strokeContour(p2, 2.1);
+      faintFill(p1); strokeContour(p1, 2.1); faintFill(p2); strokeContour(p2, 2.1); nucleus();
     } else {
-      var pc0 = function () { g.arc(cx, cy, s * 0.7, 0, Math.PI * 2); };
-      faintFill(pc0); strokeContour(pc0, 2.5);
-      g.save(); g.strokeStyle = color; g.globalAlpha = 0.85; g.lineWidth = 1.4; g.shadowColor = color; g.shadowBlur = 5;
-      for (var a2 = 0; a2 < Math.PI * 2; a2 += Math.PI / 10) {
-        g.beginPath();
-        g.moveTo(cx + Math.cos(a2) * s * 0.72, cy + Math.sin(a2) * s * 0.72);
-        g.lineTo(cx + Math.cos(a2) * s * 1.08, cy + Math.sin(a2) * s * 1.08);
-        g.stroke();
-      }
-      g.fillStyle = "#fff"; g.globalAlpha = 0.95; g.shadowBlur = 0;
-      g.beginPath(); g.arc(cx - s * 0.18, cy - s * 0.1, s * 0.09, 0, Math.PI * 2); g.fill();
-      g.beginPath(); g.arc(cx + s * 0.2, cy + s * 0.12, s * 0.08, 0, Math.PI * 2); g.fill();
-      g.restore();
+      var pc0 = function () { g.arc(cx, cy, s * 0.72, 0, Math.PI * 2); };
+      faintFill(pc0); strokeContour(pc0, 2.5); cilia(s * 0.74, s * 0.74, 16); nucleus();
     }
     CACHE[key] = c;
     if (Object.keys(CACHE).length > 64) { var k0 = Object.keys(CACHE)[0]; delete CACHE[k0]; }
     return c;
   }
   function drawNeonCell(c, o, sz) {
-    var ssz = sz || 4;
-    var scale = Math.max(ssz * 3.6, 7);
+    var drawSz = neonDrawSz(sz);
     var shape = shapeOf(o);
     var color = colOf(o);
-    var px = Math.max(48, Math.min(128, Math.round(ssz * 18)));
+    var idx = spIdx(o);
+    var sp = loadSp(idx);
+    if (sp && (sp.naturalWidth || sp.width) > 1) {
+      var iw = sp.naturalWidth || sp.width;
+      var ih = sp.naturalHeight || sp.height;
+      var aspect = iw / Math.max(1, ih);
+      var dw, dh;
+      if (aspect >= 1) { dw = drawSz; dh = drawSz / aspect; }
+      else { dh = drawSz; dw = drawSz * aspect; }
+      c.save();
+      c.globalCompositeOperation = "source-over";
+      c.globalAlpha = 1;
+      c.shadowColor = color;
+      c.shadowBlur = Math.max(4, drawSz * 0.55);
+      c.drawImage(sp, -dw / 2, -dh / 2, dw, dh);
+      c.shadowBlur = 0;
+      /* soft translucent tint so fill reads neon */
+      c.globalAlpha = 0.22;
+      c.fillStyle = color;
+      c.beginPath();
+      c.ellipse(0, 0, dw * 0.42, dh * 0.42, 0, 0, Math.PI * 2);
+      c.fill();
+      c.restore();
+      return;
+    }
+    var px = Math.max(48, Math.min(128, Math.round(drawSz * 10)));
     var spr = bake(shape, color, px);
     c.save();
     c.globalCompositeOperation = "source-over";
     c.globalAlpha = 1;
-    c.drawImage(spr, -scale, -scale, scale * 2, scale * 2);
+    c.shadowColor = color;
+    c.shadowBlur = Math.max(3, drawSz * 0.4);
+    c.drawImage(spr, -drawSz, -drawSz, drawSz * 2, drawSz * 2);
     c.restore();
   }
   var SPRITE_BASE = "assets/themes/neon-bio/sprites/";

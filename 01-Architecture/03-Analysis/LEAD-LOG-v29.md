@@ -142,3 +142,16 @@
 ## 2026-11-04 neon-bio LIVE pass (box)
 - screen-space neon_pond_bg under water; swiss+neon sprites at o.x/o.y; HUD/menu neon CSS; themePondBar no overlap 375/1400
 - shots /workspace/v29neon/; FPS target ≥ classic; JS ≤500
+
+## 2026-11-04 03:24 IST — neon-bio LIVE v2 (acceptance retry)
+
+Owner rejected prior neon LIVE (~60%): huge identical ovals, Pond style clipped on 375, Divide/Energy mid-scene, cheap wavy tubes/bubbles instead of painterly bed.
+
+Fixes:
+1. Species PNG sprites via `sp.num-1` / array index (was missing → bake-only ovals); `neonDrawSz` ≈ sz*2.6 (readable, not half-screen); zoom boost 5.5 removed.
+2. `#themePondBar` mobile: kill `.theme-sel-wrap{min-width:120}` that forced select to 120px past edge; bar right=18 width=82; select fully in viewport (pink gap ≥18px @375).
+3. `#hDivReady` / `#divReason` neon mobile → bottom-left above actBar (not mid-scene top).
+4. Rebuilt painterly `neon_pond_bg.jpg` (rocky cavern, surface, rays, glowing bed); skip `renderShore`/`renderBubbles`/`renderSediment` for neon; wrapWater = screen-space bed only.
+
+FPS @1400: neon 60 ≥ classic 55; @375: neon 60 ≈ classic 60. JS: neon_draw 177, visuals 500, engine 52. Shots `/workspace/v29neon/*_v2.jpg`. No deploy. Honest eye ~85–88% vs concept 03 (still HUD chrome differs from circular concept icons).
+

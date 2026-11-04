@@ -168,3 +168,12 @@ Owner rejected v2 (~70%): Pop:11, dull plaques, black left wall, square buttons.
 FPS: neon 60 ≥ classic 51 @1400; 60/60 @375. JS neon_draw 169 / visuals 500 / engine 52.
 Shots /workspace/v29neon/*_v3.jpg. Honest eye ~85%. No deploy.
 
+### v3 final metrics (2026-11-04 ~03:45 IST)
+- Pop invariant: classic=298 neon=298 Δ0 (`.04-Src/tests/test_theme_pop_invariant.mjs` PASS)
+- LIVE shots Pop≈297–300; circular actBar (48×48)
+- FPS: neon 60–61 ≥ classic ~57 @1400; neon 60 @375
+- JS: theme_neon_draw 168 / theme_visuals 500 / theme_engine 52
+- bed neon-bio-v5 + translucent cave walls w/ cyan·magenta rims + surface band
+- Honest eye vs concept 03: ~85% (surface shimmer & creature cilia detail still weaker)
+- No deploy
+

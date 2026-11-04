@@ -1,35 +1,19 @@
 /**
  * Theme must not change organism population (classic vs neon-bio).
- * Run from a cwd that has playwright, e.g.:
- *   cd /path/with/node_modules && node /abs/path/to/test_theme_pop_invariant.mjs
- * Or: NODE_PATH=.../node_modules node thisfile.mjs
+ * Run: cd /workspace/kqt && node /workspace/igraspore/.04-Src/tests/test_theme_pop_invariant.mjs
  * Expects IGS_BASE (default http://127.0.0.1:8820/index.html).
  */
 import { createRequire } from "module";
-import { pathToFileURL } from "url";
-import { existsSync } from "fs";
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 let chromium;
 try {
   ({ chromium } = await import("playwright"));
-} catch (e) {
-  const candidates = [
-    "/workspace/kqt/node_modules/playwright",
-    join(__dirname, "../../../node_modules/playwright"),
-    join(__dirname, "../../node_modules/playwright")
-  ];
-  let loaded = false;
-  for (const c of candidates) {
-    if (existsSync(c)) {
-      ({ chromium } = await import(pathToFileURL(join(c, "index.js")).href));
-      loaded = true; break;
-    }
+} catch (e1) {
+  try {
+    ({ chromium } = require("/workspace/kqt/node_modules/playwright"));
+  } catch (e2) {
+    throw e1;
   }
-  if (!loaded) throw e;
 }
 
 const BASE = process.env.IGS_BASE || "http://127.0.0.1:8820/index.html";

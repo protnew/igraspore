@@ -348,7 +348,7 @@
       var id = tid();
       if (id === "neon-bio") {
         var ok = false;
-        try { ok = drawThemePondBedScreen("neon-bio-v4","assets/themes/neon-bio/neon_pond_bg.jpg?v=4"); } catch (eW) {}
+        try { ok = drawThemePondBedScreen("neon-bio-v5","assets/themes/neon-bio/neon_pond_bg.jpg?v=5"); } catch (eW) {}
         if (!ok) {
           ctx.save(); ctx.setTransform(1,0,0,1,0,0);
           ctx.fillStyle = "#000014"; ctx.fillRect(0,0,cv.width,cv.height); ctx.restore();
@@ -356,11 +356,11 @@
         /* soft surface band only — no wavy tube stroke */
         ctx.save(); ctx.setTransform(1,0,0,1,0,0);
         var H = cv.height, W = cv.width;
-        var sg = ctx.createLinearGradient(0, 0, 0, H * 0.14);
-        sg.addColorStop(0, "rgba(40,160,255,0.35)");
-        sg.addColorStop(0.55, "rgba(0,220,255,0.18)");
+        var sg = ctx.createLinearGradient(0, 0, 0, H * 0.18);
+        sg.addColorStop(0, "rgba(80,200,255,0.55)");
+        sg.addColorStop(0.4, "rgba(0,255,255,0.32)");
         sg.addColorStop(1, "rgba(0,40,80,0)");
-        ctx.fillStyle = sg; ctx.fillRect(0, 0, W, H * 0.14);
+        ctx.fillStyle = sg; ctx.fillRect(0, 0, W, H * 0.18);
         ctx.restore();
         return;
       }
@@ -477,7 +477,7 @@
     if (id === "neon-bio") {
       try {
         if (typeof settings !== "undefined" && settings) { settings.renderMode = "swiss"; w._swissStrict = true; }
-        bedState("neon-bio-v4", "assets/themes/neon-bio/neon_pond_bg.jpg?v=4");
+        bedState("neon-bio-v5", "assets/themes/neon-bio/neon_pond_bg.jpg?v=5");
       } catch (eSw) {}
     }
   }

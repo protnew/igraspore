@@ -144,7 +144,7 @@
       c.globalCompositeOperation = "source-over";
       c.globalAlpha = 1;
       c.shadowColor = color;
-      c.shadowBlur = Math.max(4, Math.min(14, drawSz * 0.55));
+      c.shadowBlur = Math.max(4, Math.min(12, drawSz * 0.5));
       c.drawImage(img, x, y, w, h);
       c.restore();
     }

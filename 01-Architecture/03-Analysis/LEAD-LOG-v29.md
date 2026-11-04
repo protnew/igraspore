@@ -106,3 +106,8 @@
 - note: Windows Shell hung — commit via GitHub API; local Obsidian tree may lag until pull
 
 - also committed pond/neon_pond_bg.jpg fallback path (26771c5)
+
+## 2026-11-04 02:32 Asia/Jerusalem — neon pond bg CLEAN (no baked orgs/HUD)
+- neon_pond_bg.jpg rebuilt procedural: water/rays/walls/bed/particles ONLY
+- removed concept organisms + corner HUD baked into prior bg
+- live browser shots next (box http+headless); no deploy

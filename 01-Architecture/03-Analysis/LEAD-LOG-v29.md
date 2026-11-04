@@ -197,3 +197,8 @@ Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/
 - render.js: cover background with clamped parallax (no uncovered edge when camera is far off-centre).
 - Tests: pop invariant PASS; FPS neon 60.2 ≈ classic 60.2 @375; JS: render 230 / theme_visuals 474 / theme_neon_draw 162.
 - Shots: /workspace/v29neon/*_v5.jpg + side_*_v5.jpg.
+
+## v5.1 neon + v5 styles (2026-11-04)
+- neon: palette cyan/magenta (green only for producers, yellow rare), denser cilia (×2.8), creatures ×1.9 at ≥900px. Commit e61289b.
+- Generic v5 pipeline for 6 styles: clean bg cover full viewport + old layers off + procedural per-style creatures (theme_neon_draw.js) + procedural bestiary thumbs + style-themes-v5chrome.css (HUD/menu/bestiary).
+- phase-contrast: clean bg (old → .10-Archive/pond-bg-pre-v5-2026-11-04/), grey translucent bodies with bright halo. Pop PASS, FPS 375 60/60, 1400 51 vs classic 55 (headless).

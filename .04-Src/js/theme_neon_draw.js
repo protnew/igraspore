@@ -145,11 +145,11 @@
       /* bright halo (phase-contrast artifact) */
       g.save(); g.shadowColor = "rgba(255,255,255,0.95)"; g.shadowBlur = px * 0.09; g.strokeStyle = "rgba(245,250,255,0.9)"; g.lineWidth = px * 0.035; K.path(); g.stroke(); g.restore();
       g.save(); var gr = g.createRadialGradient(K.cx, K.cy, 0, K.cx, K.cy, Math.max(K.rx, K.ry));
-      gr.addColorStop(0, "rgba(120,130,135,0.35)"); gr.addColorStop(0.75, "rgba(70,78,82,0.45)"); gr.addColorStop(1, "rgba(40,44,48,0.65)");
+      gr.addColorStop(0, "rgba(150,160,160,0.16)"); gr.addColorStop(0.7, "rgba(110,120,122,0.26)"); gr.addColorStop(1, "rgba(40,46,48,0.55)");
       g.fillStyle = gr; K.path(); g.fill(); g.restore();
       K.hair("rgba(225,232,236,0.75)", Math.max(0.8, px * 0.008), 1.6, 1, px * 0.02);
       g.save(); g.strokeStyle = "rgba(30,34,38,0.9)"; g.lineWidth = Math.max(1, px * 0.012); K.path(); g.stroke(); g.restore();
-      K.dots(24, function (r) { return r < 0.5 ? "rgba(25,28,30,0.8)" : "rgba(235,240,242,0.8)"; });
+      K.dots(30, function (r) { return r < 0.6 ? "rgba(40,46,48,0.55)" : "rgba(250,252,252,0.9)"; }, 1.2);
       K.nuc("rgba(40,44,48,0.75)", "rgba(240,245,248,0.9)", 0);
     },
     engr: function (K) {

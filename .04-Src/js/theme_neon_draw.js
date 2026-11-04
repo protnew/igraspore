@@ -142,12 +142,13 @@
     },
     phase: function (K) {
       var g = K.g, px = K.px;
-      /* bright halo (phase-contrast artifact) */
-      g.save(); g.shadowColor = "rgba(255,255,255,0.95)"; g.shadowBlur = px * 0.09; g.strokeStyle = "rgba(245,250,255,0.9)"; g.lineWidth = px * 0.035; K.path(); g.stroke(); g.restore();
+      /* bright halo (phase-contrast artifact) — double pass for strong glow on dark teal */
+      g.save(); g.shadowColor = "rgba(230,255,250,1)"; g.shadowBlur = px * 0.16; g.strokeStyle = "rgba(200,255,245,0.55)"; g.lineWidth = px * 0.06; K.path(); g.stroke();
+      g.shadowBlur = px * 0.06; g.strokeStyle = "rgba(250,255,255,1)"; g.lineWidth = px * 0.03; K.path(); g.stroke(); g.restore();
       g.save(); var gr = g.createRadialGradient(K.cx, K.cy, 0, K.cx, K.cy, Math.max(K.rx, K.ry));
-      gr.addColorStop(0, "rgba(150,160,160,0.16)"); gr.addColorStop(0.7, "rgba(110,120,122,0.26)"); gr.addColorStop(1, "rgba(40,46,48,0.55)");
+      gr.addColorStop(0, "rgba(190,205,205,0.22)"); gr.addColorStop(0.7, "rgba(120,140,142,0.38)"); gr.addColorStop(1, "rgba(30,40,44,0.7)");
       g.fillStyle = gr; K.path(); g.fill(); g.restore();
-      K.hair("rgba(225,232,236,0.75)", Math.max(0.8, px * 0.008), 1.6, 1, px * 0.02);
+      K.hair("rgba(235,255,250,0.9)", Math.max(0.8, px * 0.008), 1.6, 1, px * 0.02);
       g.save(); g.strokeStyle = "rgba(30,34,38,0.9)"; g.lineWidth = Math.max(1, px * 0.012); K.path(); g.stroke(); g.restore();
       K.dots(30, function (r) { return r < 0.6 ? "rgba(40,46,48,0.55)" : "rgba(250,252,252,0.9)"; }, 1.2);
       K.nuc("rgba(40,44,48,0.75)", "rgba(240,245,248,0.9)", 0);
@@ -214,7 +215,7 @@
   };
   function bake(shape, color, px, st) {
     st = st || styleNow();
-    var key = st + "|" + shape + "|" + color + "|" + px + "|v7";
+    var key = st + "|" + shape + "|" + color + "|" + px + "|v8";
     if (CACHE[key]) return CACHE[key];
     var c = document.createElement("canvas"); c.width = px; c.height = px;
     var K = kit(c.getContext("2d"), shape, px);

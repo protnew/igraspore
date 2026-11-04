@@ -270,5 +270,20 @@
     if (!THUMBS[key]) { try { THUMBS[key] = bake(shape, col, 160, st, v).toDataURL("image/png"); } catch (e) { return null; } }
     return THUMBS[key];
   }
+  /* prewarm: bake every species sprite for the active style in small idle slices (engraving hatching is costly) */
+  var PW = { st: null, i: 0 };
+  function prewarm() {
+    var st = styleNow(), db = (typeof SPECIES_DB !== "undefined") ? SPECIES_DB : null;
+    if (db && st === "engr") {
+      if (PW.st !== st) { PW.st = st; PW.i = 0; }
+      var wide = typeof cv !== "undefined" && cv && cv.width > 900, sizes = wide ? [112, 160] : [72, 112], t0 = Date.now();
+      while (PW.i < db.length * sizes.length && Date.now() - t0 < 8) {
+        var sp = db[PW.i % db.length], px = sizes[(PW.i / db.length) | 0]; PW.i++;
+        if (sp) { var o = { sp: sp }; bake(shapeOf(o), colOf(o, st), px, st, hashStr(sp.id || sp.name || "x") % 4); }
+      }
+    }
+    setTimeout(prewarm, (st === "engr" && PW.i < ((db && db.length) || 1) * 2) ? 40 : 2000);
+  }
+  setTimeout(prewarm, 300);
   w.igsNeonDraw = { styleNow: styleNow, bodyOf: bodyOf, drawCell: drawCell, bake: bake, thumb: thumb, shapeOf: shapeOf, colOf: colOf, STYLE_OF: STYLE_OF };
 })(typeof window !== "undefined" ? window : globalThis);

@@ -1,6 +1,11 @@
 /* theme_visuals.js — per-theme pond sky/sun/pads/postFX + bestiary sprite thumbs */
 (function (w) {
   "use strict";
+  var V5 = { "neon-bio": 1, "phase-contrast": 1, "engraving": 1, "cyberpunk-scanner": 1, "glass-lab": 1, "haeckel-watercolor": 1 };
+  var BG = { "neon-bio": "neon-bio/neon_pond_bg.jpg?v=7", "phase-contrast": "phase-contrast/phase_pond_bg.jpg?v=8", "engraving": "engraving/engraving_pond_bg.jpg?v=8",
+    "cyberpunk-scanner": "cyberpunk-scanner/cyber_pond_bg.jpg?v=8", "glass-lab": "glass-lab/glass_pond_bg.jpg?v=8", "haeckel-watercolor": "haeckel-watercolor/haeckel_pond_bg.jpg?v=8" };
+  function isV5(id) { return !!V5[id]; }
+  w.__igsThemeCover = V5; w.__igsPondBgs = w.__igsPondBgs || {};
   function tid() { return w.__igsThemePondId || "classic"; }
   function bid() { return w.__igsThemeBestiary || "classic"; }
   function wrapSky() {
@@ -9,6 +14,7 @@
     function themedSky(vL, vR, vT) {
       var id = tid();
       if (id === "classic") return orig.apply(this, arguments);
+      if (isV5(id)) { w._sunPos = null; return; }
       var h = -vT;
       if (vT >= 5) { if (id === "neon-bio" || id === "cyberpunk-scanner" || id === "phase-contrast" || id === "engraving") w._sunPos = null; return; }
       if (h < 1) return;
@@ -83,7 +89,7 @@
     var orig = renderSunOverlay;
     function themedSun() {
       var id = tid();
-      if (id === "neon-bio" || id === "cyberpunk-scanner" || id === "phase-contrast" || id === "engraving") return;
+      if (isV5(id)) return;
       if (id === "glass-lab" && w._sunPos) {
         var s = w._sunPos;
         ctx.save();
@@ -107,7 +113,7 @@
     var orig = drawNaturalLilypads;
     function themedPads(vL, vR, surfW) {
       var id = tid();
-      if (id === "neon-bio" || id === "cyberpunk-scanner" || id === "phase-contrast") return;
+      if (isV5(id)) return;
       if (id === "engraving") {
         ctx.save();
         try { ctx.filter = "grayscale(1) contrast(1.4) sepia(0.7) brightness(0.85)"; } catch (eP) {}
@@ -126,7 +132,7 @@
     w.drawSwissCell = function (c, o, sz, sh) {
       var id = tid();
       var ssz = sz || 4;
-      if (id === "neon-bio") {
+      if (isV5(id)) {
         if (w.igsNeonDraw && typeof w.igsNeonDraw.drawCell === "function") {
           try {
             c.save();
@@ -207,89 +213,20 @@
   }
   function postFX() {
     var id = tid();
-    if (!id || id === "classic" || typeof ctx === "undefined" || !cv) return;
-    var W = cv.width, H = cv.height;
-    ctx.save();
-    if (id === "neon-bio") {
-      /* cover bg already in render.js; soft vignette only */
-      var vig = ctx.createRadialGradient(W / 2, H * 0.5, H * 0.2, W / 2, H * 0.5, H * 0.95);
-      vig.addColorStop(0, "rgba(0,0,0,0)");
-      vig.addColorStop(1, "rgba(0,0,0,0.18)");
-      ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
-    } else if (id === "phase-contrast") {
-      try { drawThemePondBed("phase-contrast","assets/themes/phase-contrast/phase_pond_bg.jpg",0.40); } catch (eBed) {}
-      ctx.globalCompositeOperation = "saturation";
-      ctx.fillStyle = "rgba(128,128,128,0.92)";
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "rgba(200,220,220,0.05)";
-      ctx.fillRect(0, 0, W, H);
-      var R = Math.min(W, H) * 0.48;
-      var v2 = ctx.createRadialGradient(W / 2, H / 2, R * 0.55, W / 2, H / 2, R * 1.05);
-      v2.addColorStop(0, "rgba(0,0,0,0)");
-      v2.addColorStop(0.7, "rgba(0,0,0,0.25)");
-      v2.addColorStop(1, "rgba(0,0,0,0.78)");
-      ctx.fillStyle = v2; ctx.fillRect(0, 0, W, H);
-      ctx.fillStyle = "rgba(255,255,255,0.03)";
-      for (var di = 0; di < 30; di++) {
-        var dx = ((di * 97) % W), dy = ((di * 53) % H);
-        ctx.fillRect(dx, dy, 1.5, 1.5);
-      }
-    } else if (id === "engraving") {
-      try { drawThemePondBed("engraving","assets/themes/engraving/engraving_pond_bg.jpg",0.38); } catch (eBed) {}
-      ctx.globalCompositeOperation = "color";
-      ctx.fillStyle = "rgba(190,170,130,1)";
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "soft-light";
-      ctx.fillStyle = "rgba(210,185,140,0.55)";
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "multiply";
-      ctx.fillStyle = "rgba(210,195,160,0.35)";
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "source-over";
-      ctx.strokeStyle = "rgba(35,25,15,0.14)";
-      ctx.lineWidth = 1;
-      for (var y = 0; y < H; y += 2) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
-      ctx.strokeStyle = "rgba(35,25,15,0.10)";
-      for (var x = -H; x < W; x += 4) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x + H, H); ctx.stroke();
-      }
-      for (var x2 = 0; x2 < W + H; x2 += 5) {
-        ctx.beginPath(); ctx.moveTo(x2, 0); ctx.lineTo(x2 - H, H); ctx.stroke();
-      }
-      var ve = ctx.createRadialGradient(W / 2, H / 2, H * 0.2, W / 2, H / 2, H * 0.75);
-      ve.addColorStop(0, "rgba(0,0,0,0)");
-      ve.addColorStop(1, "rgba(40,28,12,0.35)");
-      ctx.fillStyle = ve; ctx.fillRect(0, 0, W, H);
-    } else if (id === "cyberpunk-scanner") {
-      try { drawThemePondBed("cyberpunk-scanner","assets/themes/cyberpunk-scanner/cyber_pond_bg.jpg",0.4); } catch (eBed) {}
-      ctx.globalCompositeOperation = "screen";
-      ctx.fillStyle = "rgba(0,255,100,0.05)";
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "rgba(0,0,0,0.12)";
-      for (var sl = 0; sl < H; sl += 3) ctx.fillRect(0, sl, W, 1);
-      ctx.strokeStyle = "rgba(0,255,140,0.14)";
-      ctx.lineWidth = 1;
-      var step = 40;
-      for (var gx = 0; gx < W; gx += step) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke(); }
-      for (var gy = 0; gy < H; gy += step) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke(); }
-      var top = ctx.createLinearGradient(0, 0, 0, H * 0.35);
-      top.addColorStop(0, "rgba(5,0,20,0.9)");
-      top.addColorStop(1, "rgba(5,0,20,0)");
-      ctx.fillStyle = top; ctx.fillRect(0, 0, W, H * 0.4);
-    } else if (id === "haeckel-watercolor") {
-      try { drawThemePondBed("haeckel-watercolor","assets/themes/haeckel-watercolor/haeckel_pond_bg.jpg",0.36); } catch (eBed) {}
-      ctx.globalCompositeOperation = "soft-light";
-      ctx.fillStyle = "rgba(232,210,160,0.28)";
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "source-over";
-    } else if (id === "glass-lab") {
-      try { drawThemePondBed("glass-lab","assets/themes/glass-lab/glass_pond_bg.jpg",0.34); } catch (eBed) {}
-      ctx.globalCompositeOperation = "screen";
-      ctx.fillStyle = "rgba(180,220,240,0.10)";
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "source-over";
+    if (!isV5(id) || typeof ctx === "undefined" || !cv) return;
+    var W = cv.width, H = cv.height, FX = {
+      "neon-bio": [0.18, null], "phase-contrast": [0.30, null], "engraving": [0.28, "rgba(120,90,50,0.05)"],
+      "cyberpunk-scanner": [0.25, null], "glass-lab": [0.10, "rgba(255,255,255,0.03)"], "haeckel-watercolor": [0.14, "rgba(240,220,180,0.04)"]
+    }[id];
+    ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
+    var vig = ctx.createRadialGradient(W / 2, H * 0.5, H * 0.2, W / 2, H * 0.5, H * 0.95);
+    vig.addColorStop(0, "rgba(0,0,0,0)"); vig.addColorStop(1, "rgba(0,0,0," + FX[0] + ")");
+    ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
+    if (FX[1]) { ctx.fillStyle = FX[1]; ctx.fillRect(0, 0, W, H); }
+    if (id === "cyberpunk-scanner") { /* faint scanline sweep */
+      var sy = ((Date.now() / 18) % (H + 80)) - 40, sg = ctx.createLinearGradient(0, sy - 40, 0, sy + 40);
+      sg.addColorStop(0, "rgba(0,246,255,0)"); sg.addColorStop(0.5, "rgba(0,246,255,0.07)"); sg.addColorStop(1, "rgba(0,246,255,0)");
+      ctx.fillStyle = sg; ctx.fillRect(0, sy - 40, W, 80);
     }
     ctx.restore();
   }
@@ -303,14 +240,14 @@
         st.tried=true;
         try{
           var im=new Image();
-          im.onload=function(){ st.img=im; if(key.indexOf("neon-bio")===0) w.__igsNeonPondBg=im; };
+          im.onload=function(){ st.img=im; var tk=key.replace(/-v\d+$/,""); w.__igsPondBgs[tk]=im; if(tk==="neon-bio") w.__igsNeonPondBg=im; };
           im.onerror=function(){ st.fail=true; };
           im.src=src;
         }catch(e){ st.fail=true; }
       }
       return null;
     }
-    if(key.indexOf("neon-bio")===0) w.__igsNeonPondBg=st.img;
+    var tk2=key.replace(/-v\d+$/,""); w.__igsPondBgs[tk2]=st.img; if(tk2==="neon-bio") w.__igsNeonPondBg=st.img;
     return st;
   }
   function drawThemePondBed(key, src, alpha) {
@@ -336,7 +273,7 @@
     var orig = renderWater;
     function themedWater(vL, vR, vT, vB) {
       var id = tid();
-      if (id === "neon-bio") { return; }
+      if (isV5(id)) { return; }
       return orig.apply(this, arguments);
     }
     themedWater.__igsThemeWrap = true;
@@ -409,6 +346,8 @@
           if (this.dataset.fb === "1") { this.dataset.fb = "2"; this.src = base + "circle.png"; return; }
           this.dataset.fb = "1"; this.src = base + shape + ".png";
         };
+        var pth = (w.igsNeonDraw && w.igsNeonDraw.thumb) ? w.igsNeonDraw.thumb(sp, theme) : null;
+        if (pth) { img.onerror = null; img.src = pth; }
         img.style.filter = "none";
         var cap = el.querySelector("b");
         if (cap && name) cap.textContent = name;
@@ -447,10 +386,10 @@
     var dark = {"neon-bio":0.42,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.55,"haeckel-watercolor":0.75,"glass-lab":0.9};
     if (dark[id] != null) w.__igsThemeDayLight = dark[id];
     else if (id === "classic") w.__igsThemeDayLight = null;
-    if (id === "neon-bio") {
+    if (isV5(id)) {
       try {
         if (typeof settings !== "undefined" && settings) { settings.renderMode = "swiss"; w._swissStrict = true; }
-        bedState("neon-bio-v7", "assets/themes/neon-bio/neon_pond_bg.jpg?v=7");
+        bedState(id + "-v8", "assets/themes/" + BG[id]);
       } catch (eSw) {}
     }
   }
@@ -458,7 +397,7 @@
     function skip(get, set) {
       var fn = get(); if (typeof fn !== "function" || fn.__igsThemeWrap) return;
       var orig = fn;
-      var wrapped = function () { if (tid() === "neon-bio") return; return orig.apply(this, arguments); };
+      var wrapped = function () { if (isV5(tid())) return; return orig.apply(this, arguments); };
       wrapped.__igsThemeWrap = true; set(wrapped);
     }
     skip(function () { return typeof renderShore === "function" ? renderShore : null; }, function (f) { renderShore = f; });

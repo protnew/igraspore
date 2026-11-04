@@ -17,10 +17,10 @@ function render(){
   var vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
   
   // === STEP 1: BACKGROUND ===
-  var _neonPond = (typeof window!=='undefined' && window.__igsThemePondId==='neon-bio');
+  var _neonPond = (typeof window!=='undefined' && !!(window.__igsThemeCover && window.__igsThemeCover[window.__igsThemePondId]));
   if(_neonPond){
     // Full-viewport cover bg + light parallax (old sky/water split OFF)
-    var _nb = window.__igsNeonPondBg;
+    var _nb = (window.__igsPondBgs||{})[window.__igsThemePondId];
     ctx.setTransform(1,0,0,1,0,0);
     if(_nb && _nb.width){
       var _cw=cv.width,_ch=cv.height;

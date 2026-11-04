@@ -28,7 +28,7 @@
      non-contractile tail), T7 Podoviridae (short stub tail), Phi-6 Cystoviridae (enveloped, no tail), MS2 Leviviridae (tiny, no tail) */
   var MORPH = { "T4 Bacteriophage": "myo", "Lambda Phage": "sipho", "T7 Bacteriophage": "podo", "Phi-6 Phage": "cysto", "MS2 Phage": "levi" };
   function phage(c, px, ink, seed, nm) {
-    var mo = MORPH[nm] || "myo", r = rnd(seed), k = px / 2, h = k * 0.32;
+    var mo = MORPH[nm] || "myo", r = rnd(seed), k = px / 2, h = k * 0.32 * ({ podo: 0.62, cysto: 0.6, levi: 0.42 }[mo] || 1);
     if (mo === "cysto" || mo === "levi" || mo === "podo" || mo === "sipho") { c.save(); c.translate(k, mo === "sipho" ? k * 0.55 : k); c.strokeStyle = ink; c.fillStyle = ink; c.lineWidth = px / 110;
       var R = mo === "levi" ? h * 0.75 : h * 1.05, i, a;
       if (mo === "cysto") { c.beginPath(); c.arc(0, 0, R * 1.15, 0, 6.283); c.globalAlpha = 0.18; c.fill(); c.globalAlpha = 1; c.stroke();
@@ -50,6 +50,14 @@
   var PAL = { producer: [92, 140, 52], consumer1: [214, 146, 40], consumer2: [196, 102, 44], consumer3: [186, 70, 64], decomposer: [150, 104, 56], virus: [190, 72, 60] };
   /* engraving: light hatched linework; haeckel: translucent watercolour washes in ochre/sepia/olive */
   function restyle(cv, s, sp) {
+    if (s === "glass") { var G = cv.getContext("2d"), M = cv.width, id = G.getImageData(0, 0, M, M), p = id.data, al = new Float32Array(M * M), tm = new Float32Array(M * M), R = 9, u, v;
+      for (u = 0; u < M * M; u++) al[u] = p[u * 4 + 3] / 255;
+      for (v = 0; v < M; v++) { var acc = 0; for (u = -R; u < M; u++) { if (u + R < M) acc += al[v * M + u + R]; if (u - R - 1 >= 0) acc -= al[v * M + u - R - 1]; if (u >= 0) tm[v * M + u] = acc / (2 * R + 1); } }
+      for (u = 0; u < M; u++) { var ac2 = 0; for (v = -R; v < M; v++) { if (v + R < M) ac2 += tm[(v + R) * M + u]; if (v - R - 1 >= 0) ac2 -= tm[(v - R - 1) * M + u]; if (v >= 0) al[v * M + u] = ac2 / (2 * R + 1); } }
+      for (u = 0; u < M * M; u++) { var aa = p[u * 4 + 3] / 255; if (aa < 0.02) continue; var dep = al[u], rim = Math.max(0, 1 - dep * 1.6);
+        p[u * 4] = p[u * 4] * (1 - 0.45 * rim) + 40 * 0.45 * rim + (255 - p[u * 4]) * 0.35 * dep; p[u * 4 + 1] = p[u * 4 + 1] * (1 - 0.45 * rim) + 100 * 0.45 * rim + (255 - p[u * 4 + 1]) * 0.35 * dep; p[u * 4 + 2] = p[u * 4 + 2] * (1 - 0.45 * rim) + 160 * 0.45 * rim + (255 - p[u * 4 + 2]) * 0.35 * dep;
+        p[u * 4 + 3] = Math.min(255, aa * 255 * (0.55 + 0.45 * rim)); }
+      G.putImageData(id, 0, 0); }
     if (s === "glass") { var g = cv.getContext("2d"), N = cv.width, gr = g.createRadialGradient(N * 0.36, N * 0.3, 2, N * 0.42, N * 0.38, N * 0.42);
       g.save(); g.globalCompositeOperation = "source-atop"; gr.addColorStop(0, "rgba(255,255,255,.85)"); gr.addColorStop(0.35, "rgba(255,255,255,.2)"); gr.addColorStop(1, "rgba(70,130,190,.28)");
       g.fillStyle = gr; g.fillRect(0, 0, N, N); var lg = g.createLinearGradient(0, N, N, 0); lg.addColorStop(0, "rgba(40,110,170,.25)"); lg.addColorStop(0.5, "rgba(255,255,255,0)"); lg.addColorStop(1, "rgba(255,255,255,.25)");
@@ -67,16 +75,32 @@
     }
     x.putImageData(o, 0, 0); return cv;
   }
+  /* filamentous cyanobacteria (producer, shape filament/trichormus): a curved trichome of real cells;
+     trichormus (Nostoc) = bead-like cells with larger pale heterocysts, filament = short disc cells in a sheath */
+  function chain(c, px, sp, s, col) {
+    var bead = String(sp.shape) === "trichormus", r = rnd(hash(sp.name)), n = bead ? 16 : 22, ph = r() * 6, ink = INK[s], glow = s === "neon" || s === "cyber" || s === "phase";
+    var pts = []; for (var i = 0; i < n; i++) { var t = i / (n - 1); pts.push([px * (0.08 + 0.84 * t), px * (0.5 + 0.2 * Math.sin(t * 5.2 + ph))]); }
+    c.save(); c.lineWidth = px / 160; c.strokeStyle = s === "neon" ? col : ink; if (glow) { c.shadowColor = s === "neon" ? col : ink; c.shadowBlur = px / 40; }
+    if (!bead) { c.globalAlpha = 0.35; c.lineWidth = px / 11; c.lineCap = "round"; c.beginPath(); pts.forEach(function (q, j) { if (j) c.lineTo(q[0], q[1]); else c.moveTo(q[0], q[1]); }); c.strokeStyle = col; c.stroke(); c.globalAlpha = 1; c.lineWidth = px / 160; c.strokeStyle = s === "neon" ? col : ink; }
+    for (var k = 0; k < n; k++) { var a = pts[Math.max(0, k - 1)], b2 = pts[Math.min(n - 1, k + 1)], ang = Math.atan2(b2[1] - a[1], b2[0] - a[0]), het = bead && k % 5 === 3;
+      var rx = bead ? px * 0.05 * (het ? 1.2 : 1) : px * 0.018, ry = bead ? px * 0.045 * (het ? 1.2 : 1) : px * 0.04;
+      c.save(); c.translate(pts[k][0], pts[k][1]); c.rotate(ang); c.beginPath(); c.ellipse(0, 0, rx, ry, 0, 0, 6.283);
+      c.globalAlpha = het ? 0.25 : 0.6; c.fillStyle = col; c.fill(); c.globalAlpha = 1; c.stroke();
+      if (!het) { c.globalAlpha = 0.7; c.fillStyle = ink; for (var g = 0; g < 3; g++) { c.beginPath(); c.arc((r() - 0.5) * rx, (r() - 0.5) * ry, px * 0.005, 0, 6.283); c.fill(); } c.globalAlpha = 1; }
+      else { c.beginPath(); c.arc(rx * 0.8, 0, px * 0.006, 0, 6.283); c.fillStyle = ink; c.fill(); }
+      c.restore(); }
+    c.restore();
+  }
   function render(sp, s) {
     var key = s + "|" + sp.id; if (BIG[key]) return BIG[key];
     var D = w.igsNeonDraw, shape = sp.shape ? String(sp.shape) : D.shapeOf({ sp: sp }), col = D.colOf({ sp: sp }, s), px = 300;
-    var spr = sp.cat === "virus" ? null : D.bake(shape, col, px, s, hash(sp.id || sp.name) % 4);
+    var fil = sp.cat === "producer" && (shape === "filament" || shape === "trichormus"), spr = sp.cat === "virus" || fil ? null : D.bake(shape, col, px, s, hash(sp.id || sp.name) % 4);
     var c = document.createElement("canvas"); c.width = c.height = px; var x = c.getContext("2d");
-    if (spr) { x.drawImage(spr, 0, 0); detail(x, sp, s, px); } else phage(x, px, s === "cyber" || s === "neon" || s === "phase" ? (s === "cyber" ? "#ff3cf0" : "#e8fff9") : (s === "glass" ? "#5b7f9e" : "#5a3a1e"), hash(sp.name), sp.name);
+    if (fil) chain(x, px, sp, s, col); else if (spr) { x.drawImage(spr, 0, 0); detail(x, sp, s, px); } else phage(x, px, s === "cyber" || s === "neon" || s === "phase" ? (s === "cyber" ? "#ff3cf0" : "#e8fff9") : (s === "glass" ? "#5b7f9e" : "#5a3a1e"), hash(sp.name), sp.name);
     /* crop to the creature so it fills the card */
     try { var d = x.getImageData(0, 0, px, px).data, x0 = px, y0 = px, x1 = 0, y1 = 0;
       for (var yy = 0; yy < px; yy += 2) for (var xx = 0; xx < px; xx += 2) if (d[(yy * px + xx) * 4 + 3] > 24) { if (xx < x0) x0 = xx; if (xx > x1) x1 = xx; if (yy < y0) y0 = yy; if (yy > y1) y1 = yy; }
-      if (x1 > x0) { var side = Math.max(x1 - x0, (y1 - y0) * 1.0) * 1.12, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, o2 = document.createElement("canvas"); o2.width = o2.height = 320;
+      if (x1 > x0 && sp.cat !== "virus") { var side = Math.max(x1 - x0, (y1 - y0) * 1.0) * 1.12, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, o2 = document.createElement("canvas"); o2.width = o2.height = 320;
         o2.getContext("2d").drawImage(c, cx - side / 2, cy - side / 2, side, side, 0, 0, 320, 320); c = o2; } c = restyle(c, s, sp); } catch (e) {}
     try { BIG[key] = c.toDataURL("image/png"); } catch (e) { return null; } return BIG[key];
   }

@@ -159,7 +159,7 @@ FPS @1400: neon 60 ≥ classic 55; @375: neon 60 ≈ classic 60. JS: neon_draw 1
 
 Owner rejected v2 (~70%): Pop:11, dull plaques, black left wall, square buttons.
 
-(0) Pop:11 was shot-script artifact (`orgs.length=0` seed). Real spawn classic=297 neon=297 delta=0 same seed. Added `07-QA-and-Testing/playwright/test_theme_pop_invariant.mjs`. sp.num only affects PNG index in theme_neon_draw — not biology/spawn.
+(0) Pop:11 was shot-script artifact (`orgs.length=0` seed). Real spawn classic=297 neon=297 delta=0 same seed. Added `.04-Src/tests/test_theme_pop_invariant.mjs` (07-QA is gitignored). sp.num only affects PNG index in theme_neon_draw — not biology/spawn.
 
 (1) Species PNGs: punched dark fills → transparent; removed draw tint ellipse; single-pass contour glow (FPS-safe).
 (2) neon_pond_bg rebuilt: translucent symmetric cave rims + surface band + rays + bed; shore/bubbles still skipped.

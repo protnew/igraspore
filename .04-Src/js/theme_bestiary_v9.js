@@ -35,7 +35,7 @@
     for (var f = 0; f < 3; f++) { var sx = (f - 1) * h * 0.3; [-1, 1].forEach(function (sg) { c.beginPath(); c.moveTo(sx, by); c.lineTo(sx + sg * h * 0.45, by + h * 0.35); c.lineTo(sx + sg * h * 0.6, by + h * 0.75); c.stroke(); }); }
     c.restore();
   }
-  var PAL = { producer: [122, 128, 52], consumer1: [176, 120, 48], consumer2: [150, 88, 50], consumer3: [138, 64, 52], decomposer: [112, 86, 60], virus: [150, 60, 50] };
+  var PAL = { producer: [118, 138, 60], consumer1: [196, 140, 60], consumer2: [176, 104, 62], consumer3: [168, 82, 70], decomposer: [140, 108, 72], virus: [170, 80, 66] };
   /* engraving: light hatched linework; haeckel: translucent watercolour washes in ochre/sepia/olive */
   function restyle(cv, s, sp) {
     if (s !== "engr" && s !== "haeckel") return cv; var n = cv.width, x = cv.getContext("2d"), im = x.getImageData(0, 0, n, n), d = im.data, A = new Float32Array(n * n), L = new Float32Array(n * n);
@@ -46,8 +46,8 @@
       var e = Math.abs(A[j - 1] - A[j + 1]) + Math.abs(A[j - n] - A[j + n]) + Math.abs(L[j - 1] - L[j + 1]) * a + Math.abs(L[j - n] - L[j + n]) * a, dk = 1 - L[j], k = j * 4, al;
       if (s === "engr") { var hat = ((xx + y) % 6 === 0 ? 1 : 0) * (dk > 0.45 ? 1 : 0) + ((xx - y + n) % 6 === 0 ? 1 : 0) * (dk > 0.75 ? 1 : 0), eg = e > 0.18 ? e : 0;
         al = Math.min(1, eg * 1.8 + hat * 0.3 * a + 0.03 * a); q[k] = 43; q[k + 1] = 26; q[k + 2] = 14; q[k + 3] = al * 255; }
-      else { var wsh = 0.28 + 0.3 * dk + (rr() - 0.5) * 0.06, ed = Math.min(1, e * 1.8), m = ed;
-        q[k] = pc[0] * (1 - m) + sep[0] * m; q[k + 1] = pc[1] * (1 - m) + sep[1] * m; q[k + 2] = pc[2] * (1 - m) + sep[2] * m; q[k + 3] = Math.min(1, a * wsh + ed * 0.9) * 255; }
+      else { var wsh = 0.5 + 0.35 * dk + (rr() - 0.5) * 0.1, ed = Math.min(1, e * 1.4), m = ed * 0.8;
+        q[k] = pc[0] * (1 - m) + sep[0] * m; q[k + 1] = pc[1] * (1 - m) + sep[1] * m; q[k + 2] = pc[2] * (1 - m) + sep[2] * m; q[k + 3] = Math.min(0.92, a * wsh + ed * 0.6) * 255; }
     }
     x.putImageData(o, 0, 0); return cv;
   }

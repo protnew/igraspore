@@ -31,6 +31,7 @@ function render(){
       var _ox=(_cw-_dw)/2 - Math.max(-_sx,Math.min(_sx,(cam.x||0)*0.035));
       var _oy=(_ch-_dh)/2 - Math.max(-_sy,Math.min(_sy,((cam.y||0)-_pd*0.42)*0.02));
       ctx.drawImage(_nb,_ox,_oy,_dw,_dh);
+      if(window.igsMicro) try{ window.igsMicro.draw(ctx,_cw,_ch,cam,performance.now()); }catch(e){}
     } else {
       ctx.fillStyle='#000018'; ctx.fillRect(0,0,cv.width,cv.height);
     }

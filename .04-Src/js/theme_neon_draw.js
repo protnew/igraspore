@@ -47,9 +47,11 @@
     var n = parseInt(h, 16) || 0xffffff; return "rgba(" + (n >> 16 & 255) + "," + (n >> 8 & 255) + "," + (n & 255) + "," + a + ")";
   }
   /* geometry kit shared by all styles */
-  function kit(g, shape, px) {
+  var VAR = [[1, 1], [1.18, 0.82], [0.86, 1.12], [1.35, 0.68]];
+  function kit(g, shape, px, v) {
     var cx = px / 2, cy = px / 2, s = px * 0.26;
     var b = bodyOf(shape), rx = s * b[0], ry = s * b[1], kind = b[2];
+    if (v && kind !== "ph") { rx *= VAR[v % 4][0]; ry *= VAR[v % 4][1]; }
     if (styleNow() === "haeckel" && kind !== "ph" && kind !== "dip") { rx *= 1.18; ry *= 0.78; }   /* elongated Haeckel plates */
     var seed = hashStr(shape) | 1;
     var K = { g: g, px: px, cx: cx, cy: cy, s: s, rx: rx, ry: ry, kind: kind };
@@ -228,32 +230,34 @@
       K.nuc(rgba(col, 0.35), sep + "0.75)", 0);
     }
   };
-  function bake(shape, color, px, st) {
+  function bake(shape, color, px, st, v) {
+    v = v || 0;
     st = st || styleNow();
-    var key = st + "|" + shape + "|" + color + "|" + px + "|v12";
+    var key = st + "|" + shape + "|" + color + "|" + px + "|" + v + "|v13";
     if (CACHE[key]) return CACHE[key];
     var c = document.createElement("canvas"); c.width = px; c.height = px;
-    var K = kit(c.getContext("2d"), shape, px);
+    var K = kit(c.getContext("2d"), shape, px, v);
     (STYLES[st] || STYLES.neon)(K, color);
     CACHE[key] = c;
-    var ks = Object.keys(CACHE); if (ks.length > 240) delete CACHE[ks[0]];
+    var ks = Object.keys(CACHE); if (ks.length > 480) delete CACHE[ks[0]];
     return c;
   }
   function drawCell(c, o, sz) {
     var st = styleNow(), drawSz = drawSzOf(sz);
     var big = (typeof cv !== "undefined" && cv && cv.width > 900) ? 1.9 : 1;
     if (st === "engr") big *= (big > 1 ? 1.45 : 1.15);
-    var k = drawSz * 2.2 * big;
+    var sp = (o && o.sp) || {}, hh = hashStr(sp.id || sp.name || "x"), v = hh % 4;
+    var k = drawSz * 2.2 * big * (0.72 + ((hh >> 3) % 7) * 0.09);   /* per-species size variety, visual only */
     var px = k > 70 ? 160 : k > 40 ? 112 : 72;
-    var spr = bake(shapeOf(o), colOf(o, st), px, st);
+    var spr = bake(shapeOf(o), colOf(o, st), px, st, v);
     c.save(); c.globalAlpha = 0.96; c.drawImage(spr, -k / 2, -k / 2, k, k); c.restore();
   }
   /* bestiary thumbs: same procedural body as in the pond */
   function thumb(sp, theme) {
     var st = STYLE_OF[theme] || "neon", shape = (sp && sp.shape) ? String(sp.shape) : shapeOf({ sp: sp });
-    var col = colOf({ sp: sp }, st), key = st + "|" + shape + "|" + col;
-    if (!THUMBS[key]) { try { THUMBS[key] = bake(shape, col, 160, st).toDataURL("image/png"); } catch (e) { return null; } }
+    var col = colOf({ sp: sp }, st), v = hashStr((sp && (sp.id || sp.name)) || "x") % 4, key = st + "|" + shape + "|" + col + "|" + v;
+    if (!THUMBS[key]) { try { THUMBS[key] = bake(shape, col, 160, st, v).toDataURL("image/png"); } catch (e) { return null; } }
     return THUMBS[key];
   }
-  w.igsNeonDraw = { drawCell: drawCell, bake: bake, thumb: thumb, shapeOf: shapeOf, colOf: colOf, STYLE_OF: STYLE_OF };
+  w.igsNeonDraw = { styleNow: styleNow, bodyOf: bodyOf, drawCell: drawCell, bake: bake, thumb: thumb, shapeOf: shapeOf, colOf: colOf, STYLE_OF: STYLE_OF };
 })(typeof window !== "undefined" ? window : globalThis);

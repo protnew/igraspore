@@ -211,3 +211,4 @@ Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/
 - v5.2 haeckel: watercolour blooms, veins, vacuoles, denser cilia. FPS 60/60, Pop PASS.
 - v5.3 haeckel: muted ochre/sepia/olive palette, translucent washes, thinner sepia outline, elongated bodies (x1.18/x0.78).
 - v5.3 engraving: denser hatching (step 0.019/0.02), heavier contour, 60 stipple dots, creatures x1.45 at 1400 / x1.15 mobile. Pop PASS.
+- v5.4 (all styles infra) + glass: per-species silhouette variants (4 aspect variants), per-species size variety 0.72-1.26 (visual only), new theme_micro.js decorative micro-life layer (24 baked mini-sprites, 150/80 drifting + dust, limited to water band per style). Glass FPS 60/60, Pop PASS.

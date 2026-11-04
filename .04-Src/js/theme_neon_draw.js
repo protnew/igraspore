@@ -8,7 +8,7 @@
     phase:   { prod: ["#cfd6d8"], dec: ["#cfd6d8"], rest: ["#cfd6d8"] },
     engr:    { prod: ["#2b1a0e"], dec: ["#2b1a0e"], rest: ["#2b1a0e"] },
     cyber:   { prod: ["#39ffb0"], dec: ["#ff2bd6"], rest: ["#00f6ff", "#ff2bd6", "#00f6ff", "#ff4fe0"] },
-    glass:   { prod: ["#b6ffc8", "#c8ffb0"], dec: ["#e0c8ff"], rest: ["#9fe8ff", "#c9b8ff", "#ffc2e6", "#a8f0ff"] },
+    glass:   { prod: ["#2fbf6a", "#22a8a0"], dec: ["#8a5cd6"], rest: ["#1e9bd7", "#6f5cd6", "#d64a9b", "#1aa3c4"] },
     haeckel: { prod: ["#6f9e4a", "#8aa648"], dec: ["#b0843a", "#8c6a3a"], rest: ["#c0573a", "#2f7d8c", "#7a4f8e", "#3d6fa8", "#b2464f", "#3f8f7a"] }
   };
   function styleNow() { return STYLE_OF[w.__igsThemePondId] || "neon"; }
@@ -186,16 +186,16 @@
     glass: function (K, col) {
       var g = K.g, px = K.px;
       g.save(); var gr = g.createLinearGradient(K.cx - K.rx, K.bcy - K.ry, K.cx + K.rx, K.bcy + K.ry);
-      gr.addColorStop(0, "rgba(255,255,255,0.35)"); gr.addColorStop(0.5, rgba(col, 0.18)); gr.addColorStop(1, rgba(col, 0.38));
+      gr.addColorStop(0, "rgba(255,255,255,0.35)"); gr.addColorStop(0.5, rgba(col, 0.32)); gr.addColorStop(1, rgba(col, 0.6));
       g.fillStyle = gr; K.path(); g.fill(); g.restore();
-      K.hair("rgba(255,255,255,0.55)", Math.max(0.8, px * 0.007), 1.4, 1, 0);
+      K.hair(rgba(col, 0.8), Math.max(0.8, px * 0.007), 1.4, 1, 0);
       g.save(); K.path(); g.clip();
       g.strokeStyle = rgba(col, 0.75); g.lineWidth = px * 0.05; K.path(); g.stroke();   /* thick inner rim = refraction */
       g.fillStyle = "rgba(255,255,255,0.8)"; g.shadowColor = "#fff"; g.shadowBlur = px * 0.04;
       g.beginPath(); g.ellipse(K.cx - K.rx * 0.38, K.bcy - K.ry * 0.45, K.rx * 0.32, K.ry * 0.16, -0.3, 0, 6.2832); g.fill();
       g.beginPath(); g.arc(K.cx + K.rx * 0.45, K.bcy + K.ry * 0.4, Math.max(1, px * 0.012), 0, 6.2832); g.fill();
       g.restore();
-      g.save(); g.strokeStyle = "rgba(255,255,255,0.9)"; g.lineWidth = Math.max(1, px * 0.012); K.path(); g.stroke(); g.restore();
+      g.save(); g.strokeStyle = rgba(col, 0.95); g.lineWidth = Math.max(1.2, px * 0.02); K.path(); g.stroke(); g.strokeStyle = "rgba(255,255,255,0.9)"; g.lineWidth = Math.max(0.8, px * 0.007); K.path(); g.stroke(); g.restore();
       for (var b = 0; b < 5; b++) { var a = K.rnd() * 6.28, r = Math.sqrt(K.rnd()) * 0.55;
         g.save(); g.strokeStyle = "rgba(255,255,255,0.55)"; g.fillStyle = rgba(col, 0.25); g.lineWidth = Math.max(0.7, px * 0.006);
         g.beginPath(); g.arc(K.cx + Math.cos(a) * K.rx * r, K.bcy + Math.sin(a) * K.ry * r, px * (0.015 + K.rnd() * 0.02), 0, 6.2832); g.fill(); g.stroke(); g.restore(); }
@@ -214,7 +214,7 @@
   };
   function bake(shape, color, px, st) {
     st = st || styleNow();
-    var key = st + "|" + shape + "|" + color + "|" + px + "|v6";
+    var key = st + "|" + shape + "|" + color + "|" + px + "|v7";
     if (CACHE[key]) return CACHE[key];
     var c = document.createElement("canvas"); c.width = px; c.height = px;
     var K = kit(c.getContext("2d"), shape, px);

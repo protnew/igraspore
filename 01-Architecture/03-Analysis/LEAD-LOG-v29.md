@@ -104,3 +104,5 @@
 - box sides: /workspace/v29all3/side_pond_neon-bio.jpg + pond_neon-bio_dedicated.jpg (v3)
 - bestiary species names already real; NO deploy
 - note: Windows Shell hung — commit via GitHub API; local Obsidian tree may lag until pull
+
+- also committed pond/neon_pond_bg.jpg fallback path (26771c5)

@@ -33,3 +33,20 @@ html body #wikiO.v9b .wiki-thumb-wrap{aspect-ratio:auto!important;display:block!
 html body #wikiO.v9b #wikiContent{display:flex!important;flex-wrap:wrap;align-items:flex-start;gap:10px}
 html body #wikiO.v9b .wiki-entry{flex:0 0 calc(50% - 5px)!important;width:calc(50% - 5px)!important;box-sizing:border-box}
 @media(min-width:900px){html body #wikiO.v9b #wikiContent{gap:16px}html body #wikiO.v9b .wiki-entry{flex-basis:calc(33.33% - 11px)!important;width:calc(33.33% - 11px)!important}}
+html body #wikiO.v9b{overflow-x:hidden!important}
+html body #wikiO.v9b #v9bhead{margin-left:0!important;margin-right:0!important;max-width:100%;box-sizing:border-box}
+html body #wikiO.v9b #v9bhead .v9f{max-width:100%;box-sizing:border-box}
+html body #wikiO.v9b #wikiContent,html body #wikiO.v9b .wiki-search{max-width:100%;box-sizing:border-box}
+/* v9 engraving bestiary */
+#wikiO.v9b[data-v9=engr]{background:#efe5cf url("assets/themes/engraving/engraving_pond_bg.jpg") center/cover fixed!important;color:#2b1a0e}
+#wikiO.v9b[data-v9=engr]::before{content:"";position:fixed;inset:0;background:rgba(244,236,218,.86);pointer-events:none}
+#wikiO.v9b[data-v9=engr]>*{position:relative}
+[data-v9=engr] #v9bhead{border:3px double #2b1a0e;background:#f6eedc;margin:0 0 10px;font-family:Georgia,serif}
+[data-v9=engr] #v9bhead .v9t{font-family:Georgia,serif;letter-spacing:.2em}
+[data-v9=engr] #v9bhead .v9f button{background:#f6eedc;border:1px solid #2b1a0e;border-radius:0;color:#2b1a0e;font-family:Georgia,serif;box-shadow:inset 0 0 0 2px #f6eedc,inset 0 0 0 3px #2b1a0e}
+[data-v9=engr] #v9bhead .v9f button.on{background:#2b1a0e;color:#f6eedc}
+html body #wikiO.v9b[data-v9=engr] .wiki-entry{background:#f8f1e1!important;border:1px solid #2b1a0e!important;border-radius:0!important;box-shadow:inset 0 0 0 3px #f8f1e1,inset 0 0 0 4px #2b1a0e!important;font-family:Georgia,serif;color:#2b1a0e}
+html body #wikiO.v9b[data-v9=engr] .wiki-entry>b{text-transform:uppercase;letter-spacing:.03em;font-size:10.5px;word-break:break-word}
+html body #wikiO.v9b[data-v9=engr] img.wiki-thumb.v9big{filter:sepia(.4) contrast(.72) brightness(1.4)!important}
+[data-v9=engr] .v9x .ds{border-top:1px solid #2b1a0e;padding-top:4px;margin-top:2px}
+[data-v9=engr] #v9bbar{background:#f6eedc;border:3px double #2b1a0e;border-radius:0;color:#2b1a0e;font-family:Georgia,serif}

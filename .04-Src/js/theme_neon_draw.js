@@ -154,12 +154,12 @@
     },
     engr: function (K) {
       var g = K.g, px = K.px, ink = "#2b1a0e";
-      g.save(); g.fillStyle = "rgba(238,224,196,0.82)"; K.path(); g.fill(); g.restore();
-      K.hatch(ink, Math.max(2.2, px * 0.03), -0.7, 0.55);
+      g.save(); g.fillStyle = "rgba(242,232,208,0.9)"; K.path(); g.fill(); g.restore();
+      K.hatch(ink, Math.max(2.2, px * 0.028), -0.7, 0.7);
       g.save(); K.path(); g.clip(); g.beginPath(); g.ellipse(K.cx + K.rx * 0.45, K.bcy + K.ry * 0.45, K.rx * 0.9, K.ry * 0.9, 0, 0, 6.2832); g.clip();
       K.hatch(ink, Math.max(2.2, px * 0.03), 0.7, 0.5); g.restore();
       K.hair(ink, Math.max(0.9, px * 0.009), 1.5, 1, 0, true);
-      g.save(); g.strokeStyle = ink; g.lineWidth = Math.max(1.4, px * 0.022); g.lineJoin = "round"; K.path(); g.stroke(); g.restore();
+      g.save(); g.strokeStyle = ink; g.lineWidth = Math.max(1.8, px * 0.03); g.lineJoin = "round"; K.path(); g.stroke(); g.restore();
       K.dots(30, function () { return "rgba(43,26,14,0.85)"; }, 0.7);
       K.nuc("rgba(238,224,196,0.9)", ink, 0);
     },

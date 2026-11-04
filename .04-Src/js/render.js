@@ -27,8 +27,9 @@ function render(){
       var _sc=Math.max(_cw/_nb.width,_ch/_nb.height)*1.12;
       var _dw=_nb.width*_sc,_dh=_nb.height*_sc;
       var _pd=(typeof PD==='number'?PD:2000);
-      var _ox=(_cw-_dw)/2 - (cam.x||0)*0.035;
-      var _oy=(_ch-_dh)/2 - ((cam.y||0)-_pd*0.42)*0.02;
+      var _sx=(_dw-_cw)/2,_sy=(_dh-_ch)/2;
+      var _ox=(_cw-_dw)/2 - Math.max(-_sx,Math.min(_sx,(cam.x||0)*0.035));
+      var _oy=(_ch-_dh)/2 - Math.max(-_sy,Math.min(_sy,((cam.y||0)-_pd*0.42)*0.02));
       ctx.drawImage(_nb,_ox,_oy,_dw,_dh);
     } else {
       ctx.fillStyle='#000018'; ctx.fillRect(0,0,cv.width,cv.height);

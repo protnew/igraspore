@@ -450,7 +450,7 @@
     if (id === "neon-bio") {
       try {
         if (typeof settings !== "undefined" && settings) { settings.renderMode = "swiss"; w._swissStrict = true; }
-        bedState("neon-bio-v6", "assets/themes/neon-bio/neon_pond_bg.jpg?v=6");
+        bedState("neon-bio-v7", "assets/themes/neon-bio/neon_pond_bg.jpg?v=7");
       } catch (eSw) {}
     }
   }

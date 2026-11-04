@@ -190,3 +190,10 @@ Fix:
 
 Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/60 @375. JS visuals 474 / neon_draw 171 / engine 52. Shots `/workspace/v29neon/*_v4.jpg`. Honest eye ~88% vs concept (same cave). No deploy.
 
+
+## v5 neon-bio (2026-11-04)
+- neon_pond_bg.jpg → CLEAN owner background (720×1280, q84, 127KB); concept-baked v4 bg archived to .10-Archive/neon-bg-concept-baked-2026-11-04/. Concept images are never used as game backgrounds.
+- theme_neon_draw.js: procedural species bodies (translucent glowing fill, bright contour, cilia/flagella/phage tail, inner speckles + nucleus); no oval rings, no species PNGs.
+- render.js: cover background with clamped parallax (no uncovered edge when camera is far off-centre).
+- Tests: pop invariant PASS; FPS neon 60.2 ≈ classic 60.2 @375; JS: render 230 / theme_visuals 474 / theme_neon_draw 162.
+- Shots: /workspace/v29neon/*_v5.jpg + side_*_v5.jpg.

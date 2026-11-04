@@ -6,13 +6,17 @@
 }
 /* Pond bar: left of #pauseBtn (top:8px;right:8px;48x48) — never overlap */
 #themePondBar{
-  position:fixed;top:max(8px,env(safe-area-inset-top));right:64px;z-index:85;
+  position:fixed;top:max(8px,env(safe-area-inset-top));right:64px;left:auto!important;z-index:85;
   display:flex;flex-direction:column;gap:4px;pointer-events:auto;
-  background:rgba(0,12,28,.78);padding:6px 8px;border-radius:10px;border:1px solid #1a3a55;max-width:min(220px,42vw)
+  background:rgba(0,12,28,.78);padding:6px 8px;border-radius:10px;border:1px solid #1a3a55;max-width:min(168px,40vw)
 }
 body.in-menu #themePondBar{display:none!important}
 @media (max-width:500px){
-  #themePondBar{right:auto;left:max(8px,env(safe-area-inset-left));top:max(8px,env(safe-area-inset-top));max-width:46vw}
+  /* top-right compact; must clear #hud (max ~200px) on 375 */
+  #themePondBar{right:8px;left:auto!important;top:max(6px,env(safe-area-inset-top));max-width:110px;padding:3px 5px}
+  #themePondBar .theme-sel-label{font-size:9px;line-height:1.1}
+  #themePondBar select{min-height:36px;font-size:11px;padding:3px 4px;max-width:100%}
+  body[data-theme-pond] #hud, body[data-theme-pond] #hud.p{max-width:min(200px,52vw)!important}
 }
 #themeBestiaryBar{margin:0 0 8px 0;display:flex;justify-content:flex-end}
 
@@ -157,34 +161,76 @@ html[data-theme-pond="engraving"],body[data-theme-pond="engraving"]{background:#
 }
 
 
-/* neon-bio dedicated HUD / menu chrome */
-body[data-theme-pond="neon-bio"] #hud .btn,
-html[data-theme="neon-bio"] .menu-panel,
-#wikiO.ov.show[data-theme-bestiary="neon-bio"] {
-  --theme-border: #ff00aa;
-  --theme-accent: #00ffff;
+/* neon-bio dedicated HUD / menu / pond chrome */
+body[data-theme-pond="neon-bio"]{
+  --theme-border:#ff00aa; --theme-accent:#00ffff; --theme-text:#e8fffe;
 }
-body[data-theme-pond="neon-bio"] #hud .btn {
-  border: 2px solid #00ffff;
-  box-shadow: 0 0 12px #00ffff88, inset 0 0 8px #ff00aa44;
-  background: rgba(0,0,8,.75);
-  color: #e8fffe;
+body[data-theme-pond="neon-bio"] #themePondBar{
+  background:rgba(0,0,12,.88)!important;border:1px solid #00ffff!important;
+  box-shadow:0 0 14px #00ffff66, inset 0 0 10px #ff00aa22;
 }
-#wikiO.ov.show[data-theme-bestiary="neon-bio"] {
-  background: #000008;
+body[data-theme-pond="neon-bio"] #themePondBar select{
+  background:#050018!important;color:#e8fffe!important;border-color:#ff00aa!important;
+  box-shadow:0 0 8px #ff00aa55;
 }
-#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-entry {
-  border: 1px solid #00e5ff66;
-  box-shadow: 0 0 10px #00ffff33;
-  background: rgba(0,8,20,.85);
+body[data-theme-pond="neon-bio"] #themePondBar .theme-sel-label{color:#00ffff!important;text-shadow:0 0 6px #0ff}
+body[data-theme-pond="neon-bio"] #hud,
+body[data-theme-pond="neon-bio"] #hud.p{
+  background:rgba(0,0,12,.86)!important;border:1px solid #ff00aa!important;
+  box-shadow:0 0 16px #ff00aa55, inset 0 0 22px #00ffff18!important;
+  color:#e8fffe!important;border-radius:10px;
 }
-#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb-wrap {
-  background: #000;
-  border: 1px solid #ff00aa88;
-  box-shadow: 0 0 16px #00ffff55;
+body[data-theme-pond="neon-bio"] #hud .nm,
+body[data-theme-pond="neon-bio"] #hudTitle{color:#00ffff!important;text-shadow:0 0 8px #0ff}
+body[data-theme-pond="neon-bio"] #hud .la,
+body[data-theme-pond="neon-bio"] #hud .st{color:#c8ffe8!important}
+body[data-theme-pond="neon-bio"] #actBar .ab,
+body[data-theme-pond="neon-bio"] #pauseBtn,
+body[data-theme-pond="neon-bio"] #burgerGame{
+  background:rgba(0,0,10,.82)!important;border:1px solid #00ffff!important;
+  box-shadow:0 0 12px #00ffff66, inset 0 0 8px #ff00aa33!important;
+  color:#e8fffe!important;border-radius:10px;
 }
-body[data-theme-pond="neon-bio"] .menu-root,
-html[data-igs-theme="neon-bio"] .menu-root {
-  background: #000;
+body[data-theme-pond="neon-bio"] #actBar .ab.on,
+body[data-theme-pond="neon-bio"] #actBar .ab.active{
+  border-color:#ff00aa!important;box-shadow:0 0 16px #ff00aa88!important;
+}
+body[data-theme-pond="neon-bio"] #menuO,
+body[data-theme-pond="neon-bio"] #pauseO,
+body[data-theme-pond="neon-bio"] #deadO,
+body[data-theme-pond="neon-bio"] #introO{
+  background:#000008!important;
+}
+body[data-theme-pond="neon-bio"] #menuO .tt,
+body[data-theme-pond="neon-bio"] #pauseO .tt{
+  color:#00ffff!important;text-shadow:0 0 12px #0ff,0 0 24px #f0a;
+}
+body[data-theme-pond="neon-bio"] #menuO .btn,
+body[data-theme-pond="neon-bio"] #pauseO .btn,
+body[data-theme-pond="neon-bio"] #menuFooter .btn,
+body[data-theme-pond="neon-bio"] #deadO .btn{
+  background:rgba(5,0,20,.88)!important;color:#e8fffe!important;
+  border:1px solid #ff00aa!important;
+  box-shadow:0 0 14px #ff00aa55, inset 0 0 10px #00ffff22!important;
+}
+body[data-theme-pond="neon-bio"] #startBtn{
+  border-color:#00ffff!important;box-shadow:0 0 18px #00ffff88, inset 0 0 12px #ff00aa33!important;
+}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"]{
+  background:#000008!important;
+}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-entry{
+  border:1px solid #ff00aa!important;box-shadow:0 0 14px #ff00aa55, inset 0 0 24px #00ffff18!important;
+  background:#050012!important;
+}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .wiki-thumb-wrap{
+  background:#000!important;border:1px solid #ff00aa88!important;box-shadow:0 0 16px #00ffff55;
+}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] #wikiSearch{
+  border-color:#ff00aa!important;box-shadow:0 0 10px #ff00aa55;background:#050012!important;color:#e8fffe!important;
+}
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] .btn,
+#wikiO.ov.show[data-theme-bestiary="neon-bio"] #wikiClose{
+  border:1px solid #ff00aa!important;box-shadow:0 0 12px #ff00aa55;background:#050012!important;color:#e8fffe!important;
 }
 

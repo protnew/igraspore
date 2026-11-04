@@ -3,7 +3,6 @@
   "use strict";
   function tid() { return w.__igsThemePondId || "classic"; }
   function bid() { return w.__igsThemeBestiary || "classic"; }
-
   function wrapSky() {
     if (typeof renderSky !== "function" || renderSky.__igsThemeWrap) return;
     var orig = renderSky;
@@ -78,7 +77,6 @@
     themedSky.__igsThemeWrap = true;
     renderSky = themedSky;
   }
-
   function wrapSun() {
     if (typeof renderSunOverlay !== "function" || renderSunOverlay.__igsThemeWrap) return;
     var orig = renderSunOverlay;
@@ -131,7 +129,14 @@
       var ssz = sz || 4;
       if (id === "neon-bio") {
         if (w.igsNeonDraw && typeof w.igsNeonDraw.drawCell === "function") {
-          try { w.igsNeonDraw.drawCell(c, o, ssz); return; } catch (eN2) {}
+          try {
+            c.save();
+            c.translate(o.x, o.y);
+            if (typeof o.facing === "number") c.rotate(o.facing);
+            w.igsNeonDraw.drawCell(c, o, ssz);
+            c.restore();
+            return;
+          } catch (eN2) {}
         }
         c.save();
         var col = (o && o.sp && o.sp.color) || "#0ff";
@@ -208,54 +213,22 @@
     var W = cv.width, H = cv.height;
     ctx.save();
     if (id === "neon-bio") {
-      try { drawThemePondBed("neon-bio","assets/themes/neon-bio/neon_pond_bg.jpg",0.42); } catch (eBed) {}
-      ctx.globalCompositeOperation = "source-over";
-      var sky = ctx.createLinearGradient(0, 0, 0, H * 0.42);
-      sky.addColorStop(0, "rgba(0,0,0,0.98)");
-      sky.addColorStop(0.55, "rgba(0,0,10,0.72)");
-      sky.addColorStop(1, "rgba(0,18,36,0)");
-      ctx.fillStyle = sky; ctx.fillRect(0, 0, W, H * 0.48);
-      var cx = W * 0.5, topY = H * 0.18, bot = H * 0.95;
-      ctx.save();
+      /* bed via wrapWater; postFX rays+vignette */
+      var cx = W * 0.5, topY = H * 0.14, bot = H * 0.98;
       ctx.globalCompositeOperation = "screen";
       var ray = ctx.createLinearGradient(cx, topY, cx, bot);
-      ray.addColorStop(0, "rgba(0,255,255,0.42)");
-      ray.addColorStop(0.35, "rgba(0,200,255,0.18)");
-      ray.addColorStop(1, "rgba(0,80,160,0)");
+      ray.addColorStop(0, "rgba(0,255,255,0.28)");
+      ray.addColorStop(0.4, "rgba(0,180,255,0.1)");
+      ray.addColorStop(1, "rgba(0,40,80,0)");
       ctx.fillStyle = ray;
       ctx.beginPath();
-      ctx.moveTo(cx - 18, topY);
-      ctx.lineTo(cx + 18, topY);
-      ctx.lineTo(cx + W * 0.28, bot);
-      ctx.lineTo(cx - W * 0.28, bot);
-      ctx.closePath();
-      ctx.fill();
-      ctx.globalAlpha = 0.45;
-      ctx.beginPath();
-      ctx.moveTo(cx - 40, topY + 8);
-      ctx.lineTo(cx - 10, topY + 8);
-      ctx.lineTo(cx - W * 0.08, bot);
-      ctx.lineTo(cx - W * 0.32, bot);
-      ctx.closePath();
-      ctx.fill();
-      ctx.beginPath();
-      ctx.moveTo(cx + 10, topY + 8);
-      ctx.lineTo(cx + 40, topY + 8);
-      ctx.lineTo(cx + W * 0.32, bot);
-      ctx.lineTo(cx + W * 0.08, bot);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-      ctx.globalCompositeOperation = "screen";
-      ctx.fillStyle = "rgba(0,200,220,0.08)";
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "multiply";
-      ctx.fillStyle = "rgba(0,0,0,0.42)";
-      ctx.fillRect(0, 0, W, H);
+      ctx.moveTo(cx - 14, topY); ctx.lineTo(cx + 14, topY);
+      ctx.lineTo(cx + W * 0.22, bot); ctx.lineTo(cx - W * 0.22, bot);
+      ctx.closePath(); ctx.fill();
       ctx.globalCompositeOperation = "source-over";
-      var vig = ctx.createRadialGradient(W / 2, H * 0.55, H * 0.1, W / 2, H * 0.55, H * 0.85);
+      var vig = ctx.createRadialGradient(W / 2, H * 0.55, H * 0.18, W / 2, H * 0.55, H * 0.92);
       vig.addColorStop(0, "rgba(0,0,0,0)");
-      vig.addColorStop(1, "rgba(0,0,0,0.72)");
+      vig.addColorStop(1, "rgba(0,0,0,0.55)");
       ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
     } else if (id === "phase-contrast") {
       try { drawThemePondBed("phase-contrast","assets/themes/phase-contrast/phase_pond_bg.jpg",0.40); } catch (eBed) {}
@@ -335,31 +308,73 @@
     ctx.restore();
   }
 
-
-
-
   var _beds={};
-  function drawThemePondBed(key, src, alpha) {
+  function bedState(key, src) {
     var st=_beds[key];
     if(!st){ st=_beds[key]={img:null,tried:false,fail:false}; }
-    if(st.fail) return;
+    if(st.fail) return null;
     if(!st.img){
-      if(st.tried) return;
-      st.tried=true;
-      try{
-        var im=new Image();
-        im.onload=function(){ st.img=im; };
-        im.onerror=function(){ st.fail=true; };
-        im.src=src;
-      }catch(e){ st.fail=true; return; }
-      return;
+      if(!st.tried){
+        st.tried=true;
+        try{
+          var im=new Image();
+          im.onload=function(){ st.img=im; };
+          im.onerror=function(){ st.fail=true; };
+          im.src=src;
+        }catch(e){ st.fail=true; }
+      }
+      return null;
     }
-    if(typeof ctx==="undefined"||!cv) return;
+    return st;
+  }
+  function drawThemePondBed(key, src, alpha) {
+    var st=bedState(key, src); if(!st||typeof ctx==="undefined"||!cv) return;
     ctx.save();
     ctx.globalCompositeOperation="source-over";
     ctx.globalAlpha=alpha||0.4;
     ctx.drawImage(st.img,0,0,cv.width,cv.height);
     ctx.restore();
+  }
+  function drawThemePondBedScreen(key, src) {
+    var st=bedState(key, src); if(!st||typeof ctx==="undefined"||!cv) return false;
+    ctx.save();
+    ctx.setTransform(1,0,0,1,0,0);
+    ctx.globalCompositeOperation="source-over";
+    ctx.globalAlpha=1;
+    ctx.drawImage(st.img, 0, 0, cv.width, cv.height);
+    ctx.restore();
+    return true;
+  }
+  function wrapWater() {
+    if (typeof renderWater !== "function" || renderWater.__igsThemeWrap) return;
+    var orig = renderWater;
+    function themedWater(vL, vR, vT, vB) {
+      var id = tid();
+      if (id === "neon-bio") {
+        var ok = false;
+        try { ok = drawThemePondBedScreen("neon-bio","assets/themes/neon-bio/neon_pond_bg.jpg"); } catch (eW) {}
+        if (!ok) {
+          ctx.save(); ctx.setTransform(1,0,0,1,0,0);
+          ctx.fillStyle = "#000014"; ctx.fillRect(0,0,cv.width,cv.height); ctx.restore();
+        }
+        ctx.save();
+        var sh = ctx.createLinearGradient(0, -2, 0, 40);
+        sh.addColorStop(0, "rgba(0,255,255,0.28)");
+        sh.addColorStop(1, "rgba(0,40,80,0)");
+        ctx.fillStyle = sh; ctx.fillRect(vL, -6, vR-vL, 48);
+        ctx.strokeStyle = "rgba(120,255,255,0.6)"; ctx.lineWidth = 2;
+        ctx.beginPath();
+        for (var sx=vL; sx<=vR; sx+=8) {
+          var sy = Math.sin(sx*0.04+(typeof gt==="number"?gt:0)*1.2)*2.2;
+          if (sx===vL) ctx.moveTo(sx, sy); else ctx.lineTo(sx, sy);
+        }
+        ctx.stroke(); ctx.restore();
+        return;
+      }
+      return orig.apply(this, arguments);
+    }
+    themedWater.__igsThemeWrap = true;
+    renderWater = themedWater;
   }
 
   w.igsThemePondPostFX = postFX;
@@ -458,20 +473,24 @@
   function ensureNeonDraw(cb) {
     if (w.igsNeonDraw) { if (cb) cb(); return; }
     var s = document.createElement("script");
-    s.src = (document.querySelector('script[src*="theme_visuals"]') || {}).src
-      ? String(document.querySelector('script[src*="theme_visuals"]').src).replace(/theme_visuals\.js.*/, "theme_neon_draw.js")
-      : "04-Src/js/theme_neon_draw.js";
+    var base = (document.querySelector('script[src*="theme_visuals"]') || {}).src || "04-Src/js/theme_visuals.js";
+    s.src = String(base).replace(/theme_visuals\.js.*/, "theme_neon_draw.js");
     s.onload = function () { if (cb) cb(); };
-    s.onerror = function () { try { s.src = ".04-Src/js/theme_neon_draw.js"; } catch (e) {} };
     document.head.appendChild(s);
   }
   function install() {
     ensureNeonDraw();
-    wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapBuildWiki();
+    wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapWater(); wrapBuildWiki();
     var id = tid();
-    var dark = {"neon-bio":0.08,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.55,"haeckel-watercolor":0.75,"glass-lab":0.9};
+    var dark = {"neon-bio":0.18,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.55,"haeckel-watercolor":0.75,"glass-lab":0.9};
     if (dark[id] != null) w.__igsThemeDayLight = dark[id];
     else if (id === "classic") w.__igsThemeDayLight = null;
+    if (id === "neon-bio") {
+      try {
+        if (typeof settings !== "undefined" && settings) { settings.renderMode = "swiss"; w._swissStrict = true; }
+        bedState("neon-bio", "assets/themes/neon-bio/neon_pond_bg.jpg");
+      } catch (eSw) {}
+    }
   }
   w.igsThemeVisuals = { install: install, postFX: postFX, enhanceWiki: enhanceWiki };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", install);

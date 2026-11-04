@@ -138,3 +138,7 @@
 ## 2026-11-04 03:05 Asia/Jerusalem — haeckel-watercolor dedicated assets
 - clean pond bg (no orgs/HUD) + 101 species sprites; theme_visuals bed+thumbs
 - LIVE shots /workspace/v29all3/*_haeckel-watercolor_live.jpg + sides; scientific labels; NO deploy
+
+## 2026-11-04 neon-bio LIVE pass (box)
+- screen-space neon_pond_bg under water; swiss+neon sprites at o.x/o.y; HUD/menu neon CSS; themePondBar no overlap 375/1400
+- shots /workspace/v29neon/; FPS target ≥ classic; JS ≤500

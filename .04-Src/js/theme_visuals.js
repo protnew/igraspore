@@ -119,7 +119,6 @@
     themedPads.__igsThemeWrap = true;
     drawNaturalLilypads = themedPads;
   }
-
   function wrapSwiss() {
     if (typeof w.drawSwissCell !== "function" || w.drawSwissCell.__igsThemeWrap) return;
     var orig = w.drawSwissCell;
@@ -205,7 +204,6 @@
     };
     w.drawSwissCell.__igsThemeWrap = true;
   }
-
   function postFX() {
     var id = tid();
     if (!id || id === "classic" || typeof ctx === "undefined" || !cv) return;
@@ -227,7 +225,7 @@
       ctx.globalCompositeOperation = "source-over";
       var vig = ctx.createRadialGradient(W / 2, H * 0.55, H * 0.18, W / 2, H * 0.55, H * 0.92);
       vig.addColorStop(0, "rgba(0,0,0,0)");
-      vig.addColorStop(1, "rgba(0,0,0,0.38)");
+      vig.addColorStop(1, "rgba(0,0,0,0.22)");
       ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
     } else if (id === "phase-contrast") {
       try { drawThemePondBed("phase-contrast","assets/themes/phase-contrast/phase_pond_bg.jpg",0.40); } catch (eBed) {}
@@ -306,7 +304,6 @@
     }
     ctx.restore();
   }
-
   var _beds={};
   function bedState(key, src) {
     var st=_beds[key];
@@ -351,11 +348,20 @@
       var id = tid();
       if (id === "neon-bio") {
         var ok = false;
-        try { ok = drawThemePondBedScreen("neon-bio","assets/themes/neon-bio/neon_pond_bg.jpg"); } catch (eW) {}
+        try { ok = drawThemePondBedScreen("neon-bio-v4","assets/themes/neon-bio/neon_pond_bg.jpg?v=4"); } catch (eW) {}
         if (!ok) {
           ctx.save(); ctx.setTransform(1,0,0,1,0,0);
           ctx.fillStyle = "#000014"; ctx.fillRect(0,0,cv.width,cv.height); ctx.restore();
         }
+        /* soft surface band only — no wavy tube stroke */
+        ctx.save(); ctx.setTransform(1,0,0,1,0,0);
+        var H = cv.height, W = cv.width;
+        var sg = ctx.createLinearGradient(0, 0, 0, H * 0.14);
+        sg.addColorStop(0, "rgba(40,160,255,0.35)");
+        sg.addColorStop(0.55, "rgba(0,220,255,0.18)");
+        sg.addColorStop(1, "rgba(0,40,80,0)");
+        ctx.fillStyle = sg; ctx.fillRect(0, 0, W, H * 0.14);
+        ctx.restore();
         return;
       }
       return orig.apply(this, arguments);
@@ -363,9 +369,7 @@
     themedWater.__igsThemeWrap = true;
     renderWater = themedWater;
   }
-
   w.igsThemePondPostFX = postFX;
-
   var SPRITE_BASE = "assets/bioicons/swiss_sprites/";
   function shapeForSp(sp) {
     try {
@@ -446,7 +450,6 @@
     }
   }
   w.igsThemeWikiEnhance = enhanceWiki;
-
   function wrapBuildWiki() {
     if (typeof buildWiki !== "function" || buildWiki.__igsThemeWrap) return;
     var orig = buildWiki;
@@ -456,7 +459,6 @@
     };
     buildWiki.__igsThemeWrap = true;
   }
-
   function ensureNeonDraw(cb) {
     if (w.igsNeonDraw) { if (cb) cb(); return; }
     var s = document.createElement("script");
@@ -469,17 +471,16 @@
     ensureNeonDraw();
     wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapWater(); wrapShoreBubbles(); wrapBuildWiki();
     var id = tid();
-    var dark = {"neon-bio":0.18,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.55,"haeckel-watercolor":0.75,"glass-lab":0.9};
+    var dark = {"neon-bio":0.42,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.55,"haeckel-watercolor":0.75,"glass-lab":0.9};
     if (dark[id] != null) w.__igsThemeDayLight = dark[id];
     else if (id === "classic") w.__igsThemeDayLight = null;
     if (id === "neon-bio") {
       try {
         if (typeof settings !== "undefined" && settings) { settings.renderMode = "swiss"; w._swissStrict = true; }
-        bedState("neon-bio", "assets/themes/neon-bio/neon_pond_bg.jpg");
+        bedState("neon-bio-v4", "assets/themes/neon-bio/neon_pond_bg.jpg?v=4");
       } catch (eSw) {}
     }
   }
-
   function wrapShoreBubbles() {
     function skip(get, set) {
       var fn = get(); if (typeof fn !== "function" || fn.__igsThemeWrap) return;
@@ -491,7 +492,6 @@
     skip(function () { return typeof renderBubbles === "function" ? renderBubbles : null; }, function (f) { renderBubbles = f; });
     skip(function () { return typeof renderSediment === "function" ? renderSediment : null; }, function (f) { renderSediment = f; });
   }
-
   w.igsThemeVisuals = { install: install, postFX: postFX, enhanceWiki: enhanceWiki };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", install);
   else install();

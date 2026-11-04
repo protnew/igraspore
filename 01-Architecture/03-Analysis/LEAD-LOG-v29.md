@@ -155,3 +155,16 @@ Fixes:
 
 FPS @1400: neon 60 ≥ classic 55; @375: neon 60 ≈ classic 60. JS: neon_draw 177, visuals 500, engine 52. Shots `/workspace/v29neon/*_v2.jpg`. No deploy. Honest eye ~85–88% vs concept 03 (still HUD chrome differs from circular concept icons).
 
+## 2026-11-04 03:34 IST — neon-bio LIVE v3
+
+Owner rejected v2 (~70%): Pop:11, dull plaques, black left wall, square buttons.
+
+(0) Pop:11 was shot-script artifact (`orgs.length=0` seed). Real spawn classic=297 neon=297 delta=0 same seed. Added `07-QA-and-Testing/playwright/test_theme_pop_invariant.mjs`. sp.num only affects PNG index in theme_neon_draw — not biology/spawn.
+
+(1) Species PNGs: punched dark fills → transparent; removed draw tint ellipse; single-pass contour glow (FPS-safe).
+(2) neon_pond_bg rebuilt: translucent symmetric cave rims + surface band + rays + bed; shore/bubbles still skipped.
+(3) actBar buttons border-radius:50% circular neon.
+
+FPS: neon 60 ≥ classic 51 @1400; 60/60 @375. JS neon_draw 169 / visuals 500 / engine 52.
+Shots /workspace/v29neon/*_v3.jpg. Honest eye ~85%. No deploy.
+

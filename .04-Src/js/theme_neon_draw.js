@@ -44,14 +44,14 @@
       var pad = ("00" + idx).slice(-3);
       im.onload = function () { SP_IMG[k] = im; };
       im.onerror = function () { /* keep tried */ };
-      im.src = "assets/themes/neon-bio/sprites/species/" + pad + ".png";
+      im.src = "assets/themes/neon-bio/sprites/species/" + pad + ".png?v=3";
     } catch (e3) {}
     return null;
   }
   function neonDrawSz(sz) {
     /* Readable game scale (cilia/nucleus visible) without half-screen giants */
     if (w.demoMode) return Math.max(18, Math.min(34, (sz || 4) * 5));
-    return Math.max(5.5, Math.min(26, (sz || 4) * 2.6));
+    return Math.max(6.5, Math.min(28, (sz || 4) * 2.9));
   }
   function bake(shape, color, px) {
     var key = shape + "|" + color + "|" + px + "|v4";
@@ -62,7 +62,7 @@
     var cx = px / 2, cy = px / 2, s = px * 0.28;
     function faintFill(pathFn) {
       g.save();
-      g.globalAlpha = 0.38;
+      g.globalAlpha = 0.16;
       g.fillStyle = color;
       g.beginPath(); pathFn(); g.fill();
       g.restore();
@@ -138,6 +138,16 @@
     var color = colOf(o);
     var idx = spIdx(o);
     var sp = loadSp(idx);
+    function glowDraw(img, x, y, w, h) {
+      /* single-pass glow — keep FPS ≥ classic at 1400 */
+      c.save();
+      c.globalCompositeOperation = "source-over";
+      c.globalAlpha = 1;
+      c.shadowColor = color;
+      c.shadowBlur = Math.max(4, Math.min(14, drawSz * 0.55));
+      c.drawImage(img, x, y, w, h);
+      c.restore();
+    }
     if (sp && (sp.naturalWidth || sp.width) > 1) {
       var iw = sp.naturalWidth || sp.width;
       var ih = sp.naturalHeight || sp.height;
@@ -145,31 +155,12 @@
       var dw, dh;
       if (aspect >= 1) { dw = drawSz; dh = drawSz / aspect; }
       else { dh = drawSz; dw = drawSz * aspect; }
-      c.save();
-      c.globalCompositeOperation = "source-over";
-      c.globalAlpha = 1;
-      c.shadowColor = color;
-      c.shadowBlur = Math.max(4, drawSz * 0.55);
-      c.drawImage(sp, -dw / 2, -dh / 2, dw, dh);
-      c.shadowBlur = 0;
-      /* soft translucent tint so fill reads neon */
-      c.globalAlpha = 0.22;
-      c.fillStyle = color;
-      c.beginPath();
-      c.ellipse(0, 0, dw * 0.42, dh * 0.42, 0, 0, Math.PI * 2);
-      c.fill();
-      c.restore();
+      glowDraw(sp, -dw / 2, -dh / 2, dw, dh);
       return;
     }
     var px = Math.max(48, Math.min(128, Math.round(drawSz * 10)));
     var spr = bake(shape, color, px);
-    c.save();
-    c.globalCompositeOperation = "source-over";
-    c.globalAlpha = 1;
-    c.shadowColor = color;
-    c.shadowBlur = Math.max(3, drawSz * 0.4);
-    c.drawImage(spr, -drawSz, -drawSz, drawSz * 2, drawSz * 2);
-    c.restore();
+    glowDraw(spr, -drawSz, -drawSz, drawSz * 2, drawSz * 2);
   }
   var SPRITE_BASE = "assets/themes/neon-bio/sprites/";
   function wikiThumbSrc(shape) { return SPRITE_BASE + (shape || "circle") + ".png"; }

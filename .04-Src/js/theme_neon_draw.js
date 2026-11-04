@@ -242,6 +242,15 @@
     var ks = Object.keys(CACHE); if (ks.length > 480) delete CACHE[ks[0]];
     return c;
   }
+  /* at most 2 new sprite bakes per frame: avoids multi-second stalls when many species appear at once */
+  var BF = { t: 0, n: 0 };
+  function bakeBudget(shape, color, px, st, v) {
+    var key = st + "|" + shape + "|" + color + "|" + px + "|" + v + "|v13";
+    if (CACHE[key]) return CACHE[key];
+    var now = (w.performance ? performance.now() : Date.now()); if (now - BF.t > 12) { BF.t = now; BF.n = 0; }
+    if (BF.n >= 2) { var alt = CACHE[st + "|" + shape + "|" + color + "|72|" + v + "|v13"]; return alt || null; }
+    BF.n++; return bake(shape, color, px, st, v);
+  }
   function drawCell(c, o, sz) {
     var st = styleNow(), drawSz = drawSzOf(sz);
     var big = (typeof cv !== "undefined" && cv && cv.width > 900) ? 1.9 : 1;
@@ -249,7 +258,9 @@
     var sp = (o && o.sp) || {}, hh = hashStr(sp.id || sp.name || "x"), v = hh % 4;
     var k = drawSz * 2.2 * big * (0.72 + ((hh >> 3) % 7) * 0.09);   /* per-species size variety, visual only */
     var px = k > 70 ? 160 : k > 40 ? 112 : 72;
-    var spr = bake(shapeOf(o), colOf(o, st), px, st, v);
+    if (st === "engr" && big < 1.5 && px > 112) px = 112;   /* phone: cheaper engraving sprites */
+    var spr = bakeBudget(shapeOf(o), colOf(o, st), px, st, v);
+    if (!spr) { c.save(); c.globalAlpha = 0.5; c.fillStyle = colOf(o, st); c.beginPath(); c.ellipse(0, 0, k * 0.3, k * 0.18, 0, 0, 6.283); c.fill(); c.restore(); return; }
     c.save(); c.globalAlpha = 0.96; c.drawImage(spr, -k / 2, -k / 2, k, k); c.restore();
   }
   /* bestiary thumbs: same procedural body as in the pond */

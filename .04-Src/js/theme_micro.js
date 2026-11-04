@@ -1,4 +1,4 @@
-/* theme_micro.js — v5.4 decorative micro-life layer for v5 pond styles.
+/* theme_micro.js — v5.6 decorative micro-life layer for v5 pond styles.
    Purely visual: tiny drifting organisms + particles drawn over the clean bg, behind real cells.
    Never touches simulation state. Cost: ~1 drawImage per particle (pre-baked sprites). */
 (function (w) {
@@ -19,17 +19,26 @@
       var col = D.colOf({ sp: sp }, st);
       sprites.push(D.bake(SH[i % SH.length], col, 72, st, i % 4));
     }
-    var N = wide ? 150 : 80, parts = [];
+    var N = wide ? 150 : 46, parts = [];
     for (i = 0; i < N; i++) {
       var d = 0.35 + r() * 0.65;
       parts.push({ x: r(), y: (YR[st] || YR.neon)[0] + r() * ((YR[st] || YR.neon)[1] - (YR[st] || YR.neon)[0]), d: d, s: (wide ? 20 : 13) + r() * (wide ? 36 : 20) * d, k: (r() * sprites.length) | 0,
         a: r() * 6.283, sp: 0.15 + r() * 0.5, rot: r() * 6.283, vr: (r() - 0.5) * 0.4 });
     }
     var dots = [];
-    for (i = 0; i < (wide ? 220 : 120); i++) dots.push({ x: r(), y: (YR[st] || YR.neon)[0] + r() * ((YR[st] || YR.neon)[1] - (YR[st] || YR.neon)[0]), r: 0.6 + r() * 1.8, ph: r() * 6.283 });
+    for (i = 0; i < (wide ? 220 : 60); i++) dots.push({ x: r(), y: (YR[st] || YR.neon)[0] + r() * ((YR[st] || YR.neon)[1] - (YR[st] || YR.neon)[0]), r: 0.6 + r() * 1.8, ph: r() * 6.283 });
     state = { st: st, sprites: sprites, parts: parts, dots: dots, wide: wide };
   }
+  /* phone: render the layer into an offscreen canvas every 3rd frame, blit once per frame */
+  var off = null, offF = 0;
   function draw(ctx, cw, ch, cam, t) {
+    if (cw > 900) return drawRaw(ctx, cw, ch, cam, t);
+    if (!off) off = document.createElement("canvas");
+    if (off.width !== cw || off.height !== ch) { off.width = cw; off.height = ch; offF = 0; }
+    if (offF++ % 3 === 0) { var o = off.getContext("2d"); o.setTransform(1, 0, 0, 1, 0, 0); o.clearRect(0, 0, cw, ch); drawRaw(o, cw, ch, cam, t); }
+    ctx.drawImage(off, 0, 0, cw, ch);
+  }
+  function drawRaw(ctx, cw, ch, cam, t) {
     var D = w.igsNeonDraw; if (!D) return;
     var st = D.styleNow(), wide = cw > 900;
     if (state.st !== st || state.wide !== wide) build(st, wide);

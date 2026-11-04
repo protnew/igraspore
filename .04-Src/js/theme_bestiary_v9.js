@@ -24,8 +24,20 @@
     c.restore();
   }
   /* procedural phage for viruses (icosahedral head, collar, tail, fibres) */
-  function phage(c, px, ink, seed) {
-    var r = rnd(seed), k = px / 2, h = k * 0.32; c.save(); c.translate(k, k * 0.7); c.strokeStyle = ink; c.fillStyle = ink; c.lineWidth = px / 90;
+  /* real morphology of the game's named phages: T4 Myoviridae (long contractile tail), Lambda Siphoviridae (long flexible
+     non-contractile tail), T7 Podoviridae (short stub tail), Phi-6 Cystoviridae (enveloped, no tail), MS2 Leviviridae (tiny, no tail) */
+  var MORPH = { "T4 Bacteriophage": "myo", "Lambda Phage": "sipho", "T7 Bacteriophage": "podo", "Phi-6 Phage": "cysto", "MS2 Phage": "levi" };
+  function phage(c, px, ink, seed, nm) {
+    var mo = MORPH[nm] || "myo", r = rnd(seed), k = px / 2, h = k * 0.32;
+    if (mo === "cysto" || mo === "levi" || mo === "podo" || mo === "sipho") { c.save(); c.translate(k, mo === "sipho" ? k * 0.55 : k); c.strokeStyle = ink; c.fillStyle = ink; c.lineWidth = px / 110;
+      var R = mo === "levi" ? h * 0.75 : h * 1.05, i, a;
+      if (mo === "cysto") { c.beginPath(); c.arc(0, 0, R * 1.15, 0, 6.283); c.globalAlpha = 0.18; c.fill(); c.globalAlpha = 1; c.stroke();
+        for (i = 0; i < 28; i++) { a = i * 0.2244; c.beginPath(); c.moveTo(Math.cos(a) * R * 1.15, Math.sin(a) * R * 1.15); c.lineTo(Math.cos(a) * R * 1.3, Math.sin(a) * R * 1.3); c.stroke(); } R *= 0.7; }
+      c.beginPath(); for (i = 0; i < 6; i++) { a = i * 1.047 + 0.5236; c.lineTo(Math.cos(a) * R, Math.sin(a) * R); } c.closePath(); c.globalAlpha = 0.25; c.fill(); c.globalAlpha = 1; c.stroke();
+      c.lineWidth = px / 220; c.beginPath(); for (i = 0; i < 3; i++) { a = i * 2.094 + 0.5236; c.moveTo(0, 0); c.lineTo(Math.cos(a) * R, Math.sin(a) * R); } c.stroke();
+      if (mo === "podo") { c.lineWidth = px / 80; c.beginPath(); c.moveTo(0, R); c.lineTo(0, R * 1.35); c.stroke(); c.lineWidth = px / 160; [-1, 1].forEach(function (sg) { c.beginPath(); c.moveTo(0, R * 1.3); c.lineTo(sg * R * 0.45, R * 1.6); c.stroke(); }); }
+      if (mo === "sipho") { c.lineWidth = px / 120; c.beginPath(); c.moveTo(0, R); for (i = 1; i <= 24; i++) c.lineTo(Math.sin(i * 0.35) * R * 0.12, R + i * R * 0.07); c.stroke(); c.beginPath(); c.moveTo(Math.sin(8.4) * R * 0.12, R * 2.68); c.lineTo(Math.sin(8.4) * R * 0.12, R * 2.9); c.stroke(); }
+      c.restore(); return; } c.save(); c.translate(k, k * 0.7); c.strokeStyle = ink; c.fillStyle = ink; c.lineWidth = px / 90;
     c.beginPath(); for (var i = 0; i < 6; i++) { var a = i * 1.047 + 0.5236; c.lineTo(Math.cos(a) * h, Math.sin(a) * h); } c.closePath(); c.globalAlpha = 0.25; c.fill(); c.globalAlpha = 1; c.stroke();
     c.lineWidth = px / 200; c.beginPath(); c.moveTo(-h * 0.87, -h * 0.5); c.lineTo(0, 0); c.lineTo(h * 0.87, -h * 0.5); c.moveTo(0, 0); c.lineTo(0, h); c.stroke();
     c.globalAlpha = 0.6; for (var d = 0; d < 7; d++) { c.beginPath(); c.arc((r() - 0.5) * h, (r() - 0.6) * h, h * 0.06, 0, 6.283); c.fill(); } c.globalAlpha = 1;
@@ -35,17 +47,21 @@
     for (var f = 0; f < 3; f++) { var sx = (f - 1) * h * 0.3; [-1, 1].forEach(function (sg) { c.beginPath(); c.moveTo(sx, by); c.lineTo(sx + sg * h * 0.45, by + h * 0.35); c.lineTo(sx + sg * h * 0.6, by + h * 0.75); c.stroke(); }); }
     c.restore();
   }
-  var PAL = { producer: [118, 138, 60], consumer1: [196, 140, 60], consumer2: [176, 104, 62], consumer3: [168, 82, 70], decomposer: [140, 108, 72], virus: [170, 80, 66] };
+  var PAL = { producer: [92, 140, 52], consumer1: [214, 146, 40], consumer2: [196, 102, 44], consumer3: [186, 70, 64], decomposer: [150, 104, 56], virus: [190, 72, 60] };
   /* engraving: light hatched linework; haeckel: translucent watercolour washes in ochre/sepia/olive */
   function restyle(cv, s, sp) {
+    if (s === "glass") { var g = cv.getContext("2d"), N = cv.width, gr = g.createRadialGradient(N * 0.36, N * 0.3, 2, N * 0.42, N * 0.38, N * 0.42);
+      g.save(); g.globalCompositeOperation = "source-atop"; gr.addColorStop(0, "rgba(255,255,255,.85)"); gr.addColorStop(0.35, "rgba(255,255,255,.2)"); gr.addColorStop(1, "rgba(70,130,190,.28)");
+      g.fillStyle = gr; g.fillRect(0, 0, N, N); var lg = g.createLinearGradient(0, N, N, 0); lg.addColorStop(0, "rgba(40,110,170,.25)"); lg.addColorStop(0.5, "rgba(255,255,255,0)"); lg.addColorStop(1, "rgba(255,255,255,.25)");
+      g.fillStyle = lg; g.fillRect(0, 0, N, N); g.globalCompositeOperation = "source-over"; g.restore(); return cv; }
     if (s !== "engr" && s !== "haeckel") return cv; var n = cv.width, x = cv.getContext("2d"), im = x.getImageData(0, 0, n, n), d = im.data, A = new Float32Array(n * n), L = new Float32Array(n * n);
     for (var i = 0; i < n * n; i++) { A[i] = d[i * 4 + 3] / 255; L[i] = (d[i * 4] * 0.3 + d[i * 4 + 1] * 0.59 + d[i * 4 + 2] * 0.11) / 255; }
     var o = x.createImageData(n, n), q = o.data, pc = PAL[sp.cat] || PAL.consumer1, sep = [74, 46, 24], rr = rnd(hash(sp.name));
     for (var y = 1; y < n - 1; y++) for (var xx = 1; xx < n - 1; xx++) {
       var j = y * n + xx, a = A[j]; if (a < 0.03) continue;
-      var e = Math.abs(A[j - 1] - A[j + 1]) + Math.abs(A[j - n] - A[j + n]) + Math.abs(L[j - 1] - L[j + 1]) * a + Math.abs(L[j - n] - L[j + n]) * a, dk = 1 - L[j], k = j * 4, al;
-      if (s === "engr") { var hat = ((xx + y) % 6 === 0 ? 1 : 0) * (dk > 0.45 ? 1 : 0) + ((xx - y + n) % 6 === 0 ? 1 : 0) * (dk > 0.75 ? 1 : 0), eg = e > 0.18 ? e : 0;
-        al = Math.min(1, eg * 1.8 + hat * 0.3 * a + 0.03 * a); q[k] = 43; q[k + 1] = 26; q[k + 2] = 14; q[k + 3] = al * 255; }
+      var ea = Math.abs(A[j - 1] - A[j + 1]) + Math.abs(A[j - n] - A[j + n]), el = (Math.abs(L[j - 1] - L[j + 1]) + Math.abs(L[j - n] - L[j + n])) * a, e = ea + el, dk = 1 - L[j], k = j * 4, al;
+      if (s === "engr") { var hat = ((xx + y) % 7 === 0 ? 1 : 0) * (dk > 0.7 ? 1 : 0), eg = (ea > 0.5 ? 0.85 : ea > 0.25 ? 0.45 : 0) + (el > 0.6 ? 0.5 : 0);
+        al = Math.min(0.9, eg + hat * 0.18 * a); q[k] = 43; q[k + 1] = 26; q[k + 2] = 14; q[k + 3] = al * 255; }
       else { var wsh = 0.5 + 0.35 * dk + (rr() - 0.5) * 0.1, ed = Math.min(1, e * 1.4), m = ed * 0.8;
         q[k] = pc[0] * (1 - m) + sep[0] * m; q[k + 1] = pc[1] * (1 - m) + sep[1] * m; q[k + 2] = pc[2] * (1 - m) + sep[2] * m; q[k + 3] = Math.min(0.92, a * wsh + ed * 0.6) * 255; }
     }
@@ -56,7 +72,7 @@
     var D = w.igsNeonDraw, shape = sp.shape ? String(sp.shape) : D.shapeOf({ sp: sp }), col = D.colOf({ sp: sp }, s), px = 300;
     var spr = sp.cat === "virus" ? null : D.bake(shape, col, px, s, hash(sp.id || sp.name) % 4);
     var c = document.createElement("canvas"); c.width = c.height = px; var x = c.getContext("2d");
-    if (spr) { x.drawImage(spr, 0, 0); detail(x, sp, s, px); } else phage(x, px, s === "cyber" || s === "neon" || s === "phase" ? (s === "cyber" ? "#ff3cf0" : "#e8fff9") : (s === "glass" ? "#5b7f9e" : "#5a3a1e"), hash(sp.name));
+    if (spr) { x.drawImage(spr, 0, 0); detail(x, sp, s, px); } else phage(x, px, s === "cyber" || s === "neon" || s === "phase" ? (s === "cyber" ? "#ff3cf0" : "#e8fff9") : (s === "glass" ? "#5b7f9e" : "#5a3a1e"), hash(sp.name), sp.name);
     /* crop to the creature so it fills the card */
     try { var d = x.getImageData(0, 0, px, px).data, x0 = px, y0 = px, x1 = 0, y1 = 0;
       for (var yy = 0; yy < px; yy += 2) for (var xx = 0; xx < px; xx += 2) if (d[(yy * px + xx) * 4 + 3] > 24) { if (xx < x0) x0 = xx; if (xx > x1) x1 = xx; if (yy < y0) y0 = yy; if (yy > y1) y1 = yy; }
@@ -64,6 +80,9 @@
         o2.getContext("2d").drawImage(c, cx - side / 2, cy - side / 2, side, side, 0, 0, 320, 320); c = o2; } c = restyle(c, s, sp); } catch (e) {}
     try { BIG[key] = c.toDataURL("image/png"); } catch (e) { return null; } return BIG[key];
   }
+  /* first sentence, not cut at abbreviations like "E. coli", "sp.", "e.g." */
+  var ABBR = /(^|\s)([A-Z]|sp|spp|e\.g|i\.e|cf|approx|ca|var|subsp|St|Dr|vs|etc|No|Fig)\.$/;
+  function first(t) { var re = /[.!?](\s+|$)/g, m; while ((m = re.exec(t))) { var head = t.slice(0, m.index + 1); if (!ABBR.test(head) || !m[1]) return head; } return t; }
   function svg(d) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="' + d + '"/></svg>'; }
   var I = { pond: "M3 15c3-2 6 2 9 0s6-2 9 0M3 19c3-2 6 2 9 0s6-2 9 0M12 4a4 4 0 1 0 .1 0", gal: "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z", find: "M10 4a6 6 0 1 0 .1 0M14.5 14.5L20 20", help: "M12 3a9 9 0 1 0 .1 0M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.7M12 17h.1", all: "M6 8h.1M12 6h.1M18 8h.1M8 13h.1M14 12h.1M17 16h.1M10 18h.1" };
   function fire(id) { var e = document.getElementById(id); if (e) e.click(); }
@@ -108,7 +127,8 @@
       if (!im && sp.cat === "virus") { var tw = document.createElement("div"); tw.className = "wiki-thumb-wrap"; im = document.createElement("img"); im.className = "wiki-thumb"; im.alt = sp.name; tw.appendChild(im); var bb = en.querySelector("b"); en.insertBefore(tw, bb ? bb.nextSibling : en.firstChild); }
       var u = render(sp, s); if (u && im) { im.src = u; im.classList.add("v9big"); }
       var ex = en.querySelector(".v9x"); if (ex) ex.remove(); ex = document.createElement("div"); ex.className = "v9x";
-      var grp = CAT[sp.cat] || sp.cat, desc = ((en.querySelector(".wa") || {}).textContent || "").split(/(?<=\.)\s/)[0];
+      var grp = CAT[sp.cat] || sp.cat, desc = ((en.querySelector(".wa") || {}).textContent || "");
+      desc = first(desc);
       if (s === "cyber") ex.innerHTML = '<span class="id">ID: ' + (CODE[sp.cat] || "SP") + "-" + ("00" + (sp.num || sp.id)).slice(-3) + '</span><span class="gp">GROUP: ' + grp.toUpperCase() + '</span><span class="sz">' + (sp.size || "") + 'μm · ' + String(sp.locomotion || "").toUpperCase() + '</span>';
       else if (s === "engr" || s === "haeckel") ex.innerHTML = '<span class="gp">(' + grp + ')</span><i>' + sp.name + '</i><span class="ds">' + desc + '</span>';
       else ex.innerHTML = '<span class="gp">' + grp + '</span>';

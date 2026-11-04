@@ -12,16 +12,17 @@
       var h = -vT;
       if (vT >= 5) { if (id === "neon-bio" || id === "cyberpunk-scanner" || id === "phase-contrast" || id === "engraving") w._sunPos = null; return; }
       if (h < 1) return;
-      if (id === "neon-bio" || id === "cyberpunk-scanner") {
+      if (id === "neon-bio") { w._sunPos = null; return; }
+      if (id === "cyberpunk-scanner") {
         w._sunPos = null;
-        ctx.fillStyle = id === "neon-bio" ? "#000004" : "#050008";
+        ctx.fillStyle = "#050008";
         ctx.fillRect(vL - 20, vT - 2, (vR - vL) + 40, h + 4);
         ctx.save();
         for (var si = 0; si < 48; si++) {
           var sx = vL + ((si * 97) % Math.max(1, vR - vL));
           var sy = vT + 8 + ((si * 53) % Math.max(1, h * 0.7));
           ctx.globalAlpha = 0.3 + (si % 5) * 0.1;
-          ctx.fillStyle = id === "neon-bio" ? "#7ff" : "#f0f";
+          ctx.fillStyle = "#f0f";
           ctx.beginPath(); ctx.arc(sx, sy, 0.8, 0, Math.PI * 2); ctx.fill();
         }
         ctx.restore();
@@ -210,22 +211,10 @@
     var W = cv.width, H = cv.height;
     ctx.save();
     if (id === "neon-bio") {
-      /* bed via wrapWater */
-      var cx = W * 0.5, topY = H * 0.14, bot = H * 0.98;
-      ctx.globalCompositeOperation = "screen";
-      var ray = ctx.createLinearGradient(cx, topY, cx, bot);
-      ray.addColorStop(0, "rgba(0,255,255,0.28)");
-      ray.addColorStop(0.4, "rgba(0,180,255,0.1)");
-      ray.addColorStop(1, "rgba(0,40,80,0)");
-      ctx.fillStyle = ray;
-      ctx.beginPath();
-      ctx.moveTo(cx - 14, topY); ctx.lineTo(cx + 14, topY);
-      ctx.lineTo(cx + W * 0.22, bot); ctx.lineTo(cx - W * 0.22, bot);
-      ctx.closePath(); ctx.fill();
-      ctx.globalCompositeOperation = "source-over";
-      var vig = ctx.createRadialGradient(W / 2, H * 0.55, H * 0.18, W / 2, H * 0.55, H * 0.92);
+      /* cover bg already in render.js; soft vignette only */
+      var vig = ctx.createRadialGradient(W / 2, H * 0.5, H * 0.2, W / 2, H * 0.5, H * 0.95);
       vig.addColorStop(0, "rgba(0,0,0,0)");
-      vig.addColorStop(1, "rgba(0,0,0,0.22)");
+      vig.addColorStop(1, "rgba(0,0,0,0.18)");
       ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
     } else if (id === "phase-contrast") {
       try { drawThemePondBed("phase-contrast","assets/themes/phase-contrast/phase_pond_bg.jpg",0.40); } catch (eBed) {}
@@ -314,13 +303,14 @@
         st.tried=true;
         try{
           var im=new Image();
-          im.onload=function(){ st.img=im; };
+          im.onload=function(){ st.img=im; if(key.indexOf("neon-bio")===0) w.__igsNeonPondBg=im; };
           im.onerror=function(){ st.fail=true; };
           im.src=src;
         }catch(e){ st.fail=true; }
       }
       return null;
     }
+    if(key.indexOf("neon-bio")===0) w.__igsNeonPondBg=st.img;
     return st;
   }
   function drawThemePondBed(key, src, alpha) {
@@ -346,24 +336,7 @@
     var orig = renderWater;
     function themedWater(vL, vR, vT, vB) {
       var id = tid();
-      if (id === "neon-bio") {
-        var ok = false;
-        try { ok = drawThemePondBedScreen("neon-bio-v5","assets/themes/neon-bio/neon_pond_bg.jpg?v=5"); } catch (eW) {}
-        if (!ok) {
-          ctx.save(); ctx.setTransform(1,0,0,1,0,0);
-          ctx.fillStyle = "#000014"; ctx.fillRect(0,0,cv.width,cv.height); ctx.restore();
-        }
-        /* soft surface band only — no wavy tube stroke */
-        ctx.save(); ctx.setTransform(1,0,0,1,0,0);
-        var H = cv.height, W = cv.width;
-        var sg = ctx.createLinearGradient(0, 0, 0, H * 0.18);
-        sg.addColorStop(0, "rgba(80,200,255,0.55)");
-        sg.addColorStop(0.4, "rgba(0,255,255,0.32)");
-        sg.addColorStop(1, "rgba(0,40,80,0)");
-        ctx.fillStyle = sg; ctx.fillRect(0, 0, W, H * 0.18);
-        ctx.restore();
-        return;
-      }
+      if (id === "neon-bio") { return; }
       return orig.apply(this, arguments);
     }
     themedWater.__igsThemeWrap = true;
@@ -477,7 +450,7 @@
     if (id === "neon-bio") {
       try {
         if (typeof settings !== "undefined" && settings) { settings.renderMode = "swiss"; w._swissStrict = true; }
-        bedState("neon-bio-v5", "assets/themes/neon-bio/neon_pond_bg.jpg?v=5");
+        bedState("neon-bio-v6", "assets/themes/neon-bio/neon_pond_bg.jpg?v=6");
       } catch (eSw) {}
     }
   }
@@ -491,6 +464,7 @@
     skip(function () { return typeof renderShore === "function" ? renderShore : null; }, function (f) { renderShore = f; });
     skip(function () { return typeof renderBubbles === "function" ? renderBubbles : null; }, function (f) { renderBubbles = f; });
     skip(function () { return typeof renderSediment === "function" ? renderSediment : null; }, function (f) { renderSediment = f; });
+    skip(function () { return typeof renderSunRays === "function" ? renderSunRays : null; }, function (f) { renderSunRays = f; });
   }
   w.igsThemeVisuals = { install: install, postFX: postFX, enhanceWiki: enhanceWiki };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", install);

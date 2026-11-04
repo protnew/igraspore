@@ -177,3 +177,16 @@ Shots /workspace/v29neon/*_v3.jpg. Honest eye ~85%. No deploy.
 - Honest eye vs concept 03: ~85% (surface shimmer & creature cilia detail still weaker)
 - No deploy
 
+
+## 2026-11-04 03:55 IST — neon-bio LIVE v4
+
+Owner rejected v3 (~50%): black upper void + dotted lines + rectangular ray; flat blue jagged rect; dull small creatures. Root cause: `render.js` water `clip()` clipped fullscreen `neon_pond_bg` to world water band; STEP1 sky/water gradients + sky dots + sunRays still painted.
+
+Fix:
+- render.js: neon draws `neon_pond_bg` cover on full viewport with cam parallax in STEP1; skips sky/water/sunRays/sediment/shore/bubbles clip path
+- theme_visuals: neon sky/water no-op; expose `__igsNeonPondBg`; skip renderSunRays; postFX vignette only; bed v6
+- neon_pond_bg rebuilt from concept 03 (HUD circles scrubbed)
+- creatures ~2× drawSz + brighter glow (shadow + lighter pass)
+
+Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/60 @375. JS visuals 474 / neon_draw 171 / engine 52. Shots `/workspace/v29neon/*_v4.jpg`. Honest eye ~88% vs concept (same cave). No deploy.
+

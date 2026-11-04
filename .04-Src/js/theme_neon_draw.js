@@ -44,14 +44,14 @@
       var pad = ("00" + idx).slice(-3);
       im.onload = function () { SP_IMG[k] = im; };
       im.onerror = function () { /* keep tried */ };
-      im.src = "assets/themes/neon-bio/sprites/species/" + pad + ".png?v=3";
+      im.src = "assets/themes/neon-bio/sprites/species/" + pad + ".png?v=6";
     } catch (e3) {}
     return null;
   }
   function neonDrawSz(sz) {
-    /* Readable game scale (cilia/nucleus visible) without half-screen giants */
-    if (w.demoMode) return Math.max(18, Math.min(34, (sz || 4) * 5));
-    return Math.max(6.5, Math.min(28, (sz || 4) * 2.9));
+    /* ~2x prior — concept shows 3–5 large neon organisms */
+    if (w.demoMode) return Math.max(28, Math.min(52, (sz || 4) * 8));
+    return Math.max(14, Math.min(52, (sz || 4) * 5.8));
   }
   function bake(shape, color, px) {
     var key = shape + "|" + color + "|" + px + "|v4";
@@ -62,14 +62,14 @@
     var cx = px / 2, cy = px / 2, s = px * 0.28;
     function faintFill(pathFn) {
       g.save();
-      g.globalAlpha = 0.16;
+      g.globalAlpha = 0.28;
       g.fillStyle = color;
       g.beginPath(); pathFn(); g.fill();
       g.restore();
     }
     function strokeContour(pathFn, lw) {
       g.save();
-      g.strokeStyle = color; g.shadowColor = color; g.shadowBlur = Math.max(6, px * 0.08);
+      g.strokeStyle = color; g.shadowColor = color; g.shadowBlur = Math.max(10, px * 0.12);
       g.lineWidth = lw || 2.2; g.lineJoin = "round"; g.lineCap = "round";
       g.beginPath(); pathFn(); g.stroke();
       g.shadowBlur = 0; g.strokeStyle = "#fff"; g.globalAlpha = 0.85; g.lineWidth = Math.max(1, (lw || 2.2) * 0.45);
@@ -139,12 +139,15 @@
     var idx = spIdx(o);
     var sp = loadSp(idx);
     function glowDraw(img, x, y, w, h) {
-      /* single-pass glow — keep FPS ≥ classic at 1400 */
+      /* contour glow + bright core (FPS-safe: one blur pass) */
       c.save();
-      c.globalCompositeOperation = "source-over";
-      c.globalAlpha = 1;
       c.shadowColor = color;
-      c.shadowBlur = Math.max(4, Math.min(12, drawSz * 0.5));
+      c.shadowBlur = Math.max(8, Math.min(20, drawSz * 0.5));
+      c.globalAlpha = 1;
+      c.drawImage(img, x, y, w, h);
+      c.shadowBlur = 0;
+      c.globalCompositeOperation = "lighter";
+      c.globalAlpha = 0.55;
       c.drawImage(img, x, y, w, h);
       c.restore();
     }

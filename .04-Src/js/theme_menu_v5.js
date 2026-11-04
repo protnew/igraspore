@@ -25,9 +25,9 @@
     var b = document.getElementById("v5Badges");
     if (!v5()) { if (b) b.style.display = "none"; return; }
     if (!b) { b = document.createElement("div"); b.id = "v5Badges"; m.appendChild(b); }
-    var n = (typeof SPECIES_DB !== "undefined") ? SPECIES_DB.length : 0, f = document.getElementById("spFilterStatus");
-    var pop = f ? ((f.textContent.match(/~\s*(\d+)/) || [])[1] || "") : "";
-    var h = '<span class="v5b"><i>\u2697</i>' + n + '</span><span class="v5b"><i>\u2766</i>' + pop + '</span>';
+    var db = (typeof SPECIES_DB !== "undefined") ? SPECIES_DB : [], n = db.length, pop = 0;
+    for (var q = 0; q < n; q++) { var x = db[q]; if (x && (x.shape === "colony" || (x.bio && x.bio.colony))) pop++; }
+    var h = '<span class="v5b" title="species"><i>\u2697</i>' + n + '</span><span class="v5b" title="colonies"><i>\u2766</i>' + pop + '</span>';
     if (b.innerHTML !== h) b.innerHTML = h; b.style.display = "";
   }
   var pend = false;

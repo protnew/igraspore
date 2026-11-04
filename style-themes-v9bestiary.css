@@ -50,3 +50,15 @@ html body #wikiO.v9b[data-v9=engr] .wiki-entry>b{text-transform:uppercase;letter
 html body #wikiO.v9b[data-v9=engr] img.wiki-thumb.v9big{filter:sepia(.4) contrast(.72) brightness(1.4)!important}
 [data-v9=engr] .v9x .ds{border-top:1px solid #2b1a0e;padding-top:4px;margin-top:2px}
 [data-v9=engr] #v9bbar{background:#f6eedc;border:3px double #2b1a0e;border-radius:0;color:#2b1a0e;font-family:Georgia,serif}
+/* v9 haeckel bestiary */
+#wikiO.v9b[data-v9=haeckel]{color:#3a2a18}
+#wikiO.v9b[data-v9=haeckel]::before{content:"";position:fixed;inset:0;background:rgba(246,238,220,.84);pointer-events:none}
+#wikiO.v9b[data-v9=haeckel]>*{position:relative}
+[data-v9=haeckel] #v9bhead .v9t{font-family:Georgia,serif;font-size:30px;letter-spacing:.04em;color:#2f4a3a}
+[data-v9=haeckel] #v9bhead .v9f button{background:#efe6cc;border:1px solid #6f8a6a;color:#2f4a3a;font-family:Georgia,serif;border-radius:3px}
+[data-v9=haeckel] #v9bhead .v9f button.on{background:#e7b9b2;border-color:#a8524a;color:#6a2a22}
+html body #wikiO.v9b[data-v9=haeckel] .wiki-entry{background:#f7f0dc!important;border:1.5px solid #6f8a6a!important;border-radius:4px!important;box-shadow:inset 0 0 0 4px #f7f0dc,inset 0 0 0 5px #6f8a6a,2px 3px 8px rgba(60,40,20,.2)!important;font-family:Georgia,serif;color:#3a2a18}
+html body #wikiO.v9b[data-v9=haeckel] .wiki-entry[data-g="1"],html body #wikiO.v9b[data-v9=haeckel] .wiki-entry[data-g="3"],html body #wikiO.v9b[data-v9=haeckel] .wiki-entry[data-g="5"]{border-color:#c07a70!important;box-shadow:inset 0 0 0 4px #f7f0dc,inset 0 0 0 5px #c07a70,2px 3px 8px rgba(60,40,20,.2)!important}
+html body #wikiO.v9b[data-v9=haeckel] .wiki-entry>b{font-size:14px}
+[data-v9=haeckel] .v9x i{border:1px solid #6f8a6a;padding:2px 4px;background:#fbf6e8}
+[data-v9=haeckel] #v9bbar{background:#f7f0dc;border:1.5px solid #6f8a6a;color:#2f4a3a;font-family:Georgia,serif}

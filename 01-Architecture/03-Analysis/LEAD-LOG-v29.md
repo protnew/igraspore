@@ -214,3 +214,4 @@ Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/
 - v5.4 (all styles infra) + glass: per-species silhouette variants (4 aspect variants), per-species size variety 0.72-1.26 (visual only), new theme_micro.js decorative micro-life layer (24 baked mini-sprites, 150/80 drifting + dust, limited to water band per style). Glass FPS 60/60, Pop PASS.
 - 2026-11-04 haeckel v5.5: меню/бестиарий по раскладке концепта 02 (фон-герой, рамки, нижняя панель с иконками, процедурные иконки карточек), FPS 1400 59.5 / 375 57.7, популяция PASS, ~85%
 - 2026-11-04 engraving v5.5: меню/бестиарий по раскладке концепта 09; FPS(c1400 t1400 c375 t375) 41.8 55.5 60.3 53.3 ; популяция PASS
+- 2026-11-04 cyberpunk-scanner v5.5: меню/бестиарий по раскладке концепта 10; FPS(c1400 t1400 c375 t375) 42.8 60.5 60.2 58.0 ; популяция PASS

@@ -4,7 +4,7 @@
   "use strict";
   var C = {
     "glass-lab": { hero: "glass-lab/glass_pond_bg.jpg", cls: "glass",
-      stats: [["\u2744", "18.7\u00b0C", "WATER TEMP"], ["\u25ce", "92%", "O\u2082 SAT"]],
+      stats: [["\u2697", "$sp", "SPECIES"], ["\u25ce", "$pool", "ORGANISMS"]],
       rail: [["\u25c9", "VIEW", "demoBtn"], ["\u2295", "ZOOM", "screensaverBtn"], ["\u2697", "SAMPLE", "wikiBtnMenu"], ["\u2234", "ANALYZE", "setBtn2"]],
       tabs: [["\u2618", "POND", "startBtn"], ["\u2687", "ORGANISMS", "wikiBtnMenu"], ["\u2234", "POPULATION", "demoBtn"], ["\u2591", "DATA", "setBtn2"]] },
     "cyberpunk-scanner": { hero: "cyberpunk-scanner/cyber_pond_bg.jpg", cls: "cyber",
@@ -18,16 +18,23 @@
       stats: [["\u26a1", "", "", "demoBtn"], ["\u25f7", "", "", "screensaverBtn"]], rail: [],
       tabs: [["\u25d0", "OBSERVE", "startBtn"], ["\u25ce", "SPECIMENS", "wikiBtnMenu"], ["\u2699", "SETTINGS", "setBtn2"]] },
     "engraving": { hero: "engraving/engraving_pond_bg.jpg", cls: "engr",
-      stats: [["Lv. 4", "2,340 / 5,000", ""], ["\u25cf", "127", ""]], rail: [],
+      stats: [["\u2697", "$sp", "SPECIES"], ["\u2600", "$star", "LIGHT"]], rail: [],
       tabs: [["\u2766", "OBSERVE", "startBtn"], ["\u2698", "NURTURE", "demoBtn"], ["\u2315", "DISCOVER", "wikiBtnMenu"], ["\u0040", "ARCHIVE", "setBtn2"]] },
     "haeckel-watercolor": { hero: "haeckel-watercolor/haeckel_pond_bg.jpg", cls: "haeckel",
       stats: [], rail: [], tabs: [["\u2766", "OBSERVE", "startBtn"], ["\u2740", "", "wikiBtnMenu"], ["\u270e", "WIKI", "setBtn2"]] }
   };
   var ON = { "glass-lab": 1 };
+  function val(t) {
+    if (t === "$sp") return String((typeof SPECIES_DB !== "undefined") ? SPECIES_DB.length : "");
+    if (t === "$pool") { try { return "~" + getPoolCount(); } catch (e) { return ""; } }
+    if (t === "$star") { var s = document.getElementById("starSelect"); return s && s.selectedIndex >= 0 ? s.options[s.selectedIndex].text.replace(/^\W+/, "") : ""; }
+    return t;
+  }
+  function refresh() { var bs = document.querySelectorAll("#v6chrome [data-val]"); for (var i = 0; i < bs.length; i++) { var v = val(bs[i].getAttribute("data-val")); if (bs[i].textContent !== v) bs[i].textContent = v; } }
   function fire(id) { var b = document.getElementById(id); if (b) b.click(); }
   function btn(cls, it) {
     var b = document.createElement("button"); b.type = "button"; b.className = cls;
-    b.innerHTML = '<i>' + it[0] + '</i>' + (it[1] ? '<b>' + it[1] + '</b>' : '') + (it[2] && cls === "v6chip" ? '<s>' + it[2] + '</s>' : '');
+    b.innerHTML = '<i>' + it[0] + '</i>' + (it[1] ? '<b' + (it[1].charAt(0) === "$" ? ' data-val="' + it[1] + '">' + val(it[1]) : '>' + it[1]) + '</b>' : '') + (it[2] && cls === "v6chip" ? '<s>' + it[2] + '</s>' : '');
     var tgt = cls === "v6chip" ? it[3] : it[2]; if (tgt) b.onclick = function () { fire(tgt); }; else b.disabled = true;
     return b;
   }
@@ -59,7 +66,7 @@
     var id = w.__igsThemePondId, m = document.getElementById("menuO");
     var want = !!(ON[id] && w.__igsThemeCover && w.__igsThemeCover[id] && m);
     if (!want) { var o = document.getElementById("v6chrome"); if (o) o.remove(); document.body.classList.remove("v6on"); return; }
-    try { build(id); } catch (e) {}
+    try { build(id); refresh(); } catch (e) {}
   }
   setInterval(tick, 1200); setTimeout(tick, 300);
   w.igsMenuChrome = { tick: tick, C: C, ON: ON };

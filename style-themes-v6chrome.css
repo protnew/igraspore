@@ -31,3 +31,4 @@ html body #menuO .v6-glass .v6tab{background:none!important;border:0!important;b
 .v6-glass .v6tab.on i{background:radial-gradient(circle,#7fe0ff,#1ea8d8);color:#fff;box-shadow:0 0 18px rgba(30,170,220,.6)}
 .v6-glass .v6tab b{color:#3a7f9a}
 body.v6on[data-theme-pond="glass-lab"] #menuFooter{display:none!important}
+@media (max-width:600px){html body #menuO #v6chrome .v6rb{width:46px!important;height:46px!important}#v6chrome .v6rail{top:33%!important;gap:4px!important}#v6chrome .v6rb b{font-size:7px}}

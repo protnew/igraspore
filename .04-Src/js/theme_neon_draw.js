@@ -205,14 +205,26 @@
       K.nuc(rgba(col, 0.35), "rgba(255,255,255,0.7)", 0);
     },
     haeckel: function (K, col) {
-      var g = K.g, px = K.px;
-      for (var p = 0; p < 4; p++) { g.save(); g.translate((K.rnd() - 0.5) * px * 0.025, (K.rnd() - 0.5) * px * 0.025);
-        g.fillStyle = rgba(col, 0.2); K.path(); g.fill(); g.restore(); }
-      g.save(); K.path(); g.clip(); g.strokeStyle = rgba(col, 0.45); g.lineWidth = px * 0.05; g.filter = "blur(" + (px * 0.012).toFixed(1) + "px)"; K.path(); g.stroke(); g.restore();
-      K.hair("rgba(70,48,32,0.7)", Math.max(0.7, px * 0.006), 1.5, 1, 0);
-      g.save(); g.strokeStyle = "rgba(60,40,28,0.9)"; g.lineWidth = Math.max(0.8, px * 0.009); K.path(); g.stroke(); g.restore();
-      K.dots(18, function (r) { return r < 0.5 ? rgba(col, 0.85) : "rgba(70,48,32,0.6)"; });
-      K.nuc(rgba(col, 0.55), "rgba(60,40,28,0.8)", 0);
+      var g = K.g, px = K.px, sep = "rgba(60,40,28,";
+      for (var p = 0; p < 5; p++) { g.save(); g.translate((K.rnd() - 0.5) * px * 0.03, (K.rnd() - 0.5) * px * 0.03);
+        g.fillStyle = rgba(col, 0.18); K.path(); g.fill(); g.restore(); }
+      g.save(); K.path(); g.clip();
+      for (var b = 0; b < 4; b++) { var bx = K.cx + (K.rnd() - 0.5) * K.rx * 1.2, by = K.bcy + (K.rnd() - 0.5) * K.ry * 1.2, br = Math.max(K.rx, K.ry) * (0.35 + K.rnd() * 0.4);
+        var bg = g.createRadialGradient(bx, by, 0, bx, by, br); bg.addColorStop(0, rgba(col, 0.35)); bg.addColorStop(0.8, rgba(col, 0.08)); bg.addColorStop(1, "rgba(0,0,0,0)");
+        g.fillStyle = bg; g.fillRect(bx - br, by - br, br * 2, br * 2); }   /* watercolour blooms */
+      g.strokeStyle = rgba(col, 0.55); g.lineWidth = px * 0.05; g.filter = "blur(" + (px * 0.012).toFixed(1) + "px)"; K.path(); g.stroke(); g.filter = "none";
+      g.strokeStyle = sep + "0.35)"; g.lineWidth = Math.max(0.6, px * 0.004);   /* veins */
+      for (var v = 0; v < 7; v++) { var a = -1.4 + v * 0.47; g.beginPath(); g.moveTo(K.cx, K.bcy);
+        g.quadraticCurveTo(K.cx + Math.cos(a) * K.rx * 0.5, K.bcy + Math.sin(a + 0.4) * K.ry * 0.5, K.cx + Math.cos(a) * K.rx * 0.95, K.bcy + Math.sin(a) * K.ry * 0.95); g.stroke(); }
+      for (var q = 0; q < 6; q++) { var qa = K.rnd() * 6.28, qr = Math.sqrt(K.rnd()) * 0.6, vr = px * (0.02 + K.rnd() * 0.03);   /* vacuoles */
+        var vx = K.cx + Math.cos(qa) * K.rx * qr, vy = K.bcy + Math.sin(qa) * K.ry * qr;
+        g.fillStyle = "rgba(255,250,235,0.55)"; g.strokeStyle = sep + "0.55)"; g.lineWidth = Math.max(0.6, px * 0.004);
+        g.beginPath(); g.arc(vx, vy, vr, 0, 6.2832); g.fill(); g.stroke(); }
+      g.restore();
+      K.hair(sep + "0.8)", Math.max(0.7, px * 0.006), 2.4, 1.05, 0);
+      g.save(); g.strokeStyle = sep + "0.9)"; g.lineWidth = Math.max(0.8, px * 0.01); K.path(); g.stroke(); g.restore();
+      K.dots(26, function (r) { return r < 0.5 ? rgba(col, 0.9) : sep + "0.6)"; });
+      K.nuc(rgba(col, 0.6), sep + "0.85)", 0);
     }
   };
   function bake(shape, color, px, st) {

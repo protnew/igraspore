@@ -103,3 +103,15 @@ html body #wikiO.v9b[data-v9=phase] .wiki-entry>b{order:2;font-family:Georgia,se
 html body #wikiO.v9b[data-v9=phase] img.wiki-thumb.v9big{filter:grayscale(.85) brightness(1.1) contrast(1.1)!important}
 [data-v9=phase] .v9x{display:none!important}
 [data-v9=phase] #v9bbar{background:#0e1012;border:1px solid rgba(255,255,255,.2);border-radius:0;width:100vw;bottom:0;color:#e8eef0}
+/* v9 glass bestiary */
+#wikiO.v9b[data-v9=glass]::before{content:"";position:fixed;inset:0;background:rgba(232,240,248,.7);pointer-events:none}
+#wikiO.v9b[data-v9=glass]>*{position:relative}
+[data-v9=glass] #v9bhead{background:rgba(255,255,255,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.9);border-radius:22px;margin:0 0 12px;box-shadow:0 6px 18px rgba(80,120,160,.15)}
+[data-v9=glass] #v9bhead .v9t{color:#5b6b7d;font-size:22px;letter-spacing:.04em}
+[data-v9=glass] #v9bhead .v9f button{background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.95);color:#4d6a86;border-radius:14px;box-shadow:0 2px 6px rgba(80,120,160,.12)}
+[data-v9=glass] #v9bhead .v9f button.on{background:rgba(180,215,250,.8);color:#1f4f7a}
+html body #wikiO.v9b[data-v9=glass] .wiki-entry{background:linear-gradient(160deg,rgba(255,255,255,.75),rgba(225,236,246,.55))!important;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.95)!important;border-radius:22px!important;box-shadow:0 8px 20px rgba(80,120,160,.18),inset 0 1px 0 #fff!important;color:#3d556c}
+html body #wikiO.v9b[data-v9=glass] .wiki-entry>b{font-size:12px;color:#3d556c!important}
+[data-v9=glass] .v9x{color:#6b86a0;font-size:10px}
+[data-v9=glass] #v9bbar{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);border:1px solid #fff;border-radius:24px;color:#4d6a86;box-shadow:0 8px 20px rgba(80,120,160,.2)}
+[data-v9=glass] #v9bbar button.on{color:#1f7ad0}

@@ -208,7 +208,7 @@
     var W = cv.width, H = cv.height;
     ctx.save();
     if (id === "neon-bio") {
-      try { drawNeonPondBed(); } catch (eBed) {}
+      try { drawThemePondBed("neon-bio","assets/themes/neon-bio/neon_pond_bg.jpg",0.42); } catch (eBed) {}
       ctx.globalCompositeOperation = "source-over";
       var sky = ctx.createLinearGradient(0, 0, 0, H * 0.42);
       sky.addColorStop(0, "rgba(0,0,0,0.98)");
@@ -258,7 +258,7 @@
       vig.addColorStop(1, "rgba(0,0,0,0.72)");
       ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
     } else if (id === "phase-contrast") {
-      try { drawPhasePondBed(); } catch (eBed) {}
+      try { drawThemePondBed("phase-contrast","assets/themes/phase-contrast/phase_pond_bg.jpg",0.40); } catch (eBed) {}
       ctx.globalCompositeOperation = "saturation";
       ctx.fillStyle = "rgba(128,128,128,0.92)";
       ctx.fillRect(0, 0, W, H);
@@ -277,6 +277,7 @@
         ctx.fillRect(dx, dy, 1.5, 1.5);
       }
     } else if (id === "engraving") {
+      try { drawThemePondBed("engraving","assets/themes/engraving/engraving_pond_bg.jpg",0.38); } catch (eBed) {}
       ctx.globalCompositeOperation = "color";
       ctx.fillStyle = "rgba(190,170,130,1)";
       ctx.fillRect(0, 0, W, H);
@@ -302,6 +303,7 @@
       ve.addColorStop(1, "rgba(40,28,12,0.35)");
       ctx.fillStyle = ve; ctx.fillRect(0, 0, W, H);
     } else if (id === "cyberpunk-scanner") {
+      try { drawThemePondBed("cyberpunk-scanner","assets/themes/cyberpunk-scanner/cyber_pond_bg.jpg",0.4); } catch (eBed) {}
       ctx.globalCompositeOperation = "screen";
       ctx.fillStyle = "rgba(0,255,100,0.05)";
       ctx.fillRect(0, 0, W, H);
@@ -318,11 +320,13 @@
       top.addColorStop(1, "rgba(5,0,20,0)");
       ctx.fillStyle = top; ctx.fillRect(0, 0, W, H * 0.4);
     } else if (id === "haeckel-watercolor") {
+      try { drawThemePondBed("haeckel-watercolor","assets/themes/haeckel-watercolor/haeckel_pond_bg.jpg",0.36); } catch (eBed) {}
       ctx.globalCompositeOperation = "soft-light";
       ctx.fillStyle = "rgba(232,210,160,0.28)";
       ctx.fillRect(0, 0, W, H);
       ctx.globalCompositeOperation = "source-over";
     } else if (id === "glass-lab") {
+      try { drawThemePondBed("glass-lab","assets/themes/glass-lab/glass_pond_bg.jpg",0.34); } catch (eBed) {}
       ctx.globalCompositeOperation = "screen";
       ctx.fillStyle = "rgba(180,220,240,0.10)";
       ctx.fillRect(0, 0, W, H);
@@ -331,52 +335,30 @@
     ctx.restore();
   }
 
-  var _neonBed=null,_neonBedTried=false,_neonBedFail=false;
-  var _phaseBed=null,_phaseBedTried=false,_phaseBedFail=false;
-  function drawNeonPondBed() {
-    if (_neonBedFail) return;
-    if (!_neonBed) {
-      if (_neonBedTried) return;
-      _neonBedTried=true;
-      try {
-        var im=new Image();
-        im.onload=function(){ _neonBed=im; };
-        im.onerror=function(){
-          try { im.onerror=function(){ _neonBedFail=true; }; im.src="assets/themes/neon-bio/pond/neon_pond_bg.jpg"; }
-          catch(e2){ _neonBedFail=true; }
-        };
-        im.src="assets/themes/neon-bio/neon_pond_bg.jpg";
-      } catch(e) { _neonBedFail=true; return; }
-      return;
-    }
-    if (typeof ctx==="undefined" || !cv) return;
-    ctx.save();
-    // light overlay: canvas is opaque so destination-over would hide bed
-    ctx.globalCompositeOperation="source-over";
-    ctx.globalAlpha=0.42;
-    ctx.drawImage(_neonBed, 0, 0, cv.width, cv.height);
-    ctx.restore();
-  }
 
 
-  function drawPhasePondBed() {
-    if (_phaseBedFail) return;
-    if (!_phaseBed) {
-      if (_phaseBedTried) return;
-      _phaseBedTried=true;
-      try {
+
+  var _beds={};
+  function drawThemePondBed(key, src, alpha) {
+    var st=_beds[key];
+    if(!st){ st=_beds[key]={img:null,tried:false,fail:false}; }
+    if(st.fail) return;
+    if(!st.img){
+      if(st.tried) return;
+      st.tried=true;
+      try{
         var im=new Image();
-        im.onload=function(){ _phaseBed=im; };
-        im.onerror=function(){ _phaseBedFail=true; };
-        im.src="assets/themes/phase-contrast/phase_pond_bg.jpg";
-      } catch(e) { _phaseBedFail=true; return; }
+        im.onload=function(){ st.img=im; };
+        im.onerror=function(){ st.fail=true; };
+        im.src=src;
+      }catch(e){ st.fail=true; return; }
       return;
     }
-    if (typeof ctx==="undefined" || !cv) return;
+    if(typeof ctx==="undefined"||!cv) return;
     ctx.save();
     ctx.globalCompositeOperation="source-over";
-    ctx.globalAlpha=0.40;
-    ctx.drawImage(_phaseBed, 0, 0, cv.width, cv.height);
+    ctx.globalAlpha=alpha||0.4;
+    ctx.drawImage(st.img,0,0,cv.width,cv.height);
     ctx.restore();
   }
 
@@ -432,7 +414,7 @@
       img.className = "wiki-thumb";
       img.alt = name;
       img.loading = "lazy";
-      if (theme === "neon-bio" || theme === "phase-contrast") {
+      if (theme === "neon-bio" || theme === "phase-contrast" || theme === "engraving" || theme === "cyberpunk-scanner" || theme === "haeckel-watercolor" || theme === "glass-lab") {
         var idx = (sp && typeof sp.i === "number") ? sp.i : (sp && sp.idx);
         if (idx == null && typeof SPECIES_DB !== "undefined") {
           for (var zi = 0; zi < SPECIES_DB.length; zi++) {
@@ -440,7 +422,8 @@
           }
         }
         var pad = (idx != null) ? ("00" + idx).slice(-3) : null;
-        var base = (theme === "neon-bio") ? "assets/themes/neon-bio/sprites/" : "assets/themes/phase-contrast/sprites/";
+        var baseMap={"neon-bio":"assets/themes/neon-bio/sprites/","phase-contrast":"assets/themes/phase-contrast/sprites/","engraving":"assets/themes/engraving/sprites/","cyberpunk-scanner":"assets/themes/cyberpunk-scanner/sprites/","haeckel-watercolor":"assets/themes/haeckel-watercolor/sprites/","glass-lab":"assets/themes/glass-lab/sprites/"};
+        var base = baseMap[theme] || ("assets/themes/"+theme+"/sprites/");
         img.src = pad ? (base + "species/" + pad + ".png") : (base + shape + ".png");
         img.onerror = function () {
           if (this.dataset.fb === "2") return;

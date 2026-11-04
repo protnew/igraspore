@@ -122,3 +122,7 @@
 ## 2026-11-04 02:55 Asia/Jerusalem — phase-contrast dedicated assets
 - phase_pond_bg.jpg CLEAN (no orgs/HUD); 101 species sprites; theme_visuals bed+thumbs
 - LIVE shots box :8820 → /workspace/v29all3/*_phase-contrast_live.jpg + sides; labels scientific; NO deploy
+
+## 2026-11-04 03:05 Asia/Jerusalem — engraving dedicated assets
+- clean pond bg (no orgs/HUD) + 101 species sprites; theme_visuals bed+thumbs
+- LIVE shots /workspace/v29all3/*_engraving_live.jpg + sides; scientific labels; NO deploy

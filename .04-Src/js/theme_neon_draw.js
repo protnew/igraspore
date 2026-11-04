@@ -9,7 +9,7 @@
     engr:    { prod: ["#2b1a0e"], dec: ["#2b1a0e"], rest: ["#2b1a0e"] },
     cyber:   { prod: ["#39ffb0"], dec: ["#ff2bd6"], rest: ["#00f6ff", "#ff2bd6", "#00f6ff", "#ff4fe0"] },
     glass:   { prod: ["#2fbf6a", "#22a8a0"], dec: ["#8a5cd6"], rest: ["#1e9bd7", "#6f5cd6", "#d64a9b", "#1aa3c4"] },
-    haeckel: { prod: ["#6f9e4a", "#8aa648"], dec: ["#b0843a", "#8c6a3a"], rest: ["#c0573a", "#2f7d8c", "#7a4f8e", "#3d6fa8", "#b2464f", "#3f8f7a"] }
+    haeckel: { prod: ["#8a8a4a", "#7d8450", "#9a9258"], dec: ["#9c7a4a", "#8a6a44"], rest: ["#b08a52", "#a0764a", "#8e6e4e", "#9a8458", "#a88660", "#7e7450"] }
   };
   function styleNow() { return STYLE_OF[w.__igsThemePondId] || "neon"; }
   function hashStr(n) { var h = 0; n = String(n); for (var i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) | 0; return Math.abs(h); }
@@ -50,6 +50,7 @@
   function kit(g, shape, px) {
     var cx = px / 2, cy = px / 2, s = px * 0.26;
     var b = bodyOf(shape), rx = s * b[0], ry = s * b[1], kind = b[2];
+    if (styleNow() === "haeckel" && kind !== "ph" && kind !== "dip") { rx *= 1.18; ry *= 0.78; }   /* elongated Haeckel plates */
     var seed = hashStr(shape) | 1;
     var K = { g: g, px: px, cx: cx, cy: cy, s: s, rx: rx, ry: ry, kind: kind };
     K.rnd = function () { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
@@ -207,12 +208,12 @@
     haeckel: function (K, col) {
       var g = K.g, px = K.px, sep = "rgba(60,40,28,";
       for (var p = 0; p < 5; p++) { g.save(); g.translate((K.rnd() - 0.5) * px * 0.03, (K.rnd() - 0.5) * px * 0.03);
-        g.fillStyle = rgba(col, 0.18); K.path(); g.fill(); g.restore(); }
+        g.fillStyle = rgba(col, 0.11); K.path(); g.fill(); g.restore(); }
       g.save(); K.path(); g.clip();
       for (var b = 0; b < 4; b++) { var bx = K.cx + (K.rnd() - 0.5) * K.rx * 1.2, by = K.bcy + (K.rnd() - 0.5) * K.ry * 1.2, br = Math.max(K.rx, K.ry) * (0.35 + K.rnd() * 0.4);
-        var bg = g.createRadialGradient(bx, by, 0, bx, by, br); bg.addColorStop(0, rgba(col, 0.35)); bg.addColorStop(0.8, rgba(col, 0.08)); bg.addColorStop(1, "rgba(0,0,0,0)");
+        var bg = g.createRadialGradient(bx, by, 0, bx, by, br); bg.addColorStop(0, rgba(col, 0.22)); bg.addColorStop(0.8, rgba(col, 0.05)); bg.addColorStop(1, "rgba(0,0,0,0)");
         g.fillStyle = bg; g.fillRect(bx - br, by - br, br * 2, br * 2); }   /* watercolour blooms */
-      g.strokeStyle = rgba(col, 0.55); g.lineWidth = px * 0.05; g.filter = "blur(" + (px * 0.012).toFixed(1) + "px)"; K.path(); g.stroke(); g.filter = "none";
+      g.strokeStyle = rgba(col, 0.35); g.lineWidth = px * 0.05; g.filter = "blur(" + (px * 0.012).toFixed(1) + "px)"; K.path(); g.stroke(); g.filter = "none";
       g.strokeStyle = sep + "0.35)"; g.lineWidth = Math.max(0.6, px * 0.004);   /* veins */
       for (var v = 0; v < 7; v++) { var a = -1.4 + v * 0.47; g.beginPath(); g.moveTo(K.cx, K.bcy);
         g.quadraticCurveTo(K.cx + Math.cos(a) * K.rx * 0.5, K.bcy + Math.sin(a + 0.4) * K.ry * 0.5, K.cx + Math.cos(a) * K.rx * 0.95, K.bcy + Math.sin(a) * K.ry * 0.95); g.stroke(); }
@@ -222,14 +223,14 @@
         g.beginPath(); g.arc(vx, vy, vr, 0, 6.2832); g.fill(); g.stroke(); }
       g.restore();
       K.hair(sep + "0.8)", Math.max(0.7, px * 0.006), 2.4, 1.05, 0);
-      g.save(); g.strokeStyle = sep + "0.9)"; g.lineWidth = Math.max(0.8, px * 0.01); K.path(); g.stroke(); g.restore();
-      K.dots(26, function (r) { return r < 0.5 ? rgba(col, 0.9) : sep + "0.6)"; });
-      K.nuc(rgba(col, 0.6), sep + "0.85)", 0);
+      g.save(); g.strokeStyle = sep + "0.8)"; g.lineWidth = Math.max(0.7, px * 0.007); K.path(); g.stroke(); g.restore();
+      K.dots(26, function (r) { return r < 0.5 ? rgba(col, 0.6) : sep + "0.5)"; });
+      K.nuc(rgba(col, 0.35), sep + "0.75)", 0);
     }
   };
   function bake(shape, color, px, st) {
     st = st || styleNow();
-    var key = st + "|" + shape + "|" + color + "|" + px + "|v9";
+    var key = st + "|" + shape + "|" + color + "|" + px + "|v10";
     if (CACHE[key]) return CACHE[key];
     var c = document.createElement("canvas"); c.width = px; c.height = px;
     var K = kit(c.getContext("2d"), shape, px);

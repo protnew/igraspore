@@ -209,3 +209,4 @@ Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/
 - v5.2 phase: bg toned dark teal (PIL colorize of clean bg; light version archived), double-pass bright halo, teal chrome.
 - v5.2 engraving: denser 3-layer hatching, darker/thicker ink contour, creatures x1.3. FPS 60/57, Pop PASS.
 - v5.2 haeckel: watercolour blooms, veins, vacuoles, denser cilia. FPS 60/60, Pop PASS.
+- v5.3 haeckel: muted ochre/sepia/olive palette, translucent washes, thinner sepia outline, elongated bodies (x1.18/x0.78).

@@ -154,15 +154,17 @@
       K.nuc("rgba(40,44,48,0.75)", "rgba(240,245,248,0.9)", 0);
     },
     engr: function (K) {
-      var g = K.g, px = K.px, ink = "#2b1a0e";
-      g.save(); g.fillStyle = "rgba(242,232,208,0.9)"; K.path(); g.fill(); g.restore();
-      K.hatch(ink, Math.max(2.2, px * 0.028), -0.7, 0.7);
-      g.save(); K.path(); g.clip(); g.beginPath(); g.ellipse(K.cx + K.rx * 0.45, K.bcy + K.ry * 0.45, K.rx * 0.9, K.ry * 0.9, 0, 0, 6.2832); g.clip();
-      K.hatch(ink, Math.max(2.2, px * 0.03), 0.7, 0.5); g.restore();
-      K.hair(ink, Math.max(0.9, px * 0.009), 1.5, 1, 0, true);
-      g.save(); g.strokeStyle = ink; g.lineWidth = Math.max(1.8, px * 0.03); g.lineJoin = "round"; K.path(); g.stroke(); g.restore();
-      K.dots(30, function () { return "rgba(43,26,14,0.85)"; }, 0.7);
-      K.nuc("rgba(238,224,196,0.9)", ink, 0);
+      var g = K.g, px = K.px, ink = "#1e1008";
+      g.save(); g.fillStyle = "rgba(232,218,188,0.95)"; K.path(); g.fill(); g.restore();
+      K.hatch(ink, Math.max(1.8, px * 0.02), -0.7, 0.85);
+      g.save(); K.path(); g.clip(); g.beginPath(); g.ellipse(K.cx + K.rx * 0.4, K.bcy + K.ry * 0.4, K.rx * 1.0, K.ry * 1.0, 0, 0, 6.2832); g.clip();
+      K.hatch(ink, Math.max(1.8, px * 0.022), 0.7, 0.75); g.restore();
+      g.save(); K.path(); g.clip(); g.beginPath(); g.ellipse(K.cx + K.rx * 0.6, K.bcy + K.ry * 0.6, K.rx * 0.7, K.ry * 0.7, 0, 0, 6.2832); g.clip();
+      K.hatch(ink, Math.max(1.8, px * 0.02), 0, 0.6); g.restore();
+      K.hair(ink, Math.max(1, px * 0.011), 2.2, 1.1, 0, true);
+      g.save(); g.strokeStyle = ink; g.lineWidth = Math.max(2.2, px * 0.045); g.lineJoin = "round"; K.path(); g.stroke(); g.restore();
+      K.dots(40, function () { return "rgba(30,16,8,0.9)"; }, 0.9);
+      K.nuc("rgba(238,224,196,0.95)", ink, 0);
     },
     cyber: function (K, col) {
       var g = K.g, px = K.px, alt = col === "#00f6ff" ? "#ff2bd6" : "#00f6ff";
@@ -215,7 +217,7 @@
   };
   function bake(shape, color, px, st) {
     st = st || styleNow();
-    var key = st + "|" + shape + "|" + color + "|" + px + "|v8";
+    var key = st + "|" + shape + "|" + color + "|" + px + "|v9";
     if (CACHE[key]) return CACHE[key];
     var c = document.createElement("canvas"); c.width = px; c.height = px;
     var K = kit(c.getContext("2d"), shape, px);
@@ -227,6 +229,7 @@
   function drawCell(c, o, sz) {
     var st = styleNow(), drawSz = drawSzOf(sz);
     var big = (typeof cv !== "undefined" && cv && cv.width > 900) ? 1.9 : 1;
+    if (st === "engr") big *= 1.3;
     var k = drawSz * 2.2 * big;
     var px = k > 70 ? 160 : k > 40 ? 112 : 72;
     var spr = bake(shapeOf(o), colOf(o, st), px, st);

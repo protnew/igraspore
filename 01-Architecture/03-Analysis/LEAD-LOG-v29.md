@@ -207,3 +207,4 @@ Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/
 - glass-lab: clean petri bg, saturated glassy bodies w/ coloured rim + white highlights; frosted chrome. FPS 60 (1400,375), Pop PASS.
 - haeckel-watercolor: clean bg, layered watercolour washes + thin sepia outline; parchment chrome. Pop PASS.
 - v5.2 phase: bg toned dark teal (PIL colorize of clean bg; light version archived), double-pass bright halo, teal chrome.
+- v5.2 engraving: denser 3-layer hatching, darker/thicker ink contour, creatures x1.3. FPS 60/57, Pop PASS.

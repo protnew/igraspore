@@ -167,19 +167,12 @@
       }
       if (id === "engraving") {
         c.save();
-        try { c.filter = "grayscale(1) contrast(1.55) sepia(0.7) brightness(0.78)"; } catch (e) {}
-        c.shadowColor = "rgba(20,12,4,0.55)";
+        try { c.filter = "grayscale(1) contrast(1.7) sepia(0.6) brightness(1.0)"; } catch (e) {}
+        c.shadowColor = "rgba(40,26,12,0.45)";
         c.shadowBlur = 1.5;
         orig(c, o, ssz, sh);
         c.restore();
-        try {
-          c.save();
-          c.globalCompositeOperation = "multiply";
-          c.globalAlpha = 0.55;
-          try { c.filter = "grayscale(1) contrast(2.2) brightness(0.35)"; } catch (e4) {}
-          orig(c, o, ssz * 1.08, sh);
-          c.restore();
-        } catch (eInk) {}
+        /* v5b: dark multiply halo removed: concept 09 has light engraved creatures, one draw fewer per cell */
         return;
       }
       if (id === "cyberpunk-scanner") {
@@ -215,7 +208,7 @@
     var id = tid();
     if (!isV5(id) || typeof ctx === "undefined" || !cv) return;
     var W = cv.width, H = cv.height, FX = {
-      "neon-bio": [0.18, null], "phase-contrast": [0.30, null], "engraving": [0.28, "rgba(120,90,50,0.05)"],
+      "neon-bio": [0.18, null], "phase-contrast": [0.30, null], "engraving": [0.14, "rgba(120,90,50,0.03)"],
       "cyberpunk-scanner": [0.25, null], "glass-lab": [0.10, "rgba(255,255,255,0.03)"], "haeckel-watercolor": [0.14, "rgba(240,220,180,0.04)"]
     }[id];
     ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -383,7 +376,7 @@
     ensureNeonDraw();
     wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapWater(); wrapShoreBubbles(); wrapBuildWiki();
     var id = tid();
-    var dark = {"neon-bio":0.42,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.55,"haeckel-watercolor":0.75,"glass-lab":0.9};
+    var dark = {"neon-bio":0.42,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.85,"haeckel-watercolor":0.75,"glass-lab":0.9};
     if (dark[id] != null) w.__igsThemeDayLight = dark[id];
     else if (id === "classic") w.__igsThemeDayLight = null;
     if (isV5(id)) {

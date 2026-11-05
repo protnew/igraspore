@@ -167,7 +167,7 @@
       }
       if (id === "engraving") {
         c.save();
-        try { c.filter = "grayscale(1) sepia(0.55) contrast(1.15) brightness(1.12)"; } catch (e) {}
+        try { c.filter = "grayscale(1) sepia(0.55) contrast(0.75) brightness(1.95)"; } catch (e) {} /* v5e: thick dark membrane ring is baked into the 72-112px swiss sprite canvas and reads as a halo when upscaled; lift dark tones to mid-ink */
         c.shadowColor = "rgba(0,0,0,0)";
         c.shadowBlur = 1.5;
         /* v5d: the species colour ring in drawSprite turns into a dark halo under the sepia filter; hide it for engraving only */

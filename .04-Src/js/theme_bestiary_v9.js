@@ -82,7 +82,7 @@
     var bead = String(sp.shape) === "trichormus", r = rnd(hash(sp.name)), n = bead ? 16 : 22, ph = r() * 6, ink = INK[s], glow = s === "neon" || s === "cyber" || s === "phase", hel = /Spirulina/.test(sp.name), gl = s === "glass";
     var pts = []; for (var i = 0; i < n; i++) { var t = i / (n - 1); pts.push([px * (0.08 + 0.84 * t), px * (0.5 + (hel ? 0.16 * Math.sin(t * 13 + ph) : 0.2 * Math.sin(t * 5.2 + ph)))]); }
     c.save(); c.lineWidth = px / 160; c.strokeStyle = s === "neon" ? col : ink; if (glow) { c.shadowColor = s === "neon" ? col : ink; c.shadowBlur = px / 40; }
-    if (!bead) { c.globalAlpha = gl ? 0.18 : 0.35; c.lineWidth = px / 11; c.lineCap = "round"; c.beginPath(); pts.forEach(function (q, j) { if (j) c.lineTo(q[0], q[1]); else c.moveTo(q[0], q[1]); }); c.strokeStyle = col; c.stroke(); c.globalAlpha = 1; c.lineWidth = px / 160; c.strokeStyle = s === "neon" ? col : ink; }
+    if (!bead) { var sh = function () { c.beginPath(); pts.forEach(function (q, j) { if (j) c.lineTo(q[0], q[1]); else c.moveTo(q[0], q[1]); }); }; c.lineCap = "round"; if (gl) { c.globalAlpha = 0.9; c.lineWidth = px / 9; c.strokeStyle = "rgba(40,78,118,0.75)"; sh(); c.stroke(); c.lineWidth = px / 11; c.strokeStyle = "rgba(205,228,246,0.9)"; sh(); c.stroke(); c.lineWidth = px / 60; c.strokeStyle = "rgba(255,255,255,0.8)"; c.save(); c.translate(-px / 90, -px / 70); sh(); c.stroke(); c.restore(); } else { c.globalAlpha = 0.35; c.lineWidth = px / 11; sh(); c.strokeStyle = col; c.stroke(); } c.globalAlpha = 1; c.lineWidth = px / 160; c.strokeStyle = s === "neon" ? col : ink; }
     for (var k = 0; k < n; k++) { var a = pts[Math.max(0, k - 1)], b2 = pts[Math.min(n - 1, k + 1)], ang = Math.atan2(b2[1] - a[1], b2[0] - a[0]), het = bead && k % 5 === 3;
       var rx = bead ? px * 0.05 * (het ? 1.2 : 1) : px * 0.018, ry = bead ? px * 0.045 * (het ? 1.2 : 1) : px * 0.04;
       c.save(); c.translate(pts[k][0], pts[k][1]); c.rotate(ang); c.beginPath(); c.ellipse(0, 0, rx, ry, 0, 0, 6.283);
@@ -98,7 +98,7 @@
   function render(sp, s) {
     var key = s + "|" + sp.id; if (BIG[key]) return BIG[key];
     var D = w.igsNeonDraw, shape = sp.shape ? String(sp.shape) : D.shapeOf({ sp: sp }), col = D.colOf({ sp: sp }, s), px = 300;
-    var fil = sp.cat === "producer" && (shape === "filament" || shape === "trichormus" || (s === "glass" && /Spirulina/.test(sp.name))), spr = sp.cat === "virus" || fil ? null : D.bake(shape, col, px, s, hash(sp.id || sp.name) % 4);
+    var fil = sp.cat === "producer" && (shape === "filament" || shape === "trichormus" || /Spirulina/.test(sp.name)), spr = sp.cat === "virus" || fil ? null : D.bake(shape, col, px, s, hash(sp.id || sp.name) % 4);
     var c = document.createElement("canvas"); c.width = c.height = px; var x = c.getContext("2d");
     FILG = fil; if (fil) chain(x, px, sp, s, col); else if (spr) { x.drawImage(spr, 0, 0); detail(x, sp, s, px); } else phage(x, px, s === "cyber" || s === "neon" || s === "phase" ? (s === "cyber" ? "#ff3cf0" : "#e8fff9") : (s === "glass" ? "#5b7f9e" : "#5a3a1e"), hash(sp.name), sp.name);
     /* crop to the creature so it fills the card */

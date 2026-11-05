@@ -146,3 +146,7 @@ html body #wikiO.v9b[data-v9=haeckel] .wiki-entry>b{padding:0 24px}
 /* v5b engraving pond: engraved parchment HUD panels like concept 09 */
 body[data-theme-pond="engraving"] #hud,body[data-theme-pond="engraving"] #divReason{background:#efe4c8!important;color:#2b1d10!important;border:1px solid #3a2a18!important;outline:1px solid #3a2a18;outline-offset:2px;border-radius:2px!important;box-shadow:none!important;font-family:Georgia,serif!important}
 body[data-theme-pond="engraving"] #hud *{color:#2b1d10}
+/* v5c engraving pond: bars and bottom hint in engraving ink */
+body[data-theme-pond="engraving"] #hud{filter:sepia(1) saturate(.55) contrast(1.1)}
+body[data-theme-pond="engraving"] #hDivReady,body[data-theme-pond="engraving"] #divReason,body[data-theme-pond="engraving"] .div-reason{background:#efe4c8!important;color:#2b1d10!important;border:1px solid #3a2a18!important;outline:1px solid #3a2a18;outline-offset:2px;border-radius:2px!important;box-shadow:none!important;font-family:Georgia,serif!important}
+body[data-theme-pond="engraving"] #scaleBar{filter:sepia(1) saturate(.5) brightness(.6)}

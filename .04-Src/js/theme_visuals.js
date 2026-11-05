@@ -167,8 +167,8 @@
       }
       if (id === "engraving") {
         c.save();
-        try { c.filter = "grayscale(1) contrast(1.7) sepia(0.6) brightness(1.0)"; } catch (e) {}
-        c.shadowColor = "rgba(40,26,12,0.45)";
+        try { c.filter = "grayscale(1) sepia(0.55) contrast(1.15) brightness(1.12)"; } catch (e) {}
+        c.shadowColor = "rgba(0,0,0,0)";
         c.shadowBlur = 1.5;
         orig(c, o, ssz, sh);
         c.restore();
@@ -376,7 +376,7 @@
     ensureNeonDraw();
     wrapSky(); wrapSun(); wrapPads(); wrapSwiss(); wrapWater(); wrapShoreBubbles(); wrapBuildWiki();
     var id = tid();
-    var dark = {"neon-bio":0.42,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":0.85,"haeckel-watercolor":0.75,"glass-lab":0.9};
+    var dark = {"neon-bio":0.42,"cyberpunk-scanner":0.22,"phase-contrast":0.48,"engraving":1.0,"haeckel-watercolor":0.75,"glass-lab":0.9};
     if (dark[id] != null) w.__igsThemeDayLight = dark[id];
     else if (id === "classic") w.__igsThemeDayLight = null;
     if (isV5(id)) {

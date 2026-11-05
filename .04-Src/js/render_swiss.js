@@ -213,6 +213,22 @@ function liftDarkFills(img){
   } catch(e){ return img; }
 }
 
+// v5f engraving only: 2x prerender with a thin outline (the baked thick dark membrane ring read as a halo); other themes untouched
+function _isEngr(){ try { return document.documentElement.getAttribute('data-theme-pond') === 'engraving'; } catch(e){ return false; } }
+function engrThin(src){
+  try {
+    var W0 = src.naturalWidth || src.width, H0 = src.naturalHeight || src.height; if (!W0 || !H0) return src;
+    var W = W0 * 2, H = H0 * 2, c = document.createElement('canvas'); c.width = W; c.height = H;
+    var x = c.getContext('2d'); x.imageSmoothingQuality = 'high'; x.drawImage(src, 0, 0, W, H);
+    var d = x.getImageData(0, 0, W, H), p = d.data, D = Math.max(3, Math.round(W * 0.035)), dist = new Uint8Array(W * H), i, k, y, X;
+    for (i = 0; i < W * H; i++) dist[i] = p[i * 4 + 3] < 40 ? 0 : 255;
+    for (k = 1; k <= D; k++) for (y = 1; y < H - 1; y++) for (X = 1; X < W - 1; X++) { i = y * W + X;
+      if (dist[i] === 255 && (dist[i - 1] === k - 1 || dist[i + 1] === k - 1 || dist[i - W] === k - 1 || dist[i + W] === k - 1)) dist[i] = k; }
+    for (i = 0; i < W * H; i++) { var dd = dist[i]; if (dd < 3 || dd > D) continue; var q = i * 4, lum = 0.3 * p[q] + 0.59 * p[q + 1] + 0.11 * p[q + 2];
+      if (lum < 110) { p[q] = 214; p[q + 1] = 200; p[q + 2] = 168; } }
+    x.putImageData(d, 0, 0); return c;
+  } catch(e){ return src; }
+}
 var _liftQ = [];
 function _liftNext(){ var fn = _liftQ.shift(); if(fn) fn(); if(_liftQ.length) setTimeout(_liftNext, 0); }
 
@@ -235,7 +251,7 @@ window.loadSwissSprites = function(basePath){
     var img = new Image();
     img.decoding = 'async';
     // v20.12 menu-load: pixel lift runs in its own task (one sprite per task) so it never blocks first menu paint; result identical
-    img.onload = function(){ _liftQ.push(function(){ sprites[shape] = liftDarkFills(img) || img; done(); }); if(_liftQ.length === 1) setTimeout(_liftNext, 0); };
+    img.onload = function(){ _liftQ.push(function(){ var lf = liftDarkFills(img) || img; sprites[shape] = _isEngr() ? engrThin(lf) : lf; done(); }); if(_liftQ.length === 1) setTimeout(_liftNext, 0); };
     img.onerror = function(){ console.warn('[swiss] fail', shape); done(); };
     img.src = base + shape + '.png?v=1';
   });

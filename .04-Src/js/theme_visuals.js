@@ -170,7 +170,9 @@
         try { c.filter = "grayscale(1) sepia(0.55) contrast(1.15) brightness(1.12)"; } catch (e) {}
         c.shadowColor = "rgba(0,0,0,0)";
         c.shadowBlur = 1.5;
-        orig(c, o, ssz, sh);
+        /* v5d: the species colour ring in drawSprite turns into a dark halo under the sepia filter; hide it for engraving only */
+        var spc = o && o.sp, oc = spc ? spc.color : null; if (spc) spc.color = null;
+        try { orig(c, o, ssz, sh); } finally { if (spc) spc.color = oc; }
         c.restore();
         /* v5b: dark multiply halo removed: concept 09 has light engraved creatures, one draw fewer per cell */
         return;
@@ -216,6 +218,7 @@
     vig.addColorStop(0, "rgba(0,0,0,0)"); vig.addColorStop(1, "rgba(0,0,0," + FX[0] + ")");
     ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
     if (FX[1]) { ctx.fillStyle = FX[1]; ctx.fillRect(0, 0, W, H); }
+    if (id === "engraving") { ctx.globalCompositeOperation = "screen"; ctx.fillStyle = "rgba(150,132,100,0.35)"; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = "source-over"; } /* v5d: dark water is baked into the bg image; lift it toward parchment */
     if (id === "cyberpunk-scanner") { /* faint scanline sweep */
       var sy = ((Date.now() / 18) % (H + 80)) - 40, sg = ctx.createLinearGradient(0, sy - 40, 0, sy + 40);
       sg.addColorStop(0, "rgba(0,246,255,0)"); sg.addColorStop(0.5, "rgba(0,246,255,0.07)"); sg.addColorStop(1, "rgba(0,246,255,0)");

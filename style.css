@@ -120,7 +120,30 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 #helpO{background:rgba(0,5,15,.95);overflow:auto;padding:25px;z-index:85}
 #deadO{background:rgba(0,5,15,.96)}
 #setO{background:rgba(0,5,15,.95);overflow:auto;padding:25px}
-#wikiO{background:rgba(0,5,15,.97);overflow:hidden;z-index:85}
+#wikiO{background:rgba(0,5,15,.97);overflow-y:auto;z-index:85;position:fixed;inset:0;width:100vw;height:100vh;padding:20px;box-sizing:border-box;display:flex;flex-direction:column}
+#wikiO .tt{flex-shrink:0;text-align:center;margin-bottom:10px}
+#wikiSearch{flex-shrink:0;width:100%;max-width:600px;margin:0 auto 15px;display:block;padding:10px;font-size:15px;background:#07141f;color:#fff;border:2px solid #345;border-radius:8px;box-sizing:border-box}
+#wikiContent{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px;align-content:start;padding-bottom:80px}
+#wikiContent .wiki-cat{grid-column:1/-1;color:#4ef;font-size:20px;font-weight:bold;margin:10px 0 5px;padding:8px;background:rgba(0,20,40,0.6);border-radius:6px;text-align:center}
+#wikiContent .wiki-role{grid-column:1/-1;color:#9bd;font-size:14px;font-style:italic;margin:-5px 0 10px;text-align:center}
+#wikiContent .wiki-entry{background:#07141f;border:2px solid #234;border-radius:10px;padding:12px;min-height:120px;display:flex;flex-direction:column;gap:6px;transition:all .2s}
+#wikiContent .wiki-entry:hover{border-color:#4af;box-shadow:0 0 15px rgba(68,170,255,0.3);transform:translateY(-2px)}
+#wikiContent .wiki-entry b{font-size:16px;display:block;margin-bottom:4px}
+#wikiContent .wiki-entry .wl{font-size:12px;color:#9bd}
+#wikiContent .wiki-entry .wa{font-size:13px;color:#cde;line-height:1.5;margin:6px 0}
+#wikiContent .wiki-entry .wf{font-size:11px;color:#8ab;margin-top:auto;padding-top:6px;border-top:1px solid #234}
+#wikiContent .wiki-entry .wo{font-size:11px;color:#7ac;margin-top:4px}
+#wikiContent .wiki-entry .ww{margin-top:6px}
+#wikiContent .wiki-entry .ww a{color:#4af;text-decoration:none;font-size:12px}
+#wikiContent .wiki-entry .ww a:hover{text-decoration:underline}
+#wikiClose{flex-shrink:0;margin:15px auto 0;display:block}
+@media (max-width:768px){
+  #wikiContent{grid-template-columns:1fr;gap:12px}
+  #wikiO{padding:15px}
+}
+@media (min-width:1400px){
+  #wikiContent{grid-template-columns:repeat(3,1fr)}
+}
 .tt{font-size:32px;color:#4ef;margin-bottom:3px;text-shadow:0 0 15px #2af}
 .sb2{font-size:13px;color:#9bd;margin-bottom:10px}
 .btn{padding:9px 26px;font-size:18px;min-height:48px;background:#123;color:#bef;border:2px solid #345;border-radius:7px;cursor:pointer;font-family:inherit;margin:3px;transition:all .15s}
@@ -167,14 +190,7 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 #wikiContent::-webkit-scrollbar{width:8px}
 #wikiContent::-webkit-scrollbar-track{background:rgba(0,10,25,.8);border-radius:4px}
 #wikiContent::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1a4a6a,#0e3050);border-radius:4px}
-.wiki-cat{color:#4df;font-size:16px;font-weight:bold;margin:14px 0 6px;border-bottom:1px solid #234;padding-bottom:3px}
-.wiki-entry{background:rgba(0,15,35,.6);border:1px solid #234;border-radius:6px;padding:8px 12px;margin:5px 0;font-size:11px;color:#bcd;line-height:1.5}
-.wiki-entry b{color:#4df}
-.wiki-entry .wl{color:#789;font-style:italic;font-size:12px}
-.wiki-entry .wf{color:#abc;margin-top:3px;font-size:12px}
-.wiki-entry .wa{color:#d8ecff;font-size:13px;line-height:1.45;margin:6px 0 4px;white-space:normal}
-.wiki-entry .wo{color:#678;font-size:10px;margin-top:3px}
-.wiki-role{color:#9bb;font-size:12px;margin:0 0 8px;line-height:1.4;max-width:700px}
+/* Wiki styles moved to #wikiO section above (grid layout) */
 #wikiContent{padding:0 8px 16px}
 .wiki-search{width:300px;padding:6px 10px;background:#012;border:1px solid #345;border-radius:5px;color:#cef;font-size:12px;font-family:inherit;margin-bottom:8px}
 .wiki-search:focus{outline:none;border-color:#4af}
@@ -372,8 +388,7 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 .menu-actions{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;width:100%;max-width:920px;padding:8px 6px 10px;margin:0 auto 4px;background:rgba(0,8,18,.96);border-bottom:1px solid rgba(80,140,160,.25)}
 #foodChainBar,#foodChainDiagram{display:none!important}
 #spGrid{max-height:42vh}
-.wiki-entry .ww{margin-top:5px;font-size:12px}
-.wiki-entry .ww a{color:#7cf;text-decoration:underline}
+/* Wiki link styles moved to #wikiO section above */
 
 /* === UI-RESTORE-2026-09-22 zone framework === */
 #leftContainer{position:absolute;top:max(6px,env(safe-area-inset-top));left:max(6px,env(safe-area-inset-left))}

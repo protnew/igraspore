@@ -36,7 +36,7 @@
       "id": "C4",
       "severity": "CRITICAL",
       "where": "06-DevOps-and-Release/apk/twa-manifest.json:23 (git ls-files: файл tracked)",
-      "what": "Пароль keystore «igraspore123» в public-репо; пункт P2 BLOCKER из PRIORITY_LIST 2026-11-01 не закрыт — висит 3 дня, вектор известен с 2026-09-22 (A22-P1: keystore убрали, пароль остался).",
+      "what": "Пароль keystore «[REDACTED]» в public-репо; пункт P2 BLOCKER из PRIORITY_LIST 2026-11-01 не закрыт — висит 3 дня, вектор известен с 2026-09-22 (A22-P1: keystore убрали, пароль остался).",
       "why": "Любой с клоном репо подписывает «обновления» именем iGraSpore для установок, раздававшихся старым APK; блокер для публикации.",
       "ac": "Пароль в env (как build.gradle); поле из tracked-файла убрано; решение владельца по истории ключа зафиксировано.",
       "test_how": "git ls-files | grep twa-manifest; grep -i password twa-manifest.json = 0 совпадений после фикса."

@@ -20,7 +20,7 @@
   "signingKey": {
     "path": "C:\\Obsidian\\New\\Projects\\08-iGraSpore_V2\\_apk\\igraspore.keystore",
     "alias": "igraspore",
-    "password": "igraspore123"
+    "password": "[REDACTED]"
   },
   "appVersionName": "2.0.0",
   "appVersionCode": 1,

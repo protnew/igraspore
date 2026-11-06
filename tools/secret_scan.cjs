@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-// Secret scanner for pre-commit hook
-// Scans staged files for password literals and other secrets
+// Secret scanner for pre-commit hook and manual tree scan
+// Scans staged files (pre-commit) or entire tree (manual) for secrets
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-// Secret patterns
 const PATTERNS = [
   { name: 'Password literal', regex: /igr[a-z0-9@#$_!.-]*123/i },
   { name: 'AWS key', regex: /AKIA[0-9A-Z]{16}/ },
@@ -19,14 +18,9 @@ const PATTERNS = [
   { name: 'Generic token', regex: /token\s*[:=]\s*['"][^'"]{16,}['"]/i },
 ];
 
-// Files to skip
-const SKIP_PATTERNS = [
-  /\.git\//,
-  /node_modules\//,
-  /\.10-Archive\//,
-  /_backups-tz-/,
-  /secret_scan\.cjs$/, // Don't scan ourselves
-];
+// Only .git is excluded for pre-commit; .git + node_modules for --all scan
+const SKIP_DIRS_PRECOMMIT = ['.git'];
+const SKIP_DIRS_ALL = ['.git', 'node_modules', '.10-Archive', '._АРХИВ'];
 
 function getStagedFiles() {
   try {
@@ -38,12 +32,37 @@ function getStagedFiles() {
   }
 }
 
-function shouldSkip(filePath) {
-  return SKIP_PATTERNS.some(pattern => pattern.test(filePath));
+function getAllFiles(dir, fileList = []) {
+  const files = fs.readdirSync(dir);
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    
+    if (stat.isDirectory()) {
+      if (!SKIP_DIRS_ALL.some(skip => filePath.includes(path.sep + skip + path.sep) || filePath.endsWith(path.sep + skip))) {
+        getAllFiles(filePath, fileList);
+      }
+    } else {
+      fileList.push(filePath);
+    }
+  }
+  return fileList;
+}
+
+function shouldSkip(filePath, scanAll) {
+  const skipDirs = scanAll ? SKIP_DIRS_ALL : SKIP_DIRS_PRECOMMIT;
+  return skipDirs.some(dir => filePath.includes(path.sep + dir + path.sep) || filePath.startsWith(dir + path.sep));
 }
 
 function scanFile(filePath) {
   if (!fs.existsSync(filePath)) {
+    return [];
+  }
+  
+  // Skip binary files
+  const ext = path.extname(filePath).toLowerCase();
+  const binaryExts = ['.png', '.jpg', '.jpeg', '.gif', '.ico', '.exe', '.dll', '.so', '.dylib', '.woff', '.woff2', '.ttf', '.eot', '.mp3', '.mp4', '.wav', '.avi', '.mov', '.zip', '.rar', '.7z', '.tar', '.gz', '.jar', '.keystore'];
+  if (binaryExts.includes(ext)) {
     return [];
   }
   
@@ -65,21 +84,30 @@ function scanFile(filePath) {
 }
 
 function main() {
-  const stagedFiles = getStagedFiles();
+  const scanAll = process.argv.includes('--all');
+  let filesToScan;
   
-  if (stagedFiles.length === 0) {
-    console.log('No staged files to scan.');
-    process.exit(0);
+  if (scanAll) {
+    console.log('Scanning entire tree (except .git)...');
+    filesToScan = getAllFiles('.');
+  } else {
+    filesToScan = getStagedFiles();
+    if (filesToScan.length === 0) {
+      console.log('No staged files to scan.');
+      process.exit(0);
+    }
   }
   
   let totalFindings = 0;
+  let scannedCount = 0;
   
-  for (const file of stagedFiles) {
-    if (shouldSkip(file)) {
+  for (const file of filesToScan) {
+    if (shouldSkip(file, scanAll)) {
       continue;
     }
     
     const findings = scanFile(file);
+    scannedCount++;
     
     if (findings.length > 0) {
       console.error(`\n❌ Secret detected in ${file}:`);
@@ -91,12 +119,12 @@ function main() {
   }
   
   if (totalFindings > 0) {
-    console.error(`\n🚫 Commit blocked: ${totalFindings} secret(s) detected.`);
+    console.error(`\n🚫 ${scanAll ? 'Tree scan' : 'Commit'} blocked: ${totalFindings} secret(s) detected in ${scannedCount} file(s).`);
     console.error('   Remove secrets before committing.');
     process.exit(1);
   }
   
-  console.log(`✓ Secret scan passed: ${stagedFiles.length} file(s) scanned, 0 findings.`);
+  console.log(`✓ Secret scan passed: ${scannedCount} file(s) scanned, 0 findings.`);
   process.exit(0);
 }
 

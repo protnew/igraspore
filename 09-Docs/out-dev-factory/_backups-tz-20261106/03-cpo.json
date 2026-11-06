@@ -1,0 +1,255 @@
+{
+  "role": "03-CPO",
+  "writes_product": false,
+  "date": "2026-11-04",
+  "project": "08-iGraSpore_V2",
+  "head": "ebd6ffb (v29 neon-bio, no deploy), ветка release-ready-2026-10-14, незакоммиченных путей 1179",
+  "findings": [
+    {
+      "id": "C1",
+      "severity": "BLOCKER",
+      "where": "https://igraspore.pages.dev/ vs index.html:226-228 (диск)",
+      "what": "Прод отстаёт на 37 дней: build-stamp 1790622000 (2026-09-28), 41 <script>; на диске 59 <script> + theme_engine/theme_neon_draw/theme_visuals. Все работы v25-v29 (100 языков, листинги Play, темы, бестиарий) существуют только на диске; последний коммит сам помечен «no deploy».",
+      "why": "Релиза фактически нет: ни один игрок prod-домена не получил ни одного из 4 релизных циклов v25-v29; «выложить» сегодня нечем — развилка источника выкладки (P7) всё ещё без карточки и слова владельца.",
+      "ac": "Релизный артефакт (по решению P7) выкачен: build-stamp и список script src прод-домена = артефакту релиза; выкладка одной командой по чек-листу.",
+      "test_how": "curl -s https://igraspore.pages.dev/ | grep build-stamp; сравнить число <script> и src с релизным index.html."
+    },
+    {
+      "id": "C2",
+      "severity": "BLOCKER",
+      "where": "06-DevOps-and-Release/android/android/app/build/outputs/bundle/release/ (каталог отсутствует)",
+      "what": "Подписанного AAB нет нигде: find *.aab по 06-DevOps-and-Release и .04-Src = 0 файлов; есть только app-debug.apk. REPORT v27 ссылался на app-release.aab от 28.10 — этого файла больше нет на диске.",
+      "why": "Закрытый тест Google Play (Р13) не может начаться: грузить в internal-трек нечего; отладочный APK в магазин не принимается.",
+      "ac": "Подписанный AAB собран цепочкой T6 (build-www-release → sync_fonts → sync_public → hash 0 diffs → bundleRelease → sign-local), versionCode поднят, sha256 и путь в отчёте, aab_langs OK.",
+      "test_how": "ls .../bundle/release/app-release.aab; jarsigner -verify; node tools/aab_langs.cjs → result OK."
+    },
+    {
+      "id": "C3",
+      "severity": "CRITICAL",
+      "where": "git status --porcelain (1179 путей), .04-Src/i18n/*.json ×100, .04-Src/js/i18n_detect.js",
+      "what": "1179 незакоммиченных путей: 843 в 09-Docs, 100 в .04-Src (все 100 словарей с добавленным aria.lang — задача Д7 ТЗ v28, 99/100 — af.json без ключа; i18n_detect.js с T4a en-fallback), 71 в 06-DevOps, 37 в tools. TZ v28 выполнен частично, но 2 дня не закоммичен; REPORT-TZ-...-v28 и LEAD-LOG-v28 не существуют.",
+      "why": "Тот же сценарий потерь, что P13 (26.10): checkout/сбой стёр бы двухдневную работу и месяц истории; журнал разработки врёт «сделано v28», хотя ни коммита, ни отчёта нет.",
+      "ac": "git status чист по .04-Src и tools; Д7 дожата до 100/100 (af.json); T4a закоммичен отдельным коммитом; LEAD-LOG-v28 и REPORT-v28 созданы с «было→стало».",
+      "test_how": "git status --porcelain .04-Src = 0; grep aria.lang af.json; ls LEAD-LOG-v28.md REPORT-TZ-08-SPOR-v28*.md."
+    },
+    {
+      "id": "C4",
+      "severity": "CRITICAL",
+      "where": "06-DevOps-and-Release/apk/twa-manifest.json:23 (git ls-files: файл tracked)",
+      "what": "Пароль keystore «igraspore123» в public-репо; пункт P2 BLOCKER из PRIORITY_LIST 2026-11-01 не закрыт — висит 3 дня, вектор известен с 2026-09-22 (A22-P1: keystore убрали, пароль остался).",
+      "why": "Любой с клоном репо подписывает «обновления» именем iGraSpore для установок, раздававшихся старым APK; блокер для публикации.",
+      "ac": "Пароль в env (как build.gradle); поле из tracked-файла убрано; решение владельца по истории ключа зафиксировано.",
+      "test_how": "git ls-files | grep twa-manifest; grep -i password twa-manifest.json = 0 совпадений после фикса."
+    },
+    {
+      "id": "C5",
+      "severity": "CRITICAL",
+      "where": "09-Docs/test-runs/results-20261102-1540.json (последний)",
+      "what": "Полный прогон тестов не гонялся после v29: последний results — 2026-11-02 15:40 (база 580/4/0), с тех пор ~15 коммитов v29 (ee26f1a..ebd6ffb) и 1179 грязных путей. Требование P4 из списка 2026-11-01 «прогон на HEAD после фиксов» не выполнено 3 дня.",
+      "why": "В магазин нельзя сборку, которую никто не проверял: в предыдущий такой разрыв (63 коммита) уже въехал BLOCKER P1 — мёртвая игра при зелёных сьюитах.",
+      "ac": "Новый results-<ts>.json на финальном коммите: totals.fail=0 (ENV отдельно), копия в results-v29.json как новая база.",
+      "test_how": "tools/run-all-tests.ps1; читать totals.fail и exit-коды сьюитов."
+    },
+    {
+      "id": "C6",
+      "severity": "MAJOR",
+      "where": "TZ-08-SPOR-v28-nedodelki-2026-11-02_1750.md (создан 02.11 17:50, ревью v28.2 23:15)",
+      "what": "ТЗ v28 простаивает 2 дня: из задач сделан только T4a + Д7 (незакоммичены, см. C3). Проверено: шрифты 3/18 woff2 (ls .04-Src/fonts), пакеты round12-for-review 0/99 (ls 09-Docs/i18n-review), eco-v28 директорий 0, Store-пакет T8 0%. Оценка ТЗ 13-27 ч.",
+      "why": "Релизная готовность v28 (AAB, Store-пакет, шрифты, эко) — критический путь к Play; без неё v29 наворачивается поверх невыполненного.",
+      "ac": "T1 шрифты 18/18; T2 пакеты 99/99 (+sha-гейт); T3 эко 5×60 мин с NEG; T6/T6b AAB; T8 Store-пакет по чек-листу; порядок ТЗ T4a→T3→T4b→T6→T8→T1→T2→T5→T6b→T7.",
+      "test_how": "node tools/v26_font_check.cjs (18/18); ls 09-Docs/i18n-review | grep -c round12-for-review = 99; eco-report.md; aab_langs OK."
+    },
+    {
+      "id": "C7",
+      "severity": "MAJOR",
+      "where": "01-Architecture/03-Analysis/REPORT-TZ-08-SPOR-v29-themes-strict-20261103.md; LEAD-LOG-v29.md",
+      "what": "Хвосты v29 после волны 1 STOP PASS: strict eye 48-74% против цели 99.9% (neon pond 48%, phase 55/48, haeckel 58/72, engraving 52/66); auto MAD отвергнут как завышенный; APK-доказательство тем неполное (эмулятор kq_test35 ANR, CDP-сокет WebView отсутствовал); AE Worker — только skeleton (wrangler.toml.example), деплой — чек-лист владельца.",
+      "why": "7 стилей заявлены, но 6 из 7 заметно не совпадают с утверждёнными мокапами; A/B-аналитика не сможет стартовать без Worker и Data-safety решения.",
+      "ac": "По каждому стилю eye% ≥99.9% либо решение владельца «достаточно»; стабильные 14 APK-кадров тем; Worker задеплоен по чек-листу (отдельно, не в этом прогоне).",
+      "test_how": "Повторный strict-eye vs мокапы design-concepts-2026-11-03; emulator-5554 стабильный проход + screencap; wrangler dev + POST /theme-events."
+    },
+    {
+      "id": "C8",
+      "severity": "MAJOR",
+      "where": ".04-Src/i18n/en.json (12 theme.* ключей), ru.json; .04-Src/tools/RELEASE-CHECKLIST-v24.md",
+      "what": "Принят handoff 02 с уточнением чисел: 12 ключей theme.* есть только в en.json и ru.json — 2 из 103 паков, 101 без; ключи aria.themeBestiary/aria.themePond из FR-4 ТЗ v29 отсутствуют даже в en.json. RELEASE-CHECKLIST-v24.md не содержит ни одного упоминания i18n/lint (grep = 0), хотя lint уже в run-all-tests.ps1 с игнорируемым exit-кодом (P16).",
+      "why": "Игрок на 101 языке видит англ. или сырые ключи у всех переключателей тем; без гейта в чек-листе следующий релиз снова отдаст дыру в словарях.",
+      "ac": "Генератор ключей прогнан по всем 100 пакам (theme.* + aria.theme*, 14+ ключей); i18n_lint включён пунктом гейта в RELEASE-CHECKLIST с ненулевым exit-кодом как fail.",
+      "test_how": "grep -l '\"theme\\.' .04-Src/i18n/*.json | wc -l = 100; grep -ci lint .04-Src/tools/RELEASE-CHECKLIST-v24.md ≥ 1; i18n_lint exit-code в totals."
+    },
+    {
+      "id": "C9",
+      "severity": "MAJOR",
+      "where": ".04-Src/qa-playwright/functional_tests/part01.js, part02.js; tools/run-all-tests.ps1; 5 конфигов playwright",
+      "what": "Принят handoff 01: гейт pageerror вне конвейера подтверждён — pageerror есть только в functional_tests part01/part02, которых нет в run-all-tests.ps1 (сьюиты: vitest, qa_unit, playwright=contract.config, playwright_v20, i18n, report, aab). Конфигов playwright 5: 3 в корне (playwright.config.js, playwright.contract.config.js, playwright.v20.config.js) + 2 в .04-Src (playwright.hardtimeout.config.js, qa-playwright/playwright.functional.config.js). P3 открыта 3 дня.",
+      "why": "Класс «скрипт умер на старте» (позволил P1 жить 2 дня при зелёных сьюитах) по-прежнему не гейтится; 5 конфигов дублируют друг друга и маскируют, что реально гоняется.",
+      "ac": "Спека pageerror==0 + непустые тексты startBtn/menuSub в конфиге гейта; suite exit-code в totals; один консолидированный конфиг (или документированные роли каждого из 5).",
+      "test_how": "grep -l pageerror в спеках, запускаемых run-all-tests.ps1; намеренно сломанный бут на HEAD → гейт красный."
+    },
+    {
+      "id": "C10",
+      "severity": "MINOR",
+      "where": ".04-Src/js/ui_screens.js:179-184 (toggleRenderMode), .04-Src/js/config.js:418",
+      "what": "Принят handoff 01 (A3): renderMode не персистится — toggleRenderMode меняет settings.renderMode только в памяти; grep setItem по setting|render|mode в .04-Src/js = 0 совпадений; при reload сбрасывается в дефолт 'cartoon' (config.js:418). Темы при этом персистятся (theme_engine.js igs.theme.*), т.е. несогласованность UX видна рядом.",
+      "why": "Игрок, выбравший swiss/webgl, после перезапуска возвращается в cartoon — выбор не сохраняется, в отличие от соседних настроек.",
+      "ac": "Выбор renderMode сохраняется в LS и восстанавливается при старте; сценарий «переключил→reload→сохранён» зелёный в e2e.",
+      "test_how": "e2e: клик toggleRenderMode → reload → settings.renderMode равен выбранному."
+    },
+    {
+      "id": "C11",
+      "severity": "MINOR",
+      "where": "index.html:264-269 (внутри блока 254-273)",
+      "what": "Принят handoff 01 (A12): gameSel.addEventListener('change', ... setStarSystem ...) вложен ВНУТРЬ menuSel.addEventListener('change', ...) — каждое событие change у menuSel навешивает ещё один listener на gameSel; N изменений селектора меню = N вызовов setStarSystem на одно событие пруда.",
+      "why": "Каскадное накопление слушателей: чем чаще пользователь трогает звёздный селектор меню, тем чаще дублируется обработка пруда (двойной/кратный вызов setStarSystem).",
+      "ac": "Один постоянный listener на gameSel; spy: одно событие change = ровно 1 вызов setStarSystem.",
+      "test_how": "e2e spy на window.setStarSystem: сменить menuSel 3 раза, изменить gameSel → expect 1 вызов."
+    },
+    {
+      "id": "C12",
+      "severity": "MINOR",
+      "where": ".04-Src/js/config.js (521 строк), .04-Src/js/world_update.js (502)",
+      "what": "Лимит 500 строк пробит; config.js ВЫРОС с 517 (замер 01.11) до 521 — файл под законом «только уменьшать» стал больше. Waiver в LINE-LIMIT-EXCEPTIONS.md не оформлен (P8, открыта 3 дня).",
+      "why": "Канон «>500 = блокер» без waiver = REJECT на приёмке; рост живого файла против собственного закона.",
+      "ac": "Оба ≤500 либо подписанный waiver в LINE-LIMIT-EXCEPTIONS.md; config.js не растёт дальше до резки.",
+      "test_how": "wc -l .04-Src/js/*.js | sort -rn | head."
+    },
+    {
+      "id": "C13",
+      "severity": "MINOR",
+      "where": ".04-Src/package.json (vitest \"3.2.4\")",
+      "what": "P17 не закрыта 9 дней (с 26.10): в манифесте/lockе vitest 3.2.4 при фактически установленной 3.2.6; npm ci вернёт уязвимую версию GHSA-5xrq-8626-4rwp.",
+      "why": "Полупочинка опаснее нечиненой: проверка по lock врёт, чистая установка откатит защиту.",
+      "ac": "package.json и package-lock.json ≥3.2.6, прогон зелёный.",
+      "test_how": "grep vitest .04-Src/package.json; npm audit в .04-Src."
+    },
+    {
+      "id": "C14",
+      "severity": "CRITICAL",
+      "where": "конвейер релиза целиком: 07 (пароль) → 06/08 (коммиты/AAB) → 09 (гейт/прогон) → 01 (A14 схема путей) → 06 (сборка/деплой) → Play",
+      "what": "Консолидированный критический путь релиза (приняты куски от 06/08/09/04, сведены в один порядок): (1) санитизация пароля S2/K1 (07, ~0,5 ч, блокирует любой git add) → (2) коммит-волна по белому списку K2 (код фиксов отдельно; словари только после aria.lang 100/100 — K10 генератор с SyntaxError; cf-publish отдельно; мусор в корзину; ~1-2 ч) → (3) пин vitest Q2/S4 (~0,2 ч) → (4) гейты: functional_tests в run-all-tests.ps1 (pageerror), GATE_BASE_URL, порог dirty_count, slim tests.html, калибровка lint open=93 (~4-8 ч) → (5) полный прогон на HEAD fail=0 (~2 ч машины) → (6) фикс сборки V1 wildcard + V4 rootFiles + V5 миры + A14 единая схема путей — решение 01 (~2-4 ч) → (7) деплой — развилка владельца: вариант 1 быстрый деплой cf-publish после точечного фикса V1 ~1-2 ч (риски: выкладка до гейта, V4/V5 не входят, V13 маскирует 404) или вариант 2 полный цикл ~4-8 ч (закрывает класс тихой неполноты артефакта; зависит от A14) → (8) AAB по чек-листу v24 п.6 с хранением вне build-каталогов (~2-3 ч) → (9) Play: Store-пакет T8 + internal-трек.",
+      "why": "Четыре роли независимо дали куски релизного пути (06 — деплой/AAB, 08 — коммиты/прогон, 09 — состав гейта, 01 — схема путей), но ни у кого нет сквозного порядка с зависимостями; без него исполнитель начнёт с середины (деплой/сборка) и повторит сценарий «зелёный отчёт о мёртвой игре» (U1 жил 2 дня при зелёных сьюитах).",
+      "ac": "Путь принят как план: каждый шаг имеет хозяина и критерий выхода; развилка выкладки (вариант 1/2) не решена — решает владелец; шаги 4-5 строго до 6-8; полный прогон и фикс сборки ДО деплоя и AAB.",
+      "test_how": "Чек-пойнты по шагам: (1) grep расширенного класса = 0; (2) git status .04-Src+tools = 0; (3) manifest=lock=installed vitest; (4) run-all-tests.ps1 содержит functional, артефакты playwright внутри проекта; (5) новый results-*.json на HEAD totals.fail=0; (6) rebuild → 7 тем/24 мира/105 i18n в артефакте; (7) curl прода = свежий build-stamp; (8) jarsigner -verify + aab_langs OK на стабильном пути."
+    },
+    {
+      "id": "C15",
+      "severity": "MINOR",
+      "where": ".04-Src/js/i18n_detect.js:67 (IGS_ENABLED без zh-CN); .04-Src/i18n/zh-CN.json; detectLang:14 (chain ['zh-CN'])",
+      "what": "zh-CN не включён в релиз: IGS_ENABLED не содержит zh-CN (zh-TW есть), цепочка zh→zh-CN объявлена в detectLang:14, но гейт enabled (ok(chain[c])) её отсекает — игрок zh-hans получает fallback. Словарь физически готов: zh-CN.json на диске (18 КБ, 02.11), 436 ключей (замер 01.11). Статус: ICEBOX, в критический путь релиза не ставится.",
+      "why": "Решение о волне — продуктовое (состав языков), не UX: по Р12 языки включаются только с баллом аналитика (enabled:false без него); включение ~1-2 ч — кандидат в первый контентный апдейт вместе с L1-L2.",
+      "ac": "Слово владельца по zh-CN (включать сейчас / волной 1 после релиза); при включении — zh-CN в IGS_ENABLED и прохождение цепочки zh→zh-CN без fallback.",
+      "test_how": "grep zh-CN .04-Src/js/i18n_detect.js в строке IGS_ENABLED; e2e: Accept-Language zh-CN → язык интерфейса zh-CN, не en."
+    }
+  ],
+  "handoff_to": [
+    {
+      "to_role": "06",
+      "domain": "release/devops",
+      "trigger": "прод отстаёт на 37 дней + AAB отсутствует + развилка источника выкладки без решения",
+      "context": "curl https://igraspore.pages.dev/ = build-stamp 1790622000 (2026-09-28), 41 script; диск 59 script + темы (index.html:226-228). find *.aab = 0 файлов; app/build/outputs/bundle/release не существует. P7 (PRIORITY_LIST 01.11) без карточки Choser. Нужен: один источник выкладки, сборка AAB по цепочке v28 T6, деплой одной командой.",
+      "severity_hint": "BLOCKER"
+    },
+    {
+      "to_role": "04",
+      "domain": "frontend UX",
+      "trigger": "renderMode не персистится; двойной bind setStarSystem; config.js вырос до 521",
+      "context": "C10 (ui_screens.js:179-184, config.js:418), C11 (index.html:264-269 вложенный addEventListener), C12 (wc -l 521/502, waiver нет). Оценка: C10 ~20 мин, C11 ~20 мин, C12 — резка отдельной задачей после релиза.",
+      "severity_hint": "MINOR"
+    },
+    {
+      "to_role": "08",
+      "domain": "qa/gate",
+      "trigger": "pageerror-спека вне конвейера; 5 конфигов playwright; полный прогон не гонялся после v29",
+      "context": "C9 (functional_tests part01/02 не в run-all-tests.ps1; 5 конфигов перечислены), C5 (последний results-20261102-1540.json, ~15 коммитов v29 после). Оценка: гейт + консолидация ~60 мин, прогон ~90 мин.",
+      "severity_hint": "CRITICAL"
+    },
+    {
+      "to_role": "01",
+      "domain": "architecture",
+      "trigger": "развилка P7 «единый источник выкладки» до сих пор без карточки Choser — теперь она блокирует и деплой v29, и релиз",
+      "context": "P7/P9 открыты с 01.11 (3 дня), до того с 26.10; prod 37 дней позади (C1), AAB нет (C2). Требуется карточка 5-6×8-12 с project_tag 08-iGraSpore_V2 и решение владельца.",
+      "severity_hint": "CRITICAL"
+    },
+    {
+      "to_role": "02",
+      "domain": "i18n",
+      "trigger": "вернуть калибровку листинга: включённых 20/100, шрифтов 3/18 — листинг «100 языков» враг игры",
+      "context": "Шрифты 3/18 (C6), пакеты round12 0/99; листинги .04-Src/i18n/listing 100/100 созданы (v27), но включённых языков 20. Развилка P9 (листинг=факт enabled) не решена.",
+      "severity_hint": "MAJOR"
+    }
+  ],
+  "accepted_handoffs": [
+    {
+      "from_role": "01",
+      "domain": "qa/e2e",
+      "trigger": "A3: renderMode не персистится (сценарий переключил→reload→сохранён)",
+      "verdict": "confirmed",
+      "what_found": "grep setItem по setting|render|mode в .04-Src/js = 0; toggleRenderMode (ui_screens.js:179-184) меняет только память; дефолт 'cartoon' в config.js:418. Темы при этом персистятся (theme_engine.js LS_B/LS_P) — контраст с соседним кодом.",
+      "new_finding_id": "C10"
+    },
+    {
+      "from_role": "01",
+      "domain": "qa/e2e",
+      "trigger": "A12: spy на setStarSystem — двойной bind index.html:254-273",
+      "verdict": "confirmed",
+      "what_found": "index.html:264-269: gameSel.addEventListener('change') вложен внутрь menuSel.addEventListener('change') — каждое событие menuSel навешивает ещё один listener на gameSel → накопление вызовов setStarSystem.",
+      "new_finding_id": "C11"
+    },
+    {
+      "from_role": "01",
+      "domain": "qa/gate",
+      "trigger": "гейт pageerror (P3) всё ещё вне конвейера",
+      "verdict": "confirmed",
+      "what_found": "pageerror только в .04-Src/qa-playwright/functional_tests/part01.js и part02.js; tools/run-all-tests.ps1 гоняет сьюиты vitest/qa_unit/playwright(contract.config)/playwright_v20/i18n/report/aab — functional_tests в гейт не входят.",
+      "new_finding_id": "C9"
+    },
+    {
+      "from_role": "01",
+      "domain": "qa/infra",
+      "trigger": "5 конфигов playwright (3 в корне + 2 в .04-Src) — консолидация",
+      "verdict": "confirmed",
+      "what_found": "Ровно 5: playwright.config.js, playwright.contract.config.js, playwright.v20.config.js (корень) + .04-Src/playwright.hardtimeout.config.js, .04-Src/qa-playwright/playwright.functional.config.js. Гейт использует только contract+v20. Оценка консолидации как задачи бэклога: ~60 мин, MAJOR (вошла в C9).",
+      "new_finding_id": "C9"
+    },
+    {
+      "from_role": "02",
+      "domain": "i18n",
+      "trigger": "14 theme-ключей отсутствуют в 97 из 100 i18n-паков; прогнать генератор ключей + включить i18n_lint гейтом в RELEASE-CHECKLIST",
+      "verdict": "confirmed",
+      "what_found": "Подтверждено с уточнением чисел: theme.* (12 ключей) только в en.json и ru.json — 2 из 103 паков, 101 без; aria.themeBestiary/aria.themePond из FR-4 отсутствуют даже в en. RELEASE-CHECKLIST-v24.md: 0 упоминаний i18n/lint; lint уже есть в run-all-tests.ps1 (сьюит i18n) с игнорируемым exit-кодом (P16). Оформлено как C8 с AC: генератор по 100 пакам + пункт гейта в чек-листе.",
+      "new_finding_id": "C8"
+    },
+    {
+      "from_role": "06",
+      "domain": "release / развилка владельцу",
+      "trigger": "BLOCKER: развилка «(1) быстрый деплой текущего cf-publish после точечного фикса V1-копирования, или (2) полный цикл V1/V4/V5 + пересборка AAB по чек-листу v24 п.6 и хранение AAB вне build-каталогов»",
+      "verdict": "confirmed",
+      "what_found": "Оценка объёма/ROI (решение не делала — слово владельца): вариант 1 ≈1-2 ч (точечный фикс build-www-release.ps1:37 15-30 мин + пересборка ~15 мин + деплой одной командой + smoke 30-60 мин), риски: выкладка до зелёного гейта (32 коммита без прогона), V4 (sw.js/_headers выпадут), V5 (миры не поедут), V13 (SPA-fallback 200 маскирует 404), темы чинятся в два приёма; вариант 2 ≈4-8 ч (V1+V4+V5 1-2 ч + A14 схема путей: решение 01 ~0,5 ч + правка 1-2 ч + AAB 2-3 ч машинного), закрывает весь класс тихой неполноты артефакта. Оба варианта зависят от шагов 1-6 — вплетено в C14 шаги 6-7.",
+      "new_finding_id": "C14"
+    },
+    {
+      "from_role": "08",
+      "domain": "qa/gate",
+      "trigger": "K4: последний прогон красный (4 fail: lab_tests Y1-4 Timeout, i18n.lint open=93, report.V1 59 мин, report.V4 sha/head mismatch) + 32 коммита без прогона; K6: functional_tests (pageerror) вне конвейера, 5 конфигов playwright, hardtimeout пишет в C:/Users/Space/agent-transfer",
+      "verdict": "confirmed",
+      "what_found": "Принято как пруф автора, кодом не перепроверяла. Вклад 03: оценки часов в C14 (прогон ~2 ч машины, гейт-работа 4-8 ч) и жёсткая зависимость «гейты до полного прогона» (урок U1). Отдельно: чеки report.V1/V4 — процессные, кандидат на вынос из продуктового гейта (согласуется с Q11 09) — в крит-путь отдельным шагом не ставила, чтобы не раздувать.",
+      "new_finding_id": "C14"
+    },
+    {
+      "from_role": "09",
+      "domain": "cpo-gate",
+      "trigger": "Q1/Q3/Q6/Q7/Q9/Q2: гейт не гонялся 32 коммита после v29; functional/pageerror вне конвейера; 2 конфига бьют в прод + артефакты вне проекта; dirty_count 954 без порога отбраковки; lint open=93 — постоянный красный; vitest lock 3.2.4 vs установленная 3.2.6",
+      "verdict": "confirmed",
+      "what_found": "Порядок правильного гейта 09 принят без изменений (пин vitest → GATE_BASE_URL для functional → slim tests.html → порог dirty → полный прогон) — стал шагами 3-5 в C14. Календарная надстройка 03: lint open=93 либо калибруется до прогона (whitelist ~2-4 ч), либо полный прогон «не считается»; dirty-порог без шага 2 (коммит-волна) бессмыслен — прогон при 954/1187 грязных путях невоспроизводим. Свои замеры: vitest \"3.2.4\" в .04-Src/package.json:27, новейший results — 20261102-1540.json.",
+      "new_finding_id": "C14"
+    },
+    {
+      "from_role": "04",
+      "domain": "i18n / продуктовая развилка",
+      "trigger": "zh-CN не включён: i18n_detect.js:67 IGS_ENABLED без zh-CN, цепочка zh→zh-CN не проходит; zh-CN.json в паках есть — решение о волне не UX, а продуктовая развилка",
+      "verdict": "confirmed",
+      "what_found": "Подтверждено своими замерами: IGS_ENABLED (i18n_detect.js:67) содержит zh-TW, но не zh-CN; цепочка zh→zh-CN объявлена (detectLang:14), гейт enabled (ok(chain[c])) её отсекает; zh-CN.json на диске 18 КБ (02.11), 436 ключей (замер 01.11). Согласна: развилка состава языков релиза — слово владельца по Р12; оформлено как C15 (MINOR, ICEBOX), в крит-путь релиза не ставила. Включение ~1-2 ч — кандидат в первый контентный апдейт с L1-L2.",
+      "new_finding_id": "C15"
+    }
+  ]
+}

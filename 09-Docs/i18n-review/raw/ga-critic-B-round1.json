@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-ga-r1-18899043c6f6",
+  "command": "critic-B review ga round1",
+  "started_at": "2026-11-06T13:09:00.000Z",
+  "finished_at": "2026-11-06T13:39:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ga.json": "24d74b4a20dc36a68f92ece1c3fa9e1c96f268177e1db9a1582f4eabd4ccb963",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ga",
+      "score": 9.3,
+      "axes": {
+        "meaning": 9.5,
+        "glossary": 9.2,
+        "register": 9.4,
+        "length": 9.1,
+        "errors": 9.6
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "GREIM"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "EITILT"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "LEAN"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Aois"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Uile"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AIGÉANLANN"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Íoslódáil aip APK Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Aigéanlann"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Uath (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spór (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Taispeántas"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Roinn (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Ith (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Beatha de láimh (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Eitilt shaor (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Lean cill (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Conas imirt"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Solas"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Micreascóp (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Sos (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 23
+      }
+    }
+  ]
+}

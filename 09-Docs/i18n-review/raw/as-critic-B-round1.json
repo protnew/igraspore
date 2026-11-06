@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-as-r1-da9409ba90de",
+  "command": "critic-B review as round1",
+  "started_at": "2026-11-06T12:49:00.000Z",
+  "finished_at": "2026-11-06T13:19:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "as.json": "f47ed8293c57c6d1d7c19bb66417c43818fbb498dfd06d9e0d15e5397c72e235",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "as",
+      "score": 9.7,
+      "axes": {
+        "meaning": 9.9,
+        "glossary": 9.6,
+        "register": 9.8,
+        "length": 9.5,
+        "errors": 10
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "কামোৰ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "উৰণ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "অনুসৰণ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "বয়স"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "সকলো"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "একুৰেৰিয়াম"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "এণ্ড্ৰইড APK এপ ডাউনলোড কৰক"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "একুৰেৰিয়াম"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "স্বয়ংক্ৰিয় (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "স্প'ৰ (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "ডেমো"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "ভাগ কৰক (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "খাওক (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "হাতে খুৱালক (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "মুক্ত উৰণ (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "কোষ অনুসৰণ কৰক (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "কেনেকৈ খেলিব"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "পোহৰ"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "অণুবীক্ষণ যন্ত্ৰ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "বিৰতি (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 7
+      }
+    }
+  ]
+}

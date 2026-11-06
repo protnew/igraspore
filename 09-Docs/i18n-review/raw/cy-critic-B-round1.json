@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-cy-r1-cb1f8cd89f5b",
+  "command": "critic-B review cy round1",
+  "started_at": "2026-11-06T13:11:00.000Z",
+  "finished_at": "2026-11-06T13:41:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "cy.json": "5e71f8ce979d534c83d4cf79390c8a6fba938b69743289c28b77c45b23565847",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "cy",
+      "score": 8.5,
+      "axes": {
+        "meaning": 8.7,
+        "glossary": 8.4,
+        "register": 8.6,
+        "length": 8.3,
+        "errors": 8.8
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "BRATH"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "HEDFAN"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "DILYN"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Oed"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Popeth"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AQUARIWM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Lawrlwytho ap APK Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Aquariwm"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Awto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Sbor (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Arddangosfa"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Rhannu (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Bwyta (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Bwydo â llaw (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Hedfan rhydd (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Dilyn cell (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Sut i chwarae"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Golau"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Meicrosgop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Seibio (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 32
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-fi-r1-25aace6a7606",
+  "command": "critic-B review fi round1",
+  "started_at": "2026-11-06T11:15:00.000Z",
+  "finished_at": "2026-11-06T11:45:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "fi.json": "255bbcc1bbd029d9f9cb9a6eaacc9c786f118d357613e3bac218a848b818aa1b",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "fi",
+      "score": 8.6,
+      "axes": {
+        "meaning": 8.8,
+        "glossary": 8.5,
+        "register": 8.7,
+        "length": 8.4,
+        "errors": 8.9
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "PURE"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "LENTO"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "SEURAA"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Ikä"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Kaikki"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKVAARIO"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Lataa Android-sovellus (APK)"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akvaario"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Auto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Itiö (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Jakaudu (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Syö (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Manuaaliruokinta (Välilyönti)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Vapaa lento (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Seuraa solua (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Peliohje"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Valo"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskooppi (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Tauko (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 31
+      }
+    }
+  ]
+}

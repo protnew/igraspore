@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-kk-r1-df61cb58395d",
+  "command": "critic-B review kk round1",
+  "started_at": "2026-11-06T12:03:00.000Z",
+  "finished_at": "2026-11-06T12:33:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "kk.json": "55402ed0e91e36c029850b2b9109ccb94248f9e84437ec79b7bac04c4b44099c",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "kk",
+      "score": 9.3,
+      "axes": {
+        "meaning": 9.5,
+        "glossary": 9.2,
+        "register": 9.4,
+        "length": 9.1,
+        "errors": 9.6
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "ТІСТЕ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "ҰШУ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ЕРУ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Жасы"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Барлығы"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "АКВАРИУМ"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Android APK қосымшасын жүктеу"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Аквариум"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Авто (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Спора (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Демо"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Бөліну (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Жеу (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Қолмен азықтандыру (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Еркін ұшу (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Жасушаны қадағалау (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Қалай ойнау керек"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Жарық"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Микроскоп (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Кідірту (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 11
+      }
+    }
+  ]
+}

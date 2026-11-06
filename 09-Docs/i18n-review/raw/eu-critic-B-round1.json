@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-eu-r1-49af365cf87e",
+  "command": "critic-B review eu round1",
+  "started_at": "2026-11-06T12:17:00.000Z",
+  "finished_at": "2026-11-06T12:47:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "eu.json": "91c1d71a2db58781ea328430789afba30d98926cbdfe1433cd9389012d5ab883",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "eu",
+      "score": 8.6,
+      "axes": {
+        "meaning": 8.8,
+        "glossary": 8.5,
+        "register": 8.7,
+        "length": 8.4,
+        "errors": 8.9
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "KOSKA"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "HEGAN"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "JARRAITU"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Adina"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Dena"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKUARIOA"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Deskargatu Android APK aplikazioa"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akuarioa"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Auto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Espora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Zatitu (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Jan (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Eskuz elikatzea (Zuriunea)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Hegan libre (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Jarraitu zelula (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Nola jolastu"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Argia"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskopioa (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pausa (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 28
+      }
+    }
+  ]
+}

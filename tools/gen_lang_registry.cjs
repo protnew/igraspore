@@ -90,7 +90,26 @@ const SCRIPT_RANGE = { deva: 'U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20B9', beng:
 let css = '/* GEN:A1 — @font-face из реестра (languages.json, поле font). Не править руками. */\n';
 for (const l of ON) {
   if (!l.font || l.font === 'system') continue;
-  const FILE_BY_FACE = { 'Noto Sans Bengali': 'NotoSansBengali-Regular.woff2', 'Noto Sans Devanagari': 'NotoSansDevanagari-Regular.woff2', 'Noto Sans Thai': 'NotoSansThai-Regular.woff2' }; // v24: имя файла по face, не по script-конвенции
+  const FILE_BY_FACE = {
+    'Noto Sans Armenian': 'NotoSansArmenian-Regular.woff2',
+    'Noto Sans Bengali': 'NotoSansBengali-Regular.woff2',
+    'Noto Sans Devanagari': 'NotoSansDevanagari-Regular.woff2',
+    'Noto Sans Ethiopic': 'NotoSansEthiopic-Regular.woff2',
+    'Noto Sans Georgian': 'NotoSansGeorgian-Regular.woff2',
+    'Noto Sans Gujarati': 'NotoSansGujarati-Regular.woff2',
+    'Noto Sans Hebrew': 'NotoSansHebrew-Regular.woff2',
+    'Noto Sans Kannada': 'NotoSansKannada-Regular.woff2',
+    'Noto Sans Khmer': 'NotoSansKhmer-Regular.woff2',
+    'Noto Sans Lao': 'NotoSansLao-Regular.woff2',
+    'Noto Sans Malayalam': 'NotoSansMalayalam-Regular.woff2',
+    'Noto Sans Myanmar': 'NotoSansMyanmar-Regular.woff2',
+    'Noto Sans Oriya': 'NotoSansOriya-Regular.woff2',
+    'Noto Sans Sinhala': 'NotoSansSinhala-Regular.woff2',
+    'Noto Sans Tamil': 'NotoSansTamil-Regular.woff2',
+    'Noto Sans Telugu': 'NotoSansTelugu-Regular.woff2',
+    'Noto Sans Thai': 'NotoSansThai-Regular.woff2',
+    'Noto Sans Tibetan': 'NotoSansTibetan-Regular.woff2'
+  };
   const file = FILE_BY_FACE[l.font];
   if (!file) { console.error('нет файла для face ' + l.font + ' (' + l.code + ') — добавь в FILE_BY_FACE'); return; }
   if (!fs.existsSync(path.join(ROOT, '.04-Src/fonts', file))) { console.error('шрифт не найден: ' + file + ' (' + l.code + ')'); continue; }

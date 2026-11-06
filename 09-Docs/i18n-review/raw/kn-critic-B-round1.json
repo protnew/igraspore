@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-kn-r1-dd1c48442111",
+  "command": "critic-B review kn round1",
+  "started_at": "2026-11-06T11:43:00.000Z",
+  "finished_at": "2026-11-06T12:13:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "kn.json": "68602dfe494bcb0a8e579a0d6c5185a25cd3c2dff882760556d4d4395ba24221",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "kn",
+      "score": 8.8,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8.7,
+        "register": 8.9,
+        "length": 8.6,
+        "errors": 9.1
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "ಕಡಿ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "ಹಾರಾಟ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ಹಿಂಬಾಲನೆ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "ವಯಸ್ಸು"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "ಎಲ್ಲಾ"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ಅಕ್ವೇರಿಯಂ"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "ಆಂಡ್ರಾಯ್ಡ್ APK ಆಪ್ ಡೌನ್ಲೋಡ್ ಮಾಡಿ"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "ಅಕ್ವೇರಿಯಂ"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "ಸ್ವಯಂ (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "ಬೀಜಕ (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "ಡೆಮೊ"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "ವಿಭಜನೆ (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "ತಿನ್ನು (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "ಆಹಾರ ನೀಡಿ (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "ಮುಕ್ತ ಹಾರಾಟ (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "ಜೀವಕೋಶ ಹಿಂಬಾಲನೆ (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "ಆಡುವ ಬಗೆ"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "ಬೆಳಕು"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "ಸೂಕ್ಷ್ಮದರ್ಶಕ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "ವಿರಾಮ (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 11
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-si-r1-03612a37128e",
+  "command": "critic-A review si round1",
+  "started_at": "2026-11-06T11:48:00.000Z",
+  "finished_at": "2026-11-06T12:18:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "si.json": "d1e80216bf917e08321cae1b92aa1872e44de801944db6fe3ff0dd1351beb8c7",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "si",
+      "score": 9.4,
+      "axes": {
+        "meaning": 9.6,
+        "glossary": 9.3,
+        "register": 9.5,
+        "length": 9.2,
+        "errors": 9.7
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "හපන්න"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "පියාසැරිය"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "හඹා යන්න"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "වයස"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "සියල්ල"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "අක්වාරිය"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Android APK යෙදුම බාගන්න"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "අක්වාරිය"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "ස්වයංක්‍රීය (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "බීජකය (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "නිරූපණය"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "බෙදන්න (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "කන්න (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "අතින් පෝෂණය (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "නිදහස් පියාසැරිය (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "සෛලය හඹා යන්න (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "ක්‍රීඩා කරන ආකාරය"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "ආලෝකය"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "අන්වීක්ෂය (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "විරාමය (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 7
+      }
+    }
+  ]
+}

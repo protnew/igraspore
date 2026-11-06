@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-so-r1-bfb36e37d98b",
+  "command": "critic-A review so round1",
+  "started_at": "2026-11-06T13:02:00.000Z",
+  "finished_at": "2026-11-06T13:32:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "so.json": "19c3841b1d5a217a456df603403b6987abee15c7b87a70c4ce7b378dbc2eece4",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "so",
+      "score": 8.6,
+      "axes": {
+        "meaning": 8.8,
+        "glossary": 8.5,
+        "register": 8.7,
+        "length": 8.4,
+        "errors": 8.9
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "QANIIN"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "DUUL"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "RAAC"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Da'"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Dhammaan"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKWAARIYAM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Soo dejiso app-ka Android APK"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akwaariyam"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Otomaatig (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Ir (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Muujin"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Qaybi (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Cun (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Siin cuntada (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Duul xor ah (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Raac unug (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Sida loo ciyaaro"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Iftiin"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskoob (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Jooji (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 22
+      }
+    }
+  ]
+}

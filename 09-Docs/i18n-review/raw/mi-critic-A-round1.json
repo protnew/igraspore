@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-mi-r1-d570d710af37",
+  "command": "critic-A review mi round1",
+  "started_at": "2026-11-06T13:24:00.000Z",
+  "finished_at": "2026-11-06T13:54:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "mi.json": "b76d5cae93a880864bc96bedc4aeb3043c117b9f1884ad83e00d4fd21d7b7747",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "mi",
+      "score": 8.7,
+      "axes": {
+        "meaning": 8.9,
+        "glossary": 8.6,
+        "register": 8.8,
+        "length": 8.5,
+        "errors": 9
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "NGAU"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "RERE"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "WHAI"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Pakeke"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Katoa"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "KARI IKA"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Tikiake taupānga APK Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Kari ika"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Aunoa (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Kākano (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Wehe (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Kai (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Whangai ringa (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Rere noa (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Whai pūtau (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Ārahi tākaro"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Mārama"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mīkarakopa (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Tāria (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 17
+      }
+    }
+  ]
+}

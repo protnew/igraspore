@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-ig-r1-daa7980ba77d",
+  "command": "critic-B review ig round1",
+  "started_at": "2026-11-06T13:01:00.000Z",
+  "finished_at": "2026-11-06T13:31:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ig.json": "53eb82f4ae289b9bf5f5f9034a3ed6116730cab4f257e03d0d54db7102ced92a",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ig",
+      "score": 8.8,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8.7,
+        "register": 8.9,
+        "length": 8.6,
+        "errors": 9.1
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "ATA"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "IFE EFE"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ESO"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Afọ"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Ihe niile"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ỤLỌ AZỤ"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Budata ngwa Android APK"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Ụlọ azụ"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Onwe (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Nche (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Ngosipụta"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Kewa (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Lya (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Nri aka (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Ife efe n'efu (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Eso selu (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Otu e si egwuri egwu"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Ìhè"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Maikrọskọọpụ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Kwụsị (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 22
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-ti-r1-78c7e71fb21e",
+  "command": "critic-A review ti round1",
+  "started_at": "2026-11-06T13:30:00.000Z",
+  "finished_at": "2026-11-06T14:00:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ti.json": "6a9b2a589f33a406b23c908efd8ed6a4b3eb0c185e9dc1790e226482cf3c0f60",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ti",
+      "score": 8.7,
+      "axes": {
+        "meaning": 8.9,
+        "glossary": 8.6,
+        "register": 8.8,
+        "length": 8.5,
+        "errors": 9
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "ኣንቀሳቕስ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "ተበብዕ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ተኺተይ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "ዕድመ"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "ኩሉ"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ኣኳሪየም"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "ኣንድሮይድ APK ውረድ"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "ኣኳሪየም"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "ኣውቶ (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "ስፖር (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "ማርኣይ"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "መክፈል (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "ኽትብልካ (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "ብኢድካ ኣበል (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "ናጻ ተበብዕ (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "ሕዳስ ተኺተይ (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "ከመይ ግደኝ"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "ብርሃን"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "ማይክሮስኮፕ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "ሓጊሱ (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 20
+      }
+    }
+  ]
+}

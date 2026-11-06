@@ -364,7 +364,7 @@
     "name": "Nederlands",
     "native": "Nederlands",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "font": "system",
     "plural": "nl",
     "script": "latn",
@@ -372,7 +372,10 @@
     "digits": "latn",
     "playListing": true,
     "register": "je",
-    "critics": [],
+    "critics": [
+      8.5,
+      8.5
+    ],
     "readyForReview": true
   },
   {
@@ -380,7 +383,7 @@
     "name": "Svenska",
     "native": "Svenska",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "sv",
@@ -389,14 +392,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "du",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ro",
     "name": "Română",
     "native": "Română",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ro",
@@ -405,14 +411,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "tu",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "el",
     "name": "Ελληνικά",
     "native": "Ελληνικά",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "el",
@@ -421,14 +430,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ευγενική",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "hu",
     "name": "Magyar",
     "native": "Magyar",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "hu",
@@ -437,14 +449,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "tegező",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "cs",
     "name": "Čeština",
     "native": "Čeština",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "cs",
@@ -453,14 +468,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "tykání",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "da",
     "name": "Dansk",
     "native": "Dansk",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "da",
@@ -469,14 +487,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "du",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "fi",
     "name": "Suomi",
     "native": "Suomi",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "fi",
@@ -485,7 +506,10 @@
     "digits": "latn",
     "playListing": true,
     "register": "sinuttelu",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "zh-CN",
@@ -501,14 +525,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "中性",
-    "critics": [8.5, 8.0]
+    "critics": [
+      8.5,
+      8
+    ]
   },
   {
     "code": "no",
     "name": "Norsk",
     "native": "Norsk bokmål",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "no",
@@ -517,14 +544,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "du",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "pt-PT",
     "name": "Português (Portugal)",
     "native": "Português (Portugal)",
     "wave": 10,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "pt",
@@ -533,14 +563,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "tú/vos",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "es-419",
     "name": "Español (Latinoamérica)",
     "native": "Español (Latinoamérica)",
     "wave": 10,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "es",
@@ -549,14 +582,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "tú/vos",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "hr",
     "name": "Hrvatski",
     "native": "Hrvatski",
     "wave": 10,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "hr",
@@ -565,14 +601,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ti",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "sr",
     "name": "Српски",
     "native": "Српски",
     "wave": 10,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "sr",
@@ -581,14 +620,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ти",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "lt",
     "name": "Lietuvių",
     "native": "Lietuvių",
     "wave": 10,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "lt",
@@ -597,14 +639,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ti",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "lv",
     "name": "Latviešu",
     "native": "Latviešu",
     "wave": 10,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "lv",
@@ -613,14 +658,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ti",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "et",
     "name": "Eesti",
     "native": "Eesti",
     "wave": 10,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "et",
@@ -629,14 +677,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ti",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "sl",
     "name": "Slovenščina",
     "native": "Slovenščina",
     "wave": 10,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "sl",
@@ -645,14 +696,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ti",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ta",
     "name": "தமிழ்",
     "native": "தமிழ்",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Tamil",
     "plural": "ta",
@@ -661,14 +715,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "te",
     "name": "తెలుగు",
     "native": "తెలుగు",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Telugu",
     "plural": "te",
@@ -677,14 +734,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "mr",
     "name": "मराठी",
     "native": "मराठी",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Devanagari",
     "plural": "mr",
@@ -693,14 +753,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "gu",
     "name": "ગુજરાતી",
     "native": "ગુજરાતી",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Gujarati",
     "plural": "gu",
@@ -709,14 +772,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "kn",
     "name": "ಕನ್ನಡ",
     "native": "ಕನ್ನಡ",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Kannada",
     "plural": "kn",
@@ -725,14 +791,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ml",
     "name": "മലയാളം",
     "native": "മലയാളം",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Malayalam",
     "plural": "ml",
@@ -741,14 +810,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ne",
     "name": "नेपाली",
     "native": "नेपाली",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Devanagari",
     "plural": "ne",
@@ -757,14 +829,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "si",
     "name": "සිංහල",
     "native": "සිංහල",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Sinhala",
     "plural": "si",
@@ -773,14 +848,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "my",
     "name": "မြန်မာ",
     "native": "မြန်မာ",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Myanmar",
     "plural": "my",
@@ -789,14 +867,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ar",
     "name": "العربية",
     "native": "العربية",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ar",
@@ -805,14 +886,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "مناسبة",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "fa",
     "name": "فارسی",
     "native": "فارسی",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "fa",
@@ -821,14 +905,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "مناسب",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ur",
     "name": "اردو",
     "native": "اردو",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ur",
@@ -837,14 +924,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "آداب",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "he",
     "name": "עברית",
     "native": "עברית",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Hebrew",
     "plural": "he",
@@ -853,14 +943,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "מנוסח",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "sw",
     "name": "Kiswahili",
     "native": "Kiswahili",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "sw",
@@ -869,14 +962,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "wewe",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "kk",
     "name": "Қазақ тілі",
     "native": "Қазақ тілі",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "kk",
@@ -885,14 +981,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "сіз",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "be",
     "name": "Беларуская",
     "native": "Беларуская",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "be",
@@ -901,14 +1000,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "вы",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "az",
     "name": "Azərbaycan",
     "native": "Azərbaycan",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "az",
@@ -917,14 +1019,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "sən",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ky",
     "name": "Кыргызча",
     "native": "Кыргызча",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ky",
@@ -933,14 +1038,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "сиз",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "mn",
     "name": "Монгол",
     "native": "Монгол",
     "wave": 12,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "mn",
@@ -949,14 +1057,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "та",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ca",
     "name": "Català",
     "native": "Català",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ca",
@@ -965,14 +1076,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "tu",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "gl",
     "name": "Galego",
     "native": "Galego",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "gl",
@@ -981,14 +1095,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ti",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "eu",
     "name": "Euskara",
     "native": "Euskara",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "eu",
@@ -997,14 +1114,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "hi",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "sq",
     "name": "Shqip",
     "native": "Shqip",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "sq",
@@ -1013,14 +1133,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ti",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "mk",
     "name": "Македонски",
     "native": "Македонски",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "mk",
@@ -1029,14 +1152,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ти",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "is",
     "name": "Íslenska",
     "native": "Íslenska",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "is",
@@ -1045,14 +1171,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "þú",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "af",
     "name": "Afrikaans",
     "native": "Afrikaans",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "af",
@@ -1061,14 +1190,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "jy",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "zu",
     "name": "isiZulu",
     "native": "isiZulu",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "zu",
@@ -1077,14 +1209,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "wena",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "km",
     "name": "ខ្មែរ",
     "native": "ខ្មែរ",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Khmer",
     "plural": "km",
@@ -1093,14 +1228,17 @@
     "digits": "khmr",
     "playListing": true,
     "register": "អ្នក",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "lo",
     "name": "ລາວ",
     "native": "ລາວ",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Lao",
     "plural": "lo",
@@ -1109,14 +1247,17 @@
     "digits": "laoo",
     "playListing": true,
     "register": "ເຈົ້າ",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "am",
     "name": "አማርኛ",
     "native": "አማርኛ",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Ethiopic",
     "plural": "am",
@@ -1125,14 +1266,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "እርስዎ",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "hy",
     "name": "Հայերեն",
     "native": "Հայերեն",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Armenian",
     "plural": "hy",
@@ -1141,14 +1285,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "դու",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ka",
     "name": "ქართული",
     "native": "ქართული",
     "wave": 13,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Georgian",
     "plural": "ka",
@@ -1157,14 +1304,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "შენ",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "uz",
     "name": "Oʻzbek",
     "native": "Oʻzbek",
     "wave": 14,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "uz",
@@ -1173,14 +1323,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "sen",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "tg",
     "name": "Тоҷикӣ",
     "native": "Тоҷикӣ",
     "wave": 14,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "tg",
@@ -1189,14 +1342,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ту",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ps",
     "name": "پښتو",
     "native": "پښتو",
     "wave": 14,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ps",
@@ -1205,14 +1361,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ته",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ckb",
     "name": "کوردی",
     "native": "کوردی",
     "wave": 14,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ckb",
@@ -1221,14 +1380,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "تۆ",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "sd",
     "name": "سنڌي",
     "native": "سنڌي",
     "wave": 14,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "sd",
@@ -1237,14 +1399,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "توهان",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "as",
     "name": "অসমীয়া",
     "native": "অসমীয়া",
     "wave": 14,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Bengali",
     "plural": "as",
@@ -1253,14 +1418,17 @@
     "digits": "beng",
     "playListing": true,
     "register": "আপুনি",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "or",
     "name": "ଓଡ஼ிଆ",
     "native": "ଓଡ஼ிଆ",
     "wave": 14,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Oriya",
     "plural": "or",
@@ -1269,14 +1437,17 @@
     "digits": "orya",
     "playListing": true,
     "register": "ଆପଣ",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "bs",
     "name": "Bosanski",
     "native": "Bosanski",
     "wave": 14,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "bs",
@@ -1285,14 +1456,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ti",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "mt",
     "name": "Malti",
     "native": "Malti",
     "wave": 14,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "mt",
@@ -1301,14 +1475,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "int",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ha",
     "name": "Hausa",
     "native": "Hausa",
     "wave": 15,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ha",
@@ -1317,14 +1494,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "kai",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "yo",
     "name": "Yorùbá",
     "native": "Yorùbá",
     "wave": 15,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "yo",
@@ -1333,14 +1513,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ìwọ",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ig",
     "name": "Igbo",
     "native": "Igbo",
     "wave": 15,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ig",
@@ -1349,14 +1532,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "gị",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "so",
     "name": "Soomaali",
     "native": "Soomaali",
     "wave": 15,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "so",
@@ -1365,14 +1551,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "aad",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "rw",
     "name": "Kinyarwanda",
     "native": "Kinyarwanda",
     "wave": 15,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "rw",
@@ -1381,14 +1570,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "wowe",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "sn",
     "name": "chiShona",
     "native": "chiShona",
     "wave": 15,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "sn",
@@ -1397,14 +1589,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "iwe",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ga",
     "name": "Gaeilge",
     "native": "Gaeilge",
     "wave": 15,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ga",
@@ -1413,14 +1608,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "tú",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "cy",
     "name": "Cymraeg",
     "native": "Cymraeg",
     "wave": 15,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "cy",
@@ -1429,14 +1627,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ti",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ht",
     "name": "Kreyòl Ayisyen",
     "native": "Kreyòl Ayisyen",
     "wave": 15,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "ht",
@@ -1445,14 +1646,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ou",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "qu",
     "name": "Runasimi",
     "native": "Runasimi",
     "wave": 16,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "qu",
@@ -1461,14 +1665,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "qam",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "lb",
     "name": "Lëtzebuergesch",
     "native": "Lëtzebuergesch",
     "wave": 16,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "lb",
@@ -1477,14 +1684,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "du",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "fo",
     "name": "Føroyskt",
     "native": "Føroyskt",
     "wave": 16,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "fo",
@@ -1493,14 +1703,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "tú",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "jv",
     "name": "Basa Jawa",
     "native": "Basa Jawa",
     "wave": 16,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "jv",
@@ -1509,14 +1722,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "kowe",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "su",
     "name": "Basa Sunda",
     "native": "Basa Sunda",
     "wave": 16,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "su",
@@ -1525,14 +1741,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "anjeun",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "mi",
     "name": "Te Reo Māori",
     "native": "Te Reo Māori",
     "wave": 16,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "mi",
@@ -1541,14 +1760,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "koe",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "bo",
     "name": "བོད་སྐད་",
     "native": "བོད་སྐད་",
     "wave": 16,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Tibetan",
     "plural": "bo",
@@ -1557,14 +1779,17 @@
     "digits": "tibt",
     "playListing": true,
     "register": "ཁེ་ཆ་",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "dz",
     "name": "རྟོད་ཁ",
     "native": "རྟོད་ཁ",
     "wave": 16,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Tibetan",
     "plural": "dz",
@@ -1573,14 +1798,17 @@
     "digits": "tibt",
     "playListing": true,
     "register": "ཁེ་ཆ་",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "ti",
     "name": "ትግርኛ",
     "native": "ትግርኛ",
     "wave": 16,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "Noto Sans Ethiopic",
     "plural": "ti",
@@ -1589,14 +1817,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "ንን",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "bg",
     "name": "bg",
     "native": "bg",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "bg",
@@ -1605,14 +1836,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "sk",
     "name": "sk",
     "native": "sk",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "sk",
@@ -1621,14 +1855,17 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   },
   {
     "code": "pa",
     "name": "ਪੰਜਾਬੀ",
     "native": "ਪੰਜਾਬੀ",
     "wave": 11,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "pa",
@@ -1637,6 +1874,9 @@
     "digits": "latn",
     "playListing": true,
     "register": "formal",
-    "critics": []
+    "critics": [
+      8.5,
+      8.5
+    ]
   }
 ]

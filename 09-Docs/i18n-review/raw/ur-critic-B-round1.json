@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-ur-r1-c73004fda221",
+  "command": "critic-B review ur round1",
+  "started_at": "2026-11-06T11:57:00.000Z",
+  "finished_at": "2026-11-06T12:27:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ur.json": "29845e3ca4f56c442d5ba636c09cb010b35c4fe110af418f36c3738ae076785e",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ur",
+      "score": 9.2,
+      "axes": {
+        "meaning": 9.4,
+        "glossary": 9.1,
+        "register": 9.3,
+        "length": 9,
+        "errors": 9.5
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "کاٹو"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "پرواز"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "پیروی"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "عمر"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "سب"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ایکویریم"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "اینڈرائیڈ APK ایپ ڈاؤن لوڈ کریں"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "ایکویریم"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "خودکار (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "اسپور (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "ڈیمو"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "تقسیم (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "کھانا (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "دستی خوراک (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "آزاد پرواز (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "خلیے کی پیروی (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "کھیلنے کا طریقہ"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "روشنی"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "خردبین (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "وقفہ (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 11
+      }
+    }
+  ]
+}

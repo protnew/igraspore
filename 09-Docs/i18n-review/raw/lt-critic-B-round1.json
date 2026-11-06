@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-lt-r1-837e8a88cd4b",
+  "command": "critic-B review lt round1",
+  "started_at": "2026-11-06T11:27:00.000Z",
+  "finished_at": "2026-11-06T11:57:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "lt.json": "0756c0048e48c3319d7df0a1a8916b1b92f8a4860188551f2d0807b6a840782c",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "lt",
+      "score": 9,
+      "axes": {
+        "meaning": 9.2,
+        "glossary": 8.9,
+        "register": 9.1,
+        "length": 8.8,
+        "errors": 9.3
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "KĄSNIS"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "SKRYDIS"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "SEKIMAS"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Amžius"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Visi"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKVARIUMAS"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Atsisiųsti Android APK programėlę"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akvariumas"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Auto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Dalijimasis (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Valgyti (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Rankinis šėrimas (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Laisvas skrydis (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Sekti ląstelę (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Kaip žaisti"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Šviesa"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskopas (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pauzė (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 19
+      }
+    }
+  ]
+}

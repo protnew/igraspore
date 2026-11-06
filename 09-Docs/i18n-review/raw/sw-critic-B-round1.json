@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-sw-r1-6949768a3f8b",
+  "command": "critic-B review sw round1",
+  "started_at": "2026-11-06T12:01:00.000Z",
+  "finished_at": "2026-11-06T12:31:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "sw.json": "edd9cd582761e48d8002f50f651c87ddefea9f7d75756e835ecdd59ef44daf9a",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "sw",
+      "score": 9.3,
+      "axes": {
+        "meaning": 9.5,
+        "glossary": 9.2,
+        "register": 9.4,
+        "length": 9.1,
+        "errors": 9.6
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "KUNG'ATA"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "KURUKA"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "KUFUATA"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Umri"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Zote"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKWARIAMU"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Pakua programu ya APK ya Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akwariamu"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Otomatiki (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spoa (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Onyesho"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Kugawanya (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Kula (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Kulisha kwa mkono (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Kuruka huru (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Fuatilia seli (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Jinsi ya kucheza"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Mwanga"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Hadubini (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Simamisha (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 23
+      }
+    }
+  ]
+}

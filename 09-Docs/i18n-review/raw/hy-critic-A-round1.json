@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-hy-r1-34cd9e98cf6a",
+  "command": "critic-A review hy round1",
+  "started_at": "2026-11-06T12:34:00.000Z",
+  "finished_at": "2026-11-06T13:04:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "hy.json": "40ed4a7c8ab4a5456cd4d6d72c97bc8da35c160759a5d83965fc0969301de480",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "hy",
+      "score": 9.5,
+      "axes": {
+        "meaning": 9.7,
+        "glossary": 9.4,
+        "register": 9.6,
+        "length": 9.3,
+        "errors": 9.8
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "ԿԾԻՐ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "ԹՌԻՉ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ՀԵՏԵՒԻՐ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Տարիք"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Բոլորը"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ԱԿՎԱՐԻՈՒՄ"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Ներբեռնել Android APK հավելվածը"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Ակվարիում"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Ավտո (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Սպոր (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Դեմո"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Բաժանում (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Ուտել (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Ձեռքով կերակրել (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Ազատ թռիչք (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Հետևել բջջին (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Ինչպես խաղալ"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Լույս"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Մանրադիտակ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Դադար (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 10
+      }
+    }
+  ]
+}

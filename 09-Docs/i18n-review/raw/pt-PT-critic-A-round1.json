@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-pt-PT-r1-c4f4860e9821",
+  "command": "critic-A review pt-PT round1",
+  "started_at": "2026-11-06T11:18:00.000Z",
+  "finished_at": "2026-11-06T11:48:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "pt-PT.json": "a6554738f99b48ddec44b5d2e7786e3e15ec5b91d8b1952ecf511e9e9eec95f9",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "pt-PT",
+      "score": 9,
+      "axes": {
+        "meaning": 9.2,
+        "glossary": 8.9,
+        "register": 9.1,
+        "length": 8.8,
+        "errors": 9.3
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "MORDER"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "VOO"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "SEGUIR"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Idade"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Todos"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AQUÁRIO"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Descarregar a app Android (APK)"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Aquário"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Automático (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Espora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Dividir (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Comer (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Alimentação manual (Espaço)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Voo livre (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Seguir célula (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Como jogar"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Luz"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Microscópio (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pausa (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 29
+      }
+    }
+  ]
+}

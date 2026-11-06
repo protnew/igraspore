@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-sn-r1-184e15be43d9",
+  "command": "critic-B review sn round1",
+  "started_at": "2026-11-06T13:07:00.000Z",
+  "finished_at": "2026-11-06T13:37:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "sn.json": "be9428331686f96c1bcaf930020cb2647934f04d53933016c5053ab30eaf776e",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "sn",
+      "score": 8.4,
+      "axes": {
+        "meaning": 8.6,
+        "glossary": 8.3,
+        "register": 8.5,
+        "length": 8.2,
+        "errors": 8.7
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "MENYA"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "DENGENYEKA"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "TEVERA"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Zera"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Zvose"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKWARIYAMU"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Dhawunirodha APK yeAndroid"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akwariyamu"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Zvoga (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Taridzo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Govana (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Dya (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Dyisa nemaoko (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Dengenyeka woga (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Tevera selere (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Maitiro ekutamba"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Chiedza"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Maikuroskopu (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Mirira (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 30
+      }
+    }
+  ]
+}

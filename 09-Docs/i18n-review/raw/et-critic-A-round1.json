@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-et-r1-9b75d207b9e2",
+  "command": "critic-A review et round1",
+  "started_at": "2026-11-06T11:30:00.000Z",
+  "finished_at": "2026-11-06T12:00:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "et.json": "8fcf9c42224aa53c60eec340eb9f559c612014548897e230fed4ecbe082bf139",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "et",
+      "score": 9.3,
+      "axes": {
+        "meaning": 9.5,
+        "glossary": 9.2,
+        "register": 9.4,
+        "length": 9.1,
+        "errors": 9.6
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "NÄKS"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "LEND"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "JÄLGI"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Vanus"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Kõik"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKVAARIUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Lae alla Androidi APK rakendus"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akvaarium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Automaat (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Eos (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Jagunemine (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Söö (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Käsitsi söötmine (Tühik)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Vabalend (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Jälgi rakku (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Kuidas mängida"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Valgus"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskoop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Paus (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 26
+      }
+    }
+  ]
+}

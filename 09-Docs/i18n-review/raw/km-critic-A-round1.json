@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-km-r1-9210c707e49a",
+  "command": "critic-A review km round1",
+  "started_at": "2026-11-06T12:28:00.000Z",
+  "finished_at": "2026-11-06T12:58:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "km.json": "27827908d32eb5af4020e141f16e7278020af627c2e1b6ae6b616f7552f3766f",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "km",
+      "score": 9.3,
+      "axes": {
+        "meaning": 9.5,
+        "glossary": 9.2,
+        "register": 9.4,
+        "length": 9.1,
+        "errors": 9.6
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "ខាំ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "ហើរ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "តាម"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "អាយុ"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "ទាំងអស់"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ធុងសត្វទឹក"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "ទាញយកកម្មវិធី APK របស់ Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "ធុងសត្វទឹក"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "ស្វ័យប្រវត្តិ (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "គ្រាប់ស៊ីប (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "ការបង្ហាញ"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "បំបែក (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "ស៊ី (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "បំប៉ុងដោយដៃ (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "ហើរសេរី (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "តាមកោសិកា (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "របៀបលេង"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "ពន្លឺ"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "មីក្រូទស្សន៍ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "ផ្អាក (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 20
+      }
+    }
+  ]
+}

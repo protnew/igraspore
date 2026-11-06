@@ -1,0 +1,145 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-nl-r1-d681f7eb3065",
+  "command": "critic-B review nl round1",
+  "started_at": "2026-11-06T11:01:00.000Z",
+  "finished_at": "2026-11-06T11:31:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "nl.json": "f757d15a8c4e9bde959bf6c8278328d89efb339110b7aa7873e4267a12d1dac1",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "nl",
+      "score": 8.1,
+      "axes": {
+        "meaning": 8.3,
+        "glossary": 8,
+        "register": 8.2,
+        "length": 7.9,
+        "errors": 8.4
+      },
+      "issues": [
+        {
+          "key": "aquarium",
+          "problem": "Untranslated",
+          "fix": "Translate to nl"
+        }
+      ],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "BIJT"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "VLUCHT"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "VOLG"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Leeftijd"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Alle"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AQUARIUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Android-app (APK) downloaden"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Aquarium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Auto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spore (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Delen (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Eten (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Handmatig voeren (Spatie)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Vrije vlucht (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Cel volgen (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Speluitleg"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Licht"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Microscoop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pauze (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 57
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-zu-r1-c6f97234390f",
+  "command": "critic-A review zu round1",
+  "started_at": "2026-11-06T12:26:00.000Z",
+  "finished_at": "2026-11-06T12:56:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "zu.json": "eae678c9bfd51d1eb9a38f76f1df8af39befaa9f03237a5ff64b9ad6837e2d70",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "zu",
+      "score": 9.4,
+      "axes": {
+        "meaning": 9.6,
+        "glossary": 9.3,
+        "register": 9.5,
+        "length": 9.2,
+        "errors": 9.7
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "LOMA"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "DIZA"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "LANDA"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Iminyaka"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Konke"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKWARIYAMU"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Landa i-APK ye-Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akwariyamu"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Iyazenzela (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Isipora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Isibonelo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Hlukanisa (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Yidla (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Phisela ngesandla (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Diza mahhala (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Landela iseli (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Indlela yokudlala"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Ukukhanya"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Imayikhroskophu (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Yima kancane (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 20
+      }
+    }
+  ]
+}

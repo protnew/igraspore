@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-tg-r1-53e888d728b1",
+  "command": "critic-A review tg round1",
+  "started_at": "2026-11-06T12:40:00.000Z",
+  "finished_at": "2026-11-06T13:10:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "tg.json": "c909371d9df2e877e72ffb87da576796f9caef886db45ecbccd95e1fd1dbc450",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "tg",
+      "score": 9.6,
+      "axes": {
+        "meaning": 9.8,
+        "glossary": 9.5,
+        "register": 9.7,
+        "length": 9.4,
+        "errors": 9.9
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "БИГАЗ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "ПАРВОЗ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ПАЙРАВИ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Синну сол"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Ҳама"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "АКВАРИУМ"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Барномаи Android APK-ро боргирӣ кунед"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Аквариум"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Авто (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Спора (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Демо"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Тақсим (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Хӯрдан (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Дастӣ ғизодиҳӣ (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Парвози озод (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Пайравии ҳуҷайра (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Чӣ тавр бозӣ кардан"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Рӯшноӣ"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Микроскоп (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Таваққуф (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 11
+      }
+    }
+  ]
+}

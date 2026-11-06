@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-ckb-r1-fa8276745b9e",
+  "command": "critic-B review ckb round1",
+  "started_at": "2026-11-06T12:45:00.000Z",
+  "finished_at": "2026-11-06T13:15:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ckb.json": "8da4c2b31e406434e6853dd3dfb8de6c2aeecd4a5e288180e9a64c0bdde510ba",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ckb",
+      "score": 9.2,
+      "axes": {
+        "meaning": 9.4,
+        "glossary": 9.1,
+        "register": 9.3,
+        "length": 9,
+        "errors": 9.5
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "گازگرتن"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "فڕین"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "بەدوادا"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "تەمەن"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "هەموو"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ئاکیواریۆم"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "داگرتنی ئەپی APK ی ئەندرۆید"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "ئاکیواریۆم"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "خۆکار (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "سپۆر (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "نمایش"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "دابەشکردن (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "خواردن (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "پێدانی دەستی (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "فڕینی ئازاد (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "بەدواداکەوتنی خانە (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "چۆن یاری بکرێت"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "ڕووناکی"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "مایکرۆسکۆپ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "وەستان (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 7
+      }
+    }
+  ]
+}

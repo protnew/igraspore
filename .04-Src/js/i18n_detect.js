@@ -30,7 +30,7 @@ function detectLang(navLangs, enabled) {
 function applyLangFont(code) {
   if (typeof document === 'undefined') return;
   document.documentElement.lang = code || 'en';
-  var __IGS_FONTS = {"hi":"Noto Sans Devanagari","th":"Noto Sans Thai","bn":"Noto Sans Bengali"}; // GEN:A1
+  var __IGS_FONTS = {"hi":"Noto Sans Devanagari","th":"Noto Sans Thai","bn":"Noto Sans Bengali","ta":"Noto Sans Tamil","te":"Noto Sans Telugu","mr":"Noto Sans Devanagari","gu":"Noto Sans Gujarati","kn":"Noto Sans Kannada","ml":"Noto Sans Malayalam","ne":"Noto Sans Devanagari","si":"Noto Sans Sinhala","my":"Noto Sans Myanmar","he":"Noto Sans Hebrew","km":"Noto Sans Khmer","lo":"Noto Sans Lao","am":"Noto Sans Ethiopic","hy":"Noto Sans Armenian","ka":"Noto Sans Georgian","as":"Noto Sans Bengali","or":"Noto Sans Oriya","bo":"Noto Sans Tibetan","dz":"Noto Sans Tibetan","ti":"Noto Sans Ethiopic"}; // GEN:A1
   var __IGS_DIR = {"ar":"rtl","fa":"rtl","ur":"rtl","he":"rtl","ps":"rtl","ckb":"rtl","sd":"rtl"}; // GEN:A1 (v25 A4)
   var face = __IGS_FONTS[code] || '';
   var sample = (face && (LANG_NAME[code] || '')) ? (LANG_NAME[code] + '').trim().charAt(0) : '';
@@ -64,7 +64,7 @@ function loadLangPack(code) {
 if (typeof window !== 'undefined') {
   window.loadLangPack = loadLangPack;
   window.detectLang = detectLang;
-  window.IGS_ENABLED = window.IGS_ENABLED || {'en': 1, 'ru': 1, 'pt-BR': 1, 'es': 1, 'hi': 1, 'id': 1, 'tr': 1, 'de': 1, 'fr': 1, 'ja': 1, 'vi': 1, 'ko': 1, 'th': 1, 'fil': 1, 'it': 1, 'pl': 1, 'uk': 1, 'zh-TW': 1, 'ms': 1, 'bn': 1, 'zh-CN': 1 }; // GEN:A1
+  window.IGS_ENABLED = window.IGS_ENABLED || {'en': 1, 'ru': 1, 'pt-BR': 1, 'es': 1, 'hi': 1, 'id': 1, 'tr': 1, 'de': 1, 'fr': 1, 'ja': 1, 'vi': 1, 'ko': 1, 'th': 1, 'fil': 1, 'it': 1, 'pl': 1, 'uk': 1, 'zh-TW': 1, 'ms': 1, 'bn': 1, 'nl': 1, 'sv': 1, 'ro': 1, 'el': 1, 'hu': 1, 'cs': 1, 'da': 1, 'fi': 1, 'zh-CN': 1, 'no': 1, 'pt-PT': 1, 'es-419': 1, 'hr': 1, 'sr': 1, 'lt': 1, 'lv': 1, 'et': 1, 'sl': 1, 'ta': 1, 'te': 1, 'mr': 1, 'gu': 1, 'kn': 1, 'ml': 1, 'ne': 1, 'si': 1, 'my': 1, 'ar': 1, 'fa': 1, 'ur': 1, 'he': 1, 'sw': 1, 'kk': 1, 'be': 1, 'az': 1, 'ky': 1, 'mn': 1, 'ca': 1, 'gl': 1, 'eu': 1, 'sq': 1, 'mk': 1, 'is': 1, 'af': 1, 'zu': 1, 'km': 1, 'lo': 1, 'am': 1, 'hy': 1, 'ka': 1, 'uz': 1, 'tg': 1, 'ps': 1, 'ckb': 1, 'sd': 1, 'as': 1, 'or': 1, 'bs': 1, 'mt': 1, 'ha': 1, 'yo': 1, 'ig': 1, 'so': 1, 'rw': 1, 'sn': 1, 'ga': 1, 'cy': 1, 'ht': 1, 'qu': 1, 'lb': 1, 'fo': 1, 'jv': 1, 'su': 1, 'mi': 1, 'bo': 1, 'dz': 1, 'ti': 1, 'bg': 1, 'sk': 1, 'pa': 1 }; // GEN:A1
   // Dev/QA hook (L.9 screenshots): force a language that is NOT in the enabled set
   // without editing languages.json / LANGS / localeConfig. QA-only (U39): honoured
   // solely on the localhost QA stand or with ?qa=1; elsewhere igs_force_lang is ignored.

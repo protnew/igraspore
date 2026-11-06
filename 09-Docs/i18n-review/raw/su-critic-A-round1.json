@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-su-r1-447bab3bf7a9",
+  "command": "critic-A review su round1",
+  "started_at": "2026-11-06T13:22:00.000Z",
+  "finished_at": "2026-11-06T13:52:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "su.json": "df2ba61e1c92ec5ba0fdc053f3b862c2c99fb20d07a71965f4a92b91be9c7b71",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "su",
+      "score": 9.4,
+      "axes": {
+        "meaning": 9.6,
+        "glossary": 9.3,
+        "register": 9.5,
+        "length": 9.2,
+        "errors": 9.7
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "GIGIT"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "NGAPUNG"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "NUTUR"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Umur"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Kabéh"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKUARIUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Undeur app APK Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akuarium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Otomatis (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Meulah (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Dahar (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Kahakanan manual (Spasi)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Ngapung bébas (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Nuturkeun sél (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Cara maén"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Cahaya"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Ngaso (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 25
+      }
+    }
+  ]
+}

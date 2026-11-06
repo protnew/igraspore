@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-lo-r1-ef7ea5098170",
+  "command": "critic-A review lo round1",
+  "started_at": "2026-11-06T12:30:00.000Z",
+  "finished_at": "2026-11-06T13:00:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "lo.json": "52f02c995d3250b02f7a55c9d9eec2e948fcc49d0a2047355b3e7868f314a2ee",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "lo",
+      "score": 9.1,
+      "axes": {
+        "meaning": 9.3,
+        "glossary": 9,
+        "register": 9.2,
+        "length": 8.9,
+        "errors": 9.4
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "ກັດ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "ບິນ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ຕາມ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "ອາຍຸ"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "ທັງໝົດ"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ຕູ້ປາ"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "ດາວໂຫຼດແອັບ APK ຂອງ Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "ຕູ້ປາ"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "ອັດຕະໂນມັດ (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "ສະປໍ (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "ຕົວຢ່າງ"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "ແບ່ງ (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "ກິນ (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "ໃຫ້ອາຫານດ້ວຍມື (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "ບິນເສລີ (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "ຕາມຈຸລະການ (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "ວິທີຫຼິ້ນ"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "ແສງ"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "ຈຸນລະທັດ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "ຢຸດຊົ່ວຄາວ (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 20
+      }
+    }
+  ]
+}

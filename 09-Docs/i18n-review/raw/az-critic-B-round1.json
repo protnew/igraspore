@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-az-r1-d64b5785511b",
+  "command": "critic-B review az round1",
+  "started_at": "2026-11-06T12:07:00.000Z",
+  "finished_at": "2026-11-06T12:37:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "az.json": "a518206bf2f1a4ae024a7c78c43338fc0afcf1060857ca8ca88b55f99ef424e7",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "az",
+      "score": 8.8,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8.7,
+        "register": 8.9,
+        "length": 8.6,
+        "errors": 9.1
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "DİŞLƏ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "UÇUŞ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "İZLƏ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Yaş"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Hamı"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKVARİUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Android APK tətbiqini yüklə"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akvarium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Avto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spor (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Bölün (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Ye (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Əl ilə yem (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Sərbəst uçuş (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Hüceyrəni izlə (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Necə oynanılır"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "İşıq"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pauza (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 18
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-ht-r1-f0a3859190ba",
+  "command": "critic-B review ht round1",
+  "started_at": "2026-11-06T13:13:00.000Z",
+  "finished_at": "2026-11-06T13:43:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ht.json": "c563deb3e829eae76b1529e71d7b9453d42d3af8b4b1a7d295189ab8cfa3b843",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ht",
+      "score": 8.9,
+      "axes": {
+        "meaning": 9.1,
+        "glossary": 8.8,
+        "register": 9,
+        "length": 8.7,
+        "errors": 9.2
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "MÒDE"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "VOLE"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "SWIV"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Laj"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Tout"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKWARYÒM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Telechaje aplikasyon APK Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akwaryòm"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Otomatik (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spò (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demonsrasyon"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Separe (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Manje (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Bay manje ak men (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Vole lib (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Swiv selil la (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Kouman pou w jwe"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Limyè"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikwoskòp (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pòz (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 23
+      }
+    }
+  ]
+}

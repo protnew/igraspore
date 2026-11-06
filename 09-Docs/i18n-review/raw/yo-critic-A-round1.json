@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-yo-r1-5ad33a26bbf1",
+  "command": "critic-A review yo round1",
+  "started_at": "2026-11-06T12:58:00.000Z",
+  "finished_at": "2026-11-06T13:28:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "yo.json": "bf5b41f177d9488e8afd7e64e77654c32e63b43819e3a6f40dfbd11427805765",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "yo",
+      "score": 8.8,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8.7,
+        "register": 8.9,
+        "length": 8.6,
+        "errors": 9.1
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "KẸ́"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "FÒFÒ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ESO"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Ọjọ́ orí"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Gbogbo"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ILÉ-ẸJA"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Gbà app Android APK"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Ilé-ẹja"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Fúnra (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Ìpamọ́ (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Ìfihàn"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Pín (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Jẹ (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Fún oúnjẹ (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Fòfò ọ̀fẹ́ (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Eso sẹ́lì (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Bí a ṣe ń ṣeré"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Ìmọ́lẹ̀"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Máíkrúskópù (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Dúró (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 22
+      }
+    }
+  ]
+}

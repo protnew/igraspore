@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-cs-r1-b017f27359e3",
+  "command": "critic-A review cs round1",
+  "started_at": "2026-11-06T11:10:00.000Z",
+  "finished_at": "2026-11-06T11:40:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "cs.json": "34d5f71687fbf9db68e2be29d6874f0b034febabb7e796d744d8759ff1ba470a",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "cs",
+      "score": 9,
+      "axes": {
+        "meaning": 9.2,
+        "glossary": 8.9,
+        "register": 9.1,
+        "length": 8.8,
+        "errors": 9.3
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "KOUSNUT"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "LET"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "SLEDOVAT"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Věk"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Vše"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKVÁRIUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Stáhnout Android aplikaci (APK)"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akvárium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Auto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Dělení (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Jíst (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Ruční krmení (Mezerník)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Volný let (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Sledovat buňku (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Jak hrát"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Světlo"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pauza (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 37
+      }
+    }
+  ]
+}

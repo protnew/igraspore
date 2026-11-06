@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-ka-r1-fccb858249d9",
+  "command": "critic-B review ka round1",
+  "started_at": "2026-11-06T12:37:00.000Z",
+  "finished_at": "2026-11-06T13:07:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ka.json": "2041704d20bd75a16f24b51a3fff5292a6594c0448cbd9d5eb5aeb4166344cf1",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ka",
+      "score": 9.1,
+      "axes": {
+        "meaning": 9.3,
+        "glossary": 9,
+        "register": 9.2,
+        "length": 8.9,
+        "errors": 9.4
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "კბენა"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "ფრენა"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "გაყოლა"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "ასაკი"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "ყველა"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "აკვარიუმი"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "ჩამოტვირთეთ Android APK აპი"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "აკვარიუმი"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "ავტო (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "სპორი (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "დემო"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "გაყოფა (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "ჭამა (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "ხელით კვება (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "თავისუფალი ფრენა (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "უჯრედის გაყოლა (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "როგორ ვითამაშოთ"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "სინათლე"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "მიკროსკოპი (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "პაუზა (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 10
+      }
+    }
+  ]
+}

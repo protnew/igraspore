@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-bs-r1-bc3d3572e34d",
+  "command": "critic-B review bs round1",
+  "started_at": "2026-11-06T12:53:00.000Z",
+  "finished_at": "2026-11-06T13:23:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "bs.json": "e86ef5fe08fb05e13c2af6c0d079b061ad933e7f3246b77eb714d3b65d17c5cb",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "bs",
+      "score": 8.5,
+      "axes": {
+        "meaning": 8.7,
+        "glossary": 8.4,
+        "register": 8.6,
+        "length": 8.3,
+        "errors": 8.8
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "UGRIZ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "LET"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "PRATI"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Starost"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Sve"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKVARIJ"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Preuzmi Android APK aplikaciju"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akvarij"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Automatski (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Podjela (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Jedi (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Ručno hranjenje (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Slobodan let (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Prati ćeliju (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Kako se igra"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Svjetlo"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pauza (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 25
+      }
+    }
+  ]
+}

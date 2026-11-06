@@ -32,11 +32,19 @@ const SHOTS = [
   { url: `${BASE}/index.html?lang=zh-TW`, viewport: DESKTOP, anchor: 'game', name: '07-zh-TW-desktop-game', label: 'zh-TW · десктоп 1400px · двойной китайский (B6)' },
   { url: `${BASE}/index.html?lang=ar`, viewport: DESKTOP, anchor: 'game', name: '08-ar-desktop-game', label: 'ar · десктоп 1400px · RTL (B5)' },
   
+  // Novo включённые языки (волна 2)
+  { url: `${BASE}/index.html?lang=nl`, viewport: DESKTOP, anchor: 'game', name: '09-nl-desktop-game', label: 'nl · десктоп 1400px · novo включённый' },
+  { url: `${BASE}/index.html?lang=sv`, viewport: DESKTOP, anchor: 'game', name: '10-sv-desktop-game', label: 'sv · десктоп 1400px · novo включённый' },
+  { url: `${BASE}/index.html?lang=bg`, viewport: DESKTOP, anchor: 'game', name: '11-bg-desktop-game', label: 'bg · десктоп 1400px · novo включённый' },
+  { url: `${BASE}/index.html?lang=pl`, viewport: DESKTOP, anchor: 'game', name: '12-pl-desktop-game', label: 'pl · десктоп 1400px · novo включённый' },
+  { url: `${BASE}/index.html?lang=he`, viewport: DESKTOP, anchor: 'game', name: '13-he-desktop-game', label: 'he · десктоп 1400px · RTL novo' },
+  { url: `${BASE}/index.html?lang=ta`, viewport: DESKTOP, anchor: 'game', name: '14-ta-desktop-game', label: 'ta · десктоп 1400px · Noto Novo' },
+  
   // Негативный сценарий: несуществующий язык → откат на en
-  { url: `${BASE}/index.html?lang=xx`, viewport: DESKTOP, anchor: 'game', name: '09-xx-desktop-fallback', label: 'xx · десктоп · несуществующий язык → откат на en' },
+  { url: `${BASE}/index.html?lang=xx`, viewport: DESKTOP, anchor: 'game', name: '15-xx-desktop-fallback', label: 'xx · десктоп · несуществующий язык → откат на en' },
   
   // Граничный: пустой ?lang=
-  { url: `${BASE}/index.html?lang=`, viewport: DESKTOP, anchor: 'game', name: '10-empty-desktop-fallback', label: 'пустой ?lang= · десктоп · откат на en' },
+  { url: `${BASE}/index.html?lang=`, viewport: DESKTOP, anchor: 'game', name: '16-empty-desktop-fallback', label: 'пустой ?lang= · десктоп · откат на en' },
 ];
 
 async function sha256(buf) {

@@ -8,6 +8,7 @@
     "test:coverage": "npm run test:coverage --prefix .04-Src",
     "test:e2e": "npm run test:e2e --prefix .04-Src",
     "test:qa-unit": "npm run test:qa-unit --prefix .04-Src",
+    "check:i18n": "python \"C:/Obsidian/New/Projects/_DEV-FACTORY/i18n-hub/check.py\" --project iGraSpore",
     "postinstall": "npm install --prefix .04-Src"
   }
 }

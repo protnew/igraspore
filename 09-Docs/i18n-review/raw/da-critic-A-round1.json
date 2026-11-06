@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-da-r1-cadf3cbf6ec0",
+  "command": "critic-A review da round1",
+  "started_at": "2026-11-06T11:12:00.000Z",
+  "finished_at": "2026-11-06T11:42:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "da.json": "381616810f10935e1e39560c60aacd38ee97d7d2daf8a39738118bc02a503ac3",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "da",
+      "score": 8.2,
+      "axes": {
+        "meaning": 8.4,
+        "glossary": 8.1,
+        "register": 8.3,
+        "length": 8,
+        "errors": 8.5
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "BID"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "FLYV"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "FØLG"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Alder"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Alle"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKVARIUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Download Android-app (APK)"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akvarium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Auto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spor (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Del (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Spis (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Manuel fodring (Mellemrum)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Fri flyvning (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Følg celle (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Sådan spiller du"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Lys"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pause (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 45
+      }
+    }
+  ]
+}

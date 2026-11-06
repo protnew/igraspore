@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-ml-r1-ee0d05098b3a",
+  "command": "critic-B review ml round1",
+  "started_at": "2026-11-06T11:45:00.000Z",
+  "finished_at": "2026-11-06T12:15:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ml.json": "bbaa788580204106f505632a3c5d2b28edc02914154429114803f6f72975d44d",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ml",
+      "score": 9.2,
+      "axes": {
+        "meaning": 9.4,
+        "glossary": 9.1,
+        "register": 9.3,
+        "length": 9,
+        "errors": 9.5
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "കടി"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "പറക്കൽ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "പിന്തുടരൽ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "പ്രായം"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "എല്ലാം"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "അക്വേറിയം"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Android APK ആപ്പ് ഡൗൺലോഡ്"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "അക്വേറിയം"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "ഓട്ടോ (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "ബീജകം (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "ഡെമോ"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "വിഭജനം (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "തിന്നുക (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "കൈ തീറ്റ (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "സ്വതന്ത്ര പറക്കൽ (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "കോശം പിന്തുടരുക (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "കളിക്കേണ്ട വിധം"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "വെളിച്ചം"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "സൂക്ഷ്മദർശിനി (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "വിരാമം (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 11
+      }
+    }
+  ]
+}

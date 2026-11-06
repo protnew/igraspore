@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-mn-r1-4fbfb7ea9f81",
+  "command": "critic-B review mn round1",
+  "started_at": "2026-11-06T12:11:00.000Z",
+  "finished_at": "2026-11-06T12:41:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "mn.json": "27b171a33fb25fe1eb527abecb10e7c8fcac95acab26a7f72a2c1d0c3a4dcbaa",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "mn",
+      "score": 8.8,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8.7,
+        "register": 8.9,
+        "length": 8.6,
+        "errors": 9.1
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "ХАЗ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "НИСЛЭГ"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ДАГА"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Нас"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Бүгд"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "АКВАРИУМ"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Android APK апп татах"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Аквариум"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Авто (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Спор (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Демо"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Хуваагдах (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Идэх (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Гараар тэжээх (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Чөлөөт нислэг (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Эсийг дагах (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Хэрхэн тоглох"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Гэрэл"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Микроскоп (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Зогсоох (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 11
+      }
+    }
+  ]
+}

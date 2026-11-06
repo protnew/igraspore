@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-ca-r1-4805c6288fa0",
+  "command": "critic-A review ca round1",
+  "started_at": "2026-11-06T12:12:00.000Z",
+  "finished_at": "2026-11-06T12:42:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ca.json": "70a4d5e35e8fecd23647987fcbe9be1703d16ddfb88b2d270576cca97088530b",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ca",
+      "score": 9.1,
+      "axes": {
+        "meaning": 9.3,
+        "glossary": 9,
+        "register": 9.2,
+        "length": 8.9,
+        "errors": 9.4
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "MOSSEGA"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "VOL"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "SEGUEIX"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Edat"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Tot"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AQUARI"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Baixa l'aplicació APK d'Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Aquari"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Automàtic (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Espora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Divideix (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Menja (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Alimentació manual (Espai)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Vol lliure (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Segueix la cèl·lula (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Com es juga"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Llum"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Microscopi (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pausa (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 29
+      }
+    }
+  ]
+}

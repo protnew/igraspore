@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-ps-r1-d4737df16edf",
+  "command": "critic-A review ps round1",
+  "started_at": "2026-11-06T12:42:00.000Z",
+  "finished_at": "2026-11-06T13:12:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ps.json": "2c2fb39ac3f15109b4ce9982f7704cc9e07c4b8705e8a38502d90a0914ac3318",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ps",
+      "score": 8.9,
+      "axes": {
+        "meaning": 9.1,
+        "glossary": 8.8,
+        "register": 9,
+        "length": 8.7,
+        "errors": 9.2
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "چېچل"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "الوتنه"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "تعقیب"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "عمر"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "ټول"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "اکواریوم"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "د انډرویډ APK اپلیکېشن ښکته کړئ"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "اکواریوم"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "اتوماتیک (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "سپور (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "ډیمو"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "وېشل (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "خوړل (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "لاسي خوراک (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "آزاده الوتنه (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "د حجرې تعقیب (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "څنګه لوبه وکړو"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "روښنایي"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "مایکروسکوپ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "وقفه (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-am-r1-a4658c9ee6aa",
+  "command": "critic-A review am round1",
+  "started_at": "2026-11-06T12:32:00.000Z",
+  "finished_at": "2026-11-06T13:02:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "am.json": "b16a71e135291eaf3d41e7cd0b2693cb9192db61fd06594e16b8528c972362ec",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "am",
+      "score": 9.7,
+      "axes": {
+        "meaning": 9.9,
+        "glossary": 9.6,
+        "register": 9.8,
+        "length": 9.5,
+        "errors": 10
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "ብላ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "መብረር"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "መከተል"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "ዕድሜ"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "ሁሉም"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "አኳሪየም"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "የአንድሮይድ መተግበሪያ አውርድ"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "አኳሪየም"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "አውቶ (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "ስፖር (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "ማሳያ"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "መከፋፈል (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "መብላት (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "የእጅ መመገብ (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "ነጻ በረራ (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "ክፍል መከተል (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "እንዴት እንጫወት"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "ብርሃን"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "ማይክሮስኮፕ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "ማቆም (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 4
+      }
+    }
+  ]
+}

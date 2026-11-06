@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-uz-r1-238f64a393ba",
+  "command": "critic-A review uz round1",
+  "started_at": "2026-11-06T12:38:00.000Z",
+  "finished_at": "2026-11-06T13:08:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "uz.json": "4f621d4c3ad83a2872e3c6266a1b763c4eb07081d6861d5ec44850040f27ad9e",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "uz",
+      "score": 9.4,
+      "axes": {
+        "meaning": 9.6,
+        "glossary": 9.3,
+        "register": 9.5,
+        "length": 9.2,
+        "errors": 9.7
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "TISHLA"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "UCHISH"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "ERGASH"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Yosh"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Hammasi"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKVARIUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Android APK ilovasini yuklab olish"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akvarium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Avto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spora (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Bo'linish (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Ye (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Qo'lda boqish (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Erkin uchish (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Hujayraga ergashish (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "O'yin qanday o'ynaladi"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Yorug'lik"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pauza (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 18
+      }
+    }
+  ]
+}

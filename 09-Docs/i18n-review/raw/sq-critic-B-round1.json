@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-sq-r1-71b21c08bdf1",
+  "command": "critic-B review sq round1",
+  "started_at": "2026-11-06T12:19:00.000Z",
+  "finished_at": "2026-11-06T12:49:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "sq.json": "ebea14f23d69bbb15d7511d2e89b9c4dd0dd1e36c869cf516b1ffac92ed34dfc",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "sq",
+      "score": 9.2,
+      "axes": {
+        "meaning": 9.4,
+        "glossary": 9.1,
+        "register": 9.3,
+        "length": 9,
+        "errors": 9.5
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "KAFSHO"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "FLUTURIM"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "NDIQ"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Mosha"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Të gjitha"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKUARIUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Shkarko aplikacionin APK për Android"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akuarium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Automatik (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Sporë (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Ndaj (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Ha (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Ushqim manual (Hapësira)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Fluturim i lirë (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Ndiq qelizën (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Si luhet"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Dritë"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pauzë (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 29
+      }
+    }
+  ]
+}

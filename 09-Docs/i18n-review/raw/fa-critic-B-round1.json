@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-fa-r1-8572e1f56401",
+  "command": "critic-B review fa round1",
+  "started_at": "2026-11-06T11:55:00.000Z",
+  "finished_at": "2026-11-06T12:25:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "fa.json": "1d5f5cbfbcd752f2110f92b2de30999129c54ad471352907b49072a07456a00b",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "fa",
+      "score": 9.5,
+      "axes": {
+        "meaning": 9.7,
+        "glossary": 9.4,
+        "register": 9.6,
+        "length": 9.3,
+        "errors": 9.8
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "گاز بگیر"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "پرواز"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "دنبال کن"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "سن"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "همه"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "آکواریوم"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "دانلود اپ اندروید (APK)"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "آکواریوم"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "خودکار (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "هاگ (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "نمایشی"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "تقسیم (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "خوردن (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "تغذیه دستی (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "پرواز آزاد (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "دنبال کردن سلول (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "روش بازی"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "نور"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "میکروسکوپ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "مکث (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 7
+      }
+    }
+  ]
+}

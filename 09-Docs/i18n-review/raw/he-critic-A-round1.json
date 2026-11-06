@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-he-r1-0cecefcbef0c",
+  "command": "critic-A review he round1",
+  "started_at": "2026-11-06T11:58:00.000Z",
+  "finished_at": "2026-11-06T12:28:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "he.json": "9f4bf2cc72bb73d98d818463e16f20f92a92769c67cc6bab49d1607a82600bc9",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "he",
+      "score": 9.1,
+      "axes": {
+        "meaning": 9.3,
+        "glossary": 9,
+        "register": 9.2,
+        "length": 8.9,
+        "errors": 9.4
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "נגוס"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "טיסה"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "מעקב"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "גיל"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "הכול"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "אקווריום"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "הורדת אפליקציית APK לאנדרואיד"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "אקווריום"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "אוטומטי (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "נבג (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "דמו"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "התחלקות (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "אכילה (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "האכלה ידנית (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "טיסה חופשית (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "מעקב אחר תא (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "איך משחקים"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "אור"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "מיקרוסקופ (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "השהיה (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 11
+      }
+    }
+  ]
+}

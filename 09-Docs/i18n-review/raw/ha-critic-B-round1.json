@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-B",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-B-20261106-ha-r1-482c98a93190",
+  "command": "critic-B review ha round1",
+  "started_at": "2026-11-06T12:57:00.000Z",
+  "finished_at": "2026-11-06T13:27:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ha.json": "5514841b0a0cebe74f367b5c7db7224778f15c02c416bfa4732c1d71d26b7f5a",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ha",
+      "score": 8.8,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8.7,
+        "register": 8.9,
+        "length": 8.6,
+        "errors": 9.1
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "CIZA"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "TASHI"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "BIYE"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Shekaru"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Duka"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKWARIYUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Sauke manhajar Android APK"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akwariyum"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Atomatik (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Zhiya (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Nuni"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Raba (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Ci (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Ci da hannu (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Tashi kyauta (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Biye kwaya (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Yadda ake wasa"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Haske"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Makirufo (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Tsayi (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 27
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-ro-r1-7162fda0c221",
+  "command": "critic-A review ro round1",
+  "started_at": "2026-11-06T11:04:00.000Z",
+  "finished_at": "2026-11-06T11:34:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "ro.json": "cd7be7bbca2e26c81e9588e244c98bf960a901cce59ba8f4c129587136b1da3a",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "ro",
+      "score": 8.5,
+      "axes": {
+        "meaning": 8.7,
+        "glossary": 8.4,
+        "register": 8.6,
+        "length": 8.3,
+        "errors": 8.8
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "MUSCĂ"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "ZBOR"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "URMĂREȘTE"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Vârstă"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Toate"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "ACVARIU"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Descarcă aplicația Android (APK)"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Acvariu"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Auto (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spor (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demo"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Diviziune (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Mănâncă (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Hrănire manuală (Spațiu)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Zbor liber (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Urmărește celula (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Cum se joacă"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Lumină"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Microscop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Pauză (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 45
+      }
+    }
+  ]
+}

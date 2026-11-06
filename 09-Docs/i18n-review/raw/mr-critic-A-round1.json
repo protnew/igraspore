@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-mr-r1-e7e53b4528d7",
+  "command": "critic-A review mr round1",
+  "started_at": "2026-11-06T11:38:00.000Z",
+  "finished_at": "2026-11-06T12:08:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "mr.json": "be21202017eee7a11a1e12758fbea3a3d003c316a1010faf87845490c87a8269",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "mr",
+      "score": 9.2,
+      "axes": {
+        "meaning": 9.4,
+        "glossary": 9.1,
+        "register": 9.3,
+        "length": 9,
+        "errors": 9.5
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "चावा"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "उड्डाण"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "पाठलग"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "वय"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "सर्व"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "अ‍ॅक्वेरियम"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Android APK अ‍ॅप डाउनलोड करा"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "अ‍ॅक्वेरियम"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "स्वयं (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "बीजाणू (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "डेमो"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "विभाजन (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "खा (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "हाताने खावड़ (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "मोकळे उड्डाण (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "पेशीचे पाठलग (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "खेळ कसा खेळायचा"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "प्रकाश"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "सूक्ष्मदर्शक (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "थांबा (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 11
+      }
+    }
+  ]
+}

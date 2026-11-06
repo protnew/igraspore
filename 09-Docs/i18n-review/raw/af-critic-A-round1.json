@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-af-r1-5ad18a1e1faa",
+  "command": "critic-A review af round1",
+  "started_at": "2026-11-06T12:24:00.000Z",
+  "finished_at": "2026-11-06T12:54:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "af.json": "f321d9d6af0248e9117e6e4b04703138bb2379cc429447ec655172a384a85d48",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "af",
+      "score": 8.8,
+      "axes": {
+        "meaning": 9,
+        "glossary": 8.7,
+        "register": 8.9,
+        "length": 8.6,
+        "errors": 9.1
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "BYT"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "VLUG"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "VOLG"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Ouderdom"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Alles"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKWARIUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Laai Android APK-toep af"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akwarium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Outo (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spoor (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Vertoning"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Deel (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Eet (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Handvoer (Spasie)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Vrye vlug (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Volg sel (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Hoe om te speel"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Lig"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroskoop (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Wag (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 29
+      }
+    }
+  ]
+}

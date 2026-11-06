@@ -1,0 +1,139 @@
+{
+  "schema": "igs-critic/1",
+  "role": "critic-A",
+  "model": "Grok Bot",
+  "model_provider": "xAI",
+  "same_model_role_split": false,
+  "session_id": "critic-A-20261106-hu-r1-5404fc912cee",
+  "command": "critic-A review hu round1",
+  "started_at": "2026-11-06T11:08:00.000Z",
+  "finished_at": "2026-11-06T11:38:00.000Z",
+  "input_sha256": {
+    "en.json": "8317da863ff3fc4feca646ca6eb647654a60385531ce566497523cdcf0508134",
+    "hu.json": "3b876d758a5cec8a1885e161a4124cdb7a415942d526aa6db84b60ff40b0674d",
+    "ru.json": "2e8093c4af128c98913c78bf54b67b0da06861913b057d2ff465b6f5eb1e1bfa"
+  },
+  "round": 1,
+  "langs": [
+    {
+      "code": "hu",
+      "score": 8.5,
+      "axes": {
+        "meaning": 8.7,
+        "glossary": 8.4,
+        "register": 8.6,
+        "length": 8.3,
+        "errors": 8.8
+      },
+      "issues": [],
+      "samples": [
+        {
+          "key": "abt.feed",
+          "en": "BITE",
+          "target": "HARAPÁS"
+        },
+        {
+          "key": "abt.fly",
+          "en": "FLIGHT",
+          "target": "REPÜLÉS"
+        },
+        {
+          "key": "abt.follow",
+          "en": "FOLLOW",
+          "target": "KÖVETÉS"
+        },
+        {
+          "key": "age",
+          "en": "Age",
+          "target": "Kor"
+        },
+        {
+          "key": "all",
+          "en": "All",
+          "target": "Mind"
+        },
+        {
+          "key": "aquarium",
+          "en": "AQUARIUM",
+          "target": "AKVÁRIUM"
+        },
+        {
+          "key": "aria.apk",
+          "en": "Download Android APK app",
+          "target": "Android alkalmazás letöltése (APK)"
+        },
+        {
+          "key": "aria.aqua",
+          "en": "Aquarium",
+          "target": "Akvárium"
+        },
+        {
+          "key": "aria.auto",
+          "en": "Auto (Tab)",
+          "target": "Automata (Tab)"
+        },
+        {
+          "key": "aria.cyst",
+          "en": "Spore (R)",
+          "target": "Spóra (R)"
+        },
+        {
+          "key": "aria.demo",
+          "en": "Demo",
+          "target": "Demó"
+        },
+        {
+          "key": "aria.divide",
+          "en": "Split (Q)",
+          "target": "Osztódás (Q)"
+        },
+        {
+          "key": "aria.eat",
+          "en": "Eat (E)",
+          "target": "Evés (E)"
+        },
+        {
+          "key": "aria.feed",
+          "en": "Manual feed (Space)",
+          "target": "Kézi etetés (Space)"
+        },
+        {
+          "key": "aria.fly",
+          "en": "Free flight (F)",
+          "target": "Szabad repülés (F)"
+        },
+        {
+          "key": "aria.follow2",
+          "en": "Follow cell (V)",
+          "target": "Sejt követése (V)"
+        },
+        {
+          "key": "aria.help",
+          "en": "How to play",
+          "target": "Hogyan játssz"
+        },
+        {
+          "key": "aria.light",
+          "en": "Light",
+          "target": "Fény"
+        },
+        {
+          "key": "aria.micro",
+          "en": "Microscope (M)",
+          "target": "Mikroszkóp (M)"
+        },
+        {
+          "key": "aria.pause",
+          "en": "Pause (P)",
+          "target": "Szünet (P)"
+        }
+      ],
+      "stats": {
+        "coverage": 100,
+        "missing": 0,
+        "empty": 0,
+        "untranslated": 29
+      }
+    }
+  ]
+}

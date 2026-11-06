@@ -157,6 +157,14 @@ http://127.0.0.1:8794/index.html?lang=en&theme=engraving&screen=game
 - Манифест рецензий: 174 файла в `09-Docs/i18n-review/raw/*-round1.json`
 - Тема-ключи: 100/104 файлов имеют `theme.*` (целевое ≥91 выполнено)
 
+**Пруф-строки генератора**:
+```
+$ node --check tools/v24_gen_l5_l6.cjs
+(no output = SYNTAX OK)
+```
+
+**REVIEW-MANIFEST**: `09-Docs/i18n-review/REVIEW-MANIFEST.md` — 174 строки-файлы
+
 **Приёмка FR-5.1–5.4**:
 - Генератор: `node --check` зелёный ✅
 - Тест 91 языка: 5/5 PASS ✅
@@ -165,7 +173,9 @@ http://127.0.0.1:8794/index.html?lang=en&theme=engraving&screen=game
 
 ---
 
-## 2. Скриншоты-доказательства (≥12 кадров)
+## 2. Скриншоты-доказательства (≥12 кадров: 6 десктоп/6 мобайл)
+
+### Десктоп (1400px) — 6 кадров
 
 ### Кадр 1: English · Desktop 1400px · Menu
 ![01-en-desktop-menu](.04-Src/shots-i18n-real/01-en-desktop-menu.png)
@@ -300,6 +310,8 @@ http://127.0.0.1:8794/index.html?lang=en&theme=engraving&screen=game
 
 ---
 
+### Мобильные (375px) — 6 кадров
+
 ### Кадр 10: English · Mobile 375px · Wiki
 ![10-en-mobile-wiki](.04-Src/shots-i18n-real/10-en-mobile-wiki.png)
 
@@ -309,6 +321,66 @@ http://127.0.0.1:8794/index.html?lang=en&theme=engraving&screen=game
 - **Разработчик** → на мобильном 1 колонка (grid-template-columns:1fr) ✅
 - **Дизайнер** → карточки вики читаются, горизонтального скролла нет ✅
 - **Пользователь** → мобильная версия удобна, шрифт ≥13px ✅
+
+---
+
+### Кадр M1: English · Mobile 375px · Menu
+![02-en-mobile-menu](.04-Src/shots-i18n-real/02-en-mobile-menu.png)
+
+**Ссылка**: `http://127.0.0.1:8794/index.html?lang=en&screen=menu` (viewport 375×812)
+
+**Анализ ролями**:
+- **Разработчик** → селектор языка `#menuLangSel` адаптирован под мобильный (86vw) ✅
+- **Дизайнер** → кнопки вертикально центрированы, отступы сохранены ✅
+- **Пользователь** → меню удобно на мобильном, START крупная ✅
+
+---
+
+### Кадр M2: Russian · Mobile 375px · Settings
+![32-ru-mobile-settings](.04-Src/shots-i18n-real/32-ru-mobile-settings.png)
+
+**Ссылка**: `http://127.0.0.1:8794/index.html?lang=ru&screen=settings` (viewport 375×812)
+
+**Анализ ролями**:
+- **Разработчик** → `#setBody` шириной 86vw на мобильном ✅
+- **Дизайнер** → слайдеры широкие, текст на русском читается ✅
+- **Пользователь** → настройки доступны, кириллица корректна ✅
+
+---
+
+### Кадр M3: Arabic · Mobile 375px · Menu (RTL)
+![50-ar-mobile-menu](.04-Src/shots-i18n-real/50-ar-mobile-menu.png)
+
+**Ссылка**: `http://127.0.0.1:8794/index.html?lang=ar&screen=menu` (viewport 375×812)
+
+**Анализ ролями**:
+- **Разработчик** → `html[lang="ar"][dir="rtl"]`, layout зеркалится ✅
+- **Дизайнер** → арабский текст выровнен по правому краю ✅
+- **Пользователь** → RTL на мобильном работает ✅
+
+---
+
+### Кадр M4: Chinese (Simplified) · Mobile 375px · Game
+![66-zh-CN-mobile-game](.04-Src/shots-i18n-real/66-zh-CN-mobile-game.png)
+
+**Ссылка**: `http://127.0.0.1:8794/index.html?lang=zh-CN&screen=game` (viewport 375×812)
+
+**Анализ ролями**:
+- **Разработчик** → canvas `#c` занимает полный экран, HUD адаптирован ✅
+- **Дизайнер** → CJK-иероглифы в HUD читаются ✅
+- **Пользователь** → игра на китайском, мобильная версия удобна ✅
+
+---
+
+### Кадр M5: Hindi · Mobile 375px · Wiki
+![74-hi-mobile-wiki](.04-Src/shots-i18n-real/74-hi-mobile-wiki.png)
+
+**Ссылка**: `http://127.0.0.1:8794/index.html?lang=hi&screen=wiki` (viewport 375×812)
+
+**Анализ ролями**:
+- **Разработчик** → Indic-скрипт отображается (Noto Sans Devanagari) ✅
+- **Дизайнер** → карточки вики в 1 колонку, хинди текст читаемый ✅
+- **Пользователь** → редкий язык поддержан на мобильном ✅
 
 ---
 

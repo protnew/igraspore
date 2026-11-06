@@ -281,6 +281,106 @@ window.addEventListener('load', function(){
 </script>
 <script>if(typeof initIgrasporWebGLStyle==='function'){initIgrasporWebGLStyle();}</script>
 <script>document.addEventListener("DOMContentLoaded",function(){try{if(window.igsThemeEngine)window.igsThemeEngine.initThemes();}catch(e){}});</script>
+<script>
+// TZ-08 Stage 1: URL parameter ?screen= hook for direct screen access
+(function(){
+  'use strict';
+  var SCREEN_MAP = {
+    'menu': 'menuO',
+    'pause': 'pauseO',
+    'settings': 'setO',
+    'wiki': 'wikiO',
+    'help': 'helpO',
+    'dead': 'deadO',
+    'intro': 'introO'
+  };
+  
+  function applyScreenParam() {
+    var params = new URLSearchParams(window.location.search);
+    var screen = params.get('screen');
+    if (!screen) return;
+    
+    screen = screen.toLowerCase();
+    
+    // Special case: 'game' means close all overlays
+    if (screen === 'game') {
+      var allOverlays = document.querySelectorAll('.ov.show');
+      for (var i = 0; i < allOverlays.length; i++) {
+        allOverlays[i].className = 'ov';
+      }
+      return;
+    }
+    
+    // Special cases for UI states (not overlays)
+    if (screen === 'burger') {
+      var burger = document.getElementById('burgerGame');
+      if (burger) burger.click();
+      return;
+    }
+    
+    if (screen === 'eco') {
+      var ecoP = document.getElementById('ecoP');
+      if (ecoP) ecoP.style.display = ecoP.style.display === 'none' ? 'block' : 'flex';
+      return;
+    }
+    
+    if (screen === 'themes') {
+      // Trigger theme panel if it exists
+      if (window.igsThemeEngine && window.igsThemeEngine.injectPondSwitcher) {
+        window.igsThemeEngine.injectPondSwitcher();
+      }
+      return;
+    }
+    
+    if (screen === 'bestiary') {
+      // Open wiki and scroll to bestiary section
+      var wikiO = document.getElementById('wikiO');
+      if (wikiO) {
+        wikiO.className = 'ov show';
+        // Hide other overlays
+        var overlays = ['menuO', 'pauseO', 'setO', 'helpO', 'deadO', 'introO'];
+        for (var j = 0; j < overlays.length; j++) {
+          if (overlays[j] !== 'wikiO') {
+            var ov = document.getElementById(overlays[j]);
+            if (ov) ov.className = 'ov';
+          }
+        }
+      }
+      return;
+    }
+    
+    // Standard overlay screens
+    var targetId = SCREEN_MAP[screen];
+    if (!targetId) {
+      console.info('unknown screen: ' + screen);
+      return;
+    }
+    
+    var target = document.getElementById(targetId);
+    if (!target) return;
+    
+    // Hide all overlays first
+    var allOv = document.querySelectorAll('.ov.show');
+    for (var k = 0; k < allOv.length; k++) {
+      allOv[k].className = 'ov';
+    }
+    
+    // Show target overlay
+    target.className = 'ov show';
+  }
+  
+  // Apply on load and when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyScreenParam);
+  } else {
+    // Small delay to ensure game initialization is complete
+    setTimeout(applyScreenParam, 100);
+  }
+  
+  // Export for manual triggering if needed
+  window.__igsApplyScreen = applyScreenParam;
+})();
+</script>
 </body>
 </html>
 

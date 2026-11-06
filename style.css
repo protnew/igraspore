@@ -130,7 +130,7 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 .cb{padding:10px 14px;font-size:12px;min-height:48px;box-sizing:border-box;background:#012;color:#89c;border:1px solid #234;border-radius:3px;cursor:pointer;font-family:inherit;transition:all .1s} /* v24 задача 2: чипы-фильтры ≥48px */
 .cb:hover{background:#123;color:#cef}
 .cb.act{background:#246;color:#cef;border-color:#4af}
-.scrollbox{max-height:60vh;overflow-y:auto;max-width:900px;width:100%;padding:10px;}
+.scrollbox{max-height:60vh;overflow-y:auto;max-width:min(1400px,90vw);width:100%;margin:0 auto;padding:10px;}
 #spGrid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:8px}
 .scPrev{border:1px solid #1a3a55;border-radius:6px;margin-bottom:3px}
 .sc{width:165px;background:#012;border:2px solid #234;border-radius:8px;padding:8px;cursor:pointer;text-align:center;transition:all .12s;position:relative}
@@ -147,12 +147,12 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 .stbl td{padding:3px 12px}
 .stbl .lbl{text-align:right;color:#678}
 .stbl .val{color:#4df;font-weight:bold}
-.sr{display:flex;justify-content:space-between;width:340px;margin:4px auto;color:#bcd;font-size:12px;align-items:center}
+.sr{display:flex;justify-content:space-between;width:min(1200px,85vw);margin:4px auto;color:#bcd;font-size:12px;align-items:center}
 .tg{width:34px;height:16px;background:#234;border-radius:8px;cursor:pointer;position:relative;flex-shrink:0}
 .tg.on{background:#2a6}
 .tg::after{content:'';width:12px;height:12px;background:#bcd;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .2s}
 .tg.on::after{left:20px}
-.slider-row{display:flex;justify-content:space-between;width:340px;margin:6px auto;align-items:center;font-size:12px;color:#bcd}
+.slider-row{display:flex;justify-content:space-between;width:min(1200px,85vw);margin:6px auto;align-items:center;font-size:12px;color:#bcd}
 .slider-row input[type=range]{-webkit-appearance:none;width:140px;height:4px;background:#234;border-radius:2px;outline:none}
 .slider-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;background:#4af;border-radius:50%;cursor:pointer}
 .slider-row input[type=range]::-moz-range-thumb{width:12px;height:12px;background:#4af;border-radius:50%;cursor:pointer;border:none}
@@ -163,7 +163,7 @@ body.demo-on #hDivReady{bottom:calc(var(--corner-bottom) + var(--ui-gap) + var(-
 .scrollbox::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1a4a6a,#0e3050);border-radius:4px;border:1px solid #2a5070}
 .scrollbox::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#2a6a8a,#1e4060)}
 .scrollbox{-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8)}
-#wikiContent{overflow-y:auto;max-height:80vh;max-width:700px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8);padding-bottom:64px}
+#wikiContent{overflow-y:auto;max-height:80vh;max-width:min(1400px,90vw);width:100%;margin:0 auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#1a4a6a rgba(0,10,25,.8);padding-bottom:64px}
 #wikiContent::-webkit-scrollbar{width:8px}
 #wikiContent::-webkit-scrollbar-track{background:rgba(0,10,25,.8);border-radius:4px}
 #wikiContent::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1a4a6a,#0e3050);border-radius:4px}
@@ -470,7 +470,7 @@ body.in-menu #langSelWrap{position:fixed!important;top:8px;right:8px;z-index:450
 body.in-menu #leftContainer{z-index:300!important}
 #setO.ov.show,#deadO.ov.show{background:rgba(0,0,0,.92)!important}
 #deadO.ov.show,#pauseO.ov.show,#introO.ov.show,#setO.ov.show,#helpO.ov.show,#wikiO.ov.show,#exitConfirm.ov.show{overflow-y:auto}
-#setBody{background:#07141f;border-radius:12px;padding:12px;width:min(520px,86vw)!important}
+#setBody{background:#07141f;border-radius:12px;padding:12px;width:min(1400px,90vw)!important;max-width:90vw!important;margin:0 auto}
 #pauseO.ov.show .tt,#pauseO.ov.show .btn,#deadO.ov.show .tt,#deadO.ov.show #deadStats,#deadO.ov.show .btn,#introO.ov.show .tt,#introO.ov.show #introBody,#introO.ov.show .btn,#exitConfirm.ov.show>div{
   width:max(40vw,512px);max-width:86vw;box-sizing:border-box;
 }

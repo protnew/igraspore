@@ -17,11 +17,28 @@ function render(){
   var vL=cam.x-vw/2,vR=cam.x+vw/2,vT=cam.y-vh/2,vB=cam.y+vh/2;
   
   // === STEP 1: BACKGROUND ===
-  // Split: sky-ish upper screen, water lower — so free-cam above surface isn't a blue void
-  {
+  var _neonPond = (typeof window!=='undefined' && !!(window.__igsThemeCover && window.__igsThemeCover[window.__igsThemePondId]));
+  if(_neonPond){
+    // Full-viewport cover bg + light parallax (old sky/water split OFF)
+    var _nb = (window.__igsPondBgs||{})[window.__igsThemePondId];
+    ctx.setTransform(1,0,0,1,0,0);
+    if(_nb && _nb.width){
+      var _cw=cv.width,_ch=cv.height;
+      var _sc=Math.max(_cw/_nb.width,_ch/_nb.height)*1.12;
+      var _dw=_nb.width*_sc,_dh=_nb.height*_sc;
+      var _pd=(typeof PD==='number'?PD:2000);
+      var _sx=(_dw-_cw)/2,_sy=(_dh-_ch)/2;
+      var _ox=(_cw-_dw)/2 - Math.max(-_sx,Math.min(_sx,(cam.x||0)*0.035));
+      var _oy=(_ch-_dh)/2 - Math.max(-_sy,Math.min(_sy,((cam.y||0)-_pd*0.42)*0.02));
+      ctx.drawImage(_nb,_ox,_oy,_dw,_dh);
+      if(window.igsMicro) try{ window.igsMicro.draw(ctx,_cw,_ch,cam,performance.now()); }catch(e){}
+    } else {
+      ctx.fillStyle='#000018'; ctx.fillRect(0,0,cv.width,cv.height);
+    }
+  } else {
+    // Split: sky-ish upper screen, water lower — so free-cam above surface isn't a blue void
     var skyFrac = 0;
     if(typeof cam!=='undefined' && typeof zoom==='number' && zoom>0){
-      // fraction of screen above waterline y=0
       var halfH = cv.height/(2*zoom);
       var topW = cam.y - halfH, botW = cam.y + halfH;
       if(botW > 0 && topW < 0) skyFrac = (-topW) / (botW - topW);
@@ -34,7 +51,7 @@ function render(){
       sgrad.addColorStop(0, isReal?'#0a1840':'#0b1e48');
       sgrad.addColorStop(1, isReal?'#3a6a9a':'#4a8ec8');
       ctx.fillStyle=sgrad;
-      ctx.fillRect(0,0,cv.width|0,split|0); // TSK-RND-020
+      ctx.fillRect(0,0,cv.width|0,split|0);
     }
     var wgrad=ctx.createLinearGradient(0,split,0,cv.height);
     if(isReal){
@@ -58,19 +75,24 @@ function render(){
   
   // === STEP 3: ENVIRONMENT — water/sky/algae ALWAYS (fix black water) ===
   {
-    renderSky(vL,vR,vT);
-    ctx.save();
-    ctx.beginPath();
-    ctx.rect(vL-80, 0, (vR-vL)+160, (typeof PD==='number'?PD:2000)+80);
-    ctx.clip();
-    renderWater(vL,vR,vT,vB);
-    renderSunRays(vL,vR);
-    renderSediment(vL,vR,vB);
-    if(!isClean) renderNutrients(vL,vR,vT,vB);
-    renderShore(vL,vR,vT);
-    if(settings.shadows && !isClean) renderShadows(vL,vR,vT,vB);
-    if(settings.bubbles) renderBubbles(vL,vR,vT,vB);
-    if(!isClean){ renderParallax(vL,vR,vT,vB); renderTrails(vL,vR,vT,vB); } // gated by isClean above
+    if(_neonPond){
+      // neon: fullscreen cover already painted; skip sky/water/rays/sediment/shore/borders
+      ctx.save(); // keep restore pair with organisms clip-end below
+    } else {
+      renderSky(vL,vR,vT);
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(vL-80, 0, (vR-vL)+160, (typeof PD==='number'?PD:2000)+80);
+      ctx.clip();
+      renderWater(vL,vR,vT,vB);
+      renderSunRays(vL,vR);
+      renderSediment(vL,vR,vB);
+      if(!isClean) renderNutrients(vL,vR,vT,vB);
+      renderShore(vL,vR,vT);
+      if(settings.shadows && !isClean) renderShadows(vL,vR,vT,vB);
+      if(settings.bubbles) renderBubbles(vL,vR,vT,vB);
+      if(!isClean){ renderParallax(vL,vR,vT,vB); renderTrails(vL,vR,vT,vB); }
+    }
   }
   
   // === STEP 4: ORGANISMS (both modes) ===

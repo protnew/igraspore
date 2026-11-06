@@ -1,0 +1,140 @@
+/* style-themes-v6chrome.css — concept chrome (hero tank, side rail, tab bar, stat chips) for v5 menus. Pairs with theme_menu_chrome.js */
+#v6chrome{position:relative;max-width:720px;width:calc(100% - 16px);margin:10px auto 8px;text-align:center}
+html body #menuO #v6chrome button{cursor:pointer;font:inherit;border:0;background:none;color:inherit;padding:0!important;margin:0!important;min-width:0!important;width:auto;height:auto;clip-path:none!important;text-shadow:none!important;outline:0!important;flex-shrink:0}
+#v6chrome .v6hero{position:relative;height:clamp(300px,62vw,440px);background-size:cover;background-position:center 60%;overflow:hidden}
+#v6chrome .v6org{position:absolute;width:clamp(80px,24vw,130px);height:auto;animation:v6drift 7s ease-in-out infinite alternate;pointer-events:none;opacity:.95}
+@keyframes v6drift{from{transform:translate(0,0) rotate(-6deg)}to{transform:translate(10px,-12px) rotate(8deg)}}
+#v6chrome .v6stats{position:absolute;top:10px;left:10px;right:10px;display:flex;justify-content:space-between;pointer-events:none}
+#v6chrome .v6chip{pointer-events:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:64px;min-height:64px}
+#v6chrome .v6chip i{font-style:normal;font-size:20px;line-height:1}
+#v6chrome .v6chip b{font-size:15px}
+#v6chrome .v6chip s{text-decoration:none;font-size:8px;letter-spacing:.08em}
+#v6chrome .v6rail{position:absolute;right:10px;top:34%;display:flex;flex-direction:column;gap:6px}
+html body #menuO #v6chrome .v6rb{width:52px!important;height:52px!important;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#v6chrome .v6rb i{font-style:normal;font-size:20px;line-height:1}
+#v6chrome .v6rb b{font-size:8px;letter-spacing:.06em;margin-top:2px}
+#v6chrome .v6tabs{display:flex;justify-content:space-around;align-items:center;gap:6px;margin:10px 0 0;padding:10px 8px}
+#v6chrome .v6tab{flex:1 1 0;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:64px}
+#v6chrome .v6tab i{font-style:normal;width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:24px;border-radius:50%}
+#v6chrome .v6tab b{font-size:10px;letter-spacing:.06em}
+html body.v6on div#menuO.ov #v5Badges,html body.v6on #v5Badges{display:none!important}
+/* glass (concept 07) */
+.v6-glass{font-family:'Nunito','Segoe UI',sans-serif;color:#2a5f78}
+.v6-glass .v6hero{border-radius:26px;box-shadow:0 18px 40px rgba(30,90,120,.25)}
+.v6-glass .v6tank{position:absolute;left:4%;right:4%;top:16%;bottom:6%;border:2px solid rgba(255,255,255,.85);border-radius:10px 10px 16px 16px;background:linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(140,220,245,.18) 14%,rgba(80,190,230,.22) 70%,rgba(200,240,250,.35) 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4),inset 18px 0 30px rgba(255,255,255,.35),inset -10px 0 24px rgba(255,255,255,.25),0 12px 30px rgba(40,120,160,.25)}
+.v6-glass .v6tank::before{content:"";position:absolute;left:-2px;right:-2px;top:-10px;height:18px;border:2px solid rgba(255,255,255,.85);border-bottom:0;border-radius:50%/100% 100% 0 0;background:rgba(255,255,255,.25)}
+html body #menuO .v6-glass .v6chip,html body #menuO .v6-glass .v6rb{border-radius:50%!important;background:rgba(240,250,255,.72)!important;border:1px solid rgba(255,255,255,.95)!important;box-shadow:0 6px 16px rgba(30,90,120,.18),inset 0 1px 0 #fff;backdrop-filter:blur(8px);color:#2a7fa8}
+html body #menuO .v6-glass .v6chip{width:78px!important;height:78px!important;min-height:0!important}
+.v6-glass .v6tabs{border-radius:26px;background:rgba(240,250,255,.7);border:1px solid #fff;box-shadow:0 8px 22px rgba(30,90,120,.15);backdrop-filter:blur(8px)}
+html body #menuO .v6-glass .v6tab{background:none!important;border:0!important;box-shadow:none!important}
+.v6-glass .v6tab i{background:rgba(255,255,255,.75);border:1px solid #fff;color:#2a8fb8;box-shadow:0 4px 10px rgba(30,90,120,.15)}
+.v6-glass .v6tab.on i{background:radial-gradient(circle,#7fe0ff,#1ea8d8);color:#fff;box-shadow:0 0 18px rgba(30,170,220,.6)}
+.v6-glass .v6tab b{color:#3a7f9a}
+body.v6on[data-theme-pond="glass-lab"] #menuFooter{display:none!important}
+@media (max-width:600px){html body #menuO #v6chrome .v6rb{width:46px!important;height:46px!important}#v6chrome .v6rail{top:33%!important;gap:4px!important}#v6chrome .v6rb b{font-size:7px}}
+/* cyberpunk (concept 10) */
+.v6-cyber{font-family:'Share Tech Mono','Courier New',monospace;color:#bffcff}
+.v6-cyber .v6hero{border:1px solid #00f0ff;box-shadow:0 0 18px rgba(0,240,255,.45),inset 0 0 40px rgba(0,0,0,.5)}
+.v6-cyber .v6tank{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,240,255,.07) 0 1px,transparent 1px 22px),repeating-linear-gradient(90deg,rgba(0,240,255,.07) 0 1px,transparent 1px 22px)}
+.v6-cyber .v6org{filter:drop-shadow(0 0 6px rgba(0,255,200,.7));outline:1px dashed rgba(0,240,255,.5);outline-offset:6px;border-radius:50%}
+.v6-cyber .v6tag{position:absolute;font-size:10px;padding:1px 4px;border:1px solid #39ff88;color:#39ff88;background:rgba(0,20,10,.7);z-index:2}
+html body #menuO .v6-cyber .v6chip{width:46px!important;height:46px!important;min-height:0!important;border:1px solid #00f0ff!important;border-radius:50%!important;background:rgba(0,16,24,.75)!important;box-shadow:0 0 10px rgba(0,240,255,.5)!important;color:#00f0ff}
+.v6-cyber .v6chip s{display:none}
+html body #menuO .v6-cyber .v6rb{border:1px solid #ff3cd2!important;border-radius:50%!important;background:rgba(20,0,24,.75)!important;box-shadow:0 0 10px rgba(255,60,210,.5)!important;color:#ff7be6}
+.v6-cyber .v6tabs{border:1px solid #00f0ff;background:rgba(2,10,16,.85);box-shadow:0 0 14px rgba(0,240,255,.35);clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%,0 14px)}
+html body #menuO .v6-cyber .v6tab{background:none!important;border:0!important;box-shadow:none!important}
+.v6-cyber .v6tab i{border:1.5px solid #39ff88;color:#39ff88;box-shadow:0 0 12px rgba(57,255,136,.5)}
+.v6-cyber .v6tab:nth-child(2) i{width:76px;height:76px;border:2px solid #ff3cd2;color:#39ff88;font-size:34px;box-shadow:0 0 18px rgba(255,60,210,.6),inset 0 0 14px rgba(255,60,210,.4)}
+.v6-cyber .v6tab.on:not(:nth-child(2)) i{border-color:#ff3cd2;color:#ff7be6}
+.v6-cyber .v6tab b{color:#00f0ff}
+/* neon (concept 03) */
+.v6-neon{font-family:'Exo 2','Segoe UI',sans-serif;color:#d8fbff}
+.v6-neon .v6hero{border-radius:24px;box-shadow:0 0 26px rgba(0,232,255,.35)}
+.v6-neon .v6tank{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(120,240,255,.35),transparent 55%)}
+.v6-neon .v6org{filter:drop-shadow(0 0 10px rgba(0,232,255,.8))}
+html body #menuO .v6-neon .v6chip{width:48px!important;height:48px!important;min-height:0!important;border:1.5px solid #00e8ff!important;border-radius:50%!important;background:rgba(2,6,20,.6)!important;box-shadow:0 0 12px rgba(0,232,255,.6)!important;color:#00e8ff}
+.v6-neon .v6chip:nth-child(2){border-color:#ff4fd8!important;color:#ff4fd8!important;box-shadow:0 0 12px rgba(255,79,216,.6)!important}
+.v6-neon .v6tabs{border-radius:22px;border:1.5px solid rgba(0,232,255,.6);background:rgba(2,6,22,.75);box-shadow:0 0 18px rgba(0,232,255,.3)}
+html body #menuO .v6-neon .v6tab{background:none!important;border:0!important;box-shadow:none!important}
+.v6-neon .v6tab i{border:1.5px solid #00e8ff;color:#00e8ff;box-shadow:0 0 14px rgba(0,232,255,.55)}
+.v6-neon .v6tab.on i{background:rgba(0,232,255,.18)}
+.v6-neon .v6tab b{color:#bff6ff}
+/* phase (concept 01) */
+.v6-phase{font-family:Georgia,'Times New Roman',serif;color:#e4f4f2}
+.v6-phase .v6hero{border-radius:28px;border:1px solid rgba(169,216,210,.6);box-shadow:0 0 22px rgba(200,255,250,.25),inset 0 0 60px rgba(0,0,0,.55)}
+.v6-phase .v6tank{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,transparent 58%,rgba(2,16,18,.75) 100%)}
+.v6-phase .v6org{filter:drop-shadow(0 0 8px rgba(220,255,250,.65))}
+html body #menuO .v6-phase .v6chip{width:48px!important;height:48px!important;min-height:0!important;border-radius:50%!important;border:1px solid #a9d8d2!important;background:rgba(4,22,26,.7)!important;color:#bff5ee;box-shadow:0 0 12px rgba(220,255,250,.3)!important}
+.v6-phase .v6chip:nth-child(2){border-right-color:#4fd8c8!important;border-top-color:#4fd8c8!important}
+.v6-phase .v6tabs{border-radius:24px;border:1px solid rgba(169,216,210,.5);background:rgba(4,22,26,.8)}
+html body #menuO .v6-phase .v6tab{background:none!important;border:0!important;box-shadow:none!important}
+.v6-phase .v6tab i{border:1px solid #a9d8d2;color:#e4f4f2;box-shadow:0 0 12px rgba(220,255,250,.3)}
+.v6-phase .v6tab.on i{background:rgba(191,245,238,.15)}
+/* engraving (concept 09) */
+.v6-engr{font-family:'IM Fell English',Georgia,serif;color:#22140a}
+.v6-engr .v6hero{border:3px double #2b1a0e;outline:1px solid rgba(43,26,14,.6);outline-offset:-8px;filter:sepia(.25)}
+.v6-engr .v6tank{display:none}
+.v6-engr .v6hero{background-position:center 30%!important}
+.v6-engr .v6org{filter:contrast(1.1)}
+html body #menuO .v6-engr .v6chip{width:auto!important;min-width:96px!important;white-space:nowrap;height:52px!important;min-height:0!important;padding:2px 8px!important;border:2px solid #2b1a0e!important;outline:1px solid rgba(43,26,14,.5);outline-offset:-5px;background:rgba(236,224,196,.92)!important;color:#22140a;flex-direction:row!important;gap:6px}
+.v6-engr .v6chip s{display:none}
+.v6-engr .v6tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:none}
+html body #menuO .v6-engr .v6tab{border:2px solid #2b1a0e!important;outline:1px solid rgba(43,26,14,.5);outline-offset:-5px;background:rgba(236,224,196,.92)!important;padding:6px 0!important}
+.v6-engr .v6tab i{width:40px;height:40px;font-size:24px;color:#2b1a0e}
+.v6-engr .v6tab b{font-size:10px;color:#22140a}
+body.v6on[data-theme-pond="cyberpunk-scanner"] #menuFooter,body.v6on[data-theme-pond="neon-bio"] #menuFooter,body.v6on[data-theme-pond="phase-contrast"] #menuFooter,body.v6on[data-theme-pond="engraving"] #menuFooter{display:none!important}
+/* v7: svg icons, engraving light hatched organisms, hub, cyber HUD, haeckel */
+#v6chrome i svg{display:block;width:60%;height:60%}
+#v6chrome .v6chip i svg,#v6chrome .v6rb i svg{width:22px;height:22px}
+.v6-engr .v6org{filter:sepia(.5) brightness(1.3) contrast(1.15) drop-shadow(0 0 1px rgba(43,26,14,.9));opacity:.92;width:clamp(56px,15vw,84px)!important}
+.v6-engr .v6org.sm{width:clamp(30px,8vw,46px)!important;opacity:.8}
+html body #menuO #v6chrome .v6hub{display:flex;align-items:center;justify-content:center;width:62px!important;height:62px!important;margin:10px auto 0!important;border-radius:50%!important;font-size:30px}
+html body #menuO .v6-engr .v6hub{border:2px solid #2b1a0e!important;outline:1px solid rgba(43,26,14,.5);outline-offset:-6px;background:rgba(236,224,196,.95)!important;color:#2b1a0e}
+.v6-engr .v6hub i svg{width:30px;height:30px}
+.v6-engr .v6tab i{width:46px!important;height:46px!important}
+.v6-cyber .v6tab:nth-child(2){position:relative}
+.v6-cyber .v6tab:nth-child(2)::before{content:"";position:absolute;left:50%;top:-8px;width:100px;height:100px;transform:translateX(-50%);pointer-events:none;
+ background:linear-gradient(#39ff88,#39ff88) 0 0/16px 2px,linear-gradient(#39ff88,#39ff88) 0 0/2px 16px,linear-gradient(#39ff88,#39ff88) 100% 0/16px 2px,linear-gradient(#39ff88,#39ff88) 100% 0/2px 16px,linear-gradient(#39ff88,#39ff88) 0 100%/16px 2px,linear-gradient(#39ff88,#39ff88) 0 100%/2px 16px,linear-gradient(#39ff88,#39ff88) 100% 100%/16px 2px,linear-gradient(#39ff88,#39ff88) 100% 100%/2px 16px;background-repeat:no-repeat;filter:drop-shadow(0 0 4px rgba(57,255,136,.8))}
+.v6-cyber .v6tabs{padding-top:18px!important;padding-bottom:18px!important}
+/* haeckel (concept 02) */
+.v6-haeckel{font-family:'Cormorant Garamond',Georgia,serif;color:#3b2a1a}
+.v6-haeckel .v6hero{border:2px solid #6b4a2a;outline:1px solid rgba(107,74,42,.55);outline-offset:-7px;border-radius:4px}
+.v6-haeckel .v6tank{display:none}
+.v6-haeckel .v6org{filter:drop-shadow(0 1px 1px rgba(80,50,20,.4))}
+html body #menuO .v6-haeckel .v6chip{width:64px!important;height:64px!important;min-height:0!important;border:2px solid #6b4a2a!important;outline:1px solid rgba(107,74,42,.5);outline-offset:-5px;background:rgba(244,234,212,.94)!important;color:#3b2a1a;border-radius:4px!important}
+.v6-haeckel .v6tabs{background:rgba(244,234,212,.94);border:2px solid #6b4a2a;outline:1px solid rgba(107,74,42,.5);outline-offset:-6px}
+html body #menuO .v6-haeckel .v6tab{background:none!important;border:0!important;box-shadow:none!important}
+.v6-haeckel .v6tab i{border:2px solid #6b4a2a;color:#6b4a2a;border-radius:4px;background:#efe3c8}
+.v6-haeckel .v6tab:nth-child(2) i{width:72px;height:72px;border-radius:50%;font-size:34px}
+.v6-haeckel .v6tab b{color:#3b2a1a}
+body.v6on[data-theme-pond="haeckel-watercolor"] #menuFooter{display:none!important}
+.v6-engr .v6tab i svg{width:75%;height:75%;stroke-width:1.3}
+/* v8 */
+.v6cube{position:absolute;inset:8% 6% 4% 6%;pointer-events:none;z-index:2}
+.v6cube svg{width:100%;height:100%}.v6cube path{stroke:rgba(255,255,255,.85);stroke-width:.6;vector-effect:non-scaling-stroke;stroke-width:2;filter:drop-shadow(0 0 4px rgba(120,200,255,.8))}
+.v6cube .hl{stroke:rgba(255,255,255,1);stroke-width:3}.v6cube .wl{stroke:rgba(150,230,255,.7);stroke-dasharray:4 3}
+.v6ret{position:absolute;left:50%;bottom:6%;width:34%;max-width:200px;aspect-ratio:1;transform:translateX(-50%);pointer-events:none;z-index:3;animation:v6spin 14s linear infinite}
+.v6ret svg{width:100%;height:100%;fill:none;stroke:#39ff88;stroke-width:1.2;filter:drop-shadow(0 0 4px #39ff88)}.v6ret .d{stroke:#ff3cf0;stroke-dasharray:6 4}.v6ret .f{fill:#39ff88}
+@keyframes v6spin{to{transform:translateX(-50%) rotate(360deg)}}
+.v6timer{position:absolute;right:6px;top:6px;width:54px;height:54px;pointer-events:none;z-index:4}
+.v6timer svg{width:100%;height:100%;transform:rotate(-90deg);fill:none;stroke-width:2.5}.v6timer .bg{stroke:rgba(160,230,220,.2)}
+.v6timer .arc{stroke:#7fe6d4;stroke-dasharray:107 107;stroke-dashoffset:107;filter:drop-shadow(0 0 3px #7fe6d4);animation:v6arc 30s linear infinite}
+@keyframes v6arc{to{stroke-dashoffset:0}}
+.v6cards{position:absolute;inset:38% 3% 6% 3%;pointer-events:none;z-index:3}
+.v6card{position:absolute;width:24%;max-width:120px;background:#f3e6c8;border:1px solid #8a6a3c;box-shadow:0 0 0 3px #f3e6c8,0 0 0 4px #8a6a3c,2px 4px 8px rgba(0,0,0,.3);padding:4px;text-align:center}
+.v6card:nth-child(1){left:0;top:0}.v6card:nth-child(2){left:0;bottom:0}.v6card:nth-child(3){right:0;bottom:8%}
+.v6card img{width:100%;aspect-ratio:1;object-fit:contain}.v6card em{display:block;font:italic 11px/1.15 Georgia,serif;color:#4a3420}
+.v6-neon .v6tabs{display:none}
+html body #menuO .v6-neon .v6chip{width:46px;height:46px;border-radius:50%;box-shadow:0 0 12px currentColor,inset 0 0 8px currentColor}
+.v6-engr .v6org{filter:sepia(.7) contrast(1.4) brightness(1.05) drop-shadow(0 0 1px #2b1a0e)!important;width:15%!important;mix-blend-mode:multiply}
+.v6-engr .v6org.sm{width:8%!important}
+html body #menuO .v6hub i svg{width:30px!important;height:30px!important}
+/* v8b */
+html body #menuO #v6chrome.v6-neon .v6tabs{display:none!important}
+.v6-engr .v6org{filter:drop-shadow(0 0 1.5px rgba(245,232,205,.9))!important;mix-blend-mode:normal!important;width:17%!important;height:auto!important;background:none!important}
+.v6-engr .v6org.sm{width:9%!important}
+.v6card{width:19%}.v6card:nth-child(1){left:0;top:0}.v6card:nth-child(2){left:auto;right:0;top:6%;bottom:auto}.v6card:nth-child(3){left:0;right:auto;bottom:0}
+.v6card img{aspect-ratio:1.4}
+.v6cube path{stroke-width:3!important}
+.v6-engr .v6org{opacity:1!important;animation-name:none!important}
+.v6card img{transform:scale(1.8)}.v6card em{font-size:10px;position:relative}

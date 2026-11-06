@@ -1,0 +1,152 @@
+/* v9 bestiary frame (all v5 styles) */
+#wikiO.v9b{padding-bottom:84px!important}
+#wikiO.v9b #wikiT,#wikiO.v9b .wiki-role,#wikiO.v9b .wiki-cat,#wikiO.v9b #wikiClose,#wikiO.v9b .bstyle,#wikiO.v9b label{display:none!important}
+#wikiO.v9b select{display:none!important}
+#v9bhead{position:sticky;top:0;z-index:5;padding:10px 8px 8px;margin:-6px -6px 8px;text-align:center}
+#v9bhead .v9t{font-size:26px;letter-spacing:.12em;margin-bottom:8px}
+#v9bhead .v9f{display:flex;gap:6px;overflow-x:auto;justify-content:center;flex-wrap:wrap}
+#v9bhead .v9f button{font:inherit;font-size:11px;letter-spacing:.06em;padding:6px 10px;border-radius:14px;cursor:pointer;white-space:nowrap;text-transform:uppercase}
+#wikiO.v9b #wikiContent{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1100px;margin:0 auto}
+@media(min-width:900px){#wikiO.v9b #wikiContent{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+#wikiO.v9b .wiki-entry{display:flex!important;flex-direction:column;align-items:center;text-align:center;padding:8px!important;margin:0!important;min-width:0;width:auto!important;border-radius:14px}
+#wikiO.v9b .wiki-entry>b{order:-1;font-size:13px;line-height:1.2;margin-bottom:4px;color:inherit!important}
+#wikiO.v9b .wiki-entry .wl,#wikiO.v9b .wiki-entry .wa,#wikiO.v9b .wiki-entry .ww,#wikiO.v9b .wiki-entry .wf{display:none!important}
+#wikiO.v9b .wiki-thumb-wrap{width:100%!important;height:auto!important;aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:none!important;border:0!important;box-shadow:none!important;margin:0!important}
+#wikiO.v9b img.wiki-thumb.v9big{width:118%!important;height:118%!important;max-width:none!important;object-fit:contain;filter:none!important}
+#wikiO.v9b .v9x{display:flex;flex-direction:column;gap:2px;font-size:11px;line-height:1.25;margin-top:4px;width:100%}
+#wikiO.v9b .v9x i{font-size:12px}
+#wikiO.v9b .v9x .ds{font-size:10.5px;opacity:.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+#v9bbar{position:fixed;left:50%;transform:translateX(-50%);bottom:8px;z-index:20;display:flex;gap:4px;padding:6px 10px;border-radius:20px;width:min(560px,94vw);justify-content:space-around}
+#v9bbar button{flex:1;background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:2px;font:inherit;font-size:10px;letter-spacing:.08em;cursor:pointer;padding:4px;color:inherit;opacity:.7}
+#v9bbar button.on{opacity:1}
+#v9bbar svg{width:24px;height:24px}
+#wikiO.v9b .wiki-search{max-width:560px;margin:0 auto 10px!important;display:block}
+html body #wikiO.v9b .wiki-thumb-wrap{height:auto!important;min-height:0!important;max-height:none!important;padding:0!important;overflow:hidden}
+html body #wikiO.v9b img.wiki-thumb.v9big{width:100%!important;height:100%!important;max-height:none!important}
+html body #wikiO.v9b .wiki-thumb-wrap{flex:0 0 auto!important}html body #wikiO.v9b .wiki-entry{height:auto!important;max-height:none!important}
+html body #wikiO.v9b #wikiContent{grid-auto-rows:auto!important;align-items:start}
+html body #wikiO.v9b .wiki-entry{overflow:visible!important;contain:none!important}
+@media(max-width:600px){#v9bhead .v9f{flex-wrap:nowrap;justify-content:flex-start;scrollbar-width:none}#v9bhead .v9t{font-size:22px}}
+html body #wikiO.v9b #wikiContent{grid-template-rows:none!important}#v9bhead .v9f{justify-content:flex-start!important}@media(min-width:601px){#v9bhead .v9f{justify-content:center!important}}
+html body #wikiO.v9b .wiki-entry{content-visibility:visible!important;contain-intrinsic-size:none!important}
+html body #wikiO.v9b .wiki-thumb-wrap{aspect-ratio:auto!important;display:block!important}html body #wikiO.v9b img.wiki-thumb.v9big{height:auto!important;display:block;width:100%!important}html body #wikiO.v9b .wiki-entry{min-width:0;width:100%!important}
+html body #wikiO.v9b #wikiContent{display:flex!important;flex-wrap:wrap;align-items:flex-start;gap:10px}
+html body #wikiO.v9b .wiki-entry{flex:0 0 calc(50% - 5px)!important;width:calc(50% - 5px)!important;box-sizing:border-box}
+@media(min-width:900px){html body #wikiO.v9b #wikiContent{gap:16px}html body #wikiO.v9b .wiki-entry{flex-basis:calc(33.33% - 11px)!important;width:calc(33.33% - 11px)!important}}
+html body #wikiO.v9b{overflow-x:hidden!important}
+html body #wikiO.v9b #v9bhead{margin-left:0!important;margin-right:0!important;max-width:100%;box-sizing:border-box}
+html body #wikiO.v9b #v9bhead .v9f{max-width:100%;box-sizing:border-box}
+html body #wikiO.v9b #wikiContent,html body #wikiO.v9b .wiki-search{max-width:100%;box-sizing:border-box}
+/* v9 engraving bestiary */
+#wikiO.v9b[data-v9=engr]{background:#efe5cf url("assets/themes/engraving/engraving_pond_bg.jpg") center/cover fixed!important;color:#2b1a0e}
+#wikiO.v9b[data-v9=engr]::before{content:"";position:fixed;inset:0;background:rgba(244,236,218,.86);pointer-events:none}
+#wikiO.v9b[data-v9=engr]>*{position:relative}
+[data-v9=engr] #v9bhead{border:3px double #2b1a0e;background:#f6eedc;margin:0 0 10px;font-family:Georgia,serif}
+[data-v9=engr] #v9bhead .v9t{font-family:Georgia,serif;letter-spacing:.2em}
+[data-v9=engr] #v9bhead .v9f button{background:#f6eedc;border:1px solid #2b1a0e;border-radius:0;color:#2b1a0e;font-family:Georgia,serif;box-shadow:inset 0 0 0 2px #f6eedc,inset 0 0 0 3px #2b1a0e}
+[data-v9=engr] #v9bhead .v9f button.on{background:#2b1a0e;color:#f6eedc}
+html body #wikiO.v9b[data-v9=engr] .wiki-entry{background:#f8f1e1!important;border:1px solid #2b1a0e!important;border-radius:0!important;box-shadow:inset 0 0 0 3px #f8f1e1,inset 0 0 0 4px #2b1a0e!important;font-family:Georgia,serif;color:#2b1a0e}
+html body #wikiO.v9b[data-v9=engr] .wiki-entry>b{text-transform:uppercase;letter-spacing:.03em;font-size:10.5px;word-break:break-word}
+html body #wikiO.v9b[data-v9=engr] img.wiki-thumb.v9big{filter:none!important}
+html body #wikiO.v9b[data-v9=haeckel] img.wiki-thumb.v9big{filter:none!important;mix-blend-mode:multiply}
+[data-v9=engr] .v9x .ds{border-top:1px solid #2b1a0e;padding-top:4px;margin-top:2px}
+[data-v9=engr] #v9bbar{background:#f6eedc;border:3px double #2b1a0e;border-radius:0;color:#2b1a0e;font-family:Georgia,serif}
+/* v9 haeckel bestiary */
+#wikiO.v9b[data-v9=haeckel]{color:#3a2a18}
+#wikiO.v9b[data-v9=haeckel]::before{content:"";position:fixed;inset:0;background:rgba(246,238,220,.84);pointer-events:none}
+#wikiO.v9b[data-v9=haeckel]>*{position:relative}
+[data-v9=haeckel] #v9bhead .v9t{font-family:Georgia,serif;font-size:30px;letter-spacing:.04em;color:#2f4a3a}
+[data-v9=haeckel] #v9bhead .v9f button{background:#efe6cc;border:1px solid #6f8a6a;color:#2f4a3a;font-family:Georgia,serif;border-radius:3px}
+[data-v9=haeckel] #v9bhead .v9f button.on{background:#e7b9b2;border-color:#a8524a;color:#6a2a22}
+html body #wikiO.v9b[data-v9=haeckel] .wiki-entry{background:#f7f0dc!important;border:1.5px solid #6f8a6a!important;border-radius:4px!important;box-shadow:inset 0 0 0 4px #f7f0dc,inset 0 0 0 5px #6f8a6a,2px 3px 8px rgba(60,40,20,.2)!important;font-family:Georgia,serif;color:#3a2a18}
+html body #wikiO.v9b[data-v9=haeckel] .wiki-entry[data-g="1"],html body #wikiO.v9b[data-v9=haeckel] .wiki-entry[data-g="3"],html body #wikiO.v9b[data-v9=haeckel] .wiki-entry[data-g="5"]{border-color:#c07a70!important;box-shadow:inset 0 0 0 4px #f7f0dc,inset 0 0 0 5px #c07a70,2px 3px 8px rgba(60,40,20,.2)!important}
+html body #wikiO.v9b[data-v9=haeckel] .wiki-entry>b{font-size:14px}
+[data-v9=haeckel] .v9x i{border:1px solid #6f8a6a;padding:2px 4px;background:#fbf6e8}
+[data-v9=haeckel] #v9bbar{background:#f7f0dc;border:1.5px solid #6f8a6a;color:#2f4a3a;font-family:Georgia,serif}
+/* v9 cyberpunk bestiary */
+#wikiO.v9b[data-v9=cyber]{color:#39ff88;font-family:"Courier New",monospace}
+#wikiO.v9b[data-v9=cyber]::before{content:"";position:fixed;inset:0;background:rgba(4,8,14,.82);pointer-events:none}
+#wikiO.v9b[data-v9=cyber]>*{position:relative}
+[data-v9=cyber] #v9bhead{border-bottom:1px solid #ff3cf0;background:rgba(6,10,20,.9)}
+[data-v9=cyber] #v9bhead .v9t{color:#39ff88;text-shadow:0 0 8px #39ff88;font-family:"Courier New",monospace;font-size:20px;text-align:left}
+[data-v9=cyber] #v9bhead .v9f button{background:#060a14;border:1px solid #39ff88;color:#39ff88;border-radius:0;font-family:"Courier New",monospace;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+[data-v9=cyber] #v9bhead .v9f button.on{background:#39ff88;color:#060a14}
+html body #wikiO.v9b[data-v9=cyber] .wiki-entry{background:rgba(8,14,26,.95)!important;border:1px solid #b03cff!important;border-radius:0!important;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);box-shadow:inset 0 0 14px rgba(176,60,255,.35)!important;color:#39ff88;align-items:stretch;text-align:left}
+html body #wikiO.v9b[data-v9=cyber] .wiki-entry>b{font-family:"Courier New",monospace;text-transform:uppercase;font-size:12px;color:#39ff88!important;text-shadow:0 0 6px #39ff88}
+[data-v9=cyber] .wiki-thumb-wrap{position:relative}
+[data-v9=cyber] .wiki-thumb-wrap::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#39ff88;box-shadow:0 0 6px #39ff88}
+[data-v9=cyber] .v9x{font-family:"Courier New",monospace;font-size:10px}
+[data-v9=cyber] .v9x .id{order:-1;color:#7fffc4}[data-v9=cyber] .v9x .gp{color:#ff7cf5}[data-v9=cyber] .v9x .sz{border-left:6px solid #ff3cf0;padding-left:4px;background:repeating-linear-gradient(90deg,#b03cff 0 1px,transparent 1px 3px) left/34px 100% no-repeat;padding-left:40px}
+[data-v9=cyber] #v9bbar{background:#060a14;border:1px solid #39ff88;border-radius:0;color:#39ff88;font-family:"Courier New",monospace;box-shadow:0 0 12px rgba(57,255,136,.3)}
+[data-v9=cyber] #v9bbar button.on{color:#ff3cf0}
+/* v9 neon bestiary */
+#wikiO.v9b[data-v9=neon]::before{content:"";position:fixed;inset:0;background:rgba(2,4,10,.8);pointer-events:none}
+#wikiO.v9b[data-v9=neon]>*{position:relative}
+[data-v9=neon] #v9bhead .v9f button{background:#050810;border:1.5px solid #22d3ee;color:#bff6ff;border-radius:20px;box-shadow:0 0 8px rgba(34,211,238,.5)}
+[data-v9=neon] #v9bhead .v9f button:nth-child(3n+2){border-color:#e040fb;box-shadow:0 0 8px rgba(224,64,251,.5)}[data-v9=neon] #v9bhead .v9f button:nth-child(3n){border-color:#a3e635;box-shadow:0 0 8px rgba(163,230,53,.5)}
+[data-v9=neon] #v9bhead .v9f button.on{background:rgba(34,211,238,.2)}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry{background:rgba(6,10,18,.92)!important;border:1px solid rgba(34,211,238,.45)!important;border-radius:16px!important;box-shadow:0 0 10px rgba(34,211,238,.15)!important;color:#dffaff;position:relative}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry[data-g="1"],html body #wikiO.v9b[data-v9=neon] .wiki-entry[data-g="4"]{border-color:rgba(224,64,251,.5)!important}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry[data-g="0"],html body #wikiO.v9b[data-v9=neon] .wiki-entry[data-g="3"]{border-color:rgba(163,230,53,.5)!important}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry::after{content:"";position:absolute;right:10px;top:10px;width:10px;height:10px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;color:#22d3ee}
+html body #wikiO.v9b[data-v9=neon] .wiki-entry>b{font-size:12px;color:#bff6ff!important;padding-right:16px}
+[data-v9=neon] .v9x{color:#7dd3fc;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+[data-v9=neon] #v9bbar{background:rgba(4,8,14,.9);border:1px solid rgba(34,211,238,.4);color:#bff6ff;box-shadow:0 0 14px rgba(34,211,238,.25)}
+[data-v9=neon] #v9bbar button.on{color:#22d3ee;filter:drop-shadow(0 0 4px #22d3ee)}
+/* v9 phase bestiary */
+#wikiO.v9b[data-v9=phase]::before{content:"";position:fixed;inset:0;background:rgba(8,10,12,.86);pointer-events:none}
+#wikiO.v9b[data-v9=phase]>*{position:relative}
+[data-v9=phase] #v9bhead .v9t{font-family:Georgia,serif;font-size:30px;letter-spacing:.02em;color:#eef;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:6px}
+[data-v9=phase] #v9bhead .v9f button{background:#14171a;border:1px solid rgba(255,255,255,.35);color:#e8eef0;border-radius:18px}
+[data-v9=phase] #v9bhead .v9f button.on{background:#e8eef0;color:#101214}
+html body #wikiO.v9b[data-v9=phase] .wiki-entry{background:linear-gradient(#16191c,#0e1012)!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:12px!important;box-shadow:none!important;color:#e8eef0}
+html body #wikiO.v9b[data-v9=phase] .wiki-entry>b{order:2;font-family:Georgia,serif;font-weight:400;font-size:14px;color:#f1f5f6!important;margin-top:4px}
+html body #wikiO.v9b[data-v9=phase] img.wiki-thumb.v9big{filter:grayscale(.85) brightness(1.1) contrast(1.1)!important}
+[data-v9=phase] .v9x{display:none!important}
+[data-v9=phase] #v9bbar{background:#0e1012;border:1px solid rgba(255,255,255,.2);border-radius:0;width:100vw;bottom:0;color:#e8eef0}
+/* v9 glass bestiary */
+#wikiO.v9b[data-v9=glass]::before{content:"";position:fixed;inset:0;background:rgba(232,240,248,.7);pointer-events:none}
+#wikiO.v9b[data-v9=glass]>*{position:relative}
+[data-v9=glass] #v9bhead{background:rgba(255,255,255,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.9);border-radius:22px;margin:0 0 12px;box-shadow:0 6px 18px rgba(80,120,160,.15)}
+[data-v9=glass] #v9bhead .v9t{color:#5b6b7d;font-size:22px;letter-spacing:.04em}
+[data-v9=glass] #v9bhead .v9f button{background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.95);color:#4d6a86;border-radius:14px;box-shadow:0 2px 6px rgba(80,120,160,.12)}
+[data-v9=glass] #v9bhead .v9f button.on{background:rgba(180,215,250,.8);color:#1f4f7a}
+html body #wikiO.v9b[data-v9=glass] .wiki-entry{background:linear-gradient(160deg,rgba(255,255,255,.75),rgba(225,236,246,.55))!important;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.95)!important;border-radius:22px!important;box-shadow:0 8px 20px rgba(80,120,160,.18),inset 0 1px 0 #fff!important;color:#3d556c}
+html body #wikiO.v9b[data-v9=glass] .wiki-entry>b{font-size:12px;color:#3d556c!important}
+[data-v9=glass] .v9x{color:#6b86a0;font-size:10px}
+[data-v9=glass] #v9bbar{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);border:1px solid #fff;border-radius:24px;color:#4d6a86;box-shadow:0 8px 20px rgba(80,120,160,.2)}
+[data-v9=glass] #v9bbar button.on{color:#1f7ad0}
+/* v9 fix: compact 3-col grid on desktop, long names fit */
+@media(min-width:900px){html body #wikiO.v9b #wikiContent{max-width:880px!important;margin:0 auto}html body #wikiO.v9b .wiki-thumb-wrap{max-height:220px!important}html body #wikiO.v9b img.wiki-thumb.v9big{max-height:220px!important;object-fit:contain}}
+html body #wikiO.v9b[data-v9=engr] .wiki-entry>b{font-size:9.5px!important;letter-spacing:.02em!important}
+
+/* v10: 375 filters wrap into rows so every group is visible */
+@media(max-width:600px){html body #wikiO.v9b #v9bhead .v9f{flex-wrap:wrap!important;overflow:visible!important;justify-content:center!important;gap:4px}html body #wikiO.v9b #v9bhead .v9f button{font-size:9.5px;padding:4px 7px;letter-spacing:.02em}}
+/* v10: centre bottom bar regardless of containing block */
+html body #wikiO.v9b #v9bbar{left:0!important;right:0!important;margin:0 auto!important;transform:none!important}
+/* v10 glass: aquarium glass tile behind creature, specular rim, chip-style group label */
+html body #wikiO.v9b[data-v9=glass] .wiki-thumb-wrap{position:relative;border-radius:18px!important;background:radial-gradient(120% 90% at 30% 15%,rgba(255,255,255,.95),rgba(214,232,246,.55) 60%,rgba(190,214,236,.45))!important;box-shadow:inset 0 1px 0 #fff,inset 0 -8px 16px rgba(120,160,200,.18),0 4px 10px rgba(80,120,160,.12)!important;border:1px solid rgba(255,255,255,.95)!important}
+html body #wikiO.v9b[data-v9=glass] .wiki-thumb-wrap::after{content:"";position:absolute;left:8%;top:5%;width:45%;height:18%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,0));pointer-events:none}
+html body #wikiO.v9b[data-v9=glass] img.wiki-thumb.v9big{filter:drop-shadow(0 6px 8px rgba(60,110,150,.25)) saturate(.85)!important}
+[data-v9=glass] .v9x{display:flex;justify-content:center}[data-v9=glass] .v9x .gp{display:inline-block;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,.7);border:1px solid #fff;box-shadow:0 2px 5px rgba(80,120,160,.15)}
+/* v11: wide desktop grid (4 cols ≥1200), bar pinned to viewport centre */
+@media(min-width:900px){html body #wikiO.v9b #wikiContent{max-width:min(1320px,94vw)!important}}
+@media(min-width:1200px){html body #wikiO.v9b .wiki-entry{flex-basis:calc(25% - 12px)!important;width:calc(25% - 12px)!important}html body #wikiO.v9b .wiki-thumb-wrap,html body #wikiO.v9b img.wiki-thumb.v9big{max-height:250px!important}}
+html body #v9bbar,html body #wikiO.v9b #v9bbar{position:fixed!important;left:calc(50vw - min(280px,47vw))!important;right:auto!important;margin:0!important;transform:none!important;width:min(560px,94vw)!important;box-sizing:border-box}
+html body #wikiO.v9b[data-v9=phase] #v9bbar{left:0!important;width:100vw!important}
+/* v11: compact 375 header */
+@media(max-width:600px){html body #wikiO.v9b #v9bhead{padding:6px 4px 5px!important;margin-bottom:6px!important}html body #wikiO.v9b #v9bhead .v9t{font-size:17px!important;margin-bottom:4px!important}html body #wikiO.v9b #v9bhead .v9f{gap:3px!important}html body #wikiO.v9b #v9bhead .v9f button{font-size:8.5px!important;padding:3px 5px!important;letter-spacing:0!important;border-radius:9px}}
+/* v11 haeckel: vine ornament on card frame corners */
+html body #wikiO.v9b[data-v9=haeckel] .wiki-entry{position:relative;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' fill='none' stroke='%236f8a6a' stroke-width='1.2'%3E%3Cpath d='M4 42C6 24 16 12 40 6'/%3E%3Cpath d='M12 26c-6-2-8-7-6-11 5 1 8 5 6 11zM22 15c-2-6 0-10 5-11 1 5-1 9-5 11z' fill='%23a9bf9c' fill-opacity='.55'/%3E%3Ccircle cx='40' cy='6' r='2' fill='%23c07a70'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' fill='none' stroke='%236f8a6a' stroke-width='1.2'%3E%3Cpath d='M42 4C40 22 30 34 6 40'/%3E%3Cpath d='M34 20c6 2 8 7 6 11-5-1-8-5-6-11zM24 31c2 6 0 10-5 11-1-5 1-9 5-11z' fill='%23a9bf9c' fill-opacity='.55'/%3E%3Ccircle cx='6' cy='40' r='2' fill='%23c07a70'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:left 6px bottom 6px,right 6px top 6px!important}
+@media(max-width:600px){html body #wikiO.v9b[data-v9=engr] #v9bhead .v9f button,html body #wikiO.v9b[data-v9=cyber] #v9bhead .v9f button{border-radius:0!important}}
+
+/* v11b haeckel: ornament as overlay so card backgrounds cannot hide it */
+html body #wikiO.v9b[data-v9=haeckel] .wiki-entry::before{content:"";position:absolute;inset:3px;pointer-events:none;z-index:2;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' fill='none' stroke='%236f8a6a' stroke-width='1.2'%3E%3Cpath d='M4 42C6 24 16 12 40 6'/%3E%3Cpath d='M12 26c-6-2-8-7-6-11 5 1 8 5 6 11zM22 15c-2-6 0-10 5-11 1 5-1 9-5 11z' fill='%23a9bf9c' fill-opacity='.55'/%3E%3Ccircle cx='40' cy='6' r='2' fill='%23c07a70'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' fill='none' stroke='%236f8a6a' stroke-width='1.2'%3E%3Cpath d='M42 4C40 22 30 34 6 40'/%3E%3Cpath d='M34 20c6 2 8 7 6 11-5-1-8-5-6-11zM24 31c2 6 0 10-5 11-1-5 1-9 5-11z' fill='%23a9bf9c' fill-opacity='.55'/%3E%3Ccircle cx='6' cy='40' r='2' fill='%23c07a70'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 2px top 2px,right 2px top 2px;background-size:26px 26px,26px 26px;transform:none}
+html body #wikiO.v9b[data-v9=haeckel] .wiki-entry>b{padding:0 24px}
+/* v5b engraving pond: engraved parchment HUD panels like concept 09 */
+html[data-theme-pond="engraving"] #hud,html[data-theme-pond="engraving"] #divReason{background:#efe4c8!important;color:#2b1d10!important;border:1px solid #3a2a18!important;outline:1px solid #3a2a18;outline-offset:2px;border-radius:2px!important;box-shadow:none!important;font-family:Georgia,serif!important}
+html[data-theme-pond="engraving"] #hud *{color:#2b1d10}
+/* v5c engraving pond: bars and bottom hint in engraving ink */
+html[data-theme-pond="engraving"] #hud{filter:sepia(1) saturate(.55) contrast(1.1)}
+html[data-theme-pond="engraving"] #hDivReady,html[data-theme-pond="engraving"] #divReason,html[data-theme-pond="engraving"] .div-reason{background:#efe4c8!important;color:#2b1d10!important;border:1px solid #3a2a18!important;outline:1px solid #3a2a18;outline-offset:2px;border-radius:2px!important;box-shadow:none!important;font-family:Georgia,serif!important}
+html[data-theme-pond="engraving"] #scaleBar{filter:sepia(1) saturate(.5) brightness(.6)}

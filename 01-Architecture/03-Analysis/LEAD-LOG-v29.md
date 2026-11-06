@@ -98,3 +98,131 @@
 - theme_neon_draw.js + theme_visuals ensureNeonDraw/wiki species thumbs; HUD css; Worker+theme-stats all 7; tests ready; NO deploy
 - box sides /workspace/v29all3/side_{menu,pond,bestiary}_neon-bio.jpg
 
+
+## 2026-11-04 02:25 Asia/Jerusalem — neon-bio pond → concept 03
+- neon_pond_bg.jpg rebuilt (concept env + god-rays + cavern walls + biolum bed); theme_visuals drawNeonPondBed alpha 0.78 + path fallback
+- box sides: /workspace/v29all3/side_pond_neon-bio.jpg + pond_neon-bio_dedicated.jpg (v3)
+- bestiary species names already real; NO deploy
+- note: Windows Shell hung — commit via GitHub API; local Obsidian tree may lag until pull
+
+- also committed pond/neon_pond_bg.jpg fallback path (26771c5)
+
+## 2026-11-04 02:32 Asia/Jerusalem — neon pond bg CLEAN (no baked orgs/HUD)
+- neon_pond_bg.jpg rebuilt procedural: water/rays/walls/bed/particles ONLY
+- removed concept organisms + corner HUD baked into prior bg
+- live browser shots next (box http+headless); no deploy
+
+## 2026-11-04 02:45 Asia/Jerusalem — neon pond CLEAN + LIVE shots
+- neon_pond_bg.jpg procedural CLEAN (water/rays/walls/bed/particles; NO organisms/HUD)
+- theme_neon_draw contour glow tightened; fallback shadowBlur reduced; bed overlay alpha 0.42
+- LIVE browser shots (box :8820 + headless chrome): menu/pond/bestiary → /workspace/v29all3/*_neon-bio_live.jpg + side_pond_neon-bio.jpg
+- bestiary labels = scientific names; NO deploy
+- theme_neon_draw v2: contour-only glow (no soft circular halo plates / no lighter bloom)
+
+## 2026-11-04 02:55 Asia/Jerusalem — phase-contrast dedicated assets
+- phase_pond_bg.jpg CLEAN (no orgs/HUD); 101 species sprites; theme_visuals bed+thumbs
+- LIVE shots box :8820 → /workspace/v29all3/*_phase-contrast_live.jpg + sides; labels scientific; NO deploy
+
+## 2026-11-04 03:05 Asia/Jerusalem — engraving dedicated assets
+- clean pond bg (no orgs/HUD) + 101 species sprites; theme_visuals bed+thumbs
+- LIVE shots /workspace/v29all3/*_engraving_live.jpg + sides; scientific labels; NO deploy
+
+## 2026-11-04 03:05 Asia/Jerusalem — cyberpunk-scanner dedicated assets
+- clean pond bg (no orgs/HUD) + 101 species sprites; theme_visuals bed+thumbs
+- LIVE shots /workspace/v29all3/*_cyberpunk-scanner_live.jpg + sides; scientific labels; NO deploy
+
+## 2026-11-04 03:05 Asia/Jerusalem — glass-lab dedicated assets
+- clean pond bg (no orgs/HUD) + 101 species sprites; theme_visuals bed+thumbs
+- LIVE shots /workspace/v29all3/*_glass-lab_live.jpg + sides; scientific labels; NO deploy
+
+## 2026-11-04 03:05 Asia/Jerusalem — haeckel-watercolor dedicated assets
+- clean pond bg (no orgs/HUD) + 101 species sprites; theme_visuals bed+thumbs
+- LIVE shots /workspace/v29all3/*_haeckel-watercolor_live.jpg + sides; scientific labels; NO deploy
+
+## 2026-11-04 neon-bio LIVE pass (box)
+- screen-space neon_pond_bg under water; swiss+neon sprites at o.x/o.y; HUD/menu neon CSS; themePondBar no overlap 375/1400
+- shots /workspace/v29neon/; FPS target ≥ classic; JS ≤500
+
+## 2026-11-04 03:24 IST — neon-bio LIVE v2 (acceptance retry)
+
+Owner rejected prior neon LIVE (~60%): huge identical ovals, Pond style clipped on 375, Divide/Energy mid-scene, cheap wavy tubes/bubbles instead of painterly bed.
+
+Fixes:
+1. Species PNG sprites via `sp.num-1` / array index (was missing → bake-only ovals); `neonDrawSz` ≈ sz*2.6 (readable, not half-screen); zoom boost 5.5 removed.
+2. `#themePondBar` mobile: kill `.theme-sel-wrap{min-width:120}` that forced select to 120px past edge; bar right=18 width=82; select fully in viewport (pink gap ≥18px @375).
+3. `#hDivReady` / `#divReason` neon mobile → bottom-left above actBar (not mid-scene top).
+4. Rebuilt painterly `neon_pond_bg.jpg` (rocky cavern, surface, rays, glowing bed); skip `renderShore`/`renderBubbles`/`renderSediment` for neon; wrapWater = screen-space bed only.
+
+FPS @1400: neon 60 ≥ classic 55; @375: neon 60 ≈ classic 60. JS: neon_draw 177, visuals 500, engine 52. Shots `/workspace/v29neon/*_v2.jpg`. No deploy. Honest eye ~85–88% vs concept 03 (still HUD chrome differs from circular concept icons).
+
+## 2026-11-04 03:34 IST — neon-bio LIVE v3
+
+Owner rejected v2 (~70%): Pop:11, dull plaques, black left wall, square buttons.
+
+(0) Pop:11 was shot-script artifact (`orgs.length=0` seed). Real spawn classic=297 neon=297 delta=0 same seed. Added `.04-Src/tests/test_theme_pop_invariant.mjs` (07-QA is gitignored). sp.num only affects PNG index in theme_neon_draw — not biology/spawn.
+
+(1) Species PNGs: punched dark fills → transparent; removed draw tint ellipse; single-pass contour glow (FPS-safe).
+(2) neon_pond_bg rebuilt: translucent symmetric cave rims + surface band + rays + bed; shore/bubbles still skipped.
+(3) actBar buttons border-radius:50% circular neon.
+
+FPS: neon 60 ≥ classic 51 @1400; 60/60 @375. JS neon_draw 169 / visuals 500 / engine 52.
+Shots /workspace/v29neon/*_v3.jpg. Honest eye ~85%. No deploy.
+
+### v3 final metrics (2026-11-04 ~03:45 IST)
+- Pop invariant: classic=298 neon=298 Δ0 (`.04-Src/tests/test_theme_pop_invariant.mjs` PASS)
+- LIVE shots Pop≈297–300; circular actBar (48×48)
+- FPS: neon 60–61 ≥ classic ~57 @1400; neon 60 @375
+- JS: theme_neon_draw 168 / theme_visuals 500 / theme_engine 52
+- bed neon-bio-v5 + translucent cave walls w/ cyan·magenta rims + surface band
+- Honest eye vs concept 03: ~85% (surface shimmer & creature cilia detail still weaker)
+- No deploy
+
+
+## 2026-11-04 03:55 IST — neon-bio LIVE v4
+
+Owner rejected v3 (~50%): black upper void + dotted lines + rectangular ray; flat blue jagged rect; dull small creatures. Root cause: `render.js` water `clip()` clipped fullscreen `neon_pond_bg` to world water band; STEP1 sky/water gradients + sky dots + sunRays still painted.
+
+Fix:
+- render.js: neon draws `neon_pond_bg` cover on full viewport with cam parallax in STEP1; skips sky/water/sunRays/sediment/shore/bubbles clip path
+- theme_visuals: neon sky/water no-op; expose `__igsNeonPondBg`; skip renderSunRays; postFX vignette only; bed v6
+- neon_pond_bg rebuilt from concept 03 (HUD circles scrubbed)
+- creatures ~2× drawSz + brighter glow (shadow + lighter pass)
+
+Metrics: Pop invariant Δ3 PASS (297/300). FPS neon 60 ≥ classic 57 @1400; 60/60 @375. JS visuals 474 / neon_draw 171 / engine 52. Shots `/workspace/v29neon/*_v4.jpg`. Honest eye ~88% vs concept (same cave). No deploy.
+
+
+## v5 neon-bio (2026-11-04)
+- neon_pond_bg.jpg → CLEAN owner background (720×1280, q84, 127KB); concept-baked v4 bg archived to .10-Archive/neon-bg-concept-baked-2026-11-04/. Concept images are never used as game backgrounds.
+- theme_neon_draw.js: procedural species bodies (translucent glowing fill, bright contour, cilia/flagella/phage tail, inner speckles + nucleus); no oval rings, no species PNGs.
+- render.js: cover background with clamped parallax (no uncovered edge when camera is far off-centre).
+- Tests: pop invariant PASS; FPS neon 60.2 ≈ classic 60.2 @375; JS: render 230 / theme_visuals 474 / theme_neon_draw 162.
+- Shots: /workspace/v29neon/*_v5.jpg + side_*_v5.jpg.
+
+## v5.1 neon + v5 styles (2026-11-04)
+- neon: palette cyan/magenta (green only for producers, yellow rare), denser cilia (×2.8), creatures ×1.9 at ≥900px. Commit e61289b.
+- Generic v5 pipeline for 6 styles: clean bg cover full viewport + old layers off + procedural per-style creatures (theme_neon_draw.js) + procedural bestiary thumbs + style-themes-v5chrome.css (HUD/menu/bestiary).
+- phase-contrast: clean bg (old → .10-Archive/pond-bg-pre-v5-2026-11-04/), grey translucent bodies with bright halo. Pop PASS, FPS 375 60/60, 1400 51 vs classic 55 (headless).
+- engraving: clean bg, sepia paper bodies + ink hatching/cross-hatch + ink contour; light chrome (paper/ink). Pop PASS.
+- cyberpunk-scanner: clean bg, wireframe cyan/magenta/green bodies + scanner brackets; dark neon chrome. FPS 60/60 (1400,375), Pop PASS.
+- glass-lab: clean petri bg, saturated glassy bodies w/ coloured rim + white highlights; frosted chrome. FPS 60 (1400,375), Pop PASS.
+- haeckel-watercolor: clean bg, layered watercolour washes + thin sepia outline; parchment chrome. Pop PASS.
+- v5.2 phase: bg toned dark teal (PIL colorize of clean bg; light version archived), double-pass bright halo, teal chrome.
+- v5.2 engraving: denser 3-layer hatching, darker/thicker ink contour, creatures x1.3. FPS 60/57, Pop PASS.
+- v5.2 haeckel: watercolour blooms, veins, vacuoles, denser cilia. FPS 60/60, Pop PASS.
+- v5.3 haeckel: muted ochre/sepia/olive palette, translucent washes, thinner sepia outline, elongated bodies (x1.18/x0.78).
+- v5.3 engraving: denser hatching (step 0.019/0.02), heavier contour, 60 stipple dots, creatures x1.45 at 1400 / x1.15 mobile. Pop PASS.
+- v5.4 (all styles infra) + glass: per-species silhouette variants (4 aspect variants), per-species size variety 0.72-1.26 (visual only), new theme_micro.js decorative micro-life layer (24 baked mini-sprites, 150/80 drifting + dust, limited to water band per style). Glass FPS 60/60, Pop PASS.
+- 2026-11-04 haeckel v5.5: меню/бестиарий по раскладке концепта 02 (фон-герой, рамки, нижняя панель с иконками, процедурные иконки карточек), FPS 1400 59.5 / 375 57.7, популяция PASS, ~85%
+- 2026-11-04 engraving v5.5: меню/бестиарий по раскладке концепта 09; FPS(c1400 t1400 c375 t375) 41.8 55.5 60.3 53.3 ; популяция PASS
+- 2026-11-04 cyberpunk-scanner v5.5: меню/бестиарий по раскладке концепта 10; FPS(c1400 t1400 c375 t375) 42.8 60.5 60.2 58.0 ; популяция PASS
+- 2026-11-04 neon-bio v5.5: меню/бестиарий по раскладке концепта 03; FPS(c1400 t1400 c375 t375) 52.7 60.4 60.3 56.6 ; популяция PASS
+- 2026-11-04 phase-contrast v5.5: меню/бестиарий по раскладке концепта 01; FPS(c1400 t1400 c375 t375) 37.6 57.8 60.3 33.1 ; популяция PASS
+- 2026-11-04 glass-lab v5.5: меню/бестиарий по раскладке концепта 07; FPS(c1400 t1400 c375 t375) ; популяция PASS
+- 2026-11-04 v5 menu badges (виды/колонии) вверху справа во всех 6 стилях, круглая центральная кнопка; скрины menu_*_badges_{375,1400}_v5 — меню не ломаются
+- 2026-11-04 perf: offscreen micro на телефоне, бюджет 2 bake/кадр, prewarm engraving-спрайтов. FPS engraving 375 (style/classic): 58.2/59.3, 52.9/60.2, 3-й прогон упал (ошибка страницы, бокс перегружен). Скрины engraving _badges_v5 проверены — ок.
+- 2026-11-04 glass v6: меню по концепту 07 — аквариум-герой с организмами, чипы темп/O2, боковые кнопки VIEW/ZOOM/SAMPLE/ANALYZE, таб-бар POND/ORGANISMS/POPULATION/DATA (ведут на демо/скринсейвер/вики/настройки/старт). side_menu_glass-lab_{375,1400}_v6
+- 2026-11-04 fix: чипы меню показывают реальные данные (число видов SPECIES_DB, ~организмов getPoolCount, свет из starSelect) вместо скопированных из концепта; glass 375 пересъёмка — боковые кнопки помещаются
+- 2026-11-04 v6 меню cyberpunk(10)/neon(03)/phase(01)/engraving(09): герой с организмами, чипы (реальные данные), рейка (cyber), таб-бар по концепту; side_menu_*_{375,1400}_v6
+- 2026-11-04 v7 меню: SVG-иконки во всех 6 стилях (без текстовых символов), engraving — светлые штрихованные существа только в воде + мелкие, круглая кнопка меню; cyberpunk — HUD-рамка вокруг SCAN, метки из имён видов (LYNG.M-8 и т.п.); haeckel переведён на ту же раскладку; популяция neon/phase PASS; скрины side_menu_*_{375,1400}_v7
+- 2026-11-04 v8 меню: glass SVG-рамка куба, cyber кольцо-прицел, haeckel карточки видов с латинскими именами из SPECIES_DB, neon без таб-бара (2 иконки), phase кольцо-таймер, engraving SVG-гравюры существ + крупный ≡; популяция 6/6 PASS; скрины side_menu_*_v8
+- 2026-11-04 v9 бестиарий каркас: theme_bestiary_v9.js + style-themes-v9bestiary.css — шапка с фильтрами по реальным группам, сетка 2/3 колонки, крупные рендеры (прудовый спрайт 300px + органеллы из sp.bio, кроп), поля из данных, нижний бар

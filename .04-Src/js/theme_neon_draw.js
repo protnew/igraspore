@@ -1,13 +1,23 @@
-/* theme_neon_draw.js — dedicated neon-bio organism draw (procedural outlines+bloom). ≤500L */
+/* theme_neon_draw.js — v5 procedural organisms for 6 pond styles (neon, phase, engraving, cyber, glass, haeckel). ≤500L */
 (function (w) {
   "use strict";
-  var CACHE = {};
-  var PAL = ["#00ffff", "#ff00c8", "#78ff50", "#b464ff", "#ffdc50", "#50b4ff", "#ff50a0", "#28ffb4"];
-  function colOf(o) {
-    if (o && o.sp && o.sp.color) return o.sp.color;
-    var n = (o && o.sp && (o.sp.id || o.sp.name)) || "x";
-    var h = 0; for (var i = 0; i < String(n).length; i++) h = (h * 31 + String(n).charCodeAt(i)) | 0;
-    return PAL[Math.abs(h) % PAL.length];
+  var CACHE = {}, THUMBS = {};
+  var STYLE_OF = { "neon-bio": "neon", "phase-contrast": "phase", "engraving": "engr", "cyberpunk-scanner": "cyber", "glass-lab": "glass", "haeckel-watercolor": "haeckel" };
+  var PALS = {
+    neon:    { prod: ["#00e8ff", "#7dff5a", "#00ffd0", "#ff3cd2"], dec: ["#b05cff", "#d24bff", "#b05cff", "#ffd84a"], rest: ["#00f0ff", "#ff2bd6", "#3fd0ff", "#ff4fe0", "#00ffd5", "#d24bff", "#00c8ff", "#ff3cae"] },
+    phase:   { prod: ["#cfd6d8"], dec: ["#cfd6d8"], rest: ["#cfd6d8"] },
+    engr:    { prod: ["#2b1a0e"], dec: ["#2b1a0e"], rest: ["#2b1a0e"] },
+    cyber:   { prod: ["#39ffb0"], dec: ["#ff2bd6"], rest: ["#00f6ff", "#ff2bd6", "#00f6ff", "#ff4fe0"] },
+    glass:   { prod: ["#2fbf6a", "#22a8a0"], dec: ["#8a5cd6"], rest: ["#1e9bd7", "#6f5cd6", "#d64a9b", "#1aa3c4"] },
+    haeckel: { prod: ["#8a8a4a", "#7d8450", "#9a9258"], dec: ["#9c7a4a", "#8a6a44"], rest: ["#b08a52", "#a0764a", "#8e6e4e", "#9a8458", "#a88660", "#7e7450"] }
+  };
+  function styleNow() { return STYLE_OF[w.__igsThemePondId] || "neon"; }
+  function hashStr(n) { var h = 0; n = String(n); for (var i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) | 0; return Math.abs(h); }
+  function colOf(o, st) {
+    var sp = (o && o.sp) || o || {};
+    var P = PALS[st || styleNow()] || PALS.neon;
+    var arr = sp.cat === "producer" ? P.prod : sp.cat === "decomposer" ? P.dec : P.rest;
+    return arr[hashStr(sp.id || sp.name || "x") % arr.length];
   }
   function shapeOf(o) {
     try {
@@ -16,116 +26,264 @@
     } catch (e) {}
     return "circle";
   }
-  function bake(shape, color, px) {
-    var key = shape + "|" + color + "|" + px;
-    if (CACHE[key]) return CACHE[key];
-    var c = document.createElement("canvas");
-    c.width = c.height = px;
-    var g = c.getContext("2d");
-    var cx = px / 2, cy = px / 2, s = px * 0.38;
-    function glowStroke(drawFn, w0) {
-      g.save();
-      for (var i = 6; i >= 1; i--) {
-        g.shadowColor = color; g.shadowBlur = 6 + i * 5;
-        g.strokeStyle = color; g.globalAlpha = 0.18 + i * 0.08;
-        g.lineWidth = (w0 || 2) + i * 0.6;
-        g.beginPath(); drawFn(); g.stroke();
+  function drawSzOf(sz) {
+    if (w.demoMode) return Math.max(28, Math.min(52, (sz || 4) * 8));
+    return Math.max(5, Math.min(40, (sz || 4) * 3.4));
+  }
+  /* shape -> body: rx,ry (rel. to s), kind: cil=cilia fringe, fl=flagella, sp=spiral, dip=pair, ph=phage */
+  function bodyOf(shape) {
+    var m = {
+      rod:[1.15,0.42,"fl"], bacillus:[1.15,0.42,"fl"], clubrod:[1.1,0.45,"fl"], trichormus:[1.3,0.32,"fl"], filament:[1.35,0.28,"fl"],
+      rodtococcus:[0.9,0.5,"fl"], comma:[1.0,0.38,"sp"], vibrio:[1.0,0.38,"sp"], spiral:[1.2,0.3,"sp"], spirillum:[1.2,0.3,"sp"],
+      slipper:[1.1,0.55,"cil"], hypotrich:[1.0,0.6,"cil"], oval:[0.95,0.6,"cil"], rotifer:[0.8,0.55,"cil"], bell:[0.75,0.7,"cil"],
+      flatworm:[1.2,0.45,"cil"], apicomplexa:[1.0,0.45,"fl"], diplococci:[0.42,0.42,"dip"], phage:[0.45,0.38,"ph"],
+      coccus:[0.7,0.7,"cil"], circle:[0.72,0.72,"cil"], cluster:[0.75,0.7,"cil"], colony:[0.8,0.75,"cil"], chain:[1.2,0.35,"fl"],
+      archaea:[0.8,0.6,"fl"], mollicutes:[0.7,0.6,"cil"], irregular:[0.8,0.65,"cil"]
+    };
+    return m[shape] || [0.95, 0.58, "cil"];
+  }
+  function rgba(hex, a) {
+    var h = String(hex).replace("#", ""); if (h.length === 3) h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+    var n = parseInt(h, 16) || 0xffffff; return "rgba(" + (n >> 16 & 255) + "," + (n >> 8 & 255) + "," + (n & 255) + "," + a + ")";
+  }
+  /* geometry kit shared by all styles */
+  var VAR = [[1, 1], [1.18, 0.82], [0.86, 1.12], [1.35, 0.68]];
+  function kit(g, shape, px, v) {
+    var cx = px / 2, cy = px / 2, s = px * 0.26;
+    var b = bodyOf(shape), rx = s * b[0], ry = s * b[1], kind = b[2];
+    if (v && kind !== "ph") { rx *= VAR[v % 4][0]; ry *= VAR[v % 4][1]; }
+    if (styleNow() === "haeckel" && kind !== "ph" && kind !== "dip") { rx *= 1.18; ry *= 0.78; }   /* elongated Haeckel plates */
+    var seed = hashStr(shape) | 1;
+    var K = { g: g, px: px, cx: cx, cy: cy, s: s, rx: rx, ry: ry, kind: kind };
+    K.rnd = function () { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
+    K.path = function () {
+      g.beginPath();
+      if (kind === "dip") { g.arc(cx - rx * 0.95, cy, rx, 0, 6.2832); g.moveTo(cx + rx * 1.95, cy); g.arc(cx + rx * 0.95, cy, rx, 0, 6.2832); return; }
+      if (kind === "sp") {
+        for (var t = 0; t <= 1.0001; t += 0.04) { var x = cx + (t - 0.5) * rx * 2, y = cy + Math.sin(t * 9.42) * ry * 0.9 - ry * 0.45; t === 0 ? g.moveTo(x, y) : g.lineTo(x, y); }
+        for (var t2 = 1; t2 >= -0.0001; t2 -= 0.04) { g.lineTo(cx + (t2 - 0.5) * rx * 2, cy + Math.sin(t2 * 9.42) * ry * 0.9 + ry * 0.45); }
+        g.closePath(); return;
       }
-      g.shadowColor = "#fff"; g.shadowBlur = 8; g.globalAlpha = 0.95;
-      g.strokeStyle = "#fff"; g.lineWidth = Math.max(1.2, (w0 || 2) * 0.7);
-      g.beginPath(); drawFn(); g.stroke();
-      g.restore();
-    }
-    function bodyFill(drawFn) {
-      g.save(); g.globalAlpha = 0.22; g.fillStyle = color;
-      g.beginPath(); drawFn(); g.fill(); g.restore();
-    }
-    if (shape === "rod" || shape === "filament" || shape === "clubrod" || shape === "trichormus" || shape === "rodtococcus") {
-      var rw = s * (shape === "filament" ? 0.22 : 0.35), rh = s * 1.15;
-      var path = function () { g.ellipse(cx, cy, rw, rh, 0, 0, Math.PI * 2); };
-      bodyFill(path); glowStroke(path, 2.2);
-    } else if (shape === "spiral" || shape === "trypanosoma" || shape === "comma" || shape === "apicomplexa") {
-      var pathS = function () {
-        var n = shape === "comma" ? 28 : 60, amp = shape === "comma" ? 0.55 : 1;
+      if (kind === "ph") { g.ellipse(cx, cy - s * 0.4, rx, ry, 0, 0, 6.2832); return; }
+      g.ellipse(cx, cy, rx, ry, 0, 0, 6.2832);
+    };
+    K.bcy = kind === "ph" ? cy - s * 0.4 : cy;
+    /* hair: cilia fringe or flagella; dens=multiplier, len=multiplier */
+    K.hair = function (stroke, lw, dens, len, blur, straight) {
+      g.save(); g.strokeStyle = stroke; g.lineCap = "round"; g.lineWidth = lw;
+      if (blur) { g.shadowColor = stroke; g.shadowBlur = blur; }
+      if (kind === "cil" || kind === "dip") {
+        var n = Math.round(46 * dens * Math.max(rx, ry) / s); g.beginPath();
         for (var i = 0; i < n; i++) {
-          var t = i / 9, rr = 3 + i * 1.05 * amp;
-          var x = cx + Math.cos(t) * rr, y = cy + Math.sin(t) * rr * 0.85;
-          if (i === 0) g.moveTo(x, y); else g.lineTo(x, y);
+          var a = i / n * 6.2832, ex = cx + Math.cos(a) * rx, ey = cy + Math.sin(a) * ry, nx = Math.cos(a) * ry, ny = Math.sin(a) * rx;
+          if (kind === "dip") { ex = cx + (Math.cos(a) > 0 ? rx * 0.95 : -rx * 0.95) + Math.cos(a) * rx; ey = cy + Math.sin(a) * rx; nx = Math.cos(a); ny = Math.sin(a); }
+          var nl = Math.hypot(nx, ny) || 1; nx /= nl; ny /= nl;
+          var L = s * (0.16 + K.rnd() * 0.09) * len, bend = straight ? 0 : (K.rnd() - 0.5) * 0.7;
+          g.moveTo(ex, ey);
+          g.quadraticCurveTo(ex + nx * L * 0.6 - ny * L * bend, ey + ny * L * 0.6 + nx * L * bend, ex + nx * L, ey + ny * L);
         }
-      };
-      glowStroke(pathS, 2.4);
-    } else if (shape === "colony" || shape === "star" || shape === "volvox") {
-      var n = shape === "star" ? 5 : 7;
-      for (var i = 0; i < n; i++) {
-        var ang = (i / n) * Math.PI * 2;
-        var x = cx + Math.cos(ang) * s * 0.55, y = cy + Math.sin(ang) * s * 0.55;
-        (function (xx, yy) {
-          var p = function () { g.arc(xx, yy, s * 0.22, 0, Math.PI * 2); };
-          bodyFill(p); glowStroke(p, 1.6);
-        })(x, y);
-      }
-      var pc = function () { g.arc(cx, cy, s * 0.28, 0, Math.PI * 2); };
-      bodyFill(pc); glowStroke(pc, 2);
-    } else if (shape === "slipper" || shape === "hypotrich" || shape === "oval" || shape === "bell" || shape === "rotifer" || shape === "testate" || shape === "testate2" || shape === "flatworm") {
-      var rx = s * (shape === "slipper" || shape === "hypotrich" ? 1.05 : 0.85);
-      var ry = s * (shape === "slipper" || shape === "hypotrich" ? 0.45 : 0.65);
-      var po = function () { g.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2); };
-      bodyFill(po); glowStroke(po, 2);
-      if (shape === "slipper" || shape === "hypotrich" || shape === "rotifer") {
-        g.save(); g.strokeStyle = color; g.globalAlpha = 0.75; g.lineWidth = 1.4;
-        for (var a = -0.7; a <= 0.7; a += 0.18) {
-          g.beginPath();
-          g.moveTo(cx + rx * 0.85, cy + Math.sin(a) * ry);
-          g.lineTo(cx + rx * 1.35, cy + Math.sin(a) * ry * 1.35);
+        g.stroke();
+      } else {
+        var nf = kind === "fl" ? 3 : 1; g.lineWidth = lw * 1.4;
+        for (var f = 0; f < nf; f++) {
+          var sx = kind === "ph" ? cx : cx + rx * 0.98, sy = kind === "ph" ? cy - s * 0.4 + ry : cy + (f - (nf - 1) / 2) * ry * 0.5;
+          g.beginPath(); g.moveTo(sx, sy);
+          for (var k = 1; k <= 16; k++) {
+            var tt = k / 16;
+            if (kind === "ph") g.lineTo(sx + Math.sin(tt * 12) * s * 0.06, sy + tt * s * 0.9);
+            else g.lineTo(sx + tt * s * 0.95 * len, sy + Math.sin(tt * 9 + f) * s * 0.14 * tt);
+          }
           g.stroke();
         }
-        g.restore();
+        if (kind === "ph") { for (var lg = -1; lg <= 1; lg += 2) { g.beginPath(); g.moveTo(cx, cy - s * 0.4 + ry + s * 0.9); g.lineTo(cx + lg * s * 0.4, cy + s * 0.75); g.stroke(); } }
+        if (kind === "fl" || kind === "sp") { /* short side pili so rods read furry too */
+          var np = kind === "sp" ? 0 : Math.round(18 * dens); g.lineWidth = lw * 0.7; g.beginPath();
+          for (var p = 0; p < np; p++) { var pa = p / np * 6.2832, px0 = cx + Math.cos(pa) * rx, py0 = cy + Math.sin(pa) * ry;
+            g.moveTo(px0, py0); g.lineTo(px0 + Math.cos(pa) * s * 0.1 * len, py0 + Math.sin(pa) * s * 0.1 * len); }
+          g.stroke();
+        }
       }
-    } else if (shape === "phage") {
-      var ph = function () { g.ellipse(cx, cy - s * 0.35, s * 0.45, s * 0.35, 0, 0, Math.PI * 2); };
-      bodyFill(ph); glowStroke(ph, 2);
-      g.save(); g.strokeStyle = color; g.shadowColor = color; g.shadowBlur = 10; g.lineWidth = 2.2;
-      g.beginPath(); g.moveTo(cx, cy - s * 0.05); g.lineTo(cx, cy + s * 0.7); g.stroke();
       g.restore();
-    } else if (shape === "diplococci") {
-      var p1 = function () { g.arc(cx - s * 0.4, cy, s * 0.42, 0, Math.PI * 2); };
-      var p2 = function () { g.arc(cx + s * 0.4, cy, s * 0.42, 0, Math.PI * 2); };
-      bodyFill(p1); glowStroke(p1, 2); bodyFill(p2); glowStroke(p2, 2);
-    } else {
-      var pc0 = function () { g.arc(cx, cy, s * 0.72, 0, Math.PI * 2); };
-      bodyFill(pc0); glowStroke(pc0, 2.4);
-      g.save(); g.strokeStyle = color; g.globalAlpha = 0.7; g.lineWidth = 1.3;
-      for (var a2 = 0; a2 < Math.PI * 2; a2 += Math.PI / 10) {
-        g.beginPath();
-        g.moveTo(cx + Math.cos(a2) * s * 0.75, cy + Math.sin(a2) * s * 0.75);
-        g.lineTo(cx + Math.cos(a2) * s * 1.05, cy + Math.sin(a2) * s * 1.05);
-        g.stroke();
+    };
+    K.dots = function (n, colFn, rMul) {
+      g.save(); K.path(); g.clip();
+      for (var d = 0; d < n; d++) {
+        var da = K.rnd() * 6.2832, dr = Math.sqrt(K.rnd()) * 0.8;
+        var dx = cx + Math.cos(da) * rx * dr * (kind === "dip" ? 2 : 1), dy = K.bcy + Math.sin(da) * ry * dr;
+        g.fillStyle = colFn(K.rnd()); g.beginPath(); g.arc(dx, dy, px * (0.006 + K.rnd() * 0.012) * (rMul || 1), 0, 6.2832); g.fill();
       }
-      g.fillStyle = "#fff"; g.globalAlpha = 0.85;
-      g.beginPath(); g.arc(cx - s * 0.18, cy - s * 0.1, s * 0.1, 0, Math.PI * 2); g.fill();
-      g.beginPath(); g.arc(cx + s * 0.2, cy + s * 0.12, s * 0.08, 0, Math.PI * 2); g.fill();
       g.restore();
+    };
+    K.nuc = function (fill, stroke, blur) {
+      if (kind === "sp" || kind === "ph") return;
+      g.save(); if (blur) { g.shadowColor = fill; g.shadowBlur = blur; }
+      g.beginPath(); g.ellipse(cx + rx * 0.1, cy, Math.min(rx, ry) * 0.24, Math.min(rx, ry) * 0.2, 0, 0, 6.2832);
+      if (fill) { g.fillStyle = fill; g.fill(); }
+      if (stroke) { g.shadowBlur = 0; g.strokeStyle = stroke; g.lineWidth = Math.max(1, px * 0.01); g.stroke(); }
+      g.restore();
+    };
+    K.hatch = function (ink, step, ang, alpha) {
+      g.save(); K.path(); g.clip(); g.strokeStyle = ink; g.globalAlpha = alpha; g.lineWidth = Math.max(0.8, px * 0.007);
+      g.translate(cx, cy); g.rotate(ang);
+      for (var y = -px; y < px; y += step) { g.beginPath(); g.moveTo(-px, y); g.lineTo(px, y); g.stroke(); }
+      g.restore();
+    };
+    return K;
+  }
+  var STYLES = {
+    neon: function (K, col) {
+      var g = K.g, px = K.px;
+      g.save(); g.shadowColor = col; g.shadowBlur = px * 0.14;
+      var gr = g.createRadialGradient(K.cx - K.rx * 0.2, K.cy - K.ry * 0.2, 0, K.cx, K.cy, Math.max(K.rx, K.ry) * 1.1);
+      gr.addColorStop(0, rgba(col, 0.6)); gr.addColorStop(0.6, rgba(col, 0.32)); gr.addColorStop(1, rgba(col, 0.14));
+      g.fillStyle = gr; K.path(); g.fill(); g.restore();
+      K.hair(rgba(col, 0.95), Math.max(1, px * 0.01), 2.8, 1.0, px * 0.05);
+      g.save(); g.lineJoin = "round"; g.strokeStyle = col; g.shadowColor = col; g.shadowBlur = px * 0.1; g.lineWidth = Math.max(1.6, px * 0.026);
+      K.path(); g.stroke(); g.shadowBlur = 0; g.strokeStyle = "rgba(255,255,255,0.85)"; g.lineWidth = Math.max(0.8, px * 0.008); K.path(); g.stroke(); g.restore();
+      K.dots(28, function (r) { return r < 0.35 ? "rgba(255,255,255,0.9)" : rgba(col, 0.95); });
+      K.nuc("rgba(255,255,255,0.85)", null, px * 0.04);
+    },
+    phase: function (K) {
+      var g = K.g, px = K.px;
+      /* bright halo (phase-contrast artifact) — double pass for strong glow on dark teal */
+      g.save(); g.shadowColor = "rgba(230,255,250,1)"; g.shadowBlur = px * 0.16; g.strokeStyle = "rgba(200,255,245,0.55)"; g.lineWidth = px * 0.06; K.path(); g.stroke();
+      g.shadowBlur = px * 0.06; g.strokeStyle = "rgba(250,255,255,1)"; g.lineWidth = px * 0.03; K.path(); g.stroke(); g.restore();
+      g.save(); var gr = g.createRadialGradient(K.cx, K.cy, 0, K.cx, K.cy, Math.max(K.rx, K.ry));
+      gr.addColorStop(0, "rgba(190,205,205,0.22)"); gr.addColorStop(0.7, "rgba(120,140,142,0.38)"); gr.addColorStop(1, "rgba(30,40,44,0.7)");
+      g.fillStyle = gr; K.path(); g.fill(); g.restore();
+      K.hair("rgba(235,255,250,0.9)", Math.max(0.8, px * 0.008), 1.6, 1, px * 0.02);
+      g.save(); g.strokeStyle = "rgba(30,34,38,0.9)"; g.lineWidth = Math.max(1, px * 0.012); K.path(); g.stroke(); g.restore();
+      K.dots(30, function (r) { return r < 0.6 ? "rgba(40,46,48,0.55)" : "rgba(250,252,252,0.9)"; }, 1.2);
+      K.nuc("rgba(40,44,48,0.75)", "rgba(240,245,248,0.9)", 0);
+    },
+    engr: function (K) {
+      var g = K.g, px = K.px, ink = "#1e1008";
+      g.save(); g.fillStyle = "rgba(236,224,196,1)"; K.path(); g.fill(); g.restore();
+      K.hatch(ink, Math.max(1.8, px * 0.019), -0.7, 0.8);
+      g.save(); K.path(); g.clip(); g.beginPath(); g.ellipse(K.cx + K.rx * 0.4, K.bcy + K.ry * 0.4, K.rx * 1.0, K.ry * 1.0, 0, 0, 6.2832); g.clip();
+      K.hatch(ink, Math.max(1.8, px * 0.02), 0.7, 0.65); g.restore();
+      g.save(); K.path(); g.clip(); g.beginPath(); g.ellipse(K.cx + K.rx * 0.6, K.bcy + K.ry * 0.6, K.rx * 0.7, K.ry * 0.7, 0, 0, 6.2832); g.clip();
+      K.hatch(ink, Math.max(1.8, px * 0.02), 0, 0.45); g.restore();
+      K.hair(ink, Math.max(1, px * 0.011), 2.2, 1.1, 0, true);
+      g.save(); g.strokeStyle = ink; g.lineWidth = Math.max(2.2, px * 0.05); g.lineJoin = "round"; K.path(); g.stroke(); g.restore();
+      K.dots(60, function () { return "rgba(30,16,8,0.9)"; }, 0.9);
+      K.nuc("rgba(238,224,196,0.95)", ink, 0);
+    },
+    cyber: function (K, col) {
+      var g = K.g, px = K.px, alt = col === "#00f6ff" ? "#ff2bd6" : "#00f6ff";
+      g.save(); g.fillStyle = rgba(col, 0.1); K.path(); g.fill(); g.restore();
+      /* wireframe meridians */
+      g.save(); K.path(); g.clip(); g.strokeStyle = rgba(col, 0.55); g.lineWidth = Math.max(0.8, px * 0.007);
+      for (var m = 1; m <= 3; m++) { g.beginPath(); g.ellipse(K.cx, K.bcy, K.rx * m / 4, K.ry, 0, 0, 6.2832); g.stroke(); }
+      for (var l = -2; l <= 2; l++) { g.beginPath(); g.moveTo(K.cx - K.rx * 1.2, K.bcy + l * K.ry * 0.38); g.lineTo(K.cx + K.rx * 1.2, K.bcy + l * K.ry * 0.38); g.stroke(); }
+      g.restore();
+      K.hair(rgba(col, 0.85), Math.max(0.8, px * 0.008), 1.2, 0.8, px * 0.02, true);
+      g.save(); g.strokeStyle = col; g.shadowColor = col; g.shadowBlur = px * 0.06; g.lineWidth = Math.max(1.4, px * 0.018); K.path(); g.stroke(); g.restore();
+      /* scanner brackets + id tick */
+      var bx = K.cx - K.rx * 1.25, by = K.bcy - K.ry * 1.35, bw = K.rx * 2.5, bh = K.ry * 2.7, t = Math.min(bw, bh) * 0.22;
+      g.save(); g.strokeStyle = alt; g.lineWidth = Math.max(1, px * 0.012); g.shadowColor = alt; g.shadowBlur = px * 0.03;
+      [[bx, by, 1, 1], [bx + bw, by, -1, 1], [bx, by + bh, 1, -1], [bx + bw, by + bh, -1, -1]].forEach(function (c) {
+        g.beginPath(); g.moveTo(c[0] + c[2] * t, c[1]); g.lineTo(c[0], c[1]); g.lineTo(c[0], c[1] + c[3] * t); g.stroke(); });
+      g.fillStyle = alt; g.fillRect(bx, by - px * 0.035, bw * 0.4, px * 0.018);
+      g.restore();
+      K.dots(10, function () { return rgba(col, 0.9); }, 0.8);
+      K.nuc(null, col, 0);
+    },
+    glass: function (K, col) {
+      var g = K.g, px = K.px;
+      g.save(); var gr = g.createLinearGradient(K.cx - K.rx, K.bcy - K.ry, K.cx + K.rx, K.bcy + K.ry);
+      gr.addColorStop(0, "rgba(255,255,255,0.35)"); gr.addColorStop(0.5, rgba(col, 0.32)); gr.addColorStop(1, rgba(col, 0.6));
+      g.fillStyle = gr; K.path(); g.fill(); g.restore();
+      K.hair(rgba(col, 0.8), Math.max(0.8, px * 0.007), 1.4, 1, 0);
+      g.save(); K.path(); g.clip();
+      g.strokeStyle = rgba(col, 0.75); g.lineWidth = px * 0.05; K.path(); g.stroke();   /* thick inner rim = refraction */
+      g.fillStyle = "rgba(255,255,255,0.8)"; g.shadowColor = "#fff"; g.shadowBlur = px * 0.04;
+      g.beginPath(); g.ellipse(K.cx - K.rx * 0.38, K.bcy - K.ry * 0.45, K.rx * 0.32, K.ry * 0.16, -0.3, 0, 6.2832); g.fill();
+      g.beginPath(); g.arc(K.cx + K.rx * 0.45, K.bcy + K.ry * 0.4, Math.max(1, px * 0.012), 0, 6.2832); g.fill();
+      g.restore();
+      g.save(); g.strokeStyle = rgba(col, 0.95); g.lineWidth = Math.max(1.2, px * 0.02); K.path(); g.stroke(); g.strokeStyle = "rgba(255,255,255,0.9)"; g.lineWidth = Math.max(0.8, px * 0.007); K.path(); g.stroke(); g.restore();
+      for (var b = 0; b < 5; b++) { var a = K.rnd() * 6.28, r = Math.sqrt(K.rnd()) * 0.55;
+        g.save(); g.strokeStyle = "rgba(255,255,255,0.55)"; g.fillStyle = rgba(col, 0.25); g.lineWidth = Math.max(0.7, px * 0.006);
+        g.beginPath(); g.arc(K.cx + Math.cos(a) * K.rx * r, K.bcy + Math.sin(a) * K.ry * r, px * (0.015 + K.rnd() * 0.02), 0, 6.2832); g.fill(); g.stroke(); g.restore(); }
+      K.nuc(rgba(col, 0.35), "rgba(255,255,255,0.7)", 0);
+    },
+    haeckel: function (K, col) {
+      var g = K.g, px = K.px, sep = "rgba(60,40,28,";
+      for (var p = 0; p < 5; p++) { g.save(); g.translate((K.rnd() - 0.5) * px * 0.03, (K.rnd() - 0.5) * px * 0.03);
+        g.fillStyle = rgba(col, 0.11); K.path(); g.fill(); g.restore(); }
+      g.save(); K.path(); g.clip();
+      for (var b = 0; b < 4; b++) { var bx = K.cx + (K.rnd() - 0.5) * K.rx * 1.2, by = K.bcy + (K.rnd() - 0.5) * K.ry * 1.2, br = Math.max(K.rx, K.ry) * (0.35 + K.rnd() * 0.4);
+        var bg = g.createRadialGradient(bx, by, 0, bx, by, br); bg.addColorStop(0, rgba(col, 0.22)); bg.addColorStop(0.8, rgba(col, 0.05)); bg.addColorStop(1, "rgba(0,0,0,0)");
+        g.fillStyle = bg; g.fillRect(bx - br, by - br, br * 2, br * 2); }   /* watercolour blooms */
+      g.strokeStyle = rgba(col, 0.35); g.lineWidth = px * 0.05; g.filter = "blur(" + (px * 0.012).toFixed(1) + "px)"; K.path(); g.stroke(); g.filter = "none";
+      g.strokeStyle = sep + "0.35)"; g.lineWidth = Math.max(0.6, px * 0.004);   /* veins */
+      for (var v = 0; v < 7; v++) { var a = -1.4 + v * 0.47; g.beginPath(); g.moveTo(K.cx, K.bcy);
+        g.quadraticCurveTo(K.cx + Math.cos(a) * K.rx * 0.5, K.bcy + Math.sin(a + 0.4) * K.ry * 0.5, K.cx + Math.cos(a) * K.rx * 0.95, K.bcy + Math.sin(a) * K.ry * 0.95); g.stroke(); }
+      for (var q = 0; q < 6; q++) { var qa = K.rnd() * 6.28, qr = Math.sqrt(K.rnd()) * 0.6, vr = px * (0.02 + K.rnd() * 0.03);   /* vacuoles */
+        var vx = K.cx + Math.cos(qa) * K.rx * qr, vy = K.bcy + Math.sin(qa) * K.ry * qr;
+        g.fillStyle = "rgba(255,250,235,0.55)"; g.strokeStyle = sep + "0.55)"; g.lineWidth = Math.max(0.6, px * 0.004);
+        g.beginPath(); g.arc(vx, vy, vr, 0, 6.2832); g.fill(); g.stroke(); }
+      g.restore();
+      K.hair(sep + "0.8)", Math.max(0.7, px * 0.006), 2.4, 1.05, 0);
+      g.save(); g.strokeStyle = sep + "0.8)"; g.lineWidth = Math.max(0.7, px * 0.007); K.path(); g.stroke(); g.restore();
+      K.dots(26, function (r) { return r < 0.5 ? rgba(col, 0.6) : sep + "0.5)"; });
+      K.nuc(rgba(col, 0.35), sep + "0.75)", 0);
     }
+  };
+  function bake(shape, color, px, st, v) {
+    v = v || 0;
+    st = st || styleNow();
+    var key = st + "|" + shape + "|" + color + "|" + px + "|" + v + "|v13";
+    if (CACHE[key]) return CACHE[key];
+    var c = document.createElement("canvas"); c.width = px; c.height = px;
+    var K = kit(c.getContext("2d"), shape, px, v);
+    (STYLES[st] || STYLES.neon)(K, color);
     CACHE[key] = c;
-    if (Object.keys(CACHE).length > 64) {
-      var k0 = Object.keys(CACHE)[0]; delete CACHE[k0];
-    }
+    var ks = Object.keys(CACHE); if (ks.length > 480) delete CACHE[ks[0]];
     return c;
   }
-  function drawNeonCell(c, o, sz) {
-    var shape = shapeOf(o);
-    var color = colOf(o);
-    var px = Math.max(48, Math.min(192, Math.round((sz || 4) * 22)));
-    var spr = bake(shape, color, px);
-    var s = (sz || 4) * 2.2;
-    c.save();
-    c.globalCompositeOperation = "lighter";
-    c.drawImage(spr, -s, -s, s * 2, s * 2);
-    c.restore();
+  /* at most 2 new sprite bakes per frame: avoids multi-second stalls when many species appear at once */
+  var BF = { t: 0, n: 0 };
+  function bakeBudget(shape, color, px, st, v) {
+    var key = st + "|" + shape + "|" + color + "|" + px + "|" + v + "|v13";
+    if (CACHE[key]) return CACHE[key];
+    var now = (w.performance ? performance.now() : Date.now()); if (now - BF.t > 12) { BF.t = now; BF.n = 0; }
+    if (BF.n >= 2) { var alt = CACHE[st + "|" + shape + "|" + color + "|72|" + v + "|v13"]; return alt || null; }
+    BF.n++; return bake(shape, color, px, st, v);
   }
-  var SPRITE_BASE = "assets/themes/neon-bio/sprites/";
-  function wikiThumbSrc(shape) {
-    return SPRITE_BASE + (shape || "circle") + ".png";
+  function drawCell(c, o, sz) {
+    var st = styleNow(), drawSz = drawSzOf(sz);
+    var big = (typeof cv !== "undefined" && cv && cv.width > 900) ? 1.9 : 1;
+    if (st === "engr") big *= (big > 1 ? 1.45 : 1.15);
+    var sp = (o && o.sp) || {}, hh = hashStr(sp.id || sp.name || "x"), v = hh % 4;
+    var k = drawSz * 2.2 * big * (0.72 + ((hh >> 3) % 7) * 0.09);   /* per-species size variety, visual only */
+    var px = k > 70 ? 160 : k > 40 ? 112 : 72;
+    if (st === "engr" && big < 1.5 && px > 112) px = 112;   /* phone: cheaper engraving sprites */
+    var spr = bakeBudget(shapeOf(o), colOf(o, st), px, st, v);
+    if (!spr) { c.save(); c.globalAlpha = 0.5; c.fillStyle = colOf(o, st); c.beginPath(); c.ellipse(0, 0, k * 0.3, k * 0.18, 0, 0, 6.283); c.fill(); c.restore(); return; }
+    c.save(); c.globalAlpha = 0.96; c.drawImage(spr, -k / 2, -k / 2, k, k); c.restore();
   }
-  w.igsNeonDraw = { drawCell: drawNeonCell, bake: bake, wikiThumbSrc: wikiThumbSrc, shapeOf: shapeOf, colOf: colOf };
+  /* bestiary thumbs: same procedural body as in the pond */
+  function thumb(sp, theme) {
+    var st = STYLE_OF[theme] || "neon", shape = (sp && sp.shape) ? String(sp.shape) : shapeOf({ sp: sp });
+    var col = colOf({ sp: sp }, st), v = hashStr((sp && (sp.id || sp.name)) || "x") % 4, key = st + "|" + shape + "|" + col + "|" + v;
+    if (!THUMBS[key]) { try { THUMBS[key] = bake(shape, col, 160, st, v).toDataURL("image/png"); } catch (e) { return null; } }
+    return THUMBS[key];
+  }
+  /* prewarm: bake every species sprite for the active style in small idle slices (engraving hatching is costly) */
+  var PW = { st: null, i: 0 };
+  function prewarm() {
+    var st = styleNow(), db = (typeof SPECIES_DB !== "undefined") ? SPECIES_DB : null;
+    if (db && st === "engr") {
+      if (PW.st !== st) { PW.st = st; PW.i = 0; }
+      var wide = typeof cv !== "undefined" && cv && cv.width > 900, sizes = wide ? [112, 160] : [72, 112], t0 = Date.now();
+      while (PW.i < db.length * sizes.length && Date.now() - t0 < 8) {
+        var sp = db[PW.i % db.length], px = sizes[(PW.i / db.length) | 0]; PW.i++;
+        if (sp) { var o = { sp: sp }; bake(shapeOf(o), colOf(o, st), px, st, hashStr(sp.id || sp.name || "x") % 4); }
+      }
+    }
+    setTimeout(prewarm, (st === "engr" && PW.i < ((db && db.length) || 1) * 2) ? 40 : 2000);
+  }
+  setTimeout(prewarm, 300);
+  w.igsNeonDraw = { styleNow: styleNow, bodyOf: bodyOf, drawCell: drawCell, bake: bake, thumb: thumb, shapeOf: shapeOf, colOf: colOf, STYLE_OF: STYLE_OF };
 })(typeof window !== "undefined" ? window : globalThis);

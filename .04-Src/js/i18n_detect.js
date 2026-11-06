@@ -64,7 +64,7 @@ function loadLangPack(code) {
 if (typeof window !== 'undefined') {
   window.loadLangPack = loadLangPack;
   window.detectLang = detectLang;
-  window.IGS_ENABLED = window.IGS_ENABLED || {'en': 1, 'ru': 1, 'pt-BR': 1, 'es': 1, 'hi': 1, 'id': 1, 'tr': 1, 'de': 1, 'fr': 1, 'ja': 1, 'vi': 1, 'ko': 1, 'th': 1, 'fil': 1, 'it': 1, 'pl': 1, 'uk': 1, 'zh-TW': 1, 'ms': 1, 'bn': 1 }; // GEN:A1
+  window.IGS_ENABLED = window.IGS_ENABLED || {'en': 1, 'ru': 1, 'pt-BR': 1, 'es': 1, 'hi': 1, 'id': 1, 'tr': 1, 'de': 1, 'fr': 1, 'ja': 1, 'vi': 1, 'ko': 1, 'th': 1, 'fil': 1, 'it': 1, 'pl': 1, 'uk': 1, 'zh-TW': 1, 'ms': 1, 'bn': 1, 'zh-CN': 1 }; // GEN:A1
   // Dev/QA hook (L.9 screenshots): force a language that is NOT in the enabled set
   // without editing languages.json / LANGS / localeConfig. QA-only (U39): honoured
   // solely on the localhost QA stand or with ?qa=1; elsewhere igs_force_lang is ignored.
@@ -98,7 +98,9 @@ if (typeof window !== 'undefined') {
     applyLangFont(curLang);
     if (typeof GENDERED_SP!=='undefined') GENDERED_SP.name = tt('sp.1001');
     { // v24 A2: en/ru грузятся из JSON как остальные (единственный источник — i18n/*.json)
-      loadLangPack(curLang).then(function() {
+      // v28 T4a Д8a: en-fallback — грузим en + curLang параллельно (guard при curLang='en')
+      var loadPromises = (curLang === 'en') ? [loadLangPack('en')] : [loadLangPack('en'), loadLangPack(curLang)];
+      Promise.all(loadPromises).then(function() {
         window.__igsLangReady = 1; // в26 Д8: с этого момента tt() вправе считать ключ отсутствующим
         applyLangFont(curLang);
         if (typeof buildLangBar === 'function') buildLangBar();

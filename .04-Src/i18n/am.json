@@ -434,5 +434,20 @@
   "coloniesCount.one": "{n} ቅኝብ",
   "coloniesCount.other": "{n} ቅኝቦች",
   "aliveCount.one": "{n} ሕያው",
-  "aliveCount.other": "{n} ሕያዋን"
+  "aliveCount.other": "{n} ሕያዋን",
+  "aria.lang": "ቋንቋ",
+  "theme.classic": "[MT] Classic",
+  "theme.neonBio": "[MT] Neon",
+  "theme.phaseContrast": "[MT] Phase contrast",
+  "theme.bestiary": "[MT] Bestiary style",
+  "theme.pond": "[MT] Pond style",
+  "theme.analyticsOptOut": "[MT] Theme analytics",
+  "theme.analyticsHint": "[MT] Anonymous style stats",
+  "aria.themeBestiary": "[MT] Bestiary visual style",
+  "aria.themePond": "[MT] Pond visual style",
+  "theme.fpsFallback": "[MT] Theme FX reduced (FPS)",
+  "theme.glassLab": "[MT] Glass lab",
+  "theme.cyberpunk": "[MT] Cyberpunk",
+  "theme.haeckel": "[MT] Haeckel",
+  "theme.engraving": "[MT] Engraving"
 }

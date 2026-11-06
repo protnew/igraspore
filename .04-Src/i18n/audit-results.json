@@ -1,0 +1,1003 @@
+[
+  {
+    "locale": "cs",
+    "file": "cs.json",
+    "keys": 457,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 101.3,
+    "status": "🟢"
+  },
+  {
+    "locale": "lv",
+    "file": "lv.json",
+    "keys": 457,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 101.3,
+    "status": "🟢"
+  },
+  {
+    "locale": "pl",
+    "file": "pl.json",
+    "keys": 457,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 101.3,
+    "status": "🟢"
+  },
+  {
+    "locale": "ru",
+    "file": "ru.json",
+    "keys": 457,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 101.3,
+    "status": "🟢"
+  },
+  {
+    "locale": "sl",
+    "file": "sl.json",
+    "keys": 457,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 101.3,
+    "status": "🟢"
+  },
+  {
+    "locale": "uk",
+    "file": "uk.json",
+    "keys": 457,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 101.3,
+    "status": "🟢"
+  },
+  {
+    "locale": "bg",
+    "file": "bg.json",
+    "keys": 454,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100.7,
+    "status": "🟢"
+  },
+  {
+    "locale": "et",
+    "file": "et.json",
+    "keys": 454,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100.7,
+    "status": "🟢"
+  },
+  {
+    "locale": "hr",
+    "file": "hr.json",
+    "keys": 454,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100.7,
+    "status": "🟢"
+  },
+  {
+    "locale": "lt",
+    "file": "lt.json",
+    "keys": 454,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100.7,
+    "status": "🟢"
+  },
+  {
+    "locale": "sk",
+    "file": "sk.json",
+    "keys": 454,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100.7,
+    "status": "🟢"
+  },
+  {
+    "locale": "sr",
+    "file": "sr.json",
+    "keys": 454,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100.7,
+    "status": "🟢"
+  },
+  {
+    "locale": "am",
+    "file": "am.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ar",
+    "file": "ar.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "as",
+    "file": "as.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "az",
+    "file": "az.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "be",
+    "file": "be.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "bn",
+    "file": "bn.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "bo",
+    "file": "bo.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "bs",
+    "file": "bs.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ca",
+    "file": "ca.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ckb",
+    "file": "ckb.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "cy",
+    "file": "cy.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "da",
+    "file": "da.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "de",
+    "file": "de.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "dz",
+    "file": "dz.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "el",
+    "file": "el.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "es-419",
+    "file": "es-419.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "es",
+    "file": "es.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "eu",
+    "file": "eu.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "fa",
+    "file": "fa.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "fi",
+    "file": "fi.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "fil",
+    "file": "fil.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "fo",
+    "file": "fo.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "fr",
+    "file": "fr.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ga",
+    "file": "ga.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "gl",
+    "file": "gl.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "gu",
+    "file": "gu.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ha",
+    "file": "ha.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "he",
+    "file": "he.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "hi",
+    "file": "hi.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ht",
+    "file": "ht.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "hu",
+    "file": "hu.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "hy",
+    "file": "hy.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "id",
+    "file": "id.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ig",
+    "file": "ig.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "is",
+    "file": "is.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "it",
+    "file": "it.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ja",
+    "file": "ja.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "jv",
+    "file": "jv.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ka",
+    "file": "ka.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "kk",
+    "file": "kk.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "km",
+    "file": "km.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "kn",
+    "file": "kn.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ko",
+    "file": "ko.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ky",
+    "file": "ky.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "lb",
+    "file": "lb.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "lo",
+    "file": "lo.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "mi",
+    "file": "mi.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "mk",
+    "file": "mk.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ml",
+    "file": "ml.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "mn",
+    "file": "mn.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "mr",
+    "file": "mr.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ms",
+    "file": "ms.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "mt",
+    "file": "mt.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "my",
+    "file": "my.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ne",
+    "file": "ne.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "nl",
+    "file": "nl.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "no",
+    "file": "no.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "or",
+    "file": "or.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "pa",
+    "file": "pa.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ps",
+    "file": "ps.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "pt-BR",
+    "file": "pt-BR.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "pt-PT",
+    "file": "pt-PT.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "qu",
+    "file": "qu.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ro",
+    "file": "ro.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "rw",
+    "file": "rw.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "sd",
+    "file": "sd.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "si",
+    "file": "si.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "sn",
+    "file": "sn.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "so",
+    "file": "so.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "sq",
+    "file": "sq.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "su",
+    "file": "su.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "sv",
+    "file": "sv.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "sw",
+    "file": "sw.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ta",
+    "file": "ta.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "te",
+    "file": "te.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "tg",
+    "file": "tg.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "th",
+    "file": "th.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ti",
+    "file": "ti.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "tr",
+    "file": "tr.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "ur",
+    "file": "ur.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "uz",
+    "file": "uz.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "vi",
+    "file": "vi.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "yo",
+    "file": "yo.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "zh-CN",
+    "file": "zh-CN.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "zh-TW",
+    "file": "zh-TW.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "zu",
+    "file": "zu.json",
+    "keys": 451,
+    "missing": 0,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 100,
+    "status": "🟢"
+  },
+  {
+    "locale": "af",
+    "file": "af.json",
+    "keys": 450,
+    "missing": 1,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 99.8,
+    "status": "🟢"
+  },
+  {
+    "locale": "languages",
+    "file": "languages.json",
+    "keys": 0,
+    "missing": 451,
+    "empty": 0,
+    "placeholders": 0,
+    "coverage": 0,
+    "status": "❌",
+    "error": "(data[key] || \"\").match is not a function"
+  }
+]

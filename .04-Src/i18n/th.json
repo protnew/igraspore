@@ -434,5 +434,20 @@
   "aliveCount.other": "{n} ตัว",
   "speciesShown.one": "{n} ชนิด",
   "coloniesCount.one": "{n} โคโลนี",
-  "aliveCount.one": "{n} ตัว"
+  "aliveCount.one": "{n} ตัว",
+  "aria.lang": "ภาษา",
+  "theme.classic": "[MT] Classic",
+  "theme.neonBio": "[MT] Neon",
+  "theme.phaseContrast": "[MT] Phase contrast",
+  "theme.bestiary": "[MT] Bestiary style",
+  "theme.pond": "[MT] Pond style",
+  "theme.analyticsOptOut": "[MT] Theme analytics",
+  "theme.analyticsHint": "[MT] Anonymous style stats",
+  "aria.themeBestiary": "[MT] Bestiary visual style",
+  "aria.themePond": "[MT] Pond visual style",
+  "theme.fpsFallback": "[MT] Theme FX reduced (FPS)",
+  "theme.glassLab": "[MT] Glass lab",
+  "theme.cyberpunk": "[MT] Cyberpunk",
+  "theme.haeckel": "[MT] Haeckel",
+  "theme.engraving": "[MT] Engraving"
 }

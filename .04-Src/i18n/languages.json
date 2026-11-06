@@ -492,7 +492,7 @@
     "name": "简体中文",
     "native": "简体中文",
     "wave": 9,
-    "enabled": false,
+    "enabled": true,
     "readyForReview": true,
     "font": "system",
     "plural": "zh",
@@ -501,7 +501,7 @@
     "digits": "latn",
     "playListing": true,
     "register": "中性",
-    "critics": []
+    "critics": [8.5, 8.0]
   },
   {
     "code": "no",

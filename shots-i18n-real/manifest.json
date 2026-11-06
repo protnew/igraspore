@@ -1,0 +1,192 @@
+[
+  {
+    "name": "01-zh-CN-desktop-game",
+    "label": "zh-CN · десктоп 1400px · игровой экран",
+    "url": "http://127.0.0.1:8794/index.html?lang=zh-CN",
+    "viewport": {
+      "width": 1400,
+      "height": 900
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "zh-CN",
+    "htmlDir": "ltr",
+    "bytes": 104234,
+    "sha256": "db5e3ffaf4dd559a86a62ae7ffb8d56a1f503553fc475b29baa21dd22d2bfcb9",
+    "anchor": "#c",
+    "pngSize": 143912,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:29.905Z"
+  },
+  {
+    "name": "02-zh-CN-mobile-game",
+    "label": "zh-CN · мобильный 375px · игровой экран",
+    "url": "http://127.0.0.1:8794/index.html?lang=zh-CN",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "zh-CN",
+    "htmlDir": "ltr",
+    "bytes": 109189,
+    "sha256": "60d1d0721e7b9c42254eb3dd10f8a5bcb7c8b4b097640fee7ae6defc29f4a19a",
+    "anchor": "#c",
+    "pngSize": 59930,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:31.338Z"
+  },
+  {
+    "name": "03-zh-CN-desktop-menu",
+    "label": "zh-CN · десктоп · меню (селектор языка)",
+    "url": "http://127.0.0.1:8794/index.html?lang=zh-CN",
+    "viewport": {
+      "width": 1400,
+      "height": 900
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "zh-CN",
+    "htmlDir": "ltr",
+    "bytes": 104244,
+    "sha256": "114461e5d99720a1a062b224389ae2ea5d91a6b4018250d051fe2a3ac5253d54",
+    "anchor": "#menuLangSel",
+    "pngSize": 143966,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:32.743Z"
+  },
+  {
+    "name": "04-zh-CN-mobile-menu",
+    "label": "zh-CN · мобильный · меню (селектор языка)",
+    "url": "http://127.0.0.1:8794/index.html?lang=zh-CN",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "zh-CN",
+    "htmlDir": "ltr",
+    "bytes": 109215,
+    "sha256": "125de2aa0e75440ed86f2ac69c5ea96f30fe2c0faeb4576dbd99aeb0d3e8a21f",
+    "anchor": "#menuLangSel",
+    "pngSize": 60126,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:34.051Z"
+  },
+  {
+    "name": "05-en-desktop-game",
+    "label": "en · десктоп 1400px · игровой экран",
+    "url": "http://127.0.0.1:8794/index.html?lang=en",
+    "viewport": {
+      "width": 1400,
+      "height": 900
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "en",
+    "htmlDir": "ltr",
+    "bytes": 103279,
+    "sha256": "6d03649e8f8851b51ab974bdf3d133f6fd4ed772184f8bef6bdd7b1c16b65a23",
+    "anchor": "#c",
+    "pngSize": 136986,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:35.594Z"
+  },
+  {
+    "name": "06-ru-desktop-game",
+    "label": "ru · десктоп 1400px · игровой экран",
+    "url": "http://127.0.0.1:8794/index.html?lang=ru",
+    "viewport": {
+      "width": 1400,
+      "height": 900
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "ru",
+    "htmlDir": "ltr",
+    "bytes": 110499,
+    "sha256": "36563e8f3e6a0c1569dac37c8db945b15085675a502b8cc6d28017a6cc52fa06",
+    "anchor": "#c",
+    "pngSize": 141106,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:37.087Z"
+  },
+  {
+    "name": "07-zh-TW-desktop-game",
+    "label": "zh-TW · десктоп 1400px · двойной китайский (B6)",
+    "url": "http://127.0.0.1:8794/index.html?lang=zh-TW",
+    "viewport": {
+      "width": 1400,
+      "height": 900
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "zh-TW",
+    "htmlDir": "ltr",
+    "bytes": 103797,
+    "sha256": "7d92d6b219d94b842f088e7cd4246b90a1deec6a5fc88657d2612f6ba80fa648",
+    "anchor": "#c",
+    "pngSize": 141565,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:38.594Z"
+  },
+  {
+    "name": "08-ar-desktop-game",
+    "label": "ar · десктоп 1400px · RTL (B5)",
+    "url": "http://127.0.0.1:8794/index.html?lang=ar",
+    "viewport": {
+      "width": 1400,
+      "height": 900
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "en",
+    "htmlDir": "ltr",
+    "bytes": 103290,
+    "sha256": "c554cb13003abaa1beb70413fcec996d0536b4057781aa2503ea6f223fa72d6d",
+    "anchor": "#c",
+    "pngSize": 136767,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:39.931Z"
+  },
+  {
+    "name": "09-xx-desktop-fallback",
+    "label": "xx · десктоп · несуществующий язык → откат на en",
+    "url": "http://127.0.0.1:8794/index.html?lang=xx",
+    "viewport": {
+      "width": 1400,
+      "height": 900
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "zh-CN",
+    "htmlDir": "ltr",
+    "bytes": 104258,
+    "sha256": "15a429150cd272ca2cc7967585c5d9154a0def9c078073ee329dcad0a03f1b32",
+    "anchor": "#c",
+    "pngSize": 144776,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:41.312Z"
+  },
+  {
+    "name": "10-empty-desktop-fallback",
+    "label": "пустой ?lang= · десктоп · откат на en",
+    "url": "http://127.0.0.1:8794/index.html?lang=",
+    "viewport": {
+      "width": 1400,
+      "height": 900
+    },
+    "status": 200,
+    "title": "iGraSpore",
+    "htmlLang": "zh-CN",
+    "htmlDir": "ltr",
+    "bytes": 104248,
+    "sha256": "7a776e61e93c49b48c5145064497937bf83254b65650bac8af2a65e3204bed84",
+    "anchor": "#c",
+    "pngSize": 144226,
+    "errors": 0,
+    "timestamp": "2026-11-06T11:42:42.645Z"
+  }
+]

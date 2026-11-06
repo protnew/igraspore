@@ -5,7 +5,7 @@ const fs = require('fs');
 const crypto = require('crypto');
 const { chromium } = require(path.resolve(__dirname, '..', 'node_modules', 'playwright'));
 
-const BASE = process.env.BASE || 'http://127.0.0.1:8793';
+const BASE = process.env.BASE || 'http://127.0.0.1:8794';
 const OUT = path.resolve(__dirname, '..', 'shots-i18n-real');
 if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
 
@@ -15,28 +15,28 @@ const MOBILE = { width: 375, height: 812 };
 // Якоря DOM для каждого типа экрана
 const ANCHORS = {
   menu: '#menuLangSel',      // меню — селектор языка
-  game: '#hud',              // игровой экран — HUD
+  game: '#c',                // игровой экран — canvas
   settings: '#setO',         // настройки — контейнер
 };
 
 const SHOTS = [
   // zh-CN — основной язык задачи
-  { url: `${BASE}/src/index.html?lang=zh-CN`, viewport: DESKTOP, anchor: 'game', name: '01-zh-CN-desktop-game', label: 'zh-CN · десктоп 1400px · игровой экран' },
-  { url: `${BASE}/src/index.html?lang=zh-CN`, viewport: MOBILE, anchor: 'game', name: '02-zh-CN-mobile-game', label: 'zh-CN · мобильный 375px · игровой экран' },
-  { url: `${BASE}/src/index.html?lang=zh-CN`, viewport: DESKTOP, anchor: 'menu', name: '03-zh-CN-desktop-menu', label: 'zh-CN · десктоп · меню (селектор языка)' },
-  { url: `${BASE}/src/index.html?lang=zh-CN`, viewport: MOBILE, anchor: 'menu', name: '04-zh-CN-mobile-menu', label: 'zh-CN · мобильный · меню (селектор языка)' },
+  { url: `${BASE}/index.html?lang=zh-CN`, viewport: DESKTOP, anchor: 'game', name: '01-zh-CN-desktop-game', label: 'zh-CN · десктоп 1400px · игровой экран' },
+  { url: `${BASE}/index.html?lang=zh-CN`, viewport: MOBILE, anchor: 'game', name: '02-zh-CN-mobile-game', label: 'zh-CN · мобильный 375px · игровой экран' },
+  { url: `${BASE}/index.html?lang=zh-CN`, viewport: DESKTOP, anchor: 'menu', name: '03-zh-CN-desktop-menu', label: 'zh-CN · десктоп · меню (селектор языка)' },
+  { url: `${BASE}/index.html?lang=zh-CN`, viewport: MOBILE, anchor: 'menu', name: '04-zh-CN-mobile-menu', label: 'zh-CN · мобильный · меню (селектор языка)' },
   
   // Сравнение с другими языками
-  { url: `${BASE}/src/index.html?lang=en`, viewport: DESKTOP, anchor: 'game', name: '05-en-desktop-game', label: 'en · десктоп 1400px · игровой экран' },
-  { url: `${BASE}/src/index.html?lang=ru`, viewport: DESKTOP, anchor: 'game', name: '06-ru-desktop-game', label: 'ru · десктоп 1400px · игровой экран' },
-  { url: `${BASE}/src/index.html?lang=zh-TW`, viewport: DESKTOP, anchor: 'game', name: '07-zh-TW-desktop-game', label: 'zh-TW · десктоп 1400px · двойной китайский (B6)' },
-  { url: `${BASE}/src/index.html?lang=ar`, viewport: DESKTOP, anchor: 'game', name: '08-ar-desktop-game', label: 'ar · десктоп 1400px · RTL (B5)' },
+  { url: `${BASE}/index.html?lang=en`, viewport: DESKTOP, anchor: 'game', name: '05-en-desktop-game', label: 'en · десктоп 1400px · игровой экран' },
+  { url: `${BASE}/index.html?lang=ru`, viewport: DESKTOP, anchor: 'game', name: '06-ru-desktop-game', label: 'ru · десктоп 1400px · игровой экран' },
+  { url: `${BASE}/index.html?lang=zh-TW`, viewport: DESKTOP, anchor: 'game', name: '07-zh-TW-desktop-game', label: 'zh-TW · десктоп 1400px · двойной китайский (B6)' },
+  { url: `${BASE}/index.html?lang=ar`, viewport: DESKTOP, anchor: 'game', name: '08-ar-desktop-game', label: 'ar · десктоп 1400px · RTL (B5)' },
   
   // Негативный сценарий: несуществующий язык → откат на en
-  { url: `${BASE}/src/index.html?lang=xx`, viewport: DESKTOP, anchor: 'game', name: '09-xx-desktop-fallback', label: 'xx · десктоп · несуществующий язык → откат на en' },
+  { url: `${BASE}/index.html?lang=xx`, viewport: DESKTOP, anchor: 'game', name: '09-xx-desktop-fallback', label: 'xx · десктоп · несуществующий язык → откат на en' },
   
   // Граничный: пустой ?lang=
-  { url: `${BASE}/src/index.html?lang=`, viewport: DESKTOP, anchor: 'game', name: '10-empty-desktop-fallback', label: 'пустой ?lang= · десктоп · откат на en' },
+  { url: `${BASE}/index.html?lang=`, viewport: DESKTOP, anchor: 'game', name: '10-empty-desktop-fallback', label: 'пустой ?lang= · десктоп · откат на en' },
 ];
 
 async function sha256(buf) {

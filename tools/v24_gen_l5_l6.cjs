@@ -227,7 +227,7 @@ makeLang('hy', romCommon({
   e:'Հեշտ', n:'Սովորական', h:'Դժվար', exit:'Ելք?', exitMsg:'Այս կյանքի առաջընթացը կկորչի։',
   yes:'Այո', no:'Ոչ', more:'Ավելին', deadY:'Քո բջիջը մահացավ', alive:'կենդանի', other:'Այլ',
   err:'Սխալ', errA:'Ասինխրոն սխալ', load:'Կառուցում ենք լճակը…', eco:'Խնայողության ռեժիմ',
-  camFly:'Ազատ տեսախցիկ', roleOk:'Հասկացա — լողում եմ', roleWho':'Ով ես դու / ինչ ես ուտում', roleFood:'Սնունդ',
+  camFly:'Ազատ տեսախցիկ', roleOk:'Հասկացա — լողում եմ', roleWho:'Ով ես դու / ինչ ես ուտում', roleFood:'Սնունդ',
   top:'ցուցակի սկզբում', species:'տեսակ', close:'Փակել', clear:'Մաքրել',
   restart:'ՎԵՐԱԳՈՐծԱՐԿԵԼ', play:'Խաղալ', next:'Հաջորդ', skip:'Բաց թողնել',
   spO:'{n} տեսակ', colO:'{n} գաղութ', alO:'{n} կենդանի',
@@ -242,7 +242,7 @@ makeLang('ka', romCommon({
   e:'მარტივი', n:'ჩვეულებრივი', h:'რთული', exit:'გასვლა?', exitMsg:'ამ სიცოცხლის პროგრესი დაიკარგება.',
   yes:'დიახ', no:'არა', more:'მეტი', deadY:'შენი უჯრედი დაიღუპა', alive:'ცოცხალი', other:'სხვა',
   err:'შეცდომა', errA:'ასინქრონული შეცდომა', load:'ტბას ვაშენებთ…', eco:'ეკონომიური რეჟიმი',
-  camFly:'თავისუფალი კამერა', roleOk:'მივხვდი — ცურავ', roleWho':'ვინ ხარ / რას ჭამ', roleFood:'საკვები',
+  camFly:'თავისუფალი კამერა', roleOk:'მივხვდი — ცურავ', roleWho:'ვინ ხარ / რას ჭამ', roleFood:'საკვები',
   top:'სიის დასაწყისში', species:'სახეობა', close:'დახურვა', clear:'გასუფთავება',
   restart:'ხელახლა გაშვება', play:'ითამაშე', next:'შემდეგი', skip:'გამოტოვება',
   spO:'{n} სახეობა', colO:'{n} კოლონია', alO:'{n} ცოცხალი',
@@ -258,7 +258,7 @@ makeLang('uz', romCommon({
   e:'Oson', n:'Normal', h:'Qiyin', exit:'Chiqish?', exitMsg:'Bu hayotning yutuqlari yo‘qoladi.',
   yes:'Ha', no:'Yo‘q', more:'Ko‘proq', deadY:'Sening hujayrang o‘ldi', alive:'tirik', other:'Boshqa',
   err:'Xato', errA:'Asinxron xato', load:'Hovuz qurilmoqda…', eco:'Tejash rejimi',
-  camFly:'Erkin kamera', roleOk:'Tushundim — suzaman', roleWho':'Sen kimsan / nima yeyasan', roleFood:'Ovqat',
+  camFly:'Erkin kamera', roleOk:'Tushundim — suzaman', roleWho:'Sen kimsan / nima yeyasan', roleFood:'Ovqat',
   top:'ro‘yxat boshida', species:'tur', close:'YOPISH', clear:'Tozalash',
   restart:'QAYTA ISHGАРИШ', play:'O‘ynash', next:'Keyingi', skip:'O‘tkazib yuborish',
   spO:'{n} tur', colO:'{n} koloniya', alO:'{n} tirik',
@@ -273,7 +273,7 @@ makeLang('tg', romCommon({
   e:'Осон', n:'Муқаррарӣ', h:'Душвор', exit:'Хуруҷ?', exitMsg:'Пешрафти ин ҳаёт гум мешавад.',
   yes:'Ҳа', no:'Не', more:'Бештар', deadY:'Ҳуҷайраи ту мурд', alive:'зинда', other:'Дигар',
   err:'Хато', errA:'Хатои асинхронӣ', load:'Кӯл месозем…', eco:'Ҳолати иқтисодӣ',
-  camFly:'Камераи озод', roleOk:'Фаҳмидам — шиноварӣ', roleWho':'Ту кистӣ / чи мехӯрӣ', roleFood:'Ғизо',
+  camFly:'Камераи озод', roleOk:'Фаҳмидам — шиноварӣ', roleWho:'Ту кистӣ / чи мехӯрӣ', roleFood:'Ғизо',
   top:'дар аввали рӯйхат', species:'намуд', close:'ПӮШИДАН', clear:'Тоза кардан',
   restart:'АЗ НАВ ОҒОЗ', play:'Бозӣ кун', next:'Оянда', skip:'Гузарондан',
   spO:'{n} намуд', colO:'{n} колония', alO:'{n} зинда',
@@ -289,7 +289,7 @@ makeLang('ps', romCommon({
   e:'اسانه', n:'معمولي', h:'سخت', exit:'وتل؟', exitMsg:'د دې ژوند پرمختګ به ورک شي.',
   yes:'هو', no:'نه', more:'نور', deadY:'ستاسو حجره مړه شوه', alive:'ژوندي', other:'نور',
   err:'تیروتنه', errA:'نا همزمانه تېروتنه', load:'حوض جوړوی…', eco:'اقتصادي حالت',
-  camFly:'ازاده کیمره', roleOk:'پوه شوم — لامبو وهي', roleWho':'ته څوک یې / څه خوري', roleFood:'خواړه',
+  camFly:'ازاده کیمره', roleOk:'پوه شوم — لامبو وهي', roleWho:'ته څوک یې / څه خوري', roleFood:'خواړه',
   top:'د لیست په سر', species:'ډولونه', close:'بندول', clear:'پاکول',
   restart:'بیا پیل', play:'لوبه وکړه', next:'بل', skip:'پرېښودل',
   spO:'{n} ډولونه', colO:'{n} کالونۍ', alO:'{n} ژوندي',
@@ -304,7 +304,7 @@ makeLang('ckb', romCommon({
   e:'ئاسان', n:'ئاسایی', h:'سەخت', exit:'دەرچوون؟', exitMsg:'پێشکەوتنی ئەم ژیانە لەدەست دەچێت.',
   yes:'بەڵێ', no:'نەخێر', more:'زیاتر', deadY:'خانەکەت مرد', alive:'زیندوو', other:'هیتر',
   err:'هەڵە', errA:'هەڵەی ناهاوکێش', load:'گۆمەکە دروست دەکەین…', eco:'دۆخی پاشەکەوت',
-  camFly:'کامێرای ئازاد', roleOk:'تێگەیشتم — مەلە دەکەم', roleWho':'تۆ کێی / چی دەخۆیت', roleFood:'خواردن',
+  camFly:'کامێرای ئازاد', roleOk:'تێگەیشتم — مەلە دەکەم', roleWho:'تۆ کێی / چی دەخۆیت', roleFood:'خواردن',
   top:'لە سەرەتای لیستەکە', species:'جۆر', close:'داخستن', clear:'سڕینەوە',
   restart:'دەستپێکردنەوە', play:'یاری بکە', next:'دواتر', skip:'پەڕاندن',
   spO:'{n} جۆر', colO:'{n} کۆلۆنیا', alO:'{n} زیندوو',
@@ -319,11 +319,11 @@ makeLang('sd', romCommon({
   e:'آسان', n:'عام', h:'مشڪل', exit:'نڪرڻ؟', exitMsg:'هن زندگي جي ترقي وڃي ويندي.',
   yes:'ها', no:'نه', more:'وڌيڪ', deadY:'توهان جي سيل مئي', alive:'جيئرو', other:'ٻيا',
   err:'غلطي', errA:'غير هم وقت غلطي', load:'تلاءُ ٺاهي رهيا آهيون…', eco:'بچت موڊ',
-  camFly:'کير اچادو', roleOk:'سمجهي ورتو — تريس', roleWho':'تون ڪير آهين / ڇا کائين ٿو', roleFood':'کاڌو',
+  camFly:'کير اچادو', roleOk:'سمجهي ورتو — تريس', roleWho:'تون ڪير آهين / ڇا کائين ٿو', roleFood:'کاڌو',
   top:'فهرست جي شروعات ۾', species:'قسم', close:'بند ڪريو', clear:'صاف ڪريو',
   restart:'ٻيهر شروع', play:'کيڏ', next:'اڳيون', skip:'ڇڏي ڏيو',
   spO:'{n} قسم', colO:'{n} ڪالونيون', alO:'{n} جيئرا',
-  wikiT':'وڪي- تلاءُ ۾ زندگي', searchPh':'ڳوليو...'
+  wikiT:'وڪي- تلاءُ ۾ زندگي', searchPh:'ڳوليو...'
 }, {}), { native:'سنڌي', font:'system', plural:'sd', script:'arab', dir:'rtl', digits:'latn', register:'توهان', listing:false });
 
 // as or bs mt
@@ -335,11 +335,11 @@ makeLang('as', romCommon({
   e:'সহজ', n:'স্বাভাৱিক', h:'কঠিন', exit:'ওলাই যাব?', exitMsg:'এই জীৱনৰ প্ৰগতি হেৰুৱাব।',
   yes:'হয়', no:'নহয়', more:'অধিক', deadY:'আপোনাৰ কোষ মৰিল', alive:'জীৱিত', other:'অন্য',
   err:'ভুল', errA:'এচিনক্ৰনাছ ভুল', load:'পুখুৰী সাজি আছে…', eco:'সঞ্চয়ী মোড',
-  camFly:'মুক্ত কেমেৰা', roleOk:'বুজিলোঁ — সাঁতৰিম', roleWho':'তুমি কোন / কি খায়', roleFood':'খাদ্য',
+  camFly:'মুক্ত কেমেৰা', roleOk:'বুজিলোঁ — সাঁতৰিম', roleWho:'তুমি কোন / কি খায়', roleFood:'খাদ্য',
   top:'তালিকাৰ আৰম্ভণিত', species:'প্ৰজাতি', close:'বন্ধ কৰক', clear:'পৰিষ্কাৰ',
   restart:'পুনৰ আৰম্ভ', play:'খেলক', next:'পৰৱৰ্তী', skip:'এৰাই যাওক',
   spO:'{n} প্ৰজাতি', colO:'{n} উপনিবেশ', alO:'{n} জীৱিত',
-  wikiT':'ৱিকি- পুখুৰীত জীৱন', searchPh':'বিচাৰক...'
+  wikiT:'ৱিকি- পুখুৰীত জীৱন', searchPh:'বিচাৰক...'
 }, {}), { native:'অসমীয়া', font:'Noto Sans Bengali', plural:'as', script:'beng', dir:'ltr', digits:'beng', register:'আপুনি' });
 
 makeLang('or', romCommon({
@@ -350,11 +350,11 @@ makeLang('or', romCommon({
   e:'ସହଜ', n:'ସାଧାରଣ', h:'କଠିନ', exit:'ବାହାରିବେ?', exitMsg:'ଏହି ଜୀବନର ପ୍ରଗତି ହଜିଯିବ।',
   yes:'ହଁ', no:'ନା', more:'ଅଧିକ', deadY:'ତୁମର ଜୀବକୋଷ ମୃତ', alive:'ଜୀବନ୍ତ', other:'ଅନ୍ୟ',
   err:'ତ୍ରୁଟି', errA:'ଅସିନ୍କ୍ରୋନସ ତ୍ରୁଟି', load:'ପୋଖରୀ ନିର୍ମାଣ କରୁଛି…', eco:'ସଞ୍ଚୟ ମୋଡ',
-  camFly:'ମୁକ୍ତ କ୍ୟାମେରା', roleOk:'ବୁଝିଗଲି — ପହଁରୁଛି', roleWho':'ତୁମେ କିଏ / କଣ ଖାଉଛ', roleFood':'ଖାଦ୍ୟ',
+  camFly:'ମୁକ୍ତ କ୍ୟାମେରା', roleOk:'ବୁଝିଗଲି — ପହଁରୁଛି', roleWho:'ତୁମେ କିଏ / କଣ ଖାଉଛ', roleFood:'ଖାଦ୍ୟ',
   top:'ତାଲିକାର ଉପରେ', species:'ପ୍ରଜାତି', close:'ବନ୍ଦ କରନ୍ତୁ', clear:'ସଫା କରନ୍ତୁ',
   restart:'ପୁନଃ ଆରମ୍ଭ', play:'ଖେଳନ୍ତୁ', next:'ପରବର୍ତ୍ତୀ', skip:'ଏଡ଼ାନ୍ତୁ',
   spO:'{n} ପ୍ରଜାତି', colO:'{n} ଉପନିବେଶ', alO:'{n} ଜୀବନ୍ତ',
-  wikiT':'ଉଇକି- ପୋଖରୀରେ ଜୀବନ', searchPh':'ଖୋଜନ୍ତୁ...'
+  wikiT:'ଉଇକି- ପୋଖରୀରେ ଜୀବନ', searchPh:'ଖୋଜନ୍ତୁ...'
 }, {}), { native:'ଓଡ଼ିଆ', font:'Noto Sans Oriya', plural:'or', script:'orya', dir:'ltr', digits:'orya', register:'ଆପଣ' });
 
 makeLang('bs', romCommon({
@@ -365,12 +365,12 @@ makeLang('bs', romCommon({
   e:'Lako', n:'Normalno', h:'Teško', exit:'Izaći?', exitMsg:'Napredak ovog života bit će izgubljen.',
   yes:'Da', no:'Ne', more:'Više', deadY:'Tvoja ćelija je umrla', alive:'živih', other:'Ostalo',
   err:'Greška', errA:'Asinhrona greška', load:'Gradim bar…', eco:'Uštedni režim',
-  camFly:'Slobodna kamera', roleOk:'Razumijem — plivam', roleWho':'Ko si / što jedeš', roleFood':'Hrana',
+  camFly:'Slobodna kamera', roleOk:'Razumijem — plivam', roleWho:'Ko si / što jedeš', roleFood:'Hrana',
   top:'na vrhu liste', species:'vrsta', close:'ZATVORI', clear:'Obriši',
   restart:'RESTART', play:'Igraj', next:'Sljedeće', skip:'Preskoči',
   sp1:'{n} vrsta', spF:'{n} vrste', spO:'{n} vrsta', col1:'{n} kolonija', colF:'{n} kolonije', colO:'{n} kolonija',
   al1:'{n} živ', alF:'{n} živa', alO:'{n} živih',
-  wikiT':'Wiki: Život u baru', searchPh':'Traži...'
+  wikiT:'Wiki: Život u baru', searchPh:'Traži...'
 }, {}), { native:'Bosanski', font:'system', plural:'bs', script:'latn', dir:'ltr', digits:'latn', register:'ti' });
 
 makeLang('mt', romCommon({
@@ -381,11 +381,11 @@ makeLang('mt', romCommon({
   e:'Faċli', n:'Normali', h:'Diffiċli', exit:'Toħroġ?', exitMsg:'Il-progress ta\u2019 din il-ħajja se jintilef.',
   yes:'Iva', no:'Le', more:'Aktar', deadY:'Iċ-ċellola tiegħek mietet', alive:'ħajjin', other:'Oħra',
   err:'Żball', errA:'Żball asinkronu', load:'Kunstruwixxi l-lag…', eco:'Mod ta\u2019 tnaqqis',
-  camFly:'Kamera ħielsa', roleOk:'Intebbaħ — sejn', roleWho':'Int min / xi tkun tiekol', roleFood':'Ikel',
-  top':'fil-bidu tal-lista', species':'speċi', close':'AGĦLAQ', clear':'Imsħi',
-  restart':'ERĠA IBDA', play:'Ilgħab', next':'Li jmiss', skip':'Aqbeż',
-  spO':'{n} speċi', colO':'{n} kolonji', alO':'{n} ħajjin',
-  wikiT':'Wiki- Ħajja fil-lag', searchPh':'Fittex...'
+  camFly:'Kamera ħielsa', roleOk:'Intebbaħ — sejn', roleWho:'Int min / xi tkun tiekol', roleFood:'Ikel',
+  'top':'fil-bidu tal-lista', 'species':'speċi', 'close':'AGĦLAQ', 'clear':'Imsħi',
+  'restart':'ERĠA IBDA', 'play':'Ilgħab', 'next':'Li jmiss', 'skip':'Aqbeż',
+  'spO':'{n} speċi', 'colO':'{n} kolonji', 'alO':'{n} ħajjin',
+  wikiT:'Wiki- Ħajja fil-lag', searchPh:'Fittex...'
 }, {}), { native:'Malti', font:'system', plural:'mt', script:'latn', dir:'ltr', digits:'latn', register:'int', listing:false });
 
 console.log('L5+L6: 22 словарей готовы');

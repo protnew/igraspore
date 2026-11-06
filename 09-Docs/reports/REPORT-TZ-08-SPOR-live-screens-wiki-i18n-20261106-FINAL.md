@@ -428,28 +428,52 @@ bfb7866 Stage 4: Expand content areas to ≥85% viewport (FR-4.1–4.2)
 
 ---
 
-## 5. Тесты
+## 5. Тесты (п.16 — полный прогон с baseline)
 
-### Полный прогон тестов ✅
+### Baseline (ДО коммита FR-0.4)
 ```
 Command: npm test
+Date: 2026-11-06 19:09
 Result: Test Files  46 passed (46)
         Tests       353 passed (353)
-Duration: 141.94s (transform 1.24s, setup 563ms, collect 21.28s, tests 17.92s)
+Duration: 74.89s
 Status: ✅ ALL PASS
+Log: 09-Docs/test-runs/logs/20261106-190920/baseline.log
 ```
 
+### Full run (ПОСЛЕ коммита FR-0.4 + §24 tails)
+```
+Command: npm test
+Date: 2026-11-06 19:29
+Result: Test Files  46 passed (46)
+        Tests       353 passed (353)
+Duration: 226.93s
+Status: ✅ ALL PASS
+Log: 09-Docs/test-runs/logs/20261106-192920/full-run.log
+```
+
+### Дельта "было→стало"
+| Метрика | Baseline | Full run | Изменение |
+|---------|----------|----------|-----------|
+| Test Files | 46 | 46 | 0 |
+| Tests | 353 | 353 | 0 |
+| Passed | 353 | 353 | 0 |
+| Failed | 0 | 0 | 0 |
+| Duration | 74.89s | 226.93s | +152s (environment variance) |
+
+**Вывод**: правки FR-0.4 и §24 tails не сломали тесты. 353/353 PASS стабильно.
+
 **Ключевые тесты**:
-- `langs_consistency.test.js`: 5/5 PASS (3054ms) — каждый включённый язык имеет доказательство критиков
-- `comprehensive.test.js`: 19/19 PASS (9010ms) — логика AI, биологии, конфигурации
-- `import_all_src.test.js`: 33/33 PASS (900ms) — импорт всех модулей
-- `i18n_hardcoded.test.js`: 55/55 PASS (318ms) — отсутствие хардкода
-- `i18n_digits.test.js`: 4/4 PASS (374ms) — цифры в i18n
-- `i18n_plural.test.js`: 3/3 PASS (10ms) — плюрализация
-- `i18n_rtl.test.js`: 3/3 PASS (7ms) — RTL языки
-- `i18n_registry.test.js`: 3/3 PASS (48ms) — реестр языков
-- `theme_engine.test.js`: 6/6 PASS (30ms) — движок тем
-- `mobile_pool.test.js`: 3/3 PASS (11ms) — мобильный пул
+- `langs_consistency.test.js`: 5/5 PASS (3024ms) — каждый включённый язык имеет доказательство критиков
+- `comprehensive.test.js`: 19/19 PASS (5553ms) — логика AI, биологии, конфигурации
+- `import_all_src.test.js`: 33/33 PASS (610ms) — импорт всех модулей
+- `i18n_hardcoded.test.js`: 55/55 PASS (213ms) — отсутствие хардкода
+- `i18n_digits.test.js`: 4/4 PASS (88ms) — цифры в i18n
+- `i18n_plural.test.js`: 3/3 PASS (7ms) — плюрализация
+- `i18n_rtl.test.js`: 3/3 PASS (4ms) — RTL языки
+- `i18n_registry.test.js`: 3/3 PASS (44ms) — реестр языков
+- `theme_engine.test.js`: 6/6 PASS (54ms) — движок тем
+- `mobile_pool.test.js`: 3/3 PASS (9ms) — мобильный пул
 
 ### Secret scan (pre-commit hook) ✅
 ```
@@ -459,8 +483,10 @@ Status: ✅
 ```
 
 ### Логи тестов
-- Папка: `.07-QA-and-Testing/logs/`
-- Формат: `test-run-YYYYMMDD-HHMMSS.log`
+- Папка: `09-Docs/test-runs/logs/`
+- Baseline: `20261106-190920/baseline.log`
+- Full run: `20261106-192920/full-run.log`
+- mtime ≥ коммита: ✅ (19:09 ≥ 19:08, 19:29 ≥ 19:10)
 
 ---
 

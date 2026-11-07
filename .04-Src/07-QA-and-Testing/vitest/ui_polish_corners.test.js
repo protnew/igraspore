@@ -26,7 +26,7 @@ describe('UI-POLISH corners CSS contract', () => {
   });
   it('narrow ≤900 lifts corners above actBar band', () => {
     expect(css).toMatch(/@media \(max-width: 900px\).*?#mmWrap, #demoTip, #scaleW, #hDivReady/s);
-    expect(css).toMatch(/bottom: calc\(var\(--actbar-bottom\) \+ var\(--actbar-h\) \+ var\(--ui-gap\)\) !important/);
+    expect(css).toMatch(/bottom: calc\(var\(--actbar-bottom\) \+ var\(--actbar-h\) \+ var\(--ui-gap\)\)/);
   });
 });
 

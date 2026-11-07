@@ -137,9 +137,9 @@ describe('UI-IMPROVE F6: mobile compact bottom bar', () => {
   const css = () => fs.readFileSync(path.resolve(__dirname, '../../../style.css'), 'utf-8');
   it('hides text on non-key buttons, shows icon, keeps 44x44 hit area', () => {
     const c = css();
-    expect(c).toMatch(/\.ab:not\(\.ab-keep\) \.abt \{ display: none !important; \}/);
+    expect(c).toMatch(/\.ab:not\(\.ab-keep\) \.abt \{ display: none; \}/);
     expect(c).toMatch(/\.ab\[data-ico\]:not\(\.ab-keep\)::before \{ content: attr\(data-ico\)/);
-    expect(c).toMatch(/min-width: 44px !important; min-height: 44px !important/);
+    expect(c).toMatch(/min-width: 44px; min-height: 44px/);
     expect(read('mobile.js')).toMatch(/\.is-mobile \.ab\{min-width:48px!important;min-height:48px!important/);
   });
   it('text stays only on eat / divide / auto / spore (labels from the dictionary)', () => {

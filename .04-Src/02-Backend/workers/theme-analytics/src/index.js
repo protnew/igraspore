@@ -28,6 +28,9 @@ function validEvent(ev) {
   if (typeof ev.anonId !== "string" || ev.anonId.length < 4 || ev.anonId.length > 80) return false;
   if (typeof ev.sessionId !== "string" || ev.sessionId.length < 4 || ev.sessionId.length > 80) return false;
   if (typeof ev.ts !== "number") return false;
+  const now = Date.now();
+  if (ev.ts < now - 86400000 || ev.ts > now + 60000) return false;
+  if (ev.ms !== undefined && typeof ev.ms !== "number") return false;
   return true;
 }
 
@@ -44,10 +47,13 @@ export default {
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
     const url = new URL(request.url);
     if (url.pathname === "/theme-events" && request.method === "POST") {
+      const contentLength = parseInt(request.headers.get("Content-Length") || "0", 10);
+      if (contentLength > 100000) return json({ ok:false, error:"payload_too_large" }, 413, headers);
       let body;
       try { body = await request.json(); } catch (e) { return json({ ok:false, error:"bad_json" }, 400, headers); }
       const events = Array.isArray(body.events) ? body.events.slice(0, 50) : [];
-      let n = 0;
+      let written = 0;
+      const degraded = !env.THEME_AE;
       for (const ev of events) {
         if (!validEvent(ev)) continue;
         if (env.THEME_AE && env.THEME_AE.writeDataPoint) {
@@ -56,14 +62,15 @@ export default {
             doubles: [ev.ts, ev.ms || 0],
             indexes: [ev.anonId]
           });
-          n++;
-        } else { n++; }
+          written++;
+        }
       }
-      return json({ ok:true, accepted:n }, 200, headers);
+      return json({ ok:true, written, degraded }, 200, headers);
     }
     if (url.pathname === "/theme-stats" && request.method === "GET") {
+      if (!env.STATS_GATE) return json({ ok:false, error:"stats_disabled" }, 503, headers);
       const gate = request.headers.get("X-Stats-Gate") || "";
-      if (env.STATS_GATE && gate !== env.STATS_GATE) {
+      if (gate !== env.STATS_GATE) {
         return json({ ok:false, error:"forbidden" }, 403, headers);
       }
       return json({

@@ -18,7 +18,6 @@
     <locale android:name="it"/>
     <locale android:name="pl"/>
     <locale android:name="uk"/>
-    <locale android:name="zh-TW"/>
     <locale android:name="ms"/>
     <locale android:name="bn"/>
     <locale android:name="nl"/>
@@ -65,7 +64,6 @@
     <locale android:name="mk"/>
     <locale android:name="is"/>
     <locale android:name="af"/>
-    <locale android:name="zu"/>
     <locale android:name="km"/>
     <locale android:name="lo"/>
     <locale android:name="am"/>

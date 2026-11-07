@@ -133,7 +133,7 @@ window.showToast = function(msg, color){
   if(!el){
     el = document.createElement('div');
     el.id = 'toast';
-    el.style.cssText = 'position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:35;padding:12px 24px;border-radius:var(--r-md);font-size:var(--fs-lg);font-weight:800;color:var(--text-primary);background:var(--bg-panel);border:2px solid var(--accent);pointer-events:none;opacity:0;transition:opacity var(--fast) var(--ease);text-shadow:0 2px 6px rgba(0,0,0,.5);backdrop-filter:blur(4px);';
+    el.className = 'igs-toast';
     document.body.appendChild(el);
   }
   el.textContent = msg;
@@ -258,6 +258,7 @@ document.addEventListener('keydown',function(e){
   var code=e.code||'';
   if(code==='KeyW')k='w'; else if(code==='KeyA')k='a'; else if(code==='KeyS')k='s'; else if(code==='KeyD')k='d';
   keys[k]=true;
+  if(k==='x'){ if(window.demoMode){ window.exitDemo(); e.preventDefault(); return; } }
   if(k==='w'||k==='a'||k==='s'||k==='d'||k==='arrowup'||k==='arrowdown'||k==='arrowleft'||k==='arrowright'){
     // Map arrows to camKeys
     var ck = k;

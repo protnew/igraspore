@@ -57,7 +57,7 @@ function renderPoolBanner(){
     if(!cs || !cs.parentNode) return;
     el = document.createElement('div');
     el.id = 'poolBanner';
-    el.style.cssText='text-align:center;margin:6px 8px 10px;padding:8px 12px;border-radius:10px;background:rgba(40,80,120,0.45);border:1px solid rgba(120,200,255,0.35);color:#dff;font-size:13px;line-height:1.35';
+    el.className='igs-pool-banner';
     cs.parentNode.insertBefore(el, cs);
   }
   var n = getPoolCount();

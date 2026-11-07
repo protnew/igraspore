@@ -158,7 +158,8 @@ describe('UI-IMPROVE F6: mobile compact bottom bar', () => {
 
 describe('UI-IMPROVE F7: P2 polish', () => {
   it('toast z-index is 35 (under modal overlays)', () => {
-    expect(read('main_events.js')).toMatch(/translateX\(-50%\);z-index:35;padding:12px 24px/);
+    const css = fs.readFileSync(path.resolve(__dirname, '../../src/style.css'), 'utf-8');
+    expect(css).toMatch(/\.igs-toast\{[^}]*z-index:35/);
   });
   it('no dead apple-touch-icon link in index.html', () => {
     const html = fs.readFileSync(path.resolve(__dirname, '../../../index.html'), 'utf-8');

@@ -46,7 +46,7 @@ function buildSpeciesGrid(){
               : (selCat==='all' ? SPECIES_DB.length : countCat(selCat));
   var st=document.createElement('div');
   st.id='spFilterStatus';
-  st.style.cssText='width:100%;padding:8px 10px;margin:0 0 8px 0;font-size:13px;font-weight:700;color:#dff;background:linear-gradient(90deg,rgba(0,80,40,0.75),rgba(0,40,70,0.75));border-radius:8px;border:2px solid #4c8;box-shadow:0 0 12px rgba(60,180,100,0.35)';
+  st.className='igs-filter-status';
   var catLabel = (selCat==='all') ? tt('all') : (typeof catName==='function'?catName(selCat):selCat);
   var colN = 0;
   if(selCat==='all'||selCat==='producer'){
@@ -118,7 +118,7 @@ function buildSpeciesGrid(){
   }
   if(document.querySelectorAll('#spGrid .sc').length===0){
     var empty=document.createElement('div');
-    empty.style.cssText='padding:12px;color:#f89;font-size:12px';
+    empty.className='igs-no-species';
     empty.textContent=tt('noSpecies',{cat:(typeof catName==='function'?catName(selCat):selCat)});
     sg.appendChild(empty);
   }
@@ -141,21 +141,21 @@ function updateMenuTexts(){
     if(el) el.innerHTML = tt('menuSub') +
       '<br><span style="color:#8cf;font-size:11px">\u{1F30A} '+tt('poolWill',{n:poolN,kinds:SPECIES_DB.length})+'</span>';
   })();
-  document.getElementById('startBtn').textContent=tt('start');
-  document.getElementById('helpBtn').textContent=tt('help');
-  document.getElementById('setBtn2').textContent=tt('set');
-  document.getElementById('wikiBtnMenu').textContent=tt('wiki');
-  document.getElementById('resBtn').textContent=tt('resume');
-  document.getElementById('pHelp').textContent=tt('help');document.getElementById('pSet').textContent=tt('set');document.getElementById('pWiki').textContent=tt('wiki');
-  document.getElementById('pauseT').textContent=tt('paused');
-  document.getElementById('restartBtn').textContent=tt('restart');document.getElementById('menuBtn').textContent=tt('menu');
-  document.getElementById('helpT').textContent=tt('help');document.getElementById('helpClose').textContent=tt('close');
-  document.getElementById('pLegend').textContent=tt('legend');
-  document.getElementById('pCam').textContent=tt('camFly');
-  document.getElementById('pMap').textContent=tt('mapChart');
-  document.getElementById('pMicro').textContent=tt('microscope');
-  document.getElementById('pPic').textContent=tt('picMode');
-  document.getElementById('menuBtnPause').textContent=tt('exit');
+  var sb=document.getElementById('startBtn'); if(sb) sb.textContent=tt('start');
+  var hb=document.getElementById('helpBtn'); if(hb) hb.textContent=tt('help');
+  var stb=document.getElementById('setBtn2'); if(stb) stb.textContent=tt('set');
+  var wb=document.getElementById('wikiBtnMenu'); if(wb) wb.textContent=tt('wiki');
+  var rb=document.getElementById('resBtn'); if(rb) rb.textContent=tt('resume');
+  var ph=document.getElementById('pHelp'); if(ph) ph.textContent=tt('help');var ps=document.getElementById('pSet'); if(ps) ps.textContent=tt('set');var pw=document.getElementById('pWiki'); if(pw) pw.textContent=tt('wiki');
+  var pt=document.getElementById('pauseT'); if(pt) pt.textContent=tt('paused');
+  var rsb=document.getElementById('restartBtn'); if(rsb) rsb.textContent=tt('restart');var mb=document.getElementById('menuBtn'); if(mb) mb.textContent=tt('menu');
+  var ht=document.getElementById('helpT'); if(ht) ht.textContent=tt('help');var hc=document.getElementById('helpClose'); if(hc) hc.textContent=tt('close');
+  var pLegend=document.getElementById('pLegend'); if(pLegend) pLegend.textContent=tt('legend');
+  var pCam=document.getElementById('pCam'); if(pCam) pCam.textContent=tt('camFly');
+  var pMap=document.getElementById('pMap'); if(pMap) pMap.textContent=tt('mapChart');
+  var pMicro=document.getElementById('pMicro'); if(pMicro) pMicro.textContent=tt('microscope');
+  var pPic=document.getElementById('pPic'); if(pPic) pPic.textContent=tt('picMode');
+  var menuBtnPause=document.getElementById('menuBtnPause'); if(menuBtnPause) menuBtnPause.textContent=tt('exit');
   var demoBtn=document.getElementById('demoBtn'); if(demoBtn) demoBtn.textContent=tt('demo');
   function hudLabel(id, key, hk){
     var b=document.getElementById(id); if(!b) return;

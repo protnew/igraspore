@@ -415,3 +415,19 @@ body.debug #topRightStack{display:flex!important}
   #actBar{max-height:72px!important;flex-wrap:nowrap!important}
   #bPause{min-width:44px;min-height:44px}
 }
+
+/* === D2: CSS className replacements for inline cssText === */
+.igs-spd-bar{position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;gap:4px;padding:6px 10px;background:rgba(0,12,28,0.95);border:1px solid #3a6a95;border-radius:8px;pointer-events:auto;box-shadow:0 2px 12px rgba(0,0,0,0.5)}
+.igs-spd-btn{padding:6px 12px;font-size:14px;min-width:44px;cursor:pointer;border-radius:5px;border:1px solid #345;background:#012;color:#fff;font-family:inherit}
+.igs-spd-btn.act{background:#1a6a3a}
+.igs-lab-label{font:700 10px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;text-align:center;margin-bottom:2px;pointer-events:none}
+.igs-slider-indicator{height:3px;background:rgba(200,230,255,0.9);border-left:2px solid #fff;border-right:2px solid #fff;box-shadow:0 1px 2px #000;width:100px;margin:0 auto;pointer-events:none}
+.igs-role-card{position:fixed;left:50%;top:18%;transform:translateX(-50%);z-index:9999;max-width:520px;width:92%;background:rgba(6,18,14,0.94);border:1px solid rgba(140,220,160,0.45);border-radius:14px;padding:14px 16px;color:#e8ffe8;font:14px/1.4 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+.igs-demo-tip{background:rgba(0,12,28,0.82);color:#cfe;border:1px solid #4af;border-radius:8px;padding:10px 12px;font:13px/1.35 system-ui,sans-serif;pointer-events:none}
+.igs-toast{position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:35;padding:12px 24px;border-radius:var(--r-md);font-size:var(--fs-lg);font-weight:800;color:var(--text-primary);background:var(--bg-panel);border:2px solid var(--accent);pointer-events:none;opacity:0;transition:opacity var(--fast) var(--ease);text-shadow:0 2px 6px rgba(0,0,0,.5);backdrop-filter:blur(4px)}
+.igs-org-edu-panel{display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:72px;z-index:60;max-width:min(520px,92vw);padding:10px 14px;border-radius:10px;background:rgba(4,16,22,0.88);border:1px solid rgba(100,180,140,0.45);color:#eaf7f0;font-family:system-ui,sans-serif;pointer-events:none;box-shadow:0 8px 28px rgba(0,0,0,0.45)}
+.igs-gl-canvas{position:absolute;top:0;left:0;z-index:0;pointer-events:none;display:none}
+.igs-toast-queue{position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:35;padding:12px 24px;border-radius:8px;font-weight:800;pointer-events:none;opacity:0}
+.igs-pool-banner{text-align:center;margin:6px 8px 10px;padding:8px 12px;border-radius:10px;background:rgba(40,80,120,0.45);border:1px solid rgba(120,200,255,0.35);color:#dff;font-size:13px;line-height:1.35}
+.igs-filter-status{width:100%;padding:8px 10px;margin:0 0 8px 0;font-size:13px;font-weight:700;color:#dff;background:linear-gradient(90deg,rgba(0,80,40,0.75),rgba(0,40,70,0.75));border-radius:8px;border:2px solid #4c8;box-shadow:0 0 12px rgba(60,180,100,0.35)}
+.igs-no-species{padding:12px;color:#f89;font-size:12px}

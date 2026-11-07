@@ -19,7 +19,7 @@ function showSpeedBar(){
   if(!sb) return;
   var speeds=[{v:0,l:'\u23f8'},{v:0.25,l:'0.25x'},{v:0.5,l:'0.5x'},{v:1,l:'1x'},{v:2,l:'2x'},{v:5,l:'5x'},{v:10,l:'10x'}];
   sb.innerHTML='';
-  sb.style.cssText='position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:9999;display:flex!important;gap:4px;padding:6px 10px;background:rgba(0,12,28,0.95);border:1px solid #3a6a95;border-radius:8px;pointer-events:auto;box-shadow:0 2px 12px rgba(0,0,0,0.5);';
+  sb.className='igs-spd-bar';
   for(var i=0;i<speeds.length;i++){
     var b=document.createElement('button');
     b.type='button';
@@ -27,7 +27,7 @@ function showSpeedBar(){
     b.textContent=speeds[i].l;
     b.setAttribute('data-ts',speeds[i].v);
     b.title=speeds[i].v===0?tt('paused'):(tt('simSpeed')+' '+speeds[i].l);
-    b.style.cssText='padding:6px 12px;font-size:14px;min-width:44px;cursor:pointer;border-radius:5px;border:1px solid #345;background:'+(Math.abs(timeScale-speeds[i].v)<0.001?'#1a6a3a':'#012')+';color:#fff;font-family:inherit;';
+    b.className='igs-spd-btn'+(Math.abs(timeScale-speeds[i].v)<0.001?' act':'');
     b.onclick=function(ev){
       var el=ev.currentTarget||ev.target;
       timeScale=parseFloat(el.getAttribute('data-ts'));
@@ -309,10 +309,10 @@ function ensureScaleBarContent(sw){
   var lab = document.createElement('div');
   lab.id = 'scaleT';
   lab.textContent = '100 µm';
-  lab.style.cssText = 'font:700 10px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;text-align:center;margin-bottom:2px;pointer-events:none';
+  lab.className = 'igs-lab-label';
   sl = document.createElement('div');
   sl.id = 'scaleL';
-  sl.style.cssText = 'height:3px;background:rgba(200,230,255,0.9);border-left:2px solid #fff;border-right:2px solid #fff;box-shadow:0 1px 2px #000;width:100px;margin:0 auto;pointer-events:none';
+  sl.className = 'igs-slider-indicator';
   sw.appendChild(lab); sw.appendChild(sl);
   return sl;
 }

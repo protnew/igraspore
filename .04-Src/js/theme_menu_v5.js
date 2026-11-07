@@ -17,7 +17,7 @@
       var url = D.thumb(sp, theme); if (!url) continue;
       var im = c.querySelector("img.scV5");
       if (!im) { im = document.createElement("img"); im.className = "scV5"; im.alt = ""; cv.parentNode.insertBefore(im, cv); }
-      im.src = url; im.style.cssText = "display:block;width:120px;height:120px;margin:2px auto;"; cv.style.display = "none"; cv.setAttribute("data-v5", theme);
+      im.src = url; im.classList.add("igs-theme-thumb-v5"); cv.style.display = "none"; cv.setAttribute("data-v5", theme);
     }
   }
   function badges() {

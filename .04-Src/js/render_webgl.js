@@ -57,7 +57,7 @@
       glCanvas=document.createElement('canvas');
       glCanvas.id='glCanvas';
       glCanvas.setAttribute('aria-hidden','true');
-      glCanvas.style.cssText='position:absolute;top:0;left:0;z-index:0;pointer-events:none;display:none;';
+      glCanvas.className='igs-gl-canvas';
       var c=document.getElementById('c');
       if(c && c.parentNode) c.parentNode.insertBefore(glCanvas, c);
       else document.body.insertBefore(glCanvas, document.body.firstChild);

@@ -163,8 +163,7 @@ function startDemoMode() {
     if (!tip) {
       tip = document.createElement('div');
       tip.id = 'demoTip';
-      tip.style.cssText = 'background:rgba(0,12,28,0.82);color:#cfe;border:1px solid #4af;border-radius:8px;' +
-        'padding:10px 12px;font:13px/1.35 system-ui,sans-serif;pointer-events:none';
+      tip.className = 'igs-demo-tip';
       document.body.appendChild(tip);
     }
     tip.style.pointerEvents = 'auto';

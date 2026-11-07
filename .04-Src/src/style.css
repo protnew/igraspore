@@ -101,6 +101,39 @@ canvas{display:block;touch-action:none}#c{position:absolute;top:0;left:0}
 #weatherP{display:none !important}
 #death-screen,#menu-screen,#species-modal,#mobile-controls,#zoom-controls,#sp-filters{display:none}
 
+/* D2: Speed bar container (replaces ui.js:22 cssText) */
+.igs-spd-bar{position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;gap:4px;padding:6px 10px;background:rgba(0,12,28,0.95);border:1px solid #3a6a95;border-radius:8px;pointer-events:auto;box-shadow:0 2px 12px rgba(0,0,0,0.5)}
+/* D2: Speed bar button (replaces ui.js:30 cssText) */
+.igs-spd-btn{padding:6px 12px;font-size:14px;min-width:44px;cursor:pointer;border-radius:5px;border:1px solid #345;background:#012;color:#fff;font-family:inherit}
+.igs-spd-btn.act{background:#1a6a3a}
+/* D2: Lab label (replaces ui.js:316 cssText) */
+.igs-lab-label{font:700 10px/1.2 system-ui,sans-serif;color:rgba(200,230,255,0.95);text-shadow:0 1px 2px #000;text-align:center;margin-bottom:2px;pointer-events:none}
+/* D2: Slider indicator (replaces ui.js:319 cssText) */
+.igs-slider-indicator{height:3px;background:rgba(200,230,255,0.9);border-left:2px solid #fff;border-right:2px solid #fff;box-shadow:0 1px 2px #000;width:100px;margin:0 auto;pointer-events:none}
+
+/* D2: Role card overlay (replaces config.js:441 cssText) */
+.igs-role-card{position:fixed;left:50%;top:18%;transform:translateX(-50%);z-index:9999;max-width:520px;width:92%;background:rgba(6,18,14,0.94);border:1px solid rgba(140,220,160,0.45);border-radius:14px;padding:14px 16px;color:#e8ffe8;font:14px/1.4 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+/* D2: Demo tip bar (replaces demo.js:166 cssText) */
+.igs-demo-tip{background:rgba(0,12,28,0.82);color:#cfe;border:1px solid #4af;border-radius:8px;padding:10px 12px;font:13px/1.35 system-ui,sans-serif;pointer-events:none}
+/* D2: OK button touch-target span (replaces main.js:374 cssText) */
+.igs-ok-span{display:inline-block;min-width:48px;min-height:48px;line-height:48px}
+/* D2: Toast notification (replaces main_events.js:136 cssText) */
+.igs-toast{position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:35;padding:12px 24px;border-radius:var(--r-md);font-size:var(--fs-lg);font-weight:800;color:var(--text-primary);background:var(--bg-panel);border:2px solid var(--accent);pointer-events:none;opacity:0;transition:opacity var(--fast) var(--ease);text-shadow:0 2px 6px rgba(0,0,0,.5);backdrop-filter:blur(4px)}
+/* D2: Organelle education panel (replaces render_edu.js:172 cssText) */
+.igs-org-edu-panel{display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:72px;z-index:60;max-width:min(520px,92vw);padding:10px 14px;border-radius:10px;background:rgba(4,16,22,0.88);border:1px solid rgba(100,180,140,0.45);color:#eaf7f0;font-family:system-ui,sans-serif;pointer-events:none;box-shadow:0 8px 28px rgba(0,0,0,0.45)}
+/* D2: WebGL canvas layer (replaces render_webgl.js:60 cssText) */
+.igs-gl-canvas{position:absolute;top:0;left:0;z-index:0;pointer-events:none;display:none}
+/* D2: Theme menu v5 thumbnail (replaces theme_menu_v5.js:20 cssText) */
+.igs-theme-thumb-v5{display:block;width:120px;height:120px;margin:2px auto}
+/* D2: Toast queue notification (replaces toast_queue.js:11 cssText) */
+.igs-toast-queue{position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:35;padding:12px 24px;border-radius:8px;font-weight:800;pointer-events:none;opacity:0}
+/* D2: Pool banner (replaces ui_food_chain.js:72 cssText) */
+.igs-pool-banner{text-align:center;margin:6px 8px 10px;padding:8px 12px;border-radius:10px;background:rgba(40,80,120,0.45);border:1px solid rgba(120,200,255,0.35);color:#dff;font-size:13px;line-height:1.35}
+/* D2: Species filter status bar (replaces ui_menus.js:49 cssText) */
+.igs-filter-status{width:100%;padding:8px 10px;margin:0 0 8px 0;font-size:13px;font-weight:700;color:#dff;background:linear-gradient(90deg,rgba(0,80,40,0.75),rgba(0,40,70,0.75));border-radius:8px;border:2px solid #4c8;box-shadow:0 0 12px rgba(60,180,100,0.35)}
+/* D2: No species found message (replaces ui_menus.js:121 cssText) */
+.igs-no-species{padding:12px;color:#f89;font-size:12px}
+
 /* === STATE UTILITY CLASSES (JS toggles these instead of inline colors) === */
 .is-active-cam{background:var(--success)!important;box-shadow:0 0 12px var(--success-glow)!important}
 .is-active-mode{background:var(--bg-elevated)!important;border-color:var(--accent)!important}

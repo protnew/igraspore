@@ -8,7 +8,7 @@
     if(node) return node;
     node=document.createElement('div');
     node.id='toast';
-    node.style.cssText='position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:35;padding:12px 24px;border-radius:8px;font-weight:800;pointer-events:none;opacity:0;';
+    node.className='igs-toast-queue';
     document.body.appendChild(node);
     return node;
   }

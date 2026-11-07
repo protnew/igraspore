@@ -438,7 +438,7 @@ function showRoleCard(sp){
     if(cat==='producer') eats = tt('food.producer');
     var d = document.createElement('div');
     d.id = 'roleCard';
-    d.style.cssText = 'position:fixed;left:50%;top:18%;transform:translateX(-50%);z-index:9999;max-width:520px;width:92%;background:rgba(6,18,14,0.94);border:1px solid rgba(140,220,160,0.45);border-radius:14px;padding:14px 16px;color:#e8ffe8;font:14px/1.4 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.45)';
+    d.className = 'igs-role-card';
     d.innerHTML =
       '<div style="font-size:12px;opacity:.7;margin-bottom:4px">'+tt('roleWho')+'</div>'+
       '<div style="font-size:18px;font-weight:700;color:#c8ffc0;margin-bottom:6px">'+(sp.name||name)+' · '+name+'</div>'+

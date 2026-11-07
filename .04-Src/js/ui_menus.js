@@ -46,7 +46,7 @@ function buildSpeciesGrid(){
               : (selCat==='all' ? SPECIES_DB.length : countCat(selCat));
   var st=document.createElement('div');
   st.id='spFilterStatus';
-  st.style.cssText='width:100%;padding:8px 10px;margin:0 0 8px 0;font-size:13px;font-weight:700;color:#dff;background:linear-gradient(90deg,rgba(0,80,40,0.75),rgba(0,40,70,0.75));border-radius:8px;border:2px solid #4c8;box-shadow:0 0 12px rgba(60,180,100,0.35)';
+  st.className='igs-filter-status';
   var catLabel = (selCat==='all') ? tt('all') : (typeof catName==='function'?catName(selCat):selCat);
   var colN = 0;
   if(selCat==='all'||selCat==='producer'){
@@ -118,7 +118,7 @@ function buildSpeciesGrid(){
   }
   if(document.querySelectorAll('#spGrid .sc').length===0){
     var empty=document.createElement('div');
-    empty.style.cssText='padding:12px;color:#f89;font-size:12px';
+    empty.className='igs-no-species';
     empty.textContent=tt('noSpecies',{cat:(typeof catName==='function'?catName(selCat):selCat)});
     sg.appendChild(empty);
   }

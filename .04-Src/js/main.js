@@ -371,7 +371,7 @@ function startGame(isScreensaver){
            var span=document.createElement('span');
            span.id='roleCardOk';
            span.textContent=okBtn.textContent||'OK';
-           span.style.cssText='display:inline-block;min-width:48px;min-height:48px;line-height:48px';
+           span.className='igs-ok-span';
            span.onclick=function(ev){ if(ev) ev.stopPropagation(); io.className='ov'; state='playing'; window._pendingTutorial=false; };
            okBtn.textContent='';
            okBtn.appendChild(span);

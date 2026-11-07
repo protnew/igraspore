@@ -73,7 +73,15 @@ window.showToast = function(msg, color){
   if(!el){
     el = document.createElement('div');
     el.id = 'toast';
-    el.style.cssText = 'position:fixed;top:22%;left:50%;transform:translateX(-50%);z-index:50;padding:12px 22px;border-radius:10px;font-size:20px;font-weight:800;color:#fff;background:rgba(0,20,40,.88);border:2px solid #4af;pointer-events:none;opacity:0;transition:opacity .15s;text-shadow:0 2px 6px #000;';
+    el.className = 'igs-toast';
+    el.style.zIndex = '50';
+    el.style.fontSize = '20px';
+    el.style.borderRadius = '10px';
+    el.style.padding = '12px 22px';
+    el.style.background = 'rgba(00,20,40,.88)';
+    el.style.border = '2px solid #4af';
+    el.style.color = '#fff';
+    el.style.textShadow = '0 2px 6px #000';
     document.body.appendChild(el);
   }
   el.textContent = msg;

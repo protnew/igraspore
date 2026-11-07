@@ -765,11 +765,7 @@ function ensureOrgEduPanel(){
   if(document.getElementById('orgEduPanel')) return;
   var d = document.createElement('div');
   d.id = 'orgEduPanel';
-  d.style.cssText = 'display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:72px;z-index:60;'+
-    'max-width:min(520px,92vw);padding:10px 14px;border-radius:10px;'+
-    'background:rgba(4,16,22,0.88);border:1px solid rgba(100,180,140,0.45);'+
-    'color:#eaf7f0;font-family:system-ui,sans-serif;pointer-events:none;'+
-    'box-shadow:0 8px 28px rgba(0,0,0,0.45)';
+  d.className = 'igs-org-edu-panel';
   document.body.appendChild(d);
 }
 window.renderOrganelleEdu = renderOrganelleEdu;

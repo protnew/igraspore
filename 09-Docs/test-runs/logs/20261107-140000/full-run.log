@@ -1,0 +1,30 @@
+
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/mobile_pool.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/cyst_manual.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/aquarium_lifecycle.test.js [2m([22m[2m8 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/virus_scale.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/world_update.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/visuals.test.js [2m([22m[2m12 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/world.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/demo.test.js [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/toast_queue.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/biology_update_core.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/render_pipeline.test.js [2m([22m[2m18 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/lang_detect.test.js [2m([22m[2m1 test[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/pool_formula.test.js [2m([22m[2m5 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/ai_move.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/ui_polish_corners.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/death_ledger.test.js [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/math.test.js [2m([22m[2m7 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/i18n_rtl.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/biology_virus.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/render_modes.test.js [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/locomotion.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/force_lang_gate.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m .04-Src/07-QA-and-Testing/vitest/organs.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m46 passed[39m[22m[90m (46)[39m
+[2m      Tests [22m [1m[32m353 passed[39m[22m[90m (353)[39m
+[2m   Start at [22m 14:11:37
+[2m   Duration [22m 289.47s[2m (transform 1.43s, setup 7.66s, collect 4.75s, tests 34.60s, environment 158.18s, prepare 26.50s)[22m
+
